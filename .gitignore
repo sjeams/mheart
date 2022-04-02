@@ -5,3 +5,10 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 
+/config/db.php
+/config/console.php
+/.idea
+/runtime
+/robots.txt
+/u.php
+/ErrorFiles
