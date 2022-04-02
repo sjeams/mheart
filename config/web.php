@@ -3,6 +3,14 @@
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
+Yii::$classMap['Method'] = '@app/libs/Method.php';
+Yii::$classMap['UploadFile'] = '@app/libs/upload/UploadFile.php';
+Yii::$classMap['AlipaySubmit'] = '@app/libs/yii2_alipay/AlipaySubmit.php';
+Yii::$classMap['PHPExcel'] = '@app/libs/PHPExcel.php';
+Yii::$classMap['PHPExcel_Writer_Excel5'] = '@app/libs/PHPExcel/Writer/Excel5.php';
+Yii::$classMap['PHPExcel_Reader_Excel5'] = '@app/libs/PHPExcel/Reader/Excel5.php';
+Yii::$classMap['PHPExcel_Reader_Excel2007'] = '@app/libs/PHPExcel/Reader/Excel2007.php';
+Yii::$classMap['PHPExcel_IOFactory'] = '@app/libs/PHPExcel/IOFactory.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -11,6 +19,33 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'admin' => [
+            'class'=>'app\modules\admin\AdminModule'
+        ],
+        'content' => [
+            'class'=>'app\modules\content\ContentModule'
+        ],
+        'basic' => [
+            'class'=>'app\modules\basic\BasicModule'
+        ],
+        'user' => [
+            'class'=>'app\modules\user\UserModule'
+        ],
+        'cn' => [
+            'class'=>'app\modules\cn\CnModule'
+        ],
+        'app' => [
+            'class'=>'app\modules\app\AppModule'
+        ],
+        'question' => [
+            'class'=>'app\modules\question\QuestionModule'
+        ],
+        'wap' => [
+            'class'=>'app\modules\wap\WapModule'
+        ],
+    ],
+ 
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -23,6 +58,9 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+
+
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -43,14 +81,19 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+       
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+                ''=>'cn/book/index',  //首页
+                'book-<contentid:\d+>.html' => 'cn/book/detail',    //备考列表页
+                // 'book/list.html' => 'cn/book/list',    //备考列表页
+                // 'book/list-<type:\d+>.html' => 'cn/book/list',    //备考列表页
+                // 'book/list-<type:\d+>-<page:\d+>-<pageSize:\d+>.html' => 'cn/book/list',    //备考列表页
+             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];

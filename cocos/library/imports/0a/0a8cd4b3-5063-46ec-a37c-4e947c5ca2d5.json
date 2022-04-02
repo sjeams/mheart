@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "火腿",
+    "texture": "616d2547-ddfe-4027-a4e9-bfedd2919543",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      72
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      72
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

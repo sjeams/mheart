@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "煎饺",
+    "texture": "cb07701e-f4d1-4df5-be66-659f511aa748",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      67,
+      61
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      67,
+      61
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

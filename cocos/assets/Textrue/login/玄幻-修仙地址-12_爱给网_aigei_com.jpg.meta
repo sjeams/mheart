@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4632fb66-2a90-495b-b8e3-68d35ce762dd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 960,
+  "height": 540,
+  "platformSettings": {},
+  "subMetas": {
+    "玄幻-修仙地址-12_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "b1f0630f-4737-479a-99d0-54a4c3b2597f",
+      "rawTextureUuid": "4632fb66-2a90-495b-b8e3-68d35ce762dd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 960,
+      "height": 540,
+      "rawWidth": 960,
+      "rawHeight": 540,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

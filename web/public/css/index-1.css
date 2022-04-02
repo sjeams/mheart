@@ -1,0 +1,641 @@
+/*********************************banner*****************************/
+.banner-wrap {
+    position: relative;
+    height: 600px;
+}
+
+.banner {
+    width: 100% !important;
+    height: 600px;
+    overflow: hidden;
+
+}
+
+.banner li {
+    height: 600px;
+    width: 100% !important;
+    overflow: hidden;
+}
+
+.banner li a {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    display: block;
+}
+
+.slideBox .hd {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -0px;
+    bottom: 15px;
+    z-index: 10;
+}
+
+.slideBox .hd li {
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.slideBox .hd li.on {
+    width: 20px;
+    border-radius: 8px;
+    background: #00b38b;
+}
+
+/******************************其他链接********************/
+.otherList {
+    padding: 65px 0;
+}
+
+.otherList li {
+    float: left;
+    height: 275px;
+    width: 365px;
+}
+
+.otherList li:hover img {
+    transform: rotateY(360deg);
+    transition: all 0.5s ease-out;
+}
+
+.otherList li:first-child {
+    background: #4081de;
+}
+
+.otherList li:nth-child(2) {
+    background: #fec050;
+    margin: 0 50px;
+}
+
+.otherList li:last-child {
+    background: #f95855;
+}
+
+.otherList li img {
+    margin: 15px 0 25px;
+}
+
+.otherList li a.linkName {
+    display: block;
+    color: #ffffff;
+    margin: 0 auto;
+    font-size: 24px;
+    width: 133px;
+    height: 35px;
+    line-height: 35px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+/************************雅思考试小贴士******************/
+.itesHint {
+    padding: 40px 0;
+    background: #e9f1ff;
+}
+
+.ot-line {
+    width: 420px;
+}
+
+.mothList {
+    padding: 30px 0 25px;
+}
+
+.mothList li {
+    width: 67px;
+    height: 40px;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 28px;
+    border: 1px solid #00b38b;
+}
+
+.mothList li:last-child {
+    margin-right: 0;
+}
+
+.mothList li.on {
+    color: #ffffff;
+    background: #00b38b;
+}
+
+.mothInfo {
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    padding: 10px 15px 5px;
+}
+
+.mothInfo li {
+    float: left;
+    width: 240px;
+    margin-bottom: 5px;
+    margin-right: 68px;
+}
+
+.mothInfo li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.mothInfo li a {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    color: #191919;
+}
+
+.mothInfo li:hover a {
+    color: #00A17B;
+}
+
+/**********************热报课程********************/
+.ot-bg1 {
+    padding: 35px 0;
+    background: url("../images/ot-bg1.jpg") no-repeat 0 0;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+}
+
+.subWrap {
+    width: 160px;
+    height: 160px;
+    margin-right: 10px;
+    line-height: 158px;
+    position: relative;
+    background: url("../images/ot-bg2.png") no-repeat 0 0;
+}
+
+.subNum {
+    position: absolute;
+    font-size: 82px;
+    color: #dbe5ff;
+    font-weight: bold;
+    right: 0;
+    line-height: normal;
+    top: -60px;
+}
+
+.subTit {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.subInfo {
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-bottom: 3px;
+}
+
+.subShow {
+    display: block;
+    background: #00b38b;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 28px;
+    width: 130px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto 0;
+}
+
+.subList li {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 90px;
+    margin-right: 200px;
+}
+
+.subList li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.sunInfo-wrap {
+    width: 220px;
+}
+
+.schedule-wrap {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding: 0 15px 0 30px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.schedule-wrap input {
+    padding-left: 5px;
+    width: 120px;
+    border: none;
+    outline: none;
+    height: 24px;
+}
+
+.schedule-wrap input.code {
+    width: inherit;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-left: 15px;
+    margin-right: 40px;
+    background: #73777e;
+    color: #ffffff;
+}
+
+.schedule-wrap input.try {
+    width: inherit;
+    margin-left: 15px;
+    background: #00b38b;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+.schedule-wrap span {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.schedule-wrap em {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.schedule-hint {
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+/***********************备考心经**********************/
+.ot-bg2 {
+    /*height: 655px;*/
+    padding-top: 50px;
+    background: url("../images/ot-bg2.jpg") no-repeat 0 0;
+    background-size: cover;
+}
+
+.dataList {
+    padding: 90px 0 80px;
+}
+
+.dataWrap {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    position: relative;
+    width: 240px;
+    margin-right: 5px;
+    padding: 25px 20px 15px 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 2px #d4d4d2;
+}
+
+.dataList .dataWrap:last-child {
+    margin-right: 0;
+}
+
+.dataTit {
+    padding-top: 7px;
+    font-size: 58px;
+}
+
+.dataDe {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.dataLink a {
+    margin: 5px 0 8px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 30px;
+    line-height: 25px;
+    width: 110px;
+    text-align: center;
+}
+
+.dataLink a:nth-child(2n) {
+    margin-left: 8px;
+}
+
+.smallTit {
+    position: absolute;
+    left: -8px;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+/******************名师点睛****************/
+.ot-bg3 {
+    padding-top: 35px;
+    padding-bottom: 50px;
+    background: url("../images/ot-bg3.jpg") no-repeat 0 0;
+    background-size: cover;
+}
+
+.discussWrap {
+    width: 550px;
+    padding: 0 15px;
+    background: #323745;
+    border-top: 4px solid #3684ff;
+}
+
+.disLeft {
+    width: 300px;
+}
+
+.disTit {
+    width: 105px;
+    height: 34px;
+    text-align: center;
+    margin-top: -4px;
+    line-height: 34px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.disList-1 li {
+    border-bottom: 1px solid #3c414e;
+}
+
+.disList-1 li a {
+    display: block;
+    padding-right: 20px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 18px;
+    height: 44px;
+    line-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.disList-1 li a:hover {
+    color: #afde7f;
+}
+
+.disMore {
+    padding: 30px 0;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.disMore:hover {
+    color: #afde7f;
+}
+
+.disRight {
+    width: 200px;
+    margin-top: 10px;
+    padding: 0 13px 13px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.disRtit {
+    margin: 15px 0 10px 0;
+    font-size: 18px;
+    color: #f2ffa8;
+}
+
+.disInfo {
+    width: 140px;
+}
+
+.disImg {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 3px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.disName {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.disDate {
+    font-size: 12px;
+    color: #a9a9a9;
+}
+
+.disDe {
+    padding-top: 3px;
+    font-size: 12px;
+    color: #a9a9a9;
+    height: 35px;
+    overflow: hidden;
+}
+
+.point-1 {
+    position: absolute;
+    left: -14px;
+    top: 16px;
+}
+
+.disList-2 {
+    padding: 10px 0 5px 10px;
+    border-left: 1px solid #f2ffa8;
+}
+
+.disList-2 li {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #3c414e;
+}
+
+.disList-2 li:last-child {
+    margin-bottom: 0;
+}
+
+/**********************名师团队*****************/
+.ot-bg4 {
+    padding: 40px 0 30px;
+    background: #e9f1ff;
+}
+
+.teamList li:nth-child(4n) {
+    /*margin-right: 0;*/
+}
+
+.teamList li {
+    width: 256px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.dis2-img {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.teacher-name {
+    margin: 5px 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3d4045;
+}
+
+.teacher-tag {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 0 5px;
+    width: 130px;
+    height: 25px;
+    margin: 0 auto;
+    line-height: 25px;
+    background: #74e3cd;
+}
+
+.teacher-de {
+    margin-top: 20px;
+    border-top: 1px solid #d5d5d5;
+    padding-top: 15px;
+    color: #3d4045;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 20px;
+}
+
+a.teamLink {
+    display: inline-block;
+    font-size: 18px;
+    color: #00b38b;
+    margin: 20px 0;
+}
+
+a.teamLink:hover {
+    text-decoration: underline;
+}
+.slideBox-1 .hd {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -0px;
+    bottom: 15px;
+    z-index: 10;
+}
+.slideBox-1{
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+.slideBox-1 .hd li {
+    width: 10px;
+    height: 10px;
+    float: left;
+    cursor: pointer;
+    margin: 0 2px;
+    border-radius: 50%;
+    background: #ababab;
+}
+
+.slideBox-1 .hd li.on {
+    width: 20px;
+    border-radius: 8px;
+    background: #00b38b;
+}
+/***********************学员案例*******************/
+.ot-bg5{
+    padding: 40px 0 50px;
+    background: #ffffff;
+}
+.caseList{
+    padding-top: 55px;
+}
+.caseList li{
+    float: left;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.caseList li:nth-child(6n-7){
+    margin-top: -285px;
+}
+.caseImg-1{
+    width: 370px;
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.caseDe-1{
+    width: 320px;
+    padding: 0 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 210px;
+    background: rgba(255, 183, 112, 0.8);
+}
+.caseDe-1 p.case-name{
+    padding-top: 50px;
+    font-size: 24px;
+}
+.caseDe-1 .case-sub{
+    margin: 10px 0;
+    font-size: 18px;
+}
+.case-de{
+    line-height: 24px;
+    text-align: left;
+    font-size: 18px;
+    height: 48px;
+    overflow: hidden;
+}
+.caseImg-2{
+    width: 370px;
+    height: 275px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.caseDe-2{
+    width: 320px;
+    padding: 0 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    background: rgba(92, 93, 175, 0.8);
+}
+.caseDe-2 .case-name{
+    padding-top: 15px;
+    font-size: 24px;
+}
+.caseDe-2 .case-sub{
+    font-size: 18px;
+    padding-left: 20px;
+    vertical-align: baseline;
+}

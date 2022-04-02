@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "canser",
+    "texture": "2f79e2ca-9d55-462a-86df-6bd0b4d12626",
+    "atlas": "",
+    "rect": [
+      0,
+      5,
+      141,
+      125
+    ],
+    "offset": [
+      -0.5,
+      -2.5
+    ],
+    "originalSize": [
+      142,
+      130
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

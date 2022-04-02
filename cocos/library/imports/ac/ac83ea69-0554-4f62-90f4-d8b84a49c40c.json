@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "仙侠魔幻手游《圣堂》全套资源-背景13(bg13)_爱给网_aigei_com(1)",
+    "texture": "284ccf63-1b4c-4bfd-a03d-a596de247c37",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      684,
+      640
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      684,
+      640
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

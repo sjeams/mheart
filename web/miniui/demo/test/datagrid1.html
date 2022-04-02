@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DataGrid 数据表格</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="../demo.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
+    <style type="text/css">
+    body,html{
+        padding:0;margin:0;
+        height:100%;width:100%;
+    }
+    </style>
+</head>
+<body>
+	<div id="divback">
+	<div style="background-color: #EBF3FF; width:100%; height:20px;">
+		<p >宝钢金属有限公司>部门满意度调查</p>
+	</div>
+    <div style="height:5px;"></div>
+    <div class="mini-toolbar" style="margin:10px;">
+    	添加新模板
+    </div>
+    <div id="div11" style="display: block;">
+    	<div class="mini-toolbar" style="margin:10px;">
+    	1.填写基本信息&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">2.选择部门</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">3.选择普通问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">4.选中流程问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">5.预览模板</font>
+    	</div>
+    </div>
+    <div id="div22" style="display: none;">
+    	<div class="mini-toolbar" style="margin:10px;">
+    	<font style="color:#999999">1.填写基本信息</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font>2.选择部门&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">3.选择普通问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">4.选中流程问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">5.预览模板</font>
+    	</div>
+    </div>
+    <div id="div33" style="display: none;">
+    	<div class="mini-toolbar" style="margin:10px;">
+    	<font style="color:#999999">1.填写基本信息</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">2.选择部门</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font>3.选择普通问题&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">4.选中流程问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">5.预览模板</font>
+    	</div>
+    </div>
+    <div id="div44" style="display: none;">
+    	<div class="mini-toolbar" style="margin:10px;">
+    	<font style="color:#999999">1.填写基本信息</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">2.选择部门</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">3.选择普通问题</font>&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font>4.选中流程问题&nbsp;&nbsp;<font style="color:#FFFFFF">>>&nbsp;</font><font style="color:#999999">5.预览模板</font>
+    	</div>
+    </div>
+    <div id="div1">
+	    <div style="height:5px;"></div>
+	    <div style=" margin-left:15px; width:90%; color:#009; font-weight:bold">请填写模板的基本信息</div>
+	   
+	    <div style="width:90%; margin-left:20px;">
+	    	模板名称：<input type="text" width="200px;" id="name" name="name"/><p/>
+	        模板类型：<input id="combo1" class="mini-combobox" style="width:150px;" textField="name" valueField="id" 
+	    url="../BMSSTemplate.jsp?method=getTemType" value=" "   showNullItem="false" allowInput="true" />  <p/>
+	        <table width="100%">
+	        	<tr>
+	            	<td valign="top" align="right">
+	                	说明信息：
+	                </td>
+	                <td align="left">
+	                	<textarea rows="5"  cols="90%" name="description" id="description"></textarea>
+	                </td>
+	            </tr>
+	        </table>
+	    
+	    </div>
+	   
+	    <div style="width:90%;" align="right">
+	    	<a class="mini-button" iconCls="icon-redo" onclick="div1next();" >下一步</a>
+	    </div>
+    </div>
+    
+    <div id="div2" style="display: none;">
+    	 <div style="height:5px;"></div>
+	     <div style=" margin-left:15px; width:90%; color:#009; font-weight:bold">请选中模板中包含的部门</div>
+	     
+	     <table width="80%"  align="center">
+		 	<tr>
+				<td>
+				<div>
+	            <span>部门名：</span>    
+	            <input id="keyText" class="mini-textbox" style="width:160px;" onenter="onSearchClick"/>
+	            <a class="mini-button" onclick="onSearchClick" style="width:60px;height:20px;">查找</a>       
+	        </div>
+				</td>
+				<td colspan="2"></td>
+			</tr>
+	        <tr>
+	            <td width="40%" align="left">
+	                <div id="grid1" class="mini-datagrid" style=" width:250px;height:200px;"
+	                    idField="id" multiSelect="true"
+	                    url="data/bumen.txt" resultAsData="true" showFooter="false">
+	                    <div property="columns">
+	                        <div type="checkcolumn"></div>
+	                        <div header="待选择的部门" field="text" style=" width:200px;"></div>
+	                    </div>
+	                </div>
+	            </td>
+	            <td width="10%" align="left" style="width:60px;text-align:center;">
+	                <input type="button" value=">" onclick="add()" style="width:40px;"/><br />
+	                <input type="button" value=">>" onclick="addAll()" style="width:40px;"/><br />
+	                <input type="button" value="&lt;&lt;" onclick="removeAll()" style="width:40px;"/><br />
+	                <input type="button" value="&lt;" onclick="remove()" style="width:40px;"/><br />
+	
+	            </td>
+	            <td width="35%" align="left">
+	                <div id="grid2" class="mini-datagrid" style="width:250px;height:200px;"                     
+                    idField="id"  multiSelect="true" showFooter="false"
+                    allowCellEdit="true" allowCellSelect="true">
+                    <div property="columns">
+                        <div type="checkcolumn"></div>
+                        <div header="部门名称" field="text">
+                            <input property="editor" class="mini-textbox" style="width:100%"/>
+                        </div>
+                    </div>
+                </div>
+	                
+	            </td>
+	            <td align="left" width="10%" style="width:50px;text-align:center;vertical-align:bottom">
+	               
+	
+	            </td>
+	        </tr>
+	    	
+	    </table> 
+	    <table width="90%" align="center">
+	    	<tr>
+	        	<td  align="left"><a class="mini-button" iconCls="icon-undo" onclick="div2back();" >上一步</a></td>
+	            <td  align="right"><a class="mini-button" iconCls="icon-redo" onclick="div2next();" >下一步</a></td>
+	        </tr>
+	    </table>  
+    </div>
+    
+    <div id="div3" style="display: none;">
+    	<div style="height:5px;"></div>
+    <div style=" margin-left:15px; width:90%; color:#009; font-weight:bold">请选中模板中包含的问题</div>
+    <div style=" border-bottom:5px; border-bottom-color:#6C9; border:1px solid #09F; width:98%; margin-left:10px;"  >
+         <ul id="tree1" class="mini-tree" url="data/putong.txt" style=" width:100%;" 
+            showTreeIcon="true" textField="text" idField="id" showTreeLines="false" contextMenu="#treeMenu" >
+        </ul>
+    </div>
+	
+   <ul id="treeMenu" class="mini-contextmenu"  onbeforeopen="onBeforeOpen">        
+		<li name="addQuestion" iconCls="icon-add" onclick="onAddQuestion">添加问题</li>
+		<li name="editNode" iconCls="icon-edit" onclick="onEditNode">编辑</li>
+		<li name="removeQuestion" iconCls="icon-remove" onclick="onRemoveNode">删除问题</li>	
+	</ul>
+    <table width="98%" align="left" style="margin-left:10px;">
+    	<tr>
+        	<td  align="left"><a class="mini-button" iconCls="icon-undo" onclick="div3back();" >上一步</a></td>
+            <td  align="right"><a class="mini-button" iconCls="icon-redo" onclick="div3next();" >下一步</a></td>
+        </tr>
+    </table>  
+    </div>
+    
+    
+    <div id="div4" style="display: none;">
+    	<div style="height:5px;"></div>
+     <div style=" margin-left:15px; width:90%; color:#009; font-weight:bold">请选择模板中包含的流程问题</div>
+     <div style=" border-bottom:5px; border-bottom-color:#6C9; border:1px solid #09F; width:90%; margin-left:10px;"  >
+         <ul id="tree2" class="mini-tree" url="data/liucheng.txt" style=" width:100%;" 
+            textField="text" idField="id" showCheckBox="true" contextMenu="#treeMenu" >
+        </ul>
+    </div>
+	<ul id="treeMenu" class="mini-contextmenu"  onbeforeopen="onBeforeOpen">        
+		<li name="addType" iconCls="icon-add" onclick="onAddType">添加流程</li>
+		<li name="addSubType" iconCls="icon-add" onclick="onAddType">添加子流程</li>
+		<li name="addQuestion" iconCls="icon-add" onclick="onAddQuestion">添加问题</li>
+		<li name="editNode" iconCls="icon-edit" onclick="onEditNode">编辑</li>
+		<li name="removeType" iconCls="icon-remove" onclick="onRemoveType">删除流程</li>
+		<li name="removeQuestion" iconCls="icon-remove" onclick="onRemoveQuestion">删除问题</li>	
+	</ul>
+      <table width="90%" align="left" style="margin-left:10px;">
+    	<tr>
+        	<td  align="left"><a class="mini-button" iconCls="icon-undo" onclick="div4back();" >上一步</a></td>
+            <td  align="right"><a class="mini-button" iconCls="icon-redo" onclick="div4next();" >下一步</a></td>
+        </tr>
+    </table>  
+    </div>
+    </div>
+    
+    <div id="divnext" style="display: none;">
+    	<div style="background-color: #EBF3FF; width:100%; height:20px;">
+			<p >宝钢金属有限公司>部门满意度调查</p>
+		</div>
+    	<div style="height:5px;"></div>
+    	<div class="mini-toolbar" style="margin:10px;">
+    	预览模板
+    </div>
+    <div id="tabs1" class="mini-tabs" activeIndex="0" style="width:90%;height:65%; border:1px solid #09F" allowResize="true" >
+		 <div title="文化践行">
+            <div class="mini-fit">
+                <div id="datagrid1" class="mini-datagrid" style="width:100%; height:100%;"  onload="onLoad" allowResize="true"
+                 url="data/wenhua.txt"  idField="id" showFooter="false">
+                    <div property="columns">       
+                        <div headerAlign="center" header="2011测试">
+                            <div property="columns">
+                                <div field="dept" headerAlign="center" style="width:10%;"  allowSort="true">部门</div>
+                                <div field="type" headerAlign="center" style="width:15%;" allowSort="true">类别</div>
+                                <div field="info" headerAlign="center" style="width:15%;" allowSort="true">调查内容</div>
+                                <div headerAlign="center" header="很满意"  >
+                                    <div property="columns" >
+                                        <div width="50px;" field="ten" >10分</div>
+                                        <div width="50px;" field="nine">9分</div>
+                                    </div>
+                                </div>
+                                <div  headerAlign="center" header="满意">
+                                    <div property="columns">
+                                        <div width="50px;" field="eight" >8分</div>
+                                        <div width="50px;" field="seven" >7分</div>
+                                    </div>
+                                </div>
+                                <div header="一般" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="six" >6分</div>
+                                        <div width="50px;" field="five" >5分</div>
+                                    </div>
+                                </div>
+                                <div  header="不满意" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="four" >4分</div>
+                                        <div width="50px;" field="three" >3分</div>
+                                    </div>
+                                </div>
+                                <div  header="很不满意" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="two" >2分</div>
+                                        <div width="50px;" field="one" >1分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                               
+                        </div>
+                    </div>   
+                  </div>
+        </div>
+        <div title="管理流程"  >
+            <div class="mini-fit">
+                <div id="datagrid2" class="mini-datagrid" style="width:100%; height:100%;"  onload="onLoad1" allowResize="true" 
+                url="data/guanli.txt"  idField="id" showFooter="false" >
+                    <div property="columns">       
+                        <div headerAlign="center" header="2011测试">
+                            <div property="columns">
+                                <div field="progress" headerAlign="center" style="width:10%;" allowResize="true" allowSort="true">流程</div>
+                                <div field="childprogress" headerAlign="center" style="width:15%;" allowResize="true" allowSort="true">子流程</div>
+                                <div field="question" headerAlign="center" style="width:15%;" allowResize="true" allowSort="true">问题名称</div>
+                                <div headerAlign="center" header="很满意"  >
+                                    <div property="columns" >
+                                        <div width="50px;" field="ten" >10分</div>
+                                        <div width="50px;" field="nine">9分</div>
+                                    </div>
+                                </div>
+                                <div  headerAlign="center" header="满意">
+                                    <div property="columns">
+                                        <div width="50px;" field="eight" >8分</div>
+                                        <div width="50px;" field="seven" >7分</div>
+                                    </div>
+                                </div>
+                                <div header="一般" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="six" >6分</div>
+                                        <div width="50px;" field="five" >5分</div>
+                                    </div>
+                                </div>
+                                <div  header="不满意" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="four" >4分</div>
+                                        <div width="50px;" field="three" >3分</div>
+                                    </div>
+                                </div>
+                                <div  header="很不满意" headerAlign="center">
+                                    <div property="columns">
+                                        <div width="50px;" field="two" >2分</div>
+                                        <div width="50px;" field="one" >1分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                               
+                        </div>
+                    </div>   
+                  </div>
+        </div>
+       
+    </div>
+	 <table width="90%" align="left" style="margin-left:10px;">
+    	<tr>
+        	<td  align="left"><a class="mini-button" iconCls="icon-undo" onclick="div5back();" >上一步</a></td>
+            <td  align="right"><a class="mini-button" iconCls="icon-save" onclick="donext()">保存</a></td>
+        </tr>
+    </table>  
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    mini.parse();
+    
+
+    
+    	function donext(){
+			window.location="DC0503.html";	
+		}
+
+	//	function valuechanged(){
+		//	var obj = mini.get("combo1");
+		//	alert(obj.getValue());
+	//	}
+    	
+		function doSet(){
+			var obj = mini.get("combo1");
+			obj.setValue(" ");
+		}
+		window.onload=doSet;
+
+		function div1next(){
+			
+			div1.style.display="none";
+			div2.style.display="block";
+			div3.style.display="none";
+			div4.style.display="none";
+			
+			div11.style.display="none";
+			div22.style.display="block";
+			div33.style.display="none";
+			div44.style.display="none";
+			var grid1 = mini.get("grid1");
+			grid1.load();
+			var grid2 = mini.get("grid2");
+			grid2.load();
+		}
+
+		function div2back(){
+			
+			div1.style.display="block";
+			div2.style.display="none";
+			div3.style.display="none";
+			div4.style.display="none";
+			
+			div11.style.display="block";
+			div22.style.display="none";
+			div33.style.display="none";
+			div44.style.display="none";
+		}
+
+		function div2next(){
+			
+			div1.style.display="none";
+			div2.style.display="none";
+			div3.style.display="block";
+			div4.style.display="none";
+			
+			div11.style.display="none";
+			div22.style.display="none";
+			div33.style.display="block";
+			div44.style.display="none";
+		}
+
+		function div3back(){
+			
+			div1.style.display="none";
+			div2.style.display="block";
+			div3.style.display="none";
+			div4.style.display="none";
+			
+			div11.style.display="none";
+			div22.style.display="block";
+			div33.style.display="none";
+			div44.style.display="none";
+		}
+
+		function div3next(){
+			
+			div1.style.display="none";
+			div2.style.display="none";
+			div3.style.display="none";
+			div4.style.display="block";
+			
+			div11.style.display="none";
+			div22.style.display="none";
+			div33.style.display="none";
+			div44.style.display="block";
+		}
+
+		function div4back(){
+			
+			div1.style.display="none";
+			div2.style.display="none";
+			div3.style.display="block";
+			div4.style.display="none";
+			
+			div11.style.display="none";
+			div22.style.display="none";
+			div33.style.display="block";
+			div44.style.display="none";
+		}
+
+		function div4next(){
+			//var divback = document.getElementById("divback");
+			//var divnext = document.getElementById("divnext");
+			divback.style.display="none";
+			divnext.style.display="block";
+		}
+
+		function div5back(){
+			
+			divback.style.display="block";
+			divnext.style.display="none";
+		}
+    </script>

@@ -1,0 +1,9 @@
+{
+  "__type__": "cc.JsonAsset",
+  "_name": "login",
+  "_objFlags": 0,
+  "_native": "",
+  "json": {
+    "token": "73b065a3969a85ba8651123e86a6297f"
+  }
+}
