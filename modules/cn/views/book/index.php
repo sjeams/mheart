@@ -114,9 +114,7 @@
         <video class="fullscreenvideo" playsinline="" autoplay="" muted="" loop="">
         <!-- <source src="http://fd.aigei.com/pvvdo_fast/vdo/mp4/f7/f77c9af3b0364be4b94f52fee154fc99.mp4?e=1592421660&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:EvR2Ky4jnZqjJzgzSLcWJvt9lcQ=" type="video/mp4"> -->
         <!-- <source src="http://fd.aigei.com/pvvdo_fast/vdo/mp4/d1/d195d6afd6154b0badc1a5858ae2cdc8.mp4?e=1592421660&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:TyTx7zapVGwPgVDhzvtOI8sLWg0=" type="video/mp4"> -->
-      
-        <!-- MP4播放 -->
-        <!-- <source src="/public/music/video.mp4" type="video/mp4"> -->
+        <source src="/public/music/video.mp4" type="video/mp4">
         
         
         </video>
@@ -133,7 +131,7 @@
             </div>  -->
             <div class="center gonggao ">
                 <div class="clear">最新公告：<br>
-                    服务器于2022年9月进行公测！
+                    服务器于2020年9月进行公测！
                 </div>
             </div> 
 

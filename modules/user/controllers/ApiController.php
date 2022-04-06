@@ -25,6 +25,8 @@ class ApiController extends ApiControl {
     public $enableCsrfValidation = false;
     public static $trees = [];
 
+
+
     public function actionUserBlockLst()
     {
         $data = Yii::$app->db->createCommand("select u.userName,u.id as uid,b.* FROM {{%user_block}} ub left join {{%user}} u on ub.userId=u.id left join {{%block}} b on ub.blockId=b.id where u.id is not null")->queryAll();
@@ -272,4 +274,23 @@ class ApiController extends ApiControl {
         }
         die(json_encode($res));
     }
+
+
+    /**
+     *  搜索内容
+     * by sjeam
+     */
+    public function actionServer(){
+        $wordKey = Yii::$app->request->get('wordKey');
+        $data = Content::find()->asArray()->where(" catId=482 and pid!=0 and name like '%{$wordKey}%' ")->all();
+        $data = Content::getContentTag($data);
+        if(!empty($data)){
+            $res = ['code'=>1,'message'=>'获取成功','data'=>$data];
+        } else{
+            $res = ['code'=>0,'message'=>'没有相似内容'];
+        }
+        die(json_encode($res));
+    }
+
+
 }
