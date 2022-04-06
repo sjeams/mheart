@@ -281,15 +281,21 @@ class ApiController extends ApiControl {
      * by sjeam
      */
     public function actionServer(){
-        $wordKey = Yii::$app->request->get('wordKey');
-        $data = Content::find()->asArray()->where(" catId=482 and pid!=0 and name like '%{$wordKey}%' ")->all();
-        $data = Content::getContentTag($data);
-        if(!empty($data)){
-            $res = ['code'=>1,'message'=>'获取成功','data'=>$data];
-        } else{
-            $res = ['code'=>0,'message'=>'没有相似内容'];
-        }
-        die(json_encode($res));
+        //创建Server对象，监听127.0.0.1:9501 端口
+        //阿里云服务器安全组已经打开
+        $serv = new Swoole\Server("0.0.0.0",9501);
+
+        //监听连接进入事件
+        $serv->on('Connect',function($serv, $fd) {echo "Client:Connect.\n";});
+
+        //监听数据接收事件
+        $serv->on('Receive',function($serv, $fd, $from_id, $data){$serv->send($fd,"Server:".$data);});
+
+        //监听连接关闭事件
+        $serv->on('Close',function($serv,$fd) {echo "Client:Close.\n";});
+
+        //启动服务器
+        $serv->start();
     }
 
 
