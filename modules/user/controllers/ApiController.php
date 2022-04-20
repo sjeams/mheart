@@ -26,8 +26,8 @@ class ApiController extends ApiControl {
     public static $trees = [];
     public function actionIndex()
     {
-
-        var_dump(111);die;
+        $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
+        var_dump($token);die;
     }
 
 
