@@ -24,7 +24,11 @@ class ApiController extends ApiControl {
 
     public $enableCsrfValidation = false;
     public static $trees = [];
+    public function actionIndex()
+    {
 
+        var_dump(111);die;
+    }
 
 
     public function actionUserBlockLst()
