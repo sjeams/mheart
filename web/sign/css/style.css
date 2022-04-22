@@ -813,19 +813,19 @@ p {
 .underline-title {
   font-size: 30px;
   /* display: inline-block; */
-  margin-bottom: 90px;
+  /* margin-bottom: 90px; */
   padding: 0 24px;
 }
 
 .underline-title:after {
   content: '';
   display: block;
-  height: 1px;
+  height: 2px;
   width: 100%;
   position: absolute;
   left: 0;
-  margin-top: 20px;
-  background-color: #171717;
+  margin-top: 10px;
+  background-color: #122a88;
 }
 
 .lead {

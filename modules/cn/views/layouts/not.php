@@ -42,6 +42,10 @@
     box-sizing: border-box;
 
 }
+.fontstyle{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+   color: #122a88;
+}
 </style>
 
 <body class="relative">
@@ -74,9 +78,11 @@
       <!-- Content -->
       <section class="section-wrap contact pt-mdm-60">
         <div class="container relative">
-          <!-- <div class="text-center">
-            <h1 class="heading underline-title uppercase">贷款信息评估</h1>
-          </div> -->
+       
+          <div class="text-center">
+            <h1 class="heading underline-title uppercase fontstyle"> 安心e贷</h1>
+       
+          </div>
           <div class="row">            
             <div class="col-sm-10 col-sm-offset-1">
               <!-- <img src="/sign/img/contact.jpg" class="img-fw mb-30" alt=""> -->
