@@ -67,6 +67,7 @@
 
     <p>是否面签人:  <span><?php echo $data['belong']==0?'否':'是'?> </span> </p> 
     
+    
 </div>
 
 <div class="detail">
