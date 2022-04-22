@@ -21,7 +21,7 @@
 
 <script>
     function submit(){
-        window.location.href = '/cn/sign/login?fllow=follo<?php echo $res['id'] ?>';
+        window.location.href = '/cn/sign/login?fllow=<?php echo $res['id'] ?>';
     }
 
 </script>

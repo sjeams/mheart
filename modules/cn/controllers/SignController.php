@@ -46,16 +46,18 @@ class SignController extends ApiControl
         $this->layout = 'not';
 
 
-        $fllow =    Yii::$app->request->post('fllow');
-        if($fllow){
-            UserExchange::find() ->where("id =$fllow");
-        }
+        $fllow =    Yii::$app->request->get('fllow');
+
+        // var_dump( $fllow );die;
+        // if($fllow){
+        //     UserExchange::find() ->where("id =$fllow");
+        // }
         // $banner =Jump:: getBanner('教材首页');
         // var_dump($banner);die;
         // $this->title = '轮回之门';
         // $this->keywords = '回合制游戏、卡牌、召唤、融合、装备、BOOS、竞技、爆装备、修仙、穿越、仙侠';
         // $this->description = '永久免费，大型手机回合制游戏。数千种功法，几十个不同小说电影世界，不同世界人物的交互，跨世纪的修仙游戏。';
-        return $this->render('login', []);
+        return $this->render('login', ['fllow'=>$fllow]);
     }
 
 
@@ -66,12 +68,13 @@ class SignController extends ApiControl
      */
     public function actionBasic()
     {
+        $fllow = Yii::$app->request->get('fllow');
         // $banner =Jump:: getBanner('教材首页');
         // var_dump($banner);die;
         // $this->title = '轮回之门';
         // $this->keywords = '回合制游戏、卡牌、召唤、融合、装备、BOOS、竞技、爆装备、修仙、穿越、仙侠';
         // $this->description = '永久免费，大型手机回合制游戏。数千种功法，几十个不同小说电影世界，不同世界人物的交互，跨世纪的修仙游戏。';
-        return $this->render('basic', []);
+        return $this->render('basic', ['fllow'=>$fllow]);
     }
 
 

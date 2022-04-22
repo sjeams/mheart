@@ -39,7 +39,9 @@
     <p>家庭收入:  <span><?php echo $data['Income_home']?> </span> </p>
     <p>本月收入:  <span><?php echo $data['Income_month']?> </span> </p>
     
-    <p>贷款类型:  <span><?php echo $data['lona_type']?> </span> </p>
+ 
+
+    <p>贷款类型:  <span> <?php echo $data['lona_type']==0? '信用贷': ($data['lona_type']==1? '企业贷':  '房、车按揭' ); ?> </span> </p>
     <p>是否有社保:  <span><?php echo $data['social_security']==0?'否':'是'?> </span> </p>
     <p>社保年限:  <span><?php echo $data['social_security_money']?> </span> </p>
     

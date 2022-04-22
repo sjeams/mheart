@@ -44,23 +44,32 @@
 
 <button type="button" class="layui-btn layui-btn-fluid colrstyle"  onclick="submit()">查看额度</button>
  
+<input type="hidden" name="" id="foolw" value="<?php echo $fllow ?>" placeholder="面签id" >  
 
 
  <script>
 
      function submit(){
         var phone = $('#phone').val();
+        var fllow = $('#foolw').val();
         $.ajax({
             url: "/cn/sign/login-phone",
             type: "post",
             data: {
-                phone: phone
+                phone: phone,
             },
             dataType: "json",
             success: function (data) {
                 if (data.code == 1) {
                     // 填写页
-                    window.location.href = '/cn/sign/basic';
+                    if(fllow){
+                        window.location.href = '/cn/sign/basic?fllow='+fllow;
+                    }else{
+                        window.location.href = '/cn/sign/basic';
+                    }
+
+             
+         
                 }else if (data.code == 2) {
                     //结果页
                     window.location.href = '/cn/sign/result';

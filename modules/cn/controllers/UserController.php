@@ -79,6 +79,29 @@ class UserController extends ApiControl
         $template = Yii::$app->params['template'];
         $data = UserExchange::find()->where("order_id='$order_id'")->asArray()->one();
         
+
+        $card =array(
+            0=>'居民身份证',
+            1=>'护照',
+            2=>'军官证',
+            3=>'港澳通行证',
+            4=>'其他',
+ 
+        );
+
+        $list =array(
+            0=>'研究生及以上',
+            1=>'大学本科',
+            2=>'大专和专科',
+            3=>'中专',
+            4=>'技工学习',
+            5=>'高中',
+            6=>'初中',
+        );
+        $data['class'] =  $list[ $data['class']];
+        $data['card_type'] =  $card[ $data['card_type']];
+
+
         return $this->render('detail',['template'=>$template,'data'=>$data]);
     }
 

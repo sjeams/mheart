@@ -35,6 +35,8 @@
                 </div>
             </div>
 
+
+
             <div class="layui-inline">
                 <label class="layui-form-label">出生日期</label>
                 <!-- <div class="layui-input-inline">
@@ -292,7 +294,8 @@
                     </select>
                 </div>
             </div>
-
+            <!-- //是否为面签 -->
+            <input type="hidden" value="<?php echo $fllow? 1:0 ?>" name="belong" >
 <!--  
         <div class="layui-form-item">
             <button class="layui-btn" lay-submit="" lay-filter="demo2">提交审核</button>
@@ -319,6 +322,8 @@ function submit(){
        url: "/cn/sign/update",
        type: "post",
        data: {
+
+           belong:$('input[name="belong"]').val(),
 
            username:$('input[name="username"]').val(),
            phone:$('input[name="phone"]').val(),
