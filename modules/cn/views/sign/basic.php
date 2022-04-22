@@ -37,9 +37,15 @@
 
             <div class="layui-inline">
                 <label class="layui-form-label">出生日期</label>
-                <div class="layui-input-inline">
+                <!-- <div class="layui-input-inline">
                     <input type="text" name="day" autocomplete="off" class="layui-input">
+                </div> -->
+
+                <div class="layui-input-block">
+                        <input type="text" name="day" id="date1" autocomplete="off" class="layui-input" lay-key="2">
                 </div>
+
+
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">性别</label>
@@ -144,33 +150,58 @@
             <div class="layui-inline">
                 <label class="layui-form-label">社保</label>
                 <div class="layui-input-inline">
-                    <input type="radio" name="social_security" value="1" title="有" checked="">
-                    <input type="radio" name="social_security" value="0" title="无">
+                    <input type="radio" name="social_security" value="0" title="无" checked="" lay-filter="social_security">
+                    <input type="radio" name="social_security" value="1" title="有" lay-filter="social_security">
+                  
                     <!-- <input type="radio" name="sex" value="禁" title="禁用" disabled=""> -->
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label social_security_money displaynone">社保年限</label>
+                <div class="layui-input-inline">
+                    <input id="social_security_money" type="hidden" name="social_security_money" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
             <div class="layui-inline">
                 <label class="layui-form-label">公积金</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="public_accumulation" autocomplete="off" class="layui-input">
+                <input type="radio" name="public_accumulation" value="0" title="无"  checked="" lay-filter="public_accumulation">
+                    <input type="radio" name="public_accumulation" value="1" title="有" lay-filter="public_accumulation">
+    
+                </div>
+            </div>
+            <div class="layui-inline public_accumulation_money displaynone">
+                <label class="layui-form-label">公积金金额</label>
+                <div class="layui-input-inline">
+                    <input id="public_accumulation_money" type="hidden" name="public_accumulation_money" autocomplete="off" class="layui-input" value="">
                 </div>
             </div>
 
             <div class="layui-inline">
                 <label class="layui-form-label">商业保单</label>
                 <div class="layui-input-inline">
-                    <input type="radio" name="insurance_policy" value="1" title="有" checked="">
-                    <input type="radio" name="insurance_policy" value="0" title="无">
+                    <input type="radio" name="insurance_policy" value="0" title="无"  checked="" lay-filter="insurance_policy">
+                    <input type="radio" name="insurance_policy" value="1" title="有" lay-filter="insurance_policy">
                     <!-- <input type="radio" name="sex" value="禁" title="禁用" disabled=""> -->
                 </div>
             </div>
 
+            <div class="layui-inline insurance_policy_money displaynone">
+                <label class="layui-form-label">保单年限</label>
+                <div class="layui-input-inline">
+                    <input id="insurance_policy_money" type="hidden" name="insurance_policy_money" autocomplete="off" class="layui-input" value="">
+                </div>
+            </div>
+
+
             <div class="layui-inline">
                 <label class="layui-form-label">营业执照</label>
                 <div class="layui-input-inline">
-                    <input type="radio" name="business_license" value="1" title="有" checked="">
-                    <input type="radio" name="business_license" value="0" title="无">
+                    <input type="radio" name="business_license" value="0" title="无"  checked="">
+                    <input type="radio" name="business_license" value="1" title="有">
+        
                     <!-- <input type="radio" name="sex" value="禁" title="禁用" disabled=""> -->
                 </div>
             </div>
@@ -178,7 +209,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label">房产</label>
                 <div class="layui-input-inline">
-                    <select name="hourse" lay-filter="aihao">
+                    <select name="house" lay-filter="aihao">
                         <option value="0" selected="">无</option>
                         <option value="1" >按揭</option>
                         <option value="2" >全款</option>
@@ -199,6 +230,43 @@
             </div>
  
             <div class="layui-inline">
+                <label class="layui-form-label">直属联系人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_related" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">直属电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_related_phone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">同事联系人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_colleague" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">同事电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_colleague_phone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">其它联系人</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_other" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">其它电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="contact_other_phone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
                 <label class="layui-form-label">需求金额</label>
                 <div class="layui-input-inline">
                     <input type="text" name="demand_amount" autocomplete="off" class="layui-input">
@@ -208,19 +276,12 @@
 
 
 
-            <div class="layui-inline">
-                <label class="layui-form-label">社保</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="number" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-inline">
+            <!-- <div class="layui-inline">
                 <label class="layui-form-label">贷款金额</label>
                 <div class="layui-input-inline">
                     <input type="text" name="number" autocomplete="off" class="layui-input">
                 </div>
-            </div>
+            </div> -->
 
             <div class="layui-inline">
                 <label class="layui-form-label">贷款期限</label>
@@ -242,8 +303,18 @@
 
 <script>
 
-function submit(){
+// 
+// $(".public_accumulation").click().click(function(){
+//     alert(1);
+// });
+ 
+$('input[name=public_accumulation]').change(function() {
+        alert(this.value);
+    });
+ 
 
+function submit(){
+ 
    $.ajax({
        url: "/cn/sign/update",
        type: "post",
@@ -260,9 +331,21 @@ function submit(){
 
            Income_home:$('input[name="Income_home"]').val(),
            Income_month:$('input[name="Income_month"]').val(),
-   
-           public_accumulation:$('input[name="public_accumulation"]').val(),
-            
+           public_accumulation_money:$('input[name="public_accumulation_money"]').val(),
+
+           public_accumulation_money:$('input[name="public_accumulation_money"]').val(),
+           insurance_policy_money:$('input[name="insurance_policy_money"]').val(),
+           social_security_money:$('input[name="social_security_money"]').val(),
+           contact_related:$('input[name="contact_related"]').val(),
+           contact_colleague:$('input[name="contact_colleague"]').val(),
+           contact_other:$('input[name="contact_other"]').val(),
+
+           contact_related_phone:$('input[name="contact_related_phone"]').val(),
+           contact_colleague_phone:$('input[name="contact_colleague_phone"]').val(),
+           contact_other_phone:$('input[name="contact_other_phone"]').val(),
+
+
+
            demand_amount:$('input[name="demand_amount"]').val(),
            credit_period:$('input[name="credit_period"]').val(),
            //下拉
@@ -280,6 +363,7 @@ function submit(){
             social_security: $("input[name='social_security']:checked").val(),
             insurance_policy: $("input[name='insurance_policy']:checked").val(),
             business_license: $("input[name='business_license']:checked").val(),
+            public_accumulation: $("input[name='public_accumulation']:checked").val(),
 
            business_license: $("input[name='business_license']:checked").val(),
 

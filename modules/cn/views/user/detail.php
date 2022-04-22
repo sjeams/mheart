@@ -3,8 +3,8 @@
     <li><a href="/user.html">内容模块</a> <span class="divider">/</span></li>
     <li class="active">后台目录</li>
 </ul>
-<form action="/content/curriculum/add" method="post" class="form-horizontal">
-        <input type="hidden" name="id" value="<?php echo isset($data['id'])?$data['id']:'';  ?>" />
+<form action="/cn/user/useradd" method="post" class="form-horizontal">
+        <input type="hidden" name="order_id" value="<?php echo isset($data['order_id'])?$data['order_id']:'';  ?>" />
         <fieldset>
             <div class="control-group">
                 <label for="modulename" class="control-label">批款额度</label>
@@ -33,7 +33,7 @@
             <div class="control-group">
                 <label for="modulename" class="control-label">备注</label>
                 <div class="controls">
-                    <textarea name="content[courseIds]" style="width: 400px;height: 120px;" ><?php echo isset($data['contentid'])?$data['contentid']:''?></textarea>
+                    <textarea name="content[remarks]" style="width: 400px;height: 120px;" ><?php echo isset($data['remarks'])?$data['remarks']:''?></textarea>
                     <span class="help-block">对当前客户进行备注说明</span>
                 </div>
             </div>

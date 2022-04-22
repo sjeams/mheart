@@ -1,11 +1,46 @@
 
+<style>
+  #fudong{
+    margin: 150px 100px;
+    /* margin: 50%  20%; */
+    /* position:absolute; */
+  /* top: 0; */
+ 
+  }
+  #fudong span{
+        width: 200px;
+      display: inline-block;
+      text-align: center;
+  }
+  .xinyong{
+    /* line-height: 80px; */
+    font-size: 20px;
+    color: red;
+  }
+  #last{
+    line-height: 80px;
+    font-size: 60px;
+  }
 
+</style>
 <div>
-您的信用评分低于80分
+
 
 </div>
 
-<span id="last">30</span>请稍等，数据正在审核中...</div>  
+ 
+<link rel="stylesheet" href="/sign/loading/loading.css">
+<script type="text/javascript" src="/sign/loading/loading.js"></script>
+
+<div id="fudong">
+<span class="xinyong">
+    您的信用评为<?php echo $res['num'] ?>
+</span>
+<span id="last">30</span>
+
+<span>请稍等，数据正在审核中...</span>
+
+</div>  
 <!-- <button type="button" class="layui-btn layui-btn-fluid colrstyle"  onclick="submit()">二次审核</button> -->
 <script language="javascript">  
 

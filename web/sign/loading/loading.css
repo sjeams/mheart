@@ -1,0 +1,64 @@
+html body{
+  margin: 0;
+  padding: 0;
+}
+
+/*动态加载圈-loading-start*/
+body .loading-box-shadow-omg{
+  /* width: -webkit-fill-available; */
+  /* height: -webkit-fill-available; */
+  margin: 0% 40%;
+  background-color: #211f1f5c;
+  position: absolute;
+  /* top: 0; */
+  z-index: 99;
+}
+
+.hidden{
+  display: none!important;
+}
+
+body .loading-box-shadow-omg .loading-box{
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 20%;
+  height: 25%;
+}
+
+body .loading-box-shadow-omg .loading-box .loading-circle{
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  animation: init-circle 1s linear infinite;
+}
+
+body .loading-box-shadow-omg .loading-box .loading-content{
+  position: absolute;
+  bottom: 5%;
+  font-weight: bold;
+  color: rebeccapurple;
+  width: 100%;
+  text-align: center;
+}
+
+body .loading-box-shadow-omg .loading-box .loading-circle>div{
+  background-color: #292961;
+  border-radius: 20px;
+  position: absolute;
+}
+
+@keyframes init-circle {
+  from{
+      transform: rotate(360deg);
+  }
+  to{
+      transform: rotate(0deg);
+  }
+}
+/*动态加载圈-loading-stop*/

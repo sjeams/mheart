@@ -21,7 +21,10 @@
   <link rel="stylesheet" href="/sign/css/animate.min.css" />
   <link rel="stylesheet" href="/layuimini/lib/layui-v2.5.4/css/layui.css" media="all">
   <link rel="stylesheet" href="/layuimini/css/public.css" media="all">
-
+  <script type="text/javascript" src="/sign/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/sign/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/sign/js/plugins.js"></script>
+  <script type="text/javascript" src="/sign/js/scripts.js"></script>
 </head>
 <style>
 .layui-form-pane .layui-form-label {
@@ -41,7 +44,12 @@
 .colrstyle{
         background-color: #122a88;
   
-    }
+  }
+  .displaynone{ display: none!important;}
+  .displayblock{
+    display: block!important;
+
+  }
 </style>
 
 <body class="relative">
@@ -95,10 +103,7 @@
 </div> <!-- end main wrapper -->
 
 <!-- jQuery Scripts -->
-<script type="text/javascript" src="/sign/js/jquery.min.js"></script>
-<script type="text/javascript" src="/sign/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/sign/js/plugins.js"></script>
-<script type="text/javascript" src="/sign/js/scripts.js"></script>
+
 
 
 
@@ -160,7 +165,56 @@ return false;
 });
 
  
+  form.on('radio(public_accumulation)', function(data){
+        // console.log(data.elem); //得到radio原始DOM对象
+      // console.log(data.value); //被点击的radio的value值
+      if(data.value==1){
+        $("#public_accumulation_money").attr('type','text');
+        $(".public_accumulation_money").removeClass("displaynoen");
+        $(".public_accumulation_money").addClass("displayblock");
+      }else{
+        $("#public_accumulation_money").attr('type','hidden');
+        $(".public_accumulation_money").removeClass("displayblock");
+        $(".public_accumulation_money").addClass("displaynoen");
+      }
 
+ 
+  });
+
+ 
+  form.on('radio(insurance_policy)', function(data){
+        // console.log(data.elem); //得到radio原始DOM对象
+      // console.log(data.value); //被点击的radio的value值
+      if(data.value==1){
+        $("#insurance_policy_money").attr('type','text');
+        $(".insurance_policy_money").removeClass("displaynoen");
+        $(".insurance_policy_money").addClass("displayblock");
+      }else{
+        $("#insurance_policy_money").attr('type','hidden');
+        $(".insurance_policy_money").removeClass("displayblock");
+        $(".insurance_policy_money").addClass("displaynoen");
+      }
+
+ 
+  });
+
+  form.on('radio(social_security)', function(data){
+        // console.log(data.elem); //得到radio原始DOM对象
+      // console.log(data.value); //被点击的radio的value值
+      if(data.value==1){
+        $("#social_security_money").attr('type','text');
+        $(".social_security_money").removeClass("displaynoen");
+        $(".social_security_money").addClass("displayblock");
+      }else{
+        $("#social_security_money").attr('type','hidden');
+        $(".social_security_money").removeClass("displayblock");
+        $(".social_security_money").addClass("displaynoen");
+      }
+
+ 
+  });
+    
+ 
 });
 </script>
 

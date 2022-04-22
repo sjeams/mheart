@@ -44,6 +44,12 @@ class SignController extends ApiControl
     public function actionLogin()
     {
         $this->layout = 'not';
+
+
+        $fllow =    Yii::$app->request->post('fllow');
+        if($fllow){
+            UserExchange::find() ->where("id =$fllow");
+        }
         // $banner =Jump:: getBanner('教材首页');
         // var_dump($banner);die;
         // $this->title = '轮回之门';
@@ -75,8 +81,12 @@ class SignController extends ApiControl
      */
     public function actionWite()
     {
- 
-        return $this->render('wite', []);
+        $phone = Yii::$app->session->get('phone');
+        $res = UserExchange::find()->where("phone =$phone")->asArray()->one();
+        if(!$res){
+            echo  '操作错误';die;
+        }
+        return $this->render('wite', ['res'=> $res]);
     }
 
     /**
@@ -86,11 +96,15 @@ class SignController extends ApiControl
     public function actionResult()
     {
         $phone = Yii::$app->session->get('phone');
+
+
         $res = UserExchange::find()->where("phone =$phone")->asArray()->one();
+
+        if(!$res){
+            echo  '操作错误';die;
+        }
         $res['order_id']=substr_replace($res['order_id'],"*****",3,5); 
         $res['card']=substr_replace($res['card'],"************",3,12); 
-
- 
         $res['discript']=  Yii::$app->params['template'][$res['template']];
         // var_dump($res['order_id']);die;
         // $banner =Jump:: getBanner('教材首页');
@@ -144,11 +158,31 @@ class SignController extends ApiControl
             die(json_encode(['code'=>0,'message'=>'手机号格式有误']));
         }
 
+        // 评分计算
+        // 公积金
+        $num = 0;
+        if( $data['public_accumulation_money'] >=600 ){
+            $num+=30;
+        }
+        if( $data['insurance_policy_money'] >=2 ){
+            $num+=10;
+        }
+        if( $data['business_license'] ==1 ){
+            $num+=10;
+        }
+        if( $data['car'] !=0 ){
+            $num+=10;
+        }
+        if( $data['house'] !=0 ){
+            $num+=20;
+        }
+
+        $data['num'] =$num;
         $res = UserExchange::find()->where("phone =$phone")->one();
         if(!$res){
             Yii::$app->signdb->createCommand()->insert('x2_user_information', $data)->execute();
         }
-
+        // var_dump($data);die;
         // die(json_encode(['code'=>0,'message'=>'请填写完整内容']));
         // $preg='/^1[3456789]\d{9}$/';
         // if(!preg_match($preg,$phone)){

@@ -3,11 +3,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="title" content="GRE后台在线后台">
-    <meta name="description" content="GRE后台在线后台">
-    <meta name="keywords" content="GRE后台在线后台">
+    <meta name="title" content="天誉后台">
+    <meta name="description" content="天誉后台">
+    <meta name="keywords" content="天誉后台">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>GRE后台</title>
+    <title>天誉后台</title>
     <!-- Le styles -->
     <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
     <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">

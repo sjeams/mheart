@@ -39,10 +39,10 @@ class UserController extends ApiControl
         // }
         if($phone){
             // $id=intval($uid);
-            $where .= " and x2_user_information.phone={$phone}";
+            $where .= " and x2_user_information.phone=$phone";
         }
         if($username){
-            $where .= " and x2_user_information.username like '% {$username} %'";
+            $where .= " and x2_user_information.username like '%$username%'";
         }
         if($beginTime){
             $beginTime= strtotime($beginTime);
@@ -74,8 +74,12 @@ class UserController extends ApiControl
 
     public function actionDetail(){
 
+        $order_id = Yii::$app->request->get('order_id');
+        // var_dump( $order_id);die;
         $template = Yii::$app->params['template'];
-        return $this->render('detail',['template'=>$template]);
+        $data = UserExchange::find()->where("order_id='$order_id'")->asArray()->one();
+        
+        return $this->render('detail',['template'=>$template,'data'=>$data]);
     }
 
     //修改查看状态
@@ -94,6 +98,19 @@ class UserController extends ApiControl
         }else{
             echo "<script>alert('删除失败');setTimeout(function (){location.href='index'},1000)</script>";
         }
+    }
+
+    
+    //修改查看状态
+    public function actionUseradd(){
+        $order_id = Yii::$app->request->post('order_id');
+ 
+        $content = Yii::$app->request->post('content');
+        $content =  $content?$content:[];
+        // var_dump($content);die;
+        UserExchange::updateAll($content,"order_id = '$order_id'");
+        // echo "<script>setTimeout(function(){location.href='/cn/user/index'},1000)</script>";
+        header("location:/user.html");die;   //结果页
     }
 
     

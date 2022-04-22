@@ -6,7 +6,7 @@
     <meta name="description" content="GRE后台在线后台">
     <meta name="keywords" content="GRE后台在线后台">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>GRE后台</title>
+    <title>天誉后台</title>
     <!-- Le styles -->
     <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
     <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
@@ -22,7 +22,7 @@
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
-
+ 
  
 <!-- 按钮 -->
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
@@ -66,12 +66,13 @@
                 <th style=" ">姓名</th>
                 <th>月收入</th>
                 <th>需求金额</th>
+                <th>放款金额</th>
                 <th>购买时间</th>
                 <th>贷款金额</th>
-                <th>是否面签</th>
+                <th>是否面签人</th>
                 <th>联系方式</th>
                 <th >身份证</th>
-                <th >是否联系</th>
+                <th >是否放款</th>
                 <!-- <th >操作</th> -->
             </tr>
             </thead>
@@ -82,15 +83,16 @@
                     break;
                 }
                 ?>
-                <tr>
+                <tr style=" background-color:  <?php   if(!$v['follow_person']){  echo '#ffb2b2'; }else{ echo '#b9eca4'; }  ?>">
                     <!-- <input name="id[]" type="hidden"  value="<?php echo $v['id']?>"> -->
                     <td ><span><?php echo $v['order_id'] ?></span></td>
                     <td><span><a href="/detail-<?php echo $v['order_id']?>.html"><?php echo $v['username']?></a></span></td>
                     <td><span><?php echo $v['Income_month']?></span></td>
                     <td><span><?php echo $v['demand_amount']?></span></td>
+                    <td><span><?php echo $v['loan_amount']?></span></td>
                     <td><span><?php echo date('Y-m-d H:i:s',$v['create_time'])  ?></span></td>
                     <td ><span><?php echo $v['loan_amount'] ?></span></td>
-                    <td ><span><?php echo $v['belong'] ?></span></td>
+                    <td ><span><?php echo $v['belong']==1?'是':'否' ?></span></td>
                     <td ><span><?php echo $v['phone'] ?></span></td>
                     <td ><span><?php echo $v['card'] ?></span></td>
            
