@@ -496,7 +496,10 @@ abstract class Application extends Module
     {
         return $this->get('db');
     }
-
+    public function getsigndb()
+    {
+        return $this->get('signdb');
+    }
     /**
      * Returns the log dispatcher component.
      * @return \yii\log\Dispatcher the log dispatcher application component.

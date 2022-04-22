@@ -2,7 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
-
+ 
 Yii::$classMap['Method'] = '@app/libs/Method.php';
 Yii::$classMap['UploadFile'] = '@app/libs/upload/UploadFile.php';
 Yii::$classMap['AlipaySubmit'] = '@app/libs/yii2_alipay/AlipaySubmit.php';
@@ -81,13 +81,15 @@ $config = [
             ],
         ],
         'db' => $db,
-       
+        // 'signdb' => $signdb,
+        'signdb' => require(__DIR__ . '/signdb.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                ''=>'cn/book/index',  //首页
-                'book-<contentid:\d+>.html' => 'cn/book/detail',    //备考列表页
+                ''=>'cn/sign/index',  //首页
+                'user.html' => 'cn/user/index',    //备考列表页
+                'detail-<type:\w+>.html' => 'cn/user/detail',  
                 // 'book/list.html' => 'cn/book/list',    //备考列表页
                 // 'book/list-<type:\d+>.html' => 'cn/book/list',    //备考列表页
                 // 'book/list-<type:\d+>-<page:\d+>-<pageSize:\d+>.html' => 'cn/book/list',    //备考列表页
