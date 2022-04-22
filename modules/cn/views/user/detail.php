@@ -91,9 +91,9 @@
                 <label for="modulename" class="control-label">选用模板</label>
                 <div class="controls">
                     <!-- <input type="text" name="content[sort]" value="1"> -->
-                    <select name="content[belong]" >
+                    <select name="content[template]" >
                         <?php foreach($template as $key=> $v){ ?>
-                            <option value="<?php echo $key ?>" <?php echo isset($data['belong'])&&$data['belong']== $key?'selected':'' ;?>  ><?php echo $v ?></option>
+                            <option value="<?php echo $key ?>" <?php echo isset($data['template'])&&$data['template']== $key?'selected':'' ;?>  ><?php echo $v ?></option>
                         <?php } ?>
                     </select>
                 </div>
