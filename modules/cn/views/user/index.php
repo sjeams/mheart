@@ -37,12 +37,12 @@
         <table class="table">
             <tr>
                 <td>
-                    商品ID：
-                    <input name="contentid" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['contentid'])?$_GET['contentid']:''?>"/>
+                    手机号：
+                    <input name="phone" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['phone'])?$_GET['phone']:''?>"/>
                 </td>
                 <td>
-                   Uid：
-                    <input name="uid" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['uid'])?$_GET['uid']:''?>"/>
+                    用户名：
+                    <input name="username" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['username'])?$_GET['username']:''?>"/>
                 </td>
                 <td>
                     操作时间：
@@ -61,15 +61,15 @@
             <thead>
             <tr>
                 <!-- <th style="width: 120px;">排序</th> -->
-                <th style=" ">标题</th>
-                <th>订单</th>
-                <th>累计报名</th>
+                <th >贷款编号</th>
+                <th style=" ">姓名</th>
+                <th>月收入</th>
+                <th>需求金额</th>
                 <th>购买时间</th>
-                <th>uid</th>
-                <th>用户昵称</th>
+                <th>贷款金额</th>
+                <th>是否面签</th>
                 <th>联系方式</th>
-                <th >雷豆</th>
-                <th >商品id</th>
+                <th >身份证</th>
                 <th >是否联系</th>
                 <!-- <th >操作</th> -->
             </tr>
@@ -83,18 +83,19 @@
                 ?>
                 <tr>
                     <!-- <input name="id[]" type="hidden"  value="<?php echo $v['id']?>"> -->
-                    <td><span><a href="/detail-<?php echo $v['order_id']?>.html"><?php echo $v['title']?></a></span></td>
-                    <td><span><?php echo $v['order_id']?></span></td>
-                    <td><span><?php echo $v['total']?></span></td>
-                    <td><span><?php echo date('Y-m-d H:i:s',$v['buy_time'])  ?></span></td>
-                    <td ><span><?php echo $v['uid'] ?></span></td>
-                    <td ><span><?php echo $v['username'] ?></span></td>
+                    <td ><span><?php echo $v['order_id'] ?></span></td>
+                    <td><span><a href="/detail-<?php echo $v['order_id']?>.html"><?php echo $v['username']?></a></span></td>
+                    <td><span><?php echo $v['Income_month']?></span></td>
+                    <td><span><?php echo $v['demand_amount']?></span></td>
+                    <td><span><?php echo date('Y-m-d H:i:s',$v['create_time'])  ?></span></td>
+                    <td ><span><?php echo $v['loan_amount'] ?></span></td>
+                    <td ><span><?php echo $v['belong'] ?></span></td>
                     <td ><span><?php echo $v['phone'] ?></span></td>
-                    <td ><span><?php echo $v['leidou'] ?></span></td>
-                    <td ><span><?php echo $v['contentid'] ?></span></td>
-                    <!-- <td ><span><?php echo $v['isLook'] ?></div></td> -->
+                    <td ><span><?php echo $v['card'] ?></span></td>
+           
+                    <!-- <td ><span><?php echo $v['is_amount'] ?></div></td> -->
                     <td>	
-                        <div class="cell-right"><span class="<?php if($v['isLook']==1){ ?>switch-on<?php } else { ?>switch-off<?php } ?>" onclick="updateStatus(this)" data-id="<?php echo $v['id']; ?>" data-value="<?php echo $v['isLook']; ?>" class="wifi"></span></div>
+                        <div class="cell-right"><span class="<?php if($v['is_amount']==1){ ?>switch-on<?php } else { ?>switch-off<?php } ?>" onclick="updateStatus(this)" data-id="<?php echo $v['id']; ?>" data-value="<?php echo $v['is_amount']; ?>" class="wifi"></span></div>
                     </td>
 
                     <!-- <td  class="notSLH" style="width: 247px;">
