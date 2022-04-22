@@ -30,7 +30,8 @@
 <script src="/laydate/laydate.js"></script>
 <div class=" " id="datacontent">
     <ul class="breadcrumb">
-        <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li>
+        <!-- <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li> -->
+        <li><a href="/user.html">内容模块</a> <span class="divider">/</span></li>
         <li class="active">后台目录</li>
     </ul>
     <form action="/cn/user/index/" method="get" class="form-horizontal">

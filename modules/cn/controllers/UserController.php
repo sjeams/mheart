@@ -73,7 +73,9 @@ class UserController extends ApiControl
     }
 
     public function actionDetail(){
-        return $this->render('detail');
+
+        $template = Yii::$app->params['template'];
+        return $this->render('detail',['template'=>$template]);
     }
 
     //修改查看状态

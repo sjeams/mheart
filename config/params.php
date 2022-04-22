@@ -217,11 +217,11 @@ return [
         ],
     ],
     'template' => [  // 大首页配置
-        1=>'<span style="color:red">系统匹配为信贷中等风险客户，风险可控,需联系人出面签约办理放款</span>',
-        2=>'<span style="color:red">系统匹配为信贷中等风险客户，风险可控,需联系人出面签约办理放款</span>',
-        3=>'<span style="color:red">系统匹配为信贷中等风险客户，风险可控,需联系人出面签约办理放款</span>',
-        4=>'<span style="color:red">系统匹配为信贷中等风险客户，风险可控,需联系人出面签约办理放款</span>',
-        5=>'<span style="color:red">系统匹配为信贷中等风险客户，风险可控,需联系人出面签约办理放款</span>',
+        1=>'<span style="color:red">客户风险异常，且近期查询异常,需协助人出面签约办理放款</span>',
+        2=>'<span style="color:red">客户贷款用途存疑，还款能力不足，,需协助人出面签约办理放款</span>',
+        3=>'<span style="color:red">客户大数据评分低，,需协助人出面签约办理放款</span>',
+        4=>'<span style="color:red">系统匹配为信贷中等风险客户，,需协助人出面签约办理放款</span>',
+        5=>'<span style="color:blue">恭喜您申请通过，等待面签放款</span>',
     ]
 
 
