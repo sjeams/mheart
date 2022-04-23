@@ -5,10 +5,10 @@
 </ul>
 
 <style>
- .detail{
+ /* .detail{
      width: 35%;
      float: left;
- }
+ } */
  .spaniline span{
      margin: 20px;;
  }
