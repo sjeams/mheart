@@ -16,6 +16,8 @@
      margin-left: 0px!important;
  }
 
+
+
 </style>
 
 <div class="detail spaniline">
