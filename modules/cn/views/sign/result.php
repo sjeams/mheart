@@ -1,7 +1,7 @@
 <p> 申请编号：<?php echo $res['order_id'] ?> </p> 
 <p> 客户姓名：<?php echo $res['username'] ?> </p> 
 <p> 身份证号： <?php echo $res['card'] ?> </p> 
-<p> 终审额度： <?php echo $res['loan_amount'] ? $res['loan_amount'] .'元'  : '<span style="color:red">批款中</span>'?> </p> 
+<p> 终审额度： <?php echo $res['loan_amount'] ? $res['loan_amount'] .'元'  : '<span style="color:red">批款中信服度不高</span>'?> </p> 
 <p> 利息： 0.45～1.08</p> 
 <p> 还款方式：  等额本息/先息后本 </p> 
 <p> 备注： <?php echo $res['discript'] ?>  </p> 
