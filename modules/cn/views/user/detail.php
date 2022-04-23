@@ -13,7 +13,7 @@
      margin: 20px;;
  }
  .form-horizontal{
-     margin-left: -20px;;
+     margin-left: 0px;
  }
 
 </style>
