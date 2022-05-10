@@ -30,7 +30,7 @@ class VideoController extends ApiControl
 
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $belong =2;   
-        for($i=1;$i<=13;$i++){
+        for($i=1;$i<=59;$i++){
             Video::getQueryList($i,$belong);
             // echo $i.'<br>';
         }
@@ -53,7 +53,7 @@ class VideoController extends ApiControl
         if($login!=123){
             die;
         }
-
+      
         $title = Yii::$app->request->get('title');
         $where ="1=1";
 
