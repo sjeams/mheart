@@ -28,7 +28,7 @@ class Video extends ActiveRecord {
 		$list=array(
 			// 新东方
 			// array($belong,0,'国产主播','/vod/type/id/40/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
-			array($belong,0,'国产主播','/index.php/vod/type/id/20/page/'.$page.'.html','http://aibozy.com/'),
+			array($belong,2,'国产主播','/index.php/vod/type/id/29/page/'.$page.'.html','http://aibozy.com/'),
 			// 小站
 			// array(2,2,'小站备考心经','https://gre.zhan.com/beikao/'),
 		);
