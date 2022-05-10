@@ -6,6 +6,18 @@ use app\modules\admin\models\Words;
 use app\modules\admin\models\User;
 class Method
 {
+
+    // 去空格 大转小写
+    public static function getMytrim($str)
+    {
+        $search = array(" ", "　", "\n", "\r", "\t","&nbsp;"," ");
+        $replace = array("", "", "", "", "", "", "");
+        //  替换并大转小写
+        $string = strtolower(str_replace($search, $replace, $str));
+        //  strtoupper($string);
+        return $string;
+    }
+
     /**
      * 分页函数
      * @param array $config 分页配置
