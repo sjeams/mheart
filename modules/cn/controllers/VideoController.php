@@ -41,7 +41,6 @@ class VideoController extends ApiControl
 
 
 
-    
     /**
      * 基本信息
      * by  sjeam
