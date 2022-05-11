@@ -73,8 +73,6 @@
                     <td  style=" width:15%"><span><a href="<?php echo $v['url']?>" target="blank"><?php echo $v['title']?></a></span></td>
                     <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td>
      
- 
-
                     <!-- <td  class="notSLH" style="width: 247px;">
                         <div>
                             <a class="btn" href="/user/brush/delete?id=<?php echo $v['id'] ; ?>" >删除</a>

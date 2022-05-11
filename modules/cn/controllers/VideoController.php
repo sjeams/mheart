@@ -30,7 +30,7 @@ class VideoController extends ApiControl
 
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $belong =2;   
-        for($i=1;$i<=59;$i++){
+        for($i=1;$i<=15;$i++){
             Video::getQueryList($i,$belong);
             // echo $i.'<br>';
         }
