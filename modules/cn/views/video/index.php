@@ -41,7 +41,6 @@
                     标题：
                     <input name="title" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
                 </td>
-                <input name="login" class="input-small" size="25" type="hidden" class="number" value="<?php echo isset($_GET['login'])?$_GET['login']:''?>"/>
                 <td>
                     <button class="btn btn-primary" type="submit">搜索</button>
                 </td>

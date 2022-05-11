@@ -51,7 +51,13 @@ class VideoController extends ApiControl
         $login = Yii::$app->request->get('login');
         
         if($login!=123){
-            die;
+
+            $login = Yii::$app->session->get('login');
+            if($login!=123){
+                die;
+            }
+        }else{
+            Yii::$app->session->set('login',123);
         }
       
         $title = Yii::$app->request->get('title');
@@ -71,7 +77,7 @@ class VideoController extends ApiControl
         //     $brush[$k]['total'] = $num;
         }
         // var_dump($brush);die;
-        return $this->render('index',['content'=>$brush,'page'=>$page,'login'=>$login]);
+        return $this->render('index',['content'=>$brush,'page'=>$page]);
 
 
     }
