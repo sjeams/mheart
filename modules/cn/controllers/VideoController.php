@@ -49,19 +49,27 @@ class VideoController extends ApiControl
     {
     
         $login = Yii::$app->request->get('login');
-        
+        // $belong = Yii::$app->request->get('belong');
         if($login!=123){
-
             $login = Yii::$app->session->get('login');
+            $belong = Yii::$app->session->get('belong');
             if($login!=123){
-                die;
+                $belong=0;
+            }else{
+                $belong=1;
             }
         }else{
             Yii::$app->session->set('login',123);
+            $belong=1;
         }
-      
+        
+
         $title = Yii::$app->request->get('title');
         $where ="1=1";
+
+        if($belong ==0){
+            $where .= " and belong =$belong"; 
+        }
 
         if($title){
             $where .= " and title like '%$title%'";
