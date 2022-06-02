@@ -47,6 +47,7 @@ class VideoController extends ApiControl
      */
     public function actionVideo()
     {
+        $this->layout = 'cn';
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
         $id = Yii::$app->request->get('id',1);
         $m3u8 = Jian::find()->where("id=$id")->asArray()->one();

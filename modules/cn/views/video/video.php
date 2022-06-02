@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>在线视频</title>
         <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
         <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
@@ -23,9 +24,11 @@
         }
     </style>
     <body>
+        
         <div class="center">
             <!-- 视频 -->
-           <div class="video" style="height:400px;"></div>
+            <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
+           <div class="video" ></div>
             <script type="text/javascript">
                 //定义一个变量：videoObject，用来做为视频初始化配置
                 var videoObject = {
