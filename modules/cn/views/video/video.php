@@ -28,7 +28,7 @@
         <div class="center">
             <!-- 视频 -->
             <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-           <div class="video" ></div>
+           <div class="video" style="height:50%;"></div>
             <script type="text/javascript">
                 //定义一个变量：videoObject，用来做为视频初始化配置
                 var videoObject = {
