@@ -10,6 +10,8 @@ use yii;
 
 use app\libs\ApiControl;
 use app\modules\cn\models\Video;
+use app\modules\cn\models\Jian;
+
 use yii\data\Pagination;
 
 class VideoController extends ApiControl
@@ -39,7 +41,18 @@ class VideoController extends ApiControl
     }
 
 
-
+  /**
+     * 基本信息
+     * by  sjeam
+     */
+    public function actionVideo()
+    {
+        // http://wolongzyw.com/index.php/vod/detail/id/41194.html
+        $id = Yii::$app->request->get('id',1);
+        $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
+        $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
+        return $this->render('video', ['m3u8'=>$m3u8,'data' =>$data]);
+    }
 
     /**
      * 基本信息
