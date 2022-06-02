@@ -12,15 +12,24 @@
         }
         .name{
             margin-top: 20px;
+
+        }
+        .bord{
+            display: inline-block;
+            text-align: center;
+            width:80px;
+            height:20px;
+            border: 1px solid wheat;
         }
         a{
-            margin-right: 20px;
-            padding: 10px; 
+    
+            /* margin-right: 20px; */
+            /* padding: 5px;  */
         }
         .on{
             
             background-color: #fbb450a3;
-            border-radius: 5px;
+            border-radius: 2px;
         }
     </style>
     <body>
@@ -43,8 +52,10 @@
             <div>
              <p class="name"> <?php echo $m3u8['name'] ?> </p>
                 <?php foreach($data as $v){ ?>
-                        <a class=" <?php echo $m3u8['num']==$v['num']?'on':'' ?> " href="/cn/video/video?id=<?php echo $v['id'] ?>"> 第<?php echo  $v['num'] ?>集</a>
-               <?php   }   ?>
+                     
+                        <a class=" <?php echo $m3u8['num']==$v['num']?'on':'' ?> " href="/cn/video/video?id=<?php echo $v['id'] ?>">   <span class="bord">  第<?php echo  $v['num'] ?>集 </span></a>
+                       
+                    <?php   }   ?>
             
             </div>
          
