@@ -12,7 +12,7 @@ class Report extends ResultPrinter implements ConsolePrinter
      * @param \PHPUnit\Framework\Test $test
      * @param float $time
      */
-    public function endTest(\PHPUnit\Framework\Test $test, $time)
+    public function endTest(\PHPUnit\Framework\Test $test, float $time) : void
     {
         $name = Descriptor::getTestAsString($test);
         $success = ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_PASSED);
@@ -26,6 +26,8 @@ class Report extends ResultPrinter implements ConsolePrinter
             $status = 'Skipped';
         } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_INCOMPLETE) {
             $status = 'Incomplete';
+        } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_RISKY) {
+            $status = 'Useless';
         } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_ERROR) {
             $status = 'ERROR';
         } else {
@@ -41,23 +43,24 @@ class Report extends ResultPrinter implements ConsolePrinter
         $this->write($line . "\n");
     }
 
-    protected function endRun()
+    protected function endRun() : void
     {
-        $this->write("\nCodeception Results\n");
-        $this->write(sprintf(
-            "Successful: %s. Failed: %s. Incomplete: %s. Skipped: %s",
-            $this->successful,
-            $this->failed,
-            $this->skipped,
-            $this->incomplete
-        ) . "\n");
     }
 
     public function printResult(\PHPUnit\Framework\TestResult $result)
     {
+        $this->write("\nCodeception Results\n");
+        $this->write(sprintf(
+                "Successful: %d. Failed: %d. Incomplete: %d. Skipped: %d. Useless: %d",
+                $this->successful,
+                $this->failed,
+                $this->incomplete,
+                $this->skipped,
+                $this->risky
+            ) . "\n");
     }
 
-    public function write($buffer)
+    public function write(string $buffer) : void
     {
         parent::write($buffer);
     }
