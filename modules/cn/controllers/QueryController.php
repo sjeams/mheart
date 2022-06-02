@@ -24,7 +24,7 @@ class QueryController extends ApiControl
     public function actionIndex()
     {
 
-        Query::getQueryUrl();
+        Query::getVideo();
 
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
