@@ -21,11 +21,7 @@
             height:20px;
             border: 1px solid wheat;
         }
-        a{
-    
-            /* margin-right: 20px; */
-            /* padding: 5px;  */
-        }
+ 
         .on{
             
             background-color: #fbb450a3;
@@ -43,6 +39,7 @@
                 var videoObject = {
                     container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
                     plug:'hls.js',//设置使用hls插件
+                    autoplay:true,
                     video: '<?php echo $m3u8['url'] ?>'//视频地址
                 };
                 new ckplayer(videoObject);//初始化播放器
