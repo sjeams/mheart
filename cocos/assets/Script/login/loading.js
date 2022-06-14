@@ -57,13 +57,13 @@ cc.Class({
             console.log('正在加载场景资源，请耐心等待...');
         // 加载资源包
         this._urls = [
-            {url:'http://www.monster.com/app/api/file-content?url=http://www.monster.com/app/loading/剑指苍茫.mp3', type:'mp3'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://www.monster.com/app/loading/loading.jpg', type:'jpg'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
-            // {url:'http://www.monster.com/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
+            {url:'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/剑指苍茫.mp3', type:'mp3'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/loading.jpg', type:'jpg'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
+            // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
         ];
 
         console.log( this.progressBar); 

@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'b005bs3OsxEXphcM4J27bYW', 'wap');
-// Script/model/wap.js
+// Script/scence/wap.js
 
 "use strict";
 

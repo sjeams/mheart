@@ -19,6 +19,7 @@ require('./assets/Script/home_js/userinfo');
 require('./assets/Script/login/Alert');
 require('./assets/Script/login/ProgressBarScript');
 require('./assets/Script/login/SpriteTextTool');
+require('./assets/Script/login/Tools');
 require('./assets/Script/login/background');
 require('./assets/Script/login/http');
 require('./assets/Script/login/jspfile');

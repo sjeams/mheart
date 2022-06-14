@@ -48,7 +48,7 @@ cc.Class({
                 'servername': server.name,
         };
         // cc.log(server); 
-        httpRequest.httpPost('http://www.monster.com/app/api-server/user-role', params ,function (data) {
+        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-role', params ,function (data) {
             cc.log(data); 
             if(data.code==0){ // 登录失败，或本地数据失效
                 cc.director.loadScene('login');
