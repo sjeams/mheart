@@ -14,7 +14,8 @@ cc.Class({
   "extends": cc.Component,
   properties: {
     gridLayout: cc.Node,
-    toolPrefab: cc.Prefab // _alert:null, //提示框
+    toolPrefab: cc.Prefab,
+    scroll_view: cc.ScrollView // _alert:null, //提示框
     // _btnOK:null, //提示框确定按钮
     // _btnCancel:null, //提示框取消按钮
     // _title:null, //提示框标题
@@ -48,43 +49,59 @@ cc.Class({
 
   },
   // LIFE-CYCLE CALLBACKS:
-  onLoad: function onLoad() {},
+  onLoad: function onLoad() {
+    // 生成所有道具
+    this.spawnTools();
+  },
   start: function start() {// this.node.active =false;
   },
   spawnTools: function spawnTools() {
+    var _this = this;
+
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', [], function (data) {
-      //   for(let i = 0; i < data.server; i ++) {
-      //     this.view[path + root.children[i].name] = root.children[i];
-      //     this.load_all_object(root.children[i], path + root.children[i].name + "/");
-      //     }
-      console.log(this.gridLayout);
-      var cellWidth = this.gridLayout.width * 0.105;
-      var cellHeight = this.gridLayout.height * 0.215;
-      var spacingX = this.gridLayout.width * 0.022;
-      var spacingY = this.gridLayout.height * 0.045;
-      this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
-      this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
-      this.gridLayout.getComponent(cc.Layout).spacingX = spacingX;
-      this.gridLayout.getComponent(cc.Layout).spacingY = spacingY; // 根据TOOLS生成相应的道具
+      console.log(data);
 
-      this.toolsArray = [];
-      var TOOLS = data.server;
+      for (var i = 0; i < data.data.server; i++) {
+        this.view[path + root.children[i].name] = root.children[i];
+        this.load_all_object(root.children[i], path + root.children[i].name + "/");
+      } // console.log(_this.gridLayout)
+      // let cellWidth = _this.gridLayout.width * 0.105;
+      // let cellHeight = _this.gridLayout.height * 0.215;
+      // let spacingX = _this.gridLayout.width * 0.022;
+      // let spacingY = _this.gridLayout.height * 0.045;
 
-      for (var i = 0; i < data.server.length; i++) {
-        var tool = cc.instantiate(this.toolPrefab);
-        tool.getComponent('Tools').initInfo(TOOLS[i]);
-        this.toolsArray.push(tool);
-        this.gridLayout.addChild(tool);
+
+      var cellWidth = _this.gridLayout.width * 0.45;
+      var cellHeight = _this.gridLayout.height * 0.2;
+      var spacingX = _this.gridLayout.width * 0.02;
+      var spacingY = _this.gridLayout.height * 0.05;
+      _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
+      _this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
+      _this.gridLayout.getComponent(cc.Layout).spacingX = spacingX;
+      _this.gridLayout.getComponent(cc.Layout).spacingY = spacingY; // 根据TOOLS生成相应的道具
+
+      _this.toolsArray = [];
+      var TOOLS = data.data.server;
+
+      for (var _i = 0; _i < data.data.server.length; _i++) {
+        var tool = cc.instantiate(_this.toolPrefab); // console.log(TOOLS[i])
+        // _this.gridLayout.addChild(tool);
+
+        tool.getComponent('Tools').initInfo(TOOLS[_i]);
+
+        _this.toolsArray.push(tool);
+
+        _this.gridLayout.addChild(tool);
       }
     });
   },
   show_dlg: function show_dlg() {
-    // 生成所有道具
-    this.spawnTools();
-    this.node.active = true; // this.mask,opacity = 0;
+    this.node.active = true;
+
+    _this.gridLayout.destroy(); // this.mask,opacity = 0;
     // var ac1 =cc.fadeTo(0.3,this.mask_opacity);
     // this.mask.runAction(ac1);
     // this.dlg.scale =0;
@@ -103,12 +120,14 @@ cc.Class({
     // 显示节点
     // this.gridLayout.parent.active = true;
     // }
+
   },
   hidden_dlg: function hidden_dlg() {
     // var ac1 =cc.fadeOut(0.3);
     // this.mask.runAction(ac1);
     // var ac2 =cc.scaleTo(0.3,0).easing(cc.easeBackIn());
     // this.dlg.runAction(ac2);
+    // this.node.destroy();
     this.node.active = false; // 请求更换 server
   }
 });

@@ -10,7 +10,8 @@ cc.Class({
 
     properties: {
         gridLayout: cc.Node,
-        toolPrefab: cc.Prefab
+        toolPrefab: cc.Prefab,
+        scroll_view:cc.ScrollView
         // _alert:null, //提示框
         // _btnOK:null, //提示框确定按钮
         // _btnCancel:null, //提示框取消按钮
@@ -49,49 +50,61 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () { 
- 
+             // 生成所有道具
+             this.spawnTools();   
     },
 
     start () {
         // this.node.active =false;
     },
     spawnTools () {
+        var _this =this;
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', [], function (data) {
-     
-        //   for(let i = 0; i < data.server; i ++) {
-        //     this.view[path + root.children[i].name] = root.children[i];
-        //     this.load_all_object(root.children[i], path + root.children[i].name + "/");
-        //     }
-            console.log(this.gridLayout)
-            let cellWidth = this.gridLayout.width * 0.105;
-            let cellHeight = this.gridLayout.height * 0.215;
-            let spacingX = this.gridLayout.width * 0.022;
-            let spacingY = this.gridLayout.height * 0.045;
-
-            this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
-            this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
-            this.gridLayout.getComponent(cc.Layout).spacingX = spacingX;
-            this.gridLayout.getComponent(cc.Layout).spacingY = spacingY;
-            // 根据TOOLS生成相应的道具
-            this.toolsArray = [];
-            let TOOLS = data.server;
-            for (let i=0; i<data.server.length; i++) {
-                let tool = cc.instantiate(this.toolPrefab);
-                tool.getComponent('Tools').initInfo(TOOLS[i]);
-                this.toolsArray.push(tool);
-                this.gridLayout.addChild(tool);
+          console.log(data);
+          for(let i = 0; i < data.data.server; i ++) {
+            this.view[path + root.children[i].name] = root.children[i];
+            this.load_all_object(root.children[i], path + root.children[i].name + "/");
             }
+            // console.log(_this.gridLayout)
+            // let cellWidth = _this.gridLayout.width * 0.105;
+            // let cellHeight = _this.gridLayout.height * 0.215;
+            // let spacingX = _this.gridLayout.width * 0.022;
+            // let spacingY = _this.gridLayout.height * 0.045;
+
+            let cellWidth = _this.gridLayout.width * 0.45;
+            let cellHeight = _this.gridLayout.height * 0.2;
+            let spacingX = _this.gridLayout.width * 0.02;
+            let spacingY = _this.gridLayout.height * 0.05;
+
+      
+            _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
+            _this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
+            _this.gridLayout.getComponent(cc.Layout).spacingX = spacingX;
+            _this.gridLayout.getComponent(cc.Layout).spacingY = spacingY;
+            // 根据TOOLS生成相应的道具
+            _this.toolsArray = [];
+            let TOOLS = data.data.server;
+          
+            for (let i=0; i<data.data.server.length; i++) {
+                let tool = cc.instantiate(_this.toolPrefab);
+                // console.log(TOOLS[i])
+                // _this.gridLayout.addChild(tool);
+                tool.getComponent('Tools').initInfo(TOOLS[i]);
+                _this.toolsArray.push(tool);
+                _this.gridLayout.addChild(tool);
+                
+            }
+ 
         })
     },
 
 
     show_dlg () {
-        // 生成所有道具
-        this.spawnTools();
-        this.node.active =true;
 
+        this.node.active =true;
+        _this.gridLayout.destroy();
         // this.mask,opacity = 0;
         // var ac1 =cc.fadeTo(0.3,this.mask_opacity);
         // this.mask.runAction(ac1);
@@ -125,7 +138,7 @@ cc.Class({
 
         // var ac2 =cc.scaleTo(0.3,0).easing(cc.easeBackIn());
         // this.dlg.runAction(ac2);
-
+        // this.node.destroy();
         this.node.active =false;
         // 请求更换 server
 

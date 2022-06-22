@@ -15,7 +15,7 @@ use app\libs\ApiControl;
 use app\modules\app\models\UserServer;
 use app\modules\app\models\User;
 use app\modules\app\models\UserLogin;
-
+use Codeception\PHPUnit\Constraint\Page;
 use Yii;
 use UploadFile;
 
@@ -134,8 +134,9 @@ class ApiServerController extends ApiControl{
      * app/api-server/user-register
      */
      public function actionUserRegister(){
- 
-        $server = UserServer::find()->asarray()->All();
+        $page=Yii::$app->request->post('page',1);
+        $pageSize=Yii::$app->request->post('pageSize',6);
+        $server = UserServer::find()->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
         // var_dump($server);die;
         //  echo  json_encode($server);
        die(json_encode(['code' => 1,'data'=>['server' => $server],'message' => 'succes']));

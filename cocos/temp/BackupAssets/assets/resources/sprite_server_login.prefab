@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "c20200819100346",
+    "_name": "sprite_server_login",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -58,8 +58,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -185,
-        60,
+        0,
+        0,
         0,
         0,
         0,
@@ -67,7 +67,7 @@
         1,
         0.5,
         0.5,
-        0.5
+        1
       ]
     },
     "_eulerAngles": {
@@ -85,7 +85,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "serverid",
+    "_name": "server_name",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -122,16 +122,16 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -50,
-        0,
+        -68.352,
+        -10.461,
         0,
         0,
         0,
         0,
         1,
-        1,
-        1,
-        1
+        0.5,
+        0.5,
+        0.5
       ]
     },
     "_eulerAngles": {
@@ -161,8 +161,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "1区 - 开天辟地",
-    "_N$string": "1区 - 开天辟地",
+    "_string": "2区 - 盘古化身",
+    "_N$string": "2区 - 盘古化身",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -185,14 +185,14 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "891b1c5b-5b63-4f87-a165-b36d1af22810"
     },
-    "fileId": "71ZAe82+FOlYeDDa9xYD8Y",
+    "fileId": "35v1bQoXRIo7PtD6iF/Z91",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "status",
+    "_name": "server_type",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -229,16 +229,16 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        146,
-        0,
+        67.588,
+        -10.461,
         0,
         0,
         0,
         0,
         1,
-        1,
-        1,
-        1
+        0.5,
+        0.5,
+        0.5
       ]
     },
     "_eulerAngles": {
@@ -292,9 +292,9 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "891b1c5b-5b63-4f87-a165-b36d1af22810"
     },
-    "fileId": "13qWRDNVFA5pT17gxDpXYi",
+    "fileId": "7flfjIuZRMYaPzfy/eQ/eZ",
     "sync": false
   },
   {
@@ -315,7 +315,7 @@
     "_spriteFrame": {
       "__uuid__": "4c1329af-3f23-408c-9d6e-2787a5ad2e2e"
     },
-    "_type": 0,
+    "_type": 1,
     "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
@@ -330,73 +330,19 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Button",
+    "__type__": "9c99erZc29ESIVQKwP6Lsma",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_normalMaterial": null,
-    "_grayMaterial": null,
-    "duration": 0.1,
-    "zoomScale": 1.2,
-    "clickEvents": [
-      null
-    ],
-    "_N$interactable": true,
-    "_N$enableAutoGrayEffect": false,
-    "_N$transition": 0,
-    "transition": 0,
-    "_N$normalColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
+    "server_type": {
+      "__id__": 5
     },
-    "_N$pressedColor": {
-      "__type__": "cc.Color",
-      "r": 211,
-      "g": 211,
-      "b": 211,
-      "a": 255
+    "server_name": {
+      "__id__": 2
     },
-    "pressedColor": {
-      "__type__": "cc.Color",
-      "r": 211,
-      "g": 211,
-      "b": 211,
-      "a": 255
-    },
-    "_N$hoverColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "hoverColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_N$disabledColor": {
-      "__type__": "cc.Color",
-      "r": 124,
-      "g": 124,
-      "b": 124,
-      "a": 255
-    },
-    "_N$normalSprite": null,
-    "_N$pressedSprite": null,
-    "pressedSprite": null,
-    "_N$hoverSprite": null,
-    "hoverSprite": null,
-    "_N$disabledSprite": null,
-    "_N$target": null,
     "_id": ""
   },
   {
@@ -405,9 +351,9 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "891b1c5b-5b63-4f87-a165-b36d1af22810"
     },
-    "fileId": "21hensiC5JNLTj8at36cIF",
+    "fileId": "39HqaZn9RN0LxJ7I+8LlSV",
     "sync": false
   }
 ]

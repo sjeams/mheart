@@ -2,6 +2,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        server_type: cc.Node,
+        server_name: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -11,11 +13,15 @@ cc.Class({
 
         // 图片
         var self = this;
-        cc.loader.loadRes(info['picUrl'], cc.SpriteFrame, function (err, spriteFrame) {
-            self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
-        });
+        
+        if(info['picUrl']){
+            cc.loader.loadRes(info['picUrl'], cc.SpriteFrame, function (err, spriteFrame) {
+                self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+            });
+        }
 
-        // 介绍
-        this.node.intro = info['intro'];
+        this.server_type.getComponent(cc.Label).string=info['type'];
+        this.server_name.getComponent(cc.Label).string= info['id']+'区  -  '+info['name'];
+
     },
 });
