@@ -15,7 +15,7 @@ cc.Class({
   properties: {
     gridLayout: cc.Node,
     toolPrefab: cc.Prefab,
-    scroll_view: cc.ScrollView // _alert:null, //提示框
+    bt_StartGame: cc.Button // _alert:null, //提示框
     // _btnOK:null, //提示框确定按钮
     // _btnCancel:null, //提示框取消按钮
     // _title:null, //提示框标题
@@ -66,21 +66,19 @@ cc.Class({
       'pageSize': 8
     };
     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
-      console.log(data);
-
-      for (var i = 0; i < data.data.server; i++) {
-        this.view[path + root.children[i].name] = root.children[i];
-        this.load_all_object(root.children[i], path + root.children[i].name + "/");
-      } // console.log(_this.gridLayout)
+      console.log(data); //   for(let i = 0; i < data.data.server; i ++) {
+      //     this.view[path + root.children[i].name] = root.children[i];
+      //     this.load_all_object(root.children[i], path + root.children[i].name + "/");
+      //     }
+      // console.log(_this.gridLayout)
       // let cellWidth = _this.gridLayout.width * 0.105;
       // let cellHeight = _this.gridLayout.height * 0.215;
       // let spacingX = _this.gridLayout.width * 0.022;
       // let spacingY = _this.gridLayout.height * 0.045;
 
-
       var cellWidth = _this.gridLayout.width * 0.45;
       var cellHeight = _this.gridLayout.height * 0.2;
-      var spacingX = _this.gridLayout.width * 0.02;
+      var spacingX = _this.gridLayout.width * 0.05;
       var spacingY = _this.gridLayout.height * 0.05;
       _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
       _this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
@@ -90,11 +88,11 @@ cc.Class({
       _this.toolsArray = [];
       var TOOLS = data.data.server;
 
-      for (var _i = 0; _i < data.data.server.length; _i++) {
+      for (var i = 0; i < data.data.server.length; i++) {
         var tool = cc.instantiate(_this.toolPrefab); // console.log(TOOLS[i])
         // _this.gridLayout.addChild(tool);
 
-        tool.getComponent('Tools').initInfo(TOOLS[_i]);
+        tool.getComponent('Tools').initInfo(TOOLS[i]);
 
         _this.toolsArray.push(tool);
 
@@ -103,9 +101,7 @@ cc.Class({
     });
   },
   show_dlg: function show_dlg() {
-    this.node.active = true;
-
-    _this.gridLayout.destroy(); // this.mask,opacity = 0;
+    this.node.active = true; // this.mask,opacity = 0;
     // var ac1 =cc.fadeTo(0.3,this.mask_opacity);
     // this.mask.runAction(ac1);
     // this.dlg.scale =0;
@@ -124,15 +120,22 @@ cc.Class({
     // 显示节点
     // this.gridLayout.parent.active = true;
     // }
-
   },
   hidden_dlg: function hidden_dlg() {
+    // this.gridLayout.destroy();
     // var ac1 =cc.fadeOut(0.3);
     // this.mask.runAction(ac1);
+    // console.log( getComponent(cc.Label));
     // var ac2 =cc.scaleTo(0.3,0).easing(cc.easeBackIn());
     // this.dlg.runAction(ac2);
     // this.node.destroy();
+    this.bt_StartGame.node.on("touchstart", this.onStartGameTouchStart, this);
+    console.log(this.bt_StartGame.node);
     this.node.active = false; // 请求更换 server
+  },
+  onStartGameTouchStart: function onStartGameTouchStart() {
+    console.log("1111"); // console.log("onStartGameTouchStart.");
+    // cc.director.loadScene("GameScene");
   }
 });
 
