@@ -134,10 +134,12 @@ class ApiServerController extends ApiControl{
      * app/api-server/user-register
      */
      public function actionUserRegister(){
-        $page=Yii::$app->request->post('page',1);
-        $pageSize=Yii::$app->request->post('pageSize',6);
-        
-        $server = UserServer::find()->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
+
+        $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
+
+        $page=$data['page']?$data['page']:1;
+        $pageSize=$data['pageSize']?$data['pageSize']:6;
+        $server = UserServer::find()->offset(($page-1)*$pageSize)->limit($pageSize)->asarray()->All();
         // var_dump($server);die;
         //  echo  json_encode($server);
        die(json_encode(['code' => 1,'data'=>['server' => $server],'message' => 'succes']));

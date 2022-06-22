@@ -61,7 +61,11 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', [], function (data) {
+    var params = {
+      'page': 1,
+      'pageSize': 8
+    };
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
       console.log(data);
 
       for (var i = 0; i < data.data.server; i++) {

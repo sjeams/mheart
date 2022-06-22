@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1655805240667,
+    "asset": 1655876206145,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -800,8 +800,8 @@
     "relativePath": "Script\\home_js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1655884696574,
-    "meta": 1655884696595,
+    "asset": 1655886580899,
+    "meta": 1655886580932,
     "relativePath": "Scene\\index.fire"
   },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
@@ -845,7 +845,7 @@
     "relativePath": "resources\\sprite_server_login.prefab"
   },
   "94d4e510-f9d8-4f4e-a5da-b39f4310a46b": {
-    "asset": 1655869751899,
+    "asset": 1655869800302,
     "meta": 1655869751902,
     "relativePath": "resources\\server_pic"
   },
@@ -854,14 +854,14 @@
     "meta": 1655869800341,
     "relativePath": "resources\\server_pic\\server_background.png"
   },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1655885344913,
-    "meta": 1655885347913,
-    "relativePath": "Script\\login\\Alert.js"
-  },
   "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
     "asset": 1655884964390,
     "meta": 1655885347932,
     "relativePath": "Script\\login\\Tools.js"
+  },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1655886631749,
+    "meta": 1655886635082,
+    "relativePath": "Script\\login\\Alert.js"
   }
 }
