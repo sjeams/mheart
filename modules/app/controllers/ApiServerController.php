@@ -136,6 +136,7 @@ class ApiServerController extends ApiControl{
      public function actionUserRegister(){
         $page=Yii::$app->request->post('page',1);
         $pageSize=Yii::$app->request->post('pageSize',6);
+        
         $server = UserServer::find()->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
         // var_dump($server);die;
         //  echo  json_encode($server);
@@ -145,6 +146,7 @@ class ApiServerController extends ApiControl{
 
 
     /**
+     * 
      * 服务器选择
      * app/api-server/user-server
      */
