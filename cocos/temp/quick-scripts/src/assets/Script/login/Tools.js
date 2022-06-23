@@ -30,17 +30,17 @@ cc.Class({
 
 
     if (info['num'] < 100) {
-      this.server_type.getComponent(cc.Label).string = '空闲';
-      this.node.getChildByName('server_type').color = new cc.color('green');
+      this.server_type.getComponent(cc.Label).string = info['type'];
+      this.node.getChildByName('server_type').color = new cc.color(info['color']);
     } else if (info['num'] < 500 && info['num'] >= 100) {
-      this.server_type.getComponent(cc.Label).string = '流畅';
-      this.node.getChildByName('server_type').color = new cc.color('#BDFF00');
+      this.server_type.getComponent(cc.Label).string = info['type'];
+      this.node.getChildByName('server_type').color = new cc.color(info['color']);
     } else if (info['num'] < 1000 && info['num'] >= 500) {
-      this.server_type.getComponent(cc.Label).string = '拥挤';
-      this.node.getChildByName('server_type').color = new cc.color('#FFD100');
+      this.server_type.getComponent(cc.Label).string = info['type'];
+      this.node.getChildByName('server_type').color = new cc.color(info['color']);
     } else {
-      this.server_type.getComponent(cc.Label).string = '爆满';
-      this.node.getChildByName('server_type').color = new cc.color('#FF0000');
+      this.server_type.getComponent(cc.Label).string = info['type'];
+      this.node.getChildByName('server_type').color = new cc.color(info['color']);
     }
 
     this.server_name.getComponent(cc.Label).string = info['id'] + '区  -  ' + info['name']; //创建一个新button 并将其挂载到创建的精灵下
@@ -70,7 +70,8 @@ cc.Class({
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-server', {
-      'id': info['id']
+      'id': info['id'],
+      'token': null
     }, function (data) {
       //     console.log(data);
       var server_choes_label = cc.find("Canvas/server/server_choes/server_choes_label");

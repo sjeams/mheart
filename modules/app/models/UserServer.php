@@ -13,7 +13,8 @@ class UserServer extends ActiveRecord
     //  * 修改颜色
     //  */
     public static function getServerColor($id){
-        $count =  UserLogin::find()->where("server =$id")->count();
+
+        $count = UserLogin::find()->where("server =$id")->count();
         if( $count<100){
             $type='空闲';
              $color = 'green';
@@ -27,6 +28,7 @@ class UserServer extends ActiveRecord
             $type='爆满';
              $color = '#FF0000'; 
         } 
+        // var_dump($type);die;
         UserServer::updateAll(['num' => $count,'type' => $type,'color' => $color],"id=$id");
     }
 
