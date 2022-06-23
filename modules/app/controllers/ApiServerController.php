@@ -153,10 +153,17 @@ class ApiServerController extends ApiControl{
      * app/api-server/user-server
      */
      public function actionUserServer(){
-        $server = UserServer::find()->asarray()->All();
-        // var_dump($server);die;
-        //  echo  json_encode($server);
-       die(json_encode(['code' => 1,'data'=>['server' => $server],'message' => 'succes']));
+        $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
+        $id=$data['id']?$data['id']:1;
+        $token = $data['token'];
+        if($token){
+            UserServer::updateAll([ 'server' => $id],"token=$token");
+        }
+        // Content::updateAll(['viewCount' => $data[0]['viewCount']+1],"id={$contentId}");
+        UserServer::getServerColor($id);
+        $server = UserServer::find()->where("id = $id")->asarray()->one();
+
+        die(json_encode(['code' => 0,'data'=>['server' => $server],'message' => 'succes']));
     }
     
 

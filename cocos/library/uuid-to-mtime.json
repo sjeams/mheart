@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1655876206145,
+    "asset": 1655965972239,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -500,7 +500,7 @@
     "relativePath": "Script"
   },
   "a305a3be-3158-4e78-948c-448ea1b5c17a": {
-    "asset": 1655791636310,
+    "asset": 1655958123091,
     "meta": 1655109292698,
     "relativePath": "Script\\login"
   },
@@ -800,8 +800,8 @@
     "relativePath": "Script\\home_js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1655891803618,
-    "meta": 1655891803635,
+    "asset": 1655977331721,
+    "meta": 1655977331736,
     "relativePath": "Scene\\index.fire"
   },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
@@ -834,11 +834,6 @@
     "meta": 1655791687015,
     "relativePath": "Script\\bage\\Tool.js"
   },
-  "891b1c5b-5b63-4f87-a165-b36d1af22810": {
-    "asset": 1655869900110,
-    "meta": 1655869900126,
-    "relativePath": "resources\\sprite_server_login.prefab"
-  },
   "94d4e510-f9d8-4f4e-a5da-b39f4310a46b": {
     "asset": 1655869800302,
     "meta": 1655869751902,
@@ -854,19 +849,19 @@
     "meta": 1655886957180,
     "relativePath": "Script\\home_js\\userinfo.js"
   },
-  "2b70c33f-85e8-43e0-b067-5f3830906866": {
-    "asset": 1655891199469,
-    "meta": 1655891199476,
-    "relativePath": "resources\\sprite_server_login - 001.prefab"
-  },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1655891225258,
-    "meta": 1655891237658,
-    "relativePath": "Script\\login\\Tools.js"
+  "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
+    "asset": 1655969879688,
+    "meta": 1655969879693,
+    "relativePath": "resources\\sprite_server_login.prefab"
   },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1655891861937,
-    "meta": 1655891896584,
+    "asset": 1655974348202,
+    "meta": 1655974366296,
     "relativePath": "Script\\login\\Alert.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1655977285287,
+    "meta": 1655977330758,
+    "relativePath": "Script\\login\\Tools.js"
   }
 }
