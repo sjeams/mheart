@@ -65,8 +65,12 @@ cc.Class({
   //按钮点击回调
   onConfirBtn: function onConfirBtn(e, info) {
     console.log(info);
+
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-server', {
-      'id': str
+      'id': info['id']
     }, function (data) {
       //     console.log(data);
       var server_choes_label = cc.find("Canvas/server/server_choes/server_choes_label");

@@ -155,7 +155,7 @@ class ApiServerController extends ApiControl{
      public function actionUserServer(){
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         $id=$data['id']?$data['id']:1;
-        $token = $data['token'];
+        $token = $data['token']?$data['token']:null;
         if($token){
             UserServer::updateAll([ 'server' => $id],"token=$token");
         }

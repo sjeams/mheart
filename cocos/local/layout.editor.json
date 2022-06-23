@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 385,
-      "y": 41,
+      "x": 705,
+      "y": 38,
       "width": 1267,
       "height": 814,
       "layout": {
@@ -20,7 +20,7 @@
                     "children": [
                       "hierarchy"
                     ],
-                    "height": 433.703125,
+                    "height": 403.328125,
                     "type": "panel",
                     "width": 321
                   },
@@ -29,12 +29,12 @@
                     "children": [
                       "assets"
                     ],
-                    "height": 309.78125,
+                    "height": 287.171875,
                     "type": "panel",
                     "width": 321
                   }
                 ],
-                "height": 746.5,
+                "height": 693.5,
                 "type": "dock-v",
                 "width": 321
               },
@@ -45,7 +45,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 394.71875,
+                    "height": 367.09375,
                     "type": "panel",
                     "width": 549
                   },
@@ -56,12 +56,12 @@
                       "timeline",
                       "game-window"
                     ],
-                    "height": 348.765625,
+                    "height": 323.40625,
                     "type": "panel",
                     "width": 549
                   }
                 ],
-                "height": 746.5,
+                "height": 693.5,
                 "type": "dock-v",
                 "width": 549
               },
@@ -72,12 +72,12 @@
                   "node-library",
                   "cocos-services"
                 ],
-                "height": 746.5,
+                "height": 693.5,
                 "type": "panel",
                 "width": 375
               }
             ],
-            "height": 746.5,
+            "height": 693.5,
             "type": "dock-h",
             "width": 1251
           }
