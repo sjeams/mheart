@@ -15,13 +15,13 @@ class UserServer extends ActiveRecord
     public static function getServerColor($id){
 
         $count = UserLogin::find()->where("server =$id")->count();
-        if( $count<100){
+        if( $count<50){
             $type='空闲';
              $color = 'green';
-        }else if( $count<500&& $count>=100){
+        }else if( $count<200&& $count>=50){
             $type='流畅';
              $color = '#BDFF00';
-        }else if( $count<1000&& $count>=500){
+        }else if( $count<500&& $count>=200){
             $type='拥挤';
              $color = '#FFD100';
         }else{
