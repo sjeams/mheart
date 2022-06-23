@@ -43,7 +43,7 @@ cc.Class({
         // }    
         this.server_type.getComponent(cc.Label).string=info['type'];
         this.node.getChildByName('server_type').color = new cc.color(info['color']);
-        
+
         this.server_name.getComponent(cc.Label).string= info['id']+'区  -  '+info['name'];
         //创建一个新button 并将其挂载到创建的精灵下
         this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info);
@@ -71,15 +71,19 @@ cc.Class({
             'id': info['id'],
             'token': null
         }, function (data) {
-                    //     console.log(data);
+                        console.log(data);
             var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
             server_choes_label.getComponent(cc.Label).string=info['name'];
             var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
             server_choes_type.getComponent(cc.Label).string=info['type'];
             server_choes_type.color = new cc.color(info['color']); 
         })
+
         var mask =cc.find("Canvas/mask");
+      
+
         mask.active=false
+      
         // var mask =  this.node.getChildByName('mask')
     
         // console.log(this.node.getSiblingIndex())

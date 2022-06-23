@@ -49,8 +49,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () { 
-             // 生成所有道具
-             this.spawnTools();   
+         // 生成所有道具
+         this.spawnTools();   
     },
 
     start () {
@@ -76,8 +76,7 @@ cc.Class({
             let cellHeight = _this.gridLayout.height * 0.2;
             let spacingX = _this.gridLayout.width * 0.05;
             let spacingY = _this.gridLayout.height * 0.05;
-
-      
+            
             _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
             _this.gridLayout.getComponent(cc.Layout).cellSize.height = cellHeight;
             _this.gridLayout.getComponent(cc.Layout).spacingX = spacingX;
@@ -101,6 +100,7 @@ cc.Class({
 
 
     show_dlg () {
+      
 
         this.node.active =true;
         // this.mask,opacity = 0;
@@ -141,10 +141,7 @@ cc.Class({
         // this.node.destroy();
         // this.bt_StartGame.node.on("sprite_server_login", this.onStartGameTouchStart, this);
         // console.log( this.bt_StartGame.node);
-    
-  
         // 请求更换 server
- 
     },
  
 

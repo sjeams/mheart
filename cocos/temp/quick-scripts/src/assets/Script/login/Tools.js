@@ -27,22 +27,23 @@ cc.Class({
         self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];
+    // if(info['num']<100){
+    //     this.server_type.getComponent(cc.Label).string='空闲';
+    //     this.node.getChildByName('server_type').color = new cc.color('green');
+    // }else if(info['num']<500&&info['num']>=100){
+    //     this.server_type.getComponent(cc.Label).string='流畅';
+    //     this.node.getChildByName('server_type').color = new cc.color('#BDFF00');
+    // }else if(info['num']<1000&&info['num']>=500){
+    //     this.server_type.getComponent(cc.Label).string='拥挤';
+    //     this.node.getChildByName('server_type').color = new cc.color('#FFD100');
+    // }else{
+    //     this.server_type.getComponent(cc.Label).string='爆满';
+    //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
+    // }    
 
 
-    if (info['num'] < 100) {
-      this.server_type.getComponent(cc.Label).string = info['type'];
-      this.node.getChildByName('server_type').color = new cc.color(info['color']);
-    } else if (info['num'] < 500 && info['num'] >= 100) {
-      this.server_type.getComponent(cc.Label).string = info['type'];
-      this.node.getChildByName('server_type').color = new cc.color(info['color']);
-    } else if (info['num'] < 1000 && info['num'] >= 500) {
-      this.server_type.getComponent(cc.Label).string = info['type'];
-      this.node.getChildByName('server_type').color = new cc.color(info['color']);
-    } else {
-      this.server_type.getComponent(cc.Label).string = info['type'];
-      this.node.getChildByName('server_type').color = new cc.color(info['color']);
-    }
-
+    this.server_type.getComponent(cc.Label).string = info['type'];
+    this.node.getChildByName('server_type').color = new cc.color(info['color']);
     this.server_name.getComponent(cc.Label).string = info['id'] + '区  -  ' + info['name']; //创建一个新button 并将其挂载到创建的精灵下
 
     this.bindClickEvent(this.sprite_server_login.getComponent(cc.Button), info);
@@ -73,7 +74,7 @@ cc.Class({
       'id': info['id'],
       'token': null
     }, function (data) {
-      //     console.log(data);
+      console.log(data);
       var server_choes_label = cc.find("Canvas/server/server_choes/server_choes_label");
       server_choes_label.getComponent(cc.Label).string = info['name'];
       var server_choes_type = cc.find("Canvas/server/server_choes/server_choes_type");
