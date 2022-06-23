@@ -9,6 +9,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        scorllview:cc.ScorllView
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -33,8 +34,9 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
-            var tips  =cc.find("Canvas/tips/gonggao_tips");
-            tips.getComponent(cc.Label).string=data.data['gonggao_sz'];
+            var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
+            tips.getComponent(cc.Label).string=data.data['gonggao_sx'];
+            
         })
     },
  
@@ -45,7 +47,7 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
-            var tips  =cc.find("Canvas/tips/gonggao_tips");
+            var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
             tips.getComponent(cc.Label).string=data.data['gonggao_sz'];
         })
     },
@@ -53,7 +55,7 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
-            var tips  =cc.find("Canvas/tips/gonggao_tips");
+            var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
             tips.getComponent(cc.Label).string=data.data['gonggao_sx'];
         })
     },
@@ -61,7 +63,7 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
-            var tips  =cc.find("Canvas/tips/gonggao_tips");
+            var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
             tips.getComponent(cc.Label).string=data.data['gonggao_gx'];
         })
     },
@@ -69,7 +71,7 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
-            var tips  =cc.find("Canvas/tips/gonggao_tips");
+            var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
             tips.getComponent(cc.Label).string=data.data['gonggao_lx'];
         })
     },

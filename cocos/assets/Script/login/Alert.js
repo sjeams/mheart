@@ -62,7 +62,7 @@ cc.Class({
         var httpRequest = new HttpHelper();
         var params = {
                 'page': 1,
-                'pageSize': 8,
+                'pageSize': 12,
         };
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
         //   console.log(data);
