@@ -66,10 +66,10 @@ cc.Class({
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-server', {
-            'id': info['id']
+            'id': info['id'],
+            'token': null
         }, function (data) {
-            
-        //     console.log(data);
+                    //     console.log(data);
             var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
             server_choes_label.getComponent(cc.Label).string=info['name'];
             var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
