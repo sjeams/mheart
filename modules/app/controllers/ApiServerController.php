@@ -165,6 +165,23 @@ class ApiServerController extends ApiControl{
 
         die(json_encode(['code' => 0,'data'=>['server' => $server],'message' => 'succes']));
     }
-    
+        /**
+     * 
+     * 服务器选择
+     * app/api-server/user-tips
+     */
+    public function actionUserTips(){
+        $data =array(
+            'gonggao_sz'=>'请大家在游戏中发言时，不要带有国家领导人或者侮辱性的词汇。如果官方发现，一律严处。',
+            'gonggao_sx'=>'请大家在游戏中发言时，不要带有国家领导人或者侮辱性的词汇。如果官方发现，一律严处。',
+            'gonggao_gx'=>'请大家在游戏中发言时，不要带有国家领导人或者侮辱性的词汇。如果官方发现，一律严处。',
+            'gonggao_lx'=>'邮箱:359824901@qq.com',
+
+
+        );
+
+        die(json_encode(['code' => 0,'data'=>$data,'message' => 'succes']));
+  
+    }
 
 }

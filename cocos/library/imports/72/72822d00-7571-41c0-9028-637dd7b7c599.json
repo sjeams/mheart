@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bagButn",
+    "texture": "997aaa35-1638-44f2-b93b-b33c530de838",
+    "atlas": "",
+    "rect": [
+      119,
+      20,
+      296,
+      133
+    ],
+    "offset": [
+      -10,
+      14
+    ],
+    "originalSize": [
+      554,
+      201
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
