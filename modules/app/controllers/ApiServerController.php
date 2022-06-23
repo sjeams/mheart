@@ -157,7 +157,7 @@ class ApiServerController extends ApiControl{
         $id=$data['id']?$data['id']:1;
         $token = $data['token']?$data['token']:null;
         if($token){
-            UserServer::updateAll([ 'server' => $id],"token=$token");
+            UserLogin::updateAll(['server' => $id],"token=$token");
         }
         // Content::updateAll(['viewCount' => $data[0]['viewCount']+1],"id={$contentId}");
         UserServer::getServerColor($id);
