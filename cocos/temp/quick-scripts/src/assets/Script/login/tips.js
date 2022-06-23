@@ -29,24 +29,59 @@ cc.Class({
     // },
   },
   // LIFE-CYCLE CALLBACKS:
+  // cc.loader.releaseRes("test assets/anim");
   onLoad: function onLoad() {
-    var _this = this;
-
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    var params = {};
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', params, function (data) {
-      var tips = data.data;
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+      var tips = cc.find("Canvas/tips/gonggao_tips");
+      tips.getComponent(cc.Label).string = data.data['gonggao_sz'];
     });
   },
   start: function start() {},
   gonggao_sz: function gonggao_sz() {
-    console.log(tips);
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+      var tips = cc.find("Canvas/tips/gonggao_tips");
+      tips.getComponent(cc.Label).string = data.data['gonggao_sz'];
+    });
   },
-  gonggao_sx: function gonggao_sx() {},
-  gonggao_gx: function gonggao_gx() {},
-  gonggao_lx: function gonggao_lx() {} // update (dt) {},
+  gonggao_sx: function gonggao_sx() {
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+      var tips = cc.find("Canvas/tips/gonggao_tips");
+      tips.getComponent(cc.Label).string = data.data['gonggao_sx'];
+    });
+  },
+  gonggao_gx: function gonggao_gx() {
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+      var tips = cc.find("Canvas/tips/gonggao_tips");
+      tips.getComponent(cc.Label).string = data.data['gonggao_gx'];
+    });
+  },
+  gonggao_lx: function gonggao_lx() {
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+      var tips = cc.find("Canvas/tips/gonggao_tips");
+      tips.getComponent(cc.Label).string = data.data['gonggao_lx'];
+    });
+  },
+  show_dlg: function show_dlg() {
+    this.node.active = true;
+  },
+  hidden_dlg: function hidden_dlg() {
+    this.node.active = false;
+  } // update (dt) {},
 
 });
 
