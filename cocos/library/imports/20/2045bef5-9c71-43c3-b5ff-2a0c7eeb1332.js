@@ -24,27 +24,6 @@ cc.Class({
     //     type:cc.node,
     //     default:null
     // },
-    // dlg:{
-    //     type:cc.node,
-    //     default:null
-    // },
-    // server:{
-    //     type:cc.node,
-    //     default:true
-    // },
-    // tips:{
-    //     type:cc.node,
-    //     default:true
-    // },
-    // gridLayout:{
-    //     type:cc.node,
-    //     default:true
-    // },
-    // toolPrefab:{
-    //     type:cc.node,
-    //     default:true
-    // },
-    // mask_opacity: 100,
 
   },
   // LIFE-CYCLE CALLBACKS:
@@ -104,38 +83,13 @@ cc.Class({
     });
   },
   show_dlg: function show_dlg() {
-    this.node.active = true; // this.mask,opacity = 0;
-    // var ac1 =cc.fadeTo(0.3,this.mask_opacity);
-    // this.mask.runAction(ac1);
-    // this.dlg.scale =0;
-    // var ac2 =cc.scaleTo(0.3,1).easing(cc.easeBackout());
-    // this.dlg.runAction(ac2);
-    // // 背包按钮
-    // if (this.gridLayout.parent.active) {
-    //     // 隐藏节点
-    //     this.gridLayout.parent.active = false;
-    //     // 删除所有道具(或者不删，只是隐藏，自己决定)
+    this.node.active = true; //     // 删除所有道具(或者不删，只是隐藏，自己决定)
     //     this.toolsArray.forEach(element => {
     //         element.removeFromParent();
     //     });
-    // }
-    // else {
-    // 显示节点
-    // this.gridLayout.parent.active = true;
-    // }
   },
   hidden_dlg: function hidden_dlg() {
-    this.node.active = false; // console.log(222)
-    // this.gridLayout.destroy();
-    // var ac1 =cc.fadeOut(0.3);
-    // this.mask.runAction(ac1);
-    // console.log( getComponent(cc.Label));
-    // var ac2 =cc.scaleTo(0.3,0).easing(cc.easeBackIn());
-    // this.dlg.runAction(ac2);
-    // this.node.destroy();
-    // this.bt_StartGame.node.on("sprite_server_login", this.onStartGameTouchStart, this);
-    // console.log( this.bt_StartGame.node);
-    // 请求更换 server
+    this.node.active = false; // 请求更换 server
   }
 });
 
