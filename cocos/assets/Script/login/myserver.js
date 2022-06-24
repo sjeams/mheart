@@ -21,6 +21,16 @@ cc.Class({
         // cc.sys.localStorage.setItem('token', value);
         // cc.sys.localStorage.getItem(key);
         // cc.sys.localStorage.removeItem(key);
+
+        // 保存最高分到本地
+        // const KEY_BEST_SCORE = "bestScore";
+        // let bestScore = cc.sys.localStorage.getItem(KEY_BEST_SCORE);
+        // if (bestScore === "null" || this.score > bestScore) {
+        //     bestScore = this.score;
+        // }
+        // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
+ 
+
     },
      
     tokenlogin: function(){

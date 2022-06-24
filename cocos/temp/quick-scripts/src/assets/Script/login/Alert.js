@@ -98,8 +98,8 @@ cc.Class({
       var scorllheight = _this.gridLayout.parent; //计算滚动条高度
 
       var height = (cellHeight + spacingY) * Math.ceil(data.data.server.length / 2); // console.log(height);
+      // scorllheight.designResolution  = new cc.Size(600, height);
 
-      scorllheight.designResolution = new cc.Size(600, height);
       scorllheight.setContentSize(600, height);
     });
   },
