@@ -20,7 +20,7 @@
                     "children": [
                       "hierarchy"
                     ],
-                    "height": 450.6875,
+                    "height": 452.84375,
                     "type": "panel",
                     "width": 374
                   },
@@ -29,12 +29,12 @@
                     "children": [
                       "assets"
                     ],
-                    "height": 282.796875,
+                    "height": 283.15625,
                     "type": "panel",
                     "width": 374
                   }
                 ],
-                "height": 736.5,
+                "height": 739,
                 "type": "dock-v",
                 "width": 374
               },
@@ -45,7 +45,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 433.703125,
+                    "height": 435.1875,
                     "type": "panel",
                     "width": 835.984375
                   },
@@ -56,12 +56,12 @@
                       "timeline",
                       "game-window"
                     ],
-                    "height": 299.796875,
+                    "height": 300.8125,
                     "type": "panel",
                     "width": 835.984375
                   }
                 ],
-                "height": 736.5,
+                "height": 739,
                 "type": "dock-v",
                 "width": 835.984375
               },
@@ -72,12 +72,12 @@
                   "node-library",
                   "cocos-services"
                 ],
-                "height": 736.5,
+                "height": 739,
                 "type": "panel",
                 "width": 360
               }
             ],
-            "height": 736.5,
+            "height": 739,
             "type": "dock-h",
             "width": 1576
           }
@@ -95,7 +95,8 @@
         "node-library",
         "cocos-services"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "project-settings": {

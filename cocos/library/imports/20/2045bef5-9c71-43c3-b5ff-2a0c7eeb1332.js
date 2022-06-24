@@ -72,7 +72,7 @@ cc.Class({
       // let spacingX = _this.gridLayout.width * 0.022;
       // let spacingY = _this.gridLayout.height * 0.045;
       var cellWidth = _this.gridLayout.width * 0.45;
-      var cellHeight = _this.gridLayout.height * 0.2;
+      var cellHeight = _this.gridLayout.height * 0.15;
       var spacingX = _this.gridLayout.width * 0.05;
       var spacingY = _this.gridLayout.height * 0.05;
       _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
