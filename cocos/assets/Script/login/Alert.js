@@ -62,7 +62,7 @@ cc.Class({
         var httpRequest = new HttpHelper();
         var params = {
                 'page': 1,
-                'pageSize': 12,
+                'pageSize': 11,
         };
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
         //   console.log(data);
@@ -74,7 +74,7 @@ cc.Class({
             // let spacingY = _this.gridLayout.height * 0.045;
             let cellWidth = _this.gridLayout.width * 0.45;
             let cellHeight = _this.gridLayout.height * 0.15;
-            let spacingX = _this.gridLayout.width * 0.05;
+            let spacingX = _this.gridLayout.width * 0.08;
             let spacingY = _this.gridLayout.height * 0.05;
             
             _this.gridLayout.getComponent(cc.Layout).cellSize.width = cellWidth;
@@ -94,7 +94,13 @@ cc.Class({
                 _this.gridLayout.addChild(tool);
                 
             }
- 
+            // 定义content滚动条高度
+            let scorllheight =  _this.gridLayout.parent;
+            //计算滚动条高度
+            let  height =  (cellHeight+spacingY)*( Math.ceil( data.data.server.length/2));
+            // console.log(height);
+            // scorllheight.designResolution  = new cc.Size(600, height);
+            scorllheight.setContentSize(600,height);
         })
     },
 
