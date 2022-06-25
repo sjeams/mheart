@@ -20,7 +20,7 @@ class VideoController extends ApiControl
     public $layout = 'null';
     function init (){
         parent::init();
-
+        set_time_limit(0);
     }
 
     /**
@@ -36,7 +36,6 @@ class VideoController extends ApiControl
             Video::getQueryList($i,$belong);
             // echo $i.'<br>';
         }
-        
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
 
@@ -61,39 +60,42 @@ class VideoController extends ApiControl
      */
     public function actionIndex()
     {
-    
+        $password=1;
+
         $login = Yii::$app->request->get('login');
         // $belong = Yii::$app->request->get('belong');
-        if($login!=123){
+        if($login!=$password){
             $login = Yii::$app->session->get('login');
             $belong = Yii::$app->session->get('belong');
-            if($login!=123){
+            if($login!=$password){
                 $belong=0;
             }else{
                 $belong=1;
             }
         }else{
-            Yii::$app->session->set('login',123);
+            Yii::$app->session->set('login',$password);
             $belong=1;
         }
         
-
+        $type = Yii::$app->request->get('type',0);
         $title = Yii::$app->request->get('title');
         $where ="1=1";
 
         if($belong ==0){
             $where .= " and belong =$belong"; 
         }
-
+        if($type!=''){
+            $where .= " and type = $type ";
+        }
         if($title){
             $where .= " and title like '%$title%'";
         }
         $count = Video::find()->select("id")->where($where)->count();
-        $page = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
         $brush=Video::find()
         // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
  
-        ->where($where)->offset($page->offset)->limit($page->limit)->asarray()->all();
+        ->where($where)->offset($page->offset)->limit($page->limit)->orderBy('id desc')->asarray()->all();
         foreach ($brush as $k=>$v){
         //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
         //     $brush[$k]['total'] = $num;

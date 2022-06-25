@@ -24,11 +24,11 @@ class Video extends ActiveRecord {
 	// 采集列表
     public static function getQueryUrl($page,$belong)
     {
-
+		// 类型  0国产--1主播/  2少女  3熟女 4日本  5其它  6AI  7三级 8精品
 		$list=array(
 			// 新东方
 			// array($belong,0,'国产主播','/vod/type/id/40/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
-			array($belong,6,'国产主播','/index.php/vod/type/id/36/page/'.$page.'.html','http://aibozy.com/'),
+			array($belong,7,'国产主播','/index.php/vod/type/id/31/page/'.$page.'.html','http://aibozy.com/'),
 			// 小站
 			// array(2,2,'小站备考心经','https://gre.zhan.com/beikao/'),
 		);
@@ -48,7 +48,7 @@ class Video extends ActiveRecord {
     public static function getQueryList($page,$belong)
     {
 		$res =Video::getQueryUrl($page,$belong);
-		// var_dump($res);die;
+ 
 		foreach($res as$key=> $v){
 			switch($v['belong']){
 				case 1 :     	
@@ -81,8 +81,7 @@ class Video extends ActiveRecord {
 			foreach($data as $ky=>$val){
 				// $sql = array(false,'xdf_Video',array("oldTitle = '{$val['title']}'"),false);
 				// $indata = $this->db->fetch($this->sql->makeSelect($sql));
-				$indata=	Video::find()->where("title='{$val['title']}'")->asarray()->One();
-				// var_dump($indata);die;
+				$indata=	Video::find()->select('id')->where("title='{$val['title']}'")->asarray()->One();
 				if(!$indata){
 					Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http']);
 				}
@@ -97,7 +96,7 @@ class Video extends ActiveRecord {
 
 
 		
-
+	
 		switch($belong){
 			case 1 :     	// 新东方
 				$content1= array('.play-body ','text');
@@ -116,6 +115,9 @@ class Video extends ActiveRecord {
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
 					$args['imageurl']=$val['imageurl'];
+					if((string)strpos($args['imageurl'],'http')==''){
+						$args['imageurl']=$http.$args['imageurl'];
+					} 
 					$args['type']= $type;
 					$args['belong']= $belong;
 					$args['link']= $link;
@@ -127,7 +129,7 @@ class Video extends ActiveRecord {
 
 			break;
 			case 2 :     	// 新东方
-
+			
 				$val['title']= Method::getMytrim($val['title']);
 				$content1= array('li input','value');
 				$content2= array('.lazy ','src');
@@ -142,7 +144,7 @@ class Video extends ActiveRecord {
 					'imageurl' => $content2
 				))->data;
 
-				// var_dump($data1);
+			
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
@@ -150,11 +152,16 @@ class Video extends ActiveRecord {
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
 					$args['imageurl']=$data1[0]['imageurl'];
+ 
+					if((string)strpos($args['imageurl'],'http')==''){
+						$args['imageurl']=$http.$args['imageurl'];
+					} 
 					$args['type']= $type;
 					$args['belong']= $belong;
 					$args['link']= $link;
 					// var_dump($args);die;
 					// return $array[1][0];
+					// var_dump($args);die;
 					Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 				} 
 	

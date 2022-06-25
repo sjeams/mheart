@@ -40,7 +40,19 @@
                 <td>
                     标题：
                     <input name="title" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
+                    <a href="/cn/video/index?page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
+                    <a href="/cn/video/index?type=0&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
+                    <a href="/cn/video/index?type=1&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
+                    <a href="/cn/video/index?type=2&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
+                    <a href="/cn/video/index?type=3&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
+                    <a href="/cn/video/index?type=4&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日本</a>
+                    <a href="/cn/video/index?type=5&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
+                    <a href="/cn/video/index?type=6&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI</a>
+                    <a href="/cn/video/index?type=7&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
+                    <a href="/cn/video/index?type=8&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
+
                 </td>
+                
                 <td>
                     <button class="btn btn-primary" type="submit">搜索</button>
                 </td>
