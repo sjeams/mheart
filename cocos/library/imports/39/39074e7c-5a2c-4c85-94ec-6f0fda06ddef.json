@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "login_alert",
-    "texture": "327c76c9-49a2-410e-b9e4-5f6f388ab41f",
+    "name": "13334",
+    "texture": "31b47881-545a-45cf-9215-5f5ebba6b2d7",
     "atlas": "",
     "rect": [
-      430,
-      12,
-      1384,
-      996
+      33,
+      8,
+      334,
+      109
     ],
     "offset": [
-      -48,
-      30
+      1,
+      3.5
     ],
     "originalSize": [
-      2340,
-      1080
+      398,
+      132
     ],
     "capInsets": [
       0,

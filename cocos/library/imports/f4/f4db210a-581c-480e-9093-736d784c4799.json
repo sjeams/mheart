@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "login_alert",
-    "texture": "327c76c9-49a2-410e-b9e4-5f6f388ab41f",
+    "name": "canser",
+    "texture": "8fc00a6e-4265-4e6f-b578-71c40e8f9386",
     "atlas": "",
     "rect": [
-      430,
-      12,
-      1384,
-      996
+      0,
+      5,
+      141,
+      125
     ],
     "offset": [
-      -48,
-      30
+      -0.5,
+      -2.5
     ],
     "originalSize": [
-      2340,
-      1080
+      142,
+      130
     ],
     "capInsets": [
       0,
