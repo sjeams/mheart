@@ -66,11 +66,10 @@ cc.Class({
              
         //     });
         // })
-        var _this =this;
-     
         var token =cc.sys.localStorage.getItem('token');
         if(token){
                 httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {'token':token} ,function (data) {
+                    var _this =this;
                     // cc.loader.release('resources/login.json'); //释放json 资源
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                     //     jsb.fileUtils.writeStringToFile(data,token)
@@ -80,7 +79,7 @@ cc.Class({
                     if(data.code==0){
                         // this.loginbox.node.active = false;  // 进度隐藏
                     }else{
-                        this.node.active = false  
+                         // this.loginbox.node.active = false;  // 进度隐藏
                     }
             });
 
