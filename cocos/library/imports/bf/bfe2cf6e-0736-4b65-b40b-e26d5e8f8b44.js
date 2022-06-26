@@ -85,7 +85,7 @@ cc.Class({
       if (data.code == 1) {
         // _this.register_alert.color =  new cc.color('#BDFF00');
         _this.register_alert.string = '';
-        cc.sys.localStorage.setItem('token', data.token);
+        cc.sys.localStorage.setItem('token', data.data.token);
         cc.sys.localStorage.setItem('loginname', loginname);
         cc.sys.localStorage.setItem('password', password);
         _this.node.active = false;
