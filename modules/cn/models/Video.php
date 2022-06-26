@@ -24,11 +24,11 @@ class Video extends ActiveRecord {
 	// 采集列表
     public static function getQueryUrl($page,$belong)
     {
-		// 类型  0国产--1主播/  2少女/无码  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9收藏
+		// 类型  0国产--1主播/  2少女  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9无码  10 收藏
 			// 新东方
 			if($belong==1){
 				$list=array(
-					array($belong,8,'国产主播','/vod/type/id/76/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
+					array($belong,1,'国产主播','/vod/type/id/74/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
 				);
 			}else if($belong==2){
 				$list=array(

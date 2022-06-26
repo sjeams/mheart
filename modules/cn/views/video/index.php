@@ -22,7 +22,16 @@
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
- 
+ <style>
+
+     .check a{
+        display: inline-block;
+        width: 60px;
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+     }
+ </style>
  
 <!-- 按钮 -->
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
@@ -38,23 +47,34 @@
         <table class="table">
             <tr>
                 <td>
+                    <p>
                     标题：
-                    <input name="title" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
+                        <input name="title" class="input-small" size="25" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
+                
+                        <button class="btn btn-primary" type="submit">搜索</button>
+                    </p>
+                    <p class="check">
                     <a href="/cn/video/index?page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
                     <a href="/cn/video/index?type=0&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
                     <a href="/cn/video/index?type=1&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
                     <a href="/cn/video/index?type=2&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
                     <a href="/cn/video/index?type=3&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
                     <a href="/cn/video/index?type=4&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
+                  
+                    </p>
+                    <p class="check">
                     <a href="/cn/video/index?type=5&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
                     <a href="/cn/video/index?type=6&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
                     <a href="/cn/video/index?type=7&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
                     <a href="/cn/video/index?type=8&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
-                    <a href="/cn/video/index?type=9&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9收藏</a>
+                    <a href="/cn/video/index?type=9&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
+                    <a href="/cn/video/index?type=10&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
+                    </p>
+
                 </td>
-                
+                    <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
                 <td>
-                    <button class="btn btn-primary" type="submit">搜索</button>
+            
                 </td>
             </tr>
         </table>
