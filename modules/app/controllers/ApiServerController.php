@@ -93,7 +93,7 @@ class ApiServerController extends ApiControl{
         if(!empty($data['token'])){
             $login =  UserLogin ::find()->select('id,server')->where( "token = '{$data['token']}' "  )->asArray()->One();
             if(!empty($login)){ // 验证登录
-                $userinfo =  UserLogin::find()->where( "loginid = {$login['id']}  and  server = {$login['server']} ")->asArray()->One();
+                $userinfo =  User::find()->where( "loginid = {$login['id']}  and  server = {$login['server']} ")->asArray()->One();
                 $server =  UserServer::find()->select("id,name")->where( "id = {$login['server']} ")->asArray()->One();
                 $server['loginid'] =$login['id']; // 定义loginid
                 if(!empty($userinfo)){
