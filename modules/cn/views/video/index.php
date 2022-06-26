@@ -27,9 +27,16 @@
      .check a{
         display: inline-block;
         width: 65px;
-        padding: 5px;
+ 
         border: 1px solid black;
         text-align: center;
+     }
+     .collect{
+        display: inline-block;
+        width: 65px;
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;   
      }
  </style>
  
@@ -105,8 +112,10 @@
                     <td  style=" width:25%">
                         <a href="<?php echo $v['url']?>" target="blank">
                         <p> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
-                        <p><?php echo $v['title']?></p>
+                        <p> <?php echo $v['title']?></p>
+ 
                         </a>
+                        <p> <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span></p>
                     </td>
                     <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
      
@@ -124,7 +133,7 @@
         <!-- <button class="push btn btn-primary" type="submit">排序</button> -->
     </form>
 
-
+   <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
     <div class="pagination pagination-left">
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
@@ -134,36 +143,64 @@
 </div>
 
 <script>
-  function  updateStatus(obj){
-      var id = $(obj).data('id');
-      var status = $(obj).data('value');
-    if(status==1){status=0;}else{status=1;}
-    $.ajax({
-        url: '/cn/user/updatestatus', // 跳转到 action 
-        data:{
-            id: id,
-            status: status,
-            // editStatus : 1,
-        },
-        type: 'post',
-        // dataType: 'json',
-        success: function (data) {
-            //查看还是取消
-            if(status==0){ var shownum =parseInt( $('#brush b').text( ))+1;  }else{  var shownum =parseInt( $('#brush b').text( ))-1;}
-            
-            if(shownum==0){    
-                $('#brush b').css('display','none');
-            }else{
-                $('#brush b').css('display','inline-block');
+
+ 
+    function  videoup(id){
+        var videotype =$("#videotype").val();
+
+        $.ajax({
+            url: '/cn/video/up', // 跳转到 action 
+            data:{
+                id: id,
+            },
+            type: 'post',
+            // dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                if(data==1){
+                    $('.videoup'+id).html('取消');  
+      
+                }else{
+                    $('.videoup'+id).html('收藏');   
+                    if(videotype==10 ){
+                        window.location.reload();
+                    }
+                }
+            },
+            error: function () {
             }
-            $('#brush b').text(shownum );
-            // alert(status);
-            $(obj).data('value',status);  // 修改状态
-        },
-        error: function () {
-        }
-    });
-  }
+        });
+    }
+//   function  updateStatus(obj){
+//       var id = $(obj).data('id');
+//       var status = $(obj).data('value');
+//     if(status==1){status=0;}else{status=1;}
+//     $.ajax({
+//         url: '/cn/user/updatestatus', // 跳转到 action 
+//         data:{
+//             id: id,
+//             status: status,
+//             // editStatus : 1,
+//         },
+//         type: 'post',
+//         // dataType: 'json',
+//         success: function (data) {
+//             //查看还是取消
+//             if(status==0){ var shownum =parseInt( $('#brush b').text( ))+1;  }else{  var shownum =parseInt( $('#brush b').text( ))-1;}
+            
+//             if(shownum==0){    
+//                 $('#brush b').css('display','none');
+//             }else{
+//                 $('#brush b').css('display','inline-block');
+//             }
+//             $('#brush b').text(shownum );
+//             // alert(status);
+//             $(obj).data('value',status);  // 修改状态
+//         },
+//         error: function () {
+//         }
+//     });
+//   }
 </script>
 
 

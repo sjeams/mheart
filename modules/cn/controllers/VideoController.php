@@ -128,7 +128,15 @@ class VideoController extends ApiControl
             $where .= " and belong =$belong"; 
         }
         if($type!=''){
-            $where .= " and type = $type ";
+     
+            if($type==10){
+                // 收藏视频
+                $where .= " and up = 1"; 
+            }else{
+                // 不同类型视频
+                $where .= " and type = $type ";
+            }
+
         }
         if($title){
             $where .= " and title like '%$title%'";
@@ -148,9 +156,27 @@ class VideoController extends ApiControl
         // var_dump($brush);die;
         return $this->render('index',['content'=>$brush,'page'=>$page]);
 
-
     }
-    
+    /**
+     * 基本信息
+     * by  sjeam
+     * http://www.mheart.cc/cn/video/up
+     */
+    public function actionUp()
+    {
+        $id = Yii::$app->request->post('id');
+        // var_dump($page);
+        $video=Video::find()->where("id =$id ")->one();
+        if($video->up==1){
+            $video->up=0;
+        }else{
+            $video->up=1;
+        }
+        $video->save();
+        // echo  "第".$page."页，采集完成。</br>";
+        // die(Method::jsonGenerate(1,['up'=>$video->up],'返回数据成功'));
+        echo $video->up;
+    } 
 
 
 }
