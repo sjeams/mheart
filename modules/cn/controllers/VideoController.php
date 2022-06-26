@@ -22,22 +22,65 @@ class VideoController extends ApiControl
         parent::init();
         set_time_limit(0);
     }
+    /**
+     * 基本信息
+     * by  sjeam
+     * http://www.mheart.cc/cn/video/reload
+     */
+    public function actionReload()
+    {
+        $total =72;
+        $belong =3;
+        $page = Yii::$app->request->get('page');
+        if(!$page){
+            $page=$total;
+        }else{
+            $page = $page-1;
+        }
+        if($page<=0){
+            echo 'ok,采集完成!!';die;
+        }
+        return $this->render('reload',[ 'page'=>$page,'belong'=>$belong]);
+    }
+
+
+    // /**
+    //  * 基本信息
+    //  * by  sjeam
+    //  * http://www.mheart.cc/cn/video/uploade
+    //  */
+    // public function actionUploade()
+    // {
+
+    //     $belong =2; 
+    //     for($page=1;$page<=15;$page++){
+    //         $res = Method::curl_post_fix($_SERVER['SERVER_NAME']."/cn/video/updateurl",['belong' => $belong,'page' => $page]);
+    //         print_r($res);
+    //     }
+    //     var_dump('OK');die;
+    //     // die(Method::jsonGenerate(1,[],'返回数据成功'));
+    // }
+
+
 
     /**
      * 基本信息
      * by  sjeam
+     * http://www.mheart.cc/cn/video/updateurl
      */
-    public function actionUploade()
+    public function actionUpdateurl()
     {
-
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
-        $belong =2;   
-        for($i=1;$i<=15;$i++){
-            Video::getQueryList($i,$belong);
-            // echo $i.'<br>';
-        }
+        $page = Yii::$app->request->post('page',5);
+        $belong = Yii::$app->request->post('belong',3);
+        // var_dump($page);
+        Video::getQueryList($page,$belong);
+        // echo  "第".$page."页，采集完成。</br>";
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
+
+
+
 
 
   /**

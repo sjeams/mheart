@@ -90,9 +90,9 @@ class ApiServerController extends ApiControl{
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
-            $login =  UserLogin ::find()->select('id')->where( "loginname = '{$data['loginname']}'  and  password = '{$data['password']}' "  )->asArray()->One();
+            $login =  UserLogin ::find()->select('id')->where( "token = '{$data['token']}' "  )->asArray()->One();
             if(!empty($login)){ // 验证登录
-                $userinfo =  User::find()->where( "loginid = {$login['id']}  and  server = {$data['serverid']} ")->asArray()->One();
+                $userinfo =  User::find()->where( "loginid = {$login['id']}  and  server = {$login['server']} ")->asArray()->One();
                 $server =  UserServer::find()->select("id,name")->where( "id = {$data['serverid']} ")->asArray()->One();
                 $server['loginid'] =$login['id']; // 定义loginid
                 if(!empty($userinfo)){

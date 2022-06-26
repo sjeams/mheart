@@ -12,10 +12,23 @@ var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
-    editbox: cc.EditBox
+    register_alert: cc.Label,
+    register_login_name: cc.EditBox,
+    register_login_password: cc.EditBox
   },
   onLoad: function onLoad() {
-    // 操作文本--读取用户信息
+    var loginname = cc.sys.localStorage.getItem('loginname');
+    var password = cc.sys.localStorage.getItem('password');
+
+    if (loginname) {
+      this.register_login_name.getComponent(cc.EditBox).string = loginname;
+    }
+
+    if (loginname) {
+      this.register_login_password.getComponent(cc.EditBox).string = password;
+    } // 操作文本--读取用户信息
+
+
     this.tokenlogin(); // 快捷登录
     // // 账号密码登录
     // this.login();
@@ -55,12 +68,31 @@ cc.Class({
     });
   },
   login: function login() {
+    var loginname = this.register_login_name.getComponent(cc.EditBox).string;
+    var password = this.register_login_password.getComponent(cc.EditBox).string;
     var params = {
-      'loginname': 'yincan1993',
-      'password': 123456
+      'loginname': loginname,
+      'password': password // 'loginname': 'yincan1993',
+      // 'password': 123456,
+
     };
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params, function (data) {// cc.log(data); 
-      //操作文本--修改用户信息
+
+    var _this = this;
+
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params, function (data) {
+      cc.log(data);
+
+      if (data.code == 1) {
+        // _this.register_alert.color =  new cc.color('#BDFF00');
+        _this.register_alert.string = '';
+        cc.sys.localStorage.setItem('token', data.token);
+        cc.sys.localStorage.setItem('loginname', loginname);
+        cc.sys.localStorage.setItem('password', password);
+        _this.node.active = false;
+      } else {
+        _this.register_alert.string = '账号密码错误!';
+      } //操作文本--修改用户信息
+
     });
   },
   btnClick1: function btnClick1(event, customEventData) {
@@ -71,10 +103,13 @@ cc.Class({
     //         'serverid': 1,
     // };
     // cc.sys.localStorage.setItem('params', JSON.stringify(params));
-    var params = JSON.parse(cc.sys.localStorage.getItem("params")); // cc.log(value); 
+    var params = JSON.parse(cc.sys.localStorage.getItem("params"));
+    var token = cc.sys.localStorage.getItem('token'); // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
 
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', params, function (data) {
+    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {
+      'token': token
+    }, function (data) {
       cc.log(data);
 
       if (data.code == 0) {// 登录失败，或本地数据失效
@@ -130,8 +165,14 @@ cc.Class({
     //     }
     // });
   },
-  start: function start() {} // update (dt) {},
-
+  start: function start() {},
+  // update (dt) {},
+  show_dlg: function show_dlg() {
+    this.node.active = true;
+  },
+  hidden_dlg: function hidden_dlg() {
+    this.node.active = false;
+  }
 });
 
 cc._RF.pop();
