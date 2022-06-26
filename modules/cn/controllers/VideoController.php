@@ -29,8 +29,8 @@ class VideoController extends ApiControl
      */
     public function actionReload()
     {
-        $total =35;
-        $belong =3;
+        $total =69;
+        $belong =1;
         $page = Yii::$app->request->get('page');
         if(!$page){
             $page=$total;
@@ -71,8 +71,8 @@ class VideoController extends ApiControl
     public function actionUpdateurl()
     {
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
-        $page = Yii::$app->request->post('page',5);
-        $belong = Yii::$app->request->post('belong',3);
+        $page = Yii::$app->request->post('page',1);
+        $belong = Yii::$app->request->post('belong',1);
         // var_dump($page);
         Video::getQueryList($page,$belong);
         // echo  "第".$page."页，采集完成。</br>";
@@ -134,15 +134,17 @@ class VideoController extends ApiControl
             $where .= " and title like '%$title%'";
         }
         $count = Video::find()->select("id")->where($where)->count();
-        $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
+        // $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
+        $page = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        // var_dump($page);die;
         $brush=Video::find()
         // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
  
         ->where($where)->offset($page->offset)->limit($page->limit)->orderBy('id desc')->asarray()->all();
-        foreach ($brush as $k=>$v){
+        // foreach ($brush as $k=>$v){
         //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
         //     $brush[$k]['total'] = $num;
-        }
+        // }
         // var_dump($brush);die;
         return $this->render('index',['content'=>$brush,'page'=>$page]);
 

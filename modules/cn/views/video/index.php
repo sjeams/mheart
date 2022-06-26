@@ -50,7 +50,7 @@
                     <a href="/cn/video/index?type=6&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
                     <a href="/cn/video/index?type=7&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
                     <a href="/cn/video/index?type=8&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
-
+                    <a href="/cn/video/index?type=9&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9收藏</a>
                 </td>
                 
                 <td>
@@ -81,8 +81,13 @@
                 <tr>
                     <!-- <input name="id[]" type="hidden"  value="<?php echo $v['id']?>"> -->
                   
-                    <td  style=" width:15%"><span><a href="<?php echo $v['url']?>" target="blank"><?php echo $v['title']?></a></span></td>
-                    <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td>
+                    <td  style=" width:25%">
+                        <a href="<?php echo $v['url']?>" target="blank">
+                        <p> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p><?php echo $v['title']?></p>
+                        </a>
+                    </td>
+                    <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
      
                     <!-- <td  class="notSLH" style="width: 247px;">
                         <div>
