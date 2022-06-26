@@ -36,7 +36,7 @@ class Video extends ActiveRecord {
 				);
 			}else if($belong==3){
 				$list=array(
-					array($belong,0,'国产主播','/index.php/vod/type/id/22/page/'.$page.'.html','http://yinwozy9.com'),
+					array($belong,2,'国产主播','/index.php/vod/type/id/24/page/'.$page.'.html','http://yinwozy9.com'),
 				);
 
 			}			

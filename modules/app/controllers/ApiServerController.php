@@ -50,7 +50,7 @@ class ApiServerController extends ApiControl{
         if(!empty($data)){
             $login =  UserLogin ::find()->select('id')->where( "token = '{$data['token']}'  "  )->One();
             if(!empty($login)){ // 验证登录--返回token
-                die(json_encode(['code' => 1,'data'=>['token' =>$token],'message' => '登录成功']));
+                die(json_encode(['code' => 1,'data'=>['token' =>$data['token']],'message' => '登录成功']));
             } 
         }
         die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   

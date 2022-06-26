@@ -15,6 +15,7 @@ cc.Class({
     onLoad: function () {
         var loginname =cc.sys.localStorage.getItem('loginname');
         var password =cc.sys.localStorage.getItem('password');
+        // console.log(loginname)
         if(loginname){
            this.register_login_name.getComponent(cc.EditBox).string=loginname;
         }
@@ -23,7 +24,6 @@ cc.Class({
         }
         // 操作文本--读取用户信息
         this.tokenlogin(); // 快捷登录
-
         // // 账号密码登录
         // this.login();
         //储存缓存
@@ -42,34 +42,53 @@ cc.Class({
 
  
     },
-     
     tokenlogin: function(){
         // 获取本地json  信息
         // cc.loader.load( cc.url.raw("resources/login.json"),function(err,res){  
-        cc.loader.loadRes('login.json',function(err,res){   //默认resources
-            let json = res.json;
-            var params = {
-                'token': json.token,
-            };
-            cc.log(json.token); 
-            var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
-                cc.loader.release('resources/login.json'); //释放json 资源
-                // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
-                //     jsb.fileUtils.writeStringToFile(data,token)
-                // }
-                // cc.log(data); 
-                // 未登录弹出登录
-                if(data.code==0){
-                    // this.loginbox.node.active = false;  // 进度隐藏
-                }
-             
-            });
-        })
+        // cc.loader.loadRes('login.json',function(err,res){   //默认resources
+        //     let json = res.json;
+        //     var params = {
+        //         'token': json.token,
+        //     };
+        //     cc.log(json.token); 
+        //     var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+        //         cc.loader.release('resources/login.json'); //释放json 资源
+        //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
+        //         //     jsb.fileUtils.writeStringToFile(data,token)
+        //         // }
+        //         // cc.log(data); 
+        //         // 未登录弹出登录
+        //         if(data.code==0){
+        //             // this.loginbox.node.active = false;  // 进度隐藏
 
+                    
+        //         }
+             
+        //     });
+        // })
+        var _this =this;
+     
+        var token =cc.sys.localStorage.getItem('token');
+        if(token){
+                httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {'token':token} ,function (data) {
+                    // cc.loader.release('resources/login.json'); //释放json 资源
+                    // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
+                    //     jsb.fileUtils.writeStringToFile(data,token)
+                    // }
+                    // cc.log(data); 
+                    // 未登录弹出登录
+                    if(data.code==0){
+                        // this.loginbox.node.active = false;  // 进度隐藏
+                    }else{
+                        this.node.active = false  
+                    }
+            });
+
+        } 
     },
 
     login: function(){
-
+    
        var loginname = this.register_login_name.getComponent(cc.EditBox).string;
        var password = this.register_login_password.getComponent(cc.EditBox).string;
         var params = {
