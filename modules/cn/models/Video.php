@@ -40,7 +40,7 @@ class Video extends ActiveRecord {
 				);
 			}else if($belong==4){
 				$list=array(
-					array($belong,9,'国产主播','/index.php/vod/type/id/4/page/'.$page.'.html','http://tantanzy11.com'),
+					array($belong,7,'国产主播','/index.php/vod/type/id/35/page/'.$page.'.html','http://tantanzy11.com'),
 				);
 			}	
 			
