@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 520,
-      "y": 154,
-      "width": 1335,
-      "height": 800,
+      "x": 858,
+      "y": 117,
+      "width": 1063,
+      "height": 740,
       "layout": {
         "children": [
           {
@@ -96,7 +96,8 @@
         "cocos-services"
       ]
     },
-    "worker": {}
+    "worker": {},
+    "window-1656321653468": {}
   },
   "panels": {
     "project-settings": {
