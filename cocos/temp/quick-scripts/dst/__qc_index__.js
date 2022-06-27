@@ -21,6 +21,8 @@ require('./assets/Script/login/ProgressBarScript');
 require('./assets/Script/login/SpriteTextTool');
 require('./assets/Script/login/Tools');
 require('./assets/Script/login/background');
+require('./assets/Script/login/button_check');
+require('./assets/Script/login/button_xieyi');
 require('./assets/Script/login/http');
 require('./assets/Script/login/jspfile');
 require('./assets/Script/login/loading');
