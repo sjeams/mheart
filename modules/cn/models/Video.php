@@ -28,7 +28,7 @@ class Video extends ActiveRecord {
 			// 新东方
 			if($belong==1){
 				$list=array(
-					array($belong,1,'国产主播','/vod/type/id/74/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
+					array($belong,0,'国产主播','/vod/type/id/40/page/'.$page.'.html','https://www.zhishub-wwwjipotv.cc:2083'),
 				);
 			}else if($belong==2){
 				$list=array(

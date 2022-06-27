@@ -29,7 +29,7 @@ class VideoController extends ApiControl
      */
     public function actionReload()
     {
-        $total =28;
+        $total =401;
         $belong =1;
         $page = Yii::$app->request->get('page');
         if(!$page){
@@ -177,6 +177,20 @@ class VideoController extends ApiControl
         // die(Method::jsonGenerate(1,['up'=>$video->up],'返回数据成功'));
         echo $video->up;
     } 
-
+    /**
+     * 基本信息
+     * by  sjeam
+     * http://www.mheart.cc/cn/video/delete
+     */
+    public function actionDelete()
+    {
+        $id = Yii::$app->request->post('id');
+        // var_dump($page);
+        $video=Video::find()->where("id =$id ")->one();
+        $video->delete();
+        // echo  "第".$page."页，采集完成。</br>";
+        // die(Method::jsonGenerate(1,['up'=>$video->up],'返回数据成功'));
+        echo true;
+    } 
 
 }

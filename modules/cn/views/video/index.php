@@ -61,22 +61,22 @@
                         <button class="btn btn-primary" type="submit">搜索</button>
                     </p>
                     <p class="check">
-                    <a href="/cn/video/index?page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
-                    <a href="/cn/video/index?type=0&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
-                    <a href="/cn/video/index?type=1&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
-                    <a href="/cn/video/index?type=2&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
+                    <a href="/cn/video/index?page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
+                    <a href="/cn/video/index?type=0&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
+                    <a href="/cn/video/index?type=1&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
+                    <a href="/cn/video/index?type=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
                     </p>
                     <p class="check">
-                    <a href="/cn/video/index?type=3&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
-                    <a href="/cn/video/index?type=4&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
-                    <a href="/cn/video/index?type=5&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
-                    <a href="/cn/video/index?type=6&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
+                    <a href="/cn/video/index?type=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
+                    <a href="/cn/video/index?type=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
+                    <a href="/cn/video/index?type=5&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
+                    <a href="/cn/video/index?type=6&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
                     </p>
                     <p class="check">
-                    <a href="/cn/video/index?type=7&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
-                    <a href="/cn/video/index?type=8&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
-                    <a href="/cn/video/index?type=9&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
-                    <a href="/cn/video/index?type=10&page=<?php echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
+                    <a href="/cn/video/index?type=7&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
+                    <a href="/cn/video/index?type=8&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
+                    <a href="/cn/video/index?type=9&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
+                    <a href="/cn/video/index?type=10&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
                     </p>
 
                 </td>
@@ -115,7 +115,10 @@
                         <p> <?php echo $v['title']?></p>
  
                         </a>
-                        <p> <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span></p>
+                        <p> 
+                            <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
+                            <span onclick="Delete(<?php echo $v['id']?>)" class="collect"> 删除 </span>
+                        </p>
                     </td>
                     <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
      
@@ -140,11 +143,20 @@
             'pagination' => $page,
         ])?>
     </div>
+    <p>
+        <input type="text" value="<?php echo isset($_GET['page'])?$_GET['page']:''?>" id="goPage">
+        <input type="button"  onclick="gou()" value="GO">
+
+    </p>
+
 </div>
 
 <script>
-
  
+    function  gou(){
+        var goPage =$("#goPage").val();
+        window.location.href="/cn/video/index?page="+goPage+"&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>";
+    }
     function  videoup(id){
         var videotype =$("#videotype").val();
 
@@ -169,6 +181,22 @@
             },
             error: function () {
             }
+        });
+    }
+
+    
+    function  Delete(id){
+        $.ajax({
+            url: '/cn/video/delete', // 跳转到 action 
+            data:{
+                id: id,
+            },
+            type: 'post',
+            // dataType: 'json',
+            success: function (data) {
+                window.location.reload();
+          
+            },
         });
     }
 //   function  updateStatus(obj){
