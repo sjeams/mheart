@@ -29,8 +29,8 @@ class VideoController extends ApiControl
      */
     public function actionReload()
     {
-        $total =401;
-        $belong =1;
+        $total =43;
+        $belong =4;
         $page = Yii::$app->request->get('page');
         if(!$page){
             $page=$total;
@@ -72,7 +72,7 @@ class VideoController extends ApiControl
     {
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $page = Yii::$app->request->post('page',1);
-        $belong = Yii::$app->request->post('belong',1);
+        $belong = Yii::$app->request->post('belong',4);
         // var_dump($page);
         Video::getQueryList($page,$belong);
         // echo  "第".$page."页，采集完成。</br>";

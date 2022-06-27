@@ -38,8 +38,14 @@ class Video extends ActiveRecord {
 				$list=array(
 					array($belong,2,'国产主播','/index.php/vod/type/id/24/page/'.$page.'.html','http://yinwozy9.com'),
 				);
-
-			}			
+			}else if($belong==4){
+				$list=array(
+					array($belong,9,'国产主播','/index.php/vod/type/id/4/page/'.$page.'.html','http://tantanzy11.com'),
+				);
+			}	
+			
+			
+			
 			// 小站
 			// array(2,2,'小站备考心经','https://gre.zhan.com/beikao/'),
 	
@@ -80,7 +86,16 @@ class Video extends ActiveRecord {
 					$content3= array('.videoContent li .videoName>img','src','');
 		
 				break;
+
+				case 4 :   		// 小站
+					$content1= array('.content .nr li span .name','href','');
+					$content2= array('.content .nr li span .name','html','');
+					$content3= array('.content .nr li span .name>img','src','');
+		
+				break;
 			}
+
+			
 			// 抓取列表  --结果
 			$httpurl =$v['http'].$v['url'];
 			// var_dump($httpurl);die;
@@ -219,6 +234,44 @@ class Video extends ActiveRecord {
 					// var_dump($args);die;
 					Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 				} 
+			break;
+			case 4 :     	// 新东方
+				
+				$val['title']= Method::getMytrim($val['title']);
+				$content1= array('li input','value');
+				$content2= array('.lazy ','src');
+
+				// $content2= array('h1','text');
+				// $model	='.xqy_core_main';
+				$link =$http.$val['url'];
+				// var_dump($link);
+				$data1 = QueryList::Query($link,array(
+					'content' => $content1,
+					'imageurl' => $content2
+				))->data;
+
+			
+				if(!empty($data1[0]['content'] )){
+					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
+					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					// var_dump($array);die;
+					$args['url']=$array[1][0];
+					$args['title']= addslashes($val['title']);
+					$args['imageurl']=$data1[0]['imageurl'];
+ 
+					if((string)strpos($args['imageurl'],'http')==''){
+						$args['imageurl']=$http.$args['imageurl'];
+					} 
+					$args['type']= $type;
+					$args['belong']= $belong;
+					$args['link']= $link;
+					// var_dump($args);die;
+					// return $array[1][0];
+					// var_dump($args);die;
+					Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
+				} 
+	
+
 			break;
 		}
  
