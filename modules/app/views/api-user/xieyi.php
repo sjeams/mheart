@@ -5,7 +5,34 @@
         word-wrap: break-all;
         word-break: normal;
         overflow: hidden;
+        
     }
+/* //滚动条样式 */
+::-webkit-scrollbar
+{
+  width: 10px;
+}
+/* 垂直滚动条的滑动块 */
+::-webkit-scrollbar-thumb:vertical {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color:#717270;
+}
+ 
+::-webkit-scrollbar-track {
+    border: 1px #d3d3d3 solid;
+    box-shadow: 0px 0px 3px #dfdfdf inset;
+    border-radius: 10px;
+    background: #eee;
+}
+::-webkit-scrollbar-thumb {
+    border: 1px #808080 solid;
+    border-radius: 10px;
+    background: #999;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
 </style>
 <p>心缘网络游戏儿童个人信息保护政策及监护人须知</p>
 
