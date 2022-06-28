@@ -879,11 +879,6 @@
     "meta": 1656382857014,
     "relativePath": "Script\\login\\button_xieyi.js"
   },
-  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656407445559,
-    "meta": 1656407445584,
-    "relativePath": "Scene\\index.fire"
-  },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
     "asset": 1656384302615,
     "meta": 1656384304520,
@@ -928,5 +923,10 @@
     "asset": 1656403712938,
     "meta": 1656403722541,
     "relativePath": "Script\\login\\register_knows.js"
+  },
+  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
+    "asset": 1656411510220,
+    "meta": 1656411510254,
+    "relativePath": "Scene\\index.fire"
   }
 }
