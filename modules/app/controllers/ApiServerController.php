@@ -52,8 +52,12 @@ class ApiServerController extends ApiControl{
             $userinfo =  new UserLogin();
             $userinfo->loginname =$data['loginname'];
             $userinfo->password =$data['password'];
+            $token = md5($login['id'].'lhzm'.time());
+            $userinfo->token = $token;
             $userinfo->save();
-            die(json_encode(['code' => 1,'data'=>['token' =>null],'message' => '注册成功']));   
+
+            $login =  UserLogin ::find()->select('id,phone')->where( "token = '{$token}'  ")->asarray()->One();
+            die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '注册成功']));   
         }
     }
 
@@ -67,9 +71,9 @@ class ApiServerController extends ApiControl{
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
-            $login =  UserLogin ::find()->select('id')->where( "token = '{$data['token']}'  "  )->One();
+            $login =  UserLogin ::find()->select('id,phone')->where( "token = '{$data['token']}'  ")->asarray()->One();
             if(!empty($login)){ // 验证登录--返回token
-                die(json_encode(['code' => 1,'data'=>['token' =>$data['token']],'message' => '登录成功']));
+                die(json_encode(['code' => 1,'data'=>['token' =>$data['token'],'userinfo'=>$login],'message' => '登录成功']));
             } 
         }
         die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   
@@ -92,7 +96,8 @@ class ApiServerController extends ApiControl{
                 $token = md5($login['id'].'lhzm'.time());
                 $login->token = $token;
                 $login->save();
-                die(json_encode(['code' => 1,'data'=>['token' =>$token],'message' => '登录成功']));
+                $login =  UserLogin ::find()->select('id,phone')->where( "token = '{$token}'  ")->asarray()->One();
+                die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '登录成功']));   
             } 
         }
         die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   

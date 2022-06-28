@@ -7,9 +7,10 @@ cc.Class({
     extends: cc.Component,
  
     properties: {
-        register_alert: cc.Label,
-        register_login_name: cc.EditBox,
-        register_login_password: cc.EditBox
+        user_status:cc.Node,
+        user_phone:cc.Label,
+        // register_login_name: cc.EditBox,
+        // register_login_password: cc.EditBox
     },
  
     onLoad: function () {      
@@ -68,13 +69,11 @@ cc.Class({
                     //     jsb.fileUtils.writeStringToFile(data,token)
                     // }
                     // cc.log(data); 
-                    // 未登录弹出登录
-                    if(data.code==0){
-                        console.log(11)
-                        // this.loginbox.node.active = false;  // 进度隐藏
-                    }else{
-                         // this.loginbox.node.active = false;  // 进度隐藏
-                    }
+                    // 登录成功
+                    if(data.code==1){
+                        user_phone.string ='';
+                        _this.user_status.node.active = true;  // 进度隐藏
+                    } 
             });
 
         } 
@@ -90,7 +89,6 @@ cc.Class({
             // 'loginname': 'yincan1993',
             // 'password': 123456,
         };
-
         var _this= this;
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
             cc.log(data); 

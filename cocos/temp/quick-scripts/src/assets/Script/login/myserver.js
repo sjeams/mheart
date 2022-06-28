@@ -12,9 +12,10 @@ var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
-    register_alert: cc.Label,
-    register_login_name: cc.EditBox,
-    register_login_password: cc.EditBox
+    user_status: cc.Node,
+    user_phone: cc.Label // register_login_name: cc.EditBox,
+    // register_login_password: cc.EditBox
+
   },
   onLoad: function onLoad() {
     this.tokenlogin(); // 快捷登录
@@ -65,13 +66,12 @@ cc.Class({
         //     jsb.fileUtils.writeStringToFile(data,token)
         // }
         // cc.log(data); 
-        // 未登录弹出登录
+        // 登录成功
 
 
-        if (data.code == 0) {
-          console.log(11); // this.loginbox.node.active = false;  // 进度隐藏
-        } else {// this.loginbox.node.active = false;  // 进度隐藏
-          }
+        if (data.code == 1) {
+          _this.user_status.node.active = true; // 进度隐藏
+        }
       });
     }
   },
