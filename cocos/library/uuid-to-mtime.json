@@ -849,11 +849,6 @@
     "meta": 1656419775410,
     "relativePath": "Script\\login\\tips.js"
   },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1655985490332,
-    "meta": 1656419775437,
-    "relativePath": "Script\\login\\Tools.js"
-  },
   "31b47881-545a-45cf-9215-5f5ebba6b2d7": {
     "asset": 1656145373945,
     "meta": 1656419774747,
@@ -884,11 +879,6 @@
     "meta": 1656419775247,
     "relativePath": "Script\\login\\loading.js"
   },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1656419626424,
-    "meta": 1656419775353,
-    "relativePath": "Script\\login\\register.js"
-  },
   "976917f8-d11e-4f5c-9190-619188b1ae4e": {
     "asset": 1654182015206,
     "meta": 1656419774987,
@@ -910,8 +900,8 @@
     "relativePath": "Script\\config\\Conf.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656426612334,
-    "meta": 1656426612366,
+    "asset": 1656428472823,
+    "meta": 1656428472856,
     "relativePath": "Scene\\index.fire"
   },
   "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
@@ -924,9 +914,19 @@
     "meta": 1656425769552,
     "relativePath": "Script\\login\\register_in.js"
   },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1656426845620,
+    "meta": 1656426884763,
+    "relativePath": "Script\\login\\register.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1656427662573,
+    "meta": 1656427672111,
+    "relativePath": "Script\\login\\Tools.js"
+  },
   "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1656426609848,
-    "meta": 1656426612082,
+    "asset": 1656428470932,
+    "meta": 1656428472567,
     "relativePath": "Script\\login\\myserver.js"
   }
 }

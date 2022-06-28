@@ -61,49 +61,51 @@ cc.Class({
       httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {
         'token': token
       }, function (data) {
-        var _this = this; // cc.loader.release('resources/login.json'); //释放json 资源
+        // cc.loader.release('resources/login.json'); //释放json 资源
         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
         //     jsb.fileUtils.writeStringToFile(data,token)
         // }
-
-
         cc.log(data); // 登录成功
 
         if (data.code == 1) {
-          _this.user_phone.string = data.userinfo.loginname;
-          _this.user_status.node.active = true; // 进度隐藏
+          //定位弹出窗口
+          var user_status = cc.find("Canvas/server/user_status");
+          user_status.active = true;
+          var user_phone = cc.find("Canvas/server/user_status/user_phone");
+          var loginname = data.data.userinfo.loginname; // 其中slice(start, end)：用于提取字符串的片段
+          // str.slice(1) 指下标为1之后的所有元素
+
+          var phone = loginname.slice(0, 3) + "****" + loginname.slice(7, 10);
+          user_phone.getComponent(cc.Label).string = phone;
         }
       });
     }
   },
-  login: function login() {
-    var loginname = this.register_login_name.getComponent(cc.EditBox).string;
-    var password = this.register_login_password.getComponent(cc.EditBox).string;
-    var params = {
-      'loginname': loginname,
-      'password': password // 'loginname': 'yincan1993',
-      // 'password': 123456,
-
-    };
-
-    var _this = this;
-
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params, function (data) {
-      cc.log(data);
-
-      if (data.code == 1) {
-        // _this.register_alert.color =  new cc.color('#BDFF00');
-        _this.register_alert.string = '';
-        cc.sys.localStorage.setItem('token', data.data.token);
-        cc.sys.localStorage.setItem('loginname', loginname);
-        cc.sys.localStorage.setItem('password', password);
-        _this.node.active = false;
-      } else {
-        _this.register_alert.string = '账号密码错误!';
-      } //操作文本--修改用户信息
-
-    });
-  },
+  // login: function(){
+  //    var loginname = this.register_login_name.getComponent(cc.EditBox).string;
+  //    var password = this.register_login_password.getComponent(cc.EditBox).string;
+  //     var params = {
+  //         'loginname': loginname,
+  //         'password': password,
+  //         // 'loginname': 'yincan1993',
+  //         // 'password': 123456,
+  //     };
+  //     var _this= this;
+  //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+  //         cc.log(data); 
+  //         if(data.code==1){
+  //             // _this.register_alert.color =  new cc.color('#BDFF00');
+  //             _this.register_alert.string ='';
+  //             cc.sys.localStorage.setItem('token', data.data.token);
+  //             cc.sys.localStorage.setItem('loginname', loginname);
+  //             cc.sys.localStorage.setItem('password', password);
+  //             _this.node.active =false;
+  //         }else{
+  //             _this.register_alert.string ='账号密码错误!';
+  //         }
+  //         //操作文本--修改用户信息
+  //     });
+  // },
   btnClick1: function btnClick1(event, customEventData) {
     // // 请求登录接口
     // var params = {
