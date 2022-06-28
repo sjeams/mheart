@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'bfe2c9uBzZLZbQL4m1ej4tE', 'myserver');
-// Script/login/myserver.js
+cc._RF.push(module, 'e24f2TQo8ZGDYgWVYt3qr6q', 'register_in');
+// Script/login/register_in.js
 
 "use strict";
 
@@ -176,6 +176,18 @@ cc.Class({
   start: function start() {},
   // update (dt) {},
   show_dlg: function show_dlg() {
+    //显示出现账号密码
+    var loginname = cc.sys.localStorage.getItem('loginname');
+    var password = cc.sys.localStorage.getItem('password');
+
+    if (loginname) {
+      this.register_login_name.getComponent(cc.EditBox).string = loginname;
+    }
+
+    if (loginname) {
+      this.register_login_password.getComponent(cc.EditBox).string = password;
+    }
+
     this.node.active = true;
   },
   hidden_dlg: function hidden_dlg() {

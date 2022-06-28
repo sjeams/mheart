@@ -190,7 +190,15 @@ cc.Class({
     // update (dt) {},
 
     show_dlg () {
- 
+        //显示出现账号密码
+        var loginname =cc.sys.localStorage.getItem('loginname');
+        var password =cc.sys.localStorage.getItem('password');
+        if(loginname){
+            this.register_login_name.getComponent(cc.EditBox).string=loginname;
+        }
+        if(loginname){
+            this.register_login_password.getComponent(cc.EditBox).string=password;
+        }
         this.node.active =true;
 
     },

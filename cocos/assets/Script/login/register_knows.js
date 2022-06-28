@@ -3,6 +3,7 @@ var HttpHelper = require("http");
 // var fs = require('fs'); // 引入fs模块
 // var globaluserinfo = require("GlobaluserInfo");
 let httpRequest =  new HttpHelper();  
+
 cc.Class({
     extends: cc.Component,
  
@@ -12,12 +13,18 @@ cc.Class({
         register_login_password: cc.EditBox
     },
  
-    onLoad: function () {      
-        
-        this.tokenlogin(); // 快捷登录
-
-        // 操作文本--读取用户信息
-   
+    onLoad: function () {
+        // var loginname =cc.sys.localStorage.getItem('loginname');
+        // var password =cc.sys.localStorage.getItem('password');
+        // // console.log(loginname)
+        // if(loginname){
+        //    this.register_login_name.getComponent(cc.EditBox).string=loginname;
+        // }
+        // if(loginname){
+        //     this.register_login_password.getComponent(cc.EditBox).string=password;
+        // }
+        // // 操作文本--读取用户信息
+        // this.tokenlogin(); // 快捷登录
         // // 账号密码登录
         // this.login();
         //储存缓存
@@ -33,9 +40,10 @@ cc.Class({
         // }
         // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
         
+
+ 
     },
     tokenlogin: function(){
-    
         // 获取本地json  信息
         // cc.loader.load( cc.url.raw("resources/login.json"),function(err,res){  
         // cc.loader.loadRes('login.json',function(err,res){   //默认resources
@@ -70,7 +78,6 @@ cc.Class({
                     // cc.log(data); 
                     // 未登录弹出登录
                     if(data.code==0){
-                        console.log(11)
                         // this.loginbox.node.active = false;  // 进度隐藏
                     }else{
                          // this.loginbox.node.active = false;  // 进度隐藏
@@ -190,9 +197,7 @@ cc.Class({
     // update (dt) {},
 
     show_dlg () {
- 
         this.node.active =true;
-
     },
     hidden_dlg () {
         this.node.active =false;

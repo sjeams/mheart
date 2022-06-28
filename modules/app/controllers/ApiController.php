@@ -1,4 +1,9 @@
 <?php
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:53
+ * @Description: 
+ */
 /**
  * Created by PhpStorm.
  * User: Administrator
@@ -41,8 +46,10 @@ class ApiController extends ApiControl{
             echo file_get_contents($request);
         }
     }
-    // $array =  Yii::$app->params['loading'];
-    // var_dump($array);die;
+
+
+    
+    
     
 
 }
