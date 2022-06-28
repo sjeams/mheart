@@ -29,7 +29,7 @@ class VideoController extends ApiControl
      */
     public function actionReload()
     {
-        $total =37;
+        $total =11;
         $belong =4;
         $page = Yii::$app->request->get('page');
         if(!$page){

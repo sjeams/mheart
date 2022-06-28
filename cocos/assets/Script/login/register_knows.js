@@ -8,9 +8,10 @@ cc.Class({
     extends: cc.Component,
  
     properties: {
-        register_alert: cc.Label,
-        register_login_name: cc.EditBox,
-        register_login_password: cc.EditBox
+        // register_alert: cc.Label,
+        // register_login_name: cc.EditBox,
+        // register_login_password: cc.EditBox,
+        register_knows_webview:cc.WebView
     },
  
     onLoad: function () {
@@ -87,108 +88,107 @@ cc.Class({
         } 
     },
 
-    login: function(){
+    // login: function(){
     
-       var loginname = this.register_login_name.getComponent(cc.EditBox).string;
-       var password = this.register_login_password.getComponent(cc.EditBox).string;
-        var params = {
-            'loginname': loginname,
-            'password': password,
-            // 'loginname': 'yincan1993',
-            // 'password': 123456,
-        };
+    //    var loginname = this.register_login_name.getComponent(cc.EditBox).string;
+    //    var password = this.register_login_password.getComponent(cc.EditBox).string;
+    //     var params = {
+    //         'loginname': loginname,
+    //         'password': password,
+    //         // 'loginname': 'yincan1993',
+    //         // 'password': 123456,
+    //     };
 
-        var _this= this;
-        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
-            cc.log(data); 
-            if(data.code==1){
-                // _this.register_alert.color =  new cc.color('#BDFF00');
-                _this.register_alert.string ='';
-                cc.sys.localStorage.setItem('token', data.data.token);
-                cc.sys.localStorage.setItem('loginname', loginname);
-                cc.sys.localStorage.setItem('password', password);
-                _this.node.active =false;
-            }else{
-                _this.register_alert.string ='账号密码错误!';
-            }
-            //操作文本--修改用户信息
-        });
+    //     var _this= this;
+    //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+    //         cc.log(data); 
+    //         if(data.code==1){
+    //             // _this.register_alert.color =  new cc.color('#BDFF00');
+    //             _this.register_alert.string ='';
+    //             cc.sys.localStorage.setItem('token', data.data.token);
+    //             cc.sys.localStorage.setItem('loginname', loginname);
+    //             cc.sys.localStorage.setItem('password', password);
+    //             _this.node.active =false;
+    //         }else{
+    //             _this.register_alert.string ='账号密码错误!';
+    //         }
+    //         //操作文本--修改用户信息
+    //     });
 
-    },
-
-    btnClick1: function (event, customEventData) {
-        // // 请求登录接口
-        // var params = {
-        //         'loginname': 'yincan1993',
-        //         'password': 123456,
-        //         'serverid': 1,
-        // };
-        // cc.sys.localStorage.setItem('params', JSON.stringify(params));
-        var params = JSON.parse(cc.sys.localStorage.getItem("params"));
-        var token =cc.sys.localStorage.getItem('token');
+    // },
+    //
+    // btnClick1: function (event, customEventData) {
+    //     // // 请求登录接口
+    //     // var params = {
+    //     //         'loginname': 'yincan1993',
+    //     //         'password': 123456,
+    //     //         'serverid': 1,
+    //     // };
+    //     // cc.sys.localStorage.setItem('params', JSON.stringify(params));
+    //     var params = JSON.parse(cc.sys.localStorage.getItem("params"));
+    //     var token =cc.sys.localStorage.getItem('token');
     
-        // cc.log(value); 
-        // let httpRequest =  new HttpHelper();  
-        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {'token':token} ,function (data) {
-            cc.log(data); 
-            if(data.code==0){ // 登录失败，或本地数据失效
-                // 弹窗
-            }else{
-                // 设置服务器
-                cc.sys.localStorage.setItem('server', JSON.stringify(data.data.server));
-                if(data.code==1){// 登录成功，进入游戏
-                    // cc.log(data.data.userinfo); 
-                    cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
-                    cc.director.loadScene('home/dating');
-                    // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
-                    // cc.sys.localStorage.getItem(key); //读取数据
-                }
-                if(data.code==2){ // 登录成功，未定义角色
-                    // 进入定义角色界面     
-                    var server = JSON.parse(cc.sys.localStorage.getItem('server'));
-                    // cc.log(server); 
-                    // 创建角色
-                    cc.director.loadScene('register');
-                }
-            }
+    //     // cc.log(value); 
+    //     // let httpRequest =  new HttpHelper();  
+    //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {'token':token} ,function (data) {
+    //         cc.log(data); 
+    //         if(data.code==0){ // 登录失败，或本地数据失效
+    //             // 弹窗
+    //         }else{
+    //             // 设置服务器
+    //             cc.sys.localStorage.setItem('server', JSON.stringify(data.data.server));
+    //             if(data.code==1){// 登录成功，进入游戏
+    //                 // cc.log(data.data.userinfo); 
+    //                 cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
+    //                 cc.director.loadScene('home/dating');
+    //                 // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
+    //                 // cc.sys.localStorage.getItem(key); //读取数据
+    //             }
+    //             if(data.code==2){ // 登录成功，未定义角色
+    //                 // 进入定义角色界面     
+    //                 var server = JSON.parse(cc.sys.localStorage.getItem('server'));
+    //                 // cc.log(server); 
+    //                 // 创建角色
+    //                 cc.director.loadScene('register');
+    //             }
+    //         }
 
-        });
+    //     });
         
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
-        // var node = event.target;
-        // var button = node.getComponent(cc.Button);
-        //这里的 customEventData 参数就等于你之前设置的 "click1 user data"
-        // cc.log("node=", node.name, " event=", event.type, " data=", customEventData);
-    },
+    //     //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+    //     // var node = event.target;
+    //     // var button = node.getComponent(cc.Button);
+    //     //这里的 customEventData 参数就等于你之前设置的 "click1 user data"
+    //     // cc.log("node=", node.name, " event=", event.type, " data=", customEventData);
+    // },
 
-    callback: function (event) {
-        // cc.log(data)
-        // var userCount =  cc.find("Canvas/ground/editbox_count").getComponent(cc.EditBox).string;
-        // var userPassward =  cc.find("Canvas/ground/editbox_passward").getComponent(cc.EditBox).string;
-        // console.log("用户账号："+userCount+ "用户密码："+ userPassward);
-        // HttpHelp.login(userCount,userPassward,function(isSuccess,Data){
-        //     var info = Data;
-        //     if(true == isSuccess){
-        //         console.log("login  success!!!");
-        //         console.log(info);
-        //         globaluserinfo.username = info.username;
-        //         globaluserinfo.gamepoint = info.gamepoint;
-        //         globaluserinfo.skey = info.skey;
-        //         globaluserinfo.userid = info.userid;
+    // callback: function (event) {
+    //     // cc.log(data)
+    //     // var userCount =  cc.find("Canvas/ground/editbox_count").getComponent(cc.EditBox).string;
+    //     // var userPassward =  cc.find("Canvas/ground/editbox_passward").getComponent(cc.EditBox).string;
+    //     // console.log("用户账号："+userCount+ "用户密码："+ userPassward);
+    //     // HttpHelp.login(userCount,userPassward,function(isSuccess,Data){
+    //     //     var info = Data;
+    //     //     if(true == isSuccess){
+    //     //         console.log("login  success!!!");
+    //     //         console.log(info);
+    //     //         globaluserinfo.username = info.username;
+    //     //         globaluserinfo.gamepoint = info.gamepoint;
+    //     //         globaluserinfo.skey = info.skey;
+    //     //         globaluserinfo.userid = info.userid;
  
-        //         globaluserinfo.money = info.money;
-        //         globaluserinfo.userid = info.userid;
-        //         globaluserinfo.password = info.password;
-        //         globaluserinfo.salt = info.salt;
+    //     //         globaluserinfo.money = info.money;
+    //     //         globaluserinfo.userid = info.userid;
+    //     //         globaluserinfo.password = info.password;
+    //     //         globaluserinfo.salt = info.salt;
  
-        //         //登录成功后加载地图资源
-                cc.director.loadScene('map');
-        //     }else{
-        //         console.log("login  filed!!!")
-        //     }
-        // });
-        
-    },
+    //     //         //登录成功后加载地图资源
+    //             cc.director.loadScene('map');
+    //     //     }else{
+    //     //         console.log("login  filed!!!")
+    //     //     }
+    //     // });
+    // },
  
     start () {
  
@@ -201,5 +201,21 @@ cc.Class({
     },
     hidden_dlg () {
         this.node.active =false;
+    },
+
+    xieyi_show_dlg () {
+        this.register_knows_webview.url ='https://www.mheart.xyz/app/api-user/xieyi';
+        this.node.active =true;
+    },
+    xieyi_hidden_dlg () {
+        this.node.active =false;
+    },
+    yinsi_show_dlg () {
+        this.register_knows_webview.url ='https://www.mheart.xyz/app/api-user/yinsi';
+        this.node.active =true;
+    },
+    yinsi_hidden_dlg () {
+        this.node.active =false;
     }
+
 });
