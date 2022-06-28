@@ -40,7 +40,7 @@ class Video extends ActiveRecord {
 				);
 			}else if($belong==4){
 				$list=array(
-					array($belong,7,'国产主播','/index.php/vod/type/id/35/page/'.$page.'.html','http://tantanzy11.com'),
+					array($belong,9,'国产主播','/index.php/vod/type/id/4/page/'.$page.'.html','http://tantanzy11.com'),
 				);
 			}	
 			
@@ -253,7 +253,7 @@ class Video extends ActiveRecord {
 			
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('在线播放$','',$data1[0]['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
