@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'bfe2c9uBzZLZbQL4m1ej4tE', 'myserver');
-// Script/login/myserver.js
+cc._RF.push(module, '5b7b7P5FYFFiYYsd/RnEfBv', 'register');
+// Script/login/register.js
 
 "use strict";
 
@@ -17,8 +17,19 @@ cc.Class({
     register_login_password: cc.EditBox
   },
   onLoad: function onLoad() {
+    var loginname = cc.sys.localStorage.getItem('loginname');
+    var password = cc.sys.localStorage.getItem('password'); // console.log(loginname)
+
+    if (loginname) {
+      this.register_login_name.getComponent(cc.EditBox).string = loginname;
+    }
+
+    if (loginname) {
+      this.register_login_password.getComponent(cc.EditBox).string = password;
+    } // 操作文本--读取用户信息
+
+
     this.tokenlogin(); // 快捷登录
-    // 操作文本--读取用户信息
     // // 账号密码登录
     // this.login();
     //储存缓存
@@ -68,8 +79,7 @@ cc.Class({
         // 未登录弹出登录
 
 
-        if (data.code == 0) {
-          console.log(11); // this.loginbox.node.active = false;  // 进度隐藏
+        if (data.code == 0) {// this.loginbox.node.active = false;  // 进度隐藏
         } else {// this.loginbox.node.active = false;  // 进度隐藏
           }
       });
