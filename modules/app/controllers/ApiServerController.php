@@ -41,7 +41,7 @@ class ApiServerController extends ApiControl{
     /**
      * 登录--验证  --账号密码
      * app/api-server/login
-     * http://localhost/monster/web/app/api-server/register_in
+     * http://localhost/monster/web/app/api-server/register-in
      */
     public function actionRegisterIn(){
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
@@ -50,8 +50,8 @@ class ApiServerController extends ApiControl{
             die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '账号已存在']));   
         }else{
             $userinfo =  new UserLogin();
-            $userinfo->loginid =$data['loginname'];
-            $userinfo->server =$data['password'];
+            $userinfo->loginname =$data['loginname'];
+            $userinfo->password =$data['password'];
             $userinfo->save();
             die(json_encode(['code' => 1,'data'=>['token' =>null],'message' => '注册成功']));   
         }
