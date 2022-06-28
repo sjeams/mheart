@@ -1,3 +1,12 @@
+<style>
+    /* 自动换行 */
+    p{
+        table-layout: fixed;
+        word-wrap: break-all;
+        word-break: normal;
+        overflow: hidden;
+    }
+</style>
 
 <p>心缘网络游戏个人信息保护政策</p>
 
