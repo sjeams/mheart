@@ -68,10 +68,10 @@ cc.Class({
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                     //     jsb.fileUtils.writeStringToFile(data,token)
                     // }
-                    // cc.log(data); 
+                    cc.log(data); 
                     // 登录成功
                     if(data.code==1){
-                        user_phone.string ='';
+                        _this.user_phone.string =data.userinfo.loginname;
                         _this.user_status.node.active = true;  // 进度隐藏
                     } 
             });
