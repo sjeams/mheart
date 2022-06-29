@@ -11,10 +11,13 @@ cc.Class({
   initInfo: function initInfo(info) {
     // 初始化该道具相关信息
     // 图片
-    var self = this;
+    var self = this; //加载资源
+
     cc.loader.loadRes(info['picUrl'], cc.SpriteFrame, function (err, spriteFrame) {
       self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
-    }); // 介绍
+    }); // 释放资源
+    // cc.loader.release(info['picUrl'])
+    // 介绍
 
     this.node.intro = info['intro'];
   }

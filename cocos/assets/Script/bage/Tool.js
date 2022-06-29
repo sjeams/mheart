@@ -11,10 +11,12 @@ cc.Class({
 
         // 图片
         var self = this;
+        //加载资源
         cc.loader.loadRes(info['picUrl'], cc.SpriteFrame, function (err, spriteFrame) {
             self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
         });
-
+        // 释放资源
+        // cc.loader.release(info['picUrl'])
         // 介绍
         this.node.intro = info['intro'];
     },

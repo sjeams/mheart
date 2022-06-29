@@ -8,11 +8,13 @@
     ]
   ],
   "excluded-modules": [
+    "Audio",
+    "AudioSource",
     "3D Physics/cannon.js",
     "3D Physics/Builtin",
     "3D Particle"
   ],
-  "last-module-event-record-time": 1622539650614,
+  "last-module-event-record-time": 1656466654908,
   "design-resolution-width": 1334,
   "design-resolution-height": 750,
   "fit-width": true,
@@ -35,6 +37,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }

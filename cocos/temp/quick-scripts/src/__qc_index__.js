@@ -4,7 +4,6 @@ require('./assets/Script/bage/Game');
 require('./assets/Script/bage/Tool');
 require('./assets/Script/commonjs/alert');
 require('./assets/Script/commonjs/post');
-require('./assets/Script/config/Conf');
 require('./assets/Script/home_js/userinfo');
 require('./assets/Script/login/Alert');
 require('./assets/Script/login/ProgressBarScript');

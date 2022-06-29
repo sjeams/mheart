@@ -74,7 +74,6 @@ cc.Class({
         this.bmp_font.string = "0%";
 
 
-  
         // this.ProgressBar.progress += math_random / 100; 
         this._clearAll();
        
