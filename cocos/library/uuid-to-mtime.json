@@ -655,8 +655,8 @@
     "relativePath": "resources\\tools\\银钥匙.png"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1656484635238,
-    "meta": 1656484635252,
+    "asset": 1656485377962,
+    "meta": 1656485377977,
     "relativePath": "Scene\\loading.fire"
   },
   "1ca2cd5f-95bf-41d0-8a8e-df420a90b8c0": {
@@ -870,8 +870,8 @@
     "relativePath": "Script\\bage\\Game.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656484689166,
-    "meta": 1656484689209,
+    "asset": 1656485162400,
+    "meta": 1656485162437,
     "relativePath": "Scene\\index.fire"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
@@ -910,8 +910,8 @@
     "relativePath": "Script\\login\\http.js"
   },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
-    "asset": 1656484676953,
-    "meta": 1656484680299,
+    "asset": 1656485374293,
+    "meta": 1656485377792,
     "relativePath": "Script\\login\\loading.js"
   }
 }

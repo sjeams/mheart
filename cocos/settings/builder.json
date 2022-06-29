@@ -2,9 +2,7 @@
   "title": "xinyuan",
   "packageName": "org.cocos2d.demo",
   "startScene": "8ec67a9e-6d17-4e2d-a168-9480379a78e8",
-  "excludeScenes": [
-    "2d5d8107-dd4c-4e91-8a91-24e8fc76dc51"
-  ],
+  "excludeScenes": [],
   "includeSDKBox": false,
   "orientation": {
     "landscapeLeft": true,
