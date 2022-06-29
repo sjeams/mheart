@@ -23,7 +23,9 @@ use Yii;
 use UploadFile;
 
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: X-Requested-With');
+header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
+header('Access-Control-Allow-Credentials: true;');
+
 header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 
 class ApiController extends ApiControl{
