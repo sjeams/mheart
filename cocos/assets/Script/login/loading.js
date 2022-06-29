@@ -65,15 +65,12 @@ cc.Class({
             // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
             // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
         ];
-
         console.log( this.progressBar); 
         // console.log( this.sprite); 
         this.resource = null;
         this.progressBar.progress =0;
 
         this.bmp_font.string = "0%";
-
-
         // this.ProgressBar.progress += math_random / 100; 
         this._clearAll();
        
@@ -133,7 +130,7 @@ cc.Class({
  
     _completeCallback: function(err, texture) {
         //加载完成回调
-        // this.loadnextScene();  // 下一场景 
+        this.loadnextScene();  // 下一场景 
     },
  
     update (dt) {

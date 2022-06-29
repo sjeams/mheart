@@ -120,8 +120,9 @@ cc.Class({
       this.current = cc.audioEngine.play(res.url, false, 1);
     }
   },
-  _completeCallback: function _completeCallback(err, texture) {//加载完成回调
-    // this.loadnextScene();  // 下一场景 
+  _completeCallback: function _completeCallback(err, texture) {
+    //加载完成回调
+    this.loadnextScene(); // 下一场景 
   },
   update: function update(dt) {
     if (!this.resource) {

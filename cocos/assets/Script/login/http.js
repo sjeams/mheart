@@ -1,3 +1,8 @@
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:52
+ * @Description: 
+ */
 /**
  * Http 请求封装
  */
@@ -10,7 +15,11 @@ const HttpHelper = cc.Class({
     properties: {
 
     },
-
+    onLoad () {
+        
+        // 从服务器加载mp3来进行播放
+        this.current = cc.audioEngine.play(res.url, false, 1);  
+    },
     /**
      * get请求
      * @param {string} url 

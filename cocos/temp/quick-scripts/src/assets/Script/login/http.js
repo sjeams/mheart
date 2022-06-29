@@ -4,6 +4,12 @@ cc._RF.push(module, '8228eqRxUNJ4IVqrOVz3ZWN', 'http');
 
 "use strict";
 
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:52
+ * @Description: 
+ */
+
 /**
  * Http 请求封装
  */
@@ -11,6 +17,10 @@ var HttpHelper = cc.Class({
   "extends": cc.Component,
   statics: {},
   properties: {},
+  onLoad: function onLoad() {
+    // 从服务器加载mp3来进行播放
+    this.current = cc.audioEngine.play(res.url, false, 1);
+  },
 
   /**
    * get请求
