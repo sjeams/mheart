@@ -21,7 +21,7 @@ cc.view._maxPixelRatio = 4; // downloader polyfill
 
 window.wxDownloader = remoteDownloader; // handle remote downloader
 
-remoteDownloader.REMOTE_SERVER_ROOT = "https://www.mheart.xyz";
+remoteDownloader.REMOTE_SERVER_ROOT = "https://www.mheart.xyz/app";
 remoteDownloader.SUBCONTEXT_ROOT = "";
 var pipeBeforeDownloader = cc.loader.subPackPipe || cc.loader.md5Pipe || cc.loader.assetLoader;
 cc.loader.insertPipeAfter(pipeBeforeDownloader, remoteDownloader);

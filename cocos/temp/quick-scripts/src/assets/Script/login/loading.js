@@ -56,7 +56,7 @@ cc.Class({
     console.log('正在加载场景资源，请耐心等待...'); // 加载资源包
 
     this._urls = [{
-      url: 'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/剑指苍茫.mp3',
+      url: 'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/jianzhicangmang.mp3',
       type: 'mp3'
     } // {url:'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/loading.jpg', type:'jpg'},
     // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
@@ -120,9 +120,8 @@ cc.Class({
       this.current = cc.audioEngine.play(res.url, false, 1);
     }
   },
-  _completeCallback: function _completeCallback(err, texture) {
-    //加载完成回调
-    this.loadnextScene(); // 下一场景 
+  _completeCallback: function _completeCallback(err, texture) {//加载完成回调
+    // this.loadnextScene();  // 下一场景 
   },
   update: function update(dt) {
     if (!this.resource) {

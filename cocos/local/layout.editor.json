@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 470,
-      "y": 26,
+      "x": 488,
+      "y": 175,
       "width": 1337,
       "height": 833,
       "layout": {
@@ -149,10 +149,10 @@
       "height": 339
     },
     "builder": {
-      "x": 769,
-      "y": 63,
+      "x": 785,
+      "y": 146,
       "width": 972,
-      "height": 797
+      "height": 782
     },
     "sprite-editor": {
       "x": 650,
