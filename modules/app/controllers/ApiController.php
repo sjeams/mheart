@@ -44,10 +44,20 @@ class ApiController extends ApiControl{
      */
      public function actionFileContent(){
         $request = Yii::$app->request->get('url');
+
+
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        ); 
         if(isset($request)){  
-            echo file_get_contents($request);
+            echo file_get_contents($request, false, stream_context_create($arrContextOptions)); 
         }
+
     }
+    
 
 
     
