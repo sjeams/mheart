@@ -480,12 +480,12 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1655972005906,
+    "asset": 1656474516213,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
   "1a60bfb7-074b-4f3b-9a8f-effe69eda3d4": {
-    "asset": 1656465243118,
+    "asset": 1656651347606,
     "meta": 1655109292658,
     "relativePath": "Scene"
   },
@@ -550,7 +550,7 @@
     "relativePath": "resources\\tools"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
-    "asset": 1655109292667,
+    "asset": 1656651347606,
     "meta": 1655109292664,
     "relativePath": "Scene\\home"
   },
@@ -640,8 +640,8 @@
     "relativePath": "Scene\\bage_s\\bage_user.fire"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1655109292665,
-    "meta": 1656465808455,
+    "asset": 1656651231496,
+    "meta": 1656651231516,
     "relativePath": "Scene\\home\\dating.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
@@ -655,8 +655,8 @@
     "relativePath": "resources\\tools\\银钥匙.png"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1656487429229,
-    "meta": 1656487429245,
+    "asset": 1656651162321,
+    "meta": 1656651162380,
     "relativePath": "Scene\\loading.fire"
   },
   "1ca2cd5f-95bf-41d0-8a8e-df420a90b8c0": {
@@ -870,8 +870,8 @@
     "relativePath": "Script\\bage\\Game.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656485162400,
-    "meta": 1656485162437,
+    "asset": 1656653387722,
+    "meta": 1656653387804,
     "relativePath": "Scene\\index.fire"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
@@ -889,11 +889,6 @@
     "meta": 1656465809201,
     "relativePath": "Script\\login\\Tools.js"
   },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1656465243118,
-    "meta": 1656465809026,
-    "relativePath": "Script\\login\\myserver.js"
-  },
   "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
     "asset": 1656474699980,
     "meta": 1656474747953,
@@ -910,8 +905,13 @@
     "relativePath": "Script\\login\\http.js"
   },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
-    "asset": 1656485374293,
-    "meta": 1656485377792,
+    "asset": 1656489751561,
+    "meta": 1656489755435,
     "relativePath": "Script\\login\\loading.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1656653384140,
+    "meta": 1656653385560,
+    "relativePath": "Script\\login\\myserver.js"
   }
 }

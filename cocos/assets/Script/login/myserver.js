@@ -70,7 +70,7 @@ cc.Class({
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                     //     jsb.fileUtils.writeStringToFile(data,token)
                     // }
-                    cc.log(data); 
+                    // cc.log(data); 
                     // 登录成功
                     if(data.code==1){
                         
@@ -133,7 +133,7 @@ cc.Class({
         // cc.log(value); 
         // let httpRequest =  new HttpHelper();  
         httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {'token':token} ,function (data) {
-            cc.log(data); 
+            // cc.log(data); 
             if(data.code==0){ // 登录失败，或本地数据失效
                 // 弹窗
             }else{
@@ -142,7 +142,7 @@ cc.Class({
                 if(data.code==1){// 登录成功，进入游戏
                     // cc.log(data.data.userinfo); 
                     cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
-                    cc.director.loadScene('home/dating');
+                    cc.director.loadScene('/home/dating');
                     // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
                     // cc.sys.localStorage.getItem(key); //读取数据
                 }
