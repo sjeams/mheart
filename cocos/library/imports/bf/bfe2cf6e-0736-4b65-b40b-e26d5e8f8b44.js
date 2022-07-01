@@ -132,7 +132,7 @@ cc.Class({
           // 登录成功，进入游戏
           // cc.log(data.data.userinfo); 
           cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
-          cc.director.loadScene('/home/dating'); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
+          cc.director.loadScene('home/dating'); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
           // cc.sys.localStorage.getItem(key); //读取数据
         }
 

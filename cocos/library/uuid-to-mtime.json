@@ -870,8 +870,8 @@
     "relativePath": "Script\\bage\\Game.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656666520967,
-    "meta": 1656666520993,
+    "asset": 1656669114633,
+    "meta": 1656669114675,
     "relativePath": "Scene\\index.fire"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
@@ -904,14 +904,14 @@
     "meta": 1656489755435,
     "relativePath": "Script\\login\\loading.js"
   },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1656667018108,
-    "meta": 1656667078220,
-    "relativePath": "Script\\login\\myserver.js"
-  },
   "5b7b73f9-1581-4589-862c-77f46711f06f": {
     "asset": 1656667073793,
     "meta": 1656667078283,
     "relativePath": "Script\\login\\register.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1656669084793,
+    "meta": 1656669113850,
+    "relativePath": "Script\\login\\myserver.js"
   }
 }
