@@ -5,9 +5,9 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 233,
-      "y": 110,
-      "width": 1593,
+      "x": 586,
+      "y": 119,
+      "width": 1327,
       "height": 734,
       "layout": {
         "children": [
@@ -29,12 +29,12 @@
                     "children": [
                       "assets"
                     ],
-                    "height": 390.5,
+                    "height": 387,
                     "type": "panel",
                     "width": 376
                   }
                 ],
-                "height": 619.5,
+                "height": 616,
                 "type": "dock-v",
                 "width": 376
               },
@@ -45,7 +45,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 350.28125,
+                    "height": 346.984375,
                     "type": "panel",
                     "width": 613
                   },
@@ -56,12 +56,12 @@
                       "timeline",
                       "game-window"
                     ],
-                    "height": 266.21875,
+                    "height": 266,
                     "type": "panel",
                     "width": 613
                   }
                 ],
-                "height": 619.5,
+                "height": 616,
                 "type": "dock-v",
                 "width": 613
               },
@@ -72,12 +72,12 @@
                   "node-library",
                   "cocos-services"
                 ],
-                "height": 619.5,
+                "height": 616,
                 "type": "panel",
                 "width": 582
               }
             ],
-            "height": 619.5,
+            "height": 616,
             "type": "dock-h",
             "width": 1577
           }
@@ -95,7 +95,9 @@
         "node-library",
         "cocos-services"
       ]
-    }
+    },
+    "window-1656666578036": {},
+    "worker": {}
   },
   "panels": {
     "project-settings": {
@@ -147,8 +149,8 @@
       "height": 339
     },
     "builder": {
-      "x": 593,
-      "y": 75,
+      "x": 934,
+      "y": 105,
       "width": 972,
       "height": 730
     },

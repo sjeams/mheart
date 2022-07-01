@@ -485,7 +485,7 @@
     "relativePath": "resources"
   },
   "1a60bfb7-074b-4f3b-9a8f-effe69eda3d4": {
-    "asset": 1656651347606,
+    "asset": 1656651495389,
     "meta": 1655109292658,
     "relativePath": "Scene"
   },
@@ -550,7 +550,7 @@
     "relativePath": "resources\\tools"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
-    "asset": 1656651347606,
+    "asset": 1656651495389,
     "meta": 1655109292664,
     "relativePath": "Scene\\home"
   },
@@ -640,8 +640,8 @@
     "relativePath": "Scene\\bage_s\\bage_user.fire"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1656651231496,
-    "meta": 1656651231516,
+    "asset": 1656667078543,
+    "meta": 1656667078559,
     "relativePath": "Scene\\home\\dating.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
@@ -786,8 +786,8 @@
   },
   "4632fb66-2a90-495b-b8e3-68d35ce762dd": {
     "asset": 1655109292758,
-    "meta": 1656465809554,
-    "relativePath": "Textrue\\login\\玄幻-修仙地址-12_爱给网_aigei_com.jpg"
+    "meta": 1656666515969,
+    "relativePath": "Textrue\\login\\login_home.jpg"
   },
   "7d55b773-b808-433b-aa68-27c1885f5785": {
     "asset": 1655109292746,
@@ -870,19 +870,14 @@
     "relativePath": "Script\\bage\\Game.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656653387722,
-    "meta": 1656653387804,
+    "asset": 1656666520967,
+    "meta": 1656666520993,
     "relativePath": "Scene\\index.fire"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
     "asset": 1656465243118,
     "meta": 1656465809082,
     "relativePath": "Script\\login\\register_in.js"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1656387971848,
-    "meta": 1656465809130,
-    "relativePath": "Script\\login\\register.js"
   },
   "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
     "asset": 1656045641418,
@@ -910,8 +905,13 @@
     "relativePath": "Script\\login\\loading.js"
   },
   "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1656653384140,
-    "meta": 1656653385560,
+    "asset": 1656667018108,
+    "meta": 1656667078220,
     "relativePath": "Script\\login\\myserver.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1656667073793,
+    "meta": 1656667078283,
+    "relativePath": "Script\\login\\register.js"
   }
 }

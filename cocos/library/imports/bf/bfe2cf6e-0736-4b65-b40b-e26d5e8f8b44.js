@@ -114,7 +114,7 @@ cc.Class({
     //         'serverid': 1,
     // };
     // cc.sys.localStorage.setItem('params', JSON.stringify(params));
-    var params = JSON.parse(cc.sys.localStorage.getItem("params"));
+    // var params = JSON.parse(cc.sys.localStorage.getItem("params"));
     var token = cc.sys.localStorage.getItem('token'); // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
 
