@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "server_tips",
+    "name": "server_tips_pic",
     "texture": "fe1c2c7a-a7dd-49ca-ac7c-1e8e61b97703",
     "atlas": "",
     "rect": [

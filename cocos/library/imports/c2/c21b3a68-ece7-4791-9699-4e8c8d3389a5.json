@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "银钥匙",
+    "texture": "ed5eaa4c-df73-428d-af35-59b29add48f5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      73,
+      61
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      73,
+      61
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

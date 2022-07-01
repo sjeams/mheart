@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "心经",
+    "texture": "99ddd7d7-aca2-4d57-a7cf-0ee8dc733bc5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      77,
+      78
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      77,
+      78
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

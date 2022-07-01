@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "login_alert",
+    "name": "alert_login_pic",
     "texture": "327c76c9-49a2-410e-b9e4-5f6f388ab41f",
     "atlas": "",
     "rect": [
