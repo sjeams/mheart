@@ -8,8 +8,8 @@
     ]
   ],
   "excluded-modules": [
-    "Audio",
-    "AudioSource",
+    "3D",
+    "3D Primitive",
     "3D Physics/cannon.js",
     "3D Physics/Builtin",
     "3D Particle"
@@ -37,6 +37,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }

@@ -101,10 +101,10 @@
   },
   "panels": {
     "project-settings": {
-      "x": 902,
-      "y": 122,
-      "width": 600,
-      "height": 565
+      "x": 900,
+      "y": 120,
+      "width": 603,
+      "height": 568
     },
     "ui-kit-preview-extra": {
       "x": 552,
@@ -150,9 +150,9 @@
     },
     "builder": {
       "x": 265,
-      "y": 42,
+      "y": 102,
       "width": 977,
-      "height": 734
+      "height": 674
     },
     "sprite-editor": {
       "x": 650,
