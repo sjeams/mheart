@@ -46,38 +46,38 @@
 <script src="/laydate/laydate.js"></script>
 <div class=" " id="datacontent">
     <ul class="breadcrumb">
-        <!-- <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li> -->
-        <li><a href="/cn/video/list">采集</a> <span class="divider">/</span></li>
-        <li class="active">内容</li>
+        <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
+        <li class="active">采集 <span class="divider">/</span></li>
+        <li><a href="/cn/video/index">内容</a> </li>
     </ul>
-    <form action="/cn/video/index" method="get" class="form-horizontal">
+    <form action="/cn/video/list" method="get" class="form-horizontal">
         <table class="table">
             <tr>
                 <td>
                     <p>
                     标题：
-                        <input name="title" class="input-mediu" size="25" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
+                        <input name="title" class="input-mediu" size="60" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
                 
                         <button class="btn btn-primary" type="submit">搜索</button>
                     </p>
-                    <p class="check">
-                    <a href="/cn/video/index?page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
-                    <a href="/cn/video/index?type=0&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
-                    <a href="/cn/video/index?type=1&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
-                    <a href="/cn/video/index?type=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
+                    <!-- <p class="check">
+                    <a href="/cn/video/list?page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
+                    <a href="/cn/video/list?type=0&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
+                    <a href="/cn/video/list?type=1&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
+                    <a href="/cn/video/list?type=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
                     </p>
                     <p class="check">
-                    <a href="/cn/video/index?type=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
-                    <a href="/cn/video/index?type=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
-                    <a href="/cn/video/index?type=5&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
-                    <a href="/cn/video/index?type=6&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
+                    <a href="/cn/video/list?type=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
+                    <a href="/cn/video/list?type=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
+                    <a href="/cn/video/list?type=5&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
+                    <a href="/cn/video/list?type=6&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
                     </p>
                     <p class="check">
-                    <a href="/cn/video/index?type=7&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
-                    <a href="/cn/video/index?type=8&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
-                    <a href="/cn/video/index?type=9&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
-                    <a href="/cn/video/index?type=10&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
-                    </p>
+                    <a href="/cn/video/list?type=7&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
+                    <a href="/cn/video/list?type=8&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
+                    <a href="/cn/video/list?type=9&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
+                    <a href="/cn/video/list?type=10&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
+                    </p> -->
 
                 </td>
                     <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
@@ -87,7 +87,7 @@
             </tr>
         </table>
     </form>
-    <form action="/cn/video/index" method="post">
+    <form action="/cn/video/list" method="post">
         <table class="table table-hover add_defined">
             <thead>
             <tr>
@@ -101,23 +101,25 @@
             </thead>
             <tbody>
             <?php
-            foreach($content as $kss => $v) {
-                if($kss == 10){
-                    break;
-                }
-                ?>
+            foreach($content as $kss => $v) {  ?>
+                <div id="form<?php echo $kss?>">
+                    <input type="hidden" name="url" value="<?php echo $v['url']?>" >
+                    <input type="hidden" name="title" value="<?php echo $v['title']?>" >
+                    <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                    <input type="hidden" name="type" value="<?php echo $v['type']?>" >
+                    <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
+                    <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                </div>
                 <tr>
                     <!-- <input name="id[]" type="hidden"  value="<?php echo $v['id']?>"> -->
-                  
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php  echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
- 
                         </a>
                         <p> 
-                            <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
-                            <span onclick="Delete(<?php echo $v['id']?>)" class="collect"> 删除 </span>
+                            <!-- <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span> -->
+                            <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
                         </p>
                     </td>
                     <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
@@ -137,12 +139,7 @@
     </form>
 
    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
-    <div class="pagination pagination-left">
-        <?php use yii\widgets\LinkPager;
-        echo LinkPager::widget([
-            'pagination' => $page,
-        ])?>
-    </div>
+ 
     <p>
         <input type="text" value="<?php echo isset($_GET['page'])?$_GET['page']:''?>" id="goPage">
         <input type="button"  onclick="gou()" value="GO">
@@ -155,7 +152,7 @@
  
     function  gou(){
         var goPage =$("#goPage").val();
-        window.location.href="/cn/video/index?page="+goPage+"&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>";
+        window.location.href="/cn/video/list?page="+goPage+"&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>";
     }
     function  videoup(id){
         var videotype =$("#videotype").val();
@@ -185,17 +182,24 @@
     }
 
     
-    function  Delete(id){
+    function  Update(id){
+
+        var url =$("#form"+id+"  input[name=url]").val();
+        var title =$("#form"+id+"  input[name=title]").val();
+        var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+        var belong =$("#form"+id+"  input[name=belong]").val();
+        var link =$("#form"+id+"  input[name=link]").val();
+        
         $.ajax({
-            url: '/cn/video/delete', // 跳转到 action 
+            url: '/cn/video/update', // 跳转到 action 
             data:{
                 id: id,
             },
             type: 'post',
-            // dataType: 'json',
+            data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1},
+            dataType: 'json',
             success: function (data) {
-                window.location.reload();
-          
+                // window.location.reload();
             },
         });
     }

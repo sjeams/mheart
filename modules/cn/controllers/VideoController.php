@@ -18,6 +18,8 @@ class VideoController extends ApiControl
 {
     public $enableCsrfValidation = false;
     public $layout = 'null';
+
+    public  $password=1;
     function init (){
         parent::init();
         set_time_limit(0);
@@ -81,10 +83,49 @@ class VideoController extends ApiControl
 
 
 
+    /**
+     * 第三方列表
+     * by  sjeam
+     */
+    public function actionList()
+    {
+        $password =$this->password;
+        $login = Yii::$app->session->get('login');
+   
+        if($login==$password){
+            $belong = Yii::$app->request->post('belong',4);
+        }else{
+            $belong=0;
+        }
+        $page = Yii::$app->request->post('page',1);
+        $type = Yii::$app->request->get('type',1);
+
+        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'type'.$type;
+        $list =Yii::$app->session->get($sessionStr);
+        if(!$list){
+            $list = Video::getQueryList($page,$belong,1,$type); // 获取采集数据
+            Yii::$app->session->set($sessionStr,$list);
+        }
+        return $this->render('list',['content'=>$list]);
+    }
+
+  /**
+     * 采集单条插入
+     * by  sjeam
+     */
+    public function actionUpdate()
+    {
+     
+        // http://wolongzyw.com/index.php/vod/detail/id/41194.html
+        $args = Yii::$app->request->post();
+        // var_dump($args);die;
+        Yii::$app->signdb->createCommand()->insert('x2_video',$args)->execute();
+
+    }
 
 
   /**
-     * 基本信息
+     * 视频播放器
      * by  sjeam
      */
     public function actionVideo()
@@ -98,13 +139,12 @@ class VideoController extends ApiControl
     }
 
     /**
-     * 基本信息
+     * 首页
      * by  sjeam
      */
     public function actionIndex()
     {
-        $password=1;
-
+        $password =$this->password;
         $login = Yii::$app->request->get('login');
         // $belong = Yii::$app->request->get('belong');
         if($login!=$password){
@@ -155,7 +195,6 @@ class VideoController extends ApiControl
         // }
         // var_dump($brush);die;
         return $this->render('index',['content'=>$brush,'page'=>$page]);
-
     }
     /**
      * 基本信息
