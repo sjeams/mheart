@@ -111,24 +111,17 @@
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
                 <tr>
-                    <!-- <input name="id[]" type="hidden"  value="<?php echo $v['id']?>"> -->
+      
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php  echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php // echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p> 
-                            <!-- <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span> -->
-                            <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
+                             <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
                         </p>
                     </td>
-                    <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
-     
-                    <!-- <td  class="notSLH" style="width: 247px;">
-                        <div>
-                            <a class="btn" href="/user/brush/delete?id=<?php echo $v['id'] ; ?>" >删除</a>
-                        </div>
-                    </td> -->
+                 
                 </tr>
                 <?php
             }
