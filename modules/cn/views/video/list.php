@@ -1,29 +1,51 @@
-<!-- 报告详情 -->
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="title" content="GRE后台在线后台">
-    <meta name="description" content="GRE后台在线后台">
-    <meta name="keywords" content="GRE后台在线后台">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>天誉后台</title>
-    <!-- Le styles -->
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet">
+ 
+<title>在线视频</title>
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
+<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+ 
+<style>
+.name{
+    margin-top: 20px;
 
-    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-    <!-- 编辑器公式插件 -->
-    <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
-    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
-</head>
+}
+.bord{
+    display: inline-block;
+    text-align: center;
+    width:80px;
+    height:20px;
+    border: 1px solid wheat;
+}
+
+.on{
+    
+    background-color: #fbb450a3;
+    border-radius: 2px;
+}
+</style>
+ 
+<!-- Le styles -->
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet">
+
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<!-- 编辑器公式插件 -->
+<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+ 
  <style>
+     .check{
+         display: block;
+         float: left;
 
+         clear: both;
+     }
      .check a{
         display: inline-block;
         width: 65px;
@@ -40,6 +62,7 @@
      }
  </style>
  
+ 
 <!-- 按钮 -->
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
 <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
@@ -50,57 +73,38 @@
         <li class="active">采集 <span class="divider">/</span></li>
         <li><a href="/cn/video/index">内容</a> </li>
     </ul>
-    <form action="/cn/video/list" method="get" class="form-horizontal">
-        <table class="table">
-            <tr>
-                <td>
-                    <p>
-                    标题：
-                        <input name="title" class="input-mediu" size="60" type="text" class="number" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
-                
-                        <button class="btn btn-primary" type="submit">搜索</button>
-                    </p>
-                    <!-- <p class="check">
-                    <a href="/cn/video/list?page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
-                    <a href="/cn/video/list?type=0&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>
-                    <a href="/cn/video/list?type=1&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >1主播</a>
-                    <a href="/cn/video/list?type=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >2少女</a>
-                    </p>
-                    <p class="check">
-                    <a href="/cn/video/list?type=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >3欧美</a>
-                    <a href="/cn/video/list?type=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >4日韩</a>
-                    <a href="/cn/video/list?type=5&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >5其它</a>
-                    <a href="/cn/video/list?type=6&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >6AI/明星</a>
-                    </p>
-                    <p class="check">
-                    <a href="/cn/video/list?type=7&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >7三级</a>
-                    <a href="/cn/video/list?type=8&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >8精品</a>
-                    <a href="/cn/video/list?type=9&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >9无码</a>
-                    <a href="/cn/video/list?type=10&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >10收藏</a>
-                    </p> -->
 
-                </td>
-                    <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
-                <td>
-            
-                </td>
-            </tr>
-        </table>
-    </form>
+     
+
+ 
     <form action="/cn/video/list" method="post">
-        <table class="table table-hover add_defined">
+        <table class="table table-hover ">
             <thead>
-            <tr>
-                <!-- <th style="width: 120px;">排序</th> -->
-                <th >标题</th>
- 
-                <th>图片</th>
- 
-                <!-- <th >操作</th> -->
-            </tr>
+                <p>
+                    <!-- 视频 -->
+                    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
+                    <div class="video" style="width:300px;"></div>
+                        <script type="text/javascript">
+                            //定义一个变量：videoObject，用来做为视频初始化配置
+                            var videoObject = {
+                                container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+                                plug:'hls.js',//设置使用hls插件
+                                autoplay:true,
+                                video: ''//视频地址
+                            };
+                            new ckplayer(videoObject);//初始化播放器
+                    </script>
+                    <!-- 视频end -->
+                </p>
+                <p class="check">
+                    <a href="/cn/video/index?belong=1page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >jipo</a>
+                    <a href="/cn/video/index?belong=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >aibozy</a>
+                    <a href="/cn/video/index?belong=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >yinwozy9 </a>
+                    <a href="/cn/video/index?belong=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >tantanzy11</a>
+                </p>
             </thead>
             <tbody>
-            <?php
+            <?php if($content){
             foreach($content as $kss => $v) {  ?>
                 <div id="form<?php echo $kss?>">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
@@ -114,17 +118,18 @@
       
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php // echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php  echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p> 
                              <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
+                             <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
                         </p>
                     </td>
                  
                 </tr>
                 <?php
-            }
+            } }
             ?>
             </tbody>
         </table>
@@ -140,38 +145,26 @@
     </p>
 
 </div>
-
+ 
+ 
 <script>
  
     function  gou(){
         var goPage =$("#goPage").val();
         window.location.href="/cn/video/list?page="+goPage+"&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>";
     }
-    function  videoup(id){
-        var videotype =$("#videotype").val();
-
-        $.ajax({
-            url: '/cn/video/up', // 跳转到 action 
-            data:{
-                id: id,
-            },
-            type: 'post',
-            // dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                if(data==1){
-                    $('.videoup'+id).html('取消');  
-      
-                }else{
-                    $('.videoup'+id).html('收藏');   
-                    if(videotype==10 ){
-                        window.location.reload();
-                    }
-                }
-            },
-            error: function () {
-            }
-        });
+    // 预览
+    function  video(id){
+        var url =$("#form"+id+"  input[name=url]").val();
+        // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
+        var videoObject = {
+                container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+                plug:'hls.js',//设置使用hls插件
+                autoplay:true,
+                video: url//视频地址
+            };
+            new ckplayer(videoObject);//初始化播放器
+   
     }
 
     
@@ -182,7 +175,6 @@
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var belong =$("#form"+id+"  input[name=belong]").val();
         var link =$("#form"+id+"  input[name=link]").val();
-        
         $.ajax({
             url: '/cn/video/update', // 跳转到 action 
             data:{

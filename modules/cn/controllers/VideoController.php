@@ -89,19 +89,21 @@ class VideoController extends ApiControl
      */
     public function actionList()
     {
+        $this->layout = 'cn';
         $password =$this->password;
+    
         $login = Yii::$app->session->get('login');
-   
+        $page = Yii::$app->request->post('page',1);
+        $type = Yii::$app->request->get('type',1);
         if($login==$password){
             $belong = Yii::$app->request->post('belong',4);
         }else{
             $belong=0;
         }
-        $page = Yii::$app->request->post('page',1);
-        $type = Yii::$app->request->get('type',1);
-
+        
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'type'.$type;
         $list =Yii::$app->session->get($sessionStr);
+
         if(!$list){
             $list = Video::getQueryList($page,$belong,1,$type); // 获取采集数据
             Yii::$app->session->set($sessionStr,$list);
