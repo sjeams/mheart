@@ -83,7 +83,7 @@
                 <p>
                     <!-- 视频 -->
                     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-                    <div class="video" style="width:300px;"></div>
+                    <div class="video" style="width:300px;height:200px"></div>
                         <script type="text/javascript">
                             //定义一个变量：videoObject，用来做为视频初始化配置
                             var videoObject = {
@@ -96,12 +96,7 @@
                     </script>
                     <!-- 视频end -->
                 </p>
-                <p class="check">
-                    <a href="/cn/video/index?belong=1page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >jipo</a>
-                    <a href="/cn/video/index?belong=2&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >aibozy</a>
-                    <a href="/cn/video/index?belong=3&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >yinwozy9 </a>
-                    <a href="/cn/video/index?belong=4&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>" >tantanzy11</a>
-                </p>
+ 
             </thead>
             <tbody>
             <?php if($content){
@@ -137,21 +132,72 @@
     </form>
 
    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
+   <div class="pagination pagination-left">
+        <?php use yii\widgets\LinkPager;
+        echo LinkPager::widget([
+            'pagination' => $page,
+        ])?>
+    </div>
+
+    <div class="layui-form-item">
+            <label class="layui-form-label">来源belong</label>
+            <div class="layui-input-inline">
+                <select name="belong" id="goBelong">
+                    <?php  foreach($category as $v){  ?>
+                        <option value="<?php echo $v['id'] ?>"<?php echo isset($_GET['belong'])?$_GET['belong']== $v['id'] :'selected'?>><?php echo $v['name'] ?></option>
+                    <?php  } ?>
+                </select>
+            </div>
+            <label class="layui-form-label">类型typ</label>
+            <div class="layui-input-inline">
+                <select name="type" id="goType">
+ 
+                </select>
+            </div>
+            <label class="layui-form-label">采集页码</label>
+            <div class="layui-input-inline">
+            <input type="text" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
+            </div>
+      
+        </div>
+
+    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
  
     <p>
-        <input type="text" value="<?php echo isset($_GET['page'])?$_GET['page']:''?>" id="goPage">
-        <input type="button"  onclick="gou()" value="GO">
-
+    <input type="button"  onclick="gou()" value="GO">
     </p>
 
 </div>
  
  
 <script>
- 
+    
+    $(function(){
+        // var goBelong =$("#goBelong").val();
+        $.ajax({
+            url: '/cn/video/get-belong', // 跳转到 action 
+            data:{
+                belong:'<?php echo isset($_GET['belong'])?$_GET['belong']:'4'?>',
+                type:'<?php echo isset($_GET['type'])?$_GET['type']:'8'?>'
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                $("#goType").append(data.data);
+            },
+        });
+    });
+
+
+
+
     function  gou(){
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
         var goPage =$("#goPage").val();
-        window.location.href="/cn/video/list?page="+goPage+"&type=<?php echo isset($_GET['type'])?$_GET['type']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>";
+        var goPage_list =$("#goPage_list").val();
+        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&goPage_list="+goPage_list+"&goBelong="+goBelong;
     }
     // 预览
     function  video(id){
@@ -166,8 +212,6 @@
             new ckplayer(videoObject);//初始化播放器
    
     }
-
-    
     function  Update(id){
 
         var url =$("#form"+id+"  input[name=url]").val();
@@ -177,9 +221,6 @@
         var link =$("#form"+id+"  input[name=link]").val();
         $.ajax({
             url: '/cn/video/update', // 跳转到 action 
-            data:{
-                id: id,
-            },
             type: 'post',
             data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1},
             dataType: 'json',

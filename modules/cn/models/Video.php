@@ -100,7 +100,7 @@ class Video extends ActiveRecord {
 					break;
 				}
 
-				
+				// var_dump($v['http'].$v['url'] );die;
 				// 抓取列表  --结果
 				$httpurl =$v['http'].$v['url'];
 				// var_dump($httpurl);die;
@@ -109,20 +109,26 @@ class Video extends ActiveRecord {
 					'title' => $content2,
 					'imageurl' => $content3,
 				))->data;  
-
+				
 				// if($v['belong']==3){
 				// 	var_dump($v);
-					// var_dump($data );die;
+			 
 				// }	
-				// var_dump($data);die;
-				//采集数据处理
-				foreach($data as $ky=>$val){
-					// $indata=	Video::find()->select('id')->where("title='{$val['title']}'")->asarray()->One();
-					// if(!$indata){
-					$list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
-					// }
-					$Rlist[]=$list;
+				if($isquery){
+					foreach($data as $ky=>$val){
+						$data[$ky]['http'] =$v['http'];
+						$data[$ky]['belong'] =$v['belong'];
+					}
+					return $data;die;
+				}else{
+					//采集数据处理
+					foreach($data as $ky=>$val){
+						$list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
+				
+						$Rlist[]=$list;
+					}
 				}
+
 			}
 
 		}
@@ -132,6 +138,8 @@ class Video extends ActiveRecord {
 	// 抓取详情 --存入本地
     public static function getQueryDetails($belong,$val,$type,$http,$isquery=0)
     {
+
+
 		switch($belong){
 			case 1 :     	// 新东方
 				$content1= array('.play-body ','text');
@@ -265,7 +273,7 @@ class Video extends ActiveRecord {
 					'imageurl' => $content2
 				))->data;
 
-			
+				// var_dump($data1);die;
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('在线播放$','',$data1[0]['content']);

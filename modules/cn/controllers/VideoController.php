@@ -12,6 +12,10 @@ use app\libs\ApiControl;
 use app\modules\cn\models\Video;
 use app\modules\cn\models\Jian;
 
+use app\modules\cn\models\VideoList;
+use app\modules\cn\models\Category;
+
+
 use yii\data\Pagination;
 
 class VideoController extends ApiControl
@@ -91,25 +95,71 @@ class VideoController extends ApiControl
     {
         $this->layout = 'cn';
         $password =$this->password;
-    
+        Yii::$app->session->set('login',1);
         $login = Yii::$app->session->get('login');
-        $page = Yii::$app->request->post('page',1);
+        $page = Yii::$app->request->get('page',1);
+        $page_list = Yii::$app->request->post('page_list',1);
         $type = Yii::$app->request->get('type',1);
         if($login==$password){
             $belong = Yii::$app->request->post('belong',4);
         }else{
             $belong=0;
         }
-        
-        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'type'.$type;
-        $list =Yii::$app->session->get($sessionStr);
-
-        if(!$list){
-            $list = Video::getQueryList($page,$belong,1,$type); // 获取采集数据
-            Yii::$app->session->set($sessionStr,$list);
+        // 缓存列表
+        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
+        $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+        if($res){
+               $list =   json_decode($res['value'],true);
+               $count =$res['count'];
+        }else{
+            $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
+            // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
+            $list=[];
+            if($listvideo){
+                foreach($listvideo as$key=> $val){
+                    if($key<($page*10)&&$key>=($page-1)*10){
+                        $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                    }
+                }
+                $count = count($listvideo);
+                // var_dump($list);die;
+                $args['key_value'] =$sessionStr;
+                $args['value'] =  json_encode($list,true);
+                $args['time'] =time();
+                $args['count'] =$count;
+                $args['page'] =$page;
+                // 存入缓存列表
+                Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+            }
         }
-        return $this->render('list',['content'=>$list]);
+        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        $category = Category::Category();
+ 
+        return $this->render('list',['content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
     }
+
+    public function actionGetBelong()
+    {
+        $type = Yii::$app->request->post('type',8);
+        $belong = Yii::$app->request->post('belong',0);
+        $list = Category::find()->where("belong=$belong")->asArray()->all();
+        $str ='';
+        foreach($list as $v){
+            $name =$v['name'];
+            $value =$v['type'];
+            if($v['belong']==$belong&&$v['type']==$type){
+                $str .= "<option value='$value'  selected > $name </option>";
+            }else{
+                $str .= "<option value='$value'  > $name </option>";
+            }
+        }
+
+        // var_dump($str);die;
+        // echo $str;
+        die(Method::jsonGenerate(1,$str,'返回数据成功'));
+    }
+
+
 
   /**
      * 采集单条插入
