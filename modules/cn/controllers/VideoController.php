@@ -14,8 +14,7 @@ use app\modules\cn\models\Jian;
 
 use app\modules\cn\models\VideoList;
 use app\modules\cn\models\Category;
-
-
+use app\modules\cn\models\Query;
 use yii\data\Pagination;
 
 class VideoController extends ApiControl
@@ -98,38 +97,45 @@ class VideoController extends ApiControl
         Yii::$app->session->set('login',1);
         $login = Yii::$app->session->get('login');
         $page = Yii::$app->request->get('page',1);
-        $page_list = Yii::$app->request->post('page_list',1);
+        $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',1);
         if($login==$password){
-            $belong = Yii::$app->request->post('belong',4);
+            $belong = Yii::$app->request->get('belong',4);
         }else{
             $belong=0;
         }
+
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+        // var_dump($belong);die;
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
         }else{
-            $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
-            // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
-            $list=[];
-            if($listvideo){
-                foreach($listvideo as$key=> $val){
-                    if($key<($page*10)&&$key>=($page-1)*10){
-                        $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                    }
-                }
-                $count = count($listvideo);
+            if($belong==0){
+                // $list = Query::getVideo();
                 // var_dump($list);die;
-                $args['key_value'] =$sessionStr;
-                $args['value'] =  json_encode($list,true);
-                $args['time'] =time();
-                $args['count'] =$count;
-                $args['page'] =$page;
-                // 存入缓存列表
-                Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+            }else{
+                    $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
+                // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
+                $list=[];
+                if($listvideo){
+                    foreach($listvideo as$key=> $val){
+                        if($key<($page*10)&&$key>=($page-1)*10){
+                            $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                        }
+                    }
+                    $count = count($listvideo);
+                    // var_dump($list);die;
+                    $args['key_value'] =$sessionStr;
+                    $args['value'] =  json_encode($list,true);
+                    $args['time'] =time();
+                    $args['count'] =$count;
+                    $args['page'] =$page;
+                    // 存入缓存列表
+                    Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                }
             }
         }
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);

@@ -197,7 +197,7 @@
         var goType =$("#goType").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&goPage_list="+goPage_list+"&goBelong="+goBelong;
+        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong;
     }
     // 预览
     function  video(id){

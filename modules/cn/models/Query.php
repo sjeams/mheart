@@ -25,9 +25,7 @@ class Query extends ActiveRecord {
 	// 采集列表
 	public static function getVideo( )
 	{
-
 		// https://www.yszzq.com/
-
 		$http="https://www.taopianzy.com";
 		$url = $http."/home/vodlist/1/1-1.html";
 		$rules = [
@@ -36,38 +34,44 @@ class Query extends ActiveRecord {
 		];
 		// 切片选择器,跳过第一条广告
 		$range = '.table tr:gt(0)';
-		$rt = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
+		$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
 		// var_dump($rt );die;
-		foreach($rt as $v){
+		foreach($list as$key=> $v){
 			$html =$http.$v['link'];	
 		 
-			$rules = [
-				'image' => array(' .left>img','data-original'),
-				'name' => array('.right .name','html','span'),
-				'oname' => array('.right .line:eq(0) .text','html','span -font '),
-				'auto' => array('.right .line:eq(1)   .text:eq(0)','html','span -font '),
-				'language' => array('.right .line:eq(1)   .text:eq(1)','html','span -font '),
-				'Starring' => array('.right .line:eq(2)   .text:eq(0)','html','span -font '),
-				'address' => array('.right .line:eq(2)   .text:eq(1)','html','span -font '),
-				'type' => array('.right .line:eq(3)   .text:eq(0)','html','span -font '),
-				'longtime' => array('.right .line:eq(3)   .two:eq(1) ','html','span -font '),
-				'grade' => array('.right .line:eq(4)   .two:eq(0) font:eq(1)','html','span -font '),
-				'uptime' => array('.right .line:eq(4)   .two:eq(1) ','html','span -font '),
-				'pretags' => array(' #pretags','html',' '),
-				//视频地址
-				'm3u8' => array(' .tbAddr:eq(0) input','value',' '),
-				'm3u8video' => array(' .tbAddr:eq(1) input','value',' '),
+			// $rules = [
+			// 	'imageUrl' => array(' .left>img','data-original'),
+			// 	'name' => array('.right .name','html','span'),
+			// 	'oname' => array('.right .line:eq(0) .text','html','span -font '),
+			// 	'auto' => array('.right .line:eq(1)   .text:eq(0)','html','span -font '),
+			// 	'language' => array('.right .line:eq(1)   .text:eq(1)','html','span -font '),
+			// 	'Starring' => array('.right .line:eq(2)   .text:eq(0)','html','span -font '),
+			// 	'address' => array('.right .line:eq(2)   .text:eq(1)','html','span -font '),
+			// 	'type' => array('.right .line:eq(3)   .text:eq(0)','html','span -font '),
+			// 	'longtime' => array('.right .line:eq(3)   .two:eq(1) ','html','span -font '),
+			// 	'grade' => array('.right .line:eq(4)   .two:eq(0) font:eq(1)','html','span -font '),
+			// 	'uptime' => array('.right .line:eq(4)   .two:eq(1) ','html','span -font '),
+			// 	'pretags' => array(' #pretags','html',' '),
+			// 	//视频地址
+			// 	'm3u8' => array(' .tbAddr:eq(0) input','value',' '),
+			// 	'm3u8video' => array(' .tbAddr:eq(1) input','value',' '),
 
+			// ];
+			$rules = [
+				'imageUrl' => array(' .left>img','data-original'),
+				'title' => array('.right .name','html','span'),
+				'url' => array(' .tbAddr:eq(0) input','value',' '),
 			];
 			// 切片选择器,跳过第一条广告
 
 			$rt = QueryList::get($html)->rules($rules)->query()->getData()->all();
-			var_dump($rt );die;
+			$rt ['belong']=0;
+			$rt ['type']=1;
+			$list[$key] =$rt;
 		}
-		
-		;die;
-
-
+		return $list;
+		// var_dump($list );die;
+		// ;die;
 		
 		// $url = "https://www.taopianzy.com/home/index.html";
 		// $rules = [
