@@ -104,10 +104,18 @@ class VideoController extends ApiControl
         }else{
             $belong=0;
         }
-
+ 
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
+
+        // 删除当前缓存
+        $clear = Yii::$app->request->get('clear',0);
+        if($clear){
+            VideoList::deleteAll("key_value ='$sessionStr' ");
+        }
+      
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+
         // var_dump($belong);die;
         if($res){
                $list =   json_decode($res['value'],true);
