@@ -85,11 +85,9 @@ tbody{
 <script src="/laydate/laydate.js"></script>
 <div class="container">
 <div class=" " id="datacontent">
-
-    
     <!-- 视频 -->
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-    <div style="height:240px;position:relative"><div  class="video" style="position: fixed;z-index:100;width:90%;height:240px "> </div></div>
+    <div style="height:360px;position:relative"><div  class="video" style="position: fixed;z-index:100;width:100%;height:360px; "> </div></div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
             var videoObject = {
@@ -123,10 +121,9 @@ tbody{
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
                 <tr>
-      
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -139,6 +136,37 @@ tbody{
                 <?php
             } }
             ?>
+            <tr>
+            <td>
+                <div class="layui-form-item center">
+                        <label class="layui-form-label">来源belong</label>
+                        <div class="layui-input-inline">
+                            <select name="belong" id="goBelong">
+                                <?php  foreach($category as $v){  ?>
+                                    <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==4?'selected':'')?>><?php echo $v['name'] ?></option>
+                                <?php  } ?>
+                            </select>
+                        </div>
+                        <label class="layui-form-label">类型typ</label>
+                        <div class="layui-input-inline">
+                            <select name="type" id="goType">
+            
+                            </select>
+                        </div>
+                        <label class="layui-form-label">采集页码</label>
+                        <div class="layui-input-inline">
+                        <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
+                        </div>
+                    <p class="center">
+                    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
+                    <input type="button"  onclick="gou()" value="GO">
+                    <input type="button"  onclick="clearSession()" value="刷新">
+                    </p>
+                </div>
+
+            </td>
+
+            </tr>
             </tbody>
        
         </table>
@@ -153,34 +181,8 @@ tbody{
         ])?>
     </div>
 
-    <div class="layui-form-item center">
-            <label class="layui-form-label">来源belong</label>
-            <div class="layui-input-inline">
-                <select name="belong" id="goBelong">
-                    <?php  foreach($category as $v){  ?>
-                        <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==4?'selected':'')?>><?php echo $v['name'] ?></option>
-                    <?php  } ?>
-                </select>
-            </div>
-            <label class="layui-form-label">类型typ</label>
-            <div class="layui-input-inline">
-                <select name="type" id="goType">
- 
-                </select>
-            </div>
-            <label class="layui-form-label">采集页码</label>
-            <div class="layui-input-inline">
-            <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
-            </div>
-      
-    </div>
 
-    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
- 
-    <p class="center">
-    <input type="button"  onclick="gou()" value="GO">
-    <input type="button"  onclick="clearSession()" value="刷新">
-    </p>
+
 
 </div>
  
