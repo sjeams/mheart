@@ -144,7 +144,7 @@
             <div class="layui-input-inline">
                 <select name="belong" id="goBelong">
                     <?php  foreach($category as $v){  ?>
-                        <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :''?>><?php echo $v['name'] ?></option>
+                        <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==4?'selected':'')?>><?php echo $v['name'] ?></option>
                     <?php  } ?>
                 </select>
             </div>
