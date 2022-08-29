@@ -114,14 +114,6 @@
             <tbody>
             <?php if($content){
             foreach($content as $kss => $v) {  ?>
-                <div id="form<?php echo $kss?>">
-                    <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                    <input type="hidden" name="title" value="<?php echo $v['title']?>" >
-                    <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
-                    <input type="hidden" name="type" value="<?php echo $v['type']?>" >
-                    <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
-                    <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-                </div>
                 <?php if($v['belong']==0){   ?>
                     <tr>
                     <td  >
@@ -151,6 +143,14 @@
                 </tr>
 
                 <?php   }else{ ?>
+                <div id="form<?php echo $kss?>">
+                    <input type="hidden" name="url" value="<?php echo $v['url']?>" >
+                    <input type="hidden" name="title" value="<?php echo $v['title']?>" >
+                    <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                    <input type="hidden" name="type" value="<?php echo $v['type']?>" >
+                    <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
+                    <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                </div>
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">

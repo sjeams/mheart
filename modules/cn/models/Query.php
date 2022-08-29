@@ -63,7 +63,7 @@ class Query extends ActiveRecord {
 		$rules2 = [
 			'imageurl' => array(' .left>img','data-original'),
 			'title' => array('.right .name','html','span'),
-			'url' => array(' .tbAddr:eq(0) input','value',' '),
+			// 'url' => array(' .tbAddr:eq(0) input','value',' '),
 		];
 		foreach($urls as$key=> $url){
 			// $html =$http.$v['link'];	
