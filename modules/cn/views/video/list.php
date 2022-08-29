@@ -3,9 +3,8 @@
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0">
+
 <style>
- 
  
 .name{
     margin-top: 20px;
@@ -47,6 +46,7 @@
 
      .center{
         text-align: center;
+        margin: auto 0px;
      }
 
      .collect{
@@ -60,15 +60,27 @@
  
  
 <!-- 按钮 -->
-<link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
-<script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
+<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet"> -->
+<!-- <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script> -->
 <script src="/laydate/laydate.js"></script>
- 
-<!-- <div class="container"> -->
- 
+ <!-- Le styles -->
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
+<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
+
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<!-- 编辑器公式插件 -->
+<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
     <!-- 视频 -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0"> -->
-    <div style="height:300px;position:relative"><div class="video" style="position: fixed;z-index:100;width:90%;height:300px;"> </div></div>
+ 
+    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <div style="height:300px;position:relative" class="center"><div class="video" style="position:fixed;z-index:100;width:100%;height:300px;"> </div></div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
             var videoObject = {
@@ -79,6 +91,8 @@
             };
             new ckplayer(videoObject);//初始化播放器
     </script>
+<div class="container">
+
         <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
         <li class="active">采集 <span class="divider">/</span></li>
@@ -104,7 +118,7 @@
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img src="<?php //  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -165,7 +179,7 @@
 
 
 
-<!-- </div> -->
+</div>
  
 <script>
     
@@ -238,20 +252,7 @@
 
 
 
-<!-- Le styles -->
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
 
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-<!-- 编辑器公式插件 -->
-<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
-<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 
 
 
