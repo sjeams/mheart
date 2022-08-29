@@ -113,7 +113,7 @@
       
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php    echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p> 

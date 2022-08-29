@@ -118,14 +118,13 @@ class Video extends ActiveRecord {
 					foreach($data as $ky=>$val){
 						$data[$ky]['http'] =$v['http'];
 						$data[$ky]['belong'] =$v['belong'];
+						$data[$ky]['type'] =$v['type'];
 					}
 					return $data;die;
 				}else{
 					//采集数据处理
 					foreach($data as $ky=>$val){
-						$list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
-				
-						$Rlist[]=$list;
+						$Rlist[] = Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
 					}
 				}
 

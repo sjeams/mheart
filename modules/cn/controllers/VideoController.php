@@ -125,7 +125,7 @@ class VideoController extends ApiControl
                 // $list = Query::getVideo();
                 // var_dump($list);die;
             }else{
-                    $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
+                $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                 $list=[];
                 if($listvideo){
