@@ -97,7 +97,6 @@
                         <input name="title" class="span2" id="appendedInputButton"   type="text" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
                         <button class="btn btn-primary" type="button">搜索</button>
                     </div>
-                  
                     <p class="check">
                     <a href="/cn/video/index?page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >全部</a>
                     <a href="/cn/video/index?type=0&page=1<?php //echo isset($_GET['page'])?$_GET['page']:''?>&title=<?php echo isset($_GET['title'])?$_GET['title']:''?>" >0国产</a>

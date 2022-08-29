@@ -120,7 +120,7 @@
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img src="<?php // echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -138,7 +138,7 @@
                 <div class="layui-form-item center">
                         <label class="layui-form-label">来源belong</label>
                         <div class="layui-input-inline">
-                            <select name="belong" id="goBelong">
+                            <select name="belong" id="goBelong" onchange="func()">
                                 <?php  foreach($category as $v){  ?>
                                     <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==4?'selected':'')?>><?php echo $v['name'] ?></option>
                                 <?php  } ?>
@@ -196,10 +196,31 @@
             dataType: 'json',
             success: function (data) {
                 console.log(data)
-                $("#goType").append(data.data);
+                $("#goType").html(data.data);
             },
         });
     });
+
+    function func(){  
+    //获取被选中的option标签  
+        var belong = $('#goBelong  option:selected').val(); 
+        $.ajax({
+            url: '/cn/video/get-belong', // 跳转到 action 
+            data:{
+                belong:belong,
+                type:'<?php echo isset($_GET['type'])?$_GET['type']:'8'?>'
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                $("#goType").html(data.data);
+            },
+        });
+    }  
+
+
+
 
     function clearSession(){
         var goBelong =$("#goBelong").val();
