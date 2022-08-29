@@ -3,18 +3,10 @@
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
- 
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0">
 <style>
-body{
-    min-width:auto!important;
-    max-width: 768px;
-    }
-tbody{
-    margin-top: 10px;
-    /* border: 1px solid black; */
-    border-radius: 20px;
-}
-
+ 
+ 
 .name{
     margin-top: 20px;
 
@@ -35,20 +27,7 @@ tbody{
 }
 </style>
  
-<!-- Le styles -->
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet">
 
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-<!-- 编辑器公式插件 -->
-<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
-<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
  
  <style>
      .check{
@@ -84,11 +63,12 @@ tbody{
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
 <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
 <script src="/laydate/laydate.js"></script>
-<div class="container">
-<div class=" " id="datacontent">
+ 
+<!-- <div class="container"> -->
+ 
     <!-- 视频 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-    <div style="height:360px;position:relative"><div  class="video" style="position: fixed;z-index:100;width:100%;height:360px; "> </div></div>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0"> -->
+    <div style="height:300px;position:relative"><div class="video" style="position: fixed;z-index:100;width:90%;height:300px;"> </div></div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
             var videoObject = {
@@ -185,9 +165,8 @@ tbody{
 
 
 
-</div>
+<!-- </div> -->
  
-</div>
 <script>
     
     $(function(){
@@ -259,7 +238,20 @@ tbody{
 
 
 
-<style>
+<!-- Le styles -->
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
+<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
+
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<!-- 编辑器公式插件 -->
+<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 
 
 
