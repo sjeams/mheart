@@ -5,10 +5,20 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
  
 <style>
+body{
+    min-width:auto!important;
+    }
+tbody{
+    margin-top: 10px;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+}
+
 .name{
     margin-top: 20px;
 
 }
+
 .bord{
     display: inline-block;
     text-align: center;
@@ -53,6 +63,12 @@
         border: 1px solid black;
         text-align: center;
      }
+
+
+     .center{
+        text-align: center;
+     }
+
      .collect{
         display: inline-block;
         width: 65px;
@@ -67,37 +83,34 @@
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
 <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
 <script src="/laydate/laydate.js"></script>
+<div class="container">
 <div class=" " id="datacontent">
-    <ul class="breadcrumb">
+
+    
+    <!-- 视频 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
+    <div style="height:240px;position:relative"><div  class="video" style="position: fixed;z-index:100;width:90%;height:240px "> </div></div>
+        <script type="text/javascript">
+            //定义一个变量：videoObject，用来做为视频初始化配置
+            var videoObject = {
+                container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+                plug:'hls.js',//设置使用hls插件
+                autoplay:true,
+                video: ''//视频地址
+            };
+            new ckplayer(videoObject);//初始化播放器
+    </script>
+        <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
         <li class="active">采集 <span class="divider">/</span></li>
         <li><a href="/cn/video/index">内容</a> </li>
     </ul>
-
-     
-
- 
-    <form action="/cn/video/list" method="post">
-        <table class="table table-hover ">
-            <thead>
-                <p>
-                    <!-- 视频 -->
-                    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-                    <div class="video" style="width:300px;height:200px"></div>
-                        <script type="text/javascript">
-                            //定义一个变量：videoObject，用来做为视频初始化配置
-                            var videoObject = {
-                                container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
-                                plug:'hls.js',//设置使用hls插件
-                                autoplay:true,
-                                video: ''//视频地址
-                            };
-                            new ckplayer(videoObject);//初始化播放器
-                    </script>
-                    <!-- 视频end -->
-                </p>
- 
-            </thead>
+    <!-- 视频end -->
+    <form action="/cn/video/list" method="post" class="  ">
+        <table class="table table-bordered  "  >
+            <!-- <thead>
+            </thead> -->
+       
             <tbody>
             <?php if($content){
             foreach($content as $kss => $v) {  ?>
@@ -111,12 +124,12 @@
                 </div>
                 <tr>
       
-                    <td  style=" width:25%">
+                    <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php    echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p> <img src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
-                        <p> 
+                        <p class="center"> 
                              <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
                              <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
                         </p>
@@ -127,19 +140,20 @@
             } }
             ?>
             </tbody>
+       
         </table>
         <!-- <button class="push btn btn-primary" type="submit">排序</button> -->
     </form>
 
    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
-   <div class="pagination pagination-left">
+   <div class="pagination pagination-left center">
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
             'pagination' => $page,
         ])?>
     </div>
 
-    <div class="layui-form-item">
+    <div class="layui-form-item center">
             <label class="layui-form-label">来源belong</label>
             <div class="layui-input-inline">
                 <select name="belong" id="goBelong">
@@ -156,21 +170,21 @@
             </div>
             <label class="layui-form-label">采集页码</label>
             <div class="layui-input-inline">
-            <input type="text" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
+            <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
             </div>
       
-        </div>
+    </div>
 
     <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
  
-    <p>
+    <p class="center">
     <input type="button"  onclick="gou()" value="GO">
     <input type="button"  onclick="clearSession()" value="刷新">
     </p>
 
 </div>
  
- 
+</div>
 <script>
     
     $(function(){
@@ -219,6 +233,7 @@
             new ckplayer(videoObject);//初始化播放器
    
     }
+    // 收藏
     function  Update(id){
 
         var url =$("#form"+id+"  input[name=url]").val();
@@ -236,36 +251,7 @@
             },
         });
     }
-//   function  updateStatus(obj){
-//       var id = $(obj).data('id');
-//       var status = $(obj).data('value');
-//     if(status==1){status=0;}else{status=1;}
-//     $.ajax({
-//         url: '/cn/user/updatestatus', // 跳转到 action 
-//         data:{
-//             id: id,
-//             status: status,
-//             // editStatus : 1,
-//         },
-//         type: 'post',
-//         // dataType: 'json',
-//         success: function (data) {
-//             //查看还是取消
-//             if(status==0){ var shownum =parseInt( $('#brush b').text( ))+1;  }else{  var shownum =parseInt( $('#brush b').text( ))-1;}
-            
-//             if(shownum==0){    
-//                 $('#brush b').css('display','none');
-//             }else{
-//                 $('#brush b').css('display','inline-block');
-//             }
-//             $('#brush b').text(shownum );
-//             // alert(status);
-//             $(obj).data('value',status);  // 修改状态
-//         },
-//         error: function () {
-//         }
-//     });
-//   }
+ 
 </script>
 
 
