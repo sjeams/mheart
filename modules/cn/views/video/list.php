@@ -80,7 +80,7 @@
     <!-- 视频 -->
  
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div style="height:300px;position:relative" class="center"><div class="video" style="position:fixed;z-index:100;width:100%;height:300px;"> </div></div>
+    <div style="height:300px;position:relative" class="center"><div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div></div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
             var videoObject = {
@@ -118,7 +118,7 @@
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php //  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
