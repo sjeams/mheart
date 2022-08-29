@@ -47,7 +47,9 @@ class Query extends ActiveRecord {
 
 
 		// 切片选择器----start
-		$range = 'tbody tr ';
+		$range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
+		// $range = '.playList table tbody tr:nth-child(even)';// 偶数行
+		
 		// 切片选择器,跳过第一条广告
 		$rules = [
 			// 'imageUrl' => array(' .left>img','data-original'),
@@ -58,9 +60,13 @@ class Query extends ActiveRecord {
 		// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
 		$sql = QueryList::rules($rules)->range($range);
 		// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
-
+		$rules2 = [
+			'imageurl' => array(' .left>img','data-original'),
+			'title' => array('.right .name','html','span'),
+			// 'url' => array(' .tbAddr:eq(0) input','value',' '),
+		];
 		foreach($urls as$key=> $url){
-			$html =$http.$v['link'];	
+			// $html =$http.$v['link'];	
 			// $rules = [
 			// 	'imageUrl' => array(' .left>img','data-original'),
 			// 	'name' => array('.right .name','html','span'),
@@ -77,19 +83,11 @@ class Query extends ActiveRecord {
 			// 	//视频地址
 			// 	'm3u8' => array(' .tbAddr:eq(0) input','value',' '),
 			// 	'm3u8video' => array(' .tbAddr:eq(1) input','value',' '),
-
 			// ];
-
-			$rules = [
-				'imageurl' => array(' .left>img','data-original'),
-				'title' => array('.right .name','html','span'),
-				// 'url' => array(' .tbAddr:eq(0) input','value',' '),
-			];
 			// 切片选择器,跳过第一条广告
-			$rt = QueryList::get($html)->rules($rules)->query()->getData()->all();
+			$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
 			$rt ['belong']=0;
 			$rt ['type']=$search;
-			
 			// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
 			$video = $sql->get($url)->query()->getData()->all();
 			// $rt['title'] =$video[0]['name'];

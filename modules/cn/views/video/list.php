@@ -30,17 +30,22 @@
  
  <style>
      .check{
-         display: block;
+         /* display: flex; */
          float: left;
-
+         margin: 0px auto ;
          clear: both;
+         padding: 5px;
+         
      }
      .check a{
         display: inline-block;
-        width: 65px;
- 
+        width: 120px;
+        padding: 5px 20px;
         border: 1px solid black;
-        text-align: center;
+        text-align: center;  
+        border-radius: 5px; 
+        margin:  5px auto;
+
      }
 
 
@@ -117,22 +122,40 @@
                     <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
-                <?php if($v['belong']==0){  foreach( $v['video'] as $v){?>
+                <?php if($v['belong']==0){   ?>
                     <tr>
                     <td  >
-                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <!-- <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p> -->
-                        <p> <?php echo $v['title']?></p>
-                        </a>
+                    <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                    <p> <?php echo $v['title']?></p>
+                    <td  >
+                    </tr>
+                    <tr>
+                    <td>
+                    <span class="check">
+                    <?php foreach( $v['video'] as$y=> $vdieo){?>
+                        <div id="form<?php echo $kss.'c'.$y?>" style="display:none">
+                            <input type="hidden" name="url" value="<?php echo $vdieo['url']?>" >
+                            <input type="hidden" name="title" value="<?php echo $vdieo['title']?>" >
+                            <input type="hidden" name="imageurl" value="<?php echo $vdieo['imageurl']?>" >
+                            <input type="hidden" name="type" value="<?php echo $vdieo['type']?>" >
+                            <input type="hidden" name="belong" value="<?php echo $vdieo['belong']?>" >
+                            <input type="hidden" name="link" value="<?php echo $vdieo['link']?>" >
+                        </div>
+
+                        <!-- <a href="<?php $v['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $v['title']?>  </a> -->
+                        <a href="#"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a>
                         <!-- <p class="center"> 
                              <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
                              <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
                         </p> -->
+
+                        <?php } ?>
+                        </span>
                     </td>
                  
                 </tr>
 
-                <?php } }else{ ?>
+                <?php   }else{ ?>
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
@@ -263,6 +286,7 @@
     // 预览
     function  video(id){
         var url =$("#form"+id+"  input[name=url]").val();
+        console.log(url);
         // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
         var videoObject = {
                 container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
