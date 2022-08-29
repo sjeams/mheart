@@ -7,6 +7,7 @@
 <style>
 body{
     min-width:auto!important;
+    max-width: 768px;
     }
 tbody{
     margin-top: 10px;
@@ -83,7 +84,7 @@ tbody{
 <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
 <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
 <script src="/laydate/laydate.js"></script>
-<div class="container">
+ 
 <div class=" " id="datacontent">
     <!-- 视频 -->
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
@@ -123,7 +124,7 @@ tbody{
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img src="<?php // echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -186,7 +187,7 @@ tbody{
 
 </div>
  
-</div>
+ 
 <script>
     
     $(function(){
