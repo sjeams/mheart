@@ -93,8 +93,8 @@
         <thead>
             <tr>
                 <td >
-                    <div class="input-append center">
-                        <input name="title" class="  span2" id="appendedInputButton"   type="text" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
+                    <div class="input-append center" style="display: block;">
+                        <input name="title" class="span2" id="appendedInputButton"   type="text" value="<?php echo isset($_GET['title'])?$_GET['title']:''?>"/>
                         <button class="btn btn-primary" type="button">搜索</button>
                     </div>
                   
@@ -136,18 +136,11 @@
                         <p> <?php echo $v['title']?></p>
  
                         </a>
-                        <p> 
+                        <p class="center">
                             <span onclick="videoup(<?php echo $v['id']?>)" class="videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
                             <span onclick="Delete(<?php echo $v['id']?>)" class="collect"> 删除 </span>
                         </p>
                     </td>
-                    <!-- <td  ><span> <img src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></span></td> -->
-     
-                    <!-- <td  class="notSLH" style="width: 247px;">
-                        <div>
-                            <a class="btn" href="/user/brush/delete?id=<?php echo $v['id'] ; ?>" >删除</a>
-                        </div>
-                    </td> -->
                 </tr>
                 <?php
             }
