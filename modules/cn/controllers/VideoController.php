@@ -100,11 +100,14 @@ class VideoController extends ApiControl
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',1);
         if($login==$password){
-            $belong = Yii::$app->request->get('belong',4);
+            $belong = Yii::$app->request->get('belong',0);
         }else{
             $belong=0;
         }
  
+        if($belong==0){
+            if($type=='undefined'||$type==null||empty($type)) $type='封神榜';
+        }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
 
@@ -113,17 +116,24 @@ class VideoController extends ApiControl
         if($clear){
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
-      
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
-
         // var_dump($belong);die;
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
         }else{
             if($belong==0){
-                $list = Query::getVideo();
-                var_dump($list);die;
+                $list = Query::getVideo($type);
+                $count = count($list);
+                $args['key_value'] =$sessionStr;
+                $args['value'] =  json_encode($list,true);
+                $args['time'] =time();
+                $args['count'] =$count;
+                $args['page'] =$page;
+                $args['belong'] =$belong;
+                // 存入缓存列表
+                Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+              
             }else{
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
@@ -141,6 +151,7 @@ class VideoController extends ApiControl
                     $args['time'] =time();
                     $args['count'] =$count;
                     $args['page'] =$page;
+                    $args['belong'] =$belong;
                     // 存入缓存列表
                     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                 }
@@ -148,7 +159,7 @@ class VideoController extends ApiControl
         }
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $category = Category::Category();
- 
+        // var_dump($list);die;
         return $this->render('list',['content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
     }
 
@@ -157,7 +168,8 @@ class VideoController extends ApiControl
         $type = Yii::$app->request->post('type',8);
         $belong = Yii::$app->request->post('belong',0);
         $list = Category::find()->where("belong=$belong")->asArray()->all();
-        $str ='';
+        $str ='<select name="goType" id="goType">';
+
         foreach($list as $v){
             $name =$v['name'];
             $value =$v['type'];
@@ -167,7 +179,7 @@ class VideoController extends ApiControl
                 $str .= "<option value='$value'  > $name </option>";
             }
         }
-
+        $str .=' </select>';
         // var_dump($str);die;
         // echo $str;
         die(Method::jsonGenerate(1,$str,'返回数据成功'));

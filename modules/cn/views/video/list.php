@@ -117,6 +117,22 @@
                     <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
+                <?php if($v['belong']==0){  foreach( $v['video'] as $v){?>
+                    <tr>
+                    <td  >
+                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                        <!-- <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p> -->
+                        <p> <?php echo $v['title']?></p>
+                        </a>
+                        <!-- <p class="center"> 
+                             <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
+                             <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
+                        </p> -->
+                    </td>
+                 
+                </tr>
+
+                <?php } }else{ ?>
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
@@ -131,7 +147,7 @@
                  
                 </tr>
                 <?php
-            } }
+            } } }
             ?>
             <tr>
             <td>
@@ -145,10 +161,8 @@
                             </select>
                         </div>
                         <label class="layui-form-label">类型typ</label>
-                        <div class="layui-input-inline">
-                            <select name="type" id="goType">
-            
-                            </select>
+                        <div class="layui-input-inline" id="goTypeInput">
+   
                         </div>
                         <label class="layui-form-label">采集页码</label>
                         <div class="layui-input-inline">
@@ -183,28 +197,36 @@
 </div>
  
 <script>
-    
     $(function(){
-        // var goBelong =$("#goBelong").val();
-        $.ajax({
-            url: '/cn/video/get-belong', // 跳转到 action 
-            data:{
-                belong:'<?php echo isset($_GET['belong'])?$_GET['belong']:'4'?>',
-                type:'<?php echo isset($_GET['type'])?$_GET['type']:'8'?>'
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                $("#goType").html(data.data);
-            },
-        });
+        var belong =$("#goType").val();
+        if(!belong){
+            var inputvalue ='<input type="text" value="" name="goType" id="goType">';
+            $("#goTypeInput").html(inputvalue);
+        }else{
+            $.ajax({
+                url: '/cn/video/get-belong', // 跳转到 action 
+                data:{
+                    belong:'<?php echo isset($_GET['belong'])?$_GET['belong']:'0'?>',
+                    type:'<?php echo isset($_GET['type'])?$_GET['type']:''?>'
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data)
+                    $("#goTypeInput").html(data.data);
+                },
+            });
+        }
     });
 
     function func(){  
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
-        $.ajax({
+        if(belong==0){
+            var inputvalue ='<input type="text" value="" name="goType">';
+            $("#goTypeInput").html(inputvalue);
+        }else{
+            $.ajax({
             url: '/cn/video/get-belong', // 跳转到 action 
             data:{
                 belong:belong,
@@ -214,12 +236,12 @@
             dataType: 'json',
             success: function (data) {
                 console.log(data)
-                $("#goType").html(data.data);
+                $("#goTypeInput").html(data.data);
             },
-        });
+            });
+        }
+
     }  
-
-
 
 
     function clearSession(){

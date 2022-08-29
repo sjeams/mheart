@@ -23,11 +23,15 @@ class Query extends ActiveRecord {
             // return '{{%query}}';
     }
 	// 采集列表
-	public static function getVideo( )
+	public static function getVideo($search='封神榜')
 	{
+
+ 
+		$url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 		// https://www.yszzq.com/
 		$http="https://www.taopianzy.com";
-		$url = $http."/home/vodlist/1/1-1.html";
+		// $url = $http."/home/vodlist/1/1-1.html";
+	
 		$rules = [
 			'name' => array('td:eq(0) span:eq(0)','html','a'),
 			'link' => array('td:eq(0) a','href',''),
@@ -35,10 +39,28 @@ class Query extends ActiveRecord {
 		// 切片选择器,跳过第一条广告
 		$range = '.table tr:gt(0)';
 		$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
-		// var_dump($rt );die;
-		foreach($list as$key=> $v){
+		// var_dump($list );die;
+		$urls =[];
+		foreach($list as  $v){
+			$urls[] =$http.$v['link'];
+		}
+
+
+		// 切片选择器----start
+		$range = 'tbody tr ';
+		// 切片选择器,跳过第一条广告
+		$rules = [
+			// 'imageUrl' => array(' .left>img','data-original'),
+			// 'name' => array('.right .name','html','span'),
+			'title' => array('.title .download-title ','html','span'),
+			'url' => array(' .tbAddr:eq(0) input','value',' '),
+		];
+		// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
+		$sql = QueryList::rules($rules)->range($range);
+		// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+
+		foreach($urls as$key=> $url){
 			$html =$http.$v['link'];	
-		 
 			// $rules = [
 			// 	'imageUrl' => array(' .left>img','data-original'),
 			// 	'name' => array('.right .name','html','span'),
@@ -57,18 +79,26 @@ class Query extends ActiveRecord {
 			// 	'm3u8video' => array(' .tbAddr:eq(1) input','value',' '),
 
 			// ];
+
 			$rules = [
-				'imageUrl' => array(' .left>img','data-original'),
+				'imageurl' => array(' .left>img','data-original'),
 				'title' => array('.right .name','html','span'),
-				'url' => array(' .tbAddr:eq(0) input','value',' '),
+				// 'url' => array(' .tbAddr:eq(0) input','value',' '),
 			];
 			// 切片选择器,跳过第一条广告
-
 			$rt = QueryList::get($html)->rules($rules)->query()->getData()->all();
 			$rt ['belong']=0;
-			$rt ['type']=1;
+			$rt ['type']=$search;
+			
+			// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+			$video = $sql->get($url)->query()->getData()->all();
+			// $rt['title'] =$video[0]['name'];
+			// $rt['imageurl'] =$video[0]['imageurl'];
+			$rt['video'] =	$video;
 			$list[$key] =$rt;
+			// var_dump($list[0]);
 		}
+		// var_dump($list );die;
 		return $list;
 		// var_dump($list );die;
 		// ;die;
