@@ -52,9 +52,11 @@
      .collect{
         display: inline-block;
         width: 65px;
-        padding: 5px;
+        padding: 5px 20px;
         border: 1px solid black;
-        text-align: center;   
+        text-align: center;  
+        border-radius: 5px; 
+        margin: auto 10px;
      }
  </style>
  
@@ -93,7 +95,7 @@
     </script>
 <div class="container">
 
-        <ul class="breadcrumb">
+    <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
         <li class="active">采集 <span class="divider">/</span></li>
         <li><a href="/cn/video/index">内容</a> </li>
@@ -118,7 +120,7 @@
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img src="<?php  echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -167,9 +169,8 @@
         </table>
         <!-- <button class="push btn btn-primary" type="submit">排序</button> -->
     </form>
-
    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
-   <div class="pagination pagination-left center">
+   <div class="pagination pagination-left center" >
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
             'pagination' => $page,
@@ -177,7 +178,7 @@
     </div>
 
 
-
+    <div style="height:20px;overflow:hidden"></div>            
 
 </div>
  

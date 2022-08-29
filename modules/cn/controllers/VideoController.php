@@ -210,6 +210,7 @@ class VideoController extends ApiControl
      */
     public function actionIndex()
     {
+        $this->layout = 'cn';
         $password =$this->password;
         $login = Yii::$app->request->get('login');
         // $belong = Yii::$app->request->get('belong');
