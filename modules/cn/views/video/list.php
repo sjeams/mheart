@@ -132,24 +132,19 @@
                     <tr>
                     <td>
                     <span class="check">
-                    <?php foreach( $v['video'] as$y=> $vdieo){?>
+                    <?php if($v['video']){ foreach( $v['video'] as$y=> $vdieo){?>
                         <div id="form<?php echo $kss.'c'.$y?>" style="display:none">
                             <input type="hidden" name="url" value="<?php echo $vdieo['url']?>" >
-                            <input type="hidden" name="title" value="<?php echo $vdieo['title']?>" >
-                            <input type="hidden" name="imageurl" value="<?php echo $vdieo['imageurl']?>" >
-                            <input type="hidden" name="type" value="<?php echo $vdieo['type']?>" >
-                            <input type="hidden" name="belong" value="<?php echo $vdieo['belong']?>" >
-                            <input type="hidden" name="link" value="<?php echo $vdieo['link']?>" >
                         </div>
 
-                        <!-- <a href="<?php $v['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $v['title']?>  </a> -->
+                        <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                         <a href="#"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a>
                         <!-- <p class="center"> 
                              <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
                              <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
                         </p> -->
 
-                        <?php } ?>
+                        <?php } }?>
                         </span>
                     </td>
                  
