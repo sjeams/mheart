@@ -37,7 +37,7 @@ class WechatApiController extends ApiControl{
      * 资源调用中心
      * app/api/file-content
      */
-     public function actionWchatCode(){
+     public function actionWechatCode(){
         $code = Yii::$app->request->get('code');
         var_dump( $code);die;
 
