@@ -51,9 +51,9 @@ class WechatApiController extends ApiControl{
 		$url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appid . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
 		$res = Method::wechatHttpRequest($url);
 		$res = json_decode($res, true); //这里返回了openid  session_key  { ["session_key"]=> string(24) "+J57ZEEVLKOOW+vV4hoKQg==" ["openid"]=> string(28) "oVn92tyIcbLb0rt6NR6GyF4XBt8w" }
-  
+        $openid =$res['openid'];
         $res = Method::wechatDecryptData($encryptedData, $iv,$res['session_key']);
-        die(json_encode(['code' => 1,'data'=>$res,'message' => '登录成功']));   
+        die(json_encode(['code' => 1,'data'=>$res,'openid'=>$openid,'message' => '登录成功']));   
     }
     /**
      * 用户信息返回
