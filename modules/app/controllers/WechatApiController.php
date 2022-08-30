@@ -25,7 +25,8 @@ header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NA
 
 class WechatApiController extends ApiControl{
     public  $appid;    
-     function init(){
+    public  $secret; 
+    function init(){
         // Yii::$app->session->set('uid',30186);
         // Yii::$app->session->set('userId',40888);
         parent::init();
