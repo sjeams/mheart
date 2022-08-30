@@ -52,8 +52,8 @@ class WechatApiController extends ApiControl{
 		$res = json_decode($res, true); //这里返回了openid  session_key  { ["session_key"]=> string(24) "+J57ZEEVLKOOW+vV4hoKQg==" ["openid"]=> string(28) "oVn92tyIcbLb0rt6NR6GyF4XBt8w" }
         $openid =$res['openid'];
         $res = Method::wechatDecryptData($encryptedData, $iv,$res['session_key']);
-        var_dump($res);die;
-        $phone = $res->phone;
+ 
+        $phone = $res->phoneNumber;
         
         $register =WechatUser::find()->where("phone=$phone")->one();
         if(!$register){
