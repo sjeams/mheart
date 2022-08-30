@@ -52,7 +52,7 @@ class WechatApiController extends ApiControl{
 		$res = Method::wechatHttpRequest($url);
 		$res = json_decode($res, true); //这里返回了openid  session_key  { ["session_key"]=> string(24) "+J57ZEEVLKOOW+vV4hoKQg==" ["openid"]=> string(28) "oVn92tyIcbLb0rt6NR6GyF4XBt8w" }
   
-        $res = Method::wechatDecryptData($encryptedData, $iv,$res->session_key);
+        $res = Method::wechatDecryptData($encryptedData, $iv,$res['session_key']);
         die(json_encode(['code' => 1,'data'=>$res,'message' => '登录成功']));   
     }
     /**
