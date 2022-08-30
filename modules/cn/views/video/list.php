@@ -199,7 +199,7 @@
             </tbody>
        
         </table>
-        <!-- <button class="push btn btn-primary" type="submit">排序</button> -->
+ 
     </form>
    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
    <div class="pagination pagination-left center" >
