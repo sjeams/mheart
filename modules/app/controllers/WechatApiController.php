@@ -12,7 +12,7 @@ use app\libs\Pager;
 use app\libs\ApiControl;
 
 
-// use app\modules\cn\models\Login;
+use app\modules\app\models\WechatUser;
 
 use Yii;
 use UploadFile;
@@ -42,7 +42,6 @@ class WechatApiController extends ApiControl{
      * wechat-app/app/wechat-code
      */
      public function actionWechatCode(){
-     
         $code = Yii::$app->request->get('code');
         $encryptedData = Yii::$app->request->get('encryptedData');
         $iv = Yii::$app->request->get('iv');
@@ -53,6 +52,14 @@ class WechatApiController extends ApiControl{
 		$res = json_decode($res, true); //这里返回了openid  session_key  { ["session_key"]=> string(24) "+J57ZEEVLKOOW+vV4hoKQg==" ["openid"]=> string(28) "oVn92tyIcbLb0rt6NR6GyF4XBt8w" }
         $openid =$res['openid'];
         $res = Method::wechatDecryptData($encryptedData, $iv,$res['session_key']);
+        $phone =$res['phone'];
+        $register =WechatUser::find()->where("phone=$phone")->one();
+        if(!$register){
+            $row = new WechatUser();
+            $row->openid =$openid;
+            $row->phone =$phone;
+            $row->save();
+        }
         die(json_encode(['code' => 1,'data'=>$res,'openid'=>$openid,'message' => '登录成功']));   
     }
     /**
