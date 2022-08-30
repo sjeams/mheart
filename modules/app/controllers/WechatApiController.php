@@ -24,12 +24,15 @@ header('Access-Control-Allow-Credentials: true;');
 header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 
 class WechatApiController extends ApiControl{
-    
+    public  $appid;    
      function init(){
         // Yii::$app->session->set('uid',30186);
         // Yii::$app->session->set('userId',40888);
         parent::init();
         //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
+        $this->appid ='wxf54aab84c2d7e384';
+        $this->secret='8c5925f3332a36ca67037d5806b10aa5';
+
     }
     public $enableCsrfValidation = false;
 
@@ -38,9 +41,15 @@ class WechatApiController extends ApiControl{
      * app/api/file-content
      */
      public function actionWechatCode(){
+     
         $code = Yii::$app->request->get('code');
-        var_dump( $code);die;
-
+        $appid = $this->appid; //小程序appid
+		$secret = $this->secret; //小程序密钥
+		$url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appid . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
+		$res = Method::wechatHttpRequest($url);
+		$res = json_decode($res, true); //这里返回了openid  session_key
+        return $res;
+        // var_dump( $res);die;
     }
 
 }
