@@ -801,7 +801,8 @@ class Method
     //     echo '总和：', array_sum( $result );
     //     exit;
     // }
-    function wechatHttpRequest($url, $data='', $method='GET'){
+    // 微信请求
+    public static function  wechatHttpRequest($url, $data='', $method='GET'){
         $curl = curl_init();  
         curl_setopt($curl, CURLOPT_URL, $url);  
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);  
@@ -825,5 +826,18 @@ class Method
         curl_close($curl);  
         return $result;
       }
- 
+
+       // 微信解密
+      public static function wechatDecryptData($encryptedData, $iv,$sessionKey )
+      {
+        $aesKey=base64_decode($sessionKey);
+        $aesIV=base64_decode($iv);
+        $aesCipher=base64_decode($encryptedData);
+        
+        $result=openssl_decrypt( $aesCipher, "AES-128-CBC", $aesKey, 1, $aesIV);
+        
+        $dataObj=json_decode( $result );
+
+        return $dataObj;
+      }
 }

@@ -38,8 +38,8 @@ class WechatApiController extends ApiControl{
     public $enableCsrfValidation = false;
 
     /**
-     * 资源调用中心
-     * app/api/file-content
+     * openId
+     * wechat-app/app/wechat-code
      */
      public function actionWechatCode(){
      
@@ -47,11 +47,20 @@ class WechatApiController extends ApiControl{
         $appid = $this->appid; //小程序appid
 		$secret = $this->secret; //小程序密钥
 		$url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . $appid . "&secret=" . $secret . "&js_code=" . $code . "&grant_type=authorization_code";
-		$res = Method::curl_post_fix($url ,[]);
-    
+		$res = Method::wechatHttpRequest($url);
 		$res = json_decode($res, true); //这里返回了openid  session_key
- 
         die(json_encode(['code' => 1,'data'=>$res,'message' => '登录成功']));   
     }
-
+    /**
+     * 用户信息返回
+     * wechat-app/app/wechat-info
+     */
+    public function actionWechatInfo(){
+        
+         $encryptedData = Yii::$app->request->get('encryptedData');
+         $iv = Yii::$app->request->get('iv');
+         $sessionKey = Yii::$app->request->get('sessionKey');
+        $res = Method::wechatDecryptData($encryptedData, $iv,$sessionKey);
+        die(json_encode(['code' => 1,'data'=>$res,'message' => 'succes']));   
+    }
 }
