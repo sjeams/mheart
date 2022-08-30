@@ -50,7 +50,7 @@ class WechatApiController extends ApiControl{
 		$res = Method::wechatHttpRequest($url);
 		$res = json_decode($res, true); //这里返回了openid  session_key
         return $res;
-        // var_dump( $res);die;
+        var_dump( $res);die;
     }
 
 }
