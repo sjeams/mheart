@@ -1,0 +1,46 @@
+<?php
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:53
+ * @Description:  微信聊天室接口
+ */
+ 
+namespace app\modules\app\controllers;
+
+use app\libs\Method;
+use app\libs\Pager;
+use app\libs\ApiControl;
+
+
+// use app\modules\cn\models\Login;
+
+use Yii;
+use UploadFile;
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
+header('Access-Control-Allow-Credentials: true;');
+
+header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+
+class WechatApiController extends ApiControl{
+    
+     function init(){
+        // Yii::$app->session->set('uid',30186);
+        // Yii::$app->session->set('userId',40888);
+        parent::init();
+        //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
+    }
+    public $enableCsrfValidation = false;
+
+    /**
+     * 资源调用中心
+     * app/api/file-content
+     */
+     public function actionWchatCode(){
+        $code = Yii::$app->request->get('code');
+        var_dump( $code);die;
+
+    }
+
+}
