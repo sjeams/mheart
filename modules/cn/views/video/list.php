@@ -87,7 +87,11 @@
     <!-- 视频 -->
  
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div style="height:300px;position:relative" class="center"><div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div></div>
+    <div style="height:300px;position:relative" class="center">
+    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px;">video</button>
+    <div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div>
+
+    </div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
             var videoObject = {
@@ -98,6 +102,7 @@
             };
             new ckplayer(videoObject);//初始化播放器
     </script>
+
 <div class="container">
 
     <ul class="breadcrumb">
@@ -218,7 +223,7 @@
     $(function(){
         var belong =$("#goType").val();
         if(!belong){
-            var inputvalue ='<input type="text" value="" name="goType" id="goType">';
+            var inputvalue ='<input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">';
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
@@ -241,7 +246,7 @@
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
         if(belong==0){
-            var inputvalue ='<input type="text" value="" name="goType">';
+            var inputvalue ='<input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType">';
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({

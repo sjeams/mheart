@@ -98,7 +98,7 @@ class VideoController extends ApiControl
         $login = Yii::$app->session->get('login');
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
-        $type = Yii::$app->request->get('type',1);
+        $type = Yii::$app->request->get('type');
         if($login==$password){
             $belong = Yii::$app->request->get('belong',0);
         }else{
@@ -106,6 +106,7 @@ class VideoController extends ApiControl
         }
  
         if($belong==0){
+     
             if($type=='undefined'||$type==null||empty($type)) $type='封神榜';
         }
         // 缓存列表
