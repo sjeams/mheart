@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "70140c1d-77c4-4394-9a2b-f2f39005d551",
+  "uuid": "cb07701e-f4d1-4df5-be66-659f511aa748",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "煎饺": {
       "ver": "1.0.4",
-      "uuid": "8b2c5e11-400f-4a37-82a4-de9d03e1ae3a",
-      "rawTextureUuid": "70140c1d-77c4-4394-9a2b-f2f39005d551",
+      "uuid": "3ce8558e-0e79-46ed-8f14-aba7ca7c6a19",
+      "rawTextureUuid": "cb07701e-f4d1-4df5-be66-659f511aa748",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

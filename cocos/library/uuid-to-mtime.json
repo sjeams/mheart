@@ -547,7 +547,7 @@
   "3742f2e6-3c00-4908-a3e9-6cd3e607161c": {
     "asset": 1656683729547,
     "meta": 1656683729542,
-    "relativePath": "resources\\tools"
+    "relativePath": "Textrue\\tools"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
     "asset": 1656683729501,
@@ -597,7 +597,7 @@
   "3cc13c11-e12b-4267-b80f-06466de811ad": {
     "asset": 1656682042555,
     "meta": 1656685075850,
-    "relativePath": "resources\\tools\\黄石.png"
+    "relativePath": "Textrue\\tools\\黄石.png"
   },
   "cbca4d71-a3a5-4917-a794-e5a434e67b3a": {
     "asset": 1656682042544,
@@ -607,32 +607,32 @@
   "616d2547-ddfe-4027-a4e9-bfedd2919543": {
     "asset": 1656682042551,
     "meta": 1656685075860,
-    "relativePath": "resources\\tools\\火腿.png"
+    "relativePath": "Textrue\\tools\\火腿.png"
   },
   "cb07701e-f4d1-4df5-be66-659f511aa748": {
     "asset": 1656682042553,
     "meta": 1656685075860,
-    "relativePath": "resources\\tools\\煎饺.png"
+    "relativePath": "Textrue\\tools\\煎饺.png"
   },
   "a6c5e1bf-fab2-4464-b98a-b9d1d7779605": {
     "asset": 1656682042554,
     "meta": 1656685075870,
-    "relativePath": "resources\\tools\\金钥匙.png"
+    "relativePath": "Textrue\\tools\\金钥匙.png"
   },
   "574e6458-db90-4160-bb50-4b437be76fd2": {
     "asset": 1656682042550,
     "meta": 1656685075870,
-    "relativePath": "resources\\tools\\卷轴.png"
+    "relativePath": "Textrue\\tools\\卷轴.png"
   },
   "b2bece28-09d5-4daf-8ab4-07be8c097256": {
     "asset": 1656682042552,
     "meta": 1656685075890,
-    "relativePath": "resources\\tools\\烈酒.png"
+    "relativePath": "Textrue\\tools\\烈酒.png"
   },
   "88dc2eba-3f6f-427a-b3ba-bead44413b32": {
     "asset": 1656682042550,
     "meta": 1656685075890,
-    "relativePath": "resources\\tools\\心经.png"
+    "relativePath": "Textrue\\tools\\心经.png"
   },
   "2d5d8107-dd4c-4e91-8a91-24e8fc76dc51": {
     "asset": 1655985490332,
@@ -652,7 +652,7 @@
   "65fc95f6-6484-4543-b7a8-22e23dc3be12": {
     "asset": 1656682042555,
     "meta": 1656685075915,
-    "relativePath": "resources\\tools\\银钥匙.png"
+    "relativePath": "Textrue\\tools\\银钥匙.png"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
     "asset": 1656678796108,
@@ -870,8 +870,8 @@
     "relativePath": "Script\\bage\\Game.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1656690745708,
-    "meta": 1656690745734,
+    "asset": 1656691201638,
+    "meta": 1656691201677,
     "relativePath": "Scene\\index.fire"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
@@ -913,90 +913,5 @@
     "asset": 1656682042506,
     "meta": 1656685076232,
     "relativePath": "Script\\login\\myserver.js"
-  },
-  "fe01122c-2279-493e-82f1-e11418bcb563": {
-    "asset": 1656145373998,
-    "meta": 1656685075580,
-    "relativePath": "Textrue\\server_pic"
-  },
-  "80ea8a66-dc5d-40b9-aabb-a1f0a4ffc441": {
-    "asset": 1656145373944,
-    "meta": 1656685076622,
-    "relativePath": "Textrue\\server_pic\\13333.png"
-  },
-  "1132dc05-86ff-44bf-8e93-73d67f85f0b8": {
-    "asset": 1656145373945,
-    "meta": 1656685076623,
-    "relativePath": "Textrue\\server_pic\\13334.png"
-  },
-  "d3ed5023-dc37-4fbe-8cdb-217d6e19ef42": {
-    "asset": 1656145373946,
-    "meta": 1656685076635,
-    "relativePath": "Textrue\\server_pic\\canser.png"
-  },
-  "34cd0be3-5e36-498f-b67a-5ee4767cd629": {
-    "asset": 1655986452995,
-    "meta": 1656685076637,
-    "relativePath": "Textrue\\server_pic\\bagButn.png"
-  },
-  "d78a1b2a-608a-4549-baa9-ac36ede10729": {
-    "asset": 1655985490336,
-    "meta": 1656685076653,
-    "relativePath": "Textrue\\server_pic\\server_background.png"
-  },
-  "f13e7cee-7160-4b43-a7a1-8ef94abf49a6": {
-    "asset": 1656145373998,
-    "meta": 1656685076694,
-    "relativePath": "Textrue\\server_pic\\login_alert.png"
-  },
-  "d9a6652c-aba9-46ff-95e5-83715359cc32": {
-    "asset": 1655988388074,
-    "meta": 1656685075590,
-    "relativePath": "Textrue\\tools"
-  },
-  "d7dec243-cc17-4503-8381-5f789b1fe0ca": {
-    "asset": 1655986409477,
-    "meta": 1656685076711,
-    "relativePath": "Textrue\\server_pic\\server_tips.png"
-  },
-  "b5687639-9164-4059-ba4c-19bf0d14a16c": {
-    "asset": 1654182015276,
-    "meta": 1656685076713,
-    "relativePath": "Textrue\\tools\\黄石.png"
-  },
-  "7ac26cc0-ec3e-4114-b4ed-9851b66979d6": {
-    "asset": 1654182015273,
-    "meta": 1656685076724,
-    "relativePath": "Textrue\\tools\\火腿.png"
-  },
-  "70140c1d-77c4-4394-9a2b-f2f39005d551": {
-    "asset": 1654182015274,
-    "meta": 1656685076726,
-    "relativePath": "Textrue\\tools\\煎饺.png"
-  },
-  "13f78341-4ec2-446d-aed4-eafc872566f1": {
-    "asset": 1654182015275,
-    "meta": 1656685076736,
-    "relativePath": "Textrue\\tools\\金钥匙.png"
-  },
-  "4058be97-b31c-435a-8940-d0b5dd602500": {
-    "asset": 1654182015271,
-    "meta": 1656685076738,
-    "relativePath": "Textrue\\tools\\卷轴.png"
-  },
-  "99ddd7d7-aca2-4d57-a7cf-0ee8dc733bc5": {
-    "asset": 1654182015272,
-    "meta": 1656685076750,
-    "relativePath": "Textrue\\tools\\心经.png"
-  },
-  "dbcc275f-2655-45b6-8362-845cc85d74ce": {
-    "asset": 1654182015274,
-    "meta": 1656685076751,
-    "relativePath": "Textrue\\tools\\烈酒.png"
-  },
-  "ed5eaa4c-df73-428d-af35-59b29add48f5": {
-    "asset": 1654182015275,
-    "meta": 1656685076759,
-    "relativePath": "Textrue\\tools\\银钥匙.png"
   }
 }

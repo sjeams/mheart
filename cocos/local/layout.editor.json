@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1536,
-      "height": 824,
+      "x": 321,
+      "y": 20,
+      "width": 1537,
+      "height": 791,
       "layout": {
         "children": [
           {
@@ -95,9 +95,7 @@
         "node-library",
         "cocos-services"
       ]
-    },
-    "window-1656690790346": {},
-    "worker": {}
+    }
   },
   "panels": {
     "project-settings": {
@@ -151,7 +149,7 @@
     "builder": {
       "x": 264,
       "y": 100,
-      "width": 979,
+      "width": 980,
       "height": 676
     },
     "sprite-editor": {

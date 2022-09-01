@@ -5,7 +5,11 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 
 <style>
- 
+.pimage {
+
+     margin: 0px auto;
+     display: block;
+ }
 .name{
     margin-top: 20px;
 
@@ -35,16 +39,20 @@
          margin: 0px auto ;
          clear: both;
          padding: 5px;
+
+        overflow-y: scroll;
+        max-height: 240px;
          
      }
      .check a{
         display: inline-block;
         width: 120px;
-        padding: 5px 20px;
+        padding: 4px 20px;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
         margin:  5px auto;
+        font-size: 12px;
 
      }
 
@@ -87,9 +95,13 @@
     <!-- 视频 -->
  
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div style="height:300px;position:relative" class="center">
-    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px;">video</button>
-    <div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div>
+    <div class="center ">
+    <input type="hidden" name="" id="hiddenvalue" value="1">
+    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
+     <div style="height:300px;position:relative"  class="videohidden">
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div>
+     </div>
+
 
     </div>
         <script type="text/javascript">
@@ -122,13 +134,13 @@
                 <?php if($v['belong']==0){   ?>
                     <tr>
                     <td  >
-                    <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                    <p> <img class="pimage" src="<?php   echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
                     <p> <?php echo $v['title']?></p>
                     <td  >
                     </tr>
                     <tr>
                     <td>
-                    <span class="check">
+                    <span class="check" style="overflow-y:auto;">
                     <?php if($v['video']){ foreach( $v['video'] as$y=> $vdieo){?>
                         <div id="form<?php echo $kss.'c'.$y?>" style="display:none">
                             <input type="hidden" name="url" value="<?php echo $vdieo['url']?>" >
@@ -159,7 +171,7 @@
                 <tr>
                     <td  >
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" style="width:100%" alt="<?php echo $v['imageurl']?>" ></p>
+                        <p> <img class="pimage"  src="<?php echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
@@ -206,7 +218,7 @@
         </table>
  
     </form>
-   <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
+   <input type="hidden" id="videotype"  value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
    <div class="pagination pagination-left center" >
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
@@ -315,6 +327,21 @@
             },
         });
     }
+
+    function videoHidden(){
+
+        var hiddenvalue = $("#hiddenvalue").val();
+        if(hiddenvalue==1){
+            $("#hiddenvalue").val(0); 
+            $('.videohidden').css("display","table-column");
+        }else{
+            $("#hiddenvalue").val(1); 
+            $('.videohidden').css("display","block");
+        }
+  
+    
+    }
+  
  
 </script>
 

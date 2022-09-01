@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "dbcc275f-2655-45b6-8362-845cc85d74ce",
+  "uuid": "b2bece28-09d5-4daf-8ab4-07be8c097256",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "烈酒": {
       "ver": "1.0.4",
-      "uuid": "22dc80bf-73d1-4b5d-9380-c7ca334bc139",
-      "rawTextureUuid": "dbcc275f-2655-45b6-8362-845cc85d74ce",
+      "uuid": "a7fb55b8-dfe5-476f-b01b-3a1a095b2e54",
+      "rawTextureUuid": "b2bece28-09d5-4daf-8ab4-07be8c097256",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

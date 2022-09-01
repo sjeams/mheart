@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "ed5eaa4c-df73-428d-af35-59b29add48f5",
+  "uuid": "65fc95f6-6484-4543-b7a8-22e23dc3be12",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "银钥匙": {
       "ver": "1.0.4",
-      "uuid": "c21b3a68-ece7-4791-9699-4e8c8d3389a5",
-      "rawTextureUuid": "ed5eaa4c-df73-428d-af35-59b29add48f5",
+      "uuid": "1f364eb8-b930-4b0e-ba4f-5441c75d2a8b",
+      "rawTextureUuid": "65fc95f6-6484-4543-b7a8-22e23dc3be12",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

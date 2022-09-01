@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "99ddd7d7-aca2-4d57-a7cf-0ee8dc733bc5",
+  "uuid": "88dc2eba-3f6f-427a-b3ba-bead44413b32",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "心经": {
       "ver": "1.0.4",
-      "uuid": "8791e1bc-00ba-4175-8936-6d15b09bdf6d",
-      "rawTextureUuid": "99ddd7d7-aca2-4d57-a7cf-0ee8dc733bc5",
+      "uuid": "150d0b28-7ed4-404d-a680-1dda40d144fa",
+      "rawTextureUuid": "88dc2eba-3f6f-427a-b3ba-bead44413b32",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
