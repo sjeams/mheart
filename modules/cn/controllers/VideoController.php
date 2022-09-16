@@ -187,7 +187,7 @@ class VideoController extends ApiControl
         $list = Category::find()->where("belong=$belong")->asArray()->all();
         if($list){
             $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
-            $str ='<select name="goType" id="goType">';
+            $str ='<select name="goType" id="goType" onchange="searchfunc()">';
             // $type = Yii::$app->request->post('type',8);
             foreach($list as $v){
                 $name =$v['name'];

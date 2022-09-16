@@ -278,9 +278,14 @@
         }
     });
 
+    function searchfunc(){
+        $('#goSearch').val(''); 
+    }
+
     function func(){  
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
+
         if(belong==0){
             // var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
             var inputvalue ="";
