@@ -30,12 +30,13 @@ class Video extends ActiveRecord {
 				// $type = $type?$type:40;
 				if($type){
 					$list=array(
-						array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+						array($belong,20,'国产主播',"/vod/type/id/$type/page/$page.html",'https://ea111.cc'),
 					);
 				}else{
 					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://laoyavideo.com'),
+						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://ea111.cc'),
 					);
 			
 				}
@@ -103,10 +104,15 @@ class Video extends ActiveRecord {
 			foreach($res as$key=> $v){
 				switch($v['belong']){
 					case 1 :     	
-						$content1= array('#tpl-img-content li>a','href','');
-						$content2= array('#tpl-img-content li>a','title','');
-						$content3= array('#tpl-img-content li a>img','src','');
+						// $content1= array('#tpl-img-content li>a','href','');
+						// $content2= array('#tpl-img-content li>a','title','');
+						// $content3= array('#tpl-img-content li a>img','src','');
 						// $model	='#tpl-img-content';
+
+						$content1= array('.stui-vodlist .title>a','href','');
+						$content2= array('.stui-vodlist .title>a','title','');
+						$content3= array('.stui-vodlist img','src','');
+
 					break;
 					case 2 :   		// 小站
 						$content1= array('.content .nr li span .name','href','');
@@ -138,7 +144,7 @@ class Video extends ActiveRecord {
 					'title' => $content2,
 					'imageurl' => $content3,
 				))->data;  
-				
+				// var_dump($httpurl);die;
 				// if($v['belong']==3){
 				// 	var_dump($v);
 			 
@@ -160,34 +166,37 @@ class Video extends ActiveRecord {
 			}
 
 		}
+
 		return $Rlist;
 	}
 
 	// 抓取详情 --存入本地
     public static function getQueryDetails($belong,$val,$type,$http,$isquery=0)
     {
-
-
 		switch($belong){
 			case 1 :     	// 新东方
-				$content1= array('.play-body ','text');
-				// $content2= array('h1','text');
+				$content1= array('.copy_text .hidden-xs ','text');
+				$content2= array('.img-responsive ','src');
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);
 			
 				$data1 = QueryList::Query($link,array(
-					'content' => $content1
+					'content' => $content1,
+					'imageurl' => $content2
 				))->data;
 			
 				if(!empty($data1[0]['content'] )){
-					preg_match_all('/var vid = "(.*?)"/is',$data1[0]['content'],$array);
+					// preg_match_all('/var vid = "(.*?)"/is',$data1[0]['content'],$array);
 					// var_dump($array);die;
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					$data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
+					// $array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('$','',$data1[0]['content']);
+					// $array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
-					$args['imageurl']=$val['imageurl'];
+					// $args['imageurl']=$val['imageurl'];
+					$args['imageurl']=$data1[0]['imageurl'];
 					if((string)strpos($args['imageurl'],'http')==''){
 						$args['imageurl']=$http.$args['imageurl'];
 					} 

@@ -128,6 +128,8 @@
     </ul>  
     <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
     <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
+    <a href="https://xjav10.cc/"><button>香蕉</button></a>
+    
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >
@@ -306,6 +308,7 @@
     function  gou(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
+        if(!goType){ var  goType =''; }
         var goSearch =$("#goSearch").val();
         // console.log(goType)
         // return false
