@@ -130,6 +130,7 @@ class VideoController extends ApiControl
                 $args['count'] =$count;
                 $args['page'] =$page;
                 $args['belong'] =$belong;
+                $args['type'] =$type;
                 // 存入缓存列表
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
               
@@ -151,6 +152,7 @@ class VideoController extends ApiControl
                     $args['count'] =$count;
                     $args['page'] =$page;
                     $args['belong'] =$belong;
+                    $args['type'] =$type;
                     // 存入缓存列表
                     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                 }
