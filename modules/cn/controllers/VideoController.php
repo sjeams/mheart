@@ -94,7 +94,7 @@ class VideoController extends ApiControl
     {
         $this->layout = 'cn';
         $password =$this->password;
-        Yii::$app->session->set('login',1);
+        // Yii::$app->session->set('login',1);
         $login = Yii::$app->session->get('login');
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
@@ -104,9 +104,8 @@ class VideoController extends ApiControl
         }else{
             $belong=0;
         }
- 
+   
         if($belong==0){
-     
             if($type=='undefined'||$type==null||empty($type)) $type='封神榜';
         }
         // 缓存列表
@@ -118,7 +117,6 @@ class VideoController extends ApiControl
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
-        // var_dump($belong);die;
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];

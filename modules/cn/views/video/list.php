@@ -15,6 +15,10 @@
 
 }
 
+.videohidden{
+    display: table-column-group;
+}
+
 .bord{
     display: inline-block;
     text-align: center;
@@ -96,7 +100,7 @@
  
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <div class="center ">
-    <input type="hidden" name="" id="hiddenvalue" value="1">
+    <input type="hidden" name="" id="hiddenvalue" value="0">
     <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
      <div style="height:300px;position:relative"  class="videohidden">
         <div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div>
@@ -197,7 +201,7 @@
                         </div>
                         <label class="layui-form-label">类型typ</label>
                         <div class="layui-input-inline" id="goTypeInput">
-   
+                            <input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">
                         </div>
                         <label class="layui-form-label">采集页码</label>
                         <div class="layui-input-inline">
@@ -230,12 +234,13 @@
     <div style="height:20px;overflow:hidden"></div>            
 
 </div>
- 
+
 <script>
     $(function(){
-        var belong =$("#goType").val();
-        if(!belong){
-            var inputvalue ='<input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">';
+        var belong = $('#goBelong  option:selected').val(); 
+        console.log(belong)
+        if(belong==0){
+            var inputvalue ='<input type="text" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
@@ -258,7 +263,7 @@
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
         if(belong==0){
-            var inputvalue ='<input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType">';
+            var inputvalue ='<input type="text" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
@@ -291,6 +296,8 @@
     function  gou(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
+        // console.log(goType)
+        // return false
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
         window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong;
