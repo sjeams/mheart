@@ -103,7 +103,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
      <div style="height:300px;position:relative"  class="videohidden">
-        <div class="video" style="position:fixed;z-index:100;width:100%;height:300px;margin: auto -20px; "> </div>
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:100%;margin: auto -20px; "> </div>
      </div>
 
 
@@ -220,7 +220,9 @@
                 </div>
                 <tr>
                     <td  >
-                        <a href="https://m3u8.huakuibf3.com/m3u8/?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                        <!-- // 第三方URL -->
+                        <!-- https://m3u8.huakuibf3.com/m3u8/?url= -->
+                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                         <p> <img class="pimage"  src="<?php echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
