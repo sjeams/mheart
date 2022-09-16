@@ -128,12 +128,22 @@
     </ul>  
     <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
     <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
-    <a href="https://xjav10.cc/"><button>香蕉</button></a>
+    <a href="https://xjav10.cc/"><button>香蕉</button></a> 
     
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >
             <thead>
+            <?php if(!$login){ ?>
+                <tr>
+                    <td>
+                    <div class="layui-form-item center">
+                        <input type="text" name="login" value="" id="login">
+                            <a onclick="login()"><button>L</button></a>
+                        </div>
+                    </td>
+                </tr>
+            <?php }?>
             <tr>
             <td>
                 <div class="layui-form-item center">
@@ -293,6 +303,23 @@
 
     }  
 
+    //登录
+    function  login(){
+        login = $("#login").val();
+        $.ajax({
+            url: '/cn/video/login', // 跳转到 action 
+            data:{
+                login:login,
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                window.location.reload();
+            },
+        });
+    }
+
 
     function clearSession(){
         var goBelong =$("#goBelong").val();
@@ -303,7 +330,6 @@
         var goPage_list =$("#goPage_list").val();
         window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
     }
-
 
     function  gou(){
         var goBelong =$("#goBelong").val();

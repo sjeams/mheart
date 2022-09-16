@@ -22,7 +22,7 @@ class VideoController extends ApiControl
     public $enableCsrfValidation = false;
     public $layout = 'null';
 
-    public  $password=2;
+    public  $password='2';
     function init (){
         parent::init();
         set_time_limit(0);
@@ -84,7 +84,12 @@ class VideoController extends ApiControl
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
 
-
+    public function actionLogin()
+    {
+        //默认登录
+        $login = Yii::$app->request->post('login');
+        Yii::$app->session->set('login',$login);
+    }
 
     /**
      * 第三方列表
@@ -93,7 +98,7 @@ class VideoController extends ApiControl
     public function actionList()
     {
         //默认登录
-        Yii::$app->session->set('login',2);
+        // Yii::$app->session->set('login',2);
         $this->layout = 'cn';
         $password =$this->password;
         $login = Yii::$app->session->get('login');
@@ -103,11 +108,11 @@ class VideoController extends ApiControl
         $search = Yii::$app->request->get('search');
         // 搜索类型默认为0
         if($search){  $type=0; }
-
+        $belong = Yii::$app->request->get('belong',0);
         if($login==$password){
-            $belong = Yii::$app->request->get('belong',0);
+            $login=1;
         }else{
-            $belong=0;
+            $login=0;
         }
    
         if($belong==0){
@@ -122,11 +127,14 @@ class VideoController extends ApiControl
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
         }else{
+    
             if($belong==0){
+       
                 $list = Query::getVideo($search);
                 $count = count($list);
                 $args['key_value'] =$sessionStr;
@@ -141,6 +149,7 @@ class VideoController extends ApiControl
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
               
             }else{
+       
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
                 // var_dump($listvideo);die;
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
@@ -169,7 +178,7 @@ class VideoController extends ApiControl
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $category = Category::Category();
         // var_dump($list);die;
-        return $this->render('list',['content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        return $this->render('list',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
     }
 
     public function actionGetBelong()
