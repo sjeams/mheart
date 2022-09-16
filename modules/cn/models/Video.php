@@ -33,10 +33,11 @@ class Video extends ActiveRecord {
 						array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
 					);
 				}else{
-					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://laoyavideo.com'),
 					);
+			
 				}
 			}else if($belong==2){
 				// $type = $type?$type:24;
@@ -182,6 +183,8 @@ class Video extends ActiveRecord {
 				if(!empty($data1[0]['content'] )){
 					preg_match_all('/var vid = "(.*?)"/is',$data1[0]['content'],$array);
 					// var_dump($array);die;
+					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
 					$args['imageurl']=$val['imageurl'];
@@ -221,6 +224,7 @@ class Video extends ActiveRecord {
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
@@ -265,6 +269,8 @@ class Video extends ActiveRecord {
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
@@ -304,6 +310,8 @@ class Video extends ActiveRecord {
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('在线播放$','',$data1[0]['content']);
+					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
