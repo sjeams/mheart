@@ -143,7 +143,7 @@
                                 <?php  } ?>
                             </select>
                         </div>
-                        <label class="layui-form-label">类型typ</label>
+                        <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline" id="goTypeInput">
                             <input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">
                         </div>
@@ -246,7 +246,7 @@
         var belong = $('#goBelong  option:selected').val(); 
         console.log(belong)
         if(belong==0){
-            var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            // var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
             var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
         }else{
@@ -270,7 +270,8 @@
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
         if(belong==0){
-            var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            // var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
