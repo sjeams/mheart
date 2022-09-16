@@ -22,7 +22,7 @@ class VideoController extends ApiControl
     public $enableCsrfValidation = false;
     public $layout = 'null';
 
-    public  $password=1;
+    public  $password=2;
     function init (){
         parent::init();
         set_time_limit(0);
@@ -92,9 +92,10 @@ class VideoController extends ApiControl
      */
     public function actionList()
     {
+        //默认登录
+        Yii::$app->session->set('login',2);
         $this->layout = 'cn';
         $password =$this->password;
-        // Yii::$app->session->set('login',1);
         $login = Yii::$app->session->get('login');
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
