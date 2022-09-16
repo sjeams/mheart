@@ -106,7 +106,7 @@ class VideoController extends ApiControl
         }
    
         if($belong==0){
-            if($type=='undefined'||$type==null||empty($type)) $type='封神榜';
+            if($type=='undefined'||$type==null||empty($type)) $type='我们都是超能力者';
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
