@@ -98,7 +98,11 @@ class VideoController extends ApiControl
         $login = Yii::$app->session->get('login');
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
-        $type = Yii::$app->request->get('type');
+        $type = Yii::$app->request->get('type',0);
+        $search = Yii::$app->request->get('search');
+        // 搜索类型默认为0
+        if($search){  $type=0; }
+
         if($login==$password){
             $belong = Yii::$app->request->get('belong',0);
         }else{
@@ -106,10 +110,10 @@ class VideoController extends ApiControl
         }
    
         if($belong==0){
-            if($type=='undefined'||$type==null||empty($type)) $type='我们都是超能力者';
+            if($search=='undefined'||$search==null||empty($search)) $search='我们都是超能力者';
         }
         // 缓存列表
-        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type;
+        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
 
         // 删除当前缓存
         $clear = Yii::$app->request->get('clear',0);
@@ -122,7 +126,7 @@ class VideoController extends ApiControl
                $count =$res['count'];
         }else{
             if($belong==0){
-                $list = Query::getVideo($type);
+                $list = Query::getVideo($search);
                 $count = count($list);
                 $args['key_value'] =$sessionStr;
                 $args['value'] =  json_encode($list,true);
@@ -131,11 +135,12 @@ class VideoController extends ApiControl
                 $args['page'] =$page;
                 $args['belong'] =$belong;
                 $args['type'] =$type;
+                $args['search'] =$search;
                 // 存入缓存列表
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
               
             }else{
-                $listvideo = Video::getQueryList($page_list,$belong,1,$type); // 获取采集数据
+                $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                 $list=[];
                 if($listvideo){
@@ -153,6 +158,7 @@ class VideoController extends ApiControl
                     $args['page'] =$page;
                     $args['belong'] =$belong;
                     $args['type'] =$type;
+                    $args['search'] =$search;
                     // 存入缓存列表
                     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                 }
@@ -166,21 +172,23 @@ class VideoController extends ApiControl
 
     public function actionGetBelong()
     {
-        $type = Yii::$app->request->post('type',8);
         $belong = Yii::$app->request->post('belong',0);
         $list = Category::find()->where("belong=$belong")->asArray()->all();
-        $str ='<select name="goType" id="goType">';
-
-        foreach($list as $v){
-            $name =$v['name'];
-            $value =$v['type'];
-            if($v['belong']==$belong&&$v['type']==$type){
-                $str .= "<option value='$value'  selected > $name </option>";
-            }else{
-                $str .= "<option value='$value'  > $name </option>";
+        if($list){
+            $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
+            $str ='<select name="goType" id="goType">';
+            // $type = Yii::$app->request->post('type',8);
+            foreach($list as $v){
+                $name =$v['name'];
+                $value =$v['type'];
+                if($v['belong']==$belong&&$v['type']==$type){
+                    $str .= "<option value='$value'  selected > $name </option>";
+                }else{
+                    $str .= "<option value='$value'  > $name </option>";
+                }
             }
+            $str .=' </select>';
         }
-        $str .=' </select>';
         // var_dump($str);die;
         // echo $str;
         die(Method::jsonGenerate(1,$str,'返回数据成功'));

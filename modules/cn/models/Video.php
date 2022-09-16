@@ -22,30 +22,58 @@ class Video extends ActiveRecord {
 	
 	
 	// 采集列表
-    public static function getQueryUrl($page,$belong,$type=0)
+    public static function getQueryUrl($page,$belong,$type=0,$search)
     {
 		// 类型  0国产--1主播/  2少女  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9无码  10 收藏
 			// 新东方
 			if($belong==1){
-				$type = $type?$type:40;
-				$list=array(
-					array($belong,0,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
-				);
+				// $type = $type?$type:40;
+				if($type){
+					$list=array(
+						array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+					);
+				}else{
+					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					$list=array(
+						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+					);
+				}
 			}else if($belong==2){
-				$type = $type?$type:24;
-				$list=array(
-					array($belong,5,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://aibozy.com'),
-				);
+				// $type = $type?$type:24;
+				if($type){
+					$list=array(
+						array($belong,20,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://aibozy.com'),
+					);
+				}else{
+					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					$list=array(
+						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://aibozy.com'),
+					);
+				}
 			}else if($belong==3){
-				$type = $type?$type:24;
-				$list=array(
-					array($belong,2,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://yinwozy9.com'),
-				);
+				// $type = $type?$type:24;
+				if($type){
+					$list=array(
+						array($belong,22,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://yinwozy9.com'),
+					);
+				}else{
+					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					$list=array(
+						array($belong,22,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://yinwozy9.com'),
+					);
+				}
 			}else if($belong==4){
-				$type = $type?$type:1;
-				$list=array(
-					array($belong,8,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://tantanzy11.com'),
-				);
+				// $type = $type?$type:1;
+				if($type){
+					$list=array(
+						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://tantanzy11.com'),
+					);
+				}else{
+					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					$list=array(
+						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://tantanzy11.com'),
+					);
+				}
 			}else{
 				return false;
 			}	
@@ -65,9 +93,9 @@ class Video extends ActiveRecord {
 
 
 	// 采集数据
-    public static function getQueryList($page,$belong,$isquery=0,$type=0)
+    public static function getQueryList($page,$belong,$isquery=0,$type=0,$search='')
     {
-		$res =Video::getQueryUrl($page,$belong,$type);
+		$res =Video::getQueryUrl($page,$belong,$type,$search);
 		// var_dump($res);die;
 		if($res){ 
 			$Rlist =[];

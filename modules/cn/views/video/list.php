@@ -129,9 +129,41 @@
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >
-            <!-- <thead>
-            </thead> -->
-       
+            <thead>
+            <tr>
+            <td>
+                <div class="layui-form-item center">
+                        <label class="layui-form-label">来源belong</label>
+                        <div class="layui-input-inline">
+                            <select name="belong" id="goBelong" onchange="func()">
+                            <?php  foreach($category as $v){  ?>
+                                    <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==0?'selected':'')?>><?php echo $v['name'] ?></option>
+                                <?php  } ?>
+                            </select>
+                        </div>
+                        <!-- <label class="layui-form-label">类型typ</label> -->
+                        <div class="layui-input-inline" id="goTypeInput">
+                            <!-- <input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType"> -->
+                        </div>
+
+                        <label class="layui-form-label">搜索</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="center" value="<?php echo isset($_GET['search'])?$_GET['search']:''?>" id="goSearch">
+                        </div>
+
+                        <label class="layui-form-label">采集页码</label>
+                        <div class="layui-input-inline">
+                        <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
+                        </div>
+                    <p class="center">
+                    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
+                    <input type="button"  onclick="gou()" value="GO">
+                    <input type="button"  onclick="clearSession()" value="刷新">
+                    </p>
+                </div>
+            </td>
+            </tr>
+            </thead>
             <tbody>
             <?php if($content){
             foreach($content as $kss => $v) {  ?>
@@ -174,7 +206,7 @@
                 </div>
                 <tr>
                     <td  >
-                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                        <a href="https://m3u8.huakuibf3.com/m3u8/?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                         <p> <img class="pimage"  src="<?php echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
                         <p> <?php echo $v['title']?></p>
                         </a>
@@ -188,35 +220,7 @@
                 <?php
             } } }
             ?>
-            <tr>
-            <td>
-                <div class="layui-form-item center">
-                        <label class="layui-form-label">来源belong</label>
-                        <div class="layui-input-inline">
-                            <select name="belong" id="goBelong" onchange="func()">
-                                <?php  foreach($category as $v){  ?>
-                                    <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==0?'selected':'')?>><?php echo $v['name'] ?></option>
-                                <?php  } ?>
-                            </select>
-                        </div>
-                        <label class="layui-form-label">类型typ</label>
-                        <div class="layui-input-inline" id="goTypeInput">
-                            <input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">
-                        </div>
-                        <label class="layui-form-label">采集页码</label>
-                        <div class="layui-input-inline">
-                        <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
-                        </div>
-                    <p class="center">
-                    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
-                    <input type="button"  onclick="gou()" value="GO">
-                    <input type="button"  onclick="clearSession()" value="刷新">
-                    </p>
-                </div>
 
-            </td>
-
-            </tr>
             </tbody>
        
         </table>
@@ -240,7 +244,8 @@
         var belong = $('#goBelong  option:selected').val(); 
         console.log(belong)
         if(belong==0){
-            var inputvalue ='<input type="text" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
@@ -263,7 +268,7 @@
     //获取被选中的option标签  
         var belong = $('#goBelong  option:selected').val(); 
         if(belong==0){
-            var inputvalue ='<input type="text" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
@@ -288,19 +293,22 @@
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         var goPage =$("#goPage").val();
+        var goSearch =$("#goSearch").val();
+        
         var goPage_list =$("#goPage_list").val();
-        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&clear=1";
+        window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
     }
 
 
     function  gou(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
+        var goSearch =$("#goSearch").val();
         // console.log(goType)
         // return false
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong;
+        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
     }
     // 预览
     function  video(id){
