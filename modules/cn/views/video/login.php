@@ -1,14 +1,15 @@
+<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
 <style>
      input{
-     height: 30px!important;
+     height: 40px!important;
      border-radius: 5px!important;
-     width: 50%!important;
  }
     .check{
          /* display: flex; */
          /* float: left; */
-         position: fixed;
+        position: fixed;
         /* padding: 5px; */
         display: inline-block;
         /* overflow-y: scroll; */
@@ -19,7 +20,7 @@
      }
      .checka{
         display: inline-block;
-        min-width: 38%;
+        /* min-width: 38%; */
         padding: 2% 5%;
         border: 1px solid black;
         text-align: center;  
@@ -40,7 +41,7 @@
         color: white;
     }
     .checka input{
-         border-radius: 5px;
+        border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
         text-align: center;
