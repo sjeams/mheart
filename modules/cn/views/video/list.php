@@ -60,7 +60,6 @@
 
      }
 
-
      .center{
         text-align: center;
         margin: auto 0px;
@@ -76,7 +75,10 @@
         margin: auto 10px;
      }
  </style>
+ <div>
+
  
+ </div>
  
 <!-- 按钮 -->
 <!-- <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet"> -->
@@ -97,7 +99,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
     <!-- 视频 -->
- 
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <div class="center ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
