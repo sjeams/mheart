@@ -124,7 +124,7 @@ class VideoController extends ApiControl
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
         if($login!=1){
-            $belong==0;
+            $belong=0;
         }
         if($belong==0){
             if($search=='undefined'||$search==null||empty($search)) $search='我们都是超能力者';
