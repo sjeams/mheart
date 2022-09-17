@@ -124,19 +124,21 @@
     <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
         <li class="active">采集 <span class="divider">/</span></li>
+        <?php if($login==1){ ?>
         <li><a href="/cn/video/index">内容</a> </li>
- 
+        <?php  } ?>
     </ul>  
-    <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
-    <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
-    <a href="https://xjav10.cc/"><button>香蕉</button></a> 
+
     <?php if(!$login){ ?>
         <div class="layui-form-item center">
-        
             <input type="text" name="login" value="" id="login">
             <button onclick="loginIn()">L</button> 
         </div>
-    <?php }?>
+    <?php }else{?>
+    <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
+    <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
+    <a href="https://xjav10.cc/"><button>香蕉</button></a> 
+    <?php } ?>
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >

@@ -91,6 +91,7 @@
     <form action="/cn/video/index" method="get"  >
         <table class="table table-bordered  "  >
         <thead>
+            <?php if($login==1){?>
             <tr>
                 <td >
                     <div class="input-append center" style="display: block;">
@@ -116,8 +117,8 @@
 
                 </td>
                     <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
- 
             </tr>
+            <?php }?>
             </thead>
             <tbody>
             <?php

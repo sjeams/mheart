@@ -22,7 +22,7 @@ class VideoController extends ApiControl
     public $enableCsrfValidation = false;
     public $layout = 'null';
 
-    public  $password=1;
+    public  $password=222;
     function init (){
         parent::init();
         set_time_limit(0);
@@ -177,7 +177,11 @@ class VideoController extends ApiControl
             }
         }
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        $category = Category::Category();
+        if($login){
+            $category = Category::Category();
+        }else{
+            $category = Category::CategoryVideo();
+        }
         // var_dump($list);die;
         return $this->render('list',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
     }
@@ -244,26 +248,35 @@ class VideoController extends ApiControl
     {
         $this->layout = 'cn';
         $password =$this->password;
-        $login = Yii::$app->request->get('login');
-        // $belong = Yii::$app->request->get('belong');
-        if($login!=$password){
-            $login = Yii::$app->session->get('login');
-            $belong = Yii::$app->session->get('belong');
-            if($login!=$password){
-                $belong=0;
-            }else{
-                $belong=1;
-            }
-        }else{
-            Yii::$app->session->set('login',$password);
+        $login = Yii::$app->session->get('login');
+
+        
+        if($login == $password){
+            $login=1;
             $belong=1;
+        }else{
+            $login=0;
+            $belong=0;
         }
+        // $belong = Yii::$app->request->get('belong');
+        // if($login!=$password){
+        //     $login = Yii::$app->session->get('login');
+        //     $belong = Yii::$app->session->get('belong');
+        //     if($login!=$password){
+        //         $belong=0;
+        //     }else{
+        //         $belong=1;
+        //     }
+        // }else{
+        //     Yii::$app->session->set('login',$password);
+        //     $belong=1;
+        // }
         
         $type = Yii::$app->request->get('type',0);
         $title = Yii::$app->request->get('title');
         $where ="1=1";
 
-        if($belong ==0){
+        if($belong == 0){
             $where .= " and belong =$belong"; 
         }
         if($type!=''){
@@ -293,7 +306,7 @@ class VideoController extends ApiControl
         //     $brush[$k]['total'] = $num;
         // }
         // var_dump($brush);die;
-        return $this->render('index',['content'=>$brush,'page'=>$page]);
+        return $this->render('index',['login'=>$login,'content'=>$brush,'page'=>$page]);
     }
     /**
      * 基本信息
