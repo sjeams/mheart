@@ -22,7 +22,7 @@ class VideoController extends ApiControl
     public $enableCsrfValidation = false;
     public $layout = 'null';
 
-    public  $password='2';
+    public  $password=1;
     function init (){
         parent::init();
         set_time_limit(0);
