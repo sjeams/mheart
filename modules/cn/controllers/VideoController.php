@@ -111,7 +111,6 @@ class VideoController extends ApiControl
      */
     public function actionList()
     {
-   
         // 登录状态
         $login = $this->login;
         $this->layout = 'cn';
@@ -123,7 +122,10 @@ class VideoController extends ApiControl
         // 搜索类型默认为0
         if($search){  $type=0; }
         $belong = Yii::$app->request->get('belong',0);
-
+        // 未登录 禁止链接访问
+        if($login!=1){
+            $belong==0;
+        }
         if($belong==0){
             if($search=='undefined'||$search==null||empty($search)) $search='我们都是超能力者';
         }
