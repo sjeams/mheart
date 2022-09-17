@@ -52,7 +52,7 @@
      }
      .check a{
         display: inline-block;
-        width: 65px;
+        width: 35%;
         padding: 5px 20px;
         border: 1px solid black;
         text-align: center;  
@@ -69,8 +69,8 @@
 
      .collect{
         display: inline-block;
-        width: 65px;
-        padding: 5px 20px;
+        width: 45%;
+        padding: 5% 20px;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
