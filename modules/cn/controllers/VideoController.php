@@ -22,10 +22,23 @@ class VideoController extends ApiControl
     public $enableCsrfValidation = false;
     public $layout = 'null';
 
-    public  $password=222;
+    public  $passwordav='111av'; //av
+    public  $passwordsp=111; //视频
+    public  $login=0; //av
+
     function init (){
         parent::init();
         set_time_limit(0);
+
+        $status= Yii::$app->session->get('login');
+        if($status==$this->passwordav){
+            $this->login=1;
+        }else if($status==$this->passwordsp){
+            $this->login=2;
+        }else{
+            $this->login=0;
+        }
+
     }
     /**
      * 基本信息
@@ -98,11 +111,11 @@ class VideoController extends ApiControl
      */
     public function actionList()
     {
-        //默认登录
-        // Yii::$app->session->set('login',2);
+   
+        // 登录状态
+        $login = $this->login;
         $this->layout = 'cn';
-        $password =$this->password;
-        $login = Yii::$app->session->get('login');
+ 
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
@@ -110,12 +123,7 @@ class VideoController extends ApiControl
         // 搜索类型默认为0
         if($search){  $type=0; }
         $belong = Yii::$app->request->get('belong',0);
-        if($login==$password){
-            $login=1;
-        }else{
-            $login=0;
-        }
-   
+
         if($belong==0){
             if($search=='undefined'||$search==null||empty($search)) $search='我们都是超能力者';
         }
@@ -183,7 +191,12 @@ class VideoController extends ApiControl
             $category = Category::CategoryVideo();
         }
         // var_dump($list);die;
-        return $this->render('list',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        if($login==0){
+            return $this->render('login',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        }else{
+            return $this->render('list',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        }
+    
     }
 
     public function actionGetBelong()
@@ -247,31 +260,17 @@ class VideoController extends ApiControl
     public function actionIndex()
     {
         $this->layout = 'cn';
-        $password =$this->password;
-        $login = Yii::$app->session->get('login');
-
-        
-        if($login == $password){
+ 
+        // 登录状态
+        $login = $this->login;
+        if($login == 1){
             $login=1;
             $belong=1;
         }else{
             $login=0;
             $belong=0;
         }
-        // $belong = Yii::$app->request->get('belong');
-        // if($login!=$password){
-        //     $login = Yii::$app->session->get('login');
-        //     $belong = Yii::$app->session->get('belong');
-        //     if($login!=$password){
-        //         $belong=0;
-        //     }else{
-        //         $belong=1;
-        //     }
-        // }else{
-        //     Yii::$app->session->set('login',$password);
-        //     $belong=1;
-        // }
-        
+ 
         $type = Yii::$app->request->get('type',0);
         $title = Yii::$app->request->get('title');
         $where ="1=1";

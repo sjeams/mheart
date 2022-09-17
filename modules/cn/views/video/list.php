@@ -37,6 +37,11 @@
 
  
  <style>
+      input{
+     height: 30px!important;
+     border-radius: 5px!important;
+     /* width: 50%!important; */
+ }
      .check{
          /* display: flex; */
          /* float: left; */
@@ -53,13 +58,12 @@
      .check a{
         display: inline-block;
         min-width: 38%;
-        padding: 2% 5%;
+        padding: 10px  5%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
         margin:  5px auto;
         font-size: 12px;
-
      }
 
 
@@ -133,12 +137,9 @@
         <?php  } ?>
     </ul>  
 
-    <?php if(!$login){ ?>
-        <div class="layui-form-item center">
-            <input type="text" name="login" value="" id="login">
-            <button onclick="loginIn()">L</button> 
-        </div>
-    <?php }else{?>
+    <?php if($login==1){ ?>
+
+ 
     <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
     <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
     <a href="https://xjav10.cc/"><button>香蕉</button></a> 
@@ -174,8 +175,10 @@
                         </div>
                     <p class="center">
                     <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
-                    <input type="button"  onclick="gou()" value="GO">
-                    <input type="button"  onclick="clearSession()" value="刷新">
+             
+                    <span  class="btn btn-primary" onclick="gou()"> GO  </span>
+                    <span  class="btn btn-primary" onclick="clearSession()"> 刷新  </span>
+              
                     </p>
                 </div>
             </td>
@@ -401,6 +404,7 @@
   
  
 </script>
+
 
 
 

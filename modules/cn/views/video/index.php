@@ -21,10 +21,13 @@
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
  <style>
- 
+ input{
+     height: 30px!important;
+     border-radius: 5px!important;
+     width: 50%!important;
+ }
 .name{
     margin-top: 20px;
-
 }
 
 .bord{
@@ -44,16 +47,17 @@
 <style>
      .check{
          /* display: flex; */
-         float: left;
+         /* float: left; */
          margin: 0px auto ;
          clear: both;
          /* padding: 5px; */
+         
          
      }
      .check a{
         display: inline-block;
         width: 38%;
-        padding: 2% 5%;
+        padding: 10px 5%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
@@ -63,13 +67,14 @@
 
      .center{
         text-align: center;
-        margin: auto 0px;
+        margin:  10px  auto  ;
+      
      }
 
      .collect{
         display: inline-block;
         width: 20%;
-        padding: 2% 10%;
+        padding: 10px 10%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
@@ -131,7 +136,7 @@
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                         <p class="center"> <img   src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
-                        <p> <?php echo $v['title']?></p>
+                        <p class="center"> <?php echo $v['title']?></p>
  
                         </a>
                         <p class="center">
