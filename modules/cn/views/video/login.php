@@ -2,11 +2,13 @@
 
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
 <style>
-     input{
+input{
      height: 40px!important;
      border-radius: 5px!important;
  }
+     
     .check{
+        font-size: 24px;
          /* display: flex; */
          /* float: left; */
         position: fixed;
@@ -17,6 +19,7 @@
         margin: 25% auto ;
         text-align: center;
 
+
      }
      .checka{
         display: inline-block;
@@ -26,21 +29,21 @@
         text-align: center;  
         border-radius: 5px; 
         margin:  5px auto;
- 
+        
         /* background-color: #b7efc3; */
      }
-     .checka span{
+     .check span{
          /* border-radius: 5px;
         background-color: #4c54b3;  */
         color: #4c54b3;
         font-weight: bold;
     }
-     .checka button{
+     .check button{
          border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
     }
-    .checka input{
+    .check input{
         border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
@@ -55,12 +58,12 @@
 
     }
 </style>
-<div class="check">
-    <div class="checka">
+<div class="check container">
+    <!-- <div class="checka"> -->
         <span class="logincss">登录系统</span>
         <input type="text" name="login" value="" class="logincss" id="login">
         <button onclick="loginIn()" class="logincss">登录</button> 
-    </div>
+    <!-- </div> -->
 </div>
 
 <script>
