@@ -125,25 +125,23 @@
         <!-- <li><a href="/cn/sign/list">内容模块</a> <span class="divider">/</span></li> -->
         <li class="active">采集 <span class="divider">/</span></li>
         <li><a href="/cn/video/index">内容</a> </li>
+ 
     </ul>  
     <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
     <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
     <a href="https://xjav10.cc/"><button>香蕉</button></a> 
-    
+    <?php if(!$login){ ?>
+        <div class="layui-form-item center">
+        
+            <input type="text" name="login" value="" id="login">
+            <button onclick="loginIn()">L</button> 
+        </div>
+    <?php }?>
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >
             <thead>
-            <?php if(!$login){ ?>
-                <tr>
-                    <td>
-                    <div class="layui-form-item center">
-                        <input type="text" name="login" value="" id="login">
-                            <a onclick="login()"><button>L</button></a>
-                        </div>
-                    </td>
-                </tr>
-            <?php }?>
+
             <tr>
             <td>
                 <div class="layui-form-item center">
@@ -311,7 +309,7 @@
     }  
 
     //登录
-    function  login(){
+    function  loginIn(){
         login = $("#login").val();
         $.ajax({
             url: '/cn/video/login', // 跳转到 action 

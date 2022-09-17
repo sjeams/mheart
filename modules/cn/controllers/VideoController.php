@@ -89,6 +89,7 @@ class VideoController extends ApiControl
         //默认登录
         $login = Yii::$app->request->post('login');
         Yii::$app->session->set('login',$login);
+        die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
 
     /**
@@ -213,7 +214,6 @@ class VideoController extends ApiControl
      */
     public function actionUpdate()
     {
-     
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
         $args = Yii::$app->request->post();
         // var_dump($args);die;
