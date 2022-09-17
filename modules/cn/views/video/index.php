@@ -47,13 +47,13 @@
          float: left;
          margin: 0px auto ;
          clear: both;
-         padding: 5px;
+         /* padding: 5px; */
          
      }
      .check a{
         display: inline-block;
-        width: 35%;
-        padding: 5px 20px;
+        width: 38%;
+        padding: 2% 5%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
@@ -69,8 +69,8 @@
 
      .collect{
         display: inline-block;
-        width: 45%;
-        padding: 5% 20px;
+        width: 20%;
+        padding: 2% 10%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
@@ -131,7 +131,7 @@
  
                     <td  style=" width:25%">
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p class="center"> <img   src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p> <?php echo $v['title']?></p>
  
                         </a>
