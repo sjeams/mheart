@@ -80,6 +80,8 @@
         text-align: center;  
         border-radius: 5px; 
         margin: auto 10px;
+        background-color:  #5879f3a3;
+        cursor: pointer;
      }
  </style>
  <div>
@@ -204,10 +206,7 @@
 
                         <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                         <a href="#"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a>
-                        <!-- <p class="center"> 
-                             <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
-                             <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
-                        </p> -->
+ 
 
                         <?php } }?>
                         </span>
@@ -233,8 +232,9 @@
                         <p class="center">  <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
-                             <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
-                             <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
+                            <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
+                             <span onclick="Update(<?php echo $kss?>)" class="collect"> 收藏</span>
+        
                         </p>
                     </td>
                  
