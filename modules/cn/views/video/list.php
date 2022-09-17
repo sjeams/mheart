@@ -69,7 +69,7 @@
 
      .center{
         text-align: center;
-        margin: auto 0px;
+        margin:  10px  auto  ;
      }
 
      .collect{
@@ -229,8 +229,8 @@
                         <!-- // 第三方URL -->
                         <!-- https://m3u8.huakuibf3.com/m3u8/?url= -->
                         <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p> <img class="pimage"  src="<?php echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
-                        <p> <?php echo $v['title']?></p>
+                        <p class="center">  <img class="pimage"  src="<?php echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
+                        <p class="center">  <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
                              <span onclick="Update(<?php echo $kss?>)" class="collect"> 写入收藏</span>
