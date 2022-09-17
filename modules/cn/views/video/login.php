@@ -1,6 +1,26 @@
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+ 
+<!-- 报告详情 -->
+<head>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="title" content="GRE后台在线后台">
+    <meta name="description" content="GRE后台在线后台">
+    <meta name="keywords" content="GRE后台在线后台">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>天誉后台</title>
+    <!-- Le styles -->
+    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+    <!-- 编辑器公式插件 -->
+    <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+</head>
 <style>
 input{
      height: 40px!important;
@@ -9,36 +29,28 @@ input{
      
     .check{
         font-size: 24px;
-         /* display: flex; */
-         /* float: left; */
-        position: fixed;
-        /* padding: 5px; */
+        /* position: fixed; */
         display: inline-block;
-        /* overflow-y: scroll; */
         width: 100%;
         margin: 25% auto ;
         text-align: center;
-
-
      }
-     .checka{
+     /* .checka{
         display: inline-block;
-        /* min-width: 38%; */
+        min-width: 38%;
         padding: 2% 5%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
         margin:  5px auto;
-        
-        /* background-color: #b7efc3; */
-     }
-     .check span{
+     } */
+    .check span{
          /* border-radius: 5px;
         background-color: #4c54b3;  */
         color: #4c54b3;
         font-weight: bold;
     }
-     .check button{
+    .check button{
          border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
@@ -58,14 +70,25 @@ input{
 
     }
 </style>
-<div class="check container">
-    <!-- <div class="checka"> -->
-        <span class="logincss">登录系统</span>
-        <input type="text" name="login" value="" class="logincss" id="login">
-        <button onclick="loginIn()" class="logincss">登录</button> 
-    <!-- </div> -->
+ 
+<div class="container">
+    <ul class="breadcrumb">
+    </ul>
+ 
+<table class="table  "  >
+    <thead>
+        <tr>
+        <td>
+        <div class="check">
+            <span class="logincss">登录系统</span>
+            <input type="text" name="login" value="" class="logincss" id="login">
+            <button onclick="loginIn()" class="logincss">登录</button> 
+        </div>
+        </td>
+        </tr>
+    <thead>
+</table>
 </div>
-
 <script>
     //登录
     function  loginIn(){
