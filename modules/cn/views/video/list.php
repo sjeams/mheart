@@ -39,19 +39,21 @@
  <style>
      .check{
          /* display: flex; */
-         float: left;
-         margin: 0px auto ;
-         clear: both;
-         padding: 5px;
-
+         /* float: left; */
+      
+        clear: both;
+        /* padding: 5px; */
+         display: inline-block;
         overflow-y: scroll;
-        max-height: 240px;
-         
+        max-height: 220px;
+        width: 100%;
+        margin: 0px auto ;
+         text-align: center;
      }
      .check a{
         display: inline-block;
-        width: 120px;
-        padding: 4px 20px;
+        min-width: 38%;
+        padding: 2% 5%;
         border: 1px solid black;
         text-align: center;  
         border-radius: 5px; 
@@ -59,6 +61,7 @@
         font-size: 12px;
 
      }
+
 
      .center{
         text-align: center;
@@ -104,7 +107,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
      <div style="height:300px;position:relative"  class="videohidden">
-        <div class="video" style="position:fixed;z-index:100;width:100%;height:100%;margin: auto -20px; "> </div>
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
      </div>
 
 
@@ -144,7 +147,6 @@
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  "  >
             <thead>
-
             <tr>
             <td>
                 <div class="layui-form-item center">
@@ -186,7 +188,7 @@
                     <tr>
                     <td  >
                     <p> <img class="pimage" src="<?php   echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
-                    <p> <?php echo $v['title']?></p>
+                    <p class="center"> <?php echo $v['title']?></p>
                     <td  >
                     </tr>
                     <tr>
