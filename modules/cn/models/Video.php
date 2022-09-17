@@ -231,6 +231,7 @@ class Video extends ActiveRecord {
 
 			
 				if(!empty($data1[0]['content'] )){
+		 
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
 					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
@@ -276,6 +277,7 @@ class Video extends ActiveRecord {
 
 				// var_dump($data1);die;
 				if(!empty($data1[0]['content'] )){
+		 
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
 					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
@@ -305,7 +307,7 @@ class Video extends ActiveRecord {
 				$val['title']= Method::getMytrim($val['title']);
 				$content1= array('li input','value');
 				$content2= array('.lazy ','src');
-
+	 
 				// $content2= array('h1','text');
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
@@ -317,10 +319,11 @@ class Video extends ActiveRecord {
 
 				// var_dump($data1);die;
 				if(!empty($data1[0]['content'] )){
+					// $data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
 					$array[1][0] = str_replace('在线播放$','',$data1[0]['content']);
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					// $array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					// $array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);

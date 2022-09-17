@@ -185,7 +185,7 @@ class VideoController extends ApiControl
             }
         }
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        if($login){
+        if($login==1){
             $category = Category::Category();
         }else{
             $category = Category::CategoryVideo();
