@@ -143,7 +143,7 @@
 
  
     <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
-    <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://aibovideo.com/"><button>爱播</button></a>
+    <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://siwazyw.cc/index.php/vod/type/id/20.html"><button>丝袜</button></a>
     <a href="https://xjav10.cc/"><button>香蕉</button></a> 
     <?php } ?>
     <!-- 视频end -->
