@@ -31,12 +31,12 @@ class Video extends ActiveRecord {
 				if($type){
 					$list=array(
 						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
-						array($belong,20,'国产主播',"/vod/type/id/$type/page/$page.html",'https://ea111.cc'),
+						array($belong,12,'国产主播',"/vod-type-id-$type-pg-$page.html",'https://huakuizy0.com'),
 					);
-				}else{
+				}else{ 
 					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://ea111.cc'),
+						array($belong,12,'国产主播',"/index.phpwd/$search&page=$page",'https://huakuizy0.com'),
 					);
 			
 				}
@@ -44,24 +44,24 @@ class Video extends ActiveRecord {
 				// $type = $type?$type:24;
 				if($type){
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://aibozy.com'),
+						array($belong,20,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://laoyazy54.com'),
 					);
 				}else{
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://aibozy.com'),
+						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://laoyazy54.com'),
 					);
 				}
 			}else if($belong==3){
 				// $type = $type?$type:24;
 				if($type){
 					$list=array(
-						array($belong,22,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://yinwozy9.com'),
+						array($belong,22,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://sewozy16.com/'),
 					);
 				}else{
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,22,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://yinwozy9.com'),
+						array($belong,22,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewozy16.com/'),
 					);
 				}
 			}else if($belong==4){
@@ -109,15 +109,18 @@ class Video extends ActiveRecord {
 						// $content3= array('#tpl-img-content li a>img','src','');
 						// $model	='#tpl-img-content';
 
-						$content1= array('.stui-vodlist .title>a','href','');
-						$content2= array('.stui-vodlist .title>a','title','');
-						$content3= array('.stui-vodlist img','src','');
+						// $content1= array('.stui-vodlist .title>a','href','');
+						// $content2= array('.stui-vodlist .title>a','title','');
+						// $content3= array('.stui-vodlist img','src','');
+						$content1= array('.content .row','href','');
+						$content2= array('.content .row ul li','html','');
+						$content3= array('.content .row ul li>img','src','');
 
 					break;
 					case 2 :   		// 小站
-						$content1= array('.content .nr li span .name','href','');
-						$content2= array('.content .nr li span .name','html','');
-						$content3= array('.content .nr li span .name>img','src','');
+						$content1= array('.content .row','href','');
+						$content2= array('.content .row ul li','html','img');
+						$content3= array('.content .row ul li>img','src','');
 			
 					break;
 					case 3 :   		// 小站
@@ -134,7 +137,6 @@ class Video extends ActiveRecord {
 			
 					break;
 				}
-
 				// var_dump($v['http'].$v['url'] );die;
 				// 抓取列表  --结果
 				$httpurl =$v['http'].$v['url'];
@@ -144,7 +146,7 @@ class Video extends ActiveRecord {
 					'title' => $content2,
 					'imageurl' => $content3,
 				))->data;  
-				// var_dump($httpurl);die;
+				// var_dump($data);die;
 				// if($v['belong']==3){
 				// 	var_dump($v);
 			 
@@ -175,26 +177,33 @@ class Video extends ActiveRecord {
     {
 		switch($belong){
 			case 1 :     	// 新东方
-				$content1= array('.copy_text .hidden-xs ','text');
-				$content2= array('.img-responsive ','src');
+				// $content1= array('.copy_text .hidden-xs ','text');
+				// $content2= array('.img-responsive ','src');
 				// $model	='.xqy_core_main';
+				$content1= array('#playId1','value');
+				$content2= array('.theme .detail img','src','-img');
+				$content3= array('.theme .detail img','title');
 				$link =$http.$val['url'];
 				// var_dump($link);
 			
 				$data1 = QueryList::Query($link,array(
 					'content' => $content1,
-					'imageurl' => $content2
+					'imageurl' => $content2,
+					'title' => $content3
 				))->data;
 			
 				if(!empty($data1[0]['content'] )){
 					// preg_match_all('/var vid = "(.*?)"/is',$data1[0]['content'],$array);
 					// var_dump($array);die;
-					$data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
+					// $data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
 					// $array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('$','',$data1[0]['content']);
+					// $array[1][0] = str_replace('$','',$data1[0]['content']);
 					// $array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
+					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+
 					$args['url']=$array[1][0];
-					$args['title']= addslashes($val['title']);
+					$args['title']= addslashes($data1[0]['title']);
 					// $args['imageurl']=$val['imageurl'];
 					$args['imageurl']=$data1[0]['imageurl'];
 					if((string)strpos($args['imageurl'],'http')==''){
@@ -216,20 +225,21 @@ class Video extends ActiveRecord {
 			break;
 			case 2 :     	// 新东方
 				
-				$val['title']= Method::getMytrim($val['title']);
-				$content1= array('li input','value');
-				$content2= array('.lazy ','src');
-
+				// $val['title']= Method::getMytrim($val['title']);
+				$content1= array('#playId1','value');
+				$content2= array('.theme .detail img','src','-img');
+				$content3= array('.theme .detail img','title');
 				// $content2= array('h1','text');
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);
 				$data1 = QueryList::Query($link,array(
 					'content' => $content1,
-					'imageurl' => $content2
+					'imageurl' => $content2,
+					'title' => $content3
 				))->data;
 
-			
+				// var_dump($val['title']);die;
 				if(!empty($data1[0]['content'] )){
 		 
 					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
@@ -237,7 +247,7 @@ class Video extends ActiveRecord {
 					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
-					$args['title']= addslashes($val['title']);
+					$args['title']= addslashes($data1[0]['title']);
 					$args['imageurl']=$data1[0]['imageurl'];
  
 					if((string)strpos($args['imageurl'],'http')==''){
