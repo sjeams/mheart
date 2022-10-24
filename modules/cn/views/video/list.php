@@ -83,6 +83,10 @@
         background-color:  #5879f3a3;
         cursor: pointer;
      }
+     .nav-item{
+        display: inline-block;
+     }
+
  </style>
  <div>
 
@@ -141,10 +145,12 @@
 
     <?php if($login==1){ ?>
 
- 
-    <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
-    <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://siwazyw.cc/index.php/vod/type/id/20.html"><button>丝袜</button></a>
-    <a href="https://xjav10.cc/"><button>香蕉</button></a> 
+        <p class="center">
+            <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
+            <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://siwazyw.cc/index.php/vod/type/id/20.html"><button>丝袜</button></a>
+            <a href="https://xjav10.cc/"><button>香蕉</button></a> 
+        </p>
+
     <?php } ?>
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
@@ -153,22 +159,28 @@
             <tr>
             <td>
                 <div class="layui-form-item center">
-                        <label class="layui-form-label">来源belong</label>
+                        <!-- <label class="layui-form-label">来源belong</label> -->
                         <div class="layui-input-inline">
-                            <select name="belong" id="goBelong" onchange="func()">
+                            <!-- <select name="belong" id="goBelong" onchange="func()">
                             <?php  foreach($category as $v){  ?>
                                     <option value="<?php echo $v['id'] ?>"<?php echo   isset($_GET['belong'])?( $_GET['belong']== $v['id'] ?'selected':'') :($v['id'] ==0?'selected':'')?>><?php echo $v['name'] ?></option>
                                 <?php  } ?>
-                            </select>
+                            </select> -->
+                            <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                            <p class="center" id="listBelong" >
+                                <?php foreach($category as $v){  ?>
+                                    <a class="btn <?php echo $data['belong']== $v['id'] ?'active btn-primary':''?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="#"><?php echo $v['name'] ?></a>
+                                <?php }  ?>
+                            </p>
                         </div>
                         <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline" id="goTypeInput">
                             <input type="text" value="<?php echo isset($_GET['type'])?$_GET['type']:''?>" name="goType" id="goType">
                         </div>
 
-                        <label class="layui-form-label">搜索</label>
+                        <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline">
-                            <input type="text" class="center" value="<?php echo isset($_GET['search'])?$_GET['search']:''?>" id="goSearch">
+                            <input type="text" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo isset($_GET['search'])?$_GET['search']:''?>" id="goSearch">
                         </div>
 
                         <label class="layui-form-label">采集页码</label>
@@ -176,7 +188,7 @@
                         <input type="text" class="center" value="<?php echo isset($_GET['page_list'])?$_GET['page_list']:'1'?>" id="goPage_list">
                         </div>
                     <p class="center">
-                    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>" id="goPage">
+                    <input type="hidden" value="<?php echo isset($_GET['page'])?$_GET['page']:'1'?>"  placeholder="page"  id="goPage">
              
                     <span  class="btn btn-primary" onclick="gou()"> GO  </span>
                     <span  class="btn btn-primary" onclick="clearSession()"> 刷新  </span>
@@ -288,6 +300,36 @@
 
     function searchfunc(){
         $('#goSearch').val(''); 
+    }
+
+
+    function belongChange(belong){
+        // var belong = $('#belong'+belong).val();
+        $('#goBelong').val(belong);
+        $('#listBelong a').removeClass('active'); 
+        $('#listBelong a').removeClass('btn-primary'); 
+        $('#belong'+belong).addClass('active btn-primary'); 
+        // $('#belong'+belong).addClass('btn-primary'); 
+        if(belong==0){
+            // var inputvalue ='<input type="hidden" value="<?php echo intval(isset($_GET['type'])?$_GET['type']:'')?>" name="goType" id="goType">';
+            var inputvalue ="";
+            $("#goTypeInput").html(inputvalue);
+        }else{
+            $.ajax({
+            url: '/cn/video/get-belong', // 跳转到 action 
+            data:{
+                belong:belong,
+                type:'<?php echo isset($_GET['type'])?$_GET['type']:'8'?>'
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                $("#goTypeInput").html(data.data);
+            },
+            });
+        }
+
     }
 
     function func(){  

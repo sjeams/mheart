@@ -193,10 +193,16 @@ class VideoController extends ApiControl
             $category = Category::CategoryVideo();
         }
         // var_dump($list);die;
+        $data['page']=$page;
+        $data['type']=$type;
+        $data['page_list']=$page_list;
+        $data['search']=$search;
+        $data['belong']=$belong;
+
         if($login==0){
-            return $this->render('login',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         }else{
-            return $this->render('list',['login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         }
     
     }

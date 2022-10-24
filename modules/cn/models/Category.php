@@ -23,10 +23,10 @@ class Category extends ActiveRecord {
         $list =array(
             array( 'id'=>0,'name'=>'淘片片' ),
             // array( 'id'=>1,'name'=>'jipo' ),
-            array( 'id'=>1,'name'=>'花魁资源' ),
+            array( 'id'=>1,'name'=>'花魁' ),
             array( 'id'=>2,'name'=>'丝袜' ),
             array( 'id'=>3,'name'=>'色窝' ),
-            array( 'id'=>4,'name'=>'tantanzy11' ),
+            array( 'id'=>4,'name'=>'探探' ),
         );
      return  $list;
     }
