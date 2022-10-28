@@ -210,27 +210,63 @@ class VideoController extends ApiControl
     public function actionGetBelong()
     {
         $belong = Yii::$app->request->post('belong',0);
+        $type = Yii::$app->request->post('type');
+        $list_type = Yii::$app->session->get('list_type');
         $list = Category::find()->where("belong=$belong")->asArray()->all();
-        if($list){
-            $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
-            $str ='<select name="goType" id="goType" onchange="searchfunc()">';
-            // $type = Yii::$app->request->post('type',8);
-            foreach($list as $v){
-                $name =$v['name'];
-                $value =$v['type'];
-                if($v['belong']==$belong&&$v['type']==$type){
-                    $str .= "<option value='$value'  selected > $name </option>";
+            if($list){
+                // $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
+                if($list_type){
+                    $str ='<select name="goType" id="goType" onchange="searchfunc()">';
+                    // $type = Yii::$app->request->post('type',8);
+                    foreach($list as $v){
+                        $name =$v['name'];
+                        $value =$v['type'];
+                        if($v['belong']==$belong&&$v['type']==$type){
+                            $str .= "<option value='$value'  selected > $name </option>";
+                        }else{
+                            $str .= "<option value='$value'  > $name </option>";
+                        }
+                    }
+                    $str .=' </select>';
                 }else{
-                    $str .= "<option value='$value'  > $name </option>";
+                    $typeArray= array_column($list,'type');
+                    if(!in_array($type,$typeArray)&&!empty($typeArray)){
+                        $type=$typeArray[0];
+                    } 
+                    $str ='<p class="center" id="listType" >'; 
+                    $str .="<input type='hidden' value='$type' name='goType' id='goType'/>";
+                    foreach($list as $v){
+                        $name =$v['name'];
+                        $value =$v['type'];
+                        if($v['belong']==$belong&&$v['type']==$type){
+                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='#'>$name</a>";
+                        }else{
+                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='#'>$name</a>";
+                        }
+                    }
+                    $str .='  </p>';
+                   
                 }
             }
-            $str .=' </select>';
-        }
         // var_dump($str);die;
         // echo $str;
         die(Method::jsonGenerate(1,$str,'返回数据成功'));
     }
-
+  /**
+     * 采集单条插入
+     * by  sjeam
+     */
+    public function actionChangeType()
+    {
+        $list_type =Yii::$app->session->get('list_type');
+   
+        if($list_type){
+            Yii::$app->session->remove('list_type'); 
+        }else{
+            Yii::$app->session->set('list_type','has');
+        }
+        echo true;
+    }
 
 
   /**
@@ -243,7 +279,6 @@ class VideoController extends ApiControl
         $args = Yii::$app->request->post();
         // var_dump($args);die;
         Yii::$app->signdb->createCommand()->insert('x2_video',$args)->execute();
-
     }
 
 

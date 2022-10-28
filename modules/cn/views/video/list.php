@@ -186,6 +186,7 @@
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新  </span>
+                                <span  class="btn btn-primary" onclick="changeType()"> Model </span>
                             </p>
                         </div>
                     </td>
@@ -266,18 +267,18 @@
 
 <script>
     $(function(){
-        var belong = $('#goBelong  option:selected').val(); 
-        console.log(belong)
+        var belong = $('#goBelong').val(); 
+        var type = $('#goType').val(); 
+        // console.log(belong)
         if(belong==0){
- 
             var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
         }else{
             $.ajax({
                 url: '/cn/video/get-belong', // 跳转到 action 
                 data:{
-                    belong:'<?php echo $data['belong']?>',
-                    type:'<?php echo $data['type']?>'
+                    belong:belong,
+                    type:type
                 },
                 type: 'post',
                 dataType: 'json',
@@ -292,7 +293,19 @@
     function searchfunc(){
         $('#goSearch').val(''); 
     }
+ 
 
+    function typeChange(type){
+        // 重置状态page和search
+        $("#goSearch").val('');
+        $("#goPage").val(1);
+        $("#goPage_list").val(1);
+        $('#goType').val(type);
+        $('#goPage a').removeClass('active'); 
+        $('#goPage a').removeClass('btn-primary'); 
+        $('#type'+type).addClass('active btn-primary'); 
+        gou();
+    }
 
     function belongChange(belong){
         // var belong = $('#belong'+belong).val();
@@ -323,33 +336,32 @@
             },
             });
         }
-
     }
 
-    function func(){  
-    //获取被选中的option标签  
-        var belong = $('#goBelong  option:selected').val(); 
+    // function func(){  
+    // //获取被选中的option标签  
+    //     var belong = $('#goBelong').val(); 
+    //     var type = $('#goType').val(); 
+    //     if(belong==0){
+    //         var inputvalue ="";
+    //         $("#goTypeInput").html(inputvalue);
+    //     }else{
+    //         $.ajax({
+    //         url: '/cn/video/get-belong', // 跳转到 action 
+    //         data:{
+    //             belong:belong,
+    //             type:type
+    //         },
+    //         type: 'post',
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             console.log(data)
+    //             $("#goTypeInput").html(data.data);
+    //         },
+    //         });
+    //     }
 
-        if(belong==0){
-            var inputvalue ="";
-            $("#goTypeInput").html(inputvalue);
-        }else{
-            $.ajax({
-            url: '/cn/video/get-belong', // 跳转到 action 
-            data:{
-                belong:belong,
-                type:'<?php echo $data['type']?>'
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                $("#goTypeInput").html(data.data);
-            },
-            });
-        }
-
-    }  
+    // }  
 
     //登录
     function  loginIn(){
@@ -367,7 +379,19 @@
             },
         });
     }
-
+    //切换类型刷新页面
+    function  changeType(){
+        $.ajax({
+            url: '/cn/video/change-type', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                // window.location.reload();
+                gou();
+            },
+        });
+    }
 
     function clearSession(){
         var goBelong =$("#goBelong").val();
