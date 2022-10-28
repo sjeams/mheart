@@ -7,7 +7,7 @@
     <title>天誉后台</title>
     <!-- Le styles -->
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+    <link href="./backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
@@ -81,8 +81,8 @@
  </style>
  
 <!-- 按钮 -->
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
-<script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
+<!-- <link href="./backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
+<script type="text/javascript" src="./backStage/js/honeySwitch/honeySwitch.js"></script>
 <script src="/laydate/laydate.js"></script> -->
 <div class="container">
     <ul class="breadcrumb">
@@ -214,7 +214,11 @@
             },
         });
     }
- 
+$(document).keyup(function(event){
+    if(event.keyCode ==13){
+        gou();
+    }
+});
 </script>
 
 

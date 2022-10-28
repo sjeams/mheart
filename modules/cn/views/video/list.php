@@ -1,13 +1,7 @@
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>在线视频</title>
+
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
-</head>
-<body>
-    
-</body>
 <style>
 #goPage_list{
     display: inline-block;
@@ -94,13 +88,13 @@
 
  </style>
 <!-- 按钮 -->
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet"> -->
-<!-- <script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script> -->
+<!-- <link href="./backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet"> -->
+<!-- <script type="text/javascript" src="./backStage/js/honeySwitch/honeySwitch.js"></script> -->
 <script src="/laydate/laydate.js"></script>
  <!-- Le styles -->
-<link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
+<link href="./backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+<!-- <link href="./backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
+<!-- <link href="./backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
 
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
@@ -114,13 +108,11 @@
     <!-- 视频 -->
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <div class="center ">
-    <input type="hidden" name="" id="hiddenvalue" value="0">
-    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
-     <div style="height:300px;position:relative"  class="videohidden">
-        <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
-     </div>
-
-
+        <input type="hidden" name="" id="hiddenvalue" value="0">
+        <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
+        <div style="height:300px;position:relative"  class="videohidden">
+            <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
+        </div>
     </div>
         <script type="text/javascript">
             //定义一个变量：videoObject，用来做为视频初始化配置
@@ -171,7 +163,7 @@
                                 </div>
                                 <!-- <label class="layui-form-label">类型typ</label> -->
                                 <div class="layui-input-inline" id="goTypeInput">
-                                    <input type="text" value="<?php echo $data['type'] ?>" name="goType" id="goType">
+                                    <!-- <input type="text" value="<?php echo $data['type'] ?>" name="goType" id="goType"> -->
                                 </div>
 
                                 <!-- <label class="layui-form-label">搜索</label> -->
@@ -188,8 +180,9 @@
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <span  class="btn btn-primary" onclick="clearSession()"> 刷新  </span>
-                                <span  class="btn btn-primary" onclick="changeType()"> Model </span>
+                                <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
+                                <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
+                                <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
                         </div>
                     </td>
@@ -269,31 +262,29 @@
 </div>
 
 <script>
-    $(function(){
-        var belong = $('#goBelong').val(); 
-        var type = $('#goType').val(); 
-        // console.log(belong)
-        if(belong==0){
-            var inputvalue ="";
-            $("#goTypeInput").html(inputvalue);
-        }else{
-            $.ajax({
-                url: '/cn/video/get-belong', // 跳转到 action 
-                data:{
-                    belong:belong,
-                    type:type
-                },
-                type: 'post',
-                dataType: 'json',
-                success: function (data) {
-                    // console.log(data)
-                    if(data){
-                        $("#goTypeInput").html(data.data);
-                    }
-                },
-            });
-        }
-    });
+    // $(function(){
+    //     var belong = $('#goBelong').val(); 
+    //     // console.log(belong)
+    //     // if(belong==0){
+    //     //     var inputvalue ="";
+    //     //     $("#goTypeInput").html(inputvalue);
+    //     // }else{
+    //     $.ajax({
+    //         url: '/cn/video/get-belong', // 跳转到 action 
+    //         data:{
+    //             belong:belong,
+    //         },
+    //         type: 'post',
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             // console.log(data)
+    //             if(data){
+    //                 $("#goTypeInput").html(data.data);
+    //             }
+    //         },
+    //     });
+    //     // }
+    // });
     // function searchfunc(){
     //     $('#goSearch').val(''); 
     // }
@@ -321,21 +312,23 @@
         if(belong==0){
             var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
+            gou();
         }else{
             $.ajax({
-            url: '/cn/video/get-belong', // 跳转到 action 
-            data:{
-                belong:belong,
-                type:'<?php echo $data['type']?>'
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                $("#goTypeInput").html(data.data);
-            },
+                url: '/cn/video/get-belong', // 跳转到 action 
+                data:{
+                    belong:belong,
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    // console.log(data)
+                    $("#goTypeInput").html(data.data);
+                    gou();
+                },
             });
         }
+   
     }
     //切换类型刷新页面
     function  changeType(){
@@ -351,25 +344,38 @@
         });
     }
 
+    
+    function clearModel(){
+        $.ajax({
+            url: '/cn/video/clear-session', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                // window.location.reload();
+                gou();
+            },
+        }); 
+    }
     function clearSession(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         var goPage =$("#goPage").val();
         var goSearch =$("#goSearch").val();
-        
         var goPage_list =$("#goPage_list").val();
         window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
     }
 
 
     function  prevPage(){
+        $("#goPage").val(1);
         var goPage_list =$("#goPage_list").val();
         if(goPage_list>1){  $("#goPage_list").val(parseInt(goPage_list)-1); }
         gou();
     }
     function  nextPage(){
+        $("#goPage").val(1);
         var goPage_list =$("#goPage_list").val();
-        
         $("#goPage_list").val(parseInt(goPage_list)+1);
         gou();
     }
@@ -385,7 +391,7 @@
     // 预览
     function  video(id){
         var url =$("#form"+id+"  input[name=url]").val();
-        console.log(url);
+        // console.log(url);
         // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
         var videoObject = {
                 container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
@@ -429,13 +435,14 @@
     
     }
   
- 
+$(document).keyup(function(event){
+    if(event.keyCode ==13){
+        gou();
+    }
+});
 </script>
 
-
-
-
-
+ 
 
 
 

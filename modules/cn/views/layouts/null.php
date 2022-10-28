@@ -3,15 +3,15 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="title" content="天誉后台">
-    <meta name="description" content="天誉后台">
-    <meta name="keywords" content="天誉后台">
+    <meta name="title" content="在线视频">
+    <meta name="description" content="在线视频">
+    <meta name="keywords" content="在线视频">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>天誉后台</title>
+    <title>在线视频</title>
     <!-- Le styles -->
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/bootstrap-combined.min.css?v=10" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/layoutit.css" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/plugin.css" rel="stylesheet">
 
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
@@ -24,9 +24,8 @@
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
 <body>
- 
 <div class="container-fluid">
-<?= $content ?>
+    <?= $content ?>
 </div>
 </body>
 </html>
