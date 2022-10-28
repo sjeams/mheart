@@ -1,6 +1,4 @@
-<!-- 报告详情 -->
 <head>
- 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="title" content="GRE后台在线后台">
     <meta name="description" content="GRE后台在线后台">

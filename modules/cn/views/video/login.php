@@ -1,13 +1,6 @@
- 
-<!-- 报告详情 -->
-<head>
- 
+ <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="title" content="GRE后台在线后台">
-    <meta name="description" content="GRE后台在线后台">
-    <meta name="keywords" content="GRE后台在线后台">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>天誉后台</title>
+    <title>在线视频</title>
     <!-- Le styles -->
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
