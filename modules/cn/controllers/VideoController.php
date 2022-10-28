@@ -127,25 +127,21 @@ class VideoController extends ApiControl
             $belong=0;
         }
         if($belong==0){
-            if($search=='undefined'||$search==null||empty($search)) $search='我们都是超能力者';
+            if($search=='undefined'||$search==null||empty($search)||$search=="") $search='我们都是超能力者';
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-
         // 删除当前缓存
         $clear = Yii::$app->request->get('clear',0);
         if($clear){
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
-
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
         }else{
-    
             if($belong==0){
-       
                 $list = Query::getVideo($search);
                 $count = count($list);
                 $args['key_value'] =$sessionStr;
@@ -216,7 +212,7 @@ class VideoController extends ApiControl
             if($list){
                 // $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
                 if($list_type){
-                    $str ='<select name="goType" id="goType" onchange="searchfunc()">';
+                    $str ='<select name="goType" id="goType listType" >';
                     // $type = Yii::$app->request->post('type',8);
                     foreach($list as $v){
                         $name =$v['name'];

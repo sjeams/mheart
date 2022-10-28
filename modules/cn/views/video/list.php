@@ -5,6 +5,9 @@
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 </head>
+<body>
+    
+</body>
 <style>
 #goPage_list{
     display: inline-block;
@@ -252,7 +255,7 @@
         </table>
  
     </form>
-   <input type="hidden" id="videotype"  value="<?php echo  $data['type']?>">
+ 
    <div class="pagination pagination-left center" >
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
@@ -283,18 +286,17 @@
                 type: 'post',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data)
-                    $("#goTypeInput").html(data.data);
+                    // console.log(data)
+                    if(data){
+                        $("#goTypeInput").html(data.data);
+                    }
                 },
             });
         }
     });
-
-    function searchfunc(){
-        $('#goSearch').val(''); 
-    }
- 
-
+    // function searchfunc(){
+    //     $('#goSearch').val(''); 
+    // }
     function typeChange(type){
         // 重置状态page和search
         $("#goSearch").val('');
@@ -308,7 +310,6 @@
     }
 
     function belongChange(belong){
-        // var belong = $('#belong'+belong).val();
         // 重置状态page和search
         $("#goSearch").val('');
         $("#goPage").val(1);
@@ -317,7 +318,6 @@
         $('#listBelong a').removeClass('active'); 
         $('#listBelong a').removeClass('btn-primary'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        // $('#belong'+belong).addClass('btn-primary'); 
         if(belong==0){
             var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
@@ -336,48 +336,6 @@
             },
             });
         }
-    }
-
-    // function func(){  
-    // //获取被选中的option标签  
-    //     var belong = $('#goBelong').val(); 
-    //     var type = $('#goType').val(); 
-    //     if(belong==0){
-    //         var inputvalue ="";
-    //         $("#goTypeInput").html(inputvalue);
-    //     }else{
-    //         $.ajax({
-    //         url: '/cn/video/get-belong', // 跳转到 action 
-    //         data:{
-    //             belong:belong,
-    //             type:type
-    //         },
-    //         type: 'post',
-    //         dataType: 'json',
-    //         success: function (data) {
-    //             console.log(data)
-    //             $("#goTypeInput").html(data.data);
-    //         },
-    //         });
-    //     }
-
-    // }  
-
-    //登录
-    function  loginIn(){
-        login = $("#login").val();
-        $.ajax({
-            url: '/cn/video/login', // 跳转到 action 
-            data:{
-                login:login,
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                // console.log(data)
-                window.location.reload();
-            },
-        });
     }
     //切换类型刷新页面
     function  changeType(){
@@ -406,7 +364,7 @@
 
     function  prevPage(){
         var goPage_list =$("#goPage_list").val();
-        if(goPage_list>1){    $("#goPage_list").val(parseInt(goPage_list)-1); }
+        if(goPage_list>1){  $("#goPage_list").val(parseInt(goPage_list)-1); }
         gou();
     }
     function  nextPage(){
