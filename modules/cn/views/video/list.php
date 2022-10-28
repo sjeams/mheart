@@ -226,7 +226,9 @@
                         <td  >
                             <!-- // 第三方URL -->
                             <!-- https://m3u8.huakuibf3.com/m3u8/?url= -->
-                            <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                            <!-- https://help.siwazywcdn2.com:5278/m3u8.php?url= -->
+                            
+                            <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                             <p class="center">  <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
                             <p class="center">  <?php echo $v['title']?></p>
                             </a>

@@ -76,6 +76,21 @@ class Video extends ActiveRecord {
 						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
 					);
 				}
+
+			}else if($belong==5){
+				// $type = $type?$type:1;
+				// https://siwazyw.cc/index.php/vod/type/id/20/page/2.html
+				if($type){
+					$list=array(
+						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.cc'),
+					);
+				}else{
+					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					$list=array(
+						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.cc'),
+					);
+				}
+
 			}else{
 				return false;
 			}	
@@ -135,6 +150,12 @@ class Video extends ActiveRecord {
 						$content2= array(' .name','html','');
 						$content3= array('.name>img','src','');
 						$rang='.content .nr li span ';
+					break;
+					case 5 :   		// 小站
+						$content1= array(' a','href','');
+						$content2= array(' a','title','');
+						$content3= array(' a .img>img','data-src','');
+						$rang='.block-post .item ';
 					break;
 				}
 				// var_dump($v['http'].$v['url'] );die;
@@ -202,13 +223,13 @@ class Video extends ActiveRecord {
 					// preg_match_all('/var vid = "(.*?)"/is',$data1['content'],$array);
 					// var_dump($array);die;
 					// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
-					// $array[1][0] = str_replace('正片$','',$data1['content']);
-					// $array[1][0] = str_replace('$','',$data1['content']);
-					// $array[1][0] = str_replace('高清$','',$data1['content']);
-					$array[1][0] = str_replace('正片$','',$data1['content']);
-					$array[1][0] = str_replace('高清$','',$data1['content']);
+					// $videourl = str_replace('正片$','',$data1['content']);
+					// $videourl = str_replace('$','',$data1['content']);
+					// $videourl = str_replace('高清$','',$data1['content']);
+					$videourl = str_replace('正片$','',$data1['content']);
+					$videourl = str_replace('高清$','',$data1['content']);
 
-					$args['url']=$array[1][0];
+					$args['url']=$videourl;
 					$args['title']= addslashes($data1['title']);
 					// $args['imageurl']=$val['imageurl'];
 					$args['imageurl']=$data1['imageurl'];
@@ -219,7 +240,7 @@ class Video extends ActiveRecord {
 					$args['belong']= $belong;
 					$args['link']= $link;
 					// var_dump($args);die;
-					// return $array[1][0];
+					// return $videourl;
 					if(!$isquery){
 						Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 					}
@@ -252,10 +273,10 @@ class Video extends ActiveRecord {
 				if(!empty($data1['content'] )){
 		 
 					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
-					$array[1][0] = str_replace('正片$','',$data1['content']);
-					$array[1][0] = str_replace('高清$','',$data1['content']);
+					$videourl = str_replace('正片$','',$data1['content']);
+					$videourl = str_replace('高清$','',$data1['content']);
 					// var_dump($array);die;
-					$args['url']=$array[1][0];
+					$args['url']=$videourl;
 					$args['title']= addslashes($data1['title']);
 					$args['imageurl']=$data1['imageurl'];
  
@@ -266,7 +287,7 @@ class Video extends ActiveRecord {
 					$args['belong']= $belong;
 					$args['link']= $link;
 					// var_dump($args);die;
-					// return $array[1][0];
+					// return $videourl;
 					// var_dump($args);die;
 					if(!$isquery){
 						Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
@@ -299,11 +320,11 @@ class Video extends ActiveRecord {
 				if(!empty($data1['content'] )){
 		 
 					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
-					$array[1][0] = str_replace('正片$','',$data1['content']);
-					$array[1][0] = str_replace('高清$','',$data1['content']);
+					$videourl = str_replace('正片$','',$data1['content']);
+					$videourl = str_replace('高清$','',$data1['content']);
 					
 					// var_dump($array);die;
-					$args['url']=$array[1][0];
+					$args['url']=$videourl;
 					$args['title']= addslashes($val['title']);
 					$args['imageurl']=$data1['imageurl'];
  
@@ -314,7 +335,7 @@ class Video extends ActiveRecord {
 					$args['belong']= $belong;
 					$args['link']= $link;
 					// var_dump($args);die;
-					// return $array[1][0];
+					// return $videourl;
 					// var_dump($args);die;
 					if(!$isquery){
 						Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
@@ -344,11 +365,11 @@ class Video extends ActiveRecord {
 				if(!empty($data1['content'] )){
 					// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
 					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
-					$array[1][0] = str_replace('在线播放$','',$data1['content']);
-					// $array[1][0] = str_replace('正片$','',$data1['content']);
-					// $array[1][0] = str_replace('高清$','',$data1['content']);
+					$videourl = str_replace('在线播放$','',$data1['content']);
+					// $videourl = str_replace('正片$','',$data1['content']);
+					// $videourl = str_replace('高清$','',$data1['content']);
 					// var_dump($array);die;
-					$args['url']=$array[1][0];
+					$args['url']=$videourl;
 					$args['title']= addslashes($val['title']);
 					$args['imageurl']=$data1['imageurl'];
  
@@ -359,7 +380,54 @@ class Video extends ActiveRecord {
 					$args['belong']= $belong;
 					$args['link']= $link;
 					// var_dump($args);die;
-					// return $array[1][0];
+					// return $videourl;
+					// var_dump($args);die;
+					if(!$isquery){
+						Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
+					}
+					return $args;
+				} 
+
+			break;
+			case 5 :     	// 新东方
+				
+				$val['title']= Method::getMytrim($val['title']);
+				$content1= array('#input','value');
+				// $content2= array('.lazy ','src');
+	 
+				// $content2= array('h1','text');
+				// $model	='.xqy_core_main';
+				$link =$http.$val['url'];
+				// var_dump($link);
+				$rules=array(
+					'content' => $content1,
+					// 'imageurl' => $content2
+				);
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
+
+			
+				if(!empty($data1['content'] )){
+					// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
+					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
+					$videourl = str_replace('在线播放$','',$data1['content']);
+					$videourl = str_replace('HD$','',$data1['content']);
+					// $videourl = str_replace('正片$','',$data1['content']);
+					// $videourl = str_replace('高清$','',$data1['content']);
+					// var_dump($array);die;
+					$args['url']=$videourl;
+					$args['title']= addslashes($val['title']);
+					$args['imageurl']=$val['imageurl'];
+ 
+					if((string)strpos($args['imageurl'],'http')==''){
+						$args['imageurl']=$http.$args['imageurl'];
+					} 
+					$args['type']= $type;
+					$args['belong']= $belong;
+					$args['link']= $link;
+					// var_dump($args);die;
+					// return $videourl;
 					// var_dump($args);die;
 					if(!$isquery){
 						Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();

@@ -21,12 +21,13 @@ class Category extends ActiveRecord {
 
 	 public static function Category(){
         $list =array(
-            array( 'id'=>0,'name'=>'淘片片' ),
+            array( 'id'=>0,'name'=>'淘片' ),
             // array( 'id'=>1,'name'=>'jipo' ),
             array( 'id'=>1,'name'=>'花魁' ),
             array( 'id'=>2,'name'=>'丝袜' ),
             array( 'id'=>3,'name'=>'色窝' ),
             array( 'id'=>4,'name'=>'探探' ),
+            array( 'id'=>5,'name'=>'丝袜2' ),
         );
      return  $list;
     }

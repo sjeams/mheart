@@ -163,9 +163,10 @@ class VideoController extends ApiControl
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                 $list=[];
                 $count = count($listvideo);
+                $pageSize=10;
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
-                        if($key<($page*10)&&$key>=($page-1)*10){
+                        if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){
                             $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                         }
                     }
