@@ -3,7 +3,7 @@
     <title>在线视频</title>
     <!-- Le styles -->
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="./backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->

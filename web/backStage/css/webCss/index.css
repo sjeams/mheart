@@ -1,0 +1,587 @@
+/*共有的css*/
+@import "public.css";
+@import "footer.css";
+@import "header.css";
+
+/*=========以下是首页轮播css===============*/
+.z_lunbo { width:100%; height:516px; position:relative;}/* overflow:hidden;*/
+.z_lunbo a img{
+    border:none;
+}
+.z_lunbo .hd{ height:15px; overflow:hidden; position:absolute; left: 50%;margin-left: -10px; bottom:38px; z-index:1; }
+.z_lunbo .hd ul{ overflow:hidden; zoom:1; float:left;}
+.z_lunbo .hd ul li{ float:left; margin-right:17px;  width:16px; height:15px; line-height:14px; text-align:center; background:url("../images/tikuSomeBg.png") no-repeat -333px 0;; cursor:pointer;}
+.z_lunbo .hd ul li.on{background:url("../images/tikuSomeBg.png") no-repeat -317px 0;}
+.z_lunbo .bd{ position:relative; height:100%; z-index:0;   }
+.z_lunbo .bd ul li{width:100%; height:516px; zoom:1;}
+.z_lunbo .bd ul li.lunbo01{
+     background:url("../images/index_lunbo1.jpg") no-repeat center;
+ }
+.z_lunbo .bd ul li.lunbo02{
+    background:url("../images/index_lunbo2.jpg") no-repeat center;
+}
+.z_lunbo .bd ul li.lunbo03{
+    background:url("../images/index_lunbo3.jpg") no-repeat center;
+}
+
+/*.z_lunbo .bd img{ width:100%; height:516px; display:block;}*/
+
+/* 下面是前/后按钮代码，如果不需要删除即可 */
+.z_lunbo .prev,
+.z_lunbo .next{ position:absolute; left:0; top:50%; margin-top:-25px; display:block; width:32px; height:40px;  }
+.z_lunbo .next{ left:auto; right:0; background-position:8px 5px; }
+.z_lunbo .prevStop{ display:none;  }
+.z_lunbo .nextStop{ display:none;  }
+/*=========end================*/
+
+/*=========以下是改版首页css===============*/
+
+#z_lunbo .huiyuan_login_zzc{
+    width: 348px;
+    height: 516px;
+    background:#000000;
+    opacity: 0.2;
+    filter:alpha(opacity=20);
+    position: absolute;
+    right:10%;
+    top: 0;
+}
+
+#z_lunbo .huiy_login_c{
+    width: 242px;
+    height: 246px;
+    position: absolute;
+    right: 13%;
+    top: 128px;
+    color: #ffffff;
+}
+
+.huiy_login_c .miss_login{
+    font-size:12px;
+    color:#9a0202;
+    display:none;
+    background:url("../images/huiyuan_jingao.png") no-repeat left center;
+    padding-left:13px;
+}
+
+#z_lunbo .huiy_login_c .hy_username{
+    width: 241px;
+    height: 30px;
+    background: url("../images/tikuSomeBg.png") no-repeat  -127px -251px;
+    border: none;
+    margin-top: 16px;
+    padding-left: 25px;
+
+    box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    -webkit-box-sizing: border-box;
+
+}
+
+#z_lunbo .huiy_login_c .hy_password{
+
+    width: 241px;
+
+    height: 29px;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -129px -219px;
+
+    border: none;
+
+    margin-top: 16px;
+
+    padding-left: 25px;
+
+    box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    -webkit-box-sizing: border-box;
+
+}
+#z_lunbo .huiy_login_c .hy_yzm{
+    width: 135px;
+    height: 29px;
+    border-radius: 5px;
+    background: white;
+    border: none;
+    padding-left: 10px;
+}
+#z_lunbo .huiy_login_c .yzmImg{
+   position: relative;
+    top: 12px;
+}
+.huiy_login_c .yzmImg:hover{
+    cursor: pointer;
+}
+#z_lunbo .huiy_login_c .log_reg{
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 27px;
+
+}
+
+#z_lunbo .huiy_login_c .log_reg input{
+
+    color: #ffffff;
+
+    background: #020202;
+
+    padding: 7px 20px;
+
+    border: none;
+
+    font-size: 16px;
+
+    font-family: '微软雅黑';
+
+}
+
+#z_lunbo .huiy_login_c .log_reg input:hover{
+
+    cursor: pointer;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log{
+
+    width: 100%;
+
+    text-align: right;
+
+    padding-top: 18px;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul{
+
+   position: absolute;
+
+    right: 0;
+
+    margin-top: 10px;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul li{
+
+    float: left;
+
+    margin-right: 12px;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul li:last-child{
+
+    margin-right: 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_weibo{
+
+    width: 28px;
+
+    height: 28px;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -179px 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_weibo:hover{
+
+    cursor: pointer;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -207px 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_weixin{
+
+    width: 28px;
+
+    height: 28px;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -235px 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_weixin:hover{
+
+    cursor: pointer;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -263px 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_qq{
+
+    width: 28px;
+
+    height: 28px;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -123px 0;
+
+}
+
+#z_lunbo .huiy_login_c .qita_log ul .hy_qq:hover{
+
+    cursor: pointer;
+
+    background: url("../images/tikuSomeBg.png") no-repeat -151px 0;
+
+}
+.index_yizhans{
+    width: 747px;
+    height: 221px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background: url("../images/index_yizhanshi.png") no-repeat;
+    padding-top: 40px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.indexYZS{
+    width: 100%;
+    height: 742px;
+    background: #1c1c1c;
+    padding-top: 71px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.indexYZS ul li{
+    width: 175px;
+    float: left;
+    text-align: center;
+    margin-right: 178px;
+    margin-bottom: 75px;
+}
+.indexYZS ul li:nth-child(3n){
+    margin-right: 0;
+}
+.indexYZS ul li:nth-child(3){
+    margin-bottom: 50px;
+}
+.indexYZS ul{
+    width: 890px;
+    margin: 0 auto;
+}
+.indexYZS ul li div{
+    width: 100%;
+    height: 176px;
+    border: 1px #33b9e3 solid;
+    color:#33b9e3;
+    border-radius: 20px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.indexYZS ul li div p{
+    font-size: 75px;
+    margin-bottom: 10px;
+}
+.indexYZS ul li a div span{
+    font-size: 20px;
+    color: #33b9e3;
+}
+.indexYZS ul li div:hover{
+    cursor: pointer;
+}
+.indexYZS ul li div:hover p{
+    transform:translateY(-5px);
+    -moz-transform:translateY(-5px);
+    -webkit-transform:translateY(-5px);
+    -o-transform:translateY(-5px);
+}
+.indexYZS ul li ol {
+    margin-top: 18px;
+}
+.indexYZS ul li ol li a{
+    color: #e3e3e3;
+    font-size: 15px;
+}
+
+.indexYZS ul li ol li{
+    margin-bottom: 0;
+}
+.indexYZS ul li ol li:nth-child(3){
+    margin-bottom: 0;
+}
+.studentsDP{
+    width: 100%;
+    height: 670px;
+    background: url("../images/index_xydpBG.jpg") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.stu_div{
+    width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+.stu_div .stuTitle{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.stuSlide{
+    width: 100%;
+    height: 475px;
+    position: relative;
+    padding-top: 103px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.stuSlideHd .prev{
+    width: 33px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -20px;
+    background: url("../images/index_blueWjian.png") no-repeat;
+}
+.stuSlideHd .prev.prevStop{
+    background: url("../images/index_blueWjian001.png") no-repeat;
+}
+.stuSlideHd .next{
+    width: 33px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -20px;
+    background: url("../images/index_blueWjian02.png") no-repeat;
+}
+.stuSlideHd .next.nextStop{
+    background: url("../images/index_blueWjian002.png") no-repeat;
+}
+.stuSlideHd .quotation01{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -12px;
+}
+.stuSlideHd .quotation02{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -12px;
+}
+.stuSlideBd{
+    width: 1030px;
+    margin: 0 auto;
+}
+.stuSlideBd ul li div.stuFour{
+    width: 478px;
+    height: 115px;
+    margin-right: 69px;
+    margin-bottom: 40px;
+    float: left;
+}
+.stuSlideBd ul li div.stuFour:hover{
+    cursor: pointer;
+    background: rgba(54, 96, 181, 0.60);
+}
+.stuFour .stuF_left{
+    width: 93px;
+    height: 93px;
+    border-radius: 93px;
+    /*background: white;*/
+    margin-top: 10px;
+    margin-left: 32px;
+    float: left;
+    overflow: hidden;
+}
+.stuFour .stuF_left img{
+    width: 100%;
+}
+.stuFour .stuF_right{
+    width: 332px;
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+    text-align: left;
+}
+.stuFour .stuF_right .rtitleP{
+    font-size: 20px;
+    color: #fbee15;
+}
+.stuFour .stuF_right .rfontP{
+    font-size: 12px;
+}
+.stuFour .stuF_right .rtitleP .inP{
+    color: #fbee15;
+    font-size: 30px;
+}
+.teacherTeam{
+    width: 1181px;
+    height: 804px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.teacherTeam p{
+    font-size: 35px;
+    color: #352e2c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.teacherTeam span{
+    font-size: 20px;
+    color: #7d7d7d;
+}
+.teacherTeam ul{
+    margin-top: 48px;
+}
+.teacherTeam ul li{
+    width: 277px;
+    height: 294px;
+    float: left;
+    position: relative;
+    margin-right: 24px;
+    margin-bottom: 84px;
+    overflow: hidden;
+}
+.teacherTeam ul li img{
+    width: 100%;
+}
+.teacherTeam ul li:hover{
+    cursor: pointer;
+}
+.teacherTeam ul li div{
+    width: 100%;
+    height: 71px;
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+.teacherTeam ul li div p.pamanda{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.teacherTeam ul li div span.showSpan{
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+}
+.teacherTeam ul li div .hideP{
+    color: white;
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    text-align: left;
+    margin-left: 38px;
+    display: none;
+    font-weight: normal;
+}
+.teacherTeam ul li:nth-child(4n){
+    margin-right: 0;
+}
+.teacherTeam ul li div a{
+    color: white;
+    font-size: 16px;
+    padding: 3px 15px;
+    border: 1px white solid;
+    float: right;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+.leigeJiYu{
+    width: 100%;
+    height: 637px;
+    background: url("../images/index_lgjyBG_01.png") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 59px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.lg_title{
+    color: white;
+    text-align: center;
+}
+.lg_title p{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.lg_title span{
+    font-size: 16px;
+}
+.lg_greenDiv{
+    width: 1060px;
+    height: 210px;
+    background: #41c064;
+    color: #f4fff9;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+    padding-top: 25px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkitbox-sizing:border-box;
+}
+.lg_greenDiv .rightImg{
+    position: absolute;
+    right: -86px;
+    top: -47px;
+}
+.lg_greenDiv div{
+    width: 710px;
+    height: 155px;
+    margin-left: 58px;
+    position: relative;
+}
+.lg_greenDiv div p{
+    text-indent: 2em;
+    line-height: 28px;
+}
+.lg_greenDiv div a{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.lg_greenDiv div a img{
+    vertical-align: middle;
+}
+.lg_greenDiv div a input{
+    color: #41c064;
+    border: none;
+    padding: 3px 20px 6px 3px;
+    background: white;
+}
+
+
+
+/*广告提示窗*/
+.jiqir_close02{width:18px;height:20px;background:url("../images/tikuSomeBg.png") no-repeat -582px -4px;position:absolute;top:0;right:0}
+.jiqir_close02:hover{cursor:pointer}
+.guangg_tishi{width:100%;height:40px;background:#232c35;position:fixed;bottom:0;z-index:20000;text-align:center;padding:10px 0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.guangg_tishi p{color:#fff}.guangg_tishi span{color:#5089b4;position:relative;top:-5px}.guangg_tishi span img{vertical-align:middle}

@@ -1,0 +1,282 @@
+/*共有的css*/
+@import "public.css";
+@import "footer.css";
+@import "header.css";
+/*资讯页css*/
+.banner{
+    width: 1176px;
+    height: 374px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.bannerLeft{
+    width: 450px;
+    height: 100%;
+    float: left;
+    background: url("../images/information_black.jpg") no-repeat;
+    padding: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+}
+.bannerLeft b{
+    font-size: 25px;
+}
+.bannerLeft  p{
+    color: white;
+    margin-top: 30px;
+}
+.bannerRight{
+    width: 726px;
+    height: 100%;
+    float: left;
+}
+.info{
+    width: 1174px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.infoLeft{
+    width: 774px;
+    height: 100%;
+    float: left;
+}
+.infoLhd{
+    width: 100%;
+    border-bottom: 1px #d3d3d3 solid;
+    padding-bottom: 10px;
+}
+.infoLhd ul li{
+    float: left;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.infoLhd ul li:hover{
+    cursor: pointer;
+    background: #02a5eb;
+    color: white;
+}
+.infoLhd ul li.on{
+    background: #02a5eb;
+    color: white;
+}
+.infoLbd>ul>div>li{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px #7e7e7e solid;
+    position: relative;
+}
+.infoLbd>ul>div>li a.readAll{
+    color: #34388e;
+    font-size: 14px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.infoLbd_left{
+    float: left;
+}
+.infoLbd_left img{
+    width: 250px;
+}
+.infoLbd_right{
+    float: left;
+}
+.infoLbd_right h2{
+    font-weight: normal;
+}
+.infoLbd_right span,p{
+    color: #a4a4a4;
+    font-size: 12px;
+}
+.bdright_maleft{
+    margin-left: 25px;
+}
+.bdright_maleft02{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 20px 0 50px 0;
+}
+.fenPage{
+    margin-top: 40px;
+}
+.fenPage ul li{
+    float: left;
+    margin-right: 5px;
+}
+.fenPage ul li a{
+    background: #b6b6b6;
+    padding: 1px 5px;
+    color: white;
+    border-radius: 3px;
+
+}
+.fenPage ul li.on a{
+    background: #34388f;
+}
+.fenPage ul li:hover a{
+    background: #34388f;
+}
+.infoRight{
+    width: 337px;
+    height: 100%;
+    float: left;
+    margin-left: 60px;
+}
+
+/*与资讯详情页公用右边部分*/
+.hotArticle{
+    width: 100%;
+    margin-bottom: 49px;
+}
+.infoRight h3{
+    color: #575757;
+    border-bottom: 1px #686868 solid;
+    padding-bottom: 3px;
+}
+.hotArticle ul li{
+    font-size: 14px;
+    border-bottom: 1px #686868 dotted;
+    padding: 12px 0 6px 0;
+}
+.hotArticle ul li a{
+    color: #3c3839;
+}
+.examination{
+    margin-bottom: 60px;
+}
+.examination ul li{
+    width: 80px;
+    float: left;
+    text-align: center;
+    margin-right: 33px;
+    margin-top: 20px;
+}
+.examination ul li span{
+    font-size: 16px;
+}
+.examination ul li:nth-child(3n){
+    margin-right: 0;
+}
+.examination ul li .blueCircle{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background: #05a3e6;
+}
+.blueCircle span{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.examination ul li .blueCircle img{
+    vertical-align: middle;
+}
+.examination ul li:hover{
+    cursor: pointer;
+}
+.examination ul li:hover .blueCircle{
+    background: #494544;
+}
+.special{
+    margin-bottom: 43px;
+}
+.special ul li:first-child{
+    margin-top: 13px;
+}
+.special ul li{
+    margin-bottom: 9px;
+}
+.special ul li span{
+    width: 107px;
+    height: 23px;
+    text-align: center;
+    display: block;
+    line-height: 23px;
+    background: url("../images/information_green.png") no-repeat;
+    float: left;
+    font-size: 12px;
+    color: white;
+    margin-right: 5px;
+}
+.hotHuati{
+    margin-bottom: 50px;
+}
+.hotHuati ul{
+    margin-top: 20px;
+}
+.hotHuati ul li{
+    margin-right: 8px;
+    float: left;
+}
+.hotHuati ul li:nth-child(4){
+    margin-right: 0;
+}
+.hotHuati ul li:nth-child(5){
+   margin-left: 30px;
+}
+.hotHuati ul li.mt{
+    margin-top: 15px;
+}
+.hotHuati ul li a.bac01{
+    background: #f05966
+}
+.hotHuati ul li a.bac02{
+    background: #f68514;
+}
+.hotHuati ul li a.bac03{
+    background: #0a8fe5;
+}
+.hotHuati ul li a{
+    padding: 2px 5px;
+    color: white;
+    background: #b6b6b6;
+    font-size: 13px;
+}
+/*与资讯详情页公用右边部分 end*/
+
+/*资讯详情页css*/
+.inxq_title{
+    font-size: 16px;
+}
+.main_article{
+    width: 100%;
+    margin-top: 33px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.main_article span.smallTime{
+    font-size: 12px;
+    color: #777674;
+}
+.main_article pre{
+    color: #777674;
+}
+.icon-medium{
+    margin-top: 50px;
+}
+.jinqiClass h3{
+    color: #565656;
+    margin-top: 25px;
+}
+.jinqiClass ul{
+    margin-top: 25px;
+}
+.jinqiClass ul li{
+    width: 186px;
+    text-align: center;
+    margin-right: 60px;
+    float: left;
+}
+.jinqiClass ul li:first-child{
+    margin-left: 50px;
+}
+.jinqiClass ul li:last-child{
+    margin-right: 0;
+}
+.jinqiClass ul li p span{
+    color: #5d5b5c;
+    font-size: 12px;
+}

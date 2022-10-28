@@ -1,0 +1,292 @@
+@import "public.css";
+@import "header.css";
+@import "footer.css";
+
+.outDiv{
+    width: 100%;
+    position: relative;
+}
+.vIndexSlideFont{
+    width: 1071px;
+    height: 531px;
+    position: absolute;
+    top: 50%;
+    margin-top: -265px;
+    left: 50%;
+    margin-left: -535px;
+}
+.classTable{
+    width: 224px;
+    height: 294px;
+    background: rgba(0, 0, 0, 0.23);
+    padding: 16px 0 0 25px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.classTable p{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.classTable span{
+    font-size: 14px;
+    color: white;
+}
+.classTable ul li:first-child{
+    margin-top: 10px;
+}
+.classTable ul li{
+    width: 100%;
+}
+.classTable ul li .whiteLi:hover{
+    cursor: pointer;
+    color: #34388f;
+}
+.classTable ul li .whiteLi{
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    background: white;
+    color: #605e5f;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+}
+.classTable ul li .whiteLi img{
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+.classTable ul li div.inzzc{
+    width: 197px;
+    /*height: 152px;*/
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 180px;
+    top: 0;
+    display: none;
+    padding-bottom: 20px;
+}
+.classTable ul li div ol{
+    margin-left: 5px;
+}
+.classTable ul li div ol li:first-child{
+    margin-top: 0;
+}
+.classTable ul li div ol li{
+    width: auto;
+    height: 23px;
+    background: none;
+    font-size: 13px;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.classTable ul li div.inzzc ol li a{
+    color: white;
+}
+.classTable ul li div ol li:hover a{
+    color: #b1c9dd;
+}
+.slideBd ul li{
+    width: 100%;
+    height: 611px;
+    float: left;
+    zoom:1;
+}
+
+
+.slideHd .prev{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    z-index: 999;
+}
+.slideHd .next{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    z-index: 999;
+}
+.fourYuan{
+    width: 231px;
+    height: 208px;
+    background: rgba(0, 0, 0, 0.23);
+    margin-top: 28px;
+    padding-top: 24px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    margin-right: 49px;
+}
+.fourYuan .fourInY{
+    width: 165px;
+    height: 165px;
+    background: white;
+    border-radius: 165px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 35px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.fourYuan .fourInY input[type='button']{
+    width: 87px;
+    height: 20px;
+    background: url("../images/VPindex_greyHand.png") no-repeat;
+    color: white;
+    border: none;
+    text-align: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.fourYuan .fourInY input[type='button']:hover{
+    cursor: pointer;
+    background: url("../images/VPindex_greenHand.png") no-repeat;
+}
+.fourYuan .fourInY span{
+    font-size: 15px;
+}
+.videoTitle{
+    text-align: center;
+    color: #5f5d5e;
+    font-size: 30px;
+    margin-top: 59px;
+}
+.vIndex_lunbo{
+    margin-top: 40px;
+}
+
+.vIndexHd ul li{
+    padding: 5px 20px;
+    color: #a2a2a2;
+    border: 2px #a2a2a2 solid;
+    border-radius: 5px;
+    font-size: 22px;
+    float: left;
+    position: relative;
+    margin-right: 53px;
+}
+.vIndexHd ul li:last-child{
+    margin-right: 0;
+}
+.vIndexHd ul {
+    width: 690px;
+    margin: 0 auto;
+}
+.vIndexHd ul li:hover{
+    cursor: pointer;
+    color: #313396;
+    border: 2px #313396 solid;
+}
+.vIndexHd ul li.on{
+    color: #313396;
+    border: 2px #313396 solid;
+}
+.vIndexHd ul li.on img{
+    display: block;
+}
+.vIndexHd ul li img{
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 45px;
+    display: none;
+}
+.commonDiv{
+    width: 1179px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.commonDiv .bigTitle{
+    height: 58px;
+    font-size: 35px;
+    color: #02a5eb;
+    padding-left: 50px;
+    font-weight: bold;
+}
+.commonDiv ul li {
+    float: left;
+    margin-top: 42px;
+}
+.commonDiv ul li .cLeftImg{
+    width: 293px;
+    height: 180px;
+    float: left;
+}
+.commonDiv ul li .cLeftImg img{
+    width: 100%;
+    height: 100%;
+}
+.commonDiv ul li .cRightFont{
+    width: 275px;
+    height: 180px;
+    float: left;
+    margin-left: 20px;
+}
+.commonDiv ul li .cRightFont input.blueBtn{
+    width: 102px;
+    height: 29px;
+    background: url("../images/VPindex_blue.png") no-repeat;
+    border: none;
+    color: white;
+    text-align: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: '微软雅黑';
+    margin-top: 25px;
+}
+.commonDiv ul li .cRightFont input.greenBtn{
+    width: 102px;
+    height: 29px;
+    background: url("../images/VPindex_green.png") no-repeat;
+    border: none;
+    color: white;
+    text-align: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: '微软雅黑';
+    margin-top: 25px;
+}
+.commonDiv ul li .cRightFont p{
+    font-size: 21px;
+}
+.commonDiv ul li .cRightFont .blueTitle{
+    display: block;
+    padding-left: 13px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #20a6dd;
+    font-weight: bold;
+    background: url("../images/VPindex_dian.png") no-repeat center left;
+}
+.commonDiv ul li .cRightFont .greyFont{
+    font-size: 14px;
+    color: #999798;
+}
+.price{
+    margin-top: 17px;
+}
+.price .priceRed{
+    color: #c0343a;
+    font-size: 25px;
+}
+.price .priceGrey{
+    color: #888888;
+    font-size: 12px;
+    text-decoration: line-through;
+}

@@ -133,10 +133,10 @@ class VideoController extends ApiControl
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
         // // 删除当前缓存
-        // $clear = Yii::$app->request->get('clear',0);
-        // if($clear){
-        //     VideoList::deleteAll("key_value ='$sessionStr' ");
-        // }
+        $clear = Yii::$app->request->get('clear',0);
+        if($clear){
+            VideoList::deleteAll("key_value ='$sessionStr' ");
+        }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
         if($res){
                $list =   json_decode($res['value'],true);
@@ -207,9 +207,9 @@ class VideoController extends ApiControl
     public function actionGetBelong()
     {
         $belong = Yii::$app->request->post('belong',0);
-        // $type = Yii::$app->request->post('type');
+        $type = Yii::$app->request->post('type',0);
         $list_type = Yii::$app->session->get('list_type');
-
+        // var_dump( $type);die;
         if($belong==0){
             $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
             die(Method::jsonGenerate(1,$str,'返回数据成功'));
@@ -217,8 +217,10 @@ class VideoController extends ApiControl
         $list = Category::find()->where("belong=$belong")->asArray()->all();
         // var_dump( $list);die;
             if($list){
-                $typeArray= array_column($list,'type');
-                $type=$typeArray[0];
+                if(!$type){
+                    $typeArray= array_column($list,'type');
+                    $type=$typeArray[0];
+                }
                 // var_dump($type);die;
                 // $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
                 if($list_type){

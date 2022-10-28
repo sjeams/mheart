@@ -1,0 +1,92 @@
+.crFl{
+    float: left;
+    position: relative;
+    margin-right: 5px;
+    overflow: hidden;
+}
+.fl_ps{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+}
+.flbac01{
+    background: #38b429;
+}
+.flbac02{
+    background: #08a4ea;
+}
+.fl_ps .bTitle{
+    color: white;
+    font-size: 30px;
+    margin: 10px 0 0 20px;
+}
+.og_head_ul {
+    float: left
+}
+.og_head_ul ul li {
+    line-height: 23px;
+}
+.og_head_ul ul li.on {
+    color: #000
+}
+.og_head_ul ul li.on img {
+    display: inline
+}
+.og_head_ul ul li:hover{
+    cursor: pointer;
+}
+.og_head_ul ul li img {
+    display: none
+}
+.og_body_ul{
+    margin-left: 100px;
+}
+.og_body_ul ul li{
+    height: 23px;
+}
+.og_body_ul ul li a {
+    color: #000
+}
+.og_body_ul ul li:hover a {
+    color: #fff
+}
+.og_body_ul ul li {
+    line-height: 21px;
+}
+.sNext {
+    width: 31px;
+    height: 31px;
+    display: block;
+    background: url("../images/tikuSomeBg.png") no-repeat -494px -284px;
+    float: left;
+}
+.sNext:hover,.sPrev:hover{
+    cursor: pointer;
+}
+
+.sNext.on {
+    background: url("../images/tikuSomeBg.png") no-repeat -378px -283px
+}
+
+.sPrev {
+    width: 31px;
+    height: 31px;
+    display: block;
+    float: left;
+    background: url("../images/tikuSomeBg.png") no-repeat -451px -284px
+}
+
+.sPrev.on {
+    background: url("../images/tikuSomeBg.png") no-repeat -414px -283px
+}
+.b-desc{
+    margin: 10px 0 0 20px;
+}
+.shd{
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}

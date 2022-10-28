@@ -1,0 +1,381 @@
+@import "header.css";
+@import "footer.css";
+@import "public.css";
+@import "tiku_xiangqing.css";
+
+.tijiao_head_null {
+    width: 100%;
+    height: 20px
+}
+
+.tH_dzj {
+    width: 863px;
+    height: 386px;
+    border: 1px #00a3ea solid;
+    margin-top: 20px;
+    margin-bottom: 34px;
+    position: relative
+}
+
+.tH_dzj_indiv {
+    width: 755px;
+    height: 328px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -372px;
+    margin-top: -164px
+}
+
+.tH_dzj_tubiao {
+    width: 44px;
+    height: 100%;
+    float: left;
+    position: relative
+}
+
+.tH_dzj_tubiao div {
+    border-left: 1px #00a1e5 solid;
+    height: 93px;
+    position: relative;
+    left: 30%;
+    top: -4px
+}
+
+.tH_dzj_defen {
+    width: 457px;
+    height: 100%;
+    float: left
+}
+
+.tH_dzj_title {
+    font-size: 22px
+}
+
+.tH_dzj_defen_P {
+    width: 100%;
+    padding-top: 17px
+}
+
+.tH_dzj_person {
+    width: 132px;
+    height: 32px;
+    float: left
+}
+
+.tH_dzj_person a {
+    width: 18px;
+    height: 27px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    background: url("../images/tijiao_jieguo_huiP.png") no-repeat
+}
+
+.tH_dzj_center_jdt {
+    width: 152px;
+    height: 31px;
+    float: left;
+    position: relative
+}
+
+.tH_big_jdt {
+    width: 126px;
+    height: 10px;
+    background: #afafaf;
+    box-shadow: 0 3px 3px #dfdfdf;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px
+}
+
+.tH_small_jdt_W {
+    width: 50%
+}
+
+.tH_small_jdt_W02 {
+    width: 40%
+}
+
+.tH_small_jdt_W03 {
+    width: 35%
+}
+
+.tH_small_jdt {
+    height: 100%;
+    background: #07a2e5
+}
+
+.tH_dzj_right_bz {
+    width: 44px;
+    height: 31px;
+    line-height: 31px;
+    float: left
+}
+
+.tH_dzj_right_bz .tH_red_font {
+    color: #c9060c;
+    font-size: 12px;
+    font-weight: bold
+}
+.tH_bottom_font {
+    color: #898989;
+    font-size: 13px;
+}
+.tH_dzj_right_bz .fontSize{
+   font-size: 18px;
+}
+.tH_hui_font {
+    color: #8a8a8a
+}
+
+.tH_dzj_daojishi {
+    width: 252px;
+    height: 100%;
+    float: left
+}
+
+.th_djs_waiy {
+    width: 251px;
+    height: 162px;
+    border-radius: 5px;
+    border: 2px #19a3e4 solid;
+    position: relative;
+    text-align: center;
+    line-height: 40px;
+    padding-top: 50px
+}
+
+.th_djs_waiy img {
+    position: absolute;
+    left: 156px;
+    bottom: -45px
+}
+
+#tijiao_LX_left {
+    width: 876px;
+    float: left
+}
+
+.LX_l_center_jilu {
+    width: 863px;
+    height: 559px;
+    border: 1px #00a1e5 solid;
+    margin: 15px 0 30px 0;
+    position: relative
+}
+
+.LX_right_ul {
+    width: 282px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.LX_right_ul ul li {
+    float: left;
+    border-left: 1px #02a4eb solid;
+    border-bottom: 1px #02a4eb solid;
+    border-right: 1px #02a4eb solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 2px;
+    font-size: 15px;
+    padding: 2px 5px
+}
+
+.LX_right_ul ul li:hover {
+    cursor: pointer
+}
+
+.LX_r_ul_active a {
+    color: #02a4eb
+}
+
+.LX_quan_active {
+    background: #02a4eb
+}
+
+.LX_quan_active a {
+    color: #fff
+}
+
+#LX_huojian_right {
+    width: 320px;
+    float: left
+}
+
+#LX_jilu {
+    width: 1196px;
+    margin: 0 auto
+}
+
+.LX_hr_img {
+    width: 100%;
+    height: 383px;
+    margin-top: 45px
+}
+
+.LX_zuoti_JL {
+    width: 845px;
+    height: 510px;
+    float: left;
+    margin-top: 26px;
+    overflow: hidden;
+    margin-left: 10px
+}
+
+.LX_zuoti_JL ul li {
+    position: relative;
+    border-bottom: 1px #14a8e4 dashed;
+}
+
+.LX_zuoti_JL ul li .pX_l_a {
+    font-size: 16px;
+    color: #03a4eb;
+    font-weight: bold;
+    background: url("../images/timu_list_bianji_blue.png") no-repeat;
+    padding-left: 25px
+}
+
+.LX_zuoti_JL ul li:hover .pX_l_a {
+    color: #ea4902;
+    background: url("../images/timu_list_bj_orange.png") no-repeat
+}
+
+.LX_zuoti_JL ul li:hover {
+    cursor: pointer;
+}
+
+.LX_zuoti_JL ul li:hover .PX_l_center_SCK_show {
+    color: #000;
+}
+
+.LX_l_center_SCK_show {
+    width: 77%;
+    position: relative;
+    padding: 10px 0 30px 0;
+    float:left;
+    font-size: 16px;
+    font-family: 'Tahoma';
+}
+.showAnswer{
+    width: 13%;
+    text-align: center;
+    float: left;
+    margin-top: 15px;
+}
+.showAnswer b:first-child{
+    font-size: 30px;
+    color: #b70202;
+    margin-right: 10px;
+}
+.show_miao{
+    width: 10%;
+    text-align: center;
+    float: left;
+    margin-top: 8px;
+}
+.show_miao p{
+    font-size: 30px;
+}
+.show_miao span{
+    color: #9a9a9a;
+    font-size: 12px;
+}
+.LX_center_bottom_tubiao {
+    width: 100%;
+    height : 21px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    font-size: 14px;
+    color: #333185;
+    font-family: '微软雅黑';
+}
+
+.LX_center_bottom_tubiao .tjjg_shouc {
+    width: 12px;
+    height: 13px;
+    background: url("../images/tijiao_jieguo_love.jpg") no-repeat left center;
+    padding-left: 13px
+}
+
+.LX_center_bottom_tubiao .tjjg_shouc.on {
+    background: url("../images/tijiao_jieguo_loveRed.jpg") no-repeat left center
+}
+
+.LX_center_bottom_tubiao a {
+    color: #333185
+}
+
+.LX_l_center_jilu .div_scroll {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    float: left
+}
+
+.LX_l_center_jilu .scroll_container {
+    overflow: hidden;
+    position: relative
+}
+
+.LX_l_center_jilu .scroll_absolute {
+    position: absolute
+}
+
+.LX_l_center_jilu .scroll_vertical_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: green;
+    margin: 0;
+    padding: 0
+}
+
+.LX_l_center_jilu .scroll_track {
+    position: relative;
+    background-color: #fff
+}
+
+.LX_l_center_jilu .scroll_drag {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: #00a5e5
+}
+
+.LX_l_center_jilu .scroll_arrow {
+    text-indent: -20000px;
+    display: block;
+    cursor: pointer;
+    background-color: #369db4
+}
+
+.LX_l_center_jilu .scroll_vertical_bar .scroll_arrow {
+    height: 5px;
+}
+.diffTitle ul li{
+    float: left;
+    padding: 5px 20px;
+    background: #f1f3f7;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.diffTitle ul li:hover{
+    cursor: pointer;
+    background: #02a3e9;
+    color: white;
+}
+.diffTitle ul li.on{
+    background: #02a3e9;
+
+}
+.diffTitle ul li.on a{
+    color: white;
+}

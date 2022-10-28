@@ -1,0 +1,89 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.register_zzc{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.2;
+    filter:alpha(opacity=20);
+}
+.registerDiv{
+    width: 800px;
+    height: 400px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    padding-left: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.registerDiv form{
+    margin-left: 100px;
+}
+.registerDiv h1{
+    font-size: 40px;
+    color: #f78215;
+    font-style: italic;
+    font-weight: bold;
+}
+.registerDiv label{
+    font-size: 20px;
+    font-family: '微软雅黑';
+    line-height: 50px;
+}
+.registerDiv input[type='text']{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px #dcdcdc solid;
+    padding-left: 20px;
+}
+.registerDiv input[type='password']{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px #dcdcdc solid;
+    padding-left: 20px;
+}
+.registerDiv  form #regBtn{
+   border: none;
+   background:#f78215;
+    padding: 10px 45px;
+    font-size: 20px;
+    color: white;
+    font-family: '微软雅黑';
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+}
+.registerDiv input[type='button']:hover{
+    cursor: pointer;
+}
+#free_yzm{
+    background: #808080;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    font-family: '微软雅黑';
+    font-size: 16px;
+}
+.registerDiv  form span{
+    color: #9a0202;
+    background: url("../images/huiyuan_jingao.png") no-repeat;
+    padding-left: 13px;
+    font-size: 12px;
+    display: none;
+}
+.registerDiv  form .yzmSpan{
+    margin-left: 100px;
+}

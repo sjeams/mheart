@@ -1,0 +1,55 @@
+/*共有的css*/
+@import "public.css";
+@import "footer.css";
+@import "header.css";
+
+
+.xq_nav{
+    width: 1180px;
+    height: 46px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.xq_nav ul li a:last-child{
+    color: #079fe3;
+}
+.testZN{
+    width: 1180px;
+    margin: 0 auto;
+}
+.testZN .test_left{
+    width: 119px;
+    float: left;
+}
+.testZN .test_left ul li{
+    background: url("../images/index_xqDG.png") no-repeat left 5px;
+    height: 37px;
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+}
+.testZN .test_left ul li.on{
+    background: url("../images/index_xqDB.png") no-repeat left 5px;
+}
+.testZN .test_left ul li.on span{
+    background: #02a3e9;
+    color: white;
+    padding: 1px 2px;
+}
+.testZN .test_left ul li img{
+    position: absolute;
+    left: 3px;
+    top: 13px;
+}
+.testZN .test_right{
+    width: 1003px;
+    min-height: 500px;
+    float: left;
+    border: 1px #c9caca solid;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}

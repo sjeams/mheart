@@ -8,9 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>天誉后台</title>
     <!-- Le styles -->
-    <link href="./backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-    <link href="./backStage/css/coreCss/layoutit.css" rel="stylesheet">
-    <link href="./backStage/css/coreCss/plugin.css" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/layoutit.css" rel="stylesheet">
+    <link href="https://file.viplgw.cn/ui/gre/backStage/css/coreCss/plugin.css" rel="stylesheet">
 
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
@@ -25,8 +25,8 @@
  
  
 <!-- 按钮 -->
-<link href="./backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
-<script type="text/javascript" src="./backStage/js/honeySwitch/honeySwitch.js"></script>
+<link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
+<script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
 <script src="/laydate/laydate.js"></script>
 <div class=" " id="datacontent">
     <ul class="breadcrumb">

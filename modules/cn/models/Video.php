@@ -5,8 +5,8 @@ use yii\db\ActiveRecord;
 use Yii;
 use app\libs\Method;
 use yii\data\Pagination;
-use app\libs\QueryList;
-
+// use app\libs\QueryList;
+use QL\QueryList;
 use function PHPSTORM_META\map;
 
 class Video extends ActiveRecord {
@@ -36,7 +36,7 @@ class Video extends ActiveRecord {
 				}else{ 
 					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
 					$list=array(
-						array($belong,12,'国产主播',"/index.phpwd/$search&page=$page",'https://huakuizy0.com'),
+						array($belong,12,'国产主播',"/?m=vod-index-pg-$page.html",'https://huakuizy0.com'),
 					);
 			
 				}
@@ -68,12 +68,12 @@ class Video extends ActiveRecord {
 				// $type = $type?$type:1;
 				if($type){
 					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'http://tantanzy11.com'),
+						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
 					);
 				}else{
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'http://tantanzy11.com'),
+						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
 					);
 				}
 			}else{
@@ -112,44 +112,47 @@ class Video extends ActiveRecord {
 						// $content1= array('.stui-vodlist .title>a','href','');
 						// $content2= array('.stui-vodlist .title>a','title','');
 						// $content3= array('.stui-vodlist img','src','');
-						$content1= array('.content .row','href','');
-						$content2= array('.content .row ul li','html','');
-						$content3= array('.content .row ul li>img','src','');
-
+						$content1= array('','href','');
+						$content2= array(' ul li','html','');
+						$content3= array(' ul li>img','src','');
+						$rang='.content .row';
 					break;
 					case 2 :   		// 小站
-						$content1= array('.content .row','href','');
-						$content2= array('.content .row ul li','html','img');
-						$content3= array('.content .row ul li>img','src','');
-			
+						$content1= array('','href','');
+						$content2= array(' ul li','html','img');
+						$content3= array(' ul li>img','src','');
+						$rang='.content .row';
 					break;
 					case 3 :   		// 小站
-						$content1= array('.videoContent li .videoName','href','');
-						$content2= array('.videoContent li .videoName','text','');
-						$content3= array('.videoContent li .videoName>img','src','');
-			
+						$content1= array('.videoName','href','');
+						$content2= array('.videoName','text','');
+						$content3= array('.videoName>img','src','');
+						$rang='.videoContent li ';
 					break;
 
 					case 4 :   		// 小站
-						$content1= array('.content .nr li span .name','href','');
-						$content2= array('.content .nr li span .name','html','');
-						$content3= array('.content .nr li span .name>img','src','');
-			
+						$content1= array(' .name','href','');
+						$content2= array(' .name','html','');
+						$content3= array('.name>img','src','');
+						$rang='.content .nr li span ';
 					break;
 				}
 				// var_dump($v['http'].$v['url'] );die;
 				// 抓取列表  --结果
 				$httpurl =$v['http'].$v['url'];
 				// var_dump($httpurl);die;
-				$data = QueryList::Query($httpurl,array(
+				$rules=array(
 					'url' =>  $content1,
 					'title' => $content2,
 					'imageurl' => $content3,
-				))->data;  
+				);
+ 
+				$ql = QueryList::rules($rules);
+				$data =$ql->get($httpurl)->range($rang)->queryData();
+				$ql->destruct();
 				// var_dump($data);die;
 				// if($v['belong']==3){
 				// 	var_dump($v);
-			 
 				// }	
 				if($isquery){
 					foreach($data as $ky=>$val){
@@ -184,28 +187,31 @@ class Video extends ActiveRecord {
 				$content2= array('.theme .detail img','src','-img');
 				$content3= array('.theme .detail img','title');
 				$link =$http.$val['url'];
-				// var_dump($link);
-			
-				$data1 = QueryList::Query($link,array(
+				// var_dump($link);			
+				$rules=array(
 					'content' => $content1,
 					'imageurl' => $content2,
 					'title' => $content3
-				))->data;
-			
-				if(!empty($data1[0]['content'] )){
-					// preg_match_all('/var vid = "(.*?)"/is',$data1[0]['content'],$array);
+				);
+				// var_dump($link);die;
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
+				// var_dump($data1);die;
+				if(!empty($data1['content'] )){
+					// preg_match_all('/var vid = "(.*?)"/is',$data1['content'],$array);
 					// var_dump($array);die;
-					// $data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
-					// $array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					// $array[1][0] = str_replace('$','',$data1[0]['content']);
-					// $array[1][0] = str_replace('高清$','',$data1[0]['content']);
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
+					// $array[1][0] = str_replace('正片$','',$data1['content']);
+					// $array[1][0] = str_replace('$','',$data1['content']);
+					// $array[1][0] = str_replace('高清$','',$data1['content']);
+					$array[1][0] = str_replace('正片$','',$data1['content']);
+					$array[1][0] = str_replace('高清$','',$data1['content']);
 
 					$args['url']=$array[1][0];
-					$args['title']= addslashes($data1[0]['title']);
+					$args['title']= addslashes($data1['title']);
 					// $args['imageurl']=$val['imageurl'];
-					$args['imageurl']=$data1[0]['imageurl'];
+					$args['imageurl']=$data1['imageurl'];
 					if((string)strpos($args['imageurl'],'http')==''){
 						$args['imageurl']=$http.$args['imageurl'];
 					} 
@@ -233,22 +239,25 @@ class Video extends ActiveRecord {
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);
-				$data1 = QueryList::Query($link,array(
+ 
+				$rules=array(
 					'content' => $content1,
 					'imageurl' => $content2,
 					'title' => $content3
-				))->data;
-
+				);
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
 				// var_dump($val['title']);die;
-				if(!empty($data1[0]['content'] )){
+				if(!empty($data1['content'] )){
 		 
-					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
+					$array[1][0] = str_replace('正片$','',$data1['content']);
+					$array[1][0] = str_replace('高清$','',$data1['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
-					$args['title']= addslashes($data1[0]['title']);
-					$args['imageurl']=$data1[0]['imageurl'];
+					$args['title']= addslashes($data1['title']);
+					$args['imageurl']=$data1['imageurl'];
  
 					if((string)strpos($args['imageurl'],'http')==''){
 						$args['imageurl']=$http.$args['imageurl'];
@@ -279,23 +288,24 @@ class Video extends ActiveRecord {
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 			
-			
-				$data1 = QueryList::Query($link,array(
+				$rules=array(
 					'content' => $content1,
 					'imageurl' => $content2
-				))->data;
-
+				);
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
 				// var_dump($data1);die;
-				if(!empty($data1[0]['content'] )){
+				if(!empty($data1['content'] )){
 		 
-					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
-					$array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					$array[1][0] = str_replace('高清$','',$data1[0]['content']);
+					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
+					$array[1][0] = str_replace('正片$','',$data1['content']);
+					$array[1][0] = str_replace('高清$','',$data1['content']);
 					
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
-					$args['imageurl']=$data1[0]['imageurl'];
+					$args['imageurl']=$data1['imageurl'];
  
 					if((string)strpos($args['imageurl'],'http')==''){
 						$args['imageurl']=$http.$args['imageurl'];
@@ -322,22 +332,25 @@ class Video extends ActiveRecord {
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);
-				$data1 = QueryList::Query($link,array(
+				$rules=array(
 					'content' => $content1,
 					'imageurl' => $content2
-				))->data;
+				);
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
 
 				// var_dump($data1);die;
-				if(!empty($data1[0]['content'] )){
-					// $data1[0]['content'] = iconv("gb2312","UTF-8",$data1[0]['content']);
-					// preg_match_all('/正片\$(.*?)/is',$data1[0]['content'],$array);
-					$array[1][0] = str_replace('在线播放$','',$data1[0]['content']);
-					// $array[1][0] = str_replace('正片$','',$data1[0]['content']);
-					// $array[1][0] = str_replace('高清$','',$data1[0]['content']);
+				if(!empty($data1['content'] )){
+					// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
+					// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
+					$array[1][0] = str_replace('在线播放$','',$data1['content']);
+					// $array[1][0] = str_replace('正片$','',$data1['content']);
+					// $array[1][0] = str_replace('高清$','',$data1['content']);
 					// var_dump($array);die;
 					$args['url']=$array[1][0];
 					$args['title']= addslashes($val['title']);
-					$args['imageurl']=$data1[0]['imageurl'];
+					$args['imageurl']=$data1['imageurl'];
  
 					if((string)strpos($args['imageurl'],'http')==''){
 						$args['imageurl']=$http.$args['imageurl'];

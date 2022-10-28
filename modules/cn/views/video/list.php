@@ -87,15 +87,11 @@
      }
 
  </style>
-<!-- 按钮 -->
-<!-- <link href="./backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet"> -->
-<!-- <script type="text/javascript" src="./backStage/js/honeySwitch/honeySwitch.js"></script> -->
+ 
+ 
 <script src="/laydate/laydate.js"></script>
  <!-- Le styles -->
-<link href="./backStage/css/coreCss/bootstrap-combined.min.css?v=1" rel="stylesheet">
-<!-- <link href="./backStage/css/coreCss/layoutit.css" rel="stylesheet"> -->
-<!-- <link href="./backStage/css/coreCss/plugin.css" rel="stylesheet"> -->
-
+ 
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
@@ -104,6 +100,7 @@
 <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+<link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
     <!-- 视频 -->
     <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -163,7 +160,7 @@
                                 </div>
                                 <!-- <label class="layui-form-label">类型typ</label> -->
                                 <div class="layui-input-inline" id="goTypeInput">
-                                    <!-- <input type="text" value="<?php echo $data['type'] ?>" name="goType" id="goType"> -->
+                                    <input type="text" value="<?php echo $data['type'] ?>" name="goType" id="goType">
                                 </div>
 
                                 <!-- <label class="layui-form-label">搜索</label> -->
@@ -262,29 +259,31 @@
 </div>
 
 <script>
-    // $(function(){
-    //     var belong = $('#goBelong').val(); 
-    //     // console.log(belong)
-    //     // if(belong==0){
-    //     //     var inputvalue ="";
-    //     //     $("#goTypeInput").html(inputvalue);
-    //     // }else{
-    //     $.ajax({
-    //         url: '/cn/video/get-belong', // 跳转到 action 
-    //         data:{
-    //             belong:belong,
-    //         },
-    //         type: 'post',
-    //         dataType: 'json',
-    //         success: function (data) {
-    //             // console.log(data)
-    //             if(data){
-    //                 $("#goTypeInput").html(data.data);
-    //             }
-    //         },
-    //     });
-    //     // }
-    // });
+    $(function(){
+        var belong = $('#goBelong').val(); 
+        var type = $('#goType').val(); 
+        // console.log(belong)
+        // if(belong==0){
+        //     var inputvalue ="";
+        //     $("#goTypeInput").html(inputvalue);
+        // }else{
+        $.ajax({
+            url: '/cn/video/get-belong', // 跳转到 action 
+            data:{
+                belong:belong,
+                type:type
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                if(data){
+                    $("#goTypeInput").html(data.data);
+                }
+            },
+        });
+        // }
+    });
     // function searchfunc(){
     //     $('#goSearch').val(''); 
     // }
@@ -318,6 +317,7 @@
                 url: '/cn/video/get-belong', // 跳转到 action 
                 data:{
                     belong:belong,
+                    type:0
                 },
                 type: 'post',
                 dataType: 'json',

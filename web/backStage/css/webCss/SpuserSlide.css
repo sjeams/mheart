@@ -1,0 +1,19 @@
+/*=========以下是首页轮播css===============*/
+.z_lunbo { width:100%; height:612px; position:relative;  }/* overflow:hidden;*/
+.z_lunbo a img{
+    border:0 none;
+}
+.z_lunbo .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:5px; z-index:1; }
+.z_lunbo .hd ul{ overflow:hidden; zoom:1; float:left;  }
+.z_lunbo .hd ul li{ float:left; margin-right:2px;  width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer;}
+.z_lunbo .hd ul li.on{ background:#f00; color:#fff; }
+.z_lunbo .bd{ position:relative; height:100%; z-index:0;   }
+.z_lunbo .bd ul li{width:100%; height:612px; zoom:1; vertical-align:middle; background: url("../images/lunbo_01.gif") no-repeat center;  }
+.z_lunbo .bd img{ width:1900px; height:612px; display:block;  }
+/* 下面是前/后按钮代码，如果不需要删除即可 */
+.z_lunbo .prev,
+.z_lunbo .next{ position:absolute; left:0; top:50%; margin-top:-25px; display:block; width:32px; height:40px;  }
+.z_lunbo .next{ left:auto; right:0; background-position:8px 5px; }
+.z_lunbo .prevStop{ display:none;  }
+.z_lunbo .nextStop{ display:none;  }
+/*=========end================*/

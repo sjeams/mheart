@@ -9,9 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>在线视频</title>
     <!-- Le styles -->
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/bootstrap-combined.min.css?v=10" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-    <link href="https://file.viplgw.cn/ui/gre/backStage/css/backStage/css/coreCss/plugin.css" rel="stylesheet">
+
+    <link href="/backStage/css/coreCss/layoutit.css" rel="stylesheet">
+    <link href="/backStage/css/coreCss/plugin.css" rel="stylesheet">
 
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
