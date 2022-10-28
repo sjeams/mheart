@@ -301,8 +301,8 @@
         $("#goPage").val(1);
         $("#goPage_list").val(1);
         $('#goType').val(type);
-        $('#goPage a').removeClass('active'); 
-        $('#goPage a').removeClass('btn-primary'); 
+        $('#listType a').removeClass('active'); 
+        $('#listType a').removeClass('btn-primary'); 
         $('#type'+type).addClass('active btn-primary'); 
         gou();
     }
