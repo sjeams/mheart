@@ -196,7 +196,8 @@ class VideoController extends ApiControl
         $data['page_list']=$page_list;
         $data['search']=$search;
         $data['belong']=$belong;
-
+        $data['issearch']=$category[$belong]['issearch'];
+     
         if($login==0){
             return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         }else{

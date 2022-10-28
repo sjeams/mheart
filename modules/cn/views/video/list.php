@@ -165,7 +165,7 @@
 
                                 <!-- <label class="layui-form-label">搜索</label> -->
                                 <div class="layui-input-inline">
-                                    <input type="text" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                                    <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                                 </div>
 
                                 <!-- <label class="layui-form-label">采集页码</label> -->
@@ -229,8 +229,8 @@
                             <!-- https://help.siwazywcdn2.com:5278/m3u8.php?url= -->
                             
                             <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                            <p class="center">  <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
-                            <p class="center">  <?php echo $v['title']?></p>
+                            <p class="center"><img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
+                            <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
                             </a>
                             <p class="center"> 
                                 <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
@@ -254,8 +254,19 @@
             'pagination' => $page,
         ])?>
     </div>
+    <style>
+    .footer{
+        margin-left: auto;
+        float: right;
+        height: 70px;
+        /* width: 20px; */
+        position: fixed;
 
+        bottom: 0;
 
+        }
+    </style>
+    <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div>
     <div style="height:20px;overflow:hidden"></div>            
 
 </div>
