@@ -1,81 +1,24 @@
  
-<style>
- input{
-     height: 30px!important;
-     border-radius: 5px!important;
-     width: 50%!important;
- }
-.name{
-    margin-top: 20px;
-}
-.pimage {
-  
-    margin: 0px auto;
-    display: block;
- }
-.bord{
-    display: inline-block;
-    text-align: center;
-    width:80px;
-    height:20px;
-    border: 1px solid wheat;
-}
 
-.on{
-    
-    background-color: #fbb450a3;
-    border-radius: 2px;
-}
-</style>
-<style>
-     .check{
-         /* display: flex; */
-         /* float: left; */
-         margin: 0px auto ;
-         clear: both;
-         /* padding: 5px; */
-         
-         
-     }
-     .check a{
-        display: inline-block;
-        width: 38%;
-        padding: 10px 5%;
-        border: 1px solid black;
-        text-align: center;  
-        border-radius: 5px; 
-        margin:  5px auto;
-     }
-
-     .center{
-        text-align: center;
-        margin:  10px  auto  ;
-      
-     }
-
-     .collect{
-        display: inline-block;
-        width: 20%;
-        padding: 10px 10%;
-        border: 1px solid black;
-        text-align: center;  
-        border-radius: 5px; 
-        margin: auto 10px;
-     }
- </style>
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
-<link href="/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-<link href="/backStage/css/coreCss/plugin.css" rel="stylesheet">
-<script src="/laydate/laydate.js"></script>
-<!-- Le styles -->
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-<link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
-<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+<!-- 视频 -->
+<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<div class="center ">
+    <input type="hidden" name="" id="hiddenvalue" value="0">
+    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
+    <div style="height:300px;position:relative"  class="videohidden">
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        //定义一个变量：videoObject，用来做为视频初始化配置
+        var videoObject = {
+            container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+            plug:'hls.js',//设置使用hls插件
+            autoplay:true,
+            video: ''//视频地址
+        };
+        new ckplayer(videoObject);//初始化播放器
+</script>
 <div class="container">
     <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li> -->
@@ -83,7 +26,7 @@
         <li class="active">内容</li>
     </ul>
     <form action="/cn/video/index" method="get"  >
-        <table class="table table-bordered  "  >
+        <table class="table table-bordered  tablestyle"  >
         <thead>
             <?php if($login==1){?>
             <tr>
@@ -124,8 +67,8 @@
                 <tr>
  
                     <td  style=" width:25%">
-                        <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p class="center"> <img class="pimage" src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                        <p class="center"> <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p class="center"> <?php echo $v['title']?></p>
  
                         </a>
@@ -141,9 +84,7 @@
             </tbody>
         </table>
     </form>
- 
-
-   <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
+    <input type="hidden" id="videotype" value="<?php echo  isset($_GET['type'])?$_GET['type']:''?>">
     <div class="pagination pagination-left">
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
@@ -206,11 +147,7 @@
             },
         });
     }
-$(document).keyup(function(event){
-    if(event.keyCode ==13){
-        gou();
-    }
-});
+
 </script>
 
 

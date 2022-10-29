@@ -27,7 +27,7 @@ class Category extends ActiveRecord {
             array( 'id'=>2,'name'=>'丝袜' ,'issearch'=>'1'),
             array( 'id'=>3,'name'=>'色窝' ,'issearch'=>'1'),
             array( 'id'=>4,'name'=>'探探' ,'issearch'=>'0'),
-            array( 'id'=>5,'name'=>'丝袜2' ,'issearch'=>'0'),
+            array( 'id'=>5,'name'=>'丝袜主播' ,'issearch'=>'0'),
         );
      return  $list;
     }

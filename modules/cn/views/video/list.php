@@ -1,127 +1,25 @@
 
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
-<style>
-#goPage_list{
-    display: inline-block;
-    width:60px;
-}
-.pimage {
-    margin: 0px auto;
-    display: block;
- }
-.name{
-    margin-top: 20px;
-
-}
-
-.videohidden{
-    display: table-column-group;
-}
-
-.bord{
-    display: inline-block;
-    text-align: center;
-    width:80px;
-    height:20px;
-    border: 1px solid wheat;
-}
-
-.on{
-    
-    background-color: #fbb450a3;
-    border-radius: 2px;
-}
-</style>
-
- <style>
-      input{
-     height: 30px!important;
-     border-radius: 5px!important;
-     /* width: 50%!important; */
- }
-     .check{
-         /* display: flex; */
-         /* float: left; */
-      
-        clear: both;
-        /* padding: 5px; */
-         display: inline-block;
-        overflow-y: scroll;
-        max-height: 220px;
-        width: 100%;
-        margin: 0px auto ;
-         text-align: center;
-     }
-     .check a{
-        display: inline-block;
-        min-width: 38%;
-        padding: 10px  5%;
-        border: 1px solid black;
-        text-align: center;  
-        border-radius: 5px; 
-        margin:  5px auto;
-        font-size: 12px;
-     }
-
-
-     .center{
-        text-align: center;
-        margin:  10px  auto  ;
-     }
-
-     .collect{
-        display: inline-block;
-        width: 65px;
-        padding: 5px 20px;
-        border: 1px solid black;
-        text-align: center;  
-        border-radius: 5px; 
-        margin: auto 10px;
-        background-color:  #5879f3a3;
-        cursor: pointer;
-     }
-     .nav-item{
-        display: inline-block;
-     }
-
- </style>
  
- 
-<script src="/laydate/laydate.js"></script>
- <!-- Le styles -->
- 
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-<link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
-<!-- 编辑器公式插件 -->
-<!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
 
-<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
-    <!-- 视频 -->
-    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div class="center ">
-        <input type="hidden" name="" id="hiddenvalue" value="0">
-        <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
-        <div style="height:300px;position:relative"  class="videohidden">
-            <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
-        </div>
+<!-- 视频 -->
+<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<div class="center ">
+    <input type="hidden" name="" id="hiddenvalue" value="0">
+    <button style="position:fixed;z-index:101;width:50%;;margin: auto  0px; float:rigth" onclick="videoHidden()">video</button>
+    <div style="height:300px;position:relative"  class="videohidden">
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
     </div>
-        <script type="text/javascript">
-            //定义一个变量：videoObject，用来做为视频初始化配置
-            var videoObject = {
-                container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
-                plug:'hls.js',//设置使用hls插件
-                autoplay:true,
-                video: ''//视频地址
-            };
-            new ckplayer(videoObject);//初始化播放器
-    </script>
+</div>
+    <script type="text/javascript">
+        //定义一个变量：videoObject，用来做为视频初始化配置
+        var videoObject = {
+            container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+            plug:'hls.js',//设置使用hls插件
+            autoplay:true,
+            video: ''//视频地址
+        };
+        new ckplayer(videoObject);//初始化播放器
+</script>
 
 <div class="container">
 
@@ -144,18 +42,18 @@
     <?php } ?>
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
-        <table class="table table-bordered  "  >
+        <table class="table table-bordered  tablestyle"  >
             <thead>
                 <tr>
                     <td>
                         <div class="layui-form-item center">
                                 <!-- <label class="layui-form-label">来源belong</label> -->
-                                <div class="layui-input-inline btn-group">
+                                <div class="layui-input-inline  ">
         
                                     <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                                     <p class="center" id="listBelong" >
                                         <?php foreach($category as $v){  ?>
-                                            <a class="btn btn-sm <?php echo $data['belong']== $v['id'] ?'active btn-primary':''?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="#"><?php echo $v['name'] ?></a>
+                                            <a class="btn btn-sm <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="#"><?php echo $v['name'] ?></a>
                                         <?php }  ?>
                                     </p>
                                 </div>
@@ -178,7 +76,9 @@
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
+                                <?php if(!$data['list_type']){?> 
                                 <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
+                                <?php }?>
                                 <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
@@ -255,20 +155,7 @@
             'pagination' => $page,
         ])?>
     </div>
-    <style>
-    .footer{
-        margin-left: auto;
-        float: right;
-        height: 70px;
-        /* width: 20px; */
-        position: fixed;
-
-        bottom: 0;
-
-        }
-    </style>
-    <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div>
-    <div style="height:20px;overflow:hidden"></div>            
+         
 
 </div>
 
@@ -321,6 +208,7 @@
         $('#goBelong').val(belong);
         $('#listBelong a').removeClass('active'); 
         $('#listBelong a').removeClass('btn-primary'); 
+        $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         if(belong==0){
             var inputvalue ="";
@@ -356,9 +244,7 @@
                 gou();
             },
         });
-    }
-
-    
+    } 
     function clearModel(){
         $.ajax({
             url: '/cn/video/clear-session', // 跳转到 action 
@@ -433,27 +319,7 @@
                 // window.location.reload();
             },
         });
-    }
-
-    function videoHidden(){
-
-        var hiddenvalue = $("#hiddenvalue").val();
-        if(hiddenvalue==1){
-            $("#hiddenvalue").val(0); 
-            $('.videohidden').css("display","table-column");
-        }else{
-            $("#hiddenvalue").val(1); 
-            $('.videohidden').css("display","block");
-        }
-  
-    
-    }
-  
-$(document).keyup(function(event){
-    if(event.keyCode ==13){
-        gou();
-    }
-});
+    } 
 </script>
 
  

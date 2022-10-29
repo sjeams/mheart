@@ -20,7 +20,7 @@ use yii\data\Pagination;
 class VideoController extends ApiControl
 {
     public $enableCsrfValidation = false;
-    public $layout = 'null';
+    public $layout = 'cn';
 
     public  $passwordav='111av'; //av
     public  $passwordsp=111; //视频
@@ -79,8 +79,6 @@ class VideoController extends ApiControl
     //     // die(Method::jsonGenerate(1,[],'返回数据成功'));
     // }
 
-
-
     /**
      * 基本信息
      * by  sjeam
@@ -113,7 +111,7 @@ class VideoController extends ApiControl
     {
         // 登录状态
         $login = $this->login;
-        $this->layout = 'cn';
+        
 
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
@@ -191,6 +189,9 @@ class VideoController extends ApiControl
             $category = Category::CategoryVideo();
         }
         // var_dump($type);die;
+        // model隐藏
+        $list_type = Yii::$app->session->get('list_type');
+        $data['list_type']=$list_type;
         $data['page']=$page;
         $data['type']=$type;
         $data['page_list']=$page_list;
@@ -225,7 +226,7 @@ class VideoController extends ApiControl
                 }
                 // var_dump($type);die;
                 // $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
-                if($list_type){
+                if(!$list_type){
                     $str ='<select name="goType" id="goType listType" >';
                     // $type = Yii::$app->request->post('type',8);
                     foreach($list as $v){
@@ -307,7 +308,7 @@ class VideoController extends ApiControl
      */
     public function actionVideo()
     {
-        $this->layout = 'cn';
+        
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
         $id = Yii::$app->request->get('id',1);
         $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
@@ -321,8 +322,6 @@ class VideoController extends ApiControl
      */
     public function actionIndex()
     {
-        $this->layout = 'cn';
- 
         // 登录状态
         $login = $this->login;
         if($login == 1){

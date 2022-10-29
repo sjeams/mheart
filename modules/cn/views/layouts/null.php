@@ -12,14 +12,17 @@
 
     <link href="/backStage/css/coreCss/layoutit.css" rel="stylesheet">
     <link href="/backStage/css/coreCss/plugin.css" rel="stylesheet">
-    <script src="/laydate/laydate.js"></script>
-    <!-- Le styles -->
+    <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-    <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <!-- 编辑器公式插件 -->
+    <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+
 </head>
 
 
