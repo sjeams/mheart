@@ -85,6 +85,7 @@
         text-align: center;
         margin:  5px  auto  ;
         display: inline-block;
+        cursor: pointer;
      }
  
      .collect{
@@ -120,7 +121,7 @@
     .footer{
         margin-left: auto;
         float: right;
-        height: 70px;
+        height: 60px;
         /* width: 20px; */
         position: fixed;
 
@@ -128,8 +129,10 @@
 
         }
 </style>
-<div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div>
-<div style="height:20px;overflow:hidden"></div>   
+<!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
+<div class="center"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div>
+
+<div style="height:30px;overflow:hidden"></div>   
 
 <script>
 // 视频隐藏
