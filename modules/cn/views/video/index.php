@@ -8,7 +8,11 @@
 .name{
     margin-top: 20px;
 }
-
+.pimage {
+  
+    margin: 0px auto;
+    display: block;
+ }
 .bord{
     display: inline-block;
     text-align: center;
@@ -49,7 +53,7 @@
       
      }
 
-     /* .collect{
+     .collect{
         display: inline-block;
         width: 20%;
         padding: 10px 10%;
@@ -57,17 +61,6 @@
         text-align: center;  
         border-radius: 5px; 
         margin: auto 10px;
-     } */
-     .collect{
-        display: inline-block;
-        width: 65px;
-        padding: 5px 20px;
-        border: 1px solid black;
-        text-align: center;  
-        border-radius: 5px; 
-        margin: auto 10px;
-        background-color:  #5879f3a3;
-        cursor: pointer;
      }
  </style>
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
@@ -132,7 +125,7 @@
  
                     <td  style=" width:25%">
                         <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p class="center"> <img   src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
+                        <p class="center"> <img class="pimage" src="<?php echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p class="center"> <?php echo $v['title']?></p>
  
                         </a>
