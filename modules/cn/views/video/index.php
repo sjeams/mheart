@@ -60,11 +60,7 @@
         margin: auto 10px;
      }
  </style>
- 
-<!-- 按钮 -->
-<!-- <link href="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.css" rel="stylesheet">
-<script type="text/javascript" src="https://file.viplgw.cn/ui/gre/backStage/js/honeySwitch/honeySwitch.js"></script>
-<script src="/laydate/laydate.js"></script> -->
+ <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
 <div class="container">
     <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li> -->
