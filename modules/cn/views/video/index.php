@@ -1,5 +1,5 @@
  
- <style>
+<style>
  input{
      height: 30px!important;
      border-radius: 5px!important;
@@ -43,14 +43,13 @@
         margin:  5px auto;
      }
 
-
      .center{
         text-align: center;
         margin:  10px  auto  ;
       
      }
 
-     .collect{
+     /* .collect{
         display: inline-block;
         width: 20%;
         padding: 10px 10%;
@@ -58,9 +57,32 @@
         text-align: center;  
         border-radius: 5px; 
         margin: auto 10px;
+     } */
+     .collect{
+        display: inline-block;
+        width: 65px;
+        padding: 5px 20px;
+        border: 1px solid black;
+        text-align: center;  
+        border-radius: 5px; 
+        margin: auto 10px;
+        background-color:  #5879f3a3;
+        cursor: pointer;
      }
  </style>
- <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
+<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+<link href="/backStage/css/coreCss/layoutit.css" rel="stylesheet">
+<link href="/backStage/css/coreCss/plugin.css" rel="stylesheet">
+<script src="/laydate/laydate.js"></script>
+<!-- Le styles -->
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
+<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 <div class="container">
     <ul class="breadcrumb">
         <!-- <li><a href="/cn/sign/index">内容模块</a> <span class="divider">/</span></li> -->
@@ -109,7 +131,7 @@
                 <tr>
  
                     <td  style=" width:25%">
-                        <a href="<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
+                        <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                         <p class="center"> <img   src="<?php   echo $v['imageurl']?>" alt="<?php echo $v['imageurl']?>"></p>
                         <p class="center"> <?php echo $v['title']?></p>
  
