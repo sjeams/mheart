@@ -248,9 +248,9 @@ class VideoController extends ApiControl
                         $name =$v['name'];
                         $value =$v['type'];
                         if($v['type']==$type){
-                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='#'>$name</a>";
+                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:return false;'>$name</a>";
                         }else{
-                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='#'>$name</a>";
+                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:return false;'>$name</a>";
                         }
                     }
                     $str .='  </p>';

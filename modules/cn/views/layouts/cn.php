@@ -1,25 +1,5 @@
 
 <style>
-/* .tablestyle{
-    margin: 0px -15px;
- } */
-/* .center{
-    width: 100%;
-    text-align: center;
-    margin:  0px  auto  ;
-    display: inline-block;
-    
-} */
- 
-/* .collect {
-    display: inline-block;
-    width: 20%;
-    padding: 10px 10%;
-    border: 1px solid black;
-    text-align: center;  
-    border-radius: 5px; 
-    margin: auto 10px;
-} */
 #goPage_list{
     display: inline-block;
     width:60px;
@@ -60,15 +40,14 @@
     .check{
          /* display: flex; */
          /* float: left; */
-      
         clear: both;
         /* padding: 5px; */
-         display: inline-block;
+        display: inline-block;
         overflow-y: scroll;
-        max-height: 220px;
+        max-height: 260px;
         width: 100%;
         margin: 0px auto ;
-         text-align: center;
+        text-align: center;
      }
      .check a{
         display: inline-block;

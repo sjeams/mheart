@@ -47,13 +47,13 @@
                 <tr>
                     <td>
                         <div class="layui-form-item center">
-                                <!-- <label class="layui-form-label">来源belong</label> -->
-                                <div class="layui-input-inline  ">
+                           
+                                <div class="layui-input-inline">
         
                                     <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                                     <p class="center" id="listBelong" >
                                         <?php foreach($category as $v){  ?>
-                                            <a class="btn btn-sm <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="#"><?php echo $v['name'] ?></a>
+                                            <a class="btn btn-sm <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="javascript:return false;"><?php echo $v['name'] ?></a>
                                         <?php }  ?>
                                     </p>
                                 </div>
@@ -105,7 +105,7 @@
                                 </div>
 
                                 <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
-                                <a href="#"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a>
+                                <a href="javascript:return false;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a>
         
 
                                 <?php } }?>
