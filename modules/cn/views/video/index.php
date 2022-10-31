@@ -4,7 +4,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <button style="position:fixed;z-index:101;width:30%;;margin:  auto 15%; float:right" onclick="videoHidden()">video</button>
     <div style="height:300px;position:relative"  class="videohidden">
-        <div class="video" style="position:fixed;z-index:100;width:100%; margin: auto -20px; "> </div>
+        <div class="video" style="position:fixed;z-index:100;width:100%;height:38%; margin: auto -20px; "> </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -16,7 +16,7 @@ var videoObject = {
     video: ''//视频地址
 };
 new ckplayer(videoObject);//初始化播放器
-        // 视频预览
+// 视频预览
 function  video(id){
     var url =$("#form"+id+"  input[name=url]").val();
     // console.log(url);
