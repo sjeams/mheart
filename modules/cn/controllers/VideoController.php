@@ -143,12 +143,12 @@ class VideoController extends ApiControl
             $where .= " and title like '%$title%'";
         }
         $count = Video::find()->select("id")->where($where)->count();
-        // $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
+        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         // var_dump($page);die;
         $brush=Video::find()
         // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
-        ->where($where)->offset($page->offset)->limit($page->limit)->orderBy('id desc')->asarray()->all();
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->asarray()->all();
         // foreach ($brush as $k=>$v){
         //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
         //     $brush[$k]['total'] = $num;
