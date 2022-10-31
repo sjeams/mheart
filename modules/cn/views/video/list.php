@@ -107,7 +107,7 @@ function  video(id){
                     <?php if($v['belong']==0){   ?>
                         <tr>
                             <td  >
-                                <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
+                                <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p>
                                 <p class="center"> <?php echo $v['title']?></p>
                             <td  >
                         </tr>
@@ -145,7 +145,7 @@ function  video(id){
                             <!-- https://help.siwazywcdn2.com:5278/m3u8.php?url= -->
                             
                             <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                            <p class="center"><img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="<?php echo $v['imageurl']?>" ></p>
+                            <p class="center"><img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="" ></p>
                             <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
                             </a>
                             <p class="center"> 
