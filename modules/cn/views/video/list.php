@@ -5,7 +5,7 @@
 <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="center ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
-    <button style="position:fixed;z-index:101;width:30%;;margin:  auto 15%; float:rigth" onclick="videoHidden()">video</button>
+    <button style="position:fixed;z-index:101;width:30%;;margin:  auto 15%; float:right" onclick="videoHidden()">video</button>
     <div style="height:300px;position:relative"  class="videohidden">
         <div class="video" style="position:fixed;z-index:100;width:100%;height:38%;margin: auto -20px; "> </div>
     </div>
@@ -167,7 +167,7 @@ function  video(id){
    <div class="pagination pagination-left center" >
         <?php use yii\widgets\LinkPager;
         echo LinkPager::widget([
-            'pagination' => $page,
+            'pagination' => $pageStr,
         ])?>
     </div>
          

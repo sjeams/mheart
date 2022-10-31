@@ -102,7 +102,64 @@ class VideoController extends ApiControl
         Yii::$app->session->set('login',$login);
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
+    /**
+     * 首页
+     * by  sjeam
+     */
+    public function actionIndex()
+    {
+        // 登录状态
+        $login = $this->login;
+        if($login == 1){
+            $login=1;
+            $belong=1;
+            $list = Category::find()->where("belong=0")->asArray()->all();
+        }else{
+            $login=0;
+            $belong=0;
+            $list = [];
+        }
+ 
+        $type = Yii::$app->request->get('type','all');
+        $title = Yii::$app->request->get('title');
+        $page = Yii::$app->request->get('page',1);
+        $where ="1=1";
 
+        if($belong == 0){
+            $where .= " and belong =$belong"; 
+        }
+        if($type!='all'){
+     
+            if($type==10){
+                // 收藏视频
+                $where .= " and up = 1"; 
+            }else{
+                // 不同类型视频
+                $where .= " and type = $type ";
+            }
+
+        }
+        if($title){
+            $where .= " and title like '%$title%'";
+        }
+        $count = Video::find()->select("id")->where($where)->count();
+        // $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
+        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        // var_dump($page);die;
+        $brush=Video::find()
+        // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
+        ->where($where)->offset($page->offset)->limit($page->limit)->orderBy('id desc')->asarray()->all();
+        // foreach ($brush as $k=>$v){
+        //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
+        //     $brush[$k]['total'] = $num;
+        // }
+  
+        $data['type']=$type; 
+        $data['title']=$title; 
+        $data['page']=$page; 
+        //来源
+        return $this->render('index',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+    }
     /**
      * 第三方列表
      * by  sjeam
@@ -200,9 +257,9 @@ class VideoController extends ApiControl
         $data['issearch']=$category[$belong]['issearch'];
      
         if($login==0){
-            return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         }else{
-            return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'page'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         }
     
     }
@@ -316,58 +373,7 @@ class VideoController extends ApiControl
         return $this->render('video', ['m3u8'=>$m3u8,'data' =>$data]);
     }
 
-    /**
-     * 首页
-     * by  sjeam
-     */
-    public function actionIndex()
-    {
-        // 登录状态
-        $login = $this->login;
-        if($login == 1){
-            $login=1;
-            $belong=1;
-        }else{
-            $login=0;
-            $belong=0;
-        }
- 
-        $type = Yii::$app->request->get('type',0);
-        $title = Yii::$app->request->get('title');
-        $where ="1=1";
 
-        if($belong == 0){
-            $where .= " and belong =$belong"; 
-        }
-        if($type!=''){
-     
-            if($type==10){
-                // 收藏视频
-                $where .= " and up = 1"; 
-            }else{
-                // 不同类型视频
-                $where .= " and type = $type ";
-            }
-
-        }
-        if($title){
-            $where .= " and title like '%$title%'";
-        }
-        $count = Video::find()->select("id")->where($where)->count();
-        // $page = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
-        $page = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        // var_dump($page);die;
-        $brush=Video::find()
-        // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
- 
-        ->where($where)->offset($page->offset)->limit($page->limit)->orderBy('id desc')->asarray()->all();
-        // foreach ($brush as $k=>$v){
-        //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
-        //     $brush[$k]['total'] = $num;
-        // }
-        // var_dump($brush);die;
-        return $this->render('index',['login'=>$login,'content'=>$brush,'page'=>$page]);
-    }
     /**
      * 基本信息
      * by  sjeam

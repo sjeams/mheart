@@ -64,7 +64,7 @@
         text-align: center;
         margin:  5px  auto  ;
         display: inline-block;
-        cursor: pointer;
+        /* cursor: pointer; */
      }
  
      .collect{
