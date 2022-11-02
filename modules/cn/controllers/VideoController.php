@@ -110,6 +110,9 @@ class VideoController extends ApiControl
     {
         // 登录状态
         $login = $this->login;
+        if($login==0){
+            return $this->render('login');die;
+        }
         if($login == 1){
             $login=1;
             $belong=1;
@@ -119,7 +122,6 @@ class VideoController extends ApiControl
             $belong=0;
             $list = [];
         }
- 
         $type = Yii::$app->request->get('type','all');
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
