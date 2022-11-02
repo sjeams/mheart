@@ -20,7 +20,7 @@ input{
      border-radius: 5px!important;
  }
      
-    .check{
+    .login_check{
         font-size: 24px;
         /* position: fixed; */
         display: inline-block;
@@ -28,7 +28,7 @@ input{
         margin: 25% auto ;
         text-align: center;
      }
-     /* .checka{
+     /* .login_checka{
         display: inline-block;
         min-width: 38%;
         padding: 2% 5%;
@@ -37,18 +37,18 @@ input{
         border-radius: 5px; 
         margin:  5px auto;
      } */
-    .check span{
+    .login_check span{
          /* border-radius: 5px;
         background-color: #4c54b3;  */
         color: #4c54b3;
         font-weight: bold;
     }
-    .check button{
+    .login_check button{
          border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
     }
-    .check input{
+    .login_check input{
         border-radius: 5px;
         background-color: #4c54b3; 
         color: white;
@@ -72,7 +72,7 @@ input{
     <thead>
         <tr>
         <td>
-        <div class="check">
+        <div class="login_check">
             <span class="logincss">登录系统</span>
             <input type="text" name="login" value="" class="logincss" id="login">
             <button onclick="loginIn()" class="logincss">登录</button> 
