@@ -72,7 +72,7 @@ function  video(id){
                                 </div>
                                 <!-- <label class="layui-form-label">类型typ</label> -->
                                 <div class="layui-input-inline" id="goTypeInput">
-                                    <input type="text" value="<?php echo $data['type'] ?>" name="goType" id="goType">
+                                    <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
                                 </div>
 
                                 <!-- <label class="layui-form-label">搜索</label> -->
