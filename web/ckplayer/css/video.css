@@ -1,3 +1,13 @@
+
+input{
+	height: 40px!important;
+	border-radius: 5px!important;
+	/* //input超出边界解决办法 */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* list */
 #goPage_list{
     display: inline-block;
@@ -29,15 +39,12 @@
     border-radius: 2px;
 }
 .btn {min-width: 60px;}
- 
 
-
+.search_button{
+	height: 40px!important;
+}
 /* //index */
-input{
-	height: 30px!important;
-	border-radius: 5px!important;
-	/* width: 50%!important; */
-   }
+
    .check{
 		/* display: flex; */
 		/* float: left; */

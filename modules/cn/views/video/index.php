@@ -1,8 +1,7 @@
  <!-- 视频 -->
-<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="center ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
-    <button style="position:fixed;z-index:101;width:30%;;margin:  auto 15%; float:right" onclick="videoHidden()">video</button>
+    <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button>
     <div style="height:300px;position:relative"  class="videohidden">
         <div class="video" style="position:fixed;z-index:100;width:100%;height:38%; margin: auto -20px; "> </div>
     </div>
@@ -45,7 +44,7 @@ function  video(id){
                 <td >
                     <div class="input-append center" style="display: block;">
                         <input name="title" class="span2" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
-                        <button class="btn btn-primary" type="sbumit">搜索</button>
+                        <button class="btn btn-primary search_button" type="sbumit">搜索</button>
                     </div>
                     <p class="center">
                         <a class="btn <?php echo $data['type']=='all'?'active btn-primary':' btn-default'?>" href="/cn/video/index?page=1&title=<?php echo $data['title']?>" >全部</a>

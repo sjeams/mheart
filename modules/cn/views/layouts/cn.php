@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- 自适应布局 -->
+<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
@@ -18,7 +20,7 @@
 <div>   </div>
 
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
-<div class="center"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div>
+<div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div>
 
 <div style="height:30px;overflow:hidden"></div>   
 </body>

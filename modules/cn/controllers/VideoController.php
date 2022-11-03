@@ -8,7 +8,7 @@ use app\libs\Method;
 use yii\db\ActiveRecord;
 use yii;
 
-use app\libs\ApiControl;
+use app\libs\VideoApiControl;
 use app\modules\cn\models\Video;
 use app\modules\cn\models\Jian;
 
@@ -16,29 +16,36 @@ use app\modules\cn\models\VideoList;
 use app\modules\cn\models\Category;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
-
-class VideoController extends ApiControl
+use app\modules\cn\models\User;
+class VideoController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
     public $layout = 'cn';
 
-    public  $passwordav='111av'; //av
-    public  $passwordsp=111; //视频
+    // public  $passwordav='111av'; //av
+    // public  $passwordsp=111; //视频
     public  $login=0; //av
-
+    public  $user;
     function init (){
         parent::init();
+        // var_dump(111);die;
         set_time_limit(0);
-
-        $status= Yii::$app->session->get('login');
-        if($status==$this->passwordav){
-            $this->login=1;
-        }else if($status==$this->passwordsp){
-            $this->login=2;
-        }else{
-            $this->login=0;
+        $this->user = Yii::$app->session->get('userlogin');
+        $this->login= intval($this->user['graden']); // 0未登录
+        if(!$this->user){
+            // 判断http还是https
+            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
+            header('Location: '.$href);die;
         }
-
+        // $status= Yii::$app->session->get('login');
+        // if($status==$this->passwordav){
+        //     $this->login=1;
+        // }else if($status==$this->passwordsp){
+        //     $this->login=2;
+        // }else{
+        //     $this->login=0;
+        // }
     }
     /**
      * 基本信息
@@ -95,13 +102,15 @@ class VideoController extends ApiControl
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
 
-    public function actionLogin()
-    {
+    // public function actionLogin()
+    // {
         //默认登录
-        $login = Yii::$app->request->post('login');
-        Yii::$app->session->set('login',$login);
-        die(Method::jsonGenerate(1,[],'返回数据成功'));
-    }
+        // $login = Yii::$app->request->post('login');
+        // Yii::$app->session->set('login',$login);
+        // die(Method::jsonGenerate(1,[],'返回数据成功'));
+ 
+    // }
+ 
     /**
      * 首页
      * by  sjeam
@@ -115,10 +124,9 @@ class VideoController extends ApiControl
             $belong=1;
             $list = Category::find()->where("belong=0")->asArray()->all();
         }else{
-            return $this->render('login');die;
-            // $login=0;
-            // $belong=0;
-            // $list = [];
+            $login=0;
+            $belong=0;
+            $list = [];
         }
         $type = Yii::$app->request->get('type','all');
         $title = Yii::$app->request->get('title');
@@ -166,10 +174,11 @@ class VideoController extends ApiControl
      */
     public function actionList()
     {
+        if(!$this->user){
+            return $this->render('login');die;
+        }
         // 登录状态
         $login = $this->login;
-        
-
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
@@ -256,11 +265,11 @@ class VideoController extends ApiControl
         $data['belong']=$belong;
         $data['issearch']=$category[$belong]['issearch'];
      
-        if($login==0){
-            return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
-        }else{
+        // if($login==0){
+        //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        // }else{
             return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
-        }
+        // }
     
     }
 

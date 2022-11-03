@@ -14,7 +14,7 @@ return [
     // 'SMS_SIG' => '雷哥网',
     // 'SMS_PWD' => '800616',
     'defaultImg' => '/cn/images/details_defaultImg.png',
-    'appHost' => 'http://test.toeflonline.cn',
+    // 'appHost' => 'http://test.toeflonline.cn',
     'timeLimit' => 600,
     'alipay_path' => dirname(__FILE__).'/../libs/yii2_alipay/',
     'defaultImg' => '/cn/images/details_defaultImg.png',
