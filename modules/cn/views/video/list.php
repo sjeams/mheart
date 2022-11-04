@@ -34,20 +34,18 @@ function  video(id){
 </script>
 
 <div class="container">
-
     <!-- <ul class="breadcrumb">
         <li class="active btn btn-primary">采集</li>
         <li class="btn btn-default"><a href="/cn/video/index">内容</a> </li>
     </ul>   -->
     <?php if($login>0){ ?>
-
         <p class="center">
-            <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
-            <a href="https://sewovideo.com/"><button>色窝</button></a>  <a href="https://siwazyw.cc/index.php/vod/type/id/20.html"><button>丝袜</button></a>
-            <a href="https://xjav10.cc/"><button>香蕉</button></a> 
+            友情链接：
+            <a class="btn_link" href="https://laoyavideo.com/" class="btn">  老鸭头  </a><a class="btn_link" href="https://yinwovideo.com/"> 淫窝 </a>
+            <a class="btn_link" href="https://sewovideo.com/"> 色窝 </a>  <a class="btn_link" href="https://siwazyw.cc/index.php/vod/type/id/20.html"> 丝袜 </a>
+            <a class="btn_link" href="https://xjav10.cc/">  香蕉 </a> 
         </p>
-
-    <?php } ?>
+    <?php } ?> 
     <!-- 视频end -->
     <form action="/cn/video/list" method="post" class="  ">
         <table class="table table-bordered  tablestyle"  >
@@ -163,8 +161,6 @@ function  video(id){
             'pagination' => $pageStr,
         ])?>
     </div>
-         
-
 </div>
 
 <script>

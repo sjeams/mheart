@@ -43,8 +43,9 @@ input{
 .search_button{
 	height: 40px!important;
 }
+.btn_link{margin: 5px;}
 /* //index */
-
+	
    .check{
 		/* display: flex; */
 		/* float: left; */
