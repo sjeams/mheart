@@ -1219,7 +1219,7 @@
 }
 /*共用状态-音量调节背景色*/
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-volumebox .ck-bar-volume .ck-bar-volume-bg{
-	width: 20px;
+	width: 8px;
 	height: 140px;
 	background: #808080;
 	border-radius: 3px;
@@ -1229,7 +1229,7 @@
 }
 /*共用状态-音量调节前景色*/
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-volumebox .ck-bar-volume .ck-bar-volume-bg .ck-bar-volume-pp{
-	width: 20px;
+	width: 8px;
 	height: 140px;
 	background: #e80101;
 	margin-top: 140px;

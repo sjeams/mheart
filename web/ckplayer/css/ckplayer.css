@@ -1018,6 +1018,7 @@
 	float: left;
 	border-radius: 5px;
 	padding: 10px;
+	margin-left: -10px;
 	margin-bottom: 10px;
 }
 .ckplayer-ckplayer .ck-main .ck-bar .ck-list-bg-box .ck-list-bg .ck-list-p{
@@ -1220,7 +1221,7 @@
 }
 /*共用状态-音量调节背景色*/
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-volumebox .ck-bar-volume .ck-bar-volume-bg{
-	width: 20px;
+	width: 8px;
 	height: 140px;
 	background: #808080;
 	border-radius: 3px;
@@ -1230,7 +1231,7 @@
 }
 /*共用状态-音量调节前景色*/
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-volumebox .ck-bar-volume .ck-bar-volume-bg .ck-bar-volume-pp{
-	width: 20px;
+	width: 8px;
 	height: 140px;
 	background: #0368d0;
 	margin-top: 140px;
