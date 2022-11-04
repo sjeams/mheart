@@ -39,7 +39,7 @@ function  video(id){
     <form action="/cn/video/index" method="get"  >
         <table class="table table-bordered  tablestyle"  >
         <thead>
-            <?php if($login==1){?>
+            <?php if($login>1){?>
             <tr>
                 <td >
                     <div class="input-append center" style="display: block;">
@@ -99,10 +99,12 @@ function  video(id){
         ])?>
 
     </div>
+    <?php if($login>1){?>
     <p class=" input-append center">
         <input type="text" value="<?php echo $data['page'] ?>" id="goPage">
         <input class="btn" type="button"  onclick="gou()" value="GO">
     </p>
+    <?php }?>
 </div>
 
 <script>

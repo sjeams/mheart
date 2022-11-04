@@ -91,7 +91,8 @@ class LoginController extends ApiControl
     {
         $token = Yii::$app->session->get('token');
         WechatUser::updateAll(['token' => ''],"token='$token'");
-        Yii::$app->session->destroy();
+        // Yii::$app->session->destroy();
+        session_destroy();
         die(Method::jsonGenerate(1,[],'succes'));
     }
 
