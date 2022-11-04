@@ -16,13 +16,20 @@
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
 <body>
+
+<?php use app\commands\videomodel\headerWidget;?>
+<?php headerWidget::begin();?>
+<?php headerWidget::end();?> 
+
 <?= $content ?>
-<div>   </div>
 
+<?php use app\commands\videomodel\footerWidget;?>
+<?php footerWidget::begin();?>
+<?php footerWidget::end();?> 
+<!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
+<!-- <div style="height:30px;overflow:hidden"></div>  -->
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
-<div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div>
 
-<div style="height:30px;overflow:hidden"></div>   
 </body>
 <script>
 // 视频隐藏
@@ -44,5 +51,5 @@ $(document).keyup(function(event){
         gou();
     }
 });
-
 </script>
+

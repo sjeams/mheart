@@ -277,7 +277,7 @@ class VideoController extends VideoApiControl
     {
         $belong = Yii::$app->request->post('belong',0);
         $type = Yii::$app->request->post('type',0);
-        $list_type = Yii::$app->session->get('list_type');
+        // $list_type = Yii::$app->session->get('list_type');
         // var_dump( $type);die;
         if($belong==0){
             $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
@@ -290,22 +290,20 @@ class VideoController extends VideoApiControl
                     $typeArray= array_column($list,'type');
                     $type=$typeArray[0];
                 }
-                // var_dump($type);die;
-                // $type = Category::find()->where("belong=$belong and status=1")->asArray()->one()['type'];
-                if(!$list_type){
-                    $str ='<select name="goType" id="goType listType" >';
-                    // $type = Yii::$app->request->post('type',8);
-                    foreach($list as $v){
-                        $name =$v['name'];
-                        $value =$v['type'];
-                        if( $v['type']==$type){
-                            $str .= "<option value='$value'  selected > $name </option>";
-                        }else{
-                            $str .= "<option value='$value'  > $name </option>";
-                        }
-                    }
-                    $str .=' </select>';
-                }else{
+                // if(!$list_type){
+                //     $str ='<select name="goType" id="goType listType" >';
+                //     // $type = Yii::$app->request->post('type',8);
+                //     foreach($list as $v){
+                //         $name =$v['name'];
+                //         $value =$v['type'];
+                //         if( $v['type']==$type){
+                //             $str .= "<option value='$value'  selected > $name </option>";
+                //         }else{
+                //             $str .= "<option value='$value'  > $name </option>";
+                //         }
+                //     }
+                //     $str .=' </select>';
+                // }else{
                     // if(!in_array($type,$typeArray)&&!empty($typeArray)){
                     // } 
                     $str ='<p class="center" id="listType" >'; 
@@ -323,7 +321,7 @@ class VideoController extends VideoApiControl
                     // if($belong==1){
                     //     var_dump($str);die;
                     // }
-                }
+                // }
             }
         // var_dump($str);die;
         // echo $str;

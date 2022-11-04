@@ -1,7 +1,7 @@
  <!-- 视频 -->
-<div class="center ">
+<div class="  ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
-    <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button>
+    <!-- <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button> -->
     <div style="height:300px;position:relative"  class="videohidden">
         <div class="video" style="position:fixed;z-index:100;width:100%;height:38%; margin: auto -20px; "> </div>
     </div>
@@ -32,10 +32,10 @@ function  video(id){
 }
 </script>
 <div class="container">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
         <li><a class="btn btn-default" href="/cn/video/list">采集</a>  </li>
         <li class="active btn btn-primary">内容</li>
-    </ul>
+    </ul> -->
     <form action="/cn/video/index" method="get"  >
         <table class="table table-bordered  tablestyle"  >
         <thead>

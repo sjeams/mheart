@@ -89,14 +89,3 @@ input{
 	.nav-item{
 	   display: inline-block;
 	}
-	/* // footer */
-	.footer{
-        margin-left: auto;
-        float: right;
-        height: 60px;
-        /* width: 20px; */
-        position: fixed;
-
-        bottom: 0;
-
-	}
