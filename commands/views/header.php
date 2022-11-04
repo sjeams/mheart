@@ -40,7 +40,9 @@
     <table class="table table-bordered  tablestyle">
         <tr>
             <td class="btn-primary"><a class=" " href="/cn/video/list">采集</a></td>
+            <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
+            <?php } ?>
             <td class="btn-primary" ><a class=" " href="javascript:;" onclick="loginOuts()">退出</a> </td>
         </tr>
     </table>

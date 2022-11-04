@@ -12,10 +12,8 @@
     use yii;
     use app\models\Block;
 	class HeaderWidget extends Widget  {
-        public $controller;
-        public $module;
-        public $data;
-        public $blockArr = [];
+    
+        public $userlogin;
         /**
          * 定义函数
          * */
@@ -29,6 +27,8 @@
             // foreach($userBlock as $v){
             //     $this->blockArr[] = $v['blockId'];
             // }
+            $this->userlogin = Yii::$app->session->get('userlogin');
+            // var_dump($userlogin);die;
         }
 
         /**
@@ -36,7 +36,7 @@
          * */
         public function run(){
             // return $this->render('left',['data' => $this->data,'controller' => $this->controller,'module' => $this->module,'blockArr' => $this->blockArr]);
-            return $this->render('header');
+            return $this->render('header',['userlogin'=>$this->userlogin]);
         }
 	}
 ?>
