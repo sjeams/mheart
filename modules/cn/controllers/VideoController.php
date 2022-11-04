@@ -189,6 +189,7 @@ class VideoController extends VideoApiControl
         if($login==0){
             $belong=0;
         }
+ 
         if($belong==0){
             if($search=='undefined'||$search==null||empty($search)||$search=="") $search='我们都是超能力者';
         }
@@ -200,6 +201,7 @@ class VideoController extends VideoApiControl
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+ 
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
