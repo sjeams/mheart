@@ -53,7 +53,7 @@ class LoginController extends ApiControl
         //写入账号并且登录
         $data=array(
             'phone'=>$phone,
-            // 'name'=>$name,
+            'name'=>$phone,
             'password'=>$password
         );
         $res = Yii::$app->signdb->createCommand()->insert('x2_wechat_user', $data)->execute();

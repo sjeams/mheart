@@ -34,7 +34,8 @@ class WechatUser extends ActiveRecord {
         $token = Yii::$app->session->get('token');
         $userlogin = WechatUser::find()->select('id,name,graden,phone')->where("token=$token")->asArray()->one();
         if($userlogin){
-            if($userlogin['graden']==1){
+            //管理员可操作
+            if($userlogin['id']==2){
                 return true;
             }else{
                 return false; 
