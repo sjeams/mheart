@@ -18,6 +18,7 @@
         text-align: center ;
     }
     .video_header td a{
+        color: white;
         width: 100%;
         margin: auto;
         display: inline-block;
@@ -38,9 +39,9 @@
 <div class="video_header center  "> 
     <table class="table table-bordered  tablestyle">
         <tr>
-            <td class="btn-primary"><a class="btn-primary" href="/cn/video/list">采集</a></td>
-            <td class="btn-primary"><a class="btn-primary" href="/cn/video/index">内容</a> </td>
-            <td class="btn-primary" ><a class="btn-primary" href="#" onclick="loginOuts()">退出</a> </td>
+            <td class="btn-primary"><a class=" " href="/cn/video/list">采集</a></td>
+            <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
+            <td class="btn-primary" ><a class=" " href="javascript:;" onclick="loginOuts()">退出</a> </td>
         </tr>
     </table>
 </div>
