@@ -5,7 +5,7 @@
         height:5%;
         width: 100%;
         position: fixed;
-        margin:auto;
+        margin:1%  auto;
         left:0; 
         right:0; 
         /* top:0;  */
