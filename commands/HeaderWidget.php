@@ -1,12 +1,17 @@
 <?php
-/**
- * 后台左菜单组件
+/*
+ * @Author: sjeam
+ * @Date: 2022-11-04 10:35:02
+ * @Description: 
  */
-    namespace app\commands\background;
+/**
+ * 底部菜单组件
+ */
+    namespace app\commands;
     use yii\base\Widget;
     use yii;
     use app\models\Block;
-	class LeftWidget extends Widget  {
+	class HeaderWidget extends Widget  {
         public $controller;
         public $module;
         public $data;
@@ -31,7 +36,7 @@
          * */
         public function run(){
             // return $this->render('left',['data' => $this->data,'controller' => $this->controller,'module' => $this->module,'blockArr' => $this->blockArr]);
-            return $this->render('left');
+            return $this->render('header');
         }
 	}
 ?>

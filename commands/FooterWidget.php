@@ -7,11 +7,11 @@
 /**
  * 底部菜单组件
  */
-    namespace app\commands\videomodel;
+    namespace app\commands;
     use yii\base\Widget;
     use yii;
     use app\models\Block;
-	class HeaderWidget extends Widget  {
+	class FooterWidget extends Widget  {
         public $controller;
         public $module;
         public $data;
@@ -19,8 +19,9 @@
         /**
          * 定义函数
          * */
-        public function init()
-        {
+        // public function init()
+        // {
+            // parent::init();
             // $userId = Yii::$app->session->get('adminId');
             // $model = new Block();
             // $navId = $model->find()->where(['value' => $this->module,'pid' => 1])->one();
@@ -29,14 +30,14 @@
             // foreach($userBlock as $v){
             //     $this->blockArr[] = $v['blockId'];
             // }
-        }
+        // }
 
         /**
          * 运行覆盖程序
          * */
         public function run(){
             // return $this->render('left',['data' => $this->data,'controller' => $this->controller,'module' => $this->module,'blockArr' => $this->blockArr]);
-            return $this->render('header');
+            return $this->render('footer');
         }
 	}
 ?>
