@@ -13,18 +13,18 @@ use yii\data\Pagination;
 class LoginController extends ApiControl
 {
     public $enableCsrfValidation = false;
-    public $layout = 'cn';
+    public $layout = 'login';
     public  $user;
     function init (){
         parent::init();
         // var_dump(111);die;
         set_time_limit(0);
-        $this->user = Yii::$app->session->get('userlogin');
-        if($this->user){
-            // 判断http还是https
-            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
-            header('Location: '.$href);die;
+        // 登录后自动刷新
+        $out = Yii::$app->request->post('out');
+        $token = Yii::$app->session->get('token');
+        // var_dump($password);die;
+        if(!$out){
+            WechatUser::headerLocation();
         }
     }
     /**
@@ -86,12 +86,13 @@ class LoginController extends ApiControl
             die(Method::jsonGenerate(0,[],'账号密码错误'));
         }
     }
-    //登录
+    //退出
     public function actionLoginOut()
     {
         $token = Yii::$app->session->get('token');
         WechatUser::updateAll(['token' => ''],"token='$token'");
-        session_destroy();
+        Yii::$app->session->destroy();
+        die(Method::jsonGenerate(1,[],'succes'));
     }
 
     public function actionLogin()

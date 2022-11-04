@@ -13,6 +13,7 @@
         display: inline-block;
 	}
     .video_header td{
+        background-color: white;
         border: 1px solid #0044cc;
         text-align: center ;
     }
@@ -23,9 +24,8 @@
     }
 
     /* center */
- 
     .video_center{
-        border: 1px solid #0044cc;
+        /* border: 1px solid #0044cc; */
         height: 90%;
         /* position: fixed; */
         display: flex;
@@ -44,15 +44,16 @@
         </tr>
     </table>
 </div>
- 
 <div class="video_center "> 
-
-<script src="">
+<script  >
     //退出
     function  loginOuts(){
         $.ajax({
             url: '/cn/login/login-out', // 跳转到 action 
             type: 'post',
+            data:{
+                out:1,
+            },
             dataType: 'json',
             success: function (data) {
                 window.location.reload();   

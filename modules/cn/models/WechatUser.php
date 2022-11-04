@@ -19,4 +19,15 @@ class WechatUser extends ActiveRecord {
         Yii::$app->session->set('token',$token);
         Yii::$app->session->set('userlogin',$userlogin);
     }
+
+    public static function headerLocation(){
+        $user = Yii::$app->session->get('userlogin');
+        if($user){
+            // 判断http还是https
+            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
+            header('Location: '.$href);die;
+        }
+
+    }
 }

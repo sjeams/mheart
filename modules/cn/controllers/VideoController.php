@@ -21,7 +21,6 @@ class VideoController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
     public $layout = 'cn';
-
     // public  $passwordav='111av'; //av
     // public  $passwordsp=111; //视频
     public  $login=0; //av

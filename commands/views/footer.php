@@ -21,7 +21,6 @@
         width: 100%;
         margin: auto;
         display: inline-block;
- 
     }
 </style>
 </div>
