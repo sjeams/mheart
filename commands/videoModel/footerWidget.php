@@ -7,7 +7,7 @@
 /**
  * 底部菜单组件
  */
-    namespace app\commands\videoModel;
+    namespace app\commands\videomodel;
     use yii\base\Widget;
     use yii;
     use app\models\Block;
