@@ -919,7 +919,6 @@
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-playbackrate-box .ck-bar-playbackrate-bg-box {
 	width: auto;
 	height: auto;
-	min-height: 200px;
 }
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-playbackrate-box:hover .ck-bar-playbackrate-bg-box {
 	display: block;
@@ -1018,7 +1017,6 @@
 	float: left;
 	border-radius: 5px;
 	padding: 10px;
-	margin-left: -10px;
 	margin-bottom: 10px;
 }
 .ckplayer-ckplayer .ck-main .ck-bar .ck-list-bg-box .ck-list-bg .ck-list-p{
