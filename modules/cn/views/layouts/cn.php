@@ -18,14 +18,14 @@
 <body>
 
 <?php use app\commands\HeaderWidget;?>
-<?php HeaderWidget::widget();?>
- 
+<?php HeaderWidget::begin();?>
+<?php HeaderWidget::end();?> 
 
 <?= $content ?>
 
 <?php use app\commands\FooterWidget;?>
-<?php FooterWidget::widget();?>
- 
+<?php FooterWidget::begin();?>
+<?php footerWidget::end();?> 
 <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
 <!-- <div style="height:30px;overflow:hidden"></div>  -->
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
