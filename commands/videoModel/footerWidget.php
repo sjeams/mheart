@@ -11,7 +11,7 @@
     use yii\base\Widget;
     use yii;
     use app\models\Block;
-	class footerWidget extends Widget  {
+	class FooterWidget extends Widget  {
         public $controller;
         public $module;
         public $data;

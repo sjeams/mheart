@@ -17,14 +17,14 @@
 </head>
 <body>
 
-<?php use app\commands\videomodel\headerWidget;?>
-<?php headerWidget::begin();?>
-<?php headerWidget::end();?> 
+<?php use app\commands\videomodel\HeaderWidget;?>
+<?php HeaderWidget::begin();?>
+<?php HeaderWidget::end();?> 
 
 <?= $content ?>
 
-<?php use app\commands\videomodel\footerWidget;?>
-<?php footerWidget::begin();?>
+<?php use app\commands\videomodel\FooterWidget;?>
+<?php FooterWidget::begin();?>
 <?php footerWidget::end();?> 
 <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
 <!-- <div style="height:30px;overflow:hidden"></div>  -->
