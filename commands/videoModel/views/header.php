@@ -29,7 +29,7 @@
         height: 90%;
         /* position: fixed; */
         display: flex;
-        margin:auto;
+        margin:10% auto;
         left:0; 
         right:0; 
     }

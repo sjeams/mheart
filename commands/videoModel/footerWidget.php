@@ -19,8 +19,9 @@
         /**
          * 定义函数
          * */
-        public function init()
-        {
+        // public function init()
+        // {
+            // parent::init();
             // $userId = Yii::$app->session->get('adminId');
             // $model = new Block();
             // $navId = $model->find()->where(['value' => $this->module,'pid' => 1])->one();
@@ -29,7 +30,7 @@
             // foreach($userBlock as $v){
             //     $this->blockArr[] = $v['blockId'];
             // }
-        }
+        // }
 
         /**
          * 运行覆盖程序
