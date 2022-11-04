@@ -39,7 +39,7 @@ function  video(id){
     <form action="/cn/video/index" method="get"  >
         <table class="table table-bordered  tablestyle"  >
         <thead>
-            <?php if($login>1){?>
+            <?php if($login>0){?>
             <tr>
                 <td >
                     <div class="input-append center" style="display: block;">

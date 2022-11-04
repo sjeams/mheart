@@ -39,7 +39,7 @@ function  video(id){
         <li class="active btn btn-primary">采集</li>
         <li class="btn btn-default"><a href="/cn/video/index">内容</a> </li>
     </ul>   -->
-    <?php if($login==1){ ?>
+    <?php if($login>0){ ?>
 
         <p class="center">
             <a href="https://laoyavideo.com/"><button>老鸭头</button> </a><a href="https://yinwovideo.com/"><button>淫窝</button></a>
@@ -84,9 +84,9 @@ function  video(id){
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <?php if(!$data['list_type']){?> 
+                                <!-- <?php if(!$data['list_type']){?> 
                                 <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
-                                <?php }?>
+                                <?php }?> -->
                                 <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>

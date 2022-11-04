@@ -16,7 +16,7 @@ use app\modules\cn\models\VideoList;
 use app\modules\cn\models\Category;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
-use app\modules\cn\models\User;
+use app\modules\cn\models\WechatUser;
 class VideoController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
@@ -118,8 +118,7 @@ class VideoController extends VideoApiControl
     {
         // 登录状态
         $login = $this->login;
-        if($login == 1){
-            $login=1;
+        if($login!=0){
             $belong=1;
             $list = Category::find()->where("belong=0")->asArray()->all();
         }else{
@@ -187,7 +186,7 @@ class VideoController extends VideoApiControl
         if($search){  $type=0; }
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
-        if($login!=1){
+        if($login==0){
             $belong=0;
         }
         if($belong==0){
@@ -408,12 +407,14 @@ class VideoController extends VideoApiControl
     public function actionDelete()
     {
         $id = Yii::$app->request->post('id');
-        // var_dump($page);
-        $video=Video::find()->where("id =$id ")->one();
-        $video->delete();
-        // echo  "第".$page."页，采集完成。</br>";
-        // die(Method::jsonGenerate(1,['up'=>$video->up],'返回数据成功'));
-        echo true;
+        //管理员权限1可删除
+        $graden = WechatUser::getGraden();
+        if($graden){
+            $video=Video::find()->where("id =$id ")->one();
+            $video->delete();
+            echo true;
+        }
+        echo false;
     } 
 
 }

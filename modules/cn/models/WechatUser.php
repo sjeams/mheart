@@ -28,6 +28,19 @@ class WechatUser extends ActiveRecord {
             $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
             header('Location: '.$href);die;
         }
-
+    }
+    // 获取权限
+    public static function getGraden(){
+        $token = Yii::$app->session->get('token');
+        $userlogin = WechatUser::find()->select('id,name,graden,phone')->where("token=$token")->asArray()->one();
+        if($userlogin){
+            if($userlogin['graden']==1){
+                return true;
+            }else{
+                return false; 
+            }
+        }else{
+            return false;
+        }
     }
 }

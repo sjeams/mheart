@@ -22,7 +22,7 @@
                 //token过期userlogin存在保持登录状态，否则销毁
                 $userlogin= Yii::$app->session->get('userlogin');
                 if(!$userlogin){
-                    $userlogin = WechatUser::find()->select('id,user_name,graden,phone')->where("token=$token")->asArray()->one();
+                    $userlogin = WechatUser::find()->select('id,name,graden,phone')->where("token=$token")->asArray()->one();
                     // 验证token是否有效--另一设备登录挤下
                     if( $userlogin){
                         Yii::$app->session->set('userlogin',$userlogin);
