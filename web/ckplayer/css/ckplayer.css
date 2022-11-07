@@ -921,7 +921,8 @@
 	height: auto;
 }
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-playbackrate-box:hover .ck-bar-playbackrate-bg-box {
-	display: block;
+	/* display: block; */
+	display: inline-table;
 }
 /*字幕*/
 .ckplayer-ckplayer .ck-main .ck-bar .ck-bar-track-box{
