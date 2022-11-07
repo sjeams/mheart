@@ -30,6 +30,7 @@ function  video(id){
         new ckplayer(videoObject);//初始化播放器
 
 }
+// CV.singleClick(player.playOrPause);//监听视频单击
 </script>
 <div class="container">
     <!-- <ul class="breadcrumb">

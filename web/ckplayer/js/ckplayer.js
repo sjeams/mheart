@@ -1316,21 +1316,25 @@
 			//CV.singleClick(player.playOrPause);//监听视频单击
 			CV.singleClick(function(){
 				if(!isDrag){
-					player.playOrPause();
+					// player.playOrPause();
+					isDrag=false;
 				}
 				else{
 					isDrag=false;
 				}
 			});
-			CM.doubleClick(player.fullOrExit);//监听视频双击
-			$(document).addListener('keydown',videoHandler.keydown);//监听键盘按键
-			addListener(window, 'resize', videoHandler.resize);//监听窗口尺寸变化
-			if(!isUndefined(vars['smallWindows'])){
-				if(valType(vars['smallWindows'])=='boolean' && vars['smallWindows']){
-					addListener(window, 'scroll', windowScroll);//监听窗口滚动
-				}
-			}
-			CT.mouseWheel(videoHandler.mouseWheel);
+			CV.doubleClick(function(){
+				player.playOrPause();
+			});
+			// CM.doubleClick(player.fullOrExit);//监听视频双击
+			// $(document).addListener('keydown',videoHandler.keydown);//监听键盘按键
+			// addListener(window, 'resize', videoHandler.resize);//监听窗口尺寸变化
+			// if(!isUndefined(vars['smallWindows'])){
+			// 	if(valType(vars['smallWindows'])=='boolean' && vars['smallWindows']){
+			// 		addListener(window, 'scroll', windowScroll);//监听窗口滚动
+			// 	}
+			// }
+			// CT.mouseWheel(videoHandler.mouseWheel);
 		},
 		/*
 		 * eventTarget
