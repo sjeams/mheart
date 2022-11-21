@@ -41,7 +41,8 @@
         display: inline-block; */
 
     }
-    footer{
+    .footer{
+        /* background-color: black; */
         position: fixed;
         margin:0px auto;
         left:0; 
@@ -52,19 +53,9 @@
 </style>
 <div class="video_center "> 
 <?= $content ?>
+
 </div>
-<footer class="center"> 
-    <p>
-        Copyright © 2022-现在 心缘测试
-        <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
-            蜀ICP备2022010153号-1
-        </a>
-        <!-- <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
-            ICP证书: 沪B2-20180057
-        </a><br> -->
-    </p>
-    </div></div>
-</footer>
+
 </body>
 <script>
 // 视频隐藏
