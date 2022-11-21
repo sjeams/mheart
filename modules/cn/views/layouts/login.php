@@ -26,7 +26,7 @@
         max-width: 400px;
         /* position: fixed; */
         display: flex;
-        margin:10% auto;
+        margin:0px auto;
         left:0; 
         right:0; 
         top:0; 
@@ -80,7 +80,5 @@ $(document).keyup(function(event){
             ICP证书: 沪B2-20180057
         </a><br> -->
     </p>
-
-        
-            </div></div>
+    </div></div>
 </footer>
