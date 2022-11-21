@@ -24,7 +24,8 @@
         height: 100%;
         width: 100%;
         max-width: 400px;
-        /* position: fixed; */
+        min-height: 400px;
+        position: fixed;
         display: flex;
         margin:0px auto;
         left:0; 
@@ -39,6 +40,14 @@
         bottom:0;
         display: inline-block; */
 
+    }
+    footer{
+        position: fixed;
+        margin:0px auto;
+        left:0; 
+        right:0; 
+        /* top:0;  */
+        bottom:0;  
     }
 </style>
 <div class="video_center "> 
