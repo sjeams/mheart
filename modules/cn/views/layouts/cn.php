@@ -14,6 +14,7 @@
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+<title>心缘测试</title>
 </head>
 <body>
 

@@ -74,7 +74,7 @@
         <tr>
         <td>
         <div class="login_check">
-            <span class="logincss">在线互动</span>
+            <span class="logincss">心缘测试</span>
             <input type="text" name="name" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="name">
             <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
             <span class="error "></span>

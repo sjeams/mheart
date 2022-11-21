@@ -14,6 +14,7 @@
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+<title>心缘测试</title>
 </head>
 <body>
 <style>
@@ -68,3 +69,18 @@ $(document).keyup(function(event){
 });
 </script>
 
+
+<footer class="center"> 
+    <p>
+        Copyright © 2022-现在 心缘测试
+        <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
+            蜀ICP备2022010153号-1
+        </a>
+        <!-- <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
+            ICP证书: 沪B2-20180057
+        </a><br> -->
+    </p>
+
+        
+            </div></div>
+</footer>
