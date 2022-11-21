@@ -34,8 +34,10 @@
         left:0; 
         right:0; 
     }
+    .video_header td{
+        width: 33.33%;
+    }
 </style>
- 
 <div class="video_header center  "> 
     <table class="table table-bordered  tablestyle">
         <tr>
@@ -43,7 +45,7 @@
             <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
             <?php } ?>
-            <td class="btn-primary" ><a class=" " href="javascript:;" onclick="loginOuts()">退出</a> </td>
+            <td class="btn-primary" ><a class=" " href="javascript:;" onclick="loginOuts()">(<?php echo $userlogin['name'] ?>)退出</a> </td>
         </tr>
     </table>
 </div>

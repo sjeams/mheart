@@ -68,46 +68,33 @@
 <div class="container">
     <!-- <ul class="breadcrumb">
     </ul> -->
- 
 <table class="table  "  >
     <thead>
         <tr>
         <td>
         <div class="login_check">
             <span class="logincss">心缘测试</span>
-            <input type="text" name="name" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="name">
+            <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
             <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
             <span class="error "></span>
                 <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
-            <button  class="logincss_btn login_left" onclick="loginIn()"  >   登录</button>
-            <button   class="logincss_btn login_rigth" onclick="register()"   >    注册</button>
+            <button  class="logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
+            <button   class="logincss_btn login_rigth" onclick="loginPhone()"   >   登录/注册</button>
         </div>
 
         </td>
     <thead>
 </table>
-<div class="center footer"> 
-    <p>
-        Copyright © 2022-现在 心缘测试
-        <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
-            蜀ICP备2022010153号-1
-        </a>
-        <!-- <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
-            ICP证书: 沪B2-20180057
-        </a><br> -->
-    </p>
-    </div></div>
-</div>
+
 </div>
 <script>
-    //登录
-    function  loginIn(){
-        name = $("#name").val();
+    function  loginPhone(){
+        phone = $("#phone").val();
         password = $("#password").val();
         $.ajax({
-            url: '/cn/login/login-in', // 跳转到 action 
+            url: '/cn/login/login-phone', // 跳转到 action 
             data:{
-                name:name,
+                phone:phone,
                 password:password,
             },
             type: 'post',
@@ -123,28 +110,52 @@
             },
         });
     }
-    //快速注册
-    function  register(){
-        name = $("#name").val();
-        password = $("#password").val();;
-        $.ajax({
-            url: '/cn/login/login-register', // 跳转到 action 
-            data:{
-                phone:name,
-                password:password,
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                // console.log(data)
-                if(data.code==1){
-                    window.location.reload();   
-                }else{
-                    $('.error').text(data.message);
-                }
-            },
-        });
-    }
+
+    // //登录
+    // function  loginIn(){
+    //     name = $("#phone").val();
+    //     password = $("#password").val();
+    //     $.ajax({
+    //         url: '/cn/login/login-in', // 跳转到 action 
+    //         data:{
+    //             name:name,
+    //             password:password,
+    //         },
+    //         type: 'post',
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             console.log(data)
+    //             if(data.code==1){
+    //                 window.location.reload();   
+    //             }else{
+    //                 $('.error').text(data.message);
+    //             }
+    //             // window.location.reload();
+    //         },
+    //     });
+    // }
+    // //快速注册
+    // function  register(){
+    //     name = $("#phone").val();
+    //     password = $("#password").val();;
+    //     $.ajax({
+    //         url: '/cn/login/login-register', // 跳转到 action 
+    //         data:{
+    //             phone:name,
+    //             password:password,
+    //         },
+    //         type: 'post',
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             // console.log(data)
+    //             if(data.code==1){
+    //                 window.location.reload();   
+    //             }else{
+    //                 $('.error').text(data.message);
+    //             }
+    //         },
+    //     });
+    // }
 $(document).keyup(function(event){
     if(event.keyCode ==13){
         loginIn();

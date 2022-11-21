@@ -14,7 +14,7 @@ class WechatUser extends ActiveRecord {
         //更新token
         WechatUser::updateAll(['token' => $token],"id=$userId");
         //设置缓存
-        $userlogin = WechatUser::find()->select('id,name,graden,phone')->where("id=$userId")->asArray()->one();
+        $userlogin = WechatUser::find()->select('id,name,graden')->where("id=$userId")->asArray()->one();
         // var_dump($token);die;
         Yii::$app->session->set('token',$token);
         Yii::$app->session->set('userlogin',$userlogin);
@@ -32,7 +32,7 @@ class WechatUser extends ActiveRecord {
     // 获取权限
     public static function getGraden(){
         $token = Yii::$app->session->get('token');
-        $userlogin = WechatUser::find()->select('id,name,graden,phone')->where("token=$token")->asArray()->one();
+        $userlogin = WechatUser::find()->select('id,name,graden')->where("token=$token")->asArray()->one();
         if($userlogin){
             //管理员可操作
             if($userlogin['id']==2){

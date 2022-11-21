@@ -26,18 +26,37 @@ class LoginController extends ApiControl
             WechatUser::headerLocation();
         }
     }
+
+    public function actionLoginPhone(){
+        $phone = Yii::$app->request->post('phone');
+        $password = Yii::$app->request->post('password');
+        if($phone){
+            $res = WechatUser::find()->where("phone =$phone")->one();
+            if($res){
+                die(Method::jsonGenerate(0,[],'手机号码已存在'));
+                // 正常登录
+                $this->LoginIn($phone,$password);
+            }else{
+                //注册
+               $this->LoginRegister($phone,$password);
+            }
+        }else{
+            //游客登录
+            $this->LoginIn($phone,$password);
+            die(Method::jsonGenerate(1,[],'游客'));
+        }
+    }
+
     /**
     * 注册
     * by  sjeam
     * post接口： /cn/login/login-register
     * 参    数：
     */
-    public function actionLoginRegister(){
+    public function  LoginRegister($phone,$password){
         $this->layout=false;
-        $phone = Yii::$app->request->post('phone');
-        // $name = Yii::$app->request->post('name');
-        $password = Yii::$app->request->post('password');
-      
+        // $phone = Yii::$app->request->post('phone');
+        // $password = Yii::$app->request->post('password');
         $preg='/^1[3456789]\d{9}$/';
         if(!preg_match($preg,$phone)){
             die(Method::jsonGenerate(0,[],'手机号格式有误'));
@@ -66,17 +85,19 @@ class LoginController extends ApiControl
         die(Method::jsonGenerate(1,[],'succes'));
     }
     //登录
-    public function actionLoginIn()
+    public function  LoginIn($name,$password)
     {
         $this->layout=false;
-        $name = Yii::$app->request->post('name');
-        $password = Yii::$app->request->post('password');
+        // $name = Yii::$app->request->post('name');
+        // $password = Yii::$app->request->post('password');
+        // var_dump($name);die;
         if(!$name){
             //管理员
             if($password=='111av'){
                 $name='sjeam';
             }else{
                 $name='游客';
+                $password='111';
             }
         }
         $res = WechatUser::find()->where("password ='$password'  and (name ='$name' or phone ='$name') ")->one(); 
