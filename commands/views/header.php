@@ -24,7 +24,7 @@
         display: inline-block;
     }
     .video_header td{
-        width: 33.33%;
+        /* width:100%; */
     }
     /* center */
     .video_center{
@@ -36,6 +36,14 @@
         left:0; 
         right:0; 
     }
+    .menu_list{
+        width:200px;
+        position: fixed;
+        margin:0px auto;
+        /* left:0;  */
+        right:0;   
+        display: none;
+    }
 </style>
 <div class="video_header center  "> 
     <table class="table table-bordered  tablestyle">
@@ -44,12 +52,28 @@
             <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
             <?php } ?>
-            <td class="btn-primary" ><a class=" " href="javascript:;" onclick="loginOuts()">(<?php echo $userlogin['name'] ?>)退出</a> </td>
+            <td class="btn-primary" style="width: 200px;">
+                <input type="hidden" name="" id="menu" value="0">
+                <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
+            </td>
         </tr>
     </table>
 </div>
+<ul class="list-group text-center menu_list">
+    <li class="list-group-item active" onclick="loginOuts()"> 退出</li>
+</ul>
 <div class="video_center "> 
 <script  >
+    function Menu(){
+       var menu =$("#menu").val();
+       if(menu==1){
+            $('.menu_list').css('display','none');
+            $("#menu").val(0)
+       }else{
+            $('.menu_list').css('display','block');
+            $("#menu").val(1)
+        }
+    }
     //退出
     function  loginOuts(){
         $.ajax({

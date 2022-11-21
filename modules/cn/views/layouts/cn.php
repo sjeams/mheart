@@ -14,6 +14,13 @@
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+<script type="text/javascript" charset="utf-8" src="/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+
 <title>心缘测试</title>
 </head>
 <body>
