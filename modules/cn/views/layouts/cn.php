@@ -24,9 +24,9 @@
 
 <div class="container">
     <!-- 视频窗口 -->
-    <?php use app\commands\VideoWidget;?>
-    <?php VideoWidget::begin();?>
-    <?php VideoWidget::end();?> 
+    <?php use app\commands\videoWidget;?>
+    <?php videoWidget::begin();?>
+    <?php videoWidget::end();?> 
     <!-- 内容 -->
     <?= $content ?>
     <!-- 备案 -->
