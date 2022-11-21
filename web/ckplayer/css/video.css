@@ -25,7 +25,17 @@ input{
 .videohidden{
     display: table-column-group;
 }
-
+.video{
+	position:fixed;
+	z-index:100;
+	width:100%;
+	height:40%; 
+	margin: auto;
+	left:0; 
+	right:0; 
+	top:38px; 
+	/* bottom:0; */
+}
 .bord{
     display: inline-block;
     text-align: center;
@@ -71,7 +81,7 @@ input{
 	.center{
 	   width: 100%;
 	   text-align: center;
-	   margin:  5px  auto  ;
+	   margin:  0px  auto  ;
 	   display: inline-block;
 	   /* cursor: pointer; */
 	}

@@ -17,13 +17,24 @@
 <title>心缘测试</title>
 </head>
 <body>
-
+<!-- 头部 -->
 <?php use app\commands\HeaderWidget;?>
 <?php HeaderWidget::begin();?>
 <?php HeaderWidget::end();?> 
 
-<?= $content ?>
-
+<div class="container">
+    <!-- 视频窗口 -->
+    <?php use app\commands\VideoWidget;?>
+    <?php VideoWidget::begin();?>
+    <?php VideoWidget::end();?> 
+    <!-- 内容 -->
+    <?= $content ?>
+    <!-- 备案 -->
+    <?php use app\commands\BeiAnWidget;?>
+    <?php BeiAnWidget::begin();?>
+    <?php BeiAnWidget::end();?> 
+</div>
+<!-- 底部 -->
 <?php use app\commands\FooterWidget;?>
 <?php FooterWidget::begin();?>
 <?php footerWidget::end();?> 
@@ -53,4 +64,3 @@ $(document).keyup(function(event){
     }
 });
 </script>
-

@@ -2,7 +2,7 @@
 	.video_header{
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
-        height:5%;
+        height:38px;
         width: 100%;
         position: fixed;
         margin:auto;
@@ -23,19 +23,18 @@
         margin: auto;
         display: inline-block;
     }
-
+    .video_header td{
+        width: 33.33%;
+    }
     /* center */
     .video_center{
         /* border: 1px solid #0044cc; */
         height: 90%;
         /* position: fixed; */
         display: flex;
-        margin:10% auto;
+        margin:48px auto;
         left:0; 
         right:0; 
-    }
-    .video_header td{
-        width: 33.33%;
     }
 </style>
 <div class="video_header center  "> 
