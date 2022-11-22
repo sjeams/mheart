@@ -99,8 +99,8 @@
                         <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
-                            <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
-                            <span onclick="Update(<?php echo $kss?>)" class="collect collect_id<?php echo $kss?>"> 收藏</span>
+                            <span onclick="video(<?php echo $kss?>)" class="btn collect"> 预览</span>
+                            <span onclick="Update(<?php echo $kss?>)" class="btn collect collect_id<?php echo $kss?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 收藏</span>
                         </p>
                     </td>
                 
@@ -246,7 +246,8 @@
     }
 
     // 收藏
-    function  Update(id){
+    function  Update(id){ 
+        // $(".collect_id"+id).addClass('btn-success');
         var url =$("#form"+id+"  input[name=url]").val();
         var title =$("#form"+id+"  input[name=title]").val();
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
@@ -258,7 +259,7 @@
             data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1},
             dataType: 'json',
             success: function (data) {
-                $(".collect_id"+id).css('color','green');
+                $(".collect_id"+id).addClass('btn-success');
             },
         });
     } 

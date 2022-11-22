@@ -189,7 +189,7 @@ class VideoController extends VideoApiControl
         if($login==0){
             $belong=0;
         }
- 
+        
         if($belong==0){
             if($search=='undefined'||$search==null||empty($search)||$search=="") $search='我们都是超能力者';
         }
@@ -201,7 +201,6 @@ class VideoController extends VideoApiControl
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
- 
         if($res){
                $list =   json_decode($res['value'],true);
                $count =$res['count'];
@@ -219,8 +218,9 @@ class VideoController extends VideoApiControl
                 $args['search'] =$search;
                 // 存入缓存列表
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
-              
+                 
             }else{
+       
             //    var_dump($type);die;
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
                 // var_dump($listvideo);die;
@@ -228,6 +228,7 @@ class VideoController extends VideoApiControl
                 $list=[];
                 $count = count($listvideo);
                 $pageSize=10;
+           
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
                         if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){
@@ -248,6 +249,17 @@ class VideoController extends VideoApiControl
                 }
             }
         }
+ 
+        foreach($list as$key=> $v){
+            $find_title =$v['title'];
+            $find_collect =Video::find()->select('id')->where("title = '$find_title'")->One();
+            if($find_collect){
+                $list[$key]['collect']=1;
+            }else{
+                $list[$key]['collect']=0;
+            }          
+        }
+        // var_dump($list);die;
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         if($login==1){
             $category = Category::Category();
@@ -363,6 +375,7 @@ class VideoController extends VideoApiControl
         $args = Yii::$app->request->post();
         // var_dump($args);die;
         Yii::$app->signdb->createCommand()->insert('x2_video',$args)->execute();
+        echo true; 
     }
 
 
@@ -371,8 +384,7 @@ class VideoController extends VideoApiControl
      * by  sjeam
      */
     public function actionVideo()
-    {
-        
+    { 
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
         $id = Yii::$app->request->get('id',1);
         $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
