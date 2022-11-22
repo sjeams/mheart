@@ -196,18 +196,19 @@
             type: 'post',
             dataType: 'json',
             success: function (data) {
- 
                 gou();
             },
         });
     } 
     function clearModel(){
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
         $.ajax({
             url: '/cn/video/clear-session', // 跳转到 action 
             type: 'post',
             dataType: 'json',
+            data:{belong:goBelong,type:goType},
             success: function (data) {
- 
                 gou();
             },
         }); 

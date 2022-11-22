@@ -346,7 +346,6 @@ class VideoController extends VideoApiControl
     public function actionChangeType()
     {
         $list_type =Yii::$app->session->get('list_type');
-   
         if($list_type){
             Yii::$app->session->remove('list_type'); 
         }else{
