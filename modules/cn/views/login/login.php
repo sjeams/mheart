@@ -24,6 +24,7 @@
         font-weight: bold;
     }
     .login_check button{
+        font-size: 18px;
          border-radius: 5px;
         background-color: #4c54b3!important; 
         color: white;
