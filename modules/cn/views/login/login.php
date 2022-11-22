@@ -25,8 +25,9 @@
     }
     .login_check button{
          border-radius: 5px;
-        background-color: #4c54b3; 
+        background-color: #4c54b3!important; 
         color: white;
+        line-height: 50%;
     }
     .login_check input{
         border-radius: 5px;
@@ -46,6 +47,7 @@
         display: inline-block;
         font-size: 24px;
         margin: 10px auto;
+        background-color:  #5879f3a3!important;
     }
     .top{
         display: none;
@@ -69,7 +71,7 @@
     <!-- <ul class="breadcrumb">
     </ul> -->
 <table class="table  "  >
-    <thead>
+    <thead>	  
         <tr>
         <td>
         <div class="login_check">
@@ -78,8 +80,8 @@
             <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
             <span class="error "></span>
                 <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
-            <button  class="logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
-            <button   class="logincss_btn login_rigth" onclick="loginPhone()"   >   登录/注册</button>
+            <button  class=" logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
+            <button   class=" logincss_btn login_rigth" onclick="loginPhone()"   >   登录/注册</button>
         </div>
 
         </td>
