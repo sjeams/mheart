@@ -1808,7 +1808,7 @@ function createDefaultConfig() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _io_io_controller_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../io/io-controller.js */ "./src/io/io-controller.js");
-/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config.js */ "./src/config.js");
+/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config.js */ "./src/p");
 /*
  * Copyright (C) 2016 Bilibili. All Rights Reserved.
  *

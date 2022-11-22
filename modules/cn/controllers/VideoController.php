@@ -306,8 +306,8 @@ class VideoController extends VideoApiControl
                 // }else{
                     // if(!in_array($type,$typeArray)&&!empty($typeArray)){
                     // } 
-                    $str ='<p class="center" id="listType" >'; 
-                    $str .="<input type='hidden' value='$type' name='goType' id='goType'/>";
+                    $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
+                    $str .='<p class="center" id="listType" >'; 
                     foreach($list as $v){
                         $name =$v['name'];
                         $value =$v['type'];

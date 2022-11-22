@@ -1,9 +1,8 @@
 <?php if($login>0){ ?>
-    <p class="center">
-        友情链接：
-        <a class="btn_link" href="https://laoyavideo.com/" class="btn">  老鸭头  </a><a class="btn_link" href="https://yinwovideo.com/"> 淫窝 </a>
-        <a class="btn_link" href="https://sewovideo.com/"> 色窝 </a>  <a class="btn_link" href="https://siwazyw.cc/index.php/vod/type/id/20.html"> 丝袜 </a>
-        <a class="btn_link" href="https://xjav10.cc/">  香蕉 </a> 
+    <p class="center  "  >
+        <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a><a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a>
+        <a class="btn_link " href="https://sewovideo.com/"> 色窝 </a>  <a class="btn_link " href="https://siwazyw.cc/index.php/vod/type/id/20.html"> 丝袜 </a>
+        <a class="btn_link " href="https://xjav10.cc/">  香蕉 </a> 
     </p>
 <?php } ?> 
 <!-- 视频end -->
@@ -13,41 +12,41 @@
             <tr>
                 <td>
                     <div class="layui-form-item center">
-                        
-                            <div class="layui-input-inline">
-    
-                                <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
-                                <p class="center" id="listBelong" >
-                                    <?php foreach($category as $v){  ?>
-                                        <a class="btn btn-sm <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="javascript:return false;"><?php echo $v['name'] ?></a>
-                                    <?php }  ?>
-                                </p>
-                            </div>
-                            <!-- <label class="layui-form-label">类型typ</label> -->
-                            <div class="layui-input-inline" id="goTypeInput">
-                                <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
-                            </div>
+                        <div class="layui-input-inline">
+                            <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                            <p class="center" id="listBelong" >
+                                <?php foreach($category as $v){  ?>
+                                    <a class="btn  <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="javascript:return false;"><?php echo $v['name'] ?></a>
+                                <?php }  ?>
+                            </p>
+                        </div>
+                        <!-- <label class="layui-form-label">类型typ</label> -->
+                        <div class="layui-input-inline" id="goTypeInput">
+                            <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
+                        </div>
 
-                            <!-- <label class="layui-form-label">搜索</label> -->
-                            <div class="layui-input-inline">
-                                <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
-                            </div>
+                        <!-- <label class="layui-form-label">搜索</label> -->
+                        <div class="layui-input-inline">
+                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                        </div>
 
-                            <!-- <label class="layui-form-label">采集页码</label> -->
-                            <div class="layui-input-inline">
-                                <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                                <input type="text" class="center" value="<?php echo $data['page_list'] ?>" id="goPage_list">
-                                <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
-                            </div>
-                        <p class="center">
-                            <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
-                            <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                            <!-- <?php if(!$data['list_type']){?> 
-                            <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
-                            <?php }?> -->
-                            <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
-                            <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
-                        </p>
+                        <!-- <label class="layui-form-label">采集页码</label> -->
+                        <div class="layui-input-inline">
+                            <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
+                            <input type="text" class="center" value="<?php echo $data['page_list'] ?>" id="goPage_list">
+                            <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                        </div>
+                        <div class="layui-input-inline">
+                            <p class="center">
+                                <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
+                                <span  class="btn btn-primary" onclick="gou()"> GO  </span>
+                                <!-- <?php if(!$data['list_type']){?> 
+                                <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
+                                <?php }?> -->
+                                <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
+                                <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
+                            </p>
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -101,7 +100,7 @@
                         </a>
                         <p class="center"> 
                             <span onclick="video(<?php echo $kss?>)" class="collect"> 预览</span>
-                            <span onclick="Update(<?php echo $kss?>)" class="collect"> 收藏</span>
+                            <span onclick="Update(<?php echo $kss?>)" class="collect collect_id<?php echo $kss?>"> 收藏</span>
                         </p>
                     </td>
                 
@@ -128,11 +127,7 @@
     $(function(){
         var belong = $('#goBelong').val(); 
         var type = $('#goType').val(); 
-        // console.log(belong)
-        // if(belong==0){
-        //     var inputvalue ="";
-        //     $("#goTypeInput").html(inputvalue);
-        // }else{
+ 
         $.ajax({
             url: '/cn/video/get-belong', // 跳转到 action 
             data:{
@@ -148,11 +143,9 @@
                 }
             },
         });
-        // }
+ 
     });
-    // function searchfunc(){
-    //     $('#goSearch').val(''); 
-    // }
+ 
     function typeChange(type){
         // 重置状态page和search
         $("#goSearch").val('');
@@ -204,8 +197,7 @@
             type: 'post',
             dataType: 'json',
             success: function (data) {
-                // console.log(data)
-                // window.location.reload();
+ 
                 gou();
             },
         });
@@ -216,8 +208,7 @@
             type: 'post',
             dataType: 'json',
             success: function (data) {
-                // console.log(data)
-                // window.location.reload();
+ 
                 gou();
             },
         }); 
@@ -256,7 +247,6 @@
 
     // 收藏
     function  Update(id){
-
         var url =$("#form"+id+"  input[name=url]").val();
         var title =$("#form"+id+"  input[name=title]").val();
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
@@ -268,7 +258,7 @@
             data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1},
             dataType: 'json',
             success: function (data) {
-                // window.location.reload();
+                $(".collect_id"+id).css('color','green');
             },
         });
     } 

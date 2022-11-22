@@ -35,33 +35,40 @@
         margin:48px auto;
         left:0; 
         right:0; 
+        top:38px;
+        z-index: 1;
     }
     .menu_list{
-        width:200px;
+        width: 180px;
         position: fixed;
         margin:0px auto;
         /* left:0;  */
         right:0;   
         display: none;
     }
+    .td_menu_list{
+        width: 180px;
+    }
 </style>
 <div class="video_header center  "> 
-    <table class="table table-bordered  tablestyle">
+    <table class="table table-bordered  tablestyle mb-0">
         <tr>
             <td class="btn-primary"><a class=" " href="/cn/video/list">采集</a></td>
             <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
             <?php } ?>
-            <td class="btn-primary" style="width: 200px;">
+            <td class="btn-primary" class="td_menu_list">
                 <input type="hidden" name="" id="menu" value="0">
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
         </tr>
+
     </table>
+    <ul class="list-group text-center menu_list">
+        <li class="list-group-item active" onclick="loginOuts()"> 退出</li>
+    </ul>
 </div>
-<ul class="list-group text-center menu_list">
-    <li class="list-group-item active" onclick="loginOuts()"> 退出</li>
-</ul>
+
 <div class="video_center "> 
 <script  >
     function Menu(){

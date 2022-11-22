@@ -2,9 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="applicable-device" content="mobile">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta name="referrer" content="always">
+ 
 <!-- 自适应布局 -->
-<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
@@ -13,13 +27,15 @@
 <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+<!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
 
 
 
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
 <script type="text/javascript" charset="utf-8" src="/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+<!-- 自定义样式 -->
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
 
 <title>心缘测试</title>
 </head>

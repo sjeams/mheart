@@ -4,8 +4,8 @@
         <?php if($login>0){?>
         <tr>
             <td >
-                <div class="input-append center" style="display: block;">
-                    <input name="title" class="span2" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
+                <div class="input_div center" style="display: block;">
+                    <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
                     <button class="btn btn-primary search_button" type="sbumit">搜索</button>
                 </div>
                 <p class="center">
@@ -42,7 +42,7 @@
                     </a>
                     <p class="center">
                         <span onclick="videoup(<?php echo $v['id']?>)" class="btn videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
-                        <span onclick="video(<?php echo $kss?>)" class="btn  "> 预览 </span>
+                        <span onclick="video(<?php echo $kss?>)" class="btn  collect"> 预览 </span>
                         <span onclick="Delete(<?php echo $v['id']?>)" class="btn collect"> 删除 </span>
                     </p>
                 </td>
