@@ -2,6 +2,7 @@
 .btn-primary{
 	cursor: pointer;
 }
+ 
 .td a{
 	width: 100%;
 	cursor: pointer;
@@ -9,7 +10,7 @@
 }
 a:hover{text-decoration:none!important}
 input{
-	height: 40px!important;
+	height: 38px!important;
 	border-radius: 5px!important;
 	/* //input超出边界解决办法 */
 	-webkit-box-sizing: border-box;

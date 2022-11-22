@@ -191,7 +191,7 @@ class VideoController extends VideoApiControl
         }
         
         if($belong==0){
-            if($search=='undefined'||$search==null||empty($search)||$search=="") $search='我们都是超能力者';
+            if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;

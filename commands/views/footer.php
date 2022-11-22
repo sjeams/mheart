@@ -2,7 +2,7 @@
 	.video_footer{
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
-        height:38px;
+        height:40px;
         width: 100%;
         position: fixed;
         margin:0px  auto;
@@ -14,7 +14,7 @@
 	}
     .video_footer td{
         background-color: white;
-        border: 1px solid #0044cc;
+        /* border: 1px solid #0044cc; */
         text-align: center ;
         width: 50%;
     }

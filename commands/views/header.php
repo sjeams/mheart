@@ -14,7 +14,7 @@
 	}
     .video_header td{
         background-color: white;
-        border: 1px solid #0044cc;
+        /* border: 1px solid #0044cc; */
         text-align: center ;
     }
     .video_header td a{
@@ -29,10 +29,10 @@
     /* center */
     .video_center{
         /* border: 1px solid #0044cc; */
-        height: 90%;
+        height: 100%-80px;
         /* position: fixed; */
         display: flex;
-        margin:48px auto;
+        margin:60px auto;
         left:0; 
         right:0; 
         top:38px;
