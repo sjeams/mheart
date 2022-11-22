@@ -220,18 +220,18 @@ class VideoController extends VideoApiControl
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                  
             }else{
-       
             //    var_dump($type);die;
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
                 // var_dump($listvideo);die;
                 // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                 $list=[];
+                // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
-                $pageSize=10;
-           
+                // $pageSize=10;
+                $pageSize= $count;
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
-                        if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){
+                        if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
                             $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                         }
                     }
@@ -249,7 +249,7 @@ class VideoController extends VideoApiControl
                 }
             }
         }
- 
+        //是否收藏
         foreach($list as$key=> $v){
             $find_title =$v['title'];
             $find_collect =Video::find()->select('id')->where("title = '$find_title'")->One();
