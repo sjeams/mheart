@@ -227,7 +227,7 @@ class VideoController extends VideoApiControl
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
-                // $pageSize=10;
+                // $pageSize=20;
                 $pageSize= $count;
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
