@@ -164,7 +164,14 @@ class VideoController extends VideoApiControl
         $data['title']=$title; 
         $data['page']=$page; 
         //来源
-        return $this->render('index',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+  
+        $html = Yii::$app->request->get('html',0);
+        if($html){
+            $this->layout = 'kongbai';
+            return $this->render('html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+        }else{
+            return $this->render('index_html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+        }
     }
     /**
      * 第三方列表
@@ -181,6 +188,7 @@ class VideoController extends VideoApiControl
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
         $search = Yii::$app->request->get('search','');
+
 
         // 搜索类型默认为0
         if($search){  $type=0; }
@@ -280,7 +288,14 @@ class VideoController extends VideoApiControl
         // if($login==0){
         //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         // }else{
-            return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            $html = Yii::$app->request->get('html',0);
+            if($html){
+                $this->layout = 'kongbai';
+                return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            }else{
+                return $this->render('list_html',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            }
+          
         // }
     
     }
@@ -324,9 +339,9 @@ class VideoController extends VideoApiControl
                         $name =$v['name'];
                         $value =$v['type'];
                         if($v['type']==$type){
-                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:return false;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }else{
-                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:return false;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }
                     }
                     $str .='  </p>';

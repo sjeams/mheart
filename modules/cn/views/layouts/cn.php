@@ -86,4 +86,15 @@ $(document).keyup(function(event){
         gou();
     }
 });
+
+// 异步html
+function getprintHtml(url){
+    var getHtml =$.ajax({
+        type:"get",
+        url: url,
+        dataType: 'json',
+        async: false,
+    });
+    return getHtml.responseText;
+}
 </script>
