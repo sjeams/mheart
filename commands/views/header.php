@@ -2,7 +2,7 @@
 	.video_header{
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
-        height:38px;
+        height:40px;
         width: 100%;
         position: fixed;
         margin:auto;
@@ -35,7 +35,7 @@
         margin:60px auto;
         left:0; 
         right:0; 
-        top:38px;
+        top:40px;
         z-index: 1;
     }
     .menu_list{

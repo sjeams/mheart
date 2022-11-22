@@ -10,7 +10,7 @@
 }
 a:hover{text-decoration:none!important}
 input{
-	height: 38px!important;
+	height: 40px!important;
 	border-radius: 5px!important;
 	/* //input超出边界解决办法 */
 	-webkit-box-sizing: border-box;
@@ -19,7 +19,7 @@ input{
 }
 /* 搜索 */
 .search_input{
-	margin-top: 15px;
+	margin-top: 10px;
 }
 .input_div{
 	vertical-align: middle;
@@ -50,7 +50,7 @@ input{
 	margin: auto;
 	left:0; 
 	right:0; 
-	top:38px; 
+	top:40px; 
 	/* bottom:0; */
 }
 .bord{
