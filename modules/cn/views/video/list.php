@@ -95,7 +95,7 @@
                         <!-- https://help.siwazywcdn2.com:5278/m3u8.php?url= -->
                         
                         <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
-                        <p class="center"><img class="pimage" src="<?php //echo $v['imageurl']?>"   alt="" ></p>
+                        <p class="center"><img class="pimage" src="<?php echo $v['imageurl']?>"   alt="" ></p>
                         <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
                         </a>
                         <p class="center"> 
