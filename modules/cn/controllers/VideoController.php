@@ -356,8 +356,8 @@ class VideoController extends VideoApiControl
     public function actionClearSession()
     {
         $belong = Yii::$app->request->post('belong',0);
-        $type = Yii::$app->request->post('type',0);
-        VideoList::deleteAll(" belong =$belong and type = $type ");
+        // $type = Yii::$app->request->post('type',0);
+        VideoList::deleteAll(" belong =$belong ");
         echo true;
     }
 
