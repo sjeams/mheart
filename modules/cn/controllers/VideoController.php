@@ -116,6 +116,7 @@ class VideoController extends VideoApiControl
      */
     public function actionIndex()
     {
+        
         // 登录状态
         $login = $this->login;
         if($login!=0){
