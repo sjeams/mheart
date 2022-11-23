@@ -87,6 +87,7 @@
                     <input type="hidden" name="type" value="<?php echo $v['type']?>" >
                     <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                    <input type="hidden"  name="is_collect" value="<?php echo $v['collect']?>">
                 </div>
                 <tr>
                     <td  >
@@ -275,16 +276,26 @@
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var belong =$("#form"+id+"  input[name=belong]").val();
         var link =$("#form"+id+"  input[name=link]").val();
+        var collect = $("#form"+id+"  input[name=is_collect]").val();// 是否收藏
         $.ajax({
             url: '/cn/video/update', // 跳转到 action 
             type: 'post',
-            data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1},
+            data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1,is_collect:collect},
             dataType: 'json',
             success: function (data) {
-                $(".collect_id"+id).addClass('btn-success');
+                if(collect==1){
+                    $("#form"+id+"  input[name=is_collect]").val(0);
+                    $(".collect_id"+id).removeClass('btn-success');
+                    $(".collect_id"+id).addClass('btn-defult');
+                }else{
+                    $("#form"+id+"  input[name=is_collect]").val(1);
+                    $(".collect_id"+id).removeClass('btn-defult');
+                    $(".collect_id"+id).addClass('btn-success');
+                }
             },
         });
     } 
+    
 </script>
 
  

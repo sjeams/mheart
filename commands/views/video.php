@@ -28,7 +28,7 @@ function  video(id){
             // rotate:90,//旋转90度
         };
         new ckplayer(videoObject);//初始化播放器
-        videoHidden();//显示窗口
+        videoHidden(1);//显示窗口
 }
 // CV.singleClick(player.playOrPause);//监听视频单击
 </script>

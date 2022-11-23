@@ -32,7 +32,7 @@ class WechatUser extends ActiveRecord {
     // 获取权限
     public static function getGraden(){
         $token = Yii::$app->session->get('token');
-        $userlogin = WechatUser::find()->select('id,name,graden,is_cache')->where("token=$token")->asArray()->one();
+        $userlogin = WechatUser::find()->select('id,name,graden,is_cache')->where("token='$token'")->asArray()->one();
         if($userlogin){
             //管理员可操作
             if($userlogin['id']==2){
@@ -44,6 +44,8 @@ class WechatUser extends ActiveRecord {
             return false;
         }
     }
+
+    //修改缓存状态
     public static function changeCache($user){
         $get_cache=0;
         if($user){
@@ -60,4 +62,5 @@ class WechatUser extends ActiveRecord {
         }
         return $get_cache;
     }
+    
 }

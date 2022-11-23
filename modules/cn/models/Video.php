@@ -467,6 +467,17 @@ class Video extends ActiveRecord {
 		}
 		return $list;
 	}
+	public static function deleteCollect($id){
+        //管理员权限1可删除
+        $graden = WechatUser::getGraden();
+        if($graden){
+            $video=Video::find()->where("id =$id ")->one();
+            $video->delete();
+			return true;
+        }
+		return false;
+	}
+
 }
 
 ?>

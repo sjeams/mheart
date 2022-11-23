@@ -31,7 +31,7 @@
         <tr>
             <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
             <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
-            <td class="btn-primary" onclick="videoHidden()">video</td>
+            <td class="btn-primary" onclick="videoHidden(0)">video</td>
         </tr>
     </table>
 </div>

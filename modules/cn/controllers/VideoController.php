@@ -450,9 +450,19 @@ class VideoController extends VideoApiControl
     public function actionUpdate()
     {
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
+
         $args = Yii::$app->request->post();
+        if($args['is_collect']==1){
+            $title =addslashes($args['title']);
+            $video =Video::find()->where("title='$title'")->asarray()->One();
+            if($video){
+              Video::deleteCollect($video['id']);
+            }
+        }else{
+            unset($args['is_collect']);
+            Yii::$app->signdb->createCommand()->insert('x2_video',$args)->execute();
+        }
         // var_dump($args);die;
-        Yii::$app->signdb->createCommand()->insert('x2_video',$args)->execute();
         echo true; 
     }
 
@@ -499,14 +509,7 @@ class VideoController extends VideoApiControl
     public function actionDelete()
     {
         $id = Yii::$app->request->post('id');
-        //管理员权限1可删除
-        $graden = WechatUser::getGraden();
-        if($graden){
-            $video=Video::find()->where("id =$id ")->one();
-            $video->delete();
-            echo true;
-        }
-        echo false;
+        return  Video::deleteCollect($id);
     } 
 
 }

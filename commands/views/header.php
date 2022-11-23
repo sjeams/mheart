@@ -45,9 +45,10 @@
         /* left:0;  */
         right:0;   
         display: none;
+        z-index: 101;
     }
     .td_menu_list{
-        width: 180px;
+        width: 180px!important;
     }
 </style>
 <div class="video_header center  "> 
@@ -57,7 +58,7 @@
             <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
             <?php } ?>
-            <td class="btn-primary" class="td_menu_list">
+            <td class="btn-primary" class="td_menu_list" style="width: 180px;">
                 <input type="hidden" name="" id="menu" value="0">
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
