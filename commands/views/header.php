@@ -56,7 +56,7 @@
         <tr>
             <td class="btn-primary"><a class=" " href="/cn/video/list">采集</a></td>
             <?php if($userlogin['graden']>0) {?>
-            <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
+            <td class="btn-primary"><a class=" " href="/cn/video/indexs">内容</a> </td>
             <?php } ?>
             <td class="btn-primary" class="td_menu_list" style="width: 180px;">
                 <input type="hidden" name="" id="menu" value="0">

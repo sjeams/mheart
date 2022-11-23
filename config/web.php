@@ -20,6 +20,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'modules' => [
+        'cn' => [
+            'class'=>'app\modules\cn\CnModule'
+        ],
         'admin' => [
             'class'=>'app\modules\admin\AdminModule'
         ],
@@ -31,9 +34,6 @@ $config = [
         ],
         'user' => [
             'class'=>'app\modules\user\UserModule'
-        ],
-        'cn' => [
-            'class'=>'app\modules\cn\CnModule'
         ],
         'app' => [
             'class'=>'app\modules\app\AppModule'
