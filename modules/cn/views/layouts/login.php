@@ -59,22 +59,7 @@
 
 </body>
 <script>
-// 视频隐藏
-function videoHidden(open){
-    if(open==1){
-        var hiddenvalue = 0; //默认开启
-    }else{
-        var hiddenvalue = $("#hiddenvalue").val();
-    }
-    if(hiddenvalue==1){
-        $("#hiddenvalue").val(0); 
-        $('.videohidden').css("display","table-column");
-    }else{
-        $("#hiddenvalue").val(1); 
-        $('.videohidden').css("display","block");
-    }
 
-}
 // 点击事件监听
 $(document).keyup(function(event){
     if(event.keyCode ==13){

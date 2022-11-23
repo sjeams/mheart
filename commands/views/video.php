@@ -2,7 +2,7 @@
  <div class=" ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button> -->
-    <div style="height:300px;position:relative"  class="videohidden">
+    <div class="videohidden">
         <div class="video"> </div>
     </div>
 </div>
