@@ -447,6 +447,26 @@ class Video extends ActiveRecord {
 	}
 
 
+	public static function isCollect($list){
+		$find_collect=[];
+		if($list){
+			// var_dump(array_column($list,'title'));die;
+			$list_collect =  "'".implode("','",array_column($list,'title'))."'" ;
+			// $list_collect = addslashes($list_collect);
+			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
+			$find_collect = array_column($find_collect,'title');
+		}
+		//是否收藏
+		foreach($list as$key=> $v){
+			$find_title =$v['title'];
+			if(in_array( $find_title, $find_collect) ){
+				$list[$key]['collect']=1;
+			}else{
+				$list[$key]['collect']=0;
+			}          
+		}
+		return $list;
+	}
 }
 
 ?>

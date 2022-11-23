@@ -251,22 +251,15 @@ class VideoController extends VideoApiControl
                     $args['page'] =$page;
                     $args['belong'] =$belong;
                     $args['type'] =$type;
-                    $args['search'] =$search;
+                    // $args['search'] =$search;
                     // 存入缓存列表
                     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                 }
             }
         }
-        //是否收藏
-        foreach($list as$key=> $v){
-            $find_title =$v['title'];
-            $find_collect =Video::find()->select('id')->where("title = '$find_title'")->One();
-            if($find_collect){
-                $list[$key]['collect']=1;
-            }else{
-                $list[$key]['collect']=0;
-            }          
-        }
+        // 采集查询-标题-是否收藏
+        $list=  Video::isCollect($list);
+        // var_dump($list);die;   
         // var_dump($list);die;
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         if($login==1){
