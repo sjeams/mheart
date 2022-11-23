@@ -110,7 +110,6 @@
             ?>
             <tr>
                 <td class="center">
-
                     <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
                     <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                     <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
@@ -252,11 +251,11 @@
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
 
-        // window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
-        $('.list_html').html('采集中，请稍后...')
-        var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
-        var list_html = getprintHtml(url);
-        $('.list_html').html(list_html)
+        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        // $('.list_html').html('采集中，请稍后...')
+        // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
+        // var list_html = getprintHtml(url);
+        // $('.list_html').html(list_html)
     }
 
     // 收藏
