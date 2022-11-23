@@ -35,6 +35,9 @@ $config = [
         'user' => [
             'class'=>'app\modules\user\UserModule'
         ],
+        'cn' => [
+            'class'=>'app\modules\cn\CnModule'
+        ],
         'app' => [
             'class'=>'app\modules\app\AppModule'
         ],

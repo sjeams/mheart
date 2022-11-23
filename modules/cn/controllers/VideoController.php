@@ -46,7 +46,6 @@ class VideoController extends VideoApiControl
         //     $this->login=0;
         // }
     }
-
     /**
      * 基本信息
      * by  sjeam
@@ -115,7 +114,7 @@ class VideoController extends VideoApiControl
      * 首页
      * by  sjeam
      */
-    public function actionIndexs()
+    public function actionIndex()
     {
         // 登录状态
         $login = $this->login;
