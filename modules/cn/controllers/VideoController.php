@@ -249,6 +249,7 @@ class VideoController extends VideoApiControl
      */
     public function actionList()
     {
+
         if(!$this->user){
             return $this->render('login');die;
         }

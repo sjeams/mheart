@@ -62,11 +62,11 @@
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
         </tr>
-
     </table>
     <ul class="list-group text-center menu_list">
- 
+        <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?>
         <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
+        <?php }?>
         <li class="list-group-item btn-defult" onclick="loginOuts()"> 退出</li>
     </ul>
 </div>
