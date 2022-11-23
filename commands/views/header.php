@@ -65,7 +65,9 @@
 
     </table>
     <ul class="list-group text-center menu_list">
-        <li class="list-group-item active" onclick="loginOuts()"> 退出</li>
+ 
+        <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
+        <li class="list-group-item btn-defult" onclick="loginOuts()"> 退出</li>
     </ul>
 </div>
 
@@ -81,6 +83,55 @@
             $("#menu").val(1)
         }
     }
+    
+    function isCache(){
+        $.ajax({
+            url: '/cn/video/is-cache', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if(data==1){
+                    $('.cache_name').text('缓存√');
+                    $('.cache_name').removeClass('btn-defult');
+                    $('.cache_name').addClass('btn-success');
+                    goCache();
+                }else{
+                    $('.cache_name').text('缓存×');
+                    $('.cache_name').removeClass('btn-success');
+                    $('.cache_name').addClass('btn-defult');
+                }
+                // console.log(data);
+                // window.location.reload();   
+            },
+        });
+    } 
+    // 开启缓存
+    function goCache(){
+
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
+        if(!goType){ var  goType =''; }
+        var goSearch =$("#goSearch").val();
+        var goPage =$("#goPage").val();
+        var goPage_list =$("#goPage_list").val();
+ 
+        $.ajax({
+            url: '/cn/video/get-cache', // 跳转到 action 
+            type: 'post',
+            data:{ 
+                page:goPage,
+                type:goType,
+                page_list:goPage_list,
+                belong:goBelong,
+                search:goSearch,
+            },
+            dataType: 'json',
+            success: function (data) {
+                // window.location.reload();   
+            },
+        });
+    }
+
     //退出
     function  loginOuts(){
         $.ajax({

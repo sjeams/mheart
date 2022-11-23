@@ -151,7 +151,16 @@
         });
  
     });
- 
+    // 自动加载
+    $(document).ready(function(){ 
+        // alert("页面加载完成！")；
+        var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
+        if(is_cache==1){
+            // console.log(11);
+            goCache();
+        }
+    }); 
+
     function typeChange(type){
         // 重置状态page和search
         $("#goSearch").val('');

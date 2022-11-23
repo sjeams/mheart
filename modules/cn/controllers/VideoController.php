@@ -173,6 +173,76 @@ class VideoController extends VideoApiControl
             return $this->render('index_html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
+
+    public function actionIsCache()
+    {
+        $res = WechatUser:: changeCache($this->user);
+        echo $res;
+    }
+
+    // 自动缓存
+    public function actionGetCache()
+    {
+        // 是否开启-自动缓存 0/1
+        // $get_cache = Yii::$app->session->get('get_cache');
+        // var_dump( $this->user);die;
+        $get_cache =$this->user['is_cache'];
+        // 登录状态
+        $login = $this->login;
+        $page = Yii::$app->request->post('page',1);
+        $page_list = Yii::$app->request->post('page_list',1);
+        $type = Yii::$app->request->post('type',0);
+        $search = Yii::$app->request->post('search','');
+        // 搜索类型默认为0
+        if($search){  $type=0; }
+        $belong = Yii::$app->request->post('belong',0);
+        // 未登录 禁止链接访问
+        if($login==0){
+            $belong=0;
+        }
+        // 影视不进入缓存-开启缓存进入
+        if($belong!=0&&$get_cache==1){
+            // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
+            // 缓存列表
+            for ($i =0; $i <= 4; $i++) {
+                $newpage= $page_list+$i;
+                $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
+                $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+                if(!$res){
+                    $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
+                    // var_dump($listvideo);die;
+                    // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
+                    $list=[];
+                    // 是否分页--改为不分页，直接采集
+                    $count = count($listvideo);
+                    // $pageSize=20;
+                    $pageSize= $count;
+                    if($listvideo){
+                        foreach($listvideo as$key=> $val){
+                            if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+                                $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                            }
+                        }
+                        // var_dump($list);die;
+                        $args['key_value'] =$sessionStr;
+                        $args['value'] =  json_encode($list,true);
+                        $args['time'] =time();
+                        $args['count'] =$count;
+                        $args['page'] =$page;
+                        $args['belong'] =$belong;
+                        $args['type'] =$type;
+                        $args['search'] =$search;
+                        $args['page_list'] =$newpage;
+                        // 存入缓存列表
+                        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                    }
+                }
+            }
+        } 
+        echo true;
+    }
+
+
     /**
      * 第三方列表
      * by  sjeam
@@ -188,7 +258,6 @@ class VideoController extends VideoApiControl
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
         $search = Yii::$app->request->get('search','');
-
 
         // 搜索类型默认为0
         if($search){  $type=0; }
@@ -251,7 +320,8 @@ class VideoController extends VideoApiControl
                     $args['page'] =$page;
                     $args['belong'] =$belong;
                     $args['type'] =$type;
-                    // $args['search'] =$search;
+                    $args['search'] =$search;
+                    $args['page_list'] =$page_list;
                     // 存入缓存列表
                     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
                 }
