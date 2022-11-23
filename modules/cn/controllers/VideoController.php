@@ -116,62 +116,118 @@ class VideoController extends VideoApiControl
      */
     public function actionIndex()
     {
+
+        if(!$this->user){
+            return $this->render('login');die;
+        }
         // 登录状态
         $login = $this->login;
-        if($login!=0){
-            $belong=1;
-            $list = Category::find()->where("belong=0")->asArray()->all();
-        }else{
-            $login=0;
-            $belong=0;
-            $list = [];
-        }
-        $type = Yii::$app->request->get('type','all');
-        $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
-        $where ="1=1";
+        $page_list = Yii::$app->request->get('page_list',1);
+        $type = Yii::$app->request->get('type',0);
+        $search = Yii::$app->request->get('search','');
 
-        if($belong == 0){
-            $where .= " and belong =$belong"; 
+        // 搜索类型默认为0
+        if($search){  $type=0; }
+        $belong = Yii::$app->request->get('belong',0);
+        // 未登录 禁止链接访问
+        if($login==0){
+            $belong=0;
         }
-        if($type!='all'){
-     
-            if($type==10){
-                // 收藏视频
-                $where .= " and up = 1"; 
-            }else{
-                // 不同类型视频
-                $where .= " and type = $type ";
-            }
-
+        
+        if($belong==0){
+            if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
         }
-        if($title){
-            $where .= " and title like '%$title%'";
+        // 缓存列表
+        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
+        // // 删除当前缓存
+        $clear = Yii::$app->request->get('clear',0);
+        if($clear){
+            VideoList::deleteAll("key_value ='$sessionStr' ");
         }
-        $count = Video::find()->select("id")->where($where)->count();
-        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>20]);
-        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        // var_dump($page);die;
-        $brush=Video::find()
-        // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
-        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->asarray()->all();
-        // foreach ($brush as $k=>$v){
-        //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
-        //     $brush[$k]['total'] = $num;
-        // }
-  
-        $data['type']=$type; 
-        $data['title']=$title; 
-        $data['page']=$page; 
-        //来源
-  
-        $html = Yii::$app->request->get('html',0);
-        if($html){
-            $this->layout = 'kongbai';
-            return $this->render('html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+        $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+        if($res){
+               $list =   json_decode($res['value'],true);
+               $count =$res['count'];
         }else{
-            return $this->render('index_html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            if($belong==0){
+                $list = Query::getVideo($search);
+                $count = count($list);
+                $args['key_value'] =$sessionStr;
+                $args['value'] =  json_encode($list,true);
+                $args['time'] =time();
+                $args['count'] =$count;
+                $args['page'] =$page;
+                $args['belong'] =$belong;
+                $args['type'] =$type;
+                $args['search'] =$search;
+                // 存入缓存列表
+                Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                 
+            }else{
+            //    var_dump($type);die;
+                $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
+                // var_dump($listvideo);die;
+                // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
+                $list=[];
+                // 是否分页--改为不分页，直接采集
+                $count = count($listvideo);
+                // $pageSize=20;
+                $pageSize= $count;
+                if($listvideo){
+                    foreach($listvideo as$key=> $val){
+                        if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+                            $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                        }
+                    }
+                    // var_dump($list);die;
+                    $args['key_value'] =$sessionStr;
+                    $args['value'] =  json_encode($list,true);
+                    $args['time'] =time();
+                    $args['count'] =$count;
+                    $args['page'] =$page;
+                    $args['belong'] =$belong;
+                    $args['type'] =$type;
+                    $args['search'] =$search;
+                    $args['page_list'] =$page_list;
+                    // 存入缓存列表
+                    Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                }
+            }
         }
+        // 采集查询-标题-是否收藏
+        $list=  Video::isCollect($list);
+        // var_dump($list);die;   
+        // var_dump($list);die;
+        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        if($login==1){
+            $category = Category::Category();
+        }else{
+            $category = Category::CategoryVideo();
+        }
+        // var_dump($type);die;
+        // model隐藏
+        $list_type = Yii::$app->session->get('list_type');
+        $data['list_type']=$list_type;
+        $data['page']=$page;
+        $data['type']=$type;
+        $data['page_list']=$page_list;
+        $data['search']=$search;
+        $data['belong']=$belong;
+        $data['issearch']=$category[$belong]['issearch'];
+     
+        // if($login==0){
+        //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        // }else{
+            $html = Yii::$app->request->get('html',0);
+            if($html){
+                $this->layout = 'kongbai';
+                return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            }else{
+                return $this->render('list_html',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+            }
+          
+        // }
     }
 
     public function actionIsCache()
