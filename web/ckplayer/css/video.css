@@ -39,6 +39,8 @@ input{
     margin-top: 20px;
 }
 
+ 
+
 .videohidden{
     display: table-column-group;
 }
@@ -101,6 +103,9 @@ input{
 	   margin:  0px  auto  ;
 	   display: inline-block;
 	   /* cursor: pointer; */
+	   /* 文字换行 */
+		word-wrap: break-word;
+		word-break: break-all;
 	}
 
 	.collect{

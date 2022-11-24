@@ -206,7 +206,7 @@ class VideoController extends VideoApiControl
         if($belong!=0&&$get_cache==1){
             // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
             // 缓存列表
-            for ($i =0; $i <= 4; $i++) {
+            for ($i =0; $i <= 3; $i++) {
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
                 $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
