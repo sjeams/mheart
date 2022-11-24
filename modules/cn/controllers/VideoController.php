@@ -13,6 +13,7 @@ use app\modules\cn\models\Video;
 use app\modules\cn\models\Jian;
 
 use app\modules\cn\models\VideoList;
+use app\modules\cn\models\VideoListDetail;
 use app\modules\cn\models\Category;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
@@ -221,7 +222,8 @@ class VideoController extends VideoApiControl
                     if($listvideo){
                         foreach($listvideo as$key=> $val){
                             if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-                                $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                                $list []= VideoListDetail::isUpdateVideo($val);
+                                // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                             }
                         }
                         // var_dump($list);die;
@@ -235,7 +237,7 @@ class VideoController extends VideoApiControl
                         $args['search'] =$search;
                         $args['page_list'] =$newpage;
                         // 存入缓存列表
-                        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
                     }
                 }
             }
@@ -311,7 +313,8 @@ class VideoController extends VideoApiControl
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
                         if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-                            $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                            $list []= VideoListDetail::isUpdateVideo($val);
+                            // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                         }
                     }
                     // var_dump($list);die;
