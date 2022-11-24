@@ -54,7 +54,7 @@
 <div class="video_header center  "> 
     <table class="table table-bordered  tablestyle mb-0">
         <tr>
-            <td class="btn-primary"><a class=" " href="/cn/video/list">采集</a></td>
+            <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
             <?php if($userlogin['graden']>0) {?>
             <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
             <?php } ?>
@@ -108,7 +108,7 @@
     } 
     // 开启缓存
     function goCache(){
-
+        $('.caiji_name').text('采集中...')
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         if(!goType){ var  goType =''; }
@@ -128,6 +128,11 @@
             },
             dataType: 'json',
             success: function (data) {
+                if(data==1){
+                    $('.caiji_name').text('采集√')
+                }else{
+                    $('.caiji_name').text('采集×')
+                }
                 // window.location.reload();   
             },
         });
