@@ -18,7 +18,7 @@
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                             <p class="center" id="listBelong" >
                                 <?php foreach($category as $kss =>  $v){  ?>
-                                    <a class="btn btn-sm  <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
+                                    <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>" onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
                                 <?php }  ?>
                             </p>
                         </div>

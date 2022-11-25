@@ -51,7 +51,7 @@
         width: 180px!important;
     }
 </style>
-<div class="video_header center  "> 
+<div class="video_header center  top-title"> 
     <table class="table table-bordered  tablestyle mb-0">
         <tr>
             <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
@@ -75,6 +75,9 @@
 
 <div class="video_center "> 
 <script  >
+    function my_video(){
+        window.location.href='/cn/video/collect-video';
+    }
     function Menu(){
        var menu =$("#menu").val();
        if(menu==1){
@@ -153,4 +156,32 @@
             },
         });
     }
+</script>
+
+
+<script>
+//隐藏头部
+// $(function(){   
+//     var winHeight = $(document).scrollTop();
+//     $(window).scroll(function() {
+//         var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+//         console.log(scrollY+'cc');
+//         console.log(winHeight+'pp');
+        
+//         if (scrollY > 200){ //如果滚动距离大于550px则隐藏，否则删除隐藏类
+//             $('.top-title').addClass('hiddened');
+//         } 
+//         else {
+//             $('.top-title').removeClass('hiddened');
+//         }
+ 
+//         if (scrollY > winHeight){ //如果没滚动到顶部，删除显示类，否则添加显示类
+//             $('.top-title').removeClass('showed');
+//         } 
+//         else {
+//             $('.top-title').addClass('showed');
+//         }               
+ 
+//      });
+// });
 </script>

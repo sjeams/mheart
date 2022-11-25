@@ -1,4 +1,18 @@
-.btn {min-width:28%;margin: 5px;}
+body {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.container{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.hiddened{
+	display: none!important;
+}
+.showed{
+	display: block!important;
+}
+.btn { width:28%;margin: 5px; }
 .btn-primary{
 	cursor: pointer;
 }
@@ -34,6 +48,8 @@ input{
 .pimage {
     margin: 0px auto;
     display: block;
+	max-width: 90%;
+	max-height: 400px;
  }
 .name{
     margin-top: 20px;

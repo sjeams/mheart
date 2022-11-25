@@ -151,8 +151,11 @@ class Query extends Component implements QueryInterface, ExpressionInterface
      */
     public function createCommand($db = null)
     {
+
         if ($db === null) {
             $db = Yii::$app->getDb();
+        }else if($db ==='sign'){
+            $db = Yii::$app->getsigndb();
         }
         list($sql, $params) = $db->getQueryBuilder()->build($this);
 
