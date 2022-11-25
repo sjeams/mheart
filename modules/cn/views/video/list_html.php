@@ -1,3 +1,5 @@
+
+<input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
 <?php if($login>0){ ?>
     <p class="center  "  >
         <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a><a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a>
@@ -15,7 +17,7 @@
                         <div class="layui-input-inline">
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                             <p class="center" id="listBelong" >
-                                <?php foreach($category as $v){  ?>
+                                <?php foreach($category as $kss =>  $v){  ?>
                                     <a class="btn btn-sm  <?php echo $data['belong']== $v['id'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['id'] ?>" id="belong<?php echo $v['id'] ?>" onclick="belongChange(<?php echo $v['id'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
                                 <?php }  ?>
                             </p>
@@ -34,7 +36,12 @@
                         <div class="layui-input-inline">
                             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
                             <input type="text" class="center" value="<?php echo $data['page_list'] ?>" id="goPage_list">
-                            <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                
+                            <?php if($isnext){ ?>
+                                <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                            <?php }else{ ?>
+                                <span  class="btn btn-defult"  >下一页</span>    
+                            <?php  }?>
                         </div>
                         <div class="layui-input-inline">
                             <p class="center">
@@ -58,7 +65,7 @@
                     <tr>
                         <td>
                             <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p>
-                            <p class="center"> <?php echo $v['title']?></p>
+                            <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
                 </td>
                     </tr>
                     <tr>
@@ -113,7 +120,11 @@
                 <td class="center">
                     <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
                     <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
-                    <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                    <?php if($isnext){ ?>
+                        <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                    <?php }else{ ?>
+                        <span  class="btn btn-defult"  >下一页</span>    
+                    <?php  }?> 
                 </td>
             </tr>
         </tbody>

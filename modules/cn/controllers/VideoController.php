@@ -238,11 +238,14 @@ class VideoController extends VideoApiControl
                         $args['page_list'] =$newpage;
                         // 存入缓存列表
                         Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
+                    }else{
+                        //为空时，跳出循环
+                        return true;die;
                     }
                 }
             }
         } 
-        echo true;
+        return true;
     }
 
 
@@ -352,16 +355,20 @@ class VideoController extends VideoApiControl
         $data['search']=$search;
         $data['belong']=$belong;
         $data['issearch']=$category[$belong]['issearch'];
-     
+        
+        // var_dump( $count);die;
+        //是否有下一页
+        $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
+        // var_dump( $isnext);die;
         // if($login==0){
         //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         // }else{
             $html = Yii::$app->request->get('html',0);
             if($html){
                 $this->layout = 'kongbai';
-                return $this->render('list',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
             }else{
-                return $this->render('list_html',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
             }
           
         // }
