@@ -458,15 +458,27 @@ class Video extends ActiveRecord {
 		}
 		//是否收藏
 		foreach($list as$key=> $v){
+			//收藏
 			$find_title =$v['title'];
 			if(in_array( $find_title, $find_collect) ){
 				$list[$key]['collect']=1;
 			}else{
 				$list[$key]['collect']=0;
-			}          
+			}    
+			//我的收藏
+			$video_id =$v['id'];
+			$my_collect = VideoListCollect::find()->select('video_id')->where("video_id =$video_id ")->asarray()->one();
+			if($my_collect){
+				$list[$key]['my_collect']=1;
+			}else{
+				$list[$key]['my_collect']=0;
+			}
 		}
 		return $list;
 	}
+
+ 
+
 	public static function deleteCollect($id){
         //管理员权限1可删除
         $graden = WechatUser::getGraden();

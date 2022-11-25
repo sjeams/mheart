@@ -14,6 +14,8 @@ use app\modules\cn\models\Jian;
 
 use app\modules\cn\models\VideoList;
 use app\modules\cn\models\VideoListDetail;
+use app\modules\cn\models\VideoListCollect;
+
 use app\modules\cn\models\Category;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
@@ -320,6 +322,7 @@ class VideoController extends VideoApiControl
                             // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                         }
                     }
+
                     // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] =  json_encode($list,true);
@@ -335,8 +338,10 @@ class VideoController extends VideoApiControl
                 }
             }
         }
-        // 采集查询-标题-是否收藏
-        $list=  Video::isCollect($list);
+        if($belong!=0){ // 影视不进入
+            // 采集查询-标题-是否收藏
+            $list=  Video::isCollect($list);
+        }
         // var_dump($list);die;   
         // var_dump($list);die;
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
@@ -454,7 +459,7 @@ class VideoController extends VideoApiControl
     
 
 
-  /**
+    /**
      * 采集单条插入
      * by  sjeam
      */
@@ -477,7 +482,27 @@ class VideoController extends VideoApiControl
         echo true; 
     }
 
-
+    /**
+     * 采集单条插入收藏
+     * by  sjeam
+     */
+    public function actionMyupdate()
+    {
+        $args = Yii::$app->request->post();
+        // var_dump($args);die;
+        $user_id =  $this->user['id'];
+        $video_id = $args['video_id'];
+        $video=VideoListCollect::find()->where("video_id = $video_id and user_id =$user_id ")->one();
+        if($video){
+            VideoListCollect::deleteAll(" video_id = $video_id and user_id =$user_id ");
+            die(Method::jsonGenerate(0,null,'删除'));
+        }else{
+            $args['user_id']=$user_id;
+            Yii::$app->signdb->createCommand()->insert('x2_video_list_collect',$args)->execute();
+            die(Method::jsonGenerate(1,null,'收藏'));
+        }
+        // var_dump($args);die;
+    }
   /**
      * 视频播放器
      * by  sjeam

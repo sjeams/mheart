@@ -88,6 +88,7 @@
 
                 <?php   }else{ ?>
                 <div id="form<?php echo $kss?>">
+                    <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                     <input type="hidden" name="title" value="<?php echo $v['title']?>" >
                     <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
@@ -108,7 +109,8 @@
                         </a>
                         <p class="center"> 
                             <span onclick="video(<?php echo $kss?>)" class="btn collect"> 预览</span>
-                            <span onclick="Update(<?php echo $kss?>)" class="btn collect collect_id<?php echo $kss?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 收藏</span>
+                            <span onclick="Update_my(<?php echo $kss?>)" class="btn collect my_collect_<?php echo $kss?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
+                            <span onclick="Update(<?php echo $kss?>)" class="btn collect collect_id<?php echo $kss?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span>
                         </p>
                     </td>
                 
@@ -281,6 +283,7 @@
 
     // 收藏
     function  Update(id){ 
+        console.log(id);
         // $(".collect_id"+id).addClass('btn-success');
         var url =$("#form"+id+"  input[name=url]").val();
         var title =$("#form"+id+"  input[name=title]").val();
@@ -306,6 +309,30 @@
             },
         });
     } 
+    // 我的收藏
+    function  Update_my(id){ 
+        // $(".collect_id"+id).addClass('btn-success');
+        var video_id =$("#form"+id+"  input[name=video_id]").val();
+        var title =$("#form"+id+"  input[name=title]").val();
+        $.ajax({
+            url: '/cn/video/myupdate', // 跳转到 action 
+            type: 'post',
+            data:{video_id:video_id,title:title},
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                if(data.code==1){
+                    $(".my_collect_"+id).removeClass('btn-defult');
+                    $(".my_collect_"+id).addClass('btn-success');
+                }else{
+                    $(".my_collect_"+id).removeClass('btn-success');
+                    $(".my_collect_"+id).addClass('btn-defult');
+                }
+            },
+        });
+    } 
+ 
+
     
 </script>
 
