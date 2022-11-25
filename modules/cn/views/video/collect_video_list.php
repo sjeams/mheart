@@ -19,19 +19,30 @@
                 <!-- //跳转 -->
                 <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
                 <p class="center"> 
-                    <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
-                    <div class="video<?php echo $v['id']?>" style="width:100%; height:200px;position:relative"></div>
+                    <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img">
+                    <!-- <div class="video<?php echo $v['id']?>" style="width:100%; height:200px;position:relative"></div>
                     <script>
                         var videoObject = {
                             container: '.video<?php echo $v['id']?>', //“#”代表容器的ID，“.”或“”代表容器的class
                             plug:'hls.js',//设置使用hls插件
                             autoplay:false,
+                            // logo:'<?php echo $v['imageurl']?>',
                             poster:'<?php echo $v['imageurl']?>',//封面图片
                             video: '<?php echo $v['url']?>',//视频地址
+                            title:'<?php echo $v['title']?>',//视频标题
+                            rightBar:true,
+                            screenshot:true,
+                            smallWindows:true,
+                            playbackrateOpen:true,
+                            webFull:true,
+                            theatre:true,
+                            //小窗风格
+                            // controls:true,
+                            // language:'en',
                             // rotate:90,//旋转90度
                         };
                         new ckplayer(videoObject);//初始化播放器
-                    </script>
+                    </script> -->
                 </p>
 
                 <div id="form<?php echo $v['id']?>" style="display:none">

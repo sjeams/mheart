@@ -26,6 +26,12 @@ function  video(id){
             autoplay:true,
             video: url,//视频地址
             // rotate:90,//旋转90度
+            rightBar:true,
+            screenshot:true,
+            smallWindows:true,
+            playbackrateOpen:true,
+            webFull:true,
+            theatre:true,
         };
         new ckplayer(videoObject);//初始化播放器
         videoHidden(1);//显示窗口
