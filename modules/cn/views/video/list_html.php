@@ -134,13 +134,7 @@
     </table>
 
 </form>
-
-<!-- <div class="pagination pagination-left center" >
-    <?php use yii\widgets\LinkPager;
-    echo LinkPager::widget([
-        'pagination' => $pageStr,
-    ])?>
-</div> -->
+ 
 
  
 <script>
@@ -320,7 +314,6 @@
             data:{video_id:video_id,title:title},
             dataType: 'json',
             success: function (data) {
-                console.log(data)
                 if(data.code==1){
                     $(".my_collect_"+id).removeClass('btn-defult');
                     $(".my_collect_"+id).addClass('btn-success');

@@ -29,7 +29,6 @@
             }
             ?>
             <tr>
-
                 <td>
                     <!-- //跳转 -->
                     <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank">
@@ -83,9 +82,8 @@
                 id: id,
             },
             type: 'post',
-            // dataType: 'json',
+            dataType: 'json',
             success: function (data) {
-                console.log(data)
                 if(data==1){
                     $('.videoup'+id).html('取消');  
       
@@ -109,10 +107,11 @@
                 id: id,
             },
             type: 'post',
-            // dataType: 'json',
+            dataType: 'json',
             success: function (data) {
-                window.location.reload();
-          
+                if(data.code==1){
+                    window.location.reload(); 
+                }
             },
         });
     }

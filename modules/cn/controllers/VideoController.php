@@ -220,13 +220,13 @@ class VideoController extends VideoApiControl
                     // 是否分页--改为不分页，直接采集
                     $count = count($listvideo);
                     // $pageSize=20;
-                    $pageSize= $count;
+                    // $pageSize= $count;
                     if($listvideo){
                         foreach($listvideo as$key=> $val){
-                            if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+                            // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
                                 $list []= VideoListDetail::isUpdateVideo($val);
                                 // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                            }
+                            // }
                         }
                         // var_dump($list);die;
                         $args['key_value'] =$sessionStr;
@@ -257,7 +257,6 @@ class VideoController extends VideoApiControl
      */
     public function actionList()
     {
-
         if(!$this->user){
             return $this->render('login');die;
         }
@@ -304,7 +303,6 @@ class VideoController extends VideoApiControl
                 $args['search'] =$search;
                 // 存入缓存列表
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
-                 
             }else{
             //    var_dump($type);die;
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
@@ -314,15 +312,14 @@ class VideoController extends VideoApiControl
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
                 // $pageSize=20;
-                $pageSize= $count;
+                // $pageSize= $count;
                 if($listvideo){
                     foreach($listvideo as$key=> $val){
-                        if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+                        // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
                             $list []= VideoListDetail::isUpdateVideo($val);
                             // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                        }
+                        // }
                     }
-
                     // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] =  json_encode($list,true);
@@ -340,11 +337,11 @@ class VideoController extends VideoApiControl
         }
         if($belong!=0){ // 影视不进入
             // 采集查询-标题-是否收藏
-            $list=  Video::isCollect($list);
+            $list=  Video::isCollect($list,$this->user['id']);
         }
         // var_dump($list);die;   
         // var_dump($list);die;
-        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         if($login==1){
             $category = Category::Category();
         }else{
@@ -360,7 +357,7 @@ class VideoController extends VideoApiControl
         $data['search']=$search;
         $data['belong']=$belong;
         $data['issearch']=$category[$belong]['issearch'];
-        
+
         // var_dump( $count);die;
         //是否有下一页
         $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
@@ -371,9 +368,9 @@ class VideoController extends VideoApiControl
             $html = Yii::$app->request->get('html',0);
             if($html){
                 $this->layout = 'kongbai';
-                return $this->render('list',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }else{
-                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }
           
         // }
@@ -545,7 +542,8 @@ class VideoController extends VideoApiControl
     public function actionDelete()
     {
         $id = Yii::$app->request->post('id');
-        return  Video::deleteCollect($id);
+        $code = Video::deleteCollect($id);
+        die(Method::jsonGenerate($code,null,'succes'));
     } 
 
 }

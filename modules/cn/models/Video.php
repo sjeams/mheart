@@ -447,31 +447,35 @@ class Video extends ActiveRecord {
 	}
 
 
-	public static function isCollect($list){
+	public static function isCollect($list,$user_id=0){
 		$find_collect=[];
+		$find_my_collect=[];
 		if($list){
 			// var_dump(array_column($list,'title'));die;
 			$list_collect =  "'".implode("','",array_column($list,'title'))."'" ;
 			// $list_collect = addslashes($list_collect);
 			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
 			$find_collect = array_column($find_collect,'title');
-		}
-		//是否收藏
-		foreach($list as$key=> $v){
-			//收藏
-			$find_title =$v['title'];
-			if(in_array( $find_title, $find_collect) ){
-				$list[$key]['collect']=1;
-			}else{
-				$list[$key]['collect']=0;
-			}    
-			//我的收藏
-			$video_id =$v['id'];
-			$my_collect = VideoListCollect::find()->select('video_id')->where("video_id =$video_id ")->asarray()->one();
-			if($my_collect){
-				$list[$key]['my_collect']=1;
-			}else{
-				$list[$key]['my_collect']=0;
+			
+			$video_id = implode(",",array_column($list,'id'));
+			$my_collect = VideoListCollect::find()->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
+			$find_my_collect = array_column($my_collect,'video_id');
+			//是否收藏
+			foreach($list as$key=> $v){
+				//收藏
+				$find_title =$v['title'];
+				if(in_array( $find_title, $find_collect) ){
+					$list[$key]['collect']=1;
+				}else{
+					$list[$key]['collect']=0;
+				}    
+				//我的收藏
+				$find_title =$v['id'];
+				if(in_array( $find_title, $find_my_collect) ){
+					$list[$key]['my_collect']=1;
+				}else{
+					$list[$key]['my_collect']=0;
+				}   
 			}
 		}
 		return $list;
@@ -483,11 +487,10 @@ class Video extends ActiveRecord {
         //管理员权限1可删除
         $graden = WechatUser::getGraden();
         if($graden){
-            $video=Video::find()->where("id =$id ")->one();
-            $video->delete();
-			return true;
+			Video::deleteAll("id ='$id' ");
+			return 1;
         }
-		return false;
+		return 0;
 	}
 
 }
