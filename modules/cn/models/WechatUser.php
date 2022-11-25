@@ -18,6 +18,8 @@ class WechatUser extends ActiveRecord {
         // var_dump($token);die;
         Yii::$app->session->set('token',$token);
         Yii::$app->session->set('userlogin',$userlogin);
+        //设置cookie
+        setcookie('sslToken',$token,time()+86400,'/','mheart.xyz');
     }
 
     public static function headerLocation(){
