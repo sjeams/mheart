@@ -85,13 +85,7 @@
         </tbody>
     </table>
 </form>
-<input type="hidden" id="videotype" value="<?php echo $data['type'] ?>">
-<!-- <div class="pagination pagination-left center">
-    <?php use yii\widgets\LinkPager;
-    echo LinkPager::widget([
-        'pagination' => $pageStr,
-    ])?>
-</div> -->
+ 
 <input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo $data['count'] ?>">
 <script>
