@@ -434,6 +434,58 @@ class VideoController extends VideoApiControl
             return $this->render('collect_video',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
+
+
+      /**
+     * 我的收藏-快速浏览页面
+     * by  sjeam
+     */
+    public function actionQueryVideo()
+    {
+        // 登录状态
+        $login = $this->login; 
+        $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
+        $title = Yii::$app->request->get('title');
+        $page = Yii::$app->request->get('page',1);
+        $belong = Yii::$app->request->get('belong',0);
+        $where ="1=1";
+        if($belong){
+            $where .= " and a.belong =$belong"; 
+        }
+        if($title){
+            $where .= " and a.title like '%$title%'";
+        } 
+        $count= (new \yii\db\Query())
+        ->select("count(1) as num")
+        ->from("x2_video_list_detail as a")
+        // ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        ->where($where)->one('sign')['num'];
+        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+        // $where .=" and user_id = ".$this->user['id'];
+        $brush= (new \yii\db\Query())
+        ->select("a.*")
+        ->from("x2_video_list_detail as a")
+        // ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
+        $data['belong']=$belong; 
+        $data['title']=$title; 
+        $data['page']=$page; 
+        $data['count']=ceil($count/10 ); 
+        // var_dump($data['count']);die;
+        //来源
+        $html = Yii::$app->request->get('html',0);
+        if($html){
+            // var_dump(111);die;
+            $this->layout = 'kongbai';
+            if($list){
+                return $this->render('query_video_list',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            }else{
+                return '';
+            }
+        }else{
+            return $this->render('query_video',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+        }
+    }
     public function actionGetBelong()
     {
         $belong = Yii::$app->request->post('belong',0);

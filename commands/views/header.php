@@ -58,6 +58,7 @@
         <tr>
             <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
             <?php if($userlogin['graden']>0) {?>
+                <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td>
                 <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
             <?php } ?>
             <td class="btn-primary" class="td_menu_list" style=" width: 160px;">
@@ -80,7 +81,9 @@
 
 <div class="video_center "> 
 <script  >
-
+    function my_collect(){
+        window.location.href='/cn/video/query-video';  
+    }
     function old_content(){
         window.location.href='/cn/video/index';  
     }
@@ -97,7 +100,6 @@
             $("#menu").val(1)
         }
     }
-    
     
     function isBofang(){
         $.ajax({
