@@ -1,3 +1,29 @@
+<style>
+
+    .video_box{
+        background: url(/ckplayer/css/images/play.png) no-repeat 70% center;
+        background-size: 60% 60%;
+        border: 8px solid rgba(255,255,255,.6);
+        border-radius: 50%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        /* display: none; */
+        z-index: 90;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: .2s;
+    }
+</style>
+
+
 <form     >
     <table class="table table-bordered  tablestyle"  >
     <thead>
@@ -22,73 +48,19 @@
         <?php }?>
         </thead>
         <tbody id="content_append">
-        <?php
-        foreach($content as $kss => $v) {
-            if($kss == 10){
-                break;
-            }
-            ?>
-            <div id="form<?php echo $kss?>">
-                <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
-                <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                <input type="hidden" name="title" value="<?php echo $v['title']?>" >
-                <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
-                <input type="hidden" name="type" value="<?php echo $v['type']?>" >
-                <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
-                <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-            </div>
-            <tr>
-                <td>
-                    <!-- //跳转 -->
-                    <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
-                    <p class="center"> 
-                        <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img">
-                        <!-- <div class="video<?php echo $v['id']?>" style="width:100%; height:240px;position:relative"></div>
-                        <script>
-                            var videoObject = {
-                                container: '.video<?php echo $v['id']?>', //“#”代表容器的ID，“.”或“”代表容器的class
-                                plug:'hls.js',//设置使用hls插件
-                                autoplay:false,
-                                // logo:'<?php echo $v['imageurl']?>',
-                                poster:'<?php echo $v['imageurl']?>',//封面图片
-                                video: '<?php echo $v['url']?>',//视频地址
-                                title:'<?php echo $v['title']?>',//视频标题
-                                rightBar:true,
-                                screenshot:true,
-                                smallWindows:true,
-                                playbackrateOpen:true,
-                                webFull:true,
-                                theatre:true,
-                                //小窗风格
-                                // controls:true,
-                                // language:'en',
-                                // rotate:90,//旋转90度
-                            };
-                            new ckplayer(videoObject);//初始化播放器
-                        </script> -->
-                    </p>
-
-                    <div id="form<?php echo $kss?>" style="display:none">
-                        <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                    </div>
-                    <p class="center"  onclick="video(<?php echo $kss?>)"><span ><b>Page<?php echo $data['page'] ?>、</b></span>  <?php echo $v['title']?></p>
-                    <!-- </a> -->
-                    <p class="center">
-                        <span onclick="video(<?php echo $kss?>)" class="btn  collect"> 预览 </span>
-                        <span onclick="Update_my(<?php echo $kss?>)" class="btn collect my_collect_<?php echo $kss?> btn-danger"> 移除</span>
-                    </p>
-                </td>
-            </tr>
-            <?php
-        }
-        ?>
+                        
         </tbody>
     </table>
 </form>
- 
+<!-- 当前视频id -->
+<input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo $data['count'] ?>">
 <script>
+    $(function(){
+        gou();
+    })
+
     function collect_search(goPage){
        var title =  $('#appendedInputButton').val();
        var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
@@ -117,11 +89,13 @@
                 if(data.code==1){
                     $(".my_collect_"+id).removeClass('btn-defult');
                     $(".my_collect_"+id).addClass('btn-success');
-                    window.location.reload();
+                    // window.location.reload();
                 }else{
                     $(".my_collect_"+id).removeClass('btn-success');
                     $(".my_collect_"+id).addClass('btn-defult');
-                    window.location.reload();
+                    // window.location.reload();
+                    $(".remove_"+id).remove();
+                    
                 }
             },
         });

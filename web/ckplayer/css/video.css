@@ -12,7 +12,7 @@ body {
 .showed{
 	display: block!important;
 }
-.btn { width:28%;margin: 5px; }
+.btn { width:28%!important;margin: 5px; }
 .btn-primary{
 	cursor: pointer;
 }
@@ -128,12 +128,13 @@ input{
 	   display: inline-block;
 	   /* width: 65px;
 	   padding: 5px 20px; */
-	   border: 1px solid black;
+	   /* border: 1px solid black; */
 	   text-align: center;  
-	   border-radius: 5px; 
+	   /* border-radius: 5px;  */
 	   margin-top:  10px ;
-	   background-color:  #5879f3a3;
+	   /* background-color:  #5879f3a3!important; */
 	   cursor: pointer;
+	   margin: auto;
 	}
 	.nav-item{
 	   display: inline-block;

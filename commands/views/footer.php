@@ -1,5 +1,6 @@
 <style>
 	.video_footer{
+        z-index: 100;
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
         height:40px;
@@ -28,10 +29,14 @@
 </div>
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle">
-        <tr>
-            <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
+        <tr class="append_top">
             <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
-            <td class="btn-primary" onclick="videoHidden(0)">video</td>
+            <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
+                <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
+            <?php }else{ ?>  
+                <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
+                <td class="btn-primary" onclick="videoHidden(0)">video</td>
+            <?php }  ?>  
         </tr>
     </table>
 </div>
