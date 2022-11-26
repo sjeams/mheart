@@ -14,7 +14,7 @@ class WechatUser extends ActiveRecord {
         //更新token
         WechatUser::updateAll(['token' => $token],"id=$userId");
         //设置缓存
-        $userlogin = WechatUser::find()->select('id,name,graden,is_cache')->where("id=$userId")->asArray()->one();
+        $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
         // var_dump($token);die;
         Yii::$app->session->set('token',$token);
         Yii::$app->session->set('userlogin',$userlogin);
@@ -34,7 +34,7 @@ class WechatUser extends ActiveRecord {
     // 获取权限
     public static function getGraden(){
         $token = Yii::$app->session->get('token');
-        $userlogin = WechatUser::find()->select('id,name,graden,is_cache')->where("token='$token'")->asArray()->one();
+        $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("token='$token'")->asArray()->one();
         if($userlogin){
             //管理员可操作
             if($userlogin['id']==2){
@@ -59,10 +59,30 @@ class WechatUser extends ActiveRecord {
             }
             WechatUser::updateAll(['is_cache' => $get_cache],"id = $userId");
             //更新缓存
-            $userlogin = WechatUser::find()->select('id,name,graden,is_cache')->where("id=$userId")->asArray()->one();
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
             Yii::$app->session->set('userlogin',$userlogin);
         }
         return $get_cache;
     }
+    //修改自动播放状态
+    public static function  changeBofang($user){
+        $get_bofang=0;
+        if($user){
+            $userId =$user['id'];
+            if($user['is_bofang']==1){
+                $get_bofang=0;
+            }else{
+                $get_bofang=1;
+            }
+            WechatUser::updateAll(['is_bofang' => $get_bofang],"id = $userId");
+            //更新缓存
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
+            Yii::$app->session->set('userlogin',$userlogin);
+        }
+        return $get_bofang;
+    }
     
+
+
+   
 }

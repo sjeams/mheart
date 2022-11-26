@@ -1,4 +1,5 @@
- <!-- 视频 -->
+
+<!-- 视频 -->
  <div class=" ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button> -->
@@ -43,7 +44,7 @@ function  video(id){
 function  videoList(id){
     //重置按钮
     var now_video =$("#now_video").val();
-    console.log(now_video)
+    // console.log(now_video)
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
         $(".video"+now_video).html(player);

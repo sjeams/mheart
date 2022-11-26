@@ -31,6 +31,9 @@
         width: 40%;
         max-width: 200px;
     }
+    #content_append td{
+        height: 340px!important;
+    }
 </style>
 
 
@@ -66,12 +69,13 @@
 <!-- 当前视频id -->
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
+<input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
+<input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 
 <script>
     $(function(){
         gou();
     })
-
     function nextPage(goPage){
        var title =  $('#appendedInputButton').val();
        var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
@@ -136,8 +140,27 @@
         });  
  
     } 
+    
+        //滚动条触发事件
+        $(window).scroll(function() {
+        //监听事件内容
+        // console.log(getScrollHeight()) 
+        // console.log(getWindowHeight() + getDocumentTop())  
+            //自动播放插件
+            var is_bofang = $('#is_bofang_type').val();
+            if(is_bofang==1){
+                var goPageCount = $("#goPageCount").val()
+                var top_hidden =$("#top_hidden").val()
+                var td_num = Math.floor((getDocumentTop()+100)/340)
+                var id =  $("#content_append").find("td:eq("+td_num+") input[name=video_id]").val();
+                var now_video =$("#now_video").val();
+                //自动播放
+                if( id!=now_video){
+                    videoList(id);
+                }
+            }
 
-
+        });
 </script>
 
 

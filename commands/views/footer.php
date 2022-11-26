@@ -29,7 +29,6 @@
 </div>
 
 <input type="hidden" value="0" id="top_hidden">
-<input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
         <tr class="append_top">
@@ -43,15 +42,16 @@
     </table>
 </div>
  
+
 <script>
     //滚动条触发事件
     $(window).scroll(function() {
         //监听事件内容
         // console.log(getScrollHeight()) 
         // console.log(getWindowHeight() + getDocumentTop())  
-        //默认不进来
-        var goPageCount = $("#goPageCount").val()
-        var top_hidden =$("#top_hidden").val()
+ 
+        // console.log(id)
+        
         if (getScrollHeight() <= getWindowHeight() + getDocumentTop() ) {
             //当滚动条到底时,这里是触发内容
             if(goPageCount){
@@ -70,7 +70,6 @@
                     $("#top_hidden").val(1)
                 }
             }
-
         }else{
             if(top_hidden==1){
                 $('.page_bottom').css('display','none');
@@ -91,6 +90,8 @@
                 $('.top-title').addClass('hiddened');
                 $('.page_bottom').css('display','none');
                 $("#top_hidden").val(0)
+
+
             }else{
                 // console.log("往上滚动");
                 $('.top-title').removeClass('hiddened');

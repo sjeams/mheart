@@ -70,6 +70,7 @@
         <?php if($userlogin['graden']>0) {?>
             <li class="list-group-item btn-defult" onclick="old_content()"> 喜欢</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
+            <li class="list-group-item  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'播放√':'播放×' ?></li>
             <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>
 
@@ -97,6 +98,31 @@
         }
     }
     
+    
+    function isBofang(){
+        $.ajax({
+            url: '/cn/video/is-bofang', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if(data==1){
+                    $('.bofang_name').text('播放√');
+                    $('.bofang_name').removeClass('btn-defult');
+                    $('.bofang_name').addClass('btn-success');
+                    $('#is_bofang_type').val(1)
+                }else{
+                    $('.bofang_name').text('播放x');
+                    $('.bofang_name').removeClass('btn-success');
+                    $('.bofang_name').addClass('btn-defult');
+                    $('#is_bofang_type').val(0)
+                    
+                }
+                // console.log(data);
+                // window.location.reload();   
+            },
+        });
+    } 
+
     function isCache(){
         $.ajax({
             url: '/cn/video/is-cache', // 跳转到 action 

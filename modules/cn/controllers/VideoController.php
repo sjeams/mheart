@@ -178,7 +178,11 @@ class VideoController extends VideoApiControl
             return $this->render('index_html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
-
+    public function actionIsBofang()
+    {
+        $res = WechatUser:: changeBofang($this->user);
+        echo $res;
+    }
     public function actionIsCache()
     {
         $res = WechatUser:: changeCache($this->user);
