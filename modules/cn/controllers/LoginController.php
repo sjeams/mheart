@@ -117,6 +117,7 @@ class LoginController extends ApiControl
         WechatUser::updateAll(['token' => ''],"token='$token'");
         // Yii::$app->session->destroy();
         session_destroy();
+        setcookie('sslToken');
         die(Method::jsonGenerate(1,[],'succes'));
     }
 
