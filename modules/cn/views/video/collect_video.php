@@ -22,8 +22,12 @@
         transition: .2s;
     }
     .ckplayer-ckplayer{
-        border-radius: 5%;
+        border-radius: 2%;
     }
+    .collect-video-style{
+        border-radius:2%!important;width:100%;max-width:420px;margin:auto; height:280px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
+    }
+    
 </style>
 
 

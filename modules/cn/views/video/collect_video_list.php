@@ -21,7 +21,7 @@
                 <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
                 <p class="center"> 
                     <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
-                    <div  class="video<?php echo $v['id']?>" style="border-radius:5%!important;width:100%;max-width:420px;margin:auto; height:280px;position:relative;background-image:url(<?php echo $v['imageurl']?>);background-repeat: no-repeat;background-position: center;background-size:auto 100%;"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div>                    <!-- <script>
+                    <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div>                    <!-- <script>
                         var videoObject = {
                             container: '.video<?php echo $v['id']?>', //“#”代表容器的ID，“.”或“”代表容器的class
                             plug:'hls.js',//设置使用hls插件
