@@ -52,7 +52,7 @@
                 <!-- </a> -->
                 <p class="center">
                     <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn  collect"> 预览 </span> -->
-                    <span style="width: 100%;max-width:420px" onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> btn-danger"> 移除</span>
+                    <span style="width: 100%!important;max-width:420px" onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> btn-danger"> 移除</span>
                 </p>
             </td>
         </tr>
