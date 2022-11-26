@@ -27,7 +27,10 @@
     .collect-video-style{
         border-radius:2%!important;width:100%;max-width:420px;margin:auto; height:280px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
     }
-    
+    .layui-layer-btn a{
+        width: 40%;
+        max-width: 200px;
+    }
 </style>
 
 
@@ -99,7 +102,7 @@
         ,btn: ['确定', '取消']
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: ' '
+        ,content: ' <div class="center" style="margin-top:20px">确定删除？</div>'
         ,success: function(layero){
           var btn = layero.find('.layui-layer-btn');
           btn.find('.layui-layer-btn0').click(function(){
