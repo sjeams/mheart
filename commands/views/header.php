@@ -49,9 +49,7 @@
         display: none;
         z-index: 101;
     }
-    .td_menu_list{
-        /* max-width: 120px!important; */
-    }
+ 
     .tablestyle td{
         width: 25%;
     }
@@ -64,7 +62,7 @@
                 <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td>
                 <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
             <?php } ?>
-            <td class="btn-primary" class="td_menu_list"  >
+            <td class="btn-primary"   >
                 <input type="hidden" name="" id="menu" value="0">
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
