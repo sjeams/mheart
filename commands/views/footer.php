@@ -29,7 +29,7 @@
 </div>
 
 <input type="hidden" value="0" id="top_hidden">
-<input type="hidden" id="goPageCount" value="<?php echo $data['count']?$data['count']:0; ?>">
+<input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
         <tr class="append_top">
