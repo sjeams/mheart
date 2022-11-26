@@ -57,7 +57,7 @@
         <tr>
             <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
             <?php if($userlogin['graden']>0) {?>
-            <td class="btn-primary"><a class=" " href="/cn/video/index">内容</a> </td>
+                <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
             <?php } ?>
             <td class="btn-primary" class="td_menu_list" style="width: 180px;">
                 <input type="hidden" name="" id="menu" value="0">
@@ -66,16 +66,22 @@
         </tr>
     </table>
     <ul class="list-group text-center menu_list">
-        <li class="list-group-item btn-defult" onclick="my_video()"> 收藏</li>
-        <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?>
-        <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
-        <?php }?>
+        <?php if($userlogin['graden']>0) {?>
+            <li class="list-group-item btn-defult" onclick="old_content()"> 喜欢</li>
+            <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
+            <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
+        <?php } ?>
+
         <li class="list-group-item btn-defult" onclick="loginOuts()"> 退出</li>
     </ul>
 </div>
 
 <div class="video_center "> 
 <script  >
+
+    function old_content(){
+        window.location.href='/cn/video/index';  
+    }
     function my_video(){
         window.location.href='/cn/video/collect-video';
     }
@@ -113,7 +119,7 @@
     } 
     // 开启缓存
     function goCache(){
-        $('.caiji_name').text('采集中...')
+        $('.caiji_name').text('采集...')
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         if(!goType){ var  goType =''; }
