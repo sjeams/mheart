@@ -1,3 +1,4 @@
+<?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/login/login'){ ?>
 <style>
     .beian{    
         /* position: fixed; */
@@ -15,3 +16,4 @@
         蜀ICP备2022010153号-1
     </a></p>
 </div>
+<?php } ?>
