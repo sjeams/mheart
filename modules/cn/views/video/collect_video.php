@@ -21,6 +21,9 @@
         cursor: pointer;
         transition: .2s;
     }
+    .ckplayer-ckplayer{
+        border-radius: 5%;
+    }
 </style>
 
 
@@ -75,30 +78,54 @@
         collect_search(goPage);
         // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
+
+    
      // 我的收藏
      function  Update_my(id){ 
-        // $(".collect_id"+id).addClass('btn-success');
-        var video_id =$("#form"+id+"  input[name=video_id]").val();
-        var title =$("#form"+id+"  input[name=title]").val();
-        $.ajax({
-            url: '/cn/video/myupdate', // 跳转到 action 
-            type: 'post',
-            data:{video_id:video_id,title:title},
-            dataType: 'json',
-            success: function (data) {
-                if(data.code==1){
-                    $(".my_collect_"+id).removeClass('btn-defult');
-                    $(".my_collect_"+id).addClass('btn-success');
-                    // window.location.reload();
-                }else{
-                    $(".my_collect_"+id).removeClass('btn-success');
-                    $(".my_collect_"+id).addClass('btn-defult');
-                    // window.location.reload();
-                    $(".remove_"+id).remove();
-                    
-                }
-            },
-        });
+        // layer.confirm('确认删除?', function(index){
+            // layer.close(index);
+        // });  
+        layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['确定', '取消']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: ' '
+        ,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').click(function(){
+ 
+            var video_id =$("#form"+id+"  input[name=video_id]").val();
+            var title =$("#form"+id+"  input[name=title]").val();
+            $.ajax({
+                url: '/cn/video/myupdate', // 跳转到 action 
+                type: 'post',
+                data:{video_id:video_id,title:title},
+                dataType: 'json',
+                success: function (data) {
+                    if(data.code==1){
+                        $(".my_collect_"+id).removeClass('btn-defult');
+                        $(".my_collect_"+id).addClass('btn-success');
+                        // window.location.reload();
+                    }else{
+                        $(".my_collect_"+id).removeClass('btn-success');
+                        $(".my_collect_"+id).addClass('btn-defult');
+                        // window.location.reload();
+                        $(".remove_"+id).remove();
+                        
+                    }
+                },
+            });
+  
+          });
+        }
+        });  
+ 
     } 
 
     $(window).scroll(function() {

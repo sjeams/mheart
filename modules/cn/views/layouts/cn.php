@@ -29,7 +29,10 @@
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
 
-
+ 
+<!-- layui弹窗 -->
+<link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
+<script src="/layui-v2.6.8/layui/layui.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
