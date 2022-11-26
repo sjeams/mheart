@@ -31,10 +31,12 @@
                     if( $userlogin){
                         Yii::$app->session->set('userlogin',$userlogin);
                     }else{
+                        setcookie('sslToken');
                         session_destroy();
                     }
                 }
             }else{
+                setcookie('sslToken');
                 session_destroy();
             }
             // $this->config();
