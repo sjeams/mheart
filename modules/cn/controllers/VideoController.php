@@ -410,7 +410,7 @@ class VideoController extends VideoApiControl
         ->select("a.*")
         ->from("x2_video_list_detail as a")
         ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
-        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('create_time desc')->all('sign');
         $data['belong']=$belong; 
         $data['title']=$title; 
         $data['page']=$page; 
@@ -510,7 +510,7 @@ class VideoController extends VideoApiControl
 
 
     /**
-     * 采集单条插入
+     * 采集单条插入喜欢
      * by  sjeam
      */
     public function actionUpdate()
@@ -548,6 +548,7 @@ class VideoController extends VideoApiControl
             die(Method::jsonGenerate(0,null,'删除'));
         }else{
             $args['user_id']=$user_id;
+            $args['create_time']=time();
             Yii::$app->signdb->createCommand()->insert('x2_video_list_collect',$args)->execute();
             die(Method::jsonGenerate(1,null,'收藏'));
         }
