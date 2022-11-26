@@ -13,8 +13,8 @@
         <thead>
             <tr>
                 <td>
-                    <div class="layui-form-item center">
-                        <div class="layui-input-inline">
+                    <!-- <div class="layui-form-item center"> -->
+                        <div class="layui-input-inline center">
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                             <p class="center" id="listBelong" >
                                 <?php foreach($category as $kss =>  $v){  ?>
@@ -23,17 +23,17 @@
                             </p>
                         </div>
                         <!-- <label class="layui-form-label">类型typ</label> -->
-                        <div class="layui-input-inline" id="goTypeInput">
+                        <div class="layui-input-inline center" id="goTypeInput">
                             <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
                         </div>
 
                         <!-- <label class="layui-form-label">搜索</label> -->
-                        <div class="layui-input-inline">
+                        <div class="layui-input-inline center">
                             <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
 
                         <!-- <label class="layui-form-label">采集页码</label> -->
-                        <div class="layui-input-inline">
+                        <div class="layui-input-inline center">
                             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
                             <input type="text" class="center" value="<?php echo $data['page_list'] ?>" id="goPage_list">
                 
@@ -43,7 +43,7 @@
                                 <span  class="btn btn-defult"  >下一页</span>    
                             <?php  }?>
                         </div>
-                        <div class="layui-input-inline">
+                        <div class="layui-input-inline center">
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
@@ -54,7 +54,7 @@
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </td>
             </tr>
         </thead>
