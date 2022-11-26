@@ -1,60 +1,64 @@
 
-<!-- 视频 -->
- <div class=" ">
-    <input type="hidden" name="" id="hiddenvalue" value="0">
-    <!-- <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button> -->
-    <div class="videohidden">
-        <div class="video"> </div>
-    </div>
-</div>
+
+
+<style>
+    /* 播放按钮样式 */
+    .video_box{
+        background: url(/ckplayer/css/images/play.png) no-repeat 70% center;
+        background-size: 60% 60%;
+        border: 8px solid rgba(255,255,255,.6);
+        border-radius: 50%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        /* display: none; */
+        z-index: 90;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: .2s;
+    }
+    .ckplayer-ckplayer{
+        border-radius: 2%;
+    }
+    .collect-video-style{
+        border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
+    }
+</style>
+
+<input type="hidden" value="0" id="now_video"> 
+
+
 <script type="text/javascript">
-//定义一个变量：videoObject，用来做为视频初始化配置
-var videoObject = {
-    container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
-    plug:'hls.js',//设置使用hls插件
-    autoplay:true,
-    video: ''//视频地址
-};
-new ckplayer(videoObject);//初始化播放器
-// 视频预览
-function  video(id){
-    var url =$("#form"+id+"  input[name=url]").val();
-    // console.log(url);
-    // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
-    var videoObject = {
-            container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
-            plug:'hls.js',//设置使用hls插件
-            autoplay:true,
-            video: url,//视频地址
-            // rotate:90,//旋转90度
-            rightBar:true,
-            screenshot:true,
-            smallWindows:true,
-            playbackrateOpen:true,
-            webFull:true,
-            theatre:true,
-        };
-        new ckplayer(videoObject);//初始化播放器
-        videoHidden(1);//显示窗口
-        url =null;
-}
+function  videoList(id,key=0){
 
-
-
-function  videoList(id){
-    //重置按钮
     var now_video =$("#now_video").val();
-    // console.log(now_video)
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
         $(".video"+now_video).html(player);
     } 
-    $("#now_video").val(id); 
-    //获取视频
-    var url =$("#form"+id+"  input[name=url]").val();
-    var title =$("#form"+id+"  input[name=title]").val();
-    var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+    if(key!=0){
+    
+        $("#now_video").val(id); 
+        //获取视频
+        var url =$("#form"+key+"  input[name=url]").val();
+        var title =$("#form"+key+"  input[name=title]").val();
+        var imageurl =$("#form"+key+"  input[name=imageurl]").val();
+        console.log( title)
+    }else{
  
+        $("#now_video").val(id); 
+        //获取视频
+        var url =$("#form"+id+"  input[name=url]").val();
+        var title =$("#form"+id+"  input[name=title]").val();
+        var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+    }
     // player.pause();
     // console.log(url);
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
@@ -82,3 +86,4 @@ function  videoList(id){
 }
 // CV.singleClick(player.playOrPause);//监听视频单击
 </script>
+ 

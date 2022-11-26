@@ -1,32 +1,4 @@
 <style>
-
-    .video_box{
-        background: url(/ckplayer/css/images/play.png) no-repeat 70% center;
-        background-size: 60% 60%;
-        border: 8px solid rgba(255,255,255,.6);
-        border-radius: 50%;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        /* display: none; */
-        z-index: 90;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        cursor: pointer;
-        transition: .2s;
-    }
-    .ckplayer-ckplayer{
-        border-radius: 2%;
-    }
-    .collect-video-style{
-        border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
-    }
     .layui-layer-btn a{
         width: 40%;
         max-width: 200px;
@@ -67,7 +39,7 @@
 
 </form>
 <!-- 当前视频id -->
-<input type="hidden" value="0" id="now_video"> 
+
 <input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
