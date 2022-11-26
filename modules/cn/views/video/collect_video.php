@@ -25,7 +25,7 @@
         border-radius: 2%;
     }
     .collect-video-style{
-        border-radius:2%!important;width:100%;max-width:420px;margin:auto; height:280px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
+        border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
     }
     .layui-layer-btn a{
         width: 40%;
@@ -42,7 +42,7 @@
             <td >
                 <div class="input_div center" style="display: block;">
                     <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
-                    <button class="btn btn-primary search_button" onclick="collect_search()" type="sbumit">搜索</button>
+                    <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">搜索</button>
                 </div>
                 <p class="center">
                     <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=0&title=<?php echo $data['title']?>" >全部</a>
@@ -61,28 +61,30 @@
                         
         </tbody>
     </table>
+
 </form>
 <!-- 当前视频id -->
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
-<input type="hidden" id="goPageCount" value="<?php echo $data['count'] ?>">
+
 <script>
     $(function(){
         gou();
     })
 
-    function collect_search(goPage){
+    function nextPage(goPage){
        var title =  $('#appendedInputButton').val();
        var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
        var html = getprintHtml(url);
-        if(html!=''){
+    //    console.log(html)
+        if(html){
             $("#goPage").val(goPage);
             $('#content_append').append(html);
         }
     }
     function  gou(){
         var goPage =$("#goPage").val();
-        collect_search(goPage);
+        nextPage(goPage);
         // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 
@@ -135,46 +137,7 @@
  
     } 
 
-    $(window).scroll(function() {
-        //监听事件内容
-        // console.log(getScrollHeight()) 
-        // console.log(getWindowHeight() + getDocumentTop()) 
-        var goPageCount = $("#goPageCount").val()
-        
-        if (getScrollHeight() <= getWindowHeight() + getDocumentTop()+10) {
-            //当滚动条到底时,这里是触发内容
-            //异步请求数据,局部刷新dom
-            // console.log($("#goPage").val())
-            var goPage = Number($("#goPage").val()) + Number(1)   
-            if(goPage<=goPageCount){
-                collect_search(goPage);
-            }
-            // console.log(goPage)
-        }
-    });
-// $(function(){   
-//     var winHeight = $(document).scrollTop();
-//     $(window).scroll(function() {
-//         var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-//         console.log(scrollY+'cc');
-//         console.log(winHeight+'pp');
-        
-//         if (scrollY > 200){ //如果滚动距离大于550px则隐藏，否则删除隐藏类
-//             $('.top-title').addClass('hiddened');
-//         } 
-//         else {
-//             $('.top-title').removeClass('hiddened');
-//         }
- 
-//         if (scrollY > winHeight){ //如果没滚动到顶部，删除显示类，否则添加显示类
-//             $('.top-title').removeClass('showed');
-//         } 
-//         else {
-//             $('.top-title').addClass('showed');
-//         }               
- 
-//      });
-// });
+
 </script>
 
 

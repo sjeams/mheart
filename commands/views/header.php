@@ -40,7 +40,8 @@
         z-index: 1;
     }
     .menu_list{
-        width: 180px;
+        width: 160px!important;
+        width: 100%;
         position: fixed;
         margin:0px auto;
         /* left:0;  */
@@ -49,7 +50,7 @@
         z-index: 101;
     }
     .td_menu_list{
-        width: 180px!important;
+        width: 160px!important;
     }
 </style>
 <div class="video_header center  top-title"> 
@@ -59,7 +60,7 @@
             <?php if($userlogin['graden']>0) {?>
                 <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
             <?php } ?>
-            <td class="btn-primary" class="td_menu_list" style="width: 180px;">
+            <td class="btn-primary" class="td_menu_list" style=" width: 160px;">
                 <input type="hidden" name="" id="menu" value="0">
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
@@ -165,30 +166,3 @@
     }
 </script>
 
-
-<script>
-//隐藏头部
-// $(function(){   
-//     var winHeight = $(document).scrollTop();
-//     $(window).scroll(function() {
-//         var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-//         console.log(scrollY+'cc');
-//         console.log(winHeight+'pp');
-        
-//         if (scrollY > 200){ //如果滚动距离大于550px则隐藏，否则删除隐藏类
-//             $('.top-title').addClass('hiddened');
-//         } 
-//         else {
-//             $('.top-title').removeClass('hiddened');
-//         }
- 
-//         if (scrollY > winHeight){ //如果没滚动到顶部，删除显示类，否则添加显示类
-//             $('.top-title').removeClass('showed');
-//         } 
-//         else {
-//             $('.top-title').addClass('showed');
-//         }               
- 
-//      });
-// });
-</script>
