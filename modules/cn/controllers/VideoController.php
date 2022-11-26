@@ -411,7 +411,7 @@ class VideoController extends VideoApiControl
         ->from("x2_video_list_detail as a")
         ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
-        
+        $data['belong']=$belong; 
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
