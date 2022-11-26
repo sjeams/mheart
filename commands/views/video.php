@@ -43,16 +43,20 @@ function  videoList(id,key=0){
         var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
         $(".video"+now_video).html(player);
     } 
+
+    //判断是否是影视，影视不为空
     if(key!=0){
-    
         $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
         var title =$("#form"+key+"  input[name=title]").val();
         var imageurl =$("#form"+key+"  input[name=imageurl]").val();
-        console.log( title)
+        $('.click_video').removeClass('btn-success');
+        $('#click_video'+key).addClass('btn-success');
+
+       
+        // console.log( title)
     }else{
- 
         $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();

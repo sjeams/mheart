@@ -81,7 +81,7 @@
 
                             <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                             <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
-                            <a onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn btn-primary collect"> <?php echo $vdieo['title']?> </a>
+                            <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
 
                             <?php } }?>
                             </span>
