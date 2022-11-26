@@ -40,7 +40,7 @@
         z-index: 1;
     }
     .menu_list{
-        width: 160px!important;
+        width: 120px!important;
         width: 100%;
         position: fixed;
         margin:0px auto;
@@ -50,7 +50,7 @@
         z-index: 101;
     }
     .td_menu_list{
-        width: 160px!important;
+        width: 120px!important;
     }
 </style>
 <div class="video_header center  top-title"> 
@@ -61,7 +61,7 @@
                 <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td>
                 <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
             <?php } ?>
-            <td class="btn-primary" class="td_menu_list" style=" width: 160px;">
+            <td class="btn-primary" class="td_menu_list" style=" width: 120px;">
                 <input type="hidden" name="" id="menu" value="0">
                 <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
             </td>
