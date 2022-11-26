@@ -85,13 +85,12 @@
         var t = 0;
         $(window).scroll(function() {
             var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            if(t<=scrollY){
+            
+            if(t<=scrollY&&t>=160){
                     // console.log("往下滚动");
                 $('.top-title').addClass('hiddened');
                 $('.page_bottom').css('display','none');
                 $("#top_hidden").val(0)
-
-
             }else{
                 // console.log("往上滚动");
                 $('.top-title').removeClass('hiddened');
