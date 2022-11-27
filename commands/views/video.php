@@ -83,11 +83,11 @@ function  videoList(id,key=0){
             crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
             // loop: true,//是否需要循环播放 
             // // seek: 1,//默认需要跳转的秒数
-            // controls:false, //小窗风格 //切换影院模式和窗口模式
+            controls:true, //小窗风格 //切换影院模式和窗口模式
             // // language:'en',
             // // rotate:90,//旋转90度
-            // mobileCkControls: false,//移动端h5显示控制栏
-            // mobileAutoFull: true,//移动端是否默认全屏播放
+            mobileCkControls: false,//移动端h5显示控制栏
+            mobileAutoFull: true,//移动端是否默认全屏播放
             
             // playbackrate: 1,//默认倍速
             // debug: false,//是否开启调试模式
