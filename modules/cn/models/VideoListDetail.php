@@ -18,6 +18,21 @@ class VideoListDetail extends ActiveRecord {
             return '{{%video_list_detail}}';
     }
 
+
+
+	// public static function checkVideo($listvideo){
+    //     $link =  "'".implode("','",array_column($listvideo,'link'))."'" ;
+    //     // $list_collect = addslashes($list_collect);
+    //     $find_collect =Video::find()->select('title')->where("link in ($link)")->asarray()->all();
+    //     $find_collect = array_column($find_collect,'title');
+    //     var_dump($link);die;
+    //     foreach($listvideo as$key=> $val){
+    //         // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+    //             $list []= VideoListDetail::isUpdateVideo($val);
+    //             // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+    //         // }
+    //     }
+    // }
 	public static function isUpdateVideo($val){
         $link = addslashes($val['http'].$val['url']);
         $find_video = VideoListDetail::find()->select('id,url,title,imageurl,type,belong,link')->where("link ='$link'")->asarray()->one();

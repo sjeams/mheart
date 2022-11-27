@@ -319,6 +319,9 @@ class VideoController extends VideoApiControl
                 // $pageSize=20;
                 // $pageSize= $count;
                 if($listvideo){
+
+       
+                    // $list= VideoListDetail::checkVideo($listvideo);
                     foreach($listvideo as$key=> $val){
                         // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
                             $list []= VideoListDetail::isUpdateVideo($val);
