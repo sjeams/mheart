@@ -125,14 +125,16 @@
             } } }
             ?>
             <tr>
-                <td class="center">
-                    <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                    <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
-                    <?php if($isnext){ ?>
-                        <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
-                    <?php }else{ ?>
-                        <span  class="btn btn-defult"  >下一页</span>    
-                    <?php  }?> 
+                <td class="center"  >
+                    <p class="center">
+                        <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
+                        <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
+                        <?php if($isnext){ ?>
+                            <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
+                        <?php }else{ ?>
+                            <span  class="btn btn-defult"  >下一页</span>    
+                        <?php  }?> 
+                    </p>
                 </td>
             </tr>
         </tbody>

@@ -44,15 +44,14 @@
  
 
 <script>
-    //滚动条触发事件
+    //滚动条触发事件--分页
     $(window).scroll(function() {
         //监听事件内容
         // console.log(getScrollHeight()) 
         // console.log(getWindowHeight() + getDocumentTop())  
- 
         // console.log(id)
-        
         if (getScrollHeight() <= getWindowHeight() + getDocumentTop() ) {
+            var goPageCount = $('#goPageCount').val();
             //当滚动条到底时,这里是触发内容
             if(goPageCount){
                 var goPage = Number($("#goPage").val()) + Number(1)   
@@ -80,6 +79,7 @@
         goPageCount=null;
         goPage=null;
     });
+    //滚动条头部和底部隐藏事件
     $(function(){   
         var winHeight = $(document).scrollTop();
         var t = 0;

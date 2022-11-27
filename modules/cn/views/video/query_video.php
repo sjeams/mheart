@@ -20,9 +20,9 @@
                     <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">搜索</button>
                 </div>
                 <p class="center">
-                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=0&title=<?php echo $data['title']?>" >全部</a>
+                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-default'?>" href="/cn/video/query-video?page=1&belong=0&title=<?php echo $data['title']?>" >全部</a>
                     <?php foreach($list as $v){ ?>
-                        <a class="btn  <?php echo $data['belong']==$v['belong']?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=<?php echo $v['belong']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
+                        <a class="btn  <?php echo $data['belong']==$v['belong']?'active btn-primary':' btn-default'?>" href="/cn/video/query-video?page=1&belong=<?php echo $v['belong']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
                         <?php }?>
 
                 </p>
@@ -50,7 +50,7 @@
     })
     function nextPage(goPage){
        var title =  $('#appendedInputButton').val();
-       var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
+       var url="/cn/video/query-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
        var html = getprintHtml(url);
     //    console.log(html)
         if(html){
@@ -61,7 +61,7 @@
     function  gou(){
         var goPage =$("#goPage").val();
         nextPage(goPage);
-        // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
+        // window.location.href="/cn/video/query-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 
     

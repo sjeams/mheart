@@ -471,7 +471,7 @@ class VideoController extends VideoApiControl
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
-        // var_dump($data['count']);die;
+        // var_dump($data['count']);
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html){
