@@ -35,7 +35,7 @@
                         <!-- <label class="layui-form-label">采集页码</label> -->
                         <div class="layui-input-inline center">
                             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                            <input type="text" class="center" value="<?php echo $data['page_list'] ?>" id="goPage_list">
+                            <input type="text" class=" " style="text-align: center;margin: 0px auto;width:28%" value="<?php echo $data['page_list'] ?>" id="goPage_list">
                 
                             <?php if($isnext){ ?>
                                 <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
