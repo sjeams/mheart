@@ -49,7 +49,7 @@ function  videoList(id,key=0){
         $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
-        var title =$("#form"+key+"  input[name=title]").val();
+        // var title =$("#form"+key+"  input[name=title]").val();
         // var imageurl =$("#form"+key+"  input[name=imageurl]").val();
         $('.click_video').removeClass('btn-success');
         $('#click_video'+key).addClass('btn-success');
@@ -58,7 +58,7 @@ function  videoList(id,key=0){
         $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();
-        var title =$("#form"+id+"  input[name=title]").val();
+        // var title =$("#form"+id+"  input[name=title]").val();
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
     }
     // player.pause();
@@ -70,7 +70,7 @@ function  videoList(id,key=0){
             autoplay:true,
             video: url,//视频地址
             // poster:imageurl,//封面图片
-            title:title,//视频标题
+            // title:title,//视频标题
             // rotate:90,//旋转90度
             // rightBar:true,
             screenshot:true,
@@ -94,7 +94,7 @@ function  videoList(id,key=0){
         };
         new ckplayer(videoObject);//初始化播放器
         url =null;
-        title =null;
+        // title =null;
         // imageurl =null;
         player=null;
         // videoHidden(1);//显示窗口
