@@ -80,7 +80,7 @@ function  videoList(id,key=0){
             webFull:true,
  
             // theatre:true,
-            // // crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
+            crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
             // loop: true,//是否需要循环播放 
             // // seek: 1,//默认需要跳转的秒数
             // controls:false, //小窗风格 //切换影院模式和窗口模式
