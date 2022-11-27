@@ -81,7 +81,7 @@ function  videoList(id,key=0){
         };
         new ckplayer(videoObject);//初始化播放器
         url =null;
-        // title =null;
+        title =null;
         // imageurl =null;
         player=null;
         // videoHidden(1);//显示窗口
