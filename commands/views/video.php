@@ -78,6 +78,7 @@ function  videoList(id,key=0){
             playbackrateOpen:true,
             webFull:true,
             theatre:true,
+ 
         };
         new ckplayer(videoObject);//初始化播放器
         url =null;
