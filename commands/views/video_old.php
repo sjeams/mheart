@@ -72,6 +72,17 @@ function  videoList(id){
             playbackrateOpen:true,
             webFull:true,
             theatre:true,
+            crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
+            loop: true,//是否需要循环播放 
+            seek: 1,//默认需要跳转的秒数
+            controls:true, //小窗风格 
+            // language:'en',
+            // rotate:90,//旋转90度
+            mobileCkControls: true,//移动端h5显示控制栏
+            mobileAutoFull: true,//移动端是否默认全屏播放
+            playbackrate: 1,//默认倍速
+            // debug: false,//是否开启调试模式
+            overspread:true,//是否让视频铺满播放器
         };
         new ckplayer(videoObject);//初始化播放器
         url =null;
