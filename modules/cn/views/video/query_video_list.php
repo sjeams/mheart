@@ -1,9 +1,5 @@
 <?php   foreach($content as $kss => $v) { ?>
-/*
- * @Author: sjeam
- * @Date: 2022-11-28 10:47:57
- * @Description: 
- */
+ 
         <tr>
             <td class="remove_<?php echo $v['id']?> p-0">
                 <div id="form<?php echo $v['id']?>">
