@@ -73,21 +73,21 @@ function  videoList(id,key=0){
             // title:title,//视频标题
             // rotate:90,//旋转90度
             // rightBar:true,
-            screenshot:true,
-            smallWindows:true,
-            flashplayer: false,//设置成true则强制使用flashplayer
+            // screenshot:true,
+            // smallWindows:true,
+            // flashplayer: false,//设置成true则强制使用flashplayer
             html5m3u8: true,//PC平台上是否使用h5播放器播放m3u8---强制html播放全屏
-            webFull:true,
-            mobileAutoFull: true,//移动端是否默认全屏播放
+            // webFull:true,
+            // mobileAutoFull: true,//移动端是否默认全屏播放
             mobileCkControls: false,//移动端h5显示控制栏
-            // theatre:true,
-            crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
-            // loop: true,//是否需要循环播放 
-            // // seek: 1,//默认需要跳转的秒数
-            // controls:false, //小窗风格 //切换影院模式和窗口模式
-            // // language:'en',
-            // // rotate:90,//旋转90度
-            documentFocusPause:false,//窗口失去焦点后暂停播放
+            // // theatre:true,
+            // crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
+            // // loop: true,//是否需要循环播放 
+            // // // seek: 1,//默认需要跳转的秒数
+            // // controls:false, //小窗风格 //切换影院模式和窗口模式
+            // // // language:'en',
+            // // // rotate:90,//旋转90度
+            // documentFocusPause:false,//窗口失去焦点后暂停播放
             // playbackrate: 1,//默认倍速
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
