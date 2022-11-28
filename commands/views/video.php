@@ -36,7 +36,7 @@
 
 
 <script type="text/javascript">
-function  videoList(id,key=0){
+function  videoList(id,key=0,isbofang=1){
 
     var now_video =$("#now_video").val();
     if(now_video!=0){
@@ -61,6 +61,7 @@ function  videoList(id,key=0){
         // var title =$("#form"+id+"  input[name=title]").val();
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
     }
+
     // player.pause();
     // console.log(url);
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
@@ -84,7 +85,7 @@ function  videoList(id,key=0){
             crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
             // loop: true,//是否需要循环播放 
             // // seek: 1,//默认需要跳转的秒数
-            controls:true, //小窗风格 //切换影院模式和窗口模式--是否自带控制栏
+            controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
             // // language:'en',
             // // rotate:90,//旋转90度
             documentFocusPause:false,//窗口失去焦点后暂停播放

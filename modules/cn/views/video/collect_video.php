@@ -128,7 +128,7 @@
                 var now_video =$("#now_video").val();
                 //自动播放
                 if( id!=now_video){
-                    videoList(id);
+                    videoList(id,0,0);
                 }
             }
 
