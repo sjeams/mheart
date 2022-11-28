@@ -466,14 +466,15 @@ class VideoController extends VideoApiControl
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         // $where .=" and user_id = ".$this->user['id'];
         $brush= (new \yii\db\Query())
-        ->select("a.*")
+        ->select("a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect ")
         ->from("x2_video_list_detail as a")
-        // ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and user_id = ".$this->user['id'])
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
         $data['belong']=$belong; 
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
+        // var_dump($brush);die;
         // var_dump($data['count']);
         //来源
         $html = Yii::$app->request->get('html',0);

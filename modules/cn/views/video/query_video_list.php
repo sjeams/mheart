@@ -1,4 +1,9 @@
 <?php   foreach($content as $kss => $v) { ?>
+/*
+ * @Author: sjeam
+ * @Date: 2022-11-28 10:47:57
+ * @Description: 
+ */
         <tr>
             <td class="remove_<?php echo $v['id']?> p-0">
                 <div id="form<?php echo $v['id']?>">
@@ -19,7 +24,9 @@
                 <p class="center"  onclick="video(<?php echo $v['id']?>)"><span ><b>P<?php echo (($data['page']-1)*10+($kss+1)) ?>、</b></span>  <?php echo $v['title']?></p>
                 <p class="center">
                     <span style="width: 49%!important;max-width:210px" onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
-                    <span style="width: 49%!important;max-width:210px" onclick="Update_my(<?php echo $v['id']?>)" class="btn btn-danger collect my_collect_<?php echo $v['id']?> "> 移除</span>
+                    
+                    <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
+                    <!-- <span style="width: 49%!important;max-width:210px" onclick="Update_my(<?php echo $v['id']?>)" class="btn btn-danger collect my_collect_<?php echo $v['id']?> "> 移除</span> -->
                 </p>
             </td>
         </tr>
