@@ -33,7 +33,7 @@
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
 
         <!-- <tr class="append_top">
-            <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
+            <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php //cho $data['title']?>"/>
             <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
         </tr> -->
         <tr class="append_top">
