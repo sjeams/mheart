@@ -39,8 +39,7 @@
 
 </form>
 <!-- 当前视频id -->
-
-<input type="hidden" value="<?php echo $data['page'] ?>" id="goPage">
+<input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 

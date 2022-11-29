@@ -81,6 +81,7 @@
 </div>
 
 <div class="video_center "> 
+
 <script  >
     function my_collect(){
         window.location.href='/cn/video/query-video';  

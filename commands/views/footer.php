@@ -3,7 +3,7 @@
         z-index: 100;
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
-        height:40px;
+        height:45px;
         width: 100%;
         position: fixed;
         margin:0px  auto;
@@ -31,6 +31,11 @@
 <input type="hidden" value="0" id="top_hidden">
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
+
+        <!-- <tr class="append_top">
+            <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
+            <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
+        </tr> -->
         <tr class="append_top">
             <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td>
             <!-- <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
@@ -45,49 +50,59 @@
 
 <script>
     //滚动条触发事件--分页
-    $(window).scroll(function() {
-        //监听事件内容
-        // console.log(getScrollHeight()) 
-        // console.log(getWindowHeight() + getDocumentTop())  
-        // console.log(id)
-        if (getScrollHeight() <= getWindowHeight() + getDocumentTop() ) {
+    // $(window).scroll(function() {
+    //     //监听事件内容
+    //     // console.log(getScrollHeight()) 
+    //     // console.log(getWindowHeight() + getDocumentTop())  
+    //     // console.log(id)
+    //     if (getScrollHeight() <= getWindowHeight() + getDocumentTop() ) {
+    //         var goPageCount = $('#goPageCount').val();
+    //         //当滚动条到底时,这里是触发内容
+    //         //分页
+    //         if(goPageCount){
+    //             var goPage = Number($("#goPage").val()) + Number(1)   
+    //             if(goPage<=goPageCount){
+    //                 nextPage(goPage);
+    //             }
+    //         }
+    //     }
+    //     goPageCount=null;
+    //     goPage=null;
+    // });
+     //监听分页
+    function getPage(){
+        //窗口高度 = 滚动高度+页面高度+160.触发
+        if (getScrollHeight()<= getWindowHeight() + getDocumentTop()+160) {
             var goPageCount = $('#goPageCount').val();
             //当滚动条到底时,这里是触发内容
+            //判断是否使用分页插件
             if(goPageCount){
                 var goPage = Number($("#goPage").val()) + Number(1)   
                 if(goPage<=goPageCount){
                     nextPage(goPage);
                 }else{
-                    if(goPage>goPageCount&&top_hidden==0){
+                    //到底部距离160 显示 底部
+                    if(getScrollHeight()<= getWindowHeight() + getDocumentTop()+160){
+                        $('.top-title').removeClass('hiddened');
                         $('.page_bottom').css('display','table');
-                        $("#top_hidden").val(1)
+                        $("#top_hidden").val(1);
                     }
                 }
-            }else{
-                if(top_hidden==0){
-                    $('.page_bottom').css('display','table');
-                    $("#top_hidden").val(1)
-                }
-            }
-        }else{
-            if(top_hidden==1){
-                $('.page_bottom').css('display','none');
-                $("#top_hidden").val(0)
             }
         }
-        top_hidden=null;
         goPageCount=null;
         goPage=null;
-    });
+    }
     //滚动条头部和底部隐藏事件
     $(function(){   
+        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
         var winHeight = $(document).scrollTop();
         var t = 0;
         $(window).scroll(function() {
             var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            
+            //上下滚动操作
             if(t<=scrollY&&t>=160){
-                    // console.log("往下滚动");
+                // console.log("往下滚动");
                 $('.top-title').addClass('hiddened');
                 $('.page_bottom').css('display','none');
                 $("#top_hidden").val(0)
@@ -98,13 +113,12 @@
                 $("#top_hidden").val(1)
             }
             setTimeout(function(){t=scrollY},0);
-                
+            getPage();  
         });
     });
 </script>
 
 </script>
-
     <!-- 窗口滚动异步事件 -->
     <script>
     //文档高度
