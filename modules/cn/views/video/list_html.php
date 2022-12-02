@@ -148,22 +148,15 @@
 <script>
     //跳转页面
     function  gouSerach(){
-        var goPage =$(".footer_go_input").val();
-        // console.log(gouSerach)
-        var goBelong =$("#goBelong").val();
-        var goType =$("#goType").val();
-        var goSearch =$("#goSearch").val();
-        var goPage_list =$("#goPage_list").val();
-
-        $("#goPage").val(goPage);
-        window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        var goPage_list =$(".footer_go_input").val();
+        $("#goPage_list").val(goPage_list);
+        gou();
     }
-
     $(function(){
         //搜索框
         $('.go_hidden').removeClass('hiddened');
-        var goPage =$("#goPage").val();
-        var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
+        var goPage_list =$("#goPage_list").val();
+        var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
         $('.go_hidden').html(go_input);
 
 
@@ -295,9 +288,6 @@
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-
-        $("#gouSerach").val(goPage);
-
         window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
         // $('.list_html').html('采集中，请稍后...')
         // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
