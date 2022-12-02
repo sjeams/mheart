@@ -25,10 +25,18 @@
         margin: auto;
         display: inline-block;
     }
+    .footer_go{
+        width:50%;height:45px;vertical-align: center;text-align:center; float: right;
+    }
+    .footer_go_input{
+    width:50%;margin-top: -10px;text-align:center
+    }
+
 </style>
 </div>
 
-<input type="hidden" value="0" id="top_hidden">
+<!-- <input type="hidden" value="0" id="top_hidden"> -->
+
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
 
@@ -37,7 +45,8 @@
             <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
         </tr> -->
         <tr class="append_top">
-            <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td>
+            <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
+            <td class="btn-primary go_hidden hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td>
             <!-- <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
             <?php }else{ ?>  
                 <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
@@ -47,8 +56,29 @@
     </table>
 </div>
  
-
 <script>
+    //滚动条头部和底部隐藏事件
+    $(function(){   
+        
+        $('.go_hidden').removeClass('hiddened');
+        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
+        var winHeight = $(document).scrollTop();
+        var t = 0;
+        $(window).scroll(function() {
+            getPage();  //分页
+            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+            //上下滚动操作
+            if(t<=scrollY&&t>=160){
+                // console.log("往下滚动");
+                header_title_hidden();
+            }else{
+                // console.log("往上滚动");
+                header_title_show();
+             }
+            setTimeout(function(){t=scrollY},0);
+
+        });
+    });
     //滚动条触发事件--分页
     // $(window).scroll(function() {
     //     //监听事件内容
@@ -83,9 +113,7 @@
                 }else{
                     //到底部距离160 显示 底部
                     if(getScrollHeight()<= getWindowHeight() + getDocumentTop()+160){
-                        $('.top-title').removeClass('hiddened');
-                        $('.page_bottom').css('display','table');
-                        $("#top_hidden").val(1);
+                        header_title_show();
                     }
                 }
             }
@@ -93,29 +121,19 @@
         goPageCount=null;
         goPage=null;
     }
-    //滚动条头部和底部隐藏事件
-    $(function(){   
-        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
-        var winHeight = $(document).scrollTop();
-        var t = 0;
-        $(window).scroll(function() {
-            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            //上下滚动操作
-            if(t<=scrollY&&t>=160){
-                // console.log("往下滚动");
-                $('.top-title').addClass('hiddened');
-                $('.page_bottom').css('display','none');
-                $("#top_hidden").val(0)
-            }else{
-                // console.log("往上滚动");
-                $('.top-title').removeClass('hiddened');
-                $('.page_bottom').css('display','table');
-                $("#top_hidden").val(1)
-            }
-            setTimeout(function(){t=scrollY},0);
-            getPage();  
-        });
-    });
+
+
+    function header_title_show(){
+        $('.top-title').removeClass('hiddened');
+        $('.page_bottom').css('display','table');
+ 
+
+    }
+    function header_title_hidden(){
+        $('.top-title').addClass('hiddened');
+        $('.page_bottom').css('display','none');
+    }
+
 </script>
 
 </script>

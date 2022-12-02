@@ -46,6 +46,7 @@
 
 <script>
     $(function(){
+        $('.go_hidden').removeClass('hiddened');
         gou();
     })
     function nextPage(goPage){
@@ -56,6 +57,10 @@
         if(html){
             $("#goPage").val(goPage);
             $('#content_append').append(html);
+            //搜索框
+            var goPageCount = $("#goPageCount").val()
+            var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
+            $('.go_hidden').html(go_input);
         }
     }
     function  gou(){
@@ -64,7 +69,17 @@
         // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 
+    //跳转页面
+    function  gouSerach(){
+        var gouSerach =$(".footer_go_input").val();
+        console.log(gouSerach)
+        var title =  $('#appendedInputButton').val();
+        window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
+    }
     
+
+
+
      // 我的收藏
      function  Update_my(id){ 
         // layer.confirm('确认删除?', function(index){
