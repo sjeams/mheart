@@ -31,7 +31,7 @@
     .footer_go_input{
     width:50%;margin-top: -10px;text-align:center
     }
-
+ 
 </style>
 </div>
 
@@ -39,14 +39,13 @@
 
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
-
         <!-- <tr class="append_top">
             <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php //cho $data['title']?>"/>
             <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
         </tr> -->
         <tr class="append_top">
             <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
-            <td class="btn-primary go_hidden hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td>
+            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td>
             <!-- <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
             <?php }else{ ?>  
                 <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
@@ -59,8 +58,6 @@
 <script>
     //滚动条头部和底部隐藏事件
     $(function(){   
-        
-        $('.go_hidden').removeClass('hiddened');
         // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
         var winHeight = $(document).scrollTop();
         var t = 0;
