@@ -37,6 +37,18 @@
 
 
 <script type="text/javascript">
+// <img class="img" src="${imgurl}" onerror="imgError(this);">
+// $(function(){
+//     //图片加载失败
+//     function imgError(image){ 
+//         // 隐藏图片 
+//         // image.style.display = 'none'; 
+//         // 替换为默认图片
+//         image.setAttribute("src", "nophoto.png") 
+//         // document.getElementsByClassName("img")[0].setAttribute("src", "nophoto.png"); 
+//     }
+// })
+
 function  videoList(id,key=0,isbofang=1){
 
     var now_video =$("#now_video").val();
