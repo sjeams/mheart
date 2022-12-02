@@ -71,7 +71,7 @@
     //跳转页面
     function  gouSerach(){
         var gouSerach =$(".footer_go_input").val();
-        console.log(gouSerach)
+        // console.log(gouSerach)
         var title =  $('#appendedInputButton').val();
         window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
     }
