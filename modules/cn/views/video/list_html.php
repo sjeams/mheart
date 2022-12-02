@@ -54,6 +54,12 @@
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
                         </div>
+                        <div class="layui-input-inline center">
+                            <p class="center">
+                                <input type="text" value="10"  placeholder="setCaches"  id="setCaches">
+                                <span  class="btn btn-primary" onclick="setCaches()"> gouCache </span>
+                            </p>
+                        </div>
                     <!-- </div> -->
                 </td>
             </tr>
@@ -190,6 +196,74 @@
         }
     }); 
 
+
+
+    
+    function setCaches(){
+        $('.caiji_name').text('采集...')
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
+        if(!goType){ var  goType =''; }
+        var goSearch =$("#goSearch").val();
+        var goPage =$("#goPage").val();
+        var goPage_list =$("#goPage_list").val();
+        var setnum =$("#setCaches").val();
+        // console.log(setnum)
+        $.ajax({
+            url: '/cn/video/get-cache', // 跳转到 action 
+            type: 'post',
+            data:{ 
+                setnum:setnum,
+                page:goPage,
+                type:goType,
+                page_list:goPage_list,
+                belong:goBelong,
+                search:goSearch,
+            },
+            dataType: 'json',
+            success: function (data) {
+                if(data==1){
+                    $('.caiji_name').text('采集√');
+                    $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
+                }else{
+                    $('.caiji_name').text('采集×');
+                }
+                // window.location.reload();   
+            },
+        });
+    }
+
+    // 开启缓存
+    function goCache(){
+        $('.caiji_name').text('采集...')
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
+        if(!goType){ var  goType =''; }
+        var goSearch =$("#goSearch").val();
+        var goPage =$("#goPage").val();
+        var goPage_list =$("#goPage_list").val();
+ 
+        $.ajax({
+            url: '/cn/video/get-cache', // 跳转到 action 
+            type: 'post',
+            data:{ 
+                page:goPage,
+                type:goType,
+                page_list:goPage_list,
+                belong:goBelong,
+                search:goSearch,
+            },
+            dataType: 'json',
+            success: function (data) {
+                if(data==1){
+                    $('.caiji_name').text('采集√')
+                }else{
+                    $('.caiji_name').text('采集×')
+                }
+                // window.location.reload();   
+            },
+        });
+    }
     function typeChange(type){
         // 重置状态page和search
         $("#goSearch").val('');

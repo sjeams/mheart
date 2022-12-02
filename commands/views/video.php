@@ -4,9 +4,10 @@
 <style>
     /* 播放按钮样式 */
     .video_box{
+        opacity: 0.8;      /* 背景透明度 */
         background: url(/ckplayer/css/images/play.png) no-repeat 70% center;
         background-size: 60% 60%;
-        border: 8px solid rgba(255,255,255,.6);
+        border: 8px solid rgba(255,255,255,0.6);
         border-radius: 50%;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -22,7 +23,7 @@
         bottom: 0;
         margin: auto;
         cursor: pointer;
-        transition: .2s;
+        transition: 2s;
     }
     .ckplayer-ckplayer{
         border-radius: 2%;

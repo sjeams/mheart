@@ -205,15 +205,18 @@ class VideoController extends VideoApiControl
         // 搜索类型默认为0
         if($search){  $type=0; }
         $belong = Yii::$app->request->post('belong',0);
+        //默认缓存页码
+        $setnum = Yii::$app->request->post('setnum',3);
         // 未登录 禁止链接访问
         if($login==0){
             $belong=0;
         }
+ 
         // 影视不进入缓存-开启缓存进入
         if($belong!=0&&$get_cache==1){
             // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
             // 缓存列表
-            for ($i =0; $i <= 3; $i++) {
+            for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
                 $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
@@ -319,8 +322,6 @@ class VideoController extends VideoApiControl
                 // $pageSize=20;
                 // $pageSize= $count;
                 if($listvideo){
-
-       
                     // $list= VideoListDetail::checkVideo($listvideo);
                     foreach($listvideo as$key=> $val){
                         // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  

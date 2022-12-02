@@ -148,37 +148,7 @@
             },
         });
     } 
-    // 开启缓存
-    function goCache(){
-        $('.caiji_name').text('采集...')
-        var goBelong =$("#goBelong").val();
-        var goType =$("#goType").val();
-        if(!goType){ var  goType =''; }
-        var goSearch =$("#goSearch").val();
-        var goPage =$("#goPage").val();
-        var goPage_list =$("#goPage_list").val();
- 
-        $.ajax({
-            url: '/cn/video/get-cache', // 跳转到 action 
-            type: 'post',
-            data:{ 
-                page:goPage,
-                type:goType,
-                page_list:goPage_list,
-                belong:goBelong,
-                search:goSearch,
-            },
-            dataType: 'json',
-            success: function (data) {
-                if(data==1){
-                    $('.caiji_name').text('采集√')
-                }else{
-                    $('.caiji_name').text('采集×')
-                }
-                // window.location.reload();   
-            },
-        });
-    }
+
 
     //退出
     function  loginOuts(){
