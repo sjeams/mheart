@@ -4,6 +4,9 @@ use yii;
 use yii\data\Pagination;
 use app\modules\admin\models\Words;
 use app\modules\admin\models\User;
+
+// use app\lib\ImgCompress;
+
 class Method
 {
 
@@ -390,172 +393,6 @@ class Method
 
  
 
-    public static function score($res){
-        $gpa = $res['gpa'];
-        $gmat = $res['gmat'];
-        $toefl = $res['toefl'];
-        $school = $res['schoolGrade'];
-        $work = $res['most'];
-        if($gpa>10){
-            $num1 = SchoolTest::find()->where("gpa<$gpa AND gpa>10")->count();
-            $sign = round($gpa/100*4, 1);
-            $num2 = SchoolTest::find()->where("gpa<$gpa")->count();
-            $num = $num1+$num2;
-            $gpa = $sign;
-        }else{
-            $num1 = SchoolTest::find()->where("gpa<$gpa")->count();
-            $sign = ceil($gpa/4*100);
-            $num2 = SchoolTest::find()->where("gpa<$gpa")->count();
-            $num = $num1+$num2;
-        }
-        if($gpa>=3.5){
-            $gpa = [
-                'score' => $gpa,
-                'num' => $num+2330,
-                'type' => 1,
-                'name' => 'GPA'
-            ];
-        }elseif($gpa>=3.0){
-            $gpa = null;
-        }else{
-            $gpa = [
-                'score' => $gpa,
-                'num' => $num+117,
-                'type' => 0,
-                'name' => 'GPA'
-            ];
-        }
-
-        if(!empty($gmat)){
-            if($gmat<360){
-                $num = SchoolTest::find()->where("gmat<$gmat")->count();
-                if($gmat>=325){
-                    $gmat = [
-                        'score' => $gmat,
-                        'num' => $num+2330,
-                        'type' => 1,
-                        'name' => 'GRE'
-                    ];
-                }elseif($gmat>=310){
-                    $gmat = null;
-                }else{
-                    $gmat = [
-                        'score' => $gmat,
-                        'num' => $num+117,
-                        'type' => 0,
-                        'name' => 'GRE'
-                    ];
-                }
-            }else{
-                $num = SchoolTest::find()->where("gmat<$gmat AND gmat>360")->count();
-                if($gmat>=720){
-                    $gmat = [
-                        'score' => $gmat,
-                        'num' => $num+2330,
-                        'type' => 1,
-                        'name' => 'GMAT'
-                    ];
-                }elseif($gmat>=650){
-                    $gmat = null;
-                }else{
-                    $gmat = [
-                        'score' => $gmat,
-                        'num' => $num+117,
-                        'type' => 0,
-                        'name' => 'GMAT'
-                    ];
-                }
-            }
-        }else{
-            $gmat =null;
-        }
-
-        if($toefl<15){
-            $num = SchoolTest::find()->where("toefl<$toefl")->count();
-            if($toefl>=7){
-                $toefl = [
-                    'score' => $toefl,
-                    'num' => $num+2330,
-                    'type' => 1,
-                    'name' => '雅思'
-                ];
-            }elseif($toefl>=6){
-                $toefl = null;
-            }else{
-                $toefl = [
-                    'score' => $toefl,
-                    'num' => $num+117,
-                    'type' => 0,
-                    'name' => '雅思'
-                ];
-            }
-        }else{
-            $num = SchoolTest::find()->where("toefl<$toefl AND toefl>15")->count();
-            if($toefl>=110){
-                $toefl = [
-                    'score' => $toefl,
-                    'num' => $num+2330,
-                    'type' => 1,
-                    'name' => '托福'
-                ];
-            }elseif($toefl>=95){
-                $toefl = null;
-            }else{
-                $toefl = [
-                    'score' => $toefl,
-                    'num' => $num+117,
-                    'type' => 0,
-                    'name' => '托福'
-                ];
-            }
-        }
-
-        $num = SchoolTest::find()->where("schoolGrade>$school")->count();
-        if($school <=2){
-            $school = [
-                'name' => $res['attendSchool'],
-                'num' => $num+2330,
-                'type' => 1
-            ];
-        }elseif($school<=3){
-            $school = null;
-        }else{
-            $school = [
-                'name' => $res['attendSchool'],
-                'num' => $num+117,
-                'type' => 0
-            ];
-        }
-        if($work == 6){
-            $work = null;
-        }else{
-            $num = SchoolTest::find()->where("most>$work")->count();
-            switch($work){
-                case 1:$workName = '四大/500强';break;
-                case 2:$workName = '四大/500强';break;
-                case 3:$workName = '外企';break;
-                case 4:$workName = '国企';break;
-                case 5:$workName = '私企';break;
-            }
-            if($work <=2){
-                $work = [
-                    'name' => $workName,
-                    'num' => $num+2330,
-                    'type' => 1
-                ];
-            }elseif($work<=4){
-                $work = null;
-            }else{
-                $work = [
-                    'name' => $workName,
-                    'num' => $num+117,
-                    'type' => 0
-                ];
-            }
-        }
-      return ['gpa' => $gpa,'gmat' => $gmat,'toefl' => $toefl,'school' => $school,'work' => $work];
-    }
-
 
     /**
     * 接口字符串
@@ -840,4 +677,30 @@ class Method
 
         return $dataObj;
       }
+
+    //下载图片保存到本地
+    // public static function curl_file_get_contents($url,$path){
+    //     $hander = curl_init();
+    //     $fp = fopen($path,'wb');
+    //     curl_setopt($hander,CURLOPT_URL,$url);
+    //     curl_setopt($hander,CURLOPT_FILE,$fp);
+    //     curl_setopt($hander,CURLOPT_HEADER,0);
+    //     curl_setopt($hander,CURLOPT_FOLLOWLOCATION,1);
+    //     curl_setopt($hander,CURLOPT_TIMEOUT,60);
+    //     curl_exec($hander);
+    //     curl_close($hander);
+    //     fclose($fp);
+    //     return $path;
+    // }
+
+    //   public static function getBase64($url){
+    //     $res=Method::curl_file_get_contents($url,'test1.jpg');   //$url 为图片路径
+    //     // var_dump($res);die;
+    //     $dst_img = 'text.jpg';//压缩后图片的名称
+    //     (new ImgCompress($res))->compressImg($dst_img);  //这里的self::PERCENT  是定义的常亮 即 压缩比例  默认不传为 0.5，数据在 0-1 之间
+    //     $base64=ImgCompress::base64EncodeImage($dst_img);
+    //     unlink($res);  //删除本地图片
+    //     unlink($dst_img); //删除本地图片
+    //     return $base64;
+    // }
 }

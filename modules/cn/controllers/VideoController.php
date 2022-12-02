@@ -5,6 +5,7 @@
  */
 namespace app\modules\cn\controllers;
 use app\libs\Method;
+use app\libs\ImageBase64;
 use yii\db\ActiveRecord;
 use yii;
 
@@ -21,6 +22,8 @@ use app\modules\cn\models\CategoryName;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
 use app\modules\cn\models\WechatUser;
+
+ 
 class VideoController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
@@ -211,7 +214,7 @@ class VideoController extends VideoApiControl
         if($login==0){
             $belong=0;
         }
- 
+        
         // 影视不进入缓存-开启缓存进入
         if($belong!=0&&$get_cache==1){
             // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
