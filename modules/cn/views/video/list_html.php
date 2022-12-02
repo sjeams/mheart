@@ -56,8 +56,8 @@
                         </div>
                         <div class="layui-input-inline center">
                             <p class="center">
-                                <input type="text" value="10"  placeholder="setCaches"  id="setCaches">
-                                <span  class="btn btn-primary" onclick="setCaches()"> gouCache </span>
+                                <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
+                                <span  class="btn btn-primary" onclick="setCaches()"> 手动缓存 </span>
                             </p>
                         </div>
                     <!-- </div> -->
