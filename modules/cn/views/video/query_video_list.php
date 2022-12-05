@@ -18,7 +18,7 @@
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>
-                <p class="center"  onclick="video(<?php echo $v['id']?>)"><span ><b>P<?php echo (($data['page']-1)*10 ) ?>-<?php echo (($kss+1)) ?>、</b></span>  <?php echo $v['title']?></p>
+                <p class="center"  onclick="video(<?php echo $v['id']?>)"><span ><b>P<?php echo (($data['page']-1) ) ?>-<?php echo ( (($data['page']-1)*10 )+($kss+1)) ?>、</b></span>  <?php echo $v['title']?></p>
                 <p class="center">
                     <span style="width: 49%!important;max-width:210px" onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                     <span style="width: 49%!important;max-width:210px" onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
