@@ -24,7 +24,6 @@
                     <?php foreach($list as $v){ ?>
                         <a class="btn  <?php echo $data['belong']==$v['belong']?'active btn-primary':' btn-default'?>" href="/cn/video/query-video?page=1&belong=<?php echo $v['belong']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
                         <?php }?>
-
                 </p>
 
             </td>
@@ -44,9 +43,11 @@
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 
 <script>
+    
     $(function(){
         $('.go_hidden').removeClass('hiddened');
         gou();
+
     })
     function nextPage(goPage){
        var title =  $('#appendedInputButton').val();
@@ -65,6 +66,7 @@
     function  gou(){
         var goPage =$("#goPage").val();
         nextPage(goPage);
+        imageError();//图片报错监听
         // window.location.href="/cn/video/query-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 

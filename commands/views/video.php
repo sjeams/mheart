@@ -31,13 +31,16 @@
     .collect-video-style{
         border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
     }
+    .video_img{
+        display: none;
+    }
 </style>
 
 <input type="hidden" value="0" id="now_video"> 
 
 
 <script type="text/javascript">
-// <img class="img" src="${imgurl}" onerror="imgError(this);">
+// <img class="img" src="https://data1.huakuibf2.com/20220722/CFFA575AA9A87353/CFFA575AA9A87353.jpg" onerror="imgError(this);">
 // $(function(){
 //     //图片加载失败
 //     function imgError(image){ 
@@ -48,15 +51,35 @@
 //         // document.getElementsByClassName("img")[0].setAttribute("src", "nophoto.png"); 
 //     }
 // })
+//图片报错监听
+function imageError(){
+    $('.video_image').error(function(){
+        var id= $(this).siblings("input[name=video_id]").val();
+        videoList(id,0,1);
+    }) 
+}
 
+//判断图片是否存在
+function is_img_url(imgurl) {
+    return new Promise(function(resolve, reject) {
+        var ImgObj = new Image(); //判断图片是否存在
+        ImgObj.src = imgurl;
+        ImgObj.onload = function(res) {
+            resolve(res);
+        }
+        ImgObj.onerror = function(err) {
+            reject(err)
+        }
+    }).catch((e) => {}); // 加上这句不会报错（Uncaught (in promise)）
+}
+
+// isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 
 function  videoList(id,key=0,isbofang=1){
-
     var now_video =$("#now_video").val();
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
         $(".video"+now_video).html(player);
     } 
-
     //判断是否是影视，影视不为空
     if(key!=0){
         $("#now_video").val(id); 

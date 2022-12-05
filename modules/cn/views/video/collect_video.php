@@ -66,6 +66,7 @@
     function  gou(){
         var goPage =$("#goPage").val();
         nextPage(goPage);
+        imageError();//图片报错监听
         // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 
