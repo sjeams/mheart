@@ -31,6 +31,13 @@ input{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.click_video{
+	/* //超出边界解决办法 */
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 /* 搜索 */
 .search_input{
 	margin-top: 10px;
@@ -55,7 +62,6 @@ input{
     margin-top: 20px;
 }
 
- 
 
 .videohidden{
     display: table-column-group;

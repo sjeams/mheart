@@ -11,7 +11,7 @@
     use yii\base\Widget;
     use yii;
     use app\models\Block;
-	class videoWidget extends Widget  {
+	class VideoWidget extends Widget  {
     
         public $userlogin;
  

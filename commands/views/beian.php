@@ -1,4 +1,5 @@
-<?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/login/login'){ ?>
+<?php $userlogin = Yii::$app->session->get('userlogin');?>
+<?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/login/login'||$userlogin['id']==1){ ?>
 <style>
     .beian{    
         /* position: fixed; */

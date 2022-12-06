@@ -50,9 +50,9 @@
 
 <div class="container">
     <!-- 视频窗口 -->
-    <?php use app\commands\videoWidget;?>
-    <?php videoWidget::begin();?>
-    <?php videoWidget::end();?> 
+    <?php use app\commands\VideoWidget;?>
+    <?php VideoWidget::begin();?>
+    <?php VideoWidget::end();?> 
     <!-- 内容 -->
     <?= $content ?>
     <!-- 备案 -->
@@ -63,7 +63,7 @@
 <!-- 底部 -->
 <?php use app\commands\FooterWidget;?>
 <?php FooterWidget::begin();?>
-<?php footerWidget::end();?> 
+<?php FooterWidget::end();?> 
 <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
 <!-- <div style="height:30px;overflow:hidden"></div>  -->
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
