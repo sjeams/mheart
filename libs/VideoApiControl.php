@@ -26,7 +26,7 @@
                 $userlogin= Yii::$app->session->get('userlogin');
                 if(!$userlogin){
                     //修改参数时，注意其它地方也要修改
-                    $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("token='$token'")->asArray()->one();
+                    $userlogin = WechatUser::getUserlogin($token);
                     // 验证token是否有效--另一设备登录挤下
                     if( $userlogin){
                         Yii::$app->session->set('userlogin',$userlogin);

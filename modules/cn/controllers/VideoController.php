@@ -191,7 +191,11 @@ class VideoController extends VideoApiControl
         $res = WechatUser:: changeCache($this->user);
         echo $res;
     }
-
+    public function actionVideoModel()
+    {
+        $res = WechatUser:: changeVideoModel($this->user);
+        echo $res;
+    }
     // 自动缓存
     public function actionGetCache()
     {

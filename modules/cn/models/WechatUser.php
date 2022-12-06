@@ -10,11 +10,21 @@ class WechatUser extends ActiveRecord {
     public static function tableName(){
             return '{{%wechat_user}}';
     }
+
+    public static function getUserlogin($token,$userId=0){
+        if($token){
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("token='$token'")->asArray()->one();
+        }else{
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("id='$userId'")->asArray()->one(); 
+        }
+        return   $userlogin;
+    }
+
     public static function loginMethod($token,$userId){
         //更新token
         WechatUser::updateAll(['token' => $token],"id=$userId");
         //设置缓存
-        $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
+        $userlogin = WechatUser::getUserlogin(false,$userId);
         // var_dump($token);die;
         Yii::$app->session->set('token',$token);
         Yii::$app->session->set('userlogin',$userlogin);
@@ -34,7 +44,7 @@ class WechatUser extends ActiveRecord {
     // 获取权限
     public static function getGraden(){
         $token = Yii::$app->session->get('token');
-        $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("token='$token'")->asArray()->one();
+        $userlogin = WechatUser::getUserlogin($token);
         if($userlogin){
             //管理员可操作
             if($userlogin['id']==2){
@@ -59,7 +69,7 @@ class WechatUser extends ActiveRecord {
             }
             WechatUser::updateAll(['is_cache' => $get_cache],"id = $userId");
             //更新缓存
-            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
+            $userlogin = WechatUser::getUserlogin(false,$userId);
             Yii::$app->session->set('userlogin',$userlogin);
         }
         return $get_cache;
@@ -76,12 +86,28 @@ class WechatUser extends ActiveRecord {
             }
             WechatUser::updateAll(['is_bofang' => $get_bofang],"id = $userId");
             //更新缓存
-            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang')->where("id=$userId")->asArray()->one();
+            $userlogin = WechatUser::getUserlogin(false,$userId);
             Yii::$app->session->set('userlogin',$userlogin);
         }
         return $get_bofang;
     }
-    
+    //修改自动播放状态
+    public static function  changeVideoModel($user){
+        $video_model=0;
+        if($user){
+            $userId =$user['id'];
+            if($user['video_model']==1){
+                $video_model=0;
+            }else{
+                $video_model=1;
+            }
+            WechatUser::updateAll(['video_model' => $video_model],"id = $userId");
+            //更新缓存
+            $userlogin = WechatUser::getUserlogin(false,$userId);
+            Yii::$app->session->set('userlogin',$userlogin);
+        }
+        return $video_model;
+    }
 
 
    

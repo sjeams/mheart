@@ -1,5 +1,5 @@
 
-<!-- 视频 -->
+<!-- 视频old -->
 <div class=" ">
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button style="position:fixed;z-index:101;width:30%;;margin:  20px 16%; float:right" onclick="videoHidden()">video</button> -->
@@ -39,7 +39,7 @@ function  video(id){
         url =null;
 }
 
-
+// ------new
 
 function  videoList(id){
     //重置按钮

@@ -1,7 +1,16 @@
-
-
-
+<!-- old视频 1-->
+<div class="video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'block':'none';?>;">
+    <input type="hidden" name="" id="hiddenvalue" value="0">
+    <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button>
+    <div class="videohidden">
+        <div class="video"> </div>
+    </div>
+</div>
+<!-- new 视频 0-->
 <style>
+    .video_hidden_button{
+        position:fixed;z-index:101;width:30%; right: 0;bottom: 40px; float:right;
+    }
     /* 播放按钮样式 */
     .video_box{
         opacity: 0.8;      /* 背景透明度 */
@@ -37,7 +46,6 @@
 </style>
 
 <input type="hidden" value="0" id="now_video"> 
-
 
 <script type="text/javascript">
 // <img class="img" src="https://data1.huakuibf2.com/20220722/CFFA575AA9A87353/CFFA575AA9A87353.jpg" onerror="imgError(this);">
@@ -75,6 +83,7 @@ function is_img_url(imgurl) {
 
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 
 function  videoList(id,key=0,isbofang=1){
+    //暂停在播视频
     var now_video =$("#now_video").val();
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
@@ -97,12 +106,18 @@ function  videoList(id,key=0,isbofang=1){
         // var title =$("#form"+id+"  input[name=title]").val();
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
     }
-
-    // player.pause();
-    // console.log(url);
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
+    //播放窗口模式。。
+    var video_model = $('#is_model_type').val();
+    if(video_model==0){
+        var container_id=   '.video'+id;
+    }else{
+        var container_id=   '.video';
+        videoHidden(1);//显示窗口
+    }
+    
     var videoObject = {
-            container: '.video'+id, //“#”代表容器的ID，“.”或“”代表容器的class
+            container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
             autoplay:true,
             video: url,//视频地址

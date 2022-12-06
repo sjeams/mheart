@@ -123,12 +123,12 @@
     function header_title_show(){
         $('.top-title').removeClass('hiddened');
         $('.page_bottom').css('display','table');
- 
-
+        $('.video_hidden_button').css('display','block');
     }
     function header_title_hidden(){
         $('.top-title').addClass('hiddened');
         $('.page_bottom').css('display','none');
+        $('.video_hidden_button').css('display','none');
     }
 
 </script>

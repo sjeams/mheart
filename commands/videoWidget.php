@@ -21,6 +21,7 @@
         public function run(){
             // return $this->render('left',['data' => $this->data,'controller' => $this->controller,'module' => $this->module,'blockArr' => $this->blockArr]);
             return $this->render('video',[]);
+
         }
 	}
 ?>

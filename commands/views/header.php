@@ -72,6 +72,7 @@
         <?php if($userlogin['graden']>0) {?>
             <li class="list-group-item btn-defult" onclick="old_content()"> 喜欢</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
+            <li class="list-group-item  model_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']?'btn-success':'btn-defult' ?>" onclick="vidoeModel()"> <?php echo $userlogin['video_model']?'窗口√':'列表×' ?></li>
             <li class="list-group-item  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'播放√':'播放×' ?></li>
             <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>
@@ -81,7 +82,8 @@
 </div>
 
 <div class="video_center "> 
-
+<input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
+<input type="hidden"  id="is_model_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model'] ;?>">
 <script  >
     function my_collect(){
         window.location.href='/cn/video/query-video';  
@@ -103,6 +105,32 @@
         }
     }
     
+    function vidoeModel(){
+        $.ajax({
+            url: '/cn/video/video-model', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if(data==1){
+                    $('.model_name').text('窗口√');
+                    $('.model_name').removeClass('btn-defult');
+                    $('.model_name').addClass('btn-success');
+                    $('#is_model_type').val(1)
+                    //显示窗口播放栏
+                    $('.video_old').css('display','block');
+                }else{
+                    $('.model_name').text('列表×');
+                    $('.model_name').removeClass('btn-success');
+                    $('.model_name').addClass('btn-defult');
+                    $('#is_model_type').val(0)
+                    //隐藏窗口播放栏
+                    $('.video_old').css('display','none');
+                }
+                // console.log(data);
+                // window.location.reload();   
+            },
+        });
+    } 
     function isBofang(){
         $.ajax({
             url: '/cn/video/is-bofang', // 跳转到 action 
