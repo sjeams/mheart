@@ -14,7 +14,6 @@
 	class VideoWidget extends Widget  {
     
         public $userlogin;
- 
         /**
          * 运行覆盖程序
          * */
