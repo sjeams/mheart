@@ -26,10 +26,15 @@
         display: inline-block;
     }
     .footer_go{
+        line-height: 45px;
+        height:45px;
         width:50%;height:45px;vertical-align: center;text-align:center; float: right;
     }
     .footer_go_input{
-    width:50%;margin-top: -10px;text-align:center
+        line-height: 45px!important;
+        height:45px!important;
+        margin-bottom:0px!important;
+        width:50%; text-align:center
     }
  
 </style>
@@ -45,7 +50,13 @@
         </tr> -->
         <tr class="append_top">
             <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
-            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td>
+            <!-- <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td> -->
+
+            <td class="btn-primary  video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'table-cell':'none';?>;" > 
+                <span  class=" btn-primary"  onclick="videoHidden()">  video</span>
+ 
+            </td>
+            
             <!-- <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
             <?php }else{ ?>  
                 <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>

@@ -117,7 +117,7 @@
                     $('.model_name').addClass('btn-success');
                     $('#is_model_type').val(1)
                     //显示窗口播放栏
-                    $('.video_old').css('display','block');
+                    $('.video_old').css('display','table-cell');
                 }else{
                     $('.model_name').text('列表×');
                     $('.model_name').removeClass('btn-success');

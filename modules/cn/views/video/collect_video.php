@@ -14,6 +14,9 @@
     <thead>
         <?php if($login>0){?>
         <tr>
+            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(232323)</span></td>
+        </tr>
+        <tr>
             <td >
                 <div class="input_div center" style="display: block;">
                     <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
@@ -58,9 +61,9 @@
             $("#goPage").val(goPage);
             $('#content_append').append(html);
             //搜索框
-            var goPageCount = $("#goPageCount").val()
-            var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-            $('.go_hidden').html(go_input);
+            // var goPageCount = $("#goPageCount").val()
+            // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
+            // $('.go_hidden').html(go_input);
         }
     }
     function  gou(){

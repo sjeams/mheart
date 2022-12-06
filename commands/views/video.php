@@ -1,7 +1,7 @@
 <!-- old视频 1-->
 <div class="video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'block':'none';?>;">
     <input type="hidden" name="" id="hiddenvalue" value="0">
-    <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button>
+    <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
         <div class="video"> </div>
     </div>

@@ -167,7 +167,6 @@ class VideoController extends VideoApiControl
         //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
         //     $brush[$k]['total'] = $num;
         // }
-  
         $data['type']=$type; 
         $data['title']=$title; 
         $data['page']=$page; 

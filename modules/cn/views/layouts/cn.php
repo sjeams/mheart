@@ -83,7 +83,7 @@ function videoHidden(open){
         $('.videohidden').css("display","table-column");
     }else{
         $("#hiddenvalue").val(1); 
-        $('.videohidden').css("display","block");
+        $('.videohidden').css("display","table-cell");
     }
 
 }

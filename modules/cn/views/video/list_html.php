@@ -160,10 +160,10 @@
     }
     $(function(){
         //搜索框
-        $('.go_hidden').removeClass('hiddened');
-        var goPage_list =$("#goPage_list").val();
-        var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
-        $('.go_hidden').html(go_input);
+        // $('.go_hidden').removeClass('hiddened');
+        // var goPage_list =$("#goPage_list").val();
+        // var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
+        // $('.go_hidden').html(go_input);
 
 
         var belong = $('#goBelong').val(); 
