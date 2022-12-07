@@ -36,12 +36,26 @@
         margin-bottom:0px!important;
         width:50%; text-align:center
     }
- 
+    .chat_footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        margin: 0px auto;
+        padding: 0px 0px!important;
+        /* display: table-cell; */
+    }
+    .chat_footer td{
+        width: 50%;
+        padding:0.5rem;
+    }
+    .chat_footer td input{
+        padding: 0px;
+        margin-bottom: 0px;
+    }
 </style>
 </div>
-
+<?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]!='/cn/chat/user'){ ?>
 <!-- <input type="hidden" value="0" id="top_hidden"> -->
-
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
         <!-- <tr class="append_top">
@@ -51,21 +65,22 @@
         <tr class="append_top">
             <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
             <!-- <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td> -->
-
             <td class="btn-primary  video_old"  onclick="videoHidden()" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'table-cell':'none';?>;" > 
-                <span    >  video</span>
- 
+                <span>  video</span>
             </td>
-            
-            <!-- <?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/collect-video'){ ?>
-            <?php }else{ ?>  
-                <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
-                <td class="btn-primary" onclick="videoHidden(0)">video</td>
-            <?php }  ?>   -->
+                <!-- <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
+                <td class="btn-primary" onclick="videoHidden(0)">video</td> -->
         </tr>
     </table>
 </div>
- 
+<?php }else{  ?> 
+    <table class="table table-bordered chat_footer " >
+        <tr>
+            <td class="btn-primary" ><input type="text" id="msg" name="value"  class="message-send-input" /> </td>
+            <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
+        </tr>
+    </table>
+<?php } ?> 
 <script>
     //滚动条头部和底部隐藏事件
     $(function(){   
