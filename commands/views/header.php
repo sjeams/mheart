@@ -54,13 +54,25 @@
         width: 25%;
     }
 </style>
+
+<?php 
+//请求路径
+$http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
+// var_dump($http_geturl );die;
+?>
 <div class="video_header center  top-title"> 
     <table class="table table-bordered  tablestyle mb-0">
         <tr>
-            <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
-            <?php if($userlogin['graden']>0) {?>
-                <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td>
-                <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td>
+            <?php  if( $http_geturl=='chat'){ ?>
+                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
+                <td class="btn-primary"><a class="" href="/cn/chat/list">聊天</a></td>
+            <?php }else{ ?>   
+                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
+                <td class="btn-primary"><a class=" " href="/cn/chat/list">聊天</a></td>
+                <?php if($userlogin['graden']>0) {?>
+                    <!-- <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td> -->
+                    <!-- <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td> -->
+                <?php } ?>
             <?php } ?>
             <td class="btn-primary"   >
                 <input type="hidden" name="" id="menu" value="0">
@@ -71,6 +83,8 @@
     <ul class="list-group text-center menu_list">
         <?php if($userlogin['graden']>0) {?>
             <li class="list-group-item btn-defult" onclick="old_content()"> 喜欢</li>
+            <li class="list-group-item btn-defult" onclick="my_collect()"> 收录</li>
+            <li class="list-group-item btn-defult" onclick="my_video()"> 收藏</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
             <li class="list-group-item  model_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']?'btn-success':'btn-defult' ?>" onclick="vidoeModel()"> <?php echo $userlogin['video_model']?'窗口√':'列表×' ?></li>
             <li class="list-group-item  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'播放√':'播放×' ?></li>
@@ -176,7 +190,6 @@
             },
         });
     } 
-
 
     //退出
     function  loginOuts(){

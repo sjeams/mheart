@@ -27,6 +27,7 @@ class WechatUser extends ActiveRecord {
         $userlogin = WechatUser::getUserlogin(false,$userId);
         // var_dump($token);die;
         Yii::$app->session->set('token',$token);
+        Yii::$app->session->set('userId',$userId);
         Yii::$app->session->set('userlogin',$userlogin);
         //设置cookie
         setcookie('sslToken',$token,time()+86400*3,'/','mheart.xyz');

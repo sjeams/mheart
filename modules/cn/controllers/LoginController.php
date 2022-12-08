@@ -113,8 +113,9 @@ class LoginController extends ApiControl
     //退出
     public function actionLoginOut()
     {
-        $token = Yii::$app->session->get('token');
-        WechatUser::updateAll(['token' => ''],"token='$token'");
+
+        $userId = Yii::$app->session->get('userId');
+        WechatUser::updateAll(['token' => ''],"id='$userId'");
         // Yii::$app->session->destroy();
         session_destroy();
         setcookie('sslToken');

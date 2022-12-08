@@ -53,8 +53,28 @@
         margin-bottom: 0px;
     }
 </style>
+<!-- content 的结尾div 别删了 -->
 </div>
-<?php  if( explode('?',$_SERVER["REQUEST_URI"])[0]!='/cn/chat/user'){ ?>
+
+
+
+<?php 
+//请求路径
+$http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
+$http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
+// var_dump($http_geturl );die;
+?>
+
+<?php  if( $http_geturl=='chat'){ ?>
+    <?php  if( $http_index=='chat'){ ?>
+    <table class="table table-bordered chat_footer " >
+        <tr>
+            <td class="btn-primary" ><input type="text" id="msg" name="value"  class="message-send-input" /> </td>
+            <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
+        </tr>
+    </table>
+    <?php } ?> 
+<?php }else{  ?> 
 <!-- <input type="hidden" value="0" id="top_hidden"> -->
 <div class="video_footer center"> 
     <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
@@ -73,13 +93,7 @@
         </tr>
     </table>
 </div>
-<?php }else{  ?> 
-    <table class="table table-bordered chat_footer " >
-        <tr>
-            <td class="btn-primary" ><input type="text" id="msg" name="value"  class="message-send-input" /> </td>
-            <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
-        </tr>
-    </table>
+
 <?php } ?> 
 <script>
     //滚动条头部和底部隐藏事件
