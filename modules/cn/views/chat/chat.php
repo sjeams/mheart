@@ -129,7 +129,6 @@
  
 <script lang="javascript">
     var msg;
-
 	var uid='<?php echo $user['id'] ?>';
 	var fid='<?php echo $friend['id'] ?>';
 	var room_id='<?php echo $room ?>';
@@ -139,11 +138,9 @@
         // showServerInfoSuccess("连接成功.");
 		// showServerInfoSuccess(JSON.parse(evt.data).content);
     };
- 
     websocket.onclose = function (evt) {// 关闭连接
         showServerInfoFailured("关闭连接");
     };
- 
     websocket.onmessage = function (evt) {// 接收服务器推送的消息
         //showInfo(evt.data);
 		// 进入或退出
@@ -157,15 +154,13 @@
 			//自己进去的时候缓存历史记录
 			if(JSON.parse(evt.data).uid==uid){
 				showHistory(JSON.parse(evt.data).content)
+				//修改消息阅读状态
 			}
-
 		}
- 
 		if(JSON.parse(evt.data).type == 'USER_OUT' ){
 			$("#onlineUser").html(JSON.parse(evt.data).num);
 			// showServerInfoFailured(JSON.parse(evt.data).msg);
 		}
-		
 		if(JSON.parse(evt.data).type == 'USER_MSG'){		
 			// console.log(JSON.parse(evt.data) )
 			if(JSON.parse(evt.data).from_fd == $("#onlineUserFD").html()){
@@ -180,6 +175,7 @@
 				var msg =JSON.parse(evt.data).msg;
 				showUserMessage(msg);
 				scrollToEnd();
+				my_num();//清空我的消息数
 			}
 		}
     };
@@ -202,17 +198,20 @@
 		// console.log(show_newTime())
 		if (websocket.readyState === 1) {
             msg = $('#msg').val();
+			var content_time =new Date().getTime();
 			if(msg){
 				var message = {
 					msg: msg,
 					room:room_id,
 					uid:uid,
 					fid:fid,
-					time:new Date().getTime(),
+					time:content_time,
 				};
-				console.log(message)
+				// console.log(message)
 				websocket.send(JSON.stringify(message));// 发送消息到服务器
 				$('#msg').val('');
+				//给对应的好友标记消息数量
+				Update_num(content_time,msg);
 			}
         } else {
             // alert('WebSocket 连接失败');
@@ -293,9 +292,7 @@ function show_newTime(time){
 	return year + "年" + mon + "月" + date + "日 " + h +":"+ m;
 }
 
-function toZero(t){
- 	return	(t < 10 ? "0" + t : t);
-}
+
 
 //滚动到底部
 // 如果要向下或向右等移动，可以用scrollTop或scrollRight等
@@ -307,6 +304,29 @@ function scrollToEnd(){//滚动到底部
 	$(document).scrollTop(scrollHeight);
 	// console.log("执行滚动到底端，height="+scrollHeight);
 }
+//修改好友消息数
+function  Update_num(time,msg){ 
+	$.ajax({
+		url: '/cn/chat/update-friend-num', // 跳转到 action 
+		type: 'post',
+		data:{uid:uid,fid:fid,time:time,content:msg},
+		dataType: 'json',
+		success: function (data) {
+
+		},
+	});
+} 
+//修改自己的消息数
+function  my_num(){ 
+	$.ajax({
+		url: '/cn/chat/update-my-num', // 跳转到 action 
+		type: 'post',
+		data:{uid:uid,fid:fid},
+		dataType: 'json',
+		success: function (data) {				
+		},
+	});
+} 
 
 </script>
  

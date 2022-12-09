@@ -18,8 +18,28 @@ class WeChatFriend extends ActiveRecord {
             return '{{%wechat_friend}}';
     }
 
-
-	 
+    //添加朋友
+    public static function addFriend($args){
+        // 生成好友编号-房间号
+        $room =md5(time().rand(1,10000)).rand(1,10000);
+        $args['room_id']=$room;
+        Yii::$app->signdb->createCommand()->insert('wechat_friend',$args)->execute();
+    }
+ 
+    
+    //修改未看消息数--插入最新消息和时间
+    public static function updateFriendNum($uid,$fid,$content,$time,$num=0){
+        $old  = WeChatFriend::find()->where("uid = $fid and friend_id =$uid")->asArray()->one(); 
+        $oldnum  =$old['num'];
+        $room_id =$old['room_id'];
+        WeChatFriend::updateAll(['num' =>$oldnum+$num],"uid = $fid and friend_id =$uid");
+        WeChatFriend::updateAll(['last_time' =>$time,'content' =>"$content"],"room_id = '$room_id'");
+        return $oldnum+$num;
+    }
+    //修改未看消息数
+    public static function updateUserNum($uid,$fid,$num=0){
+        WeChatFriend::updateAll(['num' =>0],"uid = $uid and friend_id =$fid");
+    }
 
 }
 

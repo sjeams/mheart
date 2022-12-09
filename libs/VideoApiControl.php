@@ -24,16 +24,10 @@
             if($token){  // 登录状态
                 //token过期userlogin存在保持登录状态，否则销毁
                 $userlogin= Yii::$app->session->get('userlogin');
-                if(!$userlogin){
+                $userId= Yii::$app->session->get('userId');
+                if(!$userlogin||!$userId){
                     //修改参数时，注意其它地方也要修改
-                    $userlogin = WechatUser::getUserlogin($token);
-                    // 验证token是否有效--另一设备登录挤下
-                    if( $userlogin){
-                        Yii::$app->session->set('userlogin',$userlogin);
-                    }else{
-                        setcookie('sslToken');
-                        session_destroy();
-                    }
+                     WechatUser::getUserlogin($token);
                 }
             }else{
                 setcookie('sslToken');

@@ -65,10 +65,10 @@ $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
         <tr>
             <?php  if( $http_geturl=='chat'){ ?>
                 <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
-                <td class="btn-primary"><a class="" href="/cn/chat/list">聊天</a></td>
+                <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
             <?php }else{ ?>   
                 <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
-                <td class="btn-primary"><a class=" " href="/cn/chat/list">聊天</a></td>
+                <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
                 <?php if($userlogin['graden']>0) {?>
                     <!-- <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td> -->
                     <!-- <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td> -->
@@ -204,6 +204,10 @@ $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
                 window.location.reload();   
             },
         });
+    }
+
+    function toZero(t){
+        return	(t < 10 ? "0" + t : t);
     }
 </script>
 
