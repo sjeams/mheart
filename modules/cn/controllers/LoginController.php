@@ -117,7 +117,6 @@ class LoginController extends ApiControl
         $userId = Yii::$app->session->get('userId');
         WechatUser::updateAll(['token' => ''],"id='$userId'");
         // Yii::$app->session->destroy();
-        var_dump($userId);die;
         session_destroy();
         setcookie('sslToken');
         die(Method::jsonGenerate(1,[],'succes'));
