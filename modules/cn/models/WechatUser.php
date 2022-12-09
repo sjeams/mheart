@@ -17,7 +17,8 @@ class WechatUser extends ActiveRecord {
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("token='$token'")->asArray()->one();
         }else{
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("id='$userId'")->asArray()->one(); 
-        }
+        }       
+        // var_dump($token);die;
         // 验证token是否有效--另一设备登录挤下
         if($userlogin){
             Yii::$app->session->set('token',$token);
@@ -36,7 +37,7 @@ class WechatUser extends ActiveRecord {
         //更新token
         WechatUser::updateAll(['token' => $token],"id=$userId");
         //设置缓存
-        WechatUser::getUserlogin(false,$userId);
+        WechatUser::getUserlogin($token,$userId);
     }
 
     public static function headerLocation(){
