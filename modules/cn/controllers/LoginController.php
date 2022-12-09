@@ -33,7 +33,7 @@ class LoginController extends ApiControl
         if($phone){
             $res = WechatUser::find()->where("phone =$phone")->one();
             if($res){
-                die(Method::jsonGenerate(0,[],'手机号码已存在'));
+                // die(Method::jsonGenerate(0,[],'手机号码已存在'));
                 // 正常登录
                 $this->LoginIn($phone,$password);
             }else{

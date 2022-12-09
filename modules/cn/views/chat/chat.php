@@ -3,6 +3,32 @@
 	<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
 <body>
 <style>
+	.chat_body{
+		margin-bottom: 20px;
+	}
+	.user_information_center{
+		cursor: pointer;
+		text-align: center;
+		margin-top:30px ;
+    }
+	/* 时间 */
+	.msg-time{
+		margin-left: 10px;
+		color:black;
+		background-color:white;
+		/* border:1px solid #bbbbbb; */
+		text-align:center;
+		word-wrap:break-word;
+		display: inline-block;
+		line-height: 30px;
+		border-radius: 5px;
+		padding:0px 10px;
+		height: 30px;
+		width: 200px;
+		color:#ffffff;
+		background-color: #dddddd;
+	}
+
 	.user_information_right{
 		cursor: pointer;
 		text-align: right;
@@ -82,7 +108,12 @@
     <div id="message-body" class="message-body">
 
     </div>
-    <div id="show-logs">		
+    <div id="show-logs">
+		<!-- <div class="user_information_center"> 
+			<div class="msg-time">
+				<?php echo date('Y-m-d H:i',time())?>
+			</div>
+		</div>		 -->
 		<!-- <div  class="user_information_left">
 			<img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> 
 			<div class="msg-user">收到了双方的发是 试</div>
@@ -93,14 +124,19 @@
 			<img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> 
 			</div> 
 		</div> -->
-</div>
+	</div>
 </body>
  
 <script lang="javascript">
-    var wsServer = "ws://124.221.174.216:9501?room=<?php echo $room;?>";
+    var msg;
+
+	var uid='<?php echo $user['id'] ?>';
+	var fid='<?php echo $friend['id'] ?>';
+	var room_id='<?php echo $room ?>';
+    var wsServer = "ws://124.221.174.216:9501?room="+room_id+"&uid="+uid;
     var websocket = new WebSocket(wsServer);
     websocket.onopen = function (evt) {// 建立连接
-        showServerInfoSuccess("连接成功.");
+        // showServerInfoSuccess("连接成功.");
 		// showServerInfoSuccess(JSON.parse(evt.data).content);
     };
  
@@ -115,10 +151,14 @@
 			if(typeof JSON.parse(evt.data).fd !== 'undefined'){
 				$("#onlineUserFD").html(JSON.parse(evt.data).fd);
 			}
-			
 			$("#onlineUser").html(JSON.parse(evt.data).num);
- 
+			//获取缓存
 			console.log(JSON.parse(evt.data) )
+			//自己进去的时候缓存历史记录
+			if(JSON.parse(evt.data).uid==uid){
+				showHistory(JSON.parse(evt.data).content)
+			}
+
 		}
  
 		if(JSON.parse(evt.data).type == 'USER_OUT' ){
@@ -127,19 +167,19 @@
 		}
 		
 		if(JSON.parse(evt.data).type == 'USER_MSG'){		
-			
-			console.log(JSON.parse(evt.data) )
+			// console.log(JSON.parse(evt.data) )
 			if(JSON.parse(evt.data).from_fd == $("#onlineUserFD").html()){
 				var msg = JSON.parse(evt.data).msg;
 							// + ' 说：我';
-				
 				showUserMessageMine(msg);
+				scrollToEnd();
 			}else{
 				// var msg = JSON.parse(evt.data).from_fd 
 				// 			+ ' 说：'
 				// 			+ JSON.parse(evt.data).msg;
 				var msg =JSON.parse(evt.data).msg;
 				showUserMessage(msg);
+				scrollToEnd();
 			}
 		}
     };
@@ -148,8 +188,6 @@
         // showInfo('发生错误: ' + evt.data);
     };
  
-    var msg;
-	var room_id;
     // var sendBtn = document.getElementById('sendBtn');
     
     // sendBtn.onclick = function(){
@@ -161,21 +199,25 @@
     //     }
     // };
     function sendBtn(){
-        if (websocket.readyState === 1) {
+		// console.log(show_newTime())
+		if (websocket.readyState === 1) {
             msg = $('#msg').val();
-			room_id = '<?php echo $room;?>';
-			uid = '<?php echo $user['id'];?>';
 			if(msg){
 				var message = {
 					msg: msg,
 					room:room_id,
 					uid:uid,
-				};			
+					fid:fid,
+					time:new Date().getTime(),
+				};
+				console.log(message)
 				websocket.send(JSON.stringify(message));// 发送消息到服务器
 				$('#msg').val('');
 			}
         } else {
-            alert('WebSocket 连接失败');
+            // alert('WebSocket 连接失败');
+			msg = $('#msg').val();
+			showUserMessageMine(msg)
         }  
     }
 
@@ -183,33 +225,89 @@
   	function gou(){
 		sendBtn();
 	}
- 
 	// function showInfo(msg){
     //     $("#show-logs").append("<div class='msg-logs'>"+msg+"</div>");
 	// }
-	
+	//历史回填
+	function showHistory(msg_list){
+		var history_time = 0;
+		for(var  msg in msg_list){
+			let new_time= show_newTime(msg_list[msg].time);
+			let old_time= show_newTime(history_time);
+			//时间
+			if(new_time!= old_time){
+				showTime(new_time);
+				var	history_time = msg_list[msg].time;
+			}
+			//消息
+			if(msg_list[msg].uid==uid){
+				showUserMessageMine(msg_list[msg].msg);
+			}else{
+				showUserMessage(msg_list[msg].msg);
+			}
+
+		}
+		scrollToEnd();
+	}
+	//显示日期
+	function showTime(time){
+		var news ='<div class="user_information_center scrollToLocation"><div class="msg-time">'+time+'</div></div>';
+		$("#message-body").append(news);
+	}
 	// friend
 	function showUserMessage(msg){
-		var news ='<div  class="user_information_left"><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> <div class="msg-user">'+msg+'</div></div>';
+		var news ='<div  class="user_information_left son-panel"><img class="user_photo" src="<?php echo $friend['photo']?$friend['photo']:'/sign/img/contact.jpg'?>" alt=""> <div class="msg-user">'+msg+'</div></div>';
 		$("#message-body").append(news);
 	}
 	//my
 	function showUserMessageMine(msg){
-		var news ='<div class="user_information_right"><div class="msg-user-mine">'+msg+'</div><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> </div> </div>';
+		var news ='<div class="user_information_right son-panel"><div class="msg-user-mine">'+msg+'</div><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> </div> </div>';
         $("#message-body").append(news);
 	}
+
 	// function showServerMsg(msg){
         // $("#message-body").append("<div class='msg-server'>服务器消息："+msg+"</div>");
 	// }
 	// 回填聊天记录
-	function showServerInfoSuccess(content){
-		
+	// function showServerInfoSuccess(content){
+		// console.log(content );
         // $("#message-body").append("<div class='msg-green'>服务器消息："+msg+"</div>");
-	}
+	// }
 	// function showServerInfoFailured(msg){
     //     $("#message-body").append("<div class='msg-exit'>服务器消息："+msg+"</div>");
 	// }
- 
+ //当前时间
+function show_newTime(time){
+    // var myDate = new Date;
+	var myDate =new Date(time)
+    var year = myDate.getFullYear(); //获取当前年
+    var mon = toZero(myDate.getMonth() + 1); //获取当前月
+    var date =  toZero(myDate.getDate()); //获取当前日
+    var h =  toZero(myDate.getHours());//获取当前小时数(0-23)
+    var m =  toZero(myDate.getMinutes());//获取当前分钟数(0-59)
+    // var s = toZero(myDate.getSeconds());//获取当前秒
+    var week =  toZero(myDate.getDay());
+    var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    // console.log(year, mon, date, weeks[week])
+	// return year + "年" + mon + "月" + date + "日" + weeks[week];
+	return year + "年" + mon + "月" + date + "日 " + h +":"+ m;
+}
+
+function toZero(t){
+ 	return	(t < 10 ? "0" + t : t);
+}
+
+//滚动到底部
+// 如果要向下或向右等移动，可以用scrollTop或scrollRight等
+//滚动到页面底端（页面内容过多时）
+function scrollToEnd(){//滚动到底部
+	var test_div = document.getElementById("message-body");
+	test_div.scrollLeft = screen.width;  //screen.width就是要移动的像素
+	var scrollHeight = $(document).height()-$(window).height();
+	$(document).scrollTop(scrollHeight);
+	// console.log("执行滚动到底端，height="+scrollHeight);
+}
+
 </script>
  
 </html>
