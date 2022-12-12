@@ -115,7 +115,7 @@
 	}
 	// 外部监听事件
     // var wsServer = "ws://124.221.174.216:9501?room="+room_id+"&uid="+uid; 
-	var wsServer = "ws://www.mheart.xyz:9501";
+	var wsServer = "wss://www.mheart.xyz/wss";
     var websocket = new WebSocket(wsServer);
 	// /监听消息数量和最新消息
 	websocket.onmessage = function (evt) {// 接收服务器推送的消息

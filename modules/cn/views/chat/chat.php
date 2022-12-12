@@ -132,7 +132,7 @@
 	var uid='<?php echo $user['id'] ?>';
 	var fid='<?php echo $friend['id'] ?>';
 	var room_id='<?php echo $room ?>';
-    var wsServer = "ws://www.mheart.xyz:9501?room="+room_id+"&uid="+uid; 
+    var wsServer = "wss://www.mheart.xyz/wss?room="+room_id+"&uid="+uid; 
     var websocket = new WebSocket(wsServer);
     websocket.onopen = function (evt) {// 建立连接
         // showServerInfoSuccess("连接成功.");
