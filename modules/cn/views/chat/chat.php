@@ -139,7 +139,7 @@
 		// showServerInfoSuccess(JSON.parse(evt.data).content);
     };
     websocket.onclose = function (evt) {// 关闭连接
-        showServerInfoFailured("关闭连接");
+        // showServerInfoFailured("关闭连接");
     };
     websocket.onmessage = function (evt) {// 接收服务器推送的消息
         //showInfo(evt.data);
@@ -150,7 +150,7 @@
 			}
 			$("#onlineUser").html(JSON.parse(evt.data).num);
 			//获取缓存
-			console.log(JSON.parse(evt.data) )
+			// console.log(JSON.parse(evt.data) )
 			//自己进去的时候缓存历史记录
 			if(JSON.parse(evt.data).uid==uid){
 				showHistory(JSON.parse(evt.data).content)
@@ -162,7 +162,6 @@
 			// showServerInfoFailured(JSON.parse(evt.data).msg);
 		}
 		if(JSON.parse(evt.data).type == 'USER_MSG'){		
-			// console.log(JSON.parse(evt.data) )
 			if(JSON.parse(evt.data).from_fd == $("#onlineUserFD").html()){
 				var msg = JSON.parse(evt.data).msg;
 							// + ' 说：我';

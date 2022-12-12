@@ -82,7 +82,7 @@
 	<input type="hidden" id="usernum" value="<?php echo $total ?>">
     <table class="table table-bordered  tablestyle"  >
         <tbody id="content_append">
-		<?php foreach($userList as $user){ ?>
+		<?php  foreach($userList as $user){ ?>
 			<tr id="user_list<?php echo $user['friend_id'] ?>"  class="user_list">
 				<td onclick="gouSerach(<?php echo $user['friend_id']?>)" >
 					<div  class="user_information_left">

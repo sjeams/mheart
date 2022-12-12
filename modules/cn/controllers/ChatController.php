@@ -55,11 +55,12 @@ class ChatController extends VideoApiControl
         $count = Yii::$app->signdb->createCommand("select count(f.uid) as count from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryOne()['count'];
         $page = Yii::$app->request->get('page',1);
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        $where =" f.uid=$uid";
+        // $where =" f.uid=$uid";
+        $where =" 1=1";
         $userList= (new \yii\db\Query())
         ->select("f.*,u.photo,u.name")
         ->from("x2_wechat_friend as f")
-        ->rightJoin('x2_wechat_user as u', 'f.friend_id = u.id ')
+        ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id and  f.uid=$uid")
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('f.last_time desc')->all('sign');
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
