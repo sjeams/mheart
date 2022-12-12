@@ -126,8 +126,15 @@
 		</div> -->
 	</div>
 </body>
- 
+<!-- 标题 -->
+<input type="hidden" value="<?php echo $chat_title ?>" id="chat_title">
 <script lang="javascript">
+	//补全标题
+	$(function(){
+		var chat_title =$('#chat_title').val();
+		$('.chat_title').text(chat_title);
+	})
+
     var msg;
 	var uid='<?php echo $user['id'] ?>';
 	var fid='<?php echo $friend['id'] ?>';
@@ -210,7 +217,7 @@
 				websocket.send(JSON.stringify(message));// 发送消息到服务器
 				$('#msg').val('');
 				//给对应的好友标记消息数量
-				Update_num(content_time,msg);
+				Update_msg(content_time,msg);
 			}
         } else {
             // alert('WebSocket 连接失败');
@@ -254,12 +261,12 @@
 	}
 	// friend
 	function showUserMessage(msg){
-		var news ='<div  class="user_information_left son-panel"><img class="user_photo" src="<?php echo $friend['photo']?$friend['photo']:'/sign/img/contact.jpg'?>" alt=""> <div class="msg-user">'+msg+'</div></div>';
+		var news ='<div  class="user_information_left son-panel"> <a href="/cn/chat/detail?uid=<?php echo $friend['id'] ?>"><img class="user_photo" src="<?php echo $friend['photo']?$friend['photo']:'/sign/img/contact.jpg'?>" alt=""> </a><div class="msg-user">'+msg+'</div></div>';
 		$("#message-body").append(news);
 	}
 	//my
 	function showUserMessageMine(msg){
-		var news ='<div class="user_information_right son-panel"><div class="msg-user-mine">'+msg+'</div><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> </div> </div>';
+		var news ='<div class="user_information_right son-panel"><div class="msg-user-mine">'+msg+'</div> <a href="/cn/chat/detail?uid=<?php echo $user['id'] ?>"><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> </a></div> </div>';
         $("#message-body").append(news);
 	}
 
@@ -304,9 +311,9 @@ function scrollToEnd(){//滚动到底部
 	// console.log("执行滚动到底端，height="+scrollHeight);
 }
 //修改好友消息数
-function  Update_num(time,msg){ 
+function  Update_msg(time,msg){ 
 	$.ajax({
-		url: '/cn/chat/update-friend-num', // 跳转到 action 
+		url: '/cn/chat/update-friend-msg', // 跳转到 action 
 		type: 'post',
 		data:{uid:uid,fid:fid,time:time,content:msg},
 		dataType: 'json',

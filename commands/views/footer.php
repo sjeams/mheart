@@ -52,6 +52,19 @@
         padding: 0px;
         margin-bottom: 0px;
     }
+    .friend_search{
+   
+ 
+    }
+    .friend_search span{
+        display: inline-block;
+        width: 48%!important;
+        margin: 0px auto;
+    }
+    .friend_input input{
+        width: 99%!important;
+    }
+ 
 </style>
 <!-- content 的结尾div 别删了 -->
 </div>
@@ -73,6 +86,23 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
         </tr>
     </table>
+    <?php } else if( $http_index=='list'){ ?> 
+        <table class="table table-bordered chat_footer " >
+            <tr>
+            <td class="btn-primary  friend_input" >
+                <input type="text" id="friend_title" name="value"  class="message-send-input" />     
+         
+            </td>
+                <td class="btn-primary friend_search" style="max-width: 100px!important;" >
+                    <span class="btn  " onclick="gou()" ><i class="bi bi-search"></i> </span>  
+                    <!-- <span class="btn  "><i class="bi bi-plus-circle"></i> </span> -->
+                    <span class="btn  "> <i class="bi bi-person-lines-fill"></i></span>
+                </td>
+            </tr>
+
+           
+        </table>
+
     <?php } ?> 
 <?php }else{  ?> 
 <!-- <input type="hidden" value="0" id="top_hidden"> -->

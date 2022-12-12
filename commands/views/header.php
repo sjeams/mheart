@@ -53,31 +53,67 @@
     .tablestyle td{
         width: 25%;
     }
+    .chat_back{
+        width: 40px!important;
+        display: block;
+        float:left;
+    }
+    .chat_back i{
+        line-height: 40px;
+    } 
+    .chat_add{
+        width: 40px!important;
+        display: block;
+        float:right;
+    }
+    .chat_add i{
+        line-height: 40px;
+    }
+    .chat_title{
+        line-height: 40px;
+        /* margin-left: -20px; */
+    }
 </style>
 
 <?php 
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
+$http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 // var_dump($http_geturl );die;
 ?>
 <div class="video_header center  top-title"> 
     <table class="table table-bordered  tablestyle mb-0">
         <tr>
             <?php  if( $http_geturl=='chat'){ ?>
-                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
-                <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                <?php  if( $http_index=='list'){ ?>
+                    <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
+                    <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                    <td class="btn-primary"   >
+                        <input type="hidden" name="" id="menu" value="0">
+                        <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
+                    </td>
+                <?php }else  if( $http_geturl=='detali'){ ?>
+                    <td class="btn-primary " >
+                        <a class="chat_back"  href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i></a>
+                        <span class="chat_title"></span>
+                        <a class="chat_add" href="/cn/chat/detail"><i class="bi bi-three-dots"></i></a>
+                    </td>
+                <?php }else  { ?>
+                    <td class="btn-primary " >
+                        <a class="chat_back" href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i></a>
+                        <span class="chat_title"></span>
+                    </td>
+                   
+                <?php } ?>
             <?php }else{ ?>   
                 <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
                 <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
-                <?php if($userlogin['graden']>0) {?>
-                    <!-- <td class="btn-primary"><a class=" " onclick="my_collect()"> 收录</a> </td> -->
-                    <!-- <td class="btn-primary"><a class=" " onclick="my_video()"> 收藏</a> </td> -->
-                <?php } ?>
+                <td class="btn-primary"   >
+                    <input type="hidden" name="" id="menu" value="0">
+                    <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
+                </td>
             <?php } ?>
-            <td class="btn-primary"   >
-                <input type="hidden" name="" id="menu" value="0">
-                <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
-            </td>
+
         </tr>
     </table>
     <ul class="list-group text-center menu_list">
@@ -90,7 +126,6 @@ $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
             <li class="list-group-item  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'播放√':'播放×' ?></li>
             <li class="list-group-item  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>
-
         <li class="list-group-item btn-defult" onclick="loginOuts()"> 退出</li>
     </ul>
 </div>
