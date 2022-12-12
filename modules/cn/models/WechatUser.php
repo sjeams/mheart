@@ -12,20 +12,20 @@ class WechatUser extends ActiveRecord {
     }
 
     public static function getUserlogin($token,$userId=0){
-
         if($token){
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("token='$token'")->asArray()->one();
+            //设置cookie
+            setcookie('sslToken',$token,time()+86400*3,'/','mheart.xyz');
         }else{
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("id='$userId'")->asArray()->one(); 
-        }       
+        }     
+        // var_dump($userlogin);die;  
         // var_dump($token);die;
         // 验证token是否有效--另一设备登录挤下
         if($userlogin){
-            Yii::$app->session->set('token',$token);
+            Yii::$app->session->set('token',$userlogin['token']);
             Yii::$app->session->set('userId',$userlogin['id']);
             Yii::$app->session->set('userlogin',$userlogin);
-            //设置cookie
-            setcookie('sslToken',$token,time()+86400*3,'/','mheart.xyz');
         }else{
             //退出和销毁
             setcookie('sslToken');

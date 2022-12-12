@@ -130,6 +130,14 @@ $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
                     $('.model_name').removeClass('btn-defult');
                     $('.model_name').addClass('btn-success');
                     $('#is_model_type').val(1)
+
+                    //暂停在播视频
+                    var now_video =$("#now_video").val();
+                    console.log(now_video)
+                    if(now_video!=0){
+                        var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
+                        $(".video"+now_video).html(player);
+                    } 
                     //显示窗口播放栏
                     $('.video_old').css('display','table-cell');
                 }else{
@@ -139,6 +147,7 @@ $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
                     $('#is_model_type').val(0)
                     //隐藏窗口播放栏
                     $('.video_old').css('display','none');
+
                 }
                 // console.log(data);
                 // window.location.reload();   

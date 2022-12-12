@@ -66,13 +66,13 @@
         </thead>
         <tbody class="list_html">
             <?php if($content){
-            foreach($content as $kss => $v) {  ?>
+            foreach($content as $kss => $v) {  $kss= $kss+1; ?>
                 <?php if($v['belong']==0){   ?>
                     <tr>
                         <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->
                             <div  class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
-                            <p class="center"><span><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
+                            <p class="center"><span><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
                 </td>
                     </tr>
                     <tr>
@@ -84,11 +84,9 @@
                                 <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
                                 <input type="hidden" name="title" value="<?php echo $vdieo['title']?>" >
                             </div>
-
                             <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                             <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
                             <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
-
                             <?php } }?>
                             </span>
                         </td>

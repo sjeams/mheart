@@ -111,6 +111,7 @@ function  videoList(id,key=0,isbofang=1){
     var video_model = $('#is_model_type').val();
     if(video_model==0){
         var container_id=   '.video'+id;
+        videoHidden(0);//隐藏窗口
     }else{
         var container_id=   '.video';
         videoHidden(1);//显示窗口
