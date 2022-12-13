@@ -13,11 +13,11 @@ class WechatUser extends ActiveRecord {
 
     public static function getUserlogin($token,$userId=0){
         if($token){
-            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("token='$token'")->asArray()->one();
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model,token')->where("token='$token'")->asArray()->one();
             //设置cookie
             setcookie('sslToken',$token,time()+86400*3,'/','mheart.xyz');
         }else{
-            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model')->where("id='$userId'")->asArray()->one(); 
+            $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model,token')->where("id='$userId'")->asArray()->one(); 
         }     
         // var_dump($userlogin);die;  
         // var_dump($token);die;
