@@ -11,7 +11,7 @@
 	<div class="msg-user msg-user-time">
 	<span class="chat_friend_time"><?php echo date('d',$v['create_time'])?></span> <span>	<?php echo intval(date('m',$v['create_time']))?>月</span>
 	</div> 	
-	<img class="user_photo img_click" src="<?php echo $v['img']?$v['img']:'/sign/img/contact.jpg'?>" alt=""> 
+	<img class="user_photo img_click" src="<?php echo isset($v['img'])?$v['img']:'/sign/img/contact.jpg'?>" alt=""> 
 	<div class="msg-user">
 		<?php echo $v['content'] ?>
 	</div> 
