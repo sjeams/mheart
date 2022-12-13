@@ -3,8 +3,8 @@ body {
     padding-right: 0px;
 }
 .container{
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 0px!important;
+    padding-left: 0px!important;
 }
 .hiddened{
 	display: none!important;

@@ -33,7 +33,7 @@
         height: 100%-80px;
         /* position: fixed; */
         display: flex;
-        margin:60px auto;
+        margin:50px auto;
         left:0; 
         right:0; 
         top:40px;
@@ -60,17 +60,21 @@
     }
     .chat_back i{
         line-height: 40px;
+        color: black;
     } 
     .chat_add{
         width: 40px!important;
         display: block;
         float:right;
+    
     }
     .chat_add i{
         line-height: 40px;
+        color: black;
     }
     .chat_title{
         line-height: 40px;
+        color: black;
         /* margin-left: -20px; */
     }
 </style>
@@ -79,10 +83,11 @@
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
 $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
-// var_dump($http_geturl );die;
+// var_dump($http_index );die;
 ?>
 <div class="video_header center  top-title"> 
-    <table class="table table-bordered  tablestyle mb-0">
+<!-- table-bordered  -->
+    <table class="table  tablestyle mb-0">
         <tr>
             <?php  if( $http_geturl=='chat'){ ?>
                 <?php  if( $http_index=='list'){ ?>
@@ -92,15 +97,15 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                         <input type="hidden" name="" id="menu" value="0">
                         <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
                     </td>
-                <?php }else  if( $http_geturl=='detali'){ ?>
-                    <td class="btn-primary " >
-                        <a class="chat_back"  href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i></a>
-                        <span class="chat_title"></span>
-                        <a class="chat_add" href="/cn/chat/detail"><i class="bi bi-three-dots"></i></a>
-                    </td>
-                <?php }else  { ?>
-                    <td class="btn-primary " >
+                <?php }else  if( $http_index=='chat'){ ?>
+                    <td class="  " >
                         <a class="chat_back" href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i></a>
+                        <span class="chat_title"></span>
+                        <a class="chat_add"   onclick="chat_detail()"><i class="bi bi-three-dots"></i></a>
+                    </td>
+                <?php }else { ?>
+                    <td class="" >
+                        <a class="chat_back"    onclick="gou_back()"><i class="bi bi-chevron-left"></i></a>
                         <span class="chat_title"></span>
                     </td>
                    

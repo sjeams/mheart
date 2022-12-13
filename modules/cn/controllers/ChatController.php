@@ -108,17 +108,63 @@ class ChatController extends VideoApiControl
      */
     public function actionDetail()
     {
-       
+        $this->layout = 'kongbai'; 
         $uid =  $this->userId;
         $fid = Yii::$app->request->get('uid',0);
         $friend =  WechatUser::find()->where("id = $fid")->asArray()->One();
+        // var_dump($friend) ;die;
         $user =  WechatUser::find()->where("id =$uid ")->asArray()->One();
         // $room =WeChatFriend::find()->where("uid =$uid and friend_id = $fid")->asArray()->One();
         // //清空我的消息数量
         // WeChatFriend::updateUserNum( $uid,$fid,0);
         $chat_title = '';
+        $html = Yii::$app->request->get('html',0);
+        if($html==1){
+            // 详情
+            return $this->render('detail',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+        }else  if($html==2){   
+            //朋友圈   
+            return $this->render('detail_remark',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+        }else  if($html==3){   
+            //朋友圈   
+            return $this->render('detail_graden',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+        }else  if($html==4){   
+            $count = Yii::$app->signdb->createCommand("select count(n.id) as count from {{%wechat_user_news}} n LEFT JOIN {{%wechat_user}} u ON n.uid = u.id  where n.uid=$fid")->queryOne()['count'];
+            $page = Yii::$app->request->get('page',1);
+            $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+            $where =" n.uid=$fid";
+            // $where =" u.id !=$uid";
+            $data['data']= (new \yii\db\Query())
+            ->select("n.*,u.id as userId,u.photo,u.name")
+            ->from("x2_wechat_user_news as n")
+            ->leftJoin('x2_wechat_user as u', "n.uid = u.id ")
+            // ->leftJoin('x2_wechat_friend as f', "f.friend_id = u.id and  f.uid=$uid")
+            ->where($where)
+            ->offset($pageStr->offset)
+            ->limit($pageStr->limit)
+            ->orderBy('n.create_time desc')->all('sign');
+            $data['page']=$page; 
+            $data['count']=ceil($count/10 ); 
+            // var_dump($data);die;
+            // $total = Yii::$app->signdb->createCommand("select sum(f.num) as total from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryOne()['total'];
+            //朋友圈  
+            $list = Yii::$app->request->get('list',0); 
+            if($list==1){
+                if($page>1){
+                    define('CHAT_YEAR',date('Y',$data['data'][0]['create_time']));
+                }else{
+                    define('CHAT_YEAR',date('Y',time()));
+                }
+                return $this->render('detail_friend_detail',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            }else{
+           
+                return $this->render('detail_friend',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            }
 
-        return $this->render('detail',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+        }else{
+            $this->layout = 'cn'; 
+            return $this->render('detail_html',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+        }
     }
 
 

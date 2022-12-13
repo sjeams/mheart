@@ -1,0 +1,168 @@
+<!-- 聊天室模板 -->
+<html>
+	<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<body>
+<style>
+	table td {
+		padding:0.25rem!important;
+	}
+ 	body{
+		background-color: #f3f3f3;
+	}
+	.chat_body{
+		margin-bottom: 20px;
+	}
+	.user_information_center{
+		cursor: pointer;
+		text-align: center;
+		margin-top:1px ;
+		margin-bottom: 10px;
+    }
+	/* 时间 */
+	.msg-time{
+		color:black;
+		background-color:white;
+		/* border-bottom: 1px solid #f1f1f1; */
+		text-align:center;
+		word-wrap:break-word;
+		/* display: inline-block; */
+		line-height:  60px;
+		border-radius: 5px;
+		padding:0px 10px;
+		height: 60px;
+		/* max-width: 400px; */
+		width: 100%;
+		color:#005fcc;
+		margin-top:1px ;
+	}
+/* 
+	.user_information_right{
+		cursor: pointer;
+		text-align: right;
+		margin-top:30px ;
+
+    } */
+    .user_information_left{
+		cursor: pointer;
+		/* margin-top: 30px; */
+		padding-top: 20px;
+		background-color: white;
+		height: 160px;
+		width: 100%;
+    }
+	.user_photo{
+		height:80px;
+		width:80px;
+		border-radius: 5px;
+		vertical-align: top;
+		margin-top: 10px;
+		margin-left: 20px;
+		float: left;
+	}
+	/* 对面 */
+	.msg-user{
+		margin-left: 10px;
+		color:black;
+		background-color:white;
+		/* border:1px solid #bbbbbb; */
+		text-align:left;
+		word-wrap:break-word;
+		display: inline-block;
+		line-height: 30px;
+		border-radius: 5px;
+		padding:5px 10px;
+		min-height: 40px;
+		max-width: 65%;
+		float: left;
+	}
+	/* 我的 */
+	.msg-user-mine{
+		margin-right: 10px;
+		color:black;
+		background-color:#89d964;
+		/* border:1px solid #ccc; */
+		text-align: left;
+		word-wrap:break-word;
+		display: inline-block;
+		line-height: 30px;
+		border-radius: 5px;
+		padding:5px 10px;
+		min-height: 40px;
+		float: left;
+		max-width: 65%;
+	}
+
+	.message-send-input{
+		min-width:240px;
+        width: 100%;
+        height:60px;
+	}
+	.message-send-button{
+		background-color:#0000FF;
+		color:white;
+		border:2px solid;
+		border-radius:25px;
+		width:100%!important;
+        text-align: center;
+        height:60px;
+	}
+
+  #onlineUserFD{
+	display: none;
+  }
+  .float_left{
+	margin-left: 10px;
+	float: left;
+  }
+  .float_rigth{
+	float: right;
+  }
+  .clolor_red{
+	color:#ff7cfb;
+  }
+  .clolor_blue{
+	color:#005fcc;
+  }
+</style>
+ <input type="hidden" value="<?php echo $friend['id'] ?>" id="friend_id">
+<div class="center chat_body">
+    <!-- 当前在线人数：<span id="onlineUser">0</span>人&nbsp;&nbsp; -->
+    <!-- 客户端FD： -->
+	<span id="onlineUserFD"></span> 
+    <div id="show-logs">
+	
+
+	</div>
+</body>
+<!-- 标题 -->
+<input type="hidden" value="<?php echo $chat_title ?>" id="chat_title">
+<input type="hidden" value="1" id="chat_belong">
+<script lang="javascript">
+	// 回退按钮
+	function gou_back(){
+		var chat_belong =$('#chat_belong').val();
+		if(chat_belong==1){
+			window.history.back(-1);
+		}else{
+			gou(1)
+		}
+	}
+	function detail_remark(){ gou(2) }
+	function detail_graden(){ gou(3) }
+	function detail_friend(){ gou(4) }
+	$(function(){
+		gou(1)
+	})
+	function  gou(chat_belong){
+        var friend_id =$('#friend_id').val();
+        // window.location.href="/cn/chat/list?friend_title="+friend_title ;
+		url="/cn/chat/detail?uid="+friend_id+"&html="+chat_belong;
+		var html = getprintHtml(url);
+		if(html){
+            $('#show-logs').html(html);
+			$('#chat_belong').val(chat_belong)
+		}
+    } 
+</script>
+ 
+</html>

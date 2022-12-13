@@ -137,7 +137,9 @@
 		var chat_title =$('#chat_title').val();
 		$('.chat_title').text(chat_title);
 	})
-
+	function chat_detail(){
+		window.location.href='/cn/chat/detail?uid=<?php echo $friend['id'] ?>';
+	}
     var msg;
 	var uid='<?php echo $user['id'] ?>';
 	var fid='<?php echo $friend['id'] ?>';
