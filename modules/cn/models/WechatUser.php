@@ -37,7 +37,7 @@ class WechatUser extends ActiveRecord {
         //更新token
         WechatUser::updateAll(['token' => $token],"id=$userId");
         //设置缓存
-        WechatUser::getUserlogin($token,$userId);
+        WechatUser::getUserlogin($token);
     }
 
     public static function headerLocation(){
