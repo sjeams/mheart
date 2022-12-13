@@ -20,14 +20,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
-<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+
 <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
+
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css">
 
  
 <!-- layui弹窗 -->
@@ -36,9 +33,11 @@
 
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
-<script type="text/javascript" charset="utf-8" src="/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+
 <!-- 自定义样式 -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
 
 <title>心缘测试</title>
 </head>
@@ -105,3 +104,10 @@ function getprintHtml(url){
     return getHtml.responseText;
 }
 </script>
+<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>

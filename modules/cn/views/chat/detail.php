@@ -3,22 +3,29 @@
 	<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
 <body>
 <style>
+	table td {
+		padding:0.25rem!important;
+	}
+ 	body{
+		background-color: #f3f3f3;
+	}
 	.chat_body{
 		margin-bottom: 20px;
 	}
 	.user_information_center{
 		cursor: pointer;
 		text-align: center;
-		margin-top:10px ;
+		margin-top:1px ;
+		margin-bottom: 10px;
     }
 	/* 时间 */
 	.msg-time{
 		color:black;
 		background-color:white;
-		border-bottom: 1px solid #f1f1f1;
+		/* border-bottom: 1px solid #f1f1f1; */
 		text-align:center;
 		word-wrap:break-word;
-		display: inline-block;
+		/* display: inline-block; */
 		line-height:  60px;
 		border-radius: 5px;
 		padding:0px 10px;
@@ -26,7 +33,7 @@
 		/* max-width: 400px; */
 		width: 100%;
 		color:#005fcc;
-		
+		margin-top:1px ;
 	}
 /* 
 	.user_information_right{
@@ -40,7 +47,7 @@
 		/* margin-top: 30px; */
 		padding-top: 20px;
 		background-color: white;
-		height: 200px;
+		height: 160px;
 		width: 100%;
     }
 	.user_photo{
@@ -99,14 +106,13 @@
         text-align: center;
         height:60px;
 	}
-	body{
-		background-color: #efefef;
-	}
+
   #onlineUserFD{
 	display: none;
   }
   .float_left{
-	  float: left;
+	margin-left: 10px;
+	float: left;
   }
   .float_rigth{
 	float: right;
@@ -142,18 +148,16 @@
 			</tr>
 		</table>  -->
 		<div  class="user_information_left">
-			<img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> 
+			<img class="user_photo img_click" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> 
 			<div class="msg-user">
 				<span style="font-size: 24px;"><strong><?php echo $user['name']?></strong> <i class="bi bi-person <?php echo $user['sex']==1?'clolor_red':'clolor_blue'?>"></i></span> <br>
-				昵称：<span><?php echo $user['name']?></span> <br>
-				手机号：<span><?php echo $user['phone']?></span> <br>
-				地区：<span><?php echo $user['city']?></span> <br>
+				 	昵称：<span><?php echo $user['name']?></span> <br>
+					手机号：<span><?php echo $user['phone']?></span> <br>
+					地区：<span><?php echo $user['city']?></span> <br>
 			</div> 
 		</div> 
 
 		<div class="user_information_center"> 
-			
-
 			<div class="msg-time">
 				<span class="float_left">
 				 备注和标签
@@ -162,6 +166,7 @@
 				<i class="bi bi-chevron-right"></i>
 				</span>
 			</div>
+			
 			<div class="msg-time">
 			<span class="float_left">
 				 朋友权限
@@ -174,11 +179,20 @@
 		</div>	
 		<div class="user_information_center"> 
 			<div class="msg-time">
-			<i class="bi bi-chat"></i> 发送消息
+				<span class="float_left">
+				 朋友圈
+				</span>
+				<span class="float_rigth">
+				<i class="bi bi-chevron-right"></i>
+				</span>
 			</div>
-			<div class="msg-time">
-			<i class="bi bi-camera-video"></i> 音视频通话
-			</div>
+		</div>	
+		<div class="user_information_center"> 
+			<a href="/cn/chat/chat?uid=<?php echo $friend['id'] ?>">
+				<div class="msg-time">
+				<i class="bi bi-chat"></i> 发送消息
+				</div>
+			</a>
 
 			<div class="msg-time">
   					删除好友
@@ -189,7 +203,16 @@
 <!-- 标题 -->
 <input type="hidden" value="<?php echo $chat_title ?>" id="chat_title">
 <script lang="javascript">
+// $('.img_click').click(function () {
+//     console.log(111)
+//     //获取图片路径
+//     var imgsrc = $(this).attr("src");
+//     console.log(imgsrc);
+//     var opacityBottom = '<div class="opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>';
+//     $(document.body).append(opacityBottom);
+//     toBigImg();//变大函数
 
+// });
 </script>
  
 </html>

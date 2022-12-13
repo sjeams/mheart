@@ -3,6 +3,9 @@
 	<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
 <body>
 <style>
+	table td {
+		padding:0.25rem!important;
+	}
 	.chat_body{
 		margin-bottom: 20px;
 	}
@@ -94,7 +97,7 @@
         height:60px;
 	}
 	body{
-		background-color: #efefef;
+		background-color: #f3f3f3;
 	}
   #onlineUserFD{
 	display: none;
