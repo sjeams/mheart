@@ -64,7 +64,7 @@
 		<span class="chat_friend_time">今天</span> 
 	</div>
 
-	<!-- <img class="user_photo img_click" src="<?php echo $data['img']?$data['img']:'/sign/img/contact.jpg'?>" alt="">  -->
+
 	<div class="msg-user msg-camera">
 		<i class="bi bi-camera"></i> 	
 	</div> 
