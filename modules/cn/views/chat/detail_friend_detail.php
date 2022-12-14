@@ -7,7 +7,7 @@
 		</div> 
 	</div> 
 <?php }?>
-<div  class="user_information_left">
+<div  class="user_information_left" onclick="detail_photo(<?php echo $v['id'] ?>)" >
 	<div class="msg-user msg-user-time">
 	<span class="chat_friend_time"><?php echo date('d',$v['create_time'])?></span> <span>	<?php echo intval(date('m',$v['create_time']))?>月</span>
 	</div> 	

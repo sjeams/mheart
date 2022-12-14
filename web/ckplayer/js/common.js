@@ -7,7 +7,6 @@ $('.img_click').click(function () {
     toBigImg();//变大函数
 
 });
-
 function toBigImg() {
     $(".opacityBottom").addClass("opacityBottom");//添加遮罩层
     $(".opacityBottom").show();
@@ -18,3 +17,5 @@ function toBigImg() {
         $(".opacityBottom").remove();
     });
 }
+
+

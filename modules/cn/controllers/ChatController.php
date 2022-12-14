@@ -160,7 +160,43 @@ class ChatController extends VideoApiControl
            
                 return $this->render('detail_friend',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
             }
+        }else  if($html==5){ 
+            //朋友圈查看图片
+            $count = Yii::$app->signdb->createCommand("select count(n.id) as count from {{%wechat_user_news}} n LEFT JOIN {{%wechat_user}} u ON n.uid = u.id  where n.uid=$fid")->queryOne()['count'];
+            $page = Yii::$app->request->get('page',1);
 
+            $photo_id = Yii::$app->request->get('photo_id',0);
+            $prev = Yii::$app->request->get('prev',0);
+            $pageSize =1; 
+            $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
+            $where =" n.uid=$fid";
+            if($prev==0){
+                $where .=" and n.id =$photo_id";
+            }else if($prev==1){
+                $where .=" and n.id <$photo_id";
+            }else if($prev==2){
+                $where .=" and n.id >$photo_id";
+            }
+            $data['data']= (new \yii\db\Query())
+            ->select("n.*,u.id as userId,u.photo,u.name")
+            ->from("x2_wechat_user_news as n")
+            ->leftJoin('x2_wechat_user as u', "n.uid = u.id ")
+            // ->leftJoin('x2_wechat_friend as f', "f.friend_id = u.id and  f.uid=$uid")
+            ->where($where)
+            ->offset($pageStr->offset)
+            ->limit($pageStr->limit)
+            ->orderBy('n.id desc')->one('sign');
+            $data['page']=$page; 
+            $data['count']=ceil($count/$pageSize); 
+            // var_dump($data);
+            if(empty($data['data'])){
+                // var_dump(1111);
+                return true;
+            }
+            //朋友圈  
+            $list = Yii::$app->request->get('list',0); 
+            return $this->render('detail_photo',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+      
         }else{
             $this->layout = 'cn'; 
             return $this->render('detail_html',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);

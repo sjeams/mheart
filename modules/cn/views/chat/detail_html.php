@@ -144,7 +144,13 @@
 		if(chat_belong==1){
 			window.history.back(-1);
 		}else{
-			gou(1)
+			if(chat_belong==5){
+				$('#chat_belong').val(4)
+				gou(4)
+			}else{
+				gou(1)
+			}
+		
 		}
 	}
 	function detail_remark(){ gou(2) }
@@ -152,6 +158,7 @@
 	function detail_friend(){ gou(4) }
 	$(function(){
 		gou(1)
+		// detail_photo(2)
 	})
 	function  gou(chat_belong){
         var friend_id =$('#friend_id').val();
@@ -163,6 +170,28 @@
 			$('#chat_belong').val(chat_belong)
 		}
     } 
+	//朋友圈图片查看
+	function  detail_photo(photo_id,prev=0){
+        var friend_id =$('#friend_id').val();
+	    var	chat_belong=5;
+        // window.location.href="/cn/chat/list?friend_title="+friend_title ;
+		url="/cn/chat/detail?uid="+friend_id+"&html="+chat_belong+"&photo_id="+photo_id+"&prev="+prev;
+		var html = getprintHtml(url);
+		// console.log(html)
+		if(html!=1){
+            $('#show-logs').html(html);
+			$('#chat_belong').val(chat_belong)
+		}
+    } 
+	//上一个
+	function  detail_photo_prev(photo_id){
+		detail_photo(photo_id,1);
+	}
+	//下一个
+	function  detail_photo_next(photo_id){
+		detail_photo(photo_id,2);
+	}
+
 </script>
  
 </html>

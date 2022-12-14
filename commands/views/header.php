@@ -99,7 +99,8 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                     </td>
                 <?php }else  if( $http_index=='chat'){ ?>
                     <td class="  " >
-                        <a class="chat_back" href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i></a>
+                    <!-- javascript:history.back(-1) -->
+                        <a class="chat_back" href="/cn/chat/list"><i class="bi bi-chevron-left"></i></a>
                         <span class="chat_title"></span>
                         <a class="chat_add"   onclick="chat_detail()"><i class="bi bi-three-dots"></i></a>
                     </td>
