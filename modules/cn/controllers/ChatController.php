@@ -98,7 +98,7 @@ class ChatController extends VideoApiControl
         //清空我的消息数量
         WeChatFriend::updateUserNum( $uid,$fid,0);
         $chat_title = $friend['name'];
-        return $this->render('chat',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend,'room'=>$room['room_id'] ]);
+        return $this->render('chat',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend,'room'=>$room['room_id'] ]);
     }
 
 
