@@ -58,14 +58,14 @@ class ChatController extends VideoApiControl
         $page = Yii::$app->request->get('page',1);
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         // $where =" f.uid=$uid";
-        $where =" u.id !=$uid";
+        $where =" u.id !=$uid and  f.uid=$uid";
         if($friend_title){
             $where .=" and (u.name  like '%$friend_title%' or u.phone like '%$friend_title%' )"; 
         }
         $userList= (new \yii\db\Query())
         ->select("f.*,u.photo,u.name")
         ->from("x2_wechat_friend as f")
-        ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id and  f.uid=$uid")
+        ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id ")
         ->where($where)
         // ->offset($pageStr->offset)
         // ->limit($pageStr->limit)

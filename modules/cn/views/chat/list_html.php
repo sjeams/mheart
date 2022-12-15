@@ -93,10 +93,10 @@
         // window.location.href="/cn/chat/list?friend_title="+friend_title ;
 		url="/cn/chat/list?friend_title="+friend_title+"&html=1";
 		var html = getprintHtml(url);
-		if(html){
+		// if(html){
             $('#content_append').html(html);
 			$("#friend_title").val('');
-		}
+		// }
     } 
 	
 	// websocket通讯
