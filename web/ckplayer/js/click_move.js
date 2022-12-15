@@ -13,6 +13,8 @@ function toBigPhotoClose() {
     // $(".friend_opacityBottom").click(function () {//点击关闭
         $("html,body").removeClass("none-scroll");
         $(".friend_opacityBottom").remove();
+		$(".chat_title").html('');
+
     // });
 }
 
@@ -26,20 +28,24 @@ $("body").on("touchstart", function(e) {
 	startY = e.originalEvent.changedTouches[0].pageY;
 });
 $("body").on("touchmove", function(e) {
-	e.preventDefault();
-	EndX = e.originalEvent.changedTouches[0].pageX,
-	EndY = e.originalEvent.changedTouches[0].pageY,
-	X = EndX - startX,
-	Y = EndY - startY;
-
-	if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-        toBigPhotoClose() 
-        click_left()
-        // alert("左滑");
-	}else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-        toBigPhotoClose() 
-        click_rigth()
-        // alert("右滑");
+	//滑动页面才监听
+	var chat_belong =$('#chat_belong').val();
+	if(chat_belong==5){
+		e.preventDefault();
+		EndX = e.originalEvent.changedTouches[0].pageX,
+		EndY = e.originalEvent.changedTouches[0].pageY,
+		X = EndX - startX,
+		Y = EndY - startY;
+	
+		if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+			// toBigPhotoClose() 
+			click_left()
+			// alert("左滑");
+		}else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+			// toBigPhotoClose() 
+			click_rigth()
+			// alert("右滑");
+		}
 	}
 });
 
@@ -52,7 +58,7 @@ function show_photo(){
 	//获取图片路径
     // var imgsrc = $(this).attr("src");
 	var new_content =  '</br><span class="photo_content">'+photo_content +'</span>';
-    var friend_opacityBottom =  '<div class="friend_opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>'+new_content;
+    var friend_opacityBottom =  '<div class="friend_opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '">'+new_content+'</div>';
     $(document.body).append(friend_opacityBottom);
     toBigPhoto();//变大函数
 }
@@ -60,26 +66,38 @@ function show_photo(){
 function click_left(){
 	var photo_page = $("#photo_page").val();
 	var now_photo = parseInt(photo_page)-1; 
-	if(now_photo>0){
+	if(now_photo!=0){
+		toBigPhotoClose() 
 		$("#photo_page").val(now_photo)
 		show_photo()
-	}else{
-		// console.log(photo_id) 
-		//    上一页
-		show_photo()
-		detail_photo_prev(photo_id);
+	}else if(now_photo<=0){
+		// console.log(111)
+		// 上一页
+		if(photo_next!=0){
+			toBigPhotoClose();
+			detail_photo(photo_next,1)
+		}else{
+			toBigPhotoClose();
+			show_photo()
+		}
 	}
 }
 function click_rigth(){
 	var photo_page = $("#photo_page").val();
 	var now_photo = parseInt(photo_page)+1; 
 	if(now_photo<=num){
+		toBigPhotoClose() 
 		$("#photo_page").val(now_photo)
 		show_photo()
-	}else{
-		// console.log(photo_id)
+	} else if (now_photo>num){
+		// console.log(222)
 		//    下一页
-		show_photo()
-		detail_photo_next(photo_id);
+		if(photo_last!=0){
+			toBigPhotoClose();
+			detail_photo(photo_last);
+		}else{
+			toBigPhotoClose();
+			show_photo()
+		}
 	}
 }

@@ -1,10 +1,10 @@
 <div  class="user_information_left">
-	<img class="user_photo img_click" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""> 
+	<img class="user_photo img_click" src="<?php echo $friend['photo']?$friend['photo']:'/sign/img/contact.jpg'?>" alt=""> 
 	<div class="msg-user">
-		<span style="font-size: 24px;"><strong><?php echo $user['name']?></strong> <i class="bi bi-person <?php echo $user['sex']==1?'clolor_red':'clolor_blue'?>"></i></span> <br>
-			昵称：<span><?php echo $user['name']?></span> <br>
-			手机号：<span><?php echo $user['phone']?></span> <br>
-			地区：<span><?php echo $user['city']?></span> <br>
+		<span style="font-size: 24px;"><strong><?php echo $friend['name']?></strong> <i class="bi bi-person <?php echo $friend['sex']==1?'clolor_red':'clolor_blue'?>"></i></span> <br>
+			昵称：<span><?php echo $friend['name']?></span> <br>
+			手机号：<span><?php echo $friend['phone']?></span> <br>
+			地区：<span><?php echo $friend['city']?></span> <br>
 	</div> 
 </div> 
 

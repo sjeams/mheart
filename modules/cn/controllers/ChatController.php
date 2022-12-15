@@ -98,7 +98,7 @@ class ChatController extends VideoApiControl
         //清空我的消息数量
         WeChatFriend::updateUserNum( $uid,$fid,0);
         $chat_title = $friend['name'];
-        return $this->render('chat',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend,'room'=>$room['room_id'] ]);
+        return $this->render('chat',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend,'room'=>$room['room_id'] ]);
     }
 
 
@@ -119,15 +119,16 @@ class ChatController extends VideoApiControl
         // WeChatFriend::updateUserNum( $uid,$fid,0);
         $chat_title = '';
         $html = Yii::$app->request->get('html',0);
+        $chat_belong = Yii::$app->request->get('chat_belong',1); //指定跳转--默认首页
         if($html==1){
             // 详情
-            return $this->render('detail',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            return $this->render('detail',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
         }else  if($html==2){   
             //朋友圈   
-            return $this->render('detail_remark',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            return $this->render('detail_remark',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
         }else  if($html==3){   
             //朋友圈   
-            return $this->render('detail_graden',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            return $this->render('detail_graden',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
         }else  if($html==4){   
             $count = Yii::$app->signdb->createCommand("select count(n.id) as count from {{%wechat_user_news}} n LEFT JOIN {{%wechat_user}} u ON n.uid = u.id  where n.uid=$fid")->queryOne()['count'];
             $page = Yii::$app->request->get('page',1);
@@ -142,7 +143,7 @@ class ChatController extends VideoApiControl
             ->where($where)
             ->offset($pageStr->offset)
             ->limit($pageStr->limit)
-            ->orderBy('n.create_time desc')->all('sign');
+            ->orderBy('n.id desc')->all('sign');
             $data['page']=$page; 
             $data['count']=ceil($count/10 ); 
             // var_dump($data);die;
@@ -155,10 +156,10 @@ class ChatController extends VideoApiControl
                 }else{
                     define('CHAT_YEAR',date('Y',time()));
                 }
-                return $this->render('detail_friend_detail',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+                return $this->render('detail_friend_detail',['data'=>$data,'chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
             }else{
            
-                return $this->render('detail_friend',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+                return $this->render('detail_friend',['data'=>$data,'chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
             }
         }else  if($html==5){ 
             //朋友圈查看图片
@@ -170,13 +171,14 @@ class ChatController extends VideoApiControl
             $pageSize =1; 
             $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
             $where =" n.uid=$fid";
-            if($prev==0){
-                $where .=" and n.id =$photo_id";
-            }else if($prev==1){
-                $where .=" and n.id <$photo_id";
-            }else if($prev==2){
-                $where .=" and n.id >$photo_id";
-            }
+            $where .=" and n.id =$photo_id";
+            // if($prev==0){
+    
+            // }else if($prev==1){
+            //     $where .=" and n.id <$photo_id";
+            // }else if($prev==2){
+            //     $where .=" and n.id >$photo_id";
+            // }
             $data['data']= (new \yii\db\Query())
             ->select("n.*,u.id as userId,u.photo,u.name")
             ->from("x2_wechat_user_news as n")
@@ -186,20 +188,27 @@ class ChatController extends VideoApiControl
             ->offset($pageStr->offset)
             ->limit($pageStr->limit)
             ->orderBy('n.id desc')->one('sign');
+
+            $last =(new \yii\db\Query())
+            ->select(" max(n.id) as id")
+            ->from("x2_wechat_user_news as n")
+            ->leftJoin('x2_wechat_user as u', "n.uid = u.id ")->where("n.uid=$fid and n.id<$photo_id ")->orderBy('n.id desc')->one('sign');     
+            $data['last']=  $last? intval($last['id']):0;
+                
+            $next=(new \yii\db\Query())
+            ->select(" min(n.id) as id")
+            ->from("x2_wechat_user_news as n")
+            ->leftJoin('x2_wechat_user as u', "n.uid = u.id ")->where("n.uid=$fid and n.id>$photo_id ")->orderBy('n.id desc')->one('sign');
+            $data['next']=  $next? intval($next['id']):0;
             $data['page']=$page; 
             $data['count']=ceil($count/$pageSize); 
-            // var_dump($data);
-            if(empty($data['data'])){
-                // var_dump(1111);
-                return true;
-            }
             //朋友圈  
             $list = Yii::$app->request->get('list',0); 
-            return $this->render('detail_photo',['data'=>$data,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
-      
+            // $this->layout = 'cn'; 
+            return $this->render('detail_photo',['prev'=>$prev,'data'=>$data,'chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
         }else{
             $this->layout = 'cn'; 
-            return $this->render('detail_html',['user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
+            return $this->render('detail_html',['chat_belong'=>$chat_belong,'user'=>$user,'chat_title'=>$chat_title,'friend'=>$friend]);
         }
     }
 

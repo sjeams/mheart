@@ -13,6 +13,8 @@
 		-webkit-box-orient:vertical;
 		overflow:hidden;	
 		margin-left:0px; 
+		padding: 0px 5px;
+		line-height: 25px;
 	}
 	body{
 		background-color: white;
@@ -22,14 +24,14 @@
 		font-size: 24px;
 	}
 	.user_photo{
-		height:80px;
-		width:80px;
+		/* height:80px; */
+		/* width:100%; */
 		border-radius: 5px;
 		vertical-align: top;
-		margin-top: 10px;
+		margin-top: 5px;
 		/* margin-left: 20px; */
 		float: left;
-		max-width: 20%;
+		/* max-width: 20%; */
 		margin-left: 0px!important;
 	}
 	.user_information_left_year{
@@ -59,20 +61,20 @@
 <!-- <div  class="user_information_left"> -->
 <!-- <img class="chat_background " s  src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt="">  -->
 <!-- </div>  -->
+<?php if($user['id']==$friend['id']){ ?>
 <div  class="user_information_left">
 	<div class="msg-user msg-user-time">
 		<span class="chat_friend_time">今天</span> 
 	</div>
-
-
 	<div class="msg-user msg-camera">
 		<i class="bi bi-camera"></i> 	
 	</div> 
 </div> 
+<?php } ?>
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
  <div id="content_append">
-
+		
  </div>
  <script>
 	$(function(){
@@ -82,7 +84,7 @@
 		var friend_id =$('#friend_id').val();
 		var chat_belong = 4;
 		// var chat_belong =$('#chat_belong').val();
-		console.log(chat_belong)
+		// console.log(chat_belong)
 			// window.location.href="/cn/chat/list?friend_title="+friend_title ;
 		var	url="/cn/chat/detail?page="+goPage+"&uid="+friend_id+"&html="+chat_belong+"&list=1";
 		var html = getprintHtml(url);
