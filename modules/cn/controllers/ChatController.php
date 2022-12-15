@@ -54,14 +54,20 @@ class ChatController extends VideoApiControl
         // WeChatFriend::find()->where('uid ='.$this->user['id'])->asArray()->all();
         // $order ="order by ";
         // $userList = Yii::$app->signdb->createCommand("select f.*,u.photo,u.name from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryAll();
-        $count = Yii::$app->signdb->createCommand("select count(f.uid) as count from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryOne()['count'];
+
+        // $where =" f.uid=$uid";
+        $where =" u.id !=$uid";
+        if($friend_title){
+            //搜索查所有人
+            $where .=" and (u.name  like '%$friend_title%' or u.phone like '%$friend_title%' )"; 
+        }else{
+            //默认查自己相关的朋友
+            $where .=" and  f.uid=$uid";
+        }
+        $count = Yii::$app->signdb->createCommand("select count(f.uid) as count from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where $where ")->queryOne()['count'];
         $page = Yii::$app->request->get('page',1);
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        // $where =" f.uid=$uid";
-        $where =" u.id !=$uid and  f.uid=$uid";
-        if($friend_title){
-            $where .=" and (u.name  like '%$friend_title%' or u.phone like '%$friend_title%' )"; 
-        }
+
         $userList= (new \yii\db\Query())
         ->select("f.*,u.photo,u.name")
         ->from("x2_wechat_friend as f")
