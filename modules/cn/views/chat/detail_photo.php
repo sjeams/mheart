@@ -11,8 +11,33 @@
 	}
 	.photo_content{
 		position: fixed;
-		bottom:10px;
+		bottom: 40px;
 		color: white;
+		display:-webkit-box;
+		-webkit-line-clamp:2;
+		-webkit-box-orient:vertical;
+		overflow:hidden;	
+		padding: 0px 20px;
+		line-height: 25px;
+	}
+	.photo_content_detail{
+		position: fixed;
+		bottom: 10px;
+		color: white;
+		display:-webkit-box;
+		-webkit-line-clamp:2;
+		-webkit-box-orient:vertical;
+		overflow:hidden;	
+		padding: 0px 20px;
+		line-height: 25px;
+	}
+	.photo_content_left{	
+		/* left: 20px;
+		position: fixed; */
+	}
+	.photo_content_right{
+		right: 20px;
+		position: fixed;
 	}
 </style>
 <?php 

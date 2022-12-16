@@ -58,6 +58,8 @@ function show_photo(){
 	//获取图片路径
     // var imgsrc = $(this).attr("src");
 	var new_content =  '</br><span class="photo_content">'+photo_content +'</span>';
+
+	var new_content = new_content+'</br><span class=" photo_content_detail">    <span class=" photo_content_left"><i class="bi bi-heart"></i> 16 <i class="bi bi-chat-left"></i> 12 </span>  <span class=" photo_content_right">详情<i class="bi bi-chevron-right"></i></span></span>';
     var friend_opacityBottom =  '<div class="friend_opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '">'+new_content+'</div>';
     $(document.body).append(friend_opacityBottom);
     toBigPhoto();//变大函数

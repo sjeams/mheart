@@ -86,28 +86,66 @@
         </tbody>
     </table>
 </form>
-
+<!-- 当前视频id -->
+<input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
+<input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <script>
+
+
+function nextPage(goPage){
+		var friend_title =$("#friend_title").val();
+    //    var url="/cn/video/query-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
+	    // if(friend_title ){
+			url="/cn/chat/list?page="+goPage+"&friend_title="+friend_title+"&html=1";
+			var html = getprintHtml(url);
+			if(html){
+				$("#goPage").val(goPage);
+				$('#content_append').append(html);
+				//搜索框
+				// var goPageCount = $("#goPageCount").val()
+				// var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
+				// $('.go_hidden').html(go_input);
+			}
+		// }
+    }
+ 
+	function  gou_search(){
+		var friend_title =$("#friend_title").val();
+        // window.location.href="/cn/chat/list?friend_title="+friend_title ;
+		url="/cn/chat/list?friend_title="+friend_title;
+		window.location.href=url;
+	}
+
     function  gou(){
         var friend_title =$("#friend_title").val();
         // window.location.href="/cn/chat/list?friend_title="+friend_title ;
-		url="/cn/chat/list?friend_title="+friend_title+"&html=1";
+		url="/cn/chat/list?page="+goPage+"&friend_title="+friend_title+"&html=1";
 		var html = getprintHtml(url);
 		// if(html){
             $('#content_append').html(html);
-			$("#friend_title").val('');
+			// $("#friend_title").val('');
 		// }
     } 
 	
 	// websocket通讯
 	$(function(){
+		var friend_title = '<?php echo isset($friend_title)?$friend_title:'' ?>';
+		if(friend_title){
+			$("#friend_title").val(friend_title)
+		}
+
 		gou()
 		//修改消息数量
 		var num = Number($("#usernum").val());
 		if(num>0){Update_user_num(num);	}
 	})
-	function gouSerach(friend_id){
-		window.location.href="/cn/chat/chat?uid="+friend_id;
+	function gouSerach(friend_id,is_friend){
+		if(is_friend==1){
+			window.location.href="/cn/chat/chat?uid="+friend_id;
+		}else{
+			window.location.href="/cn/chat/detail?uid="+friend_id;	
+		}
+
 	}
 	// 外部监听事件
     // var wsServer = "ws://124.221.174.216:9501?room="+room_id+"&uid="+uid; 

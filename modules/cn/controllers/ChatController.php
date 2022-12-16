@@ -49,7 +49,7 @@ class ChatController extends VideoApiControl
     {
         $uid = $this->userId;
         $friend_title = Yii::$app->request->get('friend_title',0);
- 
+        // $friend_title =181;
         // 登录状态
         // WeChatFriend::find()->where('uid ='.$this->user['id'])->asArray()->all();
         // $order ="order by ";
@@ -58,35 +58,50 @@ class ChatController extends VideoApiControl
         // $where =" f.uid=$uid";
         $where =" u.id !=$uid";
         if($friend_title){
+ 
             //搜索查所有人
             $where .=" and (u.name  like '%$friend_title%' or u.phone like '%$friend_title%' )"; 
+            $count = Yii::$app->signdb->createCommand("select count(u.id) as count from  {{%wechat_user}} u   where $where ")->queryOne()['count'];
+            $page = Yii::$app->request->get('page',1);
+            $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+    
+            $userList= (new \yii\db\Query())
+            ->select("f.*, u.photo,u.name")
+            ->from("x2_wechat_user as u")
+            ->leftJoin('x2_wechat_friend as f', "f.friend_id = u.id and f.uid =$uid")
+            ->where($where)
+            ->offset($pageStr->offset)
+            ->limit($pageStr->limit)
+            ->orderBy('u.id desc')->all('sign');
+            // var_dump($userList);die;
         }else{
             //默认查自己相关的朋友
-            $where .=" and  f.uid=$uid";
+            $where .=" and  f.uid=$uid and is_friend=1";
+            $count = Yii::$app->signdb->createCommand("select count(f.uid) as count from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where $where ")->queryOne()['count'];
+            $page = Yii::$app->request->get('page',1);
+            $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
+    
+            $userList= (new \yii\db\Query())
+            ->select("f.*,u.photo,u.name")
+            ->from("x2_wechat_friend as f")
+            ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id and f.uid =$uid")
+            ->where($where)
+            // ->offset($pageStr->offset)
+            // ->limit($pageStr->limit)
+            ->orderBy('f.last_time desc')->all('sign');
         }
-        $count = Yii::$app->signdb->createCommand("select count(f.uid) as count from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where $where ")->queryOne()['count'];
-        $page = Yii::$app->request->get('page',1);
-        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-
-        $userList= (new \yii\db\Query())
-        ->select("f.*,u.photo,u.name")
-        ->from("x2_wechat_friend as f")
-        ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id ")
-        ->where($where)
-        // ->offset($pageStr->offset)
-        // ->limit($pageStr->limit)
-        ->orderBy('f.last_time desc')->all('sign');
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
-        // var_dump($userList);die;
+        // var_dump($data);die;
         $total = Yii::$app->signdb->createCommand("select sum(f.num) as total from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryOne()['total'];
 
         $html = Yii::$app->request->get('html',0);
         if($html){
+            // var_dump($userList);die;
             $this->layout = 'kongbai';
-            return $this->render('list',['userList'=>$userList,'total'=>$total ]);
+            return $this->render('list',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total ]);
         }else{
-            return $this->render('list_html',['userList'=>$userList,'total'=>$total ]);      
+            return $this->render('list_html',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total ]);      
         }
     }
 
@@ -120,6 +135,10 @@ class ChatController extends VideoApiControl
         $friend =  WechatUser::find()->where("id = $fid")->asArray()->One();
         // var_dump($friend) ;die;
         $user =  WechatUser::find()->where("id =$uid ")->asArray()->One();
+
+        $is_friend =WeChatFriend::find()->where("uid =$uid and friend_id = $fid and is_friend =1")->asArray()->One();
+        $user['is_friend'] =  $is_friend ?1:0;
+
         // $room =WeChatFriend::find()->where("uid =$uid and friend_id = $fid")->asArray()->One();
         // //清空我的消息数量
         // WeChatFriend::updateUserNum( $uid,$fid,0);
@@ -247,7 +266,19 @@ class ChatController extends VideoApiControl
         $num  = WeChatFriend::find()->select('num')->where("uid = $fid and friend_id =$uid")->asArray()->one()['num']; 
         return $num;
     }
-
-
+    //添加朋友
+    public function actionAddFriend()
+    {
+        $uid =  $this->userId;
+        $fid = Yii::$app->request->post('fid',0);
+        WeChatFriend:: addFriend($uid,$fid);
+    }
+    //删除朋友
+    public function actionRemoveFriend()
+    {
+        $uid =  $this->userId;
+        $fid = Yii::$app->request->post('fid',0);
+        WeChatFriend:: removeFriend($uid,$fid);
+    }
 
 }

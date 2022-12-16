@@ -191,6 +191,34 @@ function  detail_photo(photo_id,prev=0){
 		$('#chat_belong').val(chat_belong)
 	}
 } 
+
+function  add_friend(){
+	var friend_id =$('#friend_id').val();
+	$.ajax({
+		url: '/cn/chat/add-friend', // 跳转到 action 
+		type: 'post',
+		data:{fid:friend_id},
+		dataType: 'json',
+		success: function (data){
+			location.reload();
+		},
+	});
+}
+
+function  remove_friend(){
+	var friend_id =$('#friend_id').val();
+	$.ajax({
+		url: '/cn/chat/add-friend', // 跳转到 action 
+		type: 'post',
+		data:{fid:friend_id},
+		dataType: 'json',
+		success: function (data){
+			location.reload();
+		},
+	});
+}
+
+
 // //上一个
 // function  detail_photo_prev(photo_id){
 // 	detail_photo(photo_id,1);

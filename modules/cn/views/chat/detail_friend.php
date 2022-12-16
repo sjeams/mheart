@@ -13,7 +13,7 @@
 		-webkit-box-orient:vertical;
 		overflow:hidden;	
 		margin-left:0px; 
-		padding: 0px 5px;
+		padding: 5px 10px;
 		line-height: 25px;
 	}
 	body{
@@ -33,6 +33,7 @@
 		float: left;
 		/* max-width: 20%; */
 		margin-left: 0px!important;
+		padding: 5px 5px;
 	}
 	.user_information_left_year{
 		height:60px!important;

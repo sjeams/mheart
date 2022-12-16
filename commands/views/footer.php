@@ -94,9 +94,9 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
          
             </td>
                 <td class="btn-primary friend_search" style="max-width: 100px!important;" >
-                    <span class="btn  " onclick="gou()" ><i class="bi bi-search"></i> </span>  
+                    <span class="btn  " onclick="gou_search()" ><i class="bi bi-search"></i> </span>  
                     <!-- <span class="btn  "><i class="bi bi-plus-circle"></i> </span> -->
-                    <span class="btn  "> <i class="bi bi-person-lines-fill"></i></span>
+                   <a href="/cn/chat/list"><span class="btn  "> <i class="bi bi-person-lines-fill"></i></span></a> 
                 </td>
             </tr>
 

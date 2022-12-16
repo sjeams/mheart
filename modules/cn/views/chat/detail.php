@@ -39,14 +39,20 @@
 	</div>
 </div>	
 <div class="user_information_center"> 
-	<a href="/cn/chat/chat?uid=<?php echo $friend['id'] ?>">
-		<div class="msg-time">
-		<i class="bi bi-chat"></i> 发送消息
-		</div>
-	</a>
 
-	<div class="msg-time">
-			删除好友
-	</div>
+	<?php if($user['id'] != $friend['id']){ if($user['is_friend'] ==1){?>
+		<a href="/cn/chat/chat?uid=<?php echo $friend['id'] ?>">
+			<div class="msg-time">
+			<i class="bi bi-chat"></i> 发送消息
+			</div>
+		</a>
+		<div class="msg-time" onclick="remove_friend()">
+				删除好友
+		</div>
+	<?php }else{?>
+		<div class="msg-time" onclick="add_friend()">
+				添加好友
+		</div>
+	<?php  } }?>
 </div>	
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>

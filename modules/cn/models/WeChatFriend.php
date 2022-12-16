@@ -19,13 +19,28 @@ class WeChatFriend extends ActiveRecord {
     }
 
     //添加朋友
-    public static function addFriend($args){
+    public static function addFriend($uid,$fid){
+        $args['is_friend']=1; // 默认添加
         // 生成好友编号-房间号
         $room =md5(time().rand(1,10000)).rand(1,10000);
         $args['room_id']=$room;
-        Yii::$app->signdb->createCommand()->insert('wechat_friend',$args)->execute();
+
+        $old  = WeChatFriend::find()->where("uid = $fid and friend_id =$uid")->asArray()->one(); 
+        if(!$old){
+            //插入自己的
+            $args['uid']=$uid;
+            $args['friend_id']=$fid;
+            Yii::$app->signdb->createCommand()->insert('x2_wechat_friend',$args)->execute();
+            // 插入朋友的
+            $args['uid']=$fid;
+            $args['friend_id']=$uid;
+            Yii::$app->signdb->createCommand()->insert('x2_wechat_friend',$args)->execute();
+        }
     }
- 
+    //删除朋友
+    public static function removeFriend($uid,$fid){
+        WeChatFriend::updateAll(['is_friend' =>0],"uid = $uid and friend_id =$fid");
+    }
     
     //修改未看消息数--插入最新消息和时间
     public static function updateFriendNum($uid,$fid,$content,$time,$num=0){
@@ -40,6 +55,10 @@ class WeChatFriend extends ActiveRecord {
     public static function updateUserNum($uid,$fid,$num=0){
         WeChatFriend::updateAll(['num' =>0],"uid = $uid and friend_id =$fid");
     }
+
+
+    
+
 
 }
 

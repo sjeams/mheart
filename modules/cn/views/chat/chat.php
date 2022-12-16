@@ -36,12 +36,14 @@
 		cursor: pointer;
 		text-align: right;
 		margin-top:30px ;
+		margin-right: 20px;
 
     }
     .user_information_left{
 		cursor: pointer;
 		text-align: left;
 		margin-top:30px ;
+		margin-left: 20px;
     }
 	.user_photo{
 		height:40px;
