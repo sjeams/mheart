@@ -58,7 +58,6 @@ class ChatController extends VideoApiControl
         // $where =" f.uid=$uid";
         $where =" u.id !=$uid";
         if($friend_title){
- 
             //搜索查所有人
             $where .=" and (u.name  like '%$friend_title%' or u.phone like '%$friend_title%' )"; 
             $count = Yii::$app->signdb->createCommand("select count(u.id) as count from  {{%wechat_user}} u   where $where ")->queryOne()['count'];
@@ -93,7 +92,7 @@ class ChatController extends VideoApiControl
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
         // var_dump($data);die;
-        $total = Yii::$app->signdb->createCommand("select sum(f.num) as total from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where f.uid=$uid")->queryOne()['total'];
+        $total = Yii::$app->signdb->createCommand("select sum(f.num) as total from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where  $where")->queryOne()['total'];
 
         $html = Yii::$app->request->get('html',0);
         if($html){

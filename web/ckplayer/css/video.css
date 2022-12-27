@@ -110,7 +110,7 @@ input{
 	}
 	.check a{
 	   display: inline-block;
-	   min-width: 48%;
+	   min-width: 46%;
 	   padding: 10px  5%;
 	   border: 1px solid black;
 	   text-align: center;  

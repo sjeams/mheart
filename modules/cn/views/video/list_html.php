@@ -17,7 +17,7 @@
                         <div class="layui-input-inline center">
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                             <p class="center" id="listBelong" >
-                                <?php foreach($category as $kss =>  $v){  ?>
+                                <?php foreach($category as    $v){  ?>
                                     <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>" onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
                                 <?php }  ?>
                             </p>
@@ -65,7 +65,7 @@
             </tr>
         </thead>
         <tbody class="list_html">
-            <?php if($content){
+            <?php if($content){ $kss=0;
             foreach($content as $kss => $v) {  $kss= $kss+1; ?>
                 <?php if($v['belong']==0){   ?>
                     <tr>
