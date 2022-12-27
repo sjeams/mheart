@@ -1,3 +1,8 @@
+/*
+ * @Author: sjeam
+ * @Date: 2022-12-14 16:13:21
+ * @Description: 
+ */
 // 显示图片
 function toBigPhoto() {
     $(".friend_opacityBottom").addClass("friend_opacityBottom");//添加遮罩层
@@ -49,21 +54,7 @@ $("body").on("touchmove", function(e) {
 	}
 });
 
-function show_photo(){
-	// 当前图片页码
-	var photo_page = $("#photo_page").val();
-	var imgsrc =img[parseInt(photo_page)-1];
-	var title = '<span >'+photo_time +'</span></br>'+photo_page+'/'+num;
-	$(".chat_title").html(title);
-	//获取图片路径
-    // var imgsrc = $(this).attr("src");
-	var new_content =  '</br><span class="photo_content">'+photo_content +'</span>';
 
-	var new_content = new_content+'</br><span class=" photo_content_detail">    <span class=" photo_content_left"><i class="bi bi-heart"></i> 16 <i class="bi bi-chat-left"></i> 12 </span>  <span class=" photo_content_right">详情<i class="bi bi-chevron-right"></i></span></span>';
-    var friend_opacityBottom =  '<div class="friend_opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '">'+new_content+'</div>';
-    $(document.body).append(friend_opacityBottom);
-    toBigPhoto();//变大函数
-}
 
 function click_left(){
 	var photo_page = $("#photo_page").val();

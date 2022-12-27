@@ -14,7 +14,10 @@
     <thead>
         <?php if($login>0){?>
         <tr>
-            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(232323)</span></td>
+            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(<?php echo isset($data['count'])?$data['count']:0; ?>)</span></td>
+        </tr>
+        <tr>
+            <td class="btn-primary " > <p class="center" onclick="full_screen()"> 全屏模式</p></td>
         </tr>
         <tr>
             <td >
@@ -27,9 +30,7 @@
                     <?php foreach($list as $v){ ?>
                         <a class="btn  <?php echo $data['belong']==$v['belong']?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=<?php echo $v['belong']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
                         <?php }?>
-
                 </p>
-
             </td>
                 <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
         </tr>
@@ -43,47 +44,86 @@
 </form>
 
 <!-- 当前视频id -->
+<input type="hidden" value="0" id="full_model">
+<input type="hidden" value="10" id="pageSize">
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 
 <script>
+    //全屏模式
+    function full_screen(){
+        $("#full_model").val(1);
+        // $(".video_header tr").html(' <p class="center btn-primary" onclick="full_out()">退出全屏</p> ');
+        $(".video_header").css("display","none");
+        $(".video_footer").css("display","none");
+        $("#pageSize").val(1);
+        var goPage =$("#goPage").val();
+        var title =  $('#appendedInputButton').val();
+        var url="/cn/video/collect-video?pagesize=1&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+        var html = getprintHtml(url);
+        //    console.log(html)
+        if(html){
+            $("#goPage").val(goPage);
+            $('#content_append').html(html);
+        }
+    }
+    //退出全屏
+    function full_out(){
+        $("#full_model").val(0);
+        $("#pageSize").val(10);
+        $(".video_header").css("display","block");
+        $(".video_footer").css("display","block");
+        $('.go_hidden').removeClass('hiddened');
+        $('#content_append').html("");
+        gou();
+    }
+    
     $(function(){
         $('.go_hidden').removeClass('hiddened');
         gou();
     })
+
     function nextPage(goPage){
+       var full_model =$("#full_model").val();
+       var pageSize =$("#pageSize").val();
        var title =  $('#appendedInputButton').val();
-       var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
-       var html = getprintHtml(url);
-    //    console.log(html)
-        if(html){
-            $("#goPage").val(goPage);
-            $('#content_append').append(html);
-            //搜索框
-            // var goPageCount = $("#goPageCount").val()
-            // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-            // $('.go_hidden').html(go_input);
-        }
+       if(full_model==1){
+            var url="/cn/video/collect-video?pagesize="+pageSize+"&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+            var html = getprintHtml(url);
+            if(html!=false){
+                $("#goPage").val(goPage);
+                $('#content_append').html(html);
+            }
+       }else{
+            var url="/cn/video/collect-video?pagesize="+pageSize+"&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
+            var html = getprintHtml(url);
+            if(html){
+                $("#goPage").val(goPage);
+                $('#content_append').append(html);
+                //搜索框
+                // var goPageCount = $("#goPageCount").val()
+                // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
+                // $('.go_hidden').html(go_input);
+            }
+       }
+
     }
     function  gou(){
         var goPage =$("#goPage").val();
         nextPage(goPage);
         imageError();//图片报错监听
-        // window.location.href="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title=<?php echo $data['title'] ?>";
     }
 
     //跳转页面
     function  gouSerach(){
+        var pageSize =$("#pageSize").val();
         var gouSerach =$(".footer_go_input").val();
         // console.log(gouSerach)
         var title =  $('#appendedInputButton').val();
-        window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
+        window.location.href="/cn/video/query-video?pagesize="+pageSize+"&page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
     }
     
-
-
-
      // 我的收藏
      function  Update_my(id){ 
         // layer.confirm('确认删除?', function(index){

@@ -14,7 +14,7 @@
     <thead>
         <?php if($login>0){?>
         <tr>
-        <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go" onclick="gouSerach()" >GO(232323)</span></td>
+        <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go" onclick="gouSerach()" >GO(<?php echo isset($data['count'])?$data['count']:0; ?>)</span></td>
         </tr>
         <tr>
             <td >

@@ -132,6 +132,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         var winHeight = $(document).scrollTop();
         var t = 0;
         $(window).scroll(function() {
+
             getPage();  //分页
             var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
             //上下滚动操作
