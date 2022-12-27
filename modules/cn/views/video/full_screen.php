@@ -35,6 +35,7 @@
         </tr>
 
 <?php  } ?>
+</div>
   <!-- //引入监听滑动事件 声明变量后执行 -->
 <script>
 //监听 左右滑动事件
@@ -58,7 +59,7 @@ $(".friend_opacityBottom").on("touchend", function(e) {
 	// console.log(X)
 	// console.log(Y)
 	if(Y>0){
-		if(Number($("#goPage").val())>1){
+		if(Number($("#goPage").val())>0){
 			var goPage = Number($("#goPage").val()) - Number(1)   
 			nextPage(goPage)
 		}

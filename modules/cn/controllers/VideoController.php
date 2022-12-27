@@ -402,9 +402,8 @@ class VideoController extends VideoApiControl
         $login = $this->login; 
         $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
         $title = Yii::$app->request->get('title');
-        $page = Yii::$app->request->get('page',1);
+        $page = Yii::$app->request->get('page',0);
         $pageSize = Yii::$app->request->get('pagesize',10);
-        $pageSize =1;
         $belong = Yii::$app->request->get('belong',0);
         $where ="1=1";
         if($belong){
