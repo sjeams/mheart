@@ -41,6 +41,9 @@
 
 <!-- 自定义样式 -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+<!-- 轮播图 -->
+<link rel="stylesheet" type="text/css" href="/swiper/swiper-bundle.min.css">
+<script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
 
 
 <title>心缘测试</title>

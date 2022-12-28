@@ -402,8 +402,8 @@ class VideoController extends VideoApiControl
         $login = $this->login; 
         $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
         $title = Yii::$app->request->get('title');
-        $page = Yii::$app->request->get('page',0);
-        $pageSize = Yii::$app->request->get('pagesize',10);
+        $page = Yii::$app->request->get('page',1);
+        $pageSize=10;
         $belong = Yii::$app->request->get('belong',0);
         $where ="1=1";
         if($belong){
@@ -425,7 +425,7 @@ class VideoController extends VideoApiControl
         ->select("a.*")
         ->from("x2_video_list_detail as a")
         ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
-        ->where($where)->offset($page*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
+        ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
         $data['belong']=$belong; 
         $data['title']=$title; 
         $data['page']=$page; 
@@ -433,15 +433,16 @@ class VideoController extends VideoApiControl
         // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
+        // var_dump($brush);die;
         if(!$brush){
-            return false;
+            return false;die;
         }
         if($html==1){
             $this->layout = 'kongbai';
             return $this->render('collect_video_list',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else if($html==2){
             $this->layout = 'kongbai';
-            return $this->render('full_screen',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('collect_video_full_screen',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
             return $this->render('collect_video',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }

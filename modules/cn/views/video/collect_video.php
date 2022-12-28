@@ -45,7 +45,6 @@
 
 <!-- 当前视频id -->
 <input type="hidden" value="0" id="full_model">
-<input type="hidden" value="10" id="pageSize">
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
@@ -57,10 +56,9 @@
         // $(".video_header tr").html(' <p class="center btn-primary" onclick="full_out()">退出全屏</p> ');
         $(".video_header").css("display","none");
         $(".video_footer").css("display","none");
-        $("#pageSize").val(1);
         var goPage =$("#goPage").val();
         var title =  $('#appendedInputButton').val();
-        var url="/cn/video/collect-video?pagesize=1&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+        var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
         var html = getprintHtml(url);
         //    console.log(html)
         if(html){
@@ -71,7 +69,6 @@
     //退出全屏
     function full_out(){
         $("#full_model").val(0);
-        $("#pageSize").val(10);
         $(".video_header").css("display","block");
         $(".video_footer").css("display","block");
         $('.go_hidden').removeClass('hiddened');
@@ -86,17 +83,17 @@
 
     function nextPage(goPage){
        var full_model =$("#full_model").val();
-       var pageSize =$("#pageSize").val();
        var title =  $('#appendedInputButton').val();
        if(full_model==1){
-            var url="/cn/video/collect-video?pagesize="+pageSize+"&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+            var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
             var html = getprintHtml(url);
             if(html!=false){
+                // console.log(111)
                 $("#goPage").val(goPage);
                 $('#content_append').html(html);
             }
        }else{
-            var url="/cn/video/collect-video?pagesize="+pageSize+"&page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
+            var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
             var html = getprintHtml(url);
             if(html){
                 $("#goPage").val(goPage);
@@ -117,11 +114,10 @@
 
     //跳转页面
     function  gouSerach(){
-        var pageSize =$("#pageSize").val();
         var gouSerach =$(".footer_go_input").val();
         // console.log(gouSerach)
         var title =  $('#appendedInputButton').val();
-        window.location.href="/cn/video/query-video?pagesize="+pageSize+"&page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
+        window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
     }
     
      // 我的收藏
