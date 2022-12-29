@@ -94,7 +94,6 @@
 
 function nextPage(goPage){
 		var friend_title =$("#friend_title").val();
-    //    var url="/cn/video/query-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
 	    // if(friend_title ){
 			url="/cn/chat/list?page="+goPage+"&friend_title="+friend_title+"&html=1";
 			var html = getprintHtml(url);
