@@ -3,6 +3,7 @@
 	  height: -webkit-fill-available;
     position: absolute;
     max-width:100%!important;
+    background-size:auto 100%!important;
   }
   .swiper{
     --swiper-theme-color: #ff6600;

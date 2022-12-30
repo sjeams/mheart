@@ -42,7 +42,7 @@
         border-radius: 2%;
     }
     .collect-video-style{
-        border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:100% auto ;
+        border-radius:1%!important;width:100%;max-width:420px;margin:auto; height:300px;position:relative;background-repeat: no-repeat;background-position: center;background-size:auto 100%;
     }
     .video_img{
         display: none;
