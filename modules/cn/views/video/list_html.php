@@ -113,7 +113,7 @@
                         <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
                         <!-- <p class="center"><img class="pimage" src="<?php echo $v['imageurl']?>"   alt="" ></p> -->
                         <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
-                        <p class="center"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
+                        <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
                         <!-- </a> -->
                         <p class="center"> 
                             <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->

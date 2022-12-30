@@ -31,9 +31,9 @@
     .video_center{
         /* border: 1px solid #0044cc; */
         height: 100%-80px;
-        /* position: fixed; */
+        position: relative;
         display: flex;
-        margin:50px auto;
+        margin:20px auto;
         left:0; 
         right:0; 
         top:40px;

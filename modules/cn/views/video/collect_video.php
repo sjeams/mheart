@@ -44,6 +44,9 @@
 </form>
 
 <!-- 当前视频id -->
+<input type="hidden" value="0" id="swiper_type">
+<input type="hidden" value="0" id="swiper_page">
+
 <input type="hidden" value="0" id="full_model">
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
@@ -52,6 +55,9 @@
 <script>
     //全屏模式
     function full_screen(){
+        //初始化
+        $("#swiper_type").val(0)
+        $("#swiper_page").val(0)
         $("#full_model").val(1);
         // $(".video_header tr").html(' <p class="center btn-primary" onclick="full_out()">退出全屏</p> ');
         $(".video_header").css("display","none");
@@ -88,9 +94,14 @@
             var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
             var html = getprintHtml(url);
             if(html!=false){
+                //分页后初始页码
+                page_change();
                 // console.log(111)
                 $("#goPage").val(goPage);
                 $('#content_append').html(html);
+
+            }else{
+                page_unchange();
             }
        }else{
             var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";

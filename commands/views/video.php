@@ -8,6 +8,10 @@
 </div>
 <!-- new 视频 0-->
 <style>
+    /* 单个播放边框  窗口大小*/
+    /* .ckplayer-ckplayer .ck-main{
+        position: inherit;
+    } */
     .video_hidden_button{
         position:fixed;z-index:101;width:30%; right: 0;bottom: 40px; float:right;
     }
