@@ -81,7 +81,46 @@
         $('#content_append').html("");
         gou();
     }
-    
+    //滚动定位
+    function scoll_click(swiper_type){
+        var swiper_type =  $("#swiper_type").val()
+        // 滚动条偏移
+        // $(".swiper-pagination").scrollTop($(".swiper-pagination").scrollTop() + $('.swiper-pagination-bullet-active').offset().top - $(".swiper-pagination").offset().top);
+        var newmsg_top = parseInt($('.swiper-pagination')[0].scrollHeight );
+        var window_top =  $(window).height()/2;
+        // 0上 1下
+        if(swiper_type==0){
+            var change_top = $(".swiper-pagination").scrollTop() + $('.swiper-pagination-bullet-active').offset().top - $(".swiper-pagination").offset().top
+            // console.log(111)
+            // console.log(window_top)
+            change_top = change_top -window_top;
+            if( change_top>0){
+                // --有动画效果
+                $(".swiper-pagination").animate({ scrollTop:change_top  }, 100); 
+            }else{
+                //返回头部
+                $(".swiper-pagination").animate({ scrollTop:0  }, 100); 
+            }
+        }else{
+            var change_top = $(".swiper-pagination").scrollTop() + $('.swiper-pagination-bullet-active').offset().top - $(".swiper-pagination").offset().top
+            // console.log(window_top)
+            change_top = change_top -window_top;
+            if(change_top<newmsg_top){
+                // --有动画效果
+                $(".swiper-pagination").animate({ scrollTop:change_top  }, 100); 
+            }else{
+                //返回底部
+                $(".swiper-pagination").animate({ scrollTop:newmsg_top  }, 100); 
+            }
+        }
+
+
+        
+
+
+
+    }
+
     $(function(){
         $('.go_hidden').removeClass('hiddened');
         gou();
@@ -99,7 +138,8 @@
                 // console.log(111)
                 $("#goPage").val(goPage);
                 $('#content_append').html(html);
-
+                //定位变化
+                scoll_change();
             }else{
                 page_unchange();
             }

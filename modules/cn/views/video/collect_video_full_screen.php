@@ -38,16 +38,16 @@
 	}
 	.swiper-pagination{
 		position:absolute;
-		width:18%;
+		width:25%;
     overflow-y: auto;
-
     height: inherit;
     /* opacity: 0.8;  */
   }
 	.swiper-pagination-bullet{
 		width:100%;
 		height:auto;
-		background:none;}
+		background:none;
+  }
 	.swiper-pagination-bullet img{
 		width:100%;
   }
@@ -78,7 +78,7 @@
                 </div>
                 <!-- //跳转 -->
                 <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
-                <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                <div  class="video<?php echo $v['id']?> collect-video-style" style="//background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>
@@ -111,7 +111,7 @@
       //列表隐藏
       list_hide()
       video_title()
-      
+      //禁止滚动监听分页
       $("#getPage").val(0)
     })
     $('body').click(function(){
@@ -166,6 +166,7 @@
             $("#swiper_type").val(0)
       }
     }
+    
      //page_unchange  分页后判断初始页码-没数据
     function page_unchange(){
       var swiper_type =  Number($("#swiper_type").val());
@@ -177,6 +178,21 @@
             $("#swiper_page").val(swiper_count-1)
       }
     }
+
+    //分页后定位变化
+    function scoll_change(){
+      var swiper_type =  Number($("#swiper_type").val());
+      //0上1下
+      if(swiper_type==0){
+          $(".swiper-pagination").animate({ scrollTop:0  }, 100); 
+      }else{
+          var newmsg_top = parseInt($('.swiper-pagination')[0].scrollHeight );
+          console.log(newmsg_top)
+          $(".swiper-pagination").animate({ scrollTop:newmsg_top  }, 100); 
+      }
+    }
+
+
 
     //初始页码监听页码
     var swiper_page  = Number($("#swiper_page").val());
@@ -200,9 +216,14 @@
           list_show();
           var swiper_type =  Number($("#swiper_type").val());
           var swiper_page  = Number($("#swiper_page").val());
-          //点击
+          //点击-跳转指定位置
           if(Math.abs((this.activeIndex-swiper_page))>0){
+
             $("#swiper_page").val(this.activeIndex)
+            //防止分页后滚动定位触发，初始化为10 - 上一页会触发报错
+            if(swiper_page<10){
+                scoll_click(swiper_type);
+            }
           }else{
           //正常切换0上 1下
             if(swiper_type==0){
@@ -214,8 +235,10 @@
                 var goPage = Number($("#goPage").val()) - Number(1)   
                 if(goPage>0){
                   nextPage(goPage)
+
                 }else{
                   page_unchange();
+            
                 }
               }
             }else{
@@ -229,6 +252,7 @@
                 nextPage(goPage)
               }else{
                 page_unchange(); 
+    
               }
             }
           }
