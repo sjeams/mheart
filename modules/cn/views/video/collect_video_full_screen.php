@@ -115,7 +115,7 @@
       $("#getPage").val(0)
     })
     $('body').click(function(){
-      console.log(111)
+      //隐藏和显示标题和列表
       var  is_show = $("#swiper_title").val()
       if(is_show==0){
         $("#swiper_title").val(1)
@@ -158,10 +158,12 @@
     }
 
     function video_title(){
+      var goPageCount = $("#goPageCount").val()
+      // console.log(goPageCount)
       var page =<?php echo (($data['page']) ) ?>;
       var swiper_page  = Number($("#swiper_page").val());
       var title =$(".formkey"+swiper_page+"  input[name=title]").val();
-      var title = page+'-'+(swiper_page+1)+'、'+title
+      var title = page+'/'+goPageCount+'-'+(swiper_page+1)+'、'+title
       $('.video_title').text(title);
     }
     //page_change  分页后判断初始页码-有数据
@@ -198,7 +200,6 @@
           $(".swiper-pagination").animate({ scrollTop:0  }, 100); 
       }else{
           var newmsg_top = parseInt($('.swiper-pagination')[0].scrollHeight );
-          console.log(newmsg_top)
           $(".swiper-pagination").animate({ scrollTop:newmsg_top  }, 100); 
       }
     }

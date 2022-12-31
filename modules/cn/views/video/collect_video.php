@@ -91,7 +91,6 @@
         // 0上 1下
         if(swiper_type==0){
             var change_top = $(".swiper-pagination").scrollTop() + $('.swiper-pagination-bullet-active').offset().top - $(".swiper-pagination").offset().top
-            // console.log(111)
             // console.log(window_top)
             change_top = change_top -window_top;
             if( change_top>0){
