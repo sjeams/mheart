@@ -3,7 +3,7 @@
 	  height: -webkit-fill-available;
     position: absolute;
     max-width:100%!important;
-    background-size:auto 100%!important;
+    background-size:contain!important;
   }
   .swiper{
     --swiper-theme-color: #ff6600;
@@ -38,7 +38,10 @@
 	}
 	.swiper-pagination{
 		position:absolute;
-		width:20%;
+		width:18%;
+    overflow-y: auto;
+
+    height: inherit;
     /* opacity: 0.8;  */
   }
 	.swiper-pagination-bullet{
@@ -46,7 +49,8 @@
 		height:auto;
 		background:none;}
 	.swiper-pagination-bullet img{
-		width:100%;}
+		width:100%;
+  }
     
 </style>
 
