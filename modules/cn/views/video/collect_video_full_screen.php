@@ -102,9 +102,7 @@
 
 <input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">
 
-<!-- //f防止重复提交，1秒后可切换分页 -->
-<input type="hidden" value="0" id="swiper_isover">
-
+<!-- <input type="hidden" value="0" id="swiper_type"> -->
 
 </div>
 <script language="javascript"> 
@@ -113,10 +111,8 @@
       //列表隐藏
       list_hide()
       video_title()
-      //0.5秒后可再次分页
-      setTimeout(function(){
-        $("#swiper_isover").val(1)
-      },500)
+      
+      $("#getPage").val(0)
     })
     $('body').click(function(){
       list_show();
@@ -217,10 +213,7 @@
                 // 页面跳转
                 var goPage = Number($("#goPage").val()) - Number(1)   
                 if(goPage>0){
-                  if( $("#swiper_isover").val()==1){
-                    nextPage(goPage)
-                  }
-             
+                  nextPage(goPage)
                 }else{
                   page_unchange();
                 }
@@ -233,9 +226,7 @@
                 console.log('下分页');
                 // 页面跳转
                 var goPage = Number($("#goPage").val()) + Number(1)  
-                if( $("#swiper_isover").val()==1){
-                  nextPage(goPage)
-                }
+                nextPage(goPage)
               }else{
                 page_unchange(); 
               }

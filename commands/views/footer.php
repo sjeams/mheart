@@ -123,7 +123,8 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         </tr>
     </table>
 </div>
-
+<!-- 禁用监听 -->
+<input type="hidden" value="1" id="getPage">
 <?php } ?> 
 <script>
     //滚动条头部和底部隐藏事件
@@ -132,8 +133,10 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         var winHeight = $(document).scrollTop();
         var t = 0;
         $(window).scroll(function() {
-
-            getPage();  //分页
+            //禁用滚动监听
+            if($('#getPage').val()==1){
+                getPage();  //分页
+            }
             var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
             //上下滚动操作
             if(t<=scrollY&&t>=160){
