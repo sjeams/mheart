@@ -102,7 +102,7 @@
 
 <input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">
 
-<!-- <input type="hidden" value="0" id="swiper_type"> -->
+<input type="hidden" value="0" id="swiper_title">
 
 </div>
 <script language="javascript"> 
@@ -115,7 +115,17 @@
       $("#getPage").val(0)
     })
     $('body').click(function(){
-      list_show();
+      console.log(111)
+      var  is_show = $("#swiper_title").val()
+      if(is_show==0){
+        $("#swiper_title").val(1)
+        list_show();
+      }else{
+        $("#swiper_title").val(0)
+        clearTimeout(timer);
+        $(".swiper-pagination").hide()
+        $("#full_out").hide();
+      }    
     })
     //显示边框
     function list_show(){
@@ -131,6 +141,7 @@
       timer = setTimeout(function(){
         $(".swiper-pagination").hide()
         $("#full_out").hide();
+        $("#swiper_title").val(0)
       },8000)
     }
 
