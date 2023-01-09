@@ -85,7 +85,7 @@ function is_img_url(imgurl) {
     }).catch((e) => {}); // 加上这句不会报错（Uncaught (in promise)）
 }
 
-// isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 
+// isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key=0,isbofang=1){
     //暂停在播视频
     var now_video =$("#now_video").val();
@@ -149,12 +149,21 @@ function  videoList(id,key=0,isbofang=1){
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
         };
-        new ckplayer(videoObject);//初始化播放器
+        var newplayer= new ckplayer(videoObject);//初始化播放器
         url =null;
         // title =null;
         // imageurl =null;
         player=null;
         // videoHidden(1);//显示窗口
+
+        // newplayer.visibilityState(function(state){   
+        // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
+        // console.log(state)
+        // });
+        // newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
+        //     console.log(bool)
+        // });
+
 }
 // CV.singleClick(player.playOrPause);//监听视频单击
 </script>

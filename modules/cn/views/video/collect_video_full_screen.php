@@ -1,6 +1,7 @@
 <style type="text/css">
   .collect-video-style{
 	  height: -webkit-fill-available;
+    /* height: inherit; */
     position: absolute;
     max-width:100%!important;
     background-size:contain!important;
@@ -78,7 +79,7 @@
                 </div>
                 <!-- //跳转 -->
                 <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
-                <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>,0,0)"  class="video_box "></span></div> 
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>
@@ -115,6 +116,13 @@
       $("#getPage").val(0)
     })
     $('body').click(function(){
+      list_click()
+    })
+    // $('.ckplayer-ckplayer').click(function(){
+    //   list_click()
+    // })
+
+    function list_click(){
       //隐藏和显示标题和列表
       var  is_show = $("#swiper_title").val()
       if(is_show==0){
@@ -125,8 +133,9 @@
         clearTimeout(timer);
         $(".swiper-pagination").hide()
         $("#full_out").hide();
-      }    
-    })
+      }  
+    }
+
     //显示边框
     function list_show(){
       clearTimeout(timer);
@@ -148,7 +157,7 @@
     function videoList_click(){
       var swiper_page  = Number($("#swiper_page").val());
       var video_id =$(".formkey"+swiper_page+"  input[name=video_id]").val();
-      videoList(video_id);
+      videoList(video_id,0);
     }
     function Update_my_click(){
       var swiper_page  = Number($("#swiper_page").val());
