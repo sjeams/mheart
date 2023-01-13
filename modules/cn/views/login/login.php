@@ -85,7 +85,7 @@
             <span class="error "></span>
                 <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
             <button  class=" logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
-            <button   class=" logincss_btn login_rigth" onclick="loginPhone()"   >   登录/注册</button>
+            <button   class=" logincss_btn login_rigth" onclick="loginPhone()"   >  快速登陆</button>
         </div>
 
         </td>
