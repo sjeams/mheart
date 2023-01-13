@@ -144,7 +144,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         window.location.href='/cn/video/query-video';  
     }
     function old_content(){
-        window.location.href='/cn/video/index';  
+        window.location.href='/cn/video/like';  
     }
     function my_video(){
         window.location.href='/cn/video/collect-video';

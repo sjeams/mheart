@@ -121,7 +121,7 @@ class VideoController extends VideoApiControl
      * 首页
      * by  sjeam
      */
-    public function actionIndex()
+    public function actionLike()
     {
         
         // 登录状态

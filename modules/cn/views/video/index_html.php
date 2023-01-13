@@ -1,4 +1,4 @@
-<form action="/cn/video/index" method="get"  >
+<form action="/cn/video/like" method="get"  >
     <table class="table table-bordered  tablestyle"  >
     <thead>
         <?php if($login>0){?>
@@ -9,9 +9,9 @@
                     <button class="btn btn-primary search_button" type="sbumit">搜索</button>
                 </div>
                 <p class="center">
-                    <a class="btn <?php echo $data['type']=='all'?'active btn-primary':' btn-default'?>" href="/cn/video/index?page=1&title=<?php echo $data['title']?>" >全部</a>
+                    <a class="btn <?php echo $data['type']=='all'?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&title=<?php echo $data['title']?>" >全部</a>
                     <?php foreach($list as $v){ ?>
-                        <a class="btn  <?php echo $data['type']==$v['type']?'active btn-primary':' btn-default'?>" href="/cn/video/index?page=1&type=<?php echo $v['type']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
+                        <a class="btn  <?php echo $data['type']==$v['type']?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&type=<?php echo $v['type']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
                         <?php }?>
 
                 </p>
@@ -78,7 +78,7 @@
  
     function  gou(){
         var goPage =$("#goPage").val();
-        window.location.href="/cn/video/index?page="+goPage+"&type=<?php echo $data['type'] ?>&title=<?php echo $data['title'] ?>";
+        window.location.href="/cn/video/like?page="+goPage+"&type=<?php echo $data['type'] ?>&title=<?php echo $data['title'] ?>";
     }
     function  videoup(id){
         var videotype =$("#videotype").val();
