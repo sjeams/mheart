@@ -169,7 +169,7 @@
     function video_title(){
       var goPageCount = $("#goPageCount").val()
       // console.log(goPageCount)
-      var page =<?php echo (($data['page']) ) ?>;
+      var page =<?php echo $data['page'] ?>;
       var swiper_page  = Number($("#swiper_page").val());
       var title =$(".formkey"+swiper_page+"  input[name=title]").val();
       var title = page+'/'+goPageCount+'-'+(swiper_page+1)+'、'+title
