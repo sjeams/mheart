@@ -19,39 +19,65 @@ class VideoListDetail extends ActiveRecord {
     }
 
 
+    //列表采集
+	public static function checkVideo($listvideo){
+     
+        foreach($listvideo as$key=> $val){
+            $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
+        }
+        $link =  "'" .implode("','",array_column($listvideo,'link'))."'" ;
+        // print_r($link);die;
+        // $list_collect = addslashes($list_collect);
+        $find_collect =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        $find_link = array_column($find_collect,'link');
 
-	// public static function checkVideo($listvideo){
-    //     $link =  "'".implode("','",array_column($listvideo,'link'))."'" ;
-    //     // $list_collect = addslashes($list_collect);
-    //     $find_collect =Video::find()->select('title')->where("link in ($link)")->asarray()->all();
-    //     $find_collect = array_column($find_collect,'title');
-    //     var_dump($link);die;
-    //     foreach($listvideo as$key=> $val){
-    //         // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-    //             $list []= VideoListDetail::isUpdateVideo($val);
-    //             // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-    //         // }
-    //     }
-    // }
-	public static function isUpdateVideo($val){
-        $link = addslashes($val['http'].$val['url']);
-        $find_video = VideoListDetail::find()->select('id,url,title,imageurl,type,belong,link')->where("link ='$link'")->asarray()->one();
-        if(!$find_video){
-           //单条数据采集
-            $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-            // 插入采集数据库
-            Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-            $find_video['id']=Yii::$app->signdb->getLastInsertID();
-        }else{
-            // 处理搜索以后存入的视频没有type--更新时，自动更新视频类型
-            $find_id=  $find_video['id'];
-            if($find_video['type']==0&&$val['type']!=0){
-                $val_type = $val['type'];
-                VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
+        $video_list =[];
+        foreach($listvideo as$key=> $val){
+            $video_link= $val['link'];
+            if(in_array($video_link,$find_link)){
+                $key = array_search($val['link'], $find_link);
+                $find_video= $find_collect[$key];
+                // 处理搜索以后存入的视频没有type--更新时，自动更新视频类型
+                $find_id=  $find_video['id'];
+                if($find_video['type']==0&&$val['type']!=0){
+                    $val_type = $val['type'];
+                    VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
+                }
+            }else{
+                //单条数据采集
+                $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                // 插入采集数据库
+                Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                $find_video['id']=Yii::$app->signdb->getLastInsertID();
             }
-            // unset($find_video['id']);
-        }    
-		return $find_video;
+            $video_list [] =$find_video;
+        }
+        return $video_list;
+    }
+    //单条采集
+	public static function isUpdateVideo($listvideo){
+        $video_list =[];
+        foreach($listvideo as$key=> $val){
+            $link = addslashes($val['http'].$val['url']);
+            $find_video = VideoListDetail::find()->select('id,url,title,imageurl,type,belong,link')->where("link ='$link'")->asarray()->one();
+            if(!$find_video){
+               //单条数据采集
+                $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                // 插入采集数据库
+                Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                $find_video['id']=Yii::$app->signdb->getLastInsertID();
+            }else{
+                // 处理搜索以后存入的视频没有type--更新时，自动更新视频类型
+                $find_id=  $find_video['id'];
+                if($find_video['type']==0&&$val['type']!=0){
+                    $val_type = $val['type'];
+                    VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
+                }
+                // unset($find_video['id']);
+            } 
+            $video_list [] =$find_video;
+        }
+        return $video_list;
 	}
 
 }

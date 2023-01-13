@@ -236,12 +236,14 @@ class VideoController extends VideoApiControl
                     // $pageSize=20;
                     // $pageSize= $count;
                     if($listvideo){
-                        foreach($listvideo as$key=> $val){
-                            // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-                                $list []= VideoListDetail::isUpdateVideo($val);
-                                // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                            // }
-                        }
+                        $list= VideoListDetail::checkVideo($listvideo);
+                        // $list= VideoListDetail:: isUpdateVideo($listvideo);
+                        // foreach($listvideo as$key=> $val){
+                        //     // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
+                        //         $list []= VideoListDetail::isUpdateVideo($val);
+                        //         // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                        //     // }
+                        // }
                         // var_dump($list);die;
                         $args['key_value'] =$sessionStr;
                         $args['value'] =  json_encode($list,true);
@@ -328,13 +330,8 @@ class VideoController extends VideoApiControl
                 // $pageSize=20;
                 // $pageSize= $count;
                 if($listvideo){
-                    // $list= VideoListDetail::checkVideo($listvideo);
-                    foreach($listvideo as$key=> $val){
-                        // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-                            $list []= VideoListDetail::isUpdateVideo($val);
-                            // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                        // }
-                    }
+                    $list= VideoListDetail::checkVideo($listvideo);
+                    // $list= VideoListDetail:: isUpdateVideo($listvideo);
                     // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] =  json_encode($list,true);
