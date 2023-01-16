@@ -703,4 +703,61 @@ class Method
     //     unlink($dst_img); //删除本地图片
     //     return $base64;
     // }
+
+
+
+    public static function GetVideos($url) {
+
+        $ch = curl_init();
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ["user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"]);
+        
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+        
+        $output = curl_exec($ch);
+        
+        curl_close($ch);
+        
+        return $output;
+        
+    }
+    public static  function GetUrl($url){
+
+    $UserAgent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506; .NET CLR 3.5.21022; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+
+    curl_setopt($curl, CURLOPT_HEADER, 0);
+
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+
+    curl_setopt($curl, CURLOPT_ENCODING, '');
+
+    curl_setopt($curl, CURLOPT_USERAGENT, $UserAgent);
+
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+
+    $data = curl_exec($curl);
+
+    curl_close($curl);
+
+    return $data;
+
+    }
 }
