@@ -53,7 +53,10 @@ class TorrentController extends VideoApiControl
         //     $this->login=0;
         // }
     }
-   
+    public function actionIndex()
+    {
+        return $this->render('index');
+    }   
     /**
      * 基本信息
      * by  sjeam
