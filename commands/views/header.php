@@ -89,6 +89,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 <!-- table-bordered  -->
     <table class="table  tablestyle mb-0">
         <tr>
+            <!-- //chat -->
             <?php  if( $http_geturl=='chat'){ ?>
                 <?php  if( $http_index=='list'){ ?>
                     <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
@@ -111,6 +112,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                     </td>
                    
                 <?php } ?>
+            <!-- //video -->
             <?php }else{ ?>   
                 <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
                 <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>

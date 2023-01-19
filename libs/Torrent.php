@@ -1,6 +1,6 @@
 <?php
 namespace app\libs;
-
+// 磁力链接转换
 class Torrent
 {
 
@@ -102,5 +102,58 @@ class Torrent
         }
         return $t;
     }
+
+    // public function actionAnalysis()
+    // {
+
+    //     $url ="magnet:?xt=urn:btih:0A896722C6B55C6007CDB9B339BDF7E0ACA4F760";
+    //     $res = Method::curl_post_fix("https://api.magnet-vip.com/api2/magnetinfo",['url'=>$url ]);
+    //     $res = json_decode($res,true);
+    //     //  var_dump( $res );die;
+    //             //   $res = Method::GetUrl($url);
+    //     $hash = $res['info']['infoHash'];
+    //     //    var_dump( $res );die;
+    //     $url ="https://api.magnet-vip.com/api2/download/". $hash;
+ 
+
+
+    //     $Lightbenc=new Torrent();
+
+    //     //  $btfile = $Lightbenc->bdecode_getinfo('r1.torrent');
+    //     $btfile = $Lightbenc->bdecode_getinfo( $url);
+    //     var_dump($btfile['info']['files']);die;
+    //     //获取种子文件信息
+    //     echo '<strong>种子文件名</strong>：'.$btfile['info']['name'].'<br />';
+        
+    //     echo '<strong>种子文件数</strong>：'.$btfile['info']['filecount'].'<br />';
+        
+    //     echo '<strong>种子大小</strong>：'.$btfile['info']['size'].'<br />';
+        
+    //     echo '<strong>磁力链接</strong>：'.'magnet:?xt=urn:btih:'.$btfile['info_hash'].'<br />';
+        
+    //     echo '<strong>下载种子</strong>：'.'http://bt.box.n0808.com/'.substr($btfile['info_hash'],0,2).'/'.substr($btfile['info_hash'],38).'/'
+    //         .$btfile['info_hash'].'.torrent'.'<br />';
+        
+    //     echo '<strong>备用下载</strong>：'.'http://torcache.net/torrent/'.$btfile['info_hash'].'.torrent'.'<br />';
+        
+    //     echo '<strong>备用下载</strong>：'.'http://btcache.sobt.org/'.$btfile['info_hash'].'.torrent'.'<br />';
+        
+    //     echo '<strong>备用下载</strong>：'.'https://zoink.it/torrent/'.$btfile['info_hash'].'.torrent'.'<br />';
+        
+    //     echo '<br /><strong>文件信息</strong>：<br />';
+        
+    //     foreach ($btfile['info']['files'] as $f) {
+    //         echo '—文件总大小：' . $f['length'] . ' byte<br />';
+    //         echo '—文件列表：<br />';
+        
+    //         foreach ($f['path'] as $path) {
+    //             echo '——' . $path . '<br />';
+    //         }
+    //         echo '<br />';
+    //     }
+ 
+    // } 
+
+    
 }
  
