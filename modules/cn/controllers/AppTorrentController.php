@@ -8,7 +8,7 @@ use app\libs\Method;
 use app\libs\Torrent;
 use yii\db\ActiveRecord;
 use yii;
-
+use yii\web\Controller;
 use app\libs\VideoApiControl;
 use app\modules\cn\models\Video;
 use app\modules\cn\models\Jian;
@@ -28,22 +28,22 @@ header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorizatio
 header('Access-Control-Allow-Credentials: true;');
 
 header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
-class AppTorrentController extends VideoApiControl
+class AppTorrentController extends Controller
 {
     public $enableCsrfValidation = false;
     public $layout = 'cn';
  
     public  $user;
     function init (){
-        parent::init();
-        set_time_limit(0);
-        $this->user = Yii::$app->session->get('userlogin');
-        if(!$this->user){
-            // 判断http还是https
-            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
-            header('Location: '.$href);die;
-        }
+        // parent::init();
+        // set_time_limit(0);
+        // $this->user = Yii::$app->session->get('userlogin');
+        // if(!$this->user){
+        //     // 判断http还是https
+        //     $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+        //     $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
+        //     header('Location: '.$href);die;
+        // }
     }
     // http://cs.mheart.xyz/cn/app-torrent/index
     public function actionIndex()
