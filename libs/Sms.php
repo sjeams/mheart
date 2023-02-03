@@ -53,6 +53,7 @@ class Sms {
         }
         $length = strlen($params);
         //创建socket连接
+        // http://sdk.entinfo.cn:8060/webservice.asmx
         $fp = fsockopen("sdk2.entinfo.cn", 8060, $errno, $errstr, 10) or exit($errstr . "--->" . $errno);
         //构造post请求的头
         $header = "POST /webservice.asmx/mt HTTP/1.1\r\n";

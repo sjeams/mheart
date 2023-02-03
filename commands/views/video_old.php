@@ -84,12 +84,18 @@ function  videoList(id){
             // debug: false,//是否开启调试模式
             overspread:true,//是否让视频铺满播放器
         };
-        new ckplayer(videoObject);//初始化播放器
+        _this.player =  new ckplayer(videoObject);//初始化播放器
         url =null;
         title =null;
         imageurl =null;
         player=null;
+        // _this.player.ended(function() {
+        // _this.$nextTick(() => {
+        //   _this.handleNextPath()
+        // })
+        // })
         // videoHidden(1);//显示窗口
 }
 // CV.singleClick(player.playOrPause);//监听视频单击
+
 </script>

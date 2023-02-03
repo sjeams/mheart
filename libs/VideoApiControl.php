@@ -1,4 +1,9 @@
 <?php
+/*
+ * @Author: sjeam
+ * @Date: 2022-11-28 10:47:57
+ * @Description: 
+ */
 /**
  * 用于vdieo登录
  */
@@ -14,9 +19,13 @@
         public $description;
 		public function init() {
             parent::init();
-            // $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
+            $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
+  
             // // $update = isset($_SERVER['HTTP_UPDATE']) && !empty($_SERVER['HTTP_UPDATE'])?$_SERVER['HTTP_UPDATE']:false;
-            $token= Yii::$app->session->get('token');
+            if(!$token){
+                $token= Yii::$app->session->get('token');
+            }
+
             if(!$token){
                 $token = isset($_COOKIE['sslToken'])?$_COOKIE['sslToken']:false;
             }

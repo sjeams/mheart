@@ -63,6 +63,20 @@ class TorrentController extends VideoApiControl
         //解析实例
     public function actionAnalysis()
     {
+ 
+        // $url ="magnet:?xt=urn:btih:5C45635E96E885FEED19EFD01D35BC6F2134F880";
+        // $data = file_get_contents('www.code.76lt.com/magnet-bt/torrent.php?magnet='.$url);
+        // header('Content-type: application/octet-stream; charset=utf8');
+        // Header("Accept-Ranges: bytes");
+        // header('Content-Disposition: attachment; filename='.'BT种子.torrent');
+        // echo $data;
+        $file=fopen('文件地址',"r");
+        header("Content-Type: application/octet-stream");
+        header("Accept-Ranges: bytes");
+        header("Accept-Length: ".filesize('文件地址'));
+        header("Content-Disposition: attachment; filename=文件名称");
+        echo fread($file,filesize('文件地址'));
+        fclose($file);
 
         // $url ="magnet:?xt=urn:btih:5C45635E96E885FEED19EFD01D35BC6F2134F880";
         // $url =  mb_strtolower($url);
