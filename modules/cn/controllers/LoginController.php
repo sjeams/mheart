@@ -84,6 +84,7 @@ class LoginController extends ApiControl
         }
         die(Method::jsonGenerate(1,[],'succes'));
     }
+    
     //登录
     public function  LoginIn($name,$password)
     {
