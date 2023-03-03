@@ -51,7 +51,7 @@ cc.Class({
         //         'token': json.token,
         //     };
         //     cc.log(json.token); 
-        //     var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+        //     var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
         //         cc.loader.release('resources/login.json'); //释放json 资源
         //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
         //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -68,7 +68,7 @@ cc.Class({
         // })
         var token =cc.sys.localStorage.getItem('token');
         if(token){
-                httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {'token':token} ,function (data) {
+                httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {'token':token} ,function (data) {
                     var _this =this;
                     // cc.loader.release('resources/login.json'); //释放json 资源
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
@@ -98,7 +98,7 @@ cc.Class({
         };
 
         var _this= this;
-        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+        httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params ,function (data) {
             cc.log(data); 
             if(data.code==1){
                 // _this.register_alert.color =  new cc.color('#BDFF00');

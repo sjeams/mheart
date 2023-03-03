@@ -17,7 +17,7 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-tips', [], function (data) {
       var tips = cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
       tips.getComponent(cc.Label).string = data.data['gonggao_sz']; // 转数组
       // cc.log(JSON.parse( data.data ));

@@ -15,7 +15,7 @@ class WechatUser extends ActiveRecord {
         if($token){
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model,token')->where("token='$token'")->asArray()->one();
             //设置cookie
-            setcookie('sslToken',$token,time()+86400*3,'/','mheart.xyz');
+            setcookie('sslToken',$token,time()+86400*3,'/','aheart.cn');
         }else{
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model,token')->where("id='$userId'")->asArray()->one(); 
         }     

@@ -111,7 +111,7 @@ cc.Class({
     //         'token': json.token,
     //     };
     //     cc.log(json.token); 
-    //     var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+    //     var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
     //         cc.loader.release('resources/login.json'); //释放json 资源
     //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
     //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -126,7 +126,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token');
 
     if (token) {
-      httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {
+      httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {
         'token': token
       }, function (data) {
         var _this = this; // cc.loader.release('resources/login.json'); //释放json 资源
@@ -153,7 +153,7 @@ cc.Class({
   //         // 'password': 123456,
   //     };
   //     var _this= this;
-  //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+  //     httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params ,function (data) {
   //         cc.log(data); 
   //         if(data.code==1){
   //             // _this.register_alert.color =  new cc.color('#BDFF00');
@@ -181,7 +181,7 @@ cc.Class({
   //     var token =cc.sys.localStorage.getItem('token');
   //     // cc.log(value); 
   //     // let httpRequest =  new HttpHelper();  
-  //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {'token':token} ,function (data) {
+  //     httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-login', {'token':token} ,function (data) {
   //         cc.log(data); 
   //         if(data.code==0){ // 登录失败，或本地数据失效
   //             // 弹窗
@@ -244,14 +244,14 @@ cc.Class({
     this.node.active = false;
   },
   xieyi_show_dlg: function xieyi_show_dlg() {
-    this.register_knows_webview.url = 'https://www.mheart.xyz/app/api-user/xieyi';
+    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/xieyi';
     this.node.active = true;
   },
   xieyi_hidden_dlg: function xieyi_hidden_dlg() {
     this.node.active = false;
   },
   yinsi_show_dlg: function yinsi_show_dlg() {
-    this.register_knows_webview.url = 'https://www.mheart.xyz/app/api-user/yinsi';
+    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/yinsi';
     this.node.active = true;
   },
   yinsi_hidden_dlg: function yinsi_hidden_dlg() {
@@ -319,7 +319,7 @@ cc.Class({
         'token': json.token
       };
       cc.log(json.token);
-      var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params, function (data) {
+      var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params, function (data) {
         cc.loader.release('resources/login.json'); //释放json 资源
         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -337,7 +337,7 @@ cc.Class({
       'loginname': 'yincan1993',
       'password': 123456
     };
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params, function (data) {// cc.log(data); 
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params, function (data) {// cc.log(data); 
       //操作文本--修改用户信息
     });
   },
@@ -352,7 +352,7 @@ cc.Class({
     var params = JSON.parse(cc.sys.localStorage.getItem("params")); // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
 
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', params, function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-login', params, function (data) {
       cc.log(data);
 
       if (data.code == 0) {// 登录失败，或本地数据失效
@@ -834,7 +834,7 @@ cc.Class({
   loadingBackground: function loadingBackground() {
     // 下载资源包
     // 远程 url 带图片后缀名
-    var remoteUrl = "http://127.0.0.1/ceshi.php?url=https://www.mheart.xyz/app/loading/loading.jpg";
+    var remoteUrl = "http://127.0.0.1/ceshi.php?url=https://www.aheart.cn/app/loading/loading.jpg";
     var self = this; // cc.loader.load(remoteUrl, function (err, texture) {
 
     cc.loader.load({
@@ -1267,7 +1267,7 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-server', {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-server', {
       'id': info['id'],
       'token': null
     }, function (data) {
@@ -1359,7 +1359,7 @@ cc.Class({
     //         'token': json.token,
     //     };
     //     cc.log(json.token); 
-    //     var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+    //     var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
     //         cc.loader.release('resources/login.json'); //释放json 资源
     //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
     //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -1374,7 +1374,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token');
 
     if (token) {
-      httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {
+      httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {
         'token': token
       }, function (data) {
         // cc.loader.release('resources/login.json'); //释放json 资源
@@ -1407,7 +1407,7 @@ cc.Class({
   //         // 'password': 123456,
   //     };
   //     var _this= this;
-  //     httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+  //     httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params ,function (data) {
   //         cc.log(data); 
   //         if(data.code==1){
   //             // _this.register_alert.color =  new cc.color('#BDFF00');
@@ -1434,7 +1434,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token'); // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
 
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-login', {
       'token': token
     }, function (data) {
       // cc.log(data); 
@@ -1791,13 +1791,13 @@ cc.Class({
 
     console.log('正在加载场景资源，请耐心等待...'); // 加载资源包
 
-    this._urls = [// {url:'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/jianzhicangmang.mp3', type:'mp3'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=https://www.mheart.xyz/app/loading/loading.jpg', type:'jpg'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
-      // {url:'https://www.mheart.xyz/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
+    this._urls = [// {url:'https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/jianzhicangmang.mp3', type:'mp3'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg', type:'jpg'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
+      // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
     ];
     console.log(this.progressBar); // console.log( this.sprite); 
 
@@ -2104,7 +2104,7 @@ cc.Class({
     //         'token': json.token,
     //     };
     //     cc.log(json.token); 
-    //     var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+    //     var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
     //         cc.loader.release('resources/login.json'); //释放json 资源
     //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
     //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -2119,7 +2119,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token');
 
     if (token) {
-      httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', {
+      httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {
         'token': token
       }, function (data) {
         var _this = this; // cc.loader.release('resources/login.json'); //释放json 资源
@@ -2148,7 +2148,7 @@ cc.Class({
 
     var _this = this;
 
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params, function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params, function (data) {
       cc.log(data);
 
       if (data.code == 1) {
@@ -2267,7 +2267,7 @@ cc.Class({
       'page': 1,
       'pageSize': 11
     };
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-register', params, function (data) {
       //   console.log(data);
       // console.log(_this.gridLayout)
       // let cellWidth = _this.gridLayout.width * 0.105;
@@ -2360,7 +2360,7 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-tips', [], function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-tips', [], function (data) {
       var tips = cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
       tips.getComponent(cc.Label).string = data.data['gonggao_sz']; // 转数组
       // cc.log(JSON.parse( data.data ));
@@ -2542,7 +2542,7 @@ cc.Class({
         // 'password': 123456,
 
       };
-      httpRequest.httpPost('https://www.mheart.xyz/app/api-server/register-in', params, function (data) {
+      httpRequest.httpPost('https://www.aheart.cn/app/api-server/register-in', params, function (data) {
         cc.log(data);
 
         if (data.code == 1) {

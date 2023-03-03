@@ -45,14 +45,18 @@ class AppTorrentController extends Controller
         //     header('Location: '.$href);die;
         // }
     }
-    // http://cs.mheart.xyz/cn/app-torrent/index
+    // http://cs.aheart.cn/cn/app-torrent/index
     public function actionIndex()
     {
-        $dataList =   CategoryName::find()->where("belong!=0")->asArray()->all();
+
+        $dataList =   CategoryName::find()->where("id!=4")->asArray()->all();
         $res = VideoList::find()->where(" search like'%龙珠%' ")->asarray()->one();
         $newsData =   json_decode($res['value'],true);
+
+        $banner =   CategoryName::find()->where("id!=4")->asArray()->all();    
         // $count =$res['count'];
-        die(Method::jsonGenerate(1,['newsData'=>$res,'dataList'=>$dataList],'返回数据成功'));
+        // var_dump( $newsData);die;
+        die(Method::jsonGenerate(1,['banner'=>$newsData,'newsData'=>$newsData,'dataList'=>$dataList],'返回数据成功'));
     }   
  
         //解析实例

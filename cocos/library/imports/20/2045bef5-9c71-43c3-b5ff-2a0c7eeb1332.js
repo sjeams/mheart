@@ -43,7 +43,7 @@ cc.Class({
       'page': 1,
       'pageSize': 11
     };
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-register', params, function (data) {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-register', params, function (data) {
       //   console.log(data);
       // console.log(_this.gridLayout)
       // let cellWidth = _this.gridLayout.width * 0.105;

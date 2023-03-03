@@ -70,7 +70,7 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-server', {
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-server', {
       'id': info['id'],
       'token': null
     }, function (data) {

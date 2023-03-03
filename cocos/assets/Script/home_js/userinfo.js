@@ -32,7 +32,7 @@ cc.Class({
                 'token': json.token,
             };
             cc.log(json.token); 
-            var res = httpRequest.httpPost('https://www.mheart.xyz/app/api-server/token-login', params ,function (data) {
+            var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
                 cc.loader.release('resources/login.json'); //释放json 资源
                 // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                 //     jsb.fileUtils.writeStringToFile(data,token)
@@ -53,7 +53,7 @@ cc.Class({
             'loginname': 'yincan1993',
             'password': 123456,
         };
-        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/login', params ,function (data) {
+        httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params ,function (data) {
             // cc.log(data); 
             //操作文本--修改用户信息
         });
@@ -74,7 +74,7 @@ cc.Class({
         var params = JSON.parse(cc.sys.localStorage.getItem("params"));
         // cc.log(value); 
         // let httpRequest =  new HttpHelper();  
-        httpRequest.httpPost('https://www.mheart.xyz/app/api-server/user-login', params ,function (data) {
+        httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-login', params ,function (data) {
             cc.log(data); 
             if(data.code==0){ // 登录失败，或本地数据失效
                 // 弹窗

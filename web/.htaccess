@@ -4,5 +4,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 
 
 #RewriteCond %{HTTPS} off
-#RewriteRule (.*) https://www.mheart.xyz/$1 [R,L]
+#RewriteRule (.*) https://www.aheart.cn/$1 [R,L]
 RewriteRule . index.php [L]
