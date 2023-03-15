@@ -204,6 +204,7 @@ class Video extends ActiveRecord {
 	// 抓取详情 --存入本地
     public static function getQueryDetails($belong,$val,$type,$http,$isquery=0)
     {
+	
 		switch($belong){
 			case 1 :     	// 新东方
 				// $content1= array('.copy_text .hidden-xs ','text');
@@ -419,6 +420,7 @@ class Video extends ActiveRecord {
 		$val['title']= Method::getMytrim($val['title']);
 		$content1= array('.copy_text font','text');
 		$content2= array('.left>img ','src');
+		$content3= array('.left a>img ','src');
 
 		// $content2= array('h1','text');
 		// $model	='.xqy_core_main';
@@ -426,7 +428,8 @@ class Video extends ActiveRecord {
 	
 		$rules=array(
 			'content' => $content1,
-			'imageurl' => $content2
+			'imageurl' => $content2,
+			'imageurl2' => $content3
 		);
 		$ql = QueryList::rules($rules);
 		$data1 =$ql->get($link)->queryData();
@@ -441,7 +444,7 @@ class Video extends ActiveRecord {
 			// var_dump($array);die;
 			$args['url']=$videourl;
 			$args['title']= addslashes($val['title']);
-			$args['imageurl']=$data1['imageurl'];
+			$args['imageurl']=$data1['imageurl']?$data1['imageurl']:$data1['imageurl2'];
 
 			if((string)strpos($args['imageurl'],'http')==''){
 				$args['imageurl']=$http.$args['imageurl'];
