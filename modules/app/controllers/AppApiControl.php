@@ -1,50 +1,69 @@
 <?php
-/**
- * 托福接口基础类
- * by Obelisk
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:53
+ * @Description: 
  */
-	namespace app\libs;
-    use yii;
-    use yii\web\Controller;
-    use app\modules\basic\models\Params;
-	class AppApiControl extends Controller {
-		public function init() {
-            $uid = Yii::$app->session->get('uid');
-//            $uid = 7937;
-            $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
-            // $token ='278be6938fe137454339e1bab22b6c9c';
-            if($token){
-                if($token == 1){
-                    if($uid){
-                        session_destroy();
-                    }
-                }else{
-                    $session_token =  Yii::$app->session->get('sslToken');
-                    if(!$uid || $token != $session_token){
-                        if($token){
-                            $date = Method::curl_post(Yii::$app->params['loginUrl'].'/cn/ssl-app-api/check',['token' => $token]);
-                            $data = json_decode($date,true);
-                            if($data['code'] == 1){
-                                Method::confim_user($data['info']);
-                                Yii::$app->session->set('sslToken',$token);
-                            }
-                        }
-                    }
-                }
-            }
-		}
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2018/8/29
+ * Time: 13:48
+ */
+namespace app\modules\app\controllers;
 
-        /**
-         * 定义配置项为全局变量
-         * @Obelisk
-         */
-        public function config(){
-            define('baseUrl',Yii::$app->params['baseUrl']);
-            define('tablePrefix',Yii::$app->db->tablePrefix);
-            $data = Params::find()->all();
-            foreach($data as $v){
-                define($v->key,$v->value);
-            }
+use app\libs\Method;
+use app\libs\Pager;
+use app\libs\ApiControl;
+
+
+// use app\modules\cn\models\Login;
+
+use Yii;
+use UploadFile;
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
+header('Access-Control-Allow-Credentials: true;');
+
+header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+
+class AppApiController extends ApiControl{
+    
+     function init(){
+        // Yii::$app->session->set('uid',30186);
+        // Yii::$app->session->set('userId',40888);
+        parent::init();
+        //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
+    }
+    public $enableCsrfValidation = false;
+
+    /**
+     * 资源调用中心
+     * app/api/file-content
+     */
+     public function actionFileContent(){
+        $request = Yii::$app->request->get('url');
+        // if(isset($request)){  
+        //     echo file_get_contents($request);
+        // }
+
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        ); 
+        if(isset($request)){  
+            echo file_get_contents($request, false, stream_context_create($arrContextOptions));
+ 
         }
-	}
-?>
+
+    }
+
+
+    
+    
+    
+
+}
