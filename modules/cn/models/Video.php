@@ -257,48 +257,7 @@ class Video extends ActiveRecord {
 
 			break;
 			case 2 :     	// 新东方
-				
-				// // $val['title']= Method::getMytrim($val['title']);
-				// $content1= array('#playId1','value');
-				// $content2= array('.theme .detail img','src','-img');
-				// $content3= array('.theme .detail img','title');
-				// // $content2= array('h1','text');
-				// // $model	='.xqy_core_main';
-				// $link =$http.$val['url'];
-	 
-				// $rules=array(
-				// 	'content' => $content1,
-				// 	'imageurl' => $content2,
-				// 	'title' => $content3
-				// );
-				// $ql = QueryList::rules($rules);
-				// $data1 =$ql->get($link)->queryData();
-				// $ql->destruct();
-				// // var_dump($val['title']);die;
-				// if(!empty($data1['content'] )){
-		 
-				// 	// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
-				// 	$videourl = str_replace('正片$','',$data1['content']);
-				// 	$videourl = str_replace('高清$','',$data1['content']);
-				// 	// var_dump($array);die;
-				// 	$args['url']=$videourl;
-				// 	$args['title']= addslashes($data1['title']);
-				// 	$args['imageurl']=$data1['imageurl'];
  
-				// 	if((string)strpos($args['imageurl'],'http')==''){
-				// 		$args['imageurl']=$http.$args['imageurl'];
-				// 	} 
-				// 	$args['type']= $type;
-				// 	$args['belong']= $belong;
-				// 	$args['link']= $link;
-				// 	// var_dump($args);die;
-				// 	// return $videourl;
-				// 	// var_dump($args);die;
-				// 	if(!$isquery){
-				// 		Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
-				// 	}
-				// 	return $args;
-				// } 
 				$args = Video::getQueryDetailsMethod3($belong,$val,$type,$http,$isquery);
 				if($args){
 					return 	$args;
@@ -411,7 +370,52 @@ class Video extends ActiveRecord {
 		
 	}
 	
+	public static function getQueryDetailsMethod2($belong,$val,$type,$http,$isquery=0){
+		// $val['title']= Method::getMytrim($val['title']);
+		$content1= array('#playId1','value');
+		$content2= array('.theme .detail img','src','-img');
+		$content3= array('.theme .detail img','title');
+		// $content2= array('h1','text');
+		// $model	='.xqy_core_main';
+		$link =$http.$val['url'];
 
+		$rules=array(
+			'content' => $content1,
+			'imageurl' => $content2,
+			'title' => $content3
+		);
+		$ql = QueryList::rules($rules);
+		$data1 =$ql->get($link)->queryData();
+		$ql->destruct();
+		// var_dump($val['title']);die;
+		if(!empty($data1['content'] )){
+	
+			// preg_match_all('/正片\$(.*?)/is',$data1['content'],$array);
+			$videourl = str_replace('正片$','',$data1['content']);
+			$videourl = str_replace('高清$','',$data1['content']);
+			// var_dump($array);die;
+			$args['url']=$videourl;
+			$args['title']= addslashes($data1['title']);
+			$args['imageurl']=$data1['imageurl'];
+
+			if((string)strpos($args['imageurl'],'http')==''){
+				$args['imageurl']=$http.$args['imageurl'];
+			} 
+			$args['type']= $type;
+			$args['belong']= $belong;
+			$args['link']= $link;
+			// var_dump($args);die;
+			// return $videourl;
+			// var_dump($args);die;
+			if(!$isquery){
+				Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
+			}
+			return $args;
+			
+		}else{
+			return null;
+		} 
+	}
 
 
 	public static function getQueryDetailsMethod3($belong,$val,$type,$http,$isquery=0){
