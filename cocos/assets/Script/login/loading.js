@@ -62,7 +62,7 @@ cc.Class({
             // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
             // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
             // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
-            // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
+            // {url:'https://www./app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
             // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
         ];
         console.log( this.progressBar); 

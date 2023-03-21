@@ -26,7 +26,6 @@ class Query extends ActiveRecord {
 	public static function getVideo($search='封神榜')
 	{
 
- 
 		$url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 		// https://www.yszzq.com/
 		$http="https://www.taopianzy.com";

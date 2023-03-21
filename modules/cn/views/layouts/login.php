@@ -71,7 +71,7 @@ $(document).keyup(function(event){
     <p>
         Copyright © 2022-现在 心缘测试
         <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
-            蜀ICP备2022010153号-1
+            蜀ICP备2022010153号-2
         </a>
         <!-- <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank" rel="external nofollow">
             ICP证书: 沪B2-20180057
