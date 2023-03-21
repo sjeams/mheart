@@ -23,20 +23,38 @@ class Query extends ActiveRecord {
             // return '{{%query}}';
     }
 	// 采集列表
-	public static function getVideo($search='封神榜')
+	public static function getVideo($search='封神榜',$type=1)
 	{
+		switch($type){
+			case 1:
+				$url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
+				// https://www.yszzq.com/
+				$http="https://www.taopianzy.com";
+				// $url = $http."/home/vodlist/1/1-1.html";
+				$list =Query::getVideoTp($search,$type,$url,$http);
+			break;
+			case 2:
+				$http="https://foxzyw.com";
+				$url = $http."/index.php/vod/search.html?wd=$search";
+				$list =Query::getVideoFox($search,$type,$url,$http);
+			break;
+		}
 
-		$url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
-		// https://www.yszzq.com/
-		$http="https://www.taopianzy.com";
-		// $url = $http."/home/vodlist/1/1-1.html";
-	
+		return $list;	
+	}
+
+	// 淘片
+	public static function getVideoTp($search,$type,$url,$http)
+	{
 		$rules = [
 			'name' => array('td:eq(0) span:eq(0)','html','a'),
 			'link' => array('td:eq(0) a','href',''),
 		];
-		// 切片选择器,跳过第一条广告
 		$range = '.table tr:gt(0)';
+		// var_dump($type);die;
+
+		// 切片选择器,跳过第一条广告
+
 		$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
 		// var_dump($list );die;
 		$urls =[];
@@ -86,7 +104,8 @@ class Query extends ActiveRecord {
 			// 切片选择器,跳过第一条广告
 			$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
 			$rt ['belong']=0;
-			$rt ['type']=$search;
+			$rt ['type']=$type;
+			$rt ['search']=$search;
 			// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
 			$video = $sql->get($url)->query()->getData()->all();
 			// $rt['title'] =$video[0]['name'];
@@ -115,6 +134,67 @@ class Query extends ActiveRecord {
 		// var_dump($rt );die;
 
 	}
+
+
+// 采集列表
+public static function getVideoFox($search,$type,$url,$http)
+{
+
+	$rules = [
+		'name' => array(' a:eq(0)','html',''),
+		'link' => array(' a:eq(0)','href',''),
+	];
+	$range = '.stui-vodlist li:gt(0)';
+	// var_dump($type);die;
+
+	// 切片选择器,跳过第一条广告
+
+	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
+
+	$urls =[];
+	foreach($list as  $v){
+		$urls[] =$http.$v['link'];
+	}
+	// 切片选择器----start
+	// $range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
+	// $range = '.playList table tbody tr:nth-child(even)';// 偶数行
+	$range = '.stui-content__playlist:eq(1) li ';
+	// 切片选择器,跳过第一条广告
+	$rules = [
+		// 'imageUrl' => array(' .left>img','data-original'),
+		// 'name' => array('.right .name','html','span'),
+		'title' => array(' .copy_text','html','-span'),
+		'url' => array('  .copy_text   .url','html',' '),
+	];
+	// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
+	$sql = QueryList::rules($rules)->range($range);
+	// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+	$rules2 = [
+		'imageurl' => array(' .img-responsive','src'),
+		'title' => array('.stui-content .title ','html',''),
+		// 'url' => array(' .tbAddr:eq(0) input','value',' '),
+	];
+
+	foreach($urls as$key=> $url){
+		// 切片选择器,跳过第一条广告
+		$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
+		$rt ['belong']=0;
+		$rt ['type']=$type;
+		$rt ['search']=$search;
+		// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+		$video = $sql->get($url)->query()->getData()->all();
+		// $rt['title'] =$video[0]['name'];
+		// $rt['imageurl'] =$video[0]['imageurl'];
+		$rt['video'] =	$video;
+		$list[$key] =$rt;
+		// var_dump($list[0]);die;
+	}
+	// var_dump($list );die;
+	return $list;
+
+}
+
+	
 
 	// 采集列表
     public static function getQueryUrl( )

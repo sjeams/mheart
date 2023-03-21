@@ -284,7 +284,7 @@ class VideoController extends VideoApiControl
         $search = Yii::$app->request->get('search','');
 
         // 搜索类型默认为0
-        if($search){  $type=0; }
+    
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
         if($login==0){
@@ -292,7 +292,11 @@ class VideoController extends VideoApiControl
         }
         
         if($belong==0){
+            //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
+        }else{
+            //采集所有默认类型为0
+            if($search){  $type=0; }
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
@@ -307,7 +311,7 @@ class VideoController extends VideoApiControl
                $count =$res['count'];
         }else{
             if($belong==0){
-                $list = Query::getVideo($search);
+                $list = Query::getVideo($search,$type);
                 $count = count($list);
                 $args['key_value'] =$sessionStr;
                 $args['value'] =  json_encode($list,true);
@@ -504,10 +508,13 @@ class VideoController extends VideoApiControl
         // $list_type = Yii::$app->session->get('list_type');
         // var_dump( $type);die;
         if($belong==0){
-            $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
-            die(Method::jsonGenerate(1,$str,'返回数据成功'));
+            $list = Category::find()->where("category_id=1")->asArray()->all();
+            // $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
+            // die(Method::jsonGenerate(1,$str,'返回数据成功'));
+        }else{
+            $list = Category::find()->where("belong=$belong")->asArray()->all();
         }
-        $list = Category::find()->where("belong=$belong")->asArray()->all();
+
         // var_dump( $list);die;
             if($list){
                 if(!$type){
