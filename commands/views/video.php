@@ -129,6 +129,7 @@ function  videoList(id,key=0,isbofang=1){
             // poster:imageurl,//封面图片
             // title:title,//视频标题
             // rotate:90,//旋转90度
+            // seek:180,
             rightBar:true,
             screenshot:true,
             smallWindows:true,
@@ -140,7 +141,7 @@ function  videoList(id,key=0,isbofang=1){
             // theatre:true,
             crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
             // loop: true,//是否需要循环播放 
-            // // seek: 1,//默认需要跳转的秒数
+            // seek: 42,//默认需要跳转的秒数
             controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
             // // language:'en',
             // // rotate:90,//旋转90度
@@ -148,8 +149,16 @@ function  videoList(id,key=0,isbofang=1){
             // playbackrate: 1,//默认倍速
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
+            loaded:'loadHandler',// 监听播放时间方法
         };
+
+        //获取播cookie放时间
+        var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
+        var videoObject = cokieTime(videoObject,videoID)
+        // console.log(videoObject);
         var newplayer= new ckplayer(videoObject);//初始化播放器
+        newplayer.addListener('time', timeHandler,videoID); //监听播放时间
+        newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
         url =null;
         // title =null;
         // imageurl =null;
@@ -163,8 +172,86 @@ function  videoList(id,key=0,isbofang=1){
         // newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
         //     console.log(bool)
         // });
+        function timeHandler(t) {
+            // console.log(videoID)
+            cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
+            // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
+        }
+        function VideoPlayEndedHandler(){//监听视频播放完成
+            // alert('本视频已结束');
+        }
+    }
+    // CV.singleClick(player.playOrPause);//监听视频单击
 
-}
-// CV.singleClick(player.playOrPause);//监听视频单击
+</script>
+
+
+
+<script type="text/javascript">
+
+    function cokieTime(videoObject,videoID){
+        // console.log(videoID)
+        var cookieTime = cookie.get('time_'+videoID); //调用已记录的time
+        // console.log(cookieTime)
+        //console.log(cookieTime);
+        if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
+            cookieTime = 0;
+        }
+        // if(cookieTime > 0) {
+        //     alert('本视频记录的上次观看时间(秒)为：' + cookieTime);
+        // }
+        if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
+            videoObject['seek'] = parseInt(cookieTime) ;
+            // videoObject.seek=cookieTime;
+        }
+        return videoObject;
+    }
+
+    //操作cookie的对象
+    var cookie = {
+        set: function(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString();
+        },
+        get: function(name) {
+            var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+            if(arr = document.cookie.match(reg)) {
+                return unescape(arr[2]);
+            } else {
+                return null;
+            }
+        },
+        del: function(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if(cval != null) {
+                document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+            }
+        }
+    };
+    // var videoID = url; //视频的区分ID，每个视频分配一个唯一的ID
+    // var cookieTime = cookie.get('time_' + videoID); //调用已记录的time
+    // //console.log(cookieTime);
+    // if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
+    //     cookieTime = 0;
+    // }
+    // if(cookieTime > 0) {
+    //     alert('本视频记录的上次观看时间(秒)为：' + cookieTime);
+    // }
+    // // var videoObject = {
+    // //     container: '.videosamplex', //“#”代表容器的ID，“.”或“”代表容器的class
+    // //     variable: 'player', //该属性必需设置，值等于下面的new chplayer()的对象
+    // //     poster: 'pic/wdm.jpg',
+    // //     loaded:'loadHandler',
+    // //     video: 'http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4' //视频地址,.m3u8也支持   PC
+    // // };
+    // if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
+    //     videoObject['seek'] = cookieTime;
+    // }
+    // var player = new ckplayer(videoObject);
+
 </script>
  

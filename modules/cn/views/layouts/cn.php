@@ -45,6 +45,8 @@
 <link rel="stylesheet" type="text/css" href="/swiper/swiper-bundle.min.css">
 <script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
 
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
+
 
 <title>心缘测试</title>
 </head>
