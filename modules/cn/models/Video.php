@@ -154,7 +154,7 @@ class Video extends ActiveRecord {
 						$content1= array(' .name','href','');
 						$content2= array(' .name','html','');
 						$content3= array('.name>img','src','');
-						$rang='.content .nr li span:eq(1) ';
+						$rang='.content .nr li   ';
 					break;
 					case 5 :   		// 小站
 						$content1= array(' a','href','');
