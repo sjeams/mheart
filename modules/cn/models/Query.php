@@ -38,6 +38,11 @@ class Query extends ActiveRecord {
 				$url = $http."/index.php/vod/search.html?wd=$search";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
+			case 3:
+				$http="https://kudianzy.com/";
+				$url = $http."/index.php/vod/search.html?wd=$search";
+				$list =Query::getVideoFox($search,$type,$url,$http);
+			break;
 		}
 
 		return $list;	
@@ -139,25 +144,19 @@ class Query extends ActiveRecord {
 // 采集列表
 public static function getVideoFox($search,$type,$url,$http)
 {
-
 	$rules = [
 		'name' => array(' a:eq(0)','html',''),
 		'link' => array(' a:eq(0)','href',''),
 	];
 	$range = '.stui-vodlist li:gt(0)';
 	// var_dump($type);die;
-
 	// 切片选择器,跳过第一条广告
-
 	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
-
 	$urls =[];
 	foreach($list as  $v){
 		$urls[] =$http.$v['link'];
 	}
 	// 切片选择器----start
-	// $range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
-	// $range = '.playList table tbody tr:nth-child(even)';// 偶数行
 	$range = '.stui-content__playlist:eq(1) li ';
 	// 切片选择器,跳过第一条广告
 	$rules = [
@@ -181,13 +180,11 @@ public static function getVideoFox($search,$type,$url,$http)
 		$rt ['belong']=0;
 		$rt ['type']=$type;
 		$rt ['search']=$search;
-		// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
 		$video = $sql->get($url)->query()->getData()->all();
 		// $rt['title'] =$video[0]['name'];
 		// $rt['imageurl'] =$video[0]['imageurl'];
 		$rt['video'] =	$video;
 		$list[$key] =$rt;
-		// var_dump($list[0]);die;
 	}
 	// var_dump($list );die;
 	return $list;

@@ -154,7 +154,7 @@ class Video extends ActiveRecord {
 						$content1= array(' .name','href','');
 						$content2= array(' .name','html','');
 						$content3= array('.name>img','src','');
-						$rang='.content .nr li span ';
+						$rang='.content .nr li span:eq(1) ';
 					break;
 					case 5 :   		// 小站
 						$content1= array(' a','href','');
@@ -272,7 +272,7 @@ class Video extends ActiveRecord {
 				}
 			break;
 			case 4 :     	// 新东方
-				
+				// var_dump($val);die;
 				$val['title']= Method::getMytrim($val['title']);
 				$content1= array('li input','value');
 				$content2= array('.lazy ','src');
@@ -280,7 +280,7 @@ class Video extends ActiveRecord {
 				// $content2= array('h1','text');
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
-				// var_dump($link);
+				// var_dump($link);die;
 				$rules=array(
 					'content' => $content1,
 					'imageurl' => $content2
