@@ -120,7 +120,8 @@ function  videoList(id,key=0,isbofang=1){
         var container_id=   '.video';
         videoHidden(1);//显示窗口
     }
-    
+    //获取播cookie放时间
+    var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
     var videoObject = {
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
@@ -150,15 +151,17 @@ function  videoList(id,key=0,isbofang=1){
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
             loaded:'loadHandler',// 监听播放时间方法
+            seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
+		    cookie:videoID,//cookie名称,请在同一域中保持唯一
+            timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
         };
-
-        //获取播cookie放时间
-        var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
-        var videoObject = cokieTime(videoObject,videoID)
+ 
+        // document.querySelector('video').playbackRate = 4.0   //可以f12 控制台直接倍速播放
+        // var videoObject = cokieTime(videoObject,videoID)
         // console.log(videoObject);
         var newplayer= new ckplayer(videoObject);//初始化播放器
-        newplayer.addListener('time', timeHandler,videoID); //监听播放时间
-        newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
+        // newplayer.addListener('time', timeHandler,videoID); //监听播放时间
+        // newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
         url =null;
         // title =null;
         // imageurl =null;
@@ -169,25 +172,35 @@ function  videoList(id,key=0,isbofang=1){
         // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
         // console.log(state)
         // });
-        // newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
-        //     console.log(bool)
-        // });
-        function timeHandler(t) {
-            // console.log(videoID)
-            cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
-            // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
-        }
-        function VideoPlayEndedHandler(){//监听视频播放完成
-            // alert('本视频已结束');
-        }
+        
+        newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
+            // var time = newplayer.time()
+            // console.log(time)
+            // newplayer.seek(0)
+            console.log(bool)
+            //开启倍数
+            // if(bool){
+            //     document.querySelector('video').playbackRate=4
+            // }else{
+            //     document.querySelector('video').playbackRate=1
+            // }
+        });
+
+        // function timeHandler(t) {
+        //     // console.log(videoID)
+        //     cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
+        //     // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
+        // }
+        // function VideoPlayEndedHandler(){//监听视频播放完成
+        //     // alert('本视频已结束');
+        // }
     }
     // CV.singleClick(player.playOrPause);//监听视频单击
 
 </script>
 
 
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     function cokieTime(videoObject,videoID){
         // console.log(videoID)
@@ -232,26 +245,6 @@ function  videoList(id,key=0,isbofang=1){
             }
         }
     };
-    // var videoID = url; //视频的区分ID，每个视频分配一个唯一的ID
-    // var cookieTime = cookie.get('time_' + videoID); //调用已记录的time
-    // //console.log(cookieTime);
-    // if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
-    //     cookieTime = 0;
-    // }
-    // if(cookieTime > 0) {
-    //     alert('本视频记录的上次观看时间(秒)为：' + cookieTime);
-    // }
-    // // var videoObject = {
-    // //     container: '.videosamplex', //“#”代表容器的ID，“.”或“”代表容器的class
-    // //     variable: 'player', //该属性必需设置，值等于下面的new chplayer()的对象
-    // //     poster: 'pic/wdm.jpg',
-    // //     loaded:'loadHandler',
-    // //     video: 'http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4' //视频地址,.m3u8也支持   PC
-    // // };
-    // if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
-    //     videoObject['seek'] = cookieTime;
-    // }
-    // var player = new ckplayer(videoObject);
-
-</script>
+ 
+</script> -->
  
