@@ -87,12 +87,10 @@ function is_img_url(imgurl) {
 
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key=0,isbofang=1){
+    console.log(1111)
+    console.log(key)
     //暂停在播视频
     var now_video =$("#now_video").val();
-    if(now_video!=0){
-        var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
-        $(".video"+now_video).html(player);
-    } 
     //判断是否是影视，影视不为空
     if(key!=0){
         $("#now_video").val(id); 
@@ -103,13 +101,21 @@ function  videoList(id,key=0,isbofang=1){
         $('.click_video').removeClass('btn-success');
         $('#click_video'+key).addClass('btn-success');
         // console.log( title)
+        var now_video_str =now_video+',"'+now_video+'c0"';
     }else{
         $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();
         // var title =$("#form"+id+"  input[name=title]").val();
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+        var now_video_str =now_video;
     }
+    console.log(key)
+    if(now_video!=0){
+        var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
+        $(".video"+now_video).html(player);
+    } 
+
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
