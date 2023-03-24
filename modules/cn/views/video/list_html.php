@@ -67,12 +67,12 @@
         <tbody class="list_html">
             <?php if($content){ $kss=0;
             foreach($content as $kss => $v) {  $kss= $kss+1; ?>
-                <?php if($v['belong']==0){   ?>
+                <?php if($v['belong']==0){  //视频 ?>
                     <tr>
                         <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->
                             <div  class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
-                            <p class="center"><span><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
+                            <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
                 </td>
                     </tr>
                     <tr>
@@ -93,7 +93,7 @@
                 
                     </tr>
 
-                <?php   }else{ ?>
+                <?php   }else{  //采集 ?>
                 <div id="form<?php echo $v['id']?>">
                     <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >

@@ -105,26 +105,32 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 
     <?php } ?> 
 <?php }else{  ?> 
-<!-- <input type="hidden" value="0" id="top_hidden"> -->
-<div class="video_footer center"> 
-    <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
-        <!-- <tr class="append_top">
-            <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php //cho $data['title']?>"/>
-            <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
-        </tr> -->
-        <tr class="append_top">
-            <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
-            <!-- <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td> -->
-            <td class="btn-primary  video_old"  onclick="videoHidden()" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'table-cell':'none';?>;" > 
-                <span>  video</span>
-            </td>
-                <!-- <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
-                <td class="btn-primary" onclick="videoHidden(0)">video</td> -->
-        </tr>
-    </table>
-</div>
-<!-- 禁用监听 -->
-<input type="hidden" value="1" id="getPage">
+
+        <?php  if( $http_index=='video'){ ?>
+                
+        <?php  }else{ ?>
+    <!-- <input type="hidden" value="0" id="top_hidden"> -->
+    <div class="video_footer center"> 
+        <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
+            <!-- <tr class="append_top">
+                <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php //cho $data['title']?>"/>
+                <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
+            </tr> -->
+            <tr class="append_top">
+                <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
+                <!-- <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td> -->
+                <td class="btn-primary  video_old"  onclick="videoHidden()" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'table-cell':'none';?>;" > 
+                    <span>  video</span>
+                </td>
+                    <!-- <td class="btn-primary" ><a href="#top" class=" " title="回到顶端">Top</a></td>
+                    <td class="btn-primary" onclick="videoHidden(0)">video</td> -->
+            </tr>
+        </table>
+    </div>
+    <!-- 禁用监听 -->
+    <input type="hidden" value="1" id="getPage">
+    <?php } ?> 
+
 <?php } ?> 
 <script>
     //滚动条头部和底部隐藏事件

@@ -634,11 +634,30 @@ class VideoController extends VideoApiControl
      */
     public function actionVideo()
     { 
+
+   
+        $sessionkey = Yii::$app->request->get('sessionkey');
+
+        if($sessionkey){
+            $key = Yii::$app->request->get('key');
+            $num = Yii::$app->request->get('num');
+            $num = $num?$num:0;
+            $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
+            $list =   json_decode($res['value'],true)[$key];
+            // $data = $list['video'];
+            $m3u8 = $list['video'][$num];
+            // var_dump( $list);die;
+            $res=['m3u8'=>$m3u8,'data' =>$list,'sessionkey'=>$sessionkey,'key' =>$key,'do_num' =>$num];
+        }else{
+            $id = Yii::$app->request->get('id',1);
+            $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
+            $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
+            $res=['m3u8'=>$m3u8,'data' =>$data];
+        }
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
-        $id = Yii::$app->request->get('id',1);
-        $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
-        $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
-        return $this->render('video', ['m3u8'=>$m3u8,'data' =>$data]);
+        // var_dump($m3u8);die;
+        // var_dump($data);die;
+        return $this->render('video', $res);
     }
 
 

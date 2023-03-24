@@ -87,8 +87,6 @@ function is_img_url(imgurl) {
 
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key=0,isbofang=1){
-    console.log(1111)
-    console.log(key)
     //暂停在播视频
     var now_video =$("#now_video").val();
     //判断是否是影视，影视不为空
@@ -254,3 +252,11 @@ function  videoList(id,key=0,isbofang=1){
  
 </script> -->
  
+
+<script>
+// 视频详情页
+function videoDetail(sessionkey,key,num){
+    window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key+'&num='+num;
+}
+    
+</script>

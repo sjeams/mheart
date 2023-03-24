@@ -5,57 +5,43 @@
         <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
     </head>
-    <style>
-        .center{
-            margin: 0px auto;
-            width:80%;
-        }
-        .name{
-            margin-top: 20px;
-
-        }
-        .bord{
-            display: inline-block;
-            text-align: center;
-            width:80px;
-            height:20px;
-            border: 1px solid wheat;
-        }
- 
-        .on{
-            
-            background-color: #fbb450a3;
-            border-radius: 2px;
-        }
-    </style>
     <body>
-        
-        <div class="center">
-            <!-- 视频 -->
-            <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1，user-scalable=0">
-           <div class="video" style="height:50%;"></div>
-            <script type="text/javascript">
-                //定义一个变量：videoObject，用来做为视频初始化配置
-                var videoObject = {
-                    container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
-                    plug:'hls.js',//设置使用hls插件
-                    autoplay:true,
-                    video: '<?php echo $m3u8['url'] ?>'//视频地址
-                };
-                new ckplayer(videoObject);//初始化播放器
-            </script>
-            <!-- 视频end -->
-            
-            <div>
-             <p class="name"> <?php echo $m3u8['name'] ?> </p>
-                <?php foreach($data as $v){ ?>
-                     
-                        <a class=" <?php echo $m3u8['num']==$v['num']?'on':'' ?> " href="/cn/video/video?id=<?php echo $v['id'] ?>">   <span class="bord">  第<?php echo  $v['num'] ?>集 </span></a>
-                       
-                    <?php   }   ?>
-            
-            </div>
-         
-        </div>
+        <table>
+            <?php $kss=1; $v =$data;  if($v['belong']==0){  //视频 ?>
+                <tr>
+                    <td>         
+                     <!-- <p class="center" >  <?php echo $v['title']?></p> </td> -->
+                </tr>
+                <tr>
+                    <td>
+                            <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->
+                            <div  class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span class="check" style="overflow-y:auto;">
+                    <?php if($v['video']){ foreach( $v['video'] as$y=> $vdieo){?>
+                        <div id="form<?php echo $kss.'c'.$y?>" style="display:none">
+                            <input type="hidden" name="url" value="<?php echo $vdieo['url']?>" >
+                            <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                            <input type="hidden" name="title" value="<?php echo $vdieo['title']?>" >
+                        </div>
+                        <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
+                        <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
+                        <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
+                        <?php } }?>
+                        </span>
+                    </td>
+                </tr>
+            <?php   }  ?>
+        </table>
     </body>
 </html>
+
+<script>
+    $(function(){
+        // 默认播放第一个视频
+        videoList(1,'1c0');
+    })
+</script>
