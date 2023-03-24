@@ -381,13 +381,13 @@ class VideoController extends VideoApiControl
         // if($login==0){
         //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         // }else{
-            $categoryBelong= Category::getBelong($belong,$type);
+     
             $html = Yii::$app->request->get('html',0);
             if($html){
                 $this->layout = 'kongbai';
-                return $this->render('list',['isnext'=>$isnext,'data'=>$data,'categoryBelong'=>$categoryBelong,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }else{
-                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data,'categoryBelong'=>$categoryBelong,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }
           
         // }

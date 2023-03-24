@@ -169,26 +169,25 @@
         // $('.go_hidden').html(go_input);
 
         //getbelong 获取来源
-        // var belong = $('#goBelong').val(); 
-        // var type = $('#goType').val(); 
+        var belong = $('#goBelong').val(); 
+        var type = $('#goType').val(); 
         
-        // $.ajax({
-        //     url: '/cn/video/get-belong', // 跳转到 action 
-        //     data:{
-        //         belong:belong,
-        //         type:type
-        //     },
-        //     type: 'post',
-        //     dataType: 'json',
-        //     success: function (data) {
-        //         // console.log(data)
-        //         if(data){
-        //             $("#goTypeInput").html(data.data);
-        //         }
-        //     },
-        // });
-        // var categoryBelong = "<?php echo $categoryBelong?>";  
-        // $("#goTypeInput").html(categoryBelong);
+        $.ajax({
+            url: '/cn/video/get-belong', // 跳转到 action 
+            data:{
+                belong:belong,
+                type:type
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                if(data){
+                    $("#goTypeInput").html(data.data);
+                }
+            },
+        });
+ 
         
     });
     // 自动加载
@@ -291,27 +290,27 @@
         $('#listBelong a').removeClass('btn-primary'); 
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        // if(belong==0){
-        //     var inputvalue ="";
-        //     $("#goTypeInput").html(inputvalue);
-        //     gou();
-        // }else{
-        //     $.ajax({
-        //         url: '/cn/video/get-belong', // 跳转到 action 
-        //         data:{
-        //             belong:belong,
-        //             type:0
-        //         },
-        //         type: 'post',
-        //         dataType: 'json',
-        //         success: function (data) {
-        //             // console.log(data)
-        //             $("#goTypeInput").html(data.data);
-        //             gou();
-        //         },
-        //     });
-        // }
-        gou();
+        if(belong==0){
+            var inputvalue ="";
+            $("#goTypeInput").html(inputvalue);
+            gou();
+        }else{
+            $.ajax({
+                url: '/cn/video/get-belong', // 跳转到 action 
+                data:{
+                    belong:belong,
+                    type:0
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    // console.log(data)
+                    $("#goTypeInput").html(data.data);
+                    gou();
+                },
+            });
+        }
+  
     }
     //切换类型刷新页面
     function  changeType(){
