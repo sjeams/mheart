@@ -45,6 +45,9 @@ class CategoryName extends ActiveRecord {
      return  $list;
     }
 
+
+    
+
 }
 
 ?>

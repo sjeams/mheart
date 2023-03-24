@@ -5,13 +5,17 @@
         <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
     </head>
+<style>
+    .video_center {
+        margin: 0px;
+    }
+    table{
+        margin-bottom:0px!important;
+    }
+</style>
     <body>
-        <table>
+    <table class="table table-bordered  tablestyle" >
             <?php $kss=1; $v =$data;  if($v['belong']==0){  //视频 ?>
-                <tr>
-                    <td>         
-                     <!-- <p class="center" >  <?php echo $v['title']?></p> </td> -->
-                </tr>
                 <tr>
                     <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->

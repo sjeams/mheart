@@ -18,7 +18,56 @@ class Category extends ActiveRecord {
             return '{{%category}}';
     }
 
+    public static function getBelong($belong,$type){
+        if($belong==0){
+            $list = Category::find()->where("category_id=1")->asArray()->all();
+            // $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
+            // die(Method::jsonGenerate(1,$str,'返回数据成功'));
+        }else{
+            $list = Category::find()->where("belong=$belong")->asArray()->all();
+        }
 
+        // var_dump( $list);die;
+            if($list){
+                if(!$type){
+                    $typeArray= array_column($list,'type');
+                    $type=$typeArray[0];
+                }
+                // if(!$list_type){
+                //     $str ='<select name="goType" id="goType listType" >';
+                //     // $type = Yii::$app->request->post('type',8);
+                //     foreach($list as $v){
+                //         $name =$v['name'];
+                //         $value =$v['type'];
+                //         if( $v['type']==$type){
+                //             $str .= "<option value='$value'  selected > $name </option>";
+                //         }else{
+                //             $str .= "<option value='$value'  > $name </option>";
+                //         }
+                //     }
+                //     $str .=' </select>';
+                // }else{
+                    // if(!in_array($type,$typeArray)&&!empty($typeArray)){
+                    // } 
+                    $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
+                    $str .='<p class="center" id="listType" >'; 
+                    foreach($list as $v){
+                        $name =$v['name'];
+                        $value =$v['type'];
+                        if($v['type']==$type){
+                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        }else{
+                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        }
+                    }
+                    $str .='  </p>';
+                    // if($belong==1){
+                    //     var_dump($str);die;
+                    // }
+                // }
+            }
+        return $str;
+    }
 	//  public static function Category(){
     //     $list =array(
     //         array( 'id'=>0,'name'=>'淘片','issearch'=>'1' ),
