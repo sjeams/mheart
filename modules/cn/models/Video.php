@@ -523,6 +523,18 @@ class Video extends ActiveRecord {
         }
 		return 0;
 	}
+	//批量添加
+	public static function batchInsertVideo($userkey,$uservale){
+		// $userkey=['login','password','nicename','email','create_time'];//测试数据键
+		// $uservale=array(
+		// 	 '0'=>array('admin2','2b571c42c2d79deb9872aeb0befc0124','admin','1111@qq.com','2017-07-21 15:47:07'),
+		// 	 '1'=>array('admin1','2b571c42c2d79deb9872aeb0befc0124','admin','2222@qq.com','2017-07-21 15:47:07'),
+		// 	 '2'=>array('admin55','2b571c42c2d79deb9872aeb0befc0124','admin','3333@qq.com','2017-07-21 15:47:07'),
+		// 	 '3'=>array('admin66','2b571c42c2d79deb9872aeb0befc0124','admin','4444@qq.com','2017-07-21 15:47:07'),
+		//  );//测试数据值
+		$res= \Yii::$app->signdb->createCommand()->batchInsert(Video::tableName(), $userkey, $uservale)->execute();//执行批量添加
+		return $res;
+	}
 
 }
 
