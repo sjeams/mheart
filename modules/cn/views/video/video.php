@@ -43,9 +43,16 @@
     </body>
 </html>
 
-<!-- <script>
+<script>
     $(function(){
         // 默认播放第一个视频
-        videoList(1,'1c0');
+        // videoList(1,'1c0');
+        // 列表模式播放
+        $('.model_name').text('列表×');
+        $('.model_name').removeClass('btn-success');
+        $('.model_name').addClass('btn-defult');
+        $('#is_model_type').val(0)
+        //隐藏窗口播放栏
+        $('.video_old').css('display','none');
     })
-</script> -->
+</script>
