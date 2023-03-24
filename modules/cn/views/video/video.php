@@ -39,9 +39,9 @@
     </body>
 </html>
 
-<script>
+<!-- <script>
     $(function(){
         // 默认播放第一个视频
         videoList(1,'1c0');
     })
-</script>
+</script> -->

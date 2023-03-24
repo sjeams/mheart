@@ -108,7 +108,7 @@ function  videoList(id,key=0,isbofang=1){
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
-    console.log(key)
+    // console.log(key)
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
         $(".video"+now_video).html(player);
