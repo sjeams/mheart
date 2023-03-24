@@ -255,8 +255,7 @@ function  videoList(id,key=0,isbofang=1){
 
 <script>
 // 视频详情页
-function videoDetail(sessionkey,key,num){
-    window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key+'&num='+num;
-}
-    
+function videoDetail(sessionkey,key){
+    window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;
+}   
 </script>
