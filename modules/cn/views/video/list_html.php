@@ -24,12 +24,7 @@
                         </div>
                         <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline center" id="goTypeInput">
-                            <?php if($categoryBelong){   
-                                    echo $categoryBelong;
-                                ?>
-                            <?php }else{ ?>
-                                <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
-                            <?php  } ?>
+                            <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
                         
                         </div>
                         <!-- <label class="layui-form-label">搜索</label> -->
