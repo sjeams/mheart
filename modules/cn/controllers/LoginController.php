@@ -30,6 +30,7 @@ class LoginController extends ApiControl
     public function actionLoginPhone(){
         $phone = Yii::$app->request->post('phone');
         $password = Yii::$app->request->post('password');
+        var_dump(1111);die;  
         if($phone){
             $res = WechatUser::find()->where("phone =$phone")->one();
             if($res){
