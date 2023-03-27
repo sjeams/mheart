@@ -488,8 +488,8 @@ class Video extends ActiveRecord {
 			// $list_collect = addslashes($list_collect);
 			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
 			$find_collect = array_column($find_collect,'title');
-			if($find_collect){
-				$video_id = implode(",",array_column($list,'id'));
+			$video_id = implode(",",array_column($list,'id'));
+			if($video_id){
 				$my_collect = VideoListCollect::find()->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
 			} 
 			$find_my_collect = array_column($my_collect,'video_id');
