@@ -28,7 +28,7 @@ class VideoListDetail extends ActiveRecord {
         $link =  "'" .implode("','",array_column($listvideo,'link'))."'" ;
         // print_r($link);die;
         // $list_collect = addslashes($list_collect);
-        $find_collect =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        $find_collect =VideoListDetail::find()->select('id,type,link')->where("link in ($link)")->asarray()->all();
         $find_link = array_column($find_collect,'link');
 
         $video_list =[];
@@ -43,8 +43,8 @@ class VideoListDetail extends ActiveRecord {
                 $find_id=  $find_video['id'];
                 if($find_video['type']==0&&$val['type']!=0){
                     $val_type = $val['type'];
-                    VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
-                    // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
+                    // VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
+                    $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
             }else{
                 //单条数据采集
@@ -60,11 +60,11 @@ class VideoListDetail extends ActiveRecord {
             $new_key = array_keys($new_list[0]);
             Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
         }
-        // if($update_list){//批量修改
-        //     // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
-        //     //根据id批量修改type
-        //     Video::batchUpdateVideo('x2_video_list_detail',$update_list);
-        // }
+        if($update_list){//批量修改
+            // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
+            //根据id批量修改type
+            Video::batchUpdateVideo('x2_video_list_detail',$update_list);
+        }
         //重新获取
         $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
 
