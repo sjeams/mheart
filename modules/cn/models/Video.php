@@ -481,15 +481,17 @@ class Video extends ActiveRecord {
 	public static function isCollect($list,$user_id=0){
 		$find_collect=[];
 		$find_my_collect=[];
+		$my_collect = [];
 		if($list){
 			// var_dump(array_column($list,'title'));die;
 			$list_collect =  "'".implode("','",array_column($list,'title'))."'" ;
 			// $list_collect = addslashes($list_collect);
 			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
 			$find_collect = array_column($find_collect,'title');
-			
-			$video_id = implode(",",array_column($list,'id'));
-			$my_collect = VideoListCollect::find()->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
+			if($find_collect){
+				$video_id = implode(",",array_column($list,'id'));
+				$my_collect = VideoListCollect::find()->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
+			} 
 			$find_my_collect = array_column($my_collect,'video_id');
 			//是否收藏
 			foreach($list as$key=> $v){
@@ -524,7 +526,7 @@ class Video extends ActiveRecord {
 		return 0;
 	}
 	//批量添加
-	public static function batchInsertVideo($userkey,$uservale){
+	public static function batchInsertVideo($name,$userkey,$uservale){
 		// $userkey=['login','password','nicename','email','create_time'];//测试数据键
 		// $uservale=array(
 		// 	 '0'=>array('admin2','2b571c42c2d79deb9872aeb0befc0124','admin','1111@qq.com','2017-07-21 15:47:07'),
@@ -532,10 +534,26 @@ class Video extends ActiveRecord {
 		// 	 '2'=>array('admin55','2b571c42c2d79deb9872aeb0befc0124','admin','3333@qq.com','2017-07-21 15:47:07'),
 		// 	 '3'=>array('admin66','2b571c42c2d79deb9872aeb0befc0124','admin','4444@qq.com','2017-07-21 15:47:07'),
 		//  );//测试数据值
-		$res= \Yii::$app->signdb->createCommand()->batchInsert(Video::tableName(), $userkey, $uservale)->execute();//执行批量添加
+		$res= \Yii::$app->signdb->createCommand()->batchInsert($name, $userkey, $uservale)->execute();//执行批量添加
 		return $res;
 	}
-
+	//批量添加
+	public static function batchUpdateVideo($name,$uservale){
+		$sql = Video::batchUpdate($name,"id","type", $uservale);
+		// $res= \Yii::$app->signdb->createCommand()->batchUpdate($name,"id","type",$uservale)->execute();//执行批量添加
+		$res = Yii::$app->signdb->createCommand($sql)->execute();
+		return $res;
+	}
+	public static function batchUpdate($table, $key, $val, $data){
+        $ids = implode(",", array_column($data, $key));
+        $condition = " ";
+        foreach ($data as $v){
+            $condition .= "WHEN {$v[$key]} THEN {$v[$val]} ";
+        }
+        $sql = "UPDATE `{$table}` SET  {$val} = CASE {$key} {$condition} END WHERE {$key} in ({$ids})";
+        return $sql;
+    }
+ 
 }
 
 ?>

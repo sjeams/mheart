@@ -32,6 +32,8 @@ class VideoListDetail extends ActiveRecord {
         $find_link = array_column($find_collect,'link');
 
         $video_list =[];
+        $new_list=[];
+        $update_list=[];
         foreach($listvideo as$key=> $val){
             $video_link= $val['link'];
             if(in_array($video_link,$find_link)){
@@ -42,16 +44,27 @@ class VideoListDetail extends ActiveRecord {
                 if($find_video['type']==0&&$val['type']!=0){
                     $val_type = $val['type'];
                     VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
+                    // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
             }else{
                 //单条数据采集
                 $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                 // 插入采集数据库
-                Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-                $find_video['id']=Yii::$app->signdb->getLastInsertID();
+                // Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                // $find_video['id']=Yii::$app->signdb->getLastInsertID();
+                $new_list[] =$find_video;//批量插入
             }
             $video_list [] =$find_video;
         }
+        if($new_list){ //批量插入
+            $new_key = array_keys($new_list[0]);
+            Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
+        }
+        // if($update_list){//批量修改
+        //     // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
+        //     //根据id批量修改type
+        //     Video::batchUpdateVideo('x2_video_list_detail',$update_list);
+        // }
         return $video_list;
     }
     //单条采集
