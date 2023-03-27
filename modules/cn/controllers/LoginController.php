@@ -21,7 +21,7 @@ class LoginController extends ApiControl
         set_time_limit(0);
         // 登录后自动刷新
         $out = Yii::$app->request->post('out');
-        // var_dump($password);die;
+        var_dump($out);die;
         if(!$out){
             WechatUser::headerLocation();
         }
