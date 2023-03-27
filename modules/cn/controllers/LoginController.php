@@ -30,7 +30,6 @@ class LoginController extends ApiControl
     public function actionLoginPhone(){
         $phone = Yii::$app->request->post('phone');
         $password = Yii::$app->request->post('password');
-        var_dump(1111);die;  
         if($phone){
             $res = WechatUser::find()->where("phone =$phone")->one();
             if($res){
@@ -92,7 +91,7 @@ class LoginController extends ApiControl
         $this->layout=false;
         // $name = Yii::$app->request->post('name');
         // $password = Yii::$app->request->post('password');
-        // var_dump($name);die;
+        var_dump($name);die;
         if(!$name){
             //管理员
             if($password=='111av'){
