@@ -91,7 +91,7 @@ class LoginController extends ApiControl
         $this->layout=false;
         // $name = Yii::$app->request->post('name');
         // $password = Yii::$app->request->post('password');
-        var_dump($name);die;
+        // var_dump($name);die;
         if(!$name){
             //管理员
             if($password=='111av'){
