@@ -22,7 +22,7 @@ class WechatUser extends ActiveRecord {
         }else{
             $userlogin = WechatUser::find()->select('id,name,graden,is_cache,is_bofang,video_model,token')->where("id='$userId'")->asArray()->one(); 
         }     
-        // var_dump($userlogin);die;  
+        var_dump($userlogin);die;  
         // var_dump($token);die;
         // 验证token是否有效--另一设备登录挤下
         if($userlogin){
