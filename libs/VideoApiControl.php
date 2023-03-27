@@ -29,7 +29,7 @@
             if(!$token){
                 $token = isset($_COOKIE['sslToken'])?$_COOKIE['sslToken']:false;
             }
-            var_dump( $token);die;
+            // var_dump( $token);die;
             if($token){  // 登录状态
                 //token过期userlogin存在保持登录状态，否则销毁
                 $userlogin= Yii::$app->session->get('userlogin');

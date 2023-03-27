@@ -18,7 +18,7 @@ class LoginController extends ApiControl
     function init (){
         parent::init();
         // var_dump(111);die;
-        set_time_limit(0);
+        set_time_limit(36000);
         // 登录后自动刷新
         $out = Yii::$app->request->post('out');
         // var_dump($password);die;
