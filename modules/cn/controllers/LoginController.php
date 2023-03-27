@@ -101,9 +101,7 @@ class LoginController extends ApiControl
                 $password='111';
             }
         }
-        var_dump(1111);die;
         $res = WechatUser::find()->where("password ='$password'  and (name ='$name' or phone ='$name') ")->one(); 
-       var_dump($res);die;
         if($res){
             $token =md5($password.time());
             //更新token
