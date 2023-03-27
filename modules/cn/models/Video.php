@@ -503,12 +503,17 @@ class Video extends ActiveRecord {
 					$list[$key]['collect']=0;
 				}    
 				//我的收藏
-				$find_title =$v['id'];
-				if(in_array( $find_title, $find_my_collect) ){
-					$list[$key]['my_collect']=1;
+				if(isset($v['id'])){
+					$find_title =$v['id'];
+					if(in_array( $find_title, $find_my_collect) ){
+						$list[$key]['my_collect']=1;
+					}else{
+						$list[$key]['my_collect']=0;
+					}   
 				}else{
 					$list[$key]['my_collect']=0;
-				}   
+				}
+
 			}
 		}
 		return $list;
