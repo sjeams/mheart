@@ -21,7 +21,7 @@ class LoginController extends ApiControl
         set_time_limit(0);
         // 登录后自动刷新
         $out = Yii::$app->request->post('out');
-        var_dump($out);die;
+        // var_dump($password);die;
         if(!$out){
             WechatUser::headerLocation();
         }
@@ -102,6 +102,7 @@ class LoginController extends ApiControl
             }
         }
         $res = WechatUser::find()->where("password ='$password'  and (name ='$name' or phone ='$name') ")->one(); 
+       var_dump($res);die;
         if($res){
             $token =md5($password.time());
             //更新token
