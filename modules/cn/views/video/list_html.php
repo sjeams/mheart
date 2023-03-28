@@ -112,7 +112,7 @@
                         
                         <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
                         <!-- <p class="center"><img class="pimage" src="<?php echo $v['imageurl']?>"   alt="" ></p> -->
-                        <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                        <div  class="video<?php echo $v['id']?> collect-video-style"  style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                         <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
                         <!-- </a> -->
                         <p class="center"> 
@@ -156,6 +156,11 @@
         $("#goPage_list").val(goPage_list);
         gou();
     }
+      //优先级0
+    // ;(function () {
+        // alert("function执行");
+    // }())
+
     // 优先1
     $(document).ready(function(){ 
         //搜索框
@@ -163,11 +168,9 @@
         // var goPage_list =$("#goPage_list").val();
         // var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
         // $('.go_hidden').html(go_input);
-
         //getbelong 获取来源
         var belong = $('#goBelong').val(); 
         var type = $('#goType').val(); 
-        
         $.ajax({
             url: '/cn/video/get-belong', // 跳转到 action 
             data:{
@@ -188,14 +191,18 @@
     });
     // 优先2
     $(function(){
-        // alert("页面加载完成！")；
         var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
         if(is_cache==1){
-            // console.log(11);
             goCache();
         }
     }); 
-
+    // // 优先3
+    // window.onload = function () {
+    //     $('.collect-video-style').each(function(i){
+    //      var url_link =    $('.collect-video-style').eq(i).data("url");
+    //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
+    //     })
+    // }
     
 
     function setCaches(){
