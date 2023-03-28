@@ -273,6 +273,9 @@ class VideoController extends VideoApiControl
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
         if($graden==0){
+            if($belong!=0){
+                $type=1;
+            }
             $belong=0;
         }
         
