@@ -294,6 +294,7 @@ class VideoController extends VideoApiControl
         if($belong==0){
             //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
+            $type =$type?$type:1;
         }else{
             //采集所有默认类型为0
             if($search){  $type=0; }
