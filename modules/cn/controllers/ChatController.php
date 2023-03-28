@@ -16,7 +16,7 @@ class ChatController extends VideoApiControl
     public $layout = 'cn';
     // public  $passwordav='111av'; //av
     // public  $passwordsp=111; //视频
-    public  $login=0; //av
+    public  $graden=0; //av
     public  $user;
     public  $userId;
     function init (){
@@ -25,21 +25,14 @@ class ChatController extends VideoApiControl
         set_time_limit(0);
         $this->user = Yii::$app->session->get('userlogin');
         $this->userId = Yii::$app->session->get('userId');
-        $this->login= intval($this->user['graden']); // 0未登录
+        $this->graden= intval($this->user['graden']); // 0未登录
         if(!$this->user){
             // 判断http还是https
             $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
             $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
             header('Location: '.$href);die;
         }
-        // $status= Yii::$app->session->get('login');
-        // if($status==$this->passwordav){
-        //     $this->login=1;
-        // }else if($status==$this->passwordsp){
-        //     $this->login=2;
-        // }else{
-        //     $this->login=0;
-        // }
+
     }
       /**
      * 好友列表

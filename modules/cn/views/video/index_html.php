@@ -1,7 +1,7 @@
 <form action="/cn/video/like" method="get"  >
     <table class="table table-bordered  tablestyle"  >
     <thead>
-        <?php if($login>0){?>
+        <?php if($graden>0){?>
         <tr>
             <td >
                 <div class="input_div center" style="display: block;">
@@ -67,7 +67,7 @@
     ])?>
 
 </div>
-<?php if($login>1){?>
+<?php if($graden>1){?>
 <p class=" input-append center">
     <input type="text" value="<?php echo $data['page'] ?>" id="goPage">
     <input class="btn" type="button"  onclick="gou()" value="GO">

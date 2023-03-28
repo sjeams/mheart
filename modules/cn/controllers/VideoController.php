@@ -30,28 +30,20 @@ class VideoController extends VideoApiControl
     public $layout = 'cn';
     // public  $passwordav='111av'; //av
     // public  $passwordsp=111; //视频
-    public  $login=0; //av
+    public  $graden=0; //av
     public  $user;
     function init (){
         parent::init();
         // var_dump(111);die;
         set_time_limit(0);
         $this->user = Yii::$app->session->get('userlogin');
-        $this->login= intval($this->user['graden']); // 0未登录
+        $this->graden= intval($this->user['graden']); // 0未登录
         if(!$this->user){
             // 判断http还是https
             $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
             $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
             header('Location: '.$href);die;
         }
-        // $status= Yii::$app->session->get('login');
-        // if($status==$this->passwordav){
-        //     $this->login=1;
-        // }else if($status==$this->passwordsp){
-        //     $this->login=2;
-        // }else{
-        //     $this->login=0;
-        // }
     }
     /**
      * 基本信息
@@ -108,14 +100,7 @@ class VideoController extends VideoApiControl
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
 
-    // public function actionLogin()
-    // {
-        //默认登录
-        // $login = Yii::$app->request->post('login');
-        // Yii::$app->session->set('login',$login);
-        // die(Method::jsonGenerate(1,[],'返回数据成功'));
  
-    // }
  
     /**
      * 首页
@@ -125,12 +110,12 @@ class VideoController extends VideoApiControl
     {
         
         // 登录状态
-        $login = $this->login;
-        if($login!=0){
+        $graden = $this->graden;
+        if($graden!=0){
             $belong=1;
             $list = Category::find()->where("belong=0")->asArray()->all();
         }else{
-            $login=0;
+            $graden=0;
             $belong=0;
             $list = [];
         }
@@ -175,9 +160,9 @@ class VideoController extends VideoApiControl
         $html = Yii::$app->request->get('html',0);
         if($html){
             $this->layout = 'kongbai';
-            return $this->render('html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
-            return $this->render('index_html',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
     public function actionIsBofang()
@@ -203,7 +188,7 @@ class VideoController extends VideoApiControl
         // var_dump( $this->user);die;
         $get_cache =$this->user['is_cache'];
         // 登录状态
-        $login = $this->login;
+        $graden = $this->graden;
         $page = Yii::$app->request->post('page',1);
         $page_list = Yii::$app->request->post('page_list',1);
         $type = Yii::$app->request->post('type',0);
@@ -214,7 +199,7 @@ class VideoController extends VideoApiControl
         //默认缓存页码
         $setnum = Yii::$app->request->post('setnum',2);
         // 未登录 禁止链接访问
-        if($login==0){
+        if($graden==0){
             $belong=0;
         }
         
@@ -277,7 +262,7 @@ class VideoController extends VideoApiControl
             return $this->render('login');die;
         }
         // 登录状态
-        $login = $this->login;
+        $graden = $this->graden;
         $page = Yii::$app->request->get('page',1);
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
@@ -287,7 +272,7 @@ class VideoController extends VideoApiControl
     
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
-        if($login==0){
+        if($graden==0){
             $belong=0;
         }
         
@@ -359,7 +344,7 @@ class VideoController extends VideoApiControl
         // var_dump($list);die;   
         // var_dump($list);die;
         // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        if($login==1){
+        if($graden==1){
             $category = CategoryName::Category();
         }else{
             $category = CategoryName::CategoryVideo();
@@ -379,16 +364,16 @@ class VideoController extends VideoApiControl
         //是否有下一页
         $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
         // var_dump( $isnext);die;
-        // if($login==0){
-        //     return $this->render('login',['data'=>$data,'login'=>$login,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
+        // if($graden==0){
+        //     return $this->render('login',['data'=>$data,'graden'=>$graden,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
         // }else{
      
             $html = Yii::$app->request->get('html',0);
             if($html){
                 $this->layout = 'kongbai';
-                return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }else{
-                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'login'=>$login,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
             }
           
         // }
@@ -402,7 +387,7 @@ class VideoController extends VideoApiControl
     public function actionCollectVideo()
     {
         // 登录状态
-        $login = $this->login; 
+        $graden = $this->graden; 
         $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
@@ -442,12 +427,12 @@ class VideoController extends VideoApiControl
         }
         if($html==1){
             $this->layout = 'kongbai';
-            return $this->render('collect_video_list',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('collect_video_list',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else if($html==2){
             $this->layout = 'kongbai';
-            return $this->render('collect_video_full_screen',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('collect_video_full_screen',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
-            return $this->render('collect_video',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('collect_video',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
 
@@ -459,7 +444,7 @@ class VideoController extends VideoApiControl
     public function actionQueryVideo()
     {
         // 登录状态
-        $login = $this->login; 
+        $graden = $this->graden; 
         $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
@@ -495,12 +480,12 @@ class VideoController extends VideoApiControl
             // var_dump(111);die;
             $this->layout = 'kongbai';
             if($list){
-                return $this->render('query_video_list',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+                return $this->render('query_video_list',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
             }else{
                 return '';
             }
         }else{
-            return $this->render('query_video',['login'=>$login,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('query_video',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
     public function actionGetBelong()

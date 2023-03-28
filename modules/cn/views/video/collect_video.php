@@ -12,7 +12,7 @@
 <form     >
     <table class="table table-bordered  tablestyle"  >
     <thead>
-        <?php if($login>0){?>
+        <?php if($graden>0){?>
         <tr>
             <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(<?php echo isset($data['count'])?$data['count']:0; ?>)</span></td>
         </tr>
