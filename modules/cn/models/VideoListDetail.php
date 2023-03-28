@@ -26,14 +26,11 @@ class VideoListDetail extends ActiveRecord {
             $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
         }
         $link =  "'" .implode("','",array_column($listvideo,'link'))."'" ;
-        // print_r($link);die;
-        // $list_collect = addslashes($list_collect);
         $find_collect =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
         $find_link = array_column($find_collect,'link');
-
         $video_list =[];
-        $new_list=[];
-        $update_list=[];
+        // $new_list=[];
+        // $update_list=[];
         foreach($listvideo as$key=> $val){
             $video_link= $val['link'];
             if(in_array($video_link,$find_link)){
@@ -56,20 +53,24 @@ class VideoListDetail extends ActiveRecord {
             }
             $video_list [] =$find_video;
         }
-        // if($new_list){ //批量插入
-        //     $new_key = array_keys($new_list[0]);
-        //     Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
-        // }
-        // if($update_list){//批量修改
-        //     // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
-        //     //根据id批量修改type
-        //     Video::batchUpdateVideo('x2_video_list_detail',$update_list);
-        // }
-        //重新获取
-        // $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
-
         return $video_list;
     }
+
+    // public static function updateVidoeMethod(){
+    //     // if($new_list){ //批量插入
+    //     //     $new_key = array_keys($new_list[0]);
+    //     //     Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
+    //     // }
+    //     // if($update_list){//批量修改
+    //     //     // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
+    //     //     //根据id批量修改type
+    //     //     Video::batchUpdateVideo('x2_video_list_detail',$update_list);
+    //     // }
+    //     //重新获取
+    //     // $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+    // }
+
+
     //单条采集
 	public static function isUpdateVideo($listvideo){
         $video_list =[];

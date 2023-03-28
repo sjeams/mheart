@@ -156,7 +156,8 @@
         $("#goPage_list").val(goPage_list);
         gou();
     }
-    $(function(){
+    // 优先1
+    $(document).ready(function(){ 
         //搜索框
         // $('.go_hidden').removeClass('hiddened');
         // var goPage_list =$("#goPage_list").val();
@@ -185,8 +186,8 @@
  
         
     });
-    // 自动加载
-    $(document).ready(function(){ 
+    // 优先2
+    $(function(){
         // alert("页面加载完成！")；
         var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
         if(is_cache==1){
@@ -195,9 +196,8 @@
         }
     }); 
 
-
-
     
+
     function setCaches(){
         $('.caiji_name').text('采集...')
         var goBelong =$("#goBelong").val();

@@ -197,7 +197,7 @@ class VideoController extends VideoApiControl
         if($search){  $type=0; }
         $belong = Yii::$app->request->post('belong',0);
         //默认缓存页码
-        $setnum = Yii::$app->request->post('setnum',2);
+        $setnum = Yii::$app->request->post('setnum',1);
         // 未登录 禁止链接访问
         if($graden==0){
             $belong=0;
