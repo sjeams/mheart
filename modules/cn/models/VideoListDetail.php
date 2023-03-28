@@ -50,23 +50,23 @@ class VideoListDetail extends ActiveRecord {
                 //单条数据采集
                 $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                 // 插入采集数据库
-                // Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-                // $find_video['id']=Yii::$app->signdb->getLastInsertID();
-                $new_list[] =$find_video;//批量插入
+                Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                $find_video['id']=Yii::$app->signdb->getLastInsertID();
+                // $new_list[] =$find_video;//批量插入
             }
             $video_list [] =$find_video;
         }
-        if($new_list){ //批量插入
-            $new_key = array_keys($new_list[0]);
-            Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
-        }
+        // if($new_list){ //批量插入
+        //     $new_key = array_keys($new_list[0]);
+        //     Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);
+        // }
         // if($update_list){//批量修改
         //     // Video::batchUpdateVideo('x2_video_list_detail',[["id"=>65533,"type"=>20],["id"=>65532,"type"=>20]]);
         //     //根据id批量修改type
         //     Video::batchUpdateVideo('x2_video_list_detail',$update_list);
         // }
         //重新获取
-        $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        // $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
 
         return $video_list;
     }
