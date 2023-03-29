@@ -222,14 +222,6 @@ class VideoController extends VideoApiControl
                     // $pageSize= $count;
                     if($listvideo){
                         $list= VideoListDetail::checkVideo($listvideo);
-                        // $list= VideoListDetail:: isUpdateVideo($listvideo);
-                        // foreach($listvideo as$key=> $val){
-                        //     // if($key<($page*$pageSize)&&$key>=($page-1)*$pageSize){  
-                        //         $list []= VideoListDetail::isUpdateVideo($val);
-                        //         // $list []= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                        //     // }
-                        // }
-                        // var_dump($list);die;
                         $args['key_value'] =$sessionStr;
                         $args['value'] =  json_encode($list,true);
                         $args['time'] =time();
@@ -324,8 +316,6 @@ class VideoController extends VideoApiControl
                 // $pageSize= $count;
                 if($listvideo){
                     $list= VideoListDetail::checkVideo($listvideo);
-                    // $list= VideoListDetail:: isUpdateVideo($listvideo);
-                    // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] =  json_encode($list,true);
                     $args['time'] =time();
@@ -344,7 +334,6 @@ class VideoController extends VideoApiControl
             // 采集查询-标题-是否收藏
             $list=  Video::isCollect($list,$this->user['id']);
         }
-        // var_dump($list);die;   
         // var_dump($list);die;
         // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         if($graden==1){
