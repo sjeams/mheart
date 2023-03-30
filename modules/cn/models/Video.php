@@ -338,12 +338,12 @@ class Video extends ActiveRecord {
 	//处理视频公用方法
 	public static function videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http){
 		// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);
-		$videourl = str_replace('在线播放$','',$data1['content']);
-		$videourl = str_replace('HD$','',$data1['content']);
-		$videourl = str_replace('正片$','',$data1['content']);
-		$videourl = str_replace('高清$','',$data1['content']);
+		$data1['content'] = str_replace('在线播放$','',$data1['content']);
+		$data1['content'] = str_replace('HD$','',$data1['content']);
+		$data1['content']  = str_replace('正片$','',$data1['content']);
+		$data1['content']  = str_replace('高清$','',$data1['content']);
 		$videourl = str_replace('$','',$data1['content']);
-		$args['url']=$videourl;
+		$args['url']= trim($videourl);
 		$args['title']= addslashes($data1['title']);
 		$args['imageurl']=$data1['imageurl'];
 		if((string)strpos($args['imageurl'],'http')==''){
