@@ -258,6 +258,7 @@ class Video extends ActiveRecord {
 				$ql->destruct();
 				// var_dump($data1);die;
 				if(!empty($data1['content'] )){
+					$data1['title']=$val['title'];
 					$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
 					return $args;
 				} 
@@ -278,9 +279,10 @@ class Video extends ActiveRecord {
 				$data1 =$ql->get($link)->queryData();
 				$ql->destruct();
 				if(!empty($data1['content'] )){
+					$data1['title']=$val['title'];
 					$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
 					return $args;
-				} 
+				}  
 			break;
 			default:
 			return false;
