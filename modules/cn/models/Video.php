@@ -344,7 +344,7 @@ class Video extends ActiveRecord {
 		$data1['content']  = str_replace('高清$','',$data1['content']);
 		$videourl = str_replace('$','',$data1['content']);
 		$args['url']= trim($videourl);
-		$args['title']= addslashes($data1['title']);
+		$args['title']= addslashes(trim($data1['title']));
 		$args['imageurl']=$data1['imageurl'];
 		if((string)strpos($args['imageurl'],'http')==''){
 			$args['imageurl']=$http.$args['imageurl'];
