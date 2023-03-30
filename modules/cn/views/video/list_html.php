@@ -47,9 +47,6 @@
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <!-- <?php if(!$data['list_type']){?> 
-                                <span  class="btn btn-primary" onclick="changeType()"> 模式 </span>
-                                <?php }?> -->
                                 <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
@@ -314,17 +311,7 @@
         }
   
     }
-    //切换类型刷新页面
-    function  changeType(){
-        $.ajax({
-            url: '/cn/video/change-type', // 跳转到 action 
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                gou();
-            },
-        });
-    } 
+ 
     function clearModel(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();

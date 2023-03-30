@@ -343,8 +343,7 @@ class VideoController extends VideoApiControl
         }
         // var_dump($type);die;
         // model隐藏
-        $list_type = Yii::$app->session->get('list_type');
-        $data['list_type']=$list_type;
+ 
         $data['page']=$page;
         $data['type']=$type;
         $data['page_list']=$page_list;
@@ -484,27 +483,11 @@ class VideoController extends VideoApiControl
     {
         $belong = Yii::$app->request->post('belong',0);
         $type = Yii::$app->request->post('type',0);
-        // $list_type = Yii::$app->session->get('list_type');
         // var_dump( $type);die;
         $str= Category::getBelong($belong,$type);
-        // var_dump($str);die;
-        // echo $str;
         die(Method::jsonGenerate(1,$str,'返回数据成功'));
     }
-  /**
-     * 采集单条插入
-     * by  sjeam
-     */
-    public function actionChangeType()
-    {
-        $list_type =Yii::$app->session->get('list_type');
-        if($list_type){
-            Yii::$app->session->remove('list_type'); 
-        }else{
-            Yii::$app->session->set('list_type','has');
-        }
-        echo true;
-    }
+ 
     public function actionClearSession()
     {
         $belong = Yii::$app->request->post('belong',0);

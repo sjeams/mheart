@@ -33,22 +33,7 @@ class Category extends ActiveRecord {
                     $typeArray= array_column($list,'type');
                     $type=$typeArray[0];
                 }
-                // if(!$list_type){
-                //     $str ='<select name="goType" id="goType listType" >';
-                //     // $type = Yii::$app->request->post('type',8);
-                //     foreach($list as $v){
-                //         $name =$v['name'];
-                //         $value =$v['type'];
-                //         if( $v['type']==$type){
-                //             $str .= "<option value='$value'  selected > $name </option>";
-                //         }else{
-                //             $str .= "<option value='$value'  > $name </option>";
-                //         }
-                //     }
-                //     $str .=' </select>';
-                // }else{
-                    // if(!in_array($type,$typeArray)&&!empty($typeArray)){
-                    // } 
+
                     $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
                     $str .='<p class="center" id="listType" >'; 
                     foreach($list as $v){
@@ -61,10 +46,6 @@ class Category extends ActiveRecord {
                         }
                     }
                     $str .='  </p>';
-                    // if($belong==1){
-                    //     var_dump($str);die;
-                    // }
-                // }
             }
         return $str;
     }
