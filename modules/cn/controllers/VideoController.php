@@ -202,7 +202,6 @@ class VideoController extends VideoApiControl
         if($graden==0){
             $belong=0;
         }
-        
         // 影视不进入缓存-开启缓存进入
         if($belong!=0&&$get_cache==1){
             // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
@@ -261,7 +260,6 @@ class VideoController extends VideoApiControl
         $search = Yii::$app->request->get('search','');
 
         // 搜索类型默认为0
-    
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
         if($graden==0){
@@ -308,7 +306,6 @@ class VideoController extends VideoApiControl
             //    var_dump($type);die;
                 $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
                 // var_dump($listvideo);die;
-                // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
@@ -342,8 +339,6 @@ class VideoController extends VideoApiControl
             $category = CategoryName::CategoryVideo();
         }
         // var_dump($type);die;
-        // model隐藏
- 
         $data['page']=$page;
         $data['type']=$type;
         $data['page_list']=$page_list;
@@ -354,20 +349,15 @@ class VideoController extends VideoApiControl
         // var_dump( $count);die;
         //是否有下一页
         $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
-        // var_dump( $isnext);die;
-        // if($graden==0){
-        //     return $this->render('login',['data'=>$data,'graden'=>$graden,'content'=>$list,'pageStr'=>$pageStr,'category'=>$category,'sessionkey'=>$sessionStr]);
-        // }else{
      
-            $html = Yii::$app->request->get('html',0);
-            if($html){
-                $this->layout = 'kongbai';
-                return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
-            }else{
-                return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
-            }
-          
-        // }
+        $html = Yii::$app->request->get('html',0);
+        if($html){
+            $this->layout = 'kongbai';
+            return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+        }else{
+            return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+        }
+ 
     
     }
 
