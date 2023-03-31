@@ -430,9 +430,14 @@ class VideoController extends VideoApiControl
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $belong = Yii::$app->request->get('belong',0);
+        $type = Yii::$app->request->get('type',0);
+        // var_dump($type);die;
         $where ="1=1";
         if($belong){
             $where .= " and a.belong =$belong"; 
+        }
+        if($type){
+            $where .= " and a.type =$type"; 
         }
         if($title){
             $where .= " and a.title like '%$title%'";
@@ -440,7 +445,7 @@ class VideoController extends VideoApiControl
         $count= (new \yii\db\Query())
         ->select("count(1) as num")
         ->from("x2_video_list_detail as a")
-        // ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        // ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and user_id = ".$this->user['id'])
         ->where($where)->one('sign')['num'];
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         // $where .=" and user_id = ".$this->user['id'];
@@ -450,11 +455,12 @@ class VideoController extends VideoApiControl
         ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and user_id = ".$this->user['id'])
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
         $data['belong']=$belong; 
+        $data['type']=$type; 
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
         // var_dump($brush);die;
-        // var_dump($data['count']);
+        // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html){

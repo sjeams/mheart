@@ -31,6 +31,7 @@ class VideoListDetail extends ActiveRecord {
         $video_list =[];
         // $new_list=[];
         // $update_list=[];
+        // var_dump($listvideo);die;
         foreach($listvideo as$key=> $val){
             $video_link= $val['link'];
             if(in_array($video_link,$find_link)){
@@ -38,7 +39,7 @@ class VideoListDetail extends ActiveRecord {
                 $find_video= $find_collect[$key];
                 // 处理搜索以后存入的视频没有type--更新时，自动更新视频类型
                 $find_id=  $find_video['id'];
-                if($find_video['type']==0&&$val['type']!=0){
+                if($find_video['type']!=$val['type']&&$val['type']!=0){
                     $val_type = $val['type'];
                     VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
                     // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改

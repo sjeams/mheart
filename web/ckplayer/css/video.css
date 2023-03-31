@@ -2,6 +2,11 @@ body {
     padding-left: 0px;
     padding-right: 0px;
 }
+.red{
+	color: red;
+	font-weight: bold;
+    background: #fff3e6;
+}
 /* 标签在视频上面 */
 .inherit{
     position: absolute;

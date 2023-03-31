@@ -24,70 +24,70 @@ class Video extends ActiveRecord {
 	// 采集列表
     public static function getQueryUrl($page,$belong,$type=0,$search)
     {
+		$list=[];
 		// 类型  0国产--1主播/  2少女  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9无码  10 收藏
 			// 新东方
 			if($belong==1){
-				// $type = $type?$type:40;
-				if($type){
-					$list=array(
-						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
-						array($belong,12,'国产主播',"/vod-type-id-$type-pg-$page.html",'https://huakuizy0.com'),
-					);
-				}else{ 
+				// $type = $type?$type:12;
+				if($search){
 					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
 					$list=array(
-						array($belong,12,'国产主播',"/?m=vod-index-pg-$page.html",'https://huakuizy0.com'),
+						array($belong,$type,'国产主播',"/?m=vod-index-pg-$page.html",'https://huakuizy0.com'),
 					);
-			
+				}else{ 
+					$list=array(
+						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
+						array($belong,$type,'国产主播',"/vod-type-id-$type-pg-$page.html",'https://huakuizy0.com'),
+					);
 				}
 			}else if($belong==2){
-				// $type = $type?$type:24;
-				if($type){
-					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://laoyazy54.com'),
-					);
-				}else{
+				// $type = $type?$type:20;
+				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,20,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://laoyazy54.com'),
+						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://laoyazy54.com'),
+					);
+				}else{
+					$list=array(
+						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://laoyazy54.com'),
 					);
 				}
 			}else if($belong==3){
-				// $type = $type?$type:24;
-				if($type){
-					$list=array(
-						array($belong,22,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://sewozy16.com/'),
-					);
-				}else{
+				// $type = $type?$type:22;
+				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,22,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewozy16.com/'),
+						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewozy16.com/'),
+					);
+				}else{
+					$list=array(
+						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://sewozy16.com/'),
 					);
 				}
 			}else if($belong==4){
 				// $type = $type?$type:1;
-				if($type){
-					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
-					);
-				}else{
+				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
+						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
+					);
+				}else{
+					$list=array(
+						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
 					);
 				}
 
 			}else if($belong==5){
 				// $type = $type?$type:1;
 				// https://siwazyw.cc/index.php/vod/type/id/20/page/2.html
-				if($type){
-					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.cc'),
-					);
-				}else{
+				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,1,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.cc'),
+						array($belong,$$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.cc'),
+					);
+				}else{
+					$list=array(
+						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.cc'),
 					);
 				}
 
