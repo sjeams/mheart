@@ -146,7 +146,6 @@
         $('#content_append').html(''); 
         gou();
         var  total_count =  $('.return_count').eq(0).val();
-        console.log(total_count)
         $('#total_count').html(total_count)
         $("#goPageCount").val(total_count)
     }
