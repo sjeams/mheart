@@ -62,8 +62,8 @@ class VideoListDetail extends ActiveRecord {
         }
         return $video_list;
     }
-
-    // public static function updateVidoeMethod(){
+    // batchInsertVideo
+    // public static function updateVidoeMethod($update_list,$new_list){
     //     // if($new_list){ //批量插入
     //     //     $new_key = array_keys($new_list[0]);
     //     //     Video::batchInsertVideo('x2_video_list_detail',$new_key,$new_list);

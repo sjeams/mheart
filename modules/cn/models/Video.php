@@ -424,7 +424,13 @@ class Video extends ActiveRecord {
 		// 	 '2'=>array('admin55','2b571c42c2d79deb9872aeb0befc0124','admin','3333@qq.com','2017-07-21 15:47:07'),
 		// 	 '3'=>array('admin66','2b571c42c2d79deb9872aeb0befc0124','admin','4444@qq.com','2017-07-21 15:47:07'),
 		//  );//测试数据值
-		$res= \Yii::$app->signdb->createCommand()->batchInsert($name, $userkey, $uservale)->execute();//执行批量添加
+		$res=[];
+		$total= \Yii::$app->signdb->createCommand()->batchInsert($name, $userkey, $uservale)->execute();//执行批量添加
+		$firstId= Yii::$app->signdb->getLastInsertID();
+		if($total){
+			$lastId= $firstId+$total;
+			$res =Yii::$app->signdb->createCommand("select * from $name where id>=$firstId and id<=$lastId ")->queryAll();
+		}
 		return $res;
 	}
 	//批量添加
