@@ -379,11 +379,15 @@ class VideoController extends VideoApiControl
         $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
-        $pageSize=10;
+        $type = Yii::$app->request->get('type',0);
+
         $belong = Yii::$app->request->get('belong',0);
         $where ="1=1";
         if($belong){
             $where .= " and a.belong =$belong"; 
+        }
+        if(intval($type)&&$belong!=0){
+            $where .= " and a.type =$type"; 
         }
         if($title){
             $where .= " and a.title like '%$title%'";
@@ -391,32 +395,35 @@ class VideoController extends VideoApiControl
         $count= (new \yii\db\Query())
         ->select("count(1) as num")
         ->from("x2_video_list_collect as c")
-        ->rightJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        ->leftJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         ->where($where)->one('sign')['num'];
-        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
-
-     
+        // $pageSize=10;
+        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
+        $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $where .=" and user_id = ".$this->user['id'];
         $brush= (new \yii\db\Query())
         ->select("a.*")
         ->from("x2_video_list_collect as c")
-        ->rightJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
-        ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
+        ->leftJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        // ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
         $data['belong']=$belong; 
+        $data['type']=$type; 
         $data['title']=$title; 
         $data['page']=$page; 
-        $data['count']=ceil($count/$pageSize ); 
+        $data['count']=ceil($count/10); 
         // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
         // var_dump($brush);die;
-        if(!$brush){
-            return false;die;
-        }
+
         if($html==1){
             $this->layout = 'kongbai';
             return $this->render('collect_video_list',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else if($html==2){
+            if(!$brush){
+                return false;die;
+            }
             $this->layout = 'kongbai';
             return $this->render('collect_video_full_screen',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
@@ -438,12 +445,11 @@ class VideoController extends VideoApiControl
         $page = Yii::$app->request->get('page',1);
         $belong = Yii::$app->request->get('belong',0);
         $type = Yii::$app->request->get('type',0);
-        // var_dump($type);die;
         $where ="1=1";
         if($belong){
             $where .= " and a.belong =$belong"; 
         }
-        if($type){
+        if(intval($type)&&$belong!=0){
             $where .= " and a.type =$type"; 
         }
         if($title){

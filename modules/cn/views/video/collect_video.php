@@ -14,7 +14,7 @@
     <thead>
         <?php if($graden>0){?>
         <tr>
-            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(<?php echo isset($data['count'])?$data['count']:0; ?>)</span></td>
+            <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go"  onclick="gouSerach()">GO(<span id="total_count"><?php echo isset($data['count'])?$data['count']:0; ?></span>)</span></td>
         </tr>
         <tr>
             <td class="btn-primary " > <p class="center" onclick="full_screen()"> 全屏模式</p></td>
@@ -23,14 +23,18 @@
             <td >
                 <div class="input_div center" style="display: block;">
                     <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
-                    <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">搜索</button>
+                    <span class="btn btn-primary  " onclick="gouSerach(1)" >搜索</span>
                 </div>
-                <p class="center">
-                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=0&title=<?php echo $data['title']?>" >全部</a>
+                <p class="center" id="listBelong" >
+                    <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange(0)" href="javascript:;" >全部</a>
                     <?php foreach($list as $v){ ?>
-                        <a class="btn  <?php echo $data['belong']==$v['belong']?'active btn-primary':' btn-default'?>" href="/cn/video/collect-video?page=1&belong=<?php echo $v['belong']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
+                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>"  onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
                         <?php }?>
                 </p>
+                <div class="layui-input-inline center" id="goTypeInput">
+                    <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
+                </div>
             </td>
                 <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
         </tr>
@@ -113,23 +117,85 @@
             }
         }
 
+    }
 
-        
 
-
+    function belongChange(belong){
+        // 重置状态page和search
+        // $("#goSearch").val('');
+        $("#goPage").val(1);
+        $('#goBelong').val(belong);
+        $('#listBelong a').removeClass('active'); 
+        $('#listBelong a').removeClass('btn-primary'); 
+        $('#listBelong a').addClass('btn-success'); 
+        $('#belong'+belong).removeClass('btn-success'); 
+        $('#belong'+belong).addClass('active btn-primary'); 
+        if(belong==0){
+            var inputvalue ="";
+            $("#goTypeInput").html(inputvalue);
+            gouSerach(1) 
+        }else{
+            $.ajax({
+                url: '/cn/video/get-belong', // 跳转到 action 
+                data:{
+                    belong:belong,
+                    type:0
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if(data){
+                        $("#goTypeInput").html(data.data);
+                    }
+                    gouSerach(1)    
+                },
+            });
+        }
+    }
+    function typeChange(type){
+        // 重置状态page和search
+        // $("#appendedInputButton").val('');
+        $("#goPage").val(1);
+        $('#goType').val(type);
+        $('#listType a').removeClass('active'); 
+        $('#listType a').removeClass('btn-primary'); 
+        $('#type'+type).addClass('active btn-primary');
+        gouSerach(1)
 
     }
+
+
 
     $(function(){
         $('.go_hidden').removeClass('hiddened');
         gou();
+        // var belong = $('#goBelong').val(); 
+        // var type = $('#goType').val(); 
+        // $.ajax({
+        //     url: '/cn/video/get-belong', // 跳转到 action 
+        //     data:{
+        //         belong:belong,
+        //         type:type
+        //     },
+        //     type: 'post',
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         // console.log(data)
+        //         if(data&&belong!=0){
+        //             $("#goTypeInput").html(data.data);
+        //         }
+        //     },
+        // });
     })
 
     function nextPage(goPage){
-       var full_model =$("#full_model").val();
-       var title =  $('#appendedInputButton').val();
-       if(full_model==1){
-            var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+        var full_model =$("#full_model").val();
+        var goBelong =$("#goBelong").val();
+        var goType =$("#goType").val();
+        if(!goType){ var  goType =''; }
+        var title =  $('#appendedInputButton').val();
+        if(full_model==1){
+            var url="/cn/video/collect-video?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=2";
             var html = getprintHtml(url);
             if(html!=false){
                 //分页后初始页码
@@ -142,8 +208,8 @@
             }else{
                 page_unchange();
             }
-       }else{
-            var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=1";
+        }else{
+            var url="/cn/video/collect-video?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=1";
             var html = getprintHtml(url);
             if(html){
                 $("#goPage").val(goPage);
@@ -154,22 +220,38 @@
                 // $('.go_hidden').html(go_input);
             }
        }
-
     }
     function  gou(){
         var goPage =$("#goPage").val();
         nextPage(goPage);
-        imageError();//图片报错监听
+        // imageError();//图片报错监听
+    }
+
+
+    function  gou_new(){
+        $('#content_append').html(''); 
+        gou();
+        var  total_count =  $('.return_count').eq(0).val();
+        $('#total_count').html(total_count)
+        $("#goPageCount").val(total_count)
     }
 
     //跳转页面
-    function  gouSerach(){
-        var gouSerach =$(".footer_go_input").val();
+    function  gouSerach(goPage){
+        if(goPage){
+            $(".footer_go_input").val(goPage)
+        }
+        var goPage =$(".footer_go_input").val()
+        $("#goPage").val(goPage);
+        gou_new();
         // console.log(gouSerach)
-        var title =  $('#appendedInputButton').val();
-        window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
+        // var title =  $('#appendedInputButton').val();
+        // window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
     }
-    
+
+
+
+
      // 我的收藏
      function  Update_my(id){ 
         // layer.confirm('确认删除?', function(index){
@@ -218,26 +300,26 @@
  
     } 
     
-        //滚动条触发事件
-        $(window).scroll(function() {
-        //监听事件内容
-        // console.log(getScrollHeight()) 
-        // console.log(getWindowHeight() + getDocumentTop())  
-            //自动播放插件
-            var is_bofang = $('#is_bofang_type').val();
-            if(is_bofang==1){
-                var goPageCount = $("#goPageCount").val()
-                var top_hidden =$("#top_hidden").val()
-                var td_num = Math.floor((getDocumentTop()+100)/340)
-                var id =  $("#content_append").find("td:eq("+td_num+") input[name=video_id]").val();
-                var now_video =$("#now_video").val();
-                //自动播放
-                if( id!=now_video){
-                    videoList(id,0,0);
-                }
-            }
+        // //滚动条触发事件
+        // $(window).scroll(function() {
+        // //监听事件内容
+        // // console.log(getScrollHeight()) 
+        // // console.log(getWindowHeight() + getDocumentTop())  
+        //     //自动播放插件
+        //     var is_bofang = $('#is_bofang_type').val();
+        //     if(is_bofang==1){
+        //         var goPageCount = $("#goPageCount").val()
+        //         var top_hidden =$("#top_hidden").val()
+        //         var td_num = Math.floor((getDocumentTop()+100)/340)
+        //         var id =  $("#content_append").find("td:eq("+td_num+") input[name=video_id]").val();
+        //         var now_video =$("#now_video").val();
+        //         //自动播放
+        //         if( id!=now_video){
+        //             videoList(id,0,0);
+        //         }
+        //     }
 
-        });
+        // });
 </script>
 
 

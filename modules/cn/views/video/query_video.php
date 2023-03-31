@@ -61,7 +61,7 @@
         if(belong==0){
             var inputvalue ="";
             $("#goTypeInput").html(inputvalue);
-            gou();
+            gouSerach(1) 
         }else{
             $.ajax({
                 url: '/cn/video/get-belong', // 跳转到 action 
@@ -75,7 +75,7 @@
                     if(data){
                         $("#goTypeInput").html(data.data);
                     }
-                    gou_new();       
+                    gouSerach(1)     
                 },
             });
         }
@@ -88,29 +88,29 @@
         $('#listType a').removeClass('active'); 
         $('#listType a').removeClass('btn-primary'); 
         $('#type'+type).addClass('active btn-primary');
-        gou_new();
+        gouSerach(1)
 
     }
     $(function(){
         $('.go_hidden').removeClass('hiddened');
         gou();
-        var belong = $('#goBelong').val(); 
-        var type = $('#goType').val(); 
-        $.ajax({
-            url: '/cn/video/get-belong', // 跳转到 action 
-            data:{
-                belong:belong,
-                type:type
-            },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                // console.log(data)
-                if(data&&belong!=0){
-                    $("#goTypeInput").html(data.data);
-                }
-            },
-        });
+        // var belong = $('#goBelong').val(); 
+        // var type = $('#goType').val(); 
+        // $.ajax({
+        //     url: '/cn/video/get-belong', // 跳转到 action 
+        //     data:{
+        //         belong:belong,
+        //         type:type
+        //     },
+        //     type: 'post',
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         // console.log(data)
+        //         if(data&&belong!=0){
+        //             $("#goTypeInput").html(data.data);
+        //         }
+        //     },
+        // });
     })
     function nextPage(goPage){
 
@@ -146,9 +146,9 @@
         $('#content_append').html(''); 
         gou();
         var  total_count =  $('.return_count').eq(0).val();
+        console.log(total_count)
         $('#total_count').html(total_count)
         $("#goPageCount").val(total_count)
-        $(".footer_go_input").val(1)   
     }
 
     //跳转页面
