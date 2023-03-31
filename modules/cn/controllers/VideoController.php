@@ -32,15 +32,17 @@ class VideoController extends VideoApiControl
     // public  $passwordsp=111; //视频
     public  $graden=0; //av
     public  $user;
+    public  $http_type;
     function init (){
         parent::init();
         // var_dump(111);die;
         set_time_limit(0);
         $this->user = Yii::$app->session->get('userlogin');
         $this->graden= intval($this->user['graden']); // 0未登录
+        // 判断http还是https
+        $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+        $this->http_type=  $http_type;
         if(!$this->user){
-            // 判断http还是https
-            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
             $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/login';
             header('Location: '.$href);die;
         }
@@ -275,7 +277,12 @@ class VideoController extends VideoApiControl
             $type =$type?$type:1;
         }else{
             //采集所有默认类型为0
-            if($search){  $type=0; }
+            if($search){ $type=0; }else{
+                if($type==0){  // 错误类型直接回退
+                    $href =$this->http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
+                    header('Location: '.$href);die;
+                }
+            }
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
@@ -477,7 +484,7 @@ class VideoController extends VideoApiControl
     }
     public function actionGetBelong()
     {
-        $belong = Yii::$app->request->post('belong',0);
+        $belong = Yii::$app->request->post('belong',1);
         $type = Yii::$app->request->post('type',0);
         // var_dump( $type);die;
         $str= Category::getBelong($belong,$type);
@@ -486,10 +493,16 @@ class VideoController extends VideoApiControl
  
     public function actionClearSession()
     {
-        $belong = Yii::$app->request->post('belong',0);
-        // $type = Yii::$app->request->post('type',0);
+        $belong = Yii::$app->request->post('belong',5);
+        $type = Yii::$app->request->post('type',20);
+        if($belong>0){
+            $listvideo = Video::getQueryList(1,$belong,$type); // 获取采集数据
+            if(empty($listvideo)){
+                die(Method::jsonGenerate(0,null,'error'));
+            }
+        }
         VideoList::deleteAll(" belong =$belong ");
-        echo true;
+        die(Method::jsonGenerate(1,null,'succes'));
     }
 
     

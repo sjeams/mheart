@@ -321,7 +321,25 @@
             dataType: 'json',
             data:{belong:goBelong,type:goType},
             success: function (data) {
-                gou();
+                if(data.code==0){    
+                    // alert(data.message)
+                    layer.open({
+                        type: 1
+                        ,title: false //不显示标题栏
+                        ,closeBtn: false
+                        ,area: '300px;'
+                        ,shade: 0.8
+                        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                        ,btn: ['确定']
+                        ,btnAlign: 'c'
+                        ,moveType: 1 //拖拽模式，0或者1
+                        ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
+                        ,success: function(layero){
+                        }
+                    })
+                }else{
+                    gou();
+                }
             },
         }); 
     }
