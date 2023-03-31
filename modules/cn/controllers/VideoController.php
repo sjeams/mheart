@@ -383,8 +383,8 @@ class VideoController extends VideoApiControl
         } 
         $count= (new \yii\db\Query())
         ->select("count(1) as num")
-        ->from("x2_video_list_detail as a")
-        ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        ->from("x2_video_list_collect as c")
+        ->rightJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         ->where($where)->one('sign')['num'];
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
 
@@ -392,8 +392,8 @@ class VideoController extends VideoApiControl
         $where .=" and user_id = ".$this->user['id'];
         $brush= (new \yii\db\Query())
         ->select("a.*")
-        ->from("x2_video_list_detail as a")
-        ->rightJoin('x2_video_list_collect as c', 'c.video_id = a.id ')
+        ->from("x2_video_list_collect as c")
+        ->rightJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
         $data['belong']=$belong; 
         $data['title']=$title; 
@@ -402,7 +402,7 @@ class VideoController extends VideoApiControl
         // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
-        var_dump($brush);die;
+        // var_dump($brush);die;
         if(!$brush){
             return false;die;
         }
