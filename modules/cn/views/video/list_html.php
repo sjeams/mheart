@@ -1,4 +1,4 @@
-
+<?php $search_title = $data['search'];?>
 <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
 <?php if($graden>0){ ?>
     <p class="center  "  >
@@ -69,7 +69,7 @@
                         <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->
                             <div  class="video<?php echo $kss ?> collect-video-style"   data-url="<?php echo $v['imageurl']?>" style=" "> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
-                            <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
+                            <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>    <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                 </td>
                     </tr>
                     <tr>
@@ -110,7 +110,7 @@
                         <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
                         <!-- <p class="center"><img class="pimage" src="<?php echo $v['imageurl']?>"   alt="" ></p> -->
                         <div  class="video<?php echo $v['id']?> collect-video-style" data-url="<?php echo $v['imageurl']?>" style=" "> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
-                        <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo $v['title']?></p>
+                        <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                         <!-- </a> -->
                         <p class="center"> 
                             <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
