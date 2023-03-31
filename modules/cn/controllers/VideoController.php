@@ -402,7 +402,7 @@ class VideoController extends VideoApiControl
         // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
-        // var_dump($brush);die;
+        var_dump($brush);die;
         if(!$brush){
             return false;die;
         }
