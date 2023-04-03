@@ -502,7 +502,8 @@ class VideoController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',5);
         $type = Yii::$app->request->post('type',20);
         if($belong>0){
-            $listvideo = Video::getQueryList(1,$belong,$type); // 获取采集数据
+            $listvideo = Video::getQueryList(1,$belong,1,$type); // 获取采集数据
+            // var_dump($listvideo);die;
             if(empty($listvideo)){
                 die(Method::jsonGenerate(0,null,'error'));
             }
