@@ -279,8 +279,9 @@ class VideoController extends VideoApiControl
             //采集所有默认类型为0
             if($search){ $type=0; }else{
                 if($type==0){  // 错误类型直接回退
-                    $href =$this->http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
-                    header('Location: '.$href);die;
+                    // $href =$this->http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
+                    // header('Location: '.$href);die;
+                    WechatUser::headerLocation();
                 }
             }
         }
