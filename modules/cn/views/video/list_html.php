@@ -47,7 +47,7 @@
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <span  class="btn btn-primary" onclick="clearModel()"> 更新 </span>
+                                <span  class="btn btn-primary" onclick="clearModel(0)"> 更新 </span>
                                 <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
                             </p>
                         </div>
@@ -311,15 +311,15 @@
         }
   
     }
- 
-    function clearModel(){
+    // istype 是否根据type更新
+    function clearModel(istype){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         $.ajax({
             url: '/cn/video/clear-session', // 跳转到 action 
             type: 'post',
             dataType: 'json',
-            data:{belong:goBelong,type:goType},
+            data:{belong:goBelong,type:goType,istype:istype},
             success: function (data) {
                 if(data.code==0){    
                     // alert(data.message)
@@ -344,12 +344,13 @@
         }); 
     }
     function clearSession(){
-        var goBelong =$("#goBelong").val();
-        var goType =$("#goType").val();
-        var goPage =$("#goPage").val();
-        var goSearch =$("#goSearch").val();
-        var goPage_list =$("#goPage_list").val();
-        window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        // var goBelong =$("#goBelong").val();
+        // var goType =$("#goType").val();
+        // var goPage =$("#goPage").val();
+        // var goSearch =$("#goSearch").val();
+        // var goPage_list =$("#goPage_list").val();
+        // window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        clearModel(1);
     }
 
 

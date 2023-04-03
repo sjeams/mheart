@@ -501,13 +501,18 @@ class VideoController extends VideoApiControl
     {
         $belong = Yii::$app->request->post('belong',5);
         $type = Yii::$app->request->post('type',20);
+        $istype = Yii::$app->request->post('istype',0); // 是否只清除当前类型
         if($belong>0){
             $listvideo = Video::getQueryList(1,$belong,1,$type); // 获取采集数据
             // var_dump($listvideo);die;
             if(empty($listvideo)){
                 die(Method::jsonGenerate(0,null,'error'));
             }
-        }
+            if($istype){
+                VideoList::deleteAll(" belong =$belong and type =$type");
+                die(Method::jsonGenerate(1,null,'succes'));
+            }
+        } 
         VideoList::deleteAll(" belong =$belong ");
         die(Method::jsonGenerate(1,null,'succes'));
     }
