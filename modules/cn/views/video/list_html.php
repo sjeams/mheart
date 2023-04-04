@@ -230,6 +230,7 @@
                     $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
                 }else{
                     $('.caiji_name').text('采集×');
+                    $("#goPage_list").val(data.data);
                 }
                 // window.location.reload();   
             },
@@ -267,6 +268,8 @@
             },
         });
     }
+
+
     function typeChange(type){
         // 重置状态page和search
         $("#goSearch").val('');

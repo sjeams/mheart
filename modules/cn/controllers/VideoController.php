@@ -237,13 +237,13 @@ class VideoController extends VideoApiControl
                     }else{
                         //为空时，跳出循环
                         // return false;die;
-                        die(Method::jsonGenerate(0,null,'false'));
+                        die(Method::jsonGenerate(0,$newpage-1,'false'));
                     }
                 }
             }
         } 
         // return true;
-        die(Method::jsonGenerate(1,null,'succes'));
+        die(Method::jsonGenerate(1,$newpage,'succes'));
     }
 
 
