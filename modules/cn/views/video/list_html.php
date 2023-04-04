@@ -359,6 +359,12 @@
         // var goSearch =$("#goSearch").val();
         // var goPage_list =$("#goPage_list").val();
         // window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        if(istype){
+            var type_str ='清空type缓存？'; 
+        }else{
+            var type_str ='清空belong缓存？';
+        }
+       
         layer.open({
             type: 1
             ,title: false //不显示标题栏
@@ -369,7 +375,7 @@
             ,btn: ['确定', '取消']
             ,btnAlign: 'c'
             ,moveType: 1 //拖拽模式，0或者1
-            ,content: ' <div class="center" style="margin-top:20px">确定删除？</div>'
+            ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
             ,success: function(layero){
                 var btn = layero.find('.layui-layer-btn');
                 btn.find('.layui-layer-btn0').click(function(){
