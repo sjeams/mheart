@@ -347,6 +347,7 @@
                         }
                     })
                 }else{
+                    $("#goPage_list").val(1);
                     gou();
                 }
             },
