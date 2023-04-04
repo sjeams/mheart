@@ -54,7 +54,11 @@
                         <div class="layui-input-inline center">
                             <p class="center">
                                 <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
-                                <span  class="btn btn-primary" onclick="setCaches()"> 手动缓存 </span>
+                                <?php if($isnext){ ?>
+                                    <span  class="btn btn-primary" onclick="setCaches()"> 手动缓存 </span>
+                                <?php }else{ ?>
+                                    <span  class="btn btn-defult"  > 手动缓存 </span>
+                                <?php  }?>     
                             </p>
                         </div>
                     <!-- </div> -->
@@ -231,6 +235,7 @@
                 }else{
                     $('.caiji_name').text('采集×');
                     $("#goPage_list").val(data.data);
+                    gou();  // 最后一页自动跳转
                 }
                 // window.location.reload();   
             },
