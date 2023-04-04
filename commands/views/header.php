@@ -33,7 +33,7 @@
         height: 100%-80px;
         position: relative;
         display: flex;
-        margin:20px auto;
+        margin:0px auto;
         left:0; 
         right:0; 
         top:40px;

@@ -1,7 +1,7 @@
 <?php $search_title = $data['search'];?>
 <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
 <?php if($graden>0){ ?>
-    <p class="center  "  >
+    <p class="center  "  style="margin-top:20px" >
         <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a><a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a>
         <a class="btn_link " href="https://sewovideo.com/"> 色窝 </a>  <a class="btn_link " href="https://siwazyw.cc/index.php/vod/type/id/20.html"> 丝袜 </a>
         <a class="btn_link " href="https://xjav10.cc/">  香蕉 </a> 
