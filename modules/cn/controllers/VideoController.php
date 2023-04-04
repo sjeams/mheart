@@ -236,12 +236,14 @@ class VideoController extends VideoApiControl
                         Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
                     }else{
                         //为空时，跳出循环
-                        return true;die;
+                        // return false;die;
+                        die(Method::jsonGenerate(0,null,'false'));
                     }
                 }
             }
         } 
-        return true;
+        // return true;
+        die(Method::jsonGenerate(1,null,'succes'));
     }
 
 

@@ -225,7 +225,7 @@
             },
             dataType: 'json',
             success: function (data) {
-                if(data==1){
+                if(data.code==1){
                     $('.caiji_name').text('采集√');
                     $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
                 }else{
@@ -258,7 +258,7 @@
             },
             dataType: 'json',
             success: function (data) {
-                if(data==1){
+                if(data.code==1){
                     $('.caiji_name').text('采集√')
                 }else{
                     $('.caiji_name').text('采集×')
