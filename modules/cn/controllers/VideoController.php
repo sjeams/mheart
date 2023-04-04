@@ -511,7 +511,7 @@ class VideoController extends VideoApiControl
             if(empty($listvideo)){
                 die(Method::jsonGenerate(0,null,'error'));
             }
-            if($istype){
+            if($istype==1){
                 VideoList::deleteAll(" belong =$belong and type =$type");
                 die(Method::jsonGenerate(1,null,'succes'));
             }

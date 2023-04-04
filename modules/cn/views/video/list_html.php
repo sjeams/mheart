@@ -47,8 +47,8 @@
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
                                 <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <span  class="btn btn-primary" onclick="clearModel(0)"> 更新 </span>
-                                <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
+                                <span  class="btn btn-primary" onclick="clearSession(0)"> 更新 </span>
+                                <span  class="btn btn-primary" onclick="clearSession(1)"> 刷新 </span>
                             </p>
                         </div>
                         <div class="layui-input-inline center">
@@ -133,7 +133,7 @@
                 <td class="center"  >
                     <p class="center">
                         <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                        <span  class="btn btn-primary" onclick="clearSession()"> 刷新 </span>
+                        <span  class="btn btn-primary" onclick="clearSession(1)"> 刷新 </span>
                         <?php if($isnext){ ?>
                             <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
                         <?php }else{ ?>
@@ -320,7 +320,7 @@
         }
   
     }
-    // istype 是否根据type更新
+    // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
     function clearModel(istype){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
@@ -352,14 +352,33 @@
             },
         }); 
     }
-    function clearSession(){
+    function clearSession(istype){
         // var goBelong =$("#goBelong").val();
         // var goType =$("#goType").val();
         // var goPage =$("#goPage").val();
         // var goSearch =$("#goSearch").val();
         // var goPage_list =$("#goPage_list").val();
         // window.location.href="/cn/video/list?clear=1&"+"page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
-        clearModel(1);
+        layer.open({
+            type: 1
+            ,title: false //不显示标题栏
+            ,closeBtn: false
+            ,area: '300px;'
+            ,shade: 0.8
+            ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+            ,btn: ['确定', '取消']
+            ,btnAlign: 'c'
+            ,moveType: 1 //拖拽模式，0或者1
+            ,content: ' <div class="center" style="margin-top:20px">确定删除？</div>'
+            ,success: function(layero){
+                var btn = layero.find('.layui-layer-btn');
+                btn.find('.layui-layer-btn0').click(function(){
+                    clearModel(istype);
+            });
+  
+            }
+        })
+
     }
 
 
