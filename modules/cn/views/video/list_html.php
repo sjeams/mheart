@@ -236,8 +236,8 @@
                 }else{
                     $('.caiji_name').text('采集×');
                     $("#goPage_list").val(data.data);
-                    gou();  // 最后一页自动跳转
                 }
+                gou();  // 缓存后自动跳转最后一页
                 // window.location.reload();   
             },
         });
