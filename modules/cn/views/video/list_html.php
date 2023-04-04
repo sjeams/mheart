@@ -193,7 +193,8 @@
     // 优先2
     $(function(){
         var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
-        if(is_cache==1){
+        var page_isnext =$("#page_isnext").val(); //是否有下一页
+        if(is_cache==1&&page_isnext==1){
             goCache();
         }
     }); 
