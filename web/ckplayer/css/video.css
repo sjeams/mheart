@@ -2,6 +2,21 @@ body {
     padding-left: 0px;
     padding-right: 0px;
 }
+.loading1{
+    margin: auto;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+    background: url(./images/loading1.png) no-repeat center center;
+    background-size: 100px 100px;
+    animation: ck-Circle 1.5s linear infinite;
+	-webkit-animation: ck-Circle 1.5s linear infinite
+}
+#loading1{
+	/* background: none; */
+}
+
+
 .red{
 	color: red;
 	font-weight: bold;

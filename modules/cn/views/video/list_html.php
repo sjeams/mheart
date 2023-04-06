@@ -212,6 +212,7 @@
         var goPage_list =$("#goPage_list").val();
         var setnum =$("#setCaches").val();
         // console.log(setnum)
+        addLoading()
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
@@ -225,6 +226,7 @@
             },
             dataType: 'json',
             success: function (data) {
+                removeLoading()
                 if(data.code==1){
                     $('.caiji_name').text('采集√');
                     $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
@@ -234,7 +236,9 @@
                 }
                 gou();  // 缓存后自动跳转最后一页
                 // window.location.reload();   
-            },
+            },error:function(data){
+                removeLoading()
+            }
         });
     }
 
@@ -317,6 +321,7 @@
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
     function clearModel(istype){
+        addLoading()
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         $.ajax({
@@ -325,6 +330,7 @@
             dataType: 'json',
             data:{belong:goBelong,type:goType,istype:istype},
             success: function (data) {
+                removeLoading()
                 if(data.code==0){    
                     // alert(data.message)
                     layer.open({
@@ -333,7 +339,7 @@
                         ,closeBtn: false
                         ,area: '300px;'
                         ,shade: 0.8
-                        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                        ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
                         ,btn: ['确定']
                         ,btnAlign: 'c'
                         ,moveType: 1 //拖拽模式，0或者1
@@ -345,7 +351,9 @@
                     $("#goPage_list").val(1);
                     gou();
                 }
-            },
+            },error:function(data){
+                removeLoading()
+            }
         }); 
     }
     function clearSession(istype){
