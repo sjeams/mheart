@@ -122,5 +122,16 @@ function getprintHtml(url){
 $(document).ajaxStart(function() {
     addLoading()
 });
+$(document).ajaxError(function() {
+    removeLoading()
+});
+
+$(document).ajaxSuccess(function() {
+    removeLoading()
+});
+ 
+
+
+
 </script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
