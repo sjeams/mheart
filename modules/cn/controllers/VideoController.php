@@ -568,14 +568,26 @@ class VideoController extends VideoApiControl
         }
         // var_dump($args);die;
     }
+
+    /**
+     * 修改视频报错状态
+     * by  sjeam
+     */
+    public function actionError()
+    {
+        $id = Yii::$app->request->post('id'); 
+        VideoListDetail::videoError($id);
+        die(Method::jsonGenerate(1,null,'succes'));
+    }
+
+
+
   /**
      * 视频播放器
      * by  sjeam
      */
     public function actionVideo()
     { 
-
-   
         $sessionkey = Yii::$app->request->get('sessionkey');
 
         if($sessionkey){

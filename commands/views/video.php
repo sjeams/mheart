@@ -166,6 +166,9 @@ function  videoList(id,key=0,isbofang=1){
         var newplayer= new ckplayer(videoObject);//初始化播放器
         // newplayer.addListener('time', timeHandler,videoID); //监听播放时间
         // newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
+        if(!key){ //不是视频，监听播放器
+            newplayer.addListener('error', videoError);//监听播放结束
+        }
         url =null;
         // title =null;
         // imageurl =null;
@@ -181,7 +184,7 @@ function  videoList(id,key=0,isbofang=1){
             // var time = newplayer.time()
             // console.log(time)
             // newplayer.seek(0)
-            console.log(bool)
+            // console.log(bool)
             //开启倍数
             // if(bool){
             //     document.querySelector('video').playbackRate=4
@@ -198,6 +201,29 @@ function  videoList(id,key=0,isbofang=1){
         // function VideoPlayEndedHandler(){//监听视频播放完成
         //     // alert('本视频已结束');
         // }
+        //视频报错监听
+        
+        function videoError(){
+            //标记报错id
+            console.log(id)
+            // $('.video_image').error(function(){
+            //     var id= $(this).siblings("input[name=video_id]").val();
+            //     videoList(id,0,1);
+            // }) 
+            $.ajax({
+                url: '/cn/video/error', // 跳转到 action 
+                type: 'post',
+                data:{id:id},
+                dataType: 'json',
+                success: function (data) {
+                    if(data.code==1){
+                        $(".my_collect_"+id).prev().removeClass('btn-primary');
+                        $(".my_collect_"+id).prev().addClass('btn-danger');
+                    }
+                },
+            });
+        }
+
     }
     // CV.singleClick(player.playOrPause);//监听视频单击
 

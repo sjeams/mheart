@@ -104,6 +104,11 @@ class VideoListDetail extends ActiveRecord {
         return $video_list;
 	}
 
+    //视频错误
+	public static function videoError($id){
+        VideoListDetail::updateAll(['is_error' =>1],"id = $id");
+    }
+
 }
 
 ?>
