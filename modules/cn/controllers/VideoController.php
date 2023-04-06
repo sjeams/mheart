@@ -204,6 +204,7 @@ class VideoController extends VideoApiControl
         if($graden==0){
             $belong=0;
         }
+        $newpage =$page_list;
         // 影视不进入缓存-开启缓存进入
         if($belong!=0&&$get_cache==1){
             // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
