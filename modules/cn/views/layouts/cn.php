@@ -109,7 +109,8 @@ function getprintHtml(url){
         url: url,
         dataType: 'json',
         async: false,
-        ajaxSend: function (data) {
+        // global:true,
+        ajaxStart: function (data) {
             addLoading()
         },success: function (data) {
             removeLoading()
@@ -120,7 +121,7 @@ function getprintHtml(url){
     return getHtml.responseText;
 }
 
-$(document).ajaxSend(function() {
+$(document).ajaxStart(function() {
     addLoading()
 });
 </script>
