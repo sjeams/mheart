@@ -1,6 +1,5 @@
 
-<?php $search_title = $data['title']; ?>
-<input class="return_count" type="hidden" value="<?php echo $data['count']?>" >
+
 <?php   foreach($content as $kss => $v) { ?>
  
         <tr>
@@ -30,3 +29,5 @@
             </td>
         </tr>
 <?php  } ?> 
+<?php $search_title = $data['title']; ?>
+<input class="return_count" type="hidden" value="<?php echo $data['count']?>" >

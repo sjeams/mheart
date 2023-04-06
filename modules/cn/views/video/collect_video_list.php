@@ -1,8 +1,7 @@
-<?php $search_title = $data['title']; ?>
-<input class="return_count" type="hidden" value="<?php echo $data['count']?>" >
+
 <?php   foreach($content as $kss => $v) { ?>
-        <tr>
-            <td class="remove_<?php echo $v['id']?> p-0">
+        <tr class="remove_<?php echo $v['id']?> p-0">
+            <td >
                 <div id="form<?php echo $v['id']?>">
                     <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
@@ -26,3 +25,5 @@
             </td>
         </tr>
 <?php  } ?>
+<?php $search_title = $data['title']; ?>
+<input class="return_count" type="hidden" value="<?php echo $data['count']?>" >
