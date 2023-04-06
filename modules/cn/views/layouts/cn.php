@@ -104,19 +104,24 @@ $(document).keyup(function(event){
 
 // 异步html
 function getprintHtml(url){
-    // addLoading()
     var getHtml =$.ajax({
         type:"get",
         url: url,
         dataType: 'json',
         async: false,
-        // success: function (data) {
-        //     removeLoading()
-        // },error:function(data){
-        //     removeLoading()
-        // }
+        ajaxSend: function (data) {
+            addLoading()
+        },success: function (data) {
+            removeLoading()
+        },error:function(data){
+            removeLoading()
+        }
     });
     return getHtml.responseText;
 }
+
+$(document).ajaxSend(function() {
+    addLoading()
+});
 </script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
