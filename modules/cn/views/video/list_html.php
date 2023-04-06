@@ -128,7 +128,7 @@
                 <td class="center"  >
                     <p class="center">
                         <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                        <span  class="btn btn-primary" onclick="clearSession(1)"> 刷新 </span>
+                        <span  class="btn btn-primary" onclick="cleaRload()"> 刷新 </span>
                         <?php if($isnext){ ?>
                             <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
                         <?php }else{ ?>
@@ -417,26 +417,35 @@
             success: function (data) {
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
-                gouhtml();
+                gouhtml(0);
                 var t = $("#top").offset().top;
                 $(window).scrollTop(t);
             },
         });
     }
-    function  gouhtml(){
+    function  gouhtml(clearRload){
+
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         if(!goType){ var  goType =''; }
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-        // window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
-        // $('.list_html').html('采集中，请稍后...')
-        var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
-        var list_html = getprintHtml(url);
-        if(list_html){
-            $('.list_html').html(list_html)
+        if(clearRload){
+            window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+            // $('.list_html').html('采集中，请稍后...')
+        }else{
+            var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
+            var list_html = getprintHtml(url);
+            if(list_html){
+                $('.list_html').html(list_html)
+            }
         }
+    }
+
+    // 刷新页面
+    function  clearRload(){
+        gouhtml(1);
     }
 
     // 收藏
