@@ -213,33 +213,33 @@
         var goPage_list =$("#goPage_list").val();
         var setnum =$("#setCaches").val();
         // console.log(setnum)
-        // addLoading()
-        $.ajax({
-            url: '/cn/video/get-cache', // 跳转到 action 
-            type: 'post',
-            data:{ 
-                setnum:setnum,
-                page:goPage,
-                type:goType,
-                page_list:goPage_list,
-                belong:goBelong,
-                search:goSearch,
-            },
-            dataType: 'json',
-            success: function (data) {
-                if(data.code==1){
-                    $('.caiji_name').text('采集√');
-                    $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
-                }else{
-                    $('.caiji_name').text('采集×');
-                    $("#goPage_list").val(data.data);
-                }
-                gou();  // 缓存后自动跳转最后一页
-                // window.location.reload();   
-            },error:function(data){
-                removeLoading()
-            }
-        });
+        addLoading()
+        // $.ajax({
+        //     url: '/cn/video/get-cache', // 跳转到 action 
+        //     type: 'post',
+        //     data:{ 
+        //         setnum:setnum,
+        //         page:goPage,
+        //         type:goType,
+        //         page_list:goPage_list,
+        //         belong:goBelong,
+        //         search:goSearch,
+        //     },
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         if(data.code==1){
+        //             $('.caiji_name').text('采集√');
+        //             $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
+        //         }else{
+        //             $('.caiji_name').text('采集×');
+        //             $("#goPage_list").val(data.data);
+        //         }
+        //         gou();  // 缓存后自动跳转最后一页
+        //         // window.location.reload();   
+        //     },error:function(data){
+        //         removeLoading()
+        //     }
+        // });
     }
 
     // 开启缓存
