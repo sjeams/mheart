@@ -415,11 +415,11 @@
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-        window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
+        // window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
         // $('.list_html').html('采集中，请稍后...')
-        // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
-        // var list_html = getprintHtml(url);
-        // $('.list_html').html(list_html)
+        var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
+        var list_html = getprintHtml(url);
+        $('.list_html').html(list_html)
     }
 
     // 收藏
