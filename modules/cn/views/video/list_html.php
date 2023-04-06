@@ -300,11 +300,11 @@
         $('#listBelong a').removeClass('btn-primary'); 
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        if(belong==0){
-            var inputvalue ="";
-            $("#goTypeInput").html(inputvalue);
-            gou();
-        }else{
+        // if(belong==0){
+        //     var inputvalue ="";
+        //     $("#goTypeInput").html(inputvalue);
+        //     gou();
+        // }else{
             $.ajax({
                 url: '/cn/video/get-belong', // 跳转到 action 
                 data:{
@@ -319,7 +319,7 @@
                     gou();
                 },
             });
-        }
+        // }
   
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
@@ -409,6 +409,18 @@
     }
     //查询
     function  gou(){
+        $.ajax({
+            url: '/cn/video/ajax-start', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                // $("#goTypeInput").html(data.data);
+                gouhtml();
+            },
+        });
+    }
+    function  gouhtml(){
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         if(!goType){ var  goType =''; }

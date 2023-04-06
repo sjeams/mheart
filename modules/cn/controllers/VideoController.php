@@ -646,4 +646,9 @@ class VideoController extends VideoApiControl
         die(Method::jsonGenerate($code,null,'succes'));
     } 
 
+    public function actionAjaxStart()
+    {
+        die(Method::jsonGenerate($code,null,'succes'));
+    }
+
 }

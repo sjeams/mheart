@@ -109,10 +109,7 @@ function getprintHtml(url){
         url: url,
         dataType: 'json',
         async: false,
-        // global:true,
-        ajaxStart: function (data) {
-            addLoading()
-        },success: function (data) {
+        success: function (data) {
             removeLoading()
         },error:function(data){
             removeLoading()
@@ -121,6 +118,7 @@ function getprintHtml(url){
     return getHtml.responseText;
 }
 
+//ajax 请求前添加加载状态
 $(document).ajaxStart(function() {
     addLoading()
 });
