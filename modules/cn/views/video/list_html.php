@@ -72,7 +72,7 @@
                     <tr>
                         <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $v['imageurl']?>"   alt="img" ></p> -->
-                            <div  class="video<?php echo $kss ?> collect-video-style"   data-url="<?php echo $v['imageurl']?>" style=" "> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
+                            <div  class="video<?php echo $kss ?> collect-video-style"   data-url="<?php echo $v['imageurl']?>" style="background-image:url(<?php echo $v['imageurl']?>);"><span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
                             <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>    <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                 </td>
                     </tr>
@@ -108,7 +108,7 @@
                 <tr>
                     <td  >
                         <!-- <p class="center"><img class="pimage" src="<?php echo $v['imageurl']?>"   alt="" ></p> -->
-                        <div  class="video<?php echo $v['id']?> collect-video-style" data-url="<?php echo $v['imageurl']?>" style=" "> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                        <div  class="video<?php echo $v['id']?> collect-video-style" data-url="<?php echo $v['imageurl']?>" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                         <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                         <!-- </a> -->
                         <p class="center"> 
@@ -193,13 +193,13 @@
             goCache();
         }
     }); 
-    // 优先3
-    window.onload = function () {
-        $('.collect-video-style').each(function(i){
-         var url_link =    $('.collect-video-style').eq(i).data("url");
-         $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
-        })
-    }
+    // // 优先3
+    // window.onload = function () {
+    //     $('.collect-video-style').each(function(i){
+    //      var url_link =    $('.collect-video-style').eq(i).data("url");
+    //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
+    //     })
+    // }
     
 
     function setCaches(){
@@ -251,7 +251,7 @@
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
- 
+        addLoading()
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
@@ -264,13 +264,16 @@
             },
             dataType: 'json',
             success: function (data) {
+                removeLoading()
                 if(data.code==1){
                     $('.caiji_name').text('采集√')
                 }else{
                     $('.caiji_name').text('采集×')
                 }
                 // window.location.reload();   
-            },
+            },error:function(data){
+                removeLoading()
+            }
         });
     }
 

@@ -104,11 +104,17 @@ $(document).keyup(function(event){
 
 // 异步html
 function getprintHtml(url){
+    addLoading()
     var getHtml =$.ajax({
         type:"get",
         url: url,
         dataType: 'json',
         async: false,
+        success: function (data) {
+            removeLoading()
+        },error:function(data){
+            removeLoading()
+        }
     });
     return getHtml.responseText;
 }

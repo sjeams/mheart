@@ -25,7 +25,7 @@ function addLoading(){
         ,title: false //不显示标题栏
         ,closeBtn: false
         ,skin: 'loading1 layui-anim-loop'
-        ,shade: 0.8
+        ,shade: 0.1
         ,id: 'loading1' //设定一个id，防止重复弹出
         // ,content: '<div class="center layui-anim layui-anim-up   " ></div>'
         ,success: function(layero){  
