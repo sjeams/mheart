@@ -232,7 +232,7 @@
                     $('.caiji_name').text('采集×');
                     $("#goPage_list").val(data.data);
                 }
-                // gou();  // 缓存后自动跳转最后一页
+                gou();  // 缓存后自动跳转最后一页
                 // window.location.reload();   
             },error:function(data){
                 removeLoading()
