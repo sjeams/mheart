@@ -70,4 +70,5 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         </p>
     </td>
 </tr>
+<tr> <td class="center"  ><p></p></td></tr>
 <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
