@@ -128,7 +128,7 @@
                 <td class="center"  >
                     <p class="center">
                         <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                        <span  class="btn btn-primary" onclick="cleaRload()"> 刷新 </span>
+                        <span  class="btn btn-primary" onclick="clearRload()"> 刷新 </span>
                         <?php if($isnext){ ?>
                             <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
                         <?php }else{ ?>
@@ -213,7 +213,7 @@
         var goPage_list =$("#goPage_list").val();
         var setnum =$("#setCaches").val();
         // console.log(setnum)
-        addLoading()
+        // addLoading()
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
@@ -227,7 +227,6 @@
             },
             dataType: 'json',
             success: function (data) {
-                removeLoading()
                 if(data.code==1){
                     $('.caiji_name').text('采集√');
                     $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
