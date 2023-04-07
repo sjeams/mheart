@@ -86,7 +86,6 @@
     // ;(function () {
         // alert("function执行");
     // }())
-
     // 优先1
     $(document).ready(function(){ 
         //搜索框
@@ -119,7 +118,6 @@
         });
     }
     
-
     // 优先2
     $(function(){
         var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
@@ -141,7 +139,6 @@
         goCache(setnum)
 
     }
-
     // 开启缓存
     function goCache(setnum=0){
         // console.log(setnum)
@@ -204,14 +201,7 @@
         $('#listBelong a').removeClass('btn-primary'); 
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        // if(belong==0){
-        //     var inputvalue ="";
-        //     $("#goTypeInput").html(inputvalue);
-        //     gou();
-        // }else{
-            gouSerachType(belong,0);
-        // }
-  
+        gouSerachType(belong,0);
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
     function clearModel(istype){
