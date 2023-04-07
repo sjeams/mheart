@@ -107,7 +107,7 @@ function getprintHtml(url){
     var getHtml =$.ajax({
         type:"get",
         url: url,
-        cache:false,
+        cache:true,
         dataType: 'json',
         async: false,
         success: function (data) {
