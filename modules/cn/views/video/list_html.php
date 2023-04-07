@@ -205,7 +205,27 @@
 
     function setCaches(){
         var setnum =$("#setCaches").val();
-        goCache(setnum)
+      
+        layer.open({
+            type: 1
+            ,title: false //不显示标题栏
+            ,closeBtn: false
+            ,area: '300px;'
+            ,shade: 0.8
+            ,id: 'LAY_layuipro2' //设定一个id，防止重复弹出
+            ,btn: ['确定', '取消']
+            ,btnAlign: 'c'
+            ,moveType: 1 //拖拽模式，0或者1
+            ,content: ' <div class="center" style="margin-top:20px">缓存数据</div>'
+            ,success: function(layero){
+                var btn = layero.find('.layui-layer-btn');
+                btn.find('.layui-layer-btn0').click(function(){
+                    goCache(setnum)
+            });
+  
+            }
+        })
+
     }
 
     // 开启缓存
@@ -387,13 +407,11 @@
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
                 gouhtml(0);
-                var t = $("#top").offset().top;
-                $(window).scrollTop(t);
+
             },
         });
     }
     function  gouhtml(clearRload){
-
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         if(!goType){ var  goType =''; }
@@ -410,6 +428,8 @@
                 $('.list_html').html(list_html)
             }
         }
+        var t = $("#top").offset().top;
+        $(window).scrollTop(t);
     }
 
     // 刷新页面
