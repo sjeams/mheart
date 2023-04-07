@@ -119,10 +119,6 @@ function getprintHtml(url){
     return getHtml.responseText;
 }
 
- 
-$(document).ajaxStart(function(response) {
-    response = null;
-});   
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function(response) {
     addLoading()
