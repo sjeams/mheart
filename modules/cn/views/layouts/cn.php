@@ -107,6 +107,7 @@ function getprintHtml(url){
     var getHtml =$.ajax({
         type:"get",
         url: url,
+        cache:false,
         dataType: 'json',
         async: false,
         success: function (data) {
@@ -118,16 +119,23 @@ function getprintHtml(url){
     return getHtml.responseText;
 }
 
+ 
+$(document).ajaxStart(function(response) {
+    response = null;
+});   
 //ajax 请求前添加加载状态
-$(document).ajaxStart(function() {
+$(document).ajaxStart(function(response) {
     addLoading()
+    response = null;
 });
-$(document).ajaxError(function() {
+$(document).ajaxError(function(response) {
     removeLoading()
+    response = null;
 });
 
-$(document).ajaxSuccess(function() {
+$(document).ajaxSuccess(function(response) {
     removeLoading()
+    response = null;
 });
  
 
