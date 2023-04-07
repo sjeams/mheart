@@ -204,27 +204,28 @@
     
 
     function setCaches(){
-        var setnum =$("#setCaches").val();
+        alert(111);
+        // var setnum =$("#setCaches").val();
       
-        layer.open({
-            type: 1
-            ,title: false //不显示标题栏
-            ,closeBtn: false
-            ,area: '300px;'
-            ,shade: 0.8
-            ,id: 'LAY_layuipro2' //设定一个id，防止重复弹出
-            ,btn: ['确定', '取消']
-            ,btnAlign: 'c'
-            ,moveType: 1 //拖拽模式，0或者1
-            ,content: ' <div class="center" style="margin-top:20px">缓存数据</div>'
-            ,success: function(layero){
-                var btn = layero.find('.layui-layer-btn');
-                btn.find('.layui-layer-btn0').click(function(){
-                    goCache(setnum)
-            });
+        // layer.open({
+        //     type: 1
+        //     ,title: false //不显示标题栏
+        //     ,closeBtn: false
+        //     ,area: '300px;'
+        //     ,shade: 0.8
+        //     ,id: 'LAY_layuipro2' //设定一个id，防止重复弹出
+        //     ,btn: ['确定', '取消']
+        //     ,btnAlign: 'c'
+        //     ,moveType: 1 //拖拽模式，0或者1
+        //     ,content: ' <div class="center" style="margin-top:20px">缓存数据</div>'
+        //     ,success: function(layero){
+        //         var btn = layero.find('.layui-layer-btn');
+        //         btn.find('.layui-layer-btn0').click(function(){
+        //             goCache(setnum)
+        //     });
   
-            }
-        })
+        //     }
+        // })
 
     }
 
