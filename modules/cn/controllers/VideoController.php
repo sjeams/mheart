@@ -186,8 +186,6 @@ class VideoController extends VideoApiControl
     public function actionGetCache()
     {
         // 是否开启-自动缓存 0/1
-        // $get_cache = Yii::$app->session->get('get_cache');
-        // var_dump( $this->user);die;
         $get_cache =$this->user['is_cache'];
         // 登录状态
         $graden = $this->graden;
@@ -207,7 +205,6 @@ class VideoController extends VideoApiControl
         $newpage =$page_list;
         // 影视不进入缓存-开启缓存进入--手动缓存>1时开启缓存
         if($belong!=0&&($get_cache==1|| $setnum>1)){
-            // if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
             // 缓存列表
             for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;
@@ -216,12 +213,9 @@ class VideoController extends VideoApiControl
                 if(!$res){
                     $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
                     // var_dump($listvideo);die;
-                    // $list =	Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
                     $list=[];
                     // 是否分页--改为不分页，直接采集
                     $count = count($listvideo);
-                    // $pageSize=20;
-                    // $pageSize= $count;
                     if($listvideo){
                         $list= VideoListDetail::checkVideo($listvideo);
                         $args['key_value'] =$sessionStr;
@@ -237,13 +231,11 @@ class VideoController extends VideoApiControl
                         Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
                     }else{
                         //为空时，跳出循环
-                        // return false;die;
                         die(Method::jsonGenerate(0,$newpage-1,'false'));
                     }
                 }
             }
         } 
-        // return true;
         die(Method::jsonGenerate(1,$newpage,'succes'));
     }
 
@@ -263,7 +255,6 @@ class VideoController extends VideoApiControl
         $page_list = Yii::$app->request->get('page_list',1);
         $type = Yii::$app->request->get('type',0);
         $search = Yii::$app->request->get('search','');
-
         // 搜索类型默认为0
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
@@ -273,7 +264,6 @@ class VideoController extends VideoApiControl
             }
             $belong=0;
         }
-        
         if($belong==0){
             //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
@@ -282,8 +272,6 @@ class VideoController extends VideoApiControl
             //采集所有默认类型为0
             if($search){ $type=0; }else{
                 if($type==0){  // 错误类型直接回退
-                    // $href =$this->http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
-                    // header('Location: '.$href);die;
                     WechatUser::headerLocation();
                 }
             }
@@ -297,8 +285,8 @@ class VideoController extends VideoApiControl
         }
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
         if($res){
-               $list =   json_decode($res['value'],true);
-               $count =$res['count'];
+               $list =  json_decode($res['value'],true);
+               $count = $res['count'];
         }else{
             if($belong==0){
                 $list = Query::getVideo($search,$type);
@@ -356,7 +344,6 @@ class VideoController extends VideoApiControl
         $data['search']=$search;
         $data['belong']=$belong;
         $data['issearch']=$category[$belong]['issearch'];
-
         // var_dump( $count);die;
         //是否有下一页
         $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
