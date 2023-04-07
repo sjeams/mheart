@@ -204,6 +204,13 @@
     
 
     function setCaches(){
+        var setnum =$("#setCaches").val();
+        goCache(setnum)
+    }
+
+    // 开启缓存
+    function goCache(setnum=0){
+        // console.log(setnum)
         $('.caiji_name').text('采集...')
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
@@ -211,7 +218,6 @@
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
-        var setnum =$("#setCaches").val();
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
@@ -226,45 +232,13 @@
             dataType: 'json',
             success: function (data) {
                 if(data.code==1){
-                    $('.caiji_name').text('采集√');
-                    $("#goPage_list").val(parseInt(goPage_list)+parseInt(setnum));
-                }else{
-                    $('.caiji_name').text('采集×');
-                    $("#goPage_list").val(data.data);
-                }
-                gou();  // 缓存后自动跳转最后一页
-                // window.location.reload();   
-            },error:function(data){
-                removeLoading()
-            }
-        });
-    }
-
-    // 开启缓存
-    function goCache(){
-        $('.caiji_name').text('采集...')
-        var goBelong =$("#goBelong").val();
-        var goType =$("#goType").val();
-        if(!goType){ var  goType =''; }
-        var goSearch =$("#goSearch").val();
-        var goPage =$("#goPage").val();
-        var goPage_list =$("#goPage_list").val();
-        $.ajax({
-            url: '/cn/video/get-cache', // 跳转到 action 
-            type: 'post',
-            data:{ 
-                page:goPage,
-                type:goType,
-                page_list:goPage_list,
-                belong:goBelong,
-                search:goSearch,
-            },
-            dataType: 'json',
-            success: function (data) {
-                if(data.code==1){
                     $('.caiji_name').text('采集√')
                 }else{
                     $('.caiji_name').text('采集×')
+                }
+                if(setnum){
+                    $("#goPage_list").val(data.data);
+                    gou();
                 }
                 // window.location.reload();   
             },error:function(data){
