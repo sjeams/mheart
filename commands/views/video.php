@@ -155,8 +155,8 @@ function  videoList(id,key=0,isbofang=1){
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
             loaded:'loadHandler',// 监听播放时间方法
-            seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
-		    cookie:videoID,//cookie名称,请在同一域中保持唯一
+            // seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
+		    // cookie:videoID,//cookie名称,请在同一域中保持唯一
             timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
         };
  
@@ -166,11 +166,12 @@ function  videoList(id,key=0,isbofang=1){
         var newplayer= new ckplayer(videoObject);//初始化播放器
         // newplayer.addListener('time', timeHandler,videoID); //监听播放时间
         // newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
-
-        url =null;
+        newplayer=false;
+        videoObject=false;
+        url =false;
         // title =null;
         // imageurl =null;
-        player=null;
+        player=false;
         // videoHidden(1);//显示窗口
 
         // newplayer.visibilityState(function(state){   
@@ -178,18 +179,18 @@ function  videoList(id,key=0,isbofang=1){
         // console.log(state)
         // });
         
-        newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
-            // var time = newplayer.time()
-            // console.log(time)
-            // newplayer.seek(0)
-            // console.log(bool)
-            //开启倍数
-            // if(bool){
-            //     document.querySelector('video').playbackRate=4
-            // }else{
-            //     document.querySelector('video').playbackRate=1
-            // }
-        });
+        // newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
+        //     // var time = newplayer.time()
+        //     // console.log(time)
+        //     // newplayer.seek(0)
+        //     // console.log(bool)
+        //     //开启倍数
+        //     // if(bool){
+        //     //     document.querySelector('video').playbackRate=4
+        //     // }else{
+        //     //     document.querySelector('video').playbackRate=1
+        //     // }
+        // });
 
         // function timeHandler(t) {
         //     // console.log(videoID)
