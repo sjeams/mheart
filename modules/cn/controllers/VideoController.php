@@ -331,7 +331,6 @@ class VideoController extends VideoApiControl
             $list=  Video::isCollect($list,$this->user['id']);
         }
         // var_dump($list);die;
-        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         if($graden==1){
             $category = CategoryName::Category();
         }else{
