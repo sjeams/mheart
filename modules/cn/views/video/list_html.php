@@ -25,7 +25,7 @@
                         <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline center" id="goTypeInput">
                             <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
-                        
+ 
                         </div>
                         <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
@@ -181,20 +181,20 @@
                 // console.log(data)
                 if(data){
                     $("#goTypeInput").html(data.data);
-                    gou();
+                    // gou();
                 }
             },
         });
     }
     
     // 优先2
-    $(function(){
-        var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
-        var page_isnext =$("#page_isnext").val(); //是否有下一页
-        if(is_cache==1&&page_isnext==1){
-            goCache();
-        }
-    }); 
+    // $(function(){
+    //     var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
+    //     var page_isnext =$("#page_isnext").val(); //是否有下一页
+    //     if(is_cache==1&&page_isnext==1){
+    //         goCache();
+    //     }
+    // }); 
     // // 优先3
     // window.onload = function () {
     //     $('.collect-video-style').each(function(i){
@@ -202,6 +202,14 @@
     //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
     //     })
     // }
+    function isGetCaches(){
+        var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
+        var page_isnext =$("#page_isnext").val(); //是否有下一页
+        if(is_cache==1&&page_isnext==1){
+            goCache(1);
+        }
+    }
+
 
     function getCaches(){
         var setnum =$("#setCaches").val();
@@ -221,6 +229,7 @@
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
+            async:false,
             data:{ 
                 setnum:setnum,
                 page:goPage,
@@ -236,7 +245,7 @@
                 }else{
                     $('.caiji_name').text('采集×')
                 }
-                if(setnum){
+                if(setnum>1){
                     $("#goPage_list").val(data.data);
                     gou();
                 }
@@ -246,7 +255,6 @@
             }
         });
     }
-
 
     function typeChange(type){
         // 重置状态page和search
@@ -271,6 +279,7 @@
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         gouSerachType(belong,0);
+        gou();
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
     function clearModel(istype){
@@ -365,8 +374,9 @@
             success: function (data) {
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
-                gouhtml(0);
-
+                isGetCaches(1)//固定缓存一页
+                // gouhtml(0);
+                gouhtml(1);
             },
         });
     }
@@ -386,9 +396,9 @@
             if(list_html){
                 $('.list_html').html(list_html)
             }
+            var t = $("#top").offset().top;
+            $(window).scrollTop(t);
         }
-        var t = $("#top").offset().top;
-        $(window).scrollTop(t);
     }
 
     // 刷新页面

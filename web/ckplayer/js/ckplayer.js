@@ -546,6 +546,7 @@
 			}
 			var source='';
 			if(valType(vstr)=='string'){
+				// console.log(vstr) //m3u8路径
 				if(vstr.substr(0,8)=='website:' || vstr.substr(0,4)=='url:'){
 					var ajaxUrl='';
 					if(vstr.substr(0,8)=='website:'){
