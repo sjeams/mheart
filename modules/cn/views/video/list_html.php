@@ -245,9 +245,10 @@
                 }else{
                     $('.caiji_name').text('采集×')
                 }
-                if(setnum>1){
+                if(setnum>1){//手动缓存
                     $("#goPage_list").val(data.data);
-                    gou();
+                    // gou();
+                    gouhtml(1);
                 }
                 // window.location.reload();   
             },error:function(data){
@@ -374,7 +375,7 @@
             success: function (data) {
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
-                isGetCaches(1)//固定缓存一页
+                isGetCaches(1)//开启缓存，固定缓存一页
                 // gouhtml(0);
                 gouhtml(1);
             },
