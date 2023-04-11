@@ -349,13 +349,13 @@ class VideoController extends VideoApiControl
         $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
      
         $html = Yii::$app->request->get('html',0);
-        // if($html){
-        //     $this->layout = 'kongbai';
-        //     return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
-        // }else{
-        //     $categoryBelong = Category::getBelong($belong,$type);
-        //     return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong]);
-        // }
+        if($html){
+            $this->layout = 'kongbai';
+            return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+        }else{
+            $categoryBelong = Category::getBelong($belong,$type);
+            return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong]);
+        }
  
     
     }
