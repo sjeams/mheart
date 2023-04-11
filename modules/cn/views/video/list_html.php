@@ -353,7 +353,6 @@
 
     }
 
-
     function  prevPage(){
         $("#goPage").val(1);
         var goPage_list =$("#goPage_list").val();
