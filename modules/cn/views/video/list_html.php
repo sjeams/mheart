@@ -24,8 +24,8 @@
                         </div>
                         <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline center" id="goTypeInput">
-                            <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
- 
+                            <!-- <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType"> -->
+                                <?php echo $categoryBelong ?>
                         </div>
                         <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
@@ -156,17 +156,17 @@
         // alert("function执行");
     // }())
     // 优先1
-    $(document).ready(function(){ 
-        //搜索框
-        // $('.go_hidden').removeClass('hiddened');
-        // var goPage_list =$("#goPage_list").val();
-        // var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
-        // $('.go_hidden').html(go_input);
-        //getbelong 获取来源
-        var belong = $('#goBelong').val(); 
-        var type = $('#goType').val(); 
-        gouSerachType(belong,type);
-    });
+    // $(document).ready(function(){ 
+    //     //搜索框
+    //     // $('.go_hidden').removeClass('hiddened');
+    //     // var goPage_list =$("#goPage_list").val();
+    //     // var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
+    //     // $('.go_hidden').html(go_input);
+    //     //getbelong 获取来源
+    //     var belong = $('#goBelong').val(); 
+    //     var type = $('#goType').val(); 
+    //     gouSerachType(belong,type);
+    // });
     //查询type
     function  gouSerachType(belong,type){
         $.ajax({
@@ -277,7 +277,7 @@
         $('#listBelong a').removeClass('btn-primary'); 
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        gouSerachType(belong,0);
+        // gouSerachType(belong,0);
         gou();
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type

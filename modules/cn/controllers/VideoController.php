@@ -353,7 +353,8 @@ class VideoController extends VideoApiControl
             $this->layout = 'kongbai';
             return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
         }else{
-            return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+            $categoryBelong = Category::getBelong($belong,$type);
+            return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong]);
         }
  
     
