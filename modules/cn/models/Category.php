@@ -29,11 +29,10 @@ class Category extends ActiveRecord {
 
         // var_dump( $list);die;
             if($list){
-                if(!$type){
-                    $typeArray= array_column($list,'type');
+                $typeArray= array_column($list,'type');
+                if(!$type||!in_array($type,$typeArray)){
                     $type=$typeArray[0];
                 }
-
                     $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
                     $str .='<p class="center" id="listType" >'; 
                     foreach($list as $v){
