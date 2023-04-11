@@ -106,7 +106,7 @@
                         </div>
                         <tr>
                             <td  >
-                                <div  class="video<?php echo $v['id']?> collect-video-style"  style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                                <div  class="video<?php echo $v['id']?> collect-video-style"  data-url="<?php echo $v['imageurl']?>"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                                 <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                                 <!-- </a> -->
                                 <p class="center"> 
@@ -197,12 +197,12 @@
     //     }
     // }); 
     // // 优先3
-    // window.onload = function () {
-    //     $('.collect-video-style').each(function(i){
-    //      var url_link =    $('.collect-video-style').eq(i).data("url");
-    //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
-    //     })
-    // }
+    window.onload = function () {
+        $('.collect-video-style').each(function(i){
+         var url_link =    $('.collect-video-style').eq(i).data("url");
+         $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
+        })
+    }
     function isGetCaches(){
         var is_cache =  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>;
         var page_isnext =$("#page_isnext").val(); //是否有下一页
