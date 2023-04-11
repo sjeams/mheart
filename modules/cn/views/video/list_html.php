@@ -229,7 +229,6 @@
         $.ajax({
             url: '/cn/video/get-cache', // 跳转到 action 
             type: 'post',
-            async:false,
             data:{ 
                 setnum:setnum,
                 page:goPage,
