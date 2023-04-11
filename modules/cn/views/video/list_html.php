@@ -114,7 +114,7 @@
                                     <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                                     <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
                                     <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->
-                                    <span onclick="clearRload( )" class="btn btn-primary collect"> 刷新 </span>
+                                    <span onclick="localRload( )" class="btn btn-primary collect"> 刷新 </span>
                                 </p>
                             </td>
                         
@@ -402,6 +402,10 @@
     }
 
     // 刷新页面
+    function  localRload(){
+        window.location.reload();
+    }
+
     function  clearRload(){
         gouhtml(1);
     }
