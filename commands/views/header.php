@@ -12,7 +12,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <!-- //chat -->
             <?php  if( $http_geturl=='chat'){ ?>
                 <?php  if( $http_index=='list'){ ?>
-                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
+                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
                 <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
                 <td class="btn-primary"   >
                     <input type="hidden" name="" id="menu" value="0">
@@ -37,7 +37,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                 <?php if( $http_index=='video'){ ?>
                     <td class="btn-primary" > <a href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i>返回</a></td>
                 <?php }else { ?>    
-                    <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集</a></td>
+                    <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
                 <?php } ?>
                 <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
                 <td class="btn-primary"   >
