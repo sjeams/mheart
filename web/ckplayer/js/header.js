@@ -20,7 +20,7 @@ function Menu(){
 
 function vidoeModel(){
     $.ajax({
-        url: '/cn/video/video-model', // 跳转到 action 
+        url: '/cn/video-api/video-model', // 跳转到 action 
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -55,7 +55,7 @@ function vidoeModel(){
 } 
 function isBofang(){
     $.ajax({
-        url: '/cn/video/is-bofang', // 跳转到 action 
+        url: '/cn/video-api/is-bofang', // 跳转到 action 
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -79,7 +79,7 @@ function isBofang(){
 
 function isCache(){
     $.ajax({
-        url: '/cn/video/is-cache', // 跳转到 action 
+        url: '/cn/video-api/is-cache', // 跳转到 action 
         type: 'post',
         dataType: 'json',
         success: function (data) {

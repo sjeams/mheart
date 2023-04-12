@@ -136,7 +136,7 @@
             gouSerach(1) 
         }else{
             $.ajax({
-                url: '/cn/video/get-belong', // 跳转到 action 
+                url: '/cn/video-api/get-belong', // 跳转到 action 
                 data:{
                     belong:belong,
                     type:0
@@ -172,7 +172,7 @@
         // var belong = $('#goBelong').val(); 
         // var type = $('#goType').val(); 
         // $.ajax({
-        //     url: '/cn/video/get-belong', // 跳转到 action 
+        //     url: '/cn/video-api/get-belong', // 跳转到 action 
         //     data:{
         //         belong:belong,
         //         type:type
@@ -275,7 +275,7 @@
             var video_id =$("#form"+id+"  input[name=video_id]").val();
             var title =$("#form"+id+"  input[name=title]").val();
             $.ajax({
-                url: '/cn/video/myupdate', // 跳转到 action 
+                url: '/cn/video-api/myupdate', // 跳转到 action 
                 type: 'post',
                 data:{video_id:video_id,title:title},
                 dataType: 'json',

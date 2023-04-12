@@ -84,7 +84,7 @@
         var videotype =$("#videotype").val();
 
         $.ajax({
-            url: '/cn/video/up', // 跳转到 action 
+            url: '/cn/video-api/up', // 跳转到 action 
             data:{
                 id: id,
             },
@@ -109,7 +109,7 @@
     
     function  Delete(id){
         $.ajax({
-            url: '/cn/video/delete', // 跳转到 action 
+            url: '/cn/video-api/delete', // 跳转到 action 
             data:{
                 id: id,
             },

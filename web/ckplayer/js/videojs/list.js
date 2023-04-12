@@ -24,7 +24,7 @@
     //查询type
     function  gouSerachType(belong,type){
         $.ajax({
-            url: '/cn/video/get-belong', // 跳转到 action 
+            url: '/cn/video-api/get-belong', // 跳转到 action 
             data:{
                 belong:belong,
                 type:type
@@ -81,7 +81,7 @@
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
         $.ajax({
-            url: '/cn/video/get-cache', // 跳转到 action 
+            url: '/cn/video-api/get-cache', // 跳转到 action 
             type: 'post',
             data:{ 
                 setnum:setnum,
@@ -141,7 +141,7 @@
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
         $.ajax({
-            url: '/cn/video/clear-session', // 跳转到 action 
+            url: '/cn/video-api/clear-session', // 跳转到 action 
             type: 'post',
             dataType: 'json',
             data:{belong:goBelong,type:goType,istype:istype},
@@ -221,7 +221,7 @@
     //查询
     function  gou(){
         $.ajax({
-            url: '/cn/video/ajax-start', // 跳转到 action 
+            url: '/cn/video-api/ajax-start', // 跳转到 action 
             type: 'post',
             dataType: 'json',
             success: function (data) {
@@ -274,7 +274,7 @@
         var link =$("#form"+id+"  input[name=link]").val();
         var collect = $("#form"+id+"  input[name=is_collect]").val();// 是否收藏
         $.ajax({
-            url: '/cn/video/update', // 跳转到 action 
+            url: '/cn/video-api/update', // 跳转到 action 
             type: 'post',
             data:{url:url,title:title,imageurl:imageurl,belong,belong,type:10,link:link,up:1,is_collect:collect},
             dataType: 'json',
@@ -297,7 +297,7 @@
         var video_id =$("#form"+id+"  input[name=video_id]").val();
         var title =$("#form"+id+"  input[name=title]").val();
         $.ajax({
-            url: '/cn/video/myupdate', // 跳转到 action 
+            url: '/cn/video-api/myupdate', // 跳转到 action 
             type: 'post',
             data:{video_id:video_id,title:title},
             dataType: 'json',
