@@ -108,7 +108,7 @@
                         </div>
                         <tr>
                             <td  >
-                                <div  class="video<?php echo $v['id']?> collect-video-style"  data-url="<?php //echo $v['imageurl']?>"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                                <div  class="video<?php echo $v['id']?> collect-video-style"  data-url="<?php echo $v['imageurl']?>"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                                 <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                                 <!-- </a> -->
                                 <p class="center"> 
