@@ -74,28 +74,3 @@
 </body>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
 
-<script type="text/javascript">
-    //滚动条头部和底部隐藏事件
-    $(function(){   
-        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
-        var winHeight = $(document).scrollTop();
-        var t = 0;
-        $(window).scroll(function() {
-            //禁用滚动监听
-            if($('#getPage').val()==1){
-                getPage();  //分页
-            }
-            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            //上下滚动操作
-            if(t<=scrollY&&t>=160){
-                // console.log("往下滚动");
-                header_title_hidden();
-            }else{
-                // console.log("往上滚动");
-                header_title_show();
-             }
-            setTimeout(function(){t=scrollY},0);
-
-        });
-    });
-</script>

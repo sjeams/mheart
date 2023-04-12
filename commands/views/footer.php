@@ -1,6 +1,6 @@
 
 <!-- content_header 的结尾div 别删了 --html 自动补全了-->
-<!-- </div> -->
+</div>
 
 <?php 
 //请求路径
