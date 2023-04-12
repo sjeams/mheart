@@ -50,12 +50,12 @@
     //     }
     // }); 
     // // 优先3
-    window.onload = function () {
-        $('.collect-video-style').each(function(i){
-         var url_link =    $('.collect-video-style').eq(i).data("url");
-         $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
-        })
-    }
+    // window.onload = function () {
+    //     $('.collect-video-style').each(function(i){
+    //      var url_link =    $('.collect-video-style').eq(i).data("url");
+    //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
+    //     })
+    // }
     function isGetCaches(){
         var is_cache =$("#is_cache").val();
         var page_isnext =$("#page_isnext").val(); //是否有下一页
