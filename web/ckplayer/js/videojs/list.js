@@ -66,7 +66,7 @@
     }
 
 
-    function getCaches(){
+    function moreGetCaches(){
         var setnum =$("#setCaches").val();
         goCache(setnum)
 
@@ -221,7 +221,7 @@
         gou();
     }
     //查询
-    function  gou(){
+    function  gou(iscache=0){
         $.ajax({
             url: '/cn/video-api/ajax-start', // 跳转到 action 
             type: 'post',
@@ -229,9 +229,13 @@
             success: function (data) {
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
-                isGetCaches(1)//开启缓存，固定缓存一页
-                // gouhtml(0);
-                gouhtml(1);
+                if(iscache){
+                    moreGetCaches()//手动缓存
+                }else{
+                    isGetCaches()//开启缓存，固定缓存一页
+                    // gouhtml(0);
+                    gouhtml(1);//跳转页面
+                }
             },
         });
     }

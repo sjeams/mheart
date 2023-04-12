@@ -333,12 +333,13 @@ $(document).ajaxSuccess(function( ) {
                     $('.cache_name').text('缓存√');
                     $('.cache_name').removeClass('btn-defult');
                     $('.cache_name').addClass('btn-success');
-                    goCache();
+                    isGetCaches();
                 }else{
                     $('.cache_name').text('缓存×');
                     $('.cache_name').removeClass('btn-success');
                     $('.cache_name').addClass('btn-defult');
                 }
+                $("#is_cache").val(data);
                 // console.log(data);
                 // window.location.reload();   
             },
