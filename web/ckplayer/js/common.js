@@ -96,29 +96,20 @@ function getprintHtml(url){
 }
 
 //ajax 请求前添加加载状态
-$(document).ajaxStart(function(response) {
+$(document).ajaxStart(function( ) {
     addLoading()
-    response = null;
+ 
 });
-$(document).ajaxError(function(response) {
+$(document).ajaxError(function( ) {
     removeLoading()
-    response = null;
+ 
 });
 
-$(document).ajaxSuccess(function(response) {
+$(document).ajaxSuccess(function( ) {
     removeLoading()
-    response = null;
+ 
 });
  
-
-
-
-
-
-
-
-
-
 
 
   /*  footer ______________________ */
