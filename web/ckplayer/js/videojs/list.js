@@ -10,7 +10,8 @@
         // alert("function执行");
     // }())
     // 优先1
-    // $(document).ready(function(){ 
+    $(document).ready(function(){ 
+        gouhtml(0)
     //     //搜索框
     //     // $('.go_hidden').removeClass('hiddened');
     //     // var goPage_list =$("#goPage_list").val();
@@ -20,7 +21,7 @@
     //     var belong = $('#goBelong').val(); 
     //     var type = $('#goType').val(); 
     //     gouSerachType(belong,type);
-    // });
+    });
     //查询type
     function  gouSerachType(belong,type){
         $.ajax({
@@ -83,6 +84,7 @@
         $.ajax({
             url: '/cn/video-api/get-cache', // 跳转到 action 
             type: 'post',
+            async:false,
             data:{ 
                 setnum:setnum,
                 page:goPage,

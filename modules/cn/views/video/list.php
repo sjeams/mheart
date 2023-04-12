@@ -4,7 +4,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     <?php if($v['belong']==0){  //视频 ?>
         <tr>
             <td>
-                <div  class="video<?php echo $kss ?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
+                <div  class="video<?php echo $kss ?> collect-video-style"    style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
                 <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>    <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
             </td>
         </tr>
@@ -38,14 +38,15 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     </div>
     <tr>
         <td  >
-            <div  class="video<?php echo $v['id']?> collect-video-style"  style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+            <div  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
             <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
             <!-- </a> -->
             <p class="center"> 
                 <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
                 <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                 <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
-                <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span>
+                <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->
+                <span onclick="localRload( )" class="btn btn-primary collect"> 刷新 </span>
             </p>
         </td>
     
@@ -67,4 +68,4 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     </td>
 </tr>
 <tr> <td class="center"  ><p></p></td></tr>
-<input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
+<input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">     
