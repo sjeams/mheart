@@ -38,7 +38,7 @@
 <!-- 自定义样式 -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
 <!-- 自定义公共样式，覆盖所有 -->
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?version=1">
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
 <script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
 
