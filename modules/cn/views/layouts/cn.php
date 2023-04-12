@@ -28,23 +28,18 @@
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
-
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css">
-
- 
 <!-- layui弹窗 -->
 <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
 <script src="/layui-v2.6.8/layui/layui.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
-
-<!-- 自定义样式 -->
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
 <!-- 轮播图 -->
 <link rel="stylesheet" type="text/css" href="/swiper/swiper-bundle.min.css">
+<!-- 自定义样式 -->
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+<!-- 自定义公共样式，覆盖所有 -->
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?version=1">
 <script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
-
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
 
 
@@ -77,65 +72,4 @@
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
 
 </body>
-<script>
-// 视频隐藏
-function videoHidden(open){
-    if(open==1){
-        var hiddenvalue = 0; //默认开启
-    }else{
-        var hiddenvalue = $("#hiddenvalue").val();
-    }
-    // console.log(hiddenvalue)
-    if(hiddenvalue==1){
-        $("#hiddenvalue").val(0); 
-        $('.videohidden').css("display","table-column");
-    }else{
-        $("#hiddenvalue").val(1); 
-        $('.videohidden').css("display","table-cell");
-    }
-
-}
-// 点击事件监听
-$(document).keyup(function(event){
-    if(event.keyCode ==13){
-        gou();
-    }
-});
-
-// 异步html
-function getprintHtml(url){
-    var getHtml =$.ajax({
-        type:"get",
-        url: url,
-        cache:true,
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-            removeLoading()
-        },error:function(data){
-            removeLoading()
-        }
-    });
-    return getHtml.responseText;
-}
-
-//ajax 请求前添加加载状态
-$(document).ajaxStart(function(response) {
-    addLoading()
-    response = null;
-});
-$(document).ajaxError(function(response) {
-    removeLoading()
-    response = null;
-});
-
-$(document).ajaxSuccess(function(response) {
-    removeLoading()
-    response = null;
-});
- 
-
-
-
-</script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>

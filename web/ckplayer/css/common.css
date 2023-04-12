@@ -27,3 +27,161 @@
     top: 0;
     left: 0;
 }
+
+
+
+ /*  header ______________________ */
+ .video_header{
+     /* margin: auto  0px ; */
+     /* border: 1px solid black; */
+     height:40px;
+     width: 100%;
+     position: fixed;
+     margin:auto;
+     left:0; 
+     right:0; 
+     top:0; 
+     /* bottom:0; */
+     display: inline-block;
+     z-index: 100;
+ }
+ .video_header td{
+     background-color: white;
+     /* border: 1px solid #0044cc; */
+     text-align: center ;
+ }
+ .video_header td a{
+     color: white;
+     width: 100%;
+     margin: auto;
+     display: inline-block;
+ }
+ .video_header td{
+     /* width:100%; */
+ }
+ /* center */
+ .video_center{
+     /* border: 1px solid #0044cc; */
+     height: 100%-80px;
+     position: relative;
+     display: flex;
+     margin:0px auto;
+     left:0; 
+     right:0; 
+     top:40px;
+     z-index: 1;
+ }
+ .menu_list{
+     /* width: 120px!important; */
+     /* width: 25%; */
+     width: inherit;
+     position: fixed;
+     margin:0px auto;
+     /* left:0;  */
+     right:0;   
+     display: none;
+     z-index: 101;
+ }
+
+ .tablestyle td{
+     width: 25%;
+ }
+ .chat_back{
+     width: 40px!important;
+     display: block;
+     float:left;
+ }
+ .chat_back i{
+     line-height: 40px;
+     color: black;
+ } 
+ .chat_add{
+     width: 40px!important;
+     display: block;
+     float:right;
+ 
+ }
+ .chat_add i{
+     line-height: 40px;
+     color: black;
+ }
+ .chat_title{
+     line-height: 40px;
+     color: black;
+     /* margin-left: -20px; */
+ }
+ 
+
+
+
+
+  /*  footer ______________________ */
+
+	.video_footer{
+        z-index: 100;
+        /* margin: auto  0px ; */
+		/* border: 1px solid black; */
+        height:45px;
+        width: 100%;
+        position: fixed;
+        margin:0px  auto;
+        left:0; 
+        right:0; 
+        /* top:0;  */
+        bottom:0;
+        display: inline-block;
+	}
+    .video_footer td{
+        background-color: white;
+        /* border: 1px solid #0044cc; */
+        text-align: center ;
+        width: 50%;
+    }
+    .video_footer td a{
+        color: white;
+        width: 100%;
+        margin: auto;
+        display: inline-block;
+    }
+    .footer_go{
+        line-height: 45px;
+        height:45px;
+        width:50%;height:45px;vertical-align: center;text-align:center; float: right;
+    }
+    .footer_go_input{
+        line-height: 45px!important;
+        height:45px!important;
+        margin-bottom:0px!important;
+        width:50%; text-align:center
+    }
+    .chat_footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        margin: 0px auto;
+        padding: 0px 0px!important;
+        /* display: table-cell; */
+    }
+    .chat_footer td{
+        width: 50%;
+        padding:0.5rem;
+    }
+    .chat_footer td input{
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+    .friend_search{
+   
+ 
+    }
+    .friend_search span{
+        display: inline-block;
+        width: 48%!important;
+        margin: 0px auto;
+    }
+    .friend_input input{
+        width: 99%!important;
+    }
+
+
+ 
