@@ -120,29 +120,33 @@ class VideoApiController extends VideoApiControl
             for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
-                $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+                //查询是否有session缓存
+                $res = Yii::$app->session->get($sessionStr);
                 if(!$res){
-                    $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
-                    // var_dump($listvideo);die;
-                    $list=[];
-                    // 是否分页--改为不分页，直接采集
-                    $count = count($listvideo);
-                    if($listvideo){
-                        $list= VideoListDetail::checkVideo($listvideo);
-                        $args['key_value'] =$sessionStr;
-                        $args['value'] =  json_encode($list,true);
-                        $args['time'] =time();
-                        $args['count'] =$count;
-                        $args['page'] =$page;
-                        $args['belong'] =$belong;
-                        $args['type'] =$type;
-                        $args['search'] =$search;
-                        $args['page_list'] =$newpage;
-                        // 存入缓存列表
-                        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
-                    }else{
-                        //为空时，跳出循环
-                        die(Method::jsonGenerate(0,$newpage-1,'false'));
+                    $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+                    if(!$res){
+                        $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
+                        // var_dump($listvideo);die;
+                        $list=[];
+                        // 是否分页--改为不分页，直接采集
+                        $count = count($listvideo);
+                        if($listvideo){
+                            $list= VideoListDetail::checkVideo($listvideo);
+                            $args['key_value'] =$sessionStr;
+                            $args['value'] =  json_encode($list,true);
+                            $args['time'] =time();
+                            $args['count'] =$count;
+                            $args['page'] =$page;
+                            $args['belong'] =$belong;
+                            $args['type'] =$type;
+                            $args['search'] =$search;
+                            $args['page_list'] =$newpage;
+                            // 存入缓存列表
+                            Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
+                        }else{
+                            //为空时，跳出循环
+                            die(Method::jsonGenerate(0,$newpage-1,'false'));
+                        }
                     }
                 }
             }

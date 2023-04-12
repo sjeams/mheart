@@ -179,77 +179,16 @@ class VideoController extends VideoApiControl
         if($clear){
             VideoList::deleteAll("key_value ='$sessionStr' ");
         }
-        $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
-        if($res){
-               $list =  json_decode($res['value'],true);
-               $count = $res['count'];
-        }else{
-            if($belong==0){
-                $list = Query::getVideo($search,$type);
-                $count = count($list);
-                $args['key_value'] =$sessionStr;
-                $args['value'] =  json_encode($list,true);
-                $args['time'] =time();
-                $args['count'] =$count;
-                $args['page'] =$page;
-                $args['belong'] =$belong;
-                $args['type'] =$type;
-                $args['search'] =$search;
-                // 存入缓存列表
-                Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
-            }else{
-            //    var_dump($type);die;
-                $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
-                // var_dump($listvideo);die;
-                $list=[];
-                // 是否分页--改为不分页，直接采集
-                $count = count($listvideo);
-                // $pageSize=20;
-                // $pageSize= $count;
-                if($listvideo){
-                    $list= VideoListDetail::checkVideo($listvideo);
-                    $args['key_value'] =$sessionStr;
-                    $args['value'] =  json_encode($list,true);
-                    $args['time'] =time();
-                    $args['count'] =$count;
-                    $args['page'] =$page;
-                    $args['belong'] =$belong;
-                    $args['type'] =$type;
-                    $args['search'] =$search;
-                    $args['page_list'] =$page_list;
-                    // 存入缓存列表
-                    Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
-                }
-            }
+        $res = Yii::$app->session->get($sessionStr);
+        if(!$res){
+            $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);
         }
-        if($belong!=0){ // 影视不进入
-            // 采集查询-标题-是否收藏
-            $list=  Video::isCollect($list,$this->user['id']);
-        }
-        // var_dump($list);die;
-        if($graden==1){
-            $category = CategoryName::Category();
-        }else{
-            $category = CategoryName::CategoryVideo();
-        }
-        // var_dump($type);die;
-        $data['page']=$page;
-        $data['type']=$type;
-        $data['page_list']=$page_list;
-        $data['search']=$search;
-        $data['belong']=$belong;
-        $data['issearch']=$category[$belong]['issearch'];
-        // var_dump( $count);die;
-        //是否有下一页
-        $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
-     
         $html = Yii::$app->request->get('html',0);
         if($html){
             $this->layout = 'kongbai';
-            return $this->render('list',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr]);
+            return $this->render('list',$res );
         }else{
-            $categoryBelong = Category::getBelong($belong,$type);
-            return $this->render('list_html',['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong]);
+            return $this->render('list_html',$res );
         }
  
     
