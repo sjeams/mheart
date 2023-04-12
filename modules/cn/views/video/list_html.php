@@ -145,5 +145,5 @@
 
 </form>
  
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
  
