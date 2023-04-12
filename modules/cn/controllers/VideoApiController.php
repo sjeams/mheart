@@ -177,10 +177,12 @@ class VideoApiController extends VideoApiControl
                 die(Method::jsonGenerate(0,null,'error'));
             }
             if($istype==1){
-                VideoList::deleteAll(" belong =$belong and (type =$type or type = 0)");
+                session_destroy();
+                VideoList::deleteAll(" belong =$belong and (type =$type or type = 0 )");
                 die(Method::jsonGenerate(1,null,'succes'));
             }
         } 
+        session_destroy();
         VideoList::deleteAll(" belong =$belong ");
         die(Method::jsonGenerate(1,null,'succes'));
     }
