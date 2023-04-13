@@ -14,7 +14,7 @@
     }
 </style>
     <body>
-    <table class="table table-bordered  tablestyle" >
+        <table class="table table-bordered  tablestyle" >
             <?php $kss=1; $v =$data;  if($v['belong']==0){  //视频 ?>
                 <tr>
                     <td>
@@ -24,8 +24,8 @@
                 </tr>
                 <tr>
                     <td>
-                    <span class="check" style="overflow-y:auto;">
-                    <?php if($v['video']){ foreach( $v['video'] as$y=> $vdieo){?>
+                        <span class="check" style="overflow-y:auto;">
+                        <?php if($v['video']){ foreach( $v['video'] as$y=> $vdieo){?>
                         <div id="form<?php echo $kss.'c'.$y?>" style="display:none">
                             <input type="hidden" name="url" value="<?php echo $vdieo['url']?>" >
                             <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
