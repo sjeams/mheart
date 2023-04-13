@@ -155,9 +155,6 @@ class VideoController extends VideoApiControl
         $belong = Yii::$app->request->get('belong',0);
         // 未登录 禁止链接访问
         if($graden==0){
-            if($belong!=0){
-                $type=1;
-            }
             $belong=0;
         }
         if($belong==0){
@@ -175,11 +172,6 @@ class VideoController extends VideoApiControl
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-        // // 删除当前缓存
-        $clear = Yii::$app->request->get('clear',0);
-        if($clear){
-            VideoList::deleteAll("key_value ='$sessionStr' ");
-        }
         $res = Yii::$app->session->get($sessionStr);
         if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);

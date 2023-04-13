@@ -7,7 +7,6 @@ use app\libs\Method;
 use yii\data\Pagination;
 // use app\libs\QueryList;
 use QL\QueryList;
-use function PHPSTORM_META\map;
 
 class Video extends ActiveRecord {
     public $cateData;

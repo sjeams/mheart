@@ -12,50 +12,52 @@ class Category extends ActiveRecord {
             return '{{%category}}';
     }
 
+    //获取下拉列表
     public static function getBelong($belong,$type){
+        $list = Category:: getBelongList($belong,$type)['list'];
+        $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
+        if($list){
+            $typeArray= array_column($list,'type');
+            if(!$type||!in_array($type,$typeArray)){
+                $type=$typeArray[0];
+            }
+                $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
+                $str .='<p class="center" id="listType" >'; 
+                foreach($list as $v){
+                    $name =$v['name'];
+                    $value =$v['type'];
+                    if($v['type']==$type){
+                        $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                    }else{
+                        $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                    }
+                }
+                $str .='  </p>';
+        }
+        return $str;
+    }
+    //获取默认type
+    public static function getType($belong,$type){
+        $type = Category:: getBelongList($belong,$type)['type'];
+        return $type;
+    }
+
+    public static function getBelongList($belong,$type){
         if($belong==0){
             $list = Category::find()->where("category_id=1")->asArray()->all();
-            // $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
-            // die(Method::jsonGenerate(1,$str,'返回数据成功'));
         }else{
             $list = Category::find()->where("belong=$belong")->asArray()->all();
         }
-
-        // var_dump( $list);die;
-            if($list){
-                $typeArray= array_column($list,'type');
-                if(!$type||!in_array($type,$typeArray)){
-                    $type=$typeArray[0];
-                }
-                    $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
-                    $str .='<p class="center" id="listType" >'; 
-                    foreach($list as $v){
-                        $name =$v['name'];
-                        $value =$v['type'];
-                        if($v['type']==$type){
-                            $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
-                        }else{
-                            $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
-                        }
-                    }
-                    $str .='  </p>';
-            }
-        return $str;
-    }
-    public static function getType($belong,$type){
-        if(!$type){
-            if($belong==0){
-                $list = Category::find()->where("category_id=1")->asArray()->all();
-            }else{
-                $list = Category::find()->where("belong=$belong")->asArray()->all();
-            }
-            if($list){
-                $typeArray= array_column($list,'type');
+        if($list){
+            $typeArray= array_column($list,'type');
+            if(!$type||!in_array($type,$typeArray)){
                 $type=$typeArray[0];
             }
         }
-        return $type;
+        return ['list'=>$list,'type'=>$type];
     }
+
+
 	//  public static function Category(){
     //     $list =array(
     //         array( 'id'=>0,'name'=>'淘片','issearch'=>'1' ),
