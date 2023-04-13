@@ -42,19 +42,18 @@ class Category extends ActiveRecord {
             }
         return $str;
     }
-    public static function getType($belong){
-        $type=0;
-        if($belong==0){
-            $list = Category::find()->where("category_id=1")->asArray()->all();
-            // $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
-            // die(Method::jsonGenerate(1,$str,'返回数据成功'));
-        }else{
-            $list = Category::find()->where("belong=$belong")->asArray()->all();
+    public static function getType($belong,$type){
+        if(!$type){
+            if($belong==0){
+                $list = Category::find()->where("category_id=1")->asArray()->all();
+            }else{
+                $list = Category::find()->where("belong=$belong")->asArray()->all();
+            }
+            if($list){
+                $typeArray= array_column($list,'type');
+                $type=$typeArray[0];
+            }
         }
-        if($list){
-            $typeArray= array_column($list,'type');
-            $type=$typeArray[0];
-        }  
         return $type;
     }
 	//  public static function Category(){
