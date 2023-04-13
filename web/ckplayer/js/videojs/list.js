@@ -134,6 +134,7 @@
         $('#listBelong a').removeClass('btn-primary'); 
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
+        $('#goType').val(0);
         // gouSerachType(belong,0);
         gou();
     }

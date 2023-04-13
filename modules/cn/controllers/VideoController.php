@@ -167,6 +167,7 @@ class VideoController extends VideoApiControl
         }else{
             //采集所有默认类型为0
             if($search){ $type=0; }else{
+                $type = Category::getType($belong);  //获取默认type
                 if($type==0){  // 错误类型直接回退
                     WechatUser::headerLocation();
                 }
