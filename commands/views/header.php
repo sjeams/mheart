@@ -1,9 +1,3 @@
-
-/*
- * @Author: sjeam
- * @Date: 2023-04-07 10:41:17
- * @Description: 
- */
 <?php 
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
