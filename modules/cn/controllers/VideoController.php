@@ -176,14 +176,18 @@ class VideoController extends VideoApiControl
         if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);
         }
-        $html = Yii::$app->request->get('html',0);
-        if($html){
-            $this->layout = 'kongbai';
-            return $this->render('list',$res );
-        }else{
-            return $this->render('list_html',$res );
-        }
- 
+        // $html = Yii::$app->request->get('html',0);
+        // if($html){
+        //     $this->layout = 'kongbai';
+        //     return $this->render('list',$res );
+        // }else{
+        //     return $this->render('list_html',$res );
+        // }
+        $this->layout = 'kongbai';
+        $res['html'] = $this->render('list',$res );
+        $this->layout = 'cn';
+        // var_dump($res);die;
+        return $this->render('list_html',$res );
     
     }
 

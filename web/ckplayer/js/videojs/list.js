@@ -11,7 +11,7 @@
     // }())
     // 优先1
     $(document).ready(function(){ 
-        gouhtml(0)
+        // gouhtml(0)
     //     //搜索框
     //     // $('.go_hidden').removeClass('hiddened');
     //     // var goPage_list =$("#goPage_list").val();
