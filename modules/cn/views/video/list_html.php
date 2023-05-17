@@ -33,7 +33,7 @@
                         </div>
                         <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
-                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" readonly="readonly" class="center form-control mr-sm-2"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
 
                         <!-- <label class="layui-form-label">采集页码</label> -->
@@ -126,7 +126,6 @@
             }); 
         })
         function layerSearch(search_text){
-            removeLoading()
             $('#goSearch').val(search_text);
             gou();
         }
