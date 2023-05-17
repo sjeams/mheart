@@ -77,8 +77,7 @@
                     <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
-                <!-- //跳转 -->
-                <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
+ 
                 <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>,0,0)"  class="video_box "></span></div> 
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >

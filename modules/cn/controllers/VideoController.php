@@ -218,7 +218,7 @@ class VideoController extends VideoApiControl
         $count= (new \yii\db\Query())
         ->select("count(1) as num")
         ->from("x2_video_list_collect as c")
-        ->leftJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         ->where($where)->one('sign')['num'];
         // $pageSize=10;
         // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
@@ -227,7 +227,7 @@ class VideoController extends VideoApiControl
         $brush= (new \yii\db\Query())
         ->select("a.*")
         ->from("x2_video_list_collect as c")
-        ->leftJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         // ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('c.create_time desc')->all('sign');
         $data['belong']=$belong; 
@@ -238,18 +238,20 @@ class VideoController extends VideoApiControl
         // var_dump($data['count']);die;
         //来源
         $html = Yii::$app->request->get('html',0);
-        // var_dump($brush);die;
-
+        // var_dump($list);die;
         if($html==1){
             $this->layout = 'kongbai';
+            //列表
             return $this->render('collect_video_list',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else if($html==2){
             if(!$brush){
                 return false;die;
             }
             $this->layout = 'kongbai';
+            //全屏
             return $this->render('collect_video_full_screen',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
+            //页面
             return $this->render('collect_video',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
