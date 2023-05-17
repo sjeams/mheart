@@ -89,7 +89,7 @@
                 success: function (data) {
                     // 关键词
                     if(data.code==1){    
-                        var str ='<p>搜索</p><div class="input_div center" style="display: block;"> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="" id="search_text"><div class="layui-btn-container"><span class="btn btn-primary  " onclick="layerSerach()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></div> ';
+                        var str ='<p>搜索</p><p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="" id="search_text"><span class="btn btn-primary  " onclick="layerSerach()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
                         $.each(data.data,function(index,value){
                             str = str+'<button class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</button>';
                         })
@@ -99,7 +99,7 @@
                             type: 1
                             ,title: false //不显示标题栏
                             ,closeBtn: false
-                            ,area: ['90%','90%']
+                            ,area: ['100%','90%']
                             ,shade: 0.8
                             ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
                             // ,btn: ['搜索', '取消']
