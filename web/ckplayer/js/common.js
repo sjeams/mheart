@@ -105,10 +105,10 @@ $(document).ajaxError(function( ) {
  
 });
 
-$(document).ajaxSuccess(function( ) {
-    removeLoading()
+// $(document).ajaxSuccess(function( ) {
+//     removeLoading()
  
-});
+// });
  
 
 

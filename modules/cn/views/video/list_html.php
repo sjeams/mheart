@@ -9,6 +9,8 @@
         <a class="btn_link " href="https://xjav10.cc/">  香蕉 </a> 
     </p>
 <?php } ?> 
+
+
 <!-- 视频end -->
 <form action="/cn/video/list" method="post" class="  " >
     <table class="table table-bordered  tablestyle"  >
@@ -31,7 +33,7 @@
                         </div>
                         <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
-                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2" type="search" placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" class="center form-control mr-sm-2"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
 
                         <!-- <label class="layui-form-label">采集页码</label> -->
@@ -72,8 +74,60 @@
         </tbody>
     
     </table>
-
 </form>
- 
+
+
+
+
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
- 
+<script>
+        $('#goSearch').click(function(){
+            $.ajax({
+                url: '/cn/video-api/get-kwords', // 跳转到 action 
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    // 关键词
+                    if(data.code==1){    
+                        var str ='<p>搜索</p><input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="" id="search_text"><div class="layui-btn-container">';
+                        $.each(data.data,function(index,value){
+                            str = str+'<button class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</button>';
+                        })
+                        var content  = str+'</div>';
+                        // <table class="layui-table" lay-even="" lay-skin="nob">
+                        layer.open({
+                            type: 1
+                            ,title: false //不显示标题栏
+                            ,closeBtn: false
+                            ,area: ['100%','80%']
+                            ,shade: 0.8
+                            ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
+                            ,btn: ['搜索', '取消']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: ' <div class="center" style="padding:20px">'+content+'</div>'
+                            ,success: function(layero){
+                                var btn = layero.find('.layui-layer-btn');
+                                btn.find('.layui-layer-btn0').click(function(){
+                                    var search_text =$('#search_text').val()
+                                    layerSearch(search_text)
+                                })
+                                btn.find('.layui-layer-btn1').click(function(){
+                                    removeLoading()
+                                })
+                            }
+                        })
+                    }else{
+                        removeLoading()
+                    }
+                },error:function(data){
+                    removeLoading()
+                }
+            }); 
+        })
+        function layerSearch(search_text){
+            removeLoading()
+            $('#goSearch').val(search_text);
+            gou();
+        }
+</script>

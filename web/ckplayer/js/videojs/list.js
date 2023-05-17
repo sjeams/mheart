@@ -104,6 +104,8 @@
                     $("#goPage_list").val(data.data);
                     // gou();
                     gouhtml(1);
+                }else{
+                    removeLoading()
                 }
                 // window.location.reload();   
             },error:function(data){
@@ -164,6 +166,7 @@
                         ,moveType: 1 //拖拽模式，0或者1
                         ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
                         ,success: function(layero){
+                            removeLoading()
                         }
                     })
                 }else{
@@ -258,6 +261,7 @@
             }
             var t = $("#top").offset().top;
             $(window).scrollTop(t);
+            removeLoading()
         }
     }
 
@@ -295,7 +299,8 @@
                     $(".collect_id"+id).removeClass('btn-defult');
                     $(".collect_id"+id).addClass('btn-success');
                 }
-            },
+                removeLoading()
+            }
         });
     } 
     // 我的收藏
@@ -316,6 +321,7 @@
                     $(".my_collect_"+id).removeClass('btn-success');
                     $(".my_collect_"+id).addClass('btn-defult');
                 }
+                removeLoading()
             },
         });
     } 

@@ -187,7 +187,12 @@ class VideoApiController extends VideoApiControl
         die(Method::jsonGenerate(1,null,'succes'));
     }
 
-
+    //关键词搜索
+    public function actionGetKwords()
+    {
+        $keyword = VideoList::find()->select('search')->where(" search!='' ")->limit(10)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+        die(Method::jsonGenerate(1,$keyword,'succes'));
+    }
     /**
      * 采集单条插入喜欢
      * by  sjeam
