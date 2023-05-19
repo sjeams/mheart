@@ -5,7 +5,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <tr>
             <td>
                 <div  class="video<?php echo $kss ?> collect-video-style"    style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span></div> 
-                <p class="center" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>    <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
+                <p class="center" style="width: 90%;" onclick="videoDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )"><span><b><?php echo $kss ?>、</b></span>    <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
             </td>
         </tr>
         <tr>
@@ -39,7 +39,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     <tr>
         <td  >
             <div  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
-            <p class="center"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
+            <p class="center"  style="width: 90%;"><span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
             <!-- </a> -->
             <p class="center"> 
                 <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
