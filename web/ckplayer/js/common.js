@@ -45,12 +45,25 @@ function toBigImg() {
 }
 
 //添加阴影加载中
+// function addLoading(){
+//     layer.open({
+//         type: 3
+//         ,title: false //不显示标题栏
+//         ,closeBtn: false
+//         ,skin: 'loading1 layui-anim-loop'
+//         ,shade: 0.1
+//         ,id: 'loading1' //设定一个id，防止重复弹出
+//         // ,content: '<div class="center layui-anim layui-anim-up   " ></div>'
+//         ,success: function(layero){  
+//     } });
+// }
 function addLoading(){
     layer.open({
-        type: 1
+        type: 3  // 默认弹出加载层
         ,title: false //不显示标题栏
         ,closeBtn: false
-        ,skin: 'loading1 layui-anim-loop'
+        ,icon:0
+        ,skin: ' loading1 layui-anim-loop'
         ,shade: 0.1
         ,id: 'loading1' //设定一个id，防止重复弹出
         // ,content: '<div class="center layui-anim layui-anim-up   " ></div>'
@@ -58,15 +71,19 @@ function addLoading(){
     } });
 }
 
+function removeLoadingPage(){
+    layer.closeAll('page'); //关闭所有页面层  1
+}
 
 //移除阴影加载中
 function removeLoading(){
-    layer.closeAll(); //疯狂模式，关闭所有层
-    // layer.closeAll('dialog'); //关闭信息框
-    // layer.closeAll('page'); //关闭所有页面层
-    // layer.closeAll('iframe'); //关闭所有的iframe层
-    // layer.closeAll('loading'); //关闭加载层
-    // layer.closeAll('tips'); //关闭所有的tips层    
+    // 对应所有的type  
+    // layer.closeAll(); //疯狂模式，关闭所有层
+    // layer.closeAll('dialog'); //关闭信息框  0
+    // layer.closeAll('page'); //关闭所有页面层  1
+    // layer.closeAll('iframe'); //关闭所有的iframe层 2
+    layer.closeAll('loading'); //关闭加载层 3
+    // layer.closeAll('tips'); //关闭所有的tips层   4
      
     // //关闭后的回调（layui 2.6.5、layer 3.4.0 新增）
     // layer.closeAll('loading', function(){ //关闭 loading 并执行回调
@@ -76,8 +93,6 @@ function removeLoading(){
     //   //do something
     // }); 
 }
-
-
 // 异步html
 function getprintHtml(url){
     var getHtml =$.ajax({
@@ -105,10 +120,9 @@ $(document).ajaxError(function( ) {
  
 });
 
-// $(document).ajaxSuccess(function( ) {
-//     removeLoading()
- 
-// });
+$(document).ajaxSuccess(function( ) {
+    removeLoading()
+});
  
 
 

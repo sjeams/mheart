@@ -120,13 +120,11 @@
                     }else{
                         removeLoading()
                     }
-                },error:function(data){
-                    removeLoading()
-                }
+                } 
             }); 
         })
         function cancelSerach(){
-                removeLoading()
+            removeLoadingPage();//关闭弹窗page
         }
         function layerSerach(){
             var search_text =$('#search_text').val()
