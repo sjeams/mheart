@@ -110,7 +110,7 @@ input{
 	/* //超出边界解决办法 */
 	overflow: hidden;
 	word-break: keep-all;
-	/* white-space: nowrap; */
+	white-space: nowrap;
 	text-overflow: ellipsis;
 	-webkit-line-clamp: 1; 
 	/* display: -webkit-box;  */
