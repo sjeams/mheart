@@ -159,9 +159,7 @@ class VideoController extends VideoApiControl
         }
         if($belong==0){
             //视频通过type 区分网站
-            if($search=='undefined'||$search==null||empty($search)||$search==""){
-                // $search='龙珠';
-            } 
+            if($search=='undefined'||$search==null||empty($search)||$search=="")   $search='龙珠';
             $type =$type?$type:1;
         }else{
             //采集所有默认类型为0
@@ -216,8 +214,7 @@ class VideoController extends VideoApiControl
         ->from("x2_video_list_collect as c")
         ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         ->where($where)->one('sign')['num'];
-        // $pageSize=10;
-        // $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
+ 
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $where .=" and user_id = ".$this->user['id'];
         $brush= (new \yii\db\Query())
