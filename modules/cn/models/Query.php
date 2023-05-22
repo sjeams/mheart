@@ -23,28 +23,28 @@ class Query extends ActiveRecord {
             // return '{{%query}}';
     }
 	// 采集列表
-	public static function getVideo($search='封神榜',$type=1)
+	public static function getVideo($search='封神榜',$type=1,$page=1)
 	{
 		switch($type){
 			case 1:
-				$url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
+				$url ="https://www.taopianzy.com/search.html?keyword=$search&page=$page";
+				// $url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 				// https://www.yszzq.com/
 				$http="https://www.taopianzy.com";
 				// $url = $http."/home/vodlist/1/1-1.html";
 				$list =Query::getVideoTp($search,$type,$url,$http);
 			break;
-			case 2:
+			case 2:  
 				$http="https://foxzyw.com";
-				$url = $http."/index.php/vod/search.html?wd=$search";
+				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
 			case 3:
-				$http="https://kudianzy.com/";
-				$url = $http."/index.php/vod/search.html?wd=$search";
+				$http="https://kudianzy.com";
+				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
 		}
-
 		return $list;	
 	}
 
@@ -57,9 +57,8 @@ class Query extends ActiveRecord {
 		];
 		$range = '.table tr:gt(0)';
 		// var_dump($type);die;
-
+		// var_dump($url );die;
 		// 切片选择器,跳过第一条广告
-
 		$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
 		// var_dump($list );die;
 		$urls =[];

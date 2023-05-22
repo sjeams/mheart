@@ -59,7 +59,7 @@
                             <p class="center">
                                 <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
                                 <?php if($isnext){ ?>
-                                    <span  class="btn btn-primary" onclick="gou(1)"> 手动缓存 </span>
+                                    <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
                                 <?php }else{ ?>
                                     <span  class="btn btn-defult"  > 手动缓存 </span>
                                 <?php  }?>     

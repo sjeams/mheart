@@ -97,16 +97,14 @@
             success: function (data) {
                 if(data.code==1){
                     $('.caiji_name').text('采集√')
+                    if(setnum>1){//手动缓存
+                        $("#goPage_list").val(data.data);
+                        gouhtml(1);
+                    }
                 }else{
                     $('.caiji_name').text('采集×')
                 }
-                if(setnum>1){//手动缓存
-                    $("#goPage_list").val(data.data);
-                    // gou();
-                    gouhtml(1);
-                }else{
-                    removeLoading()
-                }
+                removeLoading()
                 // window.location.reload();   
             },error:function(data){
                 removeLoading()
@@ -224,8 +222,9 @@
         $("#goPage_list").val(parseInt(goPage_list)+1);
         gou();
     }
-    //查询
-    function  gou(iscache=0){
+
+    // 手动缓存
+    function  gouCache( ){
         $.ajax({
             url: '/cn/video-api/ajax-start', // 跳转到 action 
             type: 'post',
@@ -233,13 +232,22 @@
             success: function (data) {
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
-                if(iscache){
-                    moreGetCaches()//手动缓存
-                }else{
-                    isGetCaches()//开启缓存，固定缓存一页
-                    // gouhtml(0);
-                    gouhtml(1);//跳转页面
-                }
+                moreGetCaches()//手动缓存
+            },
+        });
+    }
+    //查询
+    function  gou( ){
+        $.ajax({
+            url: '/cn/video-api/ajax-start', // 跳转到 action 
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data)
+                // $("#goTypeInput").html(data.data);
+                isGetCaches()//开启缓存，固定缓存一页
+                // gouhtml(0);
+                gouhtml(1);//跳转页面
             },
         });
     }
