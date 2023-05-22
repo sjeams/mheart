@@ -129,9 +129,11 @@
         function layerSerach(){
             var search_text =$('#search_text').val()
             layerSearch(search_text) 
+
         }
         function layerSearch(search_text){
             $('#goSearch').val(search_text);
+            cancelSerach();
             gou();
         }
 
