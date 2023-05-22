@@ -103,5 +103,11 @@ class VideoList extends ActiveRecord {
         }
         return  $videoData ;
     }
+
+    // 获取关键词
+    public static function getNewWords($belong){
+        $words =  VideoList::find()->select('search')->where("belong =$belong and search!=''")->orderBy("time desc")->asArray()->one()['search'];
+    return $words?:'龙珠';
+    }
 }
 ?>

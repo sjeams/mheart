@@ -159,7 +159,9 @@ class VideoController extends VideoApiControl
         }
         if($belong==0){
             //视频通过type 区分网站
-            if($search=='undefined'||$search==null||empty($search)||$search=="") $search='龙珠';
+            if($search=='undefined'||$search==null||empty($search)||$search==""){
+                // $search='龙珠';
+            } 
             $type =$type?$type:1;
         }else{
             //采集所有默认类型为0
@@ -176,13 +178,7 @@ class VideoController extends VideoApiControl
         if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);
         }
-        // $html = Yii::$app->request->get('html',0);
-        // if($html){
-        //     $this->layout = 'kongbai';
-        //     return $this->render('list',$res );
-        // }else{
-        //     return $this->render('list_html',$res );
-        // }
+ 
         $this->layout = 'kongbai';
         $res['html'] = $this->render('list',$res );
         $this->layout = 'cn';
@@ -297,8 +293,7 @@ class VideoController extends VideoApiControl
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
-        // var_dump($brush);die;
-        // var_dump($data['count']);die;
+ 
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html){

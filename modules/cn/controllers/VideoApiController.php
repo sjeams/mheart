@@ -190,7 +190,7 @@ class VideoApiController extends VideoApiControl
     //关键词搜索
     public function actionGetKwords()
     {
-        $keyword = VideoList::find()->select('search')->where(" search!='' ")->limit(10)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+        $keyword = VideoList::find()->select('search')->where(" search!='' ")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
         die(Method::jsonGenerate(1,$keyword,'succes'));
     }
     /**
