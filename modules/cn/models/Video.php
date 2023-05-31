@@ -181,7 +181,7 @@ class Video extends ActiveRecord {
 						$data[$ky]['belong'] =$v['belong'];
 						$data[$ky]['type'] =$v['type'];
 					}
-					return $data;die;
+					return $data? $data:[];die;
 				}else{
 					//采集数据处理
 					foreach($data as $ky=>$val){
@@ -193,7 +193,7 @@ class Video extends ActiveRecord {
 
 		}
 
-		return $Rlist;
+		return $Rlist? $Rlist:[];
 	}
 
 	// 抓取详情 --存入本地
