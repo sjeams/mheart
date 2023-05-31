@@ -56,7 +56,7 @@ class VideoListDetail extends ActiveRecord {
                     // $new_list[] =$find_video;//批量插入
                 }else{
                     //为空时，跳出循环
-                    die(Method::jsonGenerate(0,$newpage-1,'false')); 
+                    // die(Method::jsonGenerate(0,$newpage-1,'false'));
                 }
             }
             $video_list [] =$find_video;
