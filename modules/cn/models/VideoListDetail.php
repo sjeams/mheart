@@ -20,7 +20,7 @@ class VideoListDetail extends ActiveRecord {
 
 
     //列表采集
-	public static function checkVideo($listvideo){
+	public static function checkVideo($listvideo,$newpage){
      
         foreach($listvideo as$key=> $val){
             $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
@@ -54,6 +54,9 @@ class VideoListDetail extends ActiveRecord {
                     Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
                     $find_video['id']=Yii::$app->signdb->getLastInsertID();
                     // $new_list[] =$find_video;//批量插入
+                }else{
+                    //为空时，跳出循环
+                    die(Method::jsonGenerate(0,$newpage-1,'false')); 
                 }
             }
             $video_list [] =$find_video;

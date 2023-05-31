@@ -131,7 +131,7 @@ class VideoApiController extends VideoApiControl
                         // 是否分页--改为不分页，直接采集
                         $count = count($listvideo);
                         if($listvideo){
-                            $list= VideoListDetail::checkVideo($listvideo);
+                            $list= VideoListDetail::checkVideo($listvideo,$newpage);
                             $args['key_value'] =$sessionStr;
                             $args['value'] =  json_encode($list,true);
                             $args['time'] =time();
@@ -142,7 +142,8 @@ class VideoApiController extends VideoApiControl
                             $args['search'] =$search;
                             $args['page_list'] =$newpage;
                             // 存入缓存列表
-                            Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();       
+                            Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();    
+                     
                         }else{
                             //为空时，跳出循环
                             die(Method::jsonGenerate(0,$newpage-1,'false'));

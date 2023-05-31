@@ -60,7 +60,7 @@ class VideoList extends ActiveRecord {
                 // $pageSize=20;
                 // $pageSize= $count;
                 if($listvideo){
-                    $list= VideoListDetail::checkVideo($listvideo);
+                    $list= VideoListDetail::checkVideo($listvideo,$page_list);
                     $args['key_value'] =$sessionStr;
                     $args['value'] =  json_encode($list,true);
                     $args['time'] =time();
