@@ -47,11 +47,14 @@ class VideoListDetail extends ActiveRecord {
                 }
             }else{
                 //单条数据采集
-                $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                // 插入采集数据库
-                Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-                $find_video['id']=Yii::$app->signdb->getLastInsertID();
-                // $new_list[] =$find_video;//批量插入
+                $collect_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                if(is_array($collect_video)){  //判断是否为数组，报错则跳过
+                    $find_video=$collect_video;
+                    // 插入采集数据库
+                    Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                    $find_video['id']=Yii::$app->signdb->getLastInsertID();
+                    // $new_list[] =$find_video;//批量插入
+                }
             }
             $video_list [] =$find_video;
         }
