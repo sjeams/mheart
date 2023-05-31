@@ -131,7 +131,7 @@ class VideoApiController extends VideoApiControl
                         // 是否分页--改为不分页，直接采集
                         $count = count($listvideo);
                         if($listvideo){
-                            $list= VideoListDetail::checkVideo($listvideo,$newpage);
+                            $list= VideoListDetail::checkVideo($listvideo);
                             $args['key_value'] =$sessionStr;
                             $args['value'] =  json_encode($list,true);
                             $args['time'] =time();
