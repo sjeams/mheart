@@ -15,6 +15,7 @@ use app\libs\ApiControl;
 use app\modules\app\models\UserServer;
 use app\modules\app\models\User;
 use app\modules\app\models\UserLogin;
+use app\modules\app\models\UserBiologyNatureDo;
 use Codeception\PHPUnit\Constraint\Page;
 use Yii;
 use UploadFile;
@@ -66,7 +67,7 @@ class ApiServerController extends ApiControl{
      * app/api-server/login
      * http://localhost/monster/web/app/api-server/token-login
      */
-     public function actionTokenLogin(){
+    public function actionTokenLogin(){
 
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
@@ -85,7 +86,7 @@ class ApiServerController extends ApiControl{
      * app/api-server/login
      * http://localhost/monster/web/app/api-server/login
      */
-     public function actionLogin(){
+    public function actionLogin(){
 
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
@@ -110,18 +111,20 @@ class ApiServerController extends ApiControl{
      * app/api-server/user-login
      * http://localhost/monster/web/app/api-server/user-login
      */
-     public function actionUserLogin(){
+    public function actionUserLogin(){
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         // var_dump($data);die;
         if(!empty($data['token'])){
-            $login =  UserLogin ::find()->select('id,server')->where( "token = '{$data['token']}' "  )->asArray()->One();
+            $token=$data['token'];
+            $login =  UserLogin ::find()->select('id,server')->where( "token = '$token' "  )->asArray()->One();
             if(!empty($login)){ // 验证登录
                 $userinfo =  User::find()->where( "loginid = {$login['id']}  and  server = {$login['server']} ")->asArray()->One();
                 $server =  UserServer::find()->select("id,name")->where( "id = {$login['server']} ")->asArray()->One();
                 $server['loginid'] =$login['id']; // 定义loginid
                 if(!empty($userinfo)){
                     // var_dump($userinfo);die;
+                    UserLogin::updateAll(['userid' => $userinfo['userid']],"token='$token'");
                     die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo,'server'=>$server],'message' => '登录成功'])); 
                     // 登录状态储存操作
                 }else{
@@ -134,34 +137,48 @@ class ApiServerController extends ApiControl{
         die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
     }
     /**
+     * 服务器选择-退出登录
+     * app/api-server/user-login
+     * http://localhost/monster/web/app/api-server/user-login-out
+     */
+    public function actionUserLoginOut($token){
+        UserLogin::updateAll(['token' =>''],"token='$token'");
+        die(json_encode(['code' => 1,null,'message' => 'success']));  
+    }
+
+    /**
      * 创建角色
      * app/api-server/user-login
      * http://localhost/monster/web/app/api-server/user-role
      */
-     public function actionUserRole(){
-        $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
-        if(!empty($data)){
-            $userinfo =  new User();
-            $userinfo->loginid =$data['loginid'];
-            $userinfo->server =$data['server'];
-            $userinfo->name =$data['name'];
-            $userinfo->servername =$data['servername'];
-            $userinfo->save();
-            $id = $userinfo->attributes['userid'];
-            $userinfo =  User::find()->where( "userid =$id")->asArray()->One();
-            die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo],'message' => 'succes']));   
-        }
-        die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
-     }
+    public function actionUserRole(){
+    $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
+    if(!empty($data)){
+        $userinfo =  new User();
+        $userinfo->loginid =$data['loginid'];
+        $userinfo->server =$data['server'];
+        $userinfo->name =$data['name'];
+        $userinfo->servername =$data['servername'];
+        $userinfo->save();
+        $id = $userinfo->attributes['userid'];
+        $userinfo =  User::find()->where( "userid =$id")->asArray()->One();
+        //添加阵法
+        $UserBiologyNatureDo =  new UserBiologyNatureDo();
+        $UserBiologyNatureDo->userid=$userinfo['userid'];
+        $UserBiologyNatureDo ->save();
+        die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo],'message' => 'succes']));   
+    }
+    die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
+    }
+
+
 
     /**
      * 服务器选择
      * app/api-server/user-register
      */
-     public function actionUserRegister(){
-
+    public function actionUserRegister(){
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
-
         // $page=$data['page']?$data['page']:1;
         // $pageSize=$data['pageSize']?$data['pageSize']:6;
         // $server = UserServer::find()->offset(($page-1)*$pageSize)->limit($pageSize)->asarray()->All();
@@ -172,13 +189,12 @@ class ApiServerController extends ApiControl{
     }
 
 
-
     /**
      * 
      * 服务器选择
      * app/api-server/user-server
      */
-     public function actionUserServer(){
+    public function actionUserServer(){
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         $id=$data['id'];
         $token = $data['token']?$data['token']:null;

@@ -393,6 +393,18 @@ class Method
 
  
 
+    /**
+    * 接口字符串
+    * @param $code
+    * @param $data
+    * @param $message
+    * @return string
+    * @Obelisk  sjeam(创建)
+    */
+    public static function jsonApp($code,$data,$message){
+        var_dump($data);die;
+        return json_encode(['code' => $code,'data' => $data,'message' => $message]);
+    }
 
     /**
     * 接口字符串

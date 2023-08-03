@@ -1,14 +1,25 @@
 <?php
-// 世界
+//  用户验证
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
-
+use yii;
+use app\modules\app\models\Words;
 class UserLogin extends ActiveRecord
 {
     public static function tableName(){
         return '{{%user_login}}';
     }
 
+    public static function getUserlogin($token){
+        if(!empty($token)){
+            $sql ="SELECT u.* from {{%user_login}} ul INNER JOIN {{%user}} u on ul.server=u.server and ul.id=u.loginid  where ul.token = '$token'";
+            $user_info = Yii::$app->db->createCommand($sql)->queryOne();
+            $user_info['word_type'] = Words::getUserWordGrade($user_info['grade']);
+            return $user_info;
+        }else{
+            return [];
+        }
+    }
     // /**
     //  * 查询境界列表
     //  */

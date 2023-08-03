@@ -146,13 +146,7 @@ class UserBiologyController extends ApiControl {
       $type = Yii::$app->request->post('type',1); // 创造类型    1普通 2特殊 3NPC 4不可用
       // 用户 随机获取一个生物（默认管理员--权限为已通世界）
       $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
-      if(!empty($biology)){
-        //随机生物属性处理
-        $biology = UserWords ::BiologyExtendRand($biology);
-        Yii::$app->db->createCommand()->insert('x2_biology_create',$biology)->execute();//创造生物
-        $biology['createid']=Yii::$app->db->getLastInsertID(); // 获取创造id
-        Yii::$app->db->createCommand()->insert('x2_user_biology',$biology)->execute(); //添加到用户
-      }
+      $biology = UserWords :: BiologySave($biology);
 
       // var_dump($biology);die;
       // return json_encode($biology);
@@ -160,6 +154,7 @@ class UserBiologyController extends ApiControl {
       // var_dump($biology);die;
     }
 
+    
 
 
 

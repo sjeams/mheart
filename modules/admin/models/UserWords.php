@@ -3,7 +3,7 @@
 namespace app\modules\admin\models;
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
-
+use yii;
 use app\libs\Method;
 use yii\db\ActiveRecord;
 
@@ -68,10 +68,17 @@ class UserWords extends ActiveRecord
         // var_dump($biology);die;
         return $biology;
     }
-    
+    public static function BiologySave($biology){
 
-
-
-
+        if(!empty($biology)){
+            //随机生物属性处理
+            $biology = UserWords ::BiologyExtendRand($biology);
+            Yii::$app->db->createCommand()->insert('x2_biology_create',$biology)->execute();//创造生物
+            $biology['createid']=Yii::$app->db->getLastInsertID(); // 获取创造id
+            Yii::$app->db->createCommand()->insert('x2_user_biology',$biology)->execute(); //添加到用户
+            $biology['id']= Yii::$app->db->getLastInsertID();
+        }
+        return $biology;
+    }
 
 }

@@ -2,27 +2,33 @@
 // 世界
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
-
+use yii;
 class User extends ActiveRecord
 {
+    public $user_info; 
+    public $userid; 
+    function init(){
+        $this->user_info =  Yii::$app->session->get('user_info');
+        $this->userid =  $this->user_info['userid'];
+    }
     public static function tableName(){
         return '{{%user}}';
     }
+ 
+    public static   function getUserEnergy(){
+        (new User())->userBiologyList();
+        $data =  (new User())->getEnergy();
+        return $data;
+    }
+    // 用户能量-体力
+    public  function getEnergy(){  
+        return $this->user_info;
+    } 
 
-    // /**
-    //  * 查询境界列表
-    //  */
-    // public static function getValueList(){
-    //   $data = Words::find()->select('*,id as key,name as text')->asarray()->All();
-    //   return $data;
-    // }
+    //恢复能量--+20/h --自动任务/小时
+    public  function userBiologyList(){  
+        User::updateAll(['energy'=>new Yii\db\Expression("energy+20")],'energy < 120');
+    }
 
-    // /**
-    //  * 查询境界列表
-    //  */
-    //  public static function getValueListtype($page=1,$pageSize=20,$where=""){
-    //     $data['data'] = Words::find()->select("*,typeName as words,")->where(" $where")->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
-    //     $data ['total'] = Words::find()->select("id")->asarray()->count();
-    //     return $data;
-    //   }
+
 }

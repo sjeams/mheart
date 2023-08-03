@@ -2,7 +2,7 @@
 // 世界
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
-
+use yii;
 class UserServer extends ActiveRecord
 {
     public static function tableName(){
