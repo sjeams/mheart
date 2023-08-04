@@ -581,7 +581,7 @@ class Method
 
 
 
-  //物品等级
+  //物品等级--触发概率计算
   public static function getRandGrade($proArr) { 
     // $proArr=array('传说'=>1,'SSS'=>10,'SS'=>50,'S'=>100,'A'=>200,'B'=>500,'C'=>1000);//定义物品等级
     $result = ''; 
@@ -602,14 +602,71 @@ class Method
     return $result; 
   }
 
+  //技能发动顺序  bout 回合默认为0 --is_do 回合类型-是否触发  1触发 0 触发
+  public static function getSkillSort($data,$bout=0){
+    // 技能类型(0初始化,1回合化--初始化,被击前触发,被击后触发,攻击前触发,主动,攻击后触发）
+    $position = 0;//攻击位置 位置position_id
+    $attack = POSITION_ENEMY; //攻击对象--默认为敌人
+    //根据类型重新写入列表--主动 和被动
+    $skill_zd=[];  //主动
+    $skill_bd=[];  //被动
+    foreach($data as$key=> $v){
+        $belong = $v['belong'];
+        switch($belong){
+            case 0: //初始化
+                if($bout==1){
+                    $skill_bd[$key]= $v;
+                }
+            case 1: //回合化--初始化   // 回合开始触发技能 类似于--3-5个回合和消失 的护盾，攻击之类的，初始化不再有值--可以随时加入技能
+                if($bout<=$v['bout']){ //查看技能 的回合持续时间
+                    $skill_bd[$key]= $v;
+                }
+            break;
+            case 2: //被击前触发
+                $skill_bd[$key]= $v;
+            break;
+            case 3: //被击后触发
+                    $skill_bd[$key]= $v;
+            case 4: //攻击前触发 
+                    $skill_bd[$key]= $v;
+            break;
+            case 5: //主动）
+                $skill_zd[$key]= $v;
+            break;
+            case 6: //攻击后触发
+                $skill_bd[$key]= $v;
+            break;
+        }
+    }
+    //随机取一个
+    if($skill_zd){
+        $zhudong_key = array_rand($skill_zd);
+        $zd[$zhudong_key] = $skill_zd[$zhudong_key];
+        $attack = intval($skill_zd[$zhudong_key]['attack']);
+        $skill_zd = $zd;
+    }
+    $data =array_merge($skill_bd,$skill_zd);
+    $belong_sort = array_column($data,'belong');
+    //根据攻击类型排序
+    array_multisort( $belong_sort,SORT_ASC,$data);
+    return array(
+        'position'=>$position,
+        'skill'=>$data,
+        'attack'=>$attack,
+    );
+  }
 
-
-
-
-
-
-
-
+  
+    /** 数组分组
+    * sjeam
+    * 参数 ： arrayfilter(数组，字段，字段值）
+    */
+    public static function arrayfilter($action,$str,$value){
+        $data = array_filter($action, function($val) use($str,$value) { return $val[$str]== $value; }); 
+        ksort($data); //排序
+        return $data;
+    }
+  
     //  总属性最大值为210   --暂时没用
     //划分随机数  total总值  arrayMax最大值数组 arrayMin 最小值数组 wordtype世界难度+每个难度属性区间上升5,difficult加难度的属性1
     // public static function divideRand($total = 70,$arrayMax = array(10,20,30),$wordId=1){

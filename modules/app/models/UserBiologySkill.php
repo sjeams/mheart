@@ -31,7 +31,7 @@ class UserBiologySkill extends ActiveRecord
     
     public  function  mySkill($userBiologyid){  
 
- 
+        
     }
  
 }
