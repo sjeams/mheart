@@ -8,6 +8,7 @@
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\libs\Method;
+use app\modules\admin\models\BiologyBiology;
 use app\modules\admin\models\BiologySkill;
 use app\modules\admin\models\BiologySkillPosition;
 use app\modules\admin\models\BiologySkillPositionType;
@@ -254,6 +255,7 @@ class UserBiologyNatureDo extends ActiveRecord
     }
     //攻击位置计算
     public function attackPosition($attack_biology,$position_my,$position_enemy){
+        $position_in = $attack_biology['position'];//当前生物位置 
         $position_my = $attack_biology['position_my'];//当前生物1自己  2敌方  
         $fight_skill = $attack_biology['fight_skill'];//生物技能
         foreach($fight_skill as $skill){
@@ -261,11 +263,15 @@ class UserBiologyNatureDo extends ActiveRecord
             $position = $skill['position'];    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
             $position_type = $skill['positionType'];//攻击对象类型
             if($attack){ // 0 直接跳过
+                //技能使用对象
+                $attaatt_positionck = $attack==POSITION_MY?$position_my:$position_enemy;
                 // $this->attackSkill($skill,$position_my);//技能触发的对象   自己使用1 敌方使用2 
                 if($position_my == POSITION_MY){ //自己单位
+                    BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my);
                     // $this->attackSkillHut($position,$position_type);
                 }else if($position_my == POSITION_ENEMY){//敌方单位
                     // $this->attackSkillHut($position,$position_type);
+                    BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my);
                 }else{
                     //中立跳过
                 }
