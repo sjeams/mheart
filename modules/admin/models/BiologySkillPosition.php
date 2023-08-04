@@ -10,12 +10,12 @@ class BiologySkillPosition extends ActiveRecord
     }
 
     //攻击位置 自己位置   攻击类型   位置列表   是否是自己
-    public static function getPositionExtend($position,$position_type,$att_position,$position_my){
+    public static function getPositionExtend($position_in,$position,$position_type,$att_position,$position_my){
         $int=0;//返回位置
         switch($position){
             case 0: //普通攻击
                 if($position_my){
-                    $int[]=1;
+                    $int[]=$position_in;
                 }else{
 
                 }
