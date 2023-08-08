@@ -229,15 +229,14 @@ class UserBiologyNatureDo extends ActiveRecord
     // 战斗伤害顺序
     public function getFighHurt($merge_biology,$bout){
         //循环生物进行战斗
-        $position_my = Method::arrayfilter($merge_biology,'position_my',POSITION_MY);//获取敌方阵容
-        $position_enemy = Method::arrayfilter($merge_biology,'position_my',POSITION_ENEMY);//获取敌方阵容
-        $position_my  = array_column($position_my,'position'); //获取自己位置
-        $position_enemy  = array_column($position_enemy,'position_enemy'); //获取敌人位置
+
+        $position_my_list = Method::arrayfilter($merge_biology,'position_my',POSITION_MY);//获取敌方阵容
+        $position_enemy_list = Method::arrayfilter($merge_biology,'position_my',POSITION_ENEMY);//获取敌方阵容
         // // 过滤生命=0的数据
         // $poition_winner = array_keys(array_filter(array_column($position,'shengMing')));
         foreach($merge_biology as $attack_biology){
             // 攻击位置计算
-            $this->attackPosition($attack_biology,$position_my,$position_enemy); //主动攻击
+            $this->attackPosition($attack_biology,$position_my_list,$position_enemy_list); //主动攻击
             // $this->attackPosition($attack_biology,0,$position_my); //被动攻击
             //伤害顺序列表
             // if($position_skill['position']){
@@ -254,47 +253,99 @@ class UserBiologyNatureDo extends ActiveRecord
         return $merge_biology;
     }
     //攻击位置计算
-    public function attackPosition($attack_biology,$position_my,$position_enemy){
+    public function attackPosition($attack_biology,$position_my_list,$position_enemy_list){
         $position_in = $attack_biology['position'];//当前生物位置 
         $position_my = $attack_biology['position_my'];//当前生物1自己  2敌方  
         $fight_skill = $attack_biology['fight_skill'];//生物技能
+
+        //类型列表
+        $int=[];//攻击位置
+        $position_type_list = BiologySkillPositionType::positionTypeList();
+        $position_type=0;
         foreach($fight_skill as $skill){
-            $attack = $skill['attack'];//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
-            $position = $skill['position'];    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
-            $position_type = $skill['positionType'];//攻击对象类型
-            if($attack){ // 0 直接跳过
+            $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
+            $position = intval($skill['position']);    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
+            $position_type = intval($skill['positionType']);//攻击对象类型 --优先攻击排序
+            $position_my_list_new= $position_my_list;
+            $position_enemy_listt_new= $position_enemy_list;
+            //排序
+            if($position_type){
+                $position_my_list_new= BiologySkillPosition:: getPositionType($position_type,$position_my_list,$position_type_list);
+                $position_enemy_listt_new= BiologySkillPosition:: getPositionType($position_type,$position_enemy_list,$position_type_list);
+            }
+            $position_my_list_new  = array_column($position_my_list_new,'position'); //获取自己位置
+            $position_enemy_listt_new  = array_column($position_enemy_listt_new,'position'); //获取敌人位置
+            if($attack){ // 0 直接跳过--被攻击--被动跳过
                 //技能使用对象
-                $attaatt_positionck = $attack==POSITION_MY?$position_my:$position_enemy;
+                $attaatt_positionck = $attack==POSITION_MY?$position_my_list_new:( $attack==POSITION_ENEMY?$position_enemy_listt_new:[]);
                 // $this->attackSkill($skill,$position_my);//技能触发的对象   自己使用1 敌方使用2 
                 if($position_my == POSITION_MY){ //自己单位
-                    BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my);
+                    $int= BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my,$skill);
                     // $this->attackSkillHut($position,$position_type);
                 }else if($position_my == POSITION_ENEMY){//敌方单位
                     // $this->attackSkillHut($position,$position_type);
-                    BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my);
+                    $int= BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$position_my,$skill);
                 }else{
                     //中立跳过
                 }
+
+                $this->attackSkill($position_my,$attack_biology,$int,$skill);
+
+                var_dump($skill);//技能
+                var_dump($int);die;//攻击位置
             }
         }
-        var_dump($position_my);die;
+        var_dump($fight_skill);die;
     }
 
-    //被击位置计算
-    public function attackPositionBack($attack_biology,$position_my,$position_enemy){
+    //被击位置计算--被击触发
+    public function attackPositionBack($attack_biology,$position_my_list,$position_enemy_list){
+
+        // foreach($fight_skill as $skill){
+            
+        // }
+    }
+    //技能触发，造成伤害
+    public function attackSkill($position_my,$attack_biology,$int,$skill){
+        $status = $skill['status'];//1物理 2 法术 3 特殊（ 无视闪避等技能 只能特殊技能抵挡）
+        $keeptime = $skill['keeptime'];//技能伤害持续回合
+        $bout = $skill['bout'];//回合数
+        $belong = $skill['belong'];//技能类型(0初始化,1回合化--初始化,被击前触发,被击后触发,攻击前触发,主动,攻击后触发）
+        $extend = $skill['extend'];//造成伤害类型
+        $status = $skill['status'];//伤害计算类型
+        $value = intval($skill['value']);//伤害计算类型--每级增加30%
+        $percent  = (100+$value*30);
+        $hurt = intval($skill['hurt']);//伤害固定值   zhaoHuan时-(生物id)
+        if(isset($attack_biology[$extend])){ 
+            //存在的，不存在为特殊的
+            $attack_biology[$extend] = (intval($attack_biology[$extend])+$hurt); 
+        }else{
+            //不存在为特殊的
+            
+            // 召唤--根据固定的生物id召唤
+            switch($extend){
+                case 'zhaoHuan':
+                    $s_value=  intval($attack_biology[$status]);
+
+                    // $status  力量
+                    var_dump(111);die;
+                break;
+            }
+            
+            // 无敌
+            // 清晰
+            // 控制类型buff
+            //伤害分摊fenTan
+            var_dump(111);die;
+        }
+        var_dump($skill);
+        var_dump($attack_biology);die; 
 
     }
+   //技能触发，造成伤害--容器--有增有减，可以清除--限定持续回合等
+    public  function attackSkillHurt($position_my,$merge_biology,$int,$skill){
 
-    // //技能触发，造成伤害
-    // public function attackSkill($position_my,$skill){
-
-
-    // }
-
-    // //技能攻击伤害计算
-    // public  function attackSkillHut($position,$position_type){
-
-    // }
+    }
 
     //战斗buff--持续回合计算
 
