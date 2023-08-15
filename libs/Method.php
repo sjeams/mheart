@@ -656,7 +656,25 @@ class Method
     );
   }
 
-  
+  public static function percentHurt($status,$hurt,$value,$formula){
+
+    $status=intval($status);
+    $hurt=intval($hurt);
+    $value=intval($value);
+    if($formula){
+        //附带属性
+        $result = eval("return ($status.$formula);");
+        $percent  = 1+$value*0.2;
+    }else{
+        $result=0;
+        $percent = 1+$value*0.2;
+    }
+    $att = $percent*($result+$hurt);
+    return $att;
+}
+
+
+
     /** 数组分组
     * sjeam
     * 参数 ： arrayfilter(数组，字段，字段值）

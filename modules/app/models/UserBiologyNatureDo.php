@@ -310,23 +310,28 @@ class UserBiologyNatureDo extends ActiveRecord
         $status = $skill['status'];//1物理 2 法术 3 特殊（ 无视闪避等技能 只能特殊技能抵挡）
         $keeptime = $skill['keeptime'];//技能伤害持续回合
         $bout = $skill['bout'];//回合数
-        $belong = $skill['belong'];//技能类型(0初始化,1回合化--初始化,被击前触发,被击后触发,攻击前触发,主动,攻击后触发）
+        $belong = $skill['belong'];//技能类型(0初始化,1回合化--初始化,2被击前触发,3被击后触发,4攻击前触发,5主动,6攻击后触发）
         $extend = $skill['extend'];//造成伤害类型
+        
         $status = $skill['status'];//伤害计算类型
+        $formula = $skill['formula'];//公式
         $value = intval($skill['value']);//伤害计算类型--每级增加30%
-        $percent  = (100+$value*30);
         $hurt = intval($skill['hurt']);//伤害固定值   zhaoHuan时-(生物id)
         if(isset($attack_biology[$extend])){ 
-            //存在的，不存在为特殊的
-            $attack_biology[$extend] = (intval($attack_biology[$extend])+$hurt); 
+            //属性存在的，普通的
+            //计算伤害
+            $hurt = Method::percentHurt($attack_biology[$status],$hurt,$value,$formula);
+            if($belong==ATTACK5){ //主动技能
+                
+            }else{
+                $attack_biology[$extend] = (intval($attack_biology[$extend])+$hurt);
+            }
         }else{
-            //不存在为特殊的
-            
+            //属性不存在，特殊的
             // 召唤--根据固定的生物id召唤
             switch($extend){
                 case 'zhaoHuan':
                     $s_value=  intval($attack_biology[$status]);
-
                     // $status  力量
                     var_dump(111);die;
                 break;
@@ -342,6 +347,8 @@ class UserBiologyNatureDo extends ActiveRecord
         var_dump($attack_biology);die; 
 
     }
+
+    
    //技能触发，造成伤害--容器--有增有减，可以清除--限定持续回合等
     public  function attackSkillHurt($position_my,$merge_biology,$int,$skill){
 
