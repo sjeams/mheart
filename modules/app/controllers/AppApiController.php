@@ -2,7 +2,7 @@
 /*
  * @Author: sjeam
  * @Date: 2022-06-13 16:34:53
- * @Description:  app 接口
+ * @Description:  app 接口---模型窗口
  */
 namespace app\modules\app\controllers;
 
@@ -21,10 +21,6 @@ use app\modules\app\models\UserBiologySkill;
 use app\modules\app\models\UserLogin;
 use app\modules\app\models\Words;
 use app\modules\app\models\UserServer;
-
-
-
-
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');

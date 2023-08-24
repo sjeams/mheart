@@ -17,9 +17,13 @@ class UserBiologyNatureDo extends ActiveRecord
 {
     public $user_info; 
     public $userid; 
+    public $my_biology_extend; //生物位置 1
+    public $do_biology_extend; //生物位置 2
+    public $merge_biology_extend;//所有生物速度顺序 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
+
     }
     public static function tableName(){
         return '{{x2_user_biology_nature_do}}';
@@ -66,17 +70,14 @@ class UserBiologyNatureDo extends ActiveRecord
 
 
 // ----------------------------------------
-    //战斗系统
-    public function getFightSystem($my_biology,$do_biology){
-        //战斗属性调用
-        $merge_biology = $this->fightingExtend($my_biology,$do_biology);
-        //开启循环战斗--初始回合
-        $fight_history = $this->fighting($merge_biology);//返回战斗记录
-        var_dump($fight_history);die;
-       //结算奖励 
-    }
-    
 
+    //初始化定位 //----战斗开始前必须先跑这个
+    public function getBiologyInit($merge_biology_list){
+        Method::setBiologyPosition($merge_biology_list); 
+        $this->my_biology_extend = Method::getBiologyPosition(POSITION_MY);
+        $this->do_biology_extend = Method::getBiologyPosition(POSITION_ENEMY);
+        $this->merge_biology_extend = Method::getBiologyPosition(MERGE_BIOLOGY);
+    }
     public function fightingExtend($my_biology,$do_biology){
         //战斗属性调用
         $my_biology = $this->getFightAttribute($my_biology);
@@ -86,35 +87,48 @@ class UserBiologyNatureDo extends ActiveRecord
         $do_biology_sort = $this->getFightSort($do_biology,POSITION_ENEMY);//2敌方
         // var_dump($do_biology_sort);die;
         //合并，区分左边还是右边。循环按速度-顺序攻击--全灭胜利。时间到，挑战方失败。 对战剩余数量多胜利
-        $merge_biology = array_merge($my_biology_sort,$do_biology_sort);
+        $merge_biology_list = array_merge($my_biology_sort,$do_biology_sort);
         //根据速度排序
-        array_multisort(array_column($merge_biology,'suDu'),SORT_DESC,$merge_biology);
-        return $merge_biology;
+        array_multisort(array_column($merge_biology_list,'suDu'),SORT_DESC,$merge_biology_list);
+        return $merge_biology_list;
     }
 
-    public function fighting($merge_biology,$fight_history=[],$bout=0){
+    //战斗系统--主进程
+    public function getFightSystem($my_biology,$do_biology){
+        //战斗属性调用
+        $merge_biology_list =$this->fightingExtend($my_biology,$do_biology);
+        //设置容器--战斗初始化
+        $this->getBiologyInit($merge_biology_list);  //----战斗开始前必须先跑这个
+        //开启循环战斗--初始回合
+        $fight_history = $this->fighting();//返回战斗记录
+        var_dump($fight_history);die;
+       //结算奖励 
+    }
+
+
+    ///开启循环战斗--初始回合
+    public function fighting($fight_history=[],$bout=0){
         $bout++;
         // var_dump($bout);
         // --主动和被动都是根据概率触发  --主动技能只保留一个
-        $merge_biology = $this->getFightDoing($merge_biology,$bout);//触发技能--循环技能--自方和敌方技能触发--
-        $merge_biology = $this->getFighHurt($merge_biology,$bout);//战斗伤害--循环技能--每次战斗 都要循环winner--胜利后跳出 返回战斗记录结果
-        $poition_winner = $this->victory($merge_biology,$bout);//再次检查胜利者
+        $this->getFightDoing($bout);//触发技能--循环技能--自方和敌方技能触发--
+        $this->getFighHurt($bout);//战斗伤害--循环技能--每次战斗 都要循环winner--胜利后跳出 返回战斗记录结果
+        $poition_winner = $this->victory($bout);//再次检查胜利者
         // 回合战斗结果写入记录
         $fight_history[$bout]= array(
             'bout'=> $bout,
             'poition_winner'=> $poition_winner,
-            'merge_biology'=> $merge_biology,
+            'merge_biology_extend'=> $this->merge_biology_extend,
          );
          // 胜利跳出循环  0无 1自己 2敌方
         if($poition_winner==POSITION_NO){
-            $fight_history = $this->fighting($merge_biology,$fight_history,$bout);
+            $fight_history = $this->fighting($fight_history,$bout);
         } 
         return  $fight_history;
     }
 
-
     //胜利者
-    public function victory($fight_skill,$bout){
+    public function victory($bout){
         $list = array(POSITION_MY,POSITION_ENEMY);
         //大于180回合直接失败
         if($bout==FIGHT_BOUT){
@@ -122,7 +136,7 @@ class UserBiologyNatureDo extends ActiveRecord
         }else{
             // 0无胜利者  1己方 2 敌方
             foreach($list as $i){
-                $position = Method::arrayfilter($fight_skill,'position_my',$i);
+                $position = Method::arrayfilter($this->merge_biology_extend,'position_my',$i);
                 // 过滤生命=0的数据
                 $poition_winner = array_keys(array_filter(array_column($position,'shengMing')));
                 if(empty($poition_winner)){ 
@@ -134,9 +148,6 @@ class UserBiologyNatureDo extends ActiveRecord
             return POSITION_NO;
         }
     }
-
-
-
 
 
     //获取战斗属性
@@ -189,20 +200,18 @@ class UserBiologyNatureDo extends ActiveRecord
         return $r_data;
     }
     //战斗回合--开始回合  $bout 回合默认为1 第一回合开启回合技能
-    public function getFightDoing($data,$bout=1){
+    public function getFightDoing( $bout=1){
         //循环时间 还是 循环数组--根据枚举180秒定时器战斗
-        foreach($data as$key=> $v){
+        foreach($this->merge_biology_extend as$key=> $v){
             //触发技能--返回被动和主动技能--根据发动顺序排序--攻击定位0 默认攻击
             $position_skill = $v['position_skill'];//技能列表--不变的
             $skill_list =  $this->getFightSkill($v['position_skill']); //是否触发技能--技能id数组
             $position_skill = array_intersect_key($position_skill,array_flip($skill_list));//返回触发的技能
             $position_skill = Method::getSkillSort($position_skill,$bout);//执行顺序，并保只留一个主动技能--返回攻击类型，普通攻击还是主动技能   默认1 开启第一回合技能触发
-            $data[$key]['fight_skill'] = $position_skill['skill'];//回合的战斗技能
+            $this->merge_biology_extend[$key]['fight_skill'] = $position_skill['skill'];//回合的战斗技能
             // $data[$key]['fight_position'] = $position_skill['position'];//回合的战斗技能-攻击位置
             // $data[$key]['fight_attack'] = $position_skill['attack'];//技能对象 0无 自己 1 敌方2
         }
-
-        return $data;
     }
 
     //技能触发--返回触发的技能id
@@ -227,14 +236,14 @@ class UserBiologyNatureDo extends ActiveRecord
     }  
 
     // 战斗伤害顺序
-    public function getFighHurt($merge_biology,$bout){
+    public function getFighHurt($bout){
         //循环生物进行战斗
 
-        $position_my_list = Method::arrayfilter($merge_biology,'position_my',POSITION_MY);//获取敌方阵容
-        $position_enemy_list = Method::arrayfilter($merge_biology,'position_my',POSITION_ENEMY);//获取敌方阵容
+        $position_my_list = Method::arrayfilter($this->merge_biology_extend,'position_my',POSITION_MY);//获取敌方阵容
+        $position_enemy_list = Method::arrayfilter($this->merge_biology_extend,'position_my',POSITION_ENEMY);//获取敌方阵容
         // // 过滤生命=0的数据
         // $poition_winner = array_keys(array_filter(array_column($position,'shengMing')));
-        foreach($merge_biology as $attack_biology){
+        foreach($this->merge_biology_extend as $attack_biology){
             // 攻击位置计算
             $this->attackPosition($attack_biology,$position_my_list,$position_enemy_list); //主动攻击
             // $this->attackPosition($attack_biology,0,$position_my); //被动攻击
@@ -244,13 +253,13 @@ class UserBiologyNatureDo extends ActiveRecord
             // }else{
                 
             // }
-           $winner = $this->victory($merge_biology,$bout);//战斗后--检查胜利者
+           $winner = $this->victory($bout);//战斗后--检查胜利者
             if($winner){
                //跳出循环
            }
         }  
+        $this->getBiologyInit($this->merge_biology_extend); //----每回合-重置一次容器
         // var_dump($position_skill);die;
-        return $merge_biology;
     }
     //攻击位置计算
     public function attackPosition($attack_biology,$position_my_list,$position_enemy_list){
@@ -288,9 +297,12 @@ class UserBiologyNatureDo extends ActiveRecord
                 }else{
                     //中立跳过
                 }
-
-                $this->attackSkill($position_my,$attack_biology,$int,$skill);
-
+                if($int){
+                    //循环攻击位置
+                    foreach($int as $pid){
+                        $this->attackSkill($position_my,$attack_biology,$pid,$skill);
+                    }
+                }
                 var_dump($skill);//技能
                 var_dump($int);die;//攻击位置
             }
@@ -306,46 +318,64 @@ class UserBiologyNatureDo extends ActiveRecord
         // }
     }
     //技能触发，造成伤害
-    public function attackSkill($position_my,$attack_biology,$int,$skill){
-        $status = $skill['status'];//1物理 2 法术 3 特殊（ 无视闪避等技能 只能特殊技能抵挡）
-        $keeptime = $skill['keeptime'];//技能伤害持续回合
-        $bout = $skill['bout'];//回合数
-        $belong = $skill['belong'];//技能类型(0初始化,1回合化--初始化,2被击前触发,3被击后触发,4攻击前触发,5主动,6攻击后触发）
-        $extend = $skill['extend'];//造成伤害类型
-        
-        $status = $skill['status'];//伤害计算类型
-        $formula = $skill['formula'];//公式
-        $value = intval($skill['value']);//伤害计算类型--每级增加30%
-        $hurt = intval($skill['hurt']);//伤害固定值   zhaoHuan时-(生物id)
-        if(isset($attack_biology[$extend])){ 
-            //属性存在的，普通的
-            //计算伤害
-            $hurt = Method::percentHurt($attack_biology[$status],$hurt,$value,$formula);
-            if($belong==ATTACK5){ //主动技能
-                
-            }else{
-                $attack_biology[$extend] = (intval($attack_biology[$extend])+$hurt);
-            }
+    public function attackSkill($position_my,$attack_biology,$pid,$skill){
+        // var_dump($this->merge_biology_extend);die;
+        if($position_my == POSITION_MY){
+            $attack_biology =  $this->my_biology_extend['position'][$pid];
+        }else if($position_my == POSITION_ENEMY){//敌方单位
+            $attack_biology =  $this->do_biology_extend['position'][$pid];
         }else{
-            //属性不存在，特殊的
-            // 召唤--根据固定的生物id召唤
-            switch($extend){
-                case 'zhaoHuan':
-                    $s_value=  intval($attack_biology[$status]);
-                    // $status  力量
-                    var_dump(111);die;
-                break;
-            }
-            
-            // 无敌
-            // 清晰
-            // 控制类型buff
-            //伤害分摊fenTan
-            var_dump(111);die;
+            $attack_biology =[];
         }
-        var_dump($skill);
-        var_dump($attack_biology);die; 
-
+        if($attack_biology){
+            // var_dump($this->merge_biology_extend);
+            // $this->merge_biology_extend[0]['id']=788;
+            // var_dump($this->merge_biology_extend);
+            // var_dump($this->my_biology_extend['position'][$pid]);die;
+            $status = $skill['status'];//1物理 2 法术 3 特殊（ 无视闪避等技能 只能特殊技能抵挡）
+            $keeptime = $skill['keeptime'];//技能伤害持续回合
+            $bout = $skill['bout'];//回合数
+            $belong = $skill['belong'];//技能类型(0初始化,1回合化--初始化,2被击前触发,3被击后触发,4攻击前触发,5主动,6攻击后触发）
+            $extend = $skill['extend'];//造成伤害类型
+        
+            $status = $skill['status'];//伤害计算类型
+            $formula = $skill['formula'];//公式
+            $isadd = intval($skill['isadd']);//公式0减少1增加
+            $value = intval($skill['value']);//伤害计算类型--每级增加30%
+            $hurt = $skill['hurt'];//伤害固定值   zhaoHuan时-(生物id)
+            if(isset($attack_biology[$extend])){ 
+                //属性存在的，普通的
+                //计算伤害
+                $hurt = Method::percentHurt($attack_biology[$status],$hurt,$value,$formula,$isadd);
+                $to_hurt = (intval($attack_biology[$extend])+$hurt); //造成伤害，基础伤害+公式
+                if($belong==ATTACK5){ //主动技能
+                    
+                }else{
+                    // 附加属性
+                    $attack_biology[$extend] = $to_hurt;
+                }
+            }else{
+                //属性不存在，特殊的
+                // 召唤--根据固定的生物id召唤
+                switch($extend){
+                    case 'zhaoHuan':
+                        $s_value=  intval($attack_biology[$status]);
+                        // $status  力量
+                        var_dump(111);die;
+                    break;
+                }
+                
+                // 无敌
+                // 清晰
+                // 控制类型buff
+                //伤害分摊fenTan
+                var_dump(111);die;
+            }
+            var_dump($skill);
+            var_dump($attack_biology);die; 
+            //重新赋值
+            $this->merge_biology_extend[$pid]=$attack_biology;
+        }
     }
 
     

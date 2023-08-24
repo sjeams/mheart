@@ -2,7 +2,7 @@
 /*
  * @Author: sjeam
  * @Date: 2022-06-13 16:34:53
- * @Description:  app 接口
+ * @Description:  app 接口--操作属性
  */
 namespace app\modules\app\controllers;
 

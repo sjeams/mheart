@@ -1,5 +1,7 @@
 <?php
 namespace app\libs;
+
+use app\modules\admin\models\Biology;
 use yii;
 use yii\data\Pagination;
 use app\modules\admin\models\Words;
@@ -656,10 +658,10 @@ class Method
     );
   }
 
-  public static function percentHurt($status,$hurt,$value,$formula){
-
+  public static function percentHurt($status,$hurt,$value,$formula,$isadd){
+    $isadd=intval($isadd);
     $status=intval($status);
-    $hurt=intval($hurt);
+    $hurt=$hurt;
     $value=intval($value);
     if($formula){
         //附带属性
@@ -669,10 +671,13 @@ class Method
         $result=0;
         $percent = 1+$value*0.2;
     }
-    $att = $percent*($result+$hurt);
+    if($isadd){
+        $att = $percent*(+$result+$hurt);
+    }else{
+        $att = $percent*(-$result+$hurt);
+    }
     return $att;
 }
-
 
 
     /** 数组分组
@@ -684,7 +689,57 @@ class Method
         ksort($data); //排序
         return $data;
     }
-  
+    
+    //生物容器
+    public static  function setBiologyPosition($merge_biology_extend){
+        //生物初始属性备份
+        foreach($merge_biology_extend as$key=>$v){
+            $merge_biology_extend[$key]['biology_start_extend']=$v;
+        }
+        $merge_biology_extend = array_column($merge_biology_extend,null,'id');//id作为key
+
+        //九宫格位置
+        $position=[];
+        for ($i=1; $i<=9; $i++){
+            $position[$i]=[];
+        }
+        $my_biology_extend['position']=$position;
+        $do_biology_extend['position']=$position;
+        $position_my_list = Method::arrayfilter($merge_biology_extend,'position_my',POSITION_MY);//获取敌方阵容
+        $position_enemy_list = Method::arrayfilter($merge_biology_extend,'position_my',POSITION_ENEMY);//获取敌方阵容
+        $position_my_list = array_column($position_my_list,null,'position');
+        $position_enemy_list = array_column($position_enemy_list,null,'position');
+        foreach($position_my_list as$key=> $v){
+            $my_biology_extend['position'][$key]=$v;//写入定位
+        }
+        foreach($position_enemy_list as$key=> $v){
+            $do_biology_extend['position'][$key]=$v;//写入定位
+        }
+        // $my_biology['position_my_list'] = $position_my_list;
+        // $do_biology['position_enemy_list'] =  $position_enemy_list;
+        Yii::$app->session->set('my_biology_extend',$my_biology_extend);
+        Yii::$app->session->set('do_biology_extend',$do_biology_extend); 
+        Yii::$app->session->set('merge_biology_extend',$merge_biology_extend); 
+ 
+    }
+    // 获取生物容器
+    public static  function getBiologyPosition($type){
+        switch($type){
+            case POSITION_MY: 
+                $data=  Yii::$app->session->get('my_biology_extend');   
+            break;
+            case POSITION_MY: 
+                $data=  Yii::$app->session->get('do_biology_extend');     
+            break;
+            case MERGE_BIOLOGY: 
+                $data=  Yii::$app->session->get('merge_biology_extend');    
+            break;
+        }
+        return $data;
+    }   
+
+
+
     //  总属性最大值为210   --暂时没用
     //划分随机数  total总值  arrayMax最大值数组 arrayMin 最小值数组 wordtype世界难度+每个难度属性区间上升5,difficult加难度的属性1
     // public static function divideRand($total = 70,$arrayMax = array(10,20,30),$wordId=1){
