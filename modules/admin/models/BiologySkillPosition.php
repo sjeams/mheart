@@ -16,10 +16,10 @@ class BiologySkillPosition extends ActiveRecord
  
         switch($position){
             case 0: //普通攻击--第一顺位攻击
-                if($position_my){ 
-                    $int[]=$att_position[0];//敌方生物位置
-                }else{
+                if($position_my==POSITION_MY){ 
                     $int[]=$position_in;//自己生物位置
+                }else{
+                    $int[]=$att_position[0];//敌方生物位置
                 }
             break;
             case 1: //随机5个单位

@@ -604,40 +604,47 @@ class Method
     return $result; 
   }
 
-  //技能发动顺序  bout 回合默认为0 --is_do 回合类型-是否触发  1触发 0 触发
-  public static function getSkillSort($data,$bout=0){
+  //技能发动顺序  bout 回合默认为0 --is_do  0被动  1触发 2主动
+  public static function getSkillSort($data,$bout=0,$is_do){
     // 技能类型(0初始化,1回合化--初始化,被击前触发,被击后触发,攻击前触发,主动,攻击后触发）
     $position = 0;//攻击位置 位置position_id
     $attack = POSITION_ENEMY; //攻击对象--默认为敌人
     //根据类型重新写入列表--主动 和被动
-    $skill_zd=[];  //主动
-    $skill_bd=[];  //被动
+    $skill_zd=[];  //主动技能
+    $skill_bd=[];  //主动触发
+    $beji=[];  //被动
     foreach($data as$key=> $v){
         $belong = $v['belong'];
-        switch($belong){
-            case 0: //初始化
-                if($bout==1){
+        $attack_belong = $v['attack'];
+        //被动不写入触发
+        if($attack_belong==POSITION_NO){
+            $beji[]= $v;
+        }else{
+            switch($belong){
+                case 0: //初始化
+                    if($bout==1){
+                        $skill_bd[$key]= $v;
+                    }
+                case 1: //回合化--初始化   // 回合开始触发技能 类似于--3-5个回合和消失 的护盾，攻击之类的，初始化不再有值--可以随时加入技能
+                    if($bout<=$v['bout']){ //查看技能 的回合持续时间
+                        $skill_bd[$key]= $v;
+                    }
+                break;
+                case 2: //被击前触发
                     $skill_bd[$key]= $v;
-                }
-            case 1: //回合化--初始化   // 回合开始触发技能 类似于--3-5个回合和消失 的护盾，攻击之类的，初始化不再有值--可以随时加入技能
-                if($bout<=$v['bout']){ //查看技能 的回合持续时间
+                break;
+                case 3: //被击后触发
+                        $skill_bd[$key]= $v;
+                case 4: //攻击前触发 
+                        $skill_bd[$key]= $v;
+                break;
+                case 5: //主动）
+                    $skill_zd[$key]= $v;
+                break;
+                case 6: //攻击后触发
                     $skill_bd[$key]= $v;
-                }
-            break;
-            case 2: //被击前触发
-                $skill_bd[$key]= $v;
-            break;
-            case 3: //被击后触发
-                    $skill_bd[$key]= $v;
-            case 4: //攻击前触发 
-                    $skill_bd[$key]= $v;
-            break;
-            case 5: //主动）
-                $skill_zd[$key]= $v;
-            break;
-            case 6: //攻击后触发
-                $skill_bd[$key]= $v;
-            break;
+                break;
+            }
         }
     }
     //随机取一个
@@ -647,7 +654,14 @@ class Method
         $attack = intval($skill_zd[$zhudong_key]['attack']);
         $skill_zd = $zd;
     }
-    $data =array_merge($skill_bd,$skill_zd);
+    
+    if($is_do==POSITION_NO){
+        // var_dump(111);die;
+        $data =  $beji;
+        $attack = POSITION_NO;
+    }else{
+        $data = array_merge($skill_bd,$skill_zd);
+    }
     $belong_sort = array_column($data,'belong');
     //根据攻击类型排序
     array_multisort( $belong_sort,SORT_ASC,$data);
@@ -733,6 +747,9 @@ class Method
             break;
             case MERGE_BIOLOGY: 
                 $data=  Yii::$app->session->get('merge_biology_extend');    
+            break;
+            case FIGHTING_HISTORY: 
+                $data=  Yii::$app->session->get('fighting_history');    
             break;
         }
         return $data;
