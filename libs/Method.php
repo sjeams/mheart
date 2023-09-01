@@ -735,6 +735,7 @@ class Method
         Yii::$app->session->set('do_biology_extend',$do_biology_extend); 
         Yii::$app->session->set('merge_biology_extend',$merge_biology_extend); 
  
+ 
     }
     // 获取生物容器
     public static  function getBiologyPosition($type){
@@ -742,8 +743,8 @@ class Method
             case POSITION_MY: 
                 $data=  Yii::$app->session->get('my_biology_extend');   
             break;
-            case POSITION_MY: 
-                $data=  Yii::$app->session->get('do_biology_extend');     
+            case POSITION_ENEMY: 
+                $data=  Yii::$app->session->get('do_biology_extend'); 
             break;
             case MERGE_BIOLOGY: 
                 $data=  Yii::$app->session->get('merge_biology_extend');    
