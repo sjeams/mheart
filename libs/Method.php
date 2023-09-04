@@ -653,10 +653,12 @@ class Method
         $zd[$zhudong_key] = $skill_zd[$zhudong_key];
         $attack = intval($skill_zd[$zhudong_key]['attack']);
         $skill_zd = $zd;
+        $is_skill =1;//返回主触发--技能伤害
+    }else{
+        $is_skill =0;//无主动技能--普通伤害
     }
     
     if($is_do==POSITION_NO){
-        // var_dump(111);die;
         $data =  $beji;
         $attack = POSITION_NO;
     }else{
@@ -669,6 +671,7 @@ class Method
         'position'=>$position,
         'skill'=>$data,
         'attack'=>$attack,
+        'is_skill'=>$is_skill,
     );
   }
 
@@ -731,11 +734,13 @@ class Method
         }
         // $my_biology['position_my_list'] = $position_my_list;
         // $do_biology['position_enemy_list'] =  $position_enemy_list;
-        Yii::$app->session->set('my_biology_extend',$my_biology_extend);
-        Yii::$app->session->set('do_biology_extend',$do_biology_extend); 
-        Yii::$app->session->set('merge_biology_extend',$merge_biology_extend); 
- 
- 
+        // Yii::$app->session->set('my_biology_extend',$my_biology_extend);
+        // Yii::$app->session->set('do_biology_extend',$do_biology_extend); 
+        // Yii::$app->session->set('merge_biology_extend',$merge_biology_extend); 
+        $biology['my_biology_extend']=$my_biology_extend;
+        $biology['do_biology_extend']=$do_biology_extend;
+        $biology['merge_biology_extend']=$merge_biology_extend;
+        return  $biology;
     }
     // 获取生物容器
     public static  function getBiologyPosition($type){

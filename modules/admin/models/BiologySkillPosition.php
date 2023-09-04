@@ -9,7 +9,7 @@ class BiologySkillPosition extends ActiveRecord
         return '{{%biology_skill_position}}';
     }
     // 此方法用于返回攻击位置 -----自己位置 攻击位置  攻击类型   位置列表   是否是自己
-    public static function getPositionExtend($position_in,$position,$position_type,$att_position,$position_my,$skill){
+    public static function getPositionExtend($position_in,$position,$position_type,$att_position,$position_my){
         //生物位置是必有得，没有的时候，直接胜利
         // $use=[]; //治疗  增加攻击 属性 伤害
         $int=[];//返回位置
@@ -95,7 +95,7 @@ class BiologySkillPosition extends ActiveRecord
     public static function getPositionIntList($att_position,$n_list,$lie=0){
         // 计算当前攻击位置及后面
         $list=[];
-        $int=[];
+        // $int=[];
         if($lie==1){
             $arra_list=array(
                 [1,4,7],

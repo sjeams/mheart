@@ -88,7 +88,6 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
-       
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         //获取自己战斗阵容
         $my_biology = $UserBiologyNatureDo->getValueList();
@@ -96,6 +95,7 @@ class AppApinewController extends ApiUserControl{
         $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology);
+        var_dump($data['fighting_history']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }
 }
