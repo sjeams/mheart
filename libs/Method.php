@@ -701,12 +701,24 @@ class Method
     * sjeam
     * 参数 ： arrayfilter(数组，字段，字段值）
     */
-    public static function arrayfilter($action,$str,$value){
-        $data = array_filter($action, function($val) use($str,$value) { return $val[$str]== $value; }); 
+    public static function arrayfilter($action,$str,$value,$type=false){
+        if($type){
+            $data = array_filter($action, function($val) use($str,$value,$type) {
+                if( $type ==1 ){
+                    return $val[$str]>$value;
+                }else{
+                    return $val[$str]<=$value;
+                }
+            }); 
+        }else{
+            $data = array_filter($action, function($val) use($str,$value) { return $val[$str]== $value; }); 
+        }
         ksort($data); //排序
         return $data;
     }
-    
+ 
+
+
     //生物容器
     public static  function setBiologyPosition($merge_biology_extend){
         //生物初始属性备份

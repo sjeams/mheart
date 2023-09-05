@@ -95,7 +95,8 @@ class AppApinewController extends ApiUserControl{
         $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology);
-        var_dump($data['fighting_history']);die;
+        var_dump($data['fighting_msg']);
+        var_dump($data['fighting_history'][1]['fighting_history']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }
 }

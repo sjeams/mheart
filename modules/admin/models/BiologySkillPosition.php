@@ -1,7 +1,7 @@
 <?php
 // 技能
 namespace app\modules\admin\models;
-
+use app\libs\Method;
 use yii\db\ActiveRecord;
 class BiologySkillPosition extends ActiveRecord
 {
@@ -9,14 +9,18 @@ class BiologySkillPosition extends ActiveRecord
         return '{{%biology_skill_position}}';
     }
     // 此方法用于返回攻击位置 -----自己位置 攻击位置  攻击类型   位置列表   是否是自己
-    public static function getPositionExtend($position_in,$position,$position_type,$att_position,$position_my){
+    public static function getPositionExtend($position_in,$position,$position_type,$att_position,$attack){
+        
         //生物位置是必有得，没有的时候，直接胜利
         // $use=[]; //治疗  增加攻击 属性 伤害
         $int=[];//返回位置
- 
+        if(empty($att_position)){
+            return $int;
+        }
+        //获取生命大于0的数据
         switch($position){
             case 0: //普通攻击--第一顺位攻击
-                if($position_my==POSITION_MY){ 
+                if($attack==POSITION_MY){ 
                     $int[]=$position_in;//自己生物位置
                 }else{
                     $int[]=$att_position[0];//敌方生物位置
@@ -26,6 +30,13 @@ class BiologySkillPosition extends ActiveRecord
                 if($position_type){
                     $list=[]; //默认按第一顺位来
                     $int= BiologySkillPosition::getPositionInt($att_position,$list,5);//敌方生物位置
+                    if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
+                        // 获取剩余补充5个
+                        $num =count($att_position)-count($int);
+                        // array_merge()
+                        // 取差集
+                    }
+
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,5);//敌方生物位置
                 }
