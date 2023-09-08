@@ -314,13 +314,43 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($position_skill);die;
 
     }
+
+    //发起消耗
+    public function attackNeedValue($attack_biology,$skill){
+        $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
+        // 发起消耗属性--魔法等--回血,回蓝等多种状态
+        $goid =$attack_biology['id'];
+        $need =$skill['need'];
+        $attack_biology[$need] = $attack_biology[$need]+$skill['needValue'];
+        $attack_biology['shengMing']= $attack_biology['shengMing']>=0?$attack_biology['shengMing']:0;//生命最低为0
+        $attack_biology['moFa']=$attack_biology['moFa']>=0?$attack_biology['moFa']:0;//魔法最低为0
+        //发起伤害
+        $hurt_go_list = array(
+            'pid'=>$attack_biology['id'],//发起攻击位置
+            'attack'=>$attack,//攻击类型
+            'goid'=>$goid,//发起攻击位置
+            'doid'=>$goid,//攻击单位id
+            'is_do'=>1,//0反击 1主动攻击
+            'attack_biology_go'=>$attack_biology,//发起攻击单位
+            'attack_biology_do'=>$attack_biology,//被攻击单位
+            'skill'=>$skill,//发起攻击技能
+            'hurt_go'=>$skill['needValue'],//发起伤害
+            'attack'=>$attack,//发起类型
+            'extend'=>$attack_biology[$need],//伤害类型
+            'keeptime'=>$this->bout,//发起伤害持续回合
+        );
+        $this->getTips($hurt_go_list,1);
+        $this->merge_biology_extend[$goid]=$attack_biology; //自己伤害结算
+        $this->getBiologyRelode();//重置容器
+        return $attack_biology;
+    }
+
     //攻击位置计算
     public function attackPosition($attack_biology,$position_my_list,$position_enemy_list){
         $position_in = $attack_biology['position'];//当前生物位置 
         $position_my = $attack_biology['position_my'];//当前生物1自己  2敌方  
         $fight_skill = $attack_biology['fight_skill'];//生物技能
         $is_skill = $attack_biology['is_skill'];//1主动技能  普通攻击0
-
         //类型列表
         $int=[];//攻击位置
         $position_type_list = BiologySkillPositionType::positionTypeList();
@@ -337,30 +367,8 @@ class UserBiologyNatureDo extends ActiveRecord
                 if($belong==5){ //无主动技能--则进行普通攻击
                     $skill_attack=1;
                 }
-                // 发起消耗属性--魔法等--回血,回蓝等多种状态
-                $goid =$attack_biology['id'];
-                $need =$skill['need'];
-                $attack_biology[$need] = $attack_biology[$need]+$skill['needValue'];
-                $attack_biology['shengMing']= $attack_biology['shengMing']>=0?$attack_biology['shengMing']:0;//生命最低为0
-                $attack_biology['moFa']=$attack_biology['moFa']>=0?$attack_biology['moFa']:0;//魔法最低为0
-                //发起伤害
-                $hurt_go_list = array(
-                    'pid'=>$attack_biology['id'],//发起攻击位置
-                    'attack'=>$attack,//攻击类型
-                    'goid'=>$goid,//发起攻击位置
-                    'doid'=>$goid,//攻击单位id
-                    'is_do'=>1,//0反击 1主动攻击
-                    'attack_biology_go'=>$attack_biology,//发起攻击单位
-                    'attack_biology_do'=>$attack_biology,//被攻击单位
-                    'skill'=>$skill,//发起攻击技能
-                    'hurt_go'=>$skill['needValue'],//发起伤害
-                    'attack'=>$attack,//发起类型
-                    'extend'=>$attack_biology[$need],//伤害类型
-                    'keeptime'=>$this->bout,//发起伤害持续回合
-                );
-                $this->getTips($hurt_go_list,1);
-                $this->merge_biology_extend[$goid]=$attack_biology; //自己伤害结算
-                $this->getBiologyRelode();//重置容器
+                //发起技能消耗--返回消耗后的状态，因为拿的是循环值--这里可以改为容器，根据id来
+                $attack_biology = $this->attackNeedValue($attack_biology,$skill);
             }else{
                 continue;
             }
