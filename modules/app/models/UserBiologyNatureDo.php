@@ -33,6 +33,15 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->skill_extend =  array_column($skill_extend,null,'extend');
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
+        $this->my_biology_extend = [];
+        $this->do_biology_extend = [];
+        $this->merge_biology_extend = [];
+        $this->bout=0;//初始回合
+        $this->merge_biology_first = [];
+        $this->fighting_goods=[];//战斗奖励
+        $this->fighting_msg=[];//战斗奖励
+
+
     }
     public static function tableName(){
         return '{{x2_user_biology_nature_do}}';
@@ -123,11 +132,13 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->setBiologyInitFirst();//第一次初始化属性备用。
         //开启循环战斗--初始回合
         $this->fighting();//返回战斗记录
-        var_dump($this->merge_biology_extend[170]); 
         //返回战利品和战斗记录
         return ['fighting_goods'=>$this->fighting_goods,'fighting_msg'=>$this->fighting_msg,'fighting_history'=>$this->fighting_history];
     }
-
+    //重置容器
+    public function getBiologyRelode(){
+        $this->getBiologyInit($this->merge_biology_extend); //----每次战斗过后-重置一次容器
+    }
     ///开启循环战斗--初始回合
     public function fighting(){
         $this->bout +=1;
@@ -218,6 +229,7 @@ class UserBiologyNatureDo extends ActiveRecord
 
         return $r_data;
     }
+    
     //战斗回合--开始回合  $bout 回合默认为1 第一回合开启回合技能
     public function getFightDoing(){
         //循环时间 还是 循环数组--根据枚举180秒定时器战斗
@@ -289,13 +301,18 @@ class UserBiologyNatureDo extends ActiveRecord
             // }
            $winner = $this->victory($this->bout);//战斗后--检查胜利者
             if($winner){
-                $this->fighting_msg[]='胜利者是'.$winner;
+                if($winner==POSITION_MY){
+                    $this->fighting_msg[]='胜利！';
+                }else{
+                    $this->fighting_msg[]='失败！'; 
+                }
                //跳出循环
                break;
            }
-        //    $this->getBiologyInit($this->merge_biology_extend); //----每次战斗过后-重置一次容器
+
         }  
         // var_dump($position_skill);die;
+
     }
     //攻击位置计算
     public function attackPosition($attack_biology,$position_my_list,$position_enemy_list){
@@ -308,10 +325,45 @@ class UserBiologyNatureDo extends ActiveRecord
         $int=[];//攻击位置
         $position_type_list = BiologySkillPositionType::positionTypeList();
         $position_type=0;
+        $skill_attack=0;//主动攻击  0 普通  1技能
         foreach($fight_skill as $skill){
             $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
             $position = intval($skill['position']);    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
             $position_type = intval($skill['positionType']);//攻击对象类型 --优先攻击排序
+            $belong = intval($skill['belong']);//主动--技能
+            //发起技能，魔法够不够
+            $isneed_value = $this->isNeedValue($attack_biology,$skill);
+            if($isneed_value){
+                if($belong==5){ //无主动技能--则进行普通攻击
+                    $skill_attack=1;
+                }
+                // 发起消耗属性--魔法等--回血,回蓝等多种状态
+                $goid =$attack_biology['id'];
+                $need =$skill['need'];
+                $attack_biology[$need] = $attack_biology[$need]+$skill['needValue'];
+                $attack_biology['shengMing']= $attack_biology['shengMing']>=0?$attack_biology['shengMing']:0;//生命最低为0
+                $attack_biology['moFa']=$attack_biology['moFa']>=0?$attack_biology['moFa']:0;//魔法最低为0
+                //发起伤害
+                $hurt_go_list = array(
+                    'pid'=>$attack_biology['id'],//发起攻击位置
+                    'attack'=>$attack,//攻击类型
+                    'goid'=>$goid,//发起攻击位置
+                    'doid'=>$goid,//攻击单位id
+                    'is_do'=>1,//0反击 1主动攻击
+                    'attack_biology_go'=>$attack_biology,//发起攻击单位
+                    'attack_biology_do'=>$attack_biology,//被攻击单位
+                    'skill'=>$skill,//发起攻击技能
+                    'hurt_go'=>$skill['needValue'],//发起伤害
+                    'attack'=>$attack,//发起类型
+                    'extend'=>$attack_biology[$need],//伤害类型
+                    'keeptime'=>$this->bout,//发起伤害持续回合
+                );
+                $this->getTips($hurt_go_list,1);
+                $this->merge_biology_extend[$goid]=$attack_biology; //自己伤害结算
+                $this->getBiologyRelode();//重置容器
+            }else{
+                continue;
+            }
             $position_my_list_new= $position_my_list;
             $position_enemy_listt_new= $position_enemy_list;
             //排序
@@ -333,24 +385,27 @@ class UserBiologyNatureDo extends ActiveRecord
                     foreach($int as $pid){
                         // is_do 0被动   1 主动 和主动触发
                         $this->attackSkill($position_my,$attack_biology,$pid,$skill,1);
+
                     }
+                    
                 } 
-           
                 // var_dump($skill);//技能
                 // var_dump($int);die;//攻击位置
             }
         }
-
+        // var_dump($this->merge_biology_extend[170]);die;
         //没有主动技能--普通攻击
-        if(!$is_skill){
+        if(!$is_skill||$skill_attack==1){
             $pid= BiologySkillPosition::getPositionExtend($position_in,0,false,$attack_biology,$position_my)[0];  
             // var_dump($attack_biology);die;
             if($pid){
                 $this->attackPositionBlack($position_my,$attack_biology,$pid);
             }
         }
+        
         // var_dump($this->bout);
         // var_dump($this->fighting_history[$this->bout]['fighting_history'][170]);die;
+
         // var_dump($fight_skill);die;
     }
 
@@ -389,7 +444,7 @@ class UserBiologyNatureDo extends ActiveRecord
                 'extend'=>'shengMing',//伤害类型
                 'keeptime'=>$this->bout,//发起伤害持续回合
             );
-            $this->goHurt($hurtType,$hurt_go_list);
+            $this->goHurt($hurtType,$hurt_go_list);//敌人
         }
     }
 
@@ -510,11 +565,14 @@ class UserBiologyNatureDo extends ActiveRecord
         );
 
         $this->goHurt($hurtType,$hurt_go_list);
+
         // return $hurt_go;
     }
     
 
     public function goHurt($hurtType,$hurt_go_list){
+
+        $attack_biology_go= $hurt_go_list['attack_biology_go'];
         $attack_biology_do= $hurt_go_list['attack_biology_do'];
         $attack= $hurt_go_list['attack'];
         $hurt_go= $hurt_go_list['hurt_go'];
@@ -522,6 +580,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $extend= $hurt_go_list['extend'];
         $doid= $hurt_go_list['doid'];
         $goid= $hurt_go_list['goid'];
+        $skill= $hurt_go_list['skill'];
         //获取闪避
         $gailv[0] =100*100;//失败几率
         $gailv[1] =100*$attack_biology_do['shanbi'];//成功几率
@@ -560,47 +619,75 @@ class UserBiologyNatureDo extends ActiveRecord
             }else if($attack==POSITION_MY){
                 // 伤害结算
                 $attack_biology_do[$extend] = $hurt_go;
-            } 
+            }
+
         }else{
             // 伤害结算
             $attack_biology_do[$extend] = $hurt_go;
         }
-    
+
+        $attack_biology_do['shengMing']= $attack_biology_do['shengMing']>=0?$attack_biology_do['shengMing']:0;//生命最低为0
+        $attack_biology_do['moFa']=$attack_biology_do['moFa']>=0?$attack_biology_do['moFa']:0;//魔法最低为0
+        // var_dump($attack_biology_do['shengMing']);
         //写入伤害提示
         $hurt_go_list['baoji'] = $baoji;//是否暴击
         $hurt_go_list['shanbi'] = $shanbi;//是否闪避
         $hurt_go_list['hurt_go'] = $hurt_go;//伤害
+
+        $hurt_go_list['attack_biology_do']=$attack_biology_do;//伤害结果赋值
+        $this->merge_biology_extend[$doid]=$attack_biology_do; //敌人伤害结算
         $hurt_go_list =$this->getTips($hurt_go_list);
         //重新赋值--攻击对象（自己、友方、敌人）--叠加buff
-        $this->merge_biology_extend[$doid]=$attack_biology_do; //伤害结算
         $this->fighting_history[$this->bout]['fighting_history'][$doid][]=$hurt_go_list;   
+        $this->getBiologyRelode();//重置容器
+    }
+    //消耗属性，魔法，能否哦发起
+    public function isNeedValue($attack_biology_go,$skill){
+        if($skill){
+            // 判断是否满足技能发起条件
+            $need =$skill['need'];
+            $attack_biology_go[$need] = $attack_biology_go[$need]+$skill['needValue']; 
+            if($attack_biology_go[$need]>=0){
+                return true;
+            }else{
+                return false; 
+            }
+        }
+        return false; 
     }
 
-    public function getTips($hurt_go_list){
+
+    public function getTips($hurt_go_list,$is_go=0){
+        $hurt_go_list['descript_go']='';//消耗
+        $hurt_go_list['descript_do']='';//伤害
         $attack_biology_go= $hurt_go_list['attack_biology_go'];
         $attack_biology_do= $hurt_go_list['attack_biology_do'];
         $skill= $hurt_go_list['skill'];
         $shanbi= $hurt_go_list['shanbi'];
         // var_dump($hurt_go_list);die;
+        // var_dump( $hurt_go_list['hurt_go']); 
         $hurt_go_list['hurt_msg']= $hurt_go_list['hurt_go']>=0?'+'.$hurt_go_list['hurt_go']:$hurt_go_list['hurt_go'];
+        $sm_go = $attack_biology_go['name'].'('.$attack_biology_go['shengMing'].'/'.$attack_biology_go['moFa'].')    ';
+        $sm_do = $attack_biology_do['name'].'('. $attack_biology_do['shengMing'].'/'.$attack_biology_do['moFa'].')    ';
         if($skill){
-            $hurt_go_list['descript_go'] =$attack_biology_go['name'].'触发技能【'.$skill['name'].'】';
-            $hurt_go_list['descript_do'] =$attack_biology_do['name'].$skill['extend'].$hurt_go_list['hurt_msg'];
+            $need =$skill['needValue']!=0? $this->skill_extend[$skill['need']]['name'].$skill['needValue']:'';
+            $hurt_go_list['descript_go'] =$sm_go.'触发技能【'.$skill['name'].'】'.$need;
             if($shanbi){
-                $hurt_go_list['descript_do'] =$attack_biology_do['name'].'闪避';
+                $hurt_go_list['descript_do'] =$sm_do.'闪避';
             }else{
-                $hurt_go_list['descript_do'] =$attack_biology_do['name'].$skill['extend'].$hurt_go_list['hurt_msg'];
+                $hurt_go_list['descript_do'] =$sm_do.$this->skill_extend[$skill['extend']]['name'].$hurt_go_list['hurt_msg'];
             }
-            $this->fighting_msg[]=$hurt_go_list['descript_go'];
-            $this->fighting_msg[]=$hurt_go_list['descript_do'];
         }else{
-            $hurt_go_list['descript_go'] =$attack_biology_go['name'].'发起攻击';
+            $hurt_go_list['descript_go'] =$sm_go['name'].'发起攻击';
             if($shanbi){
-                $hurt_go_list['descript_do'] =$attack_biology_do['name'].'闪避';
+                $hurt_go_list['descript_do'] =$sm_do.'闪避';
             }else{
-                $hurt_go_list['descript_do'] =$attack_biology_do['name'].'shengMing'.$hurt_go_list['hurt_msg'];
+                $hurt_go_list['descript_do'] =$sm_do.'shengMing'.$hurt_go_list['hurt_msg'];
             }
+        }
+        if($is_go){
             $this->fighting_msg[]=$hurt_go_list['descript_go'];
+        }else{
             $this->fighting_msg[]=$hurt_go_list['descript_do'];
         }
         return $hurt_go_list;
