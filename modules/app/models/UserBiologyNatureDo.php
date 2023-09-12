@@ -362,7 +362,6 @@ class UserBiologyNatureDo extends ActiveRecord
             if($isneed_value){
                 if($belong==5){ //无主动技能--则进行普通攻击
                     $skill_attack=1;
-                    var_dump(111);
                 }
                 //发起技能消耗--返回消耗后的状态，因为拿的是循环值--这里可以改为容器，根据id来
                 $attack_biology = $this->attackNeedValue($attack_biology,$skill);
