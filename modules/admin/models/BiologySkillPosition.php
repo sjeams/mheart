@@ -20,7 +20,6 @@ class BiologySkillPosition extends ActiveRecord
         //获取生命大于0的数据
         switch($position){
             case 0: //普通攻击--第一顺位攻击
-        
                 if($attack==POSITION_MY){ 
                     $int[]=$position_in;//自己生物位置
                 }else{

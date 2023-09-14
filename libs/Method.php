@@ -620,30 +620,28 @@ class Method
         if($attack_belong==POSITION_NO){
             $beji[]= $v;
         }else{
-            switch($belong){
-                case 0: //初始化
-                    if($bout==1){
+            if($v['bout']==0||$bout==$v['bout']){ //查看技能 的回合持续时间
+                switch($belong){
+                    case 0: //初始化
                         $skill_bd[$key]= $v;
-                    }
-                case 1: //回合化--初始化   // 回合开始触发技能 类似于--3-5个回合和消失 的护盾，攻击之类的，初始化不再有值--可以随时加入技能
-                    if($bout<=$v['bout']){ //查看技能 的回合持续时间
+                    case 1: //回合化--初始化   // 回合开始触发技能 类似于--3-5个回合和消失 的护盾，攻击之类的，初始化不再有值--可以随时加入技能
+                            $skill_bd[$key]= $v;
+                    break;
+                    case 2: //被击前触发
                         $skill_bd[$key]= $v;
-                    }
-                break;
-                case 2: //被击前触发
-                    $skill_bd[$key]= $v;
-                break;
-                case 3: //被击后触发
+                    break;
+                    case 3: //被击后触发
+                            $skill_bd[$key]= $v;
+                    case 4: //攻击前触发 
+                            $skill_bd[$key]= $v;
+                    break;
+                    case 5: //主动）
+                        $skill_zd[$key]= $v;
+                    break;
+                    case 6: //攻击后触发
                         $skill_bd[$key]= $v;
-                case 4: //攻击前触发 
-                        $skill_bd[$key]= $v;
-                break;
-                case 5: //主动）
-                    $skill_zd[$key]= $v;
-                break;
-                case 6: //攻击后触发
-                    $skill_bd[$key]= $v;
-                break;
+                    break;
+                }
             }
         }
     }
@@ -720,13 +718,14 @@ class Method
 
 
     //生物容器
-    public static  function setBiologyPosition($merge_biology_extend){
-        //生物初始属性备份
-        foreach($merge_biology_extend as$key=>$v){
-            $merge_biology_extend[$key]['biology_start_extend']=$v;
+    public static  function setBiologyPosition($merge_biology_extend,$bout){
+        //生物初始属性备份 0回合备份一次，后面不再进入此逻辑
+        if($bout==0){
+            foreach($merge_biology_extend as$key=>$v){
+                $merge_biology_extend[$key]['biology_start_extend']=$v;
+            }
         }
         $merge_biology_extend = array_column($merge_biology_extend,null,'id');//id作为key
-
         //九宫格位置
         $position=[];
         for ($i=1; $i<=9; $i++){
