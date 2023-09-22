@@ -41,10 +41,13 @@ class AppApinewController extends ApiUserControl{
     public $UserBiologySkill; 
     public $UserLogin; 
     public $Words; 
-    public $UserServer; 
+    public $UserServer;
+    public $userid;  
     function init(){
         parent::init();
         $this->user_info =  Yii::$app->session->get('user_info');
+        $this->userid =  $this->user_info ;
+ 
         //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
         $this->UserBiology=new UserBiology();
         $this->UserBiologyAttribute=new UserBiologyAttribute();
@@ -60,17 +63,23 @@ class AppApinewController extends ApiUserControl{
 
 
     /**
-     * 随机获取一个生物
+     * 随机获取一个生物--抽卡
      * http://cs.aheart.com/app/app-apinew/user-biology
      */
     public function actionUserBiology(){
-        $UserBiology= new UserBiology();
-        $data = $UserBiology->getBiologyRand();
-        die(Method::jsonApp(1,$data,'succes'));
+        $UserBiologyNatureDo=new UserBiologyAttribute();
+        $count = $UserBiologyNatureDo->getUserBiologyAttributeCount();
+        if($count>=BIOLOGY_COUNT){
+            die(Method::jsonApp(0,null,'生物背包已满！'));
+        }else{
+            $UserBiology= new UserBiology(); 
+            $data = $UserBiology->getBiologyRand();
+            die(Method::jsonApp(1,$data,'succes'));
+        }
     }
 
     /**
-     * 写入阵法
+     * 写入阵法--布阵
      * http://cs.aheart.com/app/app-apinew/add-position
      */
     public function actionAddPosition(){
@@ -84,7 +93,7 @@ class AppApinewController extends ApiUserControl{
     }
 
     /**
-     * 请求战斗
+     * 请求战斗--战斗
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
@@ -96,11 +105,40 @@ class AppApinewController extends ApiUserControl{
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$this->param['userid']);
         // var_dump($data['fighting_msg']);die;
-        foreach($data['fighting_msg'] as $v){
-            echo $v.'<br>';
-        }
+        var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
+        // var_dump($data['fighting_goods_my']);//物品奖励结果
+        // var_dump($data['poition_winner']);
+        // foreach($data['fighting_msg'] as $v){
+        //     echo $v.'<br>';
+        // }
         die;
         // var_dump($data['fighting_history'][1]['fighting_history']);die;
         // die(Method::jsonApp(1,$data,'succes'));  
     }
+    
+    /**
+     * 生物列表
+     * http://cs.aheart.com/app/app-apinew/biology-list
+     */
+    public function actionBiologyList(){
+        $UserBiologyNatureDo=new UserBiologyAttribute();
+        $data=$UserBiologyNatureDo->myAttributesList();
+        die(Method::jsonApp(1,$data,'succes')); 
+    }
+
+    /**
+     * 生物背包
+     * http://cs.aheart.com/app/app-apinew/biology-backpaker
+     */
+    public function actionBiologyBackpaker(){
+
+    }
+    /**
+     * 用户背包
+     * http://cs.aheart.com/app/app-apinew/user-backpaker
+     */
+    public function actionUserBackpaker(){
+
+    }
+
 }

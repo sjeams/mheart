@@ -20,6 +20,11 @@ class UserBiologyAttribute extends ActiveRecord
     public static function tableName(){
         return '{{x2_user_biology_attribute}}';
     }
+    //统计总数==上限不能超过20个
+    public  function getUserBiologyAttributeCount(){
+        $count = UserBiologyAttribute::find()->where("userid=$this->userid")->count();
+        return $count;
+    }
 
     /**
      * 属性详情
@@ -29,8 +34,9 @@ class UserBiologyAttribute extends ActiveRecord
         return $data;
     }
     
-    public  function  myAttributes($userBiologyid){  
- 
+    public  function  myAttributesList(){  
+        $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userid")->asarray()->All();  
+        return $data;
     }
    
 
