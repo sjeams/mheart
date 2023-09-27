@@ -117,10 +117,18 @@ class VideoController extends VideoApiControl
         $brush=Video::find()
         // ->leftJoin('x2_content', 'x2_content.id = x2_user_information.contentid')
         ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->asarray()->all();
-        // foreach ($brush as $k=>$v){
+        foreach ($brush as $k=>$v){
         //     $num = UserExchange::find()->select("id")->where("uid={$v['uid']}")->count();
         //     $brush[$k]['total'] = $num;
-        // }
+            // var_dump($v);die;   
+            //替换第三方错误路径
+            $v['imageurl'] = str_replace( 'http://img.ywtuchuang2.com','http://img.lytuchuang20.com',$v['imageurl']);
+            $v['imageurl'] = str_replace( 'https://laoyazy54.com','http://img.lytuchuang20.com',$v['imageurl']);
+            $v['imageurl'] = str_replace( 'https://img.siwapay.com:5278','https://img.siwazywimg2.com:5278',$v['imageurl']);
+            $v['imageurl'] = str_replace( 'https://img.siwazywimg:5278','https://img.siwazywimg2.com:5278',$v['imageurl']);
+            $brush[$k]['imageurl'] =  $v['imageurl'];
+        }
+        // var_dump($brush);die;
         $data['type']=$type; 
         $data['title']=$title; 
         $data['page']=$page; 

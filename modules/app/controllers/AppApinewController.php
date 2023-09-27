@@ -21,6 +21,8 @@ use app\modules\app\models\UserBiologySkill;
 use app\modules\app\models\UserLogin;
 use app\modules\app\models\Words;
 use app\modules\app\models\UserServer;
+use app\modules\app\models\UserGoods;
+
 
 
 
@@ -108,9 +110,9 @@ class AppApinewController extends ApiUserControl{
         var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
         // var_dump($data['fighting_goods_my']);//物品奖励结果
         // var_dump($data['poition_winner']);
-        // foreach($data['fighting_msg'] as $v){
-        //     echo $v.'<br>';
-        // }
+        foreach($data['fighting_msg'] as $v){
+            echo $v.'<br>';
+        }
         die;
         // var_dump($data['fighting_history'][1]['fighting_history']);die;
         // die(Method::jsonApp(1,$data,'succes'));  
@@ -127,18 +129,28 @@ class AppApinewController extends ApiUserControl{
     }
 
     /**
-     * 生物背包
+     * 生物背包--武器--元神
      * http://cs.aheart.com/app/app-apinew/biology-backpaker
      */
     public function actionBiologyBackpaker(){
-
+        //可用物品--12技能书   1武器
+        $good_use = $this->param['good_use']?$this->param['good_use']:1;
+        $UserGoods= new UserGoods();
+        $data=$UserGoods->getBiologyBackpaker($good_use);
+        die(Method::jsonApp(1,$data,'succes'));   
     }
     /**
      * 用户背包
      * http://cs.aheart.com/app/app-apinew/user-backpaker
      */
     public function actionUserBackpaker(){
-
+        $UserGoods=new UserGoods();
+        $data=$UserGoods->getUserBackpaker();
+        die(Method::jsonApp(1,$data,'succes'));   
     }
+    
+
+
+
 
 }

@@ -134,4 +134,33 @@ class UserGoods extends ActiveRecord
         return $goods;
     }
     
+
+
+// ------------背包
+    // 背包枚举
+
+    
+
+    //生物背包
+    public  function  getBiologyBackpaker(){
+        $goods = (new \yii\db\Query())
+        ->select("a.name,a.*")
+        ->from("x2_user_goods AS a")
+        ->leftJoin("x2_user_biology_packet AS b","a.wordId = b.id") 
+        ->orderBy("id desc")
+        ->All();
+        return $goods;
+    }
+    //用户背包
+    public  function  getUserBackpaker(){
+        $goods = (new \yii\db\Query())
+        ->select("a.name,a.*")
+        ->from("x2_user_goods AS a")
+        ->leftJoin("x2_user_packet AS b","a.wordId = b.id") 
+        ->orderBy("id desc")
+        ->All();
+        return $goods;
+    }
+
+
 }
