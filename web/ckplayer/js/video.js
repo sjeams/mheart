@@ -83,7 +83,7 @@ function  videoList(id,key=0,isbofang=1){
             // title:title,//视频标题
             // rotate:90,//旋转90度
             // seek:180,
-            debug:true,//开启调试模式
+            // debug:true,//开启调试模式
             rightBar:true,
             screenshot:true,
             smallWindows:true,
@@ -105,9 +105,8 @@ function  videoList(id,key=0,isbofang=1){
             // overspread:true,//是否让视频铺满播放器
             loaded:'loadHandler',// 监听播放时间方法
             // seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
-		    cookie:videoID,//cookie名称,请在同一域中保持唯一
+		    // cookie:videoID,//cookie名称,请在同一域中保持唯一
             timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
-        	documentFocusPause:false,//窗口失去焦点后暂停播放
             mouseWheelVolume:2,//是否启用鼠标滚轮调节音量功能，0=不启用，1=启用，2=全屏时才启用
             keyVolume:2//是否启用键盘控制音量调节，0=不启用，1=启用，2=全屏时才启用
         };
