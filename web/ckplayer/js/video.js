@@ -83,10 +83,11 @@ function  videoList(id,key=0,isbofang=1){
             // title:title,//视频标题
             // rotate:90,//旋转90度
             // seek:180,
+            debug:true,//开启调试模式
             rightBar:true,
             screenshot:true,
             smallWindows:true,
-            flashplayer: true,//设置成true则强制使用flashplayer
+            flashplayer: false,//设置成true则强制使用flashplayer
             html5m3u8: true,//PC平台上是否使用h5播放器播放m3u8---强制html播放全屏
             webFull:true,
             // mobileAutoFull: true,//移动端是否默认全屏播放
@@ -103,7 +104,7 @@ function  videoList(id,key=0,isbofang=1){
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
             loaded:'loadHandler',// 监听播放时间方法
-            seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
+            // seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
 		    cookie:videoID,//cookie名称,请在同一域中保持唯一
             timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
         	documentFocusPause:false,//窗口失去焦点后暂停播放
