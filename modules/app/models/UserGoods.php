@@ -136,31 +136,56 @@ class UserGoods extends ActiveRecord
     
 
 
-// ------------背包
-    // 背包枚举
 
+
+    // ------------背包
+    // 背包枚举  
+    public  function  getGooduseType(){
+        //武器  道具  技能 元神 丹药
+       $data =Yii::$app->db->createCommand("select a.*,group_concat(b.id) as gooduse from {{%goods_use_type}} a left join {{%goods_use}} b on a.id=b.type  group by a.id")->queryAll();  
+       return $data;
+    }
     
-
     //生物背包
-    public  function  getBiologyBackpaker(){
+    public  function  getBiologyBackpaker($param){
+        // 武器  元神
+        $where =" userid = $this->userid " ;
+        if($param['gooduse']){
+            $gooduse=$param['gooduse'];
+            $where .=" and gooduse in ( $gooduse) " ; 
+        }
+        if($param['biologyid']){
+            $biologyid=$param['biologyid'];
+            $where .=" and biologyid = $biologyid " ; 
+        }
         $goods = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_user_goods AS a")
-        ->leftJoin("x2_user_biology_packet AS b","a.wordId = b.id") 
+        // ->rightJoin("x2_user_biology_packet AS b","a.id = b.userGoodsid") 
+        ->where($where) 
         ->orderBy("id desc")
         ->All();
         return $goods;
     }
     //用户背包
-    public  function  getUserBackpaker(){
+    public  function  getUserBackpaker($param){
+        $where =" userid=$this->userid " ;
+        if($param['gooduse']){
+            $gooduse=$param['gooduse'];
+            $where .=" and gooduse in ( $gooduse) " ; 
+        }
         $goods = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_user_goods AS a")
-        ->leftJoin("x2_user_packet AS b","a.wordId = b.id") 
+        // ->leftJoin("x2_user_packet AS b","a.wordId = b.id") 
+        ->where($where) 
         ->orderBy("id desc")
         ->All();
         return $goods;
     }
+
+
+    
 
 
 }

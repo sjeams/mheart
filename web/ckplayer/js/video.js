@@ -74,6 +74,7 @@ function  videoList(id,key=0,isbofang=1){
     //获取播cookie放时间
     var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
     var videoObject = {
+        debug:true,//开启调试模式
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
             autoplay:true,
