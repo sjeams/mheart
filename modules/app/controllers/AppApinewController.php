@@ -63,25 +63,6 @@ class AppApinewController extends ApiUserControl{
     }
     public $enableCsrfValidation = false;
 
-    /**
-     *  大厅
-     * 
-     *  抽卡
-     * 
-     *  装备
-     * 
-     *  战斗
-     * 
-     *  阵法
-     *  
-     *  生物
-     *  
-     *  背包
-     * 
-     */
-
-
-
 
     /**
      * 随机获取一个生物--抽卡
@@ -160,6 +141,18 @@ class AppApinewController extends ApiUserControl{
         die(Method::jsonApp(1,$data,'succes'));
     }
 
+
+   /**
+     * 添加装备栏--武器--元神
+     * http://cs.aheart.com/app/app-apinew/add-backpaker
+     * biologyid  gooduse
+     */
+    public function actionAddBackpaker(){
+        $this->param['biologyid']=170;
+        $UserGoods= new UserGoods();
+        $data=$UserGoods->addBiologyBackpaker($this->param);
+        die(Method::jsonApp(1,$data,'succes'));    
+    }
     /**
      * 生物背包--武器--元神
      * http://cs.aheart.com/app/app-apinew/biology-backpaker
@@ -173,6 +166,10 @@ class AppApinewController extends ApiUserControl{
         $data=$UserGoods->getBiologyBackpaker($this->param);
         die(Method::jsonApp(1,$data,'succes'));   
     }
+
+
+
+
     /**
      * 用户背包
      * http://cs.aheart.com/app/app-apinew/user-backpaker

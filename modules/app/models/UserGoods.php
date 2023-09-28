@@ -146,6 +146,16 @@ class UserGoods extends ActiveRecord
        return $data;
     }
     
+
+    //添加生物背包
+    public  function  addBiologyBackpaker($param){
+        
+    }
+
+
+
+
+
     //生物背包
     public  function  getBiologyBackpaker($param){
         // 武器  元神
@@ -154,14 +164,14 @@ class UserGoods extends ActiveRecord
             $gooduse=$param['gooduse'];
             $where .=" and gooduse in ( $gooduse) " ; 
         }
-        if($param['biologyid']){
-            $biologyid=$param['biologyid'];
-            $where .=" and biologyid = $biologyid " ; 
-        }
+        // if($param['biologyid']){
+        //     $biologyid=$param['biologyid'];
+        //     $where .=" and biologyid = $biologyid " ; 
+        // }
         $goods = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_user_goods AS a")
-        // ->rightJoin("x2_user_biology_packet AS b","a.id = b.userGoodsid") 
+        // ->leftJoin("x2_user_biology AS b","a.biology = b.id") 
         ->where($where) 
         ->orderBy("id desc")
         ->All();
@@ -185,7 +195,7 @@ class UserGoods extends ActiveRecord
     }
 
 
-    
+
 
 
 }
