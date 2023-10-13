@@ -107,13 +107,13 @@ class AppApinewController extends ApiUserControl{
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$this->param['userid']);
         // var_dump($data['fighting_msg']);die;
-        var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
+        // var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
         // var_dump($data['fighting_goods_my']);//物品奖励结果
         // var_dump($data['poition_winner']);
-        foreach($data['fighting_msg'] as $v){
-            echo $v.'<br>';
-        }
-        die;
+        // foreach($data['fighting_msg'] as $v){
+        //     echo $v.'<br>';
+        // }
+        // die;
         // var_dump($data['fighting_history'][1]['fighting_history']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }
@@ -186,6 +186,14 @@ class AppApinewController extends ApiUserControl{
 
     
 
+
+
+
+
+
+
+
+    
 
 
 }
