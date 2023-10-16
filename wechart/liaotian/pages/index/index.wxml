@@ -1,0 +1,35 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data  type="userNickName"></open-data>
+    </block>
+  </view>
+</view>
+<view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+    <image src='/images/avator.png'></image>
+  </view> -->
+  <!-- <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view> -->
+
+  <button open-type="getPhoneNumber" type='primary'  bindgetphonenumber="getPhoneNumber"> 登录</button>
+
+  <button lang="zh_CN" open-type='getUserInfo' bindgetuserinfo="getUserInfo">123</button>
+ 
+ 
+
+  <!-- <button
+  wx:if="{{canIUse}}"
+  open-type="getUserInfo" type='primary' 
+  bindgetuserinfo="bindGetUserInfo"
+>
+  授权登录
+</button> -->
+</view>
+<view wx:else>请升级微信版本</view>
