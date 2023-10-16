@@ -12,7 +12,7 @@ use app\libs\Pager;
 use app\libs\ApiControl;
 
 
-use app\modules\app\models\WechatUser;
+use app\modules\cn\models\WechatUser;
 
 use Yii;
 use UploadFile;
