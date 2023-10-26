@@ -184,14 +184,16 @@ cc.Class({
     this.node.active = false;
   },
   xieyi_show_dlg: function xieyi_show_dlg() {
-    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/xieyi';
+    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/xieyi'; // this.register_knows_webview.loadUrl('https://www.aheart.cn/app/api-user/xieyi');
+
     this.node.active = true;
   },
   xieyi_hidden_dlg: function xieyi_hidden_dlg() {
     this.node.active = false;
   },
   yinsi_show_dlg: function yinsi_show_dlg() {
-    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/yinsi';
+    this.register_knows_webview.url = 'https://www.aheart.cn/app/api-user/yinsi'; // this.register_knows_webview.loadUrl('https://www.aheart.cn/app/api-user/yinsi');
+
     this.node.active = true;
   },
   yinsi_hidden_dlg: function yinsi_hidden_dlg() {

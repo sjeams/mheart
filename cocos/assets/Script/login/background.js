@@ -44,7 +44,7 @@ cc.Class({
     loadingBackground: function(){
                         // 下载资源包
             // 远程 url 带图片后缀名
-            var remoteUrl = "http://127.0.0.1/ceshi.php?url=https://www.aheart.cn/app/loading/loading.jpg";
+            var remoteUrl = "https://www.aheart.cn/app_resources/loading/loading.jpg";
             var self = this;
             // cc.loader.load(remoteUrl, function (err, texture) {
             cc.loader.load({ url: remoteUrl, type: 'jpg' }, function (err, texture) {  
