@@ -645,7 +645,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $gailv[0] =100*100;//失败几率
         $gailv[1] =100*$attack_biology_do['shanbi'];//成功几率
         $shanbi =Method::getRandGrade($gailv);//1触发 0无效
-        //获取暴击
+        //获取暴击伤害默认为150%,baojilv  0
         $baoji=0;
         //获取暴击率
 
