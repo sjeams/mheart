@@ -5,103 +5,95 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": -153,
-      "y": 204,
-      "width": 1940,
-      "height": 747,
+      "x": 287,
+      "y": 301,
+      "width": 1199,
+      "height": 654,
       "layout": {
         "children": [
           {
             "children": [
               {
+                "active": 0,
                 "children": [
-                  {
-                    "active": 0,
-                    "children": [
-                      "hierarchy"
-                    ],
-                    "height": 516.71875,
-                    "type": "panel",
-                    "width": 322
-                  },
-                  {
-                    "active": 0,
-                    "children": [
-                      "assets"
-                    ],
-                    "height": 415.78125,
-                    "type": "panel",
-                    "width": 322
-                  }
+                  "hierarchy"
                 ],
-                "height": 935.5,
-                "type": "dock-v",
-                "width": 322
-              },
-              {
-                "children": [
-                  {
-                    "active": 0,
-                    "children": [
-                      "scene"
-                    ],
-                    "height": 666.5,
-                    "type": "panel",
-                    "width": 1109
-                  },
-                  {
-                    "active": 0,
-                    "children": [
-                      "console",
-                      "timeline",
-                      "game-window"
-                    ],
-                    "height": 266,
-                    "type": "panel",
-                    "width": 1109
-                  }
-                ],
-                "height": 935.5,
-                "type": "dock-v",
-                "width": 1109
+                "height": 299.984375,
+                "type": "panel",
+                "width": 204
               },
               {
                 "active": 0,
                 "children": [
-                  "inspector",
-                  "node-library",
-                  "cocos-services"
+                  "assets"
                 ],
-                "height": 935.5,
+                "height": 269,
                 "type": "panel",
-                "width": 483
+                "width": 204
               }
             ],
-            "height": 935.5,
-            "type": "dock-h",
-            "width": 1920
+            "height": 572,
+            "type": "dock-v",
+            "width": 204
+          },
+          {
+            "active": 0,
+            "children": [
+              "inspector",
+              "cocos-services"
+            ],
+            "height": 572,
+            "type": "panel",
+            "width": 304
+          },
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "scene"
+                ],
+                "height": 303,
+                "type": "panel",
+                "width": 681
+              },
+              {
+                "active": 0,
+                "children": [
+                  "console",
+                  "timeline",
+                  "game-window"
+                ],
+                "height": 266,
+                "type": "panel",
+                "width": 681
+              }
+            ],
+            "height": 572,
+            "type": "dock-v",
+            "width": 681
           }
         ],
-        "type": "dock-v"
+        "type": "dock-h"
       },
       "panels": [
         "hierarchy",
         "assets",
+        "inspector",
+        "cocos-services",
         "scene",
         "console",
         "timeline",
-        "game-window",
-        "inspector",
-        "node-library",
-        "cocos-services"
+        "game-window"
       ]
     },
+    "window-1698833370610": {},
     "worker": {}
   },
   "panels": {
     "project-settings": {
-      "x": 900,
-      "y": 120,
+      "x": 557,
+      "y": 434,
       "width": 603,
       "height": 568
     },
@@ -124,8 +116,8 @@
       "height": 739
     },
     "preferences": {
-      "x": 901,
-      "y": 238,
+      "x": 904,
+      "y": 333,
       "width": 600,
       "height": 565
     },
@@ -148,8 +140,8 @@
       "height": 339
     },
     "builder": {
-      "x": 605,
-      "y": 234,
+      "x": 378,
+      "y": 366,
       "width": 980,
       "height": 676
     },
