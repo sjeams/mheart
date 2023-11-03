@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "仙境",
+    "texture": "31e36b80-efca-46f4-a79b-9feed039b6cf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      229,
+      150
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      229,
+      150
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "混沌",
+    "texture": "b96e1d86-a149-48b0-9968-2fd6353d6bee",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      107,
+      150
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      107,
+      150
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

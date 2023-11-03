@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "progressScene",
+    "_name": "word",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        348.14221232134435,
+        180.12954616171533,
         0,
         0,
         0,
@@ -314,9 +314,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "aa2026e2-2969-449f-8043-084291ca1e58"
-    },
+    "_spriteFrame": null,
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,

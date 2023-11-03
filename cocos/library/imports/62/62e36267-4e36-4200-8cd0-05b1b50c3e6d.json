@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "炼器",
+    "texture": "5d968950-3bf3-464a-9d3d-7f28355ebf04",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      101,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      101,
+      100
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

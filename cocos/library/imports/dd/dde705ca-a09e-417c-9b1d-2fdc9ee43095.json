@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "昆仑",
+    "texture": "e8e940ff-0b84-42d7-9576-842663f2273d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      267,
+      150
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      267,
+      150
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

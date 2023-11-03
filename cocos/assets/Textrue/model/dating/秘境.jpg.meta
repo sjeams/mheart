@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8dee5719-71b4-43e3-be4a-11b9377099f5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 150,
+  "height": 150,
+  "platformSettings": {},
+  "subMetas": {
+    "秘境": {
+      "ver": "1.0.4",
+      "uuid": "697aaf95-f8fe-4659-9da8-0e849a1bf94b",
+      "rawTextureUuid": "8dee5719-71b4-43e3-be4a-11b9377099f5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 150,
+      "height": 150,
+      "rawWidth": 150,
+      "rawHeight": 150,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
