@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 734,
-      "y": 258,
+      "x": 492,
+      "y": 188,
       "width": 1529,
-      "height": 654,
+      "height": 778,
       "layout": {
         "children": [
           {
@@ -87,7 +87,8 @@
         "game-window"
       ]
     },
-    "window-1699001610414": {}
+    "window-1699003588772": {},
+    "worker": {}
   },
   "panels": {
     "project-settings": {
