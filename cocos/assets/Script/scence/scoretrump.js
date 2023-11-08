@@ -95,7 +95,7 @@ cc.Class({
           // let cellHeight = _this.content.height * 0.215;
           // let spacingX = _this.content.width * 0.022;
           // let spacingY = _this.content.height * 0.045;
-          let cellWidth = _this.person.width * 0.2;
+          let cellWidth = _this.person.width * 0.1;
           let cellHeight = _this.person.height * 0.15;
           let spacingX = _this.person.width * 0.08;
           let spacingY = _this.person.height * 0.05;
@@ -111,7 +111,7 @@ cc.Class({
         
           for (let i=0; i<data.data.server.length; i++) {
               let tool = cc.instantiate(_this.person);
-              // console.log(TOOLS[i])
+              console.log(TOOLS[i])
               // _this.content.addChild(tool);
               tool.getComponent('Tools').initInfo(TOOLS[i]);
               _this.toolsArray.push(tool);

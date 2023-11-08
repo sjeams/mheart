@@ -585,8 +585,8 @@
     "relativePath": "Scene\\bage_s\\bage_user.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1699437936314,
-    "meta": 1699437936324,
+    "asset": 1699438963390,
+    "meta": 1699438963401,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
@@ -659,11 +659,6 @@
     "meta": 1698830080021,
     "relativePath": "Textrue\\button.png"
   },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1677829166938,
-    "meta": 1698830079591,
-    "relativePath": "Script\\login\\Alert.js"
-  },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
     "asset": 1677829166939,
     "meta": 1698830079918,
@@ -708,11 +703,6 @@
     "asset": 1677829166939,
     "meta": 1698830079815,
     "relativePath": "Script\\login\\register_in.js"
-  },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1677829166941,
-    "meta": 1698830079941,
-    "relativePath": "Script\\login\\Tools.js"
   },
   "49a6412c-96e6-41c4-97a7-17fe5e4b6c32": {
     "asset": 1656477599425,
@@ -1054,9 +1044,19 @@
     "meta": 1699431656214,
     "relativePath": "resources\\sprite_世界.prefab"
   },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1699438022620,
+    "meta": 1699438065864,
+    "relativePath": "Script\\login\\Alert.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1699438355123,
+    "meta": 1699438376067,
+    "relativePath": "Script\\login\\Tools.js"
+  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1699434052316,
-    "meta": 1699434055148,
+    "asset": 1699438548633,
+    "meta": 1699438549221,
     "relativePath": "Script\\scence\\scoretrump.js"
   }
 }
