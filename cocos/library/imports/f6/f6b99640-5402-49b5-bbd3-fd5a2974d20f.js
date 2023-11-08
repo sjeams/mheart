@@ -29,14 +29,16 @@ cc.Class({
     //     }
     // },
     //测试item
-    content: {
-      "default": null,
-      type: cc.Node
-    },
-    person: {
-      "default": null,
-      type: cc.Prefab
-    },
+    //   content: {
+    //     default: null,
+    //     type: cc.Node
+    //   },
+    // person: {
+    //   default: null,
+    //   type: cc.Prefab
+    // },
+    content: cc.Node,
+    person: cc.Prefab,
     //列表
     test_scrollView: {
       "default": null,
@@ -50,11 +52,13 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    for (var i = 0; i < 10; i++) {
-      var person = cc.instantiate(this.person);
-      this.conten = person; // person.parent = this.content;
-      // this.addTouchEvent(person);  //添加触摸事件
-    } // this.value_set = [];
+    // for (let i = 0; i < 10; i++) {
+    //     let person = cc.instantiate(this.person);
+    //     this.conten=person
+    //     // person.parent = this.content;
+    //     // this.addTouchEvent(person);  //添加触摸事件
+    //   }
+    // this.value_set = [];
     // // 如果你这里是排行榜，那么你就push排行榜的数据;
     // for(var i = 1; i <= 100; i ++) {
     //     this.value_set.push(i);
@@ -66,8 +70,58 @@ cc.Class({
     //     this.content.addChild(item);
     //     this.opt_item_set.push(item);
     // }
-    // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
+    this.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
+  },
+  spawnTools: function spawnTools() {
+    var _this = this;
 
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    var params = {
+      'page': 1,
+      'pageSize': 11
+    };
+    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-register', params, function (data) {
+      //   console.log(data);
+      // console.log(_this.content)
+      // let cellWidth = _this.content.width * 0.105;
+      // let cellHeight = _this.content.height * 0.215;
+      // let spacingX = _this.content.width * 0.022;
+      // let spacingY = _this.content.height * 0.045;
+      var cellWidth = _this.person.width * 0.2;
+      var cellHeight = _this.person.height * 0.15;
+      var spacingX = _this.person.width * 0.08;
+      var spacingY = _this.person.height * 0.05; // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+      // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+      // _this.content.getComponent(cc.Layout).spacingX = spacingX;
+      // _this.content.getComponent(cc.Layout).spacingY = spacingY;
+      // 根据TOOLS生成相应的道具
+
+      _this.toolsArray = [];
+      var TOOLS = data.data.server;
+
+      for (var i = 0; i < data.data.server.length; i++) {
+        var tool = cc.instantiate(_this.person); // console.log(TOOLS[i])
+        // _this.content.addChild(tool);
+
+        tool.getComponent('Tools').initInfo(TOOLS[i]);
+
+        _this.toolsArray.push(tool);
+
+        _this.content.addChild(tool);
+
+        console.log(tool);
+      } // 定义content滚动条高度
+
+
+      var scorllheight = _this.content.parent; //计算滚动条高度
+
+      var height = (cellHeight + spacingY) * Math.ceil(data.data.server.length / 2); // console.log(height);
+      // scorllheight.designResolution  = new cc.Size(600, height);
+
+      scorllheight.setContentSize(600, height);
+    });
   },
   addTouchEvent: function addTouchEvent(node_1) {
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);

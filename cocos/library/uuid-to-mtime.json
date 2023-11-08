@@ -585,9 +585,9 @@
     "relativePath": "Scene\\bage_s\\bage_user.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1699001976163,
-    "meta": 1699001976190,
-    "relativePath": "Scene\\home\\word.fire"
+    "asset": 1699437936314,
+    "meta": 1699437936324,
+    "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
     "asset": 1698984678554,
@@ -638,11 +638,6 @@
     "asset": 1699411182540,
     "meta": 1699411609133,
     "relativePath": "Script\\scence\\loading_fist.js"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1655109292717,
-    "meta": 1698830079970,
-    "relativePath": "Script\\scence\\scoretrump.js"
   },
   "b005bb37-3acc-445e-985c-338276edb616": {
     "asset": 1655109292719,
@@ -995,19 +990,14 @@
     "relativePath": "Script\\home_js\\userinfo.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1699429395731,
-    "meta": 1699429395751,
-    "relativePath": "Scene\\home\\dating.fire"
+    "asset": 1699431089312,
+    "meta": 1699431089356,
+    "relativePath": "Scene\\home\\大厅.fire"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1699427884390,
-    "meta": 1699427884466,
+    "asset": 1699433879059,
+    "meta": 1699433879108,
     "relativePath": "Scene\\index.fire"
-  },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1699428060195,
-    "meta": 1699428071839,
-    "relativePath": "Script\\login\\myserver.js"
   },
   "5b7b73f9-1581-4589-862c-77f46711f06f": {
     "asset": 1699427952676,
@@ -1018,5 +1008,55 @@
     "asset": 1698996550491,
     "meta": 1699428297559,
     "relativePath": "Textrue\\model\\dating\\创造生物.webp"
+  },
+  "a6d455ec-80c3-4fb4-aa0b-21dee5748522": {
+    "asset": 1699430582629,
+    "meta": 1699430595182,
+    "relativePath": "Scene\\home\\神魔炼狱.fire"
+  },
+  "496e7872-51ad-40b5-8724-b872860cdea3": {
+    "asset": 1699430583891,
+    "meta": 1699430603276,
+    "relativePath": "Scene\\home\\创造生物.fire"
+  },
+  "6c5c0736-3c0d-4200-9d4b-8669f5502c96": {
+    "asset": 1699430584593,
+    "meta": 1699430616977,
+    "relativePath": "Scene\\home\\秘境探索.fire"
+  },
+  "5f3de638-09ed-47d3-bafb-ecf360038279": {
+    "asset": 1699430585506,
+    "meta": 1699430627397,
+    "relativePath": "Scene\\home\\万古仙门.fire"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1699430779266,
+    "meta": 1699430782918,
+    "relativePath": "Script\\login\\myserver.js"
+  },
+  "1e477086-473b-41b9-abb6-cfb2263fda1c": {
+    "asset": 1699431074148,
+    "meta": 1699431081377,
+    "relativePath": "Scene\\home\\天地熔炉.fire"
+  },
+  "03f119f9-e894-49d2-b6fc-d183b9cf8598": {
+    "asset": 1699431075155,
+    "meta": 1699431087620,
+    "relativePath": "Scene\\home\\镇妖塔.fire"
+  },
+  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
+    "asset": 1699431134899,
+    "meta": 1699431148291,
+    "relativePath": "Script\\scence\\home_scence.js"
+  },
+  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
+    "asset": 1699431642722,
+    "meta": 1699431656214,
+    "relativePath": "resources\\sprite_世界.prefab"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1699434052316,
+    "meta": 1699434055148,
+    "relativePath": "Script\\scence\\scoretrump.js"
   }
 }

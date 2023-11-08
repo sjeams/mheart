@@ -1,12 +1,13 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "创造生物",
     "_objFlags": 0,
     "_native": "",
     "scene": {
       "__id__": 1
-    }
+    },
+    "asyncLoadAssets": false
   },
   {
     "__type__": "cc.Scene",
@@ -174,7 +175,7 @@
       "array": [
         0,
         0,
-        180.12954616171533,
+        226.02794635610746,
         0,
         0,
         0,
