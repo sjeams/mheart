@@ -31,7 +31,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "game",
-  "libVersion": "2.24.7",
+  "libVersion": "3.2.0",
   "appid": "wx74281a6b17fcd51c",
   "projectname": "xinyuan",
   "condition": {},

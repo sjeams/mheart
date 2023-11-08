@@ -38,9 +38,6 @@ cc.Class({
         //     bestScore = this.score;
         // }
         // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
-        
-
- 
     },
     tokenlogin: function(){
         // 获取本地json  信息
@@ -60,13 +57,16 @@ cc.Class({
         //         // 未登录弹出登录
         //         if(data.code==0){
         //             // this.loginbox.node.active = false;  // 进度隐藏
-
                     
         //         }
              
         //     });
         // })
         var token =cc.sys.localStorage.getItem('token');
+        //定位弹出窗口
+        var user_status  =cc.find("Canvas/server/user_status");
+        user_status.active=true;
+        var user_phone  =cc.find("Canvas/server/user_status/user_phone");
         if(token){
                 httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {'token':token} ,function (data) {
                     var _this =this;
@@ -76,14 +76,23 @@ cc.Class({
                     // }
                     // cc.log(data); 
                     // 未登录弹出登录
-                    if(data.code==0){
+                   // 登录成功
+                    if(data.code==1){
+                        // 其中slice(start, end)：用于提取字符串的片段
+                        // str.slice(1) 指下标为1之后的所有元素
+                        var loginname =  data.data.userinfo.loginname;
+                        var phone = loginname.slice(0,3) + "****" + loginname.slice(7,10);
+                        user_phone.getComponent(cc.Label).string=phone;
                         // this.loginbox.node.active = false;  // 进度隐藏
                     }else{
-                         // this.loginbox.node.active = false;  // 进度隐藏
+                        user_phone.getComponent(cc.Label).string=data.message;
+                        // this.loginbox.node.active = false;  // 进度隐藏
                     }
             });
 
-        } 
+        }else{
+            user_phone.getComponent(cc.Label).string="未登录";
+        }
     },
 
     login: function(){
@@ -107,6 +116,10 @@ cc.Class({
                 cc.sys.localStorage.setItem('loginname', loginname);
                 cc.sys.localStorage.setItem('password', password);
                 _this.node.active =false;
+                cc.find("Canvas/server/user_status/user_phone");
+                    _this.tokenlogin()
+                // var mycomponet =  _this.node.getComponent(register)
+                // mycomponet.tokenlogin(); // 快捷登录
             }else{
                 _this.register_alert.string ='账号密码错误!';
             }

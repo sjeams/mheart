@@ -55,7 +55,11 @@ cc.Class({
     //         }
     //     });
     // })
-    var token = cc.sys.localStorage.getItem('token');
+    var token = cc.sys.localStorage.getItem('token'); //定位弹出窗口
+
+    var user_status = cc.find("Canvas/server/user_status");
+    user_status.active = true;
+    var user_phone = cc.find("Canvas/server/user_status/user_phone");
 
     if (token) {
       httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {
@@ -68,17 +72,17 @@ cc.Class({
         // cc.log(data); 
         // 登录成功
         if (data.code == 1) {
-          //定位弹出窗口
-          var user_status = cc.find("Canvas/server/user_status");
-          user_status.active = true;
-          var user_phone = cc.find("Canvas/server/user_status/user_phone");
-          var loginname = data.data.userinfo.loginname; // 其中slice(start, end)：用于提取字符串的片段
+          // 其中slice(start, end)：用于提取字符串的片段
           // str.slice(1) 指下标为1之后的所有元素
-
+          var loginname = data.data.userinfo.loginname;
           var phone = loginname.slice(0, 3) + "****" + loginname.slice(7, 10);
           user_phone.getComponent(cc.Label).string = phone;
+        } else {
+          user_phone.getComponent(cc.Label).string = data.message;
         }
       });
+    } else {
+      user_phone.getComponent(cc.Label).string = "未登录";
     }
   },
   // login: function(){
@@ -122,8 +126,10 @@ cc.Class({
       'token': token
     }, function (data) {
       // cc.log(data); 
-      if (data.code == 0) {// 登录失败，或本地数据失效
-        // 弹窗
+      if (data.code == 0) {
+        // 登录失败，或本地数据失效
+        var user_status = cc.find("Canvas/register");
+        user_status.active = true; // 弹窗
       } else {
         // 设置服务器
         cc.sys.localStorage.setItem('server', JSON.stringify(data.data.server));
@@ -134,9 +140,7 @@ cc.Class({
           cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
           cc.director.loadScene('home/dating'); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
           // cc.sys.localStorage.getItem(key); //读取数据
-        }
-
-        if (data.code == 2) {
+        } else if (data.code == 2) {
           // 登录成功，未定义角色
           // 进入定义角色界面     
           var server = JSON.parse(cc.sys.localStorage.getItem('server')); // cc.log(server); 

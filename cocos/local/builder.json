@@ -2,7 +2,7 @@
   "platform": "mini-game",
   "actualPlatform": "wechatgame",
   "template": "link",
-  "buildPath": "fabu",
+  "buildPath": "D:\\phpstudy_pro\\WWW\\mheart\\web\\app_resources",
   "debug": false,
   "sourceMaps": false,
   "embedWebDebugger": false,
