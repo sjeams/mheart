@@ -86,7 +86,7 @@ cc.Class({
       var httpRequest = new HttpHelper();
       var params = {
               'page': 1,
-              'pageSize': 11,
+              'pageSize': 12,
       };
       httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-register', params, function (data) {
       //   console.log(data);
@@ -95,16 +95,16 @@ cc.Class({
           // let cellHeight = _this.content.height * 0.215;
           // let spacingX = _this.content.width * 0.022;
           // let spacingY = _this.content.height * 0.045;
-          let cellWidth = _this.person.width * 0.1;
-          let cellHeight = _this.person.height * 0.15;
-          let spacingX = _this.person.width * 0.08;
-          let spacingY = _this.person.height * 0.05;
+          let cellWidth = _this.content.width * 0.15;
+          let cellHeight = _this.content.height * 0.15;
+          let spacingX = _this.content.width * 0.08;
+          let spacingY = _this.content.height * 0.05;
 
           
-          // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-          // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-          // _this.content.getComponent(cc.Layout).spacingX = spacingX;
-          // _this.content.getComponent(cc.Layout).spacingY = spacingY;
+          _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+          _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+          _this.content.getComponent(cc.Layout).spacingX = spacingX;
+          _this.content.getComponent(cc.Layout).spacingY = spacingY;
           // 根据TOOLS生成相应的道具
           _this.toolsArray = [];
           let TOOLS = data.data.server;

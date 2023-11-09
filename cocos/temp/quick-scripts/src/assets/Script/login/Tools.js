@@ -22,8 +22,8 @@ cc.Class({
     // 图片
     var self = this;
 
-    if (info['picUrl']) {
-      cc.loader.loadRes(info['picUrl'], cc.SpriteFrame, function (err, spriteFrame) {
+    if (info['picture']) {
+      cc.loader.loadRes(info['picture'], cc.SpriteFrame, function (err, spriteFrame) {
         self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];
