@@ -7,6 +7,7 @@
 //用户生物列表
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
+use app\modules\app\models\UserWords;
 use yii;
 
 
@@ -47,13 +48,17 @@ class Words extends ActiveRecord
         return $type;
     }
 
-    // 查询世界列表--随机3个世界
-    public  function getWordRand(){
+    // 查询世界列表--随机3个世界--当前世界以外的3个世界
+    public  function getWordRand($num=3){
         $type = $this->user_info['word_type'];
-        $data = Words::find()->where("type <= $type")->orderBy(new Yii\db\Expression('rand()'))->limit(3)->asarray()->All();
+        $where =" type <= $type";
+        $word = UserWords::find()->where("userid=$this->userid and state =0")->asArray()->one();
+        if($word){
+            $wordId=$word['wordId'];
+            $where .="  and id !=$wordId "; 
+        }
+        //STAR 星星，随机难度等级
+        $data = Words::find()->select("*,FLOOR((RAND()*5)+1) star")->where("$where")->orderBy(new Yii\db\Expression('rand()'))->limit($num)->asarray()->All();        
         return $data;
     }
-
-
-
 }

@@ -37,6 +37,7 @@ header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NA
 class AppApinewController extends ApiUserControl{
     public $param; 
     public $user_info; 
+    public $userid; 
     public $UserBiology; 
     public $UserBiologyAttribute; 
     public $UserBiologyNatureDo; 
@@ -44,11 +45,10 @@ class AppApinewController extends ApiUserControl{
     public $UserLogin; 
     public $Words; 
     public $UserServer;
-    public $userid;  
     function init(){
         parent::init();
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info ;
+        $this->userid =  $this->user_info['userid'];
  
         //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
         $this->UserBiology=new UserBiology();

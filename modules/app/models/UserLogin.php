@@ -1,4 +1,9 @@
 <?php
+/*
+ * @Author: sjeam
+ * @Date: 2022-06-13 16:34:53
+ * @Description: 
+ */
 //  用户验证
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
@@ -11,6 +16,7 @@ class UserLogin extends ActiveRecord
     }
 
     public static function getUserlogin($token){
+        //修改User后需要重新调用
         if(!empty($token)){
             $sql ="SELECT u.* from {{%user_login}} ul INNER JOIN {{%user}} u on ul.server=u.server and ul.id=u.loginid  where ul.token = '$token'";
             $user_info = Yii::$app->db->createCommand($sql)->queryOne();
