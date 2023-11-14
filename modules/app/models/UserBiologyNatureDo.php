@@ -59,6 +59,25 @@ class UserBiologyNatureDo extends ActiveRecord
         return $data;
     }
     
+    //随机敌人
+    public  function getValueListRand($num=1){
+        $data = UserBiologyNatureDo::find()->where("userid =0")->asarray()->One();
+        $array =array(1,2,3,4,5,6,7,8,9);
+        for($i=0;$i<=$num;$i++){
+            // if( intval($data["$dofind"])>0){
+                    $i++;
+            // }
+            $new = array_rand($array);
+            $dofind ='do'.($new+1);
+  
+            $data["$dofind"] = $array[$new];
+            unset($array[$new]);
+        }
+        return $data;
+    }
+
+
+
     // 写入阵法-生物id  阵法编号  is_add 1 添加 0 移除
     public  function addPosition($biologyid=0,$doid=1,$is_add=1){
         //统计位置数量

@@ -59,7 +59,7 @@ class AppApinewController extends ApiUserControl{
         $this->Words=new Words();
         $this->UserServer=new UserServer();
         $this->param = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
-        $this->param['userid']=2;
+        // $this->param['userid']=2;
     }
     public $enableCsrfValidation = false;
 
@@ -103,7 +103,12 @@ class AppApinewController extends ApiUserControl{
         //获取自己战斗阵容
         $my_biology = $UserBiologyNatureDo->getValueList();
         //获取对象战斗阵容
-        $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
+        if($this->param['userid']){ //玩家
+            $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
+        }else{//系统怪，随时刷新不做存留
+            $do_biology = $UserBiologyNatureDo->getValueListRand();
+        }
+        var_dump($do_biology);die;
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$this->param['userid']);
         // var_dump($data['fighting_msg']);die;
