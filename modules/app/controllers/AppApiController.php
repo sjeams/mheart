@@ -31,6 +31,7 @@ header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NA
 class AppApiController extends ApiUserControl{
     public $param; 
     public $user_info; 
+    public $userid; 
     public $UserBiology; 
     public $UserBiologyAttribute; 
     public $UserBiologyNatureDo; 
@@ -41,6 +42,7 @@ class AppApiController extends ApiUserControl{
     function init(){
         parent::init();
         $this->user_info =  Yii::$app->session->get('user_info');
+        $this->userid =  $this->user_info['userid'];
         //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
         $this->UserBiology=new UserBiology();
         $this->UserBiologyAttribute=new UserBiologyAttribute();
@@ -108,10 +110,11 @@ class AppApiController extends ApiUserControl{
      */
     public function actionBiologyAttribute(){
         $userBiologyid = $this->param['userBiologyid'];
+        $biology_userid = intval($this->param['biology_userid']);//0系统生物，其它为玩家
         $UserBiologyAttribute =new UserBiologyAttribute();
         $UserBiologySkill =new UserBiologySkill();
         $data=array(
-            'attribute' => $UserBiologyAttribute->getUserBiologyAttribute($userBiologyid),//生物属性
+            'attribute' => $UserBiologyAttribute->getUserBiologyAttribute($userBiologyid,$biology_userid),//生物属性
             'skill'  => $UserBiologySkill->getUserBiologySkill($userBiologyid),//生物列表
         );
         die(Method::jsonApp(1,$data,'succes'));

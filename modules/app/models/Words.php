@@ -15,9 +15,11 @@ class Words extends ActiveRecord
 {
     public $user_info; 
     public $userid; 
+    public $wordId; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
+        $this->wordId =  $this->user_info['wordId'];
     }
     public static function tableName(){
         return '{{x2_words}}';
@@ -48,14 +50,12 @@ class Words extends ActiveRecord
         return $type;
     }
 
-    // 查询世界列表--随机3个世界--当前世界以外的3个世界
+    // 查询世界列表--随机3个世界--当前世界以外的3个世界  1-5星难度
     public  function getWordRand($num=3){
         $type = $this->user_info['word_type'];
         $where =" type <= $type";
-        $word = UserWords::find()->where("userid=$this->userid and state =0")->asArray()->one();
-        if($word){
-            $wordId=$word['wordId'];
-            $where .="  and id !=$wordId "; 
+        if($this->wordId){
+            $where .="  and id !=$this->wordId "; 
         }
         //STAR 星星，随机难度等级
         $data = Words::find()->select("*,FLOOR((RAND()*5)+1) star")->where("$where")->orderBy(new Yii\db\Expression('rand()'))->limit($num)->asarray()->All();        

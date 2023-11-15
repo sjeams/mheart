@@ -63,13 +63,12 @@ class UserBiologyNatureDo extends ActiveRecord
     public  function getValueListRand($num=1){
         $data = UserBiologyNatureDo::find()->where("userid =0")->asarray()->One();
         $array =array(1,2,3,4,5,6,7,8,9);
-        for($i=0;$i<=$num;$i++){
+        for($i=0;$i<$num;$i++){
             // if( intval($data["$dofind"])>0){
-                    $i++;
+                    // $i++;
             // }
             $new = array_rand($array);
             $dofind ='do'.($new+1);
-  
             $data["$dofind"] = $array[$new];
             unset($array[$new]);
         }
@@ -139,8 +138,8 @@ class UserBiologyNatureDo extends ActiveRecord
    
     public function fightingExtend($my_biology,$do_biology){
         //战斗属性调用
-        $my_biology = $this->getFightAttribute($my_biology);
-        $do_biology = $this->getFightAttribute($do_biology);
+        $my_biology = $this->getFightAttribute($my_biology);//唯一调用己方生物
+        $do_biology = $this->getFightAttribute($do_biology);//唯一调用地方生物
         //战斗属性排序--阵营分配
         $my_biology_sort = $this->getFightSort($my_biology,POSITION_MY); //1己方
         $do_biology_sort = $this->getFightSort($do_biology,POSITION_ENEMY);//2敌方
@@ -217,12 +216,14 @@ class UserBiologyNatureDo extends ActiveRecord
 
     //获取战斗属性
     public function getFightAttribute($data){
+
+        $biology_userid = $data['userid'];//阵容属于哪个单位，0系统 ，其它为玩家
         $UserBiologyAttribute =new UserBiologyAttribute();
         for($i=0;$i<=9;$i++){
             $dofind ='do'.$i;
             if(intval($data["$dofind"])>0){
                 //基础属性
-                $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"]);
+                $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"],$biology_userid);
                 // 装备属性--基础装备--法宝
 
                 //阵法属性
@@ -233,6 +234,15 @@ class UserBiologyNatureDo extends ActiveRecord
         }
         return $data;
     }
+
+
+
+
+
+
+
+
+
     //战斗顺序
     public function getFightSort($data,$position_my){
         // suDu
