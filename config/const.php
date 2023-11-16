@@ -1,5 +1,8 @@
 <?php
 
+
+// 每级经验条
+define('BIOLOGY_EXP',100, true);  //默认生物上限不能超过20个
 //基础
 define('BIOLOGY_COUNT',20, true);  //默认生物上限不能超过20个
 define('FIGHT_BOUT',20, true);  //战斗回合

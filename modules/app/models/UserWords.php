@@ -7,8 +7,9 @@
 //用户生物列表
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
-use app\modules\app\models\User;
+use app\modules\admin\models\User;
 use app\modules\app\models\getBiologyRand;
+use app\modules\admin\models\BiologyCreate;
 use app\modules\app\models\UserBiologyNatureDo;
 use yii;
 
@@ -118,13 +119,68 @@ class UserWords extends ActiveRecord
                 $dofind ='do'.$i;
                 if(intval($nature_do["$dofind"])>0){
                     //生成生物
-                    $UserBiology= new UserBiology(); 
-                    $data = $UserBiology->getBiologyRandSystem();
+                    $data = $this->getBiologyRandSystem();
+                    $data['id']=$nature_do["$dofind"];
                     $biology_list[]=$data;
                 }
             }
             $map_int[$key]['biology_list']=$biology_list;//阵容
         }
         return $map_int;
+    }
+
+
+    // 根据征服世界随机生物id
+    public static function BiologyRandSystem($wordId,$num=1){  //默认管理员，数量为1
+        // $wordId= UserWords::find()->select('wordId')->where("userid =$userid and complete = 1")->asarray()->All();
+        // $wordId=  implode(',',array_column($wordId, 'wordId'));
+        //  var_dump($wordId);die;     
+        $biologyid = (new \yii\db\Query())
+        ->select("a.name,a.*")
+        ->from("x2_biology AS a")
+        ->leftJoin("x2_words AS b","a.wordId = b.id")
+        // ->where(['or' , ['wordId' =>'1'] ,['wordId' => $wordId]] )    // 先满足后面的条件
+        // ->where(['a.id' =>'18'] ) 
+        ->andWhere(['a.wordId' =>$wordId])
+        ->limit($num)
+        ->orderBy("rand()")
+        ->All();
+        return $biologyid;
+    }
+    //指定世界的生物
+    public  function getBiologyRandSystem(){
+        // $type = $this->user_info['word_type'];
+        //系统随机获取一个生物 
+        $biology = UserWords :: BiologyRandSystem($this->wordId)[0]; //默认管理员-数量1 --返回数组 
+        $biology['userBiologyid']=$biology['id'];
+        $biology = $this->getBiologyRandGradeSystem($biology);
+        $userbiology = User::biolobyChange($biology);//获取战斗属性
+
+        $userbiology['state']= $this->getBiologyRandStateSystem();//随机境界  
+        // var_dump($userbiology);die;
+        return  $userbiology;
+    }
+    //定义等级，境界
+    public  function getBiologyRandGradeSystem($biology){
+        // $createid = Yii::$app->request->post('createid');
+        // $create = BiologyCreate::find()->where("id=$createid")->One();
+          // 白值属性计算
+        $res = BiologyCreate::getExperience($biology,$biology,99);//属性没有变化或者强化，就用原属性 1+99  =100级
+        $biology['grade']=$res['newGrade'];
+        $biology['maxNature']=$res['maxNature'];
+        $biology['experience']=$res['experience'];
+        $biology['power']=$res['power'];
+        $biology['agile']=$res['agile'];
+        $biology['intelligence']=$res['intelligence'];
+        $biology['reiki']=$res['reiki'];
+        return $biology;
+    }
+    public  function getBiologyRandStateSystem(){
+       $difficult = intval($this->user_in_word['difficult']);
+       $star =  intval($this->user_in_word['star']);
+       $total = $difficult+$star;
+       $total = $total>20?20:$total;
+       $state =rand($difficult,$total);
+       return $state;
     }
 }

@@ -522,7 +522,7 @@
                 
 
                 mini.getbyName("grade").setValue(exp.newGrade);
-                mini.getbyName("experience").setValue(experience);
+                mini.getbyName("experience").setValue(exp.experience);
                 mini.get("percent").setValue(exp.percent);
                 extenCount();
             }

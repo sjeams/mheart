@@ -31,6 +31,7 @@ class UserWords extends ActiveRecord
         ->All();
         return $biologyid;
     }
+
     
     // 生物生成随机属性
     public static function BiologyExtendRand($biology,$userid=1){

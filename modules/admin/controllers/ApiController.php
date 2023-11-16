@@ -309,50 +309,54 @@ class ApiController extends ApiControl {
 
     // 经验修改与升级--获得属性点 --修改基础属性
     public function actionExperience(){
-      $createid = Yii::$app->request->post('createid');
-      $power = Yii::$app->request->post('power');
-      $agile = Yii::$app->request->post('agile');
-      $intelligence = Yii::$app->request->post('intelligence');
-
-      $exp = Yii::$app->request->post('experience');
-      $grade = Yii::$app->request->post('grade');
-      $maxNature = Yii::$app->request->post('maxNature');
-      $wuXing = Yii::$app->request->post('wuXing');
-      $reiki = Yii::$app->request->post('reiki');
-      // $grade=1;
-      // $exp=160;
-      // ，每级叠加经验150
-      // var_dump($exp);die;
-      $sum=0;
-      for($i=1;$i<=200;$i++) {  // 最多200级
-          $sum+= $i*150; 
-          if($sum>=$exp){
-            $res['newGrade'] =$i;   // 当前等级
-            $res['newExp'] = $i*150; // 当前晋级总共需要经验
-            $res['nowExp']= $sum-$exp; // 晋级需要经验
-            $res['lessExp']=$res['newExp']- $res['nowExp']; //晋级当前经验
-            $res['percent']= round($res['lessExp']/$res['newExp']*100,2); //经验百分比
-            $res['maxNature'] = ($i - $grade)*$wuXing+$maxNature; // 获得自由属性点
- 
-            if($res['lessExp']==$res['newExp']&&$i<200){  // 刚好满级
-              $i=$i+1; //等级+1
-              $res['newGrade'] =$i;   // 当前等级
-              $res['newExp'] = $i*150; // 当前晋级总共需要经验
-              $res['nowExp'] = $i*150; //晋级当前经验
-              $res['lessExp']=$res['newExp']- $res['nowExp']; //晋级当前经验
-              $res['percent'] =0;   //经验百分比
-              $res['maxNature'] = ($i - $grade)*$wuXing+$maxNature; // 获得自由属性点
-            }
-            // 白值属性计算
-            $create = BiologyCreate::find()->where("id=$createid")->One();
-            // var_dump($create);die;
-            $res['power'] = ($i - $grade)*$create->power +$power;
-            $res['agile'] =($i - $grade)*$create->agile +$agile;
-            $res['intelligence'] =($i - $grade)*$create->intelligence +$intelligence;
-            $res['reiki'] =  intval( ($create->reiki*($i - $grade) + ($i - $grade)*( $create->power + $create->agile + $create->intelligence))*0.1)+$reiki;//灵气
-            break;
-          }
-      }
+       $param =Yii::$app->request->post();
+       $createid = Yii::$app->request->post('createid');
+       $create = BiologyCreate::find()->where("id=$createid")->One();
+       $res = BiologyCreate::getExperience($param,$create);
+      // $createid = Yii::$app->request->post('createid');
+      // $power = Yii::$app->request->post('power');
+      // $agile = Yii::$app->request->post('agile');
+      // $intelligence = Yii::$app->request->post('intelligence');
+      // $exp = Yii::$app->request->post('experience');
+      // $grade = Yii::$app->request->post('grade');
+      // $maxNature = Yii::$app->request->post('maxNature');
+      // $wuXing = Yii::$app->request->post('wuXing');
+      // $reiki = Yii::$app->request->post('reiki');
+      // // $grade=1;
+      // // $exp=160;
+      // // ，每级叠加经验150
+      // // var_dump($exp);die;
+      // $sum=0;
+      // for($i=1;$i<=200;$i++) {  // 最多200级
+      //     $sum+= $i*150; 
+      //     if($sum>=$exp){
+      //       $res['newGrade'] =$i;   // 当前等级
+      //       $res['newExp'] = $i*150; // 当前晋级总共需要经验
+      //       $res['nowExp']= $sum-$exp; // 晋级需要经验
+      //       $res['lessExp']=$res['newExp']- $res['nowExp']; //晋级当前经验
+      //       $res['percent']= round($res['lessExp']/$res['newExp']*100,2); //经验百分比
+      //       // $res['maxNature'] = ($i - $grade)*$wuXing+$maxNature; // 获得自由属性点
+      //       $res['maxNature'] = ($i - $grade)*10+$maxNature; // 获得自由属性点
+      //       if($res['lessExp']==$res['newExp']&&$i<200){  // 刚好满级
+      //         $i=$i+1; //等级+1
+      //         $res['newGrade'] =$i;   // 当前等级
+      //         $res['newExp'] = $i*150; // 当前晋级总共需要经验
+      //         $res['nowExp'] = $i*150; //晋级当前经验
+      //         $res['lessExp']=$res['newExp']- $res['nowExp']; //晋级当前经验
+      //         $res['percent'] =0;   //经验百分比
+      //         // $res['maxNature'] = ($i - $grade)*$wuXing+$maxNature; // 获得自由属性点
+      //         $res['maxNature'] = ($i - $grade)*10+$maxNature; // 获得自由属性点
+      //       }
+      //       // 白值属性计算
+      //       $create = BiologyCreate::find()->where("id=$createid")->One();
+      //       // var_dump($create);die;
+      //       $res['power'] = ($i - $grade)*$create->power +$power;
+      //       $res['agile'] =($i - $grade)*$create->agile +$agile;
+      //       $res['intelligence'] =($i - $grade)*$create->intelligence +$intelligence;
+      //       $res['reiki'] =  intval( ($create->reiki*($i - $grade) + ($i - $grade)*( $create->power + $create->agile + $create->intelligence))*0.1)+$reiki;//灵气
+      //       break;
+      //     }
+      // }
 
       // echo "等级 : ".$res['newGrade'];
       // echo "<br>";

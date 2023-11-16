@@ -10,6 +10,8 @@ use yii\db\ActiveRecord;
 use app\modules\admin\models\UserWords;
 use app\modules\admin\models\User;
 
+
+
 use app\modules\app\models\UserBiologyAttribute;
 
 use yii;
@@ -67,14 +69,7 @@ class UserBiology extends ActiveRecord
         } 
         return  $biology;
     }
-    public  function getBiologyRandSystem(){
-        $type = $this->user_info['word_type'];
-        // 用户 随机获取一个生物（默认管理员--权限为已通世界）
-        $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组 
-        $userbiology = User::biolobyChange($biology);//获取战斗属性
-        $userbiology['userBiologyid']=$userbiology['id'];
-        // var_dump($userbiology);die;
-        return  $userbiology;
-    }
-    
+
 }
+
+ 
