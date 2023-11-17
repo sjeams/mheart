@@ -20,6 +20,7 @@ use app\modules\app\models\UserBiologyNatureDo;
 use app\modules\app\models\UserBiologySkill;
 use app\modules\app\models\UserLogin;
 use app\modules\app\models\Words;
+use app\modules\app\models\UserWords;
 use app\modules\app\models\UserServer;
 use app\modules\app\models\UserGoods;
 
@@ -99,6 +100,7 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
+        $map_num =$this->param['map_num']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         //获取自己战斗阵容
         $my_biology = $UserBiologyNatureDo->getValueList();
@@ -106,11 +108,12 @@ class AppApinewController extends ApiUserControl{
         if($this->param['userid']){ //玩家
             $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
         }else{//系统怪，随时刷新不做存留
-            $do_biology = $UserBiologyNatureDo->getValueListSystem();
+            $UserWords =new UserWords();
+            $do_biology = $UserWords->getValueListSystem($map_num,'nature_do');
         }
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果
-        $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$this->param['userid']);
+        $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_num);
         // var_dump($data['fighting_msg']);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
         // var_dump($data['fighting_goods_my']);//物品奖励结果

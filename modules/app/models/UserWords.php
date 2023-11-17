@@ -19,13 +19,15 @@ class UserWords extends ActiveRecord
     public $userid;
     public $wordId; 
     public $user_in_word;//正在进行的世界
+    public $user_in_word_map;//正在进行的世界
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
         $this->wordId =  $this->user_info['wordId'];
         if($this->wordId){
-            $sql ="SELECT u.*,ul.star,ul.num,ul.biology,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordId=u.id  where ul.userid=$this->userid and ul.complete=0";
+            $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordId=u.id  where ul.userid=$this->userid and ul.complete=0";
             $this->user_in_word = Yii::$app->db->createCommand($sql)->queryOne();
+            $this->user_in_word_map =  json_decode($this->user_in_word['map'],true);//生物地图
         }
     }
     public static function tableName(){
@@ -68,7 +70,12 @@ class UserWords extends ActiveRecord
         //生成地图坐标，随机事件个数3-10个事件，只能选择3次。   
         $map_int = $this->getWordsMapInt();
         $map = $this->getWordsMapIntBiology($map_int);//生成地图生物
-        var_dump($map);die;
+        $map=json_encode($map,true);
+        // var_dump($map);die;
+        // 存入地图
+        $word = UserWords::find()->where("userid=$this->userid and wordId =$this->wordId")->one();  
+        $word->map =$map;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
+        $word->save();
     }
     //世界地图--九宫格--坐标计算
     public  function getWordsMap(){
@@ -121,7 +128,7 @@ class UserWords extends ActiveRecord
                     //生成生物
                     $data = $this->getBiologyRandSystem();
                     $data['id']=$nature_do["$dofind"];
-                    $biology_list[]=$data;
+                    $biology_list[$i]=$data;//固定id为阵法id 1-9
                 }
             }
             $map_int[$key]['biology_list']=$biology_list;//阵容
@@ -183,4 +190,16 @@ class UserWords extends ActiveRecord
        $state =rand($difficult,$total);
        return $state;
     }
+
+    //返回地图编号  nature_do    biology_list  
+    public  function getValueListSystem($id=null,$name=null){
+       if(isset($id)&&isset($name)){
+            return $this->user_in_word_map[$id][$name];
+       }else if(isset($id)&!isset($name)){
+            return $this->user_in_word_map[$id];
+       }else{
+            return $this->user_in_word_map;
+       }
+    }
+
 }

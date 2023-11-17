@@ -8,6 +8,7 @@
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\modules\app\models\Words;
+use app\modules\app\models\UserWords;
 use yii;
 class UserBiologyAttribute extends ActiveRecord
 {
@@ -31,18 +32,16 @@ class UserBiologyAttribute extends ActiveRecord
     /**
      * 属性详情
      */
-    public  function getUserBiologyAttribute($userBiologyid,$biology_userid=0){
+    public  function getUserBiologyAttribute($userBiologyid,$biology_userid=0,$map_num){
         if($biology_userid){
             //玩家生物
             $data = UserBiologyAttribute::find()->select('*')->where("userBiologyid=$userBiologyid")->asarray()->One();  
         }else{
+            // var_dump($userBiologyid);
+            // var_dump($biology_userid);
             //系统生物
-            $biology = UserWords::find()->select("biology")->where("userid=$this->userid and wordId =$this->wordId")->one();
-            if($biology){
-                $biology =$biology['biology'];//世界生物数组--取出生物池id序号
-
-            }
-            var_dump($biology);die;
+            $UserWords =new UserWords();
+            $data = $UserWords->getValueListSystem($map_num,'biology_list')[$userBiologyid];
         }
         return $data;
     }
