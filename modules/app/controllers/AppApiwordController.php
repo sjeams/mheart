@@ -67,10 +67,21 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/index
      */
     public function actionIndex(){
-        $data['wordId'] =  $this->user_in_word;//返回正在经行的世界
-        $data['words'] = $this->Words->getWordRand(3);//返回随机三个世界
+        $data =  $this->user_in_word;//返回正在经行的世界
+        var_dump($data['user_in_word_map']);die;
         die(Method::jsonApp(1,$data,'succes'));
     }
+
+    /**
+     * 刷新世界
+     * app/app-api/biology-list
+     * http://cs.aheart.com/app/app-apiword/rand-word
+     */
+    public function actionRandWord(){
+        $data = $this->Words->getWordRand(3);//返回随机三个世界
+        die(Method::jsonApp(1,$data,'succes'));
+    }
+
     
     /**
      * 进入世界
@@ -83,7 +94,7 @@ class AppApiwordController extends ApiUserControl{
     }
 
     /**
-     * 进入世界
+     * 退出世界
      * app/app-api/biology-list
      * http://cs.aheart.com/app/app-apiword/out-word
      */
@@ -93,15 +104,14 @@ class AppApiwordController extends ApiUserControl{
     }
 
     /**
-     * 刷新世界地图--    世界时间：聊斋1年      时间流速： 1年/刷新    选择：3/次(只能做3次选择)
+     * 刷新地图--    世界时间：聊斋1年      时间流速： 1年/刷新    选择：3/次(只能做3次选择)
      * app/app-api/biology-list
-     * http://cs.aheart.com/app/app-apiword/word
+     * http://cs.aheart.com/app/app-apiword/map-word
      */
-    public function actionWord(){
+    public function actionMapWord(){
         $UserWords=new UserWords();
-        $data['wordId'] =  $this->user_in_word;//返回正在经行的世界
-        $data['sence'] =$UserWords->getUserSence();//地图生成随机场景(生物*物品)3-10个
-        die(Method::jsonApp(1,$data,'succes'));
+        $UserWords->getUserSence();//地图生成随机场景(生物*物品)3-10个
+        die(Method::jsonApp(1,null,'succes'));
     }
 
     

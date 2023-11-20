@@ -140,41 +140,53 @@ class User extends ActiveRecord
 
     // 根据白值（智力敏） 固定属性
     public static function biolobyChange($biology){
+        //白值
         $power =  intval($biology['power']);
         $agile =  intval($biology['agile']);
         $intelligence =  intval($biology['intelligence']);
         $lucky = intval($biology['lucky']);
-
-        $wuXing =  intval($biology['wuXing']);
+        // $wuXing =  intval($biology['wuXing']);
         $grade =  intval($biology['grade']);
         $score =  intval($biology['score']);
-
-        // $reiki =  intval(  intval($biology['reiki'])*$grade + (($grade-1)*($power+$agile+$intelligence)/$grade )*0.2);
         $reiki = intval($biology['reiki']);
+        $state = intval($biology['state']);
+        // $reiki =  intval(  intval($biology['reiki'])*$grade + (($grade-1)*($power+$agile+$intelligence)/$grade )*0.2);
 
-        $biology['shengMing'] = 100 + $grade*100+$power*10+$agile*2+$intelligence*2; 
-        $biology['moFa'] = intval(50+$grade+$power*0.02+$agile*0.02+$intelligence*0.1); 
+        //白值计算
+        $biology['shengMing'] = $grade*100+$power*10+$agile*2+$intelligence*2; 
+        $biology['moFa'] = intval($grade*10+$power*0.02+$agile*0.02+$intelligence*0.1); 
         
         $biology['gongJi'] =$grade*10 + intval(($power*0.2+$agile+$intelligence*0.2)*1.2)+$reiki*2; 
         $biology['huJia'] = $grade+intval(($power*0.2+$agile+$intelligence*0.2)*0.3)+$reiki*2; 
 
         $biology['faGong'] = $grade*10 + intval(($power*0.2+$agile*0.2+$intelligence)*1.2)+$reiki*2; 
         $biology['fakang'] = $grade+intval(($power*0.2+$agile*0.2+$intelligence)*0.3)+$reiki*2; 
-        $biology['reiki'] =  $reiki;
-
-        $biology['jianShang'] = 0;
-        $biology['zhenShang'] = 0;
+        // $biology['reiki'] =  $reiki;//默认为0
+        $biology['jianShang'] = $reiki*0.1+$lucky;
+        $biology['zhenShang'] = $reiki*0.1+$lucky;
         $biology['shanbi'] = intval($lucky*0.1);
-        $biology['suDu'] = intval(100+$agile*0.3+$reiki*0.3);
+        $biology['suDu'] = intval($agile*0.3+$reiki*0.3);
 
         $skillscore= !empty($biology['skill']) ? count(explode(',',$biology['skill']))*50 : 0; // 技能个数战力
-
+        $skillscore=  $skillscore+$state*50;
         $biology['special'] =$biology['shengMing']+$biology['moFa']+$biology['gongJi']+$biology['huJia']+$biology['faGong']+$biology['fakang']+$biology['reiki']+$biology['jianShang']+$biology['zhenShang']+$biology['shanbi']+$biology['suDu']+$skillscore; //战力
         // $biology['scoreGrade'] = User :: getValueList($score);// 根据评分修改品质--不定义品质
         $biology['jingBi'] = $score*2+$grade*2+$biology['state']*10; 
         $biology['jingYan'] = $score+$grade*2+$biology['state']*5; 
         return $biology;
     }
+
+
+    // 根据白值（智力敏） 额外属性--属性容器--根据额外的属性进行叠加
+    public static function biolobyChangeMore($biology,$add_biology){
+        $more = User::biolobyChange($add_biology);
+        foreach($more as$key => $v){
+            $biology[$key] = $biology[$key]+$v;
+        }
+        return $biology;
+    }
+
+
 
     /**
      * 评分等级列表

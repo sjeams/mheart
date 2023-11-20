@@ -1,7 +1,9 @@
 <?php
 
+// 系统生物每个境界提升的等级
+define('BIOLOGY_STATE_GRADE_SYSTEM_NUM',5, true);  //等级倍数
+define('BIOLOGY_STATE_GRADE_SYSTEM',2, true);  //默认生物等级
 
-// 每级经验条
 define('BIOLOGY_EXP',100, true);  //默认生物上限不能超过20个
 //基础
 define('BIOLOGY_COUNT',20, true);  //默认生物上限不能超过20个

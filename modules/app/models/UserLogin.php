@@ -21,7 +21,7 @@ class UserLogin extends ActiveRecord
             $sql ="SELECT u.* from {{%user_login}} ul INNER JOIN {{%user}} u on ul.server=u.server and ul.id=u.loginid  where ul.token = '$token'";
             $user_info = Yii::$app->db->createCommand($sql)->queryOne();
             if($user_info){
-                $user_info['word_type'] = Words::getUserWordGrade($user_info['grade']);
+                $user_info['word_type'] = intval(Words::getUserWordGrade()['difficult']);
             } 
             return $user_info;
         }else{

@@ -13,6 +13,8 @@ use app\modules\admin\models\BiologySkill;
 use app\modules\admin\models\BiologySkillPosition;
 use app\modules\admin\models\BiologySkillPositionType;
 use app\modules\admin\models\BiologySkillExtend;
+use app\modules\admin\models\User;
+
 
 use yii;
 class UserBiologyNatureDo extends ActiveRecord
@@ -227,11 +229,6 @@ class UserBiologyNatureDo extends ActiveRecord
             if(intval($data["$dofind"])>0){
                 //基础属性
                 $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"],$biology_userid,$this->map_num);
-                // 装备属性--基础装备--法宝
-
-                //阵法属性
-
-                //增幅属性
 
             }
         }
@@ -421,49 +418,53 @@ class UserBiologyNatureDo extends ActiveRecord
         $position_type_list = BiologySkillPositionType::positionTypeList();
         $position_type=0;//定位类型
         $skill_attack=0;//主动攻击  0 普通  1技能--有技能就跳过普通攻击
-        foreach($fight_skill as $skill){
-            $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
-            $position = intval($skill['position']);    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
-            $position_type = intval($skill['positionType']);//攻击对象类型 --优先攻击排序
-            $belong = intval($skill['belong']);//主动--技能
-            //发起技能，魔法够不够
-            $isneed_value = $this->isNeedValue($attack_biology,$skill);
-            if($isneed_value){
-                if($belong==ATTACK5){ //无主动技能--则进行普通攻击
-                    $skill_attack=1;
-                }
-                //发起技能消耗--返回消耗后的状态，因为拿的是循环值--这里可以改为容器，根据id来
-                $attack_biology = $this->attackNeedValue($attack_biology,$skill);
-            }else{
-                continue;
-            }
-            //获取阵容--每次技能过后需要重新获取生物状态
-            $position_my_list_new   = $this-> getShengMing(POSITION_MY);
-            $position_enemy_list_new= $this-> getShengMing(POSITION_ENEMY);
-            //排序
-            if($position_type){
-                $position_my_list_new= BiologySkillPosition:: getPositionType($position_type,$position_my_list_new,$position_type_list);
-                $position_enemy_list_new= BiologySkillPosition:: getPositionType($position_type,$position_enemy_list_new,$position_type_list);
-            }
-            $position_my_list_new  = array_column($position_my_list_new,'position'); //获取自己位置
-            $position_enemy_list_new  = array_column($position_enemy_list_new,'position'); //获取敌人位置
-            if($attack){ // 0 直接跳过--被攻击--被动跳过
-                //技能使用对象
-                $attaatt_positionck = $attack==POSITION_MY?$position_my_list_new:( $attack==POSITION_ENEMY?$position_enemy_list_new:[]);
-                if(in_array($position_my,array(POSITION_MY,POSITION_ENEMY))){  
-                    $int= BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$attack);
-                    // var_dump($skill);
-                    // var_dump($int);
-                    //循环攻击位置
-                    foreach($int as $pid){
-                        // is_do 0被动   1 主动 和主动触发
-                        $this->attackSkill($position_my,$attack_biology,$pid,$skill,SKILL_GOING);
 
+        //没有技能直接主动攻击
+        if($fight_skill ){
+            foreach($fight_skill as $skill){
+                $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
+                $position = intval($skill['position']);    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
+                $position_type = intval($skill['positionType']);//攻击对象类型 --优先攻击排序
+                $belong = intval($skill['belong']);//主动--技能
+                //发起技能，魔法够不够
+                $isneed_value = $this->isNeedValue($attack_biology,$skill);
+                if($isneed_value){
+                    if($belong==ATTACK5){ //无主动技能--则进行普通攻击
+                        $skill_attack=1;
                     }
-                    
-                } 
-                // var_dump($skill);//技能
-                // var_dump($int);die;//攻击位置
+                    //发起技能消耗--返回消耗后的状态，因为拿的是循环值--这里可以改为容器，根据id来
+                    $attack_biology = $this->attackNeedValue($attack_biology,$skill);
+                }else{
+                    continue;
+                }
+                //获取阵容--每次技能过后需要重新获取生物状态
+                $position_my_list_new   = $this-> getShengMing(POSITION_MY);
+                $position_enemy_list_new= $this-> getShengMing(POSITION_ENEMY);
+                //排序
+                if($position_type){
+                    $position_my_list_new= BiologySkillPosition:: getPositionType($position_type,$position_my_list_new,$position_type_list);
+                    $position_enemy_list_new= BiologySkillPosition:: getPositionType($position_type,$position_enemy_list_new,$position_type_list);
+                }
+                $position_my_list_new  = array_column($position_my_list_new,'position'); //获取自己位置
+                $position_enemy_list_new  = array_column($position_enemy_list_new,'position'); //获取敌人位置
+                if($attack){ // 0 直接跳过--被攻击--被动跳过
+                    //技能使用对象
+                    $attaatt_positionck = $attack==POSITION_MY?$position_my_list_new:( $attack==POSITION_ENEMY?$position_enemy_list_new:[]);
+                    if(in_array($position_my,array(POSITION_MY,POSITION_ENEMY))){  
+                        $int= BiologySkillPosition::getPositionExtend($position_in,$position,$position_type,$attaatt_positionck,$attack);
+                        // var_dump($skill);
+                        // var_dump($int);
+                        //循环攻击位置
+                        foreach($int as $pid){
+                            // is_do 0被动   1 主动 和主动触发
+                            $this->attackSkill($position_my,$attack_biology,$pid,$skill,SKILL_GOING);
+    
+                        }
+                        
+                    } 
+                    // var_dump($skill);//技能
+                    // var_dump($int);die;//攻击位置
+                }
             }
         }
         // var_dump($this->merge_biology_extend[170]);die;

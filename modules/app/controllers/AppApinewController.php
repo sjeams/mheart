@@ -100,20 +100,26 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
-        $map_num =$this->param['map_num']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$this->param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
+        $UserWords =new UserWords();
         //获取自己战斗阵容
         $my_biology = $UserBiologyNatureDo->getValueList();
         //获取对象战斗阵容
         if($this->param['userid']){ //玩家
             $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
         }else{//系统怪，随时刷新不做存留
-            $UserWords =new UserWords();
-            $do_biology = $UserWords->getValueListSystem($map_num,'nature_do');
+            $do_biology = $UserWords->getValueListSystem($map_int,'nature_do');
         }
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果
-        $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_num);
+        $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_int);
+        //如果胜利--系统战斗
+        if($data['poition_winner']&&!$this->param['userid']){
+            // 修改地图状态
+            $UserWords->updateMapSystem($map_int);
+        }
+        // var_dump($data);die;
         // var_dump($data['fighting_msg']);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录
         // var_dump($data['fighting_goods_my']);//物品奖励结果
@@ -125,7 +131,7 @@ class AppApinewController extends ApiUserControl{
         // var_dump($data['fighting_history'][1]['fighting_history']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }
-    
+
     /**
      * 生物列表
      * http://cs.aheart.com/app/app-apinew/biology-list
