@@ -14,6 +14,7 @@ use app\modules\admin\models\BiologySkillPosition;
 use app\modules\admin\models\BiologySkillPositionType;
 use app\modules\admin\models\BiologySkillExtend;
 use app\modules\admin\models\User;
+use app\modules\app\models\UserBiologyAttribute;
 
 
 use yii;
@@ -34,7 +35,8 @@ class UserBiologyNatureDo extends ActiveRecord
     public $poition_winner;//战斗结果
     public $attack_bout;//战斗回合--行动顺序--用于存储战斗结果顺序
     public $map_num;//系统战斗，获取map阵容编号时才会用到
-    
+    public $biology_int_extnd;//战斗回合容器，属性
+    public $biology_id;//当前生物id
     function init(){
         $skill_extend = BiologySkillExtend::find()->asArray()->All();
         $this->skill_extend =  array_column($skill_extend,null,'extend');
@@ -51,10 +53,72 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->poition_winner=0;//战斗结果
         $this->attack_bout=0;
         $this->map_num=0;//map阵容编号
+        $this->biology_int_extnd=[];
+        $this->biology_id=0;
     }
     public static function tableName(){
         return '{{x2_user_biology_nature_do}}';
     }
+
+
+    //生物容器属性--回合增加或者减少
+    public  function  getBiologyIntExtends($attack_biology_do,$data=[]){
+        // 每次只会进入一个属性
+        // $data['keeptime']=0;//持续回合
+        // $data['dobout']=0;//执行回合数
+        // $data['type']=0;//1增加 0 减少
+        // $data['data']=[]; //a['shengMing']=0;
+        // $data['keeptime']=2;
+        $list =[];
+        //是否写入轮询
+        if($data){
+            //初始回合
+            if($data['keeptime']!=$this->bout){ //多回合写入轮询
+                $this->biology_int_extnd['keeptime'][$this->biology_id][key($data['data'])][$data['keeptime']]+= $data['data'][key($data['data'])];//持续回合
+            }
+            if($data['dobout']!=$this->bout){ //多回合写入轮询
+                $this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']]+= $data['data'][key($data['data'])];//持续回合
+            }   
+            $list[key($data['data'])]+=$data['data'][key($data['data'])];
+        }
+        $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list);
+        // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
+        // var_dump($attack_biology_do['shengMing']);
+        // $this->getFirstBiologyIntExtends($attack_biology_do);//进入轮询--初始化轮询
+        return $attack_biology_do;
+    }
+    
+    //生物容器属性--回合开始轮询
+    public  function  getFirstBiologyIntExtends($attack_biology_do){
+        //轮询生物容器
+        $list =[];
+        if($this->biology_int_extnd){
+            //回合结束移除属性
+            foreach($this->biology_int_extnd['keeptime'][$this->biology_id] as $key=> $v){
+                foreach($v as $int_bout =>$int_value){
+                    //当前回合大于终止回合，终止触发
+                    if($this->bout>$int_bout){
+                        $list[$key]-=$int_value;//计算到属性--减去之前增加的属性值
+                        unset($this->biology_int_extnd['keeptime'][$this->biology_id][$key][$int_bout]);//失效就删除--当前回合
+                    }
+                }
+            }
+            //回合叠加属性
+            foreach($this->biology_int_extnd['dobout'][$this->biology_id] as $key=> $v){
+                foreach($v as $int_bout =>$int_value){
+                     //当前回合大于终止回合，终止触发
+                     if($this->bout>$int_bout){
+                        $list[$key]+=$int_value;//计算到属性
+                    }else{
+                        unset($this->biology_int_extnd['dobout'][$this->biology_id][$key][$int_bout]);//失效就删除--当前回合
+                    }
+                }
+            }
+        }
+        $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list);
+    }
+
+
 
     // 查询布阵生物-userid
     public  function getValueList($userid=false){
@@ -400,6 +464,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'attack'=>$attack,//发起类型
             'extend'=>$need,//伤害类型
             'keeptime'=>$this->bout,//发起伤害持续回合
+            'dobout'=>$this->bout,//执行回合数
         );
         $this->merge_biology_extend[$goid]=$attack_biology; //自己伤害结算--攻击走hurt ，消耗单独结算
         $this->getTips($hurt_go_list);
@@ -522,6 +587,7 @@ class UserBiologyNatureDo extends ActiveRecord
                 'hurt_go'=>$hurt_go,//发起伤害
                 'extend'=>'shengMing',//伤害类型
                 'keeptime'=>$this->bout,//发起伤害持续回合
+                'dobout'=>$this->bout,//执行回合数
             );
             //发起技能消耗--返回消耗后的状态，因为拿的是循环值--这里可以改为容器，根据id来
             // $attack_biology = $this->attackNeedValue($attack_biology,$skill);
@@ -611,7 +677,6 @@ class UserBiologyNatureDo extends ActiveRecord
             //属性存在的，普通的
             //计算伤害
             $hurt_go = Method::percentHurt($attack_biology_do[$status],$hurt,$value,$formula,$isadd);
-            // $hurt_go = (intval($attack_biology_do[$extend])+$hurt); //造成伤害，基础伤害+公式
         }else{
             //属性不存在，特殊的
             // 召唤--根据固定的生物id召唤
@@ -653,6 +718,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'attack'=>$attack,//发起类型
             'extend'=>$extend,//伤害类型
             'keeptime'=>$this->bout+$keeptime,//发起伤害持续回合
+            'dobout'=>$this->bout+$dobout,//执行回合数
         );
 
         $this->goHurt($hurtType,$hurt_go_list);
@@ -673,6 +739,8 @@ class UserBiologyNatureDo extends ActiveRecord
         $doid= $hurt_go_list['doid'];
         $goid= $hurt_go_list['goid'];
         $skill= $hurt_go_list['skill'];
+        $keeptime= $hurt_go_list['keeptime'];
+        $dobout= $hurt_go_list['dobout'];
 
         //获取闪避
         $gailv[0] =100*100;//失败几率
@@ -703,24 +771,34 @@ class UserBiologyNatureDo extends ActiveRecord
             $hurt_go = $hurt_go>=0?0:$hurt_go;//伤害最少为0
      
         }
-        if($is_do){ //0反击 1主动
+
+        $not_out=1;//0跳过 1不跳过
+        // if($is_do){ //0反击 1主动
             //主动---闪避直接跳过
             if($shanbi==0&&$attack==POSITION_ENEMY){ //攻击敌方单位，反弹伤害
                 //接收伤害
-                $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
+                // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
                 $this->attackSkillHurt($hurt_go_list);
                 //反弹伤害   //$goid 注意，攻击顺序不能变，这个是生物的速度攻击顺序
             }else if($attack==POSITION_MY){
                 // 伤害结算
-                $attack_biology_do[$extend] = (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
+                // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
             }else{
                 // 攻击敌方--闪避时 --跳过 
+                $not_out=0;
             }
-
-
-        }else{
+        // }else{
             // 伤害结算
-            $attack_biology_do[$extend] = (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
+            // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
+        // }
+        //属性处理
+        if($not_out){
+            $this->biology_id=$attack_biology_do['id'];
+            $hurt_extend=[];
+            $hurt_extend['keeptime']= $keeptime;//技能伤害持续回合
+            $hurt_extend['dobout']= $dobout;//执行回合数
+            $hurt_extend['data']=[$extend=>$hurt_go];//执行伤害
+            $attack_biology_do = $this->getBiologyIntExtends($attack_biology_do,$hurt_extend);
         }
      
         $attack_biology_do['shengMing']= $attack_biology_do['shengMing']>=0?$attack_biology_do['shengMing']:0;//生命最低为0
@@ -896,5 +974,12 @@ class UserBiologyNatureDo extends ActiveRecord
         );
         return  $data;
     }
+
+
+
+
+
+
+    
 
 }

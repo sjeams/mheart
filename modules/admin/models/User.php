@@ -138,8 +138,8 @@ class User extends ActiveRecord
 
 
 
-    // 根据白值（智力敏） 固定属性
-    public static function biolobyChange($biology){
+    // 根据白值（智力敏） 固定属性  need_extend 是否需要白值
+    public static function biolobyChange($biology,$not_extend=0){
         //白值
         $power =  intval($biology['power']);
         $agile =  intval($biology['agile']);
@@ -173,20 +173,27 @@ class User extends ActiveRecord
         // $biology['scoreGrade'] = User :: getValueList($score);// 根据评分修改品质--不定义品质
         $biology['jingBi'] = $score*2+$grade*2+$biology['state']*10; 
         $biology['jingYan'] = $score+$grade*2+$biology['state']*5; 
-        return $biology;
-    }
-
-
-    // 根据白值（智力敏） 额外属性--属性容器--根据额外的属性进行叠加
-    public static function biolobyChangeMore($biology,$add_biology){
-        $more = User::biolobyChange($add_biology);
-        foreach($more as$key => $v){
-            $biology[$key] = $biology[$key]+$v;
+        //不要白值，避免重复
+        if($not_extend){
+            unset($biology['power']);
+            unset($biology['agile']);
+            unset($biology['intelligence']);
+            unset($biology['lucky']);
+            unset($biology['score']);
+            unset($biology['reiki']);
+            unset($biology['state']);
         }
         return $biology;
     }
-
-
+    // 根据白值（智力敏） 额外属性--属性容器--根据额外的属性进行叠加
+    public static function biolobyChangeMore($biology,$add_biology){
+        // var_dump($add_biology);
+        $more = User::biolobyChange($add_biology,1);
+        foreach($add_biology as$key => $v){
+            $biology[$key] = $biology[$key]+$v+$more[$key]; //生物属性+白值增加+额外属性
+        }
+        return $biology;
+    }
 
     /**
      * 评分等级列表

@@ -50,6 +50,7 @@ class UserBiologyAttribute extends ActiveRecord
             $data = $UserWords->getValueListSystem($map_num,'biology_list')[$userBiologyid];
         }
         // var_dump( $data);die;
+        //初始化--固定增加的属性
         $data = $this->getUserBiologyAttributeAddExtends($data);
         return $data;
     }
@@ -81,7 +82,7 @@ class UserBiologyAttribute extends ActiveRecord
         $moreExtend['jingBi']=$moreExtend['jingBi']?:0;
         $moreExtend['jingYan']=$moreExtend['jingYan']?:0;;
         $moreExtend['shouyuan']=$moreExtend['shouyuan']?:0;
-        // var_dump($data);die;
+ 
         //初始化
         if($defult){
             //附加属性--吞噬丹药和转生固定增加
@@ -104,12 +105,13 @@ class UserBiologyAttribute extends ActiveRecord
             }
         }
         // 装备属性
-
+        
         //法宝属性
         
         //阵法属性
     
-        //回合增幅属性
+        //技能属性
+
         // var_dump($data);
         $data = User::biolobyChangeMore($data,$moreExtend);//属性累计计算
         return $data;
@@ -117,9 +119,13 @@ class UserBiologyAttribute extends ActiveRecord
     }
 
 
+    //生物容器属性
+    public  function  getBiologyInExtends(){
 
+        // User::biolobyChangeMore();
 
-
+    }
+    
 
 
 
