@@ -34,7 +34,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public $fighting_msg;//战斗提示
     public $poition_winner;//战斗结果
     public $attack_bout;//战斗回合--行动顺序--用于存储战斗结果顺序
-    public $map_num;//系统战斗，获取map阵容编号时才会用到
+    public $map_int;//系统战斗，获取map阵容编号时才会用到
     public $biology_int_extnd;//战斗回合容器，属性
     public $biology_id;//当前生物id
     function init(){
@@ -52,7 +52,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->fighting_msg=[];//战斗提示
         $this->poition_winner=0;//战斗结果
         $this->attack_bout=0;
-        $this->map_num=0;//map阵容编号
+        $this->map_int=0;//map阵容编号
         $this->biology_int_extnd=[];
         $this->biology_id=0;
     }
@@ -220,8 +220,8 @@ class UserBiologyNatureDo extends ActiveRecord
     }
 
     //战斗系统--主进程
-    public function getFightSystem($my_biology,$do_biology,$map_num=0){
-        $this->map_num=$map_num;
+    public function getFightSystem($my_biology,$do_biology,$map_int=0){
+        $this->map_int=$map_int;
         //战斗属性调用
         $merge_biology_list =$this->fightingExtend($my_biology,$do_biology);
         //设置容器--战斗初始化
@@ -292,7 +292,7 @@ class UserBiologyNatureDo extends ActiveRecord
             $dofind ='do'.$i;
             if(intval($data["$dofind"])>0){
                 //基础属性
-                $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"],$biology_userid,$this->map_num);
+                $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"],$biology_userid,$this->map_int);
 
             }
         }

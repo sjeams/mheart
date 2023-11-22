@@ -673,18 +673,19 @@ class Method
     );
   }
 
-  public static function percentHurt($status,$hurt,$value,$formula,$isadd){
+  public static function percentHurt($status,$hurt,$value,$formula,$isadd,$is_result=0){
     $isadd=intval($isadd);
     $status=intval($status);
     $hurt=$hurt;
     $value=intval($value);
     if($formula){
         //附带属性
-        $result = eval("return ($status.$formula);");
-        $percent  = 1+$value*0.2;
+        $result = eval("return (($status.$formula*100)/100);");
+        // var_dump($result);
+        $percent  = 1+($value*0.01*100)/100;
     }else{
         $result=0;
-        $percent = 1+$value*0.2;
+        $percent = 1+($value*0.01*100)/100;
     }
     if($isadd){
         $att = $percent*(+$result+$hurt);

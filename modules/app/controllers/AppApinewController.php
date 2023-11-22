@@ -117,7 +117,7 @@ class AppApinewController extends ApiUserControl{
         //如果胜利--系统战斗
         if($data['poition_winner']&&!$this->param['userid']){
             // 修改地图状态
-            $UserWords->updateMapSystem($map_int);
+            $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
         // var_dump($data);die;
         // var_dump($data['fighting_msg']);die;

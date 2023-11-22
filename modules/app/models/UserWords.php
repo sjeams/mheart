@@ -91,8 +91,6 @@ class UserWords extends ActiveRecord
         //生成地图坐标，随机事件个数3-10个事件，只能选择3次。   
         $map_int = $this->getWordsMapInt();
         $map = $this->getWordsMapIntBiology($map_int);//生成地图生物
-
-        // var_dump($map);die;
         // 存入地图
         $this->updateValueListSystem($map);
     }
@@ -248,7 +246,7 @@ class UserWords extends ActiveRecord
         $word->save();
     }
     //修改地图状态
-    public  function updateMapSystem($map_int,$status=0){
+    public  function updateMapSystemDie($map_int,$status=0){
         $map = $this->user_in_word['user_in_word_map']; 
         $map[$map_int]['status']=$status;//修改为已击杀
         $this->updateValueListSystem($map);

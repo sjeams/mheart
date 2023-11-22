@@ -38,7 +38,8 @@ class UserBiologyAttribute extends ActiveRecord
     /**
      * 属性详情
      */
-    public  function getUserBiologyAttribute($userBiologyid,$biology_userid=0,$map_num){
+    public  function getUserBiologyAttribute($userBiologyid,$biology_userid=0,$map_int=0){
+        $moreExtend=[];//属性池
         if($biology_userid){
             //玩家生物
             $data = UserBiologyAttribute::find()->select('*')->where("userBiologyid=$userBiologyid")->asarray()->One();  
@@ -47,14 +48,28 @@ class UserBiologyAttribute extends ActiveRecord
             // var_dump($biology_userid);
             //系统生物
             $UserWords =new UserWords();
-            $data = $UserWords->getValueListSystem($map_num,'biology_list')[$userBiologyid];
+            $data = $UserWords->getValueListSystem($map_int,'biology_list')[$userBiologyid];
         }
-        // var_dump( $data);die;
-        //初始化--固定增加的属性
+        //初始化
+        // 固定增加的属性
         $data = $this->getUserBiologyAttributeAddExtends($data);
+        // 装备栏 1 2 
+        
+        $moreExtend = (new UserGoods)->getUserGoodsExtend($data,$data['gooduse1'],$moreExtend);
+        $moreExtend = (new UserGoods)->getUserGoodsExtend($data,$data['gooduse2'],$moreExtend);
+        //元神
+        $moreExtend = (new UserGoods)->getUserGoodsExtend($data,$data['yuanShen'],$moreExtend);
+        //缘分--后面再行设计（暂时不用）
+        // var_dump( $moreExtend);die;
+        //法宝属性
+        //阵法属性
+        //技能属性--回合增幅，不放在初始化
+        $data = $this->getUserBiologyAttributeAddExtends($data,$moreExtend,0);//计算属性，并且叠加
         return $data;
     }
     
+
+
     //属性增幅--可单独传递值 --
     public  function  getUserBiologyAttributeAddExtends($data,$moreExtend=[],$defult=1){
         //白值--固定值根据白值变化
@@ -104,14 +119,6 @@ class UserBiologyAttribute extends ActiveRecord
                 $moreExtend['intelligence']+=$value;
             }
         }
-        // 装备属性
-        
-        //法宝属性
-        
-        //阵法属性
-    
-        //技能属性
-
         // var_dump($data);
         $data = User::biolobyChangeMore($data,$moreExtend);//属性累计计算
         return $data;

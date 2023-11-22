@@ -103,22 +103,23 @@ class AppApiController extends ApiUserControl{
         die(Method::jsonApp(1,$data,'succes'));
     }
 
-    /**
-     * 生物属性
-     * app/app-api/biology-attribute
-     * http://localhost/monster/web/app/app-api/biology-attribute
-     */
-    public function actionBiologyAttribute(){
-        $userBiologyid = $this->param['userBiologyid'];
-        $biology_userid = intval($this->param['biology_userid']);//0系统生物，其它为玩家
-        $UserBiologyAttribute =new UserBiologyAttribute();
-        $UserBiologySkill =new UserBiologySkill();
-        $data=array(
-            'attribute' => $UserBiologyAttribute->getUserBiologyAttribute($userBiologyid,$biology_userid),//生物属性
-            'skill'  => $UserBiologySkill->getUserBiologySkill($userBiologyid),//生物列表
-        );
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    // /**
+    //  * 生物属性
+    //  * app/app-api/biology-attribute
+    //  * http://localhost/monster/web/app/app-api/biology-attribute
+    //  */
+    // public function actionBiologyAttribute(){
+    //     $userBiologyid = $this->param['userBiologyid'];
+    //     $biology_userid = intval($this->param['biology_userid']);//0系统生物，其它为玩家
+    //     $map_int =$this->param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+    //     $UserBiologyAttribute =new UserBiologyAttribute();
+    //     $UserBiologySkill =new UserBiologySkill();
+    //     $data=array(
+    //         'biology' => $UserBiologyAttribute->getUserBiologyAttribute($userBiologyid,$biology_userid,$map_int),//生物属性
+    //         'skill'  => $UserBiologySkill->getUserBiologySkill($userBiologyid),//生物列表
+    //     );
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
 
     /**
      * 生物技能--属性

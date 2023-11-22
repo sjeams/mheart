@@ -9,6 +9,7 @@ namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\modules\admin\models\UserWords;
 use app\modules\admin\models\User;
+use app\modules\app\models\UserGoodsNature;
 use app\libs\Method;
 
  
@@ -29,7 +30,37 @@ class UserGoods extends ActiveRecord
     public static function tableName(){
         return '{{x2_user_goods}}';
     }
- 
+
+    //查看物品
+    public  function getUserGoods($goodsid=0){
+        $goods=[];
+        if($goodsid){
+            $goods = UserGoods::find()->where("id=$goodsid")->asArray()->One();
+            $goods['nature']= UserGoodsNature::UserGoodsNatureList($goods['id']);
+        }
+        return $goods;
+    }
+
+    //查看物品--属性
+    public  function getUserGoodsExtend($attack_biology_do,$goodsid=0,$moreExtend=[]){
+
+        $goods = $this->getUserGoods($goodsid);
+    
+        if($goods){
+            foreach($goods['nature'] as $goods_nature){
+                $extend = $goods_nature['extend'];//造成伤害类型
+                $status = $goods_nature['status'];//伤害计算类型--如果不存在就是 特殊类型---公式伤害类型
+                $formula = $goods_nature['formula'];//公式
+                $isadd = intval($goods_nature['isadd']);//公式0减少1增加
+                $value = intval($goods_nature['value']);//伤害计算类型--每级增加30%
+                $hurt = $goods_nature['hurt'];//伤害固定值   zhaoHuan时-(生物id)
+                //计算伤害
+                $hurt_go = Method::percentHurt($attack_biology_do[$status],$hurt,$value,$formula,$isadd);
+                $moreExtend[$extend]+=$hurt_go;
+            }
+        }
+        return $moreExtend;
+    }
 
     // 物品数量统计
     public static function getUserGoodsCount(){
@@ -135,8 +166,7 @@ class UserGoods extends ActiveRecord
     }
     
 
-
-
+    // x2_user_goods_nature
 
     // ------------背包
     // 背包枚举  

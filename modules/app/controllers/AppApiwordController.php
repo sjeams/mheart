@@ -68,7 +68,7 @@ class AppApiwordController extends ApiUserControl{
      */
     public function actionIndex(){
         $data =  $this->user_in_word;//返回正在经行的世界
-        var_dump($data['user_in_word_map']);die;
+        // var_dump($data['user_in_word_map']);die;
         die(Method::jsonApp(1,$data,'succes'));
     }
 
