@@ -32,6 +32,7 @@ require('./assets/Script/login/register');
 require('./assets/Script/login/register_in');
 require('./assets/Script/login/register_knows');
 require('./assets/Script/login/tips');
+require('./assets/Script/scence/MapTools');
 require('./assets/Script/scence/home_scence');
 require('./assets/Script/scence/loading_fist');
 require('./assets/Script/scence/scoretrump');

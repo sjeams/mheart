@@ -5,6 +5,9 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
+var HttpHelper = require("http"); 
+var httpRequest = new HttpHelper();
+var params =[];
 cc.Class({
     extends: cc.Component,
 
@@ -82,52 +85,65 @@ cc.Class({
 
     spawnTools () {
       var _this =this;
-      var HttpHelper = require("http"); 
-      var httpRequest = new HttpHelper();
+
       var params = {
               'page': 1,
               'pageSize': 12,
       };
-      httpRequest.httpPost('https://www.aheart.cn/app-apiword/index', params, function (data) {
-        console.log(data);
+      httpRequest.httpPost('https://www.aheart.cn/app/app-apiword/index', params, function (data) {
+         // console.log(data);
           // console.log(_this.content)
+          if(data.data){
+              //跳转到世界
+          }else{
+              //生成世界
+              _this.addWord()
+          }
+      })
+    },
+
+
+    addWord(){
+      var _this =this;
+      httpRequest.httpPost('https://www.aheart.cn/app/app-apiword/rand-word', params, function (data) {
+    
+          console.log(data);
           // let cellWidth = _this.content.width * 0.105;
           // let cellHeight = _this.content.height * 0.215;
           // let spacingX = _this.content.width * 0.022;
           // let spacingY = _this.content.height * 0.045;
-          // let cellWidth = _this.content.width * 0.15;
-          // let cellHeight = _this.content.height * 0.15;
-          // let spacingX = _this.content.width * 0.08;
-          // let spacingY = _this.content.height * 0.05;
+          let cellWidth = _this.content.width * 1;
+          let cellHeight = _this.content.height * 1;
+          let spacingX = _this.content.width * 1;
+          let spacingY = _this.content.height * 1;
 
           
-          // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-          // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-          // _this.content.getComponent(cc.Layout).spacingX = spacingX;
-          // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-          // // 根据TOOLS生成相应的道具
-          // _this.toolsArray = [];
-          // let TOOLS = data.data.server;
-        
-          // for (let i=0; i<data.data.server.length; i++) {
-          //     let tool = cc.instantiate(_this.person);
-          //     console.log(TOOLS[i])
-          //     // _this.content.addChild(tool);
-          //     tool.getComponent('Tools').initInfo(TOOLS[i]);
-          //     _this.toolsArray.push(tool);
-          //     _this.content.addChild(tool);
-          //     console.log(tool)
-              
-          // }
-          // // 定义content滚动条高度
-          // let scorllheight =  _this.content.parent;
-          // //计算滚动条高度
-          // let  height =  (cellHeight+spacingY)*( Math.ceil( data.data.server.length/2));
-          // // console.log(height);
-          // // scorllheight.designResolution  = new cc.Size(600, height);
-          // scorllheight.setContentSize(600,height);
-      })
-  },
+          _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+          _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+          _this.content.getComponent(cc.Layout).spacingX = spacingX;
+          _this.content.getComponent(cc.Layout).spacingY = spacingY;
+          // 根据MapTools生成相应的道具
+          _this.toolsArray = [];
+          let TOOLS = data.data;
+          var total = data.data.length;
+          // console.log(total) 
+          for (let i=0; i<total; i++) {
+            console.log(i) 
+              let tool = cc.instantiate(_this.person);
+              tool.getComponent('MapTools').initInfo(TOOLS[i]);
+              _this.toolsArray.push(tool);
+              _this.content.addChild(tool);    
+          }
+          // 定义content滚动条高度
+          let scorllheight =  _this.content.parent;
+          //计算滚动条高度
+          let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
+          // console.log(height);
+          // scorllheight.designResolution  = new cc.Size(600, height);
+          scorllheight.setContentSize(600,height);
+
+        })
+    },
 
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);

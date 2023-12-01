@@ -39,7 +39,7 @@ class ApiController extends ApiControl{
     public $enableCsrfValidation = false;
 
     /**
-     * 资源调用中心
+     * 资源调用中心--图片转发
      * app/api/file-content
      */
      public function actionFileContent(){
@@ -55,10 +55,9 @@ class ApiController extends ApiControl{
             ),
         ); 
         if(isset($request)){  
-            echo file_get_contents($request, false, stream_context_create($arrContextOptions));
- 
+            // echo file_get_contents($request, false, stream_context_create($arrContextOptions));
+            echo file_get_contents($request);
         }
-
     }
 
 

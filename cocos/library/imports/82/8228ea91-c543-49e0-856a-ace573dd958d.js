@@ -13,6 +13,7 @@ cc._RF.push(module, '8228eqRxUNJ4IVqrOVz3ZWN', 'http');
 /**
  * Http 请求封装
  */
+var https_url = 'https://www.aheart.cn';
 var HttpHelper = cc.Class({
   "extends": cc.Component,
   statics: {},
@@ -27,6 +28,9 @@ var HttpHelper = cc.Class({
    * @param {string} url 
    * @param {function} callback 
    */
+  httpUrl: function httpUrl(new_url) {
+    return https_url + 'app/api/file-content?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
+  },
   httpGets: function httpGets(url, callback) {
     var xhr = cc.loader.getXMLHttpRequest();
 

@@ -569,11 +569,6 @@
     "meta": 1698830078754,
     "relativePath": "resources\\login.json"
   },
-  "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1656474363773,
-    "meta": 1698830078952,
-    "relativePath": "resources\\sprite_server_login.prefab"
-  },
   "cbca4d71-a3a5-4917-a794-e5a434e67b3a": {
     "asset": 1655869782085,
     "meta": 1698830078947,
@@ -703,11 +698,6 @@
     "asset": 1656477599425,
     "meta": 1698830079384,
     "relativePath": "Script\\bage\\Tool.js"
-  },
-  "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1656484535372,
-    "meta": 1698830079649,
-    "relativePath": "Script\\login\\http.js"
   },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
     "asset": 1698293159991,
@@ -1034,11 +1024,6 @@
     "meta": 1699431148291,
     "relativePath": "Script\\scence\\home_scence.js"
   },
-  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1699431642722,
-    "meta": 1699431656214,
-    "relativePath": "resources\\sprite_世界.prefab"
-  },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
     "asset": 1699438022620,
     "meta": 1699438065864,
@@ -1060,13 +1045,33 @@
     "relativePath": "Script\\login\\Tools.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701398755882,
-    "meta": 1701398755910,
+    "asset": 1701418134743,
+    "meta": 1701418134760,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701398744180,
-    "meta": 1701398755383,
+    "asset": 1701417854649,
+    "meta": 1701417868467,
     "relativePath": "Script\\scence\\scoretrump.js"
+  },
+  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
+    "asset": 1701418703425,
+    "meta": 1701418703459,
+    "relativePath": "resources\\sprite_世界.prefab"
+  },
+  "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
+    "asset": 1701421047854,
+    "meta": 1701421047874,
+    "relativePath": "resources\\sprite_server_login.prefab"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1701420364429,
+    "meta": 1701420364834,
+    "relativePath": "Script\\scence\\MapTools.js"
+  },
+  "8228ea91-c543-49e0-856a-ace573dd958d": {
+    "asset": 1701420955279,
+    "meta": 1701420966139,
+    "relativePath": "Script\\login\\http.js"
   }
 }

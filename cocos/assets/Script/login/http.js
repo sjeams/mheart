@@ -6,6 +6,7 @@
 /**
  * Http 请求封装
  */
+var https_url = 'https://www.aheart.cn';
 const HttpHelper = cc.Class({
     extends: cc.Component,
 
@@ -25,7 +26,10 @@ const HttpHelper = cc.Class({
      * @param {string} url 
      * @param {function} callback 
      */
-    
+        httpUrl(new_url){
+            return https_url+'/app/api/file-content?url='+https_url+new_url;
+            //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
+        },
         httpGets: function (url, callback) {
             var xhr = cc.loader.getXMLHttpRequest();
             xhr.onreadystatechange = function () {
