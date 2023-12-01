@@ -649,11 +649,6 @@
     "meta": 1698830080021,
     "relativePath": "Textrue\\button.png"
   },
-  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
-    "asset": 1677829166939,
-    "meta": 1698830079918,
-    "relativePath": "Script\\login\\tips.js"
-  },
   "31b47881-545a-45cf-9215-5f5ebba6b2d7": {
     "asset": 1656920122713,
     "meta": 1698830078810,
@@ -689,20 +684,10 @@
     "meta": 1698830079330,
     "relativePath": "Script\\bage\\Game.js"
   },
-  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
-    "asset": 1677829166939,
-    "meta": 1698830079815,
-    "relativePath": "Script\\login\\register_in.js"
-  },
   "49a6412c-96e6-41c4-97a7-17fe5e4b6c32": {
     "asset": 1656477599425,
     "meta": 1698830079384,
     "relativePath": "Script\\bage\\Tool.js"
-  },
-  "e483a6af-1f42-4371-808f-155228cd65ed": {
-    "asset": 1698293159991,
-    "meta": 1698830079605,
-    "relativePath": "Script\\login\\background.js"
   },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
     "asset": 1679365544442,
@@ -954,30 +939,15 @@
     "meta": 1698999862790,
     "relativePath": "Textrue\\model\\dating\\天赋.jpg"
   },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1699001358616,
-    "meta": 1699001394045,
-    "relativePath": "Script\\login\\register_knows.js"
-  },
-  "cb9c99ea-d404-4210-819d-3a17718b001f": {
-    "asset": 1699002040970,
-    "meta": 1699002044372,
-    "relativePath": "Script\\home_js\\userinfo.js"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
     "asset": 1699431089312,
     "meta": 1699431089356,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1699433879059,
-    "meta": 1699433879108,
+    "asset": 1701423691747,
+    "meta": 1701423691844,
     "relativePath": "Scene\\index.fire"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1699427952676,
-    "meta": 1699428071928,
-    "relativePath": "Script\\login\\register.js"
   },
   "34fe89cf-1a5d-44f8-98f3-220279b43147": {
     "asset": 1698996550491,
@@ -1004,11 +974,6 @@
     "meta": 1699430627397,
     "relativePath": "Scene\\home\\万古仙门.fire"
   },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1699430779266,
-    "meta": 1699430782918,
-    "relativePath": "Script\\login\\myserver.js"
-  },
   "1e477086-473b-41b9-abb6-cfb2263fda1c": {
     "asset": 1699431074148,
     "meta": 1699431081377,
@@ -1018,16 +983,6 @@
     "asset": 1699431075155,
     "meta": 1699431087620,
     "relativePath": "Scene\\home\\镇妖塔.fire"
-  },
-  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
-    "asset": 1699431134899,
-    "meta": 1699431148291,
-    "relativePath": "Script\\scence\\home_scence.js"
-  },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1699438022620,
-    "meta": 1699438065864,
-    "relativePath": "Script\\login\\Alert.js"
   },
   "e583c8b8-caa0-4ffc-9919-2c84dc378f88": {
     "asset": 1699514597755,
@@ -1045,33 +1000,93 @@
     "relativePath": "Script\\login\\Tools.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701418134743,
-    "meta": 1701418134760,
+    "asset": 1701421661236,
+    "meta": 1701421661259,
     "relativePath": "Scene\\home\\诸天万界.fire"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701417854649,
-    "meta": 1701417868467,
-    "relativePath": "Script\\scence\\scoretrump.js"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
     "asset": 1701418703425,
     "meta": 1701418703459,
     "relativePath": "resources\\sprite_世界.prefab"
   },
+  "e483a6af-1f42-4371-808f-155228cd65ed": {
+    "asset": 1701421611950,
+    "meta": 1701421613361,
+    "relativePath": "Script\\login\\background.js"
+  },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1701421047854,
-    "meta": 1701421047874,
+    "asset": 1701421614058,
+    "meta": 1701421614085,
     "relativePath": "resources\\sprite_server_login.prefab"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1701420364429,
-    "meta": 1701420364834,
-    "relativePath": "Script\\scence\\MapTools.js"
+  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
+    "asset": 1701421746048,
+    "meta": 1701421819979,
+    "relativePath": "Script\\scence\\home_scence.js"
+  },
+  "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
+    "asset": 1701421848914,
+    "meta": 1701421848917,
+    "relativePath": "Scene\\map"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1701424560012,
+    "meta": 1701424560042,
+    "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1701420955279,
-    "meta": 1701420966139,
+    "asset": 1701422820435,
+    "meta": 1701423305614,
     "relativePath": "Script\\login\\http.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1701422859779,
+    "meta": 1701423305775,
+    "relativePath": "Script\\scence\\scoretrump.js"
+  },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1701423640415,
+    "meta": 1701423659715,
+    "relativePath": "Script\\login\\Alert.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1701423619194,
+    "meta": 1701423659844,
+    "relativePath": "Script\\login\\myserver.js"
+  },
+  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
+    "asset": 1701423630000,
+    "meta": 1701423659965,
+    "relativePath": "Script\\login\\register_in.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1701423602770,
+    "meta": 1701423660060,
+    "relativePath": "Script\\login\\register_knows.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1701423373707,
+    "meta": 1701423660177,
+    "relativePath": "Script\\login\\register.js"
+  },
+  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
+    "asset": 1701423354042,
+    "meta": 1701423660241,
+    "relativePath": "Script\\login\\tips.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1701423346887,
+    "meta": 1701423660351,
+    "relativePath": "Script\\scence\\MapTools.js"
+  },
+  "cb9c99ea-d404-4210-819d-3a17718b001f": {
+    "asset": 1701423979137,
+    "meta": 1701424318791,
+    "relativePath": "Script\\home_js\\userinfo.js"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1701424007145,
+    "meta": 1701424318939,
+    "relativePath": "Script\\scence\\score_word.js"
   }
 }

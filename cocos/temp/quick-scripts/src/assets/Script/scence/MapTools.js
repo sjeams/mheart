@@ -23,8 +23,7 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info) {
     // 初始化该道具相关信息
-    console.log(httpRequest.httpUrl(info['picture'])); // 图片
-
+    // 图片
     var _self = this;
 
     if (info['picture']) {
@@ -70,7 +69,7 @@ cc.Class({
 
     clickEventHandler.target = this.node; //这个是代码文件名
 
-    clickEventHandler.component = "Tools"; // js脚本文件-绑定
+    clickEventHandler.component = "MapTools"; // js脚本文件-绑定
 
     clickEventHandler.handler = "onConfirBtn"; // js方法名称--绑定
 
@@ -85,7 +84,7 @@ cc.Class({
     var HttpHelper = require("http");
 
     var httpRequest = new HttpHelper();
-    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-server', {
+    httpRequest.httpPost('/app/api-server/user-server', {
       'id': info['id'],
       'token': null
     }, function (data) {

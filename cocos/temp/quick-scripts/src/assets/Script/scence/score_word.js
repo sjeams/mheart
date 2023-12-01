@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'scoretrump');
-// Script/scence/scoretrump.js
+cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'score_word');
+// Script/scence/score_word.js
 
 "use strict";
 
@@ -85,15 +85,13 @@ cc.Class({
       'pageSize': 12
     };
     httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
-      //  console.log(data);
-      // console.log(_this.content)
-      if (data.data) {
-        //跳转到世界
-        cc.director.loadScene('map/诸天地图');
-      } else {
-        //生成世界
-        _this.addWord();
-      }
+      console.log(data); // console.log(_this.content)
+
+      if (data.data) {//刷新地图
+        // cc.director.loadScene('map/诸天地图');
+      } else {//生成地图
+          // _this.addWord()
+        }
     });
   },
   addWord: function addWord() {

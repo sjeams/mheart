@@ -84,10 +84,12 @@ cc.Class({
       'page': 1,
       'pageSize': 12
     };
-    httpRequest.httpPost('https://www.aheart.cn/app/app-apiword/index', params, function (data) {
-      // console.log(data);
+    httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+      //  console.log(data);
       // console.log(_this.content)
-      if (data.data) {//跳转到世界
+      if (data.data) {
+        //跳转到世界
+        cc.director.loadScene('map/诸天地图');
       } else {
         //生成世界
         _this.addWord();
@@ -97,12 +99,12 @@ cc.Class({
   addWord: function addWord() {
     var _this = this;
 
-    httpRequest.httpPost('https://www.aheart.cn/app/app-apiword/rand-word', params, function (data) {
-      console.log(data); // let cellWidth = _this.content.width * 0.105;
+    httpRequest.httpPost('/app/app-apiword/rand-word', params, function (data) {
+      // console.log(data);
+      // let cellWidth = _this.content.width * 0.105;
       // let cellHeight = _this.content.height * 0.215;
       // let spacingX = _this.content.width * 0.022;
       // let spacingY = _this.content.height * 0.045;
-
       var cellWidth = _this.content.width * 1;
       var cellHeight = _this.content.height * 1;
       var spacingX = _this.content.width * 1;
@@ -117,7 +119,7 @@ cc.Class({
       var total = data.data.length; // console.log(total) 
 
       for (var i = 0; i < total; i++) {
-        console.log(i);
+        // console.log(i) 
         var tool = cc.instantiate(_this.person);
         tool.getComponent('MapTools').initInfo(TOOLS[i]);
 

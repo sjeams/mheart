@@ -55,8 +55,6 @@ cc.Class({
     },
 
 
-
-
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function () {
@@ -91,14 +89,14 @@ cc.Class({
               'pageSize': 12,
       };
       httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
-        //  console.log(data);
+         console.log(data);
           // console.log(_this.content)
           if(data.data){
-              //跳转到世界
-              cc.director.loadScene('map/诸天地图');
+              //刷新地图
+              // cc.director.loadScene('map/诸天地图');
           }else{
-              //生成世界
-              _this.addWord()
+              //生成地图
+              // _this.addWord()
           }
       })
     },

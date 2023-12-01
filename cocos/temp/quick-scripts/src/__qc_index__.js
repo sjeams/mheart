@@ -24,5 +24,6 @@ require('./assets/Script/login/tips');
 require('./assets/Script/scence/MapTools');
 require('./assets/Script/scence/home_scence');
 require('./assets/Script/scence/loading_fist');
+require('./assets/Script/scence/score_word');
 require('./assets/Script/scence/scoretrump');
 require('./assets/Script/scence/wap');

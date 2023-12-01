@@ -68,7 +68,7 @@ cc.Class({
         // 'password': 123456,
 
       };
-      httpRequest.httpPost('https://www.aheart.cn/app/api-server/register-in', params, function (data) {
+      httpRequest.httpPost('/app/api-server/register-in', params, function (data) {
         cc.log(data);
 
         if (data.code == 1) {

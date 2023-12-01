@@ -20,7 +20,6 @@ cc.Class({
 
     initInfo (info) {
         // 初始化该道具相关信息
-        console.log(httpRequest.httpUrl(info['picture']))
         // 图片
         var _self = this;
  
@@ -66,7 +65,7 @@ cc.Class({
         //这个 node 节点是你的事件处理代码组件所属的节点
         clickEventHandler.target = this.node; 
         //这个是代码文件名
-        clickEventHandler.component = "Tools";  // js脚本文件-绑定
+        clickEventHandler.component = "MapTools";  // js脚本文件-绑定
         clickEventHandler.handler = "onConfirBtn";// js方法名称--绑定
         clickEventHandler.customEventData = index; // 回调内容
         button.clickEvents.push(clickEventHandler);
@@ -78,7 +77,7 @@ cc.Class({
         console.log(info)
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
-        httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-server', {
+        httpRequest.httpPost('/app/api-server/user-server', {
             'id': info['id'],
             'token': null
         }, function (data) {

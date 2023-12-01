@@ -25,13 +25,14 @@ var HttpHelper = cc.Class({
 
   /**
    * get请求
-   * @param {string} url 
+   * @param {string} url
    * @param {function} callback 
    */
   httpUrl: function httpUrl(new_url) {
-    return https_url + 'app/api/file-content?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
+    return https_url + '/app/api/file-content?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
   },
   httpGets: function httpGets(url, callback) {
+    var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -54,6 +55,7 @@ var HttpHelper = cc.Class({
     xhr.send();
   },
   httpPost: function httpPost(url, params, callback) {
+    var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
 
     xhr.onreadystatechange = function () {

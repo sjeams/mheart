@@ -44,7 +44,7 @@ cc.Class({
     loadingBackground: function(){
                         // 下载资源包
             // 远程 url 带图片后缀名
-            var remoteUrl = "https://www.aheart.cn/app_resources/loading/loading.jpg";
+            var remoteUrl = httpRequest.httpUrl("/app_resources/loading/loading.jpg");
             var self = this;
             // cc.loader.load(remoteUrl, function (err, texture) {
             cc.loader.load({ url: remoteUrl, type: 'jpg' }, function (err, texture) {  

@@ -53,7 +53,7 @@ cc.Class({
         //         'token': json.token,
         //     };
         //     cc.log(json.token); 
-        //     var res = httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', params ,function (data) {
+        //     var res = httpRequest.httpPost('/app/api-server/token-login', params ,function (data) {
         //         cc.loader.release('resources/login.json'); //释放json 资源
         //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
         //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -70,7 +70,7 @@ cc.Class({
         // })
         var token =cc.sys.localStorage.getItem('token');
         if(token){
-                httpRequest.httpPost('https://www.aheart.cn/app/api-server/token-login', {'token':token} ,function (data) {
+                httpRequest.httpPost('/app/api-server/token-login', {'token':token} ,function (data) {
                     var _this =this;
                     // cc.loader.release('resources/login.json'); //释放json 资源
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
@@ -100,7 +100,7 @@ cc.Class({
     //     };
 
     //     var _this= this;
-    //     httpRequest.httpPost('https://www.aheart.cn/app/api-server/login', params ,function (data) {
+    //     httpRequest.httpPost('/app/api-server/login', params ,function (data) {
     //         cc.log(data); 
     //         if(data.code==1){
     //             // _this.register_alert.color =  new cc.color('#BDFF00');
@@ -130,7 +130,7 @@ cc.Class({
     
     //     // cc.log(value); 
     //     // let httpRequest =  new HttpHelper();  
-    //     httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-login', {'token':token} ,function (data) {
+    //     httpRequest.httpPost('/app/api-server/user-login', {'token':token} ,function (data) {
     //         cc.log(data); 
     //         if(data.code==0){ // 登录失败，或本地数据失效
     //             // 弹窗
@@ -204,16 +204,30 @@ cc.Class({
     },
 
     xieyi_show_dlg () {
-        this.register_knows_webview.url ='https://www.aheart.cn/app/api-user/xieyi';
-        // this.register_knows_webview.loadUrl('https://www.aheart.cn/app/api-user/xieyi');
+        var  _self =this;
+        var remoteUrl = httpRequest.httpUrl("/app/api-user/xieyi");
+        cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+            //     console.log(_self)
+                // _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+            _self.register_knows_webview.url = new cc.SpriteFrame(texture);
+        });
+        // this.register_knows_webview.url ='/app/api-user/xieyi';
+        // this.register_knows_webview.loadUrl('/app/api-user/xieyi');
         this.node.active =true;
     },
     xieyi_hidden_dlg () {
         this.node.active =false;
     },
     yinsi_show_dlg () {
-        this.register_knows_webview.url ='https://www.aheart.cn/app/api-user/yinsi';
-        // this.register_knows_webview.loadUrl('https://www.aheart.cn/app/api-user/yinsi');
+        var  _self =this;
+        var remoteUrl = httpRequest.httpUrl("/app/api-user/yinsi");
+        cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+            //     console.log(_self)
+                // _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+            _self.register_knows_webview.url = new cc.SpriteFrame(texture);
+        });
+        // this.register_knows_webview.url ='/app/api-user/yinsi';
+        // this.register_knows_webview.loadUrl('/app/api-user/yinsi');
         this.node.active =true;
     },
     yinsi_hidden_dlg () {
