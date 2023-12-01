@@ -10,6 +10,7 @@ cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'scoretrump');
 //  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+// 世界操作  
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -82,45 +83,39 @@ cc.Class({
       'page': 1,
       'pageSize': 12
     };
-    httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-register', params, function (data) {
-      //   console.log(data);
-      // console.log(_this.content)
+    httpRequest.httpPost('https://www.aheart.cn/app-apiword/index', params, function (data) {
+      console.log(data); // console.log(_this.content)
       // let cellWidth = _this.content.width * 0.105;
       // let cellHeight = _this.content.height * 0.215;
       // let spacingX = _this.content.width * 0.022;
       // let spacingY = _this.content.height * 0.045;
-      var cellWidth = _this.content.width * 0.15;
-      var cellHeight = _this.content.height * 0.15;
-      var spacingX = _this.content.width * 0.08;
-      var spacingY = _this.content.height * 0.05;
-      _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-      _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-      _this.content.getComponent(cc.Layout).spacingX = spacingX;
-      _this.content.getComponent(cc.Layout).spacingY = spacingY; // 根据TOOLS生成相应的道具
-
-      _this.toolsArray = [];
-      var TOOLS = data.data.server;
-
-      for (var i = 0; i < data.data.server.length; i++) {
-        var tool = cc.instantiate(_this.person);
-        console.log(TOOLS[i]); // _this.content.addChild(tool);
-
-        tool.getComponent('Tools').initInfo(TOOLS[i]);
-
-        _this.toolsArray.push(tool);
-
-        _this.content.addChild(tool);
-
-        console.log(tool);
-      } // 定义content滚动条高度
-
-
-      var scorllheight = _this.content.parent; //计算滚动条高度
-
-      var height = (cellHeight + spacingY) * Math.ceil(data.data.server.length / 2); // console.log(height);
-      // scorllheight.designResolution  = new cc.Size(600, height);
-
-      scorllheight.setContentSize(600, height);
+      // let cellWidth = _this.content.width * 0.15;
+      // let cellHeight = _this.content.height * 0.15;
+      // let spacingX = _this.content.width * 0.08;
+      // let spacingY = _this.content.height * 0.05;
+      // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+      // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+      // _this.content.getComponent(cc.Layout).spacingX = spacingX;
+      // _this.content.getComponent(cc.Layout).spacingY = spacingY;
+      // // 根据TOOLS生成相应的道具
+      // _this.toolsArray = [];
+      // let TOOLS = data.data.server;
+      // for (let i=0; i<data.data.server.length; i++) {
+      //     let tool = cc.instantiate(_this.person);
+      //     console.log(TOOLS[i])
+      //     // _this.content.addChild(tool);
+      //     tool.getComponent('Tools').initInfo(TOOLS[i]);
+      //     _this.toolsArray.push(tool);
+      //     _this.content.addChild(tool);
+      //     console.log(tool)
+      // }
+      // // 定义content滚动条高度
+      // let scorllheight =  _this.content.parent;
+      // //计算滚动条高度
+      // let  height =  (cellHeight+spacingY)*( Math.ceil( data.data.server.length/2));
+      // // console.log(height);
+      // // scorllheight.designResolution  = new cc.Size(600, height);
+      // scorllheight.setContentSize(600,height);
     });
   },
   addTouchEvent: function addTouchEvent(node_1) {

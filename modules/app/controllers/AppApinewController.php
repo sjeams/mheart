@@ -109,7 +109,7 @@ class AppApinewController extends ApiUserControl{
         if($this->param['userid']){ //玩家
             $do_biology = $UserBiologyNatureDo->getValueList($this->param['userid']);
         }else{//系统怪，随时刷新不做存留
-            $do_biology = $UserWords->getValueListSystem($map_int,'nature_do');
+            $do_biology = $UserWords->getMapValueListSystem($map_int,'nature_do');
         }
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果

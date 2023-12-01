@@ -126,7 +126,7 @@ class UserWords extends ActiveRecord
     public  function getWordsMapIntBiology($map_int){
         foreach($map_int as$key=>$v){
             // 生物个数
-            $map_int[$key]['status']=1;//1正常，0死亡
+            $map_int[$key]['map_status']=1;//1正常，0死亡
             $difficult= intval($this->user_in_word['difficult']);//1-5世界等级--低武，高武
             $star= intval($this->user_in_word['star']);//1-5难度--世界难度--普通，仙人
             $total=rand($difficult,($star+$difficult));//阵容个数--最多9个
@@ -230,7 +230,7 @@ class UserWords extends ActiveRecord
     }
 
     //返回地图编号  nature_do    biology_list  
-    public  function getValueListSystem($id=null,$name=null){
+    public  function getMapValueListSystem($id=null,$name=null){
        if(isset($id)&&isset($name)){
             return $this->user_in_word_map[$id][$name];
        }else if(isset($id)&!isset($name)){
@@ -246,9 +246,11 @@ class UserWords extends ActiveRecord
         $word->save();
     }
     //修改地图状态
-    public  function updateMapSystemDie($map_int,$status=0){
+    public  function updateMapSystemDie($map_int,$map_status=0){
         $map = $this->user_in_word['user_in_word_map']; 
-        $map[$map_int]['status']=$status;//修改为已击杀
+        $map[$map_int]['map_status']=$map_status;//修改为已击杀
         $this->updateValueListSystem($map);
     }
+
+ 
 }

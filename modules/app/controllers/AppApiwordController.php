@@ -111,7 +111,8 @@ class AppApiwordController extends ApiUserControl{
     public function actionMapWord(){
         $UserWords=new UserWords();
         $UserWords->getUserSence();//地图生成随机场景(生物*物品)3-10个
-        die(Method::jsonApp(1,null,'succes'));
+        $do_biology = $UserWords->getMapValueListSystem();
+        die(Method::jsonApp(1,$do_biology,'succes'));
     }
 
     

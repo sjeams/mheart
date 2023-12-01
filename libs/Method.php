@@ -404,7 +404,7 @@ class Method
     * @Obelisk  sjeam(创建)
     */
     public static function jsonApp($code,$data,$message){
-        var_dump($data);die;
+        // var_dump($data);die;
         return json_encode(['code' => $code,'data' => $data,'message' => $message]);
     }
 

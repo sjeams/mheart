@@ -48,7 +48,7 @@ class UserBiologyAttribute extends ActiveRecord
             // var_dump($biology_userid);
             //系统生物
             $UserWords =new UserWords();
-            $data = $UserWords->getValueListSystem($map_int,'biology_list')[$userBiologyid];
+            $data = $UserWords->getMapValueListSystem($map_int,'biology_list')[$userBiologyid];
         }
         //初始化
         // 固定增加的属性
