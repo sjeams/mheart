@@ -69,7 +69,7 @@ class Words extends ActiveRecord
             $where .="  and id !=$this->wordId "; 
         }
         //STAR 星星，随机难度等级
-        $data = Words::find()->select("*,FLOOR((RAND()*5)+1) star")->where("$where")->orderBy(new Yii\db\Expression('rand()'))->limit($num)->asarray()->All();        
+        $data = Words::find()->select("*,FLOOR((RAND()*5)+0) star")->where("$where")->orderBy(new Yii\db\Expression('rand()'))->limit($num)->asarray()->All();        
         return $data;
     }
 }

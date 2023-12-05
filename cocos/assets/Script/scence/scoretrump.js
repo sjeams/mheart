@@ -126,9 +126,16 @@ cc.Class({
           // _this.toolsArray = [];
           let TOOLS = data.data;
           var total = data.data.length;
-          console.log(TOOLS) 
-          _this.content.destroyAllChildren();
+          // console.log(TOOLS) 
+
+          var fi = cc.fadeIn(2)//渐显效果
+          _this.content.runAction(fi);
+          var fo = cc.fadeOut(1)//渐隐效果
+          _this.content.runAction(fo);
+          //移除节点
           _this.content.removeAllChildren();
+          _this.content.destroyAllChildren();
+          //添加节点
           for (let i=0; i<total; i++) {
             // console.log(i) 
               let tool = cc.instantiate(_this.person);

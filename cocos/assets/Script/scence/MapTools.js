@@ -51,6 +51,7 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
+        console.log(info)
         var star ='';    
         for(i=0;i<=info['star'];i++){
             star +='⭐';
