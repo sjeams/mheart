@@ -88,8 +88,6 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/in-word
      */
     public function actionInWord(){
-        $this->param['wordid']=40;
-        $this->param['star']=2;
         $this->UserWords->inUserWord($this->param['wordid'],$this->param['star']);//进入世界
         die(Method::jsonApp(1,null,'succes'));
     }
