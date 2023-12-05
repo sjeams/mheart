@@ -148,7 +148,8 @@ class UserWords extends ActiveRecord
     
             //随机生物--查看阵容里面是否有id
             $biology_list=[];
-            for($i=0;$i<=9;$i++){
+        
+            for($i=1;$i<=9;$i++){
                 $dofind ='do'.$i;
                 if(intval($nature_do["$dofind"])>0){
                     //生成生物
