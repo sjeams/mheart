@@ -16,14 +16,14 @@ class UserWords extends ActiveRecord
 
     // 根据征服世界随机生物id
     public static function BiologyRand($type=1,$num=1,$userid=1){  //默认管理员，数量为1
-        $wordId= UserWords::find()->select('wordId')->where("userid =$userid and complete = 1")->asarray()->All();
-        // $wordId=  implode(',',array_column($wordId, 'wordId'));
-        //  var_dump($wordId);die;     
+        $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1")->asarray()->All();
+        // $wordid=  implode(',',array_column($wordid, 'wordid'));
+        //  var_dump($wordid);die;     
         $biologyid = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_biology AS a")
-        ->leftJoin("x2_words AS b","a.wordId = b.id")
-        ->where(['or' , ['wordId' =>'1'] ,['wordId' => $wordId]] )    // 先满足后面的条件
+        ->leftJoin("x2_words AS b","a.wordid = b.id")
+        ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
         // ->where(['a.id' =>'18'] ) 
         ->andWhere(['a.type' =>$type])
         ->limit($num)

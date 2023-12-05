@@ -92,8 +92,8 @@
             <!-- <div type="comboboxcolumn" autoShowPopup="true"  field="type" width="100"  allowSort="true"  align="center" headerAlign="center">生物类型
                 <input name="type" property="editor" class="mini-combobox" style="width:100%;"  data="Type" />                
             </div> -->
-            <div type="comboboxcolumn" autoShowPopup="true"  field="wordId" width="100"  allowSort="true"  align="center" headerAlign="center">生物世界
-                <input name="wordId" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
+            <div type="comboboxcolumn" autoShowPopup="true"  field="wordid" width="100"  allowSort="true"  align="center" headerAlign="center">生物世界
+                <input name="wordid" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
             </div>
 
             <!-- <div field="birthday" width="100"  allowSort="true" dateFormat="yyyy-MM-dd">出生日期
@@ -153,12 +153,12 @@
             //随机生成并添加生物
             $.ajax({
             url: "/admin/api/biology-rand",
-            data: { wordId: 1 },
+            data: { wordid: 1 },
             type: "post",
             success: function (data) {
                 // 刷新
                 grid.load();
-                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordId: 1 ,descript: "",sex: 1,yiXing: 0};
+                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordid: 1 ,descript: "",sex: 1,yiXing: 0};
                 // grid.addRow(newRow, 0);
                 // grid.beginEditCell(newRow, "name");
                 }  

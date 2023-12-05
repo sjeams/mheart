@@ -123,12 +123,12 @@
             //随机生成并添加生物
             $.ajax({
             url: "/admin/goods-store/add",
-            data: { wordId: 1 },
+            data: { wordid: 1 },
             type: "post",
             success: function (data) {
                 // 刷新
                 grid.load();
-                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordId: 1 ,descript: "",sex: 1,yiXing: 0};
+                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordid: 1 ,descript: "",sex: 1,yiXing: 0};
                 // grid.addRow(newRow, 0);
                 // grid.beginEditCell(newRow, "name");
                 }  

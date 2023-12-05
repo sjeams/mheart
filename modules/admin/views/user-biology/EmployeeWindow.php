@@ -194,7 +194,7 @@
                 </td>
                 <td >生物世界</td>
                 <td >    
-                    <input name="wordId" class="mini-combobox" onbuttonclick="onButtonEditWords"  url="/admin/api/wordslist" /> 
+                    <input name="wordid" class="mini-combobox" onbuttonclick="onButtonEditWords"  url="/admin/api/wordslist" /> 
                 </td>
                 <td >技能</td>
                 <td >    

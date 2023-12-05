@@ -130,7 +130,7 @@ class GoodsStoreController extends ApiControl {
       $data = GoodsStore::find()->where("id=$id")->asarray()->One();
       // $data =(new \yii\db\Query())->select('qa.*,q.name as wordName')
       // ->from('x2_goods_store AS qa')
-      // ->leftJoin('x2_words AS q','qa.wordId=q.Id')
+      // ->leftJoin('x2_words AS q','qa.wordid=q.Id')
       // ->where("qa.id=$id ")->asarray()->One();
 
       return json_encode($data);

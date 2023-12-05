@@ -138,13 +138,13 @@ class UserGoods extends ActiveRecord
         ->All();
         // $userid= $this->userid;
         // $type =  $this->user_info['word_type'];
-        // $wordId= UserWords::find()->select('wordId')->where("userid =$userid and complete = 1")->asarray()->All();  
+        // $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1")->asarray()->All();  
 
         // $goods = (new \yii\db\Query())
         // ->select("a.name,a.*")
         // ->from("x2_goods AS a")
-        // ->leftJoin("x2_words AS b","a.wordId = b.id")
-        // ->where(['or' , ['wordId' =>'1'] ,['wordId' => $wordId]] )    // 先满足后面的条件
+        // ->leftJoin("x2_words AS b","a.wordid = b.id")
+        // ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
         // // ->where(['a.id' =>'18'] ) 
         // ->andWhere(['a.type' =>$type])
         // ->limit($num)
@@ -217,7 +217,7 @@ class UserGoods extends ActiveRecord
         $goods = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_user_goods AS a")
-        // ->leftJoin("x2_user_packet AS b","a.wordId = b.id") 
+        // ->leftJoin("x2_user_packet AS b","a.wordid = b.id") 
         ->where($where) 
         ->orderBy("id desc")
         ->All();

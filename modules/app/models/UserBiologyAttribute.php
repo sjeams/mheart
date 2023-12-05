@@ -19,7 +19,7 @@ class UserBiologyAttribute extends ActiveRecord
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
-        $this->wordId =  $this->user_info['wordId'];
+        $this->wordid =  $this->user_info['wordid'];
     }
     public static function tableName(){
         return '{{x2_user_biology_attribute}}';

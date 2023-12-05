@@ -81,8 +81,8 @@
             </div>
             
 
-            <div type="comboboxcolumn" autoShowPopup="true"  field="wordId" width="100"  allowSort="true"  align="center" headerAlign="center">生物世界
-                <input name="wordId" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
+            <div type="comboboxcolumn" autoShowPopup="true"  field="wordid" width="100"  allowSort="true"  align="center" headerAlign="center">生物世界
+                <input name="wordid" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
             </div>
 
             <!-- <div field="birthday" width="100"  allowSort="true" dateFormat="yyyy-MM-dd">出生日期

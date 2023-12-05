@@ -119,7 +119,7 @@
                 <td >所属世界</td>
                 <td >    
                      <input name="gooduse" class="mini-combobox" onbuttonclick="onButtonEditWords"  url="/admin/api/wordslist" /> 
-                    <!-- <input  class="mini-textboxlist" name="wordId" textName="wordName" required="true"
+                    <!-- <input  class="mini-textboxlist" name="wordid" textName="wordName" required="true"
                                 url="/admin/api/wordslist" value="cn,usa" text=""
                                 valueField="id" textField="text" 
                         /> -->

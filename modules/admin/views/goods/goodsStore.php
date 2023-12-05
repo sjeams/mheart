@@ -26,8 +26,8 @@
                         <a class="mini-button" onclick="search()">查询</a>
                     </td>
                     <td>
-                        <div type="comboboxcolumn" autoShowPopup="true"  id="using"   field="wordId" width="100"  allowSort="true"  align="center" headerAlign="center">
-                            <input name="wordId" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
+                        <div type="comboboxcolumn" autoShowPopup="true"  id="using"   field="wordid" width="100"  allowSort="true"  align="center" headerAlign="center">
+                            <input name="wordid" property="editor" class="mini-combobox" style="width:100%;" url="/admin/api/wordslist" />   
                         </div>
                         <!-- <select name="type" id="using">
                             <option value="">全部</option>
@@ -104,12 +104,12 @@
             //随机生成并添加生物
             $.ajax({
             url: "/admin/goods/add",
-            data: { wordId: 1 },
+            data: { wordid: 1 },
             type: "post",
             success: function (data) {
                 // 刷新
                 grid.load();
-                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordId: 1 ,descript: "",sex: 1,yiXing: 0};
+                // var newRow = { name: "未知生物",biology: 1,state: 1,power: roundNum(1,70),agile:roundNum(1,70),intelligence: roundNum(1,70),wuXing:roundNum(5,30),skill: "",wordid: 1 ,descript: "",sex: 1,yiXing: 0};
                 // grid.addRow(newRow, 0);
                 // grid.beginEditCell(newRow, "name");
                 }  

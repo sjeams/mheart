@@ -138,7 +138,7 @@ class ApiController extends ApiControl {
     //       $model->intelligence=$v->intelligence;
     //       $model->wuXing=$v->wuXing;
     //       $model->skill=$v->skill;
-    //       $model->wordId=$v->wordId;
+    //       $model->wordid=$v->wordid;
     //       $model->descript=$v->descript;
     //       $model->sex=$v->sex;
     //       $model->yiXing=$v->yiXing;
@@ -382,7 +382,7 @@ class ApiController extends ApiControl {
     public function actionBiologyRand(){
       $userid  = Yii::$app->session->get('userid');
       if(empty($userid)){ $userid =1 ;}
-      $wordId = Yii::$app->request->post('wordId');
+      $wordid = Yii::$app->request->post('wordid');
       $totalrand = Method ::totalRand();
       $biology['userid']= $userid; 
       $biology['name']= '未知生物';  //名称
@@ -391,7 +391,7 @@ class ApiController extends ApiControl {
       $biology['sex']= 1;  //性别
       $biology['yiXing']= 0;
       $biology['grade']= 1;
-      $biology['wordId']= $wordId;
+      $biology['wordid']= $wordid;
       $biology['reiki']= rand(5,30);
       $biology['lucky']= rand(5,30);  // 幸运每个境界 概率-2   12个境界 最低为1
       $biology['wuXing']= rand(5,20);  //悟性
@@ -406,7 +406,7 @@ class ApiController extends ApiControl {
       if($rand==0){
         $skill = '';
       }else{
-        $skill =BiologySkill::find()->select("id")->asArray()->where("wordId = $wordId")->orderBy('RAND()')->offset(0)->limit($rand-1)->all();
+        $skill =BiologySkill::find()->select("id")->asArray()->where("wordid = $wordid")->orderBy('RAND()')->offset(0)->limit($rand-1)->all();
         $skill = implode(',',array_column($skill, 'id'));
       }
       $newnum= !empty($skill) ? count(explode(',',$skill)) : 0; // 技能个数

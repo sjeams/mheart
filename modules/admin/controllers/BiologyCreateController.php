@@ -90,7 +90,7 @@ class BiologyCreateController extends ApiControl {
           $model->intelligence=$v->intelligence;
           $model->wuXing=$v->wuXing;
           $model->skill=$v->skill;
-          $model->wordId=$v->wordId;
+          $model->wordid=$v->wordid;
           $model->descript=$v->descript;
           $model->sex=$v->sex;
           $model->yiXing=$v->yiXing;
