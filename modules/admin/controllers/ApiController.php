@@ -229,7 +229,7 @@ class ApiController extends ApiControl {
         $sortOrder=Yii::$app->request->post('sortOrder');
         $key=Yii::$app->request->post('key');
         $where="1=1 ";
-        if(!empty($key)){  $where.=" and name like '%$key%' or typeName like'%$key%'"; }
+        if(!empty($key)){  $where.=" and name like '%$key%' or type_name like'%$key%'"; }
         if($sortField){ // 排序
           $where.="order by $sortField $sortOrder";
         }else{$where.="";}

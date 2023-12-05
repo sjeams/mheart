@@ -511,8 +511,8 @@ class Method
     //  新 monster 接口
 
     // 最大最小总数随机 --最大值超过120
-    public static function totalRand($wordId=1){
-        $word = Words::find()->select("type,difficult")->where("id=$wordId")->One();
+    public static function totalRand($wordid=1){
+        $word = Words::find()->select("type,difficult")->where("id=$wordid")->One();
         $maxadd = 45 + intval( (intval($word->type)-1)*5)+intval($word->difficult); //最大区间值为25 -- 最大值80
         $minadd = 5+intval( (intval($word->type)-1)*5)+intval($word->difficult); //最大区间值为30 -- 最大值30
         $maxtotal = $maxadd + $minadd*3;  //最大值 为 155 空技能评分ss , 5技能 180 sss
@@ -777,7 +777,7 @@ class Method
 
     //  总属性最大值为210   --暂时没用
     //划分随机数  total总值  arrayMax最大值数组 arrayMin 最小值数组 wordtype世界难度+每个难度属性区间上升5,difficult加难度的属性1
-    // public static function divideRand($total = 70,$arrayMax = array(10,20,30),$wordId=1){
+    // public static function divideRand($total = 70,$arrayMax = array(10,20,30),$wordid=1){
     //     // var_dump($totalrand);die;
     //     // var_dump($maxadd);die;
     //     $div = count($arrayMax); //分成的份数

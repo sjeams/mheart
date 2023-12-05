@@ -1070,23 +1070,23 @@
     "relativePath": "Script\\login\\loading.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701762394216,
-    "meta": 1701762394230,
+    "asset": 1701768144535,
+    "meta": 1701768144545,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1701755935672,
-    "meta": 1701755937601,
-    "relativePath": "Script\\scence\\MapTools.js"
-  },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1701763053907,
-    "meta": 1701763053943,
+    "asset": 1701765993814,
+    "meta": 1701765993846,
     "relativePath": "resources\\sprite_世界.prefab"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701763032962,
-    "meta": 1701763038189,
+    "asset": 1701763403329,
+    "meta": 1701763403942,
     "relativePath": "Script\\scence\\scoretrump.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1701768113142,
+    "meta": 1701768143216,
+    "relativePath": "Script\\scence\\MapTools.js"
   }
 }

@@ -117,8 +117,8 @@ cc.Class({
       // 根据MapTools生成相应的道具
       // _this.toolsArray = [];
       var TOOLS = data.data;
-      var total = data.data.length; // console.log(TOOLS) 
-
+      var total = data.data.length;
+      console.log(TOOLS);
       var fi = cc.fadeIn(2); //渐显效果
 
       _this.content.runAction(fi);

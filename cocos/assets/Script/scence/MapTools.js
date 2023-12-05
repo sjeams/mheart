@@ -10,7 +10,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-  
+        server_picture: cc.Node,
         server_type: cc.Node,
         server_name: cc.Node,
         server_star: cc.Node,
@@ -32,13 +32,12 @@ cc.Class({
             //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-                //     console.log(_self)
-                    // _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
-                _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+                // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+                _self.server_picture.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
             });
         }
         // this.server_type.getComponent(cc.Label).string=info['type'];
-        // if(info['num']<100){
+        // if(info['type']==1){
         //     this.server_type.getComponent(cc.Label).string='空闲';
         //     this.node.getChildByName('server_type').color = new cc.color('green');
         // }else if(info['num']<500&&info['num']>=100){
@@ -51,14 +50,17 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
-        console.log(info)
+        
+        var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
+        var type_color = color[info['type']];
+        // console.log(info)
         var star ='';    
         for(i=0;i<=info['star'];i++){
             star +='⭐';
         }
-        this.server_type.getComponent(cc.Label).string= info['typeName'];
+        this.server_type.getComponent(cc.Label).string= info['type_name'];
         this.server_star.getComponent(cc.Label).string= star;
-        this.node.getChildByName('server_type').color = new cc.color(info['color']);
+        this.node.getChildByName('server_type').color = new cc.color(type_color);
 
         this.server_name.getComponent(cc.Label).string=info['name'];
         //创建一个新button 并将其挂载到创建的精灵下
@@ -83,16 +85,17 @@ cc.Class({
         console.log(info)
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
-        httpRequest.httpPost('/app/api-server/user-server', {
+        httpRequest.httpPost('/app/app-apiword/in-word', {
             'id': info['id'],
+            'star': info['star'],
             'token': null
         }, function (data) {
                         console.log(data);
-            var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
-            server_choes_label.getComponent(cc.Label).string=info['name'];
-            var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
-            server_choes_type.getComponent(cc.Label).string=info['type'];
-            server_choes_type.color = new cc.color(info['color']); 
+            // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
+            // server_choes_label.getComponent(cc.Label).string=info['name'];
+            // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
+            // server_choes_type.getComponent(cc.Label).string=info['type'];
+            // server_choes_type.color = new cc.color(info['color']); 
         })
 
         var mask =cc.find("Canvas/mask");

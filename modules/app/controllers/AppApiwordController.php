@@ -56,9 +56,8 @@ class AppApiwordController extends ApiUserControl{
         $this->UserWords=new UserWords();
         $this->UserServer=new UserServer();
         $this->user_in_word =  $this->UserWords->getUserWord();//返回正在经行的世界
-
         $this->param = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
-        $this->param['wordId']=1;
+        // $this->param['wordId']=1;
     }
     public $enableCsrfValidation = false;
     /**
@@ -89,6 +88,8 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/in-word
      */
     public function actionInWord(){
+        $this->param['wordId']=40;
+        $this->param['star']=2;
         $this->UserWords->inUserWord($this->param['wordId'],$this->param['star']);//进入世界
         die(Method::jsonApp(1,null,'succes'));
     }

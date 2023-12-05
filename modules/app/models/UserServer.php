@@ -36,7 +36,7 @@ class UserServer extends ActiveRecord
     //  * 查询境界列表
     //  */
     //  public static function getValueListtype($page=1,$pageSize=20,$where=""){
-    //     $data['data'] = Words::find()->select("*,typeName as words,")->where(" $where")->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
+    //     $data['data'] = Words::find()->select("*,type_name as words,")->where(" $where")->offset($page*$pageSize)->limit($pageSize)->asarray()->All();
     //     $data ['total'] = Words::find()->select("id")->asarray()->count();
     //     return $data;
     //   }

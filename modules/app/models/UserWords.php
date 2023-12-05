@@ -17,7 +17,7 @@ class UserWords extends ActiveRecord
 {
     public $user_info; 
     public $userid;
-    public $wordId; 
+    public $wordid; 
     public $user_in_word;//正在进行的世界
     public $user_in_word_map;//正在进行的世界
 
@@ -29,14 +29,14 @@ class UserWords extends ActiveRecord
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
-        $this->wordId =  $this->user_info['wordId'];
+        $this->wordid =  $this->user_info['wordid'];
         $this->int_biology =[];
         $this->int_grade =0;
         $this->int_yiXing =1;
         $this->int_yiXing_biology =0;
         $this->int_biology_id=0;
         //没有id不用查询
-        if($this->wordId){
+        if($this->wordid){
             $this->getUserWordIn();
         }
     }
@@ -46,11 +46,11 @@ class UserWords extends ActiveRecord
 
 
     public  function getUserWordIn(){
-        $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordId=u.id  where ul.userid=$this->userid and ul.complete=0";
+        $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordid=u.id  where ul.userid=$this->userid and ul.complete=0";
         $this->user_in_word = Yii::$app->db->createCommand($sql)->queryOne();
         $this->user_in_word_map =  json_decode($this->user_in_word['map'],true);//生物地图
         // var_dump($this->user_in_word);die;
-        $this->wordId=$this->user_in_word['id'];//重新获取当前世界id
+        $this->wordid=$this->user_in_word['id'];//重新获取当前世界id
         $this->user_in_word['user_in_word_map']=$this->user_in_word_map;
     }
 
@@ -59,30 +59,31 @@ class UserWords extends ActiveRecord
         return $this->user_in_word;
     }
     // 进入世界
-    public  function inUserWord($wordId,$star=1){
+    public  function inUserWord($wordid,$star=1){
         $star =intval($star)<1?1:$star;//最少1星
         UserWords::updateAll(['complete' => 1],"userid =$this->userid and complete!=1");
-        $word = UserWords::find()->where("userid=$this->userid and wordId =$wordId")->one();
+        $word = UserWords::find()->where("userid=$this->userid and wordid =$wordid")->one();
+    
         if($word){
             $word->complete =0;
             $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
             $word->save();
         }else{
            $word = new UserWords();
-           $word->wordId =$wordId;
-           $word->userid =$this->userid;
+           $word->wordid =$star;
+           $word->userid = intval($this->userid);
            $word->complete =0;//
            $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
            $word->save();
         }
         $this->getUserWordIn();//重新进入世界--重置状态
         $this->getUserSence();//生成场景
-        User::updateAll(['wordId' =>$wordId],"userid =$this->userid");//记录当前世界
+        User::updateAll(['wordid' =>$wordid],"userid =$this->userid");//记录当前世界
     }
     //退出世界
     public  function outUserWord(){
         UserWords::updateAll(['complete' => 1],"userid =$this->userid and complete!=1");
-        User::updateAll(['wordId' => 0],"userid =$this->userid");
+        User::updateAll(['wordid' => 0],"userid =$this->userid");
     }
 
 
@@ -145,8 +146,7 @@ class UserWords extends ActiveRecord
             $UserBiologyNatureDo =new UserBiologyNatureDo();
             $nature_do = $UserBiologyNatureDo->getValueListRand($total);//可以指定敌人个数
             $map_int[$key]['nature_do']=$nature_do;//阵容
-       
-
+    
             //随机生物--查看阵容里面是否有id
             $biology_list=[];
             for($i=0;$i<=9;$i++){
@@ -164,17 +164,17 @@ class UserWords extends ActiveRecord
 
 
     // 根据征服世界随机生物id
-    public static function BiologyRandSystem($wordId,$num=1){  //默认管理员，数量为1
-        // $wordId= UserWords::find()->select('wordId')->where("userid =$userid and complete = 1")->asarray()->All();
-        // $wordId=  implode(',',array_column($wordId, 'wordId'));
-        //  var_dump($wordId);die;     
+    public static function BiologyRandSystem($wordid,$num=1){  //默认管理员，数量为1
+        // $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1")->asarray()->All();
+        // $wordid=  implode(',',array_column($wordid, 'wordid'));
+        //  var_dump($wordid);die;     
         $biologyid = (new \yii\db\Query())
         ->select("a.name,a.*")
         ->from("x2_biology AS a")
-        ->leftJoin("x2_words AS b","a.wordId = b.id")
-        // ->where(['or' , ['wordId' =>'1'] ,['wordId' => $wordId]] )    // 先满足后面的条件
+        ->leftJoin("x2_words AS b","a.wordid = b.id")
+        // ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
         // ->where(['a.id' =>'18'] ) 
-        ->andWhere(['a.wordId' =>$wordId])
+        ->andWhere(['a.wordid' =>$wordid])
         ->limit($num)
         ->orderBy("rand()")
         ->All();
@@ -184,7 +184,7 @@ class UserWords extends ActiveRecord
     public  function getBiologyRandSystem(){
         // $type = $this->user_info['word_type'];
         //系统随机获取一个生物 
-        $this->int_biology = UserWords :: BiologyRandSystem($this->wordId)[0]; //默认管理员-数量1 --返回数组 
+        $this->int_biology = UserWords :: BiologyRandSystem($this->wordid)[0]; //默认管理员-数量1 --返回数组 
         $this->int_biology['userBiologyid']=$this->int_biology['id'];//生物来源id
         $this->int_biology['id']= $this->int_biology_id;//生物id改为阵法id
         $this->int_biology = $this->getBiologyRandGradeSystem();
@@ -241,7 +241,7 @@ class UserWords extends ActiveRecord
     }
     public  function updateValueListSystem($map){
         $map=json_encode($map,true);
-        $word = UserWords::find()->where("userid=$this->userid and wordId =$this->wordId")->one();  
+        $word = UserWords::find()->where("userid=$this->userid and wordid =$this->wordid")->one();  
         $word->map =$map;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
         $word->save();
     }
