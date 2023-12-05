@@ -16,8 +16,8 @@ use yii;
 class UserWords extends ActiveRecord
 {
     public $user_info; 
-    public $userid;
-    public $wordid; 
+    public $userId;
+    public $wordId; 
     public $user_in_word;//正在进行的世界
     public $user_in_word_map;//正在进行的世界
 
@@ -28,8 +28,8 @@ class UserWords extends ActiveRecord
     public $int_biology_id;//生物id 为阵法编号1-9
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
-        $this->wordid =  $this->user_info['wordid'];
+        $this->userId =  $this->user_info['userid'];
+        $this->wordId =  $this->user_info['wordid'];
         $this->int_biology =[];
         $this->int_grade =0;
         $this->int_yiXing =1;
@@ -46,11 +46,11 @@ class UserWords extends ActiveRecord
 
 
     public  function getUserWordIn(){
-        $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordid=u.id  where ul.userid=$this->userid and ul.complete=0";
+        $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordid=u.id  where ul.userid=$this->userId and ul.complete=0";
         $this->user_in_word = Yii::$app->db->createCommand($sql)->queryOne();
         $this->user_in_word_map =  json_decode($this->user_in_word['map'],true);//生物地图
         // var_dump($this->user_in_word);die;
-        $this->wordid=$this->user_in_word['id'];//重新获取当前世界id
+        $this->wordId=$this->user_in_word['id'];//重新获取当前世界id
         $this->user_in_word['user_in_word_map']=$this->user_in_word_map;
     }
 
@@ -61,29 +61,28 @@ class UserWords extends ActiveRecord
     // 进入世界
     public  function inUserWord($wordid,$star=1){
         $star =intval($star)<1?1:$star;//最少1星
-        UserWords::updateAll(['complete' => 1],"userid =$this->userid and complete!=1");
-        $word = UserWords::find()->where("userid=$this->userid and wordid =$wordid")->one();
-    
+        UserWords::updateAll(['complete' => 1],"userid =$this->userId and complete!=1");
+        $word = UserWords::find()->where("userid=$this->userId and wordid =$wordid")->one();
         if($word){
             $word->complete =0;
             $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
             $word->save();
         }else{
            $word = new UserWords();
-           $word->wordid =$star;
-           $word->userid = intval($this->userid);
+           $word->wordid = $wordid;
+           $word->userid = intval($this->userId);
            $word->complete =0;//
            $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
            $word->save();
         }
         $this->getUserWordIn();//重新进入世界--重置状态
         $this->getUserSence();//生成场景
-        User::updateAll(['wordid' =>$wordid],"userid =$this->userid");//记录当前世界
+        User::updateAll(['wordid' =>$wordid],"userid =$this->userId");//记录当前世界
     }
     //退出世界
     public  function outUserWord(){
-        UserWords::updateAll(['complete' => 1],"userid =$this->userid and complete!=1");
-        User::updateAll(['wordid' => 0],"userid =$this->userid");
+        UserWords::updateAll(['complete' => 1],"userid =$this->userId and complete!=1");
+        User::updateAll(['wordid' => 0],"userid =$this->userId");
     }
 
 
@@ -184,7 +183,7 @@ class UserWords extends ActiveRecord
     public  function getBiologyRandSystem(){
         // $type = $this->user_info['word_type'];
         //系统随机获取一个生物 
-        $this->int_biology = UserWords :: BiologyRandSystem($this->wordid)[0]; //默认管理员-数量1 --返回数组 
+        $this->int_biology = UserWords :: BiologyRandSystem($this->wordId)[0]; //默认管理员-数量1 --返回数组 
         $this->int_biology['userBiologyid']=$this->int_biology['id'];//生物来源id
         $this->int_biology['id']= $this->int_biology_id;//生物id改为阵法id
         $this->int_biology = $this->getBiologyRandGradeSystem();
@@ -241,7 +240,7 @@ class UserWords extends ActiveRecord
     }
     public  function updateValueListSystem($map){
         $map=json_encode($map,true);
-        $word = UserWords::find()->where("userid=$this->userid and wordid =$this->wordid")->one();  
+        $word = UserWords::find()->where("userid=$this->userId and wordid =$this->wordId")->one();  
         $word->map =$map;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
         $word->save();
     }
