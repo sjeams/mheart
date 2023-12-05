@@ -92,6 +92,15 @@ cc.Class({
         cc.director.loadScene('map/诸天地图');
       } else {
         //生成世界
+        var cellWidth = _this.content.width * 0.2;
+        var cellHeight = _this.content.height * 0.4;
+        var spacingX = _this.content.width * 0.6;
+        var spacingY = _this.content.height * 1;
+        _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+        _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+        _this.content.getComponent(cc.Layout).spacingX = spacingX;
+        _this.content.getComponent(cc.Layout).spacingY = spacingY;
+
         _this.addWord();
       }
     });
@@ -105,36 +114,30 @@ cc.Class({
       // let cellHeight = _this.content.height * 0.215;
       // let spacingX = _this.content.width * 0.022;
       // let spacingY = _this.content.height * 0.045;
-      var cellWidth = _this.content.width * 1;
-      var cellHeight = _this.content.height * 1;
-      var spacingX = _this.content.width * 1;
-      var spacingY = _this.content.height * 1;
-      _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-      _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-      _this.content.getComponent(cc.Layout).spacingX = spacingX;
-      _this.content.getComponent(cc.Layout).spacingY = spacingY; // 根据MapTools生成相应的道具
-
-      _this.toolsArray = [];
+      // 根据MapTools生成相应的道具
+      // _this.toolsArray = [];
       var TOOLS = data.data;
-      var total = data.data.length; // console.log(total) 
+      var total = data.data.length;
+      console.log(TOOLS);
+
+      _this.content.destroyAllChildren();
+
+      _this.content.removeAllChildren();
 
       for (var i = 0; i < total; i++) {
         // console.log(i) 
         var tool = cc.instantiate(_this.person);
-        tool.getComponent('MapTools').initInfo(TOOLS[i]);
-
-        _this.toolsArray.push(tool);
+        tool.getComponent('MapTools').initInfo(TOOLS[i]); // _this.toolsArray.push(tool);
 
         _this.content.addChild(tool);
       } // 定义content滚动条高度
+      // let scorllheight =  _this.content.parent;
+      // //计算滚动条高度
+      // let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
+      // // console.log(height);
+      // // scorllheight.designResolution  = new cc.Size(600, height);
+      // scorllheight.setContentSize(600,height);
 
-
-      var scorllheight = _this.content.parent; //计算滚动条高度
-
-      var height = (cellHeight + spacingY) * Math.ceil(total / 2); // console.log(height);
-      // scorllheight.designResolution  = new cc.Size(600, height);
-
-      scorllheight.setContentSize(600, height);
     });
   },
   addTouchEvent: function addTouchEvent(node_1) {

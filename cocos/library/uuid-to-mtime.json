@@ -485,7 +485,7 @@
     "relativePath": "resources"
   },
   "1a60bfb7-074b-4f3b-9a8f-effe69eda3d4": {
-    "asset": 1698830005962,
+    "asset": 1701421902578,
     "meta": 1655109292658,
     "relativePath": "Scene"
   },
@@ -500,7 +500,7 @@
     "relativePath": "Script\\login"
   },
   "c1ef2949-c461-4e49-8f65-6e535fad3d75": {
-    "asset": 1699430352053,
+    "asset": 1701422451820,
     "meta": 1655109292714,
     "relativePath": "Script\\scence"
   },
@@ -525,12 +525,12 @@
     "relativePath": "Script\\bage"
   },
   "ab2bc2c7-0a60-43bb-9634-ef2a835e18a5": {
-    "asset": 1655109292663,
+    "asset": 1701421856202,
     "meta": 1655109292661,
     "relativePath": "Scene\\bage_s"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
-    "asset": 1699431087611,
+    "asset": 1701421853227,
     "meta": 1655109292664,
     "relativePath": "Scene\\home"
   },
@@ -688,11 +688,6 @@
     "asset": 1656477599425,
     "meta": 1698830079384,
     "relativePath": "Script\\bage\\Tool.js"
-  },
-  "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
-    "asset": 1679365544442,
-    "meta": 1698830079718,
-    "relativePath": "Script\\login\\loading.js"
   },
   "0a7fee4f-d838-42e7-a302-b0fd4a53175a": {
     "asset": 1698982978684,
@@ -999,16 +994,6 @@
     "meta": 1699516257106,
     "relativePath": "Script\\login\\Tools.js"
   },
-  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701421661236,
-    "meta": 1701421661259,
-    "relativePath": "Scene\\home\\诸天万界.fire"
-  },
-  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1701418703425,
-    "meta": 1701418703459,
-    "relativePath": "resources\\sprite_世界.prefab"
-  },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
     "asset": 1701421611950,
     "meta": 1701421613361,
@@ -1025,24 +1010,19 @@
     "relativePath": "Script\\scence\\home_scence.js"
   },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
-    "asset": 1701421848914,
+    "asset": 1701421929133,
     "meta": 1701421848917,
     "relativePath": "Scene\\map"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1701424560012,
-    "meta": 1701424560042,
+    "asset": 1701744737434,
+    "meta": 1701744737500,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8228ea91-c543-49e0-856a-ace573dd958d": {
     "asset": 1701422820435,
     "meta": 1701423305614,
     "relativePath": "Script\\login\\http.js"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701422859779,
-    "meta": 1701423305775,
-    "relativePath": "Script\\scence\\scoretrump.js"
   },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
     "asset": 1701423640415,
@@ -1074,11 +1054,6 @@
     "meta": 1701423660241,
     "relativePath": "Script\\login\\tips.js"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1701423346887,
-    "meta": 1701423660351,
-    "relativePath": "Script\\scence\\MapTools.js"
-  },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
     "asset": 1701423979137,
     "meta": 1701424318791,
@@ -1088,5 +1063,30 @@
     "asset": 1701424007145,
     "meta": 1701424318939,
     "relativePath": "Script\\scence\\score_word.js"
+  },
+  "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
+    "asset": 1701744434357,
+    "meta": 1701744504881,
+    "relativePath": "Script\\login\\loading.js"
+  },
+  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
+    "asset": 1701755968674,
+    "meta": 1701755968708,
+    "relativePath": "resources\\sprite_世界.prefab"
+  },
+  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
+    "asset": 1701755291600,
+    "meta": 1701755291638,
+    "relativePath": "Scene\\home\\诸天万界.fire"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1701755287098,
+    "meta": 1701755290384,
+    "relativePath": "Script\\scence\\scoretrump.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1701755935672,
+    "meta": 1701755937601,
+    "relativePath": "Script\\scence\\MapTools.js"
   }
 }

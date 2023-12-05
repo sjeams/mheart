@@ -13,6 +13,7 @@ cc.Class({
   
         server_type: cc.Node,
         server_name: cc.Node,
+        server_star: cc.Node,
         sprite_server_login: cc.Button
     },
 
@@ -49,12 +50,16 @@ cc.Class({
         // }else{
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
-        // }    
-        this.server_type.getComponent(cc.Label).string=info['type'];
-        this.server_type.getComponent(cc.Label).string=info['type'];
+        // }
+        var star ='';    
+        for(i=0;i<=info['star'];i++){
+            star +='⭐';
+        }
+        this.server_type.getComponent(cc.Label).string= info['typeName'];
+        this.server_star.getComponent(cc.Label).string= star;
         this.node.getChildByName('server_type').color = new cc.color(info['color']);
 
-        this.server_name.getComponent(cc.Label).string= info['id']+'区  -  '+info['name'];
+        this.server_name.getComponent(cc.Label).string=info['name'];
         //创建一个新button 并将其挂载到创建的精灵下
         this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info);
     },
