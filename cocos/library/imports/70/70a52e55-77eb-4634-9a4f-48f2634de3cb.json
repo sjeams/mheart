@@ -39,7 +39,7 @@
         "__id__": 15
       },
       {
-        "__id__": 16
+        "__id__": 17
       }
     ],
     "_prefab": {
@@ -192,7 +192,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
+      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
     },
     "fileId": "aajsA0JDJF84Fb5clwRxV/",
     "sync": false
@@ -299,7 +299,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
+      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
     },
     "fileId": "35v1bQoXRIo7PtD6iF/Z91",
     "sync": false
@@ -406,7 +406,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
+      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
     },
     "fileId": "7flfjIuZRMYaPzfy/eQ/eZ",
     "sync": false
@@ -513,7 +513,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
+      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
     },
     "fileId": "557XyUMiRAzZ1kvxv2W+28",
     "sync": false
@@ -549,31 +549,6 @@
     "_id": ""
   },
   {
-    "__type__": "9fe90XuBmFABbeLvXUzRi55",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "server_picture": {
-      "__id__": 2
-    },
-    "server_type": {
-      "__id__": 8
-    },
-    "server_name": {
-      "__id__": 5
-    },
-    "server_star": {
-      "__id__": 11
-    },
-    "sprite_server_login": {
-      "__id__": 16
-    },
-    "_id": ""
-  },
-  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
@@ -587,7 +562,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 17
+        "__id__": 16
       }
     ],
     "_N$interactable": true,
@@ -656,12 +631,37 @@
     "customEventData": ""
   },
   {
+    "__type__": "df10ejMPvRJdp1lxSv9/YbW",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "server_picture": {
+      "__id__": 2
+    },
+    "server_type": {
+      "__id__": 8
+    },
+    "server_name": {
+      "__id__": 5
+    },
+    "server_star": {
+      "__id__": 11
+    },
+    "sprite_server_login": {
+      "__id__": 15
+    },
+    "_id": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
+      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
     },
     "fileId": "39HqaZn9RN0LxJ7I+8LlSV",
     "sync": false

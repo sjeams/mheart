@@ -36,10 +36,10 @@
         "__id__": 14
       },
       {
-        "__id__": 15
+        "__id__": 17
       },
       {
-        "__id__": 16
+        "__id__": 15
       }
     ],
     "_prefab": {
@@ -194,7 +194,7 @@
     "asset": {
       "__uuid__": "0fae4388-15e0-48b8-9221-3bbf05280a1c"
     },
-    "fileId": "aajsA0JDJF84Fb5clwRxV/",
+    "fileId": "c4ctG8AiZDs51eApq7lPY2",
     "sync": false
   },
   {
@@ -519,36 +519,6 @@
     "sync": false
   },
   {
-    "__type__": "cc.Sprite",
-    "_name": "sprite_server_login<Sprite>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": null,
-    "_type": 1,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
     "__type__": "9fe90XuBmFABbeLvXUzRi55",
     "_name": "",
     "_objFlags": 0,
@@ -569,7 +539,7 @@
       "__id__": 11
     },
     "sprite_server_login": {
-      "__id__": 16
+      "__id__": 15
     },
     "_id": ""
   },
@@ -587,7 +557,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 17
+        "__id__": 16
       }
     ],
     "_N$interactable": true,
@@ -654,6 +624,36 @@
     "_componentId": "cc.Button",
     "handler": "hidden_dlg",
     "customEventData": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "sprite_server_login<Sprite>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": null,
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
   },
   {
     "__type__": "cc.PrefabInfo",

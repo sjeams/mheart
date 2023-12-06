@@ -48,10 +48,12 @@ class UserWords extends ActiveRecord
     public  function getUserWordIn(){
         $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordid=u.id  where ul.userid=$this->userId and ul.complete=0";
         $this->user_in_word = Yii::$app->db->createCommand($sql)->queryOne();
-        $this->user_in_word_map =  json_decode($this->user_in_word['map'],true);//生物地图
-        // var_dump($this->user_in_word);die;
-        $this->wordId=$this->user_in_word['id'];//重新获取当前世界id
-        $this->user_in_word['user_in_word_map']=$this->user_in_word_map;
+        if($this->user_in_word){
+            $this->user_in_word_map =  json_decode($this->user_in_word['map'],true);//生物地图
+            // var_dump($this->user_in_word);die;
+            $this->wordId=$this->user_in_word['id'];//重新获取当前世界id
+            $this->user_in_word['user_in_word_map']=$this->user_in_word_map;
+        }
     }
 
     // 查询世界

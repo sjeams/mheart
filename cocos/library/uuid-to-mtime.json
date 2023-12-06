@@ -1060,28 +1060,18 @@
     "relativePath": "Script\\login\\loading.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701851092590,
-    "meta": 1701851092614,
+    "asset": 1701856783679,
+    "meta": 1701856783699,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1701765993814,
-    "meta": 1701765993846,
+    "asset": 1701856941897,
+    "meta": 1701856941921,
     "relativePath": "resources\\sprite_世界.prefab"
   },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701851070254,
-    "meta": 1701851086154,
-    "relativePath": "Script\\scence\\score_word.js"
-  },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1701851083900,
-    "meta": 1701851086267,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1701852644043,
-    "meta": 1701852656623,
+    "asset": 1701857082512,
+    "meta": 1701857082529,
     "relativePath": "resources\\sprite_地图.prefab"
   },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
@@ -1095,8 +1085,18 @@
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1701853944011,
-    "meta": 1701854463727,
+    "asset": 1701856124264,
+    "meta": 1701856758414,
     "relativePath": "Script\\scence\\score_map.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1701856836086,
+    "meta": 1701856842575,
+    "relativePath": "Script\\scence\\score_word.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1701856824317,
+    "meta": 1701856842682,
+    "relativePath": "Script\\scence\\wordTools.js"
   }
 }

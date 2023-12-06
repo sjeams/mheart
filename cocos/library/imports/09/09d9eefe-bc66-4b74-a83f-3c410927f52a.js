@@ -42,9 +42,9 @@ cc.Class({
     //   default: null,
     //   type: cc.Prefab
     // },
-    home: cc.Node,
     content: cc.Node,
     person: cc.Prefab,
+    home: cc.Node,
     //列表
     test_scrollView: {
       "default": null,
@@ -93,22 +93,25 @@ cc.Class({
       if (!data.data) {//刷新地图
         // cc.director.loadScene('map/诸天地图');
       } else {
-        if (data.data['picture']) {
-          var remoteUrl = httpRequest.httpUrl(data.data['picture']);
-          console.log(remoteUrl); // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
-          //     console.log(_self)
-          //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
-          // });
+        if (data.data['map_pic']) {
+          var map_pic = data.data['map_pic'];
+        } else {
+          var map_pic = data.data['picture'];
+        }
 
-          cc.loader.load({
-            url: remoteUrl
-          }, function (err, texture) {
-            // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-            _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-          });
-        } //生成地图
+        var remoteUrl = httpRequest.httpUrl(map_pic);
+        console.log(remoteUrl); // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
+        //     console.log(_self)
+        //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+        // });
+
+        cc.loader.load({
+          url: remoteUrl
+        }, function (err, texture) {
+          // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+          _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+        }); //生成地图
         // _this.addWord()
-
       }
     });
   },
