@@ -37,10 +37,10 @@ cc.Class({
       //   default: null,
       //   type: cc.Prefab
       // },
-
+  
       content: cc.Node,
       person: cc.Prefab,
-
+      home: cc.Node,
       //列表
       test_scrollView: {
         default: null,
@@ -89,12 +89,29 @@ cc.Class({
               'pageSize': 12,
       };
       httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+
+        var _self = this;
          console.log(data);
           // console.log(_this.content)
-          if(data.data){
+          if(!data.data){
               //刷新地图
               // cc.director.loadScene('map/诸天地图');
           }else{
+            if(data.data['map_pic']){
+              var  map_pic =data.data['map_pic'];
+            }else{
+              var  map_pic =data.data['picture'];
+            }
+              var remoteUrl = httpRequest.httpUrl(map_pic);
+              console.log(remoteUrl)
+              // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
+              //     console.log(_self)
+              //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+              // });
+              cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+                  // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+                  _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+              });
               //生成地图
               // _this.addWord()
           }

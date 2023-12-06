@@ -25,7 +25,6 @@ cc.Class({
         var _self = this;
  
         if(info['picture']){
-
             var remoteUrl = httpRequest.httpUrl(info['picture']);
             // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
             //     console.log(_self)

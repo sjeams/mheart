@@ -63,9 +63,12 @@ class UserWords extends ActiveRecord
         $star =intval($star)<1?1:$star;//最少1星
         UserWords::updateAll(['complete' => 1],"userid =$this->userId and complete!=1");
         $word = UserWords::find()->where("userid=$this->userId and wordid =$wordid")->one();
+
+        $map_id =rand(1,2);
         if($word){
             $word->complete =0;
             $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
+            $word->map_pic =  "/app_resources/word/地图".$map_id.".jpg";//随机地图
             $word->save();
         }else{
            $word = new UserWords();
@@ -73,6 +76,7 @@ class UserWords extends ActiveRecord
            $word->userid = intval($this->userId);
            $word->complete =0;//
            $word->star =$star;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
+           $word->map_pic =  "/app_resources/word/地图".$map_id.".jpg";//随机地图
            $word->save();
         }
         $this->getUserWordIn();//重新进入世界--重置状态

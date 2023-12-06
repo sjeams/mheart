@@ -42,6 +42,7 @@ cc.Class({
     //   default: null,
     //   type: cc.Prefab
     // },
+    home: cc.Node,
     content: cc.Node,
     person: cc.Prefab,
     //列表
@@ -85,13 +86,30 @@ cc.Class({
       'pageSize': 12
     };
     httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+      var _self = this;
+
       console.log(data); // console.log(_this.content)
 
-      if (data.data) {//刷新地图
+      if (!data.data) {//刷新地图
         // cc.director.loadScene('map/诸天地图');
-      } else {//生成地图
-          // _this.addWord()
-        }
+      } else {
+        if (data.data['picture']) {
+          var remoteUrl = httpRequest.httpUrl(data.data['picture']);
+          console.log(remoteUrl); // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
+          //     console.log(_self)
+          //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+          // });
+
+          cc.loader.load({
+            url: remoteUrl
+          }, function (err, texture) {
+            // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+            _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          });
+        } //生成地图
+        // _this.addWord()
+
+      }
     });
   },
   addWord: function addWord() {

@@ -1014,11 +1014,6 @@
     "meta": 1701421848917,
     "relativePath": "Scene\\map"
   },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1701850930529,
-    "meta": 1701850930553,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
   "8228ea91-c543-49e0-856a-ace573dd958d": {
     "asset": 1701847540858,
     "meta": 1701847588419,
@@ -1074,11 +1069,6 @@
     "meta": 1701765993846,
     "relativePath": "resources\\sprite_世界.prefab"
   },
-  "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
-    "asset": 1701850904444,
-    "meta": 1701850928632,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1701851070254,
     "meta": 1701851086154,
@@ -1089,9 +1079,24 @@
     "meta": 1701851086267,
     "relativePath": "Script\\scence\\wordTools.js"
   },
+  "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
+    "asset": 1701852644043,
+    "meta": 1701852656623,
+    "relativePath": "resources\\sprite_地图.prefab"
+  },
+  "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
+    "asset": 1701852718921,
+    "meta": 1701852811323,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1701854514102,
+    "meta": 1701854514123,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1701851226076,
-    "meta": 1701851418103,
+    "asset": 1701853944011,
+    "meta": 1701854463727,
     "relativePath": "Script\\scence\\score_map.js"
   }
 }
