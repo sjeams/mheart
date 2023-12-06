@@ -55,6 +55,8 @@ var HttpHelper = cc.Class({
     xhr.send();
   },
   httpPost: function httpPost(url, params, callback) {
+    var token = cc.sys.localStorage.getItem('token');
+    params['token'] = token;
     var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
 

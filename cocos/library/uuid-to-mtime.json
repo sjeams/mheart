@@ -1020,8 +1020,8 @@
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1701422820435,
-    "meta": 1701423305614,
+    "asset": 1701847540858,
+    "meta": 1701847588419,
     "relativePath": "Script\\login\\http.js"
   },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
@@ -1030,8 +1030,8 @@
     "relativePath": "Script\\login\\Alert.js"
   },
   "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1701423619194,
-    "meta": 1701423659844,
+    "asset": 1701847450753,
+    "meta": 1701847588521,
     "relativePath": "Script\\login\\myserver.js"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
@@ -1070,8 +1070,8 @@
     "relativePath": "Script\\login\\loading.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1701771024787,
-    "meta": 1701771024797,
+    "asset": 1701771390571,
+    "meta": 1701771390583,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
@@ -1080,8 +1080,8 @@
     "relativePath": "resources\\sprite_世界.prefab"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1701763403329,
-    "meta": 1701763403942,
+    "asset": 1701766083719,
+    "meta": 1701847588647,
     "relativePath": "Script\\scence\\scoretrump.js"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {

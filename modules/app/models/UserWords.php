@@ -172,9 +172,9 @@ class UserWords extends ActiveRecord
         ->select("a.name,a.*")
         ->from("x2_biology AS a")
         ->leftJoin("x2_words AS b","a.wordid = b.id")
-        // ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
+        ->where(['or' , ['a.wordid' =>'1'] ,['a.wordid' => $wordid]] )    // 先满足后面的条件
         // ->where(['a.id' =>'18'] ) 
-        ->andWhere(['a.wordid' =>$wordid])
+        // ->andWhere(['a.wordid' =>$wordid])
         ->limit($num)
         ->orderBy("rand()")
         ->All();

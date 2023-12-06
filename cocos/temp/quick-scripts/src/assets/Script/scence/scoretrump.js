@@ -94,7 +94,7 @@ cc.Class({
         //生成世界
         var cellWidth = _this.content.width * 0.2;
         var cellHeight = _this.content.height * 0.4;
-        var spacingX = _this.content.width * 0.6;
+        var spacingX = _this.content.width * 1;
         var spacingY = _this.content.height * 1;
         _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
         _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
