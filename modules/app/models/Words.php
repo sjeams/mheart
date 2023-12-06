@@ -15,12 +15,12 @@ use yii;
 class Words extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
-    public $wordid; 
+    public $userId; 
+    public $wordId; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
-        $this->wordid =  $this->user_info['wordid'];
+        $this->userId =  $this->user_info['userid'];
+        $this->wordId =  $this->user_info['wordid'];
     }
     public static function tableName(){
         return '{{x2_words}}';
@@ -65,8 +65,8 @@ class Words extends ActiveRecord
     public  function getWordRand($num=3){
         $type = $this->user_info['word_type'];
         $where =" type <= $type";
-        if($this->wordid){
-            $where .="  and id !=$this->wordid "; 
+        if($this->wordId){
+            $where .="  and id !=$this->wordId "; 
         }
         //STAR 星星，随机难度等级
         $data = Words::find()->select("*,FLOOR((RAND()*5)+0) star")->where("$where")->orderBy(new Yii\db\Expression('rand()'))->limit($num)->asarray()->All();        

@@ -2,7 +2,7 @@
 /*
  * @Author: sjeam
  * @Date: 2023-08-01 10:46:37
- * @Description: 
+ * @Description:
  */
 //用户生物列表
 namespace app\modules\app\models;
@@ -15,10 +15,10 @@ use yii;
 class GoodsUse extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
     }
     public static function tableName(){
         return '{{x2_goods_use}}';

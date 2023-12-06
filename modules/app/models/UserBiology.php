@@ -18,10 +18,10 @@ use yii;
 class UserBiology extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
     }
     public static function tableName(){
         return '{{x2_user_biology}}';
@@ -37,7 +37,7 @@ class UserBiology extends ActiveRecord
         return $data;
     }
     public  function userBiologyList(){  
-        $data = UserBiology::find()->select('*')->where("userid=$this->userid")->asarray();
+        $data = UserBiology::find()->select('*')->where("userid=$this->userId")->asarray();
         return $data;
     }
     //创建生物

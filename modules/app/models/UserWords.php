@@ -36,7 +36,7 @@ class UserWords extends ActiveRecord
         $this->int_yiXing_biology =0;
         $this->int_biology_id=0;
         //没有id不用查询
-        if($this->wordid){
+        if($this->wordId){
             $this->getUserWordIn();
         }
     }

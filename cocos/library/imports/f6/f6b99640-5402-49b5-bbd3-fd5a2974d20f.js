@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'scoretrump');
-// Script/scence/scoretrump.js
+cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'score_word');
+// Script/scence/score_word.js
 
 "use strict";
 
@@ -136,7 +136,7 @@ cc.Class({
       for (var i = 0; i < total; i++) {
         // console.log(i) 
         var tool = cc.instantiate(_this.person);
-        tool.getComponent('MapTools').initInfo(TOOLS[i]); // _this.toolsArray.push(tool);
+        tool.getComponent('wordTools').initInfo(TOOLS[i]); // _this.toolsArray.push(tool);
 
         _this.content.addChild(tool);
       } // 定义content滚动条高度

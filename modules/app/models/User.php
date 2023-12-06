@@ -6,10 +6,10 @@ use yii;
 class User extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
     }
     public static function tableName(){
         return '{{%user}}';

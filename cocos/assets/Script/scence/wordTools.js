@@ -73,7 +73,7 @@ cc.Class({
         //这个 node 节点是你的事件处理代码组件所属的节点
         clickEventHandler.target = this.node; 
         //这个是代码文件名
-        clickEventHandler.component = "MapTools";  // js脚本文件-绑定
+        clickEventHandler.component = "wordTools";  // js脚本文件-绑定
         clickEventHandler.handler = "onConfirBtn";// js方法名称--绑定
         clickEventHandler.customEventData = index; // 回调内容
         button.clickEvents.push(clickEventHandler);

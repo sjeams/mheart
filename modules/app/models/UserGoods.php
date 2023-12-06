@@ -20,11 +20,11 @@ use yii;
 class UserGoods extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     public $goods_type; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
         $this->goods_type = GoodsUse::getGoodsType();
     }
     public static function tableName(){
@@ -73,7 +73,7 @@ class UserGoods extends ActiveRecord
         return $data;
     }
     public  function UserGoodsList(){  
-        $data = UserGoods::find()->select('*')->where("userid=$this->userid")->asarray();
+        $data = UserGoods::find()->select('*')->where("userid=$this->userId")->asarray();
         return $data;
     }
     // //创建生物
@@ -136,7 +136,7 @@ class UserGoods extends ActiveRecord
         ->where(['a.id' =>$good_id] ) 
         ->orderBy("rand()")
         ->All();
-        // $userid= $this->userid;
+        // $userid= $this->userId;
         // $type =  $this->user_info['word_type'];
         // $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1")->asarray()->All();  
 
@@ -189,7 +189,7 @@ class UserGoods extends ActiveRecord
     //生物背包
     public  function  getBiologyBackpaker($param){
         // 武器  元神
-        $where =" userid = $this->userid " ;
+        $where =" userid = $this->userId " ;
         if($param['gooduse']){
             $gooduse=$param['gooduse'];
             $where .=" and gooduse in ( $gooduse) " ; 
@@ -209,7 +209,7 @@ class UserGoods extends ActiveRecord
     }
     //用户背包
     public  function  getUserBackpaker($param){
-        $where =" userid=$this->userid " ;
+        $where =" userid=$this->userId " ;
         if($param['gooduse']){
             $gooduse=$param['gooduse'];
             $where .=" and gooduse in ( $gooduse) " ; 

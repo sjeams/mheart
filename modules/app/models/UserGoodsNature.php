@@ -19,11 +19,11 @@ use yii;
 class UserGoodsNature extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     public $goods_type; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
         $this->goods_type = GoodsUse::getGoodsType();
     }
     public static function tableName(){

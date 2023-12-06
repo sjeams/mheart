@@ -21,7 +21,7 @@ use yii;
 class UserBiologyNatureDo extends ActiveRecord
 {
     public $user_info;//用户信息
-    public $userid; //用户id
+    public $userId; //用户id
     public $my_biology_extend; //生物位置 1--己方生物
     public $do_biology_extend; //生物位置 2--敌方生物
     public $merge_biology_extend;//所有生物速度顺序--战斗列表
@@ -41,7 +41,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $skill_extend = BiologySkillExtend::find()->asArray()->All();
         $this->skill_extend =  array_column($skill_extend,null,'extend');
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
         $this->my_biology_extend = [];
         $this->do_biology_extend = [];
         $this->merge_biology_extend = [];
@@ -122,7 +122,7 @@ class UserBiologyNatureDo extends ActiveRecord
 
     // 查询布阵生物-userid
     public  function getValueList($userid=false){
-        $userid=$userid?:$this->userid;
+        $userid=$userid?:$this->userId;
         $data = UserBiologyNatureDo::find()->where("userid = $userid")->asarray()->One();
         return $data;
     }
@@ -154,19 +154,19 @@ class UserBiologyNatureDo extends ActiveRecord
             // 写入位置
             if($is_add){
                 if($count<5){
-                    UserBiologyNatureDo::updateAll(["$do"=>$biologyid]," userid = $this->userid");
+                    UserBiologyNatureDo::updateAll(["$do"=>$biologyid]," userid = $this->userId");
                 }else{
                     return false; //位置已经满5个，需要移除
                 }          
             }else{
-                UserBiologyNatureDo::updateAll(["$do"=>'']," userid = $this->userid");
+                UserBiologyNatureDo::updateAll(["$do"=>'']," userid = $this->userId");
             }
         }
         return true;
     }
     //统计位置数量
     public  function addPositionCount(){
-        $data = UserBiologyNatureDo::find()->where("userid = $this->userid")->asArray()->one();
+        $data = UserBiologyNatureDo::find()->where("userid = $this->userId")->asArray()->one();
         $num=0;
         for($i=0;$i<=9;$i++){
             $dofind ='do'.$i;

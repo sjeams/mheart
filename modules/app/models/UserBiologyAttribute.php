@@ -14,11 +14,11 @@ use yii;
 class UserBiologyAttribute extends ActiveRecord
 {
     public $user_info; 
-    public $userid; 
+    public $userId; 
     public $biologyid; 
     function init(){
         $this->user_info =  Yii::$app->session->get('user_info');
-        $this->userid =  $this->user_info['userid'];
+        $this->userId =  $this->user_info['userid'];
         $this->wordid =  $this->user_info['wordid'];
     }
     public static function tableName(){
@@ -26,12 +26,12 @@ class UserBiologyAttribute extends ActiveRecord
     }
     //统计总数==上限不能超过20个
     public  function getUserBiologyAttributeCount(){
-        $count = UserBiologyAttribute::find()->where("userid=$this->userid")->count();
+        $count = UserBiologyAttribute::find()->where("userid=$this->userId")->count();
         return $count;
     }
 
     public  function  myAttributesList(){  
-        $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userid")->asarray()->All();  
+        $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userId")->asarray()->All();  
         return $data;
     }
    

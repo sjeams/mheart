@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'score_word');
-// Script/scence/score_word.js
+cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'score_map');
+// Script/scence/score_map.js
 
 "use strict";
 
