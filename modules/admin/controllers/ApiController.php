@@ -311,7 +311,7 @@ class ApiController extends ApiControl {
     public function actionExperience(){
        $param =Yii::$app->request->post();
        $createid = Yii::$app->request->post('createid');
-       $create = BiologyCreate::find()->where("id=$createid")->One();
+       $create = BiologyCreate::find()->where("id=$createid")->asarray()->One();
        $res = BiologyCreate::getExperience($param,$create);
       // $createid = Yii::$app->request->post('createid');
       // $power = Yii::$app->request->post('power');

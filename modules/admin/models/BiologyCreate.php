@@ -60,10 +60,10 @@ class BiologyCreate extends ActiveRecord
             //   $create = BiologyCreate::find()->where("id=$createid")->One();
               // var_dump($create);die;
               $res['experience'] = $sum;
-              $res['power'] = ($i - $grade)*$create->power +$power;
-              $res['agile'] =($i - $grade)*$create->agile +$agile;
-              $res['intelligence'] =($i - $grade)*$create->intelligence +$intelligence;
-              $res['reiki'] =  intval( ($create->reiki*($i - $grade) + ($i - $grade)*( $create->power + $create->agile + $create->intelligence))*0.1)+$reiki;//灵气
+              $res['power'] = ($i - $grade)*$create['power'] +$power;
+              $res['agile'] =($i - $grade)*$create['agile'] +$agile;
+              $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
+              $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
               return $res;
               break;
             }
@@ -95,10 +95,10 @@ class BiologyCreate extends ActiveRecord
             //   $create = BiologyCreate::find()->where("id=$createid")->One();
               // var_dump($create);die;
               $res['experience'] = $sum;
-              $res['power'] = ($i - $grade)*$create->power +$power;
-              $res['agile'] =($i - $grade)*$create->agile +$agile;
-              $res['intelligence'] =($i - $grade)*$create->intelligence +$intelligence;
-              $res['reiki'] =  intval( ($create->reiki*($i - $grade) + ($i - $grade)*( $create->power + $create->agile + $create->intelligence))*0.1)+$reiki;//灵气
+              $res['power'] = ($i - $grade)*$create['power'] +$power;
+              $res['agile'] =($i - $grade)*$create['agile'] +$agile;
+              $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
+              $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
               return $res;
               break;
             }
