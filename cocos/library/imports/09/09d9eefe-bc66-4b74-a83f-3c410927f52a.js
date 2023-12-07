@@ -88,9 +88,8 @@ cc.Class({
     httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
       // console.log(_this.content)
       if (!data.data) {
-        console.log(111); //刷新地图
+        //刷新地图
         // cc.director.loadScene('map/诸天地图');
-
         _this.addWord(); //刷新世界地图
 
       } else {
@@ -136,13 +135,14 @@ cc.Class({
     });
   },
   addWordMap: function addWordMap(data) {
+    console.log(data);
+
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 
 
     var TOOLS = data.data.user_in_word_map;
     var total = data.data.user_in_word_map.length;
-    console.log(TOOLS);
     var fi = cc.fadeIn(2); //渐显效果
 
     _this.content.runAction(fi);

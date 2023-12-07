@@ -103,15 +103,15 @@ class UserWords extends ActiveRecord
     //世界地图--九宫格--坐标计算
     public  function getWordsMap(){
         // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
-        // 1200/6=200  600/4 =150
+        // 1200/6=200  600/4 =175
         $map=[];
-        $left = (intval(750-600)/2);
-        $height = intval((1334-1200)/2);
+        $height = (intval(750-600)/2);
+        $left = intval((1334-1200)/2);
         for($num=0;$num<24;$num++){
             $x = intval($num%6);//x计算
             $y = intval($num/6);//y计算
-            $map[$num]['x']=$left+150*$x;
-            $map[$num]['y']=$height+200*$y;
+            $map[$num]['x']=$left+200*$x;
+            $map[$num]['y']=$height+150*$y;
         }
         return $map;
     }

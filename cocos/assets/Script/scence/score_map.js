@@ -132,13 +132,13 @@ cc.Class({
         })
     },
     addWordMap(data){
+      console.log(data) 
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
         let TOOLS = data.data.user_in_word_map;
         var total = data.data.user_in_word_map.length;
-        console.log(TOOLS) 
-
+  
         var fi = cc.fadeIn(2)//渐显效果
         _this.content.runAction(fi);
         var fo = cc.fadeOut(1)//渐隐效果
