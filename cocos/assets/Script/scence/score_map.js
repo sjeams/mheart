@@ -90,75 +90,80 @@ cc.Class({
       };
       httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
 
-        var _self = this;
-         console.log(data);
           // console.log(_this.content)
           if(!data.data){
               //刷新地图
               // cc.director.loadScene('map/诸天地图');
+              _this.addWord()//刷新世界地图
           }else{
-            if(data.data['map_pic']){
-              var  map_pic =data.data['map_pic'];
-            }else{
-              var  map_pic =data.data['picture'];
-            }
-              var remoteUrl = httpRequest.httpUrl(map_pic);
-              console.log(remoteUrl)
-              // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
-              //     console.log(_self)
-              //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
-              // });
-              cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-                  // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                  _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-              });
-              //生成地图
-              // _this.addWord()
+              //生成世界
+              // let cellWidth = _this.content.width * 0.105;
+              // let cellHeight = _this.content.height * 0.215;
+              // let spacingX = _this.content.width * 0.022;
+              // let spacingY = _this.content.height * 0.045;
+
+              // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+              // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+              // _this.content.getComponent(cc.Layout).spacingX = spacingX;
+              // _this.content.getComponent(cc.Layout).spacingY = spacingY;
+
+              _this.addMapPic(data) //生成地图
+              _this.addWordMap(data) //生成生物
           }
       })
     },
-
-
+    addMapPic(data){
+        var _this = this;
+        if(data.data['map_pic']){
+          var  map_pic =data.data['map_pic'];
+        }else{
+          var  map_pic =data.data['picture'];
+        }
+        var remoteUrl = httpRequest.httpUrl(map_pic);
+          cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+              _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+        });
+    },
     addWord(){
       var _this =this;
-      httpRequest.httpPost('/app/app-apiword/rand-word', params, function (data) {
-          // console.log(data);
-          // let cellWidth = _this.content.width * 0.105;
-          // let cellHeight = _this.content.height * 0.215;
-          // let spacingX = _this.content.width * 0.022;
-          // let spacingY = _this.content.height * 0.045;
-          let cellWidth = _this.content.width * 1;
-          let cellHeight = _this.content.height * 1;
-          let spacingX = _this.content.width * 1;
-          let spacingY = _this.content.height * 1;
-
-          _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-          _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-          _this.content.getComponent(cc.Layout).spacingX = spacingX;
-          _this.content.getComponent(cc.Layout).spacingY = spacingY;
-          // 根据MapTools生成相应的道具
-          _this.toolsArray = [];
-          let TOOLS = data.data;
-          var total = data.data.length;
-          // console.log(total) 
-          for (let i=0; i<total; i++) {
-            // console.log(i) 
-              let tool = cc.instantiate(_this.person);
-              tool.getComponent('MapTools').initInfo(TOOLS[i]);
-              _this.toolsArray.push(tool);
-              _this.content.addChild(tool);    
-          }
-          // 定义content滚动条高度
-          let scorllheight =  _this.content.parent;
-          //计算滚动条高度
-          let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
-          // console.log(height);
-          // scorllheight.designResolution  = new cc.Size(600, height);
-          scorllheight.setContentSize(600,height);
-
+      httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+        //写入地图数据
+        _this.addWordMap(data)
         })
     },
+    addWordMap(data){
+        var _this = this;
+        // 根据MapTools生成相应的道具
+        // _this.toolsArray = [];
+        let TOOLS = data.data.user_in_word_map;
+        var total = data.data.user_in_word_map.length;
+        console.log(TOOLS) 
 
+        var fi = cc.fadeIn(2)//渐显效果
+        _this.content.runAction(fi);
+        var fo = cc.fadeOut(1)//渐隐效果
+        _this.content.runAction(fo);
+        //移除节点
+        _this.content.removeAllChildren();
+        _this.content.destroyAllChildren();
+        //添加节点
+        for (let i=0; i<total; i++) {
+            // console.log(i) 
+            //死亡移除map_status
+            var map =TOOLS[i];
+            if(map.map_status==1){
+              // console.log(map.x)
+              // console.log(map.y)
+              let tool = cc.instantiate(_this.person);
+              tool.getComponent('mapTools').initInfo(map);
+              tool.x=map.x
+              tool.y=map.y
+              // _this.toolsArray.push(tool);
+              // tool.setPosition(map.x,map.y);  
+              _this.content.addChild(tool);   
+            }
+        }
+    },
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
         node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);

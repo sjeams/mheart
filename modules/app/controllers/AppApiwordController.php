@@ -88,8 +88,6 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/in-word
      */
     public function actionInWord(){
-        $this->param['wordid']=40;
-        $this->param['star']=2;
         $this->UserWords->inUserWord($this->param['wordid'],$this->param['star']);//进入世界
         die(Method::jsonApp(1,null,'succes'));
     }
@@ -112,8 +110,9 @@ class AppApiwordController extends ApiUserControl{
     public function actionMapWord(){
         $UserWords=new UserWords();
         $UserWords->getUserSence();//地图生成随机场景(生物*物品)3-10个
-        $do_biology = $UserWords->getMapValueListSystem();
-        die(Method::jsonApp(1,$do_biology,'succes'));
+        // $do_biology = $UserWords->getMapValueListSystem();
+        $data =  $this->user_in_word;//返回正在经行的世界
+        die(Method::jsonApp(1,$data,'succes'));
     }
 
     

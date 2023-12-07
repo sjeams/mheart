@@ -79,7 +79,7 @@ cc.Class({
 
     clickEventHandler.target = this.node; //这个是代码文件名
 
-    clickEventHandler.component = "MapTools"; // js脚本文件-绑定
+    clickEventHandler.component = "mapTools"; // js脚本文件-绑定
 
     clickEventHandler.handler = "onConfirBtn"; // js方法名称--绑定
 

@@ -103,14 +103,14 @@ class UserWords extends ActiveRecord
     //世界地图--九宫格--坐标计算
     public  function getWordsMap(){
         // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
-        // 1200/6=200  800/4 =200
+        // 1200/6=200  600/4 =150
         $map=[];
-        $left = (intval(970-800)/2);
+        $left = (intval(750-600)/2);
         $height = intval((1334-1200)/2);
         for($num=0;$num<24;$num++){
             $x = intval($num%6);//x计算
             $y = intval($num/6);//y计算
-            $map[$num]['x']=$left+200*$x;
+            $map[$num]['x']=$left+150*$x;
             $map[$num]['y']=$height+200*$y;
         }
         return $map;
@@ -247,7 +247,8 @@ class UserWords extends ActiveRecord
     }
     public  function updateValueListSystem($map){
         $map=json_encode($map,true);
-        $word = UserWords::find()->where("userid=$this->userId and wordid =$this->wordId")->one();  
+        $word = UserWords::find()->where("userid=$this->userId and wordid =$this->wordId")->one(); 
+        $word->complete =0;//改变世界状态
         $word->map =$map;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
         $word->save();
     }

@@ -98,15 +98,15 @@ cc.Class({
               cc.director.loadScene('map/诸天地图');
           }else{
               //生成世界
-              let cellWidth = _this.content.width * 0.2;
-              let cellHeight = _this.content.height * 0.4;
-              let spacingX = _this.content.width * 1;
-              let spacingY = _this.content.height * 1;
+              // let cellWidth = _this.content.width * 0.2;
+              // let cellHeight = _this.content.height * 0.4;
+              // let spacingX = _this.content.width * 0.1;
+              // let spacingY = _this.content.height * 0.1;
     
-              _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-              _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-              _this.content.getComponent(cc.Layout).spacingX = spacingX;
-              _this.content.getComponent(cc.Layout).spacingY = spacingY;
+              // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
+              // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
+              // _this.content.getComponent(cc.Layout).spacingX = spacingX;
+              // _this.content.getComponent(cc.Layout).spacingY = spacingY;
               _this.addWord()
           }
       })
