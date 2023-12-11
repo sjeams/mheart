@@ -15,6 +15,8 @@ require('./assets/Script/bage/Game');
 require('./assets/Script/bage/Tool');
 require('./assets/Script/commonjs/alert');
 require('./assets/Script/commonjs/post');
+require('./assets/Script/fighting/fightingTools');
+require('./assets/Script/fighting/score_fighting');
 require('./assets/Script/home_js/userinfo');
 require('./assets/Script/login/Alert');
 require('./assets/Script/login/ProgressBarScript');

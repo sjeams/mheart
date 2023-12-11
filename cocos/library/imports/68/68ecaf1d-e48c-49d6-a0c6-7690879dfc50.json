@@ -1,12 +1,13 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "战斗场景",
     "_objFlags": 0,
     "_native": "",
     "scene": {
       "__id__": 1
-    }
+    },
+    "asyncLoadAssets": false
   },
   {
     "__type__": "cc.Scene",
@@ -58,7 +59,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "711cbd0e-6b4f-401d-b312-0ac54d6c5b38"
+    "_id": "68ecaf1d-e48c-49d6-a0c6-7690879dfc50"
   },
   {
     "__type__": "cc.Node",
@@ -174,7 +175,7 @@
       "array": [
         0,
         0,
-        223.43455417638518,
+        649.519052838329,
         0,
         0,
         0,
@@ -499,7 +500,7 @@
     "_id": "78cUVoARFDRL75Q8dpm/Nx"
   },
   {
-    "__type__": "09d9e7+vGZLdKg/PEEJJ/Uq",
+    "__type__": "ed8ebeqhB9JK7/jr/MBPGZr",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -507,10 +508,10 @@
     },
     "_enabled": true,
     "content": {
-      "__id__": 7
+      "__id__": 6
     },
     "person": {
-      "__uuid__": "70a52e55-77eb-4634-9a4f-48f2634de3cb"
+      "__uuid__": "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05"
     },
     "home": {
       "__id__": 5
@@ -518,9 +519,10 @@
     "reload": {
       "__id__": 11
     },
+    "back": null,
     "test_scrollView": null,
     "test_pageView": null,
-    "_id": "87Tg+MWxlOI7Njrbafuxwn"
+    "_id": "efVHGZrx9FX5ZR28+QpFmf"
   },
   {
     "__type__": "cc.Node",

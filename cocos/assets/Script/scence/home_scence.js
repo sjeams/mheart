@@ -49,7 +49,10 @@ cc.Class({
     诸天万界: function() {
     cc.director.loadScene('home/诸天万界');
     },
-
+    //登录
+    大厅: function() {
+        cc.director.loadScene('home/大厅');
+    },
  
     创造生物: function() {
         cc.director.loadScene('home/创造生物');

@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'df10ejMPvRJdp1lxSv9/YbW', 'mapTools');
-// Script/scence/mapTools.js
+cc._RF.push(module, '8ac9fkSQUlL+ayF4+pxgOVe', 'fightingTools');
+// Script/fighting/fightingTools.js
 
 "use strict";
 
@@ -92,29 +92,23 @@ cc.Class({
   //按钮点击回调
   onConfirBtn: function onConfirBtn(e, info) {
     console.log(info);
-    var params = {
-      'map_int': 1,
-      'pageSize': 12
-    };
-    cc.sys.localStorage.setItem('figthing', JSON.stringify(info)); // cc.director.loadScene('战斗场景');
-    // var HttpHelper = require("http"); 
-    // var httpRequest = new HttpHelper();
-    // httpRequest.httpPost('/app/app-apiword/in-word', {
-    //     'id': info['id'],
-    //     'star': info['star'],
-    //     'token': null
-    // }, function (data) {
-    //     // 跳转到世界
-    //     // cc.director.loadScene('战斗场景');
-    //     var mask =cc.find("Canvas/mask");
-    //     // console.log(data);
-    //     // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
-    //     // server_choes_label.getComponent(cc.Label).string=info['name'];
-    //     // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
-    //     // server_choes_type.getComponent(cc.Label).string=info['type'];
-    //     // server_choes_type.color = new cc.color(info['color']); 
-    // })
-    // var mask =cc.find("Canvas/mask");
+
+    var HttpHelper = require("http");
+
+    var httpRequest = new HttpHelper();
+    httpRequest.httpPost('/app/app-apiword/in-word', {
+      'id': info['id'],
+      'star': info['star'],
+      'token': null
+    }, function (data) {
+      //跳转到世界
+      cc.director.loadScene('map/诸天地图'); // console.log(data);
+      // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
+      // server_choes_label.getComponent(cc.Label).string=info['name'];
+      // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
+      // server_choes_type.getComponent(cc.Label).string=info['type'];
+      // server_choes_type.color = new cc.color(info['color']); 
+    }); // var mask =cc.find("Canvas/mask");
     // mask.active=false
     // var mask =  this.node.getChildByName('mask')
     // console.log(this.node.getSiblingIndex())

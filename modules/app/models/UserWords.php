@@ -133,6 +133,7 @@ class UserWords extends ActiveRecord
     public  function getWordsMapIntBiology($map_int){
         foreach($map_int as$key=>$v){
             // 生物个数
+            $map_int['map_int']=$key;
             $map_int[$key]['map_status']=1;//1正常，0死亡
             $difficult= intval($this->user_in_word['difficult']);//1-5世界等级--低武，高武
             $star= intval($this->user_in_word['star']);//1-5难度--世界难度--普通，仙人

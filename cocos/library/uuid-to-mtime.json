@@ -1004,20 +1004,10 @@
     "meta": 1701421614085,
     "relativePath": "resources\\sprite_server_login.prefab"
   },
-  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
-    "asset": 1701421746048,
-    "meta": 1701421819979,
-    "relativePath": "Script\\scence\\home_scence.js"
-  },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
     "asset": 1701421929133,
     "meta": 1701421848917,
     "relativePath": "Scene\\map"
-  },
-  "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1701847540858,
-    "meta": 1701847588419,
-    "relativePath": "Script\\login\\http.js"
   },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
     "asset": 1701423640415,
@@ -1028,11 +1018,6 @@
     "asset": 1701847450753,
     "meta": 1701847588521,
     "relativePath": "Script\\login\\myserver.js"
-  },
-  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
-    "asset": 1701423630000,
-    "meta": 1701423659965,
-    "relativePath": "Script\\login\\register_in.js"
   },
   "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
     "asset": 1701423602770,
@@ -1065,8 +1050,8 @@
     "relativePath": "resources\\sprite_世界.prefab"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1702266885964,
-    "meta": 1702266885980,
+    "asset": 1702279773733,
+    "meta": 1702279773792,
     "relativePath": "resources\\sprite_地图.prefab"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
@@ -1085,18 +1070,53 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702265929577,
-    "meta": 1702265929597,
+    "asset": 1702289386057,
+    "meta": 1702289386081,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1702286566660,
+    "meta": 1702286566690,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
+    "asset": 1702280202414,
+    "meta": 1702280211964,
+    "relativePath": "resources\\sprite_生物.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1702280339815,
+    "meta": 1702280522528,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
+    "asset": 1702280567958,
+    "meta": 1702281613389,
+    "relativePath": "Script\\scence\\home_scence.js"
+  },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1702261691742,
-    "meta": 1702261765570,
+    "asset": 1702286659049,
+    "meta": 1702288419098,
     "relativePath": "Script\\scence\\score_map.js"
   },
+  "8228ea91-c543-49e0-856a-ace573dd958d": {
+    "asset": 1702288804554,
+    "meta": 1702288877002,
+    "relativePath": "Script\\login\\http.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1702288984706,
+    "meta": 1702289040401,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
-    "asset": 1702266071506,
-    "meta": 1702266110521,
+    "asset": 1702289038451,
+    "meta": 1702289040500,
     "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
+    "asset": 1702289186161,
+    "meta": 1702289382745,
+    "relativePath": "Script\\login\\register_in.js"
   }
 }
