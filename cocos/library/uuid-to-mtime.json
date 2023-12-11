@@ -1099,24 +1099,24 @@
     "meta": 1702288877002,
     "relativePath": "Script\\login\\http.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702288984706,
-    "meta": 1702289040401,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
     "asset": 1702289186161,
     "meta": 1702289382745,
     "relativePath": "Script\\login\\register_in.js"
   },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
-    "asset": 1702290283877,
-    "meta": 1702290284380,
+    "asset": 1702290752947,
+    "meta": 1702290754712,
     "relativePath": "Script\\scence\\mapTools.js"
   },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1702290994423,
+    "meta": 1702290995174,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702290288683,
-    "meta": 1702290288741,
+    "asset": 1702290996232,
+    "meta": 1702290996256,
     "relativePath": "Scene\\map\\诸天地图.fire"
   }
 }

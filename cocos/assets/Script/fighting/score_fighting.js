@@ -85,8 +85,15 @@ cc.Class({
 
     spawnTools () {
       var _this =this;
-      var params = cc.sys.localStorage.getItem('fighting'); //读取数据
-      if(params!=''){
+      var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据
+      var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据
+      if(map_int==''&&userid==''){
+        cc.director.loadScene('map/诸天地图');
+      }else{
+          var params = {
+            'map_int': map_int,
+            'userid': userid,
+          };
           httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
             console.log(data)
             // if(!data.data){
@@ -109,8 +116,6 @@ cc.Class({
             //     _this.addWordMap(data) //生成生物
             // }
         })
-      }else{
-        cc.director.loadScene('map/诸天地图');
       }
     },
     //生成地图

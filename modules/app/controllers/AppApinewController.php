@@ -61,6 +61,7 @@ class AppApinewController extends ApiUserControl{
         $this->UserServer=new UserServer();
         $this->param = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         // $this->param['userid']=2;
+        $this->param['userid'] =intval($this->param['userid']);
     }
     public $enableCsrfValidation = false;
 

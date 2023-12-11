@@ -24,7 +24,7 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info_list) {
-    info = info_list['biology_list'][0]; // 初始化该道具相关信息
+    var info = info_list['biology_list'][0]; // 初始化该道具相关信息
     // 图片
 
     var _self = this;
@@ -72,7 +72,7 @@ cc.Class({
     this.server_name.getComponent(cc.Label).string = info['name'];
     this.node.getChildByName('server_name').color = new cc.color(type_color); //创建一个新button 并将其挂载到创建的精灵下
 
-    this.bindClickEvent(this.sprite_server_login.getComponent(cc.Button), info);
+    this.bindClickEvent(this.sprite_server_login.getComponent(cc.Button), info_list.map_int);
   },
   // 绑定按钮事件
   bindClickEvent: function bindClickEvent(button, index) {
@@ -90,25 +90,27 @@ cc.Class({
     button.clickEvents.push(clickEventHandler);
   },
   //按钮点击回调
-  onConfirBtn: function onConfirBtn(e, info) {
-    console.log(info);
-
-    var HttpHelper = require("http");
-
-    var httpRequest = new HttpHelper();
-    httpRequest.httpPost('/app/app-apiword/in-word', {
-      'id': info['id'],
-      'star': info['star'],
-      'token': null
-    }, function (data) {//跳转到世界
-      // cc.director.loadScene('战斗场景');
-      // console.log(data);
-      // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
-      // server_choes_label.getComponent(cc.Label).string=info['name'];
-      // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
-      // server_choes_type.getComponent(cc.Label).string=info['type'];
-      // server_choes_type.color = new cc.color(info['color']); 
-    }); // var mask =cc.find("Canvas/mask");
+  onConfirBtn: function onConfirBtn(e, map_int) {
+    cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
+    cc.director.loadScene('战斗场景'); // console.log(info)
+    // var HttpHelper = require("http"); 
+    // var httpRequest = new HttpHelper();
+    // httpRequest.httpPost('/app/app-apiword/in-word', {
+    //     'id': info['id'],
+    //     'star': info['star'],
+    //     'token': null
+    // }, function (data) {
+    //     //跳转到世界
+    //     // cc.director.loadScene('战斗场景');
+    //     cc.sys.localStorage.setItem('figthing', JSON.stringify(info)); 
+    //     // console.log(data);
+    //     // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
+    //     // server_choes_label.getComponent(cc.Label).string=info['name'];
+    //     // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
+    //     // server_choes_type.getComponent(cc.Label).string=info['type'];
+    //     // server_choes_type.color = new cc.color(info['color']); 
+    // })
+    // var mask =cc.find("Canvas/mask");
     // mask.active=false
     // var mask =  this.node.getChildByName('mask')
     // console.log(this.node.getSiblingIndex())
