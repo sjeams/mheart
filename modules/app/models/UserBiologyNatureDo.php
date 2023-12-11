@@ -78,8 +78,11 @@ class UserBiologyNatureDo extends ActiveRecord
             }
             if($data['dobout']!=$this->bout){ //多回合写入轮询
                 $this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']]+= $data['data'][key($data['data'])];//持续回合
-            }   
-            $list[key($data['data'])]+=$data['data'][key($data['data'])];
+            }
+            //没有值，跳过
+            if(isset($list[key($data['data'])])){
+                $list[key($data['data'])]+=$data['data'][key($data['data'])];
+            } 
         }
         $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list);
         // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
