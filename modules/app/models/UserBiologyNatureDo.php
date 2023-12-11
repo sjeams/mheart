@@ -338,6 +338,8 @@ class UserBiologyNatureDo extends ActiveRecord
                     //key  改为技能id
                     $skill_list = array_column($skill_list,null,'id');
                     $data["$dofind"]['position_skill'] =  $skill_list;
+                }else{
+                    $data["$dofind"]['position_skill'] = [];
                 }
                 $r_data[]= $data["$dofind"];
             }
