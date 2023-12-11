@@ -58,9 +58,12 @@ cc.Class({
         for(i=0;i<=info['yiXing'];i++){
             star +='⭐';
         }
-        this.server_type.getComponent(cc.Label).string= info['grade'];
+
         this.server_star.getComponent(cc.Label).string= star;
 
+        this.server_type.getComponent(cc.Label).string='Lv.'+info['grade'];
+        this.node.getChildByName('server_type').color = new cc.color(type_color);
+    
         this.server_name.getComponent(cc.Label).string=info['name'];
         this.node.getChildByName('server_name').color = new cc.color(type_color);
         //创建一个新button 并将其挂载到创建的精灵下
