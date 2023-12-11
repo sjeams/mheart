@@ -731,7 +731,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public function goHurt($hurtType,$hurt_go_list){
         $hurt_go= $hurt_go_list['hurt_go'];//发起伤害
         $hurt_do=0;//用于抵消的伤害
-        $hurt_type=$hurt_go_list['hurtType'];// 伤害类型 1物理 2法术 
+        // $hurt_type=$hurt_go_list['hurtType'];// 伤害类型 1物理 2法术 
         $attack_biology_go= $hurt_go_list['attack_biology_go'];
         $attack_biology_do= $hurt_go_list['attack_biology_do'];
         $attack= $hurt_go_list['attack'];
