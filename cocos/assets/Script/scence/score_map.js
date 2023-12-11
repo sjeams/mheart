@@ -128,6 +128,10 @@ cc.Class({
     },
     reloadWord(){
       var _this =this;
+      var params = {
+        'page': 1,
+        'pageSize': 12,
+      };
       httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
         //写入地图数据
         _this.addWordMap(data)
@@ -135,7 +139,7 @@ cc.Class({
     },
     //生成生物
     addWordMap(data){
-      console.log(data) 
+        console.log(data) 
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
