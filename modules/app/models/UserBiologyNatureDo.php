@@ -646,7 +646,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $attack_biology_go =$hurt_go['attack_biology_go'];//发起攻击
         $pid =$attack_biology_go['position'];//发起攻击位置
         $attack_biology_do=$hurt_go['attack_biology_do'];//被攻击---此处为被攻击者发起攻击
-        $hurt_go =$hurt_go['hurt'];
+        // $hurt_go = $hurt_go['hurt'];
         $position_my = $attack_biology_do['position_my'];
         //当前回合被动触发的技能
         $position_skill = $this->getSkillValueList($attack_biology_do['position_skill'],0)['skill'];
@@ -772,7 +772,7 @@ class UserBiologyNatureDo extends ActiveRecord
             $hurt_go = $hurt_go>=0?0:$hurt_go;//伤害最少为0
      
         }
-
+        $hurt_go_list['hurt_go']=$hurt_go;
         $not_out=1;//0跳过 1不跳过
         // if($is_do){ //0反击 1主动
             //主动---闪避直接跳过
