@@ -67,9 +67,8 @@ cc.Class({
         console.log(info)
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
-        httpRequest.httpPost('https://www.aheart.cn/app/api-server/user-server', {
+        httpRequest.httpPostLogin('/app/api-server/user-server', {
             'id': info['id'],
-            'token': null
         }, function (data) {
                         console.log(data);
             var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");

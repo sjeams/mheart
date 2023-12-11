@@ -66,7 +66,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token');
 
     if (token) {
-      httpRequest.httpPost('/app/api-server/token-login', {
+      httpRequest.httpPostLogin('/app/api-server/token-login', {
         'token': token
       }, function (data) {
         var _this = this; // cc.loader.release('resources/login.json'); //释放json 资源

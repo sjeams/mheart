@@ -11,7 +11,7 @@ cc.Class({
         cc.sys.localStorage.removeItem('server_tips');
         var HttpHelper = require("http"); 
         var httpRequest = new HttpHelper();
-        httpRequest.httpPost('/app/api-server/user-tips', [], function (data) {
+        httpRequest.httpPostLogin('/app/api-server/user-tips', [], function (data) {
             var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
             tips.getComponent(cc.Label).string=data.data['gonggao_sz'];
             // 转数组

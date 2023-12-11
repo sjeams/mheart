@@ -43,7 +43,7 @@ cc.Class({
     //         'token': json.token,
     //     };
     //     cc.log(json.token); 
-    //     var res = httpRequest.httpPost('/app/api-server/token-login', params ,function (data) {
+    //     var res = httpRequest.httpPostLogin('/app/api-server/token-login', params ,function (data) {
     //         cc.loader.release('resources/login.json'); //释放json 资源
     //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
     //         //     jsb.fileUtils.writeStringToFile(data,token)
@@ -62,7 +62,7 @@ cc.Class({
     var user_phone = cc.find("Canvas/server/user_status/user_phone");
 
     if (token) {
-      httpRequest.httpPost('/app/api-server/token-login', {
+      httpRequest.httpPostLogin('/app/api-server/token-login', {
         'token': token
       }, function (data) {
         // cc.loader.release('resources/login.json'); //释放json 资源
@@ -95,7 +95,7 @@ cc.Class({
   //         // 'password': 123456,
   //     };
   //     var _this= this;
-  //     httpRequest.httpPost('/app/api-server/login', params ,function (data) {
+  //     httpRequest.httpPostLogin('/app/api-server/login', params ,function (data) {
   //         cc.log(data); 
   //         if(data.code==1){
   //             // _this.register_alert.color =  new cc.color('#BDFF00');
@@ -122,7 +122,7 @@ cc.Class({
     var token = cc.sys.localStorage.getItem('token'); // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
 
-    httpRequest.httpPost('/app/api-server/user-login', {
+    httpRequest.httpPostLogin('/app/api-server/user-login', {
       'token': token
     }, function (data) {
       // cc.log(data); 

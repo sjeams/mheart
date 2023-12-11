@@ -619,11 +619,6 @@
     "meta": 1702297554328,
     "relativePath": "Script\\login\\ProgressBarScript.js"
   },
-  "522f7454-94d8-4e87-9f92-b1c1f9b4c84a": {
-    "asset": 1654182015215,
-    "meta": 1702297554436,
-    "relativePath": "Script\\login\\SpriteTextTool.js"
-  },
   "c9df1867-b4d5-4505-9486-08239876411b": {
     "asset": 1654182015223,
     "meta": 1702297554503,
@@ -989,11 +984,6 @@
     "meta": 1702297555117,
     "relativePath": "Textrue\\model\\word\\星空.jpg"
   },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1699632787291,
-    "meta": 1702297554477,
-    "relativePath": "Script\\login\\Tools.js"
-  },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
     "asset": 1702297465573,
     "meta": 1702297554179,
@@ -1008,31 +998,6 @@
     "asset": 1702297465563,
     "meta": 1702297465563,
     "relativePath": "Scene\\map"
-  },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1702297465573,
-    "meta": 1702297554166,
-    "relativePath": "Script\\login\\Alert.js"
-  },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1702297465573,
-    "meta": 1702297554298,
-    "relativePath": "Script\\login\\myserver.js"
-  },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1702297465583,
-    "meta": 1702297554369,
-    "relativePath": "Script\\login\\register_knows.js"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1702297465573,
-    "meta": 1702297554406,
-    "relativePath": "Script\\login\\register.js"
-  },
-  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
-    "asset": 1702297465583,
-    "meta": 1702297554459,
-    "relativePath": "Script\\login\\tips.js"
   },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
     "asset": 1702297465573,
@@ -1089,21 +1054,6 @@
     "meta": 1702297554492,
     "relativePath": "Script\\scence\\home_scence.js"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1702297465583,
-    "meta": 1702297554548,
-    "relativePath": "Script\\scence\\score_map.js"
-  },
-  "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1702297465573,
-    "meta": 1702297554227,
-    "relativePath": "Script\\login\\http.js"
-  },
-  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
-    "asset": 1702297465573,
-    "meta": 1702297554348,
-    "relativePath": "Script\\login\\register_in.js"
-  },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
     "asset": 1702297465583,
     "meta": 1702297554523,
@@ -1115,8 +1065,58 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702297465563,
-    "meta": 1702297553706,
+    "asset": 1702299515824,
+    "meta": 1702299515841,
     "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1702298393280,
+    "meta": 1702298481739,
+    "relativePath": "Script\\scence\\score_map.js"
+  },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1702298986800,
+    "meta": 1702299104626,
+    "relativePath": "Script\\login\\Alert.js"
+  },
+  "8228ea91-c543-49e0-856a-ace573dd958d": {
+    "asset": 1702298918549,
+    "meta": 1702299104680,
+    "relativePath": "Script\\login\\http.js"
+  },
+  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
+    "asset": 1702299024180,
+    "meta": 1702299104768,
+    "relativePath": "Script\\login\\register_in.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1702299033394,
+    "meta": 1702299104808,
+    "relativePath": "Script\\login\\register_knows.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1702299045204,
+    "meta": 1702299104839,
+    "relativePath": "Script\\login\\register.js"
+  },
+  "522f7454-94d8-4e87-9f92-b1c1f9b4c84a": {
+    "asset": 1702299059147,
+    "meta": 1702299104871,
+    "relativePath": "Script\\login\\SpriteTextTool.js"
+  },
+  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
+    "asset": 1702299068818,
+    "meta": 1702299104892,
+    "relativePath": "Script\\login\\tips.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1702299244876,
+    "meta": 1702299246833,
+    "relativePath": "Script\\login\\myserver.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1702299514006,
+    "meta": 1702299515203,
+    "relativePath": "Script\\login\\Tools.js"
   }
 }

@@ -68,7 +68,7 @@ cc.Class({
         // 'password': 123456,
 
       };
-      httpRequest.httpPost('/app/api-server/register-in', params, function (data) {
+      httpRequest.httpPostLogin('/app/api-server/register-in', params, function (data) {
         cc.log(data);
 
         if (data.code == 1) {
