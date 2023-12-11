@@ -469,7 +469,6 @@ class UserBiologyNatureDo extends ActiveRecord
             'attack_biology_do'=>$attack_biology,//被攻击单位
             'skill'=>$skill,//发起攻击技能
             'hurt_go'=>$skill['needValue'],//发起伤害
-            'attack'=>$attack,//发起类型
             'extend'=>$need,//伤害类型
             'keeptime'=>$this->bout,//发起伤害持续回合
             'dobout'=>$this->bout,//执行回合数
@@ -723,7 +722,6 @@ class UserBiologyNatureDo extends ActiveRecord
             'attack_biology_do'=>$attack_biology_do,//被攻击单位
             'skill'=>$skill_go,//发起攻击技能
             'hurt_go'=>$hurt_go,//发起伤害
-            'attack'=>$attack,//发起类型
             'extend'=>$extend,//伤害类型
             'keeptime'=>$this->bout+$keeptime,//发起伤害持续回合
             'dobout'=>$this->bout+$dobout,//执行回合数
@@ -898,10 +896,14 @@ class UserBiologyNatureDo extends ActiveRecord
         $shanbi= isset($hurt_go_list['shanbi'])?:0;
         $type=$hurt_go_list['type'];//攻击类型 0普通攻击  1技能攻击  2发起消耗 
         $hurt_go=$hurt_go_list['hurt_go'];
-        $attack=$skill['attack'];//攻击对象
         $is_do= $hurt_go_list['is_do'];
-        $belong = intval($skill['belong']);//主动--技能
-
+        //不是普通攻击，技能攻击时
+        if($type==HURT_PUTONG){
+            $attack=$hurt_go_list['attack'];//攻击对象 
+        }else{
+            $attack=$skill['attack'];//攻击对象
+            $belong = intval($skill['belong']);//主动--技能
+        }
         $hurt_go_list['hurt_msg']= $hurt_go>=0?'+'.$hurt_go:$hurt_go;
         $sm_go = $attack_biology_go['name'].'生命('.$attack_biology_go['shengMing'].'/'.$attack_biology_go['biology_start_extend']['shengMing'].')    ';
         $sm_do = $attack_biology_do['name'].'生命('. $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'].')    ';
