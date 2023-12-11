@@ -23,9 +23,10 @@ cc.Class({
     sprite_server_login: cc.Button
   },
   // LIFE-CYCLE CALLBACKS:
-  initInfo: function initInfo(info) {
-    // 初始化该道具相关信息
+  initInfo: function initInfo(info_list) {
+    info = info_list['biology_list']; // 初始化该道具相关信息
     // 图片
+
     var _self = this;
 
     if (info['picture']) {

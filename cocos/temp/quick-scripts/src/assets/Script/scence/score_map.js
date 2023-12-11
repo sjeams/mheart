@@ -45,6 +45,7 @@ cc.Class({
     content: cc.Node,
     person: cc.Prefab,
     home: cc.Node,
+    reload: cc.Node,
     //列表
     test_scrollView: {
       "default": null,
@@ -90,7 +91,7 @@ cc.Class({
       if (!data.data) {
         //刷新地图
         // cc.director.loadScene('map/诸天地图');
-        _this.addWord(); //刷新世界地图
+        _this.reloadWord(); //刷新世界地图
 
       } else {
         //生成世界
@@ -110,6 +111,7 @@ cc.Class({
       }
     });
   },
+  //生成地图
   addMapPic: function addMapPic(data) {
     var _this = this;
 
@@ -126,7 +128,7 @@ cc.Class({
       _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
     });
   },
-  addWord: function addWord() {
+  reloadWord: function reloadWord() {
     var _this = this;
 
     httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
@@ -134,6 +136,7 @@ cc.Class({
       _this.addWordMap(data);
     });
   },
+  //生成生物
   addWordMap: function addWordMap(data) {
     console.log(data);
 
@@ -142,15 +145,11 @@ cc.Class({
 
 
     var TOOLS = data.data.user_in_word_map;
-    var total = data.data.user_in_word_map.length;
-    var fi = cc.fadeIn(2); //渐显效果
-
-    _this.content.runAction(fi);
-
-    var fo = cc.fadeOut(1); //渐隐效果
-
-    _this.content.runAction(fo); //移除节点
-
+    var total = data.data.user_in_word_map.length; // var fi = cc.fadeIn(2)//渐显效果
+    // _this.content.runAction(fi);
+    // var fo = cc.fadeOut(1)//渐隐效果
+    // _this.content.runAction(fo);
+    //移除节点
 
     _this.content.removeAllChildren();
 

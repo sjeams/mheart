@@ -515,13 +515,16 @@
     "home": {
       "__id__": 5
     },
+    "reload": {
+      "__id__": 11
+    },
     "test_scrollView": null,
     "test_pageView": null,
     "_id": "87Tg+MWxlOI7Njrbafuxwn"
   },
   {
     "__type__": "cc.Node",
-    "_name": "刷新地图",
+    "_name": "reload",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -898,11 +901,11 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 11
+      "__id__": 6
     },
     "component": "",
-    "_componentId": "cc.Button",
-    "handler": "",
+    "_componentId": "09d9e7+vGZLdKg/PEEJJ/Uq",
+    "handler": "reloadWord",
     "customEventData": ""
   },
   {

@@ -118,7 +118,7 @@ class UserWords extends ActiveRecord
     //获取随机3-10个坐标
     public  function getWordsMapInt(){
         //随机事件个数3-10个事件，只能选择3次。
-        $rand =rand(3,10);
+        $rand =rand(MAP_RAND_MIN,MAP_RAND_MAX);
         //划分九宫格
         $map = $this->getWordsMap();
         $map_int =array_rand($map,$rand);//随机3个定位
@@ -160,7 +160,8 @@ class UserWords extends ActiveRecord
                 if(intval($nature_do["$dofind"])>0){
                     //生成生物
                     $this->int_biology_id =$nature_do["$dofind"];
-                    $biology_list[$i] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
+                    $biology_list[] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
+                    // $biology_list[$i] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
                 }
             }
             $map_int[$key]['biology_list']=$biology_list;//阵容
