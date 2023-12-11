@@ -288,7 +288,7 @@ class UserBiologyNatureDo extends ActiveRecord
 
         $biology_userid = $data['userid'];//阵容属于哪个单位，0系统 ，其它为玩家
         $UserBiologyAttribute =new UserBiologyAttribute();
-        for($i=0;$i<=9;$i++){
+        for($i=1;$i<=9;$i++){
             $dofind ='do'.$i;
             if(intval($data["$dofind"])>0){
                 //基础属性
