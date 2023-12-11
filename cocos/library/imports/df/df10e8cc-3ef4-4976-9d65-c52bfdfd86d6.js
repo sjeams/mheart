@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'df10ejMPvRJdp1lxSv9/YbW', 'mapTools');
-// Script/scence/mapTools.js
+cc._RF.push(module, 'df10ejMPvRJdp1lxSv9/YbW', 'MapTools');
+// Script/scence/MapTools.js
 
 "use strict";
 
