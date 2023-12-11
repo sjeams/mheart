@@ -8,6 +8,7 @@
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\modules\admin\models\User;
+use app\modules\admin\models\BiologyState;
 use app\modules\app\models\getBiologyRand;
 use app\modules\admin\models\BiologyCreate;
 use app\modules\app\models\UserBiologyNatureDo;
@@ -181,7 +182,7 @@ class UserWords extends ActiveRecord
         ->leftJoin("x2_words AS b","a.wordid = b.id")
         ->where(['or' , ['a.wordid' =>'1'] ,['a.wordid' => $wordid]] )    // 先满足后面的条件
         // ->where(['a.id' =>'18'] ) 
-        // ->andWhere(['a.wordid' =>$wordid])
+        ->andWhere(['a.zhujiao' =>0])//不能是主角
         ->limit($num)
         ->orderBy("rand()")
         ->All();
@@ -197,6 +198,7 @@ class UserWords extends ActiveRecord
         $this->int_biology = $this->getBiologyRandGradeSystem();
         $userbiology = User::biolobyChange($this->int_biology);//获取战斗属性
         $userbiology['state']= $this->getBiologyRandStateSystem();//随机境界  
+        $userbiology['state_name']= BiologyState::getValueFind($userbiology['state']);//境界名称  
         // var_dump($userbiology);die;
         return  $userbiology;
     }

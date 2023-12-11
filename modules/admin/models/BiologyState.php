@@ -10,7 +10,13 @@ class BiologyState extends ActiveRecord
     public static function tableName(){
         return '{{%biology_state}}';
     }
-
+    /**
+     * 查询境界查询
+     */
+    public static function getValueFind($state){
+      $data = BiologyState::find()->where("id=$state")->asarray()->One();
+      return $data;
+    }
     /**
      * 查询境界列表
      */
