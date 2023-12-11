@@ -888,7 +888,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $attack_biology_go= $hurt_go_list['attack_biology_go'];
         $attack_biology_do= $hurt_go_list['attack_biology_do'];
         $skill= $hurt_go_list['skill'];
-        $shanbi= $hurt_go_list['shanbi'];
+        $shanbi= isset($hurt_go_list['shanbi'])?:0;
         $type=$hurt_go_list['type'];//攻击类型 0普通攻击  1技能攻击  2发起消耗 
         $hurt_go=$hurt_go_list['hurt_go'];
         $attack=$skill['attack'];//攻击对象
