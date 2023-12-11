@@ -45,7 +45,6 @@ class UserGoods extends ActiveRecord
     public  function getUserGoodsExtend($attack_biology_do,$goodsid=0,$moreExtend=[]){
 
         $goods = $this->getUserGoods($goodsid);
-    
         if($goods){
             foreach($goods['nature'] as $goods_nature){
                 $extend = $goods_nature['extend'];//造成伤害类型
@@ -56,7 +55,9 @@ class UserGoods extends ActiveRecord
                 $hurt = $goods_nature['hurt'];//伤害固定值   zhaoHuan时-(生物id)
                 //计算伤害
                 $hurt_go = Method::percentHurt($attack_biology_do[$status],$hurt,$value,$formula,$isadd);
-                $moreExtend[$extend]+=$hurt_go;
+                if(isset($moreExtend[$extend])){
+                    $moreExtend[$extend]+=$hurt_go;
+                }
             }
         }
         return $moreExtend;
