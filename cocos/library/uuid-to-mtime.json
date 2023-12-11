@@ -1085,18 +1085,18 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702261262016,
-    "meta": 1702261262035,
+    "asset": 1702262287227,
+    "meta": 1702262287241,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1702260846912,
-    "meta": 1702260848498,
+    "asset": 1702261691742,
+    "meta": 1702261765570,
     "relativePath": "Script\\scence\\score_map.js"
   },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
-    "asset": 1702261072720,
-    "meta": 1702261074809,
+    "asset": 1702262285285,
+    "meta": 1702262287133,
     "relativePath": "Script\\scence\\mapTools.js"
   }
 }

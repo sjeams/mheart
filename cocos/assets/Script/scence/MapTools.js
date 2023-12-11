@@ -20,7 +20,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     initInfo (info_list) {
-        info=info_list['biology_list'];
+        info=info_list['biology_list'][0];
         // 初始化该道具相关信息
         // 图片
         var _self = this;
@@ -52,17 +52,17 @@ cc.Class({
         // }
         
         var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-        var type_color = color[info['type']];
+        var type_color = color[info['yiXing']];
         // console.log(info)
         var star ='';    
-        for(i=0;i<=info['star'];i++){
+        for(i=0;i<=info['yiXing'];i++){
             star +='⭐';
         }
-        this.server_type.getComponent(cc.Label).string= info['type_name'];
+        this.server_type.getComponent(cc.Label).string= info['grade'];
         this.server_star.getComponent(cc.Label).string= star;
-        this.node.getChildByName('server_type').color = new cc.color(type_color);
 
         this.server_name.getComponent(cc.Label).string=info['name'];
+        this.node.getChildByName('server_name').color = new cc.color(type_color);
         //创建一个新button 并将其挂载到创建的精灵下
         this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info);
     },

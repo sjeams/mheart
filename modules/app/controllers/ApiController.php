@@ -48,21 +48,21 @@ class ApiController extends ApiControl{
         //     echo file_get_contents($request);
         // }
 
-        $arrContextOptions=array(
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
-        ); 
-        if(isset($request)){  
-            // echo file_get_contents($request, false, stream_context_create($arrContextOptions));
-            echo file_get_contents($request);
+        // $arrContextOptions=array(
+        //     "ssl"=>array(
+        //         "verify_peer"=>false,
+        //         "verify_peer_name"=>false,
+        //     ),
+        // );
+        if(file_get_contents($request) === false)
+        {
+            // echo '读取失败';
+            // 判断http还是https
+            $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
+            $request = $href.'/app_resources/defult.png';
+            // echo file_get_contents($request);
         }
+        echo file_get_contents($request);
     }
-
-
-    
-    
-    
-
 }
