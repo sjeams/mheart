@@ -162,8 +162,8 @@ class UserWords extends ActiveRecord
                 if(intval($nature_do["$dofind"])>0){
                     //生成生物
                     $this->int_biology_id =$nature_do["$dofind"];
-                    // $biology_list[] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
-                    $biology_list[$i] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
+                    $biology_list[] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
+                    // $biology_list[$i] = $this->getBiologyRandSystem();//固定id为阵法id 1-9
                 }
             }
             $map_int[$key]['biology_list']=$biology_list;//阵容
