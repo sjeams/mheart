@@ -175,13 +175,20 @@ class User extends ActiveRecord
         $biology['jingYan'] = $score+$grade*2+$biology['state']*5; 
         //不要白值，避免重复
         if($not_extend){
-            unset($biology['power']);
-            unset($biology['agile']);
-            unset($biology['intelligence']);
-            unset($biology['lucky']);
-            unset($biology['score']);
-            unset($biology['reiki']);
-            unset($biology['state']);
+            // unset($biology['power']);
+            // unset($biology['agile']);
+            // unset($biology['intelligence']);
+            // unset($biology['lucky']);
+            // unset($biology['score']);
+            // unset($biology['reiki']);
+            // unset($biology['state']);
+            $biology['power']=0;
+            $biology['agile']=0;
+            $biology['intelligence']=0;
+            $biology['lucky']=0;
+            $biology['score']=0;
+            $biology['reiki']=0;
+            $biology['state']=0;
         }
         return $biology;
     }
