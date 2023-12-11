@@ -42,13 +42,15 @@ class UserBiologyAttribute extends ActiveRecord
         $moreExtend=[];//属性池
         if($biology_userid){
             //玩家生物
-            $data = UserBiologyAttribute::find()->select('*')->where("userBiologyid=$userBiologyid")->asarray()->One();  
+            $data = UserBiologyAttribute::find()->select('*')->where("userBiologyid=$userBiologyid")->asarray()->One();
         }else{
             // var_dump($userBiologyid);
             // var_dump($biology_userid);
             //系统生物
             $UserWords =new UserWords();
-            $data = $UserWords->getMapValueListSystem($map_int,'biology_list')[$userBiologyid];
+            $merge_biology_list = $UserWords->getMapValueListSystem($map_int,'biology_list');
+            //重新定义索引id
+            $data = array_column($merge_biology_list,null,'id')[$userBiologyid];
         }
         //初始化
         // 固定增加的属性

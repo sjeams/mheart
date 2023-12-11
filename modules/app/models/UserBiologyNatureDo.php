@@ -168,7 +168,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public  function addPositionCount(){
         $data = UserBiologyNatureDo::find()->where("userid = $this->userId")->asArray()->one();
         $num=0;
-        for($i=0;$i<=9;$i++){
+        for($i=1;$i<=9;$i++){
             $dofind ='do'.$i;
             if( intval($data["$dofind"])>0){
                     $num++;
@@ -205,9 +205,11 @@ class UserBiologyNatureDo extends ActiveRecord
     }
    
     public function fightingExtend($my_biology,$do_biology){
+  
         //战斗属性调用
         $my_biology = $this->getFightAttribute($my_biology);//唯一调用己方生物
         $do_biology = $this->getFightAttribute($do_biology);//唯一调用地方生物
+      
         //战斗属性排序--阵营分配
         $my_biology_sort = $this->getFightSort($my_biology,POSITION_MY); //1己方
         $do_biology_sort = $this->getFightSort($do_biology,POSITION_ENEMY);//2敌方
@@ -293,7 +295,6 @@ class UserBiologyNatureDo extends ActiveRecord
             if(intval($data["$dofind"])>0){
                 //基础属性
                 $data["$dofind"]= $UserBiologyAttribute->getUserBiologyAttribute($data["$dofind"],$biology_userid,$this->map_int);
-
             }
         }
         return $data;
@@ -311,7 +312,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public function getFightSort($data,$position_my){
         // suDu
         $r_data=[];
-        for($i=0;$i<=9;$i++){
+        for($i=1;$i<=9;$i++){
             $dofind ='do'.$i;
             if($data["$dofind"]){
                 //基础属性-我的位置
