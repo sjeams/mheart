@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1086,
-      "y": 276,
+      "x": 852,
+      "y": 226,
       "width": 1047,
-      "height": 674,
+      "height": 718,
       "layout": {
         "children": [
           {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 278.046875,
+                "height": 292,
                 "type": "panel",
                 "width": 204
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 274.9375,
+                "height": 285,
                 "type": "panel",
                 "width": 204
               }
             ],
-            "height": 556,
+            "height": 580,
             "type": "dock-v",
             "width": 204
           },
@@ -42,7 +42,7 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 556,
+            "height": 580,
             "type": "panel",
             "width": 304
           },
@@ -53,7 +53,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 277.015625,
+                "height": 307.984375,
                 "type": "panel",
                 "width": 516.984375
               },
@@ -64,12 +64,12 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 275.96875,
+                "height": 269,
                 "type": "panel",
                 "width": 516.984375
               }
             ],
-            "height": 556,
+            "height": 580,
             "type": "dock-v",
             "width": 516.984375
           }
@@ -86,7 +86,8 @@
         "timeline",
         "game-window"
       ]
-    }
+    },
+    "window-1702266474499": {}
   },
   "panels": {
     "project-settings": {
@@ -144,8 +145,8 @@
       "height": 676
     },
     "sprite-editor": {
-      "x": 650,
-      "y": 307,
+      "x": 1199,
+      "y": 344,
       "width": 516,
       "height": 539
     },

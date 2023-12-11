@@ -1065,8 +1065,8 @@
     "relativePath": "resources\\sprite_世界.prefab"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1701940162989,
-    "meta": 1701940163011,
+    "asset": 1702266885964,
+    "meta": 1702266885980,
     "relativePath": "resources\\sprite_地图.prefab"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
@@ -1085,8 +1085,8 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702263696850,
-    "meta": 1702263696864,
+    "asset": 1702265929577,
+    "meta": 1702265929597,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
@@ -1095,8 +1095,8 @@
     "relativePath": "Script\\scence\\score_map.js"
   },
   "df10e8cc-3ef4-4976-9d65-c52bfdfd86d6": {
-    "asset": 1702263743688,
-    "meta": 1702264630721,
+    "asset": 1702266071506,
+    "meta": 1702266110521,
     "relativePath": "Script\\scence\\mapTools.js"
   }
 }
