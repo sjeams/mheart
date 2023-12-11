@@ -73,30 +73,30 @@ class UserBiologyAttribute extends ActiveRecord
     //属性增幅--可单独传递值 --
     public  function  getUserBiologyAttributeAddExtends($data,$moreExtend=[],$defult=1){
         //白值--固定值根据白值变化
-        $moreExtend['power']=$moreExtend['power']?:0;
-        $moreExtend['agile']=$moreExtend['agile']?:0;
-        $moreExtend['intelligence']=$moreExtend['intelligence']?:0;
-        $moreExtend['lucky']=$moreExtend['lucky']?:0;
-        $moreExtend['grade']=$moreExtend['grade']?:0;
-        $moreExtend['score']=$moreExtend['score']?:0;
-        $moreExtend['reiki']=$moreExtend['reiki']?:0;
-        $moreExtend['state']=$moreExtend['state']?:0;
+        $moreExtend['power']=isset($moreExtend['power'])?:0;
+        $moreExtend['agile']=isset($moreExtend['agile'])?:0;
+        $moreExtend['intelligence']=isset($moreExtend['intelligence'])?:0;
+        $moreExtend['lucky']=isset($moreExtend['lucky'])?:0;
+        $moreExtend['grade']=isset($moreExtend['grade'])?:0;
+        $moreExtend['score']=isset($moreExtend['score'])?:0;
+        $moreExtend['reiki']=isset($moreExtend['reiki'])?:0;
+        $moreExtend['state']=isset($moreExtend['state'])?:0;
         //固定值
-        $moreExtend['shengMing']=$moreExtend['shengMing']?:0;
-        $moreExtend['moFa']=$moreExtend['moFa']?:0;
-        $moreExtend['gongJi']=$moreExtend['gongJi']?:0;
-        $moreExtend['huJia']=$moreExtend['huJia']?:0;
-        $moreExtend['faGong']=$moreExtend['faGong']?:0;
-        $moreExtend['fakang']=$moreExtend['fakang']?:0;
-        $moreExtend['jianShang']=$moreExtend['jianShang']?:0;
-        $moreExtend['shanbi']=$moreExtend['shanbi']?:0;
-        $moreExtend['xiXue']=$moreExtend['xiXue']?:0;
-        $moreExtend['huDun']=$moreExtend['huDun']?:0;
-        $moreExtend['suDu']=$moreExtend['suDu']?:0;
-        $moreExtend['special']=$moreExtend['special']?:0;
-        $moreExtend['jingBi']=$moreExtend['jingBi']?:0;
-        $moreExtend['jingYan']=$moreExtend['jingYan']?:0;;
-        $moreExtend['shouyuan']=$moreExtend['shouyuan']?:0;
+        $moreExtend['shengMing']=isset($moreExtend['shengMing'])?:0;
+        $moreExtend['moFa']=isset($moreExtend['moFa'])?:0;
+        $moreExtend['gongJi']=isset($moreExtend['gongJi'])?:0;
+        $moreExtend['huJia']=isset($moreExtend['huJia'])?:0;
+        $moreExtend['faGong']=isset($moreExtend['faGong'])?:0;
+        $moreExtend['fakang']=isset($moreExtend['fakang'])?:0;
+        $moreExtend['jianShang']=isset($moreExtend['jianShang'])?:0;
+        $moreExtend['shanbi']=isset($moreExtend['shanbi'])?:0;
+        $moreExtend['xiXue']=isset($moreExtend['xiXue'])?:0;
+        $moreExtend['huDun']=isset($moreExtend['huDun'])?:0;
+        $moreExtend['suDu']=isset($moreExtend['suDu'])?:0;
+        $moreExtend['special']=isset($moreExtend['special'])?:0;
+        $moreExtend['jingBi']=isset($moreExtend['jingBi'])?:0;
+        $moreExtend['jingYan']=isset($moreExtend['jingYan'])?:0;;
+        $moreExtend['shouyuan']=isset($moreExtend['shouyuan'])?:0;
  
         //初始化
         if($defult){
