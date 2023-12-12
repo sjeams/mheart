@@ -114,7 +114,7 @@ class UserGoods extends ActiveRecord
 
     // 根据征服世界随机物品id
     public  function userGoodsRand($lucky=0,$num=5){  //默认管理员，数量为1
-        // $good_id=[];
+        $good_id=[];
         //默认一次，根据幸运最多3次触发
         if($lucky){
              //luckly 幸运
