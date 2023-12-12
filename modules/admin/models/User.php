@@ -194,10 +194,15 @@ class User extends ActiveRecord
     }
     // 根据白值（智力敏） 额外属性--属性容器--根据额外的属性进行叠加
     public static function biolobyChangeMore($biology,$add_biology){
-        // var_dump($add_biology);
+   
         $more = User::biolobyChange($add_biology,1);
+        var_dump($more); 
         foreach($add_biology as$key => $v){
             $biology[$key] = $biology[$key]+$v+$more[$key]; //生物属性+白值增加+额外属性
+            if($key=='shengMing'){
+                var_dump($more[$key]);
+            }
+         
         }
         return $biology;
     }

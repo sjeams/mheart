@@ -72,23 +72,24 @@ class UserBiologyNatureDo extends ActiveRecord
         $list =[];
         //是否写入轮询
         if(!empty($data)){
-            $data['keeptime']=isset($data['keeptime'])?:0;
-            $data['dobout']=isset($data['dobout'])?:0;
+            $data['keeptime']=isset($data['keeptime'])?intval($data['dobout']):0;
+            $data['dobout']=isset($data['dobout'])?intval($data['dobout']):0;
             //初始回合
-            if($data['keeptime']&&$data['keeptime']!=$this->bout){ //多回合写入轮询
+            if($data['keeptime']>$this->bout){ //多回合写入轮询
                 $this->biology_int_extnd['keeptime'][$this->biology_id][key($data['data'])][$data['keeptime']]+= $data['data'][key($data['data'])];//持续回合
             }
-            if($data['dobout']&&$data['dobout']!=$this->bout){ //多回合写入轮询
+            if($data['dobout']>$this->bout){ //多回合写入轮询
                 $this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']]+= $data['data'][key($data['data'])];//持续回合
             }
             //没有值，跳过
-            if(isset($list[key($data['data'])])){
+            if(key($data['data'])){
                 $list[key($data['data'])]+=$data['data'][key($data['data'])];
             } 
         }
-        $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list);
+        // var_dump($list);
+        $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list,0);
         // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
-        // var_dump($attack_biology_do['shengMing']);
+        var_dump($attack_biology_do['shengMing']);
         // $this->getFirstBiologyIntExtends($attack_biology_do);//进入轮询--初始化轮询
         return $attack_biology_do;
     }
@@ -240,10 +241,11 @@ class UserBiologyNatureDo extends ActiveRecord
         return [
             'fighting_goods_my'=>$this->fighting_goods_my,
             'fighting_goods_enemy'=>$this->fighting_goods_enemy,
-            'fighting_msg'=>$this->fighting_msg,
+            // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
             'fighting_history'=>$this->fighting_history,
             'poition_winner'=>$this->poition_winner
         ];
+   
     }
     //重置容器
     public function getBiologyRelode(){
@@ -652,7 +654,6 @@ class UserBiologyNatureDo extends ActiveRecord
         $attack_biology_go =$hurt_go['attack_biology_go'];//发起攻击
         $pid =$attack_biology_go['position'];//发起攻击位置
         $attack_biology_do=$hurt_go['attack_biology_do'];//被攻击---此处为被攻击者发起攻击
-        // $hurt_go = $hurt_go['hurt'];
         $position_my = $attack_biology_do['position_my'];
         //当前回合被动触发的技能
         $position_skill = $this->getSkillValueList($attack_biology_do['position_skill'],0)['skill'];
@@ -666,7 +667,6 @@ class UserBiologyNatureDo extends ActiveRecord
 
     //发起伤害
     public  function attackSkillHurtValue($position_my,$doid,$pid,$attack_biology_go,$skill_go,$attack_biology_do,$is_do){
- 
         $status = $skill_go['status'];//1物理 2 法术 3 特殊（ 无视闪避等技能 只能特殊技能抵挡）
         $keeptime = $skill_go['keeptime'];//技能伤害持续回合
         $dobout = $skill_go['bout'];//执行回合数
@@ -777,26 +777,31 @@ class UserBiologyNatureDo extends ActiveRecord
             $hurt_go = $hurt_go>=0?0:$hurt_go;//伤害最少为0
      
         }
-        $hurt_go_list['hurt_go']=$hurt_go;
         $not_out=1;//0跳过 1不跳过
         // if($is_do){ //0反击 1主动
             //主动---闪避直接跳过
             if($shanbi==0&&$attack==POSITION_ENEMY){ //攻击敌方单位，反弹伤害
+                $not_out=1;
+                $shanbi=0;
                 //接收伤害
                 // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
                 $this->attackSkillHurt($hurt_go_list);
                 //反弹伤害   //$goid 注意，攻击顺序不能变，这个是生物的速度攻击顺序
             }else if($attack==POSITION_MY){
+                $not_out=1;
+                $shanbi=0;
                 // 伤害结算
                 // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
             }else{
                 // 攻击敌方--闪避时 --跳过 
                 $not_out=0;
+                $shanbi=1;
             }
         // }else{
             // 伤害结算
             // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
         // }
+ 
         //属性处理
         if($not_out){
             $this->biology_id=$attack_biology_do['id'];
@@ -804,9 +809,10 @@ class UserBiologyNatureDo extends ActiveRecord
             $hurt_extend['keeptime']= $keeptime;//技能伤害持续回合
             $hurt_extend['dobout']= $dobout;//执行回合数
             $hurt_extend['data']=[$extend=>$hurt_go];//执行伤害
+            // var_dump($hurt_extend);
             $attack_biology_do = $this->getBiologyIntExtends($attack_biology_do,$hurt_extend);
         }
-     
+        // var_dump($hurt_go);die;
         $attack_biology_do['shengMing']= $attack_biology_do['shengMing']>=0?$attack_biology_do['shengMing']:0;//生命最低为0
         $attack_biology_do['moFa']=$attack_biology_do['moFa']>=0?$attack_biology_do['moFa']:0;//魔法最低为0
 
@@ -815,9 +821,10 @@ class UserBiologyNatureDo extends ActiveRecord
 
         // var_dump($attack_biology_do['shengMing']);
         //写入伤害提示
+        $hurt_go_list['not_out'] = $not_out;//是否跳过行动
         $hurt_go_list['baoji'] = $baoji;//是否暴击
         $hurt_go_list['shanbi'] = $shanbi;//是否闪避
-        $hurt_go_list['hurt_go'] = $hurt_go;//伤害
+        $hurt_go_list['hurt_go'] = $hurt_go;//伤害--结果
 
         $hurt_go_list['attack_biology_do']=$attack_biology_do;//伤害结果赋值
         $this->merge_biology_extend[$doid]=$attack_biology_do; //敌人伤害结算
@@ -893,10 +900,11 @@ class UserBiologyNatureDo extends ActiveRecord
         $attack_biology_go= $hurt_go_list['attack_biology_go'];
         $attack_biology_do= $hurt_go_list['attack_biology_do'];
         $skill= $hurt_go_list['skill'];
-        $shanbi= isset($hurt_go_list['shanbi'])?:0;
+        $shanbi= isset($hurt_go_list['shanbi'])?intval($hurt_go_list['shanbi']):0;
         $type=$hurt_go_list['type'];//攻击类型 0普通攻击  1技能攻击  2发起消耗 
         $hurt_go=$hurt_go_list['hurt_go'];
         $is_do= $hurt_go_list['is_do'];
+        // var_dump($shanbi);
         //不是普通攻击，技能攻击时
         if($type==HURT_PUTONG){
             $attack=$hurt_go_list['attack'];//攻击对象 

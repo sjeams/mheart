@@ -75,30 +75,30 @@ class UserBiologyAttribute extends ActiveRecord
     //属性增幅--可单独传递值 --
     public  function  getUserBiologyAttributeAddExtends($data,$moreExtend=[],$defult=1){
         //白值--固定值根据白值变化
-        $moreExtend['power']=isset($moreExtend['power'])?:0;
-        $moreExtend['agile']=isset($moreExtend['agile'])?:0;
-        $moreExtend['intelligence']=isset($moreExtend['intelligence'])?:0;
-        $moreExtend['lucky']=isset($moreExtend['lucky'])?:0;
-        $moreExtend['grade']=isset($moreExtend['grade'])?:0;
-        $moreExtend['score']=isset($moreExtend['score'])?:0;
-        $moreExtend['reiki']=isset($moreExtend['reiki'])?:0;
-        $moreExtend['state']=isset($moreExtend['state'])?:0;
+        $moreExtend['power']=isset($moreExtend['power'])?intval($moreExtend['power']):0;
+        $moreExtend['agile']=isset($moreExtend['agile'])?intval($moreExtend['agile']):0;
+        $moreExtend['intelligence']=isset($moreExtend['intelligence'])?intval($moreExtend['intelligence']):0;
+        $moreExtend['lucky']=isset($moreExtend['lucky'])?intval($moreExtend['lucky']):0;
+        $moreExtend['grade']=isset($moreExtend['grade'])?intval($moreExtend['grade']):0;
+        $moreExtend['score']=isset($moreExtend['score'])?intval($moreExtend['score']):0;
+        $moreExtend['reiki']=isset($moreExtend['reiki'])?intval($moreExtend['reiki']):0;
+        $moreExtend['state']=isset($moreExtend['state'])?intval($moreExtend['state']):0;
         //固定值
-        $moreExtend['shengMing']=isset($moreExtend['shengMing'])?:0;
-        $moreExtend['moFa']=isset($moreExtend['moFa'])?:0;
-        $moreExtend['gongJi']=isset($moreExtend['gongJi'])?:0;
-        $moreExtend['huJia']=isset($moreExtend['huJia'])?:0;
-        $moreExtend['faGong']=isset($moreExtend['faGong'])?:0;
-        $moreExtend['fakang']=isset($moreExtend['fakang'])?:0;
-        $moreExtend['jianShang']=isset($moreExtend['jianShang'])?:0;
-        $moreExtend['shanbi']=isset($moreExtend['shanbi'])?:0;
-        $moreExtend['xiXue']=isset($moreExtend['xiXue'])?:0;
-        $moreExtend['huDun']=isset($moreExtend['huDun'])?:0;
-        $moreExtend['suDu']=isset($moreExtend['suDu'])?:0;
-        $moreExtend['special']=isset($moreExtend['special'])?:0;
-        $moreExtend['jingBi']=isset($moreExtend['jingBi'])?:0;
-        $moreExtend['jingYan']=isset($moreExtend['jingYan'])?:0;;
-        $moreExtend['shouyuan']=isset($moreExtend['shouyuan'])?:0;
+        $moreExtend['shengMing']=isset($moreExtend['shengMing'])?intval($moreExtend['shengMing']):0;
+        $moreExtend['moFa']=isset($moreExtend['moFa'])?intval($moreExtend['moFa']):0;
+        $moreExtend['gongJi']=isset($moreExtend['gongJi'])?intval($moreExtend['gongJi']):0;
+        $moreExtend['huJia']=isset($moreExtend['huJia'])?intval($moreExtend['huJia']):0;
+        $moreExtend['faGong']=isset($moreExtend['faGong'])?intval($moreExtend['faGong']):0;
+        $moreExtend['fakang']=isset($moreExtend['fakang'])?intval($moreExtend['fakang']):0;
+        $moreExtend['jianShang']=isset($moreExtend['jianShang'])?intval($moreExtend['jianShang']):0;
+        $moreExtend['shanbi']=isset($moreExtend['shanbi'])?intval($moreExtend['shanbi']):0;
+        $moreExtend['xiXue']=isset($moreExtend['xiXue'])?intval($moreExtend['xiXue']):0;
+        $moreExtend['huDun']=isset($moreExtend['huDun'])?intval($moreExtend['huDun']):0;
+        $moreExtend['suDu']=isset($moreExtend['suDu'])?intval($moreExtend['suDu']):0;
+        $moreExtend['special']=isset($moreExtend['special'])?intval($moreExtend['special']):0;
+        $moreExtend['jingBi']=isset($moreExtend['jingBi'])?intval($moreExtend['jingBi']):0;
+        $moreExtend['jingYan']=isset($moreExtend['jingYan'])?intval($moreExtend['jingYan']):0;;
+        $moreExtend['shouyuan']=isset($moreExtend['shouyuan'])?intval($moreExtend['shouyuan']):0;
  
         //初始化
         if($defult){
@@ -113,12 +113,18 @@ class UserBiologyAttribute extends ActiveRecord
             $moreExtend['intelligence']+=$value;
         }else{
             //境界叠加--技能临时提升境界
-            if($moreExtend['state']){
+            if($data['state']!=$moreExtend['state']){
                 //境界属性增幅
                 $value = intval(Words::getUserWordGrade($moreExtend['state'])['value']);
-                $moreExtend['power']+=$value;
-                $moreExtend['agile']+=$value;
-                $moreExtend['intelligence']+=$value;
+                if($data['state']>$moreExtend['state']){
+                    $moreExtend['power']-=$value;
+                    $moreExtend['agile']-=$value;
+                    $moreExtend['intelligence']-=$value;
+                }else{
+                    $moreExtend['power']+=$value;
+                    $moreExtend['agile']+=$value;
+                    $moreExtend['intelligence']+=$value;
+                }
             }
         }
         // var_dump($data);
