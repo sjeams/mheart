@@ -91,9 +91,10 @@ class UserBiologyNatureDo extends ActiveRecord
                 $this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']]+= $data['data'][key($data['data'])];//持续回合
             }
             //没有值，跳过
-            if(key($data['data'])){
-                $list[key($data['data'])]+=$data['data'][key($data['data'])];
+            if(!isset($list[key($data['data'])])){
+                $list[key($data['data'])]=0;
             } 
+            $list[key($data['data'])]+=$data['data'][key($data['data'])];
         }
         // var_dump($list);
         $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list,0);
