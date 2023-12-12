@@ -1109,14 +1109,14 @@
     "meta": 1702353325480,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702363915843,
-    "meta": 1702363915862,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
     "asset": 1702363569813,
     "meta": 1702363911528,
     "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1702366090396,
+    "meta": 1702366090409,
+    "relativePath": "Scene\\map\\诸天地图.fire"
   }
 }
