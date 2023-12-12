@@ -96,8 +96,7 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
-        // $this->param['map_int']=3;
-        $map_int =$this->param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$this->param['map_int']?:3;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
         //获取自己战斗阵容
@@ -128,7 +127,7 @@ class AppApinewController extends ApiUserControl{
         // }
         // die;
         // var_dump($data['fighting_history'][1]['fighting_history'] [4]);die;
-        // var_dump($data['fighting_history'][1]['fighting_history']);die;
+        var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]['my_biology_extend']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }
 

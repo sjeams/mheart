@@ -110,12 +110,28 @@ class UserWords extends ActiveRecord
         $left = intval((1334-1200)/2);
         for($num=0;$num<24;$num++){
             $x = intval($num%6);//x计算
-            $y = intval($num/6);//y计算
+            $y = intval($num/4);//y计算
             $map[$num]['x']=$left+200*$x;
             $map[$num]['y']=$height+150*$y;
         }
         return $map;
     }
+    //战斗地图--九宫格--坐标计算
+    public  function getFightingMap(){
+        // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
+        // 1200/6=200  600/4 =175
+        $map=[];
+        $height = (intval(750-400)/2);
+        $left = intval((1334-800)/2);
+        for($num=0;$num<24;$num++){
+            $x = intval($num%6);//x计算1-4
+            $y = intval($num/4);//y计算1-4
+            $map[$num]['x']=$left+200*$x;
+            $map[$num]['y']=$height+150*$y;
+        }
+        return $map;
+    }
+
     //获取随机3-10个坐标
     public  function getWordsMapInt(){
         //随机事件个数3-10个事件，只能选择3次。
