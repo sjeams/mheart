@@ -256,8 +256,8 @@ class UserBiologyNatureDo extends ActiveRecord
             // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
             'fighting_history'=>$this->fighting_history,
             'poition_winner'=>$this->poition_winner,
-            'poition_my'=>$UserWords->getFightingMap(POSITION_MY),//返回坐标己方
-            'poition_enemy'=>$UserWords->getFightingMap(POSITION_ENEMY),//返回坐标敌方
+            // 'poition_my'=>$UserWords->getFightingMap(POSITION_MY),//返回坐标己方
+            // 'poition_enemy'=>$UserWords->getFightingMap(POSITION_ENEMY),//返回坐标敌方
         ];
    
     }
