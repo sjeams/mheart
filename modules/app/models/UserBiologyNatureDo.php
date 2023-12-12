@@ -89,7 +89,7 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($list);
         $attack_biology_do = (new UserBiologyAttribute())->getUserBiologyAttributeAddExtends($attack_biology_do,$list,0);
         // $attack_biology_do[$extend] =  (intval($attack_biology_do[$extend])+$hurt_go); //造成伤害，基础伤害+公式
-        var_dump($attack_biology_do['shengMing']);
+        // var_dump($attack_biology_do['shengMing']);
         // $this->getFirstBiologyIntExtends($attack_biology_do);//进入轮询--初始化轮询
         return $attack_biology_do;
     }
