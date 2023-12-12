@@ -95,7 +95,7 @@ cc.Class({
         'userid': userid
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
-        console.log(data); // if(!data.data){
+        console.log(data.poition_my); // if(!data.data){
         //     //刷新地图
         //     // cc.director.loadScene('map/诸天地图');
         //     _this.reloadWord()//刷新世界地图
