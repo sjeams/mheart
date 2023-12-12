@@ -80,7 +80,7 @@ class UserBiologyNatureDo extends ActiveRecord
            if(!isset($this->biology_int_extnd['keeptime'][$this->biology_id][key($data['data'])][$data['keeptime']])){
                 $this->biology_int_extnd['keeptime'][$this->biology_id][key($data['data'])][$data['keeptime']]=0;
             }
-            if(!isset($this->biology_int_extnd['keeptime'][$this->biology_id][key($data['data'])][$data['keeptime']])){
+            if(!isset($this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']])){
                 $this->biology_int_extnd['dobout'][$this->biology_id][key($data['data'])][$data['dobout']]=0;
             }
             //初始回合
