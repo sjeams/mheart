@@ -54,6 +54,9 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->attack_bout=0;
         $this->map_int=0;//map阵容编号
         $this->biology_int_extnd=[];
+        $this->biology_int_extnd['keeptime']=[];
+        $this->biology_int_extnd['dobout']=[];
+
         $this->biology_id=0;
     }
     public static function tableName(){
