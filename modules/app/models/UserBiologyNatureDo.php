@@ -72,7 +72,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $list =[];
         //是否写入轮询
         if(!empty($data)){
-            $data['keeptime']=isset($data['keeptime'])?intval($data['dobout']):0;
+            $data['keeptime']=isset($data['keeptime'])?intval($data['keeptime']):0;
             $data['dobout']=isset($data['dobout'])?intval($data['dobout']):0;
             //初始回合
             if($data['keeptime']>$this->bout){ //多回合写入轮询
