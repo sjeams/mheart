@@ -110,7 +110,7 @@ class UserWords extends ActiveRecord
         $left = intval((1334-1200)/2);
         for($num=0;$num<24;$num++){
             $x = intval($num%6);//x计算1-6
-            $y = intval($num/4);//y计算1-4
+            $y = intval($num/6);//y计算1-4
             $map[$num]['x']=$left+200*$x;
             $map[$num]['y']=$height+150*$y;
         }
