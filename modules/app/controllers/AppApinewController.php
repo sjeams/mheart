@@ -107,6 +107,7 @@ class AppApinewController extends ApiUserControl{
         }else{//系统怪，随时刷新不做存留
             $do_biology = $UserWords->getMapValueListSystem($map_int,'nature_do');
         }
+        // $map =$UserWords->getFightingMap();
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_int);

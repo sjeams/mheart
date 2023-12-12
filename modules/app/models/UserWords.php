@@ -109,28 +109,45 @@ class UserWords extends ActiveRecord
         $height = (intval(750-600)/2);
         $left = intval((1334-1200)/2);
         for($num=0;$num<24;$num++){
-            $x = intval($num%6);//x计算
-            $y = intval($num/4);//y计算
-            $map[$num]['x']=$left+200*$x;
-            $map[$num]['y']=$height+150*$y;
-        }
-        return $map;
-    }
-    //战斗地图--九宫格--坐标计算
-    public  function getFightingMap(){
-        // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
-        // 1200/6=200  600/4 =175
-        $map=[];
-        $height = (intval(750-400)/2);
-        $left = intval((1334-800)/2);
-        for($num=0;$num<24;$num++){
-            $x = intval($num%6);//x计算1-4
+            $x = intval($num%6);//x计算1-6
             $y = intval($num/4);//y计算1-4
             $map[$num]['x']=$left+200*$x;
             $map[$num]['y']=$height+150*$y;
         }
         return $map;
     }
+    //战斗地图--九宫格--坐标计算 24个格子
+    public  function getFightingMap($num_int=0){
+        //3x8  24个格子
+        // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
+        // 1200/8=150  450/3 =150
+        $last_num =$num_int+9;
+        $map=[];
+        $height = (intval(750-450)/2);
+        $left = intval((1334-1200)/2);
+        for($num=$num_int;$num<$last_num;$num++){
+            $x = intval($num%8);//x计算1-6
+            $y = intval($num/3);//y计算1-4
+            $map[$num+1]['x']=$left+150*$x;
+            $map[$num+1]['y']=$height+150*$y;
+        }
+        return $map;
+    }
+    //获取坐标
+    public  function getFightingPosition($myint=POSITION_MY){
+        if($myint==POSITION_MY){
+            //自己位置
+            $postition=$this->getFightingMap(0);
+        }else{
+            //敌方位置
+            $postition=$this->getFightingMap(15);
+        }
+        return $postition;
+    }
+
+
+    // POSITION_ENEMY
+
 
     //获取随机3-10个坐标
     public  function getWordsMapInt(){

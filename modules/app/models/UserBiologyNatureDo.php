@@ -14,6 +14,7 @@ use app\modules\admin\models\BiologySkillPosition;
 use app\modules\admin\models\BiologySkillPositionType;
 use app\modules\admin\models\BiologySkillExtend;
 use app\modules\admin\models\User;
+use app\modules\app\models\UserWords;
 use app\modules\app\models\UserBiologyAttribute;
 
 
@@ -248,12 +249,15 @@ class UserBiologyNatureDo extends ActiveRecord
         //开启循环战斗--初始回合
         $this->fighting();//返回战斗记录
         //返回战利品和战斗记录
+        $UserWords= new UserWords();
         return [
             'fighting_goods_my'=>$this->fighting_goods_my,
             'fighting_goods_enemy'=>$this->fighting_goods_enemy,
             // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
             'fighting_history'=>$this->fighting_history,
-            'poition_winner'=>$this->poition_winner
+            'poition_winner'=>$this->poition_winner,
+            'poition_my'=>$UserWords->getFightingMap(POSITION_MY),//返回坐标己方
+            'poition_enemy'=>$UserWords->getFightingMap(POSITION_ENEMY),//返回坐标敌方
         ];
    
     }
