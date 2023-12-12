@@ -24,11 +24,6 @@ use app\modules\app\models\UserWords;
 use app\modules\app\models\UserServer;
 use app\modules\app\models\UserGoods;
 
-
-
-
-
-
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
 header('Access-Control-Allow-Credentials: true;');
@@ -101,7 +96,7 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/fight
      */
     public function actionFight(){
-        // $this->param['map_int']=3;
+        $this->param['map_int']=3;
         $map_int =$this->param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
@@ -132,6 +127,7 @@ class AppApinewController extends ApiUserControl{
         //     echo $v.'<br>';
         // }
         // die;
+        // var_dump($data['fighting_history'][1]['fighting_history'] [4]);die;
         // var_dump($data['fighting_history'][1]['fighting_history']);die;
         die(Method::jsonApp(1,$data,'succes'));  
     }

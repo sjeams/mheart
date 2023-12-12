@@ -252,7 +252,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'fighting_goods_my'=>$this->fighting_goods_my,
             'fighting_goods_enemy'=>$this->fighting_goods_enemy,
             // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
-            'fighting_history'=>$this->fighting_history,
+            // 'fighting_history'=>$this->fighting_history,
             'poition_winner'=>$this->poition_winner
         ];
    
