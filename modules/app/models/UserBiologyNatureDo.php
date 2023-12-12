@@ -62,7 +62,7 @@ class UserBiologyNatureDo extends ActiveRecord
 
 
     //生物容器属性--回合增加或者减少
-    public  function  getBiologyIntExtends($attack_biology_do,$data=[]){
+    public  function  getBiologyIntExtends($attack_biology_do,$data){
         // 每次只会进入一个属性
         // $data['keeptime']=0;//持续回合
         // $data['dobout']=0;//执行回合数
@@ -806,8 +806,8 @@ class UserBiologyNatureDo extends ActiveRecord
         if($not_out){
             $this->biology_id=$attack_biology_do['id'];
             $hurt_extend=[];
-            $hurt_extend['keeptime']= $keeptime;//技能伤害持续回合
-            $hurt_extend['dobout']= $dobout;//执行回合数
+            $hurt_extend['keeptime']= intval($keeptime);//技能伤害持续回合
+            $hurt_extend['dobout']= intval($dobout);//执行回合数
             $hurt_extend['data']=[$extend=>$hurt_go];//执行伤害
             // var_dump($hurt_extend);
             $attack_biology_do = $this->getBiologyIntExtends($attack_biology_do,$hurt_extend);
