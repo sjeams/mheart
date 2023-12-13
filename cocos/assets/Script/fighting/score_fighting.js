@@ -94,7 +94,6 @@ cc.Class({
             'map_int': map_int,
             'userid': userid,
           };
-
           
           httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
             var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
