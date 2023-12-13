@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "生物弹窗",
+    "texture": "a39fdce2-311a-4db6-a159-dfa4988a74fd",
+    "atlas": "",
+    "rect": [
+      8,
+      0,
+      592,
+      343
+    ],
+    "offset": [
+      4,
+      0
+    ],
+    "originalSize": [
+      600,
+      343
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

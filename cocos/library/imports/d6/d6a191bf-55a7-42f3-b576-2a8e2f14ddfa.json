@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "技能框",
+    "texture": "59c4a857-2dd7-44b7-b0d6-63e4b252dadb",
+    "atlas": "",
+    "rect": [
+      8,
+      9,
+      100,
+      101
+    ],
+    "offset": [
+      -2,
+      0
+    ],
+    "originalSize": [
+      120,
+      119
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
