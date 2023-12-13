@@ -69,7 +69,6 @@ const HttpHelper = cc.Class({
             if (cc.sys.isNative) {
                 xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
             }
-            xhr.setRequestHeader("Http-Token",token);
             // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
             // xhr.setRequestHeader("Ip", "192.168.1.1");
             // xhr.setRequestHeader("Http-Token", "gzipdeflate");
@@ -112,7 +111,8 @@ const HttpHelper = cc.Class({
             // xhr.setRequestHeader("Http-Token", "gzipdeflate");
             xhr.timeout = 5000;// 5 seconds for timeout
             // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
             // xhr.send(JSON.stringify(params));
             xhr.send('data='+JSON.stringify(params));
             //  xhr.send(params);

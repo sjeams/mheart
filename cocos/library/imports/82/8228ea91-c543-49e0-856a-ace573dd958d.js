@@ -73,11 +73,10 @@ var HttpHelper = cc.Class({
 
     if (cc.sys.isNative) {
       xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
-    }
-
-    xhr.setRequestHeader("Http-Token", token); // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
+    } // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
     // xhr.setRequestHeader("Ip", "192.168.1.1");
     // xhr.setRequestHeader("Http-Token", "gzipdeflate");
+
 
     xhr.timeout = 5000; // 5 seconds for timeout
     // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
@@ -96,7 +95,11 @@ var HttpHelper = cc.Class({
     xhr.onreadystatechange = function () {
       // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
       if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
-        var respone = xhr.responseText;
+        var respone = xhr.responseText; //允许某个站点可以对本地资源跨域访问
+
+        respone.setRequestHeader("Access-Control-Allow-Origin", "*"); // 允许所有站点可以对本地资源跨域访问
+
+        respone.setRequestHeader("Access-Control-Allow-Origin", "*");
         var new_respone = JSON.parse(respone);
 
         if (new_respone.code == 0) {
@@ -121,8 +124,10 @@ var HttpHelper = cc.Class({
 
     xhr.timeout = 5000; // 5 seconds for timeout
     // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // xhr.send(JSON.stringify(params));
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8"); // xhr.setRequestHeader("Http-Token",token)
+    // xhr.send(JSON.stringify(params));
 
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   }
