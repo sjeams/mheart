@@ -96,7 +96,7 @@ class AppApinewController extends ApiUserControl{
      */
     public function actionFight(){
         $param =$this->param;
-        $map_int =$param['map_int']?:4;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$param['map_int']?:3;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
         //获取自己战斗阵容
@@ -117,6 +117,7 @@ class AppApinewController extends ApiUserControl{
             // 修改地图状态
             $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
+        // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]);die;
         // var_dump($data);die; 
         // var_dump($data);die;
         // var_dump($data['fighting_msg']);die;
@@ -130,8 +131,9 @@ class AppApinewController extends ApiUserControl{
         // var_dump($data['fighting_history'][1]['fighting_history'] [4]);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]['my_biology_extend']);die;
         //战斗序号
-        Method::fightingJson($data,$this->userid);//唯一记录，不然占内存
-        die(Method::jsonApp(1,$this->userid,'succes'));  
+        // Method::fightingJson($data,$this->userid);//唯一记录，不然占内存
+        // die(Method::jsonApp(1,$this->userid,'succes'));  
+        die(Method::jsonApp(1,$data,'succes')); 
     }
 
     /**
