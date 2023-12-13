@@ -898,18 +898,18 @@ class UserBiologyNatureDo extends ActiveRecord
         $hurt_go_list['do_biology_extend']=$this->do_biology_extend;
         $hurt_go_list['merge_biology_extend']=$this->merge_biology_extend;
         //字段太多，暂时先隐藏返回字段，保留id---json数据过大，去掉部分战斗中的字段
-        unset($hurt_go_list['attack_biology_go']);
-        // unset($hurt_go_list['attack_biology_do']);
-        unset($hurt_go_list['merge_biology_extend']);
-        //双方阵容改变数据
-        unset($hurt_go_list['my_biology_extend']);
-        unset($hurt_go_list['do_biology_extend']);
-        //只返回改变的单位--并且删除多余数据
-        unset($hurt_go_list['attack_biology_do']['descript']);//描述
-        unset($hurt_go_list['attack_biology_do']['biology_start_extend']);//开始属性
-        unset($hurt_go_list['attack_biology_do']['skill']);//技能
-        unset($hurt_go_list['attack_biology_do']['position_skill']);//技能
-        unset($hurt_go_list['attack_biology_do']['fight_skill']);//技能
+        // unset($hurt_go_list['attack_biology_go']);
+        // // unset($hurt_go_list['attack_biology_do']);
+        // unset($hurt_go_list['merge_biology_extend']);
+        // //双方阵容改变数据
+        // unset($hurt_go_list['my_biology_extend']);
+        // unset($hurt_go_list['do_biology_extend']);
+        // //只返回改变的单位--并且删除多余数据
+        // unset($hurt_go_list['attack_biology_do']['descript']);//描述
+        // unset($hurt_go_list['attack_biology_do']['biology_start_extend']);//开始属性
+        // unset($hurt_go_list['attack_biology_do']['skill']);//技能
+        // unset($hurt_go_list['attack_biology_do']['position_skill']);//技能
+        // unset($hurt_go_list['attack_biology_do']['fight_skill']);//技能
         //去掉多余技能字段
         if($hurt_go_list['skill']){
             $hurt_go_list['skill']=array(
