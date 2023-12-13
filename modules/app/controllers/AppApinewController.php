@@ -129,7 +129,9 @@ class AppApinewController extends ApiUserControl{
         // die;
         // var_dump($data['fighting_history'][1]['fighting_history'] [4]);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]['my_biology_extend']);die;
-        die(Method::jsonApp(1,$data,'succes'));  
+        //战斗序号
+        Method::fightingJson($data,$this->userid);//唯一记录，不然占内存
+        die(Method::jsonApp(1,$this->userid,'succes'));  
     }
 
     /**
