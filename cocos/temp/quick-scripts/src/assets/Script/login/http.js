@@ -95,11 +95,7 @@ var HttpHelper = cc.Class({
     xhr.onreadystatechange = function () {
       // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
       if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
-        var respone = xhr.responseText; //允许某个站点可以对本地资源跨域访问
-
-        respone.setRequestHeader("Access-Control-Allow-Origin", "*"); // 允许所有站点可以对本地资源跨域访问
-
-        respone.setRequestHeader("Access-Control-Allow-Origin", "*");
+        var respone = xhr.responseText;
         var new_respone = JSON.parse(respone);
 
         if (new_respone.code == 0) {
@@ -126,8 +122,7 @@ var HttpHelper = cc.Class({
     // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8"); // xhr.setRequestHeader("Http-Token",token)
-    // xhr.send(JSON.stringify(params));
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8"); // xhr.send(JSON.stringify(params));
 
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   }

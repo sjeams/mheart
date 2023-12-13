@@ -1035,8 +1035,8 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702476785320,
-    "meta": 1702476785342,
+    "asset": 1702477556694,
+    "meta": 1702477556710,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
@@ -1159,14 +1159,14 @@
     "meta": 1702475299757,
     "relativePath": "resources\\biology_pic\\战斗属性.png"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702471622108,
-    "meta": 1702475300379,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "8228ea91-c543-49e0-856a-ace573dd958d": {
-    "asset": 1702476783234,
-    "meta": 1702476785037,
+    "asset": 1702477127716,
+    "meta": 1702477175758,
     "relativePath": "Script\\login\\http.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1702477580344,
+    "meta": 1702477607308,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }
