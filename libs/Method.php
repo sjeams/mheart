@@ -941,7 +941,7 @@ class Method
 
     //战斗数据
     public static function fightingJson($jsonArray,$name){
-        $file_path = $_SERVER['DOCUMENT_ROOT'].'/app_resources/fighting/history';
+        $file_path = '/app_resources/fighting/history';
         // 生成目录
         if(!file_exists($file_path)){
             mkdir($file_path,0777);
@@ -949,11 +949,13 @@ class Method
         // 生成路由
         $path = $file_path.'/'.$name.'.json';
         $strjson = json_encode($jsonArray,JSON_UNESCAPED_UNICODE);//中文不强制转义
-        file_put_contents($path,$strjson);
+        file_put_contents($_SERVER['DOCUMENT_ROOT'].$path,$strjson);
         // $strjson = json_encode($jsonArray,JSON_UNESCAPED_UNICODE);//中文不强制转义
         // $fp = fopen($jsonFile,'w');//此处$jsonFile可以使用目录等设置
         // fputs($fp, $strjson); 
         // fclose($fp);
+        return  $path;
     }
+
 
 }

@@ -95,14 +95,12 @@ cc.Class({
         'userid': userid
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
-        var sn_id = '/app_resources/fighting/history/' + data.data + '.json';
-        var remoteUrl = httpRequest.httpUrlJson(sn_id);
-        cc.loader.load({
-          url: remoteUrl
-        }, function (err, results) {
-          // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-          console.log(results);
-        });
+        console.log(data); // var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
+        // var remoteUrl = httpRequest.httpUrlJson(sn_id);
+        // cc.loader.load({ url: remoteUrl }, function (err, results) {  
+        //     // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+        //     console.log(results);
+        // });
       }); // if(!data.data){
       //     //刷新地图
       //     // cc.director.loadScene('map/诸天地图');
