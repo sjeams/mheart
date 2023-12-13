@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1075,
-      "y": 162,
+      "x": 1139,
+      "y": 259,
       "width": 1047,
       "height": 718,
       "layout": {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 302.125,
+                "height": 292,
                 "type": "panel",
                 "width": 204
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 294.875,
+                "height": 285,
                 "type": "panel",
                 "width": 204
               }
             ],
-            "height": 600,
+            "height": 580,
             "type": "dock-v",
             "width": 204
           },
@@ -42,7 +42,7 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 600,
+            "height": 580,
             "type": "panel",
             "width": 306
           },
@@ -53,23 +53,23 @@
                 "children": [
                   "scene"
                 ],
-                "height": 318.671875,
+                "height": 307.984375,
                 "type": "panel",
                 "width": 515
               },
               {
-                "active": 2,
+                "active": 0,
                 "children": [
                   "console",
                   "timeline",
                   "game-window"
                 ],
-                "height": 278.3125,
+                "height": 269,
                 "type": "panel",
                 "width": 515
               }
             ],
-            "height": 600,
+            "height": 580,
             "type": "dock-v",
             "width": 515
           }

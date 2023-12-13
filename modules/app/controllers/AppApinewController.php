@@ -96,7 +96,7 @@ class AppApinewController extends ApiUserControl{
      */
     public function actionFight(){
         $param =$this->param;
-        $map_int =$param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$param['map_int']?:4;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
         //获取自己战斗阵容
