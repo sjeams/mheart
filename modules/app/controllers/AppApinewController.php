@@ -118,7 +118,7 @@ class AppApinewController extends ApiUserControl{
             $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
         // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]);die;
-        // var_dump($data);die; 
+        // var_dump($data['fighting_history'][1]['fighting_history'][1]);die; 
         // var_dump($data);die;
         // var_dump($data['fighting_msg']);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][4]);//战斗记录

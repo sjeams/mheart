@@ -274,7 +274,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->getFighHurt();//战斗伤害--循环技能--每次战斗 都要循环winner--胜利后跳出 返回战斗记录结果
         $poition_winner = $this->victory();//再次检查胜利者
         // 回合战斗结果写入记录
-        $this->fighting_history[$this->bout]['merge_biology_extend']=$this->merge_biology_extend;//回合结算状态
+        // $this->fighting_history[$this->bout]['merge_biology_extend']=$this->merge_biology_extend;//回合结算状态
          // 胜利跳出循环  0无 1自己 2敌方
         if($poition_winner==POSITION_NO){
             $this->fighting();
@@ -921,6 +921,8 @@ class UserBiologyNatureDo extends ActiveRecord
                 'positionType_msg'=>$hurt_go_list['skill']['positionType_msg'],
             );
         }
+        // var_dump($this->do_biology_extend);die;
+        // var_dump($hurt_go_list);die;
         return $hurt_go_list;
     }
 
