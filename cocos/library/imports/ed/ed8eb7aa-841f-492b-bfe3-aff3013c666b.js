@@ -96,7 +96,7 @@ cc.Class({
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
         var sn_id = '/app_resources/fighting/history/' + data.data + '.json';
-        var remoteUrl = httpRequest.httpUrl(sn_id);
+        var remoteUrl = httpRequest.httpUrlJson(sn_id);
         cc.loader.load({
           url: remoteUrl
         }, function (err, results) {

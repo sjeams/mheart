@@ -77,7 +77,7 @@ class ApiController extends ApiControl{
         echo file_get_contents($request,false,stream_context_create($arrContextOptions));
     }
 
-    public function actionFilejSON(){
+    public function actionFileJson(){
         $request = Yii::$app->request->get('url');
         $arrContextOptions=array(
             "ssl"=>array(
