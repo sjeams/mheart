@@ -69,6 +69,7 @@ const HttpHelper = cc.Class({
             if (cc.sys.isNative) {
                 xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
             }
+            xhr.setRequestHeader("Http-Token",token);
             // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
             // xhr.setRequestHeader("Ip", "192.168.1.1");
             // xhr.setRequestHeader("Http-Token", "gzipdeflate");
