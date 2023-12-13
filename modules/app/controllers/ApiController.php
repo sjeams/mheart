@@ -98,7 +98,8 @@ class ApiController extends ApiControl{
                 ),
             );
             $data= file_get_contents($request,false,stream_context_create($arrContextOptions));
-            echo  json_decode($data);
+            $data= json_decode($data,true);
+            die(Method::jsonApp(1,$data,'succes'));
         });
         // $response = file_get_contents('https://invalid-certificate.com');
         // if(file_get_contents($request,false,stream_context_create($arrContextOptions)) === false)
@@ -111,7 +112,7 @@ class ApiController extends ApiControl{
         //     // echo file_get_contents($request);
         // }
         $data= file_get_contents($request,false,stream_context_create($arrContextOptions));
-       
-        echo  json_decode($data);
+        $data= json_decode($data,true);
+        die(Method::jsonApp(1,$data,'succes'));
     }
 }
