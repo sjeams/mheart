@@ -131,22 +131,21 @@ const HttpHelper = cc.Class({
                 // progressBar.show();
                 var loadedResource =[]; //传入预制体的data参数--进度数据
                 //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-                cc.loader.loadRes('resources/sprite_loading', function(errorMessage,loadedResource){
+                cc.loader.loadRes('/sprite_loading', function(errorMessage,loadedResource){
                     //检查资源加载
                     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-                    if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; } 
+                    if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                     //开始实例化预制资源
                     var TipBoxPrefab = cc.instantiate(loadedResource);
-        
                     //将预制资源添加到父节点
-                    CanvasNode.addChild(TipBoxPrefab);
-        
+                    // CanvasNode.addChild(TipBoxPrefab);
+                    cc.find('Canvas').addChild(TipBoxPrefab);
                     //获取预制资源中的js组件，并作出相应操作
-                    var TipBoxScript = TipBoxPrefab.getComponent('progressTools');
-                    //开始操作JS组件脚本
-                    TipBoxScript.action(ButtonNumber,callbackObj); //开始为JS组件进行初始化操作,action 为自定义初始化方法
-                    TipBoxScript.setTipContent(content); //设置提示框的内容
-                    SelfCallBack(TipBoxPrefab,TipBoxScript);
+                    // var TipBoxScript = TipBoxPrefab.getComponent('progressTools');
+                    // //开始操作JS组件脚本
+                    // TipBoxScript.action(ButtonNumber,callbackObj); //开始为JS组件进行初始化操作,action 为自定义初始化方法
+                    // TipBoxScript.setTipContent(content); //设置提示框的内容
+                    // SelfCallBack(TipBoxPrefab,TipBoxScript);
                 });
                 // //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
                 // cc.loader.loadRes(PrefabUrl, function(errorMessage,loadedResource){});
@@ -158,10 +157,10 @@ const HttpHelper = cc.Class({
             }, function (){
                 // progressBar.hide();
                 //加载场景
-                cc.director.loadScene(sence, function () {
-                    // СameraСontrol.newGame();
-                    // spawnTools();
-                });
+                // cc.director.loadScene(sence, function () {
+                //     // СameraСontrol.newGame();
+                //     // spawnTools();
+                // });
             });
         }, 
 });

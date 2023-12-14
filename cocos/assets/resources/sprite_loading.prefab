@@ -27,9 +27,6 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 16
-      },
-      {
         "__id__": 17
       },
       {
@@ -231,10 +228,13 @@
       },
       {
         "__id__": 14
+      },
+      {
+        "__id__": 15
       }
     ],
     "_prefab": {
-      "__id__": 15
+      "__id__": 16
     },
     "_opacity": 255,
     "_color": {
@@ -315,14 +315,14 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
+        -240,
         0,
         0,
         0,
@@ -392,7 +392,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "num",
+    "_name": "sys_label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 6
@@ -494,7 +494,7 @@
     "asset": {
       "__uuid__": "175f3a60-1b3b-452e-8fb5-a4c183722325"
     },
-    "fileId": "fdzRq+xIpMuIXEXEI0rY5z",
+    "fileId": "e7O0p2ObxKWo5aWjg6CMl3",
     "sync": false
   },
   {
@@ -530,6 +530,26 @@
     "_id": ""
   },
   {
+    "__type__": "236d34ndr5Le5KyhPYJE5sU",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 6
+    },
+    "_enabled": true,
+    "speed": 1,
+    "progressBar": {
+      "__id__": 15
+    },
+    "audio": null,
+    "play": null,
+    "pause": null,
+    "sys_label": {
+      "__id__": 11
+    },
+    "_id": ""
+  },
+  {
     "__type__": "cc.ProgressBar",
     "_name": "",
     "_objFlags": 0,
@@ -537,7 +557,7 @@
       "__id__": 6
     },
     "_enabled": true,
-    "_N$totalLength": 300,
+    "_N$totalLength": 480,
     "_N$barSprite": {
       "__id__": 8
     },
@@ -587,26 +607,6 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "77e07WCeNBJrJqHjwTfqjkf",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "speed": 1,
-    "progressBar": {
-      "__id__": 14
-    },
-    "audio": null,
-    "play": null,
-    "pause": null,
-    "bmp_font": {
-      "__id__": 11
-    },
     "_id": ""
   },
   {

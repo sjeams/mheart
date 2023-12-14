@@ -1134,25 +1134,10 @@
     "meta": 1702532983096,
     "relativePath": "Scene\\loading.fire"
   },
-  "175f3a60-1b3b-452e-8fb5-a4c183722325": {
-    "asset": 1702542836847,
-    "meta": 1702542836868,
-    "relativePath": "resources\\sprite_loading.prefab"
-  },
   "58902ee3-1f6d-4665-b33b-72a0da295752": {
     "asset": 1702541284353,
     "meta": 1702541284381,
     "relativePath": "resources\\progress.prefab"
-  },
-  "236d3e27-76be-4b7b-92b2-84f609139b14": {
-    "asset": 1702544406621,
-    "meta": 1702544411637,
-    "relativePath": "Script\\progressTools.js"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1702544531693,
-    "meta": 1702544533755,
-    "relativePath": "Script\\http.js"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
     "asset": 1702544729718,
@@ -1175,13 +1160,28 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1702545116568,
-    "meta": 1702545118860,
+    "asset": 1702545148588,
+    "meta": 1702545392650,
     "relativePath": "Script\\scence\\wordTools.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1702545120940,
-    "meta": 1702545120983,
+    "asset": 1702545965410,
+    "meta": 1702546228914,
     "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1702547001498,
+    "meta": 1702547003098,
+    "relativePath": "Script\\http.js"
+  },
+  "175f3a60-1b3b-452e-8fb5-a4c183722325": {
+    "asset": 1702549211492,
+    "meta": 1702549211515,
+    "relativePath": "resources\\sprite_loading.prefab"
+  },
+  "236d3e27-76be-4b7b-92b2-84f609139b14": {
+    "asset": 1702549203892,
+    "meta": 1702549210237,
+    "relativePath": "Script\\progressTools.js"
   }
 }
