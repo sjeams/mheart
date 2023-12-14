@@ -11,11 +11,6 @@ cc.Class({
   properties: {
     speed: 1,
     progressBar: cc.ProgressBar,
-    // progressBar:{
-    //     default:null,
-    //     type:cc.ProgressBar,
-    //     text:cc.Sprite,
-    // },
     audio: {
       "default": null,
       type: cc.AudioClip
@@ -26,59 +21,34 @@ cc.Class({
     pause: function pause() {
       this.audioSource.pause();
     },
-    sys_label: cc.Label // sys_label: {
-    //     default: null,
-    //     type: cc.Label,
-    // },
-    // //默认头像
-    // headpic:{
-    //     type:cc.SpriteFrame,
-    //     default:null,
-    // },
-    //头像
-    // background:{
-    //     default:null,
-    //     type:cc.Sprite,
-    // },
-
+    sys_label: cc.Label
   },
-  // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    // console.log(this.node);
-    // console.log('正在对比资源');
-    // // 远程 url 不带图片后缀名，此时必须指定远程图片文件的类型
-    // remoteUrl = "http://unknown.org/emoji?id=124982374";
-    // cc.loader.load({url: remoteUrl, type: 'png'}, function () {
-    //     // Use texture to create sprite frame
-    // });
-    // // 用绝对路径加载设备存储内的资源，比如相册
-    // var absolutePath = "/dara/data/some/path/to/image.png"
-    // cc.loader.load(absolutePath, function () {
-    //     // Use texture to create sprite frame
-    // });
-    // console.log('正在加载场景资源，请耐心等待...');
     // 加载资源包
-    this._urls = [// {url:'https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/jianzhicangmang.mp3', type:'mp3'},
+    // this._urls = [
+    // {url:''}
+    // {url:'https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app_resources/loading/jianzhicangmang.mp3', type:'mp3'},
     // {url:'https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg', type:'jpg'},
     // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/123.jpg', type:'jpg'},
     // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/ccc.png', type:'png'},
     // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1/jq22honey.zip', type:'zip'},
     // {url:'https://www./app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
     // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'},
-    [1], [2]]; // console.log( this.progressBar); 
+    // ];
+    // this._urls =[];
+    // console.log( this.progressBar); 
     // console.log( this.sprite); 
-
     this.resource = null;
     this.progressBar.progress = 0;
     this.sys_label.string = "0%"; // this.ProgressBar.progress += math_random / 100; 
 
-    this._clearAll();
+    this._clearAll(); // cc.loader.load(this._urls, this._progressCallback.bind(this), this._completeCallback.bind(this));
 
-    cc.loader.load(this._urls, this._progressCallback.bind(this), this._completeCallback.bind(this));
   },
   start: function start() {},
   _clearAll: function _clearAll() {
-    for (var i = 0; i < this._urls.length; ++i) {
+    // console.log(this._urls.length)
+    for (var i = 0; i <= this._urls.length; ++i) {
       var url = this._urls[i];
       cc.loader.release(url);
     }
@@ -87,41 +57,22 @@ cc.Class({
     //加载进度回调
     // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
     // console.log('加载场景资源');
-    this.progress = completeCount / totalCount;
-    this.resource = res;
-    this.completeCount = completeCount;
-    this.totalCount = totalCount; // 代码里面获取cc.Label组件, 修改文本内容
+    this.progressBar.progress = completeCount / totalCount;
+    this.progressBar.completeCount = completeCount;
+    this.progressBar.totalCount = totalCount;
+    this.resource = res; // 代码里面获取cc.Label组件, 修改文本内容
     //在代码里面获取cc.Label组件
 
     var sys_label = this.node.getChildByName("sys_label").getComponent(cc.Label);
-    sys_label.string = parseInt(this.progress * 100) + '%'; // if( this.resource.type=='json'){
-    //     // console.log(this.resource);  // json
-    //     // 从服务器加载mp3来进行播放
-    //     // this.audio.clip = ret;
-    //     // this.audio.play();
-    // }
-    // if( this.resource.type=='png'||this.resource.type=='jpg'){
-    //      console.log(res);  // json
-    //     //res是cc.Texture2D这样对象 
-    //     //   this.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(res)
-    //     // this.headpic.spriteFrame.setTexture(res);
-    //     // this.node.spriteFrame.setTexture(res);
-    //     // this.sprite.spriteFrame.setContentSize(res.getContentSize());
-    //     // this.node.getComponent(cc.Sprite).spriteFrame = res;
-    // }
+    sys_label.string = parseInt(this.progress * 100) + '%';
 
     if (this.resource.type == 'mp3') {
-      console.log(res); // mp3
+      // console.log(res);  // mp3
       // this.audio.clip = res;
       // this.audio.play();
       // 从服务器加载mp3来进行播放
-
       this.current = cc.audioEngine.play(res.url, false, 1);
     }
-  },
-  _completeCallback: function _completeCallback(err, texture) {
-    //加载完成回调
-    this.loadnextScene(); // 下一场景 
   },
   update: function update(dt) {
     if (!this.resource) {
@@ -146,6 +97,10 @@ cc.Class({
     }
 
     this.progressBar.progress = progress;
+  },
+  _completeCallback: function _completeCallback(err, texture) {
+    //加载完成回调
+    this.loadnextScene(); // 下一场景 
   },
   loadnextScene: function loadnextScene() {// 登录预加载
     // cc.director.preloadScene('index', function () {

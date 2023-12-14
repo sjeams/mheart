@@ -738,12 +738,12 @@
     "__type__": "cc.ClickEvent",
     "target": null,
     "component": "",
-    "_componentId": "cc.Button",
+    "_componentId": "4b399vzZ3RO+bGBH1k2sE4C",
     "handler": "hidden_dlg",
     "customEventData": ""
   },
   {
-    "__type__": "df10ejMPvRJdp1lxSv9/YbW",
+    "__type__": "4b399vzZ3RO+bGBH1k2sE4C",
     "_name": "",
     "_objFlags": 0,
     "node": {

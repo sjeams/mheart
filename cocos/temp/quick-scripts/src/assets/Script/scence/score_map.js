@@ -147,8 +147,7 @@ cc.Class({
   },
   //生成生物
   addWordMap: function addWordMap(data) {
-    console.log(data);
-
+    // console.log(data) 
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 

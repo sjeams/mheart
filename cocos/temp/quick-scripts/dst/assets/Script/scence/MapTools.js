@@ -10,7 +10,7 @@
                     };
                     function __define (exports, require, module) {
                         if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
-cc._RF.push(module, 'df10ejMPvRJdp1lxSv9/YbW', 'mapTools');
+cc._RF.push(module, '4b399vzZ3RO+bGBH1k2sE4C', 'mapTools');
 // Script/scence/mapTools.js
 
 "use strict";

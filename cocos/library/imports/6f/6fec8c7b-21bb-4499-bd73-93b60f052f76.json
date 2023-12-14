@@ -178,7 +178,7 @@
       "array": [
         0,
         0,
-        182.0683094987441,
+        210.4441731196186,
         0,
         0,
         0,
@@ -1116,8 +1116,12 @@
       "__id__": 2
     },
     "_enabled": true,
-    "content": null,
-    "progress": null,
+    "speed": 1,
+    "progressBar": null,
+    "audio": null,
+    "play": null,
+    "pause": null,
+    "sys_label": null,
     "_id": "5bnJctLPlJd4AvpSXO2s+r"
   }
 ]

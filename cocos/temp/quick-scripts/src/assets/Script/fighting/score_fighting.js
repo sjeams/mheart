@@ -78,6 +78,7 @@ cc.Class({
     //     this.content.addChild(item);
     //     this.opt_item_set.push(item);
     // }
+    // httpRequest.playGameLoading()
     this.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
   },
   spawnTools: function spawnTools() {
@@ -88,7 +89,7 @@ cc.Class({
     var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据
 
     if (map_int == '' && userid == '') {
-      cc.director.loadScene('map/诸天地图');
+      httpRequest.playGame('map/诸天地图');
     } else {
       var params = {
         'map_int': map_int,
@@ -96,7 +97,7 @@ cc.Class({
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
         // var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
-        var remoteUrl = httpRequest.httpUrlJson(data.data);
+        var remoteUrl = httpRequest.httpUrlJson(data.data.sid);
         cc.loader.load({
           url: remoteUrl
         }, function (err, results) {
@@ -176,7 +177,8 @@ cc.Class({
         // console.log(map.x)
         // console.log(map.y)
         var tool = cc.instantiate(_this.person);
-        tool.getComponent('mapTools').initInfo(map);
+        console.log(map);
+        tool.getComponent('fightingTools').initInfo(map);
         tool.x = map.x;
         tool.y = map.y; // _this.toolsArray.push(tool);
         // tool.setPosition(map.x,map.y);  

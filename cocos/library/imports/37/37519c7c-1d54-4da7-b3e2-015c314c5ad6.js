@@ -132,47 +132,49 @@ var HttpHelper = cc.Class({
   //场景加载
   playGame: function playGame(sence) {
     //预加载场景并获得加载进度
-    cc.director.preloadScene(sence, function () {
-      //可以把进度数据打出来
+    cc.director.preloadScene(sence, function () {//可以把进度数据打出来
       // progressBar.num =1;
       // progressBar.show();
-      var loadedResource = []; //传入预制体的data参数--进度数据
-      //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-
-      cc.loader.loadRes('/sprite_loading', function (errorMessage, loadedResource) {
-        //检查资源加载
-        if (errorMessage) {
-          cc.log('载入预制资源失败, 原因:' + errorMessage);
-          return;
-        }
-
-        if (!(loadedResource instanceof cc.Prefab)) {
-          cc.log('你载入的不是预制资源!');
-          return;
-        } //开始实例化预制资源
-
-
-        var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
-        // CanvasNode.addChild(TipBoxPrefab);
-
-        cc.find('Canvas').addChild(TipBoxPrefab); //获取预制资源中的js组件，并作出相应操作
-        // var TipBoxScript = TipBoxPrefab.getComponent('progressTools');
-        // //开始操作JS组件脚本
-        // TipBoxScript.action(ButtonNumber,callbackObj); //开始为JS组件进行初始化操作,action 为自定义初始化方法
-        // TipBoxScript.setTipContent(content); //设置提示框的内容
-        // SelfCallBack(TipBoxPrefab,TipBoxScript);
-      }); // //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+      // //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
       // cc.loader.loadRes(PrefabUrl, function(errorMessage,loadedResource){});
       // //开始实例化预制资源(这是个实例化是我自己理解的，可能说的不正确)
       // var TipBoxPrefab = cc.instantiate(loadedResource);
       // //将预制资源添加到父节点CanvasNode为画布canvas节点 是用cc.find()获得的对象
       // CanvasNode.addChild(TipBoxPrefab);
-    }, function () {// progressBar.hide();
+    }, function () {
+      // console.log(11)
+      // progressBar.hide();
       //加载场景
-      // cc.director.loadScene(sence, function () {
-      //     // СameraСontrol.newGame();
-      //     // spawnTools();
-      // });
+      cc.director.loadScene(sence, function () {//     // СameraСontrol.newGame();
+        //     // spawnTools();
+      });
+    });
+  },
+  //场景加载--进度条
+  playGameLoading: function playGameLoading() {
+    //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    cc.loader.loadRes('/sprite_loading', function (errorMessage, loadedResource) {
+      //检查资源加载
+      if (errorMessage) {
+        cc.log('载入预制资源失败, 原因:' + errorMessage);
+        return;
+      }
+
+      if (!(loadedResource instanceof cc.Prefab)) {
+        cc.log('你载入的不是预制资源!');
+        return;
+      } //开始实例化预制资源
+
+
+      var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
+      // CanvasNode.addChild(TipBoxPrefab);
+
+      cc.find('Canvas').addChild(TipBoxPrefab); //获取预制资源中的js组件，并作出相应操作
+      // var TipBoxScript = TipBoxPrefab.getComponent('progressTools');
+      // //开始操作JS组件脚本
+      // TipBoxScript.action(ButtonNumber,callbackObj); //开始为JS组件进行初始化操作,action 为自定义初始化方法
+      // TipBoxScript.setTipContent(content); //设置提示框的内容
+      // SelfCallBack(TipBoxPrefab,TipBoxScript);
     });
   }
 });
