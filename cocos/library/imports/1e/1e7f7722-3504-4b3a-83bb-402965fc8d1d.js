@@ -14,7 +14,7 @@ cc.Class({
   onLoad: function onLoad() {
     cc.sys.localStorage.removeItem('server_tips');
 
-    var HttpHelper = require("http");
+    var HttpHelper = require("../http");
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPostLogin('/app/api-server/user-tips', [], function (data) {

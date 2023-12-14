@@ -3,7 +3,7 @@
  * @Date: 2022-06-14 16:01:41
  * @Description: 
  */
-var HttpHelper = require("http"); 
+var HttpHelper = require("../http"); 
 var httpRequest = new HttpHelper();
 var params =[];
 cc.Class({
@@ -85,9 +85,9 @@ cc.Class({
     //按钮点击回调
     onConfirBtn:function(e,map_int){
         cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
-        cc.director.loadScene('战斗场景');
+        httpRequest.playGame('战斗场景');
         // console.log(info)
-        // var HttpHelper = require("http"); 
+        // var HttpHelper = require("../http"); 
         // var httpRequest = new HttpHelper();
         // httpRequest.httpPost('/app/app-apiword/in-word', {
         //     'id': info['id'],

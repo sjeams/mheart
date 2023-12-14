@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-var HttpHelper = require("http"); 
+var HttpHelper = require("../http"); 
 var httpRequest = new HttpHelper();
 var params =[];
 cc.Class({
@@ -107,7 +107,6 @@ cc.Class({
               // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
               // _this.content.getComponent(cc.Layout).spacingX = spacingX;
               // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-
               _this.addMapPic(data) //生成地图
               _this.addWordMap(data) //生成生物
           }
@@ -128,11 +127,15 @@ cc.Class({
     },
     reloadWord(){
       var _this =this;
+
       var params = {
         'page': 1,
         'pageSize': 12,
       };
       httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+        //移除节点
+        _this.content.removeAllChildren();
+        _this.content.destroyAllChildren();
         //写入地图数据
         _this.addWordMap(data)
         })
@@ -145,14 +148,10 @@ cc.Class({
         // _this.toolsArray = [];
         let TOOLS = data.data.user_in_word_map;
         var total = data.data.user_in_word_map.length;
-  
         // var fi = cc.fadeIn(2)//渐显效果
         // _this.content.runAction(fi);
         // var fo = cc.fadeOut(1)//渐隐效果
         // _this.content.runAction(fo);
-        //移除节点
-        _this.content.removeAllChildren();
-        _this.content.destroyAllChildren();
         //添加节点
         for (let i=0; i<total; i++) {
             // console.log(i) 

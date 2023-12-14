@@ -86,6 +86,9 @@
       },
       {
         "__id__": 24
+      },
+      {
+        "__id__": 25
       }
     ],
     "_prefab": null,
@@ -175,7 +178,7 @@
       "array": [
         0,
         0,
-        236.65497323103202,
+        182.0683094987441,
         0,
         0,
         0,
@@ -1104,5 +1107,17 @@
     "_isTrimmedMode": true,
     "_atlas": null,
     "_id": "ec5Sb0E51AZLe+OwwTmLVl"
+  },
+  {
+    "__type__": "236d34ndr5Le5KyhPYJE5sU",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "content": null,
+    "progress": null,
+    "_id": "5bnJctLPlJd4AvpSXO2s+r"
   }
 ]

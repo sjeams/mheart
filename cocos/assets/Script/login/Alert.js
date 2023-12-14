@@ -35,7 +35,7 @@ cc.Class({
     },
     spawnTools () {
         var _this =this;
-        var HttpHelper = require("http"); 
+        var HttpHelper = require("../http"); 
         var httpRequest = new HttpHelper();
         var params = {
                 'page': 1,

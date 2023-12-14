@@ -11,7 +11,7 @@ cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'score_map');
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-var HttpHelper = require("http");
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 var params = [];
@@ -136,7 +136,12 @@ cc.Class({
       'pageSize': 12
     };
     httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
-      //写入地图数据
+      //移除节点
+      _this.content.removeAllChildren();
+
+      _this.content.destroyAllChildren(); //写入地图数据
+
+
       _this.addWordMap(data);
     });
   },
@@ -153,12 +158,7 @@ cc.Class({
     // _this.content.runAction(fi);
     // var fo = cc.fadeOut(1)//渐隐效果
     // _this.content.runAction(fo);
-    //移除节点
-
-    _this.content.removeAllChildren();
-
-    _this.content.destroyAllChildren(); //添加节点
-
+    //添加节点
 
     for (var i = 0; i < total; i++) {
       // console.log(i) 

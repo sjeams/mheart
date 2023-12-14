@@ -36,7 +36,7 @@ cc.Class({
   spawnTools: function spawnTools() {
     var _this = this;
 
-    var HttpHelper = require("http");
+    var HttpHelper = require("../http");
 
     var httpRequest = new HttpHelper();
     var params = {

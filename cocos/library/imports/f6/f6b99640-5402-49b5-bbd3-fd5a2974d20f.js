@@ -11,7 +11,7 @@ cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'score_word');
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-var HttpHelper = require("http");
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 var params = [];
@@ -89,7 +89,7 @@ cc.Class({
       // console.log(_this.content)
       if (data.data) {
         //跳转到世界
-        cc.director.loadScene('map/诸天地图');
+        httpRequest.playGame('map/诸天地图');
       } else {
         //生成世界
         // let cellWidth = _this.content.width * 0.2;

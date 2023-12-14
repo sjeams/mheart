@@ -9,7 +9,7 @@ cc._RF.push(module, '8ac9fkSQUlL+ayF4+pxgOVe', 'fightingTools');
  * @Date: 2022-06-14 16:01:41
  * @Description: 
  */
-var HttpHelper = require("http");
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 var params = [];
@@ -93,7 +93,7 @@ cc.Class({
   onConfirBtn: function onConfirBtn(e, info) {
     console.log(info);
 
-    var HttpHelper = require("http");
+    var HttpHelper = require("../http");
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPost('/app/app-apiword/in-word', {

@@ -11,7 +11,7 @@ cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'score_fighting');
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-var HttpHelper = require("http");
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 var params = [];

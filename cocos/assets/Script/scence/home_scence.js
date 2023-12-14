@@ -1,11 +1,15 @@
+
+
 // Learn cc.Class:
 //  - https://docs.cocos.com/creator/manual/en/scripting/class.html
 // Learn Attribute:
 //  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
+var HttpHelper = require("../http"); 
+// var httpRequest = new HttpHelper();
 cc.Class({
+    
     extends: cc.Component,
 
     properties: {
@@ -28,12 +32,18 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        // 常驻节点
+        // cc.game.addPersistRootNode( myNode)
+        // cc.game.removePersistRootNode( myNode)
+    },
 
     start () {
 
     },
+    ProgressBar(){
 
+    },
     // update (dt) {},
 
 
@@ -47,40 +57,58 @@ cc.Class({
 
     //登录
     诸天万界: function() {
-    cc.director.loadScene('home/诸天万界');
+
+      var params = {
+        'page': 1,
+        'pageSize': 12,
+        };
+        httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+        //  console.log(data);
+          // console.log(_this.content)
+          if(data.data){
+              //跳转到世界
+            // cc.director.preloadScene("loading", function () {
+                // cc.director.loadScene('map/诸天地图');
+                httpRequest.playGame('map/诸天地图');
+            // });
+          }else{
+            //  httpRequest.playGame('home/诸天万界');
+            httpRequest.playGame('home/诸天万界');
+          }
+      })
     },
     //登录
     大厅: function() {
-        cc.director.loadScene('home/大厅');
+         httpRequest.playGame('home/大厅');
     },
  
     创造生物: function() {
-        cc.director.loadScene('home/创造生物');
+         httpRequest.playGame('home/创造生物');
     },
 
     //注册
     神魔炼狱: function() {
-        cc.director.loadScene('home/神魔炼狱');
+         httpRequest.playGame('home/神魔炼狱');
     },
 
     //大厅
     秘境探索: function() {
-        cc.director.loadScene('home/秘境探索');
+         httpRequest.playGame('home/秘境探索');
     },
 
     //奖励
     万古仙门: function() {
-        cc.director.loadScene('home/万古仙门');
+         httpRequest.playGame('home/万古仙门');
     },
    
     //充值
     天地熔炉: function() {
-        cc.director.loadScene('home/天地熔炉');
+         httpRequest.playGame('home/天地熔炉');
     },
 
     //支付
     镇妖塔: function() {
-        cc.director.loadScene('home/镇妖塔');
+         httpRequest.playGame('home/镇妖塔');
     },
 
 

@@ -3,7 +3,7 @@
  * @Date: 2022-06-14 16:01:41
  * @Description: 
  */
-var HttpHelper = require("http"); 
+var HttpHelper = require("../http"); 
 var httpRequest = new HttpHelper();
 var params =[];
 cc.Class({
@@ -50,7 +50,6 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
-        
         var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
         var type_color = color[info['type']];
         // console.log(info)
@@ -83,7 +82,7 @@ cc.Class({
     //按钮点击回调
     onConfirBtn:function(e,info){
         console.log(info)
-        var HttpHelper = require("http"); 
+        var HttpHelper = require("../http"); 
         var httpRequest = new HttpHelper();
         httpRequest.httpPost('/app/app-apiword/in-word', {
             'id': info['id'],
@@ -91,7 +90,7 @@ cc.Class({
             'token': null
         }, function (data) {
             //跳转到世界
-            cc.director.loadScene('map/诸天地图');
+            httpRequest.playGame('map/诸天地图');
             // console.log(data);
             // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
             // server_choes_label.getComponent(cc.Label).string=info['name'];

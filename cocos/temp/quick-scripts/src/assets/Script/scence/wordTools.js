@@ -9,7 +9,7 @@ cc._RF.push(module, '9fe90XuBmFABbeLvXUzRi55', 'wordTools');
  * @Date: 2022-06-14 16:01:41
  * @Description: 
  */
-var HttpHelper = require("http");
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 var params = [];
@@ -91,7 +91,7 @@ cc.Class({
   onConfirBtn: function onConfirBtn(e, info) {
     console.log(info);
 
-    var HttpHelper = require("http");
+    var HttpHelper = require("../http");
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPost('/app/app-apiword/in-word', {
@@ -100,7 +100,7 @@ cc.Class({
       'token': null
     }, function (data) {
       //跳转到世界
-      cc.director.loadScene('map/诸天地图'); // console.log(data);
+      httpRequest.playGame('map/诸天地图'); // console.log(data);
       // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
       // server_choes_label.getComponent(cc.Label).string=info['name'];
       // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
