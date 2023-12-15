@@ -1,7 +1,6 @@
 <?php
 
 // 随机地图生物个数
-
 define('MAP_RAND_MIN',1, true);  //地图生成生物最少3
 define('MAP_RAND_MAX',6, true);  //地图生成生物最多9
 
