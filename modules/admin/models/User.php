@@ -196,7 +196,10 @@ class User extends ActiveRecord
     public static function biolobyChangeMore($biology,$add_biology){
         $more = User::biolobyChange($add_biology,1);
         foreach($add_biology as$key => $v){
-            $biology[$key] = $biology[$key]+$v+$more[$key]; //生物属性+白值增加+额外属性
+            //特殊字段不进入，zhaoHuan zhiLiao  zhongDu xuanYun等
+           if(isset($biology[$key])){
+             $biology[$key] = $biology[$key]+$v+$more[$key]; //生物属性+白值增加+额外属性
+           }
         }
         return $biology;
     }
