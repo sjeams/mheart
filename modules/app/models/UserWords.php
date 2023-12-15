@@ -7,6 +7,8 @@
 //用户生物列表
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
+use app\libs\Method;
+
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
 use app\modules\app\models\getBiologyRand;
@@ -155,7 +157,7 @@ class UserWords extends ActiveRecord
         $rand =rand(MAP_RAND_MIN,MAP_RAND_MAX);
         //划分九宫格
         $map = $this->getWordsMap();
-        $map_int =array_rand($map,$rand);//随机3个定位
+        $map_int =Method::arrayRandArray($map,$rand);//随机3个定位
         $arr = [];
         foreach($map_int as $v){
             $arr[]=$map[$v];

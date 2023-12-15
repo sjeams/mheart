@@ -958,4 +958,15 @@ class Method
         return  $mkdir_path.'/'.$name.'.json';
     }
 
+    //随机数组，返回数组，特殊处理只有一个时返回值
+    public static function arrayRandArray($array,$num){
+        $rand = array_rand($array,$num);
+        //只触发一个技能或者空时，特殊处理 。
+        if(!is_array($rand)){
+            $rand>0?$rand_list[0]=$rand:'';
+        }else{
+            $rand_list =$rand;
+        }
+        return $rand_list;
+    }
 }

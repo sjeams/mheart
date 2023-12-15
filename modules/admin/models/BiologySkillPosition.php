@@ -167,13 +167,7 @@ class BiologySkillPosition extends ActiveRecord
         $int=[];
         $rand_list=[];
         $rand_num = count($att_position)<=$num?count($att_position):$num;
-        $rand = array_rand($att_position,$rand_num);
-        //只触发一个技能或者空时，特殊处理 。
-        if(!is_array($rand)){
-            $rand>0?$rand_list[0]=$rand:'';
-        }else{
-            $rand_list =$rand;
-        }
+        $rand_list = Method::arrayRandArray($att_position,$rand_num);
         //取出对应的位置
         foreach($rand_list as $v){
             $int[] =$att_position[$v];
