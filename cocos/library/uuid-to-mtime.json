@@ -674,11 +674,6 @@
     "meta": 1702605944471,
     "relativePath": "resources\\server_pic\\alert_login_pic.png"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702612207976,
-    "meta": 1702612207996,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "2d5d8107-dd4c-4e91-8a91-24e8fc76dc51": {
     "asset": 1655791050119,
     "meta": 1702605944497,
@@ -1109,11 +1104,6 @@
     "meta": 1702605946019,
     "relativePath": "Textrue\\tools\\银钥匙.png"
   },
-  "236d3e27-76be-4b7b-92b2-84f609139b14": {
-    "asset": 1702604396909,
-    "meta": 1702605945430,
-    "relativePath": "Script\\progressTools.js"
-  },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
     "asset": 1702544729718,
     "meta": 1702605945443,
@@ -1124,34 +1114,14 @@
     "meta": 1702605945517,
     "relativePath": "Script\\scence\\score_word.js"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1702604396911,
-    "meta": 1702605945496,
-    "relativePath": "Script\\scence\\score_map.js"
-  },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1702611711478,
-    "meta": 1702611711500,
+    "asset": 1702623782060,
+    "meta": 1702623782087,
     "relativePath": "resources\\sprite_地图.prefab"
   },
-  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
-    "asset": 1702608381006,
-    "meta": 1702608531747,
-    "relativePath": "resources\\sprite_生物.prefab"
-  },
-  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1702608381002,
-    "meta": 1702608531751,
-    "relativePath": "resources\\sprite_世界.prefab"
-  },
-  "175f3a60-1b3b-452e-8fb5-a4c183722325": {
-    "asset": 1702608380996,
-    "meta": 1702608531755,
-    "relativePath": "resources\\sprite_loading.prefab"
-  },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1702608380999,
-    "meta": 1702608531758,
+    "asset": 1702623708433,
+    "meta": 1702623708460,
     "relativePath": "resources\\sprite_server_login.prefab"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
@@ -1159,29 +1129,59 @@
     "meta": 1702610226576,
     "relativePath": "Scene\\loading.fire"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702608380987,
-    "meta": 1702608531833,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702608380984,
-    "meta": 1702608531944,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
     "asset": 1702608558801,
     "meta": 1702608561332,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1702610219264,
-    "meta": 1702610225655,
-    "relativePath": "Script\\http.js"
-  },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
     "asset": 1702610150532,
     "meta": 1702610225807,
     "relativePath": "Script\\login\\loading.js"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1702620504922,
+    "meta": 1702620504948,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
+    "asset": 1702623804899,
+    "meta": 1702623804928,
+    "relativePath": "resources\\sprite_世界.prefab"
+  },
+  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
+    "asset": 1702624389218,
+    "meta": 1702624389249,
+    "relativePath": "resources\\sprite_生物.prefab"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1702624782074,
+    "meta": 1702624838294,
+    "relativePath": "Script\\scence\\score_map.js"
+  },
+  "236d3e27-76be-4b7b-92b2-84f609139b14": {
+    "asset": 1702631155553,
+    "meta": 1702631196911,
+    "relativePath": "Script\\progressTools.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1702631620907,
+    "meta": 1702631620933,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1702631982373,
+    "meta": 1702631984670,
+    "relativePath": "Script\\http.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1702632339523,
+    "meta": 1702634924898,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "175f3a60-1b3b-452e-8fb5-a4c183722325": {
+    "asset": 1702634929741,
+    "meta": 1702634929759,
+    "relativePath": "resources\\sprite_loading.prefab"
   }
 }

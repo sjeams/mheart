@@ -97,11 +97,12 @@ cc.Class({
           };
           httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
             // var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
-            var remoteUrl = httpRequest.httpUrlJson(data.data.sid);
-            cc.loader.load({ url: remoteUrl }, function (err, results) {
-                // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                console.log(results);
-            });
+              var remoteUrl = httpRequest.httpUrlJson(data.data.sid);
+              // cc.assetManager.loadRemote({});  
+              cc.loader.load({ url: remoteUrl }, function (err, results) {
+                  // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+                  console.log(results);
+              });          
           })
             // if(!data.data){
             //     //刷新地图
@@ -133,7 +134,7 @@ cc.Class({
         }else{
           var  map_pic =data.data['picture'];
         }
-        var remoteUrl = httpRequest.httpUrl(map_pic);
+        // var remoteUrl = httpRequest.httpUrl(map_pic);
           cc.loader.load({ url: remoteUrl }, function (err, texture) {  
               _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });

@@ -97,7 +97,8 @@ cc.Class({
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
         // var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
-        var remoteUrl = httpRequest.httpUrlJson(data.data.sid);
+        var remoteUrl = httpRequest.httpUrlJson(data.data.sid); // cc.assetManager.loadRemote({});  
+
         cc.loader.load({
           url: remoteUrl
         }, function (err, results) {
@@ -131,9 +132,9 @@ cc.Class({
       var map_pic = data.data['map_pic'];
     } else {
       var map_pic = data.data['picture'];
-    }
+    } // var remoteUrl = httpRequest.httpUrl(map_pic);
 
-    var remoteUrl = httpRequest.httpUrl(map_pic);
+
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {

@@ -123,29 +123,8 @@ var HttpHelper = cc.Class({
 
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   },
-  //场景加载
-  playGame: function playGame(sence) {
-    //预加载场景并获得加载进度
-    cc.director.preloadScene(sence, function () {//可以把进度数据打出来
-      // progressBar.num =1;
-      // progressBar.show();
-      // //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-      // cc.loader.loadRes(PrefabUrl, function(errorMessage,loadedResource){});
-      // //开始实例化预制资源(这是个实例化是我自己理解的，可能说的不正确)
-      // var TipBoxPrefab = cc.instantiate(loadedResource);
-      // //将预制资源添加到父节点CanvasNode为画布canvas节点 是用cc.find()获得的对象
-      // CanvasNode.addChild(TipBoxPrefab);
-    }, function () {
-      // console.log(11)
-      // progressBar.hide();
-      //加载场景
-      cc.director.loadScene(sence, function () {//     // СameraСontrol.newGame();
-        //     // spawnTools();
-      });
-    });
-  },
   //场景加载--进度条
-  playGameLoading: function playGameLoading() {
+  playGame: function playGame(sence) {
     //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
     cc.loader.loadRes('/sprite_loading', function (errorMessage, loadedResource) {
       //检查资源加载
@@ -163,12 +142,36 @@ var HttpHelper = cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
       // CanvasNode.addChild(TipBoxPrefab);
 
-      cc.find('Canvas').addChild(TipBoxPrefab); //获取预制资源中的js组件，并作出相应操作
-      // var TipBoxScript = TipBoxPrefab.getComponent('progressTools');
-      // //开始操作JS组件脚本
-      // TipBoxScript.action(ButtonNumber,callbackObj); //开始为JS组件进行初始化操作,action 为自定义初始化方法
-      // TipBoxScript.setTipContent(content); //设置提示框的内容
-      // SelfCallBack(TipBoxPrefab,TipBoxScript);
+      cc.find('Canvas').addChild(TipBoxPrefab); //预加载场景并获得加载进度
+
+      cc.director.preloadScene(sence, function (completeCount, totalCount, item) {
+        var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar); // console.log(item)
+        // console.log(completeCount)
+        // console.log(totalCount)
+        //加载进度回调
+        // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
+        // console.log('加载场景资源');
+
+        progressBar.progress = completeCount / totalCount; // console.log(progressBar.progress)
+
+        progressBar.completeCount = completeCount;
+        progressBar.totalCount = totalCount;
+        resource = item; // // 代码里面获取cc.Label组件, 修改文本内容
+        // //在代码里面获取cc.Label组件
+
+        var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
+        sys_label.string = parseInt(progressBar.progress * 100) + '%'; // if( this.resource.type=='mp3'){
+        //     // console.log(res);  // mp3
+        //     // this.audio.clip = res;
+        //     // this.audio.play();
+        //     // 从服务器加载mp3来进行播放
+        //     this.current = cc.audioEngine.play(res.url, false, 1);
+        // }
+      }, function () {
+        // progressBar.hide();
+        //加载场景
+        cc.director.loadScene(sence, function () {});
+      });
     });
   }
 });

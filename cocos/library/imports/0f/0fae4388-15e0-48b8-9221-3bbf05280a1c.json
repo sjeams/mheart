@@ -225,7 +225,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 50.4
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -290,7 +290,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 3,
-    "_N$cacheMode": 0,
+    "_N$cacheMode": 2,
     "_id": ""
   },
   {
@@ -332,7 +332,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 37.8
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -397,7 +397,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 3,
-    "_N$cacheMode": 0,
+    "_N$cacheMode": 2,
     "_id": ""
   },
   {
@@ -439,7 +439,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 37.8
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -502,9 +502,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
-    "_N$cacheMode": 0,
+    "_N$cacheMode": 2,
     "_id": ""
   },
   {
