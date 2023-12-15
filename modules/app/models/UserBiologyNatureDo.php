@@ -258,6 +258,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'poition_winner'=>$this->poition_winner,
             'poition_my'=>$UserWords->getFightingMap(POSITION_MY),//返回坐标己方
             'poition_enemy'=>$UserWords->getFightingMap(POSITION_ENEMY),//返回坐标敌方
+            'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".png",//随机地图
         ];
    
     }
