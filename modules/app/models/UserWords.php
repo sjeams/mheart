@@ -157,8 +157,8 @@ class UserWords extends ActiveRecord
         $rand =rand(MAP_RAND_MIN,MAP_RAND_MAX);
         //划分九宫格
         $map = $this->getWordsMap();
-        $map_int =Method::arrayRandArray($map,$rand);//随机3个定位
         $arr = [];
+        $map_int =Method::arrayRandArray($map,$rand);//随机3个定位
         foreach($map_int as $v){
             $arr[]=$map[$v];
         }
