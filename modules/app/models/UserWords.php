@@ -127,7 +127,7 @@ class UserWords extends ActiveRecord
         $map=[];
         $height = (intval(750-450)/2);
         $left = intval((1334-1200)/2);
-        $key=1;
+        $key=0;
         for($num=$num_int;$num<$last_num;$num++){
             $key++;
             $x = intval($num%8);//x计算1-6
