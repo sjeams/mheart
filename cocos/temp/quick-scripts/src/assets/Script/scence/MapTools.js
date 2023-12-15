@@ -4,11 +4,6 @@ cc._RF.push(module, '4b399vzZ3RO+bGBH1k2sE4C', 'mapTools');
 
 "use strict";
 
-/*
- * @Author: sjeam
- * @Date: 2022-06-14 16:01:41
- * @Description: 
- */
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();

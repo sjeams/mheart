@@ -1,8 +1,3 @@
-/*
- * @Author: sjeam
- * @Date: 2022-06-13 16:34:52
- * @Description: 
- */
 /**
  * Http 请求封装
  */
@@ -78,7 +73,7 @@ const HttpHelper = cc.Class({
             // xhr.setRequestHeader("Http-Token", "gzipdeflate");
             xhr.timeout = 5000;// 5 seconds for timeout
             // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
             // xhr.send(JSON.stringify(params));
             xhr.send('data='+JSON.stringify(params));
             //  xhr.send(params);

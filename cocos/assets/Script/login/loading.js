@@ -65,7 +65,7 @@ cc.Class({
             // {url:'https://www./app/api/file-content?url=http://127.0.0.1/monster.zip', type:'zip'},
             // {url:'https://www.aheart.cn/app/api/file-content?url=http://127.0.0.1（这里填你的服务器ip)/image2.png', type:'png'}, 
         ];
-        console.log( this.progressBar); 
+        // console.log( this.progressBar); 
         // console.log( this.sprite); 
         this.resource = null;
         this.progressBar.progress =0;
@@ -92,11 +92,10 @@ cc.Class({
         //加载进度回调
         // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
         // console.log('加载场景资源');
-        this.progress = completeCount / totalCount;
+        this.progressBar.progress = completeCount / totalCount;
+        this.progressBar.completeCount = completeCount;
+        this.progressBar.totalCount = totalCount;
         this.resource = res;
-        this.completeCount = completeCount;
-        this.totalCount = totalCount;
-
         // 代码里面获取cc.Label组件, 修改文本内容
         //在代码里面获取cc.Label组件
         var sys_label = this.node.getChildByName("sys_label").getComponent(cc.Label);
@@ -166,10 +165,10 @@ cc.Class({
             //         'serverid': 1,
             // };
         });
-        var params = cc.sys.localStorage.getItem("params")
-        if(params){
+        var token = cc.sys.localStorage.getItem("token")
+        if(token){
             cc.log('快速登录');
-            cc.log(params);
+            cc.log(token);
             cc.director.loadScene('index');
             // cc.sys.localStorage.setItem('params', JSON.stringify(params)); 
         }else{
