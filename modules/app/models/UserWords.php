@@ -294,7 +294,9 @@ class UserWords extends ActiveRecord
     //修改地图状态
     public  function updateMapSystemDie($map_int,$map_status=0){
         $map = $this->user_in_word['user_in_word_map']; 
-        $map[$map_int]['map_status']=$map_status;//修改为已击杀
+        if(isset($map[$map_int])){
+            $map[$map_int]['map_status']=$map_status;//修改为已击杀
+        }
         $this->updateValueListSystem($map);
     }
 
