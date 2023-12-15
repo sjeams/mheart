@@ -127,22 +127,32 @@ class UserWords extends ActiveRecord
         $map=[];
         $height = (intval(750-450)/2);
         $left = intval((1334-1200)/2);
+        $key=1;
         for($num=$num_int;$num<$last_num;$num++){
+            $key++;
             $x = intval($num%8);//x计算1-6
             $y = intval($num/3);//y计算1-4
-            $map[$num+1]['x']=$left+150*$x;
-            $map[$num+1]['y']=$height+150*$y;
+            $map[$key]['x']=$left+150*$x;
+            $map[$key]['y']=$height+150*$y;
         }
         return $map;
     }
     //获取坐标
-    public  function getFightingPosition($myint=POSITION_MY){
+    public  function getFightingPosition($myint=POSITION_MY,$biology){
         if($myint==POSITION_MY){
             //自己位置
             $postition=$this->getFightingMap(0);
         }else{
             //敌方位置
             $postition=$this->getFightingMap(15);
+        }
+        //生物入阵
+        foreach($postition as $k=>$v){
+            $new_biology = $biology[$k];
+            if(!empty($biology[$k])){
+                unset($new_biology['biology_start_extend']);
+            }
+            $postition[$k]['biology']=$new_biology;
         }
         return $postition;
     }

@@ -96,15 +96,13 @@ cc.Class({
             'userid': userid,
           };
           httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
-
-     
               var remoteUrl = httpRequest.httpUrlJson(data.data.sid);
               // cc.assetManager.loadRemote({});  
               cc.loader.load({ url: remoteUrl }, function (err, results) {
                   // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
                   console.log(results);
-                  _this.addMapPic(data) //生成地图
-                  // _this.addWordMap(data) //生成生物
+                  _this.addMapPic(results) //生成地图
+                  // _this.addWordMap(results) //生成生物
               });          
           })   
       }
@@ -118,7 +116,9 @@ cc.Class({
           var  map_pic =data.data['picture'];
         }
         var remoteUrl = httpRequest.httpUrl(map_pic);
-          cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+
+        console.log(remoteUrl)
+        cc.loader.load({ url: remoteUrl }, function (err, texture) {  
               _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });
     },
