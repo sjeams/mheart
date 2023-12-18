@@ -102,8 +102,10 @@ cc.Class({
         cc.loader.load({
           url: remoteUrl
         }, function (err, results) {
+          _this.addMapPic(results); //生成地图
+          // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-          console.log(results);
+
         });
       }); // if(!data.data){
       //     //刷新地图
@@ -128,13 +130,9 @@ cc.Class({
   addMapPic: function addMapPic(data) {
     var _this = this;
 
-    if (data.data['map_pic']) {
-      var map_pic = data.data['map_pic'];
-    } else {
-      var map_pic = data.data['picture'];
-    } // var remoteUrl = httpRequest.httpUrl(map_pic);
-
-
+    var map_pic = data.data['map_pic'];
+    var remoteUrl = httpRequest.httpUrl(map_pic);
+    console.log(remoteUrl);
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {

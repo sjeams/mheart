@@ -1139,11 +1139,6 @@
     "meta": 1702610225807,
     "relativePath": "Script\\login\\loading.js"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702620504922,
-    "meta": 1702620504948,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
     "asset": 1702623804899,
     "meta": 1702623804928,
@@ -1174,14 +1169,19 @@
     "meta": 1702631984670,
     "relativePath": "Script\\http.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702632339523,
-    "meta": 1702634924898,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "175f3a60-1b3b-452e-8fb5-a4c183722325": {
     "asset": 1702634929741,
     "meta": 1702634929759,
     "relativePath": "resources\\sprite_loading.prefab"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1702864240734,
+    "meta": 1702864240746,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1702864016045,
+    "meta": 1702864016744,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }
