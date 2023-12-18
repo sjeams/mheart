@@ -119,6 +119,7 @@ const HttpHelper = cc.Class({
         },
         //场景加载--进度条
         playGame(sence) {
+            var _this =this;
             //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
             cc.loader.loadRes('/sprite_loading', function(errorMessage,loadedResource){
                 //检查资源加载
@@ -129,6 +130,8 @@ const HttpHelper = cc.Class({
                 //将预制资源添加到父节点
                 // CanvasNode.addChild(TipBoxPrefab);
                 cc.find('Canvas').addChild(TipBoxPrefab);
+                //请求战斗记录
+                _this.fightint();
                 //预加载场景并获得加载进度
                 cc.director.preloadScene(sence,function (completeCount, totalCount,item) {
                     var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar);
@@ -161,6 +164,24 @@ const HttpHelper = cc.Class({
                 })
             });
         },
+        //请求战斗--写入文本记录
+        fightint(){
+            var _this =this;
+            var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据--临时地图id
+            var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据--玩家对战id
+            if(map_int==''&&userid==''){
+               httpRequest.playGame('大厅');
+            }else{
+                httpRequest.httpPost('/app/app-apinew/fight', {
+                  'map_int': map_int,
+                  'userid': userid,
+                }, function (data) {
+                    //战斗历史路径
+                    cc.sys.localStorage.setItem('figthing_remote_url', JSON.stringify(data.data.sid)); 
+                })   
+            }
+        }
+
 });
 httpRequest = new HttpHelper();
 // window.HttpHelper = new HttpHelper();

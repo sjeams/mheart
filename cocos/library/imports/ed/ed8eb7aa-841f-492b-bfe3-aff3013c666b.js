@@ -84,33 +84,21 @@ cc.Class({
   spawnTools: function spawnTools() {
     var _this = this;
 
-    var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据
+    var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
 
-    var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据
-
-    if (map_int == '' && userid == '') {
+    if (figthing_remote_url == '') {
       httpRequest.playGame('map/诸天地图');
     } else {
-      var params = {
-        'map_int': map_int,
-        'userid': userid
-      };
-      httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
-        console.log(111);
-        var remoteUrl = httpRequest.httpUrlJson(data.data.sid); // cc.assetManager.loadRemote({});  
+      var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
+      cc.loader.load({
+        url: remoteUrl
+      }, function (err, data) {
+        console.log(data); // _this.addWordMap(results) //生成生物
+        // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
 
-        cc.loader.load({
-          url: remoteUrl
-        }, function (err, results) {
-          _this.addMapPic(results); //生成地图
-          // _this.addWordMap(results) //生成生物
-          // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+        _this.addMapPic(data); //生成地图
+        // _this.addWordMap(results) //生成生物
 
-
-          _this.addMapPic(results); //生成地图
-          // _this.addWordMap(results) //生成生物
-
-        });
       });
     }
   },
@@ -137,8 +125,6 @@ cc.Class({
   },
   //生成生物
   addWordMap: function addWordMap(data) {
-    console.log(data);
-
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 

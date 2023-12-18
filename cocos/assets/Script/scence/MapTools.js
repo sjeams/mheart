@@ -79,6 +79,7 @@ cc.Class({
 
     //按钮点击回调
     onConfirBtn:function(e,map_int){
+        //session设置战斗请求id
         cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
         httpRequest.playGame('战斗场景');
         // console.log(info)
