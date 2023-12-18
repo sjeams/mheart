@@ -104,13 +104,12 @@ cc.Class({
           _this.addMapPic(results); //生成地图
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-<<<<<<< HEAD
-=======
+
+
           console.log(results);
 
           _this.addMapPic(results); //生成地图
           // _this.addWordMap(results) //生成生物
->>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
 
         });
       });
@@ -120,16 +119,12 @@ cc.Class({
   addMapPic: function addMapPic(data) {
     var _this = this;
 
-<<<<<<< HEAD
-    var map_pic = data.data['map_pic'];
-=======
     if (data.data['map_pic']) {
       var map_pic = data.data['map_pic'];
     } else {
       var map_pic = data.data['picture'];
     }
 
->>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
     var remoteUrl = httpRequest.httpUrl(map_pic);
     console.log(remoteUrl);
     cc.loader.load({

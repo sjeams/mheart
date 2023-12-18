@@ -103,27 +103,15 @@ cc.Class({
                 _this.addMapPic(results) //生成地图
                 // _this.addWordMap(results) //生成生物
                   // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-<<<<<<< HEAD
-           
-=======
                   console.log(results);
                   _this.addMapPic(results) //生成地图
                   // _this.addWordMap(results) //生成生物
->>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
               });          
           })   
       }
     },
     //生成地图
     addMapPic(data){
-<<<<<<< HEAD
-        var  _this = this;
-        var  map_pic =data.data['map_pic'];
-   
-        var remoteUrl = httpRequest.httpUrl(map_pic);
-        console.log(remoteUrl);
-          cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-=======
         var _this = this;
         if(data.data['map_pic']){
           var  map_pic =data.data['map_pic'];
@@ -134,7 +122,6 @@ cc.Class({
 
         console.log(remoteUrl)
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
->>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
               _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });
     },
