@@ -160,7 +160,7 @@ const HttpHelper = cc.Class({
                 }, function (){
                     // progressBar.hide();
                     //加载场景
-                    cc.director.loadScene(sence, function () {  });
+                    // cc.director.loadScene(sence, function () {  });
                 })
             });
         },
@@ -170,14 +170,14 @@ const HttpHelper = cc.Class({
             var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据--临时地图id
             var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据--玩家对战id
             if(map_int==''&&userid==''){
-                _this.playGame('大厅');
+                cc.director.loadScene('大厅');
             }else{
                 _this.httpPost('/app/app-apinew/fight', {
                   'map_int': map_int,
                   'userid': userid,
                 }, function (data) {
                     //战斗历史路径
-                    cc.sys.localStorage.setItem('figthing_remote_url', JSON.stringify(data.data.sid)); 
+                    cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
                 })   
             }
         }

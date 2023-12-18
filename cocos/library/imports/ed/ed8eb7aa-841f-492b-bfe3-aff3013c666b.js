@@ -97,7 +97,9 @@ cc.Class({
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
 
         _this.addMapPic(data); //生成地图
-        // _this.addWordMap(results) //生成生物
+
+
+        _this.addWordMap(data); //生成生物
 
       });
     }
@@ -108,7 +110,6 @@ cc.Class({
 
     var map_pic = data.data['map_pic'];
     var remoteUrl = httpRequest.httpUrl(map_pic);
-    console.log(remoteUrl);
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {

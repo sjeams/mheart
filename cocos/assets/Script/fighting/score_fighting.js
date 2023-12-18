@@ -92,12 +92,11 @@ cc.Class({
       }else{
         var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         cc.loader.load({ url: remoteUrl }, function (err, data) {
-
           console.log(data) 
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
           _this.addMapPic(data) //生成地图
-          // _this.addWordMap(results) //生成生物
+          _this.addWordMap(data) //生成生物
       });    
       }
     },
@@ -106,8 +105,9 @@ cc.Class({
         var _this = this;
         var  map_pic =data.data['map_pic'];
         var remoteUrl = httpRequest.httpUrl(map_pic);
-        console.log(remoteUrl)
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+          if (err) {
+            cc.error(err.message || err);
               _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });
     },
