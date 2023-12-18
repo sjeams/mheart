@@ -1169,11 +1169,6 @@
     "meta": 1702869100574,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1702869766619,
-    "meta": 1702869822117,
-    "relativePath": "Script\\http.js"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1702869947142,
     "meta": 1702869947167,
@@ -1183,5 +1178,10 @@
     "asset": 1702869945049,
     "meta": 1702869946216,
     "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1702870071862,
+    "meta": 1702870072804,
+    "relativePath": "Script\\http.js"
   }
 }
