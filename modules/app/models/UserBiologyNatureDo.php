@@ -246,18 +246,22 @@ class UserBiologyNatureDo extends ActiveRecord
         //设置容器--战斗初始化
         $this->getBiologyInit($merge_biology_list);  //----战斗开始前必须先跑这个
         $this->setBiologyInitFirst();//第一次初始化属性备用。
+        //初始化阵容
+        $UserWords= new UserWords();
+        $poition_my =$UserWords->getFightingPosition(POSITION_MY,$this->my_biology_extend['position']);//返回坐标己方,初始英雄
+        $poition_enemy =$UserWords->getFightingPosition(POSITION_ENEMY,$this->do_biology_extend['position']);//返回坐标敌方
         //开启循环战斗--初始回合
         $this->fighting();//返回战斗记录
         //返回战利品和战斗记录
-        $UserWords= new UserWords();
         return [
             'fighting_goods_my'=>$this->fighting_goods_my,
             'fighting_goods_enemy'=>$this->fighting_goods_enemy,
             // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
             'fighting_history'=>$this->fighting_history,
             'poition_winner'=>$this->poition_winner,
-            'poition_my'=>$UserWords->getFightingMap(POSITION_MY),//返回坐标己方
-            'poition_enemy'=>$UserWords->getFightingMap(POSITION_ENEMY),//返回坐标敌方
+            'poition_my'=>$poition_my,
+            'poition_enemy'=>$poition_enemy,
+            'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".png",//随机地图
         ];
    
     }

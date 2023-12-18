@@ -86,7 +86,8 @@
         "timeline",
         "game-window"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "project-settings": {

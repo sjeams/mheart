@@ -235,7 +235,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "大厅",
+    "_name": "战斗",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2

@@ -96,7 +96,6 @@ cc.Class({
         'userid': userid
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
-        // var sn_id ='/app_resources/fighting/history/'+data.data+'.json';
         var remoteUrl = httpRequest.httpUrlJson(data.data.sid); // cc.assetManager.loadRemote({});  
 
         cc.loader.load({
@@ -105,32 +104,32 @@ cc.Class({
           _this.addMapPic(results); //生成地图
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+<<<<<<< HEAD
+=======
+          console.log(results);
+
+          _this.addMapPic(results); //生成地图
+          // _this.addWordMap(results) //生成生物
+>>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
 
         });
-      }); // if(!data.data){
-      //     //刷新地图
-      //     // cc.director.loadScene('map/诸天地图');
-      //     _this.reloadWord()//刷新世界地图
-      // }else{
-      //     //生成世界
-      //     // let cellWidth = _this.content.width * 0.105;
-      //     // let cellHeight = _this.content.height * 0.215;
-      //     // let spacingX = _this.content.width * 0.022;
-      //     // let spacingY = _this.content.height * 0.045;
-      //     // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-      //     // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-      //     // _this.content.getComponent(cc.Layout).spacingX = spacingX;
-      //     // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-      //     _this.addMapPic(data) //生成地图
-      //     _this.addWordMap(data) //生成生物
-      // }
+      });
     }
   },
   //生成地图
   addMapPic: function addMapPic(data) {
     var _this = this;
 
+<<<<<<< HEAD
     var map_pic = data.data['map_pic'];
+=======
+    if (data.data['map_pic']) {
+      var map_pic = data.data['map_pic'];
+    } else {
+      var map_pic = data.data['picture'];
+    }
+
+>>>>>>> fbe7aa7e65d5fece60a02d34557f5b7d57560ffd
     var remoteUrl = httpRequest.httpUrl(map_pic);
     console.log(remoteUrl);
     cc.loader.load({
