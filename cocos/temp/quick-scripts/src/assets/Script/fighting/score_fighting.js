@@ -96,6 +96,7 @@ cc.Class({
         'userid': userid
       };
       httpRequest.httpPost('/app/app-apinew/fight', params, function (data) {
+        console.log(111);
         var remoteUrl = httpRequest.httpUrlJson(data.data.sid); // cc.assetManager.loadRemote({});  
 
         cc.loader.load({
@@ -105,8 +106,6 @@ cc.Class({
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
 
-
-          console.log(results);
 
           _this.addMapPic(results); //生成地图
           // _this.addWordMap(results) //生成生物
@@ -119,12 +118,7 @@ cc.Class({
   addMapPic: function addMapPic(data) {
     var _this = this;
 
-    if (data.data['map_pic']) {
-      var map_pic = data.data['map_pic'];
-    } else {
-      var map_pic = data.data['picture'];
-    }
-
+    var map_pic = data.data['map_pic'];
     var remoteUrl = httpRequest.httpUrl(map_pic);
     console.log(remoteUrl);
     cc.loader.load({
