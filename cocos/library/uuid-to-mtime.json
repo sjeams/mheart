@@ -1107,7 +1107,7 @@
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
     "asset": 1702623782060,
     "meta": 1702623782087,
-    "relativePath": "resources\\sprite_地图.prefab"
+    "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
     "asset": 1702623708433,
@@ -1127,7 +1127,7 @@
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
     "asset": 1702623804899,
     "meta": 1702623804928,
-    "relativePath": "resources\\sprite_世界.prefab"
+    "relativePath": "prefabs\\sprite_世界.prefab"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
     "asset": 1702624782074,
@@ -1154,29 +1154,29 @@
     "meta": 1702967639771,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
-  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
-    "asset": 1702969278931,
-    "meta": 1702969278963,
-    "relativePath": "resources\\sprite_生物.prefab"
-  },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702970178694,
-    "meta": 1702970178723,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702971494860,
-    "meta": 1702971494882,
+    "asset": 1702972541113,
+    "meta": 1702972541133,
     "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1702971477406,
-    "meta": 1702971491612,
-    "relativePath": "Script\\http.js"
   },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
     "asset": 1702971317966,
     "meta": 1702971491726,
     "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
+    "asset": 1702972787064,
+    "meta": 1702972787096,
+    "relativePath": "prefabs\\sprite_生物.prefab"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1702972604730,
+    "meta": 1702972604770,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1702972228587,
+    "meta": 1702972239601,
+    "relativePath": "Script\\http.js"
   }
 }
