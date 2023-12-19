@@ -149,8 +149,8 @@ class UserWords extends ActiveRecord
         foreach($x_list as $x){
             foreach($y_list as $y){
                 $key++;
-                $map[$key]['x']= 200*($x-1);//0开始
-                $map[$key]['y']= 200*($y-1);//0开始
+                $map[$key]['x']=$left+200*($x-1);//0开始
+                $map[$key]['y']=$height+200*($y-1);//0开始
             }
         }
         
