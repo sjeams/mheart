@@ -1149,14 +1149,9 @@
     "meta": 1702869100574,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
-    "asset": 1702956430418,
-    "meta": 1702956430444,
-    "relativePath": "resources\\sprite_生物.prefab"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702965978469,
-    "meta": 1702965978500,
+    "asset": 1702967157666,
+    "meta": 1702967157690,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
@@ -1170,13 +1165,18 @@
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702965020755,
-    "meta": 1702965025786,
+    "asset": 1702967634266,
+    "meta": 1702967639771,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
+  "54b5a166-ffbc-4ad3-ac7c-fb5e31f09a05": {
+    "asset": 1702969278931,
+    "meta": 1702969278963,
+    "relativePath": "resources\\sprite_生物.prefab"
+  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702965974947,
-    "meta": 1702965974973,
+    "asset": 1702969518419,
+    "meta": 1702969518445,
     "relativePath": "Scene\\战斗场景.fire"
   }
 }

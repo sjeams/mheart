@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        245.94580201600698,
+        225.1616497329641,
         0,
         0,
         0,
@@ -355,8 +355,8 @@
         0,
         0,
         0,
-        -0.008726535498373935,
-        0.9999619230641713,
+        0,
+        1,
         1,
         1,
         1
@@ -366,7 +366,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": -1
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -403,13 +403,13 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 120
+      "width": 200,
+      "height": 200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": 0,
+      "y": 0
     },
     "_trs": {
       "__type__": "TypedArray",
@@ -480,8 +480,8 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 120
+      "width": 200,
+      "height": 200
     },
     "_resize": 1,
     "_N$layoutType": 0,

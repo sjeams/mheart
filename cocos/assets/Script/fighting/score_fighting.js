@@ -129,11 +129,11 @@ cc.Class({
             // console.log(i) 
             //死亡移除map_status
             var map =TOOLS[i];
-            // if(map.map_status==1){
+            // if(map.biology.length!=0){
               // console.log(map.x)
               // console.log(map.y)
               let tool = cc.instantiate(_this.person);
-              console.log(map)
+              // console.log(map)
               tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state);
               tool.x=map.x
               tool.y=map.y
