@@ -96,7 +96,7 @@ class AppApinewController extends ApiUserControl{
      */
     public function actionFight(){
         $param =$this->param;
-        $map_int =$param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$param['map_int']?:3;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
         //获取自己战斗阵容
@@ -107,11 +107,13 @@ class AppApinewController extends ApiUserControl{
         }else{//系统怪，随时刷新不做存留
             $do_biology = $UserWords->getMapValueListSystem($map_int,'nature_do');
         }
+        if(empty($do_biology)){
+            die(Method::jsonApp(0,null,'地图'.$map_int.'不存在！'));  
+        }
         // $map =$UserWords->getFightingMap();
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_int);
-
         //如果胜利--系统战斗
         if($data['poition_winner']&&!$param['userid']){
             // 修改地图状态

@@ -177,7 +177,12 @@ const HttpHelper = cc.Class({
                   'userid': userid,
                 }, function (data) {
                     //战斗历史路径
-                    cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
+                    if(data.code==1){
+                        cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
+                    }else{
+                        // cc.director.loadScene('大厅');  
+                        callback(JSON.parse(data));  // json 转数组
+                    }
                 })   
             }
         }

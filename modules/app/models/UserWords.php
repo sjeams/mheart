@@ -315,6 +315,10 @@ class UserWords extends ActiveRecord
 
     //返回地图编号  nature_do    biology_list  
     public  function getMapValueListSystem($id=null,$name=null){
+        //不存在地图，返回空
+        if(!isset($this->user_in_word_map[$id])){
+            return [];
+        }
        if(isset($id)&&isset($name)){
             return $this->user_in_word_map[$id][$name];
        }else if(isset($id)&!isset($name)){

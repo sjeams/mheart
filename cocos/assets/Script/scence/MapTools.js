@@ -61,7 +61,7 @@ cc.Class({
         this.server_name.getComponent(cc.Label).string=info['name'];
         this.node.getChildByName('server_name').color = new cc.color(type_color);
         //创建一个新button 并将其挂载到创建的精灵下
-        this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info_list.map_int);
+        this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button),info_list.map_int);
     },
     // 绑定按钮事件
     bindClickEvent: function (button, index) {
