@@ -153,6 +153,7 @@ class UserWords extends ActiveRecord
                 $map[$key]['y']=$height+200*($y-1);//0开始
             }
         }
+        
         // var_dump($map);die;
         return $map;
     }
