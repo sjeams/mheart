@@ -172,9 +172,10 @@ var HttpHelper = cc.Class({
         //     // 从服务器加载mp3来进行播放
         //     this.current = cc.audioEngine.play(res.url, false, 1);
         // }
-      }, function () {// progressBar.hide();
+      }, function () {
+        // progressBar.hide();
         //加载场景
-        // cc.director.loadScene(sence, function () {  });
+        cc.director.loadScene(sence, function () {});
       });
     });
   },

@@ -196,7 +196,6 @@ class UserBiologyNatureDo extends ActiveRecord
 
 
 // ----------------------------------------
-
     //初始化定位 //----战斗开始前必须先跑这个--容器
     public function getBiologyInit($merge_biology_list){
         $biology = Method::setBiologyPosition($merge_biology_list,$this->bout); 
@@ -250,6 +249,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $UserWords= new UserWords();
         $poition_my =$UserWords->getFightingPosition(POSITION_MY,$this->my_biology_extend['position']);//返回坐标己方,初始英雄
         $poition_enemy =$UserWords->getFightingPosition(POSITION_ENEMY,$this->do_biology_extend['position']);//返回坐标敌方
+        $biolgy_state =$UserWords->getBiolgyState(POSITION_ENEMY,$this->do_biology_extend['position']);//返回坐标敌方
         //开启循环战斗--初始回合
         $this->fighting();//返回战斗记录
         //返回战利品和战斗记录
@@ -261,6 +261,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'poition_winner'=>$this->poition_winner,
             'poition_my'=>$poition_my,
             'poition_enemy'=>$poition_enemy,
+            'biolgy_state'=>$biolgy_state,
             'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".png",//随机地图
         ];
    

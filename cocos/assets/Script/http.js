@@ -160,7 +160,7 @@ const HttpHelper = cc.Class({
                 }, function (){
                     // progressBar.hide();
                     //加载场景
-                    // cc.director.loadScene(sence, function () {  });
+                    cc.director.loadScene(sence, function () {  });
                 })
             });
         },

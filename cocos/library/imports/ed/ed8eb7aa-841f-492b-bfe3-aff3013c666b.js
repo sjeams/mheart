@@ -97,7 +97,7 @@ cc.Class({
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         // 初始化阵容
 
-        _this.init_postion(data); //生成生物--position_my
+        _this.init_postion(data.data.poition_my); //生成生物--position_my
 
 
         _this.addMapPic(data); //生成地图
@@ -123,10 +123,8 @@ cc.Class({
     // _this.toolsArray = [];
 
 
-    var TOOLS = postion.data.poition_my;
-    var total = postion.data.poition_my.length;
-    console.log(TOOLS);
-    console.log(total); // var fi = cc.fadeIn(2)//渐显效果
+    var TOOLS = postion;
+    var total = postion.length; // var fi = cc.fadeIn(2)//渐显效果
     // _this.content.runAction(fi);
     // var fo = cc.fadeOut(1)//渐隐效果
     // _this.content.runAction(fo);

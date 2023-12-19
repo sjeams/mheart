@@ -148,7 +148,7 @@ class AppApinewController extends ApiUserControl{
         die(Method::jsonApp(1,$data,'succes')); 
     }
 
-
+    
 
     /**
      * 背包类型

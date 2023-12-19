@@ -162,7 +162,11 @@ class UserWords extends ActiveRecord
         return $postition;
     }
 
-
+    //获取生物属性
+    public  function getBiolgyState(){
+       $data =  BiologyState::find()->select('name')->asArray()->all();
+       return array_column($data,'name');
+    }
     // POSITION_ENEMY
 
 
