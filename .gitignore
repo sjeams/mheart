@@ -6,5 +6,5 @@
 /robots.txt
 /u.php
 /ErrorFiles
-/web/app_resources/figthing/history
-/cocos/temp
+/web/app_resources/figthing/history/*
+/cocos/temp/*

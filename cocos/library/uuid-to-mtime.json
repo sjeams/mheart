@@ -1155,8 +1155,8 @@
     "relativePath": "resources\\sprite_生物.prefab"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1702964397006,
-    "meta": 1702964397025,
+    "asset": 1702965978469,
+    "meta": 1702965978500,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
@@ -1175,8 +1175,8 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702965027990,
-    "meta": 1702965028014,
+    "asset": 1702965974947,
+    "meta": 1702965974973,
     "relativePath": "Scene\\战斗场景.fire"
   }
 }
