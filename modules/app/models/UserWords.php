@@ -154,6 +154,11 @@ class UserWords extends ActiveRecord
             }
             $postition[$k]['biology']=$new_biology;
         }
+        //三个函数都可以重置函数0
+        $postition= array_merge($postition); // 前端只能0开始
+        // array_column($postition,null);
+        // array_merge($b)
+        // array_splice($b,0,$count,true)
         return $postition;
     }
 

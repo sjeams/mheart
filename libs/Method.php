@@ -946,6 +946,7 @@ class Method
         // 生成目录
         if(!file_exists($file_path)){
             mkdir($file_path,0777);
+            chmod($file_path,0777);
         }
         // 生成路由
         $path = $file_path.'/'.$name.'.json';

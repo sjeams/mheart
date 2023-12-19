@@ -83,7 +83,6 @@ cc.Class({
       this.spawnTools()
         // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
     },
-
     spawnTools () {
       var _this =this;
       var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
@@ -95,8 +94,9 @@ cc.Class({
           console.log(data) 
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+          // 初始化阵容
+          _this.init_postion(data.data.poition_my) //生成生物--position_my
           _this.addMapPic(data) //生成地图
-          _this.addWordMap(data) //生成生物
       });    
       }
     },
@@ -106,40 +106,30 @@ cc.Class({
         var  map_pic =data.data['map_pic'];
         var remoteUrl = httpRequest.httpUrl(map_pic);
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-          if (err) {
-            cc.error(err.message || err);
-              _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });
     },
-    reloadWord(){
-      var _this =this;
-      httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
-        //写入地图数据
-        _this.addWordMap(data)
-        })
-    },
     //生成生物
-    addWordMap(data){
-    
+    init_postion(postion){
+      
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
-        let TOOLS = data.data.user_in_word_map;
-        var total = data.data.user_in_word_map.length;
-  
+        let TOOLS = postion;
+        var total = postion.length;
         // var fi = cc.fadeIn(2)//渐显效果
         // _this.content.runAction(fi);
         // var fo = cc.fadeOut(1)//渐隐效果
         // _this.content.runAction(fo);
         //移除节点
-        _this.content.removeAllChildren();
-        _this.content.destroyAllChildren();
+        // _this.content.removeAllChildren();
+        // _this.content.destroyAllChildren();
         //添加节点
         for (let i=0; i<total; i++) {
             // console.log(i) 
             //死亡移除map_status
             var map =TOOLS[i];
-            if(map.map_status==1){
+            // if(map.map_status==1){
               // console.log(map.x)
               // console.log(map.y)
               let tool = cc.instantiate(_this.person);
@@ -150,8 +140,15 @@ cc.Class({
               // _this.toolsArray.push(tool);
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool);   
-            }
+            // }
         }
+    },
+    reloadWord(){
+      var _this =this;
+      httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+        //写入地图数据
+        _this.addWordMap(data)
+        })
     },
     back_map(){
       cc.director.loadScene('map/诸天地图');

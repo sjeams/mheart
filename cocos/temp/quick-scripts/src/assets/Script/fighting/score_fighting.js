@@ -95,11 +95,12 @@ cc.Class({
       }, function (err, data) {
         console.log(data); // _this.addWordMap(results) //生成生物
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+        // 初始化阵容
+
+        _this.init_postion(data); //生成生物--position_my
+
 
         _this.addMapPic(data); //生成地图
-
-
-        _this.addWordMap(data); //生成生物
 
       });
     }
@@ -116,6 +117,42 @@ cc.Class({
       _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
     });
   },
+  //生成生物
+  init_postion: function init_postion(postion) {
+    var _this = this; // 根据MapTools生成相应的道具
+    // _this.toolsArray = [];
+
+
+    var TOOLS = postion.data.poition_my;
+    var total = postion.data.poition_my.length;
+    console.log(TOOLS);
+    console.log(total); // var fi = cc.fadeIn(2)//渐显效果
+    // _this.content.runAction(fi);
+    // var fo = cc.fadeOut(1)//渐隐效果
+    // _this.content.runAction(fo);
+    //移除节点
+    // _this.content.removeAllChildren();
+    // _this.content.destroyAllChildren();
+    //添加节点
+
+    for (var i = 0; i < total; i++) {
+      // console.log(i) 
+      //死亡移除map_status
+      var map = TOOLS[i]; // if(map.map_status==1){
+      // console.log(map.x)
+      // console.log(map.y)
+
+      var tool = cc.instantiate(_this.person);
+      console.log(map);
+      tool.getComponent('fightingTools').initInfo(map);
+      tool.x = map.x;
+      tool.y = map.y; // _this.toolsArray.push(tool);
+      // tool.setPosition(map.x,map.y);  
+
+      _this.content.addChild(tool); // }
+
+    }
+  },
   reloadWord: function reloadWord() {
     var _this = this;
 
@@ -123,43 +160,6 @@ cc.Class({
       //写入地图数据
       _this.addWordMap(data);
     });
-  },
-  //生成生物
-  addWordMap: function addWordMap(data) {
-    var _this = this; // 根据MapTools生成相应的道具
-    // _this.toolsArray = [];
-
-
-    var TOOLS = data.data.user_in_word_map;
-    var total = data.data.user_in_word_map.length; // var fi = cc.fadeIn(2)//渐显效果
-    // _this.content.runAction(fi);
-    // var fo = cc.fadeOut(1)//渐隐效果
-    // _this.content.runAction(fo);
-    //移除节点
-
-    _this.content.removeAllChildren();
-
-    _this.content.destroyAllChildren(); //添加节点
-
-
-    for (var i = 0; i < total; i++) {
-      // console.log(i) 
-      //死亡移除map_status
-      var map = TOOLS[i];
-
-      if (map.map_status == 1) {
-        // console.log(map.x)
-        // console.log(map.y)
-        var tool = cc.instantiate(_this.person);
-        console.log(map);
-        tool.getComponent('fightingTools').initInfo(map);
-        tool.x = map.x;
-        tool.y = map.y; // _this.toolsArray.push(tool);
-        // tool.setPosition(map.x,map.y);  
-
-        _this.content.addChild(tool);
-      }
-    }
   },
   back_map: function back_map() {
     cc.director.loadScene('map/诸天地图');

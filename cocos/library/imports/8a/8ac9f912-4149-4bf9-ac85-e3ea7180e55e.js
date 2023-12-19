@@ -24,7 +24,7 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info_list) {
-    info = info_list['biology_list'][0]; // 初始化该道具相关信息
+    info = info_list['biology']; // 初始化该道具相关信息
     // 图片
 
     var _self = this;
