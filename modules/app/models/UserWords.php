@@ -123,18 +123,37 @@ class UserWords extends ActiveRecord
         //3x8  24个格子
         // 1334*970--划分成24块6*4  200*200正方体--内部像素可以划分为120*80
         // 1200/8=150  450/3 =150
-        $last_num =$num_int+9;
+        // $last_num =$num_int+9;
         $map=[];
         $height = (intval(750-450)/2);
         $left = intval((1334-1200)/2);
+        // for($num=$num_int;$num<$last_num;$num++){
+        //     $key++;
+        //     $x = intval($num%8);//x计算1-6
+        //     $y = intval($num/3);//y计算1-4
+        //     $map[$key]['x']=$left+150*$x;
+        //     $map[$key]['y']=$height+150*$y;
+        // }
         $key=0;
-        for($num=$num_int;$num<$last_num;$num++){
-            $key++;
-            $x = intval($num%8);//x计算1-6
-            $y = intval($num/3);//y计算1-4
-            $map[$key]['x']=$left+150*$x;
-            $map[$key]['y']=$height+150*$y;
+        // x= 3 x=2 x=1  
+        // y=3 y=2 y=1
+        if($num_int<=0){
+           $x_list = array(3,2,1);
+           $y_list = array(3,2,1);
+        }else{
+        // x= 6 x=7 x=8  
+        // y=3 y=2 y=1
+            $x_list = array(3,2,1);
+            $y_list =array(6,7,8);
         }
+        foreach($x_list as $x){
+            foreach($y_list as $y){
+                $key++;
+                $map[$key]['x']=$left+150*($x-1);//0开始
+                $map[$key]['y']=$height+150*($y-1);//0开始
+            }
+        }
+        // var_dump($map);die;
         return $map;
     }
     //获取坐标

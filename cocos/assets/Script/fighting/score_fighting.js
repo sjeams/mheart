@@ -95,7 +95,7 @@ cc.Class({
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
           // 初始化阵容
-          _this.init_postion(data.data.poition_my) //生成生物--position_my
+          _this.init_postion(data.data.poition_my,data.data.biolgy_state) //生成生物--position_my
           _this.addMapPic(data) //生成地图
       });    
       }
@@ -110,7 +110,7 @@ cc.Class({
         });
     },
     //生成生物
-    init_postion(postion){
+    init_postion(postion,biolgy_state){
       
         var _this = this;
         // 根据MapTools生成相应的道具
@@ -134,7 +134,7 @@ cc.Class({
               // console.log(map.y)
               let tool = cc.instantiate(_this.person);
               console.log(map)
-              tool.getComponent('fightingTools').initInfo(map);
+              tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state);
               tool.x=map.x
               tool.y=map.y
               // _this.toolsArray.push(tool);
