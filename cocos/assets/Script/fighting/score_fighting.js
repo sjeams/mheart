@@ -94,8 +94,12 @@ cc.Class({
           console.log(data) 
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-          // 初始化阵容
+          //移除节点
+          _this.content.removeAllChildren();
+          _this.content.destroyAllChildren();
+           // 初始化阵容
           _this.init_postion(data.data.poition_my,data.data.biolgy_state) //生成生物--position_my
+          _this.init_postion(data.data.poition_enemy,data.data.biolgy_state) //生成生物--position_ememy
           _this.addMapPic(data) //生成地图
       });    
       }
@@ -111,7 +115,6 @@ cc.Class({
     },
     //生成生物
     init_postion(postion,biolgy_state){
-      
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
@@ -121,9 +124,6 @@ cc.Class({
         // _this.content.runAction(fi);
         // var fo = cc.fadeOut(1)//渐隐效果
         // _this.content.runAction(fo);
-        //移除节点
-        // _this.content.removeAllChildren();
-        // _this.content.destroyAllChildren();
         //添加节点
         for (let i=0; i<total; i++) {
             // console.log(i) 
