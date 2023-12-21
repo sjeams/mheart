@@ -55,7 +55,6 @@ class AppApiwordController extends ApiUserControl{
         $this->Words=new Words();
         $this->UserWords=new UserWords();
         $this->UserServer=new UserServer();
-        $this->user_in_word =  $this->UserWords->getUserWord();//返回正在经行的世界
         $this->param = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         // $this->param['wordid']=1;
     }
@@ -66,8 +65,8 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/index
      */
     public function actionIndex(){
-        $data =  $this->user_in_word;//返回正在经行的世界
-        // var_dump($data['user_in_word_map']);die;
+        $UserWords=new UserWords();
+        $data =  $UserWords->getUserWord();//返回正在经行的世界
         die(Method::jsonApp(1,$data,'succes'));
     }
 
@@ -111,7 +110,7 @@ class AppApiwordController extends ApiUserControl{
         $UserWords=new UserWords();
         $UserWords->getUserSence();//地图生成随机场景(生物*物品)3-10个
         // $do_biology = $UserWords->getMapValueListSystem();
-        $data =  $this->user_in_word;//返回正在经行的世界
+        $data =  $UserWords->getUserWord();//返回正在经行的世界
         die(Method::jsonApp(1,$data,'succes'));
     }
 
