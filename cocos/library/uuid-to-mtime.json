@@ -1095,8 +1095,8 @@
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1703141377688,
-    "meta": 1703141377722,
+    "asset": 1703142745880,
+    "meta": 1703142745908,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
@@ -1180,8 +1180,8 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1703141487195,
-    "meta": 1703141488113,
+    "asset": 1703141495821,
+    "meta": 1703141927743,
     "relativePath": "Script\\http.js"
   }
 }
