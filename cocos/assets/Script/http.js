@@ -93,7 +93,7 @@ const HttpHelper = cc.Class({
                     if(new_respone.code==0){
                         //未登录
                         // console.log(JSON.parse(respone))
-                        cc.director.loadScene('登录');
+                        cc.director.loadScene('login/登录');
                     }else{
                         callback(JSON.parse(respone));  // json 转数组
                     }

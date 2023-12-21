@@ -1095,8 +1095,8 @@
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1703140216467,
-    "meta": 1703140216503,
+    "asset": 1703141377688,
+    "meta": 1703141377722,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
@@ -1113,11 +1113,6 @@
     "asset": 1703065129152,
     "meta": 1703065133920,
     "relativePath": "Script\\bakcground.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1703124206263,
-    "meta": 1703124206998,
-    "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "327c76c9-49a2-410e-b9e4-5f6f388ab41f": {
     "asset": 1703126050559,
@@ -1169,19 +1164,24 @@
     "meta": 1703130166766,
     "relativePath": "Scene\\login\\登录.fire"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1703130552925,
-    "meta": 1703130558750,
-    "relativePath": "Script\\http.js"
-  },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
     "asset": 1703130825023,
     "meta": 1703131422802,
     "relativePath": "Script\\scence\\mapTools.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1703131199103,
-    "meta": 1703131422813,
+    "asset": 1703140943827,
+    "meta": 1703140965709,
     "relativePath": "Scene\\战斗场景.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1703141324548,
+    "meta": 1703141347437,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1703141487195,
+    "meta": 1703141488113,
+    "relativePath": "Script\\http.js"
   }
 }
