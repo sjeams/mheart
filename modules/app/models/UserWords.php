@@ -47,7 +47,7 @@ class UserWords extends ActiveRecord
         return '{{x2_user_words}}';
     }
 
-
+    //重置世界信息
     public  function getUserWordIn(){
         $sql ="SELECT u.*,ul.star,ul.num,ul.map,ul.complete,ul.map_pic from {{%user_words}} ul INNER JOIN {{%words}} u on ul.wordid=u.id  where ul.userid=$this->userId and ul.complete=0";
         $this->user_in_word = Yii::$app->db->createCommand($sql)->queryOne();
@@ -333,6 +333,7 @@ class UserWords extends ActiveRecord
         $word->complete =0;//改变世界状态
         $word->map =$map;//世界等级--每级对应一个等级上限--提升后的等级不等于世界等级， 世界等级是可以提升的。
         $word->save();
+        $this->getUserWordIn();//重新进入世界--重置状态
     }
     //修改地图状态
     public  function updateMapSystemDie($map_int,$map_status=0){
