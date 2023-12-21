@@ -128,7 +128,7 @@ var HttpHelper = cc.Class({
     var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
 
-    cc.loader.loadRes('/sprite_loading', function (errorMessage, loadedResource) {
+    cc.loader.loadRes('prefabs/sprite_loading', function (errorMessage, loadedResource) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);

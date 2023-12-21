@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1702608528387,
+    "asset": 1702972519609,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -490,7 +490,7 @@
     "relativePath": "Scene"
   },
   "29978e1b-82fa-4262-ab33-2c46e787facd": {
-    "asset": 1702608528378,
+    "asset": 1703064461506,
     "meta": 1655109292679,
     "relativePath": "Script"
   },
@@ -515,7 +515,7 @@
     "relativePath": "Script\\commonjs"
   },
   "11419367-4da7-4096-a9a4-51666f1d1905": {
-    "asset": 1655798083821,
+    "asset": 1702972519609,
     "meta": 1655109292779,
     "relativePath": "prefabs"
   },
@@ -540,7 +540,7 @@
     "relativePath": "Script\\home_js"
   },
   "94d4e510-f9d8-4f4e-a5da-b39f4310a46b": {
-    "asset": 1656920122721,
+    "asset": 1703064832640,
     "meta": 1655869751902,
     "relativePath": "resources\\server_pic"
   },
@@ -565,7 +565,7 @@
     "relativePath": "Textrue\\tools"
   },
   "899733b9-9f39-4164-bed9-45809a91a125": {
-    "asset": 1702864501797,
+    "asset": 1702955942107,
     "meta": 1698830078565,
     "relativePath": "Script\\fighting"
   },
@@ -575,7 +575,7 @@
     "relativePath": "Textrue\\model\\word"
   },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
-    "asset": 1702864501380,
+    "asset": 1702955942103,
     "meta": 1701421848917,
     "relativePath": "Scene\\map"
   },
@@ -1149,11 +1149,6 @@
     "meta": 1702964390740,
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1702967634266,
-    "meta": 1702967639771,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1702972541113,
     "meta": 1702972541133,
@@ -1169,14 +1164,29 @@
     "meta": 1702972787096,
     "relativePath": "prefabs\\sprite_生物.prefab"
   },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1702972479391,
+    "meta": 1703064305721,
+    "relativePath": "Script\\http.js"
+  },
+  "37a0291a-e6cf-46bb-8a85-e17938e9bac5": {
+    "asset": 1703064832634,
+    "meta": 1703064832685,
+    "relativePath": "resources\\server_pic\\dating.png"
+  },
+  "c5c4196c-5ece-48c0-b842-eac9644db4ad": {
+    "asset": 1703065129152,
+    "meta": 1703065133920,
+    "relativePath": "Script\\bakcground.js"
+  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1702972604730,
-    "meta": 1702972604770,
+    "asset": 1703124499277,
+    "meta": 1703124499286,
     "relativePath": "Scene\\战斗场景.fire"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1702972228587,
-    "meta": 1702972239601,
-    "relativePath": "Script\\http.js"
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1703124206263,
+    "meta": 1703124206998,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }

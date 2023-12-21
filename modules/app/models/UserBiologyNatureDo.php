@@ -262,7 +262,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'poition_my'=>$poition_my,
             'poition_enemy'=>$poition_enemy,
             'biolgy_state'=>$biolgy_state,
-            'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".png",//随机地图
+            'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".jpg",//随机地图
         ];
    
     }

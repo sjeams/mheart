@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dating",
+    "texture": "37a0291a-e6cf-46bb-8a85-e17938e9bac5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      351,
+      162
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      351,
+      162
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

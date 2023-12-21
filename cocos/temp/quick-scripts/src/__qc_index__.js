@@ -2,6 +2,7 @@
 require('./assets/Script/bage/Conf');
 require('./assets/Script/bage/Game');
 require('./assets/Script/bage/Tool');
+require('./assets/Script/bakcground');
 require('./assets/Script/commonjs/alert');
 require('./assets/Script/commonjs/post');
 require('./assets/Script/fighting/fightingTools');

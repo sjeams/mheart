@@ -119,6 +119,7 @@ cc.Class({
 
     var map_pic = data.data['map_pic'];
     var remoteUrl = httpRequest.httpUrl(map_pic);
+    console.log(remoteUrl);
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {
@@ -141,19 +142,20 @@ cc.Class({
     for (var i = 0; i < total; i++) {
       // console.log(i) 
       //死亡移除map_status
-      var map = TOOLS[i]; // if(map.biology.length!=0){
-      // console.log(map.x)
-      // console.log(map.y)
+      var map = TOOLS[i];
 
-      var tool = cc.instantiate(_this.person); // console.log(map)
+      if (map.biology.length != 0) {
+        // console.log(map.x)
+        // console.log(map.y)
+        var tool = cc.instantiate(_this.person); // console.log(map)
 
-      tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state);
-      tool.x = map.x;
-      tool.y = map.y; // _this.toolsArray.push(tool);
-      // tool.setPosition(map.x,map.y);  
+        tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state);
+        tool.x = map.x;
+        tool.y = map.y; // _this.toolsArray.push(tool);
+        // tool.setPosition(map.x,map.y);  
 
-      _this.content.addChild(tool); // }
-
+        _this.content.addChild(tool);
+      }
     }
   },
   reloadWord: function reloadWord() {

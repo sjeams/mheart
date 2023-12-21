@@ -108,7 +108,9 @@ cc.Class({
     addMapPic(data){
         var _this = this;
         var  map_pic =data.data['map_pic'];
+
         var remoteUrl = httpRequest.httpUrl(map_pic);
+        console.log(remoteUrl)
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
           _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         });
@@ -129,7 +131,7 @@ cc.Class({
             // console.log(i) 
             //死亡移除map_status
             var map =TOOLS[i];
-            // if(map.biology.length!=0){
+            if(map.biology.length!=0){
               // console.log(map.x)
               // console.log(map.y)
               let tool = cc.instantiate(_this.person);
@@ -140,7 +142,7 @@ cc.Class({
               // _this.toolsArray.push(tool);
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool);   
-            // }
+            }
         }
     },
     reloadWord(){
