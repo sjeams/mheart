@@ -81,7 +81,7 @@ cc.Class({
     onConfirBtn:function(e,map_int){
         //session设置战斗请求id
         cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
-        httpRequest.playGame('战斗场景');
+        httpRequest.playGame('战斗场景',1);
         // console.log(info)
         // var HttpHelper = require("../http"); 
         // var httpRequest = new HttpHelper();

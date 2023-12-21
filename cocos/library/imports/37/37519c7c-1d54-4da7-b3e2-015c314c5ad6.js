@@ -98,7 +98,7 @@ var HttpHelper = cc.Class({
         if (new_respone.code == 0) {
           //未登录
           // console.log(JSON.parse(respone))
-          cc.director.loadScene('index');
+          cc.director.loadScene('登录');
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }
@@ -124,11 +124,13 @@ var HttpHelper = cc.Class({
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   },
   //场景加载--进度条
-  playGame: function playGame(sence) {
+  playGame: function playGame(sence, task) {
+    var _task = task || 0;
+
     var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
 
-    cc.loader.loadRes('prefabs/sprite_loading', function (errorMessage, loadedResource) {
+    cc.loader.loadRes('/sprite_loading', function (errorMessage, loadedResource) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -146,7 +148,9 @@ var HttpHelper = cc.Class({
 
       cc.find('Canvas').addChild(TipBoxPrefab); //请求战斗记录
 
-      _this.fightint(); //预加载场景并获得加载进度
+      if (_task == 1) {
+        _this.fightint();
+      } //预加载场景并获得加载进度
 
 
       cc.director.preloadScene(sence, function (completeCount, totalCount, item) {

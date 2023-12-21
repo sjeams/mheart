@@ -80,7 +80,7 @@ cc.Class({
       server_choes_type.getComponent(cc.Label).string = info['type'];
       server_choes_type.color = new cc.color(info['color']);
     });
-    var mask = cc.find("Canvas/mask");
+    var mask = cc.find("Canvas/服务器列表");
     mask.active = false; // var mask =  this.node.getChildByName('mask')
     // console.log(this.node.getSiblingIndex())
     // console.log( this.node.parent.getComponent(cc.Button));

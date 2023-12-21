@@ -39,15 +39,15 @@ cc.Class({
 
     loadnextScene: function() {
         // 登录预加载
-        cc.director.preloadScene('login', function () {
+        cc.director.preloadScene('login/登录', function () {
             cc.log('登录预加载');
         });
-        cc.director.loadScene('login');
+        cc.director.loadScene('login/登录');
     },
 
     //登录
     login: function() {
-    cc.director.loadScene('login');
+    cc.director.loadScene('login/登录');
     },
 
     //角色

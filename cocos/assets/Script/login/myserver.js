@@ -143,7 +143,7 @@ cc.Class({
                 if(data.code==1){// 登录成功，进入游戏
                     // cc.log(data.data.userinfo); 
                     cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
-                    cc.director.loadScene('home/大厅');
+                    httpRequest.playGame('home/大厅');
                     // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
                     // cc.sys.localStorage.getItem(key); //读取数据
                 }else if(data.code==2){ // 登录成功，未定义角色
@@ -151,7 +151,7 @@ cc.Class({
                     var server = JSON.parse(cc.sys.localStorage.getItem('server'));
                     // cc.log(server); 
                     // 创建角色
-                    cc.director.loadScene('register');
+                    cc.director.loadScene('login/角色');
                 }
             }
 

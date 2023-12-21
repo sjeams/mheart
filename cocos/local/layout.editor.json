@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1217,
-      "y": 155,
+      "x": 1021,
+      "y": 87,
       "width": 1242,
-      "height": 805,
+      "height": 801,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 344,
+                "height": 339.75,
                 "type": "panel",
-                "width": 204
+                "width": 254
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 340,
+                "height": 337.75,
                 "type": "panel",
-                "width": 204
+                "width": 254
               }
             ],
-            "height": 687,
+            "height": 680.5,
             "type": "dock-v",
-            "width": 204
+            "width": 254
           },
           {
             "active": 0,
@@ -42,7 +42,7 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 687,
+            "height": 680.5,
             "type": "panel",
             "width": 304
           },
@@ -53,9 +53,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 349,
+                "height": 344.75,
                 "type": "panel",
-                "width": 711.984375
+                "width": 661.984375
               },
               {
                 "active": 0,
@@ -64,14 +64,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 335,
+                "height": 332.75,
                 "type": "panel",
-                "width": 711.984375
+                "width": 661.984375
               }
             ],
-            "height": 687,
+            "height": 680.5,
             "type": "dock-v",
-            "width": 711.984375
+            "width": 661.984375
           }
         ],
         "type": "dock-h"

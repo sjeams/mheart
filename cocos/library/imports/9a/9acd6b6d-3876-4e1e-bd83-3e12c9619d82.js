@@ -4,6 +4,11 @@ cc._RF.push(module, '9acd6ttOHZOHr2DPhLJYZ2C', 'home_scence');
 
 "use strict";
 
+/*
+ * @Author: sjeam
+ * @Date: 2023-11-08 15:57:05
+ * @Description: 
+ */
 // Learn cc.Class:
 //  - https://docs.cocos.com/creator/manual/en/scripting/class.html
 // Learn Attribute:
