@@ -14,7 +14,9 @@ cc.Class({
         server_type: cc.Node,
         server_name: cc.Node,
         server_star: cc.Node,
-        sprite_server_login: cc.Button
+        server_shenMing: cc.Node,
+        server_moFa: cc.Node,
+        sprite_server_biology: cc.Button
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -49,7 +51,6 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
-        
         var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
         var type_color = color[info['yiXing']];
         // console.log(info)
@@ -63,7 +64,7 @@ cc.Class({
         this.server_name.getComponent(cc.Label).string=info['name'];
         this.node.getChildByName('server_name').color = new cc.color(type_color);
         //创建一个新button 并将其挂载到创建的精灵下
-        // this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info);
+        // this.bindClickEvent( this.sprite_server_biology.getComponent(cc.Button), info);
     },
     // 绑定按钮事件
     bindClickEvent: function (button, index) {
@@ -106,7 +107,7 @@ cc.Class({
         // console.log(this.node.getSiblingIndex())
         // console.log( this.node.parent.getComponent(cc.Button));
      
-        // this.node.getChildByName("sprite_server_login").on('click',function(event){
+        // this.node.getChildByName("sprite_server_biology").on('click',function(event){
         //     console.log("点击到按钮");
         //     callback();
         // },this);

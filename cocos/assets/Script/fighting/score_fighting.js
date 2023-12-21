@@ -98,8 +98,8 @@ cc.Class({
           _this.content.removeAllChildren();
           _this.content.destroyAllChildren();
            // 初始化阵容
-          _this.init_postion(data.data.poition_my,data.data.biolgy_state) //生成生物--position_my
-          _this.init_postion(data.data.poition_enemy,data.data.biolgy_state) //生成生物--position_ememy
+          _this.init_postion(data.data.poition_my,data.data.biolgy_state,-20) //生成生物--position_my
+          _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,20) //生成生物--position_ememy
           _this.addMapPic(data) //生成地图
       });    
       }
@@ -108,7 +108,6 @@ cc.Class({
     addMapPic(data){
         var _this = this;
         var  map_pic =data.data['map_pic'];
-
         var remoteUrl = httpRequest.httpUrl(map_pic);
         console.log(remoteUrl)
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
@@ -116,7 +115,7 @@ cc.Class({
         });
     },
     //生成生物
-    init_postion(postion,biolgy_state){
+    init_postion(postion,biolgy_state,int_px){
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
@@ -131,19 +130,40 @@ cc.Class({
             // console.log(i) 
             //死亡移除map_status
             var map =TOOLS[i];
-            if(map.biology.length!=0){
+            // if(map.biology.length!=0){
               // console.log(map.x)
               // console.log(map.y)
               let tool = cc.instantiate(_this.person);
               // console.log(map)
               tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state);
-              tool.x=map.x
+              tool.x=parseInt(map.x+int_px)
               tool.y=map.y
               // _this.toolsArray.push(tool);
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool);   
-            }
+            // }
         }
+    },
+    // 刷新血条
+    hp_update(){
+      //受到15伤害
+      this.hp -= 15;
+      // 求出伤害血量占比并显示
+      let fill = this.hp /this.all_hp;
+      this.hp_now.fillstart = 1 - fill; 
+
+      // 血条延迟，秒执行一次，一共执行六次，延迟为0
+      // this.schedule(function(){
+      //     this.magnetnumber-=5/8;
+      // },1,6,0);
+
+      //0.5秒内闪烁
+      let act_shan = cc.sequence(cc .fadeTo(0.05,0),cc.fadeTo(0.05,255));
+      this.node.runAction(cc.repeat(act_shan,5));
+      //0.5秒后还可以被攻击
+        this.scheduleOnce(function() {
+          this.state = 0;
+        }.bind(this),0.5);
     },
     reloadWord(){
       var _this =this;

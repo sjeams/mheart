@@ -20,6 +20,8 @@ cc.Class({
     server_type: cc.Node,
     server_name: cc.Node,
     server_star: cc.Node,
+    server_shenMing: cc.Node,
+    server_moFa: cc.Node,
     sprite_server_login: cc.Button
   },
   // LIFE-CYCLE CALLBACKS:
