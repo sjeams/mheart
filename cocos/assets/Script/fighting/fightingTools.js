@@ -10,18 +10,18 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        server_picture: cc.Node,
-        server_type: cc.Node,
-        server_name: cc.Node,
-        server_star: cc.Node,
-        server_shenMing: cc.Node,
-        server_moFa: cc.Node,
-        sprite_server_biology: cc.Button
+        // server_picture: cc.Node,
+        // server_type: cc.Node,
+        // server_name: cc.Node,
+        // server_star: cc.Node,
+        // server_shenMing: cc.Node,
+        // server_moFa: cc.Node,
+        // sprite_server_biology: cc.Button
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    initInfo(info,biolgy_state) {
+    initInfo(info,biolgy_state,is_my) {
         // 初始化该道具相关信息
         // 图片
         var _self = this;
@@ -34,8 +34,15 @@ cc.Class({
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                _self.server_picture.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                console.log(texture)
+                if(texture!=null){
+                    _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                }
             });
+            if(is_my==0){
+                //图片翻转
+                this.node.getChildByName('生物').setScale(-1, 1);
+            }
         }
         // this.server_type.getComponent(cc.Label).string=info['type'];
         // if(info['type']==1){
@@ -60,15 +67,21 @@ cc.Class({
         for(i=0;i<=info['yiXing'];i++){
             star +='⭐';
         }
-        this.server_star.getComponent(cc.Label).string= star;
-        this.server_type.getComponent(cc.Label).string='Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
-        this.server_type.color = new cc.color(type_color);
+        this.node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
+        this.node.getChildByName('魔法s').getComponent(cc.Label).string= info['moFa']+'/'+info['moFa'];
+        this.node.getChildByName('生物名称s').getComponent(cc.Label).string= info['name'];
+        this.node.getChildByName('生物等级s').getComponent(cc.Label).string= 'Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
+        this.node.getChildByName('星星s').getComponent(cc.Label).string= star;
+        // this.node.getChildByName('悟性s').getComponent(cc.Label).string= info['wuXing'];
+        // this.server_star.getComponent(cc.Label).string= star;
+        // this.server_type.getComponent(cc.Label).string='Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
+        // this.server_type.color = new cc.color(type_color);
         // this.node.getChildByName('server_type').color = new cc.color(type_color);
-        this.server_name.getComponent(cc.Label).string=info['name'];
-        this.server_name.color = new cc.color(type_color);
+        // this.server_name.getComponent(cc.Label).string=info['name'];
+        // this.server_name.color = new cc.color(type_color);
         // this.node.getChildByName('server_name').color = new cc.color(type_color);
         //创建一个新button 并将其挂载到创建的精灵下
-        // this.bindClickEvent( this.sprite_server_biology.getComponent(cc.Button), info);
+        this.bindClickEvent( this.node.getComponent(cc.Button), info);
     },
     // 绑定按钮事件
     bindClickEvent: function (button, index) {
@@ -77,7 +90,7 @@ cc.Class({
         //这个 node 节点是你的事件处理代码组件所属的节点
         clickEventHandler.target = this.node; 
         //这个是代码文件名
-        clickEventHandler.component = "mapTools";  // js脚本文件-绑定
+        clickEventHandler.component = "fightingTools";  // js脚本文件-绑定
         clickEventHandler.handler = "onConfirBtn";// js方法名称--绑定
         clickEventHandler.customEventData = index; // 回调内容
         button.clickEvents.push(clickEventHandler);
@@ -87,22 +100,22 @@ cc.Class({
     //按钮点击回调
     onConfirBtn:function(e,info){
         console.log(info)
-        var HttpHelper = require("../http"); 
-        var httpRequest = new HttpHelper();
-        httpRequest.httpPost('/app/app-apiword/in-word', {
-            'id': info['id'],
-            'star': info['star'],
-            'token': null
-        }, function (data) {
-            //跳转到世界
-            cc.director.loadScene('map/诸天地图');
-            // console.log(data);
-            // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
-            // server_choes_label.getComponent(cc.Label).string=info['name'];
-            // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
-            // server_choes_type.getComponent(cc.Label).string=info['type'];
-            // server_choes_type.color = new cc.color(info['color']); 
-        })
+        // var HttpHelper = require("../http"); 
+        // var httpRequest = new HttpHelper();
+        // httpRequest.httpPost('/app/app-apiword/in-word', {
+        //     'id': info['id'],
+        //     'star': info['star'],
+        //     'token': null
+        // }, function (data) {
+        //     //跳转到世界
+        //     cc.director.loadScene('map/诸天地图');
+        //     // console.log(data);
+        //     // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
+        //     // server_choes_label.getComponent(cc.Label).string=info['name'];
+        //     // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
+        //     // server_choes_type.getComponent(cc.Label).string=info['type'];
+        //     // server_choes_type.color = new cc.color(info['color']); 
+        // })
 
         // var mask =cc.find("Canvas/mask");
         // mask.active=false

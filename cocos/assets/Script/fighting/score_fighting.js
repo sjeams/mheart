@@ -99,8 +99,8 @@ cc.Class({
           _this.content.removeAllChildren();
           _this.content.destroyAllChildren();
            // 初始化阵容
-          _this.init_postion(data.data.poition_my,data.data.biolgy_state,-20) //生成生物--position_my
-          _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,20) //生成生物--position_ememy
+          _this.init_postion(data.data.poition_my,data.data.biolgy_state,-40,1) //生成生物--position_my
+          _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,40,0) //生成生物--position_ememy
           _this.addMapPic(data) //生成地图
       });    
       }
@@ -116,7 +116,7 @@ cc.Class({
         });
     },
     //生成生物
-    init_postion(postion,biolgy_state,int_px){
+    init_postion(postion,biolgy_state,int_px,is_my){
         var _this = this;
         // 根据MapTools生成相应的道具
         // _this.toolsArray = [];
@@ -156,7 +156,7 @@ cc.Class({
               // console.log(map.x)
               // console.log(map.y)
               // console.log(map)
-              tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state);
+              tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state,is_my);
               tool.x=parseInt(map.x+int_px)
               tool.y=map.y
               // _this.toolsArray.push(tool);
