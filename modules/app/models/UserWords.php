@@ -125,8 +125,8 @@ class UserWords extends ActiveRecord
         // x=1200/ 6*200  y= 600/ 3*200
         // $last_num =$num_int+9;
         $map=[];
-        $left = intval((1334-1200)/2);
-        $height = (intval(750-600)/2);
+        $left = intval((1334-(6*180))/2);
+        $height = (intval(750-(3*180))/2);
         // for($num=$num_int;$num<$last_num;$num++){
         //     $key++;
         //     $x = intval($num%8);//x计算1-6
@@ -149,8 +149,8 @@ class UserWords extends ActiveRecord
         foreach($x_list as $x){
             foreach($y_list as $y){
                 $key++;
-                $map[$key]['x']=$left+200*($x-1);//0开始
-                $map[$key]['y']=$height+200*($y-1);//0开始
+                $map[$key]['x']=$left+180*($x-1);//0开始
+                $map[$key]['y']=$height+180*($y-1);//0开始
             }
         }
         
