@@ -109,8 +109,8 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "法阵",
-    "_objFlags": 0,
+    "_name": "生物",
+    "_objFlags": 512,
     "_parent": {
       "__id__": 1
     },
@@ -123,113 +123,6 @@
     ],
     "_prefab": {
       "__id__": 4
-    },
-    "_opacity": 160,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 160,
-      "height": 40
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        -100,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 2
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "f0b7217f-d4c5-4212-b54f-3c0d8556dca6"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
-    },
-    "fileId": "90+hjyjuNE6a0MG75m284b",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "生物",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 6
-      }
-    ],
-    "_prefab": {
-      "__id__": 7
     },
     "_opacity": 255,
     "_color": {
@@ -283,7 +176,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 5
+      "__id__": 2
     },
     "_enabled": true,
     "_materials": [
@@ -316,9 +209,116 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "aajsA0JDJF84Fb5clwRxV/",
+    "fileId": "4aMBgkzZNOyJf5IiT8V+SV",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "法阵",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 6
+      }
+    ],
+    "_prefab": {
+      "__id__": 7
+    },
+    "_opacity": 160,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 160,
+      "height": 40
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        -100,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 5
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "f0b7217f-d4c5-4212-b54f-3c0d8556dca6"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
+    },
+    "fileId": "06G4s/ND1DyokJGWuI2TLI",
     "sync": false
   },
   {
@@ -368,7 +368,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        20,
+        130.004,
         0,
         0,
         0,
@@ -395,7 +395,7 @@
   {
     "__type__": "cc.Node",
     "_name": "bar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 8
     },
@@ -494,9 +494,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "3fZc3mvedNi5mIVsCfPzFd",
+    "fileId": "6ds3d5f8NL2ZqKeQewWD8S",
     "sync": false
   },
   {
@@ -554,9 +554,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "d5p8F6ZLtBrIAGlu/bLoEL",
+    "fileId": "6e+SXrYT1LYJfb6gGJraI3",
     "sync": false
   },
   {
@@ -606,7 +606,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        110.004,
         0,
         0,
         0,
@@ -732,9 +732,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "25E4TGbMVLhaCusL97dQ0W",
+    "fileId": "29pftL3YlIxaDuhEiuWUKx",
     "sync": false
   },
   {
@@ -792,14 +792,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "0d8zjsrSZDcqxWVZPOGNf0",
+    "fileId": "d97CSIgdNOBKqfeEMKA3b3",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物名称",
+    "_name": "生命s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -824,8 +824,222 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
+      "width": 64,
+      "height": 20.16
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        130.004,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 22
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "1000/200",
+    "_N$string": "1000/200",
+    "_fontSize": 16,
+    "_lineHeight": 16,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "仿宋",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
+    },
+    "fileId": "f02CPJuXlMjoKj5WsJTyWS",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "魔法s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 26
+      }
+    ],
+    "_prefab": {
+      "__id__": 27
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 56,
+      "height": 20.16
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        110.004,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 25
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "200/200",
+    "_N$string": "200/200",
+    "_fontSize": 16,
+    "_lineHeight": 16,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "仿宋",
+    "_N$overflow": 0,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
+    },
+    "fileId": "7c3/b34TlJBLVGwnin0xyP",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "生物名称s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 29
+      }
+    ],
+    "_prefab": {
+      "__id__": 30
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
       "width": 160,
-      "height": 20
+      "height": 25.2
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -866,7 +1080,7 @@
     "_name": "server_name<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 22
+      "__id__": 28
     },
     "_enabled": true,
     "_materials": [
@@ -888,9 +1102,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -899,14 +1113,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "35v1bQoXRIo7PtD6iF/Z91",
+    "fileId": "7bKpe/jzxGg7Vwrt1yql3b",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物等级",
+    "_name": "生物等级s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -915,11 +1129,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 26
+        "__id__": 32
       }
     ],
     "_prefab": {
-      "__id__": 27
+      "__id__": 33
     },
     "_opacity": 255,
     "_color": {
@@ -932,7 +1146,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 160,
-      "height": 18
+      "height": 22.68
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -973,7 +1187,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 25
+      "__id__": 31
     },
     "_enabled": true,
     "_materials": [
@@ -995,9 +1209,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -1006,14 +1220,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "7flfjIuZRMYaPzfy/eQ/eZ",
+    "fileId": "b3NIPJNjVFvpGT9HN8WKWx",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "星星",
+    "_name": "星星s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1022,11 +1236,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 29
+        "__id__": 35
       }
     ],
     "_prefab": {
-      "__id__": 30
+      "__id__": 36
     },
     "_opacity": 255,
     "_color": {
@@ -1039,7 +1253,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 160,
-      "height": 20
+      "height": 25.2
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1080,7 +1294,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 28
+      "__id__": 34
     },
     "_enabled": true,
     "_materials": [
@@ -1104,7 +1318,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -1113,223 +1327,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
-    "fileId": "557XyUMiRAzZ1kvxv2W+28",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "生命num",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 32
-      }
-    ],
-    "_prefab": {
-      "__id__": 33
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 64,
-      "height": 16
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        20,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 31
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "1000/200",
-    "_N$string": "1000/200",
-    "_fontSize": 16,
-    "_lineHeight": 16,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 0,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
-    "_N$cacheMode": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
-    },
-    "fileId": "e0vPtpQRVEgr7h6Vq/zP0y",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "魔法num",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 35
-      }
-    ],
-    "_prefab": {
-      "__id__": 36
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 56,
-      "height": 16
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 34
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "200/200",
-    "_N$string": "200/200",
-    "_fontSize": 16,
-    "_lineHeight": 16,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 0,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 0,
-    "_N$cacheMode": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
-    },
-    "fileId": "377tU0ILxMcLqIXxttox4t",
+    "fileId": "b33maH/BZN6LdJK+zy4i29",
     "sync": false
   },
   {
@@ -1453,16 +1453,16 @@
     },
     "_enabled": true,
     "server_picture": {
-      "__id__": 5
+      "__id__": 2
     },
     "server_type": {
-      "__id__": 25
+      "__id__": 31
     },
     "server_name": {
-      "__id__": 22
+      "__id__": 28
     },
     "server_star": {
-      "__id__": 28
+      "__id__": 34
     },
     "server_shenMing": {
       "__id__": 8
@@ -1481,7 +1481,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "0d598635-c030-4dbd-b28f-1ec01d09b7bb"
+      "__uuid__": "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe"
     },
     "fileId": "39HqaZn9RN0LxJ7I+8LlSV",
     "sync": false

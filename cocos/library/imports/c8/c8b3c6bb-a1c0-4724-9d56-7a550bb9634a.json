@@ -7,8 +7,8 @@
     "data": {
       "__id__": 1
     },
-    "optimizationPolicy": 0,
-    "asyncLoadAssets": false,
+    "optimizationPolicy": 2,
+    "asyncLoadAssets": true,
     "readonly": false
   },
   {
@@ -394,7 +394,7 @@
   {
     "__type__": "cc.Node",
     "_name": "bar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 9
     },
@@ -585,8 +585,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 66.73,
-      "height": 20.16
+      "width": 64,
+      "height": 16
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -649,9 +649,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
-    "_N$cacheMode": 1,
+    "_N$fontFamily": "仿宋",
+    "_N$overflow": 3,
+    "_N$cacheMode": 2,
     "_id": ""
   },
   {
@@ -692,8 +692,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 57.84,
-      "height": 20.16
+      "width": 56,
+      "height": 16
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -756,9 +756,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 0,
-    "_N$cacheMode": 1,
+    "_N$cacheMode": 2,
     "_id": ""
   },
   {

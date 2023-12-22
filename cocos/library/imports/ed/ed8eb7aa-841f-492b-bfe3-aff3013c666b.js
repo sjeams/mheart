@@ -137,25 +137,39 @@ cc.Class({
     // _this.content.runAction(fi);
     // var fo = cc.fadeOut(1)//渐隐效果
     // _this.content.runAction(fo);
-    //添加节点
+
+    var tool = cc.instantiate(_this.person); //添加节点
 
     for (var i = 0; i < total; i++) {
-      // console.log(i) 
-      //死亡移除map_status
-      var map = TOOLS[i]; // if(map.biology.length!=0){
-      // console.log(map.x)
-      // console.log(map.y)
-
-      var tool = cc.instantiate(_this.person); // console.log(map)
-
-      tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state);
+      var map = TOOLS[i];
+      var ts = tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state);
       tool.x = parseInt(map.x + int_px);
-      tool.y = map.y; // _this.toolsArray.push(tool);
-      // tool.setPosition(map.x,map.y);  
+      tool.y = map.y;
+      tool.getComponentInChildren(ts); // sprite.spriteFrame = cc.SpriteFrame.createWithImage(image);
+    } // let prefab = cc.instantiate(this.prefab);
+    // let sprite = prefab.getComponentInChildren(cc.Sprite);
+    // sprite.spriteFrame = cc.SpriteFrame.createWithImage(image);
 
-      _this.content.addChild(tool); // }
 
-    }
+    _this.content.addChild(tool); //添加节点
+    // for (let i=0; i<total; i++) {
+    //     // console.log(i) 
+    //     //死亡移除map_status
+    //     var map =TOOLS[i];
+    //     if(map.biology.length!=0){
+    //       // console.log(map.x)
+    //       // console.log(map.y)
+    //       let tool = cc.instantiate(_this.person);
+    //       // console.log(map)
+    //       tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state);
+    //       tool.x=parseInt(map.x+int_px)
+    //       tool.y=map.y
+    //       // _this.toolsArray.push(tool);
+    //       // tool.setPosition(map.x,map.y);  
+    //       _this.content.addChild(tool);   
+    //     }
+    // }
+
   },
   // 刷新血条
   hp_update: function hp_update() {

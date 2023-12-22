@@ -22,7 +22,7 @@ cc.Class({
     server_star: cc.Node,
     server_shenMing: cc.Node,
     server_moFa: cc.Node,
-    sprite_server_login: cc.Button
+    sprite_server_biology: cc.Button
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info, biolgy_state) {
@@ -59,7 +59,8 @@ cc.Class({
 
 
     var color = ['#ffffff', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
-    var type_color = color[info['yiXing']]; // console.log(info)
+    var type_color = color[info['yiXing']];
+    var type_color = 'green'; // console.log(info)
 
     var star = '';
 
@@ -69,10 +70,12 @@ cc.Class({
 
     this.server_star.getComponent(cc.Label).string = star;
     this.server_type.getComponent(cc.Label).string = 'Lv.' + info['grade'] + '(' + biolgy_state[info['state']] + ')';
-    this.node.getChildByName('server_type').color = new cc.color(type_color);
+    this.server_type.color = new cc.color(type_color); // this.node.getChildByName('server_type').color = new cc.color(type_color);
+
     this.server_name.getComponent(cc.Label).string = info['name'];
-    this.node.getChildByName('server_name').color = new cc.color(type_color); //创建一个新button 并将其挂载到创建的精灵下
-    // this.bindClickEvent( this.sprite_server_login.getComponent(cc.Button), info);
+    this.server_name.color = new cc.color(type_color); // this.node.getChildByName('server_name').color = new cc.color(type_color);
+    //创建一个新button 并将其挂载到创建的精灵下
+    // this.bindClickEvent( this.sprite_server_biology.getComponent(cc.Button), info);
   },
   // 绑定按钮事件
   bindClickEvent: function bindClickEvent(button, index) {
@@ -113,7 +116,7 @@ cc.Class({
     // var mask =  this.node.getChildByName('mask')
     // console.log(this.node.getSiblingIndex())
     // console.log( this.node.parent.getComponent(cc.Button));
-    // this.node.getChildByName("sprite_server_login").on('click',function(event){
+    // this.node.getChildByName("sprite_server_biology").on('click',function(event){
     //     console.log("点击到按钮");
     //     callback();
     // },this);
