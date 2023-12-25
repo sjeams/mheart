@@ -926,8 +926,10 @@ class UserBiologyNatureDo extends ActiveRecord
                 'positionType_msg'=>$hurt_go_list['skill']['positionType_msg'],
             );
         }
-        // var_dump($this->do_biology_extend);die;
-        // var_dump($hurt_go_list);die;
+        unset($hurt_go_list['attack_biology_do']); //去掉伤害结果生物
+        $hurt_go_list['hurt_go_value'] =$attack_biology_do[$hurt_go_list['extend']]; //只保留伤害结果数值
+        // var_dump($attack_biology_do);
+        // var_dump($hurt_go_list);
         return $hurt_go_list;
     }
 
