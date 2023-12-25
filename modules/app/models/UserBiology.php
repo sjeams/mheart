@@ -62,6 +62,7 @@ class UserBiology extends ActiveRecord
             $biologyid = $userbiology['userBiologyid'];
             $findone = UserBiologyAttribute::find()->where("biologyid=$biologyid")->One();
             if(!$findone){
+                unset($userbiology['id']);
                 Yii::$app->db->createCommand()->insert('x2_user_biology_attribute',$userbiology)->execute(); //添加到用户
             }else{
                 UserBiologyAttribute::updateAll($userbiology,"biologyid=$biologyid");
