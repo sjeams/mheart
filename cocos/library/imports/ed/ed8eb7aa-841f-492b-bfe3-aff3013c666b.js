@@ -93,10 +93,10 @@ cc.Class({
       cc.loader.load({
         url: remoteUrl
       }, function (err, data) {
-        // console.log(data) 
-        // _this.addWordMap(results) //生成生物
+        console.log(data); // _this.addWordMap(results) //生成生物
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         //移除节点
+
         _this.content.removeAllChildren();
 
         _this.content.destroyAllChildren(); // 初始化阵容
@@ -109,7 +109,11 @@ cc.Class({
 
 
         _this.addMapPic(data); //生成地图
+        //动态合图
 
+
+        cc.macro.CLEANUP_IMAGE_CACHE = false;
+        cc.dynamicAtlasManager.enabled = true;
       });
     }
   },
@@ -171,8 +175,6 @@ cc.Class({
         _this.content.addChild(tool);
       }
     }
-
-    console.log(_this.content);
   },
   // 刷新血条
   hp_update: function hp_update() {

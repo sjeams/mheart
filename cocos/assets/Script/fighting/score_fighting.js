@@ -92,7 +92,7 @@ cc.Class({
       }else{
         var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         cc.loader.load({ url: remoteUrl }, function (err, data) {
-          // console.log(data) 
+          console.log(data) 
           // _this.addWordMap(results) //生成生物
           // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
           //移除节点
@@ -102,6 +102,9 @@ cc.Class({
           _this.init_postion(data.data.poition_my,data.data.biolgy_state,-50,1) //生成生物--position_my
           _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,50,0) //生成生物--position_ememy
           _this.addMapPic(data) //生成地图
+          //动态合图
+          cc.macro.CLEANUP_IMAGE_CACHE = false;
+          cc.dynamicAtlasManager.enabled = true;
       });    
       }
     },
@@ -160,7 +163,6 @@ cc.Class({
               _this.content.addChild(tool); 
             }
         }
-        console.log(_this.content) 
     },
     // 刷新血条
     hp_update(){
