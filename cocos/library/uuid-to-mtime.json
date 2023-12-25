@@ -1214,14 +1214,14 @@
     "meta": 1703474355504,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1703474361904,
-    "meta": 1703474365223,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
   "f82f4e7d-a90b-4a38-ae4a-37f1e2ef97fe": {
-    "asset": 1703475629039,
-    "meta": 1703475629064,
+    "asset": 1703491475051,
+    "meta": 1703491475067,
     "relativePath": "prefabs\\biology_普通.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1703491046911,
+    "meta": 1703491474907,
+    "relativePath": "Script\\fighting\\fightingTools.js"
   }
 }

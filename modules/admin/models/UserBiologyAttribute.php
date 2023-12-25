@@ -6,7 +6,7 @@ use yii\db\ActiveRecord;
 class UserBiologyAttribute extends ActiveRecord
 {
     public static function tableName(){
-        return '{{%x2_user_biology_attribute}}';
+        return '{{%user_biology_attribute}}';
     }
  
 
