@@ -171,6 +171,8 @@ cc.Class({
         _this.content.addChild(tool);
       }
     }
+
+    console.log(_this.content);
   },
   // 刷新血条
   hp_update: function hp_update() {

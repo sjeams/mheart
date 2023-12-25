@@ -33,7 +33,9 @@ cc.Class({
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+                if(texture!=null){
                 _self.server_picture.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                }
             });
         }
         // this.server_type.getComponent(cc.Label).string=info['type'];

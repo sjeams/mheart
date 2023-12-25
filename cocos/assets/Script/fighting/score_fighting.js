@@ -145,7 +145,6 @@ cc.Class({
         // _this.content.addChild(tool);
    
         // _this.toolsArray = [];
-    
         //添加节点
         for (let i=0; i<total; i++) {
             // console.log(i) 
@@ -161,7 +160,7 @@ cc.Class({
               _this.content.addChild(tool); 
             }
         }
-       
+        console.log(_this.content) 
     },
     // 刷新血条
     hp_update(){
