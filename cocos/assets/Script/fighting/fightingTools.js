@@ -20,7 +20,6 @@ cc.Class({
     },
 
     // LIFE-CYCLE CALLBACKS:
-
     initInfo(info,biolgy_state,is_my) {
         // 初始化该道具相关信息
         // 图片
@@ -34,9 +33,10 @@ cc.Class({
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                console.log(texture)
+                // console.log(texture)
                 if(texture!=null){
                     _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                 
                 }
             });
             if(is_my==0){
@@ -58,10 +58,10 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
-        var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-  
-        var type_color = color[info['yiXing']];
-        var type_color ='green';
+        var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
+        // var type_color = color[info['yiXing']];
+        console.log(info['color']);
+        this.node.getChildByName('生物').color = new cc.color(info['color']);
         // console.log(info)
         var star ='';    
         for(i=0;i<=info['yiXing'];i++){

@@ -22,12 +22,15 @@ use app\modules\admin\models\BiologyCreate;
 use app\modules\admin\models\User;
 use app\modules\admin\models\UserBiology;
 use app\modules\admin\models\GoodsUse;
+use app\modules\admin\models\UserBiologyAttribute;
 
 
 class ApiController extends ApiControl {
 
     public $enableCsrfValidation = false;
 
+
+    //后台登录接口
     public function actionInit(){
       // // 清除缓存
       // $clearInfo=array('clearInfo'=>array(
@@ -183,7 +186,11 @@ class ApiController extends ApiControl {
       $data = Yii::$app->request->post('data');  
       $data = json_decode($data);
       foreach($data as $v){
-        $result = Biology::updateAll((array)$v,['id'=>$v->id]);
+        Biology::updateAll((array)$v,['id'=>$v->id]);
+        //修改其它3个表的图片
+        BiologyCreate::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
+        UserBiology::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
+        UserBiologyAttribute::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
       }
       echo true;
     }

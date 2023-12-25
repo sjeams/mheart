@@ -93,19 +93,19 @@ cc.Class({
       cc.loader.load({
         url: remoteUrl
       }, function (err, data) {
-        console.log(data); // _this.addWordMap(results) //生成生物
+        // console.log(data) 
+        // _this.addWordMap(results) //生成生物
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         //移除节点
-
         _this.content.removeAllChildren();
 
         _this.content.destroyAllChildren(); // 初始化阵容
 
 
-        _this.init_postion(data.data.poition_my, data.data.biolgy_state, -40, 1); //生成生物--position_my
+        _this.init_postion(data.data.poition_my, data.data.biolgy_state, -50, 1); //生成生物--position_my
 
 
-        _this.init_postion(data.data.poition_enemy, data.data.biolgy_state, 40, 0); //生成生物--position_ememy
+        _this.init_postion(data.data.poition_enemy, data.data.biolgy_state, 50, 0); //生成生物--position_ememy
 
 
         _this.addMapPic(data); //生成地图
@@ -118,8 +118,8 @@ cc.Class({
     var _this = this;
 
     var map_pic = data.data['map_pic'];
-    var remoteUrl = httpRequest.httpUrl(map_pic);
-    console.log(remoteUrl);
+    var remoteUrl = httpRequest.httpUrl(map_pic); // console.log(remoteUrl)
+
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {
@@ -162,10 +162,7 @@ cc.Class({
       var map = TOOLS[i];
 
       if (map.biology.length != 0) {
-        var tool = cc.instantiate(_this.person); // console.log(map.x)
-        // console.log(map.y)
-        // console.log(map)
-
+        var tool = cc.instantiate(_this.person);
         tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state, is_my);
         tool.x = parseInt(map.x + int_px);
         tool.y = map.y; // _this.toolsArray.push(tool);

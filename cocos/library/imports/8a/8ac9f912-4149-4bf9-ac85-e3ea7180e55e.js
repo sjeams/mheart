@@ -39,8 +39,7 @@ cc.Class({
         url: remoteUrl
       }, function (err, texture) {
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-        console.log(texture);
-
+        // console.log(texture)
         if (texture != null) {
           _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         }
@@ -66,9 +65,10 @@ cc.Class({
     // }
 
 
-    var color = ['#ffffff', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
-    var type_color = color[info['yiXing']];
-    var type_color = 'green'; // console.log(info)
+    var color = ['#FFFFFF', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000']; // var type_color = color[info['yiXing']];
+
+    console.log(info['color']);
+    this.node.getChildByName('生物').color = new cc.color(info['color']); // console.log(info)
 
     var star = '';
 

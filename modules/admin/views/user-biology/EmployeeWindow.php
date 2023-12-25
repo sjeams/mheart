@@ -413,13 +413,13 @@
             colorvalue = colorname.getValue();
             $("#full").spectrum({
                 color: colorvalue,  //初始化颜色
-                preferredFormat: "hex3", //输入框颜色格式
+                preferredFormat: "hex6", //输入框颜色格式
                 showInput: true,  //显示输入
                 showPalette: true, //显示选择器面板
                 cancelText: "取消",//取消按钮,按钮文字
                 chooseText: "选择",//选择按钮,按钮文字
                 palette: [
-                    ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+                    ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#FFFFFF"],
                     ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
                     ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
                     ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
