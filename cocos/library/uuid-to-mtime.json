@@ -1055,8 +1055,8 @@
     "relativePath": "Script\\scence\\score_word.js"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1702623782060,
-    "meta": 1703470676129,
+    "asset": 1703491963534,
+    "meta": 1703491963549,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
@@ -1088,11 +1088,6 @@
     "asset": 1702634929741,
     "meta": 1703470676413,
     "relativePath": "resources\\sprite_loading.prefab"
-  },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1703474576682,
-    "meta": 1703474576704,
-    "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "37a0291a-e6cf-46bb-8a85-e17938e9bac5": {
     "asset": 1703064832634,
@@ -1219,9 +1214,14 @@
     "meta": 1703491475067,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1703492217727,
+    "meta": 1703492217752,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1703491046911,
-    "meta": 1703491474907,
+    "asset": 1703492286017,
+    "meta": 1703492331776,
     "relativePath": "Script\\fighting\\fightingTools.js"
   }
 }

@@ -188,9 +188,9 @@ class ApiController extends ApiControl {
       foreach($data as $v){
         Biology::updateAll((array)$v,['id'=>$v->id]);
         //修改其它3个表的图片
-        BiologyCreate::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
-        UserBiology::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
-        UserBiologyAttribute::updateAll(['picture'=>$v['picture']],['biologyid'=>$v->id]);
+        BiologyCreate::updateAll(['picture'=>$v->picture],['biologyid'=>$v->id]);
+        UserBiology::updateAll(['picture'=>$v->picture],['biologyid'=>$v->id]);
+        UserBiologyAttribute::updateAll(['picture'=>$v->picture],['biologyid'=>$v->id]);
       }
       echo true;
     }

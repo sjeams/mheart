@@ -36,7 +36,6 @@ cc.Class({
                 // console.log(texture)
                 if(texture!=null){
                     _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                 
                 }
             });
             if(is_my==0){
@@ -60,7 +59,7 @@ cc.Class({
         // }
         var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
         // var type_color = color[info['yiXing']];
-        console.log(info['color']);
+        // console.log(info['color']);
         this.node.getChildByName('生物').color = new cc.color(info['color']);
         // console.log(info)
         var star ='';    
