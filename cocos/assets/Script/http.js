@@ -2,6 +2,8 @@
  * Http 请求封装
  */
 var https_url = 'https://www.aheart.cn';
+
+
 const HttpHelper = cc.Class({
     extends: cc.Component,
 
@@ -12,10 +14,14 @@ const HttpHelper = cc.Class({
 
     },
     onLoad () {
-        
+        // 开启调试
+        // cc.dynamicAtlasManager.showDebug(true);
+        // 关闭调试
+        // cc.dynamicAtlasManager.showDebug(false);
         // 从服务器加载mp3来进行播放
         this.current = cc.audioEngine.play(res.url, false, 1);  
-    },
+    }
+    ,
     /**
      * get请求
      * @param {string} url

@@ -36,6 +36,8 @@ cc.Class({
                 // console.log(texture)
                 if(texture!=null){
                     _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                    //销毁
+                    // this.image.spriteFrame=null;
                 }
             });
             if(is_my==0){
@@ -57,20 +59,7 @@ cc.Class({
         //     this.server_type.getComponent(cc.Label).string='爆满';
         //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
         // }
-        var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-        // var type_color = color[info['yiXing']];
-        // console.log(info['color']);
-        this.node.getChildByName('生物').color = new cc.color(info['color']);
-        // console.log(info)
-        var star ='';    
-        for(i=0;i<=info['yiXing'];i++){
-            star +='⭐';
-        }
-        this.node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
-        this.node.getChildByName('魔法s').getComponent(cc.Label).string= info['moFa']+'/'+info['moFa'];
-        this.node.getChildByName('生物名称s').getComponent(cc.Label).string= info['name'];
-        this.node.getChildByName('生物等级s').getComponent(cc.Label).string= 'Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
-        this.node.getChildByName('星星s').getComponent(cc.Label).string= star;
+
         // this.node.getChildByName('悟性s').getComponent(cc.Label).string= info['wuXing'];
         // this.server_star.getComponent(cc.Label).string= star;
         // this.server_type.getComponent(cc.Label).string='Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';

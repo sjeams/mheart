@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "阴影2",
+    "texture": "00d4f285-3f5c-4513-8a1f-26fde6028794",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      157,
+      65
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      157,
+      65
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

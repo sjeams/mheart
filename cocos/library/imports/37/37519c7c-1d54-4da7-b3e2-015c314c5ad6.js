@@ -13,6 +13,10 @@ var HttpHelper = cc.Class({
   statics: {},
   properties: {},
   onLoad: function onLoad() {
+    // 开启调试
+    // cc.dynamicAtlasManager.showDebug(true);
+    // 关闭调试
+    // cc.dynamicAtlasManager.showDebug(false);
     // 从服务器加载mp3来进行播放
     this.current = cc.audioEngine.play(res.url, false, 1);
   },

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "阴影",
+    "texture": "f7f62977-3a81-4bd8-811e-69f09cf62137",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      123,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      123,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -79,6 +79,10 @@ cc.Class({
     //     this.opt_item_set.push(item);
     // }
     // httpRequest.playGameLoading()
+    //动态合图
+    cc.macro.CLEANUP_IMAGE_CACHE = false;
+    cc.dynamicAtlasManager.enabled = true; // cc.dynamicAtlasManager.showDebug(true);
+
     this.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
   },
   spawnTools: function spawnTools() {
@@ -109,11 +113,7 @@ cc.Class({
 
 
         _this.addMapPic(data); //生成地图
-        //动态合图
 
-
-        cc.macro.CLEANUP_IMAGE_CACHE = false;
-        cc.dynamicAtlasManager.enabled = true;
       });
     }
   },
@@ -157,8 +157,9 @@ cc.Class({
     // // let sprite = prefab.getComponentInChildren(cc.Sprite);
     // // sprite.spriteFrame = cc.SpriteFrame.createWithImage(image);
     // _this.content.addChild(tool);
-    // _this.toolsArray = [];
-    //添加节点
+    // 根据TOOLS生成相应的道具
+
+    this.toolsArray = []; //添加节点
 
     for (var i = 0; i < total; i++) {
       // console.log(i) 
@@ -169,11 +170,48 @@ cc.Class({
         var tool = cc.instantiate(_this.person);
         tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state, is_my);
         tool.x = parseInt(map.x + int_px);
-        tool.y = map.y; // _this.toolsArray.push(tool);
-        // tool.setPosition(map.x,map.y);  
+        tool.y = map.y;
+
+        _this.toolsArray.push(tool); // tool.setPosition(map.x,map.y);  
+
 
         _this.content.addChild(tool);
       }
+    } // 删除所有道具(或者不删，只是隐藏，自己决定)
+    // this.toolsArray.forEach(element => {
+    //     var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
+    //     // var type_color = color[info['yiXing']];
+    //     // console.log(info['color']);
+    //     element.getChildByName('生物').color = new cc.color(info['color']);
+    //     // console.log(info)
+    //     var star ='';    
+    //     for(i=0;i<=info['yiXing'];i++){
+    //         star +='⭐';
+    //     }
+    //     element.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
+    //     element.getChildByName('魔法s').getComponent(cc.Label).string= info['moFa']+'/'+info['moFa'];
+    //     element.getChildByName('生物名称s').getComponent(cc.Label).string= info['name'];
+    //     element.getChildByName('生物等级s').getComponent(cc.Label).string= 'Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
+    //     element.getChildByName('星星s').getComponent(cc.Label).string= star;
+    //     console.log(element)
+    //     // element.removeFromParent();
+    // });
+
+  },
+  bagBtn: function bagBtn() {
+    // 背包按钮
+    if (this.gridLayout.parent.active) {
+      // 隐藏节点
+      this.gridLayout.parent.active = false; // 删除所有道具(或者不删，只是隐藏，自己决定)
+
+      this.toolsArray.forEach(function (element) {
+        element.removeFromParent();
+      });
+    } else {
+      // 显示节点
+      this.gridLayout.parent.active = true; // 生成所有道具
+
+      this.spawnTools();
     }
   },
   // 刷新血条
@@ -189,7 +227,7 @@ cc.Class({
     //0.5秒内闪烁
 
     var act_shan = cc.sequence(cc.fadeTo(0.05, 0), cc.fadeTo(0.05, 255));
-    this.node.runAction(cc.repeat(act_shan, 5)); //0.5秒后还可以被攻击
+    element.runAction(cc.repeat(act_shan, 5)); //0.5秒后还可以被攻击
 
     this.scheduleOnce(function () {
       this.state = 0;
