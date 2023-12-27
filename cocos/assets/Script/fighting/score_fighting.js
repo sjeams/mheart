@@ -87,15 +87,17 @@ cc.Class({
           // fighting_history
 
         this.spawnTools()
+
+
     },
     start () {
-      var _this =this;
-   
-        let  fighting_list=  this.fightingArray;
-        console.log(fighting_list)
-          for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
-            _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序
-        }
+      // console.log(this.toolsArray[0])
+      // var _this =this;
+      // var fighting_list = cc.sys.localStorage.getItem("fightingArray");
+      // var fighting_list = JSON.parse(fighting_list);
+      // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+      //     _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序
+      // }
     },
  
     spawnTools () {
@@ -107,7 +109,7 @@ cc.Class({
       }else{
         var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         cc.loader.load({ url: remoteUrl }, function (err, data) {
-            // console.log(data) 
+            console.log(data) 
             // _this.addWordMap(results) //生成生物
             // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
             //移除节点
@@ -117,7 +119,18 @@ cc.Class({
             _this.init_postion(data.data.poition_my,data.data.biolgy_state,-50,1) //生成生物--position_my
             _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,50,0) //生成生物--position_ememy
             _this.addMapPic(data) //生成地图
-            _this.fightingArray.push(data.data);
+            // _this.fightingArray.push(data.data);
+            // cc.sys.localStorage.setItem("fightingArray", JSON.stringify(data.data));
+            // cc.sys.localStorage.setItem("toolsArray", JSON.stringify(_this.toolsArray));
+            // var fighting_list = cc.sys.localStorage.getItem("fightingArray");
+            // var fighting_list = JSON.parse(fighting_list);
+            var fighting_list =data.data;
+            var poition_my =fighting_list.poition_my
+            var poition_enemy =fighting_list.poition_enemy
+            for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+                var history =fighting_list.fighting_history[boat].fighting_history;
+                _this.fighting_history(history,poition_my,poition_enemy)//执行战斗顺序
+            }
         });    
       }
     },
@@ -143,14 +156,17 @@ cc.Class({
         // let  tool = cc.instantiate(_this.person);
         //添加节点
         for (let i=0; i<total; i++) {
-            // console.log(i) 
             //死亡移除map_status
             var map =TOOLS[i];
+            // console.log(map) 
             if(map.biology.length!=0){
               var tool = cc.instantiate(_this.person);
               tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state,is_my);
               tool.x=parseInt(map.x+int_px)
               tool.y=map.y
+              tool.biology_int=i //阵法编号
+              tool.biology=map.biology.id
+              tool.biology_name=map.biology.name
               _this.toolsArray.push(tool);
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool); 
@@ -160,15 +176,16 @@ cc.Class({
 
     fighting_history (fighting) {
       console.log(fighting)
-      var _this = this;
+      // var _this = this;
       var this_node =this.toolsArray[0];
-      for (let i=0; i<fighting.length; i++) {
-        let action =  cc.speed(cc.sequence(cc.moveTo(1,400,200), cc.moveTo(1,this_node.y,this_node.x)),5)
+      console.log(this_node)
+      // for (let i=0; i<fighting.length; i++) {
+        let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
         // let action = cc.moveTo(1, 100, 100)
         // cc.jumpTo(3, 200, 200, 50, 5)
         // 执行动作，所有的动作都需要一个目标通过 runAction 去执行它
         this_node.runAction(action)
-      }
+      // }
         //   // 删除所有道具(或者不删，只是隐藏，自己决定)
         //   for (let i=0; i<total; i++) {
         //   this.toolsArray.forEach(element => {
