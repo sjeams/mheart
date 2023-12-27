@@ -1234,20 +1234,10 @@
     "meta": 1703647842996,
     "relativePath": "resources\\biology_pic\\9标准弹窗.png"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1703656664805,
-    "meta": 1703656664817,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1703657151104,
     "meta": 1703657151131,
     "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1703649798499,
-    "meta": 1703655300647,
-    "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
     "asset": 1703656209462,
@@ -1255,14 +1245,9 @@
     "relativePath": "Script\\scence\\mapTools.js"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1703660239149,
-    "meta": 1703660239163,
+    "asset": 1703660487645,
+    "meta": 1703660487666,
     "relativePath": "prefabs\\sprite_地图.prefab"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1703656691511,
-    "meta": 1703656696595,
-    "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1703657285407,
@@ -1298,5 +1283,20 @@
     "asset": 1703659956828,
     "meta": 1703659985961,
     "relativePath": "Scene\\home\\诸天万界.fire"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1703664512071,
+    "meta": 1703664747432,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1703667596233,
+    "meta": 1703667596700,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1703667588494,
+    "meta": 1703667594480,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }

@@ -441,13 +441,13 @@ class UserBiologyNatureDo extends ActiveRecord
             $attack_biology = $this->merge_biology_extend[$attack_biology['id']];//容器是变动的，这里要重新赋值
             //阵亡跳过回合
             if($attack_biology['shengMing']>0){
-                $this->attack_bout+=1;
+                $this->attack_bout+=1;//前端需要索引排序
                 //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['need']=[];//技能--消耗（耗蓝）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['go']=[];//技能--增幅（被动
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['do']=[];//技能--主动（攻击）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['putong']=[];//普通攻击
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['back']=[];//技能 被动（反击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['need']=[];//技能--消耗（耗蓝）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['go']=[];//技能--增幅（被动
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['do']=[];//技能--主动（攻击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['putong']=[];//普通攻击
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['back']=[];//技能 被动（反击）
                 // 攻击位置计算
                 $this->attackPosition($attack_biology); //主动攻击
             }
