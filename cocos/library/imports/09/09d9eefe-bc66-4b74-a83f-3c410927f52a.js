@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'score_map');
-// Script/scence/score_map.js
+cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'map_score');
+// Script/scence/map_score.js
 
 "use strict";
 
@@ -18,30 +18,6 @@ var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {
-    // foo: {
-    //     // ATTRIBUTES:
-    //     default: null,        // The default value will be used only when the component attaching
-    //                           // to a node for the first time
-    //     type: cc.SpriteFrame, // optional, default is typeof default
-    //     serializable: true,   // optional, default is true
-    // },
-    // bar: {
-    //     get () {
-    //         return this._bar;
-    //     },
-    //     set (value) {
-    //         this._bar = value;
-    //     }
-    // },
-    //测试item
-    //   content: {
-    //     default: null,
-    //     type: cc.Node
-    //   },
-    // person: {
-    //   default: null,
-    //   type: cc.Prefab
-    // },
     content: cc.Node,
     person: cc.Prefab,
     home: cc.Node,
@@ -82,11 +58,7 @@ cc.Class({
   spawnTools: function spawnTools() {
     var _this = this;
 
-    var params = {
-      'page': 1,
-      'pageSize': 12
-    };
-    httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+    httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
       // console.log(_this.content)
       if (!data.data) {
         //刷新地图
@@ -129,13 +101,13 @@ cc.Class({
     });
   },
   reloadWord: function reloadWord() {
-    var _this = this;
+    var _this = this; // var params = {
+    //   'page': 1,
+    //   'pageSize': 12,
+    // };
 
-    var params = {
-      'page': 1,
-      'pageSize': 12
-    };
-    httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+
+    httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
       //移除节点
       _this.content.removeAllChildren();
 

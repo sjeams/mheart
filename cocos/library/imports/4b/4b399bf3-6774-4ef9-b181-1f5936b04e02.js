@@ -54,7 +54,7 @@ cc.Class({
     // }
 
 
-    var color = ['#ffffff', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
+    var color = ['#FFFFFF', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
     var type_color = color[info['yiXing']]; // console.log(info)
 
     var star = '';
@@ -63,11 +63,11 @@ cc.Class({
       star += '⭐';
     }
 
-    this.node.getChildByName('server_name').string = info['name'] + '(' + total + ')';
+    this.node.getChildByName('server_name').getComponent(cc.Label).string = info['name'] + '(' + total + ')';
     this.node.getChildByName('server_name').color = new cc.color(type_color);
-    this.node.getChildByName('server_type').string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
+    this.node.getChildByName('server_type').getComponent(cc.Label).string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
     this.node.getChildByName('server_type').color = new cc.color(type_color);
-    this.node.getChildByName('server_star').string = star; //创建一个新button 并将其挂载到创建的精灵下
+    this.node.getChildByName('server_star').getComponent(cc.Label).string = star; //创建一个新button 并将其挂载到创建的精灵下
 
     this.bindClickEvent(this.node.getComponent(cc.Button), info_list.map_int);
   },

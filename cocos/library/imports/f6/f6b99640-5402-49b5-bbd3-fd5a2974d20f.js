@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'score_word');
-// Script/scence/score_word.js
+cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'word_score');
+// Script/scence/word_score.js
 
 "use strict";
 
@@ -14,7 +14,6 @@ cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'score_word');
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
-var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -80,16 +79,11 @@ cc.Class({
   spawnTools: function spawnTools() {
     var _this = this;
 
-    var params = {
-      'page': 1,
-      'pageSize': 12
-    };
-    httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
+    httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
       //  console.log(data);
       // console.log(_this.content)
-      if (data.data) {
-        //跳转到世界
-        httpRequest.playGame('map/诸天地图');
+      if (data.data) {//跳转到世界
+        // httpRequest.playGame('map/诸天地图');
       } else {
         //生成世界
         // let cellWidth = _this.content.width * 0.2;
@@ -107,7 +101,7 @@ cc.Class({
   addWord: function addWord() {
     var _this = this;
 
-    httpRequest.httpPost('/app/app-apiword/rand-word', params, function (data) {
+    httpRequest.httpPost('/app/app-apiword/rand-word', {}, function (data) {
       // console.log(data);
       // let cellWidth = _this.content.width * 0.105;
       // let cellHeight = _this.content.height * 0.215;
@@ -117,15 +111,11 @@ cc.Class({
       // _this.toolsArray = [];
       var TOOLS = data.data;
       var total = data.data.length;
-      console.log(TOOLS);
-      var fi = cc.fadeIn(2); //渐显效果
-
-      _this.content.runAction(fi);
-
-      var fo = cc.fadeOut(1); //渐隐效果
-
-      _this.content.runAction(fo); //移除节点
-
+      console.log(TOOLS); // var fi = cc.fadeIn(2)//渐显效果
+      // _this.content.runAction(fi);
+      // var fo = cc.fadeOut(1)//渐隐效果
+      // _this.content.runAction(fo);
+      //移除节点
 
       _this.content.removeAllChildren();
 

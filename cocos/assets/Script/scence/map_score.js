@@ -10,37 +10,11 @@ var httpRequest = new HttpHelper();
 var params =[];
 cc.Class({
     extends: cc.Component,
-
-    properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-            //测试item
-      //   content: {
-      //     default: null,
-      //     type: cc.Node
-      //   },
-
-      // person: {
-      //   default: null,
-      //   type: cc.Prefab
-      // },
-
+    properties: {  
       content: cc.Node,
       person: cc.Prefab,
-
+      home: cc.Node,
+      reload: cc.Node,
       //列表
       test_scrollView: {
         default: null,
@@ -53,8 +27,6 @@ cc.Class({
       },
 
     },
-
-
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -85,75 +57,86 @@ cc.Class({
 
     spawnTools () {
       var _this =this;
+      httpRequest.httpPost('/app/app-apiword/index',{}, function (data) {
 
-      var params = {
-              'page': 1,
-              'pageSize': 12,
-      };
-      httpRequest.httpPost('/app/app-apiword/index', params, function (data) {
-        //  console.log(data);
           // console.log(_this.content)
-          if(data.data){
-              //跳转到世界
-              httpRequest.playGame('map/诸天地图');
+          if(!data.data){
+              //刷新地图
+              // cc.director.loadScene('map/诸天地图');
+              _this.reloadWord()//刷新世界地图
           }else{
               //生成世界
-              // let cellWidth = _this.content.width * 0.2;
-              // let cellHeight = _this.content.height * 0.4;
-              // let spacingX = _this.content.width * 0.1;
-              // let spacingY = _this.content.height * 0.1;
-    
+              // let cellWidth = _this.content.width * 0.105;
+              // let cellHeight = _this.content.height * 0.215;
+              // let spacingX = _this.content.width * 0.022;
+              // let spacingY = _this.content.height * 0.045;
+
               // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
               // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
               // _this.content.getComponent(cc.Layout).spacingX = spacingX;
               // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-              _this.addWord()
+              _this.addMapPic(data) //生成地图
+              _this.addWordMap(data) //生成生物
           }
       })
     },
-
-
-    addWord(){
+    //生成地图
+    addMapPic(data){
+        var _this = this;
+        if(data.data['map_pic']){
+          var  map_pic =data.data['map_pic'];
+        }else{
+          var  map_pic =data.data['picture'];
+        }
+        var remoteUrl = httpRequest.httpUrl(map_pic);
+          cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+              _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+        });
+    },
+    reloadWord(){
       var _this =this;
-      httpRequest.httpPost('/app/app-apiword/rand-word', params, function (data) {
-          // console.log(data);
-          // let cellWidth = _this.content.width * 0.105;
-          // let cellHeight = _this.content.height * 0.215;
-          // let spacingX = _this.content.width * 0.022;
-          // let spacingY = _this.content.height * 0.045;
-
-          // 根据MapTools生成相应的道具
-          // _this.toolsArray = [];
-          let TOOLS = data.data;
-          var total = data.data.length;
-          console.log(TOOLS) 
-
-          var fi = cc.fadeIn(2)//渐显效果
-          _this.content.runAction(fi);
-          var fo = cc.fadeOut(1)//渐隐效果
-          _this.content.runAction(fo);
-          //移除节点
-          _this.content.removeAllChildren();
-          _this.content.destroyAllChildren();
-          //添加节点
-          for (let i=0; i<total; i++) {
-            // console.log(i) 
-              let tool = cc.instantiate(_this.person);
-              tool.getComponent('wordTools').initInfo(TOOLS[i]);
-              // _this.toolsArray.push(tool);
-              _this.content.addChild(tool);    
-          }
-          // 定义content滚动条高度
-          // let scorllheight =  _this.content.parent;
-          // //计算滚动条高度
-          // let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
-          // // console.log(height);
-          // // scorllheight.designResolution  = new cc.Size(600, height);
-          // scorllheight.setContentSize(600,height);
-
+      // var params = {
+      //   'page': 1,
+      //   'pageSize': 12,
+      // };
+      httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
+        //移除节点
+        _this.content.removeAllChildren();
+        _this.content.destroyAllChildren();
+        //写入地图数据
+        _this.addWordMap(data)
         })
     },
-
+    //生成生物
+    addWordMap(data){
+        // console.log(data) 
+        var _this = this;
+        // 根据MapTools生成相应的道具
+        // _this.toolsArray = [];
+        let TOOLS = data.data.user_in_word_map;
+        var total = data.data.user_in_word_map.length;
+        // var fi = cc.fadeIn(2)//渐显效果
+        // _this.content.runAction(fi);
+        // var fo = cc.fadeOut(1)//渐隐效果
+        // _this.content.runAction(fo);
+        //添加节点
+        for (let i=0; i<total; i++) {
+            // console.log(i) 
+            //死亡移除map_status
+            var map =TOOLS[i];
+            if(map.map_status==1){
+              // console.log(map.x)
+              // console.log(map.y)
+              let tool = cc.instantiate(_this.person);
+              tool.getComponent('mapTools').initInfo(map);
+              tool.x=map.x
+              tool.y=map.y
+              // _this.toolsArray.push(tool);
+              // tool.setPosition(map.x,map.y);  
+              _this.content.addChild(tool);   
+            }
+        }
+    },
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
         node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);

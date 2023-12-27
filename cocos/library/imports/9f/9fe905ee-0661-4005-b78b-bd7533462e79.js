@@ -15,12 +15,11 @@ var httpRequest = new HttpHelper();
 var params = [];
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    server_picture: cc.Node,
-    server_type: cc.Node,
-    server_name: cc.Node,
-    server_star: cc.Node,
-    sprite_server_login: cc.Button
+  properties: {// server_picture: cc.Node,
+    // server_type: cc.Node,
+    // server_name: cc.Node,
+    // server_star: cc.Node,
+    // sprite_server_login: cc.Button
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info) {
@@ -39,7 +38,7 @@ cc.Class({
       }, function (err, texture) {
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         if (texture != null) {
-          _self.server_picture.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          _self.node.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         }
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];
@@ -67,12 +66,13 @@ cc.Class({
       star += '⭐';
     }
 
-    this.server_type.getComponent(cc.Label).string = info['type_name'];
-    this.server_star.getComponent(cc.Label).string = star;
-    this.node.getChildByName('server_type').color = new cc.color(type_color);
-    this.server_name.getComponent(cc.Label).string = info['name']; //创建一个新button 并将其挂载到创建的精灵下
+    this.node.getChildByName('名称').getComponent(cc.Label).string = info['name'];
+    this.node.getChildByName('名称').color = new cc.color(type_color);
+    this.node.getChildByName('世界等级').getComponent(cc.Label).string = info['type_name'];
+    this.node.getChildByName('世界等级').color = new cc.color(type_color);
+    this.node.getChildByName('星级').getComponent(cc.Label).string = star; //创建一个新button 并将其挂载到创建的精灵下
 
-    this.bindClickEvent(this.sprite_server_login.getComponent(cc.Button), info);
+    this.bindClickEvent(this.node.getComponent(cc.Button), info);
   },
   // 绑定按钮事件
   bindClickEvent: function bindClickEvent(button, index) {
@@ -97,7 +97,7 @@ cc.Class({
 
     var httpRequest = new HttpHelper();
     httpRequest.httpPost('/app/app-apiword/in-word', {
-      'id': info['id'],
+      'wordid': info['id'],
       'star': info['star'],
       'token': null
     }, function (data) {

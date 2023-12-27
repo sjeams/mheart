@@ -35,7 +35,7 @@ cc.Class({
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
                 // console.log(texture)
                 if(texture!=null){
-                    // _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                    _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                     //销毁
                     // this.image.spriteFrame=null;
                 }
