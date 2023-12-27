@@ -10,12 +10,11 @@ var httpRequest = new HttpHelper();
 var params = [];
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    server_picture: cc.Node,
-    server_type: cc.Node,
-    server_name: cc.Node,
-    server_star: cc.Node,
-    sprite_server_login: cc.Button
+  properties: {// server_picture: cc.Node,
+    // server_type: cc.Node,
+    // server_name: cc.Node,
+    // server_star: cc.Node,
+    // sprite_server_login: cc.Button
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info_list) {
@@ -36,7 +35,7 @@ cc.Class({
       }, function (err, texture) {
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         if (texture != null) {
-          _self.server_picture.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          _self.node.getChildByName('server_picture').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         }
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];
@@ -64,13 +63,13 @@ cc.Class({
       star += '⭐';
     }
 
-    this.server_star.getComponent(cc.Label).string = star;
-    this.server_type.getComponent(cc.Label).string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
+    this.node.getChildByName('server_name').string = info['name'] + '(' + total + ')';
+    this.node.getChildByName('server_name').color = new cc.color(type_color);
+    this.node.getChildByName('server_type').string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
     this.node.getChildByName('server_type').color = new cc.color(type_color);
-    this.server_name.getComponent(cc.Label).string = info['name'] + '(' + total + ')';
-    this.node.getChildByName('server_name').color = new cc.color(type_color); //创建一个新button 并将其挂载到创建的精灵下
+    this.node.getChildByName('server_star').string = star; //创建一个新button 并将其挂载到创建的精灵下
 
-    this.bindClickEvent(this.sprite_server_login.getComponent(cc.Button), info_list.map_int);
+    this.bindClickEvent(this.node.getComponent(cc.Button), info_list.map_int);
   },
   // 绑定按钮事件
   bindClickEvent: function bindClickEvent(button, index) {
@@ -90,7 +89,9 @@ cc.Class({
   //按钮点击回调
   onConfirBtn: function onConfirBtn(e, map_int) {
     //session设置战斗请求id
-    cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
+    cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); //销毁动态合图
+
+    cc.dynamicAtlasManager.reset();
     httpRequest.playGame('战斗场景', 1); // console.log(info)
     // var HttpHelper = require("../http"); 
     // var httpRequest = new HttpHelper();

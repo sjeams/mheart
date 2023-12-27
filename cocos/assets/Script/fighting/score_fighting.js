@@ -80,9 +80,6 @@ cc.Class({
         //     this.opt_item_set.push(item);
         // }
       // httpRequest.playGameLoading()
-      //动态合图
-      cc.macro.CLEANUP_IMAGE_CACHE = false;
-      cc.dynamicAtlasManager.enabled = true;
       // cc.dynamicAtlasManager.showDebug(true);
       this.spawnTools()
         // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
@@ -235,9 +232,13 @@ cc.Class({
         })
     },
     back_map(){
+      //销毁动态合图
+      cc.dynamicAtlasManager.reset()
       cc.director.loadScene('map/诸天地图');
     },
     back_home(){
+      //销毁动态合图
+      cc.dynamicAtlasManager.reset()
       cc.director.loadScene('大厅');
     },
     addTouchEvent(node_1) {

@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "技能框",
+    "name": "1技能框",
     "texture": "59c4a857-2dd7-44b7-b0d6-63e4b252dadb",
     "atlas": "",
     "rect": [

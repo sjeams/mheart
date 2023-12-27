@@ -7,8 +7,8 @@
     "data": {
       "__id__": 1
     },
-    "optimizationPolicy": 0,
-    "asyncLoadAssets": false,
+    "optimizationPolicy": 2,
+    "asyncLoadAssets": true,
     "readonly": false
   },
   {
@@ -206,9 +206,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "8d2837a6-ecc6-44c7-a816-ffe557eea0e7"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -315,9 +313,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "8d2837a6-ecc6-44c7-a816-ffe557eea0e7"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -538,9 +534,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "8d2837a6-ecc6-44c7-a816-ffe557eea0e7"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -778,9 +772,7 @@
     "_fillStart": 1,
     "_fillRange": -1,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "8d2837a6-ecc6-44c7-a816-ffe557eea0e7"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -904,9 +896,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "8d2837a6-ecc6-44c7-a816-ffe557eea0e7"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {

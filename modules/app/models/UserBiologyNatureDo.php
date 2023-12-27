@@ -927,7 +927,11 @@ class UserBiologyNatureDo extends ActiveRecord
             );
         }
         unset($hurt_go_list['attack_biology_do']); //去掉伤害结果生物
-        $hurt_go_list['hurt_go_value'] =$attack_biology_do[$hurt_go_list['extend']]; //只保留伤害结果数值
+        if(isset($attack_biology_do[$hurt_go_list['extend']])){
+            $hurt_go_list['hurt_go_value'] =$attack_biology_do[$hurt_go_list['extend']]; //只保留伤害结果数值
+        }else{
+            $hurt_go_list['hurt_go_value'] = 0; //特殊字段不做伤害处理,如召唤。三围
+        }
         // var_dump($attack_biology_do);
         // var_dump($hurt_go_list);
         return $hurt_go_list;

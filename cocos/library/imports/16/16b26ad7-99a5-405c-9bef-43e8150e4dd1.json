@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "标准弹窗",
+    "name": "9标准弹窗",
     "texture": "57043434-c331-44d9-b43b-1d84ffc43f94",
     "atlas": "",
     "rect": [
-      4,
-      4,
-      590,
-      390
+      2,
+      2,
+      298,
+      197
     ],
     "offset": [
-      -1,
+      -0.5,
       -0.5
     ],
     "originalSize": [
-      600,
-      397
+      303,
+      200
     ],
     "capInsets": [
       0,

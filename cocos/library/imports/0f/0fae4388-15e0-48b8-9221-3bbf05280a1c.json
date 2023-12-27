@@ -171,7 +171,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+    },
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -183,7 +185,9 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": null,
+    "_atlas": {
+      "__uuid__": "2bcf1a05-c864-4043-bc42-b65e468d8eb3"
+    },
     "_id": ""
   },
   {
@@ -225,7 +229,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 40
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -288,9 +292,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -332,7 +336,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 30
+      "height": 37.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -395,9 +399,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -439,7 +443,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 30
+      "height": 37.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -502,9 +506,9 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
-    "_N$cacheMode": 2,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -640,7 +644,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "16b26ad7-99a5-405c-9bef-43e8150e4dd1"
+    },
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -652,7 +658,9 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": null,
+    "_atlas": {
+      "__uuid__": "2bcf1a05-c864-4043-bc42-b65e468d8eb3"
+    },
     "_id": ""
   },
   {

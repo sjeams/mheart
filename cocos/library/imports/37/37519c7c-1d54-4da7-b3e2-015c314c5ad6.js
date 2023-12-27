@@ -18,6 +18,8 @@ var HttpHelper = cc.Class({
     // 关闭调试
     // cc.dynamicAtlasManager.showDebug(false);
     // 从服务器加载mp3来进行播放
+    //动态合图
+    this.image_cache();
     this.current = cc.audioEngine.play(res.url, false, 1);
   },
 
@@ -211,6 +213,11 @@ var HttpHelper = cc.Class({
         }
       });
     }
+  },
+  image_cache: function image_cache() {
+    //动态合图
+    cc.macro.CLEANUP_IMAGE_CACHE = false;
+    cc.dynamicAtlasManager.enabled = true;
   }
 });
 httpRequest = new HttpHelper(); // window.HttpHelper = new HttpHelper();
