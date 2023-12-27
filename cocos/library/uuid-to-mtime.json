@@ -1125,8 +1125,8 @@
     "relativePath": "resources\\biology_pic\\2阴影.png"
   },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1703648243263,
-    "meta": 1703648243277,
+    "asset": 1703660129164,
+    "meta": 1703660129177,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
   "e0acc0b7-ee4a-4413-b4ea-990fbbb2abb0": {
@@ -1255,8 +1255,8 @@
     "relativePath": "Script\\scence\\mapTools.js"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1703656464406,
-    "meta": 1703656464434,
+    "asset": 1703660239149,
+    "meta": 1703660239163,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
@@ -1284,19 +1284,19 @@
     "meta": 1703657899569,
     "relativePath": "resources\\server_pic\\骰子.png"
   },
-  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1703659726568,
-    "meta": 1703659726592,
-    "relativePath": "Scene\\home\\诸天万界.fire"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1703658910523,
-    "meta": 1703658924660,
-    "relativePath": "Script\\scence\\word_score.js"
-  },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
     "asset": 1703659577744,
     "meta": 1703659583064,
     "relativePath": "Script\\scence\\wordTools.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1703659951297,
+    "meta": 1703659954905,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
+    "asset": 1703659956828,
+    "meta": 1703659985961,
+    "relativePath": "Scene\\home\\诸天万界.fire"
   }
 }

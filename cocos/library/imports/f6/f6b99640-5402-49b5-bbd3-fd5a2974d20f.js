@@ -82,8 +82,9 @@ cc.Class({
     httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
       //  console.log(data);
       // console.log(_this.content)
-      if (data.data) {//跳转到世界
-        // httpRequest.playGame('map/诸天地图');
+      if (data.data) {
+        //跳转到世界
+        httpRequest.playGame('map/诸天地图');
       } else {
         //生成世界
         // let cellWidth = _this.content.width * 0.2;
@@ -110,8 +111,8 @@ cc.Class({
       // 根据MapTools生成相应的道具
       // _this.toolsArray = [];
       var TOOLS = data.data;
-      var total = data.data.length;
-      console.log(TOOLS); // var fi = cc.fadeIn(2)//渐显效果
+      var total = data.data.length; // console.log(TOOLS) 
+      // var fi = cc.fadeIn(2)//渐显效果
       // _this.content.runAction(fi);
       // var fo = cc.fadeOut(1)//渐隐效果
       // _this.content.runAction(fo);

@@ -109,7 +109,7 @@
     "_prefab": {
       "__id__": 4
     },
-    "_opacity": 140,
+    "_opacity": 180,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -120,7 +120,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 180,
-      "height": 180
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -334,7 +334,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 160,
-      "height": 25.2
+      "height": 27.72
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -386,8 +386,8 @@
     "_useOriginalSize": false,
     "_string": "李逍遥",
     "_N$string": "李逍遥",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_fontSize": 22,
+    "_lineHeight": 22,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
