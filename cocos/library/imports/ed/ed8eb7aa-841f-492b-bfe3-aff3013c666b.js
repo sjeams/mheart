@@ -44,6 +44,7 @@ cc.Class({
     // },
     // 根据TOOLS生成相应的道具
     toolsArray: [],
+    fightingArray: [],
     content: cc.Node,
     person: cc.Prefab,
     home: cc.Node,
@@ -60,6 +61,7 @@ cc.Class({
       type: cc.PageView
     }
   },
+  init: function init() {},
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
     // for (let i = 0; i < 10; i++) {
@@ -82,8 +84,20 @@ cc.Class({
     // }
     // httpRequest.playGameLoading()
     // cc.dynamicAtlasManager.showDebug(true);
-    this.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
+    // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
     // fighting_history
+    this.spawnTools();
+  },
+  start: function start() {
+    var _this = this;
+
+    var fighting_list = this.fightingArray;
+    console.log(fighting_list);
+
+    for (var boat = 0; boat < fighting_list.fighting_history.length; boat++) {
+      _this.fighting_history(fighting_list[0].fighting_history[boat].fighting_history); //执行战斗顺序
+
+    }
   },
   spawnTools: function spawnTools() {
     var _this = this;
@@ -97,10 +111,10 @@ cc.Class({
       cc.loader.load({
         url: remoteUrl
       }, function (err, data) {
-        console.log(data); // _this.addWordMap(results) //生成生物
+        // console.log(data) 
+        // _this.addWordMap(results) //生成生物
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         //移除节点
-
         _this.content.removeAllChildren();
 
         _this.content.destroyAllChildren(); // 初始化阵容
@@ -115,10 +129,7 @@ cc.Class({
         _this.addMapPic(data); //生成地图
 
 
-        for (var boat = 0; boat < data.data.fighting_history.length; boat++) {
-          _this.fighting_history(data.data.fighting_history[boat].fighting_history); //执行战斗顺序
-
-        }
+        _this.fightingArray = new array(data.data);
       });
     }
   },
@@ -173,7 +184,7 @@ cc.Class({
     var this_node = this.toolsArray[0];
 
     for (var i = 0; i < fighting.length; i++) {
-      var action = cc.speed(cc.sequence(cc.moveTo(1, 400, 200), cc.moveTo(1, this_node.y, this_node.x)), 1); // let action = cc.moveTo(1, 100, 100)
+      var action = cc.speed(cc.sequence(cc.moveTo(1, 400, 200), cc.moveTo(1, this_node.y, this_node.x)), 5); // let action = cc.moveTo(1, 100, 100)
       // cc.jumpTo(3, 200, 200, 50, 5)
       // 执行动作，所有的动作都需要一个目标通过 runAction 去执行它
 

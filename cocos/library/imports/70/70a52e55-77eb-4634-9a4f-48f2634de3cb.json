@@ -94,7 +94,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_pic",
+    "_name": "背景",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -201,7 +201,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_picture",
+    "_name": "生物",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -308,7 +308,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_name",
+    "_name": "名称",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -415,7 +415,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_type",
+    "_name": "等级",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -522,7 +522,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_star",
+    "_name": "星级",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

@@ -35,7 +35,7 @@ cc.Class({
       }, function (err, texture) {
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         if (texture != null) {
-          _self.node.getChildByName('server_picture').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         }
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];
@@ -63,11 +63,11 @@ cc.Class({
       star += '⭐';
     }
 
-    this.node.getChildByName('server_name').getComponent(cc.Label).string = info['name'] + '(' + total + ')';
-    this.node.getChildByName('server_name').color = new cc.color(type_color);
-    this.node.getChildByName('server_type').getComponent(cc.Label).string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
-    this.node.getChildByName('server_type').color = new cc.color(type_color);
-    this.node.getChildByName('server_star').getComponent(cc.Label).string = star; //创建一个新button 并将其挂载到创建的精灵下
+    this.node.getChildByName('名称').getComponent(cc.Label).string = info['name'] + '(' + total + ')';
+    this.node.getChildByName('名称').color = new cc.color(type_color);
+    this.node.getChildByName('等级').getComponent(cc.Label).string = 'Lv.' + info['grade'] + '(' + info['state_name']['name'] + ')';
+    this.node.getChildByName('等级').color = new cc.color(type_color);
+    this.node.getChildByName('星级').getComponent(cc.Label).string = star; //创建一个新button 并将其挂载到创建的精灵下
 
     this.bindClickEvent(this.node.getComponent(cc.Button), info_list.map_int);
   },
