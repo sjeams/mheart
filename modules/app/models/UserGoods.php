@@ -132,7 +132,7 @@ class UserGoods extends ActiveRecord
             }
         }
         $goods = (new \yii\db\Query())
-        ->select("a.name,a.*")
+        ->select("a.id,a.name,a.point,a.describe,a.sellout,a.percenttype")
         ->from("x2_goods AS a")
         ->where(['a.id' =>$good_id] ) 
         ->orderBy("rand()")

@@ -436,18 +436,18 @@ class UserBiologyNatureDo extends ActiveRecord
 
     // 战斗伤害顺序
     public function getFighHurt(){
-        $this->attack_bout=0;
+        $this->attack_bout=-1; //重新定义，每次加1 从0开始
         foreach($this->merge_biology_extend as $attack_biology){
             $attack_biology = $this->merge_biology_extend[$attack_biology['id']];//容器是变动的，这里要重新赋值
             //阵亡跳过回合
             if($attack_biology['shengMing']>0){
                 $this->attack_bout+=1;//前端需要索引排序
                 //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['need']=[];//技能--消耗（耗蓝）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['go']=[];//技能--增幅（被动
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['do']=[];//技能--主动（攻击）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['putong']=[];//普通攻击
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout-1]['back']=[];//技能 被动（反击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['need']=[];//技能--消耗（耗蓝）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['go']=[];//技能--增幅（被动
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['do']=[];//技能--主动（攻击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['putong']=[];//普通攻击
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['back']=[];//技能 被动（反击）
                 // 攻击位置计算
                 $this->attackPosition($attack_biology); //主动攻击
             }
@@ -940,6 +940,14 @@ class UserBiologyNatureDo extends ActiveRecord
 
     //战斗结果 $is_go 0发起攻击  1发起消耗
     public function getTips($hurt_go_list){   
+        $UserWords= new UserWords();
+        if($hurt_go_list['position_my']==POSITION_MY){
+            $position_int =$UserWords->getFightingPosition(POSITION_MY,$this->my_biology_extend['position'],$hurt_go_list['doid']);//返回坐标己方,初始英雄
+        }else if($hurt_go_list['position_my']==POSITION_ENEMY){
+            $position_int =$UserWords->getFightingPosition(POSITION_ENEMY,$this->do_biology_extend['position'],$hurt_go_list['doid']);//返回坐标敌方
+        }
+        $hurt_go_list['int_x'] =$position_int['x'];//攻击的坐标x
+        $hurt_go_list['int_y'] =$position_int['y'];//攻击的坐标y
         $hurt_go_list['descript_go']='';//消耗
         $hurt_go_list['descript_do']='';//伤害
         $doid = $hurt_go_list['doid'];//伤害类型

@@ -157,8 +157,8 @@ class UserWords extends ActiveRecord
         // var_dump($map);die;
         return $map;
     }
-    //获取坐标
-    public  function getFightingPosition($myint=POSITION_MY,$biology){
+    //获取坐标 $doid 0  坐标列表， 有值 ，返回生物id 的坐标
+    public  function getFightingPosition($myint=POSITION_MY,$biology,$doid=0){
         if($myint==POSITION_MY){
             //自己位置
             $postition=$this->getFightingMap(0);
@@ -171,14 +171,24 @@ class UserWords extends ActiveRecord
             $new_biology = $biology[$k];
             if(!empty($biology[$k])){
                 unset($new_biology['biology_start_extend']);
+                $postition[$k]['id']=$new_biology['id'];
+            }else{
+                 $postition[$k]['id']=0;
             }
             $postition[$k]['biology']=$new_biology;
         }
-        //三个函数都可以重置函数0
+        //三个函数都可以重置函数0---坐标列表
         $postition= array_merge($postition); // 前端只能0开始
         // array_column($postition,null);
         // array_merge($b)
         // array_splice($b,0,$count,true)
+        //生物id 坐标计算--获取生物坐标
+        if($doid){
+            // var_dump( $postition);
+            $position_int = array_column($postition,'id');
+            $postition =$postition[array_search($doid,$position_int)];
+            unset($postition['biology']);
+        }
         return $postition;
     }
 
