@@ -941,6 +941,7 @@ class Method
 
     //战斗数据
     public static function fightingJson($jsonArray,$name){
+        $name = time().'_'.$name;
         $mkdir_path = '/app_resources/fighting/history';
         $file_path = $_SERVER['DOCUMENT_ROOT'].$mkdir_path;
         // 生成目录

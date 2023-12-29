@@ -160,7 +160,9 @@ cc.Class({
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {
-      _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+      if (texture != null) {
+        _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+      }
     });
   },
   //生成生物
@@ -303,7 +305,7 @@ cc.Class({
   back_map: function back_map() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    cc.director.loadScene('map/诸天地图');
+    httpRequest.playGame('map/诸天地图');
   },
   back_home: function back_home() {
     //销毁动态合图

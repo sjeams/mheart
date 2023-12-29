@@ -90,7 +90,9 @@ cc.Class({
         }
         var remoteUrl = httpRequest.httpUrl(map_pic);
           cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+            if(texture!=null){
               _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+            }
         });
     },
     reloadWord(){

@@ -141,42 +141,51 @@ const HttpHelper = cc.Class({
                 cc.find('Canvas').addChild(TipBoxPrefab);
                 //请求战斗记录
                 if(_task==1){
-                    _this.fightint();
+                    console.log(11111)
+                    _this.fightint(sence);
+                }else{
+                    _this.progress(sence);
                 }
-                //预加载场景并获得加载进度
-                cc.director.preloadScene(sence,function (completeCount, totalCount,item) {
-                    var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar);
-                    // console.log(item)
-                    // console.log(completeCount)
-                    // console.log(totalCount)
-                    //加载进度回调
-                    // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
-                    // console.log('加载场景资源');
-                    progressBar.progress = completeCount / totalCount;
-                    // console.log(progressBar.progress)
-                    progressBar.completeCount = completeCount;
-                    progressBar.totalCount = totalCount;
-                    resource = item;
-                    // // 代码里面获取cc.Label组件, 修改文本内容
-                    // //在代码里面获取cc.Label组件
-                    var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
-                    sys_label.string = parseInt( progressBar.progress * 100) + '%';
-                    // if( this.resource.type=='mp3'){
-                    //     // console.log(res);  // mp3
-                    //     // this.audio.clip = res;
-                    //     // this.audio.play();
-                    //     // 从服务器加载mp3来进行播放
-                    //     this.current = cc.audioEngine.play(res.url, false, 1);
-                    // }
-                }, function (){
-                    // progressBar.hide();
-                    //加载场景
-                    cc.director.loadScene(sence, function () {  });
-                })
+
             });
         },
+
+        progress(sence){
+            //预加载场景并获得加载进度
+            cc.director.preloadScene(sence,function (completeCount, totalCount,item) {
+                var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar);
+                // console.log(item)
+                // console.log(completeCount)
+                // console.log(totalCount)
+                //加载进度回调
+                // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
+                // console.log('加载场景资源');
+                progressBar.progress = completeCount / totalCount;
+                // console.log(progressBar.progress)
+                progressBar.completeCount = completeCount;
+                progressBar.totalCount = totalCount;
+                resource = item;
+                // // 代码里面获取cc.Label组件, 修改文本内容
+                // //在代码里面获取cc.Label组件
+                var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
+                sys_label.string = parseInt( progressBar.progress * 100) + '%';
+                // if( this.resource.type=='mp3'){
+                //     // console.log(res);  // mp3
+                //     // this.audio.clip = res;
+                //     // this.audio.play();
+                //     // 从服务器加载mp3来进行播放
+                //     this.current = cc.audioEngine.play(res.url, false, 1);
+                // }
+            }, function (){
+                // progressBar.hide();
+                //加载场景
+                cc.director.loadScene(sence, function () {  
+                        // spawnTools();
+                });
+            })
+        },
         //请求战斗--写入文本记录
-        fightint(){
+        fightint(sence){
             var _this =this;
             var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据--临时地图id
             var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据--玩家对战id
@@ -190,6 +199,15 @@ const HttpHelper = cc.Class({
                     //战斗历史路径
                     if(data.code==1){
                         cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
+                        for (let i=0; i<data.data.img_list; i++) {
+                            var remoteUrl = httpRequest.httpUrl(img_list[i]);
+                            cc.resources.preload(remoteUrl, cc.SpriteFrame);
+                        }
+                        // // console.log(remoteUrl)
+                        // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+                        //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                        // });
+                        _this.progress(sence)
                     }else{
                         // cc.director.loadScene('大厅');  
                         callback(JSON.parse(data));  // json 转数组

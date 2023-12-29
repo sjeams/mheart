@@ -7,7 +7,7 @@
     "scene": {
       "__id__": 1
     },
-    "asyncLoadAssets": true
+    "asyncLoadAssets": false
   },
   {
     "__type__": "cc.Scene",
@@ -1295,11 +1295,11 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 19
+      "__id__": 6
     },
     "component": "",
-    "_componentId": "cc.Button",
-    "handler": "",
+    "_componentId": "ed8ebeqhB9JK7/jr/MBPGZr",
+    "handler": "back_map",
     "customEventData": ""
   },
   {

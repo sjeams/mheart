@@ -97,7 +97,9 @@ cc.Class({
     cc.loader.load({
       url: remoteUrl
     }, function (err, texture) {
-      _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+      if (texture != null) {
+        _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+      }
     });
   },
   reloadWord: function reloadWord() {

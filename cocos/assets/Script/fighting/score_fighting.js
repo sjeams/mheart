@@ -147,7 +147,9 @@ cc.Class({
         var remoteUrl = httpRequest.httpUrl(map_pic);
         // console.log(remoteUrl)
         cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+          if(texture!=null){
           _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          }
         });
     },
     //生成生物
@@ -216,11 +218,6 @@ cc.Class({
 
       var act = cc.sequence(arr);
       _this_hero_node.runAction(act)
- 
- 
-
-
-
       console.log(_this_hero_node)
       // for (let i=0; i<fighting.length; i++) {
         // let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
@@ -301,7 +298,7 @@ cc.Class({
     back_map(){
       //销毁动态合图
       cc.dynamicAtlasManager.reset()
-      cc.director.loadScene('map/诸天地图');
+      httpRequest.playGame('map/诸天地图');
     },
     back_home(){
       //销毁动态合图

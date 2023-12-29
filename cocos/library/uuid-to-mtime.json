@@ -1229,21 +1229,6 @@
     "meta": 1703815629486,
     "relativePath": "resources\\biology_pic\\9标准弹窗.png"
   },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1703727521659,
-    "meta": 1703815629961,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1703657285407,
-    "meta": 1703815630112,
-    "relativePath": "Script\\http.js"
-  },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1703657475127,
-    "meta": 1703815630614,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
   "78b1e8ef-6b1e-4322-aa8b-0085dacbc3ae": {
     "asset": 1703657746599,
     "meta": 1703815629476,
@@ -1269,14 +1254,9 @@
     "meta": 1703815629634,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1703668517812,
-    "meta": 1703815630649,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1703668584465,
-    "meta": 1703815629309,
+    "asset": 1703821957366,
+    "meta": 1703821957389,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
@@ -1290,13 +1270,33 @@
     "relativePath": "prefabs\\biology_普通.prefab"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1703818924162,
-    "meta": 1703818924174,
+    "asset": 1703828152577,
+    "meta": 1703828860779,
     "relativePath": "Scene\\战斗场景.fire"
   },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1703828258666,
+    "meta": 1703828393727,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1703828325260,
+    "meta": 1703828393772,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1703830201685,
+    "meta": 1703830201697,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1703830143604,
+    "meta": 1703830144410,
+    "relativePath": "Script\\http.js"
+  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1703818934175,
-    "meta": 1703818935480,
+    "asset": 1703830198577,
+    "meta": 1703830200628,
     "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }
