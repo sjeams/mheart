@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        199.1858428704209,
+        200.04694573807654,
         0,
         0,
         0,
@@ -510,6 +510,7 @@
       "__id__": 6
     },
     "_enabled": true,
+    "int_num": 0,
     "toolsArray": [],
     "fightingArray": [],
     "content": {

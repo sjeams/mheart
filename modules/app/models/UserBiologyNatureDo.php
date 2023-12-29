@@ -264,7 +264,6 @@ class UserBiologyNatureDo extends ActiveRecord
             'biolgy_state'=>$biolgy_state,
             'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".jpg",//随机地图
         ];
-   
     }
     //重置容器
     public function getBiologyRelode(){

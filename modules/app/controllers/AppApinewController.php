@@ -119,6 +119,12 @@ class AppApinewController extends ApiUserControl{
             // 修改地图状态
             $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
+        //生物和场景图片预处理
+        $img_list = array_merge($data['poition_enemy'],$data['poition_my']);
+        $img_list = array_column($img_list,'biology');
+        $img_list = array_column(array_filter($img_list),'picture');
+        $img_list =  array_merge(array($data['map_pic']),$img_list);
+        $data['img_list'] =$img_list;
         // var_dump($data['fighting_history'][1]['fighting_history'][0]['need']);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]);die; 
@@ -136,7 +142,7 @@ class AppApinewController extends ApiUserControl{
         //战斗序号
         $sn_id = Method::fightingJson($data,$this->userid);//唯一记录，不然占内存
         // $user_in_word =  $UserWords->getUserWord();//返回正在经行的世界
-        die(Method::jsonApp(1,['sid'=>$sn_id],'succes'));  
+        die(Method::jsonApp(1,['sid'=>$sn_id,'img_list'=>$img_list],'succes'));  
         // die(Method::jsonApp(1,$data,'succes')); 
     }
 

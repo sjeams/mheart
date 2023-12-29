@@ -43,6 +43,7 @@ cc.Class({
     //   type: cc.Prefab
     // },
     // 根据TOOLS生成相应的道具
+    int_num: 0,
     toolsArray: [],
     fightingArray: [],
     content: cc.Node,
@@ -87,6 +88,7 @@ cc.Class({
     // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
     // fighting_history
     this.spawnTools();
+    this.home.opacity = 0;
   },
   start: function start() {// console.log(this.toolsArray[0])
     // var _this =this;
@@ -131,15 +133,19 @@ cc.Class({
         // var fighting_list = JSON.parse(fighting_list);
 
 
-        var fighting_list = data.data;
-        var poition_my = fighting_list.poition_my;
-        var poition_enemy = fighting_list.poition_enemy;
+        console.log(_this.int_num);
 
-        for (var boat = 0; boat < fighting_list.fighting_history.length; boat++) {
-          var history = fighting_list.fighting_history[boat].fighting_history;
+        if (_this.int_num == 18) {
+          _this.home.opacity = 255;
+          var fighting_list = data.data; // var poition_my =fighting_list.poition_my
+          // var poition_enemy =fighting_list.poition_enemy
 
-          _this.fighting_history(history, poition_my, poition_enemy); //执行战斗顺序
+          for (var boat = 0; boat < fighting_list.fighting_history.length; boat++) {
+            var history = fighting_list.fighting_history[boat].fighting_history;
 
+            _this.fighting_history(history); //执行战斗顺序
+
+          }
         }
       });
     }
@@ -166,11 +172,16 @@ cc.Class({
     // _this.content.runAction(fi);
     // var fo = cc.fadeOut(1)//渐隐效果
     // _this.content.runAction(fo);
+    //先让透明度为0
+    // _this.content.opacity = 0;
+    // var fin = cc.fadeIn(5);
+    // _this.content.runAction(fin);
     // let  tool = cc.instantiate(_this.person);
     //添加节点
 
     for (var i = 0; i < total; i++) {
-      //死亡移除map_status
+      _this.int_num += 1; //死亡移除map_status
+
       var map = TOOLS[i]; // console.log(map) 
 
       if (map.biology.length != 0) {
@@ -190,19 +201,40 @@ cc.Class({
       }
     }
   },
-  fighting_history: function fighting_history(fighting) {
-    console.log(fighting);
+  fighting_history: function fighting_history(history) {
+    var arr = [];
+    console.log(history); // var _this = this;
 
-    var _this = this;
+    var _this_hero_node = this.toolsArray[0];
+    var _targ_hero_node = this.toolsArray[1]; //切换成冲刺动画，并移动到目标跟前  
 
-    var this_node = this.toolsArray[0];
-    console.log(this_node); // for (let i=0; i<fighting.length; i++) {
+    arr.push(cc.spawn(cc.moveTo(0.3, _targ_hero_node.position), cc.callFunc(function () {
+      // _this_hero_node.playAnim('/biology_pic/3关闭');
+      _targ_hero_node.scale = 1;
+      arr.push(cc.scaleBy(1, 2));
+    }, this))); //播放攻击动画
 
-    var action = cc.speed(cc.sequence(cc.moveTo(5, 400, 200), cc.moveTo(5, this_node.x, this_node.y)), 10); // let action = cc.moveTo(1, 100, 100)
+    arr.push(cc.callFunc(function () {// this.hero.playAnim(animName);
+    }, this)); // var animInfo = AnimConfig.getRoleInfo(this.hero.roleId)[animName];
+    // var playTime = animInfo.frames / animInfo.fps;
+    //等待攻击完成
+
+    arr.push(cc.delayTime(0.5 + 2)); //移回原来位置
+
+    arr.push(cc.moveTo(0.1, _this_hero_node.position));
+    arr.push(cc.callFunc(function () {// this._isSpelling = false;
+    }, this));
+    var act = cc.sequence(arr);
+
+    _this_hero_node.runAction(act);
+
+    console.log(_this_hero_node); // for (let i=0; i<fighting.length; i++) {
+    // let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
+    // let action = cc.moveTo(1, 100, 100)
     // cc.jumpTo(3, 200, 200, 50, 5)
     // 执行动作，所有的动作都需要一个目标通过 runAction 去执行它
-
-    this_node.runAction(action); // }
+    // this_node.runAction(action)
+    // }
     //   // 删除所有道具(或者不删，只是隐藏，自己决定)
     //   for (let i=0; i<total; i++) {
     //   this.toolsArray.forEach(element => {
