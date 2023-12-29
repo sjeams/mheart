@@ -235,6 +235,7 @@ var HttpHelper = cc.Class({
     //动态合图
     cc.macro.CLEANUP_IMAGE_CACHE = false;
     cc.dynamicAtlasManager.enabled = true;
+    cc.dynamicAtlasManager.maxFrameSize = 2048;
   }
 });
 httpRequest = new HttpHelper(); // window.HttpHelper = new HttpHelper();

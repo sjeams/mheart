@@ -8,7 +8,7 @@
       "__id__": 1
     },
     "optimizationPolicy": 2,
-    "asyncLoadAssets": true,
+    "asyncLoadAssets": false,
     "readonly": false
   },
   {

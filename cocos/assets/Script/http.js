@@ -216,9 +216,10 @@ const HttpHelper = cc.Class({
             }
         },
         image_cache(){
-                //动态合图
-                cc.macro.CLEANUP_IMAGE_CACHE = false;
-                cc.dynamicAtlasManager.enabled = true;
+            //动态合图
+            cc.macro.CLEANUP_IMAGE_CACHE = false;
+            cc.dynamicAtlasManager.enabled = true;
+            cc.dynamicAtlasManager.maxFrameSize = 2048;
         }
 });
 httpRequest = new HttpHelper();

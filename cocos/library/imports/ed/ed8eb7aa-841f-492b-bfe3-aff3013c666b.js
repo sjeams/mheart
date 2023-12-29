@@ -43,7 +43,6 @@ cc.Class({
     //   type: cc.Prefab
     // },
     // 根据TOOLS生成相应的道具
-    int_num: 0,
     toolsArray: [],
     fightingArray: [],
     content: cc.Node,
@@ -62,7 +61,9 @@ cc.Class({
       type: cc.PageView
     }
   },
-  init: function init() {},
+  init: function init() {
+    cc.director.getScene(); //获取当前场景
+  },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
     // for (let i = 0; i < 10; i++) {
@@ -88,7 +89,6 @@ cc.Class({
     // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
     // fighting_history
     this.spawnTools();
-    this.home.opacity = 0;
   },
   start: function start() {// console.log(this.toolsArray[0])
     // var _this =this;
@@ -97,6 +97,8 @@ cc.Class({
     // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
     //     _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序
     // }
+  },
+  update: function update(dt) {// console.log(3333)
   },
   spawnTools: function spawnTools() {
     var _this = this;
@@ -110,13 +112,19 @@ cc.Class({
       cc.loader.load({
         url: remoteUrl
       }, function (err, data) {
-        console.log(data); // _this.addWordMap(results) //生成生物
+        // console.log(data) 
+        // _this.addWordMap(results) //生成生物
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         //移除节点
-
         _this.content.removeAllChildren();
 
-        _this.content.destroyAllChildren(); // 初始化阵容
+        _this.content.destroyAllChildren(); //先让透明度为0
+
+
+        _this.content.opacity = 0;
+        var fin = cc.fadeIn(2);
+
+        _this.content.runAction(fin); // 初始化阵容
 
 
         _this.init_postion(data.data.poition_my, data.data.biolgy_state, -50, 1); //生成生物--position_my
@@ -133,20 +141,20 @@ cc.Class({
         // var fighting_list = JSON.parse(fighting_list);
 
 
-        console.log(_this.int_num);
+        var fighting_list = data.data;
 
-        if (_this.int_num == 18) {
-          _this.home.opacity = 255;
-          var fighting_list = data.data; // var poition_my =fighting_list.poition_my
-          // var poition_enemy =fighting_list.poition_enemy
-
+        _this.schedule(function () {
+          //一条或多条执行语句
           for (var boat = 0; boat < fighting_list.fighting_history.length; boat++) {
             var history = fighting_list.fighting_history[boat].fighting_history;
 
             _this.fighting_history(history); //执行战斗顺序
 
           }
-        }
+        }, 3, 1, 2); //3秒后执行1次间隔2秒
+        // var poition_my =fighting_list.poition_my
+        // var poition_enemy =fighting_list.poition_enemy
+
       });
     }
   },
@@ -170,20 +178,10 @@ cc.Class({
     var _this = this;
 
     var TOOLS = postion;
-    var total = postion.length; // var fi = cc.fadeIn(2)//渐显效果
-    // _this.content.runAction(fi);
-    // var fo = cc.fadeOut(1)//渐隐效果
-    // _this.content.runAction(fo);
-    //先让透明度为0
-    // _this.content.opacity = 0;
-    // var fin = cc.fadeIn(5);
-    // _this.content.runAction(fin);
-    // let  tool = cc.instantiate(_this.person);
-    //添加节点
+    var total = postion.length; //添加节点
 
     for (var i = 0; i < total; i++) {
-      _this.int_num += 1; //死亡移除map_status
-
+      //死亡移除map_status
       var map = TOOLS[i]; // console.log(map) 
 
       if (map.biology.length != 0) {
@@ -205,32 +203,80 @@ cc.Class({
   },
   fighting_history: function fighting_history(history) {
     var arr = [];
-    console.log(history); // var _this = this;
 
-    var _this_hero_node = this.toolsArray[0];
-    var _targ_hero_node = this.toolsArray[1]; //切换成冲刺动画，并移动到目标跟前  
+    var _this = this; // console.log(_this_hero_node);
 
-    arr.push(cc.spawn(cc.moveTo(0.3, _targ_hero_node.position), cc.callFunc(function () {
-      // _this_hero_node.playAnim('/biology_pic/3关闭');
-      _targ_hero_node.scale = 1;
-      arr.push(cc.scaleBy(1, 2));
-    }, this))); //播放攻击动画
 
-    arr.push(cc.callFunc(function () {// this.hero.playAnim(animName);
-    }, this)); // var animInfo = AnimConfig.getRoleInfo(this.hero.roleId)[animName];
-    // var playTime = animInfo.frames / animInfo.fps;
-    //等待攻击完成
+    for (var i = 0; i < history.length; i++) {
+      if (i == 0) {
+        var his_log = history[i];
 
-    arr.push(cc.delayTime(0.5 + 2)); //移回原来位置
+        if (his_log.back.length != 0) {}
 
-    arr.push(cc.moveTo(0.1, _this_hero_node.position));
-    arr.push(cc.callFunc(function () {// this._isSpelling = false;
-    }, this));
-    var act = cc.sequence(arr);
+        if (his_log["do"].length != 0) {}
 
-    _this_hero_node.runAction(act);
+        if (his_log.go.length != 0) {}
 
-    console.log(_this_hero_node); // for (let i=0; i<fighting.length; i++) {
+        if (his_log.need.length != 0) {}
+
+        if (his_log.putong.length != 0) {
+          for (var n = 0; n < his_log.putong.length; n++) {
+            if (n == 0) {
+              var biology = his_log.putong[n];
+              var _this_hero_node = this.toolsArray[0];
+              var _targ_hero_node = _this.toolsArray[1];
+              console.log(biology.doid);
+              console.log(_targ_hero_node.x);
+              console.log(_targ_hero_node.y);
+              console.log(_targ_hero_node);
+              arr.push(cc.rotateTo(0.5, 5));
+              arr.push(cc.spawn(cc.moveTo(2, _targ_hero_node.x, _targ_hero_node.y), cc.callFunc(function () {
+                // _this_hero_node.playAnim('/biology_pic/3关闭');
+                _targ_hero_node.scale = 1;
+                arr.push(cc.scaleBy(1, 2));
+              }, this))); //等待攻击完成
+
+              arr.push(cc.delayTime(0.5 + 1)); //移回原来位置
+              // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
+
+              arr.push(cc.spawn(cc.moveTo(2, _this_hero_node.x, _this_hero_node.y), cc.callFunc(function () {
+                // _this_hero_node.playAnim('/biology_pic/3关闭');
+                _targ_hero_node.scale = 1;
+                arr.push(cc.scaleBy(1, 2));
+              }, this)));
+              arr.push(cc.rotateBy(0.5, -5));
+              var act = cc.sequence(arr);
+
+              _this_hero_node.runAction(act); // 停止一个动作
+              // _this_hero_node.stopAction(act);
+              // // 停止所有动作
+              // _this_hero_node.stopAllActions();
+
+            }
+          }
+        } // his_log.need.forEach(element => {
+        //   console.log(element)
+        // })
+
+      } //切换成冲刺动画，并移动到目标跟前  
+      // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
+      //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+      //   _targ_hero_node.scale = 1;
+      //   arr.push(cc.scaleBy(1,2));
+      // },this)) );
+      //播放攻击动画
+      // arr.push(cc.callFunc(function(){
+      //   // this.hero.playAnim(animName);
+      // },this));
+      // var animInfo = AnimConfig.getRoleInfo(this.hero.roleId)[animName];
+      // var playTime = animInfo.frames / animInfo.fps;
+      // arr.push(cc.callFunc(function(){
+      //     // this._isSpelling = false;
+      // },this));
+
+    } // console.log(arr);
+    // console.log(_this_hero_node)
+    // for (let i=0; i<fighting.length; i++) {
     // let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
     // let action = cc.moveTo(1, 100, 100)
     // cc.jumpTo(3, 200, 200, 50, 5)
@@ -258,6 +304,7 @@ cc.Class({
     //   //     // element.removeFromParent();
     //   });
     // }
+
   },
   bagBtn: function bagBtn() {
     // 背包按钮
