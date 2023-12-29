@@ -224,30 +224,33 @@ cc.Class({
             if (n == 0) {
               var biology = his_log.putong[n];
               var _this_hero_node = this.toolsArray[0];
-              var _targ_hero_node = _this.toolsArray[1];
-              console.log(biology.doid);
-              console.log(_targ_hero_node.x);
-              console.log(_targ_hero_node.y);
-              console.log(_targ_hero_node);
-              arr.push(cc.rotateTo(0.5, 5));
-              arr.push(cc.spawn(cc.moveTo(2, _targ_hero_node.x, _targ_hero_node.y), cc.callFunc(function () {
-                // _this_hero_node.playAnim('/biology_pic/3关闭');
-                _targ_hero_node.scale = 1;
-                arr.push(cc.scaleBy(1, 2));
-              }, this))); //等待攻击完成
+              var _targ_hero_node = _this.toolsArray[1]; // _this.buttonMove(_targ_hero_node,_targ_hero_node) //闪动
 
-              arr.push(cc.delayTime(0.5 + 1)); //移回原来位置
+              _this.buttonShake(_targ_hero_node); //闪动
+              // console.log(biology.doid) 
+              // console.log(_targ_hero_node.x) 
+              // console.log(_targ_hero_node.y) 
+              // console.log(_targ_hero_node) 
+              // arr.push(cc.rotateTo(0.5 ,5));
+              // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
+              // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
+              // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+              // //   _targ_hero_node.scale = 1;
+              // //   arr.push(cc.scaleBy(1,2));
+              // // },this)) );
+              // //等待攻击完成
+              // arr.push(cc.delayTime(0.5 + 1));
+              // //移回原来位置
               // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
-
-              arr.push(cc.spawn(cc.moveTo(2, _this_hero_node.x, _this_hero_node.y), cc.callFunc(function () {
-                // _this_hero_node.playAnim('/biology_pic/3关闭');
-                _targ_hero_node.scale = 1;
-                arr.push(cc.scaleBy(1, 2));
-              }, this)));
-              arr.push(cc.rotateBy(0.5, -5));
-              var act = cc.sequence(arr);
-
-              _this_hero_node.runAction(act); // 停止一个动作
+              // // arr.push(cc.spawn(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y),cc.callFunc(function(){
+              // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+              // //   _targ_hero_node.scale = 1;
+              // //   arr.push(cc.scaleBy(1,2));
+              // // },this)) );
+              // arr.push(cc.rotateBy(0.5 ,-5));
+              // var act = cc.sequence(arr);
+              // _this_hero_node.runAction(act)
+              // 停止一个动作
               // _this_hero_node.stopAction(act);
               // // 停止所有动作
               // _this_hero_node.stopAllActions();
@@ -305,6 +308,42 @@ cc.Class({
     //   });
     // }
 
+  },
+  buttonMove: function buttonMove(node, m_node) {
+    if (m_node.x >= node.x) {
+      var m_x = m_node.x - node.x;
+      var m_y = m_node.y - node.y;
+    } else {
+      var m_x = node.x - m_node.x;
+      var m_y = node.y - m_node.y;
+    }
+
+    console.log(m_x);
+    console.log(m_y);
+    var actionLeft = cc.moveBy(0.1, cc.v2(m_x, m_y));
+    var actionRight = cc.moveBy(0.1, cc.v2(m_x, m_y)); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
+    // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
+
+    return new Promise(function (resolve) {
+      node.runAction(cc.sequence(actionLeft, actionRight, // 执行动作完成之后调用的方法
+      cc.callFunc(function () {
+        cc.log(3333);
+        resolve();
+      })));
+    });
+  },
+  buttonShake: function buttonShake(node) {
+    var actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
+    var actionRight = cc.moveBy(0.1, cc.v2(10, 0));
+    var actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
+    var actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
+    return new Promise(function (resolve) {
+      node.runAction(cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond, // 执行动作完成之后调用的方法
+      cc.callFunc(function () {
+        cc.log(3333);
+        resolve();
+      })));
+    });
   },
   bagBtn: function bagBtn() {
     // 背包按钮

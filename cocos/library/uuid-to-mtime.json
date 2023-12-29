@@ -1289,14 +1289,14 @@
     "meta": 1703837192730,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1703842586811,
-    "meta": 1703842588489,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1703842590448,
-    "meta": 1703842590473,
+    "asset": 1703843475669,
+    "meta": 1703843475689,
     "relativePath": "Scene\\战斗场景.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1703843472232,
+    "meta": 1703843475064,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }
