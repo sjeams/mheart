@@ -66,28 +66,6 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    // for (let i = 0; i < 10; i++) {
-    //     let person = cc.instantiate(this.person);
-    //     this.conten=person
-    //     // person.parent = this.content;
-    //     // this.addTouchEvent(person);  //添加触摸事件
-    //   }
-    // this.value_set = [];
-    // // 如果你这里是排行榜，那么你就push排行榜的数据;
-    // for(var i = 1; i <= 100; i ++) {
-    //     this.value_set.push(i);
-    // }
-    // this.content = this.scroll_view.content;
-    // this.opt_item_set = [];
-    // for(var i = 0; i < this.PAGE_NUM * 3; i ++) {
-    //     var item = cc.instantiate(this.item_prefab);
-    //     this.content.addChild(item);
-    //     this.opt_item_set.push(item);
-    // }
-    // httpRequest.playGameLoading()
-    // cc.dynamicAtlasManager.showDebug(true);
-    // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
-    // fighting_history
     this.spawnTools();
   },
   start: function start() {// console.log(this.toolsArray[0])
@@ -127,18 +105,15 @@ cc.Class({
         _this.content.runAction(fin); // 初始化阵容
 
 
-        _this.init_postion(data.data.poition_my, data.data.biolgy_state, -50, 1); //生成生物--position_my
+        var star = 0; //阵容序号
+
+        var star = _this.init_postion(data.data.poition_my, data.data.biolgy_state, -0, 1, star); //生成生物--position_my
 
 
-        _this.init_postion(data.data.poition_enemy, data.data.biolgy_state, 50, 0); //生成生物--position_ememy
+        var star = _this.init_postion(data.data.poition_enemy, data.data.biolgy_state, 0, 0, star); //生成生物--position_ememy
 
 
         _this.addMapPic(data); //生成地图
-        // _this.fightingArray.push(data.data);
-        // cc.sys.localStorage.setItem("fightingArray", JSON.stringify(data.data));
-        // cc.sys.localStorage.setItem("toolsArray", JSON.stringify(_this.toolsArray));
-        // var fighting_list = cc.sys.localStorage.getItem("fightingArray");
-        // var fighting_list = JSON.parse(fighting_list);
 
 
         var fighting_list = data.data;
@@ -174,9 +149,10 @@ cc.Class({
     });
   },
   //生成生物
-  init_postion: function init_postion(postion, biolgy_state, int_px, is_my) {
+  init_postion: function init_postion(postion, biolgy_state, int_px, is_my, star) {
     var _this = this;
 
+    var TOOLS = [];
     var TOOLS = postion;
     var total = postion.length; //添加节点
 
@@ -185,11 +161,13 @@ cc.Class({
       var map = TOOLS[i]; // console.log(map) 
 
       if (map.biology.length != 0) {
+        star++;
         var tool = cc.instantiate(_this.person);
         tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state, is_my);
         tool.x = parseInt(map.x + int_px);
+        tool.getChildByName('阵法s').getComponent(cc.Label).string = star - 1;
         tool.y = map.y;
-        tool.biology_int = i; //阵法编号
+        tool.biology_int = star; //阵法编号
 
         tool.biology = map.biology.id;
         tool.biology_name = map.biology.name;
@@ -200,6 +178,8 @@ cc.Class({
         _this.content.addChild(tool);
       }
     }
+
+    return star;
   },
   fighting_history: function fighting_history(history) {
     var arr = [];
@@ -223,10 +203,18 @@ cc.Class({
           for (var n = 0; n < his_log.putong.length; n++) {
             if (n == 0) {
               var biology = his_log.putong[n];
-              var _this_hero_node = this.toolsArray[0];
-              var _targ_hero_node = _this.toolsArray[1]; // _this.buttonMove(_targ_hero_node,_targ_hero_node) //闪动
+              console.log(biology); // var _this_hero_node =_this.toolsArray[0];
+              // var _targ_hero_node  =_this.toolsArray[3];
 
-              _this.buttonShake(_targ_hero_node); //闪动
+              this.toolsArray.forEach(function (element) {
+                if (element.biology == biology.goid) {
+                  console.log(element); // var _this_hero_node =_this.toolsArray[0];
+                }
+              });
+
+              _this.buttonMove(_this_hero_node, _targ_hero_node); //移动
+              // _this.buttonShake(_targ_hero_node) //闪动
+              // _this.buttonShake(_targ_hero_node) //闪动
               // console.log(biology.doid) 
               // console.log(_targ_hero_node.x) 
               // console.log(_targ_hero_node.y) 
@@ -310,27 +298,82 @@ cc.Class({
 
   },
   buttonMove: function buttonMove(node, m_node) {
-    if (m_node.x >= node.x) {
+    var m_y = 10;
+    var m_y = 0;
+    var m_z = 0;
+
+    if (node.x > m_node.x) {
       var m_x = m_node.x - node.x;
-      var m_y = m_node.y - node.y;
-    } else {
-      var m_x = node.x - m_node.x;
-      var m_y = node.y - m_node.y;
+      m_z = +20;
+    } else if (node.x < m_node.x) {
+      var m_x = m_node.x - node.x;
+      m_z = -20;
     }
 
+    if (node.y > m_node.y) {
+      var m_y = m_node.y - node.y;
+    } else if (node.y < m_node.y) {
+      var m_y = m_node.y - node.y;
+    }
+
+    var m_x = m_x / 200 * (50 + m_z);
+    var m_y = m_y / 200 * 50; //节点坐标转到屏幕坐标
+    // var w_pos= node.convertToWorldSpace(cc.v2(0,0)); //图片左下角为原点 （480，270）（减去图片的一半）
+    // console.log(w_pos);
+    // var w_pos=cc.v2(480,320);
+    // var node_pos=this.node.convertToNodeSpace(w_pos);
+    // console.log(node_pos);
+    // var w_pos= node.convertToWorldSpaceAR(cc.v2(0,0));// 以图片锚点为原点
+    // console.log(node)
+    // var w_pos=cc.v2(node.x,node.y);
+    // var node_pos=this.node.convertToNodeSpaceAR(w_pos);
+    // console.log(node_pos);
+    // console.log(node)
+    //   console.log(m_node)
+    // var x_end = this.getDistance(node,m_node)
+    // var y_end = this.getAngle(node,m_node)
+    // var x_end = this.getDistance(node,m_node)
+
     console.log(m_x);
-    console.log(m_y);
-    var actionLeft = cc.moveBy(0.1, cc.v2(m_x, m_y));
-    var actionRight = cc.moveBy(0.1, cc.v2(m_x, m_y)); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
+    console.log(m_y); // var y_end = this.getAngle(node,m_node)
+    // var actionLeft = cc.moveBy(0.5, cc.v2(x_end,0))
+    //   var actionRight = cc.moveBy(0.5, cc.v2(-x_end,0))
+    // 让节点在向上移动的同时缩放
+    // const actionBig = cc.scaleTo(0.1, 1, 1.4)
+
+    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 0.8, 1.4));
+    var actionRight = cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 0.8, 1.4)); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
     // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
 
     return new Promise(function (resolve) {
       node.runAction(cc.sequence(actionLeft, actionRight, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
-        cc.log(3333);
+        // cc.log(3333);
         resolve();
       })));
     });
+  },
+  // 距离
+  getDistance: function getDistance(start, end) {
+    // var pos = cc.v2(start.x - end.x, start.y - end.y);
+    // var dis = Math.sqrt(pos.x*pos.x + pos.y*pos.y)/6;
+    pos1 = cc.v2(start.x, 0);
+    pos2 = cc.v2(end.x, 0);
+    var temp = pos1.sub(pos2);
+    var dis = Math.abs(temp.mag());
+    return dis;
+  },
+  // 角度
+  getAngle: function getAngle(start, end) {
+    //计算出朝向
+    var dx = end.x - start.x;
+    var dy = end.y - start.y;
+    var dir = cc.v2(dx, dy); //根据朝向计算出夹角弧度
+
+    var angle = dir.signAngle(cc.v2(1, 0)); //将弧度转换为欧拉角
+
+    var degree = angle / Math.PI * 180;
+    return -degree;
   },
   buttonShake: function buttonShake(node) {
     var actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));

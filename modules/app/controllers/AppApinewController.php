@@ -120,7 +120,7 @@ class AppApinewController extends ApiUserControl{
             $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
         //生物和场景图片预处理
-        $img_list = array_merge($data['poition_enemy'],$data['poition_my']);
+        $img_list = array_merge($data['poition_my'],$data['poition_enemy']);
         $img_list = array_column($img_list,'biology');
         $img_list = array_column(array_filter($img_list),'picture');
         $img_list =  array_merge(array($data['map_pic']),$img_list);
