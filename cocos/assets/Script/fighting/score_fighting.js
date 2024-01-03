@@ -38,6 +38,7 @@ cc.Class({
       //   type: cc.Prefab
       // },
       // 根据TOOLS生成相应的道具
+      
       toolsArray:[],
       fightingArray:[],   
       content: cc.Node,
@@ -104,18 +105,21 @@ cc.Class({
             var star = _this.init_postion(data.data.poition_my,data.data.biolgy_state,-0,1,star) //生成生物--position_my
             var star = _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,0,0,star) //生成生物--position_ememy
             _this.addMapPic(data) //生成地图
-
-              var fighting_list = data.data;
-
-              _this.schedule(function(){
+          // console.log( _this.toolsArray)
+          // const maps = new Map();
+         
+          // console.log( _this.fightingArray )
+              var fighting_list = data.data;       
                   //一条或多条执行语句
+                  _this.schedule(function(){
                   for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+                    cc.log(boat)   
                       var history =fighting_list.fighting_history[boat].fighting_history;
-                      _this.fighting_history(history)//执行战斗顺序
+                      _this.fighting_history(history)//执行战斗顺序                      
                   }
-                },3,1,2); //3秒后执行1次间隔2秒
-              // var poition_my =fighting_list.poition_my
-              // var poition_enemy =fighting_list.poition_enemy
+                  },5,0,10); //10秒后执行1次间隔5秒
+              // // var poition_my =fighting_list.poition_my
+              // // var poition_enemy =fighting_list.poition_enemy
         });    
       }
     },
@@ -137,6 +141,7 @@ cc.Class({
         var TOOLS =[];
         var TOOLS = postion;
         var total = postion.length;
+        const maps = new Map();
         //添加节点
         for (let i=0; i<total; i++) {    
             //死亡移除map_status
@@ -150,9 +155,12 @@ cc.Class({
               tool.getChildByName('阵法s').getComponent(cc.Label).string= star-1;
               tool.y=map.y
               tool.biology_int=star//阵法编号
+              tool.shengMing=map.biology.shengMing
+              tool.moFa=map.biology.moFa
               tool.biology=map.biology.id
               tool.biology_name=map.biology.name
               _this.toolsArray.push(tool);
+              _this.fightingArray[map.biology.id]=tool;
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool); 
             }
@@ -161,6 +169,7 @@ cc.Class({
     },
 
     fighting_history (history) {
+      cc.log(history)
       var  arr = [];
       var _this = this;
       // console.log(_this_hero_node);
@@ -181,21 +190,21 @@ cc.Class({
           }
           if(his_log.putong.length!=0){
             for (let n=0; n<his_log.putong.length; n++){
-              if(n==0){
               var biology = his_log.putong[n];
-              console.log(biology);
-              // var _this_hero_node =_this.toolsArray[0];
-              // var _targ_hero_node  =_this.toolsArray[3];
-
-              this.toolsArray.forEach(element => {
-                if(element.biology==biology.goid){
-                  console.log(element)
-                  // var _this_hero_node =_this.toolsArray[0];
-                }
-
-              })
-
-              _this.buttonMove(_this_hero_node,_targ_hero_node) //移动
+              // console.log(_this.fightingArray[biology.goid]);
+              // console.log(_this.fightingArray[biology.doid]);
+              // var _this_hero_node =_this.toolsArray[_this.fightingArray[biology.goid]];
+              // var _targ_hero_node =_this.toolsArray[_this.fightingArray[biology.doid]];
+              var _this_hero_node =_this.fightingArray[biology.goid]
+              var _targ_hero_node =_this.fightingArray[biology.doid]
+              if(biology.goid==biology.doid){
+                //自己
+                  _this.buttonShake(_targ_hero_node,biology) //闪动
+              }else{
+                //移动
+                _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
+              }
+              // _this.buttonShake(_targ_hero_node) //闪动
               // _this.buttonShake(_targ_hero_node) //闪动
               // _this.buttonShake(_targ_hero_node) //闪动
               // console.log(biology.doid) 
@@ -226,7 +235,6 @@ cc.Class({
               // _this_hero_node.stopAction(act);
               // // 停止所有动作
               // _this_hero_node.stopAllActions();
-            }
             }
           }
           // his_log.need.forEach(element => {
@@ -286,43 +294,12 @@ cc.Class({
         //   });
         // }
     },
-    buttonMove(node,m_node) {
-      var m_y =10
-      var m_y =0
-      var m_z=0;
-      if(node.x>m_node.x){
-        var m_x = m_node.x-node.x
-        m_z=+20
-      }else if(node.x<m_node.x){
-        var m_x = m_node.x-node.x
-        m_z=-20
-      }
-      if(node.y>m_node.y){
-        var m_y = m_node.y-node.y
-      }else if(node.y<m_node.y){
-        var m_y = m_node.y-node.y
-      }
-      var m_x =m_x/200*(50+m_z)
-      var m_y =m_y/200*50
-
-    //节点坐标转到屏幕坐标
-    // var w_pos= node.convertToWorldSpace(cc.v2(0,0)); //图片左下角为原点 （480，270）（减去图片的一半）
-    // console.log(w_pos);
-    // var w_pos=cc.v2(480,320);
-    // var node_pos=this.node.convertToNodeSpace(w_pos);
-    // console.log(node_pos);
-    // var w_pos= node.convertToWorldSpaceAR(cc.v2(0,0));// 以图片锚点为原点
-    // console.log(node)
-    // var w_pos=cc.v2(node.x,node.y);
-    // var node_pos=this.node.convertToNodeSpaceAR(w_pos);
-    // console.log(node_pos);
-    // console.log(node)
-    //   console.log(m_node)
-      // var x_end = this.getDistance(node,m_node)
-      // var y_end = this.getAngle(node,m_node)
-      // var x_end = this.getDistance(node,m_node)
-      console.log(m_x)
-      console.log(m_y)
+    buttonMove(node,m_node,biology) {
+      var _this =this;
+      if (node.x != m_node.x) m_x = m_node.x - node.x
+      if (node.y != m_node.y) m_y = m_node.y - node.y 
+      var m_x =m_x/4
+      var m_y =m_y/4
       // var y_end = this.getAngle(node,m_node)
       // var actionLeft = cc.moveBy(0.5, cc.v2(x_end,0))
       //   var actionRight = cc.moveBy(0.5, cc.v2(-x_end,0))
@@ -338,11 +315,54 @@ cc.Class({
               // 执行动作完成之后调用的方法
                   cc.callFunc(() => {
                       // cc.log(3333);
+                      // cc.log(33)
+                      _this.buttonShake(m_node,biology)
                       resolve();
                   }))
           );
       });
   },
+  
+  buttonShake(node,biology) {
+    const actionhiddenOn = cc .fadeTo(0.05,0);
+    const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
+    const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
+    const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
+    const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
+    const actionhiddenoff = cc.fadeTo(0.05,255);
+    // node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
+    // node.getComponent(cc.ProgressBar).Progress
+    return new Promise(resolve => {
+        node.runAction(
+            cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
+            // 执行动作完成之后调用的方法
+                cc.callFunc(() => {
+                    cc.log(node);
+                    cc.log(biology);
+                    if(biology.extend=='shengMing'){
+                      node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
+                      var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar)
+                      progressBar.progress = biology.hurt_go_value / node.shengMing
+                      // console.log(progressBar.progress)
+                      progressBar.completeCount = biology.hurt_go_value;
+                      progressBar.totalCount = node.shengMing;
+                      if(biology.hurt_go_value==0){
+                        node.active=false;
+                      }
+                    }
+                    if(biology.extend=='moFa'){
+                      node.getChildByName('魔法m').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+                      var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
+                      progressBar.progress = biology.hurt_go_value / node.moFa
+                      // console.log(progressBar.progress)
+                      progressBar.completeCount = biology.hurt_go_value;
+                      progressBar.totalCount = node.moFa;
+                    }
+                    resolve();
+                }))
+        );
+    });
+},
   // 距离
   getDistance(start,end){
         // var pos = cc.v2(start.x - end.x, start.y - end.y);
@@ -368,22 +388,6 @@ cc.Class({
       return -degree
   },
 
-    buttonShake(node) {
-      const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
-      const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
-      const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-      const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
-      return new Promise(resolve => {
-          node.runAction(
-              cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,
-              // 执行动作完成之后调用的方法
-                  cc.callFunc(() => {
-                      cc.log(3333);
-                      resolve();
-                  }))
-          );
-      });
-  },
     bagBtn () {
       // 背包按钮
       if (this.gridLayout.parent.active) {
@@ -404,7 +408,7 @@ cc.Class({
       }
     },
     // 刷新血条
-    hp_update(){
+    hp_update(node){
       //受到15伤害
       this.hp -= 15;
       // 求出伤害血量占比并显示
@@ -419,10 +423,10 @@ cc.Class({
       //0.5秒内闪烁
       let act_shan = cc.sequence(cc .fadeTo(0.05,0),cc.fadeTo(0.05,255));
       element.runAction(cc.repeat(act_shan,5));
-      //0.5秒后还可以被攻击
-        this.scheduleOnce(function() {
-          this.state = 0;
-        }.bind(this),0.5);
+      // //0.5秒后还可以被攻击
+      //   this.scheduleOnce(function() {
+      //     this.state = 0;
+      //   }.bind(this),0.5);
     },
     reloadWord(){
       var _this =this;
