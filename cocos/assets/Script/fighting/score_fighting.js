@@ -111,13 +111,15 @@ cc.Class({
           // console.log( _this.fightingArray )
               var fighting_list = data.data;       
                   //一条或多条执行语句
+              var boat=0;
                   _this.schedule(function(){
-                  for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+                  // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+                    boat++
                     cc.log(boat)   
                       var history =fighting_list.fighting_history[boat].fighting_history;
                       _this.fighting_history(history)//执行战斗顺序                      
-                  }
-                  },5,0,10); //10秒后执行1次间隔5秒
+                  // }
+                  },2,fighting_list.fighting_history.length,5); //10秒后执行1次间隔5秒
               // // var poition_my =fighting_list.poition_my
               // // var poition_enemy =fighting_list.poition_enemy
         });    
@@ -173,8 +175,8 @@ cc.Class({
       var  arr = [];
       var _this = this;
       // console.log(_this_hero_node);
-      for (let i=0; i<history.length; i++) {
-        if(i==0){
+      for (var i=0; i<history.length; i++) {
+        // if(i==0){
           var  his_log = history[i];
           if(his_log.back.length!=0){
 
@@ -189,7 +191,7 @@ cc.Class({
            
           }
           if(his_log.putong.length!=0){
-            for (let n=0; n<his_log.putong.length; n++){
+            for (var n=0; n<his_log.putong.length; n++){
               var biology = his_log.putong[n];
               // console.log(_this.fightingArray[biology.goid]);
               // console.log(_this.fightingArray[biology.doid]);
@@ -202,7 +204,9 @@ cc.Class({
                   _this.buttonShake(_targ_hero_node,biology) //闪动
               }else{
                 //移动
-                _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
+                      _this.schedule(function(){
+                   _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
+                  },2); //只执行一次
               }
               // _this.buttonShake(_targ_hero_node) //闪动
               // _this.buttonShake(_targ_hero_node) //闪动
@@ -236,7 +240,7 @@ cc.Class({
               // // 停止所有动作
               // _this_hero_node.stopAllActions();
             }
-          }
+          // }
           // his_log.need.forEach(element => {
           //   console.log(element)
           // })
@@ -306,12 +310,14 @@ cc.Class({
       // 让节点在向上移动的同时缩放
       // const actionBig = cc.scaleTo(0.1, 1, 1.4)
       const actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y),cc.scaleTo(0.5, 0.8, 1.4));
+       //等待攻击完成
+      const actionWaite = cc.delayTime(0.5);
       const actionRight = cc.moveBy(0.5, cc.v2(-m_x,-m_y),cc.scaleTo(0.5, 0.8, 1.4));
       // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
       // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
       return new Promise(resolve => {
           node.runAction(
-              cc.sequence(actionLeft, actionRight,
+              cc.sequence(actionLeft,actionWaite,actionRight,
               // 执行动作完成之后调用的方法
                   cc.callFunc(() => {
                       // cc.log(3333);
@@ -332,6 +338,7 @@ cc.Class({
     const actionhiddenoff = cc.fadeTo(0.05,255);
     // node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
     // node.getComponent(cc.ProgressBar).Progress
+    // cc.spwan( 同时完成
     return new Promise(resolve => {
         node.runAction(
             cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,

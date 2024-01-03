@@ -122,14 +122,15 @@ cc.Class({
         var fighting_list = data.data; //一条或多条执行语句
 
         _this.schedule(function () {
-          for (var boat = 0; boat < fighting_list.fighting_history.length; boat++) {
-            cc.log(boat);
-            var history = fighting_list.fighting_history[boat].fighting_history;
+          // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+          boat++;
+          cc.log(boat);
+          var history = fighting_list.fighting_history[boat].fighting_history;
 
-            _this.fighting_history(history); //执行战斗顺序                      
+          _this.fighting_history(history); //执行战斗顺序                      
+          // }
 
-          }
-        }, 5, 0, 10); //10秒后执行1次间隔5秒
+        }, 2, fighting_list.fighting_history.length, 5); //10秒后执行1次间隔5秒
         // // var poition_my =fighting_list.poition_my
         // // var poition_enemy =fighting_list.poition_enemy
 
@@ -196,68 +197,71 @@ cc.Class({
 
 
     for (var i = 0; i < history.length; i++) {
-      if (i == 0) {
-        var his_log = history[i];
+      // if(i==0){
+      var his_log = history[i];
 
-        if (his_log.back.length != 0) {}
+      if (his_log.back.length != 0) {}
 
-        if (his_log["do"].length != 0) {}
+      if (his_log["do"].length != 0) {}
 
-        if (his_log.go.length != 0) {}
+      if (his_log.go.length != 0) {}
 
-        if (his_log.need.length != 0) {}
+      if (his_log.need.length != 0) {}
 
-        if (his_log.putong.length != 0) {
-          for (var n = 0; n < his_log.putong.length; n++) {
-            var biology = his_log.putong[n]; // console.log(_this.fightingArray[biology.goid]);
-            // console.log(_this.fightingArray[biology.doid]);
-            // var _this_hero_node =_this.toolsArray[_this.fightingArray[biology.goid]];
-            // var _targ_hero_node =_this.toolsArray[_this.fightingArray[biology.doid]];
+      if (his_log.putong.length != 0) {
+        for (var n = 0; n < his_log.putong.length; n++) {
+          var biology = his_log.putong[n]; // console.log(_this.fightingArray[biology.goid]);
+          // console.log(_this.fightingArray[biology.doid]);
+          // var _this_hero_node =_this.toolsArray[_this.fightingArray[biology.goid]];
+          // var _targ_hero_node =_this.toolsArray[_this.fightingArray[biology.doid]];
 
-            var _this_hero_node = _this.fightingArray[biology.goid];
-            var _targ_hero_node = _this.fightingArray[biology.doid];
+          var _this_hero_node = _this.fightingArray[biology.goid];
+          var _targ_hero_node = _this.fightingArray[biology.doid];
 
-            if (biology.goid == biology.doid) {
-              //自己
-              _this.buttonShake(_targ_hero_node, biology); //闪动
+          if (biology.goid == biology.doid) {
+            //自己
+            _this.buttonShake(_targ_hero_node, biology); //闪动
 
-            } else {
-              //移动
+          } else {
+            //移动
+            _this.schedule(function () {
               _this.buttonMove(_this_hero_node, _targ_hero_node, biology); //移动
 
-            } // _this.buttonShake(_targ_hero_node) //闪动
-            // _this.buttonShake(_targ_hero_node) //闪动
-            // _this.buttonShake(_targ_hero_node) //闪动
-            // console.log(biology.doid) 
-            // console.log(_targ_hero_node.x) 
-            // console.log(_targ_hero_node.y) 
-            // console.log(_targ_hero_node) 
-            // arr.push(cc.rotateTo(0.5 ,5));
-            // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
-            // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
-            // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-            // //   _targ_hero_node.scale = 1;
-            // //   arr.push(cc.scaleBy(1,2));
-            // // },this)) );
-            // //等待攻击完成
-            // arr.push(cc.delayTime(0.5 + 1));
-            // //移回原来位置
-            // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
-            // // arr.push(cc.spawn(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y),cc.callFunc(function(){
-            // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-            // //   _targ_hero_node.scale = 1;
-            // //   arr.push(cc.scaleBy(1,2));
-            // // },this)) );
-            // arr.push(cc.rotateBy(0.5 ,-5));
-            // var act = cc.sequence(arr);
-            // _this_hero_node.runAction(act)
-            // 停止一个动作
-            // _this_hero_node.stopAction(act);
-            // // 停止所有动作
-            // _this_hero_node.stopAllActions();
+            }, 2); //只执行一次
 
-          }
-        } // his_log.need.forEach(element => {
+          } // _this.buttonShake(_targ_hero_node) //闪动
+          // _this.buttonShake(_targ_hero_node) //闪动
+          // _this.buttonShake(_targ_hero_node) //闪动
+          // console.log(biology.doid) 
+          // console.log(_targ_hero_node.x) 
+          // console.log(_targ_hero_node.y) 
+          // console.log(_targ_hero_node) 
+          // arr.push(cc.rotateTo(0.5 ,5));
+          // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
+          // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
+          // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+          // //   _targ_hero_node.scale = 1;
+          // //   arr.push(cc.scaleBy(1,2));
+          // // },this)) );
+          // //等待攻击完成
+          // arr.push(cc.delayTime(0.5 + 1));
+          // //移回原来位置
+          // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
+          // // arr.push(cc.spawn(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y),cc.callFunc(function(){
+          // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+          // //   _targ_hero_node.scale = 1;
+          // //   arr.push(cc.scaleBy(1,2));
+          // // },this)) );
+          // arr.push(cc.rotateBy(0.5 ,-5));
+          // var act = cc.sequence(arr);
+          // _this_hero_node.runAction(act)
+          // 停止一个动作
+          // _this_hero_node.stopAction(act);
+          // // 停止所有动作
+          // _this_hero_node.stopAllActions();
+
+        } // }
+        // his_log.need.forEach(element => {
         //   console.log(element)
         // })
 
@@ -321,12 +325,14 @@ cc.Class({
     // 让节点在向上移动的同时缩放
     // const actionBig = cc.scaleTo(0.1, 1, 1.4)
 
-    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 0.8, 1.4));
+    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 0.8, 1.4)); //等待攻击完成
+
+    var actionWaite = cc.delayTime(0.5);
     var actionRight = cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 0.8, 1.4)); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
     // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionLeft, actionRight, // 执行动作完成之后调用的方法
+      node.runAction(cc.sequence(actionLeft, actionWaite, actionRight, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
         // cc.log(3333);
         // cc.log(33)
@@ -344,12 +350,11 @@ cc.Class({
     var actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
     var actionhiddenoff = cc.fadeTo(0.05, 255); // node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
     // node.getComponent(cc.ProgressBar).Progress
+    // cc.spwan( 同时完成
 
     return new Promise(function (resolve) {
       node.runAction(cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond, actionhiddenOn, actionhiddenoff, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
-        // cc.log(3333);
-        cc.log(555);
         cc.log(node);
         cc.log(biology);
 
