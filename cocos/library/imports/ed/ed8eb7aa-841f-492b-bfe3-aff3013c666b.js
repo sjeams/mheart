@@ -136,7 +136,7 @@ cc.Class({
             _this.fighting_history(fighting_list.fighting_history[boat].fighting_history); //执行战斗顺序                      
             // }
 
-          }, 30, boat_length, 5); //10秒后执行1次间隔5秒
+          }, 20, boat_length, 3); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -340,13 +340,13 @@ cc.Class({
     // 让节点在向上移动的同时缩放
     // const actionBig = cc.scaleTo(0.1, 1, 1.4)
 
-    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 0.8, 1.4)); // const actionWaite = cc.delayTime(0.5);       
+    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 1, 1.4));
+    var actionRight = cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 1, 1.4));
+    var actionWaite = cc.delayTime(0.5); //等待攻击完成
 
-    var actionRight = cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 0.8, 1.4)); //等待攻击完成
+    _this.buttonShake(m_node, biology);
 
-    m_node.getChildByName('扣血s').active = true;
-    m_node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
-    var actionWaite = cc.spawn(cc.fadeTo(0.05, 0), cc.delayTime(1), cc.fadeTo(0.5, 255), cc.callFunc(function () {
+    var actionFignthing = cc.spawn(cc.delayTime(0.5), cc.callFunc(function () {
       // _this_hero_node.playAnim('/biology_pic/3关闭');
       // node.scale = 1;
       // arr.push(cc.scaleBy(1,2));
@@ -355,17 +355,16 @@ cc.Class({
     // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionLeft, actionRight, actionWaite, // 执行动作完成之后调用的方法
+      node.runAction(cc.sequence(actionLeft, actionRight, actionWaite, actionFignthing, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
         // cc.log(3333);
         // cc.log(33)
-        _this.buttonShake(m_node, biology);
-
         resolve();
       })));
     });
   },
   buttonShake: function buttonShake(node, biology) {
+    // const actionWaite =cc.delayTime(0.5);    //等待攻击
     var actionhiddenOn = cc.fadeTo(0.05, 0);
     var actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
     var actionRight = cc.moveBy(0.1, cc.v2(10, 0));
@@ -382,8 +381,8 @@ cc.Class({
         cc.log(biology);
 
         if (biology.extend == 'shengMing') {
-          // node.getChildByName('扣血s').active=true
-          // node.getChildByName('扣血s').getComponent(cc.Label).string=biology.hurt_msg
+          node.getChildByName('扣血s').active = true;
+          node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
           node.getChildByName('生命s').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.shengMing;
           var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar);
           progressBar.progress = biology.hurt_go_value / node.shengMing; // console.log(progressBar.progress)

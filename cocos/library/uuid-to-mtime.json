@@ -1274,11 +1274,6 @@
     "meta": 1703834116203,
     "relativePath": "Script\\http.js"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1704340573244,
-    "meta": 1704347757915,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "a35df353-e613-4fbb-acd6-15095812556b": {
     "asset": 1704348231377,
     "meta": 1704348231399,
@@ -1289,14 +1284,19 @@
     "meta": 1704348941635,
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1704350635000,
-    "meta": 1704350636304,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1704350781433,
-    "meta": 1704350781453,
+    "asset": 1704354838009,
+    "meta": 1704354838034,
     "relativePath": "prefabs\\biology_普通.prefab"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1704354978793,
+    "meta": 1704354978854,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1704354951832,
+    "meta": 1704354977399,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }
