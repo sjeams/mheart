@@ -119,21 +119,28 @@ cc.Class({
         // console.log( _this.fightingArray )
 
 
-        var fighting_list = data.data; //一条或多条执行语句
+        var fighting_list = data.data; //没有记录直接跳过  
 
-        _this.schedule(function () {
-          // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
-          boat++;
-          cc.log(boat);
-          var history = fighting_list.fighting_history[boat].fighting_history;
+        if (fighting_list.fighting_history.length != 0) {
+          var boat = -1;
+          var boat_length = fighting_list.fighting_history.length - 1; //一条或多条执行语句
 
-          _this.fighting_history(history); //执行战斗顺序                      
-          // }
+          cc.log(fighting_list.fighting_history);
 
-        }, 2, fighting_list.fighting_history.length, 5); //10秒后执行1次间隔5秒
-        // // var poition_my =fighting_list.poition_my
-        // // var poition_enemy =fighting_list.poition_enemy
+          _this.schedule(function () {
+            // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+            boat++;
+            cc.log(boat);
+            cc.log(fighting_list.fighting_history[boat]);
 
+            _this.fighting_history(fighting_list.fighting_history[boat].fighting_history); //执行战斗顺序                      
+            // }
+
+          }, 20, boat_length, 5); //10秒后执行1次间隔5秒
+          // // var poition_my =fighting_list.poition_my
+          // // var poition_enemy =fighting_list.poition_enemy
+
+        }
       });
     }
   },
@@ -193,11 +200,14 @@ cc.Class({
     cc.log(history);
     var arr = [];
 
-    var _this = this; // console.log(_this_hero_node);
+    var _this = this;
 
+    var i = -1; // console.log(_this_hero_node);
 
-    for (var i = 0; i < history.length; i++) {
-      // if(i==0){
+    var h_length = history.length - 1;
+
+    _this.schedule(function () {
+      i++;
       var his_log = history[i];
 
       if (his_log.back.length != 0) {}
@@ -224,10 +234,9 @@ cc.Class({
 
           } else {
             //移动
-            _this.schedule(function () {
-              _this.buttonMove(_this_hero_node, _targ_hero_node, biology); //移动
-
-            }, 2); //只执行一次
+            // _this.schedule(function(){
+            _this.buttonMove(_this_hero_node, _targ_hero_node, biology); //移动
+            // },1);
 
           } // _this.buttonShake(_targ_hero_node) //闪动
           // _this.buttonShake(_targ_hero_node) //闪动
@@ -265,23 +274,25 @@ cc.Class({
         //   console.log(element)
         // })
 
-      } //切换成冲刺动画，并移动到目标跟前  
-      // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
-      //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-      //   _targ_hero_node.scale = 1;
-      //   arr.push(cc.scaleBy(1,2));
-      // },this)) );
-      //播放攻击动画
-      // arr.push(cc.callFunc(function(){
-      //   // this.hero.playAnim(animName);
-      // },this));
-      // var animInfo = AnimConfig.getRoleInfo(this.hero.roleId)[animName];
-      // var playTime = animInfo.frames / animInfo.fps;
-      // arr.push(cc.callFunc(function(){
-      //     // this._isSpelling = false;
-      // },this));
-
-    } // console.log(arr);
+      }
+    }, 2, h_length, 2); //只执行一次
+    //切换成冲刺动画，并移动到目标跟前  
+    // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
+    //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+    //   _targ_hero_node.scale = 1;
+    //   arr.push(cc.scaleBy(1,2));
+    // },this)) );
+    //播放攻击动画
+    // arr.push(cc.callFunc(function(){
+    //   // this.hero.playAnim(animName);
+    // },this));
+    // var animInfo = AnimConfig.getRoleInfo(this.hero.roleId)[animName];
+    // var playTime = animInfo.frames / animInfo.fps;
+    // arr.push(cc.callFunc(function(){
+    //     // this._isSpelling = false;
+    // },this));
+    // }
+    // console.log(arr);
     // console.log(_this_hero_node)
     // for (let i=0; i<fighting.length; i++) {
     // let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
@@ -364,11 +375,9 @@ cc.Class({
           progressBar.progress = biology.hurt_go_value / node.shengMing; // console.log(progressBar.progress)
 
           progressBar.completeCount = biology.hurt_go_value;
-          progressBar.totalCount = node.shengMing;
-
-          if (biology.hurt_go_value == 0) {
-            node.active = false;
-          }
+          progressBar.totalCount = node.shengMing; // if(biology.hurt_go_value==0){
+          //   node.active=false;
+          // }
         }
 
         if (biology.extend == 'moFa') {
