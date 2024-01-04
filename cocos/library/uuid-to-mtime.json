@@ -1274,29 +1274,29 @@
     "meta": 1703834116203,
     "relativePath": "Script\\http.js"
   },
-  "a35df353-e613-4fbb-acd6-15095812556b": {
-    "asset": 1704348231377,
-    "meta": 1704348231399,
-    "relativePath": "prefabs\\biology_飙血.prefab"
-  },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1704348829895,
     "meta": 1704348941635,
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
+  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
+    "asset": 1704358002555,
+    "meta": 1704360677187,
+    "relativePath": "prefabs\\biology_普通.prefab"
+  },
+  "a35df353-e613-4fbb-acd6-15095812556b": {
+    "asset": 1704362300380,
+    "meta": 1704362300404,
+    "relativePath": "resources\\biology_结算.prefab"
+  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1704354978793,
-    "meta": 1704355072634,
+    "asset": 1704363283412,
+    "meta": 1704363283432,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1704357996077,
-    "meta": 1704357997655,
+    "asset": 1704363264013,
+    "meta": 1704363264037,
     "relativePath": "Script\\fighting\\score_fighting.js"
-  },
-  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1704358002555,
-    "meta": 1704358002695,
-    "relativePath": "prefabs\\biology_普通.prefab"
   }
 }

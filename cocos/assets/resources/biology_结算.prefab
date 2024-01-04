@@ -1,13 +1,13 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "biology_结算",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "data": {
       "__id__": 1
     },
-    "optimizationPolicy": 2,
+    "optimizationPolicy": 0,
     "asyncLoadAssets": false,
     "readonly": false
   },

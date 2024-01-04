@@ -112,25 +112,57 @@ cc.Class({
               var fighting_list = data.data;     
               //没有记录直接跳过  
               if(fighting_list.fighting_history.length!=0){
+              
                 var boat=-1;
-                var boat_length = fighting_list.fighting_history.length-1
+                var boat_length = fighting_list.fighting_history.length
                 //一条或多条执行语句
-
-                  cc.log(fighting_list.fighting_history)
-                    _this.schedule(function(){
-                    // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
-                      boat++
-                      cc.log(boat)   
-                      cc.log(fighting_list.fighting_history[boat])   
-                        _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序                      
-                    // }
-                    },10,boat_length,3); //10秒后执行1次间隔5秒
+                _this.schedule(function(){
+                // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
+                  boat++
+                  cc.log(boat)   
+                  if (boat == boat_length) {
+                      this.unschedule();
+                        // 在第六次执行回调时取消这个计时器
+                      _this.fightingEnd()
+                  }else{
+                    
+                    cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合'+boat
+                    // cc.log(fighting_list.fighting_history)
+                    cc.log(fighting_list.fighting_history[boat])   
+                    _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序      
+                  }                
+                // }
+                },10,boat_length,3); //10秒后执行1次间隔5秒
                 // // var poition_my =fighting_list.poition_my
                 // // var poition_enemy =fighting_list.poition_enemy
               }
-
+            
         });    
       }
+    },
+      //战斗结束
+    fightingEnd() {
+        // var _task =task||0;
+        var _this =this;
+        //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+        cc.loader.loadRes('/biology_结算', function(errorMessage,loadedResource){
+            //检查资源加载
+            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+            if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+            //开始实例化预制资源
+            var TipBoxPrefab = cc.instantiate(loadedResource);
+            //将预制资源添加到父节点
+            // CanvasNode.addChild(TipBoxPrefab);
+            cc.find('Canvas').addChild(TipBoxPrefab);
+            //请求战斗记录
+            // if(_task==1){
+            //     console.log(11111)
+            //     _this.fightint(sence);
+            // }else{
+            //     _this.progress(sence);
+            // }
+
+        });
     },
     //生成地图
     addMapPic(data){
@@ -202,10 +234,6 @@ cc.Class({
           if(his_log.putong.length!=0){
             for (var n=0; n<his_log.putong.length; n++){
               var biology = his_log.putong[n];
-              // console.log(_this.fightingArray[biology.goid]);
-              // console.log(_this.fightingArray[biology.doid]);
-              // var _this_hero_node =_this.toolsArray[_this.fightingArray[biology.goid]];
-              // var _targ_hero_node =_this.toolsArray[_this.fightingArray[biology.doid]];
               var _this_hero_node =_this.fightingArray[biology.goid]
               var _targ_hero_node =_this.fightingArray[biology.doid]
               if(biology.goid==biology.doid){
@@ -217,13 +245,6 @@ cc.Class({
                   _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
                 // },1);
               }
-              // _this.buttonShake(_targ_hero_node) //闪动
-              // _this.buttonShake(_targ_hero_node) //闪动
-              // _this.buttonShake(_targ_hero_node) //闪动
-              // console.log(biology.doid) 
-              // console.log(_targ_hero_node.x) 
-              // console.log(_targ_hero_node.y) 
-              // console.log(_targ_hero_node) 
               // arr.push(cc.rotateTo(0.5 ,5));
               // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
               // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
@@ -275,10 +296,6 @@ cc.Class({
         
       // }
       // console.log(arr);
-
-
-
-
       // console.log(_this_hero_node)
       // for (let i=0; i<fighting.length; i++) {
         // let action =  cc.speed(cc.sequence(cc.moveTo(5,400,200), cc.moveTo(5,this_node.x,this_node.y)),10)
@@ -287,27 +304,7 @@ cc.Class({
         // 执行动作，所有的动作都需要一个目标通过 runAction 去执行它
         // this_node.runAction(action)
       // }
-        //   // 删除所有道具(或者不删，只是隐藏，自己决定)
-        //   for (let i=0; i<total; i++) {
-        //   this.toolsArray.forEach(element => {
-        //   //     var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-        //   //     // var type_color = color[info['yiXing']];
-        //   //     // console.log(info['color']);
-        //   //     element.getChildByName('生物').color = new cc.color(info['color']);
-        //   //     // console.log(info)
-        //   //     var star ='';    
-        //   //     for(i=0;i<=info['yiXing'];i++){
-        //   //         star +='⭐';
-        //   //     }
-        //   //     element.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
-        //   //     element.getChildByName('魔法s').getComponent(cc.Label).string= info['moFa']+'/'+info['moFa'];
-        //   //     element.getChildByName('生物名称s').getComponent(cc.Label).string= info['name'];
-        //   //     element.getChildByName('生物等级s').getComponent(cc.Label).string= 'Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
-        //   //     element.getChildByName('星星s').getComponent(cc.Label).string= star;
-        //   //     console.log(element)
-        //   //     // element.removeFromParent();
-        //   });
-        // }
+ 
     },
     buttonMove(node,m_node,biology) {
       var  arr =[];
