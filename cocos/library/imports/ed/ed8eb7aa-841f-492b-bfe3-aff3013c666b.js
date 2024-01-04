@@ -136,7 +136,7 @@ cc.Class({
             _this.fighting_history(fighting_list.fighting_history[boat].fighting_history); //执行战斗顺序                      
             // }
 
-          }, 20, boat_length, 3); //10秒后执行1次间隔5秒
+          }, 10, boat_length, 3); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -275,7 +275,7 @@ cc.Class({
         // })
 
       }
-    }, 2, h_length, 2); //只执行一次
+    }, 1.2, h_length, 1); //只执行一次
     //切换成冲刺动画，并移动到目标跟前  
     // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
     //   // _this_hero_node.playAnim('/biology_pic/3关闭');
@@ -325,6 +325,8 @@ cc.Class({
 
   },
   buttonMove: function buttonMove(node, m_node, biology) {
+    var arr = [];
+
     var _this = this;
 
     m_x = 10;
@@ -338,33 +340,38 @@ cc.Class({
     // var actionLeft = cc.moveBy(0.5, cc.v2(x_end,0))
     //   var actionRight = cc.moveBy(0.5, cc.v2(-x_end,0))
     // 让节点在向上移动的同时缩放
-    // const actionBig = cc.scaleTo(0.1, 1, 1.4)
 
-    var actionLeft = cc.moveBy(0.5, cc.v2(m_x, m_y), cc.scaleTo(0.5, 1, 1.4));
-    var actionRight = cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 1, 1.4));
-    var actionWaite = cc.delayTime(0.5); //等待攻击完成
+    arr.push(); // arr.push(cc.moveBy(0.5, cc.v2(m_x, m_y)))
 
-    _this.buttonShake(m_node, biology);
+    arr.push(cc.spawn(cc.scaleTo(0.1, 1, 1.2), cc.moveBy(0.5, m_x, m_y), cc.callFunc(function () {
+      // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+      // //   _targ_hero_node.scale = 1;
+      // //   arr.push(cc.scaleBy(1,2));
+      //等待攻击完成
+      _this.buttonShake(m_node, biology);
+    }, this)));
+    arr.push(cc.delayTime(0.5));
+    arr.push(cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 1, 1.4))); // 让节点在向上移动的同时缩放
 
-    var actionFignthing = cc.spawn(cc.delayTime(0.5), cc.callFunc(function () {
+    arr.push(cc.scaleTo(0.1, 1, 1));
+    arr.push(cc.spawn(cc.delayTime(0.5), cc.callFunc(function () {
       // _this_hero_node.playAnim('/biology_pic/3关闭');
       // node.scale = 1;
       // arr.push(cc.scaleBy(1,2));
       m_node.getChildByName('扣血s').active = false;
-    }, this)); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
+    }, this))); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
     // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionLeft, actionRight, actionWaite, actionFignthing, // 执行动作完成之后调用的方法
-      cc.callFunc(function () {
-        // cc.log(3333);
-        // cc.log(33)
+      node.runAction(cc.sequence(arr, cc.callFunc(function () {
+        console.log(11);
         resolve();
       })));
     });
   },
   buttonShake: function buttonShake(node, biology) {
-    // const actionWaite =cc.delayTime(0.5);    //等待攻击
+    var actionWaite = cc.delayTime(0.5); //等待攻击
+
     var actionhiddenOn = cc.fadeTo(0.05, 0);
     var actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
     var actionRight = cc.moveBy(0.1, cc.v2(10, 0));
@@ -375,7 +382,7 @@ cc.Class({
     // cc.spwan( 同时完成
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond, actionhiddenOn, actionhiddenoff, // 执行动作完成之后调用的方法
+      node.runAction(cc.sequence(actionWaite, actionLeft, actionRight, actionLeftSecond, actionRightSecond, actionhiddenOn, actionhiddenoff, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
         cc.log(node);
         cc.log(biology);
@@ -394,6 +401,8 @@ cc.Class({
         }
 
         if (biology.extend == 'moFa') {
+          node.getChildByName('扣血s').active = true;
+          node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
           node.getChildByName('魔法m').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.moFa;
           var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar);
           progressBar.progress = biology.hurt_go_value / node.moFa; // console.log(progressBar.progress)
@@ -405,28 +414,6 @@ cc.Class({
         resolve();
       })));
     });
-  },
-  // 距离
-  getDistance: function getDistance(start, end) {
-    // var pos = cc.v2(start.x - end.x, start.y - end.y);
-    // var dis = Math.sqrt(pos.x*pos.x + pos.y*pos.y)/6;
-    pos1 = cc.v2(start.x, 0);
-    pos2 = cc.v2(end.x, 0);
-    var temp = pos1.sub(pos2);
-    var dis = Math.abs(temp.mag());
-    return dis;
-  },
-  // 角度
-  getAngle: function getAngle(start, end) {
-    //计算出朝向
-    var dx = end.x - start.x;
-    var dy = end.y - start.y;
-    var dir = cc.v2(dx, dy); //根据朝向计算出夹角弧度
-
-    var angle = dir.signAngle(cc.v2(1, 0)); //将弧度转换为欧拉角
-
-    var degree = angle / Math.PI * 180;
-    return -degree;
   },
   bagBtn: function bagBtn() {
     // 背包按钮
