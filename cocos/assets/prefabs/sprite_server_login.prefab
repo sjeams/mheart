@@ -14,7 +14,7 @@
   {
     "__type__": "cc.Node",
     "_name": "sprite_server_login",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": null,
     "_children": [
       {

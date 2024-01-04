@@ -955,7 +955,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $skill= $hurt_go_list['skill'];
         $shanbi= isset($hurt_go_list['shanbi'])?intval($hurt_go_list['shanbi']):0;
         $type=$hurt_go_list['type'];//攻击类型 0普通攻击  1技能攻击  2发起消耗 
-        $hurt_go=$hurt_go_list['hurt_go'];
+        $hurt_go=intval($hurt_go_list['hurt_go']);//取整显示
         $is_do= $hurt_go_list['is_do'];
         // var_dump($shanbi);
         //不是普通攻击，技能攻击时

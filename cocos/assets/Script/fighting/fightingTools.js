@@ -64,15 +64,15 @@ cc.Class({
             // console.log(info['color']);
             this.node.getChildByName('生物').color = new cc.color(info['color']);
             // console.log(info)
-            var star ='';    
-            for(i=0;i<=info['yiXing'];i++){
-                star +='⭐';
-            }
+            // var star ='';    
+            // for(i=0;i<=info['yiXing'];i++){
+            //     star +='⭐';
+            // }
             this.node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
             this.node.getChildByName('魔法s').getComponent(cc.Label).string= info['moFa']+'/'+info['moFa'];
             this.node.getChildByName('生物名称s').getComponent(cc.Label).string= info['name'];
             this.node.getChildByName('生物等级s').getComponent(cc.Label).string= 'Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';
-            this.node.getChildByName('星星s').getComponent(cc.Label).string= star;
+            // this.node.getChildByName('星星s').getComponent(cc.Label).string= star;
         // this.node.getChildByName('悟性s').getComponent(cc.Label).string= info['wuXing'];
         // this.server_star.getComponent(cc.Label).string= star;
         // this.server_type.getComponent(cc.Label).string='Lv.'+info['grade']+'('+biolgy_state[info['state']]+')';

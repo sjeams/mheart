@@ -1343,7 +1343,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "星星s",
+    "_name": "扣血s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1362,14 +1362,14 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 25.2
+      "width": 240,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1380,8 +1380,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        85,
+        100,
+        50,
         0,
         0,
         0,
@@ -1419,10 +1419,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "⭐",
-    "_N$string": "⭐",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "-100000000",
+    "_N$string": "-100000000",
+    "_fontSize": 40,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
