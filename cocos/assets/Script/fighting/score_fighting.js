@@ -167,18 +167,7 @@ cc.Class({
         }
         return star;
     },
-    //生物渐隐-淡出-淡入
-    nodefadeIn(time,type,node){
-      node.opacity = type;
-      if(type==0){
-        //先让透明度为0
-        var fin = cc.fadeIn(time);
-      }else{
-        //先让透明度为255
-        var fin = cc.fadeOut(time);
-      }
-      node.runAction(fin);
-    },
+
     fighting_history (history) {
       var  arr = [];
       var _this = this;
@@ -291,10 +280,10 @@ cc.Class({
       }
     },
     buttonMove(node,m_node,biology) {
-      var  arr =[];
+      var arr =[];
       var _this =this;
-       m_x=10
-       m_x=0
+      var m_x=10
+      var m_y=0
       if (node.x != m_node.x) m_x = m_node.x - node.x
       if (node.y != m_node.y) m_y = m_node.y - node.y 
       // var m_x =m_x/200*100
@@ -310,9 +299,7 @@ cc.Class({
       arr.push( cc.moveBy(0.5, cc.v2(-m_x,-m_y),cc.scaleTo(0.5, 1, 1.4)))
       // 让节点在向上移动的同时缩放
       arr.push(cc.scaleTo(0.1, 1,1))
-      arr.push(cc.spawn(cc.delayTime(0.5),cc.callFunc(function(){
-          m_node.getChildByName('扣血s').active=false
-      },this)) )
+
       return new Promise(resolve => {
           node.runAction(
               cc.sequence(arr,cc.callFunc(() => {       
@@ -338,10 +325,12 @@ cc.Class({
             cc.sequence(actionWaite,actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
             // 执行动作完成之后调用的方法
                 cc.callFunc(() => {
-                    cc.log(node);
-                    cc.log(biology);
+                    // cc.log(node);
+                    // cc.log(biology);
+                    var _this = this
                     if(biology.extend=='shengMing'){
                       node.getChildByName('扣血s').active=true
+                      node.getChildByName('扣血s').color = new cc.color('FF0000');
                       node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
                       node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
                       var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar)
@@ -349,7 +338,8 @@ cc.Class({
                       progressBar.completeCount = biology.hurt_go_value;
                       progressBar.totalCount = node.shengMing;
                       //扣血渐隐
-                  
+                      node.getChildByName('扣血s').opacity=255
+                      node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
                       if(biology.hurt_go_value==0){
                         node.getChildByName('悟性').active=false
                         node.getChildByName('生命').active=false
@@ -363,20 +353,40 @@ cc.Class({
                     }
                     if(biology.extend=='moFa'){
                       node.getChildByName('扣血s').active=true
+                      node.getChildByName('扣血s').color = new cc.color('#3568D5');
                       node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
                       node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
                       var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
                       progressBar.progress = biology.hurt_go_value / node.moFa
                       progressBar.completeCount = biology.hurt_go_value;
                       progressBar.totalCount = node.moFa;
-                      //扣血渐隐
+                      //扣蓝渐隐
+                      node.getChildByName('扣血s').opacity=255
+                      node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
                     }
                     resolve();
-                }))
+                }) )
         );
     });
 },
-
+    //生物渐隐-淡出-淡入
+    // nodefadeIn(time,type,node){
+    //   // cc.log(node)
+    //   var fin_arr=[];
+    //   if(type==0){
+    //     //先让透明度为0
+    //     node.getChildByName('扣血s').opacity=0
+    //     fin_arr.push(cc.fadeIn(time));
+    //   }else{
+    //     //先让透明度为255
+    //     node.getChildByName('扣血s').opacity=255
+    //     fin_arr.push(cc.fadeOut(time));
+    //   }
+    //   fin_arr.push(cc.spawn(cc.delayTime(0.5),cc.callFunc(function(){
+    //     node.getChildByName('扣血s').active=false
+    //   },this)) )
+    //   node.getChildByName('扣血s').runAction(fin_arr);
+    // },
     bagBtn () {
       // 背包按钮
       if (this.gridLayout.parent.active) {
