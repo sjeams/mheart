@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1703572102158,
+    "asset": 1704361778082,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -515,7 +515,7 @@
     "relativePath": "Script\\commonjs"
   },
   "11419367-4da7-4096-a9a4-51666f1d1905": {
-    "asset": 1704246939986,
+    "asset": 1704361778082,
     "meta": 1655109292779,
     "relativePath": "prefabs"
   },
@@ -1289,14 +1289,14 @@
     "meta": 1704362300404,
     "relativePath": "resources\\biology_结算.prefab"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1704363283412,
-    "meta": 1704363283432,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1704363264013,
-    "meta": 1704363264037,
+    "asset": 1704424514949,
+    "meta": 1704424522637,
     "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1704424515183,
+    "meta": 1704424522650,
+    "relativePath": "Scene\\战斗场景.fire"
   }
 }

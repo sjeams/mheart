@@ -18,30 +18,6 @@ var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {
-    // foo: {
-    //     // ATTRIBUTES:
-    //     default: null,        // The default value will be used only when the component attaching
-    //                           // to a node for the first time
-    //     type: cc.SpriteFrame, // optional, default is typeof default
-    //     serializable: true,   // optional, default is true
-    // },
-    // bar: {
-    //     get () {
-    //         return this._bar;
-    //     },
-    //     set (value) {
-    //         this._bar = value;
-    //     }
-    // },
-    //测试item
-    //   content: {
-    //     default: null,
-    //     type: cc.Node
-    //   },
-    // person: {
-    //   default: null,
-    //   type: cc.Prefab
-    // },
     // 根据TOOLS生成相应的道具
     toolsArray: [],
     fightingArray: [],
@@ -68,14 +44,7 @@ cc.Class({
   onLoad: function onLoad() {
     this.spawnTools();
   },
-  start: function start() {// console.log(this.toolsArray[0])
-    // var _this =this;
-    // var fighting_list = cc.sys.localStorage.getItem("fightingArray");
-    // var fighting_list = JSON.parse(fighting_list);
-    // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
-    //     _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序
-    // }
-  },
+  start: function start() {},
   update: function update(dt) {// console.log(3333)
   },
   spawnTools: function spawnTools() {
@@ -91,18 +60,13 @@ cc.Class({
         url: remoteUrl
       }, function (err, data) {
         // console.log(data) 
-        // _this.addWordMap(results) //生成生物
-        // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         //移除节点
         _this.content.removeAllChildren();
 
         _this.content.destroyAllChildren(); //先让透明度为0
 
 
-        _this.content.opacity = 0;
-        var fin = cc.fadeIn(2);
-
-        _this.content.runAction(fin); // 初始化阵容
+        _this.nodefadeIn(1, 0, _this.content); // 初始化阵容
 
 
         var star = 0; //阵容序号
@@ -115,7 +79,6 @@ cc.Class({
 
         _this.addMapPic(data); //生成地图
         // console.log( _this.toolsArray)
-        // const maps = new Map();
         // console.log( _this.fightingArray )
 
 
@@ -127,23 +90,21 @@ cc.Class({
 
           _this.schedule(function () {
             // for (let boat=0; boat<fighting_list.fighting_history.length; boat++) {
-            boat++;
-            cc.log(boat);
+            boat++; // cc.log(boat)   
 
             if (boat == boat_length) {
               this.unschedule(); // 在第六次执行回调时取消这个计时器
 
               _this.fightingEnd();
             } else {
-              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + boat; // cc.log(fighting_list.fighting_history)
-
-              cc.log(fighting_list.fighting_history[boat]);
+              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + boat + 1; // cc.log(fighting_list.fighting_history)
+              // cc.log(fighting_list.fighting_history[boat])   
 
               _this.fighting_history(fighting_list.fighting_history[boat].fighting_history); //执行战斗顺序      
 
             } // }
 
-          }, 10, boat_length, 3); //10秒后执行1次间隔5秒
+          }, 10, boat_length, 2); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -234,6 +195,20 @@ cc.Class({
 
     return star;
   },
+  //生物渐隐-淡出-淡入
+  nodefadeIn: function nodefadeIn(time, type, node) {
+    node.opacity = type;
+
+    if (type == 0) {
+      //先让透明度为0
+      var fin = cc.fadeIn(time);
+    } else {
+      //先让透明度为255
+      var fin = cc.fadeOut(time);
+    }
+
+    node.runAction(fin);
+  },
   fighting_history: function fighting_history(history) {
     cc.log(history);
     var arr = [];
@@ -246,63 +221,35 @@ cc.Class({
 
     _this.schedule(function () {
       i++;
-      var his_log = history[i];
+      var his_log = history[i]; // cc.log(i)
+      // cc.log(his_log['back'].length)
+      // return false
+      //反击
 
-      if (his_log.back.length != 0) {}
+      if (his_log['back'].length != 0) {
+        _this.playFight(_targ_hero_node, _this_hero_node, biology, his_log['back']);
+      } //执行技能
 
-      if (his_log["do"].length != 0) {}
 
-      if (his_log.go.length != 0) {}
+      if (his_log["do"].length != 0) {
+        _this.readySkill(_this_hero_node, _targ_hero_node, biology, his_log["do"]);
+      } //发起技能
 
-      if (his_log.need.length != 0) {}
+
+      if (his_log.go.length != 0) {
+        _this.playSkill(_this_hero_node, _targ_hero_node, biology, his_log.go);
+      } //消耗
+
+
+      if (his_log.need.length != 0) {
+        _this.playFight(_this_hero_node, _targ_hero_node, biology, his_log.need);
+      } //普通攻击
+
 
       if (his_log.putong.length != 0) {
-        for (var n = 0; n < his_log.putong.length; n++) {
-          var biology = his_log.putong[n];
-          var _this_hero_node = _this.fightingArray[biology.goid];
-          var _targ_hero_node = _this.fightingArray[biology.doid];
-
-          if (biology.goid == biology.doid) {
-            //自己
-            _this.buttonShake(_targ_hero_node, biology); //闪动
-
-          } else {
-            //移动
-            // _this.schedule(function(){
-            _this.buttonMove(_this_hero_node, _targ_hero_node, biology); //移动
-            // },1);
-
-          } // arr.push(cc.rotateTo(0.5 ,5));
-          // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
-          // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
-          // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-          // //   _targ_hero_node.scale = 1;
-          // //   arr.push(cc.scaleBy(1,2));
-          // // },this)) );
-          // //等待攻击完成
-          // arr.push(cc.delayTime(0.5 + 1));
-          // //移回原来位置
-          // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
-          // // arr.push(cc.spawn(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y),cc.callFunc(function(){
-          // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-          // //   _targ_hero_node.scale = 1;
-          // //   arr.push(cc.scaleBy(1,2));
-          // // },this)) );
-          // arr.push(cc.rotateBy(0.5 ,-5));
-          // var act = cc.sequence(arr);
-          // _this_hero_node.runAction(act)
-          // 停止一个动作
-          // _this_hero_node.stopAction(act);
-          // // 停止所有动作
-          // _this_hero_node.stopAllActions();
-
-        } // }
-        // his_log.need.forEach(element => {
-        //   console.log(element)
-        // })
-
+        _this.playFight(_this_hero_node, _targ_hero_node, biology, his_log.putong);
       }
-    }, 1.2, h_length, 1); //只执行一次
+    }, 1.5, h_length, 1); //只执行一次
     //切换成冲刺动画，并移动到目标跟前  
     // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
     //   // _this_hero_node.playAnim('/biology_pic/3关闭');
@@ -330,6 +277,50 @@ cc.Class({
     // }
 
   },
+  readySkill: function readySkill() {},
+  playSkill: function playSkill() {},
+  playFight: function playFight(_this_hero_node, _targ_hero_node, biology, his_log_extend) {
+    for (var n = 0; n < his_log_extend.length; n++) {
+      var biology = his_log_extend[n];
+      var _this_hero_node = _this.fightingArray[biology.goid];
+      var _targ_hero_node = _this.fightingArray[biology.doid];
+
+      if (biology.goid == biology.doid) {
+        //自己
+        _this.buttonShake(0, _targ_hero_node, biology); //闪动
+
+      } else {
+        //移动
+        // _this.schedule(function(){
+        _this.buttonMove(_this_hero_node, _targ_hero_node, biology); //移动
+        // },1);
+
+      } // arr.push(cc.rotateTo(0.5 ,5));
+      // arr.push(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y));
+      // // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
+      // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+      // //   _targ_hero_node.scale = 1;
+      // //   arr.push(cc.scaleBy(1,2));
+      // // },this)) );
+      // //等待攻击完成
+      // arr.push(cc.delayTime(0.5 + 1));
+      // //移回原来位置
+      // arr.push(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y));
+      // // arr.push(cc.spawn(cc.moveTo(2,_this_hero_node.x,_this_hero_node.y),cc.callFunc(function(){
+      // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
+      // //   _targ_hero_node.scale = 1;
+      // //   arr.push(cc.scaleBy(1,2));
+      // // },this)) );
+      // arr.push(cc.rotateBy(0.5 ,-5));
+      // var act = cc.sequence(arr);
+      // _this_hero_node.runAction(act)
+      // 停止一个动作
+      // _this_hero_node.stopAction(act);
+      // // 停止所有动作
+      // _this_hero_node.stopAllActions();
+
+    }
+  },
   buttonMove: function buttonMove(node, m_node, biology) {
     var arr = [];
 
@@ -342,32 +333,19 @@ cc.Class({
     // var m_y =m_y/200*100
 
     cc.log(m_x);
-    cc.log(m_y); // var y_end = this.getAngle(node,m_node)
-    // var actionLeft = cc.moveBy(0.5, cc.v2(x_end,0))
-    //   var actionRight = cc.moveBy(0.5, cc.v2(-x_end,0))
-    // 让节点在向上移动的同时缩放
-    // arr.push( )
-    // arr.push(cc.moveBy(0.5, cc.v2(m_x, m_y)))
-
+    cc.log(m_y);
     arr.push(cc.spawn(cc.moveBy(0.5, m_x, m_y), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {
-      // //   // _this_hero_node.playAnim('/biology_pic/3关闭');
-      // //   _targ_hero_node.scale = 1;
-      // //   arr.push(cc.scaleBy(1,2));
+      // _this_hero_node.playAnim('/biology_pic/3关闭');
       //等待攻击完成
-      _this.buttonShake(m_node, biology);
+      _this.buttonShake(0.5, m_node, biology);
     }, this)));
     arr.push(cc.delayTime(0.5));
     arr.push(cc.moveBy(0.5, cc.v2(-m_x, -m_y), cc.scaleTo(0.5, 1, 1.4))); // 让节点在向上移动的同时缩放
 
     arr.push(cc.scaleTo(0.1, 1, 1));
     arr.push(cc.spawn(cc.delayTime(0.5), cc.callFunc(function () {
-      // _this_hero_node.playAnim('/biology_pic/3关闭');
-      // node.scale = 1;
-      // arr.push(cc.scaleBy(1,2));
       m_node.getChildByName('扣血s').active = false;
-    }, this))); // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-    // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
-
+    }, this)));
     return new Promise(function (resolve) {
       node.runAction(cc.sequence(arr, cc.callFunc(function () {
         console.log(11);
@@ -375,17 +353,16 @@ cc.Class({
       })));
     });
   },
-  buttonShake: function buttonShake(node, biology) {
-    var actionWaite = cc.delayTime(0.5); //等待攻击
+  buttonShake: function buttonShake(waite_time, node, biology) {
+    var waite_time = waite_time || 0;
+    var actionWaite = cc.delayTime(waite_time); //等待攻击时间
 
     var actionhiddenOn = cc.fadeTo(0.05, 0);
     var actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
     var actionRight = cc.moveBy(0.1, cc.v2(10, 0));
     var actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
     var actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
-    var actionhiddenoff = cc.fadeTo(0.05, 255); // node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];
-    // node.getComponent(cc.ProgressBar).Progress
-    // cc.spwan( 同时完成
+    var actionhiddenoff = cc.fadeTo(0.05, 255); // cc.spwan( 同时完成
 
     return new Promise(function (resolve) {
       node.runAction(cc.sequence(actionWaite, actionLeft, actionRight, actionLeftSecond, actionRightSecond, actionhiddenOn, actionhiddenoff, // 执行动作完成之后调用的方法
@@ -398,12 +375,14 @@ cc.Class({
           node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
           node.getChildByName('生命s').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.shengMing;
           var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar);
-          progressBar.progress = biology.hurt_go_value / node.shengMing; // console.log(progressBar.progress)
-
+          progressBar.progress = biology.hurt_go_value / node.shengMing;
           progressBar.completeCount = biology.hurt_go_value;
-          progressBar.totalCount = node.shengMing; // if(biology.hurt_go_value==0){
+          progressBar.totalCount = node.shengMing; //扣血渐隐
+
+          _this.nodefadeIn(1, 255, node); // if(biology.hurt_go_value==0){
           //   node.active=false;
           // }
+
         }
 
         if (biology.extend == 'moFa') {
@@ -411,10 +390,11 @@ cc.Class({
           node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
           node.getChildByName('魔法m').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.moFa;
           var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar);
-          progressBar.progress = biology.hurt_go_value / node.moFa; // console.log(progressBar.progress)
-
+          progressBar.progress = biology.hurt_go_value / node.moFa;
           progressBar.completeCount = biology.hurt_go_value;
-          progressBar.totalCount = node.moFa;
+          progressBar.totalCount = node.moFa; //扣血渐隐
+
+          _this.nodefadeIn(1, 255, node);
         }
 
         resolve();
@@ -477,65 +457,7 @@ cc.Class({
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
     node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
     node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
-  } // start: function() {
-  //     this.start_y = this.content.y;
-  //     this.start_index = 0; // 当前我们24个Item加载的 100项数据里面的起始数据记录的索引;
-  //     this.load_record(this.start_index);
-  // },
-  // // 从这个索引开始，加载数据记录到我们的滚动列表里面的选项
-  // load_record: function(start_index) {
-  //     this.start_index = start_index;
-  //     for(var i = 0; i < this.PAGE_NUM * 3; i ++) {
-  //         var label = this.opt_item_set[i].getChildByName("src").getComponent(cc.Label);
-  //         // 显示我们的记录;
-  //         label.string = this.value_set[start_index + i];
-  //     }
-  // },
-  // on_scroll_ended: function() {
-  //     this.scrollveiw_load_recode();
-  //     this.scroll_view.elastic = true;
-  // },
-  // scrollveiw_load_recode: function() {
-  //      // 向下加载了
-  //     if (this.start_index + this.PAGE_NUM * 3 < this.value_set.length &&
-  //         this.content.y >= this.start_y + this.PAGE_NUM * 2 * this.OPT_HEIGHT) { // 动态加载
-  //         if (this.scroll_view._autoScrolling) { // 等待这个自动滚动结束以后再做加载
-  //             this.scroll_view.elastic = false; // 暂时关闭回弹效果
-  //             return;
-  //         }
-  //         var down_loaded = this.PAGE_NUM;
-  //         this.start_index += down_loaded;
-  //         if (this.start_index + this.PAGE_NUM * 3 > this.value_set.length) {
-  //             var out_len = this.start_index + this.PAGE_NUM * 3 - this.value_set.length;
-  //             down_loaded -= (out_len);
-  //             this.start_index -= (out_len);
-  //         }
-  //         this.load_record(this.start_index);
-  //         this.content.y -= (down_loaded * this.OPT_HEIGHT);
-  //         return;
-  //     }
-  //     // 向上加载
-  //     if (this.start_index > 0 && this.content.y <= this.start_y) {
-  //         if (this.scroll_view._autoScrolling) { // 等待这个自动滚动结束以后再做加载
-  //             this.scroll_view.elastic = false;
-  //             return;
-  //         }
-  //         var up_loaded = this.PAGE_NUM;
-  //         this.start_index -= up_loaded;
-  //         if (this.start_index < 0) {
-  //             up_loaded += this.start_index;
-  //             this.start_index = 0; 
-  //         }
-  //         this.load_record(this.start_index);
-  //         this.content.y += (up_loaded * this.OPT_HEIGHT);
-  //     }
-  //     // end 
-  // },
-  // // called every frame, uncomment this function to activate update callback
-  // update: function (dt) {
-  //     this.scrollveiw_load_recode();
-  // },
-
+  }
 });
 
 cc._RF.pop();

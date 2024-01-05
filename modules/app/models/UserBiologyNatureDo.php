@@ -442,11 +442,11 @@ class UserBiologyNatureDo extends ActiveRecord
             if($attack_biology['shengMing']>0){
                 $this->attack_bout+=1;//前端需要索引排序
                 //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['need']=[];//技能--消耗（耗蓝）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['go']=[];//技能--增幅（被动
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['do']=[];//技能--主动（攻击）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['putong']=[];//普通攻击
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['back']=[];//技能 被动（反击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_need']=[];//技能--消耗（耗蓝）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_go']=[];//技能--增幅（被动
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_do']=[];//技能--主动（攻击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_putong']=[];//普通攻击
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_back']=[];//技能 被动（反击）
                 // 攻击位置计算
                 $this->attackPosition($attack_biology); //主动攻击
             }
@@ -979,7 +979,7 @@ class UserBiologyNatureDo extends ActiveRecord
                 $hurt_go_list['descript_do'] =$sm_do.$this->skill_extend['shengMing']['name'].$hurt_go_list['hurt_msg'];
             }
             $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
-            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['putong'][]= $hurt_go_list; //普通攻击
+            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_putong'][]= $hurt_go_list; //普通攻击
         }else if($type==HURT_SKILL){  
             if($shanbi==1&&$attack==POSITION_ENEMY){
                 $hurt_go_list['descript_do'] =$sm_do.'闪避';
@@ -990,21 +990,22 @@ class UserBiologyNatureDo extends ActiveRecord
             //  0被动反击   1 主动攻击 和主动触发
             if($is_do==SKILL_GOING){
                 if($belong==ATTACK5){
-                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['do'][]= $hurt_go_list; //技能--主动（攻击）
+                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_do'][]= $hurt_go_list; //技能--主动（攻击）
                 }else{
-                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['go'][]= $hurt_go_list; //技能--增幅（被动）
+                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_go'][]= $hurt_go_list; //技能--增幅（被动）
                 }
             }else{
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['back'][]= $hurt_go_list; //技能（反击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_back'][]= $hurt_go_list; //技能（反击）
             }
         }else if($type==HURT_NEED){  
             $need =$skill['needValue']!=0? $this->skill_extend[$skill['need']]['name'].$skill['needValue']:'';
             $hurt_go_list['descript_go'] =$sm_go.'触发技能【'.$skill['name'].$skill['belong'].'】';
+            $hurt_go_list['descript_go_msg'] = '【'.$skill['name'].'】';
             if($need){    //无消耗为空
                 $hurt_go_list['descript_do'] =$sm_do.$need;  
             }
             $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
-            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['need'][]= $hurt_go_list; //技能--消耗（发起消耗）
+            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_need'][]= $hurt_go_list; //技能--消耗（发起消耗）
         }
         return $hurt_go_list;
     }

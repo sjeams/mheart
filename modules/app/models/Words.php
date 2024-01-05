@@ -54,9 +54,12 @@ class Words extends ActiveRecord
     //随机境界
     public static function getUserWordStateRand($difficult,$star){
         // $star=$difficult+$star;
+        //最低境界  
+        $star_state = BiologyState::find()->select('id')->where("difficult = $difficult")->orderBy('id asc')->asArray()->One()['id'];
+        //随机最高境界
         $state = BiologyState::find()->select('id')->where("difficult = $difficult")->orderBy(new Yii\db\Expression('rand()'))->asArray()->One()['id'];
-        $state = $state<=$star?$star+$difficult:$state;// 4-5星时，最低境界为星级+难度 4，先天
-        $state =  rand($star,$state); 
+        $state = $state<=$star?$star+$difficult:$state;// 2-5星时，最低境界为星级+难度 2，保底宗师
+        $state =  rand($star_state,$state); 
         return$state;
     }
 
