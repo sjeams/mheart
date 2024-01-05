@@ -91,7 +91,7 @@ cc.Class({
                   _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序      
                 }                
               // }
-              },10,boat_length,3); //10秒后执行1次间隔5秒
+              },10,boat_length,2); //10秒后执行1次间隔5秒
               // // var poition_my =fighting_list.poition_my
               // // var poition_enemy =fighting_list.poition_enemy
             }
@@ -203,10 +203,10 @@ cc.Class({
           // if(his_log.h_go.length!=0){
           //   _this.playSkill(_this_hero_node,_targ_hero_node,biology,his_log.h_go)
           // }
-          //消耗
-          // if(his_log.h_need.length!=0){
-          //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_need)
-          // }
+          //消耗魔法
+          if(his_log.h_need.length!=0){
+            _this.playFight(his_log.h_need)
+          }
           //普通攻击
           if(his_log.h_putong.length!=0){
             _this.playFight(his_log.h_putong)
@@ -342,7 +342,7 @@ cc.Class({
                     cc.log(biology);
                     if(biology.extend=='shengMing'){
                       node.getChildByName('扣血s').active=true
-                      node.getChildByName('扣血s').getComponent(cc.Label).string=biology.hurt_msg
+                      node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
                       node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
                       var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar)
                       progressBar.progress = biology.hurt_go_value / node.shengMing
@@ -363,14 +363,13 @@ cc.Class({
                     }
                     if(biology.extend=='moFa'){
                       node.getChildByName('扣血s').active=true
-                      node.getChildByName('扣血s').getComponent(cc.Label).string=biology.hurt_msg
-                      node.getChildByName('魔法m').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+                      node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
+                      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
                       var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
                       progressBar.progress = biology.hurt_go_value / node.moFa
                       progressBar.completeCount = biology.hurt_go_value;
                       progressBar.totalCount = node.moFa;
                       //扣血渐隐
- 
                     }
                     resolve();
                 }))

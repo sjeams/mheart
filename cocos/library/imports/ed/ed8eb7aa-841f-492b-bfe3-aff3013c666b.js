@@ -233,11 +233,12 @@ cc.Class({
       // if(his_log.h_go.length!=0){
       //   _this.playSkill(_this_hero_node,_targ_hero_node,biology,his_log.h_go)
       // }
-      //消耗
-      // if(his_log.h_need.length!=0){
-      //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_need)
-      // }
-      //普通攻击
+      //消耗魔法
+
+      if (his_log.h_need.length != 0) {
+        _this.playFight(his_log.h_need);
+      } //普通攻击
+
 
       if (his_log.h_putong.length != 0) {
         _this.playFight(his_log.h_putong);
@@ -389,7 +390,7 @@ cc.Class({
         if (biology.extend == 'moFa') {
           node.getChildByName('扣血s').active = true;
           node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
-          node.getChildByName('魔法m').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.moFa;
+          node.getChildByName('魔法s').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.moFa;
           var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar);
           progressBar.progress = biology.hurt_go_value / node.moFa;
           progressBar.completeCount = biology.hurt_go_value;

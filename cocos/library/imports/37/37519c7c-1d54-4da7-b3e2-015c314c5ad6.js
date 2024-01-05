@@ -155,8 +155,6 @@ var HttpHelper = cc.Class({
       cc.find('Canvas').addChild(TipBoxPrefab); //请求战斗记录
 
       if (_task == 1) {
-        console.log(11111);
-
         _this.fightint(sence);
       } else {
         _this.progress(sence);

@@ -967,11 +967,10 @@ class UserBiologyNatureDo extends ActiveRecord
         }
         $hurt_go_list['hurt_msg']= $hurt_go>=0?'+'.$hurt_go:$hurt_go;
 
-        $hurt_go_list['sm_msg_go']=  $attack_biology_go['shengMing'].'/'.$attack_biology_go['biology_start_extend']['shengMing'];
-        $hurt_go_list['sm_msg_do']=  $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'];
-        $hurt_go_list['mofa_msg_go']=  $attack_biology_go['moFa'].'/'.$attack_biology_go['biology_start_extend']['moFa'];
-        $hurt_go_list['mofa_msg_do']=   $attack_biology_do['moFa'].'/'.$attack_biology_do['biology_start_extend']['moFa'];
-        
+        // $hurt_go_list['sm_msg_go']=  $attack_biology_go['shengMing'].'/'.$attack_biology_go['biology_start_extend']['shengMing'];
+        // $hurt_go_list['sm_msg_do']=  $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'];
+        // $hurt_go_list['mofa_msg_go']=  $attack_biology_go['moFa'].'/'.$attack_biology_go['biology_start_extend']['moFa'];
+        // $hurt_go_list['mofa_msg_do']=   $attack_biology_do['moFa'].'/'.$attack_biology_do['biology_start_extend']['moFa'];
         $sm_go = $attack_biology_go['name'].'生命('.$attack_biology_go['shengMing'].'/'.$attack_biology_go['biology_start_extend']['shengMing'].')    ';
         $sm_do = $attack_biology_do['name'].'生命('. $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'].')    ';
         $sm_do .= '魔法('. $attack_biology_do['moFa'].'/'.$attack_biology_do['biology_start_extend']['moFa'].')    ';
