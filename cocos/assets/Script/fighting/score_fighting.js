@@ -57,8 +57,8 @@ cc.Class({
         cc.loader.load({ url: remoteUrl }, function (err, data) {
             // console.log(data) 
             //移除节点
-            _this.content.removeAllChildren();
-            _this.content.destroyAllChildren();
+            // _this.content.removeAllChildren();
+            // _this.content.destroyAllChildren();
             //先让透明度为0
             // _this.nodefadeIn(1,0,_this.content)
             // 初始化阵容
@@ -84,8 +84,8 @@ cc.Class({
                       // 在第六次执行回调时取消这个计时器
                     _this.fightingEnd()
                 }else{
-                  
-                  cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合'+boat+1
+               
+                  cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合'+ parseInt(boat+1) 
                   // cc.log(fighting_list.fighting_history)
                   // cc.log(fighting_list.fighting_history[boat])   
                   _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序      
@@ -112,7 +112,7 @@ cc.Class({
             var TipBoxPrefab = cc.instantiate(loadedResource);
             //将预制资源添加到父节点
             // CanvasNode.addChild(TipBoxPrefab);
-            cc.find('Canvas').addChild(TipBoxPrefab);
+            cc.find('Canvas').addChild(TipBoxPrefab,1);
             //请求战斗记录
             // if(_task==1){
             //     console.log(11111)
@@ -428,6 +428,12 @@ cc.Class({
       //销毁动态合图
       cc.dynamicAtlasManager.reset()
       httpRequest.playGame('map/诸天地图');
+    },
+    back_reload(){
+      // this.parent.active=false
+      //销毁动态合图
+      cc.dynamicAtlasManager.reset()
+      httpRequest.playGame('战斗场景');
     },
     back_home(){
       //销毁动态合图

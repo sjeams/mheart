@@ -61,13 +61,11 @@ cc.Class({
       }, function (err, data) {
         // console.log(data) 
         //移除节点
-        _this.content.removeAllChildren();
-
-        _this.content.destroyAllChildren(); //先让透明度为0
+        // _this.content.removeAllChildren();
+        // _this.content.destroyAllChildren();
+        //先让透明度为0
         // _this.nodefadeIn(1,0,_this.content)
         // 初始化阵容
-
-
         var star = 0; //阵容序号
 
         var star = _this.init_postion(data.data.poition_my, data.data.biolgy_state, -0, 1, star); //生成生物--position_my
@@ -96,14 +94,14 @@ cc.Class({
 
               _this.fightingEnd();
             } else {
-              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + boat + 1; // cc.log(fighting_list.fighting_history)
+              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + parseInt(boat + 1); // cc.log(fighting_list.fighting_history)
               // cc.log(fighting_list.fighting_history[boat])   
 
               _this.fighting_history(fighting_list.fighting_history[boat].fighting_history); //执行战斗顺序      
 
             } // }
 
-          }, 10, boat_length, 3); //10秒后执行1次间隔5秒
+          }, 10, boat_length, 2); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -133,7 +131,7 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
       // CanvasNode.addChild(TipBoxPrefab);
 
-      cc.find('Canvas').addChild(TipBoxPrefab); //请求战斗记录
+      cc.find('Canvas').addChild(TipBoxPrefab, 1); //请求战斗记录
       // if(_task==1){
       //     console.log(11111)
       //     _this.fightint(sence);
@@ -447,6 +445,12 @@ cc.Class({
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
     httpRequest.playGame('map/诸天地图');
+  },
+  back_reload: function back_reload() {
+    // this.parent.active=false
+    //销毁动态合图
+    cc.dynamicAtlasManager.reset();
+    httpRequest.playGame('战斗场景');
   },
   back_home: function back_home() {
     //销毁动态合图
