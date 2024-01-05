@@ -68,7 +68,10 @@ cc.Class({
             _this.addMapPic(data) //生成地图
           // console.log( _this.toolsArray)
           // console.log( _this.fightingArray )
-            var fighting_list = data.data;     
+            var fighting_list = data.data;    
+            // cc.log( fighting_list )
+            // _this.fightingEnd(fighting_list)
+            // return false
             //没有记录直接跳过  
             if(fighting_list.fighting_history.length!=0){
             
@@ -82,7 +85,7 @@ cc.Class({
                 if (boat == boat_length) {
                     this.unschedule();
                       // 在第六次执行回调时取消这个计时器
-                    _this.fightingEnd()
+                    _this.fightingEnd(fighting_list)
                 }else{
                
                   cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合'+ parseInt(boat+1) 
@@ -100,7 +103,7 @@ cc.Class({
       }
     },
       //战斗结束
-    fightingEnd() {
+    fightingEnd(fighting_list) {
         // var _task =task||0;
         var _this =this;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
@@ -110,6 +113,12 @@ cc.Class({
             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
             var TipBoxPrefab = cc.instantiate(loadedResource);
+            // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+            if(fighting_list.poition_winner==1){
+              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
+            }else{
+              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
+            }
             //将预制资源添加到父节点
             // CanvasNode.addChild(TipBoxPrefab);
             cc.find('Canvas').addChild(TipBoxPrefab,1);
@@ -141,7 +150,8 @@ cc.Class({
         var TOOLS =[];
         var TOOLS = postion;
         var total = postion.length;
-        const maps = new Map();
+        // const maps = new Map();
+    
         //添加节点
         for (let i=0; i<total; i++) {    
             //死亡移除map_status
@@ -161,6 +171,15 @@ cc.Class({
               tool.biology_name=map.biology.name
               _this.toolsArray.push(tool);
               _this.fightingArray[map.biology.id]=tool;
+              //永久重复移动
+              var randomNumup = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+              var randomNumdown = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+              var seq = cc.repeatForever(
+                cc.sequence(
+                    cc.moveBy(randomNumup, 0, 5),
+                    cc.moveBy(randomNumdown, 0, -5)
+                ));
+              tool.runAction(seq);
               // tool.setPosition(map.x,map.y);  
               _this.content.addChild(tool); 
             }
@@ -329,7 +348,6 @@ cc.Class({
                     // cc.log(biology);
                     var _this = this
                     if(biology.extend=='shengMing'){
-                      node.getChildByName('扣血s').active=true
                       node.getChildByName('扣血s').color = new cc.color('FF0000');
                       node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
                       node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
@@ -338,8 +356,13 @@ cc.Class({
                       progressBar.completeCount = biology.hurt_go_value;
                       progressBar.totalCount = node.shengMing;
                       //扣血渐隐
+                      node.getChildByName('扣血s').active=true
                       node.getChildByName('扣血s').opacity=255
                       node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
+
+                      node.getChildByName('受伤').active=true
+                      node.getChildByName('受伤').opacity=255
+                      node.getChildByName('受伤').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
                       if(biology.hurt_go_value==0){
                         node.getChildByName('悟性').active=false
                         node.getChildByName('生命').active=false
@@ -348,11 +371,16 @@ cc.Class({
                         node.getChildByName('生命s').active=false
                         node.getChildByName('魔法s').active=false
                         node.getChildByName('生物').active=false
+                        // 死亡
+                        node.getChildByName('受伤').active=true
+                        cc.loader.loadRes('biology_pic/1死亡之花', function (err, texture) {  
+                          node.getChildByName('受伤').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                        })
+                        node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
                         //   node.active=false;
                       }
                     }
                     if(biology.extend=='moFa'){
-                      node.getChildByName('扣血s').active=true
                       node.getChildByName('扣血s').color = new cc.color('#3568D5');
                       node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
                       node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
@@ -361,6 +389,7 @@ cc.Class({
                       progressBar.completeCount = biology.hurt_go_value;
                       progressBar.totalCount = node.moFa;
                       //扣蓝渐隐
+                      node.getChildByName('扣血s').active=true
                       node.getChildByName('扣血s').opacity=255
                       node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
                     }

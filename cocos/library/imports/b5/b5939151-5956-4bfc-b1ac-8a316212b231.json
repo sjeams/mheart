@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1墓碑",
+    "texture": "f0121585-cf7d-4bad-91b8-11b387bb6106",
+    "atlas": "",
+    "rect": [
+      3,
+      1,
+      71,
+      83
+    ],
+    "offset": [
+      -0.5,
+      2
+    ],
+    "originalSize": [
+      78,
+      89
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

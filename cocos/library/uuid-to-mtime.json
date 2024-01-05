@@ -1284,19 +1284,39 @@
     "meta": 1704439238475,
     "relativePath": "Scene\\战斗场景.fire"
   },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1704442570260,
+    "meta": 1704442572422,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
   "a35df353-e613-4fbb-acd6-15095812556b": {
-    "asset": 1704439800668,
-    "meta": 1704439864304,
+    "asset": 1704446314802,
+    "meta": 1704446314818,
     "relativePath": "resources\\biology_结算.prefab"
   },
-  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1704442125388,
-    "meta": 1704442125443,
-    "relativePath": "prefabs\\biology_普通.prefab"
+  "f0121585-cf7d-4bad-91b8-11b387bb6106": {
+    "asset": 1704446122379,
+    "meta": 1704446303018,
+    "relativePath": "resources\\biology_pic\\1墓碑.png"
+  },
+  "7dca248e-972c-44f3-9e70-63e29d46894c": {
+    "asset": 1704445752474,
+    "meta": 1704446303037,
+    "relativePath": "resources\\biology_pic\\1攻击.png"
+  },
+  "146198f3-814c-46b3-9f93-491eea1ac55c": {
+    "asset": 1704445808434,
+    "meta": 1704446303067,
+    "relativePath": "resources\\biology_pic\\1死亡之花.png"
   },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1704442192645,
-    "meta": 1704442194110,
+    "asset": 1704449039619,
+    "meta": 1704449041253,
     "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
+    "asset": 1704449042019,
+    "meta": 1704449042042,
+    "relativePath": "prefabs\\biology_普通.prefab"
   }
 }

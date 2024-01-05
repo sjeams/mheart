@@ -52,8 +52,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
-      "height": 300
+      "width": 800,
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -116,8 +116,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
-      "height": 300
+      "width": 800,
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -240,7 +240,7 @@
       "ctor": "Float64Array",
       "array": [
         100,
-        -100,
+        -140,
         0,
         0,
         0,
@@ -606,7 +606,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "ed8ebeqhB9JK7/jr/MBPGZr",
+    "_componentId": "2e810gPIYdMIbdgLhTM821Z",
     "handler": "back_reload",
     "customEventData": ""
   },
@@ -665,7 +665,7 @@
       "ctor": "Float64Array",
       "array": [
         -100,
-        -100,
+        -140,
         0,
         0,
         0,
@@ -1031,7 +1031,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "ed8ebeqhB9JK7/jr/MBPGZr",
+    "_componentId": "2e810gPIYdMIbdgLhTM821Z",
     "handler": "back_map",
     "customEventData": ""
   },
@@ -1048,7 +1048,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_name",
+    "_name": "结果s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1066,9 +1066,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 0,
-      "b": 0,
+      "r": 24,
+      "g": 20,
+      "b": 131,
       "a": 255
     },
     "_contentSize": {
@@ -1086,7 +1086,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        80,
+        140,
         0,
         0,
         0,
@@ -1137,7 +1137,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 0,
     "_N$cacheMode": 2,
     "_id": ""
@@ -1155,7 +1155,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "server_name",
+    "_name": "物品s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1173,14 +1173,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 0,
       "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 170.11,
+      "width": 0,
       "height": 40
     },
     "_anchorPoint": {
@@ -1231,8 +1231,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "金币+100",
-    "_N$string": "金币+100",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1261,7 +1261,7 @@
     "sync": false
   },
   {
-    "__type__": "ed8ebeqhB9JK7/jr/MBPGZr",
+    "__type__": "2e810gPIYdMIbdgLhTM821Z",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1269,14 +1269,6 @@
     },
     "_enabled": true,
     "toolsArray": [],
-    "fightingArray": [],
-    "content": null,
-    "person": null,
-    "home": null,
-    "reload": null,
-    "back": null,
-    "test_scrollView": null,
-    "test_pageView": null,
     "_id": ""
   },
   {

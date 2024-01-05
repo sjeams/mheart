@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1攻击",
+    "texture": "7dca248e-972c-44f3-9e70-63e29d46894c",
+    "atlas": "",
+    "rect": [
+      2,
+      14,
+      196,
+      173
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

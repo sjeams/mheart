@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1死亡之花",
+    "texture": "146198f3-814c-46b3-9f93-491eea1ac55c",
+    "atlas": "",
+    "rect": [
+      0,
+      4,
+      96,
+      124
+    ],
+    "offset": [
+      -16,
+      -2
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
