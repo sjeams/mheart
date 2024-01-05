@@ -64,9 +64,8 @@ cc.Class({
         _this.content.removeAllChildren();
 
         _this.content.destroyAllChildren(); //先让透明度为0
-
-
-        _this.nodefadeIn(1, 0, _this.content); // 初始化阵容
+        // _this.nodefadeIn(1,0,_this.content)
+        // 初始化阵容
 
 
         var star = 0; //阵容序号
@@ -104,7 +103,7 @@ cc.Class({
 
             } // }
 
-          }, 10, boat_length, 2); //10秒后执行1次间隔5秒
+          }, 10, boat_length, 3); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -210,44 +209,38 @@ cc.Class({
     node.runAction(fin);
   },
   fighting_history: function fighting_history(history) {
-    cc.log(history);
     var arr = [];
 
     var _this = this;
 
-    var i = -1; // console.log(_this_hero_node);
+    var ipage = -1; // console.log(_this_hero_node);
 
-    var h_length = history.length - 1;
+    var h_length = history.length - 1 < 0 ? 0 : history.length - 1;
 
     _this.schedule(function () {
-      i++;
-      var his_log = history[i]; // cc.log(i)
-      // cc.log(his_log['back'].length)
-      // return false
+      ipage++;
+      var his_log = history[ipage]; // cc.log(his_log)
+      // cc.log(his_log.h_putong.length)
       //反击
+      // if(his_log.h_back.length!=0){
+      //   _this.playFight(_targ_hero_node,_this_hero_node,biology,his_log.h_back)
+      // }
+      // //执行技能
+      // if(his_log.h_do.length!=0){
+      //   _this.readySkill(_this_hero_node,_targ_hero_node,biology,his_log.h_do)
+      // }
+      // //发起技能
+      // if(his_log.h_go.length!=0){
+      //   _this.playSkill(_this_hero_node,_targ_hero_node,biology,his_log.h_go)
+      // }
+      //消耗
+      // if(his_log.h_need.length!=0){
+      //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_need)
+      // }
+      //普通攻击
 
-      if (his_log['back'].length != 0) {
-        _this.playFight(_targ_hero_node, _this_hero_node, biology, his_log['back']);
-      } //执行技能
-
-
-      if (his_log["do"].length != 0) {
-        _this.readySkill(_this_hero_node, _targ_hero_node, biology, his_log["do"]);
-      } //发起技能
-
-
-      if (his_log.go.length != 0) {
-        _this.playSkill(_this_hero_node, _targ_hero_node, biology, his_log.go);
-      } //消耗
-
-
-      if (his_log.need.length != 0) {
-        _this.playFight(_this_hero_node, _targ_hero_node, biology, his_log.need);
-      } //普通攻击
-
-
-      if (his_log.putong.length != 0) {
-        _this.playFight(_this_hero_node, _targ_hero_node, biology, his_log.putong);
+      if (his_log.h_putong.length != 0) {
+        _this.playFight(his_log.h_putong);
       }
     }, 1.5, h_length, 1); //只执行一次
     //切换成冲刺动画，并移动到目标跟前  
@@ -279,11 +272,14 @@ cc.Class({
   },
   readySkill: function readySkill() {},
   playSkill: function playSkill() {},
-  playFight: function playFight(_this_hero_node, _targ_hero_node, biology, his_log_extend) {
+  playFight: function playFight(his_log_extend) {
+    var _this = this;
+
     for (var n = 0; n < his_log_extend.length; n++) {
-      var biology = his_log_extend[n];
-      var _this_hero_node = _this.fightingArray[biology.goid];
-      var _targ_hero_node = _this.fightingArray[biology.doid];
+      var biology = his_log_extend[n]; // cc.log(this.fightingArray)
+
+      var _this_hero_node = this.fightingArray[biology.goid];
+      var _targ_hero_node = this.fightingArray[biology.doid];
 
       if (biology.goid == biology.doid) {
         //自己
@@ -331,9 +327,9 @@ cc.Class({
     if (node.x != m_node.x) m_x = m_node.x - node.x;
     if (node.y != m_node.y) m_y = m_node.y - node.y; // var m_x =m_x/200*100
     // var m_y =m_y/200*100
+    // cc.log(m_x)
+    // cc.log(m_y)
 
-    cc.log(m_x);
-    cc.log(m_y);
     arr.push(cc.spawn(cc.moveBy(0.5, m_x, m_y), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {
       // _this_hero_node.playAnim('/biology_pic/3关闭');
       //等待攻击完成
@@ -379,10 +375,15 @@ cc.Class({
           progressBar.completeCount = biology.hurt_go_value;
           progressBar.totalCount = node.shengMing; //扣血渐隐
 
-          _this.nodefadeIn(1, 255, node); // if(biology.hurt_go_value==0){
-          //   node.active=false;
-          // }
-
+          if (biology.hurt_go_value == 0) {
+            node.getChildByName('悟性').active = false;
+            node.getChildByName('生命').active = false;
+            node.getChildByName('魔法').active = false;
+            node.getChildByName('悟性s').active = false;
+            node.getChildByName('生命s').active = false;
+            node.getChildByName('魔法s').active = false;
+            node.getChildByName('生物').active = false; //   node.active=false;
+          }
         }
 
         if (biology.extend == 'moFa') {
@@ -393,8 +394,6 @@ cc.Class({
           progressBar.progress = biology.hurt_go_value / node.moFa;
           progressBar.completeCount = biology.hurt_go_value;
           progressBar.totalCount = node.moFa; //扣血渐隐
-
-          _this.nodefadeIn(1, 255, node);
         }
 
         resolve();
