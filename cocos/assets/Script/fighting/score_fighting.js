@@ -5,8 +5,9 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../http"); 
+require("figthingExtend"); 
+// var httpRequest = new HttpHelper();
 var params =[];
 cc.Class({
     extends: cc.Component,
@@ -94,7 +95,7 @@ cc.Class({
                   _this.fighting_history(fighting_list.fighting_history[boat].fighting_history)//执行战斗顺序      
                 }                
               // }
-              },10,boat_length,2); //10秒后执行1次间隔5秒
+              },12,boat_length,1); //10秒后执行1次间隔5秒
               // // var poition_my =fighting_list.poition_my
               // // var poition_enemy =fighting_list.poition_enemy
             }
@@ -164,6 +165,8 @@ cc.Class({
               tool.x=parseInt(map.x+int_px)
               tool.getChildByName('阵法s').getComponent(cc.Label).string= star-1;
               tool.y=map.y
+              tool.is_my=is_my//阵容
+              tool.jing_bi=map.biology.jingBi//阵容
               tool.biology_int=star//阵法编号
               tool.shengMing=map.biology.shengMing
               tool.moFa=map.biology.moFa
@@ -172,12 +175,14 @@ cc.Class({
               _this.toolsArray.push(tool);
               _this.fightingArray[map.biology.id]=tool;
               //永久重复移动
-              var randomNumup = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-              var randomNumdown = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+              var randomNumup = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+              var randomNumdown = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
               var seq = cc.repeatForever(
                 cc.sequence(
-                    cc.moveBy(randomNumup, 0, 5),
-                    cc.moveBy(randomNumdown, 0, -5)
+                    cc.moveBy(randomNumup, 0,6),
+                    // cc.scaleTo(randomNumup, 1, 1.05),
+                    // cc.scaleTo(randomNumdown, 1.05,1),
+                    cc.moveBy(randomNumdown, 0,-6)
                 ));
               tool.runAction(seq);
               // tool.setPosition(map.x,map.y);  
@@ -219,7 +224,7 @@ cc.Class({
           if(his_log.h_putong.length!=0){
             _this.playFight(his_log.h_putong)
           }
-      },1.5,h_length,1);//只执行一次
+      },2,h_length,1.5);//只执行一次
         //切换成冲刺动画，并移动到目标跟前  
         // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
         //   // _this_hero_node.playAnim('/biology_pic/3关闭');
@@ -303,19 +308,21 @@ cc.Class({
       var _this =this;
       var m_x=10
       var m_y=0
-      if (node.x != m_node.x) m_x = m_node.x - node.x
+      var m_x_move =0
+      if (node.is_my==1){
+        m_x_move =-120
+      }else{
+        m_x_move =120
+      }    
+      if (node.x != m_node.x) m_x = m_node.x - node.x+m_x_move
       if (node.y != m_node.y) m_y = m_node.y - node.y 
-      // var m_x =m_x/200*100
-      // var m_y =m_y/200*100
-      // cc.log(m_x)
-      // cc.log(m_y)
       arr.push(cc.spawn(cc.moveBy(0.5,m_x,m_y),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
       // _this_hero_node.playAnim('/biology_pic/3关闭');
       //等待攻击完成
       _this.buttonShake(0.5,m_node,biology)
       },this)) );
       arr.push( cc.delayTime(0.5))
-      arr.push( cc.moveBy(0.5, cc.v2(-m_x,-m_y),cc.scaleTo(0.5, 1, 1.4)))
+      arr.push( cc.moveBy(0.5, cc.v2(-m_x,-m_y),cc.scaleTo(0.5, 1, 1.3)))
       // 让节点在向上移动的同时缩放
       arr.push(cc.scaleTo(0.1, 1,1))
 
@@ -346,53 +353,7 @@ cc.Class({
                 cc.callFunc(() => {
                     // cc.log(node);
                     // cc.log(biology);
-                    var _this = this
-                    if(biology.extend=='shengMing'){
-                      node.getChildByName('扣血s').color = new cc.color('FF0000');
-                      node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
-                      node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
-                      var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar)
-                      progressBar.progress = biology.hurt_go_value / node.shengMing
-                      progressBar.completeCount = biology.hurt_go_value;
-                      progressBar.totalCount = node.shengMing;
-                      //扣血渐隐
-                      node.getChildByName('扣血s').active=true
-                      node.getChildByName('扣血s').opacity=255
-                      node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
-
-                      node.getChildByName('受伤').active=true
-                      node.getChildByName('受伤').opacity=255
-                      node.getChildByName('受伤').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
-                      if(biology.hurt_go_value==0){
-                        node.getChildByName('悟性').active=false
-                        node.getChildByName('生命').active=false
-                        node.getChildByName('魔法').active=false
-                        node.getChildByName('悟性s').active=false
-                        node.getChildByName('生命s').active=false
-                        node.getChildByName('魔法s').active=false
-                        node.getChildByName('生物').active=false
-                        // 死亡
-                        node.getChildByName('受伤').active=true
-                        cc.loader.loadRes('biology_pic/1死亡之花', function (err, texture) {  
-                          node.getChildByName('受伤').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                        })
-                        node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
-                        //   node.active=false;
-                      }
-                    }
-                    if(biology.extend=='moFa'){
-                      node.getChildByName('扣血s').color = new cc.color('#3568D5');
-                      node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
-                      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
-                      var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
-                      progressBar.progress = biology.hurt_go_value / node.moFa
-                      progressBar.completeCount = biology.hurt_go_value;
-                      progressBar.totalCount = node.moFa;
-                      //扣蓝渐隐
-                      node.getChildByName('扣血s').active=true
-                      node.getChildByName('扣血s').opacity=255
-                      node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
-                    }
+                    getFightingExtend.playAction(node,biology)
                     resolve();
                 }) )
         );

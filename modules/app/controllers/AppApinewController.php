@@ -115,7 +115,7 @@ class AppApinewController extends ApiUserControl{
         //战斗系统--返回战斗结果
         $data =  $UserBiologyNatureDo->getFightSystem($my_biology,$do_biology,$map_int);
         //如果胜利--系统战斗
-        if($data['poition_winner']&&!$param['userid']){
+        if($data['poition_winner']==POSITION_MY&&!$param['userid']){
             // 修改地图状态
             $UserWords->updateMapSystemDie($map_int);//死亡移除
         }
