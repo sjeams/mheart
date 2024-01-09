@@ -479,7 +479,7 @@ class UserBiologyNatureDo extends ActiveRecord
         //发起伤害
         $hurt_go_list = array(
             'position_my'=>$position_my,//发起单位 1己方 2敌方 
-            'type'=>HURT_NEED,// 0普通攻击 1技能 
+            'type'=>HURT_NEED,// 0普通攻击 1技能 2消耗
             'pid'=>$attack_biology['id'],//发起攻击位置
             'attack'=>$attack,//攻击类型
             'goid'=>$goid,//发起攻击位置
@@ -502,7 +502,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public function attackPosition($attack_biology){
 
         $position_in = $attack_biology['position'];//当前生物位置 
-        $position_my = $attack_biology['position_my'];//当前生物1自己  2敌方  
+        $position_my = $attack_biology['position_my'];//当前生物1自己  2敌方
         $fight_skill = $attack_biology['fight_skill'];//生物技能
         $is_skill = $attack_biology['is_skill'];//1主动技能  普通攻击0
         //类型列表
@@ -530,8 +530,13 @@ class UserBiologyNatureDo extends ActiveRecord
                     continue;
                 }
                 //获取阵容--每次技能过后需要重新获取生物状态
-                $position_my_list_new   = $this-> getShengMing(POSITION_MY);
-                $position_enemy_list_new= $this-> getShengMing(POSITION_ENEMY);
+                if($position_my==POSITION_MY){  //---判断是哪一方进攻
+                    $position_my_list_new   = $this-> getShengMing(POSITION_MY);
+                    $position_enemy_list_new= $this-> getShengMing(POSITION_ENEMY);
+                }else{
+                    $position_enemy_list_new   = $this-> getShengMing(POSITION_MY);
+                    $position_my_list_new= $this-> getShengMing(POSITION_ENEMY);
+                }
                 //排序
                 if($position_type){
                     $position_my_list_new= BiologySkillPosition:: getPositionType($position_type,$position_my_list_new,$position_type_list);
@@ -552,7 +557,6 @@ class UserBiologyNatureDo extends ActiveRecord
                             $this->attackSkill($position_my,$attack_biology,$pid,$skill,SKILL_GOING);
     
                         }
-                        
                     } 
                     // var_dump($skill);//技能
                     // var_dump($int);die;//攻击位置
@@ -791,7 +795,7 @@ class UserBiologyNatureDo extends ActiveRecord
             }
             //可以完全抵消伤害
             $hurt_go = $hurt_go+$hurt_do;
-            $hurt_go = $hurt_go>=0?0:$hurt_go;//伤害最少为0
+            $hurt_go = $hurt_go>=0?-1:$hurt_go;//伤害最少为-1
      
         }
         $not_out=1;//0跳过 1不跳过
@@ -939,6 +943,7 @@ class UserBiologyNatureDo extends ActiveRecord
 
     //战斗结果 $is_go 0发起攻击  1发起消耗
     public function getTips($hurt_go_list){   
+ 
         $UserWords= new UserWords();
         if($hurt_go_list['position_my']==POSITION_MY){
             $position_int =$UserWords->getFightingPosition(POSITION_MY,$this->my_biology_extend['position'],$hurt_go_list['doid']);//返回坐标己方,初始英雄
@@ -948,6 +953,7 @@ class UserBiologyNatureDo extends ActiveRecord
         $hurt_go_list['int_x'] =$position_int['x'];//攻击的坐标x
         $hurt_go_list['int_y'] =$position_int['y'];//攻击的坐标y
         $hurt_go_list['descript_go']='';//消耗
+        $hurt_go_list['descript_go_msg'] ='';//消耗技能
         $hurt_go_list['descript_do']='';//伤害
         $doid = $hurt_go_list['doid'];//伤害类型
         $attack_biology_go= $hurt_go_list['attack_biology_go'];
@@ -965,7 +971,7 @@ class UserBiologyNatureDo extends ActiveRecord
             $attack=$skill['attack'];//攻击对象
             $belong = intval($skill['belong']);//主动--技能
         }
-        $hurt_go_list['hurt_msg']= $hurt_go>=0?'+'.$hurt_go:$hurt_go;
+        $hurt_go_list['hurt_msg']= $hurt_go>0?'+'.$hurt_go:$hurt_go;
 
         // $hurt_go_list['sm_msg_go']=  $attack_biology_go['shengMing'].'/'.$attack_biology_go['biology_start_extend']['shengMing'];
         // $hurt_go_list['sm_msg_do']=  $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'];
@@ -975,6 +981,8 @@ class UserBiologyNatureDo extends ActiveRecord
         $sm_do = $attack_biology_do['name'].'生命('. $attack_biology_do['shengMing'].'/'.$attack_biology_do['biology_start_extend']['shengMing'].')    ';
         $sm_do .= '魔法('. $attack_biology_do['moFa'].'/'.$attack_biology_do['biology_start_extend']['moFa'].')    ';
         $sm_go .= '魔法('.$attack_biology_go['moFa'].'/'.$attack_biology_go['biology_start_extend']['moFa'].')    ';
+        // var_dump($type.'-'.$is_do.'-'.$belong);
+
         // 0普通攻击  1技能攻击  2发起消耗 
         if($type==HURT_PUTONG){
             $hurt_go_list['descript_go'] =$sm_go.'普通攻击';

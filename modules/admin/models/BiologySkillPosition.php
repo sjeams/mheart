@@ -8,9 +8,13 @@ class BiologySkillPosition extends ActiveRecord
     public static function tableName(){
         return '{{%biology_skill_position}}';
     }
+
+    // position  攻击位置    positionType  攻击类型
     // 此方法用于返回攻击位置 -----自己位置 攻击位置  攻击类型   位置列表   是否是自己
     public static function getPositionExtend($position_in,$position,$position_type,$att_position,$attack){
-        
+        // var_dump($attack);
+        // var_dump($position);
+        // var_dump($att_position);
         //生物位置是必有得，没有的时候，直接胜利
         // $use=[]; //治疗  增加攻击 属性 伤害
         $int=[];//返回位置
@@ -33,10 +37,10 @@ class BiologySkillPosition extends ActiveRecord
                     if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
                         // 获取剩余补充5个
                         $num =count($att_position)-count($int);
-                        // array_merge()
                         // 取差集
+                        $les = array_diff($att_position,$int);
+                        $int= array_merge($int,array_slice($les,0,$num));
                     }
-
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,5);//敌方生物位置
                 }
@@ -62,10 +66,16 @@ class BiologySkillPosition extends ActiveRecord
                 $int = BiologySkillPosition::getPositionInt($att_position,$list);//敌方生物位置
             break;
             case 6: //随机1个单位
-   
                 if($position_type){
                     $list=[]; //默认按第一顺位来
                     $int= BiologySkillPosition::getPositionInt($att_position,$list,1);//敌方生物位置
+                    if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
+                        // 获取剩余补充5个
+                        $num =count($att_position)-count($int);
+                        // 取差集
+                        $les = array_diff($att_position,$int);
+                        $int= array_merge($int,array_slice($les,0,$num));
+                    }
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,1);//敌方生物位置
                 }
@@ -74,15 +84,28 @@ class BiologySkillPosition extends ActiveRecord
                 if($position_type){
                     $list=[]; //默认按第一顺位来
                     $int= BiologySkillPosition::getPositionInt($att_position,$list,2);//敌方生物位置
+                    if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
+                        // 获取剩余补充5个
+                        $num =count($att_position)-count($int);
+                        // 取差集
+                        $les = array_diff($att_position,$int);
+                        $int= array_merge($int,array_slice($les,0,$num));
+                    }
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,2);//敌方生物位置
                 }
             break;
             case 8: //随机3个单位
-
                 if($position_type){
                     $list=[]; //默认按第一顺位来
                     $int= BiologySkillPosition::getPositionInt($att_position,$list,3);//敌方生物位置
+                    if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
+                        // 获取剩余补充5个
+                        $num =count($att_position)-count($int);
+                        // 取差集
+                        $les = array_diff($att_position,$int);
+                        $int= array_merge($int,array_slice($les,0,$num));
+                    }
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,3);//敌方生物位置
                 }
@@ -91,13 +114,21 @@ class BiologySkillPosition extends ActiveRecord
                 if($position_type){
                     $list=[]; //默认按第一顺位来
                     $int= BiologySkillPosition::getPositionInt($att_position,$list,4);//敌方生物位置
+                    if(count($int)<count($att_position)){ //数量不够时，按第一顺位攻击
+                        // 获取剩余补充5个
+                        $num =count($att_position)-count($int);
+                        // 取差集
+                        $les = array_diff($att_position,$int);
+                        $int= array_merge($int,array_slice($les,0,$num));
+                    }
                 }else{
                     $int= BiologySkillPosition::getPositionRand($att_position,4);//敌方生物位置
                 }
             break;
-            case 9: //所有单位
+            case 10: //所有单位
                 $list=[]; //默认按第一顺位来
-                $int= BiologySkillPosition::getPositionInt($att_position,$list,9);//敌方生物位置
+                // $int= BiologySkillPosition::getPositionInt($att_position,$list,9);//敌方生物位置
+                $int= BiologySkillPosition::getPositionRand($att_position,9);//敌方生物位置
             break;
         }
         return $int;
