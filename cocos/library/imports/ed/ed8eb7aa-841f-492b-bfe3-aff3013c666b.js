@@ -95,9 +95,10 @@ cc.Class({
             boat++; // cc.log(boat)   
 
             if (boat == boat_length) {
-              this.unschedule(); // 在第六次执行回调时取消这个计时器
-
+              // 在第六次执行回调时取消这个计时器
               _this.fightingEnd(fighting_list);
+
+              _this.unschedule();
             } else {
               cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + parseInt(boat + 1); // cc.log(fighting_list.fighting_history)
               // cc.log(fighting_list.fighting_history[boat])   
@@ -106,7 +107,7 @@ cc.Class({
 
             } // }
 
-          }, 12, boat_length, 1); //10秒后执行1次间隔5秒
+          }, 15, boat_length, 1); //10秒后执行1次间隔5秒
           // // var poition_my =fighting_list.poition_my
           // // var poition_enemy =fighting_list.poition_enemy
 
@@ -220,8 +221,7 @@ cc.Class({
 
     var _this = this;
 
-    var ipage = -1; // console.log(_this_hero_node);
-
+    var ipage = -1;
     var h_length = history.length - 1 < 0 ? 0 : history.length - 1;
 
     _this.schedule(function () {
@@ -232,27 +232,34 @@ cc.Class({
       // if(his_log.h_back.length!=0){
       //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)
       // }
-      //执行技能
+      //消耗魔法 --技能名称和消耗放一起了
 
-      if (his_log.h_do.length != 0) {
-        _this.playSkill(his_log.h_do);
+      if (his_log.h_need.length != 0) {
+        _this.readySkill(his_log.h_need);
       } //发起技能名称
 
 
       if (his_log.h_go.length != 0) {
         _this.readySkill(his_log.h_go);
-      } //消耗魔法 --技能名称和消耗放一起了
+      } // 执行技能
 
 
-      if (his_log.h_need.length != 0) {
-        _this.readySkill(his_log.h_need);
+      if (his_log.h_do.length != 0) {
+        _this.playSkill(his_log.h_do);
       } //普通攻击
 
 
       if (his_log.h_putong.length != 0) {
         _this.playFight(his_log.h_putong);
-      }
-    }, 1.5, h_length, 1); //只执行一次
+      } // 执行Promise
+      // _this.readySkill(his_log.h_need).then(()=>{
+      //   _this.readySkill(his_log.h_go).then(()=>{
+      //     _this.playSkill(his_log.h_do)
+      //     _this.playFight(his_log.h_putong)
+      //   })
+      // })
+
+    }, 3, h_length, 1); //只执行一次
     //切换成冲刺动画，并移动到目标跟前  
     // arr.push(cc.spawn(cc.moveTo(2,_targ_hero_node.x,_targ_hero_node.y),cc.callFunc(function(){
     //   // _this_hero_node.playAnim('/biology_pic/3关闭');
@@ -280,52 +287,82 @@ cc.Class({
     // }
 
   },
+  //技能准备动作
   readySkill: function readySkill(his_log_extend) {
     // console.log(his_log_extend)
-    var _this = this;
+    if (his_log_extend.length != 0) {
+      var _this = this; // for (var npage=0; npage<his_log_extend.length; npage++){
 
-    for (var n = 0; n < his_log_extend.length; n++) {
-      var biology = his_log_extend[n]; // cc.log(biology)
 
-      var _this_hero_node = this.fightingArray[biology.goid];
-      var _targ_hero_node = this.fightingArray[biology.doid];
+      var npage = -1;
+      var n_length = his_log_extend.length - 1 < 0 ? 0 : his_log_extend.length - 1;
 
-      _this.buttonReady(0, _this_hero_node, biology); //自己变大--加载技能动作
+      _this.schedule(function () {
+        npage++;
+        var biology = his_log_extend[npage];
+        var _this_hero_node = this.fightingArray[biology.goid];
+        var _targ_hero_node = this.fightingArray[biology.doid];
+
+        var res = _this.buttonReady(0, _this_hero_node, biology); //自己变大--加载技能动作
+
+      }, 1, n_length, 0.1); //只执行一次
+      // }
+      // return res
 
     }
+
+    return new Promise(function (resolve) {
+      resolve();
+    });
   },
+  //技能攻击动作
   playSkill: function playSkill(his_log_extend) {
-    var _this = this;
+    if (his_log_extend.length != 0) {
+      var _this = this;
 
-    for (var n = 0; n < his_log_extend.length; n++) {
-      var biology = his_log_extend[n]; // cc.log(biology)
+      for (var npage = 0; npage < his_log_extend.length; npage++) {
+        var biology = his_log_extend[npage]; // cc.log(biology)
 
-      var _this_hero_node = this.fightingArray[biology.goid];
-      var _targ_hero_node = this.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
+        var _this_hero_node = this.fightingArray[biology.goid];
+        var _targ_hero_node = this.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
 
-      getFightingExtend.playAction(_targ_hero_node, biology, 1); //不需要其它动作，瞬发伤害动作
-    }
-  },
-  playFight: function playFight(his_log_extend) {
-    var _this = this;
-
-    for (var n = 0; n < his_log_extend.length; n++) {
-      var biology = his_log_extend[n]; // cc.log(this.fightingArray)
-
-      var _this_hero_node = this.fightingArray[biology.goid];
-      var _targ_hero_node = this.fightingArray[biology.doid];
-
-      if (biology.goid == biology.doid) {
-        // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
-        _this.buttonReady(0, _this_hero_node, biology); //自己变大--加载技能动作
-
-      } else {
-        _this.buttonMove(0.5, _this_hero_node, _targ_hero_node, biology); //移动
-
+        getFightingExtend.playAction(_targ_hero_node, biology, 1); //不需要其它动作，瞬发伤害动作
       }
     }
+
+    return new Promise(function (resolve) {
+      resolve();
+    });
   },
-  //准备
+  //普通攻击动作
+  playFight: function playFight(his_log_extend) {
+    if (his_log_extend.length != 0) {
+      var _this = this;
+
+      for (var npage = 0; npage < his_log_extend.length; npage++) {
+        var biology = his_log_extend[npage]; // cc.log(this.fightingArray)
+
+        var _this_hero_node = this.fightingArray[biology.goid];
+        var _targ_hero_node = this.fightingArray[biology.doid];
+
+        if (biology.goid == biology.doid) {
+          // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
+          var res = _this.buttonReady(0, _this_hero_node, biology); //自己变大--加载技能动作
+
+        } else {
+          var res = _this.buttonMove(0.1, _this_hero_node, _targ_hero_node, biology); //移动
+
+        }
+      }
+
+      return res;
+    }
+
+    return new Promise(function (resolve) {
+      resolve();
+    });
+  },
+  //准备动作--变大
   buttonReady: function buttonReady(waite_time, node, biology) {
     var waite_time = waite_time || 0;
     var actionhiddenBig = cc.scaleTo(0.1, 1, 1.2);
@@ -369,17 +406,16 @@ cc.Class({
     if (node.x != m_node.x) m_x = m_node.x - node.x + m_x_move;
     if (node.y != m_node.y) m_y = m_node.y - node.y; //普通攻击
 
-    arr.push(cc.spawn(cc.moveBy(0.3, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {
-      //等待攻击完成
-      _this.buttonShake(waite_time, m_node, biology);
-    }, this)));
-    arr.push(cc.delayTime(0.3));
-    arr.push(cc.spawn(cc.moveBy(0.3, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1))); // 让节点在向上移动的同时缩放
+    var actionLeft = cc.spawn(cc.moveBy(0.3, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {}, this));
+    var actionWaite = cc.delayTime(0.3);
+    var actionRight = cc.spawn(cc.moveBy(0.3, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1)); // 让节点在向上移动的同时缩放
     // arr.push(cc.scaleTo(0.1, 1,1))
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(arr, cc.callFunc(function () {
-        console.log(11);
+      node.runAction(cc.sequence(actionLeft, actionWaite, actionRight, cc.callFunc(function () {
+        //等待攻击完成
+        _this.buttonShake(waite_time, m_node, biology);
+
         resolve();
       })));
     });

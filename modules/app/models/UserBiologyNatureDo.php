@@ -987,6 +987,7 @@ class UserBiologyNatureDo extends ActiveRecord
         if($type==HURT_PUTONG){
             $hurt_go_list['descript_go'] =$sm_go.'普通攻击';
             if($shanbi){
+                $hurt_go_list['extend'] ='闪避'; //闪避时跳过动作
                 $hurt_go_list['descript_do'] =$sm_do.'闪避';
             }else{
                 $hurt_go_list['descript_do'] =$sm_do.$this->skill_extend['shengMing']['name'].$hurt_go_list['hurt_msg'];

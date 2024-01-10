@@ -19,11 +19,11 @@ var FightingExtend = cc.Class({
       node.getChildByName('技能效果').runAction(cc.fadeOut(1), cc.callFunc(function () {
         node.getChildByName('技能效果').active = false;
       }, this));
-    }
+    } // cc.log(biology)
+
 
     if (biology.extend == 'shengMing') {
-      cc.log(biology); //血条动作
-
+      //血条动作
       node.getChildByName('生命s').getComponent(cc.Label).string = biology.hurt_go_value + '/' + node.shengMing;
       var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar);
       progressBar.progress = biology.hurt_go_value / node.shengMing;
@@ -107,11 +107,21 @@ var FightingExtend = cc.Class({
         node.getChildByName('扣血s').active = false;
       }, this));
       node.getChildByName('扣蓝s').runAction(cc.moveBy(0.01, cc.v2(0, -100)));
-    } //技能
+    }
+
+    if (biology.extend == '闪避') {
+      node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
+      node.getChildByName('技能s').active = true;
+      node.getChildByName('技能s').opacity = 255; // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,100)));
+
+      node.getChildByName('技能s').runAction(cc.fadeOut(2), cc.callFunc(function () {
+        node.getChildByName('技能s').active = false;
+      }, this));
+    } //技能名称
 
 
     if (biology.descript_go_msg != '') {
-      //金币
+      cc.log(biology.descript_go_msg);
       node.getChildByName('技能s').getComponent(cc.Label).string = biology.descript_go_msg;
       node.getChildByName('技能s').active = true;
       node.getChildByName('技能s').opacity = 255; // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,100)));
