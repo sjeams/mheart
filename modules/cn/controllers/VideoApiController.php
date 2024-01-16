@@ -20,7 +20,7 @@ use app\modules\cn\models\CategoryName;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
 use app\modules\cn\models\WechatUser;
- 
+use QL\QueryList;
 class VideoApiController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
@@ -46,7 +46,7 @@ class VideoApiController extends VideoApiControl
     // /**
     //  * 基本信息
     //  * by  sjeam
-    //  * http://www.mheart.cc/cn/video/uploade
+    //  * http://www.mheart.cc/cn/video-api/uploade
     //  */
     // public function actionUploade()
     // {
@@ -59,11 +59,56 @@ class VideoApiController extends VideoApiControl
     //     var_dump('OK');die;
     //     // die(Method::jsonGenerate(1,[],'返回数据成功'));
     // }
- 
+     /**
+     * 测试接口
+     * by  sjeam
+     * http://cs.aheart.com/cn/video-api/url-test
+     */
+    public function actionUrlTest()
+    {
+        //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
+        $page = Yii::$app->request->post('page',1);
+        $belong = Yii::$app->request->post('belong',4);
+        // var_dump($page);
+        $list=array(   
+            array(4,0,'主播',"/type/2.html",'https://436727.166477.com/'),
+        );
+        //键值处理
+        foreach($list as$key=> $v){
+        $data[$key]['belong']= $v[0]; // 1【鸡婆TV】 本站永久域名www.jipotv.com
+        $data[$key]['type']=	$v[1];  // 类型  --0 主播   1 电影  2 影视剧
+        $data[$key]['title']=$v[2];
+        $data[$key]['url']=	$v[3];
+        $data[$key]['http']=$v[4];
+
+
+        }
+        $content1= array('  ','href','');
+        $content2= array('  .txt p','html','');
+        $content3= array('  .pic>img','data-original','');
+        $rules=array(
+            'url' =>  $content1,
+            'title' => $content2,
+            'imageurl' => $content3,
+        );
+        $rang='  .vods .vod';
+        $httpurl =$data[0]['http'].=$data[0]['url'];
+        // intval()
+        // https://cdn73.com:10073/13819/index.m3u8
+        $ql = QueryList::rules($rules);
+        $data =$ql->get($httpurl)->range($rang)->queryData();
+        $ql->destruct();
+        // $data = QueryList::get($httpurl)->getHtml(); ;
+        // echo $data;
+        var_dump($data);die;
+        // Video::getQueryList($page,$belong);
+        // echo  "第".$page."页，采集完成。</br>";
+        die(Method::jsonGenerate(1,[],'返回数据成功'));
+    }
     /**
      * 基本信息
      * by  sjeam
-     * http://www.mheart.cc/cn/video/updateurl
+     * http://cs.aheart.com/cn/video-api/updateurl
      */
     public function actionUpdateurl()
     {

@@ -64,16 +64,25 @@ class Video extends ActiveRecord {
 					);
 				}
 			}else if($belong==4){
-				// $type = $type?$type:1;
+				$type = $type?$type:1;
 				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					$list=array(
-						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
+						array($belong,$type,'探探',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy11.com'),
+						// array($belong,$type,'探探',"/type/2.html",'https://436727.166477.com'),
 					);
 				}else{
-					$list=array(
-						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
-					);
+					if($page==1){
+						$list=array(
+							// array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
+							array($belong,$type,'探探',"/type/$type.html",'https://436727.166477.com'),
+						);
+					}else{
+						$list=array(
+							// array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
+							array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
+						);
+					}
 				}
 
 			}else if($belong==5){
@@ -151,10 +160,14 @@ class Video extends ActiveRecord {
 					break;
 
 					case 4 :   		// 小站
-						$content1= array(' .name','href','');
-						$content2= array(' .name','html','');
-						$content3= array('.name>img','src','');
-						$rang='.content .nr li   ';
+						// $content1= array(' .name','href','');
+						// $content2= array(' .name','html','');
+						// $content3= array('.name>img','src','');
+						// $rang='.content .nr li   ';
+						$content1= array('  ','href','');
+						$content2= array('  .txt>p','html','');
+						$content3= array('  .pic>img','data-original','');
+						$rang='  .vods .vod';
 					break;
 					case 5 :   		// 小站
 						$content1= array(' a','href','');
@@ -249,14 +262,20 @@ class Video extends ActiveRecord {
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);die;
-				$rules=array(
-					'content' => $content1,
-					'imageurl' => $content2
+				// $rules=array(
+				// 	'content' => $content1,
+				// 	'imageurl' => $content2
+				// );
+				// $ql = QueryList::rules($rules);
+				// $data1 =$ql->get($link)->queryData();
+				// $ql->destruct();
+				preg_match('/\d+/', $val['url'], $result);
+				$keyid=$result[0];
+				$val['title']='ppw_'.$keyid;
+				$data1=array(
+					'content' => "https://cdn73.com:10073/$keyid/index.m3u8",
+					'imageurl' => $val['imageurl']
 				);
-				$ql = QueryList::rules($rules);
-				$data1 =$ql->get($link)->queryData();
-				$ql->destruct();
-				// var_dump($data1);die;
 				if(!empty($data1['content'] )){
 					$data1['title']=$val['title'];
 					$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
@@ -359,6 +378,7 @@ class Video extends ActiveRecord {
 		$args['type']= $type;
 		$args['belong']= $belong;
 		$args['link']= $link;
+		// var_dump($args);die;
 		if(!$isquery){
 			Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 		}
