@@ -15,6 +15,8 @@
 <meta content="telephone=no" name="format-detection">
 <meta content="email=no" name="format-detection">
 <meta name="referrer" content="always">
+<meta http-equiv="Access-Control-Allow-Origin" content="https://436727.166477.com">
+
  
 <!-- 自适应布局 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">

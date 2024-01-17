@@ -80,7 +80,7 @@ class Video extends ActiveRecord {
 					}else{
 						$list=array(
 							// array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
-							array($belong,$type,'探探',"/type/$type-$page.html",'https://736411.800871.com'),
+							array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
 						);
 					}
 				}

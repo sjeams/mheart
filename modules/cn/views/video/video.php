@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>在线视频</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
         <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>

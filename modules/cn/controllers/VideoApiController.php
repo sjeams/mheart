@@ -21,6 +21,11 @@ use app\modules\cn\models\Query;
 use yii\data\Pagination;
 use app\modules\cn\models\WechatUser;
 use QL\QueryList;
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
+header('Access-Control-Allow-Credentials: true;');
+
+header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 class VideoApiController extends VideoApiControl
 {
     public $enableCsrfValidation = false;
@@ -71,7 +76,7 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',4);
         // var_dump($page);
         $list=array(   
-            array(4,0,'主播',"/type/2.html",'https://736411.800871.com'),
+            array(4,0,'主播',"/type/2.html",'https://436727.166477.com'),
         );
         //键值处理
         foreach($list as$key=> $v){
