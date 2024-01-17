@@ -92,7 +92,8 @@ class VideoApiController extends VideoApiControl
             'imageurl' => $content3,
         );
         $rang='  .vods .vod';
-        $httpurl =$data[0]['http'].=$data[0]['url'];
+        $httpurl =$data[0]['http'].$data[0]['url'];
+        var_dump($httpurl);die;
         // intval()
         // https://cdn73.com:10073/13819/index.m3u8
         $ql = QueryList::rules($rules);
