@@ -71,7 +71,7 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',4);
         // var_dump($page);
         $list=array(   
-            array(4,0,'主播',"/type/2.html",'https://436727.166477.com'),
+            array(4,0,'主播',"/type/2.html",'https://736411.800871.com'),
         );
         //键值处理
         foreach($list as$key=> $v){
