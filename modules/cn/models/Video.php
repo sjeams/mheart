@@ -74,13 +74,13 @@ class Video extends ActiveRecord {
 				}else{
 					if($page==1){
 						$list=array(
-							// array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
-							array($belong,$type,'探探',"/type/$type.html",'https://436727.166477.com'),
+							array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
+							// array($belong,$type,'探探',"/type/$type.html",'https://436727.166477.com'),
 						);
 					}else{
 						$list=array(
-							// array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy11.com'),
-							array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
+							array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy22.com'),
+							// array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
 						);
 					}
 				}
@@ -160,14 +160,14 @@ class Video extends ActiveRecord {
 					break;
 
 					case 4 :   		// 小站
-						// $content1= array(' .name','href','');
-						// $content2= array(' .name','html','');
-						// $content3= array('.name>img','src','');
-						// $rang='.content .nr li   ';
-						$content1= array('  ','href','');
-						$content2= array('  .txt>p','html','');
-						$content3= array('  .pic>img','data-original','');
-						$rang='  .vods .vod';
+						$content1= array(' .name','href','');
+						$content2= array(' .name','html','');
+						$content3= array('.name>img','src','');
+						$rang='.content .nr li   ';
+						// $content1= array('  ','href','');
+						// $content2= array('  .txt>p','html','');
+						// $content3= array('  .pic>img','data-original','');
+						// $rang='  .vods .vod';
 					break;
 					case 5 :   		// 小站
 						$content1= array(' a','href','');
@@ -254,7 +254,6 @@ class Video extends ActiveRecord {
 				}
 			break;
 			case 4 :     	// 新东方
-				// var_dump($val);die;
 				$val['title']= Method::getMytrim($val['title']);
 				$content1= array('li input','value');
 				$content2= array('.lazy ','src');
@@ -262,20 +261,20 @@ class Video extends ActiveRecord {
 				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
 				// var_dump($link);die;
-				// $rules=array(
-				// 	'content' => $content1,
-				// 	'imageurl' => $content2
-				// );
-				// $ql = QueryList::rules($rules);
-				// $data1 =$ql->get($link)->queryData();
-				// $ql->destruct();
-				preg_match('/\d+/', $val['url'], $result);
-				$keyid=$result[0];
-				$val['title']='ppw_'.$keyid;
-				$data1=array(
-					'content' => "https://cdn73.com:10073/$keyid/index.m3u8",
-					'imageurl' => $val['imageurl']
+				$rules=array(
+					'content' => $content1,
+					'imageurl' => $content2
 				);
+				$ql = QueryList::rules($rules);
+				$data1 =$ql->get($link)->queryData();
+				$ql->destruct();
+				// preg_match('/\d+/', $val['url'], $result);
+				// $keyid=$result[0];
+				// $val['title']='ppw_'.$keyid;
+				// $data1=array(
+				// 	'content' => "https://cdn73.com:10073/$keyid/index.m3u8",
+				// 	'imageurl' => $val['imageurl']
+				// );
 				if(!empty($data1['content'] )){
 					$data1['title']=$val['title'];
 					$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
