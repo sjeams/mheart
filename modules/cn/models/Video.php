@@ -52,15 +52,16 @@ class Video extends ActiveRecord {
 					);
 				}
 			}else if($belong==3){
-				// $type = $type?$type:22;
+				$type = $type?$type:22;
 				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
+					// https://sewozy16.com
 					$list=array(
-						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewozy16.com/'),
+						array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://www.sewoav.cc'),
 					);
 				}else{
 					$list=array(
-						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://sewozy16.com/'),
+						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://www.sewoav.cc'),
 					);
 				}
 			}else if($belong==4){
@@ -153,10 +154,10 @@ class Video extends ActiveRecord {
 
 					break;
 					case 3 :   		// 小站
-						$content1= array('.videoName','href','');
-						$content2= array('.videoName','text','');
-						$content3= array('.videoName>img','src','');
-						$rang='.videoContent li ';
+						$content1= array('.uzimg','href','');
+						$content2= array('.uzimg','title','');
+						$content3= array('.uzimg>.lazy','data-original','');
+						$rang='.myvod ul>li ';
 					break;
 
 					case 4 :   		// 小站
@@ -248,7 +249,7 @@ class Video extends ActiveRecord {
 			break;
 
 			case 3 :      
-				$args = Video::getQueryDetailsMethod3($belong,$val,$type,$http,$isquery);
+				$args = Video::getQueryDetailsMethod4($belong,$val,$type,$http,$isquery);
 				if($args){
 					return 	$args;
 				}
@@ -347,6 +348,30 @@ class Video extends ActiveRecord {
 		if(!empty($data1['content'] )){
 			$data1['imageurl']=$data1['imageurl']?$data1['imageurl']:$data1['imageurl2'];
 			$data1['title']=$val['title'];
+			$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
+			return $args;
+		}else{
+			return null;
+		} 
+	}
+	public static function getQueryDetailsMethod4($belong,$val,$type,$http,$isquery=0){
+		// $val['title']= Method::getMytrim($val['title']);
+		$content1= array('.MacPlayer','html');
+		$content2= array('.theme .detail img','src','-img');
+		$content3= array('.theme .detail img','title');
+		$link =$http.$val['url'];
+		$rules=array(
+			'content' => $content1,
+			'imageurl' => $content2,
+			'title' => $content3
+		);
+		$ql = QueryList::rules($rules);
+		$data1 =$ql->get($link)->queryData();
+		$ql->destruct();
+		var_dump($link);
+		// https://www.sewoav.cc/index.php/vod/play/id/182149/sid/1/nid/1.html
+		var_dump($data1);die;
+		if(!empty($data1['content'] )){
 			$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
 			return $args;
 		}else{

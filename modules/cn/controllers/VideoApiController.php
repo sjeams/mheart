@@ -120,7 +120,7 @@ class VideoApiController extends VideoApiControl
     {
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $page = Yii::$app->request->post('page',1);
-        $belong = Yii::$app->request->post('belong',4);
+        $belong = Yii::$app->request->post('belong',3);
         // var_dump($page);
         Video::getQueryList($page,$belong);
         // echo  "第".$page."页，采集完成。</br>";
