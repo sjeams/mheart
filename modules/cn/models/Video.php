@@ -356,7 +356,7 @@ class Video extends ActiveRecord {
 	}
 	public static function getQueryDetailsMethod4($belong,$val,$type,$http,$isquery=0){
 		// $val['title']= Method::getMytrim($val['title']);
-		$content1= array('.MacPlayer','html');
+		$content1= array('.vwbg','html');
 		$content2= array('.theme .detail img','src','-img');
 		$content3= array('.theme .detail img','title');
 		$link =$http.$val['url'];
@@ -368,10 +368,17 @@ class Video extends ActiveRecord {
 		$ql = QueryList::rules($rules);
 		$data1 =$ql->get($link)->queryData();
 		$ql->destruct();
-		var_dump($link);
+		//获取jq中的url 地址
+		preg_match("/<script(.*?)>var player_aaaa=(.*?)<\/script>/",$data1['content'],$rel);
+		// preg_match("/aaaa=({.*?})/", $rel[2],$res);
+		$new_json = json_decode($rel[2],true);
+		$data1['content'] = $new_json['url'];
+		// exec('echo \''.$res[1].'\' | jq -r .', $output);
+		// $json_str =trim($res[1]);
 		// https://www.sewoav.cc/index.php/vod/play/id/182149/sid/1/nid/1.html
-		var_dump($data1);die;
 		if(!empty($data1['content'] )){
+			$data1['imageurl']=$data1['imageurl']?$data1['imageurl']:$val['imageurl'];
+			$data1['title']=$val['title'];
 			$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
 			return $args;
 		}else{
@@ -391,18 +398,14 @@ class Video extends ActiveRecord {
 		$args['imageurl']=$data1['imageurl'];
 		if((string)strpos($args['imageurl'],'http')==''){
 			$args['imageurl']=$http.$args['imageurl'];
-		} 
-
+		}
 		// siwa第三方图片路径错误--图片处理
 		// UPDATE x2_video SET imageurl =  REPLACE(imageurl, 'https://img.siwapay.com:5278/','https://img.siwazywimg2.com:5278/')
 		$args['imageurl'] = str_replace( 'https://img.siwapay.com:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
 		$args['imageurl'] = str_replace( 'https://img.siwazywimg:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
-
-
 		$args['type']= $type;
 		$args['belong']= $belong;
 		$args['link']= $link;
-		// var_dump($args);die;
 		if(!$isquery){
 			Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 		}
