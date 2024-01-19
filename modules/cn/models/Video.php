@@ -149,6 +149,11 @@ class Video extends ActiveRecord {
 						// $content2= array(' ul li','html','img');
 						// $content3= array(' ul li>img','src','');
 						// $rang='.content .row';
+						// $content1= array('.videoName','href','');
+						// $content2= array('.videoName','text','');
+						// $content3= array('.videoName>img','src','');
+						// $rang='.videoContent li ';
+
 						$content1= array('','href','');
 						$content2= array(' .container>li','text','');
 						$content3= array(' .container>li>img','src','');
