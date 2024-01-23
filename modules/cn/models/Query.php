@@ -27,20 +27,23 @@ class Query extends ActiveRecord {
 	{
 		switch($type){
 			case 1:
-				$url ="https://www.taopianzy.com/search.html?keyword=$search&page=$page";
+	
 				// $url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 				// https://www.yszzq.com/
 				$http="https://www.taopianzy.com";
+				$url = $http."/search.html?keyword=$search&page=$page";
 				// $url = $http."/home/vodlist/1/1-1.html";
 				$list =Query::getVideoTp($search,$type,$url,$http);
 			break;
 			case 2:  
-				$http="https://foxzyw.com";
+				// $http="https://foxzyw.com";
+				$http="https://ukuzy.com";
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
-				$list =Query::getVideoFox($search,$type,$url,$http);
+				$list =Query::getVideofoxzyw($search,$type,$url,$http);
 			break;
 			case 3:
-				$http="https://kudianzy.com";
+				// $http="https://kudianzy.com";
+				$http="https://cc.bdzy0.com";
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
@@ -138,7 +141,54 @@ class Query extends ActiveRecord {
 		// var_dump($rt );die;
 
 	}
+public static function getVideofoxzyw($search,$type,$url,$http)
+{
+	$rules = [
+		'name' => array(' a:eq(0)','html',''),
+		'link' => array(' a:eq(0)','href','-em'),
+	];
+	$range = '.xing_vb li:gt(0)';
+	// var_dump($type);die;
+	// 切片选择器,跳过第一条广告
+	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
+	$urls =[];
+	foreach($list as  $v){
+		$urls[] =$http.$v['link'];
+	}
+	// 切片选择器----start
+	$range = '#play_1:eq(0)  li ';
+	// 切片选择器,跳过第一条广告
+	$rules = [
+		// 'imageUrl' => array(' .left>img','data-original'),
+		// 'name' => array('.right .name','html','span'),
+		'title' => array(' a','title','-input'),
+		'url' => array('  a','href','-input'),
+	];
+	// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
+	$sql = QueryList::rules($rules)->range($range);
+	// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+	$rules2 = [
+		'imageurl' => array(' .vodImg .lazy','src'),
+		'title' => array('.vodh  h2','html',''),
+		// 'url' => array(' .tbAddr:eq(0) input','value',' '),
+	];
+	
+	foreach($urls as$key=> $url){
+		// 切片选择器,跳过第一条广告
+		$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
+		$rt ['belong']=0;
+		$rt ['type']=$type;
+		$rt ['search']=$search;
+		$video = $sql->get($url)->query()->getData()->all();
+		// $rt['title'] =$video[0]['name'];
+		// $rt['imageurl'] =$video[0]['imageurl'];
+		$rt['video'] =	$video;
+		$list[$key] =$rt;
+	}
+	// var_dump($list[0]);die;
+	return $list;
 
+}
 
 // 采集列表
 public static function getVideoFox($search,$type,$url,$http)
@@ -190,7 +240,7 @@ public static function getVideoFox($search,$type,$url,$http)
 
 }
 
-	
+
 
 	// 采集列表
     public static function getQueryUrl( )
