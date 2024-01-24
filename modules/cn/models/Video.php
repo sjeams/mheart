@@ -433,7 +433,9 @@ class Video extends ActiveRecord {
 		$args['belong']= $belong;
 		$args['link']= $link;
 		// var_dump($args);die;
-		if(!$isquery){
+		// isquery 0 需要写入， 1 不需要写入
+		$args = Video::geturlDetails($args);//验证视频是否入库--查看库是否已经存在m3u8视频
+		if(!$isquery&&$args!=null){
 			Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
 		}
 		return $args;
@@ -442,8 +444,23 @@ class Video extends ActiveRecord {
 	public static function getxdfDetails($id){
 		return Video::find()->where("id=$id")->asarray()->One();
 	}
-
-
+	//查看是否已经存在视频url--已存在不再写入
+	public static function geturlDetails($args){
+		$res =[];
+		$where = " 1=1";
+		if($args['url']){
+			$url = $args['url'];
+			$belong =$args['belong'];
+			$type =$args['type'];
+			$where.=" and url='$url' and belong = '$belong'  and type = '$type' ";
+			$res =VideoListDetail::find()->where($where)->asarray()->One();
+		}
+		if($res){
+			return null;
+		}else{
+			return $args;
+		}
+	}
 	public static function isCollect($list,$user_id=0){
 		$find_collect=[];
 		$find_my_collect=[];
