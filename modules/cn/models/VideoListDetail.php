@@ -45,6 +45,7 @@ class VideoListDetail extends ActiveRecord {
                     // VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
                     // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
+                $video_list [] =$find_video;
             }else{
                 //单条数据采集
                 $collect_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
@@ -54,9 +55,10 @@ class VideoListDetail extends ActiveRecord {
                     Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
                     $find_video['id']=Yii::$app->signdb->getLastInsertID();
                     // $new_list[] =$find_video;//批量插入
+                    $video_list [] =$find_video;
                 }
             }
-            $video_list [] =$find_video;
+            // $video_list [] =$find_video;//改为单独写入，剔除重复m3u8
         }
         //更新type
         if($update_list){
