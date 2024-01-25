@@ -76,7 +76,8 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',4);
         // var_dump($page);
         $list=array(   
-            array(4,0,'主播',"/type/2.html",'https://436727.166477.com'),
+            // array(4,0,'主播',"/type/2.html",'https://436727.166477.com'),
+            array(3,0,'主播',"/index.php/vod/type/id/39/page/1.html",'https://www.sewoav.cc'),
         );
         //键值处理
         foreach($list as$key=> $v){
@@ -85,9 +86,8 @@ class VideoApiController extends VideoApiControl
         $data[$key]['title']=$v[2];
         $data[$key]['url']=	$v[3];
         $data[$key]['http']=$v[4];
-
-
         }
+
         $content1= array('  ','href','');
         $content2= array('  .txt p','html','');
         $content3= array('  .pic>img','data-original','');
@@ -98,6 +98,11 @@ class VideoApiController extends VideoApiControl
         );
         $rang='  .vods .vod';
         $httpurl =$data[0]['http'].$data[0]['url'];
+        $data = QueryList::get($httpurl)->getHtml(); ;
+        // print($data);die;
+        $html = strip_tags($data);
+        echo "$html";
+        die;
         // var_dump($httpurl);die;
         // intval()
         // https://cdn73.com:10073/13819/index.m3u8
