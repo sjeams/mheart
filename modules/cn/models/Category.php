@@ -14,13 +14,15 @@ class Category extends ActiveRecord {
 
     //获取下拉列表
     public static function getBelong($belong,$type){
-        $list = Category:: getBelongList($belong,$type)['list'];
+        $data = Category:: getBelongList($belong,$type);
+        $list = $data['list'];
+        $type = $data['type'];
         $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
         if($list){
-            $typeArray= array_column($list,'type');
-            if(!$type||!in_array($type,$typeArray)){
-                $type=$typeArray[0];
-            }
+            // $typeArray= array_column($list,'type');
+            // if(!$type||!in_array($type,$typeArray)){
+            //     $type=$typeArray[0];
+            // }
                 $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
                 $str .='<p class="center" id="listType" >'; 
                 foreach($list as $v){
@@ -48,14 +50,27 @@ class Category extends ActiveRecord {
         }else{
             $list = Category::find()->where("belong=$belong")->asArray()->all();
         }
-        if($list){
-            $typeArray= array_column($list,'type');
-            if(!$type||!in_array($type,$typeArray)){
-                $type=$typeArray[0];
-            }
-        }
+        //获取默认设置 type
+        $type = Category::getTypeByStatus($list,$belong,$type);
         return ['list'=>$list,'type'=>$type];
     }
+
+    public static function getTypeByStatus($list,$belong,$type){
+        if($list&&$type==0){
+            $info = Category::find()->select('type')->where("belong=$belong and status =1")->asArray()->One();
+            if($info){
+                $type =$info['type'];
+            }else{
+                $typeArray= array_column($list,'type');
+                if(!$type||!in_array($type,$typeArray)){
+                    $type=$typeArray[0];
+                }
+            }
+        }
+        return $type;
+    }
+        
+
 
 
 	//  public static function Category(){

@@ -73,11 +73,14 @@ class VideoApiController extends VideoApiControl
     {
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $page = Yii::$app->request->post('page',1);
-        $belong = Yii::$app->request->post('belong',4);
+        $belong = Yii::$app->request->post('belong',2);
+        $type = Yii::$app->request->post('belong',1); 
         // var_dump($page);
         $list=array(   
             // array(4,0,'主播',"/type/2.html",'https://436727.166477.com'),
-            array(3,0,'主播',"/index.php/vod/type/id/39/page/1.html",'https://www.sewoav.cc'),
+            // array(3,0,'主播',"/index.php/vod/type/id/39/page/1.html",'https://www.sewoav.cc'),
+            array($belong,$type,'丝袜',"/index.php/vod/type/id/$type/page/$page.html",'https://lyzyz66.com'),
+            
         );
         //键值处理
         foreach($list as$key=> $v){
