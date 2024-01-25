@@ -100,8 +100,8 @@ class VideoApiController extends VideoApiControl
         $httpurl =$data[0]['http'].$data[0]['url'];
         $data = QueryList::get($httpurl)->getHtml(); ;
         // print($data);die;
-        $html = strip_tags($data);
-        echo "$html";
+        // $html = strip_tags($data);
+        echo $data;
         die;
         // var_dump($httpurl);die;
         // intval()
