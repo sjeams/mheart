@@ -177,7 +177,7 @@ class VideoApiController extends VideoApiControl
                     $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
                     if(!$res){
                         $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
-                        var_dump($listvideo);die;
+                        // var_dump($listvideo);die;
                         $list=[];
                         // 是否分页--改为不分页，直接采集
                         $count = count($listvideo);

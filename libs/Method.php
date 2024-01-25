@@ -974,4 +974,25 @@ class Method
         }
         return $rand_list;
     }
+
+
+    // 一维数组去重 array_unique($arr)
+    // 二维数组去重   
+    public static function functionsecond_array_unique_bykey($arr,$key,$key_sort=''){
+        $tmp_arr = array();
+        foreach($arr as $k => $v)
+        {
+            if(in_array($v[$key], $tmp_arr))   //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
+            {
+                unset($arr[$k]); //销毁一个变量  如果$tmp_arr中已存在相同的值就删除该值
+            }
+            else {
+                $tmp_arr[$k] = $v[$key];  //将不同的值放在该数组中保存
+            }
+        }
+        if($key_sort){
+            sort($arr); //ksort函数对数组进行排序(保留原键值key)  sort为不保留key值
+        }
+        return $arr;
+    }
 }

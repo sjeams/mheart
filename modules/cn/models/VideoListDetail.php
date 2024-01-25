@@ -21,7 +21,7 @@ class VideoListDetail extends ActiveRecord {
 
     //列表采集
 	public static function checkVideo($listvideo){
-     
+        $listvideo =  Method::functionsecond_array_unique_bykey($listvideo,'title',1); //二维数组根据title去重
         foreach($listvideo as$key=> $val){
             $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
         }
