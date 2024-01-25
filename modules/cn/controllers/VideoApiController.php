@@ -20,6 +20,9 @@ use app\modules\cn\models\CategoryName;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
 use app\modules\cn\models\WechatUser;
+
+use app\modules\cn\models\VideoImage;
+
 use QL\QueryList;
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
