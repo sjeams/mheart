@@ -45,12 +45,13 @@ class VideoListDetail extends ActiveRecord {
                     // VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
                     // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
+                // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
                 $video_list [] =$find_video;
             }else{
                 //单条数据采集
-                $collect_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-                if(is_array($collect_video)){  //判断是否为数组，报错则跳过
-                    $find_video=$collect_video;
+                $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                if(is_array($find_video)){  //判断是否为数组，报错则跳过
+                    // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
                     // 插入采集数据库
                     Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
                     $find_video['id']=Yii::$app->signdb->getLastInsertID();
@@ -67,6 +68,16 @@ class VideoListDetail extends ActiveRecord {
         }
         return $video_list;
     }
+    //插入base64 图片
+    public static function videoBaseImage($find_video){
+        if(!$find_video['image']){
+            $file_base =new VideoImage();
+            $base_id = $file_base->addBaseImage($find_video['imageurl'],128); //宽度256
+            $find_video['image'] =$base_id;
+        }
+        return $find_video;
+    }
+
     // batchInsertVideo
     // public static function updateVidoeMethod($update_list,$new_list){
     //     // if($new_list){ //批量插入

@@ -74,6 +74,11 @@ class VideoApiController extends VideoApiControl
      */
     public function actionUrlTest()
     {
+
+        //    $file_base =new VideoImage();
+        //    $baseid =  $file_base->addBaseImage('http://img.lytuchuang9.com/upload/vod/20230201-1/1ecd299d59e3148a611e30a0a5154a81.jpg');
+        //    var_dump( $baseid);die;
+ 
         //2 爱播 http://aibozy.com/index.php/vod/type/id/20/page/1.html
         $page = Yii::$app->request->post('page',1);
         $belong = Yii::$app->request->post('belong',2);
