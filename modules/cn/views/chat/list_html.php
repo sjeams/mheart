@@ -86,7 +86,7 @@
         </tbody>
     </table>
 </form>
-<!-- 当前视频id -->
+<!-- 当前用户id -->
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
 <script>

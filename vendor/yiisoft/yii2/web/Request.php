@@ -688,8 +688,8 @@ class Request extends \yii\base\Request
         if ($name === null) {
             return $this->getQueryParams();
         }
-
-        return $this->getQueryParam($name, $defaultValue);
+        return  $this->getQueryParam($name, $defaultValue)?:$defaultValue;
+        // return $this->getQueryParam($name, $defaultValue);
     }
 
     /**

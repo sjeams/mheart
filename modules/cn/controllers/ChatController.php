@@ -41,7 +41,7 @@ class ChatController extends VideoApiControl
     public function actionList()
     {
         $uid = $this->userId;
-        $friend_title = Yii::$app->request->get('friend_title',0);
+        $friend_title = Yii::$app->request->get('friend_title');
         // $friend_title =181;
         // 登录状态
         // WeChatFriend::find()->where('uid ='.$this->user['id'])->asArray()->all();
@@ -58,7 +58,7 @@ class ChatController extends VideoApiControl
             $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
     
             $userList= (new \yii\db\Query())
-            ->select("f.*, u.photo,u.name")
+            ->select("f.*,u.id as fid,u.photo,u.name")
             ->from("x2_wechat_user as u")
             ->leftJoin('x2_wechat_friend as f', "f.friend_id = u.id and f.uid =$uid")
             ->where($where)
@@ -74,7 +74,7 @@ class ChatController extends VideoApiControl
             $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
     
             $userList= (new \yii\db\Query())
-            ->select("f.*,u.photo,u.name")
+            ->select("f.*,u.id as fid,u.photo,u.name")
             ->from("x2_wechat_friend as f")
             ->rightJoin('x2_wechat_user as u', "f.friend_id = u.id and f.uid =$uid")
             ->where($where)
@@ -84,7 +84,7 @@ class ChatController extends VideoApiControl
         }
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
-        // var_dump($data);die;
+        // var_dump($userList);die;
         $total = Yii::$app->signdb->createCommand("select sum(f.num) as total from {{%wechat_friend}} f LEFT JOIN {{%wechat_user}} u ON f.friend_id = u.id where  $where")->queryOne()['total'];
 
         $html = Yii::$app->request->get('html',0);
