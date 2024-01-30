@@ -1,18 +1,20 @@
 <!-- 聊天室模板 -->
-<html>
+ 
 	<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
-<body>
-<style>
+ 
+ <style>
 	table td {
 		padding:0.25rem!important;
 	}
 	.chat_body{
 		margin-bottom: 40px;
+		/* margin: 40px auto; */
 	}
+ 
 	.user_information_center{
 		cursor: pointer;
 		text-align: center;
-		margin: 30px 30px;
+		margin:30px 30px;
     }
 	/* 时间 */
 	.msg-time{
@@ -35,7 +37,7 @@
 	.user_information_right{
 		cursor: pointer;
 		text-align: right;
-		margin: 30px 30px;
+		margin:30px 30px;
 		margin-right: 20px;
 
     }
@@ -105,7 +107,7 @@
 	display: none;
   }
 </style>
- 
+</body>
 <div class="center chat_body">
     <!-- 当前在线人数：<span id="onlineUser">0</span>人&nbsp;&nbsp; -->
     <!-- 客户端FD： -->
@@ -130,7 +132,7 @@
 			</div> 
 		</div> -->
 	</div>
-</body>
+</div>
 <!-- 标题 -->
 <input type="hidden" value="<?php echo $chat_title ?>" id="chat_title">
 <script lang="javascript">
@@ -343,4 +345,4 @@ function  my_num(){
 
 </script>
  
-</html>
+ 

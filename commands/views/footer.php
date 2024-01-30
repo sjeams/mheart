@@ -10,12 +10,14 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 ?>
 <?php  if( $http_geturl=='chat'){ ?>
     <?php  if( $http_index=='chat'){ ?>
-    <table class="table table-bordered chat_footer " >
-        <tr>
-            <td class="btn-primary" ><input type="text" id="msg" name="value"  class="message-send-input" /> </td>
-            <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
-        </tr>
-    </table>
+        <div class="video_footer center"> 
+        <table class="table table-bordered chat_footer " >
+            <tr>
+                <td class="btn-primary" ><input type="text" id="msg" name="value"  class="message-send-input" /> </td>
+                <td class="btn-primary" style="max-width: 100px!important;"  id="sendBtn" onclick="sendBtn()"><input class="message-send-button btn-primary" type="button" value="发送"> </td>
+            </tr>
+        </table>
+        </div>
     <?php } else if( $http_index=='list'){ ?> 
         <table class="table table-bordered chat_footer " >
             <tr>
