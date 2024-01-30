@@ -44,7 +44,7 @@
     .user_information_left{
 		cursor: pointer;
 		text-align: left;
-		margin-top:30px ;
+		margin:30px 30px;
 		margin-left: 20px;
     }
 	.user_photo{
