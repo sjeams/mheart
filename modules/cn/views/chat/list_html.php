@@ -76,6 +76,9 @@
 		right: 5px;
     	bottom: 5px;
 		float: right;
+		font-size: 10px;
+		line-height: 10px;
+		
 	}
 </style>
 <form >
@@ -132,7 +135,6 @@ function nextPage(goPage){
 		if(friend_title){
 			$("#friend_title").val(friend_title)
 		}
-
 		gou()
 		//修改消息数量
 		var num = Number($("#usernum").val());
@@ -162,7 +164,6 @@ function nextPage(goPage){
 	}
 	function  Update_user_num(num){ 
 		if(num>99){	num= '99+';}
-
 		// console.log($('.user_chat').text());
 		var chat_num='<span class="user_num">'+num+'</span>';
 		$('.user_chat').html('聊天'+chat_num);
@@ -176,7 +177,10 @@ function nextPage(goPage){
 		var m =  toZero(myDate.getMinutes());//获取当前分钟数(0-59)
 		$("#user_list"+uid).find('.user_time').text(h +":"+ m);
 		$("#user_list"+uid).find('.user_tips_title').addClass('user_tips');
-		
+		//提示
+		var user_num = Number($("#user_list"+uid).find('.user_tips_title').html()) + Number(1);
+		$("#user_list"+uid).find('.user_tips_title').html(user_num);
+		//统计
 		var num = Number($("#usernum").val()) + Number(1);
 		$("#usernum").val(num);
 		Update_user_num(num);

@@ -3,7 +3,7 @@
 		<td onclick="gouSerach(<?php echo $user['friend_id']?>,<?php echo $user['is_friend']?>)" >
 			<?php if($user['is_friend']==1){ ?>
 				<div  class="user_information_left">
-					<span class="user_tips_title <?php echo $user['num']>0?'user_tips':''?>"></span> 	
+					<span class="user_tips_title <?php echo $user['num']>0?'user_tips':''?>"><?php echo $user['num']?($user['num']>99?"99+":$user['num']):''?></span> 	
 					<a href="/cn/chat/detail?uid=<?php echo $user['friend_id'] ?>"><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""></a>
 				</div>
 				<div  class="user_information_left user_float_left_10">
@@ -16,7 +16,7 @@
 				</div>
 			<?php }else{ ?>
 				<div  class="user_information_left">
-					<span class="user_tips_title <?php echo $user['num']>0?'user_tips':''?>"></span> 	
+					<span class="user_tips_title <?php echo $user['num']>0?'user_tips':''?>"><?php echo $user['num']?($user['num']>99?"99+":$user['num']):''?></span> 	
 					<a href="/cn/chat/detail?uid=<?php echo $user['fid'] ?>"><img class="user_photo" src="<?php echo $user['photo']?$user['photo']:'/sign/img/contact.jpg'?>" alt=""></a>
 				</div>
 				<div  class="user_information_left user_float_left_10">
