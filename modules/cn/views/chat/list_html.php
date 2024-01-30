@@ -146,8 +146,8 @@ function nextPage(goPage){
 		}
 
 	}
-	// 外部监听事件
-    // var wsServer = "ws://124.221.174.216:9501?room="+room_id+"&uid="+uid; 
+	// 外部监听事件124.222.234.123
+    // var wsServer = "ws://124.222.234.123:9501?room="+room_id+"&uid="+uid; 
 	var wsServer = "wss://www.aheart.cn/wss";
     var websocket = new WebSocket(wsServer);
 	// /监听消息数量和最新消息

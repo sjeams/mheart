@@ -7,12 +7,12 @@
 		padding:0.25rem!important;
 	}
 	.chat_body{
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 	.user_information_center{
 		cursor: pointer;
 		text-align: center;
-		margin-top:30px ;
+		margin: 30px 30px;
     }
 	/* 时间 */
 	.msg-time{
@@ -35,7 +35,7 @@
 	.user_information_right{
 		cursor: pointer;
 		text-align: right;
-		margin-top:30px ;
+		margin: 30px 30px;
 		margin-right: 20px;
 
     }
