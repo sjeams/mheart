@@ -197,7 +197,7 @@ public static function getVideoFox($search,$type,$url,$http)
 		'name' => array(' a:eq(0)','html',''),
 		'link' => array(' a:eq(0)','href',''),
 	];
-	$range = '.stui-vodlist li:gt(0)';
+	$range = '.stui-vodlist li';
 	// var_dump($type);die;
 	// 切片选择器,跳过第一条广告
 	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
@@ -205,6 +205,7 @@ public static function getVideoFox($search,$type,$url,$http)
 	foreach($list as  $v){
 		$urls[] =$http.$v['link'];
 	}
+	// var_dump($list);die;
 	// 切片选择器----start
 	$range = '.stui-content__playlist:eq(1) li ';
 	// 切片选择器,跳过第一条广告
@@ -236,13 +237,13 @@ public static function getVideoFox($search,$type,$url,$http)
 		// $rt['imageurl'] =$video[0]['imageurl'];
 		foreach($video as$k=> $v){
 			$new_url = str_replace('$','',$v['url']);
-			$video[$k] = $new_url;
+			$video[$k]['url']= $new_url;
 		}
 		$rt['video'] =	$video;
 		$list[$key] =$rt;
 		// var_dump($list[0]);die;
 	}
-
+	// var_dump($list);die;
 	return $list;
 
 }
