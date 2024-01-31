@@ -212,14 +212,15 @@ public static function getVideoFox($search,$type,$url,$http)
 		// 'imageUrl' => array(' .left>img','data-original'),
 		// 'name' => array('.right .name','html','span'),
 		'title' => array(' .copy_text','html','-span'),
-		'url' => array('  .copy_text   .url','html',' '),
+		'url' => array('  .copy_text   .hidden-xs','html',' '),
 	];
 	// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
 	$sql = QueryList::rules($rules)->range($range);
 	// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
 	$rules2 = [
 		'imageurl' => array(' .img-responsive','src'),
-		'title' => array('.stui-content .title ','html',''),
+		// 'title' => array('.stui-content .title ','html',''),
+		'title' => array('.stui-content__detail .title ','html','')
 		// 'url' => array(' .tbAddr:eq(0) input','value',' '),
 	];
 
@@ -229,13 +230,19 @@ public static function getVideoFox($search,$type,$url,$http)
 		$rt ['belong']=0;
 		$rt ['type']=$type;
 		$rt ['search']=$search;
+		$rt ['imageurl']=$http.$rt['imageurl'];
 		$video = $sql->get($url)->query()->getData()->all();
 		// $rt['title'] =$video[0]['name'];
 		// $rt['imageurl'] =$video[0]['imageurl'];
+		foreach($video as$k=> $v){
+			$new_url = str_replace('$','',$v['url']);
+			$video[$k] = $new_url;
+		}
 		$rt['video'] =	$video;
 		$list[$key] =$rt;
+		// var_dump($list[0]);die;
 	}
-	// var_dump($list );die;
+
 	return $list;
 
 }
