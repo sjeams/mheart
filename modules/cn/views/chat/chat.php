@@ -38,14 +38,14 @@
 		cursor: pointer;
 		text-align: right;
 		margin:30px 30px;
-		margin-right: 20px;
+		margin-right: 10px;
 
     }
     .user_information_left{
 		cursor: pointer;
 		text-align: left;
 		margin:30px 30px;
-		margin-left: 20px;
+		margin-left: 10px;
     }
 	.user_photo{
 		height:40px;
@@ -83,7 +83,7 @@
 		padding:5px 10px;
 		min-height: 40px;
 
-		max-width: 65%;
+		max-width: 75%;
 	}
 
 	.message-send-input{
