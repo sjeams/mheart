@@ -156,7 +156,7 @@ public static function getVideofoxzyw($search,$type,$url,$http)
 		$urls[] =$http.$v['link'];
 	}
 	// 切片选择器----start
-	$range = '#play_1:eq(0)  li ';
+	$range = '#play_2:eq(0)  li ';
 	// 切片选择器,跳过第一条广告
 	$rules = [
 		// 'imageUrl' => array(' .left>img','data-original'),
@@ -207,7 +207,7 @@ public static function getVideoFox($search,$type,$url,$http)
 	}
 	// var_dump($list);die;
 	// 切片选择器----start
-	$range = '.stui-content__playlist:eq(1) li ';
+	$range = '.stui-content__playlist:eq(0) li ';
 	// 切片选择器,跳过第一条广告
 	$rules = [
 		// 'imageUrl' => array(' .left>img','data-original'),
@@ -243,7 +243,7 @@ public static function getVideoFox($search,$type,$url,$http)
 		$list[$key] =$rt;
 		// var_dump($list[0]);die;
 	}
-	// var_dump($list);die;
+	// var_dump($list[0]);die;
 	return $list;
 
 }

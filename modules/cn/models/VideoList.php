@@ -106,9 +106,24 @@ class VideoList extends ActiveRecord {
     }
 
     // 获取关键词
-    public static function getNewWords($belong){
-        $words =  VideoList::find()->select('search')->where("belong =$belong and search!=''")->orderBy("time desc")->asArray()->one()['search'];
-    return $words?:'龙珠';
+    public static function getKeyWords($belong){
+        // $words =  VideoList::find()->select('search')->where("belong =$belong and search!=''")->orderBy("time desc")->asArray()->one()['search'];
+        if($belong==0){
+            $words = VideoList::find()->select('search')->where(" belong =0 and search!=''")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
+        }else{
+            $words = VideoList::find()->select('search')->where(" belong !=0 and search!='' ")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
+        }
+        return $words?:'';
+    }
+    // 获取关键词列表
+    public static function getKwordsList($belong)
+    {
+        if($belong==0){
+            $keyword = VideoList::find()->select('search')->where(" belong =0 and search!=''")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+        }else{
+            $keyword = VideoList::find()->select('search')->where(" belong !=0 and search!='' ")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+        }
+        return $keyword;
     }
 }
 ?>

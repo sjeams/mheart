@@ -82,8 +82,13 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
 <script>
         $('#goSearch').click(function(){
+
+            var belong =$("#goBelong").val();
             $.ajax({
-                url: '/cn/video-api/get-kwords', // 跳转到 action 
+                url: '/cn/video-api/get-kwords', // 跳转到 action
+                data:{
+                    belong: belong,
+                },
                 type: 'post',
                 dataType: 'json',
                 success: function (data) {

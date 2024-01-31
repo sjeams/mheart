@@ -165,9 +165,11 @@ class VideoController extends VideoApiControl
         if($graden==0){
             $belong=0;
         }
+        //默认关键词
+        $key_words = VideoList::getKeyWords($belong);
         if($belong==0){
             //视频通过type 区分网站
-            if($search=='undefined'||$search==null||empty($search)||$search=="")   $search='龙珠';
+            if($search=='undefined'||$search==null||empty($search)||$search=="")   $search=$key_words;
             $type =$type?$type:1;
         }else{
             //采集所有默认类型为0
