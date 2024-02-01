@@ -41,7 +41,7 @@ class VideoList extends ActiveRecord {
                 $list = Query::getVideo($search,$type,$page_list);
                 $count = count($list);
                 $args['key_value'] =$sessionStr;
-                $args['value'] =  json_encode($list,true);
+                $args['value'] = $list?json_encode($list,true):false;
                 $args['time'] =time();
                 $args['count'] =$count;
                 $args['page'] =$page;
@@ -63,7 +63,7 @@ class VideoList extends ActiveRecord {
                     $list= VideoListDetail::checkVideo($listvideo);
                     // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
-                    $args['value'] =  json_encode($list,true);
+                    $args['value'] = $list?json_encode($list,true):false;
                     $args['time'] =time();
                     $args['count'] =$count;
                     $args['page'] =$page;
@@ -109,19 +109,19 @@ class VideoList extends ActiveRecord {
     public static function getKeyWords($belong){
         // $words =  VideoList::find()->select('search')->where("belong =$belong and search!=''")->orderBy("time desc")->asArray()->one()['search'];
         if($belong==0){
-            $words = VideoList::find()->select('search')->where(" belong =0 and search!=''")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
+            $words = VideoList::find()->select('search')->where(" belong =0 and search!='' and value!='' ")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
         }else{
-            $words = VideoList::find()->select('search')->where(" belong !=0 and search!='' ")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
+            $words = VideoList::find()->select('search')->where(" belong !=0 and search!='' and value!='' ")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
         }
-        return $words?:'十万年';
+        return $words?:'苍兰诀';
     }
     // 获取关键词列表
     public static function getKwordsList($belong)
     {
         if($belong==0){
-            $keyword = VideoList::find()->select('search')->where(" belong =0 and search!=''")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+            $keyword = VideoList::find()->select('search')->where(" belong =0 and search!='' and value!='' ")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
         }else{
-            $keyword = VideoList::find()->select('search')->where(" belong !=0 and search!='' ")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
+            $keyword = VideoList::find()->select('search')->where(" belong !=0 and search!='' and value!='' ")->limit(20)->groupBy("search")->orderBy(" time desc")->asArray()->all(); // 获取采集数据
         }
         return $keyword;
     }

@@ -200,7 +200,7 @@ class VideoApiController extends VideoApiControl
                         if($listvideo){
                             $list= VideoListDetail::checkVideo($listvideo);
                             $args['key_value'] =$sessionStr;
-                            $args['value'] =  json_encode($list,true);
+                            $args['value'] = $list?json_encode($list,true):false;
                             $args['time'] =time();
                             $args['count'] =$count;
                             $args['page'] =$page;
