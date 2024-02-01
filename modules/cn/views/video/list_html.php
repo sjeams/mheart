@@ -47,6 +47,7 @@
                                 <span  class="btn btn-defult"  >下一页</span>    
                             <?php  }?>
                         </div>
+                    <?php if($graden>0){ ?>
                         <div class="layui-input-inline center">
                             <p class="center">
                                 <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
@@ -65,6 +66,7 @@
                                 <?php  }?>     
                             </p>
                         </div>
+                    <?php } ?>
                     <!-- </div> -->
                 </td>
             </tr>

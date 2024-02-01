@@ -258,6 +258,9 @@
         var goSearch =$("#goSearch").val();
         var goPage =$("#goPage").val();
         var goPage_list =$("#goPage_list").val();
+        if(!goPage){
+            goPage=1;
+        }
         if(clearRload){
             window.location.href="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch;
             // $('.list_html').html('采集中，请稍后...')
