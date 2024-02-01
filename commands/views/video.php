@@ -14,6 +14,7 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script>
  
 <script>
+  var  newplayer= new ckplayer();
 // 视频详情页
 function videoDetail(sessionkey,key){
     window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;

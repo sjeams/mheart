@@ -115,10 +115,16 @@ function  videoList(id,key=0,isbofang=1){
         // document.querySelector('video').playbackRate = 4.0   //可以f12 控制台直接倍速播放
         // var videoObject = cokieTime(videoObject,videoID)
         // console.log(videoObject);
-        var newplayer= new ckplayer(videoObject);//初始化播放器
+        // var hls = new Hls();
+        // hls.detachMedia();
+        // hls.destroy();
+        //销毁视频，并重新生成
+        var _this=this;
+        _this.newplayer.remove();
+        _this.newplayer= new ckplayer(videoObject);//初始化播放器
         // newplayer.addListener('time', timeHandler,videoID); //监听播放时间
         // newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
-        newplayer=false;
+        // newplayer=false;
         videoObject=false;
         url =false;
         // title =null;

@@ -42,8 +42,8 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                 
         <?php  }else{ ?>
     <!-- <input type="hidden" value="0" id="top_hidden"> -->
-    <div class="video_footer center"> 
-        <table class="table table-bordered  tablestyle page_bottom" style="display: none;">
+    <div class="video_footer center page_bottom" style="display: none;"> 
+        <table class="table table-bordered  tablestyle " >
             <!-- <tr class="append_top">
                 <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php //cho $data['title']?>"/>
                 <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>

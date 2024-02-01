@@ -82,7 +82,9 @@
      display: none;
      z-index: 101;
  }
-
+.tablestyle{
+    margin-bottom: 0em;
+}
  .tablestyle td{
      width: 25%;
  }
