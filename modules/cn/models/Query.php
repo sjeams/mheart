@@ -69,9 +69,9 @@ class Query extends ActiveRecord {
 			$urls[] =$http.$v['link'];
 		}
 
-
 		// 切片选择器----start
-		$range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
+		// $range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
+		$range = '.playList table tbody tr:not(.videoPlayBox)'; // 跳过某个class
 		// $range = '.playList table tbody tr:nth-child(even)';// 偶数行
 		
 		// 切片选择器,跳过第一条广告
@@ -117,11 +117,19 @@ class Query extends ActiveRecord {
 			$video = $sql->get($url)->query()->getData()->all();
 			// $rt['title'] =$video[0]['name'];
 			// $rt['imageurl'] =$video[0]['imageurl'];
-			$rt['video'] =	$video;
+			// $rt['video'] =$video;
+			$new_video=[];
+			foreach($video as $k=> $v){
+				if($v['url']){
+					$new_video[]=$v;
+				}
+			}
+			$rt['video'] =	$new_video;
 			$list[$key] =$rt;
 			// var_dump($list[0]);
 		}
 		// var_dump($list );die;
+		// var_dump($list[2]);die;
 		return $list;
 		// var_dump($list );die;
 		// ;die;

@@ -113,7 +113,7 @@ class VideoList extends ActiveRecord {
         }else{
             $words = VideoList::find()->select('search')->where(" belong !=0 and search!='' ")->orderBy(" time desc")->asArray()->one()['search']; // 获取采集数据
         }
-        return $words?:'';
+        return $words?:'十万年';
     }
     // 获取关键词列表
     public static function getKwordsList($belong)
