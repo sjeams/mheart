@@ -328,14 +328,12 @@ class VideoController extends VideoApiControl
         $sessionkey = Yii::$app->request->get('sessionkey');
 
         if($sessionkey){
-            $key = Yii::$app->request->get('key');
-            $num = Yii::$app->request->get('num');
-            $num = $num?$num:0;
+            $key = Yii::$app->request->get('key',0);
+            $num = Yii::$app->request->get('num',0);
             $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
             $list =   json_decode($res['value'],true)[$key];
             // $data = $list['video'];
             $m3u8 = $list['video'][$num];
-            // var_dump( $list);die;
             $res=['m3u8'=>$m3u8,'data' =>$list,'sessionkey'=>$sessionkey,'key' =>$key,'do_num' =>$num];
         }else{
             $id = Yii::$app->request->get('id',1);
@@ -348,7 +346,4 @@ class VideoController extends VideoApiControl
         // var_dump($data);die;
         return $this->render('video', $res);
     }
-
- 
-
 }
