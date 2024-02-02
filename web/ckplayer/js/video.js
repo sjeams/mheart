@@ -74,7 +74,7 @@ function  videoList(id,key=0,isbofang=1){
     //获取播cookie放时间
     var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
     var videoObject = {
-        debug:true,//开启调试模式
+            debug:true,//开启调试模式
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
             autoplay:true,
@@ -98,115 +98,41 @@ function  videoList(id,key=0,isbofang=1){
             // loop: true,//是否需要循环播放 
             // seek: 42,//默认需要跳转的秒数
             controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
+            // playbackrateOpen:true,
             // // language:'en',
             // // rotate:90,//旋转90度
-            documentFocusPause:false,//窗口失去焦点后暂停播放
+            // documentFocusPause:false,//窗口失去焦点后暂停播放
             // playbackrate: 1,//默认倍速
             // debug: false,//是否开启调试模式
             // overspread:true,//是否让视频铺满播放器
             loaded:'loadHandler',// 监听播放时间方法
-            // seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
-		    // cookie:videoID,//cookie名称,请在同一域中保持唯一
-            timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
-            mouseWheelVolume:2,//是否启用鼠标滚轮调节音量功能，0=不启用，1=启用，2=全屏时才启用
-            keyVolume:2//是否启用键盘控制音量调节，0=不启用，1=启用，2=全屏时才启用
-        };
- 
-        // document.querySelector('video').playbackRate = 4.0   //可以f12 控制台直接倍速播放
-        // var videoObject = cokieTime(videoObject,videoID)
+            seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
+		    cookie:videoID,//cookie名称,请在同一域中保持唯一
+            // timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
+        }; 
+       // document.querySelector('video').playbackRate = 4.0   //可以f12 控制台直接倍速播放
+        var videoObject = cokieTime(videoObject,videoID);//开启视频缓存
         // console.log(videoObject);
-        // var hls = new Hls();
-        // hls.detachMedia();
-        // hls.destroy();
+        //刷新视频
         //销毁视频，并重新生成
         var _this=this;
         _this.newplayer.remove();
         _this.newplayer= new ckplayer(videoObject);//初始化播放器
-        // newplayer.addListener('time', timeHandler,videoID); //监听播放时间
-        // newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
-        // newplayer=false;
-        videoObject=false;
-        url =false;
-        // title =null;
-        // imageurl =null;
-        player=false;
-        // videoHidden(1);//显示窗口
-
+        _this.newplayer.addListener('time', timeHandler,videoID); //监听播放时间
+        // _this.newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
         // newplayer.visibilityState(function(state){   
         // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
         // console.log(state)
         // });
-        
-        // newplayer.mouseActive(function(bool){ //bool=true，活跃，=false，静止  
-        //     // var time = newplayer.time()
-        //     // console.log(time)
-        //     // newplayer.seek(0)
-        //     // console.log(bool)
-        //     //开启倍数
-        //     // if(bool){
-        //     //     document.querySelector('video').playbackRate=4
-        //     // }else{
-        //     //     document.querySelector('video').playbackRate=1
-        //     // }
-        // });
-
-        // function timeHandler(t) {
-        //     // console.log(videoID)
-        //     cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
-        //     // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
-        // }
+        function timeHandler(t) {
+            // console.log(videoID)
+            cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
+            // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
+        }
         // function VideoPlayEndedHandler(){//监听视频播放完成
         //     // alert('本视频已结束');
         // }
- 
-
     }
-    // CV.singleClick(player.playOrPause);//监听视频单击
-
-
-    // function cokieTime(videoObject,videoID){
-    //     // console.log(videoID)
-    //     var cookieTime = cookie.get('time_'+videoID); //调用已记录的time
-    //     // console.log(cookieTime)
-    //     //console.log(cookieTime);
-    //     if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
-    //         cookieTime = 0;
-    //     }
-    //     // if(cookieTime > 0) {
-    //     //     alert('本视频记录的上次观看时间(秒)为：' + cookieTime);
-    //     // }
-    //     if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
-    //         videoObject['seek'] = parseInt(cookieTime) ;
-    //         // videoObject.seek=cookieTime;
-    //     }
-    //     return videoObject;
-    // }
-
-    // //操作cookie的对象
-    // var cookie = {
-    //     set: function(name, value) {
-    //         var Days = 30;
-    //         var exp = new Date();
-    //         exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-    //         document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString();
-    //     },
-    //     get: function(name) {
-    //         var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
-    //         if(arr = document.cookie.match(reg)) {
-    //             return unescape(arr[2]);
-    //         } else {
-    //             return null;
-    //         }
-    //     },
-    //     del: function(name) {
-    //         var exp = new Date();
-    //         exp.setTime(exp.getTime() - 1);
-    //         var cval = getCookie(name);
-    //         if(cval != null) {
-    //             document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
-    //         }
-    //     }
-    // };
  // 视频隐藏
 function videoHidden(open){
     if(open==1){
