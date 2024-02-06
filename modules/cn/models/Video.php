@@ -38,7 +38,7 @@ class Video extends ActiveRecord {
 					$list=array(
 						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
 						// array($belong,$type,'花魁',"/vod-type-id-$type-pg-$page.html",'https://huakuizy0.com'),
-						array($belong,$type,'花魁',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com'),
+						array($belong,$type,'花魁',"/index.php/vod/type/id/$type/page/$page.html",'https://aosikazy1.com'),
 					);
 				}
 			}else if($belong==2){
@@ -359,19 +359,19 @@ class Video extends ActiveRecord {
 		$val['title']= Method::getMytrim($val['title']);
 		$content1= array('#playId1','value');
 		$content2= array('.theme .detail>img ','src');
-		$content3= array('.left a>img ','src');
+		$content3= array('.theme .detail>img','title');
 		$link =$http.$val['url'];
 		$rules=array(
 			'content' => $content1,
 			'imageurl' => $content2,
-			'imageurl2' => $content3
+			'title' => $content3
 		);
 		$ql = QueryList::rules($rules);
 		$data1 =$ql->get($link)->queryData();
 		$ql->destruct();
 		if(!empty($data1['content'] )){
 			$data1['imageurl']=$data1['imageurl']?$data1['imageurl']:$data1['imageurl2'];
-			$data1['title']=$val['title'];
+			// $data1['title']=$val['title'];
 			$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
 			return $args;
 		}else{
