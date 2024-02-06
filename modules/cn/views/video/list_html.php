@@ -84,7 +84,7 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
 <script>
         $('#goSearch').click(function(){
-
+            var goSearch =$("#goSearch").val();
             var belong =$("#goBelong").val();
             $.ajax({
                 url: '/cn/video-api/get-kwords', // 跳转到 action
@@ -96,7 +96,7 @@
                 success: function (data) {
                     // 关键词
                     if(data.code==1){    
-                        var str ='<p>搜索</p><p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="" id="search_text"><span class="btn btn-primary  " onclick="layerSerach()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
+                        var str ='<p>搜索</p><p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="'+goSearch+'" id="search_text"><span class="btn btn-primary  " onclick="layerReSerach()">重新采集</span><span class="btn btn-primary  " onclick="layerGoSearch()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
                         $.each(data.data,function(index,value){
                             str = str+'<button class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</button>';
                         })
@@ -132,11 +132,48 @@
         })
         function cancelSerach(){
             removeLoadingPage();//关闭弹窗page
-        }
-        function layerSerach(){
-            var search_text =$('#search_text').val()
-            layerSearch(search_text) 
+        }   
 
+        //重新搜索指定内容
+        function layerReSerach(){
+            addLoading()
+            var search_text =$('#search_text').val()
+            var goBelong =$("#goBelong").val();
+            var goType =$("#goType").val();
+            $.ajax({
+                url: '/cn/video-api/clear-search', // 跳转到 action 
+                type: 'post',
+                dataType: 'json',
+                data:{search:search_text,belong:goBelong,type:goType},
+                success: function (data) {
+                    layerGoSearch()
+                },error:function(data){
+                    removeLoading()
+                }
+            }); 
+        }
+        //不能搜索空内容
+        function layerGoSearch(){
+            var search_text =$('#search_text').val()
+            if(search_text){
+                layerSearch(search_text);
+            }else{
+                layer.open({
+                    type: 1
+                    ,title: false //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '300px;'
+                    ,shade: 0.8
+                    ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
+                    ,btn: ['确定']
+                    ,btnAlign: 'c'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: ' <div class="center" style="margin-top:20px">搜索不能为空!</div>'
+                    ,success: function(layero){
+                        removeLoading()
+                    }
+                })
+            }
         }
         function layerSearch(search_text){
             $('#goSearch').val(search_text);

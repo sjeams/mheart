@@ -251,7 +251,20 @@ class VideoApiController extends VideoApiControl
             }
         } 
         session_destroy();
-        VideoList::deleteAll(" belong =$belong ");
+        VideoList::deleteAll(" belong =$belong  and (type =$type or type = 0 )");
+        die(Method::jsonGenerate(1,null,'succes'));
+    }
+
+    //清除指定搜索内容
+    public function actionClearSearch()
+    {
+        $search = Yii::$app->request->post('search','');
+        $belong = Yii::$app->request->post('belong',0);
+        $type = Yii::$app->request->post('type',0);
+        session_destroy();
+        if($search){
+            VideoList::deleteAll(" belong =$belong  and (type =$type or type = 0 ) and search ='$search' "); 
+        }
         die(Method::jsonGenerate(1,null,'succes'));
     }
 
