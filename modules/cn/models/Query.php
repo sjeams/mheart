@@ -47,6 +47,12 @@ class Query extends ActiveRecord {
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
+			case 4:
+				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
+				$http="https://www.huyaapi.com";
+				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
+				$list =Query::getVideoFox4($search,$type,$url,$http);
+			break;
 		}
 		return $list;	
 	}
@@ -198,6 +204,57 @@ public static function getVideofoxzyw($search,$type,$url,$http)
 
 }
 
+
+// 采集列表
+public static function getVideoFox4($search,$type,$url,$http)
+{
+	$rules = [
+		'name' => array('.xing_vb4>a:eq(0)','html',''),
+		'link' => array('.xing_vb4>a:eq(0)','href','-em'),
+	];
+	$range = '.xing_vb ul:gt(0)';
+	// var_dump($type);die;
+	// 切片选择器,跳过第一条广告
+	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
+	$urls =[];
+	foreach($list as  $v){
+		$urls[] =$http.$v['link'];
+	}
+	// var_dump($list);die;
+	// 切片选择器----start
+	$range = '#play_2:eq(0)  li ';
+	// 切片选择器,跳过第一条广告
+	$rules = [
+		// 'imageUrl' => array(' .left>img','data-original'),
+		// 'name' => array('.right .name','html','span'),
+		'title' => array(' a','title','-input'),
+		'url' => array('  a','href','-input'),
+	];
+	// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
+	$sql = QueryList::rules($rules)->range($range);
+	// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+	$rules2 = [
+		'imageurl' => array(' .vodImg .lazy','src'),
+		'title' => array('.vodh  h2','html',''),
+		// 'url' => array(' .tbAddr:eq(0) input','value',' '),
+	];
+	
+	foreach($urls as$key=> $url){
+		// 切片选择器,跳过第一条广告
+		$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
+		$rt ['belong']=0;
+		$rt ['type']=$type;
+		$rt ['search']=$search;
+		$video = $sql->get($url)->query()->getData()->all();
+		// $rt['title'] =$video[0]['name'];
+		// $rt['imageurl'] =$video[0]['imageurl'];
+		$rt['video'] =	$video;
+		$list[$key] =$rt;
+	}
+	// var_dump($list[0]);die;
+	return $list;
+
+}
 // 采集列表
 public static function getVideoFox($search,$type,$url,$http)
 {
