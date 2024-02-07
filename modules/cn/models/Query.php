@@ -342,7 +342,7 @@ public static function getVideoFox($search,$type,$url,$http)
 		$list[$key] =$rt;
 		// var_dump($list[0]);die;
 	}
-	var_dump($list[0]);die;
+	// var_dump($list[0]);die;
 	return $list;
 
 }
