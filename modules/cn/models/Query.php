@@ -23,11 +23,11 @@ class Query extends ActiveRecord {
             // return '{{%query}}';
     }
 	// 采集列表
-	public static function getVideo($search='封神榜',$type=1,$page=1)
+	public static function getVideo($search='封神榜',$type=0,$page=1)
 	{
+		$list=[];
 		switch($type){
 			case 1:
-	
 				// $url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 				// https://www.yszzq.com/
 				$http="https://www.taopianzy.com";
@@ -48,6 +48,8 @@ class Query extends ActiveRecord {
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
 			case 4:
+				//m3u8 解析接口 https://huyajx.com/play?url=
+				// huyazy.com, huyaziyuan.com
 				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
 				$http="https://www.huyaapi.com";
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";

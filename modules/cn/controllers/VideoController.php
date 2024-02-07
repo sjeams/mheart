@@ -170,7 +170,12 @@ class VideoController extends VideoApiControl
         if($belong==0){
             //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="")   $search=$key_words;
-            $type =$type?$type:1;
+            // $type =$type?$type:1;
+            $type = Category::getType($belong,$type);  //获取默认type
+            if($type==0){  // 错误类型直接回退
+                // WechatUser::headerLocation();
+                $type = 1;
+            }
         }else{
             //采集所有默认类型为0
             if($search){ $type=0; }else{
