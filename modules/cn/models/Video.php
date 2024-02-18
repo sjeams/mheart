@@ -444,7 +444,7 @@ class Video extends ActiveRecord {
 	public static function getxdfDetails($id){
 		return Video::find()->where("id=$id")->asarray()->One();
 	}
-	//查看是否已经存在视频url--已存在不再写入
+	//查看是否已经存在视频url--已存在不再写入--链接和写入url相同
 	public static function geturlDetails($args){
 		$res =[];
 		$where = " 1=1";
@@ -452,7 +452,8 @@ class Video extends ActiveRecord {
 			$url = $args['url'];
 			$belong =$args['belong'];
 			$type =$args['type'];
-			$where.=" and url='$url' and belong = '$belong'  and type = '$type' ";
+			$link =$args['link'];
+			$where.=" and url='$url' and belong = '$belong'  and link = '$link'   and type = '$type' ";
 			$res =VideoListDetail::find()->where($where)->asarray()->One();
 		}
 		if($res){
