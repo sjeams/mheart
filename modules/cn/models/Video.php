@@ -444,7 +444,7 @@ class Video extends ActiveRecord {
 	public static function getxdfDetails($id){
 		return Video::find()->where("id=$id")->asarray()->One();
 	}
-	//查看是否已经存在视频url--已存在不再写入--链接和写入url相同
+	//查看是否已经存在视频url--已存在不再写入--m3u8唯一，不在重复写入
 	public static function geturlDetails($args){
 		$res =[];
 		$where = " 1=1";
@@ -453,12 +453,18 @@ class Video extends ActiveRecord {
 			$belong =$args['belong'];
 			$type =$args['type'];
 			$link =$args['link'];
-			$where.=" and url='$url' and belong = '$belong'  and link = '$link'   and type = '$type' ";
+			$where.=" and url='$url' and belong = '$belong'   and type = '$type' ";
 			$res =VideoListDetail::find()->where($where)->asarray()->One();
 		}
 		if($res){
-			return null;
+			//返回查到视频--修改旧的视频地址
+			$old_url_id = $res['id'];
+			VideoListDetail::updateAll(['link' =>$link],"id =$old_url_id");
+			return $res;
 		}else{
+			//视频不存在，写入
+			Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			$args['id']=Yii::$app->signdb->getLastInsertID();
 			return $args;
 		}
 	}

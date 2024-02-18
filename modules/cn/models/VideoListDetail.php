@@ -53,8 +53,8 @@ class VideoListDetail extends ActiveRecord {
                 if(is_array($find_video)){  //判断是否为数组，报错则跳过
                     // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
                     // 插入采集数据库
-                    Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-                    $find_video['id']=Yii::$app->signdb->getLastInsertID();
+                    // Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
+                    // $find_video['id']=Yii::$app->signdb->getLastInsertID();
                     // $new_list[] =$find_video;//批量插入
                     $video_list [] =$find_video;
                 }
