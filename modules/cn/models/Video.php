@@ -434,9 +434,10 @@ class Video extends ActiveRecord {
 		$args['link']= $link;
 		// var_dump($args);die;
 		// isquery 0 需要写入， 1 不需要写入
-		$args = Video::geturlDetails($args);//验证视频是否入库--查看库是否已经存在m3u8视频
 		if(!$isquery&&$args!=null){
-			Yii::$app->signdb->createCommand()->insert('x2_video', $args)->execute();
+			Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+		}else{
+			$args = Video::geturlDetails($args);//验证视频是否入库--查看库是否已经存在m3u8视频
 		}
 		return $args;
 	}
