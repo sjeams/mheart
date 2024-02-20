@@ -457,9 +457,11 @@ class Video extends ActiveRecord {
 			$res =VideoListDetail::find()->where($where)->asarray()->One();
 		}
 		if($res){
-			//返回查到视频--修改旧的视频地址
-			$old_url_id = $res['id'];
-			VideoListDetail::updateAll(['link' =>$link],"id =$old_url_id");
+			//返回查到视频--修改旧的视频地址--源地址不同就修改
+			if($link!=$res['link']){
+				$old_url_id = $res['id'];
+				VideoListDetail::updateAll(['link' =>$link],"id =$old_url_id");
+			}
 			return $res;
 		}else{
 			//视频不存在，写入
