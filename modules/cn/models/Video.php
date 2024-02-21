@@ -84,7 +84,7 @@ class Video extends ActiveRecord {
 						// array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
 					);
 				}
-
+				// 
 			}else if($belong==5){
 				// siwazyw.cc  siwazyw.tv
 				$type = $type?$type:1;
@@ -99,6 +99,20 @@ class Video extends ActiveRecord {
 						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv'),
 					);
 				}
+			}else if($belong==6){
+				// https://bfqde2023llsplde12qd27qdl.820723.com/search?tag=%E7%B4%A0%E4%BA%BA
+				// www.fi11.tv 永久网址
+				// https://hereaa.com/tags.jsp
+				// $type = $type?$type:1;
+				// if($search){
+				// 	$list=array(
+				// 		array($belong,$$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv'),
+				// 	);
+				// }else{
+				// 	$list=array(
+				// 		array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv'),
+				// 	);
+				// }
 
 			}else{
 				return false;
