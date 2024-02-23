@@ -30,20 +30,20 @@ class Query extends ActiveRecord {
 			case 1:
 				// $url ="https://www.taopianzy.com/home/search/si1_&ky$search.html";
 				// https://www.yszzq.com/
-				$http="https://www.taopianzy.com";
+				$http="https://www.taopianzy.com";//淘片
 				$url = $http."/search.html?keyword=$search&page=$page";
 				// $url = $http."/home/vodlist/1/1-1.html";
 				$list =Query::getVideoTp($search,$type,$url,$http);
 			break;
 			case 2:  
 				// $http="https://foxzyw.com";
-				$http="https://ukuzy.com";
+				$http="https://ukuzy.com";//U酷
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideofoxzyw($search,$type,$url,$http);
 			break;
 			case 3:
 				// $http="https://kudianzy.com";
-				$http="https://cc.bdzy0.com";
+				$http="https://cc.bdzy0.com"; //百度云
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
@@ -51,7 +51,7 @@ class Query extends ActiveRecord {
 				//m3u8 解析接口 https://huyajx.com/play?url=
 				// huyazy.com, huyaziyuan.com
 				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
-				$http="https://www.huyaapi.com";
+				$http="https://www.huyaapi.com"; //虎牙
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox4($search,$type,$url,$http);
 			break; 
@@ -59,7 +59,7 @@ class Query extends ActiveRecord {
 				//m3u8 解析接口 https://huyajx.com/play?url=
 				// huyazy.com, huyaziyuan.com
 				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
-				$http="https://caiji.qhzyapi.com";
+				$http="https://caiji.qhzyapi.com"; //奇虎
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox($search,$type,$url,$http);
 			break;
@@ -67,7 +67,7 @@ class Query extends ActiveRecord {
 				//m3u8 解析接口 https://huyajx.com/play?url=
 				// huyazy.com, huyaziyuan.com
 				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
-				$http="https://hhzyapi.com";
+				$http="https://hhzyapi.com";//火狐
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox6($search,$type,$url,$http);
 			break;
@@ -75,18 +75,34 @@ class Query extends ActiveRecord {
 				//m3u8 解析接口 https://huyajx.com/play?url=
 				// huyazy.com, huyaziyuan.com
 				// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
-				$http="https://jszyapi.com";
+				$http="https://jszyapi.com";//极速
 				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
 				$list =Query::getVideoFox6($search,$type,$url,$http);
 			break;
-			// case 8:
+			case 8:
 			// 	//m3u8 解析接口 https://huyajx.com/play?url=
 			// 	// huyazy.com, huyaziyuan.com
 			// 	// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
-			// 	$http="https://www.feisuzy.com";
-			// 	$url = $http."/vod/search/page/$page/wd/$search.html";
-			// 	$list =Query::getVideoFox($search,$type,$url,$http);
+				$http="https://www.subozy.com/"; //速播
+				$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
+				$list =Query::getVideoFox6($search,$type,$url,$http);
 			// break;
+			case 9:
+				// 	//m3u8 解析接口 https://huyajx.com/play?url=
+				// 	// huyazy.com, huyaziyuan.com
+				// 	// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
+					$http="https://jyzyapi.com"; //金鹰
+					$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
+					$list =Query::getVideoFox4($search,$type,$url,$http);
+				break;
+			case 10:
+				// 	//m3u8 解析接口 https://huyajx.com/play?url=
+				// 	// huyazy.com, huyaziyuan.com
+				// 	// $http="https://www.80kk.app/"; https://www.3ayy.com/vod-s/%E5%A5%B3----------1---.html
+					$http="https://cj.lziapi.com"; //量子
+					$url = $http."/index.php/vod/search/page/$page/wd/$search.html";
+					$list =Query::getVideoFox7($search,$type,$url,$http);
+				break;
 		}
 		return $list;	
 	}
@@ -243,7 +259,7 @@ public static function getVideofoxzyw($search,$type,$url,$http)
 public static function getVideoFox4($search,$type,$url,$http)
 {
 	$rules = [
-		'name' => array('.xing_vb4>a:eq(0)','html',''),
+		'name' => array('.xing_vb4>a:eq(0)','html','-em'),
 		'link' => array('.xing_vb4>a:eq(0)','href','-em'),
 	];
 	$range = '.xing_vb ul:gt(0)';
@@ -406,6 +422,71 @@ public static function getVideoFox6($search,$type,$url,$http)
 
 }
 
+
+// 采集列表
+public static function getVideoFox7($search,$type,$url,$http)
+{
+	$rules = [
+		'name' => array(' a:eq(0)','html',''),
+		'link' => array(' a:eq(0)','href',''),
+	];
+	$range = '.videoContent li';
+	// var_dump($type);die;
+	// 切片选择器,跳过第一条广告
+	$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
+	$urls =[];
+	foreach($list as  $v){
+		$urls[] =$http.$v['link'];
+	}
+	// var_dump($list);die;
+	// 切片选择器----start
+	$range = '.playlist:eq(1) li ';
+	// 切片选择器,跳过第一条广告
+	$rules = [
+		// 'imageUrl' => array(' .left>img','data-original'),
+		// 'name' => array('.right .name','html','span'),
+		'title' => array(' a:eq(0) ','html',''),
+		'url' => array('   a:eq(0)  ','href',''),
+	];
+	// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
+	$sql = QueryList::rules($rules)->range($range);
+	// $video = QueryList::get($html)->rules($rules)->range($range)->query()->getData()->all();
+	$rules2 = [
+		'imageurl' => array(' .people .left img ','src'),
+		// 'title' => array('.stui-content .title ','html',''),
+		'title' => array('.stui-content__detail .title ','html','-small')
+		// 'url' => array(' .tbAddr:eq(0) input','value',' '),
+	];
+
+	foreach($urls as$key=> $url){
+		// 切片选择器,跳过第一条广告
+		$rt = QueryList::get($url)->rules($rules2)->query()->getData()->all();
+		$rt ['belong']=0;
+		$rt ['type']=$type;
+		$rt ['search']=$search;
+		// $rt ['imageurl']=$http.$rt['imageurl'];
+		$video = $sql->get($url)->query()->getData()->all();
+		$rt['title'] =$list[0]['name'];
+		// $rt['imageurl'] =$video[0]['imageurl'];
+		// var_dump($video);die;
+		$num =0;
+		foreach($video as$k=> $v){
+			$num++;
+			if($v['url']){
+				// $new_url = str_replace('$','',$v['url']);
+				// $video[$k]['url']= $new_url;
+				$video[$k]['title']= '第'.($num).'集';
+			}else{
+				unset($video[$k]);
+			}
+		}
+		$rt['video'] =	$video;
+		$list[$key] =$rt;
+		// var_dump($list[0]);die;
+	}
+	// var_dump($list[0]);die;
+	return $list;
+}
 
 	// 采集列表
     public static function getQueryUrl( )
