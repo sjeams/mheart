@@ -45,6 +45,7 @@ class VideoListDetail extends ActiveRecord {
                     // VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
                     // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
+                // $find_video['imageurl'] = str_replace( 'https://ttzytp3.com/','https://ttzytp.com/',$find_video['imageurl']);
                 // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
                 $video_list [] =$find_video;
             }else{
