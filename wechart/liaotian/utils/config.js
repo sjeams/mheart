@@ -8,7 +8,7 @@ module.exports =  {
   // 请求域名 格式： https://您的域名
   HTTP_REQUEST_URL:'http://swoole.aheart.cn',
   // Socket链接 暂不做配置
-  WSS_SERVER_URL:'ws://124.222.234.123:9501',
+  WSS_SERVER_URL:'ws://122.51.2.193:9501',
   //JWT token 名称
   TOKEN_NAME:'token',
   //用户注册id 名称
