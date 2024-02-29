@@ -36,13 +36,7 @@
 		color:#005fcc;
 		margin-top:1px ;
 	}
-/* 
-	.user_information_right{
-		cursor: pointer;
-		text-align: right;
-		margin-top:30px ;
 
-    } */
     .user_information_left{
 		cursor: pointer;
 		/* margin-top: 30px; */
@@ -192,8 +186,7 @@ function  detail_photo(photo_id,prev=0){
 	}
 } 
 
-function  add_friend(){
-	var friend_id =$('#friend_id').val();
+function  add_friend(friend_id){
 	$.ajax({
 		url: '/cn/chat/add-friend', // 跳转到 action 
 		type: 'post',
@@ -205,10 +198,11 @@ function  add_friend(){
 	});
 }
 
-function  remove_friend(){
-	var friend_id =$('#friend_id').val();
+
+
+function  remove_friend(friend_id){
 	$.ajax({
-		url: '/cn/chat/add-friend', // 跳转到 action 
+		url: '/cn/chat/remove-friend', // 跳转到 action 
 		type: 'post',
 		data:{fid:friend_id},
 		dataType: 'json',

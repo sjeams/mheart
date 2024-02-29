@@ -33,13 +33,24 @@
 		color:#ffffff;
 		background-color: #dddddd;
 	}
-
+	p{
+		margin-bottom:0rem!important;	
+	}
+	.user_information_detail{
+		z-index: 0;
+		position: fixed;
+		height: 70px;
+		width: 100%;
+		margin-bottom:0rem!important;
+	}
 	.user_information_right{
+		z-index: 1;
+		position: relative;
 		cursor: pointer;
-		text-align: right;
-		margin:30px 30px;
-		margin-right: 10px;
-
+        /* line-height: 45px; */
+        height:45px;
+        float: right;
+		text-align:right;
     }
     .user_information_left{
 		cursor: pointer;

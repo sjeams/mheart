@@ -35,6 +35,8 @@ class WeChatFriend extends ActiveRecord {
             $args['uid']=$fid;
             $args['friend_id']=$uid;
             Yii::$app->signdb->createCommand()->insert('x2_wechat_friend',$args)->execute();
+        }else{
+            WeChatFriend::updateAll(['is_friend' =>1],"uid = $uid and friend_id =$fid");    
         }
     }
     //删除朋友

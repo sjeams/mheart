@@ -159,6 +159,7 @@
         width:50%; text-align:center
     }
     .chat_footer{
+        z-index: 2;
         width: 100%;
         position: fixed;
         bottom: 0px;

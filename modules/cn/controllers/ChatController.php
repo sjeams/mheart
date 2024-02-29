@@ -66,6 +66,7 @@ class ChatController extends VideoApiControl
             ->limit($pageStr->limit)
             ->orderBy('u.id desc')->all('sign');
             // var_dump($userList);die;
+            $is_friend=0;
         }else{
             //默认查自己相关的朋友
             $where .=" and  f.uid=$uid and is_friend=1";
@@ -81,6 +82,7 @@ class ChatController extends VideoApiControl
             // ->offset($pageStr->offset)
             // ->limit($pageStr->limit)
             ->orderBy('f.last_time desc')->all('sign');
+            $is_friend=1;
         }
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
@@ -91,9 +93,9 @@ class ChatController extends VideoApiControl
         if($html){
             // var_dump($userList);die;
             $this->layout = 'kongbai';
-            return $this->render('list',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total ]);
+            return $this->render('list',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total,'is_friend'=>$is_friend ]);
         }else{
-            return $this->render('list_html',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total ]);      
+            return $this->render('list_html',['data'=>$data,'friend_title'=>$friend_title,'userList'=>$userList,'total'=>$total,'is_friend'=>$is_friend ]);      
         }
     }
 
@@ -264,6 +266,7 @@ class ChatController extends VideoApiControl
         $uid =  $this->userId;
         $fid = Yii::$app->request->post('fid',0);
         WeChatFriend:: addFriend($uid,$fid);
+        return $fid;
     }
     //删除朋友
     public function actionRemoveFriend()
@@ -271,6 +274,7 @@ class ChatController extends VideoApiControl
         $uid =  $this->userId;
         $fid = Yii::$app->request->post('fid',0);
         WeChatFriend:: removeFriend($uid,$fid);
+        return true;
     }
 
 }

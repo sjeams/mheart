@@ -46,11 +46,11 @@
 			<i class="bi bi-chat"></i> 发送消息
 			</div>
 		</a>
-		<div class="msg-time" onclick="remove_friend()">
+		<div class="msg-time" onclick="remove_friend(<?php echo $friend['id'] ?>)">
 				删除好友
 		</div>
 	<?php }else{?>
-		<div class="msg-time" onclick="add_friend()">
+		<div class="msg-time" onclick="add_friend(<?php echo $friend['id'] ?>)">
 				添加好友
 		</div>
 	<?php  } }?>

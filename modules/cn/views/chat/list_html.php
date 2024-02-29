@@ -5,7 +5,29 @@
 	.user_list{
 		cursor: pointer;
 	}
+	.user_time {
+		line-height: 45px;
+		font-size: 20px;
+		text-align: center;
+		padding: 8px 18px;
+		border-radius: 5px;
+	}
+	.table-bordered{
+		border: 0px solid #dee2e6;
+	}
+	p{
+		margin-bottom:0rem!important;	
+	}
+	.user_information_detail{
+		z-index: 0;
+		position: fixed;
+		height: 70px;
+		width: 100%;
+		margin-bottom:0rem!important;
+	}
 	.user_information_right{
+		z-index: 1;
+		position: relative;
 		cursor: pointer;
         /* line-height: 45px; */
         height:45px;
@@ -140,11 +162,15 @@ function nextPage(goPage){
 		var num = Number($("#usernum").val());
 		if(num>0){Update_user_num(num);	}
 	})
-	function gouSerach(friend_id,is_friend){
+	function gouSerach(key,is_friend){
+		var friend_id =$("#friend_"+key).val();
+		var fid=$("#fid_"+key).val();
 		if(is_friend==1){
+			//聊天详情界面
 			window.location.href="/cn/chat/chat?uid="+friend_id;
 		}else{
-			window.location.href="/cn/chat/detail?uid="+friend_id;	
+			//搜索详情界面
+			window.location.href="/cn/chat/detail?uid="+fid;	
 		}
 
 	}
@@ -206,5 +232,21 @@ function nextPage(goPage){
 		// 	},
 		// });
 	} 
+
+	function search_add_friend(key){
+		var fid =$('#fid_'+key).val();
+		$.ajax({
+			url: '/cn/chat/add-friend', // 跳转到 action 
+			type: 'post',
+			data:{fid:fid},
+			dataType: 'json',
+			success: function (data){
+				console.log(data)
+				$('#friend_'+key).val(data);
+				$(".remove_add_"+key).parent().append('<div  class="user_information_right"><span class="user_time  ">已添加</span></div>');
+				$(".remove_add_"+key).remove();
+			},
+		});
+	}
 </script>
 
