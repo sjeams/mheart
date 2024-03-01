@@ -192,7 +192,6 @@ class VideoController extends VideoApiControl
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html){
-            var_dump(111);die;
             if(!$res){
                 $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);
             }
@@ -207,6 +206,7 @@ class VideoController extends VideoApiControl
                 return false;
             }
         }else{
+            var_dump($res);die;
             return $this->render('list_html',$res);
         }
     }
