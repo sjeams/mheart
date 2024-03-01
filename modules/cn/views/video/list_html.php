@@ -77,7 +77,7 @@
             </tr>
         </thead>
         <tbody class="list_html" >
-                <?php echo $html ?>
+                 
         </tbody>
     
     </table>
