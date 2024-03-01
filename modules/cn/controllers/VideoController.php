@@ -187,7 +187,7 @@ class VideoController extends VideoApiControl
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-        $res = Yii::$app->session->get($sessionStr);
+        $res = Yii::$app->session->get($sessionStr)?:[];
 
         //来源
         $html = Yii::$app->request->get('html',0);
@@ -206,7 +206,6 @@ class VideoController extends VideoApiControl
                 return false;
             }
         }else{
-            var_dump($res);die;
             return $this->render('list_html',$res);
         }
     }
