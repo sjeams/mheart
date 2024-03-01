@@ -202,7 +202,7 @@ class VideoController extends VideoApiControl
             if($res){
                 return $this->render('list',$res );
             }else{
-                return false;
+                return '';
             }
         }else{
             return $this->render('list_html',$res);
