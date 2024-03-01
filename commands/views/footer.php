@@ -1,7 +1,15 @@
-
+<style>
+    .use_button_height{
+		cursor: pointer;
+        /* line-height: 45px; */
+        height:60px;
+     	float: left;
+    }
+</style>
 <!-- content_header 的结尾div 别删了 --html 自动补全了-->
 </div>
-
+<!-- //底部高度占位，防遮挡 -->
+<p class="use_button_height" style="visibility: hidden;">  </p>
 <?php 
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];

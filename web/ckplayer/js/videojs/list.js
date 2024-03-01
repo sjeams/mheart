@@ -11,7 +11,7 @@
     // }())
     // 优先1
     $(document).ready(function(){ 
-        // gouhtml(0)
+        gouhtml(0)
     //     //搜索框
     //     // $('.go_hidden').removeClass('hiddened');
     //     // var goPage_list =$("#goPage_list").val();
@@ -99,7 +99,7 @@
                     $('.caiji_name').text('采集√')
                     if(setnum>1){//手动缓存
                         $("#goPage_list").val(data.data);
-                        gouhtml(1);
+                        gouhtml(0);
                     }
                 }else{
                     $('.caiji_name').text('采集×')
@@ -135,7 +135,7 @@
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         $('#goType').val(0);
-        // gouSerachType(belong,0);
+        gouSerachType(belong,0);
         gou();
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
@@ -246,8 +246,8 @@
                 // console.log(data)
                 // $("#goTypeInput").html(data.data);
                 isGetCaches()//开启缓存，固定缓存一页
-                // gouhtml(0);
-                gouhtml(1);//跳转页面
+                gouhtml(0);
+                // gouhtml(1);//跳转页面
             },
         });
     }
@@ -270,24 +270,37 @@
             if(list_html){
                 $('.list_html').html(list_html)
             }
+            //回填
+            is_next_button() //下一页
             var t = $("#top").offset().top;
             $(window).scrollTop(t);
             removeLoading()
         }
     }
 
-    // 刷新页面
-    function  localRload(){
-        window.location.reload();
+    function is_next_button(){
+        var is_next_page = $("#page_isnext").val()
+        if(is_next_page){
+          var is_next_page_html ='<span  class="btn btn-primary" onclick="nextPage()">下一页</span>'
+        }else{
+            var is_next_page_html = '<span  class="btn btn-defult"  >下一页</span>  '
+        }
+        $('.is_next_page_button').html(is_next_page_html)
     }
 
+
+    // 刷新页面  ---刷新当前
+    // function  localRload(){
+    //     window.location.reload();
+    // }
+    // 刷新页面  ---跳转刷新
     function  clearRload(){
         gouhtml(1);
     }
 
     // 收藏
     function  Update(id){ 
-        console.log(id);
+        // console.log(id);
         // $(".collect_id"+id).addClass('btn-success');
         var url =$("#form"+id+"  input[name=url]").val();
         var title =$("#form"+id+"  input[name=title]").val();

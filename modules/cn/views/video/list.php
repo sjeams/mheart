@@ -52,7 +52,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
                 <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                 <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
                 <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->
-                <span onclick="localRload( )" class="btn btn-primary collect"> 刷新 </span>
+                <span onclick="clearRload( )" class="btn btn-primary collect"> 刷新 </span>
             </p>
         </td>
     
@@ -65,13 +65,9 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <p class="center">
             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
             <span  class="btn btn-primary" onclick="clearRload()"> 刷新 </span>
-            <?php if($isnext){ ?>
-                <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
-            <?php }else{ ?>
-                <span  class="btn btn-defult"  >下一页</span>    
-            <?php  }?> 
+            <span class="is_next_page_button"><span  class="btn btn-primary" onclick="nextPage()">下一页</span></span>
         </p>
     </td>
 </tr>
-<tr> <td class="center"  ><p></p></td></tr>
+<!-- <tr> <td class="center"  ><p></p></td></tr> -->
 <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">     

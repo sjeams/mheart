@@ -55,7 +55,7 @@ class WeChatFriend extends ActiveRecord {
     }
     //修改未看消息数
     public static function updateUserNum($uid,$fid,$num=0){
-        WeChatFriend::updateAll(['num' =>0],"uid = $uid and friend_id =$fid");
+        WeChatFriend::updateAll(['num' =>$num],"uid = $uid and friend_id =$fid");
     }
 
 

@@ -1,5 +1,5 @@
 <?php $search_title = $data['search'];?>
-<input type="hidden" value="<?php echo $isnext ?>" id="page_isnext">
+<!-- <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext"> -->
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 
 <p class="center  "   style="margin-top:20px" id="top">
@@ -50,32 +50,28 @@
                             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
                             <input type="text" class=" " style="text-align: center;margin: 0px auto;width:28%" value="<?php echo $data['page_list'] ?>" id="goPage_list">
                 
-                            <?php if($isnext){ ?>
-                                <span  class="btn btn-primary" onclick="nextPage()">下一页</span>    
-                            <?php }else{ ?>
-                                <span  class="btn btn-defult"  >下一页</span>    
-                            <?php  }?>
+                            <span class="is_next_page_button"></span>
                         </div>
-                    <?php if($graden>0){ ?>
-                        <div class="layui-input-inline center">
-                            <p class="center">
-                                <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
-                                <span  class="btn btn-primary" onclick="gou()"> GO  </span>
-                                <span  class="btn btn-primary" onclick="clearSession(0)"> 更新 </span>
-                                <span  class="btn btn-primary" onclick="clearSession(1)"> 刷新 </span>
-                            </p>
-                        </div>
-                        <div class="layui-input-inline center">
-                            <p class="center">
-                                <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
-                                <?php if($isnext){ ?>
-                                    <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
-                                <?php }else{ ?>
-                                    <span  class="btn btn-defult"  > 手动缓存 </span>
-                                <?php  }?>     
-                            </p>
-                        </div>
-                    <?php } ?>
+                        <?php if($graden>0){ ?>
+                            <div class="layui-input-inline center">
+                                <p class="center">
+                                    <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
+                                    <span  class="btn btn-primary" onclick="gou()"> GO  </span>
+                                    <span  class="btn btn-primary" onclick="clearSession(0)"> 更新 </span>
+                                    <span  class="btn btn-primary" onclick="clearSession(1)"> 刷新 </span>
+                                </p>
+                            </div>
+                            <div class="layui-input-inline center">
+                                <p class="center">
+                                    <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
+                                    <?php if($isnext){ ?>
+                                        <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
+                                    <?php }else{ ?>
+                                        <span  class="btn btn-defult"  > 手动缓存 </span>
+                                    <?php  }?>     
+                                </p>
+                            </div>
+                        <?php } ?>
                     <!-- </div> -->
                 </td>
             </tr>
@@ -86,8 +82,6 @@
     
     </table>
 </form>
-
-
 
 
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>

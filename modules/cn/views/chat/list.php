@@ -44,4 +44,4 @@
 		</td>
 	</tr>  
 <?php } ?>
-<tr class="user_list" style="visibility: hidden;"><td><div  class="user_information_left"> </div></td></tr>
+<tr class="user_list" style="visibility: hidden;"><td><div  class="user_information_left"></div></td></tr>
