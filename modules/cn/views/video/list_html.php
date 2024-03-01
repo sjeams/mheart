@@ -2,7 +2,7 @@
 <!-- <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext"> -->
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 
-<p class="center  "   style="margin-top:20px" id="top">
+<p class="center  "   style="margin-top:20px">
 <!-- <a class="btn_link " href="https://www.djuu.com/"> 音乐 </a> -->
     <a class="btn_link " href="https://www.69mj.com" class="btn">  美剧  </a>
     <a class="btn_link " href="https://www.6080yy3.com" class="btn">  6080  </a>

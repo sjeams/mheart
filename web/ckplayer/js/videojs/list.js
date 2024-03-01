@@ -135,8 +135,8 @@
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         $('#goType').val(0);
-        gouSerachType(belong,0);
         gou();
+        gouSerachType(belong,0);
     }
     // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
     function clearModel(istype){
