@@ -38,6 +38,9 @@ class UserBiologyNatureDo extends ActiveRecord
     public $map_int;//系统战斗，获取map阵容编号时才会用到
     public $biology_int_extnd;//战斗回合容器，属性
     public $biology_id;//当前生物id
+    public $action_move;//当前生物攻击\技能行动次数,默认为0
+    public $history_count;//历史动作总条数
+    
     function init(){
         $skill_extend = BiologySkillExtend::find()->asArray()->All();
         $this->skill_extend =  array_column($skill_extend,null,'extend');
@@ -52,13 +55,15 @@ class UserBiologyNatureDo extends ActiveRecord
         $this->fighting_goods_my=[];//战斗奖励
         $this->fighting_msg=[];//战斗提示
         $this->poition_winner=0;//战斗结果
-        $this->attack_bout=0;
+        $this->attack_bout=0;//生物序号。//根据前端索引排序0-9
         $this->map_int=0;//map阵容编号
         $this->biology_int_extnd=[];
         $this->biology_int_extnd['keeptime']=[];
         $this->biology_int_extnd['dobout']=[];
 
         $this->biology_id=0;
+        $this->action_move=-1;//行动次数
+        $this->history_count=0;//历史条数
     }
     public static function tableName(){
         return '{{x2_user_biology_nature_do}}';
@@ -252,12 +257,14 @@ class UserBiologyNatureDo extends ActiveRecord
         $biolgy_state =$UserWords->getBiolgyState(POSITION_ENEMY,$this->do_biology_extend['position']);//返回坐标敌方
         //开启循环战斗--初始回合
         $this->fighting();//返回战斗记录
+        $this->getFightingData();//重置索引0,处理history列表
         //返回战利品和战斗记录
         return [
             'fighting_goods_my'=>$this->fighting_goods_my,
             'fighting_goods_enemy'=>$this->fighting_goods_enemy,
             // 'fighting_msg'=>$this->fighting_msg,//文字提示记录
-            'fighting_history'=>array_merge($this->fighting_history),//重置索引0
+            'fighting_history'=> $this->fighting_history ,
+            'history_count'=> $this->history_count ,
             'poition_winner'=>$this->poition_winner,
             'poition_my'=>$poition_my,
             'poition_enemy'=>$poition_enemy,
@@ -265,6 +272,31 @@ class UserBiologyNatureDo extends ActiveRecord
             'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".jpg",//随机地图
         ];
     }
+
+
+    //处理历史记录
+    public function getFightingData(){
+        $new_fighting_history = array_merge($this->fighting_history);
+        $fighting_history =  array_column($new_fighting_history,'fighting_history');
+        // var_dump($fighting_history[0]);die;
+        $history_count=0;
+        $new_data=[];
+        foreach($fighting_history as$key => $vst){
+            $list=[];
+            // 循环合并二维数组
+            foreach($vst as $vst_val){
+                $list= array_merge_recursive($list,$vst_val);
+            }
+            $history_count+=count($list);
+            $new_data[$key]['boat']= $key+1;
+            $new_data[$key]['total']= $history_count;
+            $new_data[$key]['data']= $list;
+        }
+        $this->fighting_history = $new_data;
+        $this->history_count= $history_count;
+
+    }
+
     //重置容器
     public function getBiologyRelode(){
         $this->getBiologyInit($this->merge_biology_extend); //----每次战斗过后-重置一次容器
@@ -290,8 +322,8 @@ class UserBiologyNatureDo extends ActiveRecord
     //胜利者
     public function victory(){
         $list = array(POSITION_MY,POSITION_ENEMY);
-        //大于180回合直接失败
-        if($this->bout==FIGHT_BOUT){
+        //大于20回合直接失败
+        if($this->bout>FIGHT_BOUT){
             return POSITION_ENEMY;
         }else{
             // 0无胜利者  1己方 2 敌方
@@ -441,12 +473,12 @@ class UserBiologyNatureDo extends ActiveRecord
             //阵亡跳过回合
             if($attack_biology['shengMing']>0){
                 $this->attack_bout+=1;//前端需要索引排序
-                //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_need']=[];//技能--消耗（耗蓝）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_go']=[];//技能--增幅（被动
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_do']=[];//技能--主动（攻击）
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_putong']=[];//普通攻击
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_back']=[];//技能 被动（反击）
+                // //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_need']=[];//技能--消耗（耗蓝）
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_go']=[];//技能--增幅（被动
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_do']=[];//技能--主动（攻击）
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_putong']=[];//普通攻击
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_back']=[];//技能 被动（反击）
                 // 攻击位置计算
                 $this->attackPosition($attack_biology); //主动攻击
             }
@@ -510,10 +542,12 @@ class UserBiologyNatureDo extends ActiveRecord
         $position_type_list = BiologySkillPositionType::positionTypeList();
         $position_type=0;//定位类型
         $skill_attack=0;//主动攻击  0 普通  1技能--有技能就跳过普通攻击
-
+        $this->action_move=-1; //行动次数--当前生物技能和攻击行动次数
         //没有技能直接主动攻击
         if($fight_skill ){
             foreach($fight_skill as $skill){
+                $this->action_move++;
+                $this->startHistory();
                 $attack = intval($skill['attack']);//攻击对象 攻击对象0被攻击触发 自己使用1 敌方使用2
                 $position = intval($skill['position']);    //战斗标记 攻击位置 --默认为 0 是普通攻击 ，有值为技能position_id--攻击位置
                 $position_type = intval($skill['positionType']);//攻击对象类型 --优先攻击排序
@@ -566,6 +600,8 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($this->merge_biology_extend[170]);die;
         //没有主动技能--普通攻击
         if(!$skill_attack){
+            $this->action_move++;
+             $this->startHistory();
             //获取阵容--每次技能过后需要重新获取生物状态
             $position_my_list_new   = $this-> getShengMing(POSITION_MY);
             $position_enemy_list_new= $this-> getShengMing(POSITION_ENEMY);
@@ -585,6 +621,16 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($this->fighting_history[$this->bout]['fighting_history'][170]);die;
         // var_dump($fight_skill);die;
     }
+
+    public function startHistory(){
+        //发起顺序--根据情况选取普通攻击 putong   还是 技能攻击 do
+        $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_need']=[];//技能--消耗（耗蓝）
+        $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_go']=[];//技能--增幅（被动
+        $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_putong']=[];//普通攻击
+        $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_do']=[];//技能--主动（攻击）
+        $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_back']=[];//技能 被动（反击）
+    }
+
 
     //普通攻击
     public function attackPositionBlack($position_my,$attack_biology_go,$pid){
@@ -993,7 +1039,7 @@ class UserBiologyNatureDo extends ActiveRecord
                 $hurt_go_list['descript_do'] =$sm_do.$this->skill_extend['shengMing']['name'].$hurt_go_list['hurt_msg'];
             }
             $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
-            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_putong'][]= $hurt_go_list; //普通攻击
+            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_putong'][]= $hurt_go_list; //普通攻击
         }else if($type==HURT_SKILL){  
             if($shanbi==1&&$attack==POSITION_ENEMY){
                 $hurt_go_list['descript_do'] =$sm_do.'闪避';
@@ -1004,12 +1050,12 @@ class UserBiologyNatureDo extends ActiveRecord
             //  0被动反击   1 主动攻击 和主动触发
             if($is_do==SKILL_GOING){
                 if($belong==ATTACK5){
-                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_do'][]= $hurt_go_list; //技能--主动（攻击）
+                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_do'][]= $hurt_go_list; //技能--主动（攻击）
                 }else{
-                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_go'][]= $hurt_go_list; //技能--增幅（被动）
+                    $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_go'][]= $hurt_go_list; //技能--增幅（被动）
                 }
             }else{
-                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_back'][]= $hurt_go_list; //技能（反击）
+                $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_back'][]= $hurt_go_list; //技能（反击）
             }
         }else if($type==HURT_NEED){  
             $need =$skill['needValue']!=0? $this->skill_extend[$skill['need']]['name'].$skill['needValue']:'';
@@ -1019,7 +1065,7 @@ class UserBiologyNatureDo extends ActiveRecord
                 $hurt_go_list['descript_do'] =$sm_do.$need;  
             }
             $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
-            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout]['h_need'][]= $hurt_go_list; //技能--消耗（发起消耗）
+            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_need'][]= $hurt_go_list; //技能--消耗（发起消耗）
         }
         return $hurt_go_list;
     }

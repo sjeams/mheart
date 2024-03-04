@@ -126,7 +126,9 @@ class AppApinewController extends ApiUserControl{
         $img_list =  array_merge(array($data['map_pic']),$img_list);
         $data['img_list'] =$img_list;
         // die;
-        // var_dump($data['fighting_history'][0]['fighting_history'][2]['h_do']);die;
+        // var_dump($data['fighting_history'][0]['fighting_history'][2]);die;
+        // var_dump($data['fighting_history']);die;
+        // var_dump($data['fighting_history'][0]['fighting_history'][2]);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]['putong'][0]);die;
         // var_dump($data['fighting_history'][1]['fighting_history'][1]);die; 
         // var_dump($data);die;
