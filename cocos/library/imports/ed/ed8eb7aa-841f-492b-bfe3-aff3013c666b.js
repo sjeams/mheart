@@ -81,82 +81,62 @@ cc.Class({
         // console.log( _this.fightingArray )
 
 
-        var fighting_list = data.data; // cc.log( fighting_list )
-        // _this.fightingEnd(fighting_list)
-        // return false
-        //没有记录直接跳过  
-        // var new_time =12;
-
+        var fighting_list = data.data;
         var boat_length = fighting_list.fighting_history.length;
+        var history_count = fighting_list.history_count;
         var fighting_history = fighting_list.fighting_history;
 
         if (boat_length != 0) {
           var boat = 0;
-          var boat_count = 0;
-          var i = -1; //一条或多条执行语句
+          var boat_count = -1; //一条或多条执行语句
           // _this.schedule(function(){
           //循环历史行动条数
 
           _this.schedule(function () {
             boat_count++;
 
-            if (fighting_history[boat].total < boat_count) {
-              var i = -1;
+            if (history_count[boat].total < boat_count) {
               boat++;
-            }
+            } //因为是从0开始，所以相等就结束 
 
-            i++; // for (let boat=0; boat<boat_length; boat++) {
-            //   // cc.log(boat)   
 
-            if (boat > fighting_history.length) {
-              // 在第六次执行回调时取消这个计时器
+            if (boat_count == boat_length) {
+              cc.log(111); // 在第六次执行回调时取消这个计时器
+
               _this.fightingEnd(fighting_list);
 
               _this.unschedule();
             } else {
-              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + parseInt(boat + 1);
-              cc.log(fighting_history[boat]['data'][i]); // _this.fighting_history(fighting_history[boat]['data'][i])//执行战斗顺序 
-            } // }
+              cc.log(boat_count);
+              cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + parseInt(boat + 1); // cc.log(fighting_history[boat_count])
 
-          }, 2, fighting_list.history_count + 1, 1); //只执行一次
-          // 在第六次执行回调时取消这个计时器
-          // _this.fightingEnd(fighting_list)
-          // _this.unschedule();
-          // },new_time,boat_length,0.5); //10秒后执行1次间隔5秒
-          // // var poition_my =fighting_list.poition_my
-          // // var poition_enemy =fighting_list.poition_enemy
+              _this.fighting_history(fighting_history[boat_count]); //执行战斗顺序 
+
+            }
+          }, 1, boat_length, 1); ////10秒后执行1次间隔5秒
 
         }
       });
     }
   },
-  fighting_history: function fighting_history(history) {
-    cc.log(history);
-    var arr = [];
+  fighting_history: function fighting_history(his_log) {
+    cc.log(his_log);
 
-    var _this = this;
-
-    var ipage = -1; // var h_length = history.length-1<0?0:history.length-1;
-    // for (var npage=0; npage<history.length; npage++){
-    //   var his_log = history[npage];
-    // _this.schedule(function(){
-    // ipage++
-    // cc.log(ipage)
-
-    var his_log = history[ipage]; // cc.log(his_log)
-    //反击
+    var _this = this; //反击
     // if(his_log.h_back.length!=0){
     //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)
     // }
     //消耗魔法 --技能名称和消耗放一起了
 
+
     if (his_log.h_need.length != 0) {
       _this.readySkill(his_log.h_need);
-    } // // 发起技能名称
-    // if(his_log.h_go.length!=0){
-    //   _this.readySkill(his_log.h_go)
-    // }
-    //普通攻击
+    } // // 发起技能名称被动
+
+
+    if (his_log.h_go.length != 0) {
+      _this.readySkill(his_log.h_go);
+    } //普通攻击
 
 
     if (his_log.h_putong.length != 0) {
@@ -166,8 +146,7 @@ cc.Class({
 
     if (his_log.h_do.length != 0) {
       _this.playSkill(his_log.h_do);
-    } // },2,history_count,1);//只执行一次
-
+    }
   },
   //战斗结束
   fightingEnd: function fightingEnd(fighting_list) {
@@ -419,9 +398,9 @@ cc.Class({
     if (node.x != m_node.x) m_x = m_node.x - node.x + m_x_move;
     if (node.y != m_node.y) m_y = m_node.y - node.y; //普通攻击
 
-    var actionLeft = cc.spawn(cc.moveBy(0.3, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {}, this));
+    var actionLeft = cc.spawn(cc.moveBy(0.2, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {}, this));
     var actionWaite = cc.delayTime(0.1);
-    var actionRight = cc.spawn(cc.moveBy(0.3, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1)); // 让节点在向上移动的同时缩放
+    var actionRight = cc.spawn(cc.moveBy(0.2, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1)); // 让节点在向上移动的同时缩放
     // arr.push(cc.scaleTo(0.1, 1,1))
 
     return new Promise(function (resolve) {

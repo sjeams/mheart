@@ -164,7 +164,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
+      "width": 180,
       "height": 80
     },
     "_anchorPoint": {
@@ -854,8 +854,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 160
+      "width": 150,
+      "height": 150
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1814,15 +1814,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 39,
-      "g": 95,
-      "b": 214,
+      "r": 0,
+      "g": 47,
+      "b": 148,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 37.8
+      "height": 45.36
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1874,7 +1874,7 @@
     "_useOriginalSize": false,
     "_string": "-100000000",
     "_N$string": "-100000000",
-    "_fontSize": 36,
+    "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1921,9 +1921,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 41,
-      "b": 0,
+      "r": 233,
+      "g": 11,
+      "b": 11,
       "a": 255
     },
     "_contentSize": {
@@ -1940,8 +1940,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        10,
-        80,
+        0,
+        120,
         0,
         0,
         0,
@@ -1981,7 +1981,7 @@
     "_useOriginalSize": false,
     "_string": "-100000000",
     "_N$string": "-100000000",
-    "_fontSize": 36,
+    "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2028,9 +2028,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 53,
-      "g": 190,
-      "b": 10,
+      "r": 39,
+      "g": 195,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -2047,8 +2047,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        20,
-        80,
+        0,
+        100,
         0,
         0,
         0,
@@ -2088,7 +2088,7 @@
     "_useOriginalSize": false,
     "_string": "-100000000",
     "_N$string": "-100000000",
-    "_fontSize": 36,
+    "_fontSize": 30,
     "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2112,7 +2112,7 @@
     "asset": {
       "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
     },
-    "fileId": "798seJd8FO45vSIWo+mA5y",
+    "fileId": "f7ohU25JdEfoSOWDimTQos",
     "sync": false
   },
   {
@@ -2195,8 +2195,8 @@
     "_useOriginalSize": false,
     "_string": "降龙十八掌",
     "_N$string": "降龙十八掌",
-    "_fontSize": 32,
-    "_lineHeight": 32,
+    "_fontSize": 28,
+    "_lineHeight": 28,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,

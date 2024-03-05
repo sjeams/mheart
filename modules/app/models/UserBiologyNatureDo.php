@@ -281,6 +281,8 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($fighting_history[0]);die;
         $history_count=0;
         $new_data=[];
+
+        $fighting_history_list=[];
         foreach($fighting_history as$key => $vst){
             $list=[];
             // 循环合并二维数组
@@ -290,11 +292,12 @@ class UserBiologyNatureDo extends ActiveRecord
             $history_count+=count($list);
             $new_data[$key]['boat']= $key+1;
             $new_data[$key]['total']= $history_count;
-            $new_data[$key]['data']= $list;
+            // $new_data[$key]['data']= $list;
+            $fighting_history_list= array_merge_recursive($fighting_history_list,$list);
         }
-        $this->fighting_history = $new_data;
-        $this->history_count= $history_count;
-
+        // var_dump(count($fighting_history_list)); 
+        $this->fighting_history = $fighting_history_list;//所有历史动作
+        $this->history_count= $new_data; //每个回合统计
     }
 
     //重置容器
