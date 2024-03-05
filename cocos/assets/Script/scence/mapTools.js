@@ -1,6 +1,5 @@
 var HttpHelper = require("../http"); 
 var httpRequest = new HttpHelper();
-var params =[];
 cc.Class({
     extends: cc.Component,
 

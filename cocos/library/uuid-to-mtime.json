@@ -714,16 +714,6 @@
     "meta": 1703815629957,
     "relativePath": "Script\\commonjs\\post.js"
   },
-  "cb9c99ea-d404-4210-819d-3a17718b001f": {
-    "asset": 1701423979137,
-    "meta": 1703815630066,
-    "relativePath": "Script\\home_js\\userinfo.js"
-  },
-  "e483a6af-1f42-4371-808f-155228cd65ed": {
-    "asset": 1701421611950,
-    "meta": 1703815630147,
-    "relativePath": "Script\\login\\background.js"
-  },
   "59db4906-ccc3-42ea-8c90-4ca3b1c6f8f9": {
     "asset": 1656382481728,
     "meta": 1703815630156,
@@ -749,30 +739,10 @@
     "meta": 1703815630266,
     "relativePath": "Script\\login\\ProgressBarScript.js"
   },
-  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
-    "asset": 1702345279319,
-    "meta": 1703815630286,
-    "relativePath": "Script\\login\\register_in.js"
-  },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1702345279320,
-    "meta": 1703815630343,
-    "relativePath": "Script\\login\\register_knows.js"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1702345279318,
-    "meta": 1703815630388,
-    "relativePath": "Script\\login\\register.js"
-  },
   "522f7454-94d8-4e87-9f92-b1c1f9b4c84a": {
     "asset": 1655109292702,
     "meta": 1703815630461,
     "relativePath": "Script\\login\\SpriteTextTool.js"
-  },
-  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
-    "asset": 1702524772624,
-    "meta": 1703815630505,
-    "relativePath": "Script\\login\\tips.js"
   },
   "6ceefc79-9306-4f0d-9273-1514eade4f90": {
     "asset": 1655109292723,
@@ -1025,19 +995,14 @@
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1703127620319,
-    "meta": 1703815629639,
+    "asset": 1709631210420,
+    "meta": 1709631210432,
     "relativePath": "Scene\\login\\加载.fire"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1703659614902,
-    "meta": 1703831688744,
+    "asset": 1709621461753,
+    "meta": 1709621461775,
     "relativePath": "prefabs\\sprite_世界.prefab"
-  },
-  "236d3e27-76be-4b7b-92b2-84f609139b14": {
-    "asset": 1702631155553,
-    "meta": 1703815630534,
-    "relativePath": "Script\\progressTools.js"
   },
   "175f3a60-1b3b-452e-8fb5-a4c183722325": {
     "asset": 1702634929741,
@@ -1064,16 +1029,6 @@
     "meta": 1703127187175,
     "relativePath": "Scene\\login"
   },
-  "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
-    "asset": 1703127254952,
-    "meta": 1703815630218,
-    "relativePath": "Script\\login\\loading.js"
-  },
-  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
-    "asset": 1703127464845,
-    "meta": 1703815630547,
-    "relativePath": "Script\\scence\\home_scence.js"
-  },
   "c9df1867-b4d5-4505-9486-08239876411b": {
     "asset": 1703127531607,
     "meta": 1703815630565,
@@ -1083,21 +1038,6 @@
     "asset": 1703127611119,
     "meta": 1703815630661,
     "relativePath": "Script\\scence\\wap.js"
-  },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1703127809003,
-    "meta": 1703815630137,
-    "relativePath": "Script\\login\\Alert.js"
-  },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1703127941730,
-    "meta": 1703815630524,
-    "relativePath": "Script\\login\\Tools.js"
-  },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1703128049445,
-    "meta": 1703815630242,
-    "relativePath": "Script\\login\\myserver.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
     "asset": 1703130166713,
@@ -1229,11 +1169,6 @@
     "meta": 1703815629501,
     "relativePath": "resources\\server_pic\\骰子.png"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1703659577744,
-    "meta": 1703815630760,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
     "asset": 1703821957366,
     "meta": 1703831684026,
@@ -1259,16 +1194,6 @@
     "meta": 1704446303067,
     "relativePath": "resources\\biology_pic\\1死亡之花.png"
   },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1704704746692,
-    "meta": 1704704791626,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1704704837810,
-    "meta": 1704704846192,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
   "6df561e8-8d43-4e1a-8f7f-35b23caf4702": {
     "asset": 1704767134025,
     "meta": 1704767137322,
@@ -1280,19 +1205,14 @@
     "relativePath": "Script\\fighting\\figthingExtend.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1709608554972,
-    "meta": 1709608554994,
+    "asset": 1709622294271,
+    "meta": 1709622294291,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1709608387096,
-    "meta": 1709608387121,
+    "asset": 1709621908001,
+    "meta": 1709621908036,
     "relativePath": "prefabs\\biology_普通.prefab"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1709608788692,
-    "meta": 1709608909835,
-    "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1709610577580,
@@ -1304,29 +1224,109 @@
     "meta": 1709609935567,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709610069846,
-    "meta": 1709610248648,
-    "relativePath": "Script\\http.js"
+  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
+    "asset": 1709621603277,
+    "meta": 1709621603293,
+    "relativePath": "Scene\\home\\诸天万界.fire"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1709629928128,
+    "meta": 1709630189489,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1709629942292,
+    "meta": 1709630189561,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1709629962324,
+    "meta": 1709630189947,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "cb9c99ea-d404-4210-819d-3a17718b001f": {
+    "asset": 1709629989996,
+    "meta": 1709630190002,
+    "relativePath": "Script\\home_js\\userinfo.js"
+  },
+  "e483a6af-1f42-4371-808f-155228cd65ed": {
+    "asset": 1709630023876,
+    "meta": 1709630190065,
+    "relativePath": "Script\\login\\background.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1709630087517,
+    "meta": 1709630190255,
+    "relativePath": "Script\\login\\register_knows.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1709630108933,
+    "meta": 1709630190318,
+    "relativePath": "Script\\login\\register.js"
+  },
+  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
+    "asset": 1709630113677,
+    "meta": 1709630190356,
+    "relativePath": "Script\\login\\tips.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1709630120115,
+    "meta": 1709630190404,
+    "relativePath": "Script\\login\\Tools.js"
+  },
+  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
+    "asset": 1709630125060,
+    "meta": 1709630190441,
+    "relativePath": "Script\\scence\\home_scence.js"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1709630132748,
+    "meta": 1709630190497,
+    "relativePath": "Script\\scence\\map_score.js"
   },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1709610471752,
-    "meta": 1709610532236,
+    "asset": 1709630145742,
+    "meta": 1709630190580,
     "relativePath": "Script\\scence\\mapTools.js"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1709611300846,
-    "meta": 1709611318673,
+    "asset": 1709630156657,
+    "meta": 1709630190629,
     "relativePath": "Script\\scence\\word_score.js"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1709611476304,
-    "meta": 1709611477673,
-    "relativePath": "Script\\scence\\map_score.js"
+  "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
+    "asset": 1709631234434,
+    "meta": 1709631238696,
+    "relativePath": "Script\\login\\loading.js"
   },
-  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1709611489382,
-    "meta": 1709611489401,
-    "relativePath": "Scene\\home\\诸天万界.fire"
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709631818684,
+    "meta": 1709632130840,
+    "relativePath": "Script\\http.js"
+  },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1709632010814,
+    "meta": 1709632130920,
+    "relativePath": "Script\\login\\Alert.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1709632037983,
+    "meta": 1709632131018,
+    "relativePath": "Script\\login\\myserver.js"
+  },
+  "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
+    "asset": 1709632126963,
+    "meta": 1709632131093,
+    "relativePath": "Script\\login\\register_in.js"
+  },
+  "236d3e27-76be-4b7b-92b2-84f609139b14": {
+    "asset": 1709631874897,
+    "meta": 1709632131121,
+    "relativePath": "Script\\progressTools.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1709632088835,
+    "meta": 1709632131191,
+    "relativePath": "Script\\scence\\wordTools.js"
   }
 }

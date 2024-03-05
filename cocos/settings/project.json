@@ -8,13 +8,26 @@
     ]
   ],
   "excluded-modules": [
+    "Collider",
+    "Dynamic Atlas",
+    "DragonBones",
+    "Geom Utils",
+    "Intersection",
+    "Label Effect",
+    "Mesh",
+    "MotionStreak",
+    "Physics",
+    "ParticleSystem",
+    "Spine Skeleton",
+    "StudioComponent",
+    "TiledMap",
     "3D",
     "3D Primitive",
     "3D Physics/cannon.js",
     "3D Physics/Builtin",
     "3D Particle"
   ],
-  "last-module-event-record-time": 1699001614931,
+  "last-module-event-record-time": 1709622381382,
   "design-resolution-width": 1334,
   "design-resolution-height": 750,
   "fit-width": true,
@@ -37,6 +50,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }

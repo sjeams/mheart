@@ -4,12 +4,6 @@ cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'word_score');
 
 "use strict";
 
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
 var HttpHelper = require("../http");
 
@@ -17,30 +11,6 @@ var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
-    // foo: {
-    //     // ATTRIBUTES:
-    //     default: null,        // The default value will be used only when the component attaching
-    //                           // to a node for the first time
-    //     type: cc.SpriteFrame, // optional, default is typeof default
-    //     serializable: true,   // optional, default is true
-    // },
-    // bar: {
-    //     get () {
-    //         return this._bar;
-    //     },
-    //     set (value) {
-    //         this._bar = value;
-    //     }
-    // },
-    //测试item
-    //   content: {
-    //     default: null,
-    //     type: cc.Node
-    //   },
-    // person: {
-    //   default: null,
-    //   type: cc.Prefab
-    // },
     content: cc.Node,
     person: cc.Prefab,
     //列表
@@ -54,7 +24,6 @@ cc.Class({
       type: cc.PageView
     }
   },
-  // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
     // for (let i = 0; i < 10; i++) {
     //     let person = cc.instantiate(this.person);
@@ -83,10 +52,17 @@ cc.Class({
       //  console.log(data);
       // console.log(_this.content)
       if (data.data) {
+        _this.searchHidden();
+
+        var TOOLS = [data.data];
+        var total = 1;
+
+        _this.showWord(TOOLS, total); // cc.log(111)
         //跳转到世界
-        httpRequest.playGame('map/诸天地图');
+        // httpRequest.playGame('map/诸天地图');
+
       } else {
-        //生成世界
+        _this.searchShow(); //生成世界
         // let cellWidth = _this.content.width * 0.2;
         // let cellHeight = _this.content.height * 0.4;
         // let spacingX = _this.content.width * 0.1;
@@ -95,54 +71,86 @@ cc.Class({
         // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
         // _this.content.getComponent(cc.Layout).spacingX = spacingX;
         // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-        _this.addWord();
+        // _this.addWord()
+
       }
     });
+  },
+  showWord: function showWord(TOOLS, total) {
+    var _this = this; // let cellWidth = _this.content.width * 0.105;
+    // let cellHeight = _this.content.height * 0.215;
+    // let spacingX = _this.content.width * 0.022;
+    // let spacingY = _this.content.height * 0.045;
+    // 根据MapTools生成相应的道具
+    // _this.toolsArray = [];
+    // var total = 1;
+    // cc.log(TOOLS[0]);
+    // console.log(TOOLS) 
+    // var fi = cc.fadeIn(2)//渐显效果
+    // _this.content.runAction(fi);
+    // var fo = cc.fadeOut(1)//渐隐效果
+    // _this.content.runAction(fo);
+    //移除节点
+
+
+    _this.content.removeAllChildren();
+
+    _this.content.destroyAllChildren(); //添加节点
+
+
+    for (var i = 0; i < total; i++) {
+      // console.log(i) 
+      var tool = cc.instantiate(_this.person);
+      tool.getComponent('wordTools').initInfo(TOOLS[i]); // _this.toolsArray.push(tool);
+
+      _this.content.addChild(tool);
+    } // 定义content滚动条高度
+    // let scorllheight =  _this.content.parent;
+    // //计算滚动条高度
+    // let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
+    // // console.log(height);
+    // // scorllheight.designResolution  = new cc.Size(600, height);
+    // scorllheight.setContentSize(600,height);
+
   },
   addWord: function addWord() {
     var _this = this;
 
     httpRequest.httpPost('/app/app-apiword/rand-word', {}, function (data) {
-      // console.log(data);
-      // let cellWidth = _this.content.width * 0.105;
-      // let cellHeight = _this.content.height * 0.215;
-      // let spacingX = _this.content.width * 0.022;
-      // let spacingY = _this.content.height * 0.045;
-      // 根据MapTools生成相应的道具
-      // _this.toolsArray = [];
       var TOOLS = data.data;
-      var total = data.data.length; // console.log(TOOLS) 
-      // var fi = cc.fadeIn(2)//渐显效果
-      // _this.content.runAction(fi);
-      // var fo = cc.fadeOut(1)//渐隐效果
-      // _this.content.runAction(fo);
-      //移除节点
+      var total = data.data.length;
 
-      _this.content.removeAllChildren();
-
-      _this.content.destroyAllChildren(); //添加节点
-
-
-      for (var i = 0; i < total; i++) {
-        // console.log(i) 
-        var tool = cc.instantiate(_this.person);
-        tool.getComponent('wordTools').initInfo(TOOLS[i]); // _this.toolsArray.push(tool);
-
-        _this.content.addChild(tool);
-      } // 定义content滚动条高度
-      // let scorllheight =  _this.content.parent;
-      // //计算滚动条高度
-      // let  height =  (cellHeight+spacingY)*( Math.ceil(total/2));
-      // // console.log(height);
-      // // scorllheight.designResolution  = new cc.Size(600, height);
-      // scorllheight.setContentSize(600,height);
-
+      _this.showWord(TOOLS, total);
     });
   },
   addTouchEvent: function addTouchEvent(node_1) {
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
     node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
     node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
+  },
+  outWord: function outWord() {
+    var _this = this;
+
+    _this.searchShow(); // server_choes_type.getComponent(cc.Label).string=info['type'];
+    // active
+    // _this.getChildByName('探索世界').active = true;
+    // httpRequest.httpPost('/app/app-apiword/rand-word',{},function (data) {
+    // _this.showWord(data)
+    // })
+
+  },
+  backHome: function backHome() {
+    //销毁动态合图
+    cc.dynamicAtlasManager.reset();
+    httpRequest.playGame('home/大厅');
+  },
+  searchShow: function searchShow() {
+    cc.find("Canvas/大厅/探索世界").active = true;
+    cc.find("Canvas/大厅/退出世界").active = false;
+  },
+  searchHidden: function searchHidden() {
+    cc.find("Canvas/大厅/探索世界").active = false;
+    cc.find("Canvas/大厅/退出世界").active = true;
   } // start: function() {
   //     this.start_y = this.content.y;
   //     this.start_index = 0; // 当前我们24个Item加载的 100项数据里面的起始数据记录的索引;

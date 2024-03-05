@@ -59,7 +59,7 @@ const HttpHelper = cc.Class({
         
         httpPostLogin: function (url, params, callback) {
             var token = cc.sys.localStorage.getItem('token');
-            cc.log(token)
+            // cc.log(token)
             params['token'] = token;
             var url =https_url+url;
             var xhr = cc.loader.getXMLHttpRequest();
@@ -67,16 +67,9 @@ const HttpHelper = cc.Class({
                 // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
                 if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status < 300)) {
                     var respone = xhr.responseText;
-                    var new_respone =JSON.parse(respone);
-                    if(new_respone.code==0){
-                        //未登录
-                        // console.log(JSON.parse(respone))
-                        cc.director.loadScene('login/登录');
-                    }else{
-                        callback(JSON.parse(respone));  // json 转数组
-                    }
+                    callback(JSON.parse(respone));  // json 转数组
                 }else{
-                      callback(-1);
+                    //   callback(-1);
                 }
             };
             xhr.open("POST", url, true);
@@ -97,7 +90,7 @@ const HttpHelper = cc.Class({
         //带token访问
         httpPost: function (url, params, callback) {
             var token = cc.sys.localStorage.getItem('token');
-            cc.log(token)
+            // cc.log(token)
             params['token'] = token;
             var url =https_url+url;
             var xhr = cc.loader.getXMLHttpRequest();
@@ -114,7 +107,7 @@ const HttpHelper = cc.Class({
                         callback(JSON.parse(respone));  // json 转数组
                     }
                 }else{
-                      callback(-1);
+                    //   callback(-1);
                 }
             };
             xhr.open("POST", url, true);
@@ -229,5 +222,5 @@ const HttpHelper = cc.Class({
             cc.dynamicAtlasManager.maxFrameSize = 2048;
         }
 });
-httpRequest = new HttpHelper();
+// httpRequest = new HttpHelper();
 // window.HttpHelper = new HttpHelper();

@@ -7,7 +7,6 @@ cc._RF.push(module, '4b399vzZ3RO+bGBH1k2sE4C', 'mapTools');
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
-var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {// server_picture: cc.Node,

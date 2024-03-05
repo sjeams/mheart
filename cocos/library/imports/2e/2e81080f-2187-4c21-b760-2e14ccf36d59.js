@@ -4,17 +4,6 @@ cc._RF.push(module, '2e810gPIYdMIbdgLhTM821Z', 'score_fighting_alert');
 
 "use strict";
 
-/*
- * @Author: sjeam
- * @Date: 2024-01-05 16:13:51
- * @Description: 
- */
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
 var HttpHelper = require("../http");
 

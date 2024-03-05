@@ -1,8 +1,5 @@
-
-var HttpHelper = require("http");
-// var fs = require('fs'); // 引入fs模块
-// var globaluserinfo = require("GlobaluserInfo");
-let httpRequest =  new HttpHelper();  
+var HttpHelper = require("../http"); 
+var httpRequest = new HttpHelper();
 cc.Class({
     extends: cc.Component,
  

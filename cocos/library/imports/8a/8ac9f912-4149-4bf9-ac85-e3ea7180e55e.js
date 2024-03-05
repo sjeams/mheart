@@ -4,11 +4,6 @@ cc._RF.push(module, '8ac9fkSQUlL+ayF4+pxgOVe', 'fightingTools');
 
 "use strict";
 
-/*
- * @Author: sjeam
- * @Date: 2022-06-14 16:01:41
- * @Description: 
- */
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();

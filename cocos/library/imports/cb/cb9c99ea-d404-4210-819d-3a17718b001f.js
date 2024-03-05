@@ -4,9 +4,7 @@ cc._RF.push(module, 'cb9c9nq1ARCEIGdOhdxiwAf', 'userinfo');
 
 "use strict";
 
-var HttpHelper = require("http"); // var fs = require('fs'); // 引入fs模块
-// var globaluserinfo = require("GlobaluserInfo");
-
+var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 cc.Class({

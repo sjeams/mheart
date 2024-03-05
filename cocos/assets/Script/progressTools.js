@@ -1,4 +1,5 @@
 var HttpHelper = require("http"); 
+var httpRequest = new HttpHelper();
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -23,5 +24,6 @@ cc.Class({
         this.progressBar.progress =0;
         this.sys_label.string = "0%";
     },
+
     
 })

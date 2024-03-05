@@ -4,12 +4,9 @@ cc._RF.push(module, '2045b71nHFDw7X/Kgx+6xMy', 'Alert');
 
 "use strict";
 
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+var HttpHelper = require("../http");
+
+var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -36,9 +33,6 @@ cc.Class({
   spawnTools: function spawnTools() {
     var _this = this;
 
-    var HttpHelper = require("../http");
-
-    var httpRequest = new HttpHelper();
     var params = {
       'page': 1,
       'pageSize': 11

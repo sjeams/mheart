@@ -6,6 +6,7 @@ cc._RF.push(module, '236d34ndr5Le5KyhPYJE5sU', 'progressTools');
 
 var HttpHelper = require("http");
 
+var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {

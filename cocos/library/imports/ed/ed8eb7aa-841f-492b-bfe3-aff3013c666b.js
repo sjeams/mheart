@@ -4,14 +4,10 @@ cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'score_fighting');
 
 "use strict";
 
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 // 世界操作  
-require("../http");
+var HttpHelper = require("../http");
+
+var httpRequest = new HttpHelper();
 
 require("figthingExtend"); // var httpRequest = new HttpHelper();
 

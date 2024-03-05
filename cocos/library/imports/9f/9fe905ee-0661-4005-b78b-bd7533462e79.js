@@ -4,15 +4,9 @@ cc._RF.push(module, '9fe90XuBmFABbeLvXUzRi55', 'wordTools');
 
 "use strict";
 
-/*
- * @Author: sjeam
- * @Date: 2022-06-14 16:01:41
- * @Description: 
- */
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
-var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {// server_picture: cc.Node,
@@ -21,7 +15,6 @@ cc.Class({
     // server_star: cc.Node,
     // sprite_server_login: cc.Button
   },
-  // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info) {
     // 初始化该道具相关信息
     // 图片
@@ -91,11 +84,7 @@ cc.Class({
   },
   //按钮点击回调
   onConfirBtn: function onConfirBtn(e, info) {
-    console.log(info);
-
-    var HttpHelper = require("../http");
-
-    var httpRequest = new HttpHelper();
+    // console.log(info)
     httpRequest.httpPost('/app/app-apiword/in-word', {
       'wordid': info['id'],
       'star': info['star'],

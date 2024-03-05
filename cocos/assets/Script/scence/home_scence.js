@@ -1,42 +1,12 @@
-/*
- * @Author: sjeam
- * @Date: 2023-11-08 15:57:05
- * @Description: 
- */
-
-
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 var HttpHelper = require("../http"); 
-// var httpRequest = new HttpHelper();
+var httpRequest = new HttpHelper();
 cc.Class({
     
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+ 
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
     onLoad () {
         // 常驻节点
         // cc.game.addPersistRootNode( myNode)
@@ -50,8 +20,6 @@ cc.Class({
 
     },
     // update (dt) {},
-
-
     // loadnextScene: function() {
     //     // 登录预加载
     //     cc.director.preloadScene('login', function () {
@@ -62,7 +30,6 @@ cc.Class({
 
     //登录
     诸天万界: function() {
-
       var params = {
         'page': 1,
         'pageSize': 12,
@@ -74,7 +41,7 @@ cc.Class({
               //跳转到世界
             // cc.director.preloadScene("loading", function () {
                 // cc.director.loadScene('map/诸天地图');
-                httpRequest.playGame('map/诸天地图');
+                httpRequest.playGame('home/诸天万界');
             // });
           }else{
             //  httpRequest.playGame('home/诸天万界');

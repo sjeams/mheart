@@ -4,6 +4,9 @@ cc._RF.push(module, '1e7f7ciNQRLOoO7QCll/I0d', 'tips');
 
 "use strict";
 
+var HttpHelper = require("../http");
+
+var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -13,10 +16,6 @@ cc.Class({
   // cc.loader.releaseRes("test assets/anim");
   onLoad: function onLoad() {
     cc.sys.localStorage.removeItem('server_tips');
-
-    var HttpHelper = require("../http");
-
-    var httpRequest = new HttpHelper();
     httpRequest.httpPostLogin('/app/api-server/user-tips', [], function (data) {
       var tips = cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
       tips.getComponent(cc.Label).string = data.data['gonggao_sz']; // 转数组

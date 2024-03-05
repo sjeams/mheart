@@ -1,8 +1,5 @@
-/*
- * @Author: sjeam
- * @Date: 2022-06-14 16:01:41
- * @Description: 
- */
+var HttpHelper = require("../http"); 
+var httpRequest = new HttpHelper();
 cc.Class({
     extends: cc.Component,
 
@@ -64,9 +61,7 @@ cc.Class({
 
     //按钮点击回调
     onConfirBtn:function(e,info){
-        console.log(info)
-        var HttpHelper = require("http"); 
-        var httpRequest = new HttpHelper();
+        // console.log(info)
         httpRequest.httpPostLogin('/app/api-server/user-server', {
             'id': info['id'],
         }, function (data) {
