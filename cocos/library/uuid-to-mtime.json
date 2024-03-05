@@ -1234,30 +1234,10 @@
     "meta": 1703815630760,
     "relativePath": "Script\\scence\\wordTools.js"
   },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1703659951297,
-    "meta": 1703815630737,
-    "relativePath": "Script\\scence\\word_score.js"
-  },
-  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1703659956828,
-    "meta": 1703831703195,
-    "relativePath": "Scene\\home\\诸天万界.fire"
-  },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
     "asset": 1703821957366,
     "meta": 1703831684026,
     "relativePath": "prefabs\\sprite_地图.prefab"
-  },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1703828258666,
-    "meta": 1703828393727,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1703828325260,
-    "meta": 1703828393772,
-    "relativePath": "Script\\scence\\mapTools.js"
   },
   "a35df353-e613-4fbb-acd6-15095812556b": {
     "asset": 1704446314802,
@@ -1315,18 +1295,38 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1709609355310,
-    "meta": 1709609661998,
+    "asset": 1709610577580,
+    "meta": 1709610577592,
     "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709609900276,
-    "meta": 1709609913611,
-    "relativePath": "Script\\http.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
     "asset": 1709609917759,
     "meta": 1709609935567,
     "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709610069846,
+    "meta": 1709610248648,
+    "relativePath": "Script\\http.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1709610471752,
+    "meta": 1709610532236,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1709611300846,
+    "meta": 1709611318673,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1709611476304,
+    "meta": 1709611477673,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
+    "asset": 1709611489382,
+    "meta": 1709611489401,
+    "relativePath": "Scene\\home\\诸天万界.fire"
   }
 }

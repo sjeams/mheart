@@ -71,9 +71,10 @@ var HttpHelper = cc.Class({
         var respone = xhr.responseText;
         var new_respone = JSON.parse(respone);
 
-        if (new_respone.code == 0) {//未登录
+        if (new_respone.code == 0) {
+          //未登录
           // console.log(JSON.parse(respone))
-          // cc.director.loadScene('login/登录');
+          cc.director.loadScene('login/登录');
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }
@@ -112,9 +113,10 @@ var HttpHelper = cc.Class({
         var respone = xhr.responseText;
         var new_respone = JSON.parse(respone);
 
-        if (new_respone.code == 0) {//未登录
+        if (new_respone.code == 0) {
+          //未登录
           // console.log(JSON.parse(respone))
-          // cc.director.loadScene('login/登录');
+          cc.director.loadScene('login/登录');
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }

@@ -144,6 +144,11 @@ cc.Class({
         node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
         node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
       },
+      back_map(){
+        //销毁动态合图
+        cc.dynamicAtlasManager.reset()
+        httpRequest.playGame('home/大厅');
+      },
     // start: function() {
     //     this.start_y = this.content.y;
     //     this.start_index = 0; // 当前我们24个Item加载的 100项数据里面的起始数据记录的索引;

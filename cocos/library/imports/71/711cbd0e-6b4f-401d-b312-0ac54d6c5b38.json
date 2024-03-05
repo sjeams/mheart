@@ -1290,10 +1290,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 6
+    },
     "component": "",
-    "_componentId": "cc.Button",
-    "handler": "",
+    "_componentId": "09d9e7+vGZLdKg/PEEJJ/Uq",
+    "handler": "back_map",
     "customEventData": ""
   },
   {

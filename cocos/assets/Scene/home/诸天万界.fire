@@ -57,7 +57,7 @@
     "_is3DNode": true,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "6fec8c7b-21bb-4499-bd73-93b60f052f76"
   },
   {
@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        190.74209518352262,
+        213.90827473475636,
         0,
         0,
         0,
@@ -340,7 +340,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 37.5,
+      "width": 2.34375,
       "height": 600
     },
     "_anchorPoint": {
@@ -532,7 +532,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 37.5,
+      "width": 2.34375,
       "height": 600
     },
     "_resize": 1,
