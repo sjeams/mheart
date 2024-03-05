@@ -101,13 +101,13 @@ cc.Class({
 
 
             if (boat_count == boat_length) {
-              cc.log(111); // 在第六次执行回调时取消这个计时器
-
+              // cc.log(111)
+              // 在第六次执行回调时取消这个计时器
               _this.fightingEnd(fighting_list);
 
               _this.unschedule();
             } else {
-              cc.log(boat_count);
+              // cc.log(boat_count)
               cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合' + parseInt(boat + 1); // cc.log(fighting_history[boat_count])
 
               _this.fighting_history(fighting_history[boat_count]); //执行战斗顺序 
@@ -120,8 +120,7 @@ cc.Class({
     }
   },
   fighting_history: function fighting_history(his_log) {
-    cc.log(his_log);
-
+    // cc.log(his_log)
     var _this = this; //反击
     // if(his_log.h_back.length!=0){
     //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)

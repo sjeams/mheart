@@ -7,8 +7,8 @@ cc._RF.push(module, '37519x8HVRNp7PiAVwxTFrW', 'http');
 /**
  * Http 请求封装
  */
-// var https_url = 'https://www.aheart.cn';
-var https_url = 'http://cs.aheart.com';
+var https_url = 'https://www.aheart.cn'; // var https_url = 'http://cs.aheart.com';
+
 var HttpHelper = cc.Class({
   "extends": cc.Component,
   statics: {},
@@ -60,6 +60,7 @@ var HttpHelper = cc.Class({
   },
   httpPostLogin: function httpPostLogin(url, params, callback) {
     var token = cc.sys.localStorage.getItem('token');
+    cc.log(token);
     params['token'] = token;
     var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
@@ -68,9 +69,17 @@ var HttpHelper = cc.Class({
       // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
       if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
         var respone = xhr.responseText;
-        callback(JSON.parse(respone)); // json 转数组
-      } else {//   callback(-1);
+        var new_respone = JSON.parse(respone);
+
+        if (new_respone.code == 0) {//未登录
+          // console.log(JSON.parse(respone))
+          // cc.director.loadScene('login/登录');
+        } else {
+          callback(JSON.parse(respone)); // json 转数组
         }
+      } else {
+        callback(-1);
+      }
     };
 
     xhr.open("POST", url, true);
@@ -92,6 +101,7 @@ var HttpHelper = cc.Class({
   //带token访问
   httpPost: function httpPost(url, params, callback) {
     var token = cc.sys.localStorage.getItem('token');
+    cc.log(token);
     params['token'] = token;
     var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
@@ -102,15 +112,15 @@ var HttpHelper = cc.Class({
         var respone = xhr.responseText;
         var new_respone = JSON.parse(respone);
 
-        if (new_respone.code == 0) {
-          //未登录
+        if (new_respone.code == 0) {//未登录
           // console.log(JSON.parse(respone))
-          cc.director.loadScene('login/登录');
+          // cc.director.loadScene('login/登录');
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }
-      } else {//   callback(-1);
-        }
+      } else {
+        callback(-1);
+      }
     };
 
     xhr.open("POST", url, true);

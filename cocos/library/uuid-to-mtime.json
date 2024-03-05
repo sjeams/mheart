@@ -654,11 +654,6 @@
     "meta": 1703815629587,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1702604396904,
-    "meta": 1703815629603,
-    "relativePath": "Scene\\home\\大厅.fire"
-  },
   "6c5c0736-3c0d-4200-9d4b-8669f5502c96": {
     "asset": 1699430584593,
     "meta": 1703815629622,
@@ -1264,11 +1259,6 @@
     "meta": 1703828393772,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1709608687380,
-    "meta": 1709608687436,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
   "a35df353-e613-4fbb-acd6-15095812556b": {
     "asset": 1704446314802,
     "meta": 1704446314818,
@@ -1288,11 +1278,6 @@
     "asset": 1704445808434,
     "meta": 1704446303067,
     "relativePath": "resources\\biology_pic\\1死亡之花.png"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1704686127963,
-    "meta": 1704686130673,
-    "relativePath": "Script\\http.js"
   },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1704704746692,
@@ -1319,14 +1304,29 @@
     "meta": 1709608554994,
     "relativePath": "Scene\\战斗场景.fire"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1709607452208,
-    "meta": 1709607452786,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
     "asset": 1709608387096,
     "meta": 1709608387121,
     "relativePath": "prefabs\\biology_普通.prefab"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1709608788692,
+    "meta": 1709608909835,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1709609355310,
+    "meta": 1709609661998,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709609900276,
+    "meta": 1709609913611,
+    "relativePath": "Script\\http.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1709609917759,
+    "meta": 1709609935567,
+    "relativePath": "Scene\\home\\大厅.fire"
   }
 }
