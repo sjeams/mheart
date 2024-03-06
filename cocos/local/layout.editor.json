@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 457,
-      "y": 111,
+      "x": 601,
+      "y": 799,
       "width": 1443,
       "height": 844,
       "layout": {
@@ -20,7 +20,7 @@
                 ],
                 "height": 494.328125,
                 "type": "panel",
-                "width": 321
+                "width": 338
               },
               {
                 "active": 0,
@@ -29,12 +29,12 @@
                 ],
                 "height": 226.15625,
                 "type": "panel",
-                "width": 321
+                "width": 338
               }
             ],
             "height": 723.5,
             "type": "dock-v",
-            "width": 321
+            "width": 338
           },
           {
             "active": 0,
@@ -44,7 +44,7 @@
             ],
             "height": 723.5,
             "type": "panel",
-            "width": 432
+            "width": 469
           },
           {
             "children": [
@@ -55,7 +55,7 @@
                 ],
                 "height": 362.734375,
                 "type": "panel",
-                "width": 598
+                "width": 614
               },
               {
                 "active": 0,
@@ -66,12 +66,12 @@
                 ],
                 "height": 357.75,
                 "type": "panel",
-                "width": 598
+                "width": 614
               }
             ],
             "height": 723.5,
             "type": "dock-v",
-            "width": 598
+            "width": 614
           }
         ],
         "type": "dock-h"
@@ -87,8 +87,7 @@
         "game-window"
       ]
     },
-    "window-1709707157835": {},
-    "worker": {}
+    "window-1709718218227": {}
   },
   "panels": {
     "project-settings": {
@@ -140,8 +139,8 @@
       "height": 339
     },
     "builder": {
-      "x": 956,
-      "y": 225,
+      "x": 1210,
+      "y": 383,
       "width": 980,
       "height": 676
     },

@@ -17,6 +17,7 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   initInfo: function initInfo(info_list) {
+    console.log(info_list);
     var info = info_list['biology_list'][0];
     var total = info_list['biology_list'].length; // 初始化该道具相关信息
     // 图片

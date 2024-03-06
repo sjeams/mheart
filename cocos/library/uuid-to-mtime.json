@@ -1155,8 +1155,8 @@
     "relativePath": "resources\\server_pic\\骰子.png"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1703821957366,
-    "meta": 1703831684026,
+    "asset": 1709717107981,
+    "meta": 1709717108013,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "a35df353-e613-4fbb-acd6-15095812556b": {
@@ -1265,8 +1265,8 @@
     "relativePath": "Script\\login\\register_knows.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1709705559381,
-    "meta": 1709705559407,
+    "asset": 1709717234539,
+    "meta": 1709717234559,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
@@ -1304,29 +1304,29 @@
     "meta": 1709708930071,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709708695320,
-    "meta": 1709708930345,
-    "relativePath": "Script\\http.js"
-  },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1709708889791,
-    "meta": 1709708930565,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1709708874831,
-    "meta": 1709708931310,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1709708884389,
     "meta": 1709708931429,
     "relativePath": "Script\\scence\\word_score.js"
   },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1709716901649,
+    "meta": 1709716951839,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1709716947727,
+    "meta": 1709716951949,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709717989566,
+    "meta": 1709717991878,
+    "relativePath": "Script\\http.js"
+  },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1709713631425,
-    "meta": 1709714117418,
+    "asset": 1709718063383,
+    "meta": 1709718063416,
     "relativePath": "Scene\\login\\登录.fire"
   }
 }
