@@ -443,18 +443,16 @@ cc.Class({
     },
     back_map(){
       //销毁动态合图
-      cc.dynamicAtlasManager.reset()
+      // cc.dynamicAtlasManager.reset()
       httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
     },
     back_reload(){
       // this.parent.active=false
       //销毁动态合图
-      cc.dynamicAtlasManager.reset()
+      // cc.dynamicAtlasManager.reset()
       httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
     },
     back_home(){
-      //销毁动态合图
-      cc.dynamicAtlasManager.reset()
       httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
     },
     addTouchEvent(node_1) {

@@ -88,9 +88,7 @@ cc.Class({
   //按钮点击回调
   onConfirBtn: function onConfirBtn(e, map_int) {
     //session设置战斗请求id
-    cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); //销毁动态合图
-
-    cc.dynamicAtlasManager.reset();
+    cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
     httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"), 1); // console.log(info)
     // var HttpHelper = require("../http"); 
     // var httpRequest = new HttpHelper();

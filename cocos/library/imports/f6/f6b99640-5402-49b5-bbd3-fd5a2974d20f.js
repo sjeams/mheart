@@ -137,8 +137,6 @@ cc.Class({
 
   },
   backHome: function backHome() {
-    //销毁动态合图
-    cc.dynamicAtlasManager.reset();
     httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   },
   searchShow: function searchShow() {

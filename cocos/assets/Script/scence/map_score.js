@@ -135,8 +135,6 @@ cc.Class({
         node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
       },
       back_map(){
-        //销毁动态合图
-        cc.dynamicAtlasManager.reset()
         httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
       },
     // start: function() {

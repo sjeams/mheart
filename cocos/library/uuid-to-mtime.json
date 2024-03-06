@@ -990,8 +990,8 @@
     "relativePath": "Textrue\\tools\\银钥匙.png"
   },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1704347885419,
-    "meta": 1704347885458,
+    "asset": 1709710008368,
+    "meta": 1709710008381,
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
@@ -1028,11 +1028,6 @@
     "asset": 1703127611119,
     "meta": 1703815630661,
     "relativePath": "Script\\scence\\wap.js"
-  },
-  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1709706842335,
-    "meta": 1709706842422,
-    "relativePath": "Scene\\login\\登录.fire"
   },
   "c8b3c6bb-a1c0-4724-9d56-7a550bb9634a": {
     "asset": 1703217070919,
@@ -1244,16 +1239,6 @@
     "meta": 1709632496984,
     "relativePath": "Script\\fighting\\figthingExtend.js"
   },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1709696362670,
-    "meta": 1709696869460,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1709696408379,
-    "meta": 1709696869817,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
     "asset": 1709696428028,
     "meta": 1709696870029,
@@ -1284,20 +1269,10 @@
     "meta": 1709705559407,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1709705060435,
-    "meta": 1709705064323,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
     "asset": 1709706446724,
     "meta": 1709706446755,
     "relativePath": "Scene\\login\\加载.fire"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709706684188,
-    "meta": 1709706685650,
-    "relativePath": "Script\\http.js"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
     "asset": 1709707050237,
@@ -1309,16 +1284,6 @@
     "meta": 1709708225164,
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1709708186659,
-    "meta": 1709708225283,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1709708219747,
-    "meta": 1709708225382,
-    "relativePath": "Script\\scence\\word_score.js"
-  },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
     "asset": 1709708196604,
     "meta": 1709708225449,
@@ -1328,5 +1293,40 @@
     "asset": 1709708274978,
     "meta": 1709708328631,
     "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1709708912150,
+    "meta": 1709708929394,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1709708893913,
+    "meta": 1709708930071,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709708695320,
+    "meta": 1709708930345,
+    "relativePath": "Script\\http.js"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1709708889791,
+    "meta": 1709708930565,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1709708874831,
+    "meta": 1709708931310,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1709708884389,
+    "meta": 1709708931429,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
+    "asset": 1709713631425,
+    "meta": 1709714117418,
+    "relativePath": "Scene\\login\\登录.fire"
   }
 }
