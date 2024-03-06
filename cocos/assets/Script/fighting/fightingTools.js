@@ -60,7 +60,7 @@ cc.Class({
             this.node.getChildByName('生物').color = new cc.color(info['color']);
             // console.log(info)
             // var star ='';    
-            // for(i=0;i<=info['yiXing'];i++){
+            // for(var i=0;i<=info['yiXing'];i++){
             //     star +='⭐';
             // }
             this.node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];

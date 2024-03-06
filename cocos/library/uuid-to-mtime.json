@@ -1244,11 +1244,6 @@
     "meta": 1709632496984,
     "relativePath": "Script\\fighting\\figthingExtend.js"
   },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1709696797915,
-    "meta": 1709696869383,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1709696362670,
     "meta": 1709696869460,
@@ -1263,16 +1258,6 @@
     "asset": 1709696428028,
     "meta": 1709696870029,
     "relativePath": "Script\\login\\myserver.js"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1709696463592,
-    "meta": 1709696870227,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1709696490049,
-    "meta": 1709696870289,
-    "relativePath": "Script\\scence\\word_score.js"
   },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
     "asset": 1709697087527,
@@ -1293,16 +1278,6 @@
     "asset": 1709697604378,
     "meta": 1709697629901,
     "relativePath": "Script\\login\\register_knows.js"
-  },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1709703516484,
-    "meta": 1709704299333,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1709707151327,
-    "meta": 1709707151365,
-    "relativePath": "Scene\\home\\大厅.fire"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1709705559381,
@@ -1328,5 +1303,30 @@
     "asset": 1709707050237,
     "meta": 1709707054559,
     "relativePath": "Script\\scence\\home_scence.js"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1709708159483,
+    "meta": 1709708225164,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1709708186659,
+    "meta": 1709708225283,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1709708219747,
+    "meta": 1709708225382,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1709708196604,
+    "meta": 1709708225449,
+    "relativePath": "Script\\scence\\wordTools.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1709708274978,
+    "meta": 1709708328631,
+    "relativePath": "Scene\\home\\大厅.fire"
   }
 }

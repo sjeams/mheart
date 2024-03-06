@@ -22,8 +22,8 @@ cc.Class({
 
     },
     onLoad: function () {
-        // for (let i = 0; i < 10; i++) {
-        //     let person = cc.instantiate(this.person);
+        // for (var i = 0; i < 10; i++) {
+        //     var person = cc.instantiate(this.person);
         //     this.conten=person
         //     // person.parent = this.content;
         //     // this.addTouchEvent(person);  //添加触摸事件
@@ -53,7 +53,7 @@ cc.Class({
           // console.log(_this.content)
           if(data.data){
             _this.searchHidden()
-            let TOOLS = [data.data];
+            var TOOLS = [data.data];
             var total = 1;
             _this.showWord(TOOLS,total)
           }else{
@@ -94,9 +94,9 @@ cc.Class({
         _this.content.removeAllChildren();
         _this.content.destroyAllChildren();
         //添加节点
-        for (let i=0; i<total; i++) {
+        for (var i=0; i<total; i++) {
           // console.log(i) 
-            let tool = cc.instantiate(_this.person);
+            var tool = cc.instantiate(_this.person);
             tool.getComponent('wordTools').initInfo(TOOLS[i]);
             // _this.toolsArray.push(tool);
             _this.content.addChild(tool);    
@@ -112,7 +112,7 @@ cc.Class({
     addWord(){
       var _this =this;
       httpRequest.httpPost('/app/app-apiword/rand-word',{},function (data) {
-        let TOOLS = data.data;
+        var TOOLS = data.data;
         var total = data.data.length;
         _this.showWord(TOOLS,total)
       })

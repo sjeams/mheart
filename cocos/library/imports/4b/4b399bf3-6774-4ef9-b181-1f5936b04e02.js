@@ -58,7 +58,7 @@ cc.Class({
 
     var star = '';
 
-    for (i = 0; i <= info['yiXing']; i++) {
+    for (var i = 0; i <= info['yiXing']; i++) {
       star += '⭐';
     }
 

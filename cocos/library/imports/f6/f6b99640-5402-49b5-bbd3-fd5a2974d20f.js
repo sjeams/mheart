@@ -25,8 +25,8 @@ cc.Class({
     }
   },
   onLoad: function onLoad() {
-    // for (let i = 0; i < 10; i++) {
-    //     let person = cc.instantiate(this.person);
+    // for (var i = 0; i < 10; i++) {
+    //     var person = cc.instantiate(this.person);
     //     this.conten=person
     //     // person.parent = this.content;
     //     // this.addTouchEvent(person);  //添加触摸事件

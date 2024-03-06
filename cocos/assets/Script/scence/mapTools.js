@@ -52,7 +52,7 @@ cc.Class({
         var type_color = color[info['yiXing']];
         // console.log(info)
         var star ='';    
-        for(i=0;i<=info['yiXing'];i++){
+        for(var i=0;i<=info['yiXing'];i++){
             star +='⭐';
         }
         this.node.getChildByName('名称').getComponent(cc.Label).string=info['name']+'('+total+')';

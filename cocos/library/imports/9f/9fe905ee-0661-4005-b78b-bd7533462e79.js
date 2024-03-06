@@ -55,7 +55,7 @@ cc.Class({
 
     var star = '';
 
-    for (i = 0; i <= info['star']; i++) {
+    for (var i = 0; i <= info['star']; i++) {
       star += '⭐';
     }
 

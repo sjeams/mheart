@@ -47,7 +47,7 @@ cc.Class({
         var type_color = color[info['type']];
         // console.log(info)
         var star ='';    
-        for(i=0;i<=info['star'];i++){
+        for(var i=0;i<=info['star'];i++){
             star +='⭐';
         }
         this.node.getChildByName('名称').getComponent(cc.Label).string=info['name'];
