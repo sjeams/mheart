@@ -994,19 +994,14 @@
     "meta": 1704347885458,
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
-  "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1709631210420,
-    "meta": 1709631210432,
-    "relativePath": "Scene\\login\\加载.fire"
-  },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
     "asset": 1709621461753,
     "meta": 1709621461775,
     "relativePath": "prefabs\\sprite_世界.prefab"
   },
   "175f3a60-1b3b-452e-8fb5-a4c183722325": {
-    "asset": 1702634929741,
-    "meta": 1703815629566,
+    "asset": 1709692392619,
+    "meta": 1709692392649,
     "relativePath": "resources\\sprite_loading.prefab"
   },
   "37a0291a-e6cf-46bb-8a85-e17938e9bac5": {
@@ -1025,14 +1020,9 @@
     "relativePath": "resources\\server_pic\\alert_login_pic.png"
   },
   "495154c0-dc59-4d87-adb7-d4f8e997c605": {
-    "asset": 1703127225740,
+    "asset": 1709631093137,
     "meta": 1703127187175,
     "relativePath": "Scene\\login"
-  },
-  "c9df1867-b4d5-4505-9486-08239876411b": {
-    "asset": 1703127531607,
-    "meta": 1703815630565,
-    "relativePath": "Script\\scence\\loading_fist.js"
   },
   "b005bb37-3acc-445e-985c-338276edb616": {
     "asset": 1703127611119,
@@ -1040,8 +1030,8 @@
     "relativePath": "Script\\scence\\wap.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1703130166713,
-    "meta": 1703815629651,
+    "asset": 1709706842335,
+    "meta": 1709706842422,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "c8b3c6bb-a1c0-4724-9d56-7a550bb9634a": {
@@ -1199,11 +1189,6 @@
     "meta": 1704767137322,
     "relativePath": "resources\\biology_pic\\1技能.png"
   },
-  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
-    "asset": 1709606882816,
-    "meta": 1709606925611,
-    "relativePath": "Script\\fighting\\figthingExtend.js"
-  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
     "asset": 1709622294271,
     "meta": 1709622294291,
@@ -1214,55 +1199,15 @@
     "meta": 1709621908036,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1709610577580,
-    "meta": 1709610577592,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1709609917759,
-    "meta": 1709609935567,
-    "relativePath": "Scene\\home\\大厅.fire"
-  },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1709621603277,
-    "meta": 1709621603293,
+    "asset": 1709705121391,
+    "meta": 1709705121413,
     "relativePath": "Scene\\home\\诸天万界.fire"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1709629928128,
-    "meta": 1709630189489,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1709629942292,
-    "meta": 1709630189561,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1709629962324,
-    "meta": 1709630189947,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
-  "cb9c99ea-d404-4210-819d-3a17718b001f": {
-    "asset": 1709629989996,
-    "meta": 1709630190002,
-    "relativePath": "Script\\home_js\\userinfo.js"
   },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
     "asset": 1709630023876,
     "meta": 1709630190065,
     "relativePath": "Script\\login\\background.js"
-  },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1709630087517,
-    "meta": 1709630190255,
-    "relativePath": "Script\\login\\register_knows.js"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1709630108933,
-    "meta": 1709630190318,
-    "relativePath": "Script\\login\\register.js"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
     "asset": 1709630113677,
@@ -1274,45 +1219,15 @@
     "meta": 1709630190404,
     "relativePath": "Script\\login\\Tools.js"
   },
-  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
-    "asset": 1709630125060,
-    "meta": 1709630190441,
-    "relativePath": "Script\\scence\\home_scence.js"
-  },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1709630132748,
-    "meta": 1709630190497,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1709630145742,
-    "meta": 1709630190580,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1709630156657,
-    "meta": 1709630190629,
-    "relativePath": "Script\\scence\\word_score.js"
-  },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
     "asset": 1709631234434,
     "meta": 1709631238696,
     "relativePath": "Script\\login\\loading.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709631818684,
-    "meta": 1709632130840,
-    "relativePath": "Script\\http.js"
-  },
   "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
     "asset": 1709632010814,
     "meta": 1709632130920,
     "relativePath": "Script\\login\\Alert.js"
-  },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1709632037983,
-    "meta": 1709632131018,
-    "relativePath": "Script\\login\\myserver.js"
   },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
     "asset": 1709632126963,
@@ -1324,9 +1239,94 @@
     "meta": 1709632131121,
     "relativePath": "Script\\progressTools.js"
   },
+  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
+    "asset": 1709632437325,
+    "meta": 1709632496984,
+    "relativePath": "Script\\fighting\\figthingExtend.js"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1709696797915,
+    "meta": 1709696869383,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1709696362670,
+    "meta": 1709696869460,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1709696408379,
+    "meta": 1709696869817,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1709696428028,
+    "meta": 1709696870029,
+    "relativePath": "Script\\login\\myserver.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1709696463592,
+    "meta": 1709696870227,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1709696490049,
+    "meta": 1709696870289,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "cb9c99ea-d404-4210-819d-3a17718b001f": {
+    "asset": 1709697087527,
+    "meta": 1709697106332,
+    "relativePath": "Script\\home_js\\userinfo.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1709697126692,
+    "meta": 1709697248716,
+    "relativePath": "Script\\login\\register.js"
+  },
+  "c9df1867-b4d5-4505-9486-08239876411b": {
+    "asset": 1709697532489,
+    "meta": 1709697541194,
+    "relativePath": "Script\\scence\\loading_fist.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1709697604378,
+    "meta": 1709697629901,
+    "relativePath": "Script\\login\\register_knows.js"
+  },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1709632088835,
-    "meta": 1709632131191,
+    "asset": 1709703516484,
+    "meta": 1709704299333,
     "relativePath": "Script\\scence\\wordTools.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1709707151327,
+    "meta": 1709707151365,
+    "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1709705559381,
+    "meta": 1709705559407,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1709705060435,
+    "meta": 1709705064323,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
+    "asset": 1709706446724,
+    "meta": 1709706446755,
+    "relativePath": "Scene\\login\\加载.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709706684188,
+    "meta": 1709706685650,
+    "relativePath": "Script\\http.js"
+  },
+  "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
+    "asset": 1709707050237,
+    "meta": 1709707054559,
+    "relativePath": "Script\\scence\\home_scence.js"
   }
 }

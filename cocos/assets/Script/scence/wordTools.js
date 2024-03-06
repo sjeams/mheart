@@ -79,10 +79,9 @@ cc.Class({
         httpRequest.httpPost('/app/app-apiword/in-word', {
             'wordid': info['id'],
             'star': info['star'],
-            'token': null
         }, function (data) {
             //跳转到世界
-            httpRequest.playGame('map/诸天地图');
+            httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
             // console.log(data);
             // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
             // server_choes_label.getComponent(cc.Label).string=info['name'];

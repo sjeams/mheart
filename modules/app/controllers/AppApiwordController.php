@@ -42,10 +42,12 @@ class AppApiwordController extends ApiUserControl{
     public $UserWords; 
     public $UserServer; 
     public $user_in_word;//正在进行的世界
+    public $wordId;
     function init(){
         parent::init();
         $this->user_info =  Yii::$app->session->get('user_info');
         $this->userid =  $this->user_info['userid'];
+        $this->wordId =  $this->user_info['wordid'];
         //  include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
         $this->UserBiology=new UserBiology();
         $this->UserBiologyAttribute=new UserBiologyAttribute();
@@ -87,7 +89,10 @@ class AppApiwordController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apiword/in-word
      */
     public function actionInWord(){
-        $this->UserWords->inUserWord($this->param['wordid'],$this->param['star']);//进入世界
+        //如果没有世界id，已经退出，就重新进入世界,否则直接进入世界
+        if(!$this->wordId){
+            $this->UserWords->inUserWord($this->param['wordid'],$this->param['star']);//进入世界
+        }
         die(Method::jsonApp(1,null,'succes'));
     }
 

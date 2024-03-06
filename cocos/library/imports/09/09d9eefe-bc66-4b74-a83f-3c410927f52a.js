@@ -7,7 +7,6 @@ cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'map_score');
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
-var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -52,10 +51,9 @@ cc.Class({
     var _this = this;
 
     httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
-      // console.log(_this.content)
       if (!data.data) {
         //刷新地图
-        // cc.director.loadScene('map/诸天地图');
+        // httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
         _this.reloadWord(); //刷新世界地图
 
       } else {
@@ -114,7 +112,7 @@ cc.Class({
   },
   //生成生物
   addWordMap: function addWordMap(data) {
-    // console.log(data) 
+    // cc.log(data) 
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 
@@ -152,7 +150,7 @@ cc.Class({
   back_map: function back_map() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    httpRequest.playGame('home/诸天万界');
+    httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
   } // start: function() {
   //     this.start_y = this.content.y;
   //     this.start_index = 0; // 当前我们24个Item加载的 100项数据里面的起始数据记录的索引;

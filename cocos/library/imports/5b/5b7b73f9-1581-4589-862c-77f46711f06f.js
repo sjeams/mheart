@@ -129,8 +129,7 @@ cc.Class({
 
     });
   },
-  callback: function callback(event) {
-    // cc.log(data)
+  callback: function callback(event) {// cc.log(data)
     // var userCount =  cc.find("Canvas/ground/editbox_count").getComponent(cc.EditBox).string;
     // var userPassward =  cc.find("Canvas/ground/editbox_passward").getComponent(cc.EditBox).string;
     // console.log("用户账号："+userCount+ "用户密码："+ userPassward);
@@ -148,7 +147,8 @@ cc.Class({
     //         globaluserinfo.password = info.password;
     //         globaluserinfo.salt = info.salt;
     //         //登录成功后加载地图资源
-    cc.director.loadScene('map'); //     }else{
+    // cc.director.loadScene('map');
+    //     }else{
     //         console.log("login  filed!!!")
     //     }
     // });

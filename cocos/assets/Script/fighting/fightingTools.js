@@ -104,7 +104,7 @@ cc.Class({
         //     'token': null
         // }, function (data) {
         //     //跳转到世界
-        //     cc.director.loadScene('map/诸天地图');
+        //     httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
         //     // console.log(data);
         //     // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
         //     // server_choes_label.getComponent(cc.Label).string=info['name'];

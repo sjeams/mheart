@@ -147,7 +147,7 @@ cc.Class({
         //         globaluserinfo.salt = info.salt;
  
         //         //登录成功后加载地图资源
-                cc.director.loadScene('map');
+                // cc.director.loadScene('map');
         //     }else{
         //         console.log("login  filed!!!")
         //     }

@@ -35,18 +35,18 @@ cc.Class({
   back_map: function back_map() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    httpRequest.playGame('map/诸天地图');
+    httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
   },
   back_reload: function back_reload() {
     // this.parent.active=false
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    httpRequest.playGame('战斗场景');
+    httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
   },
   back_home: function back_home() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    cc.director.loadScene('大厅');
+    httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   }
 });
 

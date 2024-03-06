@@ -9,8 +9,9 @@ var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
 
-require("figthingExtend"); // var httpRequest = new HttpHelper();
+var FightingExtend = require("figthingExtend");
 
+var getFightingExtend = new FightingExtend(); // var httpRequest = new HttpHelper();
 
 var params = [];
 cc.Class({
@@ -51,7 +52,7 @@ cc.Class({
     var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
 
     if (figthing_remote_url == null) {
-      httpRequest.playGame('map/诸天地图');
+      httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
     } else {
       var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
       cc.loader.load({
@@ -496,18 +497,18 @@ cc.Class({
   back_map: function back_map() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    httpRequest.playGame('map/诸天地图');
+    httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
   },
   back_reload: function back_reload() {
     // this.parent.active=false
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    httpRequest.playGame('战斗场景');
+    httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
   },
   back_home: function back_home() {
     //销毁动态合图
     cc.dynamicAtlasManager.reset();
-    cc.director.loadScene('大厅');
+    httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   },
   addTouchEvent: function addTouchEvent(node_1) {
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);

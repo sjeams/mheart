@@ -4,9 +4,6 @@
  * @Description: 
  */
 const FightingExtend = cc.Class({
-
-
-  
   //提示动作
   playTips(node,biology,is_skill){
         //技能名称
@@ -120,4 +117,3 @@ const FightingExtend = cc.Class({
 
   }
 });
-getFightingExtend = new FightingExtend();

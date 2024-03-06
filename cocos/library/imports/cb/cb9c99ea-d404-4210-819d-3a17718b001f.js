@@ -45,15 +45,16 @@ cc.Class({
       });
     });
   },
-  login: function login() {
-    var params = {
-      'loginname': 'yincan1993',
-      'password': 123456
-    };
-    httpRequest.httpPost('/app/api-server/login', params, function (data) {// cc.log(data); 
-      //操作文本--修改用户信息
-    });
-  },
+  // login: function(){
+  //     var params = {
+  //         'loginname': 'yincan1993',
+  //         'password': 123456,
+  //     };
+  //     httpRequest.httpPost('/app/api-server/login', params ,function (data) {
+  //         // cc.log(data); 
+  //         //操作文本--修改用户信息
+  //     });
+  // },
   btnClick1: function btnClick1(event, customEventData) {
     // // 请求登录接口
     // var params = {
@@ -78,7 +79,7 @@ cc.Class({
           // 登录成功，进入游戏
           // cc.log(data.data.userinfo); 
           cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
-          cc.director.loadScene('home/dating'); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
+          httpRequest.playGame(httpRequest.urlConfig("sence_dating")); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
           // cc.sys.localStorage.getItem(key); //读取数据
         }
 
@@ -88,7 +89,7 @@ cc.Class({
           var server = JSON.parse(cc.sys.localStorage.getItem('server')); // cc.log(server); 
           // 创建角色
 
-          cc.director.loadScene('register');
+          httpRequest.playGame(httpRequest.urlConfig("sence_jiaose"));
         }
       }
     }); //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
@@ -97,8 +98,7 @@ cc.Class({
     //这里的 customEventData 参数就等于你之前设置的 "click1 user data"
     // cc.log("node=", node.name, " event=", event.type, " data=", customEventData);
   },
-  callback: function callback(event) {
-    // cc.log(data)
+  callback: function callback(event) {// cc.log(data)
     // var userCount =  cc.find("Canvas/ground/editbox_count").getComponent(cc.EditBox).string;
     // var userPassward =  cc.find("Canvas/ground/editbox_passward").getComponent(cc.EditBox).string;
     // console.log("用户账号："+userCount+ "用户密码："+ userPassward);
@@ -116,7 +116,8 @@ cc.Class({
     //         globaluserinfo.password = info.password;
     //         globaluserinfo.salt = info.salt;
     //         //登录成功后加载地图资源
-    cc.director.loadScene('map'); //     }else{
+    // cc.director.loadScene('map');
+    //     }else{
     //         console.log("login  filed!!!")
     //     }
     // });

@@ -5,13 +5,11 @@ var https_url = 'https://www.aheart.cn';
 // var https_url = 'http://cs.aheart.com';
 const HttpHelper = cc.Class({
     extends: cc.Component,
+    // statics: {
+    // },
+    // properties: {
 
-    statics: {
-    },
-
-    properties: {
-
-    },
+    // },
     onLoad () {
         // 开启调试
         // cc.dynamicAtlasManager.showDebug(true);
@@ -21,8 +19,8 @@ const HttpHelper = cc.Class({
         //动态合图
         this.image_cache();
         this.current = cc.audioEngine.play(res.url, false, 1);  
-    }
-    ,
+        //配置路径
+    },
     /**
      * get请求
      * @param {string} url
@@ -89,6 +87,7 @@ const HttpHelper = cc.Class({
         },
         //带token访问
         httpPost: function (url, params, callback) {
+            var _this =this;
             var token = cc.sys.localStorage.getItem('token');
             // cc.log(token)
             params['token'] = token;
@@ -102,7 +101,7 @@ const HttpHelper = cc.Class({
                     if(new_respone.code==0){
                         //未登录
                         // console.log(JSON.parse(respone))
-                        cc.director.loadScene('login/登录');
+                        cc.director.loadScene(_this.urlConfig("sence_login"));
                     }else{
                         callback(JSON.parse(respone));  // json 转数组
                     }
@@ -130,8 +129,8 @@ const HttpHelper = cc.Class({
         playGame(sence,task) {
             var _task =task||0;
             var _this =this;
-            //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-            cc.loader.loadRes('/sprite_loading', function(errorMessage,loadedResource){
+            //加载预制资源 PrefabUrl为 预制资源在 资源中的路径--预加载的进度条
+            cc.loader.loadRes('./sprite_loading', function(errorMessage,loadedResource){
                 //检查资源加载
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
@@ -153,6 +152,9 @@ const HttpHelper = cc.Class({
         progress(sence){
             //预加载场景并获得加载进度
             cc.director.preloadScene(sence,function (completeCount, totalCount,item) {
+                var item =item||0;
+                var totalCount =totalCount||0;
+                var completeCount =completeCount||0;
                 var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar);
                 // console.log(item)
                 // console.log(completeCount)
@@ -164,7 +166,7 @@ const HttpHelper = cc.Class({
                 // console.log(progressBar.progress)
                 progressBar.completeCount = completeCount;
                 progressBar.totalCount = totalCount;
-                resource = item;
+                // resource = item;//实力的对象
                 // // 代码里面获取cc.Label组件, 修改文本内容
                 // //在代码里面获取cc.Label组件
                 var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
@@ -190,7 +192,7 @@ const HttpHelper = cc.Class({
             var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据--临时地图id
             var userid = cc.sys.localStorage.getItem('figthing_userid'); //读取数据--玩家对战id
             if(map_int==''&&userid==''){
-                cc.director.loadScene('大厅');
+                cc.director.loadScene(_this.urlConfig("sence_dating"));
             }else{
                 _this.httpPost('/app/app-apinew/fight', {
                   'map_int': map_int,
@@ -209,7 +211,6 @@ const HttpHelper = cc.Class({
                         // });
                         _this.progress(sence)
                     }else{
-                        // cc.director.loadScene('大厅');  
                         callback(JSON.parse(data));  // json 转数组
                     }
                 })   
@@ -220,7 +221,35 @@ const HttpHelper = cc.Class({
             cc.macro.CLEANUP_IMAGE_CACHE = false;
             cc.dynamicAtlasManager.enabled = true;
             cc.dynamicAtlasManager.maxFrameSize = 2048;
-        }
+        },
+        urlConfig(url){
+            // //配置场景路径
+            var sence = {
+                //登录
+                sence_login:"login/登录",
+                sence_jiaose:"login/角色",
+                sence_register:"login/register",
+                //商城
+                sence_jiangli:"story/jiangli",
+                sence_chongzhi:"story/chongzhi",
+                sence_zhifu:"story/zhifu",
+                //大厅
+                sence_dating:"home/大厅",
+                sence_zhutian:"home/诸天万界",
+                sence_chuangzao:"home/创造生物",
+                sence_shenmo:"home/神魔炼狱",
+                sence_mijing:"home/秘境探索",
+                sence_wangu:"home/万古仙门",
+                sence_tiandi:"home/天地熔炉",
+                sence_zhenyaota:"home/镇妖塔",
+                //场景
+                sence_ditu:"map/诸天地图",
+                sence_zhandou:"战斗场景",
+
+                
+            }
+            return sence[url];
+        },
 });
 // httpRequest = new HttpHelper();
 // window.HttpHelper = new HttpHelper();

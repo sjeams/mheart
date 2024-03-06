@@ -56,9 +56,6 @@ cc.Class({
             let TOOLS = [data.data];
             var total = 1;
             _this.showWord(TOOLS,total)
-            // cc.log(111)
-              //跳转到世界
-              // httpRequest.playGame('map/诸天地图');
           }else{
 
             _this.searchShow()
@@ -140,7 +137,7 @@ cc.Class({
       backHome(){
         //销毁动态合图
         cc.dynamicAtlasManager.reset()
-        httpRequest.playGame('home/大厅');
+        httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
     },
       searchShow(){
         cc.find("Canvas/大厅/探索世界").active = true;

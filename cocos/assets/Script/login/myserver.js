@@ -140,7 +140,7 @@ cc.Class({
                 if(data.code==1){// 登录成功，进入游戏
                     // cc.log(data.data.userinfo); 
                     cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
-                    httpRequest.playGame('home/大厅');
+                    httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
                     // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
                     // cc.sys.localStorage.getItem(key); //读取数据
                 }else if(data.code==2){ // 登录成功，未定义角色

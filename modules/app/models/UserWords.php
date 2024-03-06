@@ -68,7 +68,6 @@ class UserWords extends ActiveRecord
         $star =intval($star)<1?1:$star;//最少1星
         UserWords::updateAll(['complete' => 1],"userid =$this->userId and complete!=1");
         $word = UserWords::find()->where("userid=$this->userId and wordid =$wordid")->one();
-
         $map_id =rand(1,2);
         if($word){
             $word->complete =0;

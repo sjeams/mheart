@@ -83,7 +83,7 @@ cc.Class({
         cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
         //销毁动态合图
         cc.dynamicAtlasManager.reset()
-        httpRequest.playGame('战斗场景',1);
+        httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"),1);
         // console.log(info)
         // var HttpHelper = require("../http"); 
         // var httpRequest = new HttpHelper();

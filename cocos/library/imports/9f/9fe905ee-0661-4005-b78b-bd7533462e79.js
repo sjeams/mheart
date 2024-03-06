@@ -87,11 +87,10 @@ cc.Class({
     // console.log(info)
     httpRequest.httpPost('/app/app-apiword/in-word', {
       'wordid': info['id'],
-      'star': info['star'],
-      'token': null
+      'star': info['star']
     }, function (data) {
       //跳转到世界
-      httpRequest.playGame('map/诸天地图'); // console.log(data);
+      httpRequest.playGame(httpRequest.urlConfig("sence_ditu")); // console.log(data);
       // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
       // server_choes_label.getComponent(cc.Label).string=info['name'];
       // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");

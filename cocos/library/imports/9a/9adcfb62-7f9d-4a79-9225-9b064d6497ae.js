@@ -135,6 +135,5 @@ var FightingExtend = cc.Class({
     }
   }
 });
-getFightingExtend = new FightingExtend();
 
 cc._RF.pop();

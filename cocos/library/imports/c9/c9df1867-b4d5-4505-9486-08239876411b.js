@@ -34,38 +34,39 @@ cc.Class({
   // update (dt) {},
   loadnextScene: function loadnextScene() {
     // 登录预加载
-    cc.director.preloadScene('login/登录', function () {
-      cc.log('登录预加载');
-    });
-    cc.director.loadScene('login/登录');
+    // cc.director.preloadScene('login/登录', function () {
+    //     cc.log('登录预加载');
+    // });
+    httpRequest.playGame(httpRequest.urlConfig("sence_login"));
   },
   //登录
   login: function login() {
-    cc.director.loadScene('login/登录');
+    // cc.director.loadScene('login/登录');
+    httpRequest.playGame(httpRequest.urlConfig("sence_login"));
   },
   //角色
   role: function role() {
-    cc.director.loadScene('role');
+    httpRequest.playGame(httpRequest.urlConfig("sence_jiaose"));
   },
   //注册
   register: function register() {
-    cc.director.loadScene('register');
+    httpRequest.playGame(httpRequest.urlConfig("sence_register"));
   },
   //大厅
   home: function home() {
-    cc.director.loadScene('home');
+    httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   },
   //奖励
   jiangli: function jiangli() {
-    cc.director.loadScene('jiangli');
+    httpRequest.playGame(httpRequest.urlConfig("sence_jiangli"));
   },
   //充值
   chongzhi: function chongzhi() {
-    cc.director.loadScene('chongzhi');
+    httpRequest.playGame(httpRequest.urlConfig("sence_chongzhi"));
   },
   //支付
   zhifu: function zhifu() {
-    cc.director.loadScene('zhifu');
+    httpRequest.playGame(httpRequest.urlConfig("sence_zhifu"));
   }
 });
 
