@@ -23,16 +23,6 @@ var FightingExtend = cc.Class({
         node.getChildByName('技能s').active = false;
       }, this)); // node.getChildByName('技能s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
     }
-
-    if (biology.extend == '闪避') {
-      node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
-      node.getChildByName('技能s').active = true;
-      node.getChildByName('技能s').opacity = 255; // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,60)));
-
-      node.getChildByName('技能s').runAction(cc.fadeOut(1), cc.callFunc(function () {
-        node.getChildByName('技能s').active = false;
-      }, this));
-    }
   },
   //攻击动作
   playAction: function playAction(node, biology, is_skill) {
@@ -67,7 +57,8 @@ var FightingExtend = cc.Class({
         }, this));
         node.getChildByName('加血s').runAction(cc.moveBy(0.01, cc.v2(0, -60)));
       } else {
-        //扣血渐隐
+        cc.log(biology.hurt_go); //扣血渐隐
+
         node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
         node.getChildByName('扣血s').active = true;
         node.getChildByName('扣血s').opacity = 255;
@@ -132,6 +123,16 @@ var FightingExtend = cc.Class({
         node.getChildByName('扣血s').active = false;
       }, this));
       node.getChildByName('扣蓝s').runAction(cc.moveBy(0.01, cc.v2(0, -60)));
+    }
+
+    if (biology.extend == '闪避') {
+      node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
+      node.getChildByName('技能s').active = true;
+      node.getChildByName('技能s').opacity = 255; // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,60)));
+
+      node.getChildByName('技能s').runAction(cc.fadeOut(1), cc.callFunc(function () {
+        node.getChildByName('技能s').active = false;
+      }, this));
     }
   }
 });

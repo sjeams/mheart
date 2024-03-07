@@ -51,6 +51,7 @@ cc.Class({
     var _this = this;
 
     httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
+      // _this.addMapPic(data) //生成地图
       if (!data.data) {
         //刷新地图
         // httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
@@ -66,9 +67,6 @@ cc.Class({
         // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
         // _this.content.getComponent(cc.Layout).spacingX = spacingX;
         // _this.content.getComponent(cc.Layout).spacingY = spacingY;
-        _this.addMapPic(data); //生成地图
-
-
         _this.addWordMap(data); //生成生物
 
       }

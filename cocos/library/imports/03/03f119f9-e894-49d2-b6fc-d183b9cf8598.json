@@ -59,7 +59,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "6fec8c7b-21bb-4499-bd73-93b60f052f76"
+    "_id": "03f119f9-e894-49d2-b6fc-d183b9cf8598"
   },
   {
     "__type__": "cc.Node",
@@ -99,8 +99,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1334,
+      "height": 750
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -111,8 +111,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        480,
-        320,
+        667,
+        375,
         0,
         0,
         0,
@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        246.15418937879258,
+        252.8794179050561,
         0,
         0,
         0,
@@ -677,10 +677,10 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1334,
+      "height": 750
     },
-    "_fitWidth": false,
+    "_fitWidth": true,
     "_fitHeight": true,
     "_id": "743woJbCRJjIhgr9VBS6pB"
   },

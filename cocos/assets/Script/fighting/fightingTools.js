@@ -18,7 +18,7 @@ cc.Class({
     initInfo(info,biolgy_state,is_my) {
         // 初始化该道具相关信息
         // 图片
-        var _self = this;
+        var _this = this;
  
         if(info['picture']){
             var remoteUrl = httpRequest.httpUrl(info['picture']);
@@ -30,7 +30,7 @@ cc.Class({
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
                 // console.log(texture)
                 if(texture!=null){
-                    _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                    _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                     //销毁
                     // this.image.spriteFrame=null;
                 }
@@ -60,7 +60,7 @@ cc.Class({
             this.node.getChildByName('生物').color = new cc.color(info['color']);
             // console.log(info)
             // var star ='';    
-            // for(var i=0;i<=info['yiXing'];i++){
+            // for(i=0;i<=info['yiXing'];i++){
             //     star +='⭐';
             // }
             this.node.getChildByName('生命s').getComponent(cc.Label).string= info['shengMing']+'/'+info['shengMing'];

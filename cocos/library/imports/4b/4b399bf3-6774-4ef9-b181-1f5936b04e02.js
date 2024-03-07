@@ -22,7 +22,7 @@ cc.Class({
     var total = info_list['biology_list'].length; // 初始化该道具相关信息
     // 图片
 
-    var _self = this;
+    var _this = this;
 
     if (info['picture']) {
       var remoteUrl = httpRequest.httpUrl(info['picture']); // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
@@ -35,7 +35,7 @@ cc.Class({
       }, function (err, texture) {
         // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
         if (texture != null) {
-          _self.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
         }
       });
     } // this.server_type.getComponent(cc.Label).string=info['type'];

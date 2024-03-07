@@ -62,7 +62,7 @@ cc.Class({
             var star =0; //阵容序号
             var star = _this.init_postion(data.data.poition_my,data.data.biolgy_state,-0,1,star) //生成生物--position_my
             var star = _this.init_postion(data.data.poition_enemy,data.data.biolgy_state,0,0,star) //生成生物--position_ememy
-            _this.addMapPic(data) //生成地图
+            // _this.addMapPic(data) //生成地图
           // console.log( _this.toolsArray)
           // console.log( _this.fightingArray )
             var fighting_list = data.data;    
@@ -93,7 +93,7 @@ cc.Class({
                     // cc.log(fighting_history[boat_count])
                     _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
                   }
-              },1,boat_length,1);////10秒后执行1次间隔5秒
+              },1.5,boat_length,1);////10秒后执行1次间隔5秒
             }
         });    
       }
@@ -109,17 +109,19 @@ cc.Class({
       if(his_log.h_need.length!=0){
         _this.readySkill(his_log.h_need)
       }
-      // // 发起技能名称被动
+
+      //go和do 二选一 ，need 必有   
+      // 发起技能名称被动
       if(his_log.h_go.length!=0){
-        _this.readySkill(his_log.h_go)
-      }
-      //普通攻击
-      if(his_log.h_putong.length!=0){
-        _this.playFight(his_log.h_putong)
+        _this.playSkill(his_log.h_go)
       }
       // 执行技能
       if(his_log.h_do.length!=0){
         _this.playSkill(his_log.h_do)
+      }
+      //普通攻击
+      if(his_log.h_putong.length!=0){
+        _this.playFight(his_log.h_putong)
       }
     },
       //战斗结束
@@ -216,17 +218,11 @@ cc.Class({
       if(his_log_extend.length!=0){
         var _this =this
         for (var npage=0; npage<his_log_extend.length; npage++){
-        // var npage=-1;
-        // var n_length = his_log_extend.length-1<0?0:his_log_extend.length-1;
-        // _this.schedule(function(){
-          // npage++
           var biology = his_log_extend[npage];
           var _this_hero_node =this.fightingArray[biology.goid]
           var _targ_hero_node =this.fightingArray[biology.doid]
-          var res = _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
-        // },1,n_length,0.5);//只执行一次
+          _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
           }
-        // return res
       } 
       return new Promise(resolve => {resolve();})
     },
@@ -256,11 +252,9 @@ cc.Class({
           // cc.log(biology)
           var _this_hero_node =this.fightingArray[biology.goid]
           var _targ_hero_node =this.fightingArray[biology.doid]
-          // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
-          // _this.schedule(function(){
+          //2个攻击类型只能二选一 
+          // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
             getFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
-          // },1)
-
         }
       }
       return new Promise(resolve => {resolve();})
@@ -276,12 +270,11 @@ cc.Class({
           var _targ_hero_node =this.fightingArray[biology.doid]
           if(biology.goid==biology.doid){
               // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
-            var res = _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
+            _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
           }else{
-            var res =  _this.buttonMove(0.1,_this_hero_node,_targ_hero_node,biology) //移动
+            _this.buttonMove(0.1,_this_hero_node,_targ_hero_node,biology) //移动
           }
         }
-        return res
       }
       return new Promise(resolve => {resolve();})
     },
@@ -335,7 +328,7 @@ cc.Class({
       const actionLeft = cc.spawn(cc.moveBy(0.2,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
 
       },this)) 
-      const actionWaite = cc.delayTime(0.1) 
+      const actionWaite = cc.delayTime(0.01) 
       const actionRight =cc.spawn(cc.moveBy(0.2,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1))
       // 让节点在向上移动的同时缩放
       // arr.push(cc.scaleTo(0.1, 1,1))
@@ -442,14 +435,10 @@ cc.Class({
         })
     },
     back_map(){
-      //销毁动态合图
-      // cc.dynamicAtlasManager.reset()
       httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
     },
     back_reload(){
       // this.parent.active=false
-      //销毁动态合图
-      // cc.dynamicAtlasManager.reset()
       httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
     },
     back_home(){

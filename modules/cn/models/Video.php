@@ -104,10 +104,10 @@ class Video extends ActiveRecord {
 				// www.fi11.tv 永久网址
 				// https://hereaa.com/tags.jsp
 				// $type = $type?$type:1;
-				https://bfqde2023llsplde12qd27qdl.820723.com/json/1688045881974226946.html?t=s2
+				// https://bfqde2023llsplde12qd27qdl.820723.com/json/1688045881974226946.html?t=s2
 				if($search){
 					$list=array(
-						array($belong,$$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv'),
+						array($belong,$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv'),
 					);
 				}else{
 					$list=array(
