@@ -1452,27 +1452,6 @@
       "__id__": 1
     },
     "_enabled": true,
-    "server_picture": {
-      "__id__": 5
-    },
-    "server_type": {
-      "__id__": 25
-    },
-    "server_name": {
-      "__id__": 22
-    },
-    "server_star": {
-      "__id__": 28
-    },
-    "server_shenMing": {
-      "__id__": 8
-    },
-    "server_moFa": {
-      "__id__": 15
-    },
-    "sprite_server_biology": {
-      "__id__": 38
-    },
     "_id": ""
   },
   {

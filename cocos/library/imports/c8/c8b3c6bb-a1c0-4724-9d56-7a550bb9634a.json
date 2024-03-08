@@ -1,14 +1,14 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "biology_战斗",
+    "_name": "biology_boss",
     "_objFlags": 0,
     "_native": "",
     "data": {
       "__id__": 1
     },
     "optimizationPolicy": 2,
-    "asyncLoadAssets": true,
+    "asyncLoadAssets": false,
     "readonly": false
   },
   {

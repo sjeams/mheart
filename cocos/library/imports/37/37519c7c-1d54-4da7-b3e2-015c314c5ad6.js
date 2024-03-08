@@ -225,6 +225,9 @@ var HttpHelper = cc.Class({
           for (var i = 0; i < data.data.img_list; i++) {
             var remoteUrl = httpRequest.httpUrl(img_list[i]);
             cc.resources.preload(remoteUrl, cc.SpriteFrame);
+            cc.loader.load({
+              url: remoteUrl
+            }, function (err, texture) {});
           } // // console.log(remoteUrl)
           // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
           //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);

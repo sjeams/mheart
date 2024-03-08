@@ -1,3 +1,8 @@
+/*
+ * @Author: sjeam
+ * @Date: 2024-01-05 16:13:51
+ * @Description: 
+ */
 // 世界操作  
 var HttpHelper = require("../http"); 
 var httpRequest = new HttpHelper();
@@ -46,4 +51,11 @@ cc.Class({
     },
  
 
+    show_dlg () {
+        this.node.active =true;
+    },
+
+    hidden_dlg () {
+        this.node.active =false;
+    },
 });

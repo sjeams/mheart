@@ -580,7 +580,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1704767137298,
+    "asset": 1709790613377,
     "meta": 1702435055137,
     "relativePath": "resources\\biology_pic"
   },
@@ -651,22 +651,22 @@
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
     "asset": 1709784377596,
-    "meta": 1709784377604,
+    "meta": 1709883561999,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "6c5c0736-3c0d-4200-9d4b-8669f5502c96": {
     "asset": 1709784425487,
-    "meta": 1709784425504,
+    "meta": 1709883570477,
     "relativePath": "Scene\\home\\秘境探索.fire"
   },
   "a6d455ec-80c3-4fb4-aa0b-21dee5748522": {
     "asset": 1709784419516,
-    "meta": 1709784419524,
+    "meta": 1709883549851,
     "relativePath": "Scene\\home\\神魔炼狱.fire"
   },
   "1e477086-473b-41b9-abb6-cfb2263fda1c": {
     "asset": 1709784414948,
-    "meta": 1709784414955,
+    "meta": 1709883552493,
     "relativePath": "Scene\\home\\天地熔炉.fire"
   },
   "fe1c2c7a-a7dd-49ca-ac7c-1e8e61b97703": {
@@ -676,12 +676,12 @@
   },
   "5f3de638-09ed-47d3-bafb-ecf360038279": {
     "asset": 1709784368637,
-    "meta": 1709784368645,
+    "meta": 1709883559369,
     "relativePath": "Scene\\home\\万古仙门.fire"
   },
   "03f119f9-e894-49d2-b6fc-d183b9cf8598": {
     "asset": 1709784440197,
-    "meta": 1709784440206,
+    "meta": 1709883567712,
     "relativePath": "Scene\\home\\镇妖塔.fire"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
@@ -990,13 +990,13 @@
     "relativePath": "Textrue\\tools\\银钥匙.png"
   },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1709710008368,
-    "meta": 1709710008381,
+    "asset": 1709883357257,
+    "meta": 1709884988688,
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
     "asset": 1709621461753,
-    "meta": 1709621461775,
+    "meta": 1709887116445,
     "relativePath": "prefabs\\sprite_世界.prefab"
   },
   "175f3a60-1b3b-452e-8fb5-a4c183722325": {
@@ -1030,13 +1030,13 @@
     "relativePath": "Script\\scence\\wap.js"
   },
   "c8b3c6bb-a1c0-4724-9d56-7a550bb9634a": {
-    "asset": 1703217070919,
-    "meta": 1703815629307,
-    "relativePath": "prefabs\\biology_战斗.prefab"
+    "asset": 1709888644298,
+    "meta": 1709888644346,
+    "relativePath": "prefabs\\biology_boss.prefab"
   },
   "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
-    "asset": 1703223907200,
-    "meta": 1703831686521,
+    "asset": 1709889415402,
+    "meta": 1709889415426,
     "relativePath": "prefabs\\sprite_生物.prefab"
   },
   "3b739a45-be54-480f-81f7-f705d00e0750": {
@@ -1155,13 +1155,13 @@
     "relativePath": "resources\\server_pic\\骰子.png"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1709717107981,
-    "meta": 1709717108013,
+    "asset": 1709886180631,
+    "meta": 1709886180654,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
   "a35df353-e613-4fbb-acd6-15095812556b": {
-    "asset": 1704446314802,
-    "meta": 1704446314818,
+    "asset": 1709888294348,
+    "meta": 1709888294379,
     "relativePath": "resources\\biology_结算.prefab"
   },
   "f0121585-cf7d-4bad-91b8-11b387bb6106": {
@@ -1186,12 +1186,12 @@
   },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
     "asset": 1709621908001,
-    "meta": 1709621908036,
+    "meta": 1709885000434,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1709795337787,
-    "meta": 1709795337813,
+    "asset": 1709883524077,
+    "meta": 1709887105126,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "e483a6af-1f42-4371-808f-155228cd65ed": {
@@ -1274,35 +1274,20 @@
     "meta": 1709784404979,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1709708912150,
-    "meta": 1709708929394,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1709708884389,
     "meta": 1709708931429,
     "relativePath": "Script\\scence\\word_score.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1709717989566,
-    "meta": 1709717991878,
-    "relativePath": "Script\\http.js"
-  },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1709718063383,
-    "meta": 1709718063416,
+    "asset": 1709891337412,
+    "meta": 1709891337434,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1709791567478,
-    "meta": 1709791567506,
+    "asset": 1709887536190,
+    "meta": 1709887536206,
     "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1709719662258,
-    "meta": 1709719668135,
-    "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
     "asset": 1709719650369,
@@ -1324,14 +1309,39 @@
     "meta": 1709794154499,
     "relativePath": "Script\\fighting\\figthingExtend.js"
   },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1709887121207,
+    "meta": 1709887121251,
+    "relativePath": "Scene\\战斗场景.fire"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1709887315748,
+    "meta": 1709887402458,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1709794202363,
-    "meta": 1709794206934,
+    "asset": 1709887306456,
+    "meta": 1709887405206,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1709794214208,
-    "meta": 1709794214227,
-    "relativePath": "Scene\\战斗场景.fire"
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1709887632658,
+    "meta": 1709887680725,
+    "relativePath": "Script\\http.js"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1709887989674,
+    "meta": 1709887992718,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "141fac6f-c95e-42cb-9df0-8fd8eb3f2f74": {
+    "asset": 1709891338752,
+    "meta": 1709891338779,
+    "relativePath": "prefabs\\biology_生物_战斗详情.prefab"
+  },
+  "39fcf918-52b8-4cb5-975d-5b9ee52d773d": {
+    "asset": 1709889629074,
+    "meta": 1709889629077,
+    "relativePath": "prefabs\\生物详情"
   }
 }

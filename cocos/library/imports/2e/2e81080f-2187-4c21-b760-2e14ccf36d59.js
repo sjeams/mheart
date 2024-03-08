@@ -4,6 +4,11 @@ cc._RF.push(module, '2e810gPIYdMIbdgLhTM821Z', 'score_fighting_alert');
 
 "use strict";
 
+/*
+ * @Author: sjeam
+ * @Date: 2024-01-05 16:13:51
+ * @Description: 
+ */
 // 世界操作  
 var HttpHelper = require("../http");
 
@@ -43,6 +48,12 @@ cc.Class({
   },
   back_home: function back_home() {
     httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+  },
+  show_dlg: function show_dlg() {
+    this.node.active = true;
+  },
+  hidden_dlg: function hidden_dlg() {
+    this.node.active = false;
   }
 });
 
