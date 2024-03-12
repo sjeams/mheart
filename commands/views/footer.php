@@ -57,7 +57,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                 <button class="btn btn-primary search_button" onclick="nextPage()" type="sbumit">GO</button>
             </tr> -->
             <tr class="append_top">
-                <td class="btn-primary"  ><a href="#top" class=" " title="回到顶端">返回顶部↑</a></td> 
+                <td class="btn-primary"  ><a href="javascript:void(0);" class=" " onclick="scllTop()" title="回到顶端">返回顶部↑</a></td> 
                 <!-- <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go">GO(232323)</span></td> -->
                 <td class="btn-primary  video_old"  onclick="videoHidden()" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'table-cell':'none';?>;" > 
                     <span>  video</span>
@@ -72,5 +72,12 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     <?php } ?> 
 
 <?php } ?> 
-
+<script>
+$(function(){
+    scllTop()
+})
+function scllTop(){
+    $(window).scrollTop(0)
+}
+</script>
 <!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/footer.js"></script> -->

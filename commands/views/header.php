@@ -61,7 +61,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     </ul>
 </div>
 
-<div class="video_center " id="top" > 
+<div class="video_center "  id="top" > 
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 <input type="hidden"  id="is_model_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model'] ;?>">
 

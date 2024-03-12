@@ -272,8 +272,9 @@
             }
             //回填
             is_next_button() //下一页
-            var t = $("#top").offset().top;
-            $(window).scrollTop(t);
+            // var t = $("#top").offset().top;
+            // $(window).scrollTop(t);
+            scllTop()
             removeLoading()
         }
     }

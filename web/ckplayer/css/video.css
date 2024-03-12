@@ -87,7 +87,7 @@ body {
 .showed{
 	display: block!important;
 }
-.btn { width:28%!important;margin: 5px; }
+.btn { width:28%!important;margin: 2%; }
 .btn-primary{
 	cursor: pointer;
 }
