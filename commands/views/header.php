@@ -11,9 +11,9 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <!-- //chat -->
             <?php  if( $http_geturl=='chat'){ ?>
                 <?php  if( $http_index=='list'){ ?>
-                <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
-                <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
-                <td class="btn-primary"   >
+                <td class="btn-primary button_over_side"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
+                <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                <td class="btn-primary button_over_side"   >
                     <input type="hidden" name="" id="menu" value="0">
                     <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
                 </td>
@@ -34,12 +34,12 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <!-- //video -->
             <?php }else{ ?>   
                 <?php if( $http_index=='video'){ ?>
-                    <td class="btn-primary" > <a href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i>返回</a></td>
+                    <td class="btn-primary button_over_side" > <a href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i>返回</a></td>
                 <?php }else { ?>    
-                    <td class="btn-primary"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
+                    <td class="btn-primary button_over_side"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
                 <?php } ?>
-                <td class="btn-primary"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
-                <td class="btn-primary"   >
+                <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                <td class="btn-primary button_over_side"   >
                     <input type="hidden" name="" id="menu" value="0">
                     <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
                 </td>

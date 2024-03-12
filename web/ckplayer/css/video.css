@@ -96,6 +96,7 @@ body {
 	width: 100%;
 	cursor: pointer;
 	text-decoration: none;
+	text-align: center;
 }
 a:hover{text-decoration:none!important}
 input{
@@ -115,8 +116,20 @@ input{
 	-webkit-line-clamp: 1; 
 	/* display: -webkit-box;  */
 	-webkit-box-orient: vertical;
-
 }
+.button_over_side{
+	/* //超出边界解决办法 */
+	overflow: hidden;
+	/* word-break: keep-all; */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1; 
+	/* display: -webkit-box;  */
+	-webkit-box-orient: vertical;
+	display: block;
+	float: left;
+}
+
 /* 搜索 */
 .search_input{
 	margin-top: 10px;
