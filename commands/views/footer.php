@@ -83,11 +83,19 @@ function scllTop(){
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
 function onorientationChangeModel(type) {
     var _this =this;
-	_this.newplayer.webFull(function(bool){
-        // 页面全屏状态
-        bool=type;
-        // false，普通状态
-    });
+    // console.log(_this.newplayer);
+    if(_this.newplayer){
+        if(type){
+            // 页面全屏状态
+            _this.newplayer.full();
+            // _this.newplayer.webFull();
+            
+        }else{
+            // 退出全屏状态
+            _this.newplayer.exitFull();
+            // _this.newplayer.exitWebFull();
+        }
+    }
 }
 $(window).on('orientationchange', function(event) {
     if (event.orientation === 'landscape') {
