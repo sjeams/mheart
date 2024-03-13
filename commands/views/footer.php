@@ -87,8 +87,8 @@ function onorientationChangeModel(type) {
     if(_this.newplayer){
         if(type){
             // 页面全屏状态
-            _this.newplayer.full();
-            // _this.newplayer.webFull();
+            // _this.newplayer.full();
+            _this.newplayer.webFull();
             _this.newplayer.play();
         }else{
             // 退出全屏状态
