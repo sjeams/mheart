@@ -14,9 +14,11 @@
             if(t<=scrollY&&t>=160){
                 // console.log("往下滚动");
                 header_title_hidden();
+                MenuHidden();//隐藏菜单
             }else{
                 // console.log("往上滚动");
                 header_title_show();
+                MenuHidden();//隐藏菜单
              }
             setTimeout(function(){t=scrollY},0);
 
@@ -379,3 +381,10 @@ $(document).ajaxSuccess(function( ) {
         return	(t < 10 ? "0" + t : t);
     }
     
+    function MenuHidden(){
+        var menu =$("#menu").val();
+        if(menu==1){
+             $('.menu_list').css('display','none');
+             $("#menu").val(0)
+        }
+     }

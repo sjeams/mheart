@@ -41,18 +41,17 @@
                             <!-- <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType"> -->
                                 <?php echo $categoryBelong ?>
                         </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
                             <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" readonly="readonly" class="center form-control mr-sm-2" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
-
                         <!-- <label class="layui-form-label">采集页码</label> -->
-                        <div class="layui-input-inline center">
-                            <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                            <input type="text" class=" " style="text-align: center;margin: 0px auto;width:28%" value="<?php echo $data['page_list'] ?>" id="goPage_list">
-                
-                            <span class="is_next_page_button"></span>
-                        </div>
+
                         <?php if($graden>0){ ?>
                             <div class="layui-input-inline center">
                                 <p class="center">
@@ -64,11 +63,16 @@
                             </div>
                             <div class="layui-input-inline center">
                                 <p class="center">
-                                    <input type="text" value="5"  placeholder="setCaches"  id="setCaches">
+                                    <input type="text" value="5"  placeholder="setCaches"  id="setCaches" style="margin-bottom: 0px;">
                                     <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
                                 </p>
                             </div>
                         <?php } ?>
+                        <div class="layui-input-inline center">
+                            <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
+                            <input type="text" class=" " style="text-align: center;margin: 0px auto;width:28%" value="<?php echo $data['page_list'] ?>" id="goPage_list">
+                            <span class="is_next_page_button"></span>
+                        </div>
                     <!-- </div> -->
                 </td>
             </tr>
