@@ -92,8 +92,8 @@ function onorientationChangeModel(type) {
             _this.newplayer.play();
         }else{
             // 退出全屏状态
-            _this.newplayer.exitFull();
-            // _this.newplayer.exitWebFull();
+            // _this.newplayer.exitFull();
+            _this.newplayer.exitWebFull();
             _this.newplayer.play();
         }
     }
