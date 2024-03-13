@@ -79,5 +79,27 @@ $(function(){
 function scllTop(){
     $(window).scrollTop(0)
 }
+
+// player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
+function onorientationChangeModel(type) {
+    var _this =this;
+	_this.newplayer.webFull(function(bool){
+        // 页面全屏状态
+        bool=type;
+        // false，普通状态
+    });
+}
+$(window).on('orientationchange', function(event) {
+    if (event.orientation === 'landscape') {
+        // 横屏模式
+        console.log("横屏状态！");
+        onorientationChangeModel(true);
+    } else {
+        console.log("竖屏状态！");
+        onorientationChangeModel(false);
+    }
+});
+
+
 </script>
 <!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/footer.js"></script> -->
