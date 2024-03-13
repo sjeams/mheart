@@ -36,7 +36,7 @@
     webFull:true,
     // mobileAutoFull: true,//移动端是否默认全屏播放
     // mobileCkControls: false,//移动端h5显示控制栏
-    theatre:false,
+    theatre:true,
     crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
     // loop: true,//是否需要循环播放 
     // seek: 42,//默认需要跳转的秒数
