@@ -87,14 +87,14 @@ function onorientationChangeModel(type) {
     if(_this.newplayer){
         if(type){
             // 页面全屏状态
-            _this.newplayer.full();
+            // _this.newplayer.full();
+            _this.newplayer.webFull();
             _this.newplayer.play();
-            // _this.newplayer.webFull();
         }else{
             // 退出全屏状态
-            _this.newplayer.exitFull();
-            _this.newplayer.play();
+            // _this.newplayer.exitFull();
             _this.newplayer.exitWebFull();
+            _this.newplayer.play();
         }
     }
 }
