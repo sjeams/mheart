@@ -89,7 +89,7 @@ function  videoList(id,key=0,isbofang=1){
             screenshot:true,
             smallWindows:true,
             flashplayer: false,//设置成true则强制使用flashplayer
-            html5m3u8: true,//PC平台上是否使用h5播放器播放m3u8---强制html播放全屏
+            // html5m3u8: true,//PC平台上是否使用h5播放器播放m3u8---强制html播放全屏
             webFull:true,
             // mobileAutoFull: true,//移动端是否默认全屏播放
             // mobileCkControls: false,//移动端h5显示控制栏
