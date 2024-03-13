@@ -87,25 +87,25 @@ function onorientationChangeModel(type) {
     if(_this.newplayer){
         if(type){
             // 页面全屏状态
-            // _this.newplayer.full();
+            _this.newplayer.full();
             _this.newplayer.webFull();
             
         }else{
             // 退出全屏状态
-            // _this.newplayer.exitFull();
+            _this.newplayer.exitFull();
             _this.newplayer.exitWebFull();
         }
     }
 }
 $(window).on('orientationchange', function(event) {
     if (window.orientation == 0 || window.orientation == 180) {
-        console.log("竖屏状态！");
-        alert("竖屏状态！!");
+        // console.log("竖屏状态！");
+        // alert("竖屏状态！!");
         onorientationChangeModel(false);
     } else {
         // 横屏模式
-        console.log("横屏状态！");
-        alert("横屏状态！!");
+        // console.log("横屏状态！");
+        // alert("横屏状态！!");
         onorientationChangeModel(true);
     }
 });
