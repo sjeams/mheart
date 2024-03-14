@@ -83,7 +83,7 @@
      z-index: 101;
  }
 .tablestyle{
-    margin-bottom: 0em;
+    margin-bottom: auto;
 }
  .tablestyle td{
      width: 25%;
@@ -132,7 +132,7 @@
         left:0; 
         right:0; 
         /* top:0;  */
-        bottom:0;
+        bottom: -2px;
         display: inline-block;
 	}
     .video_footer td{

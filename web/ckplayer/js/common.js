@@ -47,16 +47,16 @@ function onorientationChangeModel(type) {
     if(_this.newplayer){
         if(type){
             // 退出全屏状态
-            // _this.newplayer.exitFull();
+            _this.newplayer.exitFull();
             // header_title_show();//显示标题
-            _this.newplayer.exitWebFull();
+            // _this.newplayer.exitWebFull();
             _this.newplayer.play();
         }else{
             // 页面全屏状态
-            // _this.newplayer.full();
+            _this.newplayer.full();
             header_title_hidden()
             MenuHidden();//隐藏侧边菜单
-            _this.newplayer.webFull();
+            // _this.newplayer.webFull();
             _this.newplayer.play();
         }
     }
