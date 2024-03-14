@@ -1,47 +1,30 @@
 
-
-
+$.orientationModel=true  //竖屏显示菜单，横屏不显示菜单
 // {/* <script type="text/javascript">
 //     //滚动条头部和底部隐藏事件 */}
-    $(function(){   
-        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
-        var winHeight = $(document).scrollTop();
-        var t = 0;
-        //只监听竖屏状态！ 横屏不做弹出
-        if (window.orientation == 0 || window.orientation == 180) {
-            $(window).scroll(function() {
-                //禁用滚动监听
-                if($('#getPage').val()==1){
-                    getPage();  //分页
-                }
-                var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-                //上下滚动操作
-                if(t<=scrollY&&t>=160){
-                    // console.log("往下滚动");
-                    header_title_hidden();//隐藏标题
-                    MenuHidden();//隐藏侧边菜单
-                }else{
-                    // console.log("往上滚动");
-                    header_title_show();//显示标题
-                    MenuHidden();//隐藏侧边菜单
-                }
-                setTimeout(function(){t=scrollY},0);
-
-            });
+$(function(){   
+    //禁用滚动监听
+    $(window).scroll(function() {
+        getPage();  //滚动分页
+        if($.orientationModel){
+            getScroll();//监听滚动，显示菜单
         }
     });
+});
 // </script>
 //监听旋转
 $(window).on('orientationchange', function(event) {
     if (window.orientation == 0 || window.orientation == 180) {
         // console.log("竖屏状态！");
         // alert("竖屏状态！!");
-        onorientationChangeModel(false);
+        onorientationChangeModel(true);
+         $.orientationModel=true
     } else {
         // 横屏模式
         // console.log("横屏状态！");
         // alert("横屏状态！!");
-        onorientationChangeModel(true);
+        onorientationChangeModel(false);
+         $.orientationModel=false
     }
 });
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
@@ -50,26 +33,22 @@ function onorientationChangeModel(type) {
     // console.log(_this.newplayer);
     if(_this.newplayer){
         if(type){
-            // 页面全屏状态
-            // _this.newplayer.full();
-            header_title_hidden()
-            _this.newplayer.webFull();
-            _this.newplayer.play();
-        }else{
             // 退出全屏状态
             // _this.newplayer.exitFull();
             header_title_show();//显示标题
             MenuHidden();//隐藏侧边菜单
             _this.newplayer.exitWebFull();
             _this.newplayer.play();
+        }else{
+
+            // 页面全屏状态
+            // _this.newplayer.full();
+            header_title_hidden()
+            _this.newplayer.webFull();
+            _this.newplayer.play();
         }
     }
 }
-
-
-
-
-
 
 $('.img_click').click(function () {
     //获取图片路径
@@ -198,26 +177,48 @@ $(document).ajaxSuccess(function( ) {
     // });
      //监听分页
     function getPage(){
-        //窗口高度 = 滚动高度+页面高度+160.触发
-        if (getScrollHeight()<= getWindowHeight() + getDocumentTop()+160) {
-            var goPageCount = $('#goPageCount').val();
-            //当滚动条到底时,这里是触发内容
-            //判断是否使用分页插件
-            if(goPageCount){
-                var goPage = Number($("#goPage").val()) + Number(1)   
-                if(goPage<=goPageCount){
-                    nextPage(goPage);
-                }else{
-                    //到底部距离160 显示 底部
-                    if(getScrollHeight()<= getWindowHeight() + getDocumentTop()+160){
-                        header_title_show();
+
+        if($('#getPage').val()==1){
+            //窗口高度 = 滚动高度+页面高度+160.触发
+            if (getScrollHeight()<= getWindowHeight() + getDocumentTop()+160) {
+                var goPageCount = $('#goPageCount').val();
+                //当滚动条到底时,这里是触发内容
+                //判断是否使用分页插件
+                if(goPageCount){
+                    var goPage = Number($("#goPage").val()) + Number(1)   
+                    if(goPage<=goPageCount){
+                        nextPage(goPage);
+                    }else{
+                        //到底部距离160 显示 底部
+                        if(getScrollHeight()<= getWindowHeight() + getDocumentTop()+160){
+                            header_title_show();
+                        }
                     }
                 }
             }
+            goPageCount=null;
+            goPage=null;
         }
-        goPageCount=null;
-        goPage=null;
     }
+    //监听滚动
+    function getScroll(){
+        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
+        var winHeight = $(document).scrollTop();
+        var t = 0;
+        var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+        //上下滚动操作
+        if(t<=scrollY&&t>=160){
+            // console.log("往下滚动");
+            header_title_hidden();
+            MenuHidden();//隐藏菜单
+        }else{
+            // console.log("往上滚动");
+            header_title_show();
+            MenuHidden();//隐藏菜单
+            }
+        setTimeout(function(){t=scrollY},0);
+    }
+ 
 
 
     function header_title_show(){
@@ -433,3 +434,10 @@ $(document).ajaxSuccess(function( ) {
              $("#menu").val(0)
         }
      }
+
+     // 点击事件监听
+    $(document).keyup(function(event){
+        if(event.keyCode ==13){
+            gou();
+        }
+    });

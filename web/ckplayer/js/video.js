@@ -150,9 +150,3 @@ function videoHidden(open){
     }
 
 }
-// 点击事件监听
-$(document).keyup(function(event){
-    if(event.keyCode ==13){
-        gou();
-    }
-});
