@@ -58,12 +58,8 @@ function  videoList(id,key,isbofang){
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
-    if(now_video!=0){
-        var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
-        // console.log(now_video)
-        // console.log(player)
-        $(".video"+now_video).html(player);
-    } 
+    // console.log(key)
+    // console.log(url)
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
@@ -136,6 +132,15 @@ function  videoList(id,key,isbofang){
         // function VideoPlayEndedHandler(){//监听视频播放完成
         //     // alert('本视频已结束');
         // }
+        //因为对象覆盖了，所以要放最后面
+
+
+        if(now_video!=0&&now_video!=id){
+            var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
+            // console.log(now_video)
+            // console.log(player)
+            $(".video"+now_video).html(player);
+        }
     }
  // 视频隐藏
 function videoHidden(open){
