@@ -33,34 +33,37 @@ function is_img_url(imgurl) {
 }
 
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
-function  videoList(id,key=0,isbofang=1){
+function  videoList(id,key,isbofang){
+    var key=key||'1c0';
+    var isbofang=isbofang||1;
     //暂停在播视频
     var now_video =$("#now_video").val();
+    //存储当前的视频id
+    $("#now_video").val(id); 
     //判断是否是影视，影视不为空
-    if(key!=0){
-        $("#now_video").val(id); 
+    var goBelong  = $("#goBelong").val();
+    if(goBelong==0){
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
         // var title =$("#form"+key+"  input[name=title]").val();
         // var imageurl =$("#form"+key+"  input[name=imageurl]").val();
         $('.click_video').removeClass('btn-success');
         $('#click_video'+key).addClass('btn-success');
-        // console.log( title)
-        var now_video_str =now_video+',"'+now_video+'c0"';
+        var now_video_str =now_video+',"'+key+'"';
+        $("#now_video_key").val(key);
     }else{
-        $("#now_video").val(id); 
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();
         // var title =$("#form"+id+"  input[name=title]").val();
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
-    // console.log(key)
     if(now_video!=0){
         var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
+        // console.log(now_video)
+        // console.log(player)
         $(".video"+now_video).html(player);
     } 
-
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
@@ -124,6 +127,7 @@ function  videoList(id,key=0,isbofang=1){
         // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
         // console.log(state)
         // });
+        // _this.newplayer.play()//点击播放
         function timeHandler(t) {
             // console.log(videoID)
             cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie

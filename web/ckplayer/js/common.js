@@ -333,11 +333,18 @@ $(document).ajaxSuccess(function( ) {
     
                     //暂停在播视频
                     var now_video =$("#now_video").val();
-                    console.log(now_video)
+                    var now_video_key =$("#now_video_key").val();
+                    //暂停在播视频
                     if(now_video!=0){
-                        var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
+                        var goBelong =$("#goBelong").val(); 
+                        if(goBelong==0){
+                            var player ="<span onclick='videoList("+now_video+","+now_video_key+")'  class='video_box '></span>";
+                        }else{
+                            var player ="<span onclick='videoList("+now_video+")'  class='video_box '></span>";
+                        }
                         $(".video"+now_video).html(player);
                     } 
+                    
                     //显示窗口播放栏
                     $('.video_old').css('display','table-cell');
                 }else{
@@ -350,8 +357,11 @@ $(document).ajaxSuccess(function( ) {
     
                 }
                 // console.log(data);
-                // window.location.reload();   
-            },
+                // window.location.reload();  
+                var now_video =$("#now_video").val();
+                var now_video_key =$("#now_video_key").val();
+                videoList(now_video,now_video_key) 
+            } 
         });
     } 
     function isBofang(){
