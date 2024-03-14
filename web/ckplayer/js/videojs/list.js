@@ -1,4 +1,6 @@
  
+    
+    
     //跳转页面
     function  gouSerach(){
         var goPage_list =$(".footer_go_input").val();
@@ -350,6 +352,9 @@
             },
         });
     } 
+
+
+
  
 
  
