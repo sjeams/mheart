@@ -4,10 +4,23 @@ $.orientationModel=true  //竖屏显示菜单，横屏不显示菜单
 //     //滚动条头部和底部隐藏事件 */}
 $(function(){   
     //禁用滚动监听
+    var winHeight = $(document).scrollTop();
+    var t = 0;
     $(window).scroll(function() {
         getPage();  //滚动分页
         if($.orientationModel){
-            getScroll();//监听滚动，显示菜单
+            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+            //上下滚动操作
+            if(t<=scrollY&&t>=160){
+                // console.log("往下滚动");
+                header_title_hidden();
+                MenuHidden();//隐藏菜单
+            }else{
+                // console.log("往上滚动");
+                header_title_show();
+                MenuHidden();//隐藏菜单
+                }
+            setTimeout(function(){t=scrollY},0);
         }
     });
 });
@@ -35,15 +48,14 @@ function onorientationChangeModel(type) {
         if(type){
             // 退出全屏状态
             // _this.newplayer.exitFull();
-            header_title_show();//显示标题
-            MenuHidden();//隐藏侧边菜单
+            // header_title_show();//显示标题
             _this.newplayer.exitWebFull();
             _this.newplayer.play();
         }else{
-
             // 页面全屏状态
             // _this.newplayer.full();
             header_title_hidden()
+            MenuHidden();//隐藏侧边菜单
             _this.newplayer.webFull();
             _this.newplayer.play();
         }
@@ -200,26 +212,7 @@ $(document).ajaxSuccess(function( ) {
             goPage=null;
         }
     }
-    //监听滚动
-    function getScroll(){
-        // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
-        var winHeight = $(document).scrollTop();
-        var t = 0;
-        var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-        //上下滚动操作
-        if(t<=scrollY&&t>=160){
-            // console.log("往下滚动");
-            header_title_hidden();
-            MenuHidden();//隐藏菜单
-        }else{
-            // console.log("往上滚动");
-            // header_title_show();
-            // MenuHidden();//隐藏菜单
-        }
-        setTimeout(function(){t=scrollY},0);
-    }
  
-
 
     function header_title_show(){
         $('.top-title').removeClass('hiddened');
