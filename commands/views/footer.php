@@ -79,6 +79,4 @@ $(function(){
 function scllTop(){
     $(window).scrollTop(0)
 }
-
 </script>
-<!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/footer.js"></script> -->

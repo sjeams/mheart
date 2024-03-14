@@ -74,5 +74,5 @@
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
 
 </body>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js?v=1"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js?v=2"></script>
 
