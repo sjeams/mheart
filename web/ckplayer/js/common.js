@@ -18,12 +18,12 @@
                 //上下滚动操作
                 if(t<=scrollY&&t>=160){
                     // console.log("往下滚动");
-                    header_title_hidden();
-                    MenuHidden();//隐藏菜单
+                    header_title_hidden();//隐藏标题
+                    MenuHidden();//隐藏侧边菜单
                 }else{
                     // console.log("往上滚动");
-                    header_title_show();
-                    MenuHidden();//隐藏菜单
+                    header_title_show();//显示标题
+                    MenuHidden();//隐藏侧边菜单
                 }
                 setTimeout(function(){t=scrollY},0);
 
@@ -31,6 +31,45 @@
         }
     });
 // </script>
+//监听旋转
+$(window).on('orientationchange', function(event) {
+    if (window.orientation == 0 || window.orientation == 180) {
+        // console.log("竖屏状态！");
+        // alert("竖屏状态！!");
+        onorientationChangeModel(false);
+    } else {
+        // 横屏模式
+        // console.log("横屏状态！");
+        // alert("横屏状态！!");
+        onorientationChangeModel(true);
+    }
+});
+// player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
+function onorientationChangeModel(type) {
+    var _this =this;
+    // console.log(_this.newplayer);
+    if(_this.newplayer){
+        if(type){
+            // 页面全屏状态
+            // _this.newplayer.full();
+            header_title_hidden()
+            _this.newplayer.webFull();
+            _this.newplayer.play();
+        }else{
+            // 退出全屏状态
+            // _this.newplayer.exitFull();
+            header_title_show();//显示标题
+            MenuHidden();//隐藏侧边菜单
+            _this.newplayer.exitWebFull();
+            _this.newplayer.play();
+        }
+    }
+}
+
+
+
+
+
 
 $('.img_click').click(function () {
     //获取图片路径
