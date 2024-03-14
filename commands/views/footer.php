@@ -45,7 +45,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 
     <?php } ?> 
 <?php }else{  ?> 
-
+        
         <?php  if( $http_index=='video'){ ?>
                 
         <?php  }else{ ?>

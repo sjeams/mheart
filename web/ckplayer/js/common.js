@@ -213,8 +213,8 @@ $(document).ajaxSuccess(function( ) {
             MenuHidden();//隐藏菜单
         }else{
             // console.log("往上滚动");
-            header_title_show();
-            MenuHidden();//隐藏菜单
+            // header_title_show();
+            // MenuHidden();//隐藏菜单
         }
         setTimeout(function(){t=scrollY},0);
     }
