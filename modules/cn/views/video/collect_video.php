@@ -76,7 +76,8 @@
             $('#content_append').html(html);
         }
         var _this=this;
-        _this.newplayer.webFull();
+        _this.newplayer.full();
+        _this.newplayer.exitWebFull();
     }
     //退出全屏
     function full_out(){
