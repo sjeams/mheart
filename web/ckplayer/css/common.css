@@ -46,7 +46,7 @@
      z-index: 100;
  }
  .video_header td{
-     background-color: white;
+     /* background-color: white; */
      /* border: 1px solid #0044cc; */
      text-align: center ;
  }
@@ -85,6 +85,13 @@
 .tablestyle{
     margin-bottom: auto;
 }
+.table td, .table th {
+    padding: 1px!important;
+    vertical-align: top;
+    line-height: 40px!important;
+    /* border-top: 1px solid #dee2e6!important; */
+}
+
  .tablestyle td{
      width: 25%;
  }
