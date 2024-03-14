@@ -7,25 +7,28 @@
         // t/scrollY  记录滚动条高度，判断上下   getScrollHeight()/ etWindowHeight() + getDocumentTop() 窗口高度
         var winHeight = $(document).scrollTop();
         var t = 0;
-        $(window).scroll(function() {
-            //禁用滚动监听
-            if($('#getPage').val()==1){
-                getPage();  //分页
-            }
-            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            //上下滚动操作
-            if(t<=scrollY&&t>=160){
-                // console.log("往下滚动");
-                header_title_hidden();
-                MenuHidden();//隐藏菜单
-            }else{
-                // console.log("往上滚动");
-                header_title_show();
-                MenuHidden();//隐藏菜单
-             }
-            setTimeout(function(){t=scrollY},0);
+        //只监听竖屏状态！ 横屏不做弹出
+        if (window.orientation == 0 || window.orientation == 180) {
+            $(window).scroll(function() {
+                //禁用滚动监听
+                if($('#getPage').val()==1){
+                    getPage();  //分页
+                }
+                var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+                //上下滚动操作
+                if(t<=scrollY&&t>=160){
+                    // console.log("往下滚动");
+                    header_title_hidden();
+                    MenuHidden();//隐藏菜单
+                }else{
+                    // console.log("往上滚动");
+                    header_title_show();
+                    MenuHidden();//隐藏菜单
+                }
+                setTimeout(function(){t=scrollY},0);
 
-        });
+            });
+        }
     });
 // </script>
 

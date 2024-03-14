@@ -75,9 +75,6 @@
             $("#goPage").val(goPage);
             $('#content_append').html(html);
         }
-        var _this=this;
-        _this.newplayer.full();
-        _this.newplayer.exitWebFull();
     }
     //退出全屏
     function full_out(){
@@ -86,8 +83,6 @@
         $(".video_footer").css("display","block");
         $('.go_hidden').removeClass('hiddened');
         $('#content_append').html("");
-        var _this=this;
-        _this.newplayer.exitWebFull();
         gou();
     }
     //滚动定位
