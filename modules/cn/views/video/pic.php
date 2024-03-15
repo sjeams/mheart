@@ -19,7 +19,7 @@
         <?php  foreach(  $m3u8['imageurl'] as$y=> $image){?>
             <tr>
                 <td> 
-                    <a href="<?php echo $image?>" > <img class="pimage" src="<?php  echo $image?>"   alt="img" ></a>
+                    <a href="<?php echo $image?>" > <img class="pimage" src="<?php  echo $image?>" style="width:100%"   alt="img" ></a>
                     <!-- <div  class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $image?>);"> </div>  -->
                 </td>
             </tr>

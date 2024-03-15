@@ -193,7 +193,6 @@ class VideoController extends VideoApiControl
         }
         //来源
         $html = Yii::$app->request->get('html',0);
-
         if($html){
             $category_id = Video::getCategoryId($belong,$type);
             $this->layout = 'kongbai';
@@ -202,7 +201,6 @@ class VideoController extends VideoApiControl
             // var_dump($res);die;
             $this->layout = 'kongbai';
             if($res){
-
                 if($category_id==2){
                 //图片
                     return $this->render('list_pic',$res );
