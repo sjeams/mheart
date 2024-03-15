@@ -4,12 +4,16 @@
 	} */
 	.user_list{
 		cursor: pointer;
+		/* height: 70px; */
+	}
+	.user_list td{
+		height: 70px;
 	}
 	.user_time {
-		line-height: 45px;
+		line-height: 70px;
 		font-size: 20px;
 		text-align: center;
-		padding: 8px 18px;
+		padding: 8px 18px!important;
 		border-radius: 5px;
 	}
 	.table-bordered{
@@ -29,20 +33,20 @@
 		z-index: 1;
 		position: relative;
 		cursor: pointer;
-        /* line-height: 45px; */
-        height:45px;
+        line-height: 70px;
+        height:70px;
         float: right;
 		text-align:right;
     }
     .user_information_left{
 		cursor: pointer;
-        /* line-height: 45px; */
-        height:45px;
+        line-height: 70px;
+        height:70px;
      	float: left;
     }
 	.user_photo{
-		height:45px;
-		width:45px;
+		height:70px;
+		width:70px;
 		border-radius: 5px;
 	}
 	/* .user_block{
