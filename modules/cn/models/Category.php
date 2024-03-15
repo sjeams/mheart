@@ -31,7 +31,12 @@ class Category extends ActiveRecord {
                     if($v['type']==$type){
                         $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                     }else{
-                        $str .=  "<a class='btn btn-sm' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        //图片
+                        if($v['category_id']==2){
+                            $str .=  "<a class='btn btn-sm btn-warning' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        }else{
+                            $str .=  "<a class='btn btn-sm ' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        }
                     }
                 }
                 $str .='  </p>';

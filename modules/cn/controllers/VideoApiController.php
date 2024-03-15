@@ -138,7 +138,7 @@ class VideoApiController extends VideoApiControl
         $page = Yii::$app->request->post('page',1);
         $belong = Yii::$app->request->post('belong',2);
         // var_dump($page);
-        Video::getQueryList($page,$belong);
+        Video::getQueryListModel($page,$belong);
         // echo  "第".$page."页，采集完成。</br>";
         die(Method::jsonGenerate(1,[],'返回数据成功'));
     }
@@ -192,32 +192,39 @@ class VideoApiController extends VideoApiControl
                 if(!$res){
                     $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
                     if(!$res){
-                        $listvideo = Video::getQueryList($newpage,$belong,1,$type,$search); // 获取采集数据
-                        // var_dump($listvideo);die;
-                        $list=[];
-                        // 是否分页--改为不分页，直接采集
-                        $count = count($listvideo);
-                        if($listvideo){
-                            $list= VideoListDetail::checkVideo($listvideo);
-                            $args['key_value'] =$sessionStr;
-                            $args['value'] = $list?json_encode($list,true):false;
-                            $args['time'] =time();
-                            $args['count'] =$count;
-                            $args['page'] =$page;
-                            $args['belong'] =$belong;
-                            $args['type'] =$type;
-                            $args['search'] =$search;
-                            $args['page_list'] =$newpage;
-                            // 存入缓存列表
-                            Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();    
-                     
-                        }else{
+                        //改到公共方法
+                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id']);
+                        if(!$res['content']){
                             //为空时，跳出循环
-                            die(Method::jsonGenerate(0,$newpage-1,'false'));
+                            die(Method::jsonGenerate(0,$newpage-1,'false')); 
                         }
+                        // $listvideo = Video::getQueryListModel($newpage,$belong,1,$type,$search); // 获取采集数据
+                        // // var_dump($listvideo);die;
+                        // $list=[];
+                        // // 是否分页--改为不分页，直接采集
+                        // $count = count($listvideo);
+                        // if($listvideo){
+                        //     $list= VideoListDetail::checkVideo($listvideo);
+                        //     $args['key_value'] =$sessionStr;
+                        //     $args['value'] = $list?json_encode($list,true):false;
+                        //     $args['time'] =time();
+                        //     $args['count'] =$count;
+                        //     $args['page'] =$page;
+                        //     $args['belong'] =$belong;
+                        //     $args['type'] =$type;
+                        //     $args['search'] =$search;
+                        //     $args['page_list'] =$newpage;
+                        //     // 存入缓存列表
+                        //     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();    
+                     
+                        // }else{
+                        //     //为空时，跳出循环
+                        //     die(Method::jsonGenerate(0,$newpage-1,'false'));
+                        // }
                     }
                 }
             }
+
         } 
         die(Method::jsonGenerate(1,$newpage,'succes'));
     }
@@ -239,7 +246,7 @@ class VideoApiController extends VideoApiControl
         $type = Yii::$app->request->post('type',33);
         $istype = Yii::$app->request->post('istype',1); // 是否只清除当前类型
         if($belong>0){
-            $listvideo = Video::getQueryList(1,$belong,1,$type); // 获取采集数据
+            $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
             // var_dump($listvideo);die;
             if(empty($listvideo)){
                 die(Method::jsonGenerate(0,null,'error'));

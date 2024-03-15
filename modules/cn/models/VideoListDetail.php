@@ -19,6 +19,17 @@ class VideoListDetail extends ActiveRecord {
     }
 
 
+
+    // 图片不做保存
+	public static function checkImage($listvideo){
+        $video_list =[];
+        foreach($listvideo as$key=> $val){
+            $find_video = Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+            $video_list [] =$find_video;
+        }
+        return $video_list;
+    }
+    
     //列表采集
 	public static function checkVideo($listvideo){
         $listvideo =  Method::functionsecond_array_unique_bykey($listvideo,'title',1); //二维数组根据title去重

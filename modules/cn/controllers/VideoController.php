@@ -193,14 +193,23 @@ class VideoController extends VideoApiControl
         }
         //来源
         $html = Yii::$app->request->get('html',0);
+
         if($html){
+            $category_id = Video::getCategoryId($belong,$type);
             $this->layout = 'kongbai';
             $res['html'] = $this->render('list',$res );
             $this->layout = 'cn';
             // var_dump($res);die;
             $this->layout = 'kongbai';
             if($res){
-                return $this->render('list',$res );
+
+                if($category_id==2){
+                //图片
+                    return $this->render('list_pic',$res );
+                }else{
+                //视频
+                    return $this->render('list',$res );
+                }
             }else{
                 return '';
             }
@@ -364,5 +373,37 @@ class VideoController extends VideoApiControl
         // var_dump($m3u8);die;
         // var_dump($res);die;
         return $this->render('video', $res);
+    }
+      /**
+     * 图片播放器
+     * by  sjeam
+     */
+    public function actionPic()
+    { 
+        $sessionkey = Yii::$app->request->get('sessionkey');
+        if($sessionkey){
+            $key = Yii::$app->request->get('key',0);
+            $num = Yii::$app->request->get('num',0);
+            $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
+            $list =   json_decode($res['value'],true)[$key];
+            $data = $list['video'];
+            $list['name'] = $list['title'];
+            $list['url'] = $list['video'][$num]['url'];
+            unset( $list['video']);
+            $res=['m3u8'=>$list,'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
+        }else{
+            $id = Yii::$app->request->get('id',1);
+            $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
+            $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
+            $res=['m3u8'=>$m3u8,'data' =>$data,'sessionkey'=>null,'kss' =>1,'do_num' =>0];
+        }
+        // var_dump($res);die;
+        // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
+        // $res['data'][0]['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
+        // var_dump($res);die;
+        // http://wolongzyw.com/index.php/vod/detail/id/41194.html
+        // var_dump($m3u8);die;
+        // var_dump($res);die;
+        return $this->render('pic', $res);
     }
 }

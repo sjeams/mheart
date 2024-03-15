@@ -57,5 +57,9 @@ var  newplayer= new ckplayer(videoObject);
 // 视频详情页
 function videoDetail(sessionkey,key){
     window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;
+} 
+// 视频详情页
+function picDetail(sessionkey,key){
+    window.location.href='/cn/video/pic?sessionkey='+sessionkey+'&key='+key;
 }   
 </script>

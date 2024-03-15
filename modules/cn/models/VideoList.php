@@ -27,9 +27,6 @@ class VideoList extends ActiveRecord {
     }   
 
 
-     
-   
-
     public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid){
         $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
  
@@ -52,15 +49,21 @@ class VideoList extends ActiveRecord {
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
             }else{
             //    var_dump($type);die;
-                $listvideo = Video::getQueryList($page_list,$belong,1,$type,$search); // 获取采集数据
-                // var_dump($listvideo);die;
+                $listvideo = Video::getQueryListModel($page_list,$belong,1,$type,$search); // 获取采集数据
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
                 // $pageSize=20;
                 // $pageSize= $count;
                 if($listvideo){
-                    $list= VideoListDetail::checkVideo($listvideo);
+                    $category_id = Video::getCategoryId($belong,$type);
+                    //category_id 2 图片,1直播  0视频
+                    if($category_id==2){
+                        // var_dump($listvideo);die;
+                        $list= VideoListDetail::checkImage($listvideo);
+                    }else{
+                        $list= VideoListDetail::checkVideo($listvideo);
+                    }
                     // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] = $list?json_encode($list,true):false;

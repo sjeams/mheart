@@ -1,4 +1,9 @@
 <?php 
+/*
+ * @Author: sjeam
+ * @Date: 2023-04-07 10:41:17
+ * @Description: 
+ */
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
 $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
@@ -33,7 +38,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <?php } ?>
             <!-- //video -->
             <?php }else{ ?>   
-                <?php if( $http_index=='video'){ ?>
+                <?php if( $http_index=='video'|| $http_index=='pic'){ ?>
                     <td class="btn-primary button_over_side" > <a href="javascript:history.back(-1)"><i class="bi bi-chevron-left"></i>返回</a></td>
                 <?php }else { ?>    
                     <td class="btn-primary button_over_side"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
