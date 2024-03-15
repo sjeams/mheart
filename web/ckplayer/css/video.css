@@ -147,6 +147,12 @@ input{
 	/* width: 32%; */
     /* width:80px; */
 }
+.btn_style{
+	width: 28%!important;
+	margin: 2%;
+	text-align: center;
+   
+}
 .pimage {
     margin: 0px auto;
     display: block;

@@ -51,7 +51,7 @@
                         <!-- <label class="layui-form-label">采集页码</label> -->
                         <div class="layui-input-inline center">
                             <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
-                            <input type="text" class="btn"   value="<?php echo $data['page_list'] ?>" id="goPage_list">
+                            <input type="text" class="btn_style"   value="<?php echo $data['page_list'] ?>" id="goPage_list">
                             <span class="is_next_page_button"></span>
                         </div>
                         <?php if($graden>0){ ?>
@@ -66,7 +66,7 @@
                             <div class="layui-input-inline center">
                                 <p class="center">
                                     <!-- <span  class="btn btn-primary" onclick="gouSuper()"> 极品 </span> -->
-                                    <input type="text" value="5" class="btn"  placeholder="setCaches"  id="setCaches" >
+                                    <input type="text" value="5" class="btn_style"  placeholder="setCaches"  id="setCaches" >
                                     <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
                                 </p>
                             </div>
