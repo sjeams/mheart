@@ -35,7 +35,9 @@ function is_img_url(imgurl) {
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key,isbofang){
     var key=key||'1c0';
-    var isbofang=isbofang||1;
+    var isbofang=isbofang||0;
+   //判断播放器类型
+   var isbofang  = $("#is_bofang_type").val();
     //暂停在播视频
     var now_video =$("#now_video").val();
     //存储当前的视频id
