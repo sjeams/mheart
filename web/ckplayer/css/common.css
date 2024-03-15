@@ -89,7 +89,10 @@
     padding: 1px!important;
     vertical-align: top;
     line-height: 40px!important;
-    /* border-top: 1px solid #dee2e6!important; */
+    border-top: 1px solid #dee2e6!important;
+}
+.table-bordered td, .table-bordered th {
+     border: 0px solid #dee2e6;
 }
 
  .tablestyle td{

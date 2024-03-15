@@ -42,7 +42,9 @@ function  videoList(id,key,isbofang){
     $("#now_video").val(id); 
     //判断是否是影视，影视不为空
     var goBelong  = $("#goBelong").val();
-    if(goBelong==0){
+    //判断是否是采集页面--只有采集页面才有影视
+    var isCollect  = $("#isCollect").val();
+    if(goBelong==0&&isCollect==1){
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
         // var title =$("#form"+key+"  input[name=title]").val();
@@ -58,6 +60,8 @@ function  videoList(id,key,isbofang){
         // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
+
+    
     // console.log(key)
     // console.log(url)
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';

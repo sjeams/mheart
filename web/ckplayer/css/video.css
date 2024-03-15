@@ -31,7 +31,7 @@
         transition: 2s;
     }
     .ckplayer-ckplayer{
-        border-radius: 2%;
+        /* border-radius: 2%; */
     }
     .collect-video-style{
         border-radius:1%!important;width:100%;
@@ -144,7 +144,8 @@ input{
 /* list */
 #goPage_list{
     display: inline-block;
-    width:80px;
+	/* width: 32%; */
+    /* width:80px; */
 }
 .pimage {
     margin: 0px auto;
@@ -206,7 +207,7 @@ input{
 	   display: inline-block;
 	   min-width: 42%;
 	   padding: 10px  5%;
-	   border: 1px solid black;
+	   border: 1px solid #ededed;
 	   text-align: center;  
 	   border-radius: 5px; 
 	   margin:  5px auto;
