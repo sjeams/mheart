@@ -476,6 +476,7 @@ class Video extends ActiveRecord {
 		preg_match_all($preg_str, $data['imageurl'], $result);
 		$image_list =$result[1];;
 		if($image_list){
+			$args['id']=time(); //id作为时间戳吧
 			$args['url']='';
 			$args['imageurl'] =$image_list;
 			$args['title']=$val['title'];
