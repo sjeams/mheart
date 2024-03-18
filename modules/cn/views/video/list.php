@@ -1,5 +1,6 @@
 <?php $search_title = $data['search'];?>
 <?php if($content){ $kss=0;
+
 foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     <?php if($v['belong']==0){  //视频 ?>
         <tr>
