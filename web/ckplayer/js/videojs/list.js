@@ -293,12 +293,15 @@
 
 
     // 刷新页面  ---刷新当前
-    // function  localRload(){
+    function  localRload(){
     //     window.location.reload();
-    // }
+    gouhtml(1);   
+}
     // 刷新页面  ---跳转刷新
     function  clearRload(){
-        gouhtml(1);
+        $(".video_header").css("display","inline-block");
+        $(".video_footer").css("display","inline-block");
+        gouhtml(0);
     }
 
     // 收藏

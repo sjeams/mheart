@@ -58,8 +58,20 @@ var  newplayer= new ckplayer(videoObject);
 function videoDetail(sessionkey,key){
     window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;
 } 
-// 视频详情页
+// 视频详情页 //全屏模式
 function picDetail(sessionkey,key){
-    window.location.href='/cn/video/pic?sessionkey='+sessionkey+'&key='+key;
+    //初始化
+    // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
+    var url ='/cn/video/pic?sessionkey='+sessionkey+'&key='+key+"&html=1";
+    var list_html = getprintHtml(url);
+    if(list_html){
+        $('.list_html').html(list_html)
+    }
+    //回填
+    // is_next_button() //下一页
+    // var t = $("#top").offset().top;
+    // $(window).scrollTop(t);
+    // scllTop()
+    removeLoading()
 }   
 </script>

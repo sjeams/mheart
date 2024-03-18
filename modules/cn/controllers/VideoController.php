@@ -379,22 +379,17 @@ class VideoController extends VideoApiControl
     public function actionPic()
     { 
         $sessionkey = Yii::$app->request->get('sessionkey');
-        if($sessionkey){
-            $key = Yii::$app->request->get('key',0);
-            $num = Yii::$app->request->get('num',0);
-            $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
-            $list =   json_decode($res['value'],true)[$key];
-            $data = $list['video'];
-            $list['name'] = $list['title'];
-            $list['url'] = $list['video'][$num]['url'];
-            unset( $list['video']);
-            $res=['m3u8'=>$list,'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
-        }else{
-            $id = Yii::$app->request->get('id',1);
-            $m3u8 = Jian::find()->where("id=$id")->asArray()->one();
-            $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
-            $res=['m3u8'=>$m3u8,'data' =>$data,'sessionkey'=>null,'kss' =>1,'do_num' =>0];
-        }
+ 
+        $key = Yii::$app->request->get('key',0);
+        $num = Yii::$app->request->get('num',0);
+        $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
+        $list =   json_decode($res['value'],true)[$key];
+        $data = $list['video'];
+        $list['name'] = $list['title'];
+        $list['url'] = $list['video'][$num]['url'];
+        unset( $list['video']);
+        $res=['content'=>$list['imageurl'],'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
+ 
         // var_dump($res);die;
         // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
         // $res['data'][0]['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
@@ -402,6 +397,11 @@ class VideoController extends VideoApiControl
         // http://wolongzyw.com/index.php/vod/detail/id/41194.html
         // var_dump($m3u8);die;
         // var_dump($res);die;
-        return $this->render('pic', $res);
+        // return $this->render('pic', $res);
+        // $html = Yii::$app->request->get('html',0);
+
+        // var_dump($res);die;
+        $this->layout = 'kongbai';
+        return $this->render('pic_full_screen', $res);
     }
 }

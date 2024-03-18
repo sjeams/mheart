@@ -46,7 +46,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     <?php } ?> 
 <?php }else{  ?> 
         
-        <?php  if( $http_index=='video'){ ?>
+        <?php  if( $http_index=='video'|| $http_index=='pic'){ ?>
                 
         <?php  }else{ ?>
     <!-- <input type="hidden" value="0" id="top_hidden"> -->
