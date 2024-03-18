@@ -384,11 +384,12 @@ class VideoController extends VideoApiControl
         $num = Yii::$app->request->get('num',0);
         $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
         $list =   json_decode($res['value'],true)[$key];
-        $data = $list['video'];
+        // $data = $list['video'];
         $list['name'] = $list['title'];
         $list['url'] = $list['video'][$num]['url'];
-        unset( $list['video']);
-        $res=['content'=>$list['image_list'],'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
+        // unset($list['video']);
+        // var_dump($list);die;
+        $res=['content'=>$list['image_list'],'data' =>$list,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
  
         // var_dump($res);die;
         // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';

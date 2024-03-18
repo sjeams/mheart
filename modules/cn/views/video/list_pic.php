@@ -1,9 +1,14 @@
 <?php $search_title = $data['search'];?>
+/*
+ * @Author: sjeam
+ * @Date: 2024-03-15 18:31:26
+ * @Description: 
+ */
 <?php if($content){ $kss=0;
 foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <tr>
             <td onclick="picDetail('<?php echo $sessionkey?>',<?php echo $kss-1; ?> )">
-                <div  class="video<?php echo $kss ?> collect-video-style"    style="background-image:url(<?php echo $v['imageurl'][0]?>);"> 
+                <div  class="video<?php echo $kss ?> collect-video-style"    style="background-image:url(<?php echo $v['imageurl']?>);"> 
                 <!-- <span  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c0' ?>')"  class="video_box "></span> -->
                 </div> 
                 <p class="center" style="width: 90%;" >

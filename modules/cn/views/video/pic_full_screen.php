@@ -68,7 +68,6 @@
     
   }
 </style>
-
 <div class="friend_opacityBottom list_hidden">
 <!-- 标题 -->    
 <!-- btn-primary -->
