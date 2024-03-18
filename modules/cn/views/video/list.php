@@ -27,7 +27,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     
         </tr>
 
-    <?php   }else{ var_dump($v);die; //采集 ?>
+    <?php   }else{  //采集 ?>
     <div id="form<?php echo $v['id']?>">
         <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
         <input type="hidden" name="url" value="<?php echo $v['url']?>" >
