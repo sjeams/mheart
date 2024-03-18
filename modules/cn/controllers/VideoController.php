@@ -388,7 +388,7 @@ class VideoController extends VideoApiControl
         $list['name'] = $list['title'];
         $list['url'] = $list['video'][$num]['url'];
         unset( $list['video']);
-        $res=['content'=>$list['imageurl'],'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
+        $res=['content'=>$list['image_list'],'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
  
         // var_dump($res);die;
         // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';

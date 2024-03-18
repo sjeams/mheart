@@ -478,7 +478,8 @@ class Video extends ActiveRecord {
 		if($image_list){
 			$args['id']=time(); //id作为时间戳吧
 			$args['url']='';
-			$args['imageurl'] =$image_list;
+			$args['imageurl'] =$image_list[0];
+			$args['image_list'] =$image_list; //图片多加个图片列表
 			$args['title']=$val['title'];
 			$args['type']= $type;
 			$args['belong']= $belong;
