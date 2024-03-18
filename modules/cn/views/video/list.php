@@ -1,6 +1,5 @@
 <?php $search_title = $data['search'];?>
 <?php if($content){ $kss=0;
-
 foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     <?php if($v['belong']==0){  //视频 ?>
         <tr>
@@ -28,7 +27,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     
         </tr>
 
-    <?php   }else{  //采集 ?>
+    <?php   }else{ var_dump($v);die; //采集 ?>
     <div id="form<?php echo $v['id']?>">
         <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
         <input type="hidden" name="url" value="<?php echo $v['url']?>" >

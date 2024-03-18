@@ -1,9 +1,4 @@
 <?php $search_title = $data['search'];?>
-/*
- * @Author: sjeam
- * @Date: 2024-03-15 18:31:26
- * @Description: 
- */
 <?php if($content){ $kss=0;
 foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <tr>
