@@ -85,7 +85,6 @@
                   </div>
                   <div  class="  collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div> 
                   <!-- <div  class="  collect-video-style" style="background-image:url(/app_resources/defult.png);"></div> -->
-                 
                   <span class="page_title"> <?php echo $kss+1 .'/'. count($content) ?></span>
               </td>
           </div>
@@ -94,10 +93,7 @@
       <div class="swiper-pagination teacherCoverContainer"></div>
     <!--分页器。如果放置在swiper外面，需要自定义样式。-->
 </div>
-<!-- <p class="center btn-primary video_footer "   id="full_buttom">
-  <span style="width: 49%!important;max-width:210px" onclick="videoList_click( )" class="btn btn-primary p-0 collect"> 重播 </span>
-  <span style="width: 49%!important;max-width:210px" onclick="Update_my_click( )" class="btn btn-danger  p-0 collect my_collect_<?php echo $v['id']?> "> 移除</span>
-</p> -->
+ 
 
 <input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">
 <input type="hidden" value="0" id="swiper_title">
@@ -127,33 +123,6 @@
           scrollbar:'.swiper-scrollbar' ,
           scrollbarHide:false,
       });
-      // $('.btnActive').click(function () {
-      //     $('.btnActive').removeClass('on');
-      //     $(this).addClass('on');
-      //     $('.hotBookCover').css({'display':'none'});
-      //     $('.hotBookCover').eq($(this).index()).css({'display':'flex'});
-      // });
-      // var  TeacherSwiper = new Swiper('.teacherCoverContainer', {
-      //     slidesPerView: 4,
-      //     spaceBetween: 30,
-      //     loop : true,
-      //     navigation: {
-      //         nextEl: '.swiper-button-next',
-      //         prevEl: '.swiper-button-prev',
-      //     },
-      // });
-
-      // var thumbsSwiper = new Swiper('#thumbs',{
-      //   spaceBetween: 10,
-      //   slidesPerView: 4,
-      //   watchSlidesVisibility: true,//防止不可点击
-      // })
-
-      // var gallerySwiper = new Swiper('#gallery',{
-      //   spaceBetween: 10,
-      //   thumbs: {
-      //     swiper: thumbsSwiper,
-      //   }
-      // })
+ 
   </script>
   
