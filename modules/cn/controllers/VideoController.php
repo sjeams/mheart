@@ -386,7 +386,7 @@ class VideoController extends VideoApiControl
         $list =   json_decode($res['value'],true)[$key];
         // $data = $list['video'];
         $list['name'] = $list['title'];
-        $list['url'] = $list['video'][$num]['url'];
+        // $list['url'] = $list['video'][$num]['url'];
         // unset($list['video']);
         // var_dump($list);die;
         $res=['content'=>$list['image_list'],'data' =>$list,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
