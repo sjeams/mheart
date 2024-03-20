@@ -65,7 +65,7 @@ function picDetail(sessionkey,key){
     var url ='/cn/video/pic?sessionkey='+sessionkey+'&key='+key+"&html=1";
     var list_html = getprintHtml(url);
     if(list_html){
-        $('.list_html').html(list_html)
+        $('.pic_html').html(list_html)
     }
     //回填
     // is_next_button() //下一页

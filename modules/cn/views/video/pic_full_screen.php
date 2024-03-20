@@ -72,7 +72,7 @@
 <!-- 标题 -->    
 <!-- btn-primary -->
 <div class="swiper friend_opacityBottom">
-    <p class="center  inherit " onclick="clearRload(0)"  > 
+    <p class="center  inherit " onclick="clearPic()"  > 
     <span class="video_back"> <</span>
     <span class="video_title"></span>
     </p>
@@ -124,6 +124,10 @@
           scrollbar:'.swiper-scrollbar' ,
           scrollbarHide:false,
       });
- 
+    function  clearPic(){
+
+      // clearRload(0)
+      $('.pic_html').html('')
+    }
   </script>
   
