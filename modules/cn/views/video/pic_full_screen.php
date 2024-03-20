@@ -125,7 +125,8 @@
           scrollbarHide:false,
       });
     function  clearPic(){
-
+      $(".video_header").css("display","inline-block");
+      $(".video_footer").css("display","inline-block");
       // clearRload(0)
       $('.pic_html').html('')
     }
