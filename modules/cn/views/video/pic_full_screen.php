@@ -39,12 +39,12 @@
  	.swiper-slide img{
 		width:100%;
 	}
-	.swiper-pagination{
+	/* .swiper-pagination{
 		position:absolute;
 		width:25%;
     overflow-y: auto;
     height: inherit;
-    /* opacity: 0.8;  */
+ 
   }
 	.swiper-pagination-bullet{
 		width:100%;
@@ -53,13 +53,13 @@
   }
 	.swiper-pagination-bullet img{
 		width:100%;
-  }
+  } */
   .swiper-button-next, .swiper-button-prev { 
-    position: fixed;
+    position: absolute;
     top:50%!important
   }
   .page_title{
-    position: fixed;
+    position: absolute;
     top:0px!important;
     text-align: center;
     width: 100%;
@@ -83,8 +83,8 @@
                   <div id="form<?php echo $kss?>" class="formkey<?php echo $kss?>">
                     <input type="hidden" name="imageurl" value="<?php echo $imageurl?>" >
                   </div>
-                  <!-- <div  class="  collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div>  -->
-                  <img  class="  collect-video-style"  src="<?php echo $imageurl?>" alt="">
+                  <div  class="  collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div> 
+                  <!-- <img  class="  collect-video-style"  src="<?php echo $imageurl?>" alt=""> -->
                   <!-- <div  class="  collect-video-style" style="background-image:url(/app_resources/defult.png);"></div> -->
                   <span class="page_title"> <?php echo $kss+1 .'/'. count($content) ?></span>
               </td>
@@ -106,9 +106,11 @@
         $(".video_header").css("display","none");
         $(".video_footer").css("display","none");
       })
+ 
+
       var BannerSwiper = new Swiper('.swiper', {
           slidesPerView: 1,
-          loop: true,
+          // loop: true,
           // tdFlow:{
           //     rotate:-30,  //旋转的角度
           //     stretch:10,  //拉伸
@@ -121,9 +123,29 @@
           //     clickable: true,
           // },
           // pagination : '.swiper-pagination',
-          scrollbar:'.swiper-scrollbar' ,
-          scrollbarHide:false,
+          // scrollbar:'.swiper-scrollbar' ,
+          // scrollbarHide:false,
+          direction: 'vertical', // 垂直切换选项
+          // loop: true, // 循环模式选项
+          
+          // 如果需要分页器
+          // pagination: {
+          //   el: '.swiper-pagination',
+          // },
+          
+          // // 如果需要前进后退按钮
+          // navigation: {
+          //   nextEl: '.swiper-button-next',
+          //   prevEl: '.swiper-button-prev',
+          // },
+          
+          // // 如果需要滚动条
+          // scrollbar: {
+          //   el: '.swiper-scrollbar',
+          // },
+          
       });
+ 
     function  clearPic(){
       $(".video_header").css("display","inline-block");
       $(".video_footer").css("display","inline-block");
