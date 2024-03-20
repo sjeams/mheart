@@ -216,13 +216,14 @@ class Video extends ActiveRecord {
 				$data =$ql->get($httpurl)->range($rang)->queryData();
 				$ql->destruct();
 				// var_dump($isquery);die;
+				// var_dump($data);die;
 				if($isquery){
 					foreach($data as $ky=>$val){
 						$data[$ky]['http'] =$v['http'];
 						$data[$ky]['belong'] =$v['belong'];
 						$data[$ky]['type'] =$v['type'];
 					}
-					return $data;die;
+					return $data?$data:[];die;
 				}else{
 					//采集数据处理
 					foreach($data as $ky=>$val){
@@ -574,7 +575,12 @@ class Video extends ActiveRecord {
 		$my_collect = [];
 		if($list){
 			// var_dump(array_column($list,'title'));die;
-			$list_collect =  "'".implode("','",array_column($list,'title'))."'" ;
+			//特殊字符转义
+			$list_collect = array_column($list,'title');
+			foreach($list_collect as $key=>$val){
+				$list_collect[$key]=addslashes($val);
+			}
+			$list_collect =  "'".implode("','",$list_collect)."'" ;
 			// $list_collect = addslashes($list_collect);
 			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
 			$find_collect = array_column($find_collect,'title');

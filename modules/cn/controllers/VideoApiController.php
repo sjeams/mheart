@@ -247,7 +247,6 @@ class VideoApiController extends VideoApiControl
         $istype = Yii::$app->request->post('istype',1); // 是否只清除当前类型
         if($belong>0){
             $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
-            // var_dump($listvideo);die;
             if(empty($listvideo)){
                 die(Method::jsonGenerate(0,null,'error'));
             }
