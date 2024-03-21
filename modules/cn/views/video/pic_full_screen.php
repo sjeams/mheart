@@ -36,9 +36,9 @@
 </style>
 <style>
   /* 分页样式 */
- 	.swiper-slide img{
+ 	/* .swiper-slide img{
 		width:100%;
-	}
+	} */
 	/* .swiper-pagination{
 		position:absolute;
 		width:25%;
@@ -83,8 +83,8 @@
                   <div id="form<?php echo $kss?>" class="formkey<?php echo $kss?>">
                     <input type="hidden" name="imageurl" value="<?php echo $imageurl?>" >
                   </div>
-                  <div  class="  collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div> 
-                  <!-- <img  class="  collect-video-style"  src="<?php echo $imageurl?>" alt=""> -->
+                  <!-- <div  class="collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div>  -->
+                  <img  class="  collect-video-style"  src="<?php echo $imageurl?>" alt="">
                   <!-- <div  class="  collect-video-style" style="background-image:url(/app_resources/defult.png);"></div> -->
                   <span class="page_title"> <?php echo $kss+1 .'/'. count($content) ?></span>
               </td>
@@ -110,7 +110,7 @@
 
       var BannerSwiper = new Swiper('.swiper', {
           slidesPerView: 1,
-          // loop: true,
+          loop: true,
           // tdFlow:{
           //     rotate:-30,  //旋转的角度
           //     stretch:10,  //拉伸
@@ -125,7 +125,7 @@
           // pagination : '.swiper-pagination',
           // scrollbar:'.swiper-scrollbar' ,
           // scrollbarHide:false,
-          direction: 'vertical', // 垂直切换选项
+          // direction: 'vertical', // 垂直切换选项
           // loop: true, // 循环模式选项
           
           // 如果需要分页器
