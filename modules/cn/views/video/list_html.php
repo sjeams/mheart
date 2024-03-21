@@ -1,3 +1,10 @@
+<style>
+    .pic_html{
+        position: fixed;
+        z-index: 9999;
+        top: 0px;
+    }
+</style>
 <?php $search_title = $data['search'];?>
 <!-- <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext"> -->
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
@@ -84,14 +91,14 @@
         <tbody class="list_html" >
                  
         </tbody>
-        <tbody class="pic_html" >
-                 
-        </tbody>
-    
+
     </table>
 </form>
 
+<div class="pic_html" >
 
+</div>
+             
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
 <script>
         $('#goSearch').click(function(){

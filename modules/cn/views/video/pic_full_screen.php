@@ -1,5 +1,5 @@
 <style type="text/css">
-  .collect-video-style{
+  .collect-video-style-pic{
 	  height: -webkit-fill-available;
     /* height: inherit; */
     position: absolute;
@@ -19,13 +19,13 @@
         float:left;
         color: white;
     }
-.video_title {
+/* .video_title {
     overflow: hidden;
     word-break: keep-all;
     white-space: nowrap;
     text-overflow: ellipsis;
     display: block;
-}
+} */
 .video_footer{
   display: none!important;
 }
@@ -54,10 +54,10 @@
 	.swiper-pagination-bullet img{
 		width:100%;
   } */
-  .swiper-button-next, .swiper-button-prev { 
+  /* .swiper-button-next, .swiper-button-prev { 
     position: absolute;
     top:50%!important
-  }
+  } */
   .page_title{
     position: absolute;
     top:0px!important;
@@ -65,39 +65,36 @@
     width: 100%;
     color:wheat;
     font-size: large;
-    
   }
 </style>
-<div class="friend_opacityBottom list_hidden">
-<!-- 标题 -->    
-<!-- btn-primary -->
-<div class="swiper friend_opacityBottom">
-    <p class="center  inherit " onclick="clearPic()"  > 
-    <span class="video_back"> <</span>
-    <span class="video_title"></span>
-    </p>
-      <div class="swiper-wrapper">
-          <?php  foreach($content as $kss => $imageurl) { ?>
-          <div class="swiper-slide">
-              <td class="remove_<?php echo $kss?> p-0">
-                  <div id="form<?php echo $kss?>" class="formkey<?php echo $kss?>">
-                    <input type="hidden" name="imageurl" value="<?php echo $imageurl?>" >
-                  </div>
-                  <!-- <div  class="collect-video-style" style="background-image:url(<?php echo $imageurl?>);"> </div>  -->
-                  <img  class="  collect-video-style"  src="<?php echo $imageurl?>" alt="">
-                  <!-- <div  class="  collect-video-style" style="background-image:url(/app_resources/defult.png);"></div> -->
-                  <span class="page_title"> <?php echo $kss+1 .'/'. count($content) ?></span>
-              </td>
+<div class="friend_opacityBottom list_hidden page_item">
+    <!-- 标题 -->    
+    <input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">
+    <input type="hidden" value="0" id="swiper_title">
+    <!-- btn-primary -->
+    <div class="swiper friend_opacityBottom">
+        <p class="center  inherit " onclick="clearPic()"  > 
+        <span class="video_back"> <</span>
+        <!-- <span class="video_title"></span> -->
+        </p>
+          <div class="swiper-wrapper">
+              <?php  foreach($content as $kss => $imageurl) { ?>
+              <div class="swiper-slide">
+                  <td class="remove_<?php echo $kss?> p-0">
+                      <div id="form<?php echo $kss?>" class="formkey<?php echo $kss?>">
+                        <input type="hidden" name="imageurl" value="<?php echo $imageurl?>" >
+                      </div>
+                      <!-- <div  class="collect-video-style-pic" style="background-image:url(<?php echo $imageurl?>);"> </div>  -->
+                      <img  class="  collect-video-style-pic"  src="<?php echo $imageurl?>" alt="">
+                      <!-- <div  class="  collect-video-style-pic" style="background-image:url(/app_resources/defult.png);"></div> -->
+                      <span class="page_title"> <?php echo $kss+1 .'/'. count($content) ?></span>
+                  </td>
+              </div>
+            <?php  } ?>
           </div>
-        <?php  } ?>
-      </div>
-      <div class="swiper-pagination teacherCoverContainer"></div>
-    <!--分页器。如果放置在swiper外面，需要自定义样式。-->
-</div>
- 
-
-<input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">
-<input type="hidden" value="0" id="swiper_title">
+          <div class="swiper-pagination teacherCoverContainer"></div>
+        <!--分页器。如果放置在swiper外面，需要自定义样式。-->
+    </div>
 </div>
 
 <script>
