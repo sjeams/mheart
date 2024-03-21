@@ -379,7 +379,6 @@ class VideoController extends VideoApiControl
     public function actionPic()
     { 
         $sessionkey = Yii::$app->request->get('sessionkey');
- 
         $key = Yii::$app->request->get('key',0);
         $num = Yii::$app->request->get('num',0);
         $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
@@ -402,7 +401,17 @@ class VideoController extends VideoApiControl
         // $html = Yii::$app->request->get('html',0);
 
         // var_dump($res);die;
-        $this->layout = 'kongbai';
+        // $this->layout = 'kongbai';
         return $this->render('pic_full_screen', $res);
     }
+    //dplayer 全屏
+    public function actionDplay()
+    { 
+        $url = Yii::$app->request->get('url');
+        $url = Yii::$app->request->get('image');
+        $this->layout = 'kongbai';
+        $res=['url'=>$url];
+        return $this->render('dplay_full_screen', [$url]);  
+    }
+
 }

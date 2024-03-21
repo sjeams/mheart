@@ -19,7 +19,7 @@
                 <tr>
                     <td>
                             <!-- <p> <img class="pimage" src="<?php  echo $m3u8['imageurl']?>"   alt="img" ></p> -->
-                            <div  class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $m3u8['imageurl']?>);"> <span id="defult_video"  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c'.$do_num ?>')"  class="video_box "></span></div> 
+                            <div id="video<?php echo $kss ?>" class="video<?php echo $kss ?> collect-video-style" style="background-image:url(<?php echo $m3u8['imageurl']?>);"> <span id="defult_video"  onclick="videoList(<?php echo $kss ?>,'<?php echo $kss.'c'.$do_num ?>')"  class="video_box "></span></div> 
                     </td>
                 </tr>
                 <tr>

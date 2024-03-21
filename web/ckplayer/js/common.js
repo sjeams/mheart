@@ -371,17 +371,20 @@ $(document).ajaxSuccess(function( ) {
             dataType: 'json',
             success: function (data) {
                 if(data==1){
-                    $('.bofang_name').text('播放√');
+                    $('.bofang_name').text('Ckplay');
                     $('.bofang_name').removeClass('btn-defult');
                     $('.bofang_name').addClass('btn-success');
                     $('#is_bofang_type').val(1)
                 }else{
-                    $('.bofang_name').text('播放x');
+                    $('.bofang_name').text('Dplay');
                     $('.bofang_name').removeClass('btn-success');
                     $('.bofang_name').addClass('btn-defult');
                     $('#is_bofang_type').val(0)
-                    
                 }
+                // 切换视频
+                var now_video =  $("#now_video").val(); 
+                var now_video_key =$("#now_video_key").val();
+                videoList(now_video,now_video_key)
                 // console.log(data);
                 // window.location.reload();   
             },

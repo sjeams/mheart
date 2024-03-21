@@ -78,7 +78,7 @@
                     <input type="hidden" name="link" value="<?php echo $v['link']?>" >
                 </div>
  
-                <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>,0,0)"  class="video_box "></span></div> 
+                <div id="video<?php echo $v['id']?>" class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>,0,0)"  class="video_box "></span></div> 
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>

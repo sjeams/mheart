@@ -1,14 +1,21 @@
+<!-- dplayer -->
+<link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
+<script type="text/javascript" src="/dplayer/dist/flv.min.js"></script>
+<script type="text/javascript" src="/dplayer/dist/md5.min.js"></script>
+<script type="text/javascript" src="/dplayer/dist/hls.min.js"></script>
+<script type="text/javascript" src="/dplayer/dist/DPlayer.min.js"></script>
+
+
+<!-- ckplayer -->
 <!-- old视频 1-->
 <div class="video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'block':'none';?>;">
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
-        <div class="video"> </div>
+        <div class="video" id="video"> </div>
     </div>
 </div>
 <!-- new 视频 0-->
-
-
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="0" id="now_video_key"> 
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script>
@@ -53,12 +60,16 @@
     // cookie:videoID,//cookie名称,请在同一域中保持唯一
     // timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
 }; 
-var  newplayer= new ckplayer(videoObject);
+// ckplayer
+var newplayer= new ckplayer(videoObject);
+
+
+
 // 视频详情页
 function videoDetail(sessionkey,key){
     window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;
 } 
-// 视频详情页 //全屏模式
+// 图片详情页 //全屏模式
 function picDetail(sessionkey,key){
     //初始化
     // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
@@ -74,4 +85,41 @@ function picDetail(sessionkey,key){
     // scllTop()
     removeLoading()
 }   
+
+// 视频详情页 //全屏模式--dplayer 播放器
+function dplayDetail(url){
+    var url ='/cn/video/dplay?url='+url;
+    console.log(url)
+    var list_html = getprintHtml(url);
+    if(list_html){
+        $('.pic_html').html(list_html)
+    }
+}
+</script>
+
+
+<script>
+    var container_id= 'video';
+    var dplayerObject={
+        container: document.getElementById(container_id),
+        autoplay: true, // 自动播放
+        theme: '#FADFA3', // 主题
+        loop: true, // 循环播放
+        lang: 'zh-cn', // 语言
+        // screenshot: true, // 截图
+        hotkey: true, // 热键
+        preload: 'auto', // 预加载
+        // logo: '/assets/octocat.png', // 左上角logo
+        volume: 0.5, // 音量
+        mutex: true, // 多个视频互斥
+        // 常规方式
+        video: {
+            url: false,
+            type: 'auto',
+            pic: '', // 封面
+            thumbnails: '', // 缩略图
+        },
+    }
+    // dplayer
+    var newdplayer = new DPlayer(dplayerObject);
 </script>

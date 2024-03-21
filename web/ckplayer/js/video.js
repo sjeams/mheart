@@ -35,7 +35,6 @@ function is_img_url(imgurl) {
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key,isbofang){
     var key=key||'1c0';
-    var isbofang=isbofang||0;
    //判断播放器类型
    var isbofang  = $("#is_bofang_type").val();
     //暂停在播视频
@@ -50,7 +49,7 @@ function  videoList(id,key,isbofang){
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
         // var title =$("#form"+key+"  input[name=title]").val();
-        // var imageurl =$("#form"+key+"  input[name=imageurl]").val();
+        var imageurl =$("#form"+key+"  input[name=imageurl]").val();
         $('.click_video').removeClass('btn-success');
         $('#click_video'+key).addClass('btn-success');
         var now_video_str =now_video+',"'+key+'"';
@@ -59,17 +58,79 @@ function  videoList(id,key,isbofang){
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();
         // var title =$("#form"+id+"  input[name=title]").val();
-        // var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+        var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
-
-    
     // console.log(key)
     // console.log(url)
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
+
+
+  
+    //选择视频
+    if(isbofang==1){
+    //1 ckplayer 播放器
+        ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
+        // var _this =this;
+        // _this.newdplayer.destroy();
+    }else{
+    //0 dplayer 播放器
+        dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
+        // var _this =this;
+        // _this.newplayer.remove();
+    }
+    
+    //因为对象覆盖了，所以要放最后面--实例化后加上标签
+    if(now_video!=0&&now_video!=id){
+        var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
+        // console.log(now_video)
+        // console.log(player)
+        $(".video"+now_video).html(player);
+    }
+}
+//dplayer 播放器
+function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
-    if(video_model==0){
+    if(video_model==0&&id!=0){
+        var container_id=   'video'+id;
+        videoHidden(0);//隐藏窗口
+    }else{
+        var container_id=   'video';
+        videoHidden(1);//显示窗口
+    }
+    var vid = md5(url);
+    var dplayerObject={
+        container: document.getElementById(container_id),
+        autoplay: true, // 自动播放
+        theme: '#FADFA3', // 主题
+        loop: true, // 循环播放
+        lang: 'zh-cn', // 语言
+        // screenshot: true, // 截图
+        hotkey: true, // 热键
+        preload: 'auto', // 预加载
+        // logo: '/assets/octocat.png', // 左上角logo
+        volume: 0.5, // 音量
+        mutex: true, // 多个视频互斥
+        // 常规方式
+        video: {
+            url: url,
+            type: 'auto',
+            pic: imageurl, // 封面
+            thumbnails: imageurl, // 缩略图
+        },
+    }
+    var _this=this;
+    // console.log(_this.newdplayer)
+    _this.newdplayer.destroy();
+    _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
+ 
+}
+//ckplayer 播放器
+function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
+    //播放窗口模式。。
+    var video_model = $('#is_model_type').val();
+    if(video_model==0&&id!=0){
         var container_id=   '.video'+id;
         videoHidden(0);//隐藏窗口
     }else{
@@ -77,7 +138,8 @@ function  videoList(id,key,isbofang){
         videoHidden(1);//显示窗口
     }
     //获取播cookie放时间
-    var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
+    // var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
+    var videoID = md5(url);
     var videoObject = {
             debug:true,//开启调试模式
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
@@ -138,16 +200,17 @@ function  videoList(id,key,isbofang){
         // function VideoPlayEndedHandler(){//监听视频播放完成
         //     // alert('本视频已结束');
         // }
-        //因为对象覆盖了，所以要放最后面
 
 
-        if(now_video!=0&&now_video!=id){
-            var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
-            // console.log(now_video)
-            // console.log(player)
-            $(".video"+now_video).html(player);
-        }
-    }
+
+
+}
+
+
+
+
+
+
  // 视频隐藏
 function videoHidden(open){
     if(open==1){

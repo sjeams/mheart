@@ -38,7 +38,7 @@
                     <!-- //跳转 -->
                     <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
                     <!-- <p class="center"> <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"></p> -->
-                    <div  class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                    <div id="video<?php echo $v['id']?>" class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
 
                     <div id="form<?php echo $kss?>" style="display:none">
                         <input type="hidden" name="url" value="<?php echo $v['url']?>" >
