@@ -124,7 +124,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
     // console.log(_this.newdplayer)
     _this.newdplayer.destroy();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
-    dplayFull()
+ 
  
 }
 //ckplayer 播放器
@@ -226,82 +226,5 @@ function videoHidden(open){
     }
 
 }
-
-//全屏事件
-function  dplayFull(){
-    player.on('fullscreen', function() {
-            
-        $("body").on("touchstart", function(e) {
-        //e.preventDefault();
-        startX = e.originalEvent.changedTouches[0].pageX,
-        startY = e.originalEvent.changedTouches[0].pageY;
-        
-        });
-        $("body").on("touchmove", function(e) {
-        //e.preventDefault();
-        moveEndX = e.originalEvent.changedTouches[0].pageX,
-        moveEndY = e.originalEvent.changedTouches[0].pageY,
-        X = moveEndX - startX,
-        Y = moveEndY - startY;
-         
-        if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-            //表示向右滑动
-            var currentTime=window.player.video.currentTime
-            currentTime=currentTime+10;
-            if (duration>0 && currentTime>duration) {
-                currentTime=duration;
-                return;
-            }
-            player.seek(currentTime)
-        //    console.log(Math.abs(X)-Math.abs(Y));
-            
-        }
-        else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-            //表示向左滑动
-            var currentTime=window.player.video.currentTime
-            currentTime=currentTime-10;
-            if (currentTime<0) {
-                currentTime=0;
-                return;
-            }
-            //console.log(currentTime);
-            window.player.seek(currentTime);
-        }
-        else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
-            //表示向下滑动
-            volume=volume-0.01
-            if (volume<0) {
-                volume=0;
-                return;
-            }
-            //console.log( Math.abs(Y)-Math.abs(X));
-            player.volume(volume, true, false);
-            
-        }
-        else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
-            //表示向上滑动
-            volume=volume+0.01
-            if (volume>100) {
-                volume=100;
-                return;
-            }
-           player.volume(volume, true, false);
-        }
-        });
-        
-        
-     
-});
-
-player.on('fullscreen_cancel', function() {
-  
-      
-      $("body").unbind("touchstart");
-      $("body").unbind("touchmove");
-      $("body").unbind("click");
-    
-
-});
-}
-
+ 
 

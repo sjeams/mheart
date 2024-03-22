@@ -162,7 +162,9 @@ $(document).ajaxError(function( ) {
     removeLoading()
  
 });
-
+$(document).ajaxStop(function( ) {
+    removeLoading()
+});
 $(document).ajaxSuccess(function( ) {
     removeLoading()
 });
