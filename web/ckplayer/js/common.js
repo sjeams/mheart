@@ -361,6 +361,7 @@ $(document).ajaxSuccess(function( ) {
                     $('.video_old').css('display','none');
     
                 }
+                removeLoading()
                 // console.log(data);
                 // window.location.reload();  
                 var now_video =$("#now_video").val();
