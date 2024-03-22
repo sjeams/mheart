@@ -401,7 +401,7 @@ class VideoController extends VideoApiControl
         // $html = Yii::$app->request->get('html',0);
 
         // var_dump($res);die;
-        // $this->layout = 'kongbai';
+        $this->layout = 'kongbai';
         return $this->render('pic_full_screen', $res);
     }
     //dplayer 全屏

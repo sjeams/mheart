@@ -72,6 +72,7 @@ function videoDetail(sessionkey,key){
 // 图片详情页 //全屏模式
 function picDetail(sessionkey,key){
     //初始化
+    videoHidden() //隐藏悬浮窗口
     // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
     var url ='/cn/video/pic?sessionkey='+sessionkey+'&key='+key+"&html=1";
     var list_html = getprintHtml(url);
@@ -89,7 +90,7 @@ function picDetail(sessionkey,key){
 // 视频详情页 //全屏模式--dplayer 播放器
 function dplayDetail(url){
     var url ='/cn/video/dplay?url='+url;
-    console.log(url)
+    // console.log(url)
     var list_html = getprintHtml(url);
     if(list_html){
         $('.pic_html').html(list_html)
