@@ -70,13 +70,12 @@ function  videoList(id,key,isbofang){
     //选择视频
     if(isbofang==1){
     //1 ckplayer 播放器
-        ckplayerVideo(id,now_video,1,now_video_str,url,imageurl)
+        ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
         // var _this =this;
         // _this.newdplayer.destroy();
     }else{
     //0 dplayer 播放器
-        // dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
-        ckplayerVideo(id,now_video,0,now_video_str,url,imageurl)
+        dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
         // var _this =this;
         // _this.newplayer.remove();
     }
