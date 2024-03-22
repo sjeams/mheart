@@ -1,10 +1,10 @@
+
 <!-- dplayer -->
 <link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
-<script type="text/javascript" src="/dplayer/dist/flv.min.js"></script>
-<script type="text/javascript" src="/dplayer/dist/md5.min.js"></script>
-<script type="text/javascript" src="/dplayer/dist/hls.min.js"></script>
-<script type="text/javascript" src="/dplayer/dist/DPlayer.min.js"></script>
-
+<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>
+<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/md5.min.js"></script>
+<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/hls.min.js"></script>
+<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
 
 <!-- ckplayer -->
 <!-- old视频 1-->
@@ -12,7 +12,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
-        <div class="video" id="video" webkit-playsinline x-webkit-airplay> </div>
+        <div class="video" id="dplay_video"> </div>
     </div>
 </div>
 <!-- new 视频 0-->
@@ -98,8 +98,9 @@ function dplayDetail(url){
 </script>
 
 
+
 <script>
-    var container_id= 'video';
+    var container_id= 'dplay_video';
     var dplayerObject={
         container: document.getElementById(container_id),
         autoplay: true, // 自动播放

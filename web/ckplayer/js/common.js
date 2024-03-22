@@ -162,9 +162,9 @@ $(document).ajaxError(function( ) {
     removeLoading()
  
 });
-$(document).ajaxStop(function( ) {
-    removeLoading()
-});
+// $(document).ajaxStop(function( ) {
+//     removeLoading()
+// });
 $(document).ajaxSuccess(function( ) {
     removeLoading()
 });
@@ -363,7 +363,7 @@ $(document).ajaxSuccess(function( ) {
                     $('.video_old').css('display','none');
     
                 }
-                removeLoading()
+                // removeLoading()
                 // console.log(data);
                 // window.location.reload();  
                 var now_video =$("#now_video").val();

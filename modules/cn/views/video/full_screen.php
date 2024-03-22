@@ -22,7 +22,7 @@
                 </div>
                 <!-- //跳转 -->
                 <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
-                <div id="video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style" style="//background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style" style="//background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>

@@ -99,7 +99,7 @@
 
 </div>
              
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js?v=1"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js"></script>
 <script>
         $('#goSearch').click(function(){
             var goSearch =$("#goSearch").val();

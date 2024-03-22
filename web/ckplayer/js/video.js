@@ -93,10 +93,10 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
     if(video_model==0&&id!=0){
-        var container_id=   'video'+id;
+        var container_id=   'dplay_video'+id;
         videoHidden(0);//隐藏窗口
     }else{
-        var container_id=   'video';
+        var container_id=   'dplay_video';
         videoHidden(1);//显示窗口
     }
     var vid = md5(url);
@@ -123,6 +123,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
     var _this=this;
     // console.log(_this.newdplayer)
     _this.newdplayer.destroy();
+    _this.newplayer.remove();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
  
  
@@ -184,6 +185,7 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
         //刷新视频
         //销毁视频，并重新生成
         var _this=this;
+        _this.newdplayer.destroy();
         _this.newplayer.remove();
         _this.newplayer= new ckplayer(videoObject);//初始化播放器
         _this.newplayer.addListener('time', timeHandler,videoID); //监听播放时间
