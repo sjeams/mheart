@@ -12,7 +12,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
-        <div class="video" id="video"> </div>
+        <div class="video" id="video" webkit-playsinline x-webkit-airplay> </div>
     </div>
 </div>
 <!-- new 视频 0-->

@@ -27,18 +27,23 @@ $(function(){
 // </script>
 //监听旋转
 $(window).on('orientationchange', function(event) {
-    if (window.orientation == 0 || window.orientation == 180) {
-        // console.log("竖屏状态！");
-        // alert("竖屏状态！!");
-        onorientationChangeModel(true);
-         $.orientationModel=true
-    } else {
-        // 横屏模式
-        // console.log("横屏状态！");
-        // alert("横屏状态！!");
-        onorientationChangeModel(false);
-         $.orientationModel=false
+    var isbofang  = $("#is_bofang_type").val();
+    // ckplayer监听播放旋转
+    if(isbofang==1){
+        if (window.orientation == 0 || window.orientation == 180) {
+            // console.log("竖屏状态！");
+            // alert("竖屏状态！!");
+            onorientationChangeModel(true);
+             $.orientationModel=true
+        } else {
+            // 横屏模式
+            // console.log("横屏状态！");
+            // alert("横屏状态！!");
+            onorientationChangeModel(false);
+             $.orientationModel=false
+        }
     }
+
 });
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
 function onorientationChangeModel(type) {
