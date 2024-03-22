@@ -1,12 +1,5 @@
-<style>
-    .pic_html{
-        position: fixed;
-        z-index: 9999;
-        top: 0px;
-    }
-</style>
 <?php $search_title = $data['search'];?>
-<!-- <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext"> -->
+ 
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 <!-- 视频end -->
 <!-- <form action="/cn/video/list" method="post" class="  " > -->

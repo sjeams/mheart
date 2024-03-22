@@ -49,7 +49,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         <?php  if( $http_index=='video'|| $http_index=='pic'){ ?>
                 
         <?php  }else{ ?>
-    <!-- <input type="hidden" value="0" id="top_hidden"> -->
+ 
     <div class="video_footer center page_bottom" style="display: none;"> 
         <table class="table table-bordered  tablestyle " >
             <!-- <tr class="append_top">
@@ -72,11 +72,3 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     <?php } ?> 
 
 <?php } ?> 
-<script>
-$(function(){
-    scllTop()
-})
-function scllTop(){
-    $(window).scrollTop(0)
-}
-</script>

@@ -1,4 +1,5 @@
 *{ touch-action: pan-y; }
+
 .bigImg {
     position: absolute;
     top: 50%;

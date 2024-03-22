@@ -1,4 +1,9 @@
 <?php
+/*
+ * @Author: sjeam
+ * @Date: 2023-04-07 10:41:17
+ * @Description: 
+ */
 /**
  * 首页
  * User: sjeam
@@ -197,7 +202,7 @@ class VideoController extends VideoApiControl
             $category_id = Video::getCategoryId($belong,$type);
             $this->layout = 'kongbai';
             $res['html'] = $this->render('list',$res );
-            $this->layout = 'cn';
+            // $this->layout = 'cn';
             // var_dump($res);die;
             $this->layout = 'kongbai';
             if($res){
@@ -209,13 +214,17 @@ class VideoController extends VideoApiControl
                     return $this->render('list',$res );
                 }
             }else{
-                return '';
+                return $this->render('kongbai',[]);
             }
         }else{
             return $this->render('list_html',$res);
         }
     }
-
+    public function actionFalse()
+    {
+        $this->layout = 'kongbai';
+        return $this->render('kongbai',[]);
+    }
     /**
      * 我的收藏-快速浏览页面
      * by  sjeam

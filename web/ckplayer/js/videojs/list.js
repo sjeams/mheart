@@ -296,7 +296,7 @@
     function  localRload(){
     //     window.location.reload();
     gouhtml(1);   
-}
+    }
     // 刷新页面  ---跳转刷新
     function  clearRload(){
         $(".video_header").css("display","inline-block");

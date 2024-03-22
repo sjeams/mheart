@@ -1,8 +1,13 @@
+//滚动条 返回顶部事件
+function scllTop(){
+    $(window).scrollTop(0)
+}
 
 $.orientationModel=true  //竖屏显示菜单，横屏不显示菜单
 // {/* <script type="text/javascript">
 //     //滚动条头部和底部隐藏事件 */}
 $(function(){   
+    scllTop()
     //禁用滚动监听
     var winHeight = $(document).scrollTop();
     var t = 0;

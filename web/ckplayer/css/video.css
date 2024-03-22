@@ -1,3 +1,9 @@
+/* //图片浮动 */
+.pic_html{
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+}
 /* 视频样式 */
 /* <style> */
     /* 单个播放边框  窗口大小*/
