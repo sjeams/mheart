@@ -48,7 +48,7 @@ function  videoList(id,key,isbofang){
     if(goBelong==0&&isCollect==1){
         //获取视频
         var url =$("#form"+key+"  input[name=url]").val();
-        // var title =$("#form"+key+"  input[name=title]").val();
+        var title =$("#form"+key+"  input[name=title]").val();
         var imageurl =$("#form"+key+"  input[name=imageurl]").val();
         $('.click_video').removeClass('btn-success');
         $('#click_video'+key).addClass('btn-success');
@@ -57,7 +57,7 @@ function  videoList(id,key,isbofang){
     }else{
         //获取视频
         var url =$("#form"+id+"  input[name=url]").val();
-        // var title =$("#form"+id+"  input[name=title]").val();
+        var title =$("#form"+id+"  input[name=title]").val();
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
@@ -70,12 +70,12 @@ function  videoList(id,key,isbofang){
     //选择视频
     if(isbofang==1){
     //1 ckplayer 播放器
-        ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
+        ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
         // var _this =this;
         // _this.newdplayer.destroy();
     }else{
     //0 dplayer 播放器
-        dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl)
+        dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
         // var _this =this;
         // _this.newplayer.remove();
     }
@@ -89,7 +89,7 @@ function  videoList(id,key,isbofang){
     }
 }
 //dplayer 播放器
-function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
+function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
     if(video_model==0&&id!=0){
@@ -112,6 +112,10 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
         // logo: '/assets/octocat.png', // 左上角logo
         volume: 0.5, // 音量
         mutex: true, // 多个视频互斥
+        landscape: true,        //手机端默认进入横屏全屏时设置true  默认false
+        playNext: true,           //全屏时是否显示下一集图标   选集数组小于等于1时不显示
+        title: title,            //视频标题
+        header: true,             //全屏显示头部信息(返回图标+标题) 
         // 常规方式
         video: {
             url: url,
@@ -129,7 +133,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
  
 }
 //ckplayer 播放器
-function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl){
+function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     //播放窗口模式。。
     var video_model = $('#is_model_type').val();
     if(video_model==0&&id!=0){
