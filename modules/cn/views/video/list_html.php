@@ -9,7 +9,7 @@
 <!-- <input type="hidden" value="<?php echo $isnext ?>" id="page_isnext"> -->
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 <!-- 视频end -->
-<form action="/cn/video/list" method="post" class="  " >
+<!-- <form action="/cn/video/list" method="post" class="  " > -->
     <table class="table table-bordered  tablestyle"  >
         <thead>
             <tr>
@@ -93,7 +93,7 @@
         </tbody>
 
     </table>
-</form>
+<!-- </form> -->
 
 <div class="pic_html" >
 
