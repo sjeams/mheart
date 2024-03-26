@@ -209,7 +209,7 @@
     transform-style: preserve-3d;
     
     /* 旋转动画 */
-    animation: rotate 4s linear infinite;
+    /* animation: rotate 4s linear infinite; */
     }
     
     @keyframes rotate {
