@@ -218,8 +218,9 @@
         left: 0px!important;
         /* top: 60px!important; */
         right: 0px!important;
-        margin: 0px auto;
-        display: inline-block;
+        margin: 0px auto!important;
+        display: inline-block!important;
+        position: fixed!important;
         /*
          */
     }
