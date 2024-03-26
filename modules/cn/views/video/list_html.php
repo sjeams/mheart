@@ -123,7 +123,7 @@
                             // ,btn: ['搜索', '取消']
                             ,btnAlign: 'c'
                             ,moveType: 1 //拖拽模式，0或者1
-                            ,content: ' <div class="center rotatable-element" style="padding:20px">'+content+'</div>'
+                            ,content: ' <div class="rotatable-element" style="padding:20px">'+content+'</div>'
                             ,success: function(layero){
                                 // var btn = layero.find('.layui-layer-btn');
                                 // btn.find('.layui-layer-btn0').click(function(){

@@ -198,3 +198,6 @@
     .friend_input input{
         width: 99%!important;
     }
+    .rotatable-element{
+    text-align: center;
+    }
