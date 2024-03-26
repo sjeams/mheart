@@ -198,10 +198,3 @@
     .friend_input input{
         width: 99%!important;
     }
-
-    .layui-layer-page .layui-layer-content {
-        position: absolute;
-        overflow: auto;
-        display: inline-block;
-        margin: 0px auto;
-    }
