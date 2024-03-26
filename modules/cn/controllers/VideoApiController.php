@@ -269,7 +269,11 @@ class VideoApiController extends VideoApiControl
         $type = Yii::$app->request->post('type',0);
         session_destroy();
         if($search){
-            VideoList::deleteAll(" belong =$belong  and (type =$type or type = 0 ) and search ='$search' "); 
+            if($belong==0){
+                VideoList::deleteAll(" belong =$belong   and search ='$search' "); 
+            }else{
+                VideoList::deleteAll(" belong =$belong  and (type =$type or type = 0 ) and search ='$search' "); 
+            }
         }
         die(Method::jsonGenerate(1,null,'succes'));
     }

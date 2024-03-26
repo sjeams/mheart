@@ -115,20 +115,23 @@
     }
 
     function typeChange(type){
-        // 重置状态page和search
-        $("#goSearch").val('');
+
         $("#goPage").val(1);
         $("#goPage_list").val(1);
         $('#goType').val(type);
         $('#listType a').removeClass('active'); 
         $('#listType a').removeClass('btn-primary'); 
         $('#type'+type).addClass('active btn-primary'); 
+        // 重置状态page和search
+        if($("#goBelong").val()!=0){
+            $("#goSearch").val('');
+        }
+        
         gou();
     }
 
     function belongChange(belong){
-        // 重置状态page和search
-        $("#goSearch").val('');
+
         $("#goPage").val(1);
         $("#goPage_list").val(1);
         $('#goBelong').val(belong);
@@ -137,6 +140,10 @@
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         $('#goType').val(0);
+        // 重置状态page和search
+        if($("#goBelong").val()!=0){
+            $("#goSearch").val('');
+        }
         gou();
         gouSerachType(belong,0);
     }
