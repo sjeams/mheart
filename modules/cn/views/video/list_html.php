@@ -109,7 +109,7 @@
                     if(data.code==1){    
                         var str ='<p>搜索</p><p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="'+goSearch+'" id="search_text"><span class="btn btn-primary  " onclick="layerReSerach()">重新采集</span><span class="btn btn-primary  " onclick="layerGoSearch()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
                         $.each(data.data,function(index,value){
-                            str = str+'<button class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</button>';
+                            str = str+'<span class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</span>';
                         })
                         var content  = str+'</div>';
                         // <table class="layui-table" lay-even="" lay-skin="nob">
@@ -123,7 +123,7 @@
                             // ,btn: ['搜索', '取消']
                             ,btnAlign: 'c'
                             ,moveType: 1 //拖拽模式，0或者1
-                            ,content: ' <div class="rotatable-element" style="padding:20px">'+content+'</div>'
+                            ,content: ' <div class="center rotatable-element" style="padding:20px">'+content+'</div>'
                             ,success: function(layero){
                                 // var btn = layero.find('.layui-layer-btn');
                                 // btn.find('.layui-layer-btn0').click(function(){
