@@ -28,9 +28,8 @@
     top: 0;
     left: 0;
 }
-.layui-layer-page .layui-layer-content{
-    position: fixed!important;
-}
+ 
+
 
  /*  header ______________________ */
  .video_header{
@@ -201,4 +200,24 @@
     }
 
 
+    /* layui 旋转 */
+    .rotatable-element {
+    /* 确保元素围绕中心点旋转 */
+    transform-origin: 50% 50%;
+    
+    /* 如果需要，启用3D转换 */
+    transform-style: preserve-3d;
+    
+    /* 旋转动画 */
+    animation: rotate 4s linear infinite;
+    }
+    
+    @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
  
