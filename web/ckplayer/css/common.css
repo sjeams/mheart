@@ -28,8 +28,9 @@
     top: 0;
     left: 0;
 }
-
-
+.layui-layer-page .layui-layer-content{
+    position: fixed!important;
+}
 
  /*  header ______________________ */
  .video_header{

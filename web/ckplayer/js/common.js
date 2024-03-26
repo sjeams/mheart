@@ -48,6 +48,8 @@ $(window).on('orientationchange', function(event) {
              $.orientationModel=false
         }
     }
+    //旋转，关闭弹窗
+    cancelSerach()
 
 });
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
