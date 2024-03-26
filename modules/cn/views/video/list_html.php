@@ -118,7 +118,7 @@
                             ,title: false //不显示标题栏
                             ,closeBtn: false
                             ,area: ['100%','90%']
-                            ,shade: 0.8
+                            ,shade: 0.9
                             ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
                             // ,btn: ['搜索', '取消']
                             ,btnAlign: 'c'
