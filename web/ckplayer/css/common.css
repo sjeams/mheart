@@ -218,6 +218,6 @@
         left: 0px;
         top: 0px;
         right: 0px;
-        margin: 0px auto;
-        display: inline-block;
+        /* margin: 0px auto;
+        display: inline-block; */
     }
