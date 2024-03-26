@@ -116,7 +116,8 @@
                             type: 1
                             ,title: false //不显示标题栏
                             ,closeBtn: false
-                            ,area: ['100%','90%']
+                            // ,area: ['100%','90%']
+                            ,area: '300px;'// 由于样式会乱，所以设置一个小的背景
                             ,shade: 0.8
                             ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
                             // ,btn: ['搜索', '取消']
