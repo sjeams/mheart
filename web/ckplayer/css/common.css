@@ -202,7 +202,7 @@
     /* text-align: center; */
     position: fixed;
     left: 0px;
-    top: 0px;
+    top: 60px;
     right: 0px;
     }
     #LAY_layuipro_kwords{
@@ -214,5 +214,10 @@
         display: inline-block;
     }
     .layui-layer-page{
-        background: none;
+        /* background: none; */
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        margin: 0px auto;
+        display: inline-block;
     }
