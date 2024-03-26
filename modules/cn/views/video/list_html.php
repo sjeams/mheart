@@ -91,7 +91,6 @@
 <div class="pic_html" >
 
 </div>
-             
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js"></script>
 <script>
         $('#goSearch').click(function(){
@@ -118,7 +117,7 @@
                             ,title: false //不显示标题栏
                             ,closeBtn: false
                             ,area: ['100%','90%']
-                            ,shade: 0.6
+                            ,shade: 0.8
                             ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
                             // ,btn: ['搜索', '取消']
                             ,btnAlign: 'c'
