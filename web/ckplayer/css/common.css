@@ -219,8 +219,7 @@
         /* top: 60px!important; */
         right: 0px!important;
         margin: 0px auto!important;
-        display: inline-block!important;
  
-  
+        position: fixed;
     }
     
