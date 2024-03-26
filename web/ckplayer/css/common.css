@@ -214,12 +214,6 @@
         display: inline-block;
     }
     .layui-layer-page{
-        /* background: none; */
-        left: 0px!important;
-        /* top: 60px!important; */
         right: 0px!important;
-        margin: 0px auto!important;
- 
-        position: fixed;
     }
     
