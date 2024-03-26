@@ -49,7 +49,7 @@ $(window).on('orientationchange', function(event) {
         }
     }
     //旋转，关闭弹窗
-    // cancelSerach()
+    cancelSerach()
 
 });
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
