@@ -2,7 +2,7 @@
   .collect-video-style{
 	  height: -webkit-fill-available;
     /* height: inherit; */
-    position: absolute;
+    position: absolute!important;
     max-width:100%!important;
     background-size:contain!important;
   }
@@ -29,6 +29,7 @@
 .video_footer{
   height: 30px!important;
 }
+ 
 </style>
 
 

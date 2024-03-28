@@ -9,7 +9,7 @@
 </style>
 
 
-<form     >
+ 
     <table class="table table-bordered  tablestyle"  >
     <thead>
         <?php if($graden>0){?>
@@ -45,7 +45,7 @@
         </tbody>
     </table>
 
-</form>
+ 
 
 <!-- 当前视频id -->
 <input type="hidden" value="0" id="swiper_type">

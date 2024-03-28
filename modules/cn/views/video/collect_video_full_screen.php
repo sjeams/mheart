@@ -2,7 +2,7 @@
   .collect-video-style{
 	  height: -webkit-fill-available;
     /* height: inherit; */
-    position: absolute;
+    position: absolute!important;
     max-width:100%!important;
     background-size:contain!important;
   }
@@ -52,7 +52,7 @@
 	.swiper-pagination-bullet img{
 		width:100%;
   }
-    
+ 
 </style>
 
 <div class="friend_opacityBottom list_hidden">
