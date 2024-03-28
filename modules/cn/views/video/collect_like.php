@@ -68,7 +68,7 @@
         $(".video_footer").css("display","none");
         var goPage =$("#goPage").val();
         var title =  $('#appendedInputButton').val();
-        var url="/cn/video/collect-video?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
+        var url="/cn/video/collect-like?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
         var html = getprintHtml(url);
         //    console.log(html)
         if(html){
@@ -195,7 +195,7 @@
         if(!goType){ var  goType =''; }
         var title =  $('#appendedInputButton').val();
         if(full_model==1){
-            var url="/cn/video/collect-video?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=2";
+            var url="/cn/video/collect-like?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=2";
             var html = getprintHtml(url);
             if(html!=false){
                 //分页后初始页码
@@ -209,7 +209,7 @@
                 page_unchange();
             }
         }else{
-            var url="/cn/video/collect-video?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=1";
+            var url="/cn/video/collect-like?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=1";
             var html = getprintHtml(url);
             if(html){
                 $("#goPage").val(goPage);
@@ -251,7 +251,6 @@
 
 
 
-
     // 我的收藏，极品
     function  like_my(id){ 
         // $(".collect_id"+id).addClass('btn-success');
@@ -269,11 +268,13 @@
                 }else{
                     $(".my_like_"+id).removeClass('btn-success');
                     $(".my_like_"+id).addClass('btn-defult');
+                    $(".remove_"+id).remove();
                 }
                 removeLoading()
             },
         });
     } 
+
 
      // 我的收藏
      function  Update_my(id){ 

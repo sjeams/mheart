@@ -49,7 +49,12 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                     
                 <?php }else { ?>    
                     <td class="btn-primary button_over_side"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
-                    <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                        <?php if($userlogin['graden']>0) {?>
+                            <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" onclick="my_like()">极品</a></td>
+                        <?php }else{?>
+                            <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
+                        <?php  } ?>  
+
                     <td class="btn-primary button_over_side"   >
                         <input type="hidden" name="" id="menu" value="0">
                         <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
@@ -62,8 +67,11 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     </table>
     <ul class="list-group text-center menu_list">
         <?php if($userlogin['graden']>0) {?>
-            <li class="list-group-item list-item-style btn-defult" onclick="old_content()"> 喜欢</li>
+            <!-- <li class="list-group-item list-item-style btn-defult" onclick="old_content()"> 喜欢</li> -->
+
+            <li class="list-group-item list-item-style btn-defult" onclick="my_chat()"> 聊天</li>
             <li class="list-group-item list-item-style btn-defult" onclick="my_collect()"> 收录</li>
+            <li class="list-group-item list-item-style btn-defult" onclick="my_like()"> 极品</li>
             <li class="list-group-item list-item-style btn-defult" onclick="my_video()"> 收藏</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
             <li class="list-group-item list-item-style  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>

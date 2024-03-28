@@ -322,6 +322,13 @@ $(document).ajaxSuccess(function( ) {
     function my_video(){
         window.location.href='/cn/video/collect-video';
     }
+    function my_like(){
+        window.location.href='/cn/video/collect-like';
+    }
+    function my_chat(){
+        window.location.href='/cn/chat/list';
+    }
+
     function Menu(){
        var menu =$("#menu").val();
        if(menu==1){

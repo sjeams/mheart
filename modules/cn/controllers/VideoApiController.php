@@ -329,6 +329,31 @@ class VideoApiController extends VideoApiControl
         }
         // var_dump($args);die;
     }
+    /**
+     * 采集单条插入极品收藏
+     * by  sjeam
+     */
+    public function actionLikeUpdate()
+    {
+        $args = Yii::$app->request->post();
+        // var_dump($args);die;
+        $user_id =  $this->user['id'];
+        $video_id = $args['video_id'];
+        $video=VideoListCollect::find()->where("video_id = $video_id and user_id =$user_id ")->one();
+        $is_like =$video->is_like;
+        if($is_like){
+            $video->is_like=0;
+            $video->update();
+            // VideoListCollect::updateAll(" video_id = $video_id and user_id =$user_id","is_like = 0");
+            die(Method::jsonGenerate(0,null,'收藏'));
+        }else{
+            $video->is_like=1;
+            $video->update();
+            // VideoListCollect::updateAll(" video_id = $video_id and user_id =$user_id","is_like = 1");
+            die(Method::jsonGenerate(1,null,'取消收藏'));
+        }
+        // var_dump($args);die;
+    }
 
     /**
      * 修改视频报错状态
