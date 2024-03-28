@@ -15,9 +15,7 @@
                 <!-- //跳转 -->
                 <!-- <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"> -->
                 <div  id="dplay_video<?php echo $v['id']?>" class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
-                <div id="form<?php echo $v['id']?>" style="display:none">
-                    <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                </div>
+
                 <p class="center"  onclick="video(<?php echo $v['id']?>)"><span ><b>P<?php echo (($data['page']) ) ?>-<?php echo ( (($data['page']-1)*10 )+($kss+1)) ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?></p>
                 <p class="center">
                     <!-- <span style="width: 49%!important;max-width:210px" onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
