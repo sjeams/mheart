@@ -43,7 +43,7 @@
         border-radius:1%!important;width:100%;
 		/* max-width:420px; */
 		margin:auto; height:300px;
-		position:relative!important;
+		position:absolute!important;
 		background-repeat: no-repeat;background-position: center;background-size:auto 100%;
     }
     .video_img{
