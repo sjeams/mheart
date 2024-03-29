@@ -1,4 +1,7 @@
 *{ touch-action: pan-y; }
+video{
+    position: relative;
+}
 
 .bigImg {
     position: absolute;
