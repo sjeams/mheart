@@ -1,8 +1,8 @@
 *{ touch-action: pan-y; }
 video{
-    position: relative;
+    position: relative!important;
+    z-index: 0; 
 }
-
 .bigImg {
     position: absolute;
     top: 50%;
