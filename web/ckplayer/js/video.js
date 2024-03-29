@@ -129,6 +129,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     _this.newdplayer.destroy();
     _this.newplayer.remove();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
+    _this.newplayer.play()//点击播放
  
  
 }
@@ -198,7 +199,7 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
         // console.log(state)
         // });
-        // _this.newplayer.play()//点击播放
+        _this.newplayer.play()//点击播放
         function timeHandler(t) {
             // console.log(videoID)
             cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
