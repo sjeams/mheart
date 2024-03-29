@@ -449,6 +449,7 @@
 				video.attr('playsinline','true');
 				video.attr('webkit-playsinline','true');
 				video.attr('x5-playsinline','true');
+				video.attr('x5-video-player-type','h5');
 				if(vars['crossOrigin']){
 					video.useCORS=true;//解决跨域
 		     		video.crossOrigin=vars['crossOrigin'];//解决跨域
