@@ -454,7 +454,7 @@
 
 				video.attr('controls','controls');
 				video.attr('x5-video-player-type','h5');
-				video.attr('x5-video-player-fullscreen','true');
+				// video.attr('x5-video-player-fullscreen','true');
 				if(vars['crossOrigin']){
 					video.useCORS=true;//解决跨域
 		     		video.crossOrigin=vars['crossOrigin'];//解决跨域
