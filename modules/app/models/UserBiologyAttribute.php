@@ -10,6 +10,10 @@ use yii\db\ActiveRecord;
 use app\modules\app\models\Words;
 use app\modules\app\models\UserWords;
 use app\modules\admin\models\User;
+use app\modules\admin\models\BiologyState;
+
+use app\modules\admin\models\BiologyBiology;
+
 use yii;
 class UserBiologyAttribute extends ActiveRecord
 {
@@ -39,6 +43,7 @@ class UserBiologyAttribute extends ActiveRecord
      * 属性详情
      */
     public  function getUserBiologyAttribute($userBiologyid,$biology_userid=0,$map_int=0){
+        $UserWords =new UserWords();
         $moreExtend=[];//属性池
         if($biology_userid){
             //玩家生物
@@ -47,12 +52,22 @@ class UserBiologyAttribute extends ActiveRecord
             // var_dump($userBiologyid);
             // var_dump($biology_userid);
             //系统生物
-            $UserWords =new UserWords();
             $merge_biology_list = $UserWords->getMapValueListSystem($map_int,'biology_list');
             //重新定义索引id
             $data = array_column($merge_biology_list,null,'id')[$userBiologyid];
         }
-        //初始化
+  
+        // $UserWords=new UserWords();
+        // //重新定义某些字段的基础属性，中文人族 ，境界
+        // foreach($data as$key=> $userbiology){
+        //     var_dump($userbiology);die;
+        //     $userbiology['state_name']= BiologyState::getValueFind($userbiology['state']);//境界名称  
+        //     $userbiology['zhong_zhu']= $UserWords->biologyExtedAdd($userbiology['biology']);//种族 
+        //     $data[$key]=$userbiology;
+        // }
+        $data['state_name']= BiologyState::getValueFind($data['state']);//境界名称  
+        $data['zhong_zhu']= $UserWords->biologyExtedAdd($data['biology']);//种族 
+        //初始化属性 
         // 固定增加的属性
         $data = $this->getUserBiologyAttributeAddExtends($data);
         // 装备栏 1 2 
@@ -69,8 +84,6 @@ class UserBiologyAttribute extends ActiveRecord
         $data = $this->getUserBiologyAttributeAddExtends($data,$moreExtend,0);//计算属性，并且叠加
         return $data;
     }
-    
-
 
     //属性增幅--可单独传递值 --
     public  function  getUserBiologyAttributeAddExtends($data,$moreExtend=[],$defult=1){

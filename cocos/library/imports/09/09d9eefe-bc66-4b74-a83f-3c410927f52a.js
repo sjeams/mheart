@@ -110,7 +110,11 @@ cc.Class({
   },
   //生成生物
   addWordMap: function addWordMap(data) {
-    // cc.log(data) 
+    cc.log(data);
+    cc.find('Canvas/tips/当前世界').getComponent(cc.Label).string = data.data.name + '(' + data.data.time + '年)';
+    cc.find('Canvas/tips/流速').getComponent(cc.Label).string = '流速: ' + data.data.time + '年/S';
+    cc.find('Canvas/tips/类型').getComponent(cc.Label).string = '类型: ' + data.data.type_name; // cc.find('Canvas/tips/时间').getComponent(cc.Label).string = '世界时间: '+data.data.name+'('+data.data.time+'年)' 
+
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 
@@ -146,6 +150,13 @@ cc.Class({
     node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
   },
   back_map: function back_map() {
+    //移除节点
+    var _this = this;
+
+    _this.content.removeAllChildren();
+
+    _this.content.destroyAllChildren();
+
     httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
   } // start: function() {
   //     this.start_y = this.content.y;

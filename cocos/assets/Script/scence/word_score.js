@@ -124,17 +124,21 @@ cc.Class({
         node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
       },
 
-      outWord(){
-              var _this =this;
-              _this.searchShow()
-            // server_choes_type.getComponent(cc.Label).string=info['type'];
-        // active
-        // _this.getChildByName('探索世界').active = true;
-        // httpRequest.httpPost('/app/app-apiword/rand-word',{},function (data) {
-          // _this.showWord(data)
-        // })
+    outWord(){
+        //移除节点
+        var _this = this;
+        _this.content.removeAllChildren();
+        _this.content.destroyAllChildren();
+        _this.searchShow()
+        httpRequest.httpPost('/app/app-apiword/out-word',{},function (data) {
+     
+        })
       },
       backHome(){
+        //移除节点
+        var _this = this;
+        _this.content.removeAllChildren();
+        _this.content.destroyAllChildren();
         httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
     },
       searchShow(){

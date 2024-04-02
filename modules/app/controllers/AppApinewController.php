@@ -12,7 +12,7 @@ use app\libs\ApiUserControl;
 use Yii;
 use UploadFile;
 
-
+use app\modules\admin\models\BiologyBiology;
 use app\modules\app\models\User;
 use app\modules\app\models\UserBiology;
 use app\modules\app\models\UserBiologyAttribute;
@@ -110,6 +110,9 @@ class AppApinewController extends ApiUserControl{
         if(empty($do_biology)){
             die(Method::jsonApp(0,null,'地图'.$map_int.'不存在！'));  
         }
+        // //处理一些需要显示的字段，如显示人族
+        // $my_biology = BiologyBiology::biologyExtedAdd($my_biology);
+        // $do_biology = BiologyBiology::biologyExtedAdd($do_biology);
         // $map =$UserWords->getFightingMap();
         // var_dump($do_biology);die;
         //战斗系统--返回战斗结果

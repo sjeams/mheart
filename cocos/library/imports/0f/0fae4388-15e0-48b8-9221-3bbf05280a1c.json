@@ -220,15 +220,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 220,
-      "height": 340
+      "height": 360
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -240,7 +240,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        100,
+        105,
         0,
         0,
         0,
@@ -280,7 +280,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+      "__uuid__": "bb94f578-19d4-4c76-94b5-22729305be8c"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -398,7 +398,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""

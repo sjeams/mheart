@@ -30,7 +30,8 @@ const FightingExtend = cc.Class({
     // cc.log(biology)
     if(biology.extend=='shengMing'){
       //血条动作
-      node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
+      // node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
+      node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value
       var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar)
       progressBar.progress = biology.hurt_go_value / node.shengMing
       progressBar.completeCount = biology.hurt_go_value;
@@ -66,7 +67,11 @@ const FightingExtend = cc.Class({
         node.getChildByName('悟性s').active=false
         node.getChildByName('生命s').active=false
         node.getChildByName('魔法s').active=false
+        node.getChildByName('魔法s').active=false
+        node.getChildByName('魔法s').active=false
         node.getChildByName('生物').active=false
+
+        
         // node.getChildByName('扣血s').active=false 
         // node.getChildByName('扣蓝s').active=false 
         // 死亡
@@ -92,7 +97,8 @@ const FightingExtend = cc.Class({
     if(biology.extend=='moFa'){
       // node.getChildByName('扣血s').color = new cc.color('#3568D5');
       node.getChildByName('扣蓝s').getComponent(cc.Label).string= biology.hurt_msg
-      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+      // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value
       var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
       progressBar.progress = biology.hurt_go_value / node.moFa
       progressBar.completeCount = biology.hurt_go_value;

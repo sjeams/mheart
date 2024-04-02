@@ -11,6 +11,7 @@ use app\libs\Method;
 
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
+use app\modules\admin\models\BiologyBiology;
 use app\modules\app\models\getBiologyRand;
 use app\modules\admin\models\BiologyCreate;
 use app\modules\app\models\UserBiologyNatureDo;
@@ -89,7 +90,7 @@ class UserWords extends ActiveRecord
     }
     //退出世界
     public  function outUserWord(){
-        UserWords::updateAll(['complete' => 1],"userid =$this->userId and complete!=1");
+        UserWords::updateAll(['complete' => 1],"userid =$this->userId");
         User::updateAll(['wordid' => 0],"userid =$this->userId");
     }
 
@@ -283,9 +284,17 @@ class UserWords extends ActiveRecord
         $userbiology = User::biolobyChange($this->int_biology);//获取战斗属性
         $userbiology['state']= $this->getBiologyRandStateSystem();//随机境界  
         $userbiology['state_name']= BiologyState::getValueFind($userbiology['state']);//境界名称  
+        $userbiology['zhong_zhu']= $this->biologyExtedAdd($userbiology['biology']);//种族 
         // var_dump($userbiology);die;
         return  $userbiology;
     }
+    //初始化基本信息
+    public  function biologyExtedAdd($biology){
+        //查询种族
+        $zhongzhu = BiologyBiology::find()->where("id =$biology")->asArray()->one();
+        return $zhongzhu['name']?:'人'; 
+    }
+
     //定义等级，境界
     public  function getBiologyRandGradeSystem( ){
         // $createid = Yii::$app->request->post('createid');

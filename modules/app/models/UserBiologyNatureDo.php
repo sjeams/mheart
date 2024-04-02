@@ -8,6 +8,9 @@
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\libs\Method;
+
+
+use app\modules\admin\models\BiologyState;
 use app\modules\admin\models\BiologyBiology;
 use app\modules\admin\models\BiologySkill;
 use app\modules\admin\models\BiologySkillPosition;
@@ -146,6 +149,7 @@ class UserBiologyNatureDo extends ActiveRecord
     public  function getValueList($userid=false){
         $userid=$userid?:$this->userId;
         $data = UserBiologyNatureDo::find()->where("userid = $userid")->asarray()->One();
+
         return $data;
     }
     

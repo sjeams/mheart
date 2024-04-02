@@ -18,7 +18,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        252.8794179050561,
+        256.56002587113994,
         0,
         0,
         0,
@@ -265,9 +265,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 133,
+      "g": 149,
+      "b": 171,
       "a": 255
     },
     "_contentSize": {
@@ -472,7 +472,7 @@
         "__id__": 16
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 18
@@ -671,8 +671,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "搜索世界",
-    "_N$string": "搜索世界",
+    "_string": "探索世界",
+    "_N$string": "探索世界",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -705,7 +705,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "72822d00-7571-41c0-9028-637dd7b7c599"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -750,7 +750,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "骰子",
+    "_name": "问号",
     "_objFlags": 0,
     "_parent": {
       "__id__": 10
@@ -773,8 +773,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 85,
-      "height": 88
+      "width": 70,
+      "height": 65
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -785,7 +785,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -100,
+        -90,
         0,
         0,
         0,
@@ -826,7 +826,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4452f13f-05b4-4882-9232-5c9c68d6f98b"
+      "__uuid__": "d2450bf6-6b14-4e8b-b45d-c42039d3fabd"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -838,7 +838,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 0,
-    "_isTrimmedMode": true,
+    "_isTrimmedMode": false,
     "_atlas": null,
     "_id": "5aHzFH9WRIW5J+qVapdLR+"
   },
@@ -908,7 +908,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "72822d00-7571-41c0-9028-637dd7b7c599"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -952,7 +952,7 @@
         "__id__": 21
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 26
@@ -1093,9 +1093,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -1185,7 +1185,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1294,7 +1294,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -1479,9 +1479,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -1571,7 +1571,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1680,7 +1680,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1ca76f3d-6587-46e2-b427-82e6b883010e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -1728,7 +1728,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "2108900c-0812-4f0f-9df5-001bfe5f1f98"
+      "__uuid__": "a7e31b07-9dad-4469-92a2-ae47dbb92ed3"
     },
     "_type": 0,
     "_sizeMode": 0,

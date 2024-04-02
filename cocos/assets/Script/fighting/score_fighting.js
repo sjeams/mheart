@@ -89,7 +89,7 @@ cc.Class({
                     _this.unschedule();
                   }else{
                     // cc.log(boat_count)
-                    cc.find('Canvas/大厅/回合/time').getComponent(cc.Label).string = '回合'+ parseInt(boat+1) 
+                    cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第'+ parseInt(boat+1)+'回合' 
                     // cc.log(fighting_history[boat_count])
                     _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
                   }
@@ -153,6 +153,7 @@ cc.Class({
             // }
         });
     },
+
     //生成地图
     addMapPic(data){
         var _this = this;
@@ -435,13 +436,25 @@ cc.Class({
         })
     },
     back_map(){
+      //移除节点
+      var _this = this;
+      _this.content.removeAllChildren();
+      _this.content.destroyAllChildren();
       httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
     },
     back_reload(){
+      //移除节点
+      var _this = this;
+      _this.content.removeAllChildren();
+      _this.content.destroyAllChildren();
       // this.parent.active=false
       httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
     },
     back_home(){
+      //移除节点
+      var _this = this;
+      _this.content.removeAllChildren();
+      _this.content.destroyAllChildren();
       httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
     },
     addTouchEvent(node_1) {
