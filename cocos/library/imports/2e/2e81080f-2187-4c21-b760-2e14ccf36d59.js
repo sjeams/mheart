@@ -54,6 +54,10 @@ cc.Class({
   },
   hidden_dlg: function hidden_dlg() {
     this.node.active = false;
+  },
+  remove_alert: function remove_alert() {
+    // 销毁所有弹窗
+    cc.find('Canvas/弹窗').removeAllChildren(); // cc.find('Canvas/弹窗').destroyAllChildren();
   }
 });
 

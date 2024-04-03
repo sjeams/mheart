@@ -480,17 +480,17 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1704361778082,
+    "asset": 1712045020788,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
   "1a60bfb7-074b-4f3b-9a8f-effe69eda3d4": {
-    "asset": 1704246939975,
+    "asset": 1712023364710,
     "meta": 1655109292658,
     "relativePath": "Scene"
   },
   "29978e1b-82fa-4262-ab33-2c46e787facd": {
-    "asset": 1703130552924,
+    "asset": 1712023364712,
     "meta": 1655109292679,
     "relativePath": "Script"
   },
@@ -515,7 +515,7 @@
     "relativePath": "Script\\commonjs"
   },
   "11419367-4da7-4096-a9a4-51666f1d1905": {
-    "asset": 1711964143312,
+    "asset": 1712023364722,
     "meta": 1655109292779,
     "relativePath": "prefabs"
   },
@@ -530,7 +530,7 @@
     "relativePath": "Scene\\bage_s"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
-    "asset": 1709706679993,
+    "asset": 1712023364699,
     "meta": 1655109292664,
     "relativePath": "Scene\\home"
   },
@@ -575,12 +575,12 @@
     "relativePath": "Textrue\\model\\word"
   },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
-    "asset": 1703727521659,
+    "asset": 1712023364706,
     "meta": 1701421848917,
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1709790613377,
+    "asset": 1712042331621,
     "meta": 1702435055137,
     "relativePath": "resources\\biology_pic"
   },
@@ -1010,7 +1010,7 @@
     "relativePath": "resources\\server_pic\\alert_login_pic.png"
   },
   "495154c0-dc59-4d87-adb7-d4f8e997c605": {
-    "asset": 1709631093137,
+    "asset": 1712023364703,
     "meta": 1703127187175,
     "relativePath": "Scene\\login"
   },
@@ -1249,11 +1249,6 @@
     "meta": 1709790613433,
     "relativePath": "resources\\biology_pic\\1地图.jpg"
   },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1709887989674,
-    "meta": 1709887992718,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
   "141fac6f-c95e-42cb-9df0-8fd8eb3f2f74": {
     "asset": 1711968644341,
     "meta": 1711968644373,
@@ -1314,11 +1309,6 @@
     "meta": 1712045020811,
     "relativePath": "resources\\生物详情\\biology_生物_战斗技能提示.prefab"
   },
-  "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
-    "asset": 1712047499390,
-    "meta": 1712047499422,
-    "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1712049072240,
     "meta": 1712049072255,
@@ -1334,19 +1324,14 @@
     "meta": 1712051246396,
     "relativePath": "Script\\scence\\mapTools.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1712051365791,
-    "meta": 1712051368076,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
     "asset": 1712051286361,
     "meta": 1712051368235,
     "relativePath": "Script\\scence\\map_score.js"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1712051778959,
-    "meta": 1712051778957,
+    "asset": 1712051778984,
+    "meta": 1712108413009,
     "relativePath": "Script\\scence\\word_score.js"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
@@ -1354,19 +1339,34 @@
     "meta": 1712051834061,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1712052606691,
-    "meta": 1712052608608,
-    "relativePath": "Script\\fighting\\fightingTools.js"
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1712110799124,
+    "meta": 1712110822606,
+    "relativePath": "Script\\http.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1712113660710,
+    "meta": 1712113728571,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1712116073072,
+    "meta": 1712116084581,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1712053560221,
-    "meta": 1712053560241,
+    "asset": 1712116129270,
+    "meta": 1712116129309,
     "relativePath": "Scene\\战斗场景.fire"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1712053620674,
-    "meta": 1712053622609,
-    "relativePath": "Script\\http.js"
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1712116174283,
+    "meta": 1712116178546,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
+    "asset": 1712116682444,
+    "meta": 1712116728736,
+    "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
   }
 }

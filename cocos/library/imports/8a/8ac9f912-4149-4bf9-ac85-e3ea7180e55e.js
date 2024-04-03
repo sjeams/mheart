@@ -139,8 +139,10 @@ cc.Class({
   },
   //查看生物详情_弹窗
   biology_detail_alert: function biology_detail_alert(info) {
-    // console.log(222)
+    // 销毁所有弹窗
+    cc.find('Canvas/弹窗').removeAllChildren(); // console.log(222)
     // var _task =task||0;
+
     var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
 
@@ -172,12 +174,15 @@ cc.Class({
     });
   },
   biology_detail_info: function biology_detail_info(TipBoxPrefab, info) {
+    var _this = this;
+
     TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string = info.shengMing;
     TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string = info.moFa;
     TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
     TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string = info.zhong_zhu + '族';
     TipBoxPrefab.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade;
     TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string = '触发率' + info.chuFa + '%';
+    TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame;
     TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string = '力量:' + info.power;
     TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string = '敏捷:' + info.agile;
     TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string = '智力:' + info.intelligence;
@@ -194,7 +199,7 @@ cc.Class({
     TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string = '闪避s' + '0%';
     TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string = '增伤:' + info.jianShang + '%';
     TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string = '减伤:' + info.zhenShang + '%';
-    cc.find('Canvas').addChild(TipBoxPrefab, 1);
+    cc.find('Canvas/弹窗').addChild(TipBoxPrefab, 1);
   }
 });
 
