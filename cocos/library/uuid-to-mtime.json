@@ -1290,8 +1290,8 @@
     "relativePath": "Scene\\login\\登录.fire"
   },
   "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1712041126624,
-    "meta": 1712041126646,
+    "asset": 1712543898483,
+    "meta": 1712543898510,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
   "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
@@ -1310,8 +1310,8 @@
     "relativePath": "resources\\生物详情\\biology_生物_战斗技能提示.prefab"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1712049072240,
-    "meta": 1712049072255,
+    "asset": 1712543347465,
+    "meta": 1712543347484,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
@@ -1339,25 +1339,10 @@
     "meta": 1712051834061,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1712110799124,
-    "meta": 1712110822606,
-    "relativePath": "Script\\http.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1712113660710,
-    "meta": 1712113728571,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1712116073072,
     "meta": 1712116084581,
     "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1712116129270,
-    "meta": 1712116129309,
-    "relativePath": "Scene\\战斗场景.fire"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1712116174283,
@@ -1368,5 +1353,20 @@
     "asset": 1712116682444,
     "meta": 1712116728736,
     "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1712542293608,
+    "meta": 1712542313784,
+    "relativePath": "Script\\http.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1712548218110,
+    "meta": 1712548250097,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1712548442518,
+    "meta": 1712548442540,
+    "relativePath": "Scene\\战斗场景.fire"
   }
 }

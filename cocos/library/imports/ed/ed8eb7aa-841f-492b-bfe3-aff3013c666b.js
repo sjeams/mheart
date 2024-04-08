@@ -102,13 +102,17 @@ cc.Class({
 
               _this.unschedule();
             } else {
-              // cc.log(boat_count)
-              cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第' + parseInt(boat + 1) + '回合'; // cc.log(fighting_history[boat_count])
+              //判断下动作是否已经下一回合
+              if (cc.find('Canvas/大厅/time').getComponent(cc.Label).string != '第' + parseInt(boat + 1) + '回合') {
+                cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第' + parseInt(boat + 1) + '回合';
+                cc.find('Canvas/大厅/time').runAction(cc.sequence(cc.scaleTo(0.3, 2, 2), cc.scaleTo(0.3, 1, 1))); //建一个缩放到1.5倍大小的动作，持续时间2秒
+              } // cc.log(fighting_history[boat_count])
+
 
               _this.fighting_history(fighting_history[boat_count]); //执行战斗顺序 
 
             }
-          }, 1.5, boat_length, 1); ////10秒后执行1次间隔5秒
+          }, 1, boat_length, 0.3); ////10秒后执行1次间隔5秒
 
         }
       });
@@ -339,8 +343,8 @@ cc.Class({
     var _this = this;
 
     var waite_time = waite_time || 0;
-    var actionhiddenBig = cc.scaleTo(0.1, 1, 1.2);
-    var actionWaite = cc.delayTime(waite_time); //等待攻击时间
+    var actionhiddenBig = cc.scaleTo(0.2, 1.2, 1.2); //变大
+    // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
 
     var actionhiddenOn = cc.fadeTo(0.05, 0); // const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
     // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
@@ -349,10 +353,11 @@ cc.Class({
     // actionLeft, actionRight, actionLeftSecond, actionRightSecond,
 
     var actionhiddenoff = cc.fadeTo(0.05, 255);
-    var actionhiddenSmoll = cc.scaleTo(0.1, 1, 1); // cc.spwan( 同时完成
+    var actionhiddenSmoll = cc.scaleTo(0.2, 1, 1); //变大还原
+    // cc.spwan( 同时完成
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionhiddenBig, actionWaite, actionhiddenOn, actionhiddenoff, actionhiddenSmoll, // 执行动作完成之后调用的方法
+      node.runAction(cc.sequence(actionhiddenBig, actionhiddenOn, actionhiddenoff, actionhiddenSmoll, // 执行动作完成之后调用的方法
       cc.callFunc(function () {
         // cc.log(node);
         // cc.log(biology);
@@ -384,16 +389,19 @@ cc.Class({
     if (node.x != m_node.x) m_x = m_node.x - node.x + m_x_move;
     if (node.y != m_node.y) m_y = m_node.y - node.y; //普通攻击
 
-    var actionLeft = cc.spawn(cc.moveBy(0.2, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {}, this));
-    var actionWaite = cc.delayTime(0.01);
-    var actionRight = cc.spawn(cc.moveBy(0.2, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1)); // 让节点在向上移动的同时缩放
+    var actionLeft = cc.spawn(cc.moveBy(0.3, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {// //等待攻击完成
+      // _this.buttonShake(waite_time,m_node,biology)
+    }, this)); // const actionWaite = cc.delayTime(0.01) 
+    //返回位置
+
+    var actionRight = cc.spawn(cc.moveBy(0.3, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
+      //等待攻击完成
+      _this.buttonShake(waite_time, m_node, biology);
+    }, this)); // 让节点在向上移动的同时缩放
     // arr.push(cc.scaleTo(0.1, 1,1))
 
     return new Promise(function (resolve) {
-      node.runAction(cc.sequence(actionLeft, actionWaite, actionRight, cc.callFunc(function () {
-        //等待攻击完成
-        _this.buttonShake(waite_time, m_node, biology);
-
+      node.runAction(cc.sequence(actionLeft, actionRight, cc.callFunc(function () {
         resolve();
       })));
     });
