@@ -176,8 +176,8 @@ class UserWords extends ActiveRecord
                  $postition[$k]['id']=0;
             }
             //技能处理
-            $position_skill =$new_biology['position_skill'];
-            $new_biology['position_skill'] = sort($position_skill); 
+            // $position_skill =$new_biology['position_skill'];
+            // $new_biology['position_skill'] = sort($position_skill); 
             $postition[$k]['biology']=$new_biology;
         }
         //三个函数都可以重置函数0---坐标列表
