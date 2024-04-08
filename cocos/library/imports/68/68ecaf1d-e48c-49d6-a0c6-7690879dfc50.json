@@ -77,18 +77,21 @@
       },
       {
         "__id__": 36
+      },
+      {
+        "__id__": 37
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 37
-      },
-      {
         "__id__": 38
       },
       {
         "__id__": 39
+      },
+      {
+        "__id__": 40
       }
     ],
     "_prefab": null,
@@ -178,7 +181,7 @@
       "array": [
         0,
         0,
-        189.65956342879207,
+        199.3888175744329,
         0,
         0,
         0,
@@ -274,9 +277,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 159,
-      "g": 176,
-      "b": 183,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -336,12 +339,12 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 100,
+    "_opacity": 80,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 54,
+      "g": 54,
+      "b": 54,
       "a": 255
     },
     "_contentSize": {
@@ -1542,7 +1545,7 @@
     },
     "component": "",
     "_componentId": "2e810gPIYdMIbdgLhTM821Z",
-    "handler": "back_map",
+    "handler": "back_time_show",
     "customEventData": ""
   },
   {
@@ -1614,6 +1617,64 @@
     "_originalWidth": 1200,
     "_originalHeight": 750,
     "_id": "c96o/FbOROl6ceWM//4ndz"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "结算",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "abQyYtnuBJhZQxOhA63EVw"
   },
   {
     "__type__": "cc.Node",

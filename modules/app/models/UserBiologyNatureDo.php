@@ -270,8 +270,8 @@ class UserBiologyNatureDo extends ActiveRecord
             'fighting_history'=> $this->fighting_history ,
             'history_count'=> $this->history_count ,
             'poition_winner'=>$this->poition_winner,
-            'poition_my'=>$poition_my,
-            'poition_enemy'=>$poition_enemy,
+            'poition_my'=>$poition_my,//前端展示信息需要处理显示
+            'poition_enemy'=>$poition_enemy,//前端展示信息需要处理显示
             'biolgy_state'=>$biolgy_state,
             'map_pic'=>"/app_resources/fighting/sence/".rand(1,6).".jpg",//随机地图
         ];

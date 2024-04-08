@@ -49,6 +49,15 @@ cc.Class({
   back_home: function back_home() {
     httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   },
+  //跳过回合
+  back_time_show: function back_time_show() {
+    this.unscheduleAllCallbacks(this); //停止某组件的所有计时器
+
+    cc.find('Canvas/结算').active = true;
+  },
+  back_time_hidden: function back_time_hidden() {
+    cc.find('Canvas/结算').active = false;
+  },
   show_dlg: function show_dlg() {
     this.node.active = true;
   },

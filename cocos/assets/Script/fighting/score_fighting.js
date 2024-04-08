@@ -70,6 +70,9 @@ cc.Class({
             var history_count =  fighting_list.history_count
             var fighting_history= fighting_list.fighting_history;
  
+
+            //先加载弹窗结果
+            _this.fightingEnd(fighting_list)
             if(boat_length!=0){
               var boat=0;
               var boat_count=-1;
@@ -85,7 +88,8 @@ cc.Class({
                   if(boat_count==boat_length){
                     // cc.log(111)
                     // 在第六次执行回调时取消这个计时器
-                    _this.fightingEnd(fighting_list)
+                    // _this.fightingEnd(fighting_list)
+                    cc.find('Canvas/结算').active =true;// 结束弹窗结果
                     _this.unschedule();
                   }else{
                     //判断下动作是否已经下一回合
@@ -112,7 +116,6 @@ cc.Class({
       if(his_log.h_need.length!=0){
         _this.readySkill(his_log.h_need)
       }
-
       //go和do 二选一 ，need 必有   
       // 发起技能名称被动
       if(his_log.h_go.length!=0){
@@ -146,7 +149,7 @@ cc.Class({
             }
             //将预制资源添加到父节点
             // CanvasNode.addChild(TipBoxPrefab);
-            cc.find('Canvas').addChild(TipBoxPrefab,1);
+            cc.find('Canvas/结算').addChild(TipBoxPrefab,1);
             //请求战斗记录
             // if(_task==1){
             //     console.log(11111)
@@ -225,7 +228,7 @@ cc.Class({
           var biology = his_log_extend[npage];
           var _this_hero_node =this.fightingArray[biology.goid]
           var _targ_hero_node =this.fightingArray[biology.doid]
-          _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
+          _this.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
           }
       } 
       return new Promise(resolve => {resolve();})
@@ -274,28 +277,31 @@ cc.Class({
           var _targ_hero_node =this.fightingArray[biology.doid]
           if(biology.goid==biology.doid){
               // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
-            _this.buttonReady(0,_this_hero_node,biology)//自己变大--加载技能动作
+            _this.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
           }else{
-            _this.buttonMove(0.1,_this_hero_node,_targ_hero_node,biology) //移动
+            _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
           }
         }
       }
       return new Promise(resolve => {resolve();})
     },
     //准备动作--变大
-    buttonReady(waite_time,node,biology) {
-        var _this =this
-        var waite_time=waite_time||0
-        const actionhiddenBig =  cc.scaleTo(0.2, 1.2, 1.2);//变大
+    buttonReady(node,biology) {
+        // var _this =this
+        // var waite_time=waite_time||0
+        const actionhiddenBig =   cc.spawn(cc.scaleTo(0.2, 1.1, 1.1),cc.callFunc(function(){
+          //等待攻击完成
+            getFightingExtend.playTips(node,biology)
+        },this));//变大还原//变大
         // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
-        const actionhiddenOn = cc.fadeTo(0.05,0);
+        const actionhiddenOn = cc.fadeTo(0.1,0);
         // const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
         // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
         // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
         // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
         // actionLeft, actionRight, actionLeftSecond, actionRightSecond,
-        const actionhiddenoff = cc.fadeTo(0.05,255);
-        const actionhiddenSmoll = cc.scaleTo(0.2,1,1);//变大还原
+        const actionhiddenoff = cc.fadeTo(0.1,255);
+        const actionhiddenSmoll =  cc.scaleTo(0.2,1,1)//变大还原
         // cc.spwan( 同时完成
         return new Promise(resolve => {
             node.runAction(
@@ -306,7 +312,7 @@ cc.Class({
                     // cc.log(biology);
                     //先走提示再动作
                     // _this.schedule(function(){
-                    getFightingExtend.playTips(node,biology)
+                    // getFightingExtend.playTips(node,biology)
                     getFightingExtend.playAction(node,biology)
                     // },1)
                     resolve();
@@ -315,7 +321,7 @@ cc.Class({
         });
     },
     //移动
-    buttonMove(waite_time,node,m_node,biology) {
+    buttonMove(node,m_node,biology) {
       var arr =[];
       var _this =this;
       var m_x=10
@@ -329,15 +335,15 @@ cc.Class({
       if (node.x != m_node.x) m_x = m_node.x - node.x+m_x_move
       if (node.y != m_node.y) m_y = m_node.y - node.y 
       //普通攻击
-      const actionLeft = cc.spawn(cc.moveBy(0.3,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
-              // //等待攻击完成
-              // _this.buttonShake(waite_time,m_node,biology)
+      const actionLeft = cc.spawn(cc.moveBy(0.2,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
+              //等待攻击完成
+              _this.buttonShake(m_node,biology)
       },this)) 
       // const actionWaite = cc.delayTime(0.01) 
       //返回位置
-      const actionRight =cc.spawn(cc.moveBy(0.3,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){
-          //等待攻击完成
-          _this.buttonShake(waite_time,m_node,biology)
+      const actionRight =cc.spawn(cc.moveBy(0.2,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){
+          // //等待攻击完成
+          // _this.buttonShake(m_node,biology)
       },this))
       // 让节点在向上移动的同时缩放
       // arr.push(cc.scaleTo(0.1, 1,1))
@@ -350,10 +356,10 @@ cc.Class({
       });
   },
   //受击
-  buttonShake(waite_time,node,biology) {
-    var _this =this;
-    var waite_time=waite_time||0
-    const actionWaite =cc.delayTime(waite_time);//等待攻击时间
+  buttonShake(node,biology) {
+    // var _this =this;
+    // var waite_time=waite_time||0
+    // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
     const actionhiddenOn = cc.fadeTo(0.05,0);
     const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
     const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
@@ -363,7 +369,7 @@ cc.Class({
     // cc.spwan( 同时完成
     return new Promise(resolve => {
         node.runAction(
-            cc.sequence(actionWaite,actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
+            cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
             // 执行动作完成之后调用的方法
                 cc.callFunc(() => {
                     // cc.log(node);

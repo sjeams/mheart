@@ -199,6 +199,26 @@ cc.Class({
     TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string = '闪避s' + '0%';
     TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string = '增伤:' + info.jianShang + '%';
     TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string = '减伤:' + info.zhenShang + '%';
+    var i = 0;
+
+    for (var prop in info.position_skill) {
+      i++;
+      cc.log('P技能' + i);
+
+      if (info.position_skill[prop].image != '') {
+        cc.loader.loadRes('/skill_icon/' + info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) {
+          TipBoxPrefab.getChildByName('P技能' + i).getComponent(cc.Sprite).spriteFrame = spriteFrame;
+        });
+      } else {
+        TipBoxPrefab.getChildByName('P技能' + i).getComponent(cc.Sprite).spriteFrame = '';
+      } // TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame
+      // var remoteUrl = httpRequest.httpUrl(info.position_skill[prop].image);
+      // cc.loader.load({ url: remoteUrl }, function (err, texture) { 
+      //     TipBoxPrefab.getChildByName('P技能'+).getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+      // });
+
+    }
+
     cc.find('Canvas/弹窗').addChild(TipBoxPrefab, 1);
   }
 });

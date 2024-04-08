@@ -30,20 +30,20 @@
         "__id__": 21
       },
       {
-        "__id__": 33
+        "__id__": 32
       },
       {
-        "__id__": 36
+        "__id__": 35
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 39
+        "__id__": 38
       }
     ],
     "_prefab": {
-      "__id__": 40
+      "__id__": 39
     },
     "_opacity": 255,
     "_color": {
@@ -377,7 +377,7 @@
     },
     "component": "",
     "_componentId": "2e810gPIYdMIbdgLhTM821Z",
-    "handler": "hidden_dlg",
+    "handler": "back_time_hidden",
     "customEventData": ""
   },
   {
@@ -835,7 +835,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 32
+      "__id__": 31
     },
     "_opacity": 255,
     "_color": {
@@ -1149,9 +1149,6 @@
     "clickEvents": [
       {
         "__id__": 30
-      },
-      {
-        "__id__": 31
       }
     ],
     "_N$interactable": true,
@@ -1230,17 +1227,7 @@
     },
     "component": "",
     "_componentId": "2e810gPIYdMIbdgLhTM821Z",
-    "handler": "back_map",
-    "customEventData": ""
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "",
-    "_componentId": "2e810gPIYdMIbdgLhTM821Z",
-    "handler": "hidden_dlg",
+    "handler": "back_time_hidden",
     "customEventData": ""
   },
   {
@@ -1265,11 +1252,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 34
+        "__id__": 33
       }
     ],
     "_prefab": {
-      "__id__": 35
+      "__id__": 34
     },
     "_opacity": 255,
     "_color": {
@@ -1323,7 +1310,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 33
+      "__id__": 32
     },
     "_enabled": true,
     "_materials": [
@@ -1372,11 +1359,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 37
+        "__id__": 36
       }
     ],
     "_prefab": {
-      "__id__": 38
+      "__id__": 37
     },
     "_opacity": 255,
     "_color": {
@@ -1430,7 +1417,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 36
+      "__id__": 35
     },
     "_enabled": true,
     "_materials": [

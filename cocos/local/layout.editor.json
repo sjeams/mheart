@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 195,
-      "y": 390,
+      "x": 1009,
+      "y": 143,
       "width": 1353,
-      "height": 654,
+      "height": 677,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 245.703125,
+                "height": 226,
                 "type": "panel",
-                "width": 256.6875
+                "width": 343
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 448.296875,
+                "height": 327.5,
                 "type": "panel",
-                "width": 256.6875
+                "width": 343
               }
             ],
-            "height": 697,
+            "height": 556.5,
             "type": "dock-v",
-            "width": 256.6875
+            "width": 343
           },
           {
             "active": 0,
@@ -42,9 +42,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 697,
+            "height": 556.5,
             "type": "panel",
-            "width": 316.3125
+            "width": 365
           },
           {
             "children": [
@@ -53,9 +53,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 343.984375,
+                "height": 274.234375,
                 "type": "panel",
-                "width": 504
+                "width": 623
               },
               {
                 "active": 0,
@@ -64,14 +64,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 350.015625,
+                "height": 279.25,
                 "type": "panel",
-                "width": 504
+                "width": 623
               }
             ],
-            "height": 697,
+            "height": 556.5,
             "type": "dock-v",
-            "width": 504
+            "width": 623
           }
         ],
         "type": "dock-h"

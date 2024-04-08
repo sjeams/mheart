@@ -1144,11 +1144,6 @@
     "meta": 1712050298507,
     "relativePath": "prefabs\\sprite_地图.prefab"
   },
-  "a35df353-e613-4fbb-acd6-15095812556b": {
-    "asset": 1712041693217,
-    "meta": 1712041693239,
-    "relativePath": "resources\\biology_结算.prefab"
-  },
   "f0121585-cf7d-4bad-91b8-11b387bb6106": {
     "asset": 1704446122379,
     "meta": 1704446303018,
@@ -1289,16 +1284,6 @@
     "meta": 1712026634675,
     "relativePath": "Scene\\login\\登录.fire"
   },
-  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
-    "asset": 1712543898483,
-    "meta": 1712543898510,
-    "relativePath": "prefabs\\biology_普通.prefab"
-  },
-  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
-    "asset": 1712041120162,
-    "meta": 1712041122455,
-    "relativePath": "Script\\fighting\\figthingExtend.js"
-  },
   "6cac66da-93bc-47e8-8e74-317f0146b403": {
     "asset": 1712045020772,
     "meta": 1712045020789,
@@ -1339,34 +1324,59 @@
     "meta": 1712051834061,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
-  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1712116073072,
-    "meta": 1712116084581,
-    "relativePath": "Script\\fighting\\score_fighting_alert.js"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1712116174283,
-    "meta": 1712116178546,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
-  "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
-    "asset": 1712116682444,
-    "meta": 1712116728736,
-    "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
-  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1712542293608,
     "meta": 1712542313784,
     "relativePath": "Script\\http.js"
   },
+  "993cff71-b628-4e19-87a9-e4ee800cd4ee": {
+    "asset": 1712562132261,
+    "meta": 1712562132280,
+    "relativePath": "prefabs\\biology_普通.prefab"
+  },
+  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
+    "asset": 1712562177983,
+    "meta": 1712562438011,
+    "relativePath": "Script\\fighting\\figthingExtend.js"
+  },
+  "2e81080f-2187-4c21-b760-2e14ccf36d59": {
+    "asset": 1712565118230,
+    "meta": 1712565126773,
+    "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "a35df353-e613-4fbb-acd6-15095812556b": {
+    "asset": 1712565146469,
+    "meta": 1712565146489,
+    "relativePath": "resources\\biology_结算.prefab"
+  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1712548218110,
-    "meta": 1712548250097,
+    "asset": 1712565488995,
+    "meta": 1712565821322,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1712548442518,
-    "meta": 1712548442540,
+    "asset": 1712567201268,
+    "meta": 1712567201344,
     "relativePath": "Scene\\战斗场景.fire"
+  },
+  "39cd5397-c68a-4a29-8dda-32fb7e239029": {
+    "asset": 1712568549074,
+    "meta": 1712568549080,
+    "relativePath": "resources\\skill_icon"
+  },
+  "b0eea557-337a-4c0c-aafa-d1a769d90be7": {
+    "asset": 1712568610008,
+    "meta": 1712568627871,
+    "relativePath": "resources\\skill_icon\\蝶舞.png"
+  },
+  "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
+    "asset": 1712570340414,
+    "meta": 1712570340462,
+    "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1712569328747,
+    "meta": 1712570215926,
+    "relativePath": "Script\\fighting\\fightingTools.js"
   }
 }

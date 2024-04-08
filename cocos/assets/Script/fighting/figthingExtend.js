@@ -8,25 +8,45 @@ const FightingExtend = cc.Class({
   playTips(node,biology,is_skill){
         //技能名称
         if(biology.descript_go_msg!=''){
-          cc.log(biology.descript_go_msg)
+          // cc.log(biology.descript_go_msg)
             node.getChildByName('技能s').getComponent(cc.Label).string=biology.descript_go_msg
             node.getChildByName('技能s').active=true
             node.getChildByName('技能s').opacity=255
             // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,60)));
-            node.getChildByName('技能s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this));
+            // node.getChildByName('技能s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this));
+            node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能s').active=false  },this));
             // node.getChildByName('技能s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
         }
   },
   //攻击动作
   playAction(node,biology,is_skill){
     var is_skill=is_skill||0
-
     //技能--攻击动画
     if(is_skill!=0){
       node.getChildByName('技能效果').active=true
       node.getChildByName('技能效果').opacity=255
-      node.getChildByName('技能效果').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('技能效果').active=false },this));
+      // node.getChildByName('技能效果').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('技能效果').active=false },this));
+      node.getChildByName('技能效果').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能效果').active=false  },this));
     }
+
+    if(biology.extend=='moFa'){
+      // node.getChildByName('扣血s').color = new cc.color('#3568D5');
+      node.getChildByName('扣蓝s').getComponent(cc.Label).string= biology.hurt_msg
+      // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value
+      var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
+      progressBar.progress = biology.hurt_go_value / node.moFa
+      progressBar.completeCount = biology.hurt_go_value;
+      progressBar.totalCount = node.moFa;
+      //扣蓝渐隐
+      node.getChildByName('扣蓝s').active=true
+      node.getChildByName('扣蓝s').opacity=255
+      node.getChildByName('扣蓝s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.1),cc.moveBy(0.5,cc.v2(0,60)),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1),cc.moveBy(0.01,cc.v2(0,-60))),cc.callFunc(function(){  node.getChildByName('扣蓝s').active=false },this));
+      // node.getChildByName('扣蓝s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
+      // node.getChildByName('扣蓝s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣蓝s').active=false },this));
+      // node.getChildByName('扣蓝s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
+    }
+
     // cc.log(biology)
     if(biology.extend=='shengMing'){
       //血条动作
@@ -42,18 +62,20 @@ const FightingExtend = cc.Class({
         node.getChildByName('加血s').getComponent(cc.Label).string= biology.hurt_msg
         node.getChildByName('加血s').active=true
         node.getChildByName('加血s').opacity=255
-        node.getChildByName('加血s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
-        node.getChildByName('加血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('加血s').active=false },this));
-        node.getChildByName('加血s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
+        node.getChildByName('加血s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.1),cc.moveBy(0.5,cc.v2(0,60)),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1),cc.moveBy(0.01,cc.v2(0,-60))),cc.callFunc(function(){  node.getChildByName('加血s').active=false },this));
+        // node.getChildByName('加血s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
+        // node.getChildByName('加血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('加血s').active=false },this));
+        // node.getChildByName('加血s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
       }else{
         cc.log(biology.hurt_go)
         //扣血渐隐
         node.getChildByName('扣血s').getComponent(cc.Label).string= biology.hurt_msg
         node.getChildByName('扣血s').active=true
         node.getChildByName('扣血s').opacity=255
-        node.getChildByName('扣血s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
-        node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
-        node.getChildByName('扣血s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
+        node.getChildByName('扣血s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.1),cc.moveBy(0.5,cc.v2(0,60)),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1),cc.moveBy(0.01,cc.v2(0,-60))),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
+        // node.getChildByName('扣血s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
+        // node.getChildByName('扣血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
+        // node.getChildByName('扣血s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
         //受伤动画
         node.getChildByName('受伤').active=true
         node.getChildByName('受伤').opacity=255
@@ -94,29 +116,13 @@ const FightingExtend = cc.Class({
         // // node.getChildByName('金币s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
       }
     }
-    if(biology.extend=='moFa'){
-      // node.getChildByName('扣血s').color = new cc.color('#3568D5');
-      node.getChildByName('扣蓝s').getComponent(cc.Label).string= biology.hurt_msg
-      // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
-      node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value
-      var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
-      progressBar.progress = biology.hurt_go_value / node.moFa
-      progressBar.completeCount = biology.hurt_go_value;
-      progressBar.totalCount = node.moFa;
-      //扣蓝渐隐
-      node.getChildByName('扣蓝s').active=true
-      node.getChildByName('扣蓝s').opacity=255
-      node.getChildByName('扣蓝s').runAction(cc.moveBy(0.2,cc.v2(0,60)));
-      node.getChildByName('扣蓝s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('扣血s').active=false },this));
-      node.getChildByName('扣蓝s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
-    }
 
     if(biology.extend=='闪避'){
       node.getChildByName('技能s').getComponent(cc.Label).string='闪避';
       node.getChildByName('技能s').active=true
       node.getChildByName('技能s').opacity=255
       // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,60)));
-      node.getChildByName('技能s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this));
+      node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.01, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this));
     }
 
 
