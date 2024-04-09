@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f7218439-dbc8-4079-966b-b2061b4cb157",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Hunter_Pet_Hyena": {
+      "ver": "1.0.4",
+      "uuid": "b5552cb5-4d44-4e9e-be6f-d7b1de2d35bf",
+      "rawTextureUuid": "f7218439-dbc8-4079-966b-b2061b4cb157",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

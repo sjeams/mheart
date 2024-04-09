@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9770958f-f235-44c3-ac44-ca5ae51a9e49",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 239,
+  "height": 150,
+  "platformSettings": {},
+  "subMetas": {
+    "神魔炼狱": {
+      "ver": "1.0.4",
+      "uuid": "b41d3fc1-b7f4-4aac-afd4-24f9e9baf6a4",
+      "rawTextureUuid": "9770958f-f235-44c3-ac44-ca5ae51a9e49",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 239,
+      "height": 150,
+      "rawWidth": 239,
+      "rawHeight": 150,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a227a596-f77d-4c85-b04e-56a8c34323b8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Rogue_BloodyEye": {
+      "ver": "1.0.4",
+      "uuid": "4194fce3-5356-4ac9-8f68-38a9095b3c62",
+      "rawTextureUuid": "a227a596-f77d-4c85-b04e-56a8c34323b8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

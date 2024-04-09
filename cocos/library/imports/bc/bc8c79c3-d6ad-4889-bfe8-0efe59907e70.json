@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "创造生物",
+    "texture": "1220f7c3-53d7-480c-9506-d2fae39a94b0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      268,
+      150
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      268,
+      150
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

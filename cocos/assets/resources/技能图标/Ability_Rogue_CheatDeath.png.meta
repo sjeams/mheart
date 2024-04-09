@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "192516a0-6deb-4e37-8397-13b868dfcc26",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Rogue_CheatDeath": {
+      "ver": "1.0.4",
+      "uuid": "bcc56a70-89b5-487c-b572-d0a87d0ac088",
+      "rawTextureUuid": "192516a0-6deb-4e37-8397-13b868dfcc26",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d93c0624-1257-46db-9319-1a59d51a8e25",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mount_NetherdrakePurple": {
+      "ver": "1.0.4",
+      "uuid": "132b9984-cff4-42dd-bb4e-f84dfbc99a5c",
+      "rawTextureUuid": "d93c0624-1257-46db-9319-1a59d51a8e25",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "消耗",
+    "texture": "467bb9d1-05c6-46f7-b439-0b7cf231dff4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      101,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      101,
+      100
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

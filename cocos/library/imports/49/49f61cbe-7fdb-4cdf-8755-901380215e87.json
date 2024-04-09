@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "锁妖塔",
+    "texture": "eee8a7c8-97ab-4db2-b147-542c3766821c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      142,
+      200
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      142,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

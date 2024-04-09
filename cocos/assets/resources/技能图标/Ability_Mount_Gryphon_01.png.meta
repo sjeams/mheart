@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8fcdfb97-70b2-441c-bd63-a2e420c4939c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mount_Gryphon_01": {
+      "ver": "1.0.4",
+      "uuid": "c36b1580-0ed2-449f-9f30-a1ab3896a64d",
+      "rawTextureUuid": "8fcdfb97-70b2-441c-bd63-a2e420c4939c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

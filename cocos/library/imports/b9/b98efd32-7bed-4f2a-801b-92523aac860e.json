@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "镇妖塔",
+    "texture": "cf709c52-7091-42ba-ba78-6c0af17f70e0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      210,
+      136
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      210,
+      136
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

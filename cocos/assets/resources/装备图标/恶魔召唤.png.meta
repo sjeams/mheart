@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "848d1e49-48f3-4dc0-a8be-7a63c6cd3334",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "恶魔召唤": {
+      "ver": "1.0.4",
+      "uuid": "eb2c8319-654b-4981-8f0d-73c224a3f1c6",
+      "rawTextureUuid": "848d1e49-48f3-4dc0-a8be-7a63c6cd3334",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

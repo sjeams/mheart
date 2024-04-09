@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "93d41820-4f87-4f77-9997-ac432d317d47",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mount_NetherDrakeElite": {
+      "ver": "1.0.4",
+      "uuid": "def77a0c-7983-4226-958b-7a66e074b18f",
+      "rawTextureUuid": "93d41820-4f87-4f77-9997-ac432d317d47",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

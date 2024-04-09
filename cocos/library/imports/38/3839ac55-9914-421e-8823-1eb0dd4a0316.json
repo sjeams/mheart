@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "体力",
+    "texture": "80b85a87-eb45-4dbb-944d-7f821233eaca",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      73,
+      66
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      73,
+      66
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

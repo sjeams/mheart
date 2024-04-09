@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4457bd22-0d2d-4895-889d-b389d36b2c45",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Creature_Poison_04": {
+      "ver": "1.0.4",
+      "uuid": "3cd76f13-31b5-4127-b52e-e652b1fdc9a4",
+      "rawTextureUuid": "4457bd22-0d2d-4895-889d-b389d36b2c45",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
