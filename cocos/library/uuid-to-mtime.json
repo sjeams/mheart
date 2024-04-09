@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1712045020788,
+    "asset": 1712568594709,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -748,11 +748,6 @@
     "asset": 1655109292725,
     "meta": 1703815630810,
     "relativePath": "Textrue\\bagBtn.png"
-  },
-  "6abb7650-c627-4245-98c7-c3bf61d17c65": {
-    "asset": 1655109292726,
-    "meta": 1703815630814,
-    "relativePath": "Textrue\\button.png"
   },
   "0b4def80-0f5b-48b0-badc-4bc8383ef3b3": {
     "asset": 1655109292734,
@@ -1030,7 +1025,7 @@
     "relativePath": "resources\\biology_pic\\2阴影.png"
   },
   "f4b08d46-7ade-48d1-b8e1-f7b0e75bc81e": {
-    "asset": 1703572082988,
+    "asset": 1712568557246,
     "meta": 1703572082999,
     "relativePath": "resources\\biology_alert"
   },
@@ -1289,11 +1284,6 @@
     "meta": 1712045020789,
     "relativePath": "resources\\生物详情"
   },
-  "1b99732f-2a4f-4d7e-aee1-057390919a05": {
-    "asset": 1712045020771,
-    "meta": 1712045020811,
-    "relativePath": "resources\\生物详情\\biology_生物_战斗技能提示.prefab"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1712543347465,
     "meta": 1712543347484,
@@ -1355,19 +1345,9 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1712567201268,
-    "meta": 1712567201344,
+    "asset": 1712634518120,
+    "meta": 1712634518136,
     "relativePath": "Scene\\战斗场景.fire"
-  },
-  "39cd5397-c68a-4a29-8dda-32fb7e239029": {
-    "asset": 1712568549074,
-    "meta": 1712568549080,
-    "relativePath": "resources\\skill_icon"
-  },
-  "b0eea557-337a-4c0c-aafa-d1a769d90be7": {
-    "asset": 1712568610008,
-    "meta": 1712568627871,
-    "relativePath": "resources\\skill_icon\\蝶舞.png"
   },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
     "asset": 1712570340414,
@@ -1378,5 +1358,65 @@
     "asset": 1712569328747,
     "meta": 1712570215926,
     "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
+    "asset": 1712634238121,
+    "meta": 1712634238111,
+    "relativePath": "resources\\技能图标"
+  },
+  "3bd227bb-e56f-46d8-b3bf-afd4fd726ee6": {
+    "asset": 1712634061375,
+    "meta": 1712648690283,
+    "relativePath": "resources\\技能图标\\刚毅.png"
+  },
+  "b68c3e96-6af1-49a8-b84c-f8cc1708dcf4": {
+    "asset": 1712634073556,
+    "meta": 1712648661562,
+    "relativePath": "resources\\技能图标\\恶魔召唤.png"
+  },
+  "9fc462e7-77a5-422b-89ed-5498cbb8594e": {
+    "asset": 1712634081504,
+    "meta": 1712648700012,
+    "relativePath": "resources\\技能图标\\抵消疾病.png"
+  },
+  "83d0fc9f-fdb1-44f4-8c76-9148a236b723": {
+    "asset": 1712634146533,
+    "meta": 1712634504062,
+    "relativePath": "resources\\技能图标\\药水绿色.png"
+  },
+  "d26831db-7435-43ec-addc-7e8ae543575c": {
+    "asset": 1712634238149,
+    "meta": 1712634238148,
+    "relativePath": "resources\\技能效果"
+  },
+  "58fe9e2b-74b9-4fc7-a0a4-84b098116a91": {
+    "asset": 1712634039483,
+    "meta": 1712648644778,
+    "relativePath": "resources\\技能图标\\死亡缠绕.png"
+  },
+  "1902624f-80dd-47e3-bb1b-0f04a33db756": {
+    "asset": 1712634720595,
+    "meta": 1712634935505,
+    "relativePath": "resources\\技能效果\\飓风.png"
+  },
+  "d79df13d-61d6-4c5d-b797-b86e06d6a749": {
+    "asset": 1712634945419,
+    "meta": 1712634965563,
+    "relativePath": "resources\\技能效果\\血爆.png"
+  },
+  "2104965e-009a-49db-88f1-ee080f9733eb": {
+    "asset": 1712642711620,
+    "meta": 1712642711648,
+    "relativePath": "resources\\技能图标\\金币.png"
+  },
+  "1b99732f-2a4f-4d7e-aee1-057390919a05": {
+    "asset": 1712650948589,
+    "meta": 1712650948602,
+    "relativePath": "resources\\生物详情\\biology_生物_战斗技能提示.prefab"
+  },
+  "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
+    "asset": 1712644167721,
+    "meta": 1712644173431,
+    "relativePath": "resources\\技能图标\\消耗.png"
   }
 }

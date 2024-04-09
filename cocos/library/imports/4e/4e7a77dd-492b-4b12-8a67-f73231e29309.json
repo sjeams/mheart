@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "飓风",
+    "texture": "1902624f-80dd-47e3-bb1b-0f04a33db756",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      199,
+      229
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      199,
+      229
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
