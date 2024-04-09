@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "13330",
-    "texture": "31b47881-545a-45cf-9215-5f5ebba6b2d7",
+    "name": "地图",
+    "texture": "72527c2a-51c2-42ac-a0ac-8647d55d7d49",
     "atlas": "",
     "rect": [
-      33,
-      8,
-      334,
-      109
+      0,
+      0,
+      350,
+      182
     ],
     "offset": [
-      1,
-      3.5
+      0,
+      0
     ],
     "originalSize": [
-      398,
-      132
+      350,
+      182
     ],
     "capInsets": [
       0,

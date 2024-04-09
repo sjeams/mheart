@@ -539,11 +539,6 @@
     "meta": 1655109292690,
     "relativePath": "Script\\home_js"
   },
-  "94d4e510-f9d8-4f4e-a5da-b39f4310a46b": {
-    "asset": 1703657899544,
-    "meta": 1655869751902,
-    "relativePath": "resources\\server_pic"
-  },
   "0a7fee4f-d838-42e7-a302-b0fd4a53175a": {
     "asset": 1703643341336,
     "meta": 1655109292733,
@@ -614,36 +609,6 @@
     "meta": 1703815629447,
     "relativePath": "resources\\biology_pic\\4异形.png"
   },
-  "232a32c6-cd05-46d3-9f21-f8efdc3871c7": {
-    "asset": 1655109292784,
-    "meta": 1703815629474,
-    "relativePath": "resources\\login.json"
-  },
-  "31b47881-545a-45cf-9215-5f5ebba6b2d7": {
-    "asset": 1656920122713,
-    "meta": 1703815629488,
-    "relativePath": "resources\\server_pic\\13330.png"
-  },
-  "b26455a4-2d50-48b3-ba2d-285a219f2ae6": {
-    "asset": 1656920122715,
-    "meta": 1703815629499,
-    "relativePath": "resources\\server_pic\\13332.png"
-  },
-  "997aaa35-1638-44f2-b93b-b33c530de838": {
-    "asset": 1656033645372,
-    "meta": 1703815629515,
-    "relativePath": "resources\\server_pic\\bagButn.png"
-  },
-  "8fc00a6e-4265-4e6f-b578-71c40e8f9386": {
-    "asset": 1656048804358,
-    "meta": 1703815629526,
-    "relativePath": "resources\\server_pic\\canser.png"
-  },
-  "cbca4d71-a3a5-4917-a794-e5a434e67b3a": {
-    "asset": 1655869782085,
-    "meta": 1703815629560,
-    "relativePath": "resources\\server_pic\\server_background.png"
-  },
   "2d5d8107-dd4c-4e91-8a91-24e8fc76dc51": {
     "asset": 1655791050119,
     "meta": 1703815629581,
@@ -663,11 +628,6 @@
     "asset": 1709784414948,
     "meta": 1709883552493,
     "relativePath": "Scene\\home\\天地熔炉.fire"
-  },
-  "fe1c2c7a-a7dd-49ca-ac7c-1e8e61b97703": {
-    "asset": 1656920122721,
-    "meta": 1703815629619,
-    "relativePath": "resources\\server_pic\\server_tips_pic.png"
   },
   "5f3de638-09ed-47d3-bafb-ecf360038279": {
     "asset": 1709784368637,
@@ -979,30 +939,15 @@
     "meta": 1703815631236,
     "relativePath": "Textrue\\tools\\银钥匙.png"
   },
-  "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1709883357257,
-    "meta": 1709884988688,
-    "relativePath": "prefabs\\sprite_server_login.prefab"
-  },
   "175f3a60-1b3b-452e-8fb5-a4c183722325": {
     "asset": 1712041805594,
-    "meta": 1712041805617,
+    "meta": 1712651898032,
     "relativePath": "resources\\sprite_loading.prefab"
-  },
-  "37a0291a-e6cf-46bb-8a85-e17938e9bac5": {
-    "asset": 1703064832634,
-    "meta": 1703815629537,
-    "relativePath": "resources\\server_pic\\dating.png"
   },
   "c5c4196c-5ece-48c0-b842-eac9644db4ad": {
     "asset": 1703065129152,
     "meta": 1703815629894,
     "relativePath": "Script\\bakcground.js"
-  },
-  "327c76c9-49a2-410e-b9e4-5f6f388ab41f": {
-    "asset": 1703126050559,
-    "meta": 1703815629546,
-    "relativePath": "resources\\server_pic\\alert_login_pic.png"
   },
   "495154c0-dc59-4d87-adb7-d4f8e997c605": {
     "asset": 1712023364703,
@@ -1124,21 +1069,6 @@
     "meta": 1703815629486,
     "relativePath": "resources\\biology_pic\\9标准弹窗.png"
   },
-  "78b1e8ef-6b1e-4322-aa8b-0085dacbc3ae": {
-    "asset": 1703657746599,
-    "meta": 1703815629476,
-    "relativePath": "resources\\server_pic\\0AutoAtlas.pac"
-  },
-  "9ffc1edb-92fa-48ef-8b70-1462b29958e6": {
-    "asset": 1703657899535,
-    "meta": 1703815629501,
-    "relativePath": "resources\\server_pic\\骰子.png"
-  },
-  "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1712050298485,
-    "meta": 1712050298507,
-    "relativePath": "prefabs\\sprite_地图.prefab"
-  },
   "f0121585-cf7d-4bad-91b8-11b387bb6106": {
     "asset": 1704446122379,
     "meta": 1704446303018,
@@ -1229,36 +1159,6 @@
     "meta": 1709707054559,
     "relativePath": "Script\\scence\\home_scence.js"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1709708196604,
-    "meta": 1709708225449,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
-  "48171ea0-5c6a-4dc0-8eb6-b50d3e826bb9": {
-    "asset": 1709790488779,
-    "meta": 1709790613433,
-    "relativePath": "resources\\biology_pic\\1地图.jpg"
-  },
-  "141fac6f-c95e-42cb-9df0-8fd8eb3f2f74": {
-    "asset": 1711968644341,
-    "meta": 1711968644373,
-    "relativePath": "prefabs\\生物详情\\biology_生物_战斗详情.prefab"
-  },
-  "39fcf918-52b8-4cb5-975d-5b9ee52d773d": {
-    "asset": 1711968079613,
-    "meta": 1709889629077,
-    "relativePath": "prefabs\\生物详情"
-  },
-  "44b8af58-8724-4798-81b8-c4567d57ab4c": {
-    "asset": 1711971172722,
-    "meta": 1711971172736,
-    "relativePath": "prefabs\\生物详情\\biology_生物_战斗技能提示.prefab"
-  },
-  "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
-    "asset": 1712023364723,
-    "meta": 1712023393204,
-    "relativePath": "prefabs\\sprite_生物.prefab"
-  },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
     "asset": 1712023364696,
     "meta": 1712023393208,
@@ -1269,35 +1169,10 @@
     "meta": 1712023393554,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "084956bf-faa0-408c-a255-201e4a76949f": {
-    "asset": 1712023364717,
-    "meta": 1712023393564,
-    "relativePath": "prefabs\\biology_生物_战斗详情.prefab"
-  },
-  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1712026536786,
-    "meta": 1712026634675,
-    "relativePath": "Scene\\login\\登录.fire"
-  },
   "6cac66da-93bc-47e8-8e74-317f0146b403": {
     "asset": 1712045020772,
     "meta": 1712045020789,
     "relativePath": "resources\\弹窗模型"
-  },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1712543347465,
-    "meta": 1712543347484,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
-  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1712050367074,
-    "meta": 1712050367094,
-    "relativePath": "prefabs\\sprite_世界.prefab"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1712051103802,
-    "meta": 1712051246396,
-    "relativePath": "Script\\scence\\mapTools.js"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
     "asset": 1712051286361,
@@ -1353,11 +1228,6 @@
     "asset": 1712651082395,
     "meta": 1712651082434,
     "relativePath": "resources\\弹窗模型\\biology_生物_战斗详情.prefab"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1712569328747,
-    "meta": 1712570215926,
-    "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
     "asset": 1712634238121,
@@ -1418,5 +1288,75 @@
     "asset": 1712644167721,
     "meta": 1712644173431,
     "relativePath": "resources\\技能图标\\消耗.png"
+  },
+  "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
+    "asset": 1712651424521,
+    "meta": 1712651435099,
+    "relativePath": "prefabs\\sprite_地图.prefab"
+  },
+  "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
+    "asset": 1712651424527,
+    "meta": 1712651435113,
+    "relativePath": "prefabs\\sprite_生物.prefab"
+  },
+  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
+    "asset": 1712651424516,
+    "meta": 1712651435131,
+    "relativePath": "prefabs\\sprite_世界.prefab"
+  },
+  "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
+    "asset": 1712651424509,
+    "meta": 1712651435143,
+    "relativePath": "prefabs\\sprite_server_login.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1712651424443,
+    "meta": 1712651435825,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1712651424466,
+    "meta": 1712651436004,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1712651424473,
+    "meta": 1712651436230,
+    "relativePath": "Script\\scence\\wordTools.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1712651444935,
+    "meta": 1712651444956,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "5fb7e54c-a2f3-42ef-afd5-9e5d902df33c": {
+    "asset": 1712651729261,
+    "meta": 1712651729265,
+    "relativePath": "resources\\背景"
+  },
+  "a19802f2-70fe-4728-90af-4458f0964b02": {
+    "asset": 1712651761753,
+    "meta": 1712651808023,
+    "relativePath": "resources\\背景\\登录.jpg"
+  },
+  "de0940f0-dfb0-4115-8ece-ac79e693d6a8": {
+    "asset": 1712651981862,
+    "meta": 1712651981914,
+    "relativePath": "Textrue\\model\\dating\\骰子.png"
+  },
+  "72527c2a-51c2-42ac-a0ac-8647d55d7d49": {
+    "asset": 1712652018392,
+    "meta": 1712652024497,
+    "relativePath": "resources\\背景\\地图.jpg"
+  },
+  "684ef8c2-06cf-4d06-a1b8-e938993bed74": {
+    "asset": 1712654403076,
+    "meta": 1712654403103,
+    "relativePath": "resources\\背景\\dating.png"
+  },
+  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
+    "asset": 1712656943017,
+    "meta": 1712656943052,
+    "relativePath": "Scene\\login\\登录.fire"
   }
 }

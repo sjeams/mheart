@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "dating",
-    "texture": "37a0291a-e6cf-46bb-8a85-e17938e9bac5",
+    "name": "登录",
+    "texture": "a19802f2-70fe-4728-90af-4458f0964b02",
     "atlas": "",
     "rect": [
       0,
       0,
-      351,
-      162
+      445,
+      250
     ],
     "offset": [
       0,
       0
     ],
     "originalSize": [
-      351,
-      162
+      445,
+      250
     ],
     "capInsets": [
       0,

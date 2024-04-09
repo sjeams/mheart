@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "骰子",
-    "texture": "9ffc1edb-92fa-48ef-8b70-1462b29958e6",
+    "name": "dating",
+    "texture": "684ef8c2-06cf-4d06-a1b8-e938993bed74",
     "atlas": "",
     "rect": [
-      7,
-      6,
-      85,
-      88
+      0,
+      0,
+      351,
+      162
     ],
     "offset": [
-      -0.5,
+      0,
       0
     ],
     "originalSize": [
-      100,
-      100
+      351,
+      162
     ],
     "capInsets": [
       0,
