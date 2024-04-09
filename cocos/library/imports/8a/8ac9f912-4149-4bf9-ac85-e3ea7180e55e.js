@@ -146,7 +146,7 @@ cc.Class({
     var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
 
-    cc.loader.loadRes('/生物详情/biology_生物_战斗详情', function (errorMessage, loadedResource) {
+    cc.loader.loadRes('/弹窗模型/biology_生物_战斗详情', function (errorMessage, loadedResource) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);

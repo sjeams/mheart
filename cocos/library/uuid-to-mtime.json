@@ -1282,7 +1282,7 @@
   "6cac66da-93bc-47e8-8e74-317f0146b403": {
     "asset": 1712045020772,
     "meta": 1712045020789,
-    "relativePath": "resources\\生物详情"
+    "relativePath": "resources\\弹窗模型"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1712543347465,
@@ -1350,9 +1350,9 @@
     "relativePath": "Scene\\战斗场景.fire"
   },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
-    "asset": 1712570340414,
-    "meta": 1712570340462,
-    "relativePath": "resources\\生物详情\\biology_生物_战斗详情.prefab"
+    "asset": 1712651082395,
+    "meta": 1712651082434,
+    "relativePath": "resources\\弹窗模型\\biology_生物_战斗详情.prefab"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1712569328747,
@@ -1412,7 +1412,7 @@
   "1b99732f-2a4f-4d7e-aee1-057390919a05": {
     "asset": 1712650948589,
     "meta": 1712650948602,
-    "relativePath": "resources\\生物详情\\biology_生物_战斗技能提示.prefab"
+    "relativePath": "resources\\弹窗模型\\biology_生物_战斗技能提示.prefab"
   },
   "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
     "asset": 1712644167721,
