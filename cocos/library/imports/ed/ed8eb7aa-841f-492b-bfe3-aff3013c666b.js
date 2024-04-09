@@ -90,7 +90,6 @@ cc.Class({
           //循环历史行动条数
 
           _this.schedule(function () {
-            cc.log(history_count[boat]);
             boat_count++;
 
             if (history_count[boat].total < boat_count) {

@@ -185,7 +185,7 @@ cc.Class({
         TipBoxPrefab.getChildByName('吸血s').getComponent(cc.Label).string='吸血:'+info.xiXue+'%'
         TipBoxPrefab.getChildByName('暴伤s').getComponent(cc.Label).string='暴伤:'+info.baoji+'%'
         TipBoxPrefab.getChildByName('闪避s').getComponent(cc.Label).string='闪避:'+info.shanbi+'%'
-        TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string='闪避s'+'0%'
+        TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string='闪避'+'0%'
         TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
         TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
 

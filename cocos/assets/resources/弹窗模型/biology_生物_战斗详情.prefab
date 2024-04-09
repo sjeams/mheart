@@ -229,16 +229,19 @@
       },
       {
         "__id__": 216
+      },
+      {
+        "__id__": 219
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 219
+        "__id__": 222
       }
     ],
     "_prefab": {
-      "__id__": 220
+      "__id__": 223
     },
     "_opacity": 255,
     "_color": {
@@ -501,9 +504,9 @@
     "_opacity": 250,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 91,
+      "g": 91,
+      "b": 91,
       "a": 255
     },
     "_contentSize": {
@@ -561,7 +564,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "1ebc2cfb-4a74-49fa-b48a-6af99f239c21"
+      "__uuid__": "16b26ad7-99a5-405c-9bef-43e8150e4dd1"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -670,9 +673,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "ec0a8227-440d-42dd-9659-fcfe96240d68"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -797,7 +798,7 @@
     "_prefab": {
       "__id__": 17
     },
-    "_opacity": 250,
+    "_opacity": 220,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -807,7 +808,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 220,
+      "width": 240,
       "height": 80
     },
     "_anchorPoint": {
@@ -820,7 +821,7 @@
       "ctor": "Float64Array",
       "array": [
         -40,
-        20,
+        0,
         0,
         0,
         0,
@@ -914,7 +915,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 120,
       "height": 160
     },
     "_anchorPoint": {
@@ -927,7 +928,7 @@
       "ctor": "Float64Array",
       "array": [
         -40,
-        100,
+        80,
         0,
         0,
         0,
@@ -1014,9 +1015,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 139,
+      "g": 139,
+      "b": 139,
       "a": 255
     },
     "_contentSize": {
@@ -1034,7 +1035,7 @@
       "ctor": "Float64Array",
       "array": [
         -260,
-        180,
+        190,
         0,
         0,
         0,
@@ -1074,7 +1075,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "95c7201e-7f62-47b0-a6fa-55473be23850"
+      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1140,8 +1141,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -325,
-        15,
+        -340,
+        30,
         0,
         0,
         0,
@@ -1181,7 +1182,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4059aa11-c60f-4586-a9b7-9e25c0cb685d"
+      "__uuid__": "3839ac55-9914-421e-8823-1eb0dd4a0316"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1247,8 +1248,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -325,
-        -15,
+        -340,
+        -10,
         0,
         0,
         0,
@@ -1288,7 +1289,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7d3b6d21-ffb9-4427-b21f-7e35e8d5d419"
+      "__uuid__": "0e81c438-f864-4841-b5ad-6f2d37736ad9"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1342,8 +1343,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1395,7 +1396,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "42f469c4-a139-4677-b3a3-3724d82b3bd2"
+      "__uuid__": "f8ea27c4-42d2-4a7f-aa29-6c2b553dc8b2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1449,8 +1450,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1502,7 +1503,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7d3b6d21-ffb9-4427-b21f-7e35e8d5d419"
+      "__uuid__": "f8ea27c4-42d2-4a7f-aa29-6c2b553dc8b2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1556,8 +1557,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1609,7 +1610,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "80884b1d-fc0d-48a6-bc0d-61ea42f05ed0"
+      "__uuid__": "f8ea27c4-42d2-4a7f-aa29-6c2b553dc8b2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1663,8 +1664,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1716,7 +1717,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "b4202ddf-a547-448d-b509-70f0e0a5a66d"
+      "__uuid__": "f8ea27c4-42d2-4a7f-aa29-6c2b553dc8b2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1770,8 +1771,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1875,8 +1876,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1980,8 +1981,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2085,8 +2086,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2190,8 +2191,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2295,8 +2296,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70,
-      "height": 70
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5610,8 +5611,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 30.240000000000002
+      "width": 180,
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5622,8 +5623,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -225,
-        17,
+        -230,
+        30,
         0,
         0,
         0,
@@ -5663,8 +5664,8 @@
     "_useOriginalSize": false,
     "_string": "6850",
     "_N$string": "6850",
-    "_fontSize": 24,
-    "_lineHeight": 24,
+    "_fontSize": 28,
+    "_lineHeight": 28,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -5674,7 +5675,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -5717,8 +5718,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 30.240000000000002
+      "width": 180,
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5729,8 +5730,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -225,
-        -13,
+        -230,
+        -10,
         0,
         0,
         0,
@@ -5770,8 +5771,8 @@
     "_useOriginalSize": false,
     "_string": "588",
     "_N$string": "588",
-    "_fontSize": 24,
-    "_lineHeight": 24,
+    "_fontSize": 28,
+    "_lineHeight": 28,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -5781,7 +5782,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -5818,13 +5819,13 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 231,
-      "b": 133,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 200,
       "height": 32.76
     },
     "_anchorPoint": {
@@ -5837,7 +5838,7 @@
       "ctor": "Float64Array",
       "array": [
         -260,
-        75,
+        120,
         0,
         0,
         0,
@@ -5888,7 +5889,114 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
+    },
+    "fileId": "8brdrysRJDx57uoK7mJDjg",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "生物境界s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 160
+      }
+    ],
+    "_prefab": {
+      "__id__": 161
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 128,
+      "b": 107,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 200,
+      "height": 32.76
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -260,
+        80,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_name<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 159
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "（天仙）",
+    "_N$string": "（天仙）",
+    "_fontSize": 26,
+    "_lineHeight": 26,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 1,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -5915,18 +6023,18 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 160
+        "__id__": 163
       }
     ],
     "_prefab": {
-      "__id__": 161
+      "__id__": 164
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 162,
+      "b": 83,
       "a": 255
     },
     "_contentSize": {
@@ -5944,114 +6052,7 @@
       "ctor": "Float64Array",
       "array": [
         -260,
-        180,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_type<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 159
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "妖族",
-    "_N$string": "妖族",
-    "_fontSize": 48,
-    "_lineHeight": 48,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 3,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
-    },
-    "fileId": "68n/F8QOBMDrpcUPXGHg+j",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "生物等级s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 163
-      }
-    ],
-    "_prefab": {
-      "__id__": 164
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 160,
-      "height": 37.8
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -260,
-        120,
+        190,
         0,
         0,
         0,
@@ -6089,10 +6090,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "等级625",
-    "_N$string": "等级625",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_string": "妖族",
+    "_N$string": "妖族",
+    "_fontSize": 48,
+    "_lineHeight": 48,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -6100,9 +6101,9 @@
     "_batchAsBitmap": false,
     "_styleFlags": 1,
     "_underlineHeight": 0,
-    "_N$horizontalAlign": 2,
+    "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6115,12 +6116,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "ebs7NIEDJK9bv671/mLWIT",
+    "fileId": "68n/F8QOBMDrpcUPXGHg+j",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "触发概率s",
+    "_name": "生物等级s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6145,8 +6146,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 32.76
+      "width": 200,
+      "height": 37.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6157,8 +6158,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        220,
-        230,
+        -40,
+        200,
         0,
         0,
         0,
@@ -6196,6 +6197,113 @@
       }
     ],
     "_useOriginalSize": false,
+    "_string": "等级625",
+    "_N$string": "等级625",
+    "_fontSize": 30,
+    "_lineHeight": 30,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 1,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "宋体",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
+    },
+    "fileId": "ebs7NIEDJK9bv671/mLWIT",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "触发概率s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 169
+      }
+    ],
+    "_prefab": {
+      "__id__": 170
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 160,
+      "height": 32.76
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        240,
+        230,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_type<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 168
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
     "_string": "触发率+0%",
     "_N$string": "触发率+0%",
     "_fontSize": 26,
@@ -6209,7 +6317,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6236,113 +6344,6 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 169
-      }
-    ],
-    "_prefab": {
-      "__id__": 170
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 255,
-      "b": 178,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 140,
-      "height": 25.2
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -265,
-        -70,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_name<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 168
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "力量:5660 ",
-    "_N$string": "力量:5660 ",
-    "_fontSize": 20,
-    "_lineHeight": 20,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 1,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
-    },
-    "fileId": "24/2IjR91I/pXG2KmUFlTH",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "敏捷s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
         "__id__": 172
       }
     ],
@@ -6359,7 +6360,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6371,7 +6372,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -70,
         0,
         0,
@@ -6410,8 +6411,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "敏捷:4800",
-    "_N$string": "敏捷:4800",
+    "_string": "力量:5660 ",
+    "_N$string": "力量:5660 ",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6423,7 +6424,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6436,12 +6437,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "69zweWFyhJo4S/uELE5KPE",
+    "fileId": "24/2IjR91I/pXG2KmUFlTH",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "智力s",
+    "_name": "敏捷s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6466,7 +6467,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6478,7 +6479,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        -120,
         -70,
         0,
         0,
@@ -6517,8 +6518,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "智力:3655",
-    "_N$string": "智力:3655",
+    "_string": "敏捷:4800",
+    "_N$string": "敏捷:4800",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6530,7 +6531,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6543,12 +6544,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "64+kIHsgRM+qK4Lk3bsZcz",
+    "fileId": "69zweWFyhJo4S/uELE5KPE",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "攻击s",
+    "_name": "智力s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6566,14 +6567,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 255,
-      "b": 255,
+      "b": 178,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6585,8 +6586,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -265,
-        -100,
+        40,
+        -70,
         0,
         0,
         0,
@@ -6624,8 +6625,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "攻击:256600",
-    "_N$string": "攻击:256600",
+    "_string": "智力:3655",
+    "_N$string": "智力:3655",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6637,7 +6638,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6650,12 +6651,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "8a06cCA8xINrWZSKSlka24",
+    "fileId": "64+kIHsgRM+qK4Lk3bsZcz",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "护甲s",
+    "_name": "攻击s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6680,7 +6681,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6692,7 +6693,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -100,
         0,
         0,
@@ -6731,8 +6732,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "护甲:960",
-    "_N$string": "护甲:960",
+    "_string": "攻击:256600",
+    "_N$string": "攻击:256600",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6744,7 +6745,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6757,12 +6758,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "8bfXkKFn1DGI10hJ6uJ3JT",
+    "fileId": "8a06cCA8xINrWZSKSlka24",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "速度s",
+    "_name": "护甲s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6787,7 +6788,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6799,7 +6800,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        -120,
         -100,
         0,
         0,
@@ -6838,8 +6839,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "速度:2700",
-    "_N$string": "速度:2700",
+    "_string": "护甲:960",
+    "_N$string": "护甲:960",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6851,7 +6852,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6864,12 +6865,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "d7PoIPyd1MWq1SiQZhfAH2",
+    "fileId": "8bfXkKFn1DGI10hJ6uJ3JT",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "特攻s",
+    "_name": "速度s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -6894,7 +6895,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -6906,8 +6907,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -265,
-        -130,
+        40,
+        -100,
         0,
         0,
         0,
@@ -6945,8 +6946,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "特攻:45660",
-    "_N$string": "特攻:45660",
+    "_string": "速度:2700",
+    "_N$string": "速度:2700",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -6958,7 +6959,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -6971,12 +6972,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "b8r4qvDcdBJ5qdHNDB3NMB",
+    "fileId": "d7PoIPyd1MWq1SiQZhfAH2",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "法抗s",
+    "_name": "特攻s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7001,7 +7002,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7013,7 +7014,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -130,
         0,
         0,
@@ -7052,8 +7053,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "法抗:80060",
-    "_N$string": "法抗:80060",
+    "_string": "特攻:45660",
+    "_N$string": "特攻:45660",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7065,7 +7066,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7078,12 +7079,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "a4q5pNVJVFGqYJpi2zFSF5",
+    "fileId": "b8r4qvDcdBJ5qdHNDB3NMB",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "灵气s",
+    "_name": "法抗s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7108,7 +7109,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7120,7 +7121,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        -120,
         -130,
         0,
         0,
@@ -7159,8 +7160,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "灵气:300",
-    "_N$string": "灵气:300",
+    "_string": "法抗:80060",
+    "_N$string": "法抗:80060",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7172,7 +7173,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7185,12 +7186,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "f42XASjNtFDIPN1vLvIvE4",
+    "fileId": "a4q5pNVJVFGqYJpi2zFSF5",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "悟性s",
+    "_name": "灵气s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7215,7 +7216,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7227,8 +7228,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -265,
-        -160,
+        40,
+        -130,
         0,
         0,
         0,
@@ -7266,8 +7267,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "悟性:20",
-    "_N$string": "悟性:20",
+    "_string": "灵气:300",
+    "_N$string": "灵气:300",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7279,7 +7280,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7292,12 +7293,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "ebL8798IpCEaHEYtz/qpuv",
+    "fileId": "f42XASjNtFDIPN1vLvIvE4",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "暴击s",
+    "_name": "悟性s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7322,7 +7323,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7334,7 +7335,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -160,
         0,
         0,
@@ -7373,8 +7374,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "暴击:0%",
-    "_N$string": "暴击:0%",
+    "_string": "悟性:20",
+    "_N$string": "悟性:20",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7386,7 +7387,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7399,12 +7400,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "e4K/RYnnZAcp1AV+4Ke/DP",
+    "fileId": "ebL8798IpCEaHEYtz/qpuv",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "吸血s",
+    "_name": "暴击s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7429,7 +7430,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7441,7 +7442,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        -120,
         -160,
         0,
         0,
@@ -7480,8 +7481,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "吸血:0%",
-    "_N$string": "吸血:0%",
+    "_string": "暴击:0%",
+    "_N$string": "暴击:0%",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7493,7 +7494,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7506,12 +7507,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "deKg9FM0JAfrztbxngDzdL",
+    "fileId": "e4K/RYnnZAcp1AV+4Ke/DP",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "暴伤s",
+    "_name": "吸血s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7536,7 +7537,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7548,8 +7549,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -265,
-        -190,
+        40,
+        -160,
         0,
         0,
         0,
@@ -7587,8 +7588,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "暴伤:1.5",
-    "_N$string": "暴伤:1.5",
+    "_string": "吸血:0%",
+    "_N$string": "吸血:0%",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7600,7 +7601,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7613,12 +7614,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "acMLVFQQNB7ZPkHyyk5GtV",
+    "fileId": "deKg9FM0JAfrztbxngDzdL",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "闪避s",
+    "_name": "暴伤s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7643,7 +7644,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7655,7 +7656,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -190,
         0,
         0,
@@ -7694,8 +7695,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "闪避:0%",
-    "_N$string": "闪避:0%",
+    "_string": "暴伤:1.5",
+    "_N$string": "暴伤:1.5",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7707,7 +7708,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7720,12 +7721,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "e0oWFQSklFiahTL8MS1nc0",
+    "fileId": "acMLVFQQNB7ZPkHyyk5GtV",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "命中s",
+    "_name": "闪避s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7750,7 +7751,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7762,7 +7763,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        -120,
         -190,
         0,
         0,
@@ -7801,8 +7802,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "命中:100%",
-    "_N$string": "命中:100%",
+    "_string": "闪避:0%",
+    "_N$string": "闪避:0%",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7814,7 +7815,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7827,12 +7828,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "23qXB09shAPbNmGTACghUN",
+    "fileId": "e0oWFQSklFiahTL8MS1nc0",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "增伤s",
+    "_name": "命中s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7850,14 +7851,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 176,
-      "g": 176,
-      "b": 176,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7869,8 +7870,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -265,
-        -220,
+        40,
+        -190,
         0,
         0,
         0,
@@ -7908,8 +7909,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "增伤:50%",
-    "_N$string": "增伤:50%",
+    "_string": "命中:100%",
+    "_N$string": "命中:100%",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7921,7 +7922,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -7934,12 +7935,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "17XuT9PqFGk7P4mKUKqDIU",
+    "fileId": "23qXB09shAPbNmGTACghUN",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "减伤s",
+    "_name": "增伤s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -7964,7 +7965,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
+      "width": 150,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7976,7 +7977,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
+        -280,
         -220,
         0,
         0,
@@ -8015,6 +8016,113 @@
       }
     ],
     "_useOriginalSize": false,
+    "_string": "增伤:50%",
+    "_N$string": "增伤:50%",
+    "_fontSize": 20,
+    "_lineHeight": 20,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 1,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 0,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "宋体",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
+    },
+    "fileId": "17XuT9PqFGk7P4mKUKqDIU",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "减伤s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 220
+      }
+    ],
+    "_prefab": {
+      "__id__": 221
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 176,
+      "g": 176,
+      "b": 176,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 150,
+      "height": 25.2
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -120,
+        -220,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_name<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 219
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
     "_string": "减伤:0%",
     "_N$string": "减伤:0%",
     "_fontSize": 20,
@@ -8028,7 +8136,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
