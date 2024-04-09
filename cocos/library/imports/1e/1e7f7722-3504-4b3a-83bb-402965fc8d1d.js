@@ -9,8 +9,7 @@ var HttpHelper = require("../http");
 var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    scorllview: cc.ScorllView
+  properties: {// scorllview:cc.ScorllView
   },
   // LIFE-CYCLE CALLBACKS:
   // cc.loader.releaseRes("test assets/anim");

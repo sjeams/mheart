@@ -40,7 +40,7 @@ class ApiServerController extends ApiControl{
 
 
     /**
-     * 登录--验证  --账号密码
+     * 【录】【 】-码
      * app/api-server/login
      * http://localhost/monster/web/app/api-server/register-in
      */
@@ -63,7 +63,7 @@ class ApiServerController extends ApiControl{
     }
 
     /**
-     * token --快捷登录
+     * toke【 】-录
      * app/api-server/login
      * http://localhost/monster/web/app/api-server/token-login
      */
@@ -73,7 +73,7 @@ class ApiServerController extends ApiControl{
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
             $login =  UserLogin ::find()->select('id,loginname')->where( "token = '{$data['token']}'  ")->asarray()->One();
-            if(!empty($login)){ // 验证登录--返回token
+            if(!empty($login)){ // 验证【录】-oken
                 die(json_encode(['code' => 1,'data'=>['token' =>$data['token'],'userinfo'=>$login],'message' => '登录成功']));
             } 
         }
@@ -82,7 +82,7 @@ class ApiServerController extends ApiControl{
 
 
     /**
-     * 登录--验证  --账号密码
+     * 【录】【 】-码
      * app/api-server/login
      * http://localhost/monster/web/app/api-server/login
      */
@@ -92,7 +92,7 @@ class ApiServerController extends ApiControl{
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
             $login =  UserLogin ::find()->select('id')->where( "(loginname = '{$data['loginname']}' or phone = '{$data['loginname']}')  and  password = '{$data['password']}' "  )->One();
-            if(!empty($login)){ // 验证登录--返回token
+            if(!empty($login)){ // 验证【录】-oken
                 // 29e1513810699c26b4ef39ebd79d4257
                 $token = md5($login['id'].'lhzm'.time());
                 $login->token = $token;
@@ -216,14 +216,14 @@ class ApiServerController extends ApiControl{
     $data =array(
         'gonggao_sz'=>'请大家在游戏中发言时，不要带有国家领导人或者侮辱性的词汇。如果官方发现，一律严处。',
         'gonggao_sx'=>'
-        人--   最适合修行的形态，领悟极高，每级次战斗有概率突破或者提升境界。幸运+10	幸运，体质，属性较高，适合新人。
-        妖--   狡猾而狡诈，大部分技能是辅助控制buff技能，非常适合于后排。触发+6%	控制，概率，buff加成，适合资深玩家。
-        鬼--   拥有无尽的魂力，最纯粹的力量，强大的魂力使他们不易死亡。法力值+100	套路，脆弱，搭配较高，适合资深玩家。
-        仙--   拥有极高的法术伤害，是大多数高输出的克星。特攻+12%     法术，控制，输出较高，适合普通玩家。
-        魔--   偏重物理防守，输出一般，属于肉盾类型，适合用于前排。生命+20%	血厚，坚硬，生存力强，适合新人。
-        灵--   天地万物皆有灵，有较高的灵气成长值。有回血，反伤，减伤等技能。	灵气+20%	辅助，肉盾，全能选手，适合普通玩家。
-        异--   超脱三界，不在五行的未知生物。拥有极高的抗性，免疫的物理和法术伤害。抗性+8%	 双抗，减伤，防御较高，适合普通玩家。
-        兽--   血腥狂暴，拥有极高的爆发。偏物理类型，适合前排或者输出。暴击+5%	     物理，暴力，爆发较高，适合新人。',
+【人】-最适合修行的形态，领悟极高，每级次战斗有概率突破或者提升境界。幸运+10	幸运，体质，属性较高，适合新人。
+【妖】-狡猾而狡诈，大部分技能是辅助控制buff技能，非常适合于后排。触发+6%	控制，概率，buff加成，适合资深玩家。
+【鬼】-拥有无尽的魂力，最纯粹的力量，强大的魂力使他们不易死亡。法力值+100	套路，脆弱，搭配较高，适合资深玩家。
+【仙】-拥有极高的法术伤害，是大多数高输出的克星。特攻+12%     法术，控制，输出较高，适合普通玩家。
+【魔】-偏重物理防守，输出一般，属于肉盾类型，适合用于前排。生命+20%	血厚，坚硬，生存力强，适合新人。
+【灵】-天地万物皆有灵，有较高的灵气成长值。有回血，反伤，减伤等技能。	灵气+20%	辅助，肉盾，全能选手，适合普通玩家。
+【异】-超脱三界，不在五行的未知生物。拥有极高的抗性，免疫的物理和法术伤害。抗性+8%	 双抗，减伤，防御较高，适合普通玩家。
+【兽】-血腥狂暴，拥有极高的爆发。偏物理类型，适合前排或者输出。暴击+5%	     物理，暴力，爆发较高，适合新人。',
         'gonggao_gx'=>'当前版本为最新版本，版本号1.0.1',
         'gonggao_lx'=>'邮箱:359824901@qq.com',
 

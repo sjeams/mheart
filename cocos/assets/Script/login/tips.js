@@ -4,7 +4,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        scorllview:cc.ScorllView
+        // scorllview:cc.ScorllView
     },
 
     // LIFE-CYCLE CALLBACKS:
