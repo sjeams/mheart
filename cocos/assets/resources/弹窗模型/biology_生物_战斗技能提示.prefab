@@ -1477,7 +1477,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -55,
+        10,
         160,
         0,
         0,
@@ -1679,7 +1679,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 260,
       "height": 30.240000000000002
     },
     "_anchorPoint": {
@@ -1691,7 +1691,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        55,
+        60,
         160,
         0,
         0,
@@ -1730,8 +1730,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "250",
-    "_N$string": "250",
+    "_string": "消耗：   250",
+    "_N$string": "消耗：   250",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -1837,8 +1837,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "[被动]",
-    "_N$string": "[被动]",
+    "_string": "触发：【被动】",
+    "_N$string": "触发：【被动】",
     "_fontSize": 24,
     "_lineHeight": 26,
     "_enableWrapText": true,

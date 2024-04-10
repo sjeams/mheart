@@ -1125,8 +1125,8 @@
     "relativePath": "resources\\技能效果\\血爆.png"
   },
   "1b99732f-2a4f-4d7e-aee1-057390919a05": {
-    "asset": 1712765485297,
-    "meta": 1712765485362,
+    "asset": 1712766828832,
+    "meta": 1712766828863,
     "relativePath": "resources\\弹窗模型\\biology_生物_战斗技能提示.prefab"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
@@ -2379,14 +2379,14 @@
     "meta": 1712761503903,
     "relativePath": "resources\\弹窗模型\\biology_生物_技能图标.prefab"
   },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1712766122683,
-    "meta": 1712766124968,
-    "relativePath": "Script\\fighting\\fightingTools.js"
-  },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1712765992649,
     "meta": 1712766124995,
     "relativePath": "Script\\fighting\\score_fighting_alert.js"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1712766826603,
+    "meta": 1712766828432,
+    "relativePath": "Script\\fighting\\fightingTools.js"
   }
 }

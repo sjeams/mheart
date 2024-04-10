@@ -290,9 +290,9 @@ cc.Class({
       var tips_Prefab = cc.instantiate(loadedResource);
       tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame;
       tips_Prefab.getChildByName('D技能名称s').getComponent(cc.Label).string = skill.name + '-[' + skill.type + ']';
-      tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = Math.abs(skill.needValue);
+      tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = '消耗:   ' + Math.abs(skill.needValue);
       var attack = skill.attack == 0 ? '被动' : '主动';
-      tips_Prefab.getChildByName('D技能类型s').getComponent(cc.Label).string = attack;
+      tips_Prefab.getChildByName('D技能类型s').getComponent(cc.Label).string = '触发: ' + attack;
       var star = '';
 
       for (var i = 0; i <= skill['type']; i++) {
