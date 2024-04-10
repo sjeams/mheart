@@ -76,8 +76,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
-      "height": 460
+      "width": 420,
+      "height": 480
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -168,7 +168,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
+      "width": 420,
       "height": 480
     },
     "_anchorPoint": {
@@ -1358,8 +1358,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 100
+      "width": 110,
+      "height": 110
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1370,8 +1370,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -130,
-        145,
+        -135,
+        160,
         0,
         0,
         0,
@@ -1478,7 +1478,7 @@
       "ctor": "Float64Array",
       "array": [
         -55,
-        150,
+        160,
         0,
         0,
         0,
@@ -1585,7 +1585,7 @@
       "ctor": "Float64Array",
       "array": [
         60,
-        180,
+        200,
         0,
         0,
         0,
@@ -1679,7 +1679,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 180,
       "height": 30.240000000000002
     },
     "_anchorPoint": {
@@ -1691,8 +1691,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        50,
-        150,
+        55,
+        160,
         0,
         0,
         0,
@@ -1799,7 +1799,7 @@
       "ctor": "Float64Array",
       "array": [
         60,
-        110,
+        120,
         0,
         0,
         0,
@@ -1893,7 +1893,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 30
     },
     "_anchorPoint": {
@@ -2000,7 +2000,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 30
     },
     "_anchorPoint": {
@@ -2107,7 +2107,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 30
     },
     "_anchorPoint": {
@@ -2189,7 +2189,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "D技能类型s",
+    "_name": "D发动时机s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2214,7 +2214,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 30
     },
     "_anchorPoint": {
@@ -2321,7 +2321,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 30
     },
     "_anchorPoint": {
@@ -2428,7 +2428,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
+      "width": 380,
       "height": 140
     },
     "_anchorPoint": {

@@ -67,6 +67,10 @@ cc.Class({
   remove_alert: function remove_alert() {
     // 销毁所有弹窗
     cc.find('Canvas/弹窗').removeAllChildren(); // cc.find('Canvas/弹窗').destroyAllChildren();
+  },
+  remove_skill: function remove_skill() {
+    // 销毁所有弹窗
+    this.node.getChildByName('技能描述').removeAllChildren(); // cc.find('Canvas/弹窗').destroyAllChildren();
   }
 });
 
