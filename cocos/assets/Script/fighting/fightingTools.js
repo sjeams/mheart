@@ -30,7 +30,7 @@ cc.Class({
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
                 // console.log(texture)
                 if (err) {
-                    cc.error(err.message || err);
+                    // cc.error(err.message || err);
                     return;
                 }
                 if(texture){
@@ -193,29 +193,62 @@ cc.Class({
         TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
         TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
 
-        var i=0;
-        for (var prop in info.position_skill) {
-            i++;
-            // cc.log('P技能'+i)
-            if(info.position_skill[prop].image!=''){
-                cc.loader.loadRes('/技能图标/'+info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) { 
-                    if (err) {
-                        cc.error(err.message || err);
-                        return;
-                    }
-                    if(spriteFrame){
-                        TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = spriteFrame; 
-                    }
-                });
-            }else{
-                TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = false; 
-            }
-            // TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame
-            // var remoteUrl = httpRequest.httpUrl(info.position_skill[prop].image);
-            // cc.loader.load({ url: remoteUrl }, function (err, texture) { 
-            //     TipBoxPrefab.getChildByName('P技能'+).getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-            // });
-        }
+        // content: cc.Node,
+        // person: cc.Prefab,
+        _this.biology_detail_skill(TipBoxPrefab,info.position_skill);
         cc.find('Canvas/弹窗').addChild(TipBoxPrefab,1);
-    }
+    },
+    //技能图片渲染
+    biology_detail_skill(TipBoxPrefab,position_skill){
+        var _this =this;
+        var TOOLS =[];
+        var TOOLS = position_skill;
+        var TipBoxPrefab_icon=[];
+        for (var prop in position_skill) {
+            var skill = TOOLS[prop];
+            var image = '/技能图标/'+skill.image;
+            //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+            cc.loader.loadRes('/弹窗模型/biology_生物_技能图标', function(errorMessage,loadedResource_icon){
+                //检查资源加载
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+                //开始实例化预制资源
+                TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                //载入技能图片
+                if(image!=''){
+                    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                        if (err) {
+                            // cc.error(err.message || err);
+                            return;
+                        }
+                        TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame.setTexture(texture);
+                    });
+                }else{
+                    TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = false; 
+                }
+                //技能等级
+                TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=prop
+                _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button), skill);
+                //写入icon
+                TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
+            })
+
+
+            
+        }
+        return TipBoxPrefab
+    },
+    // 绑定按钮事件
+    bindClickEventIcon: function (button, skill) {
+        cc.log(111)
+        cc.log(skill)
+        // var clickEventHandler = new cc.Component.EventHandler();
+        // //这个 node 节点是你的事件处理代码组件所属的节点
+        // clickEventHandler.target = this.node; 
+        // //这个是代码文件名
+        // clickEventHandler.component = "fightingTools";  // js脚本文件-绑定
+        // clickEventHandler.handler = "onConfirBtn";// js方法名称--绑定
+        // clickEventHandler.customEventData = skill; // 回调内容
+        // button.clickEvents.push(clickEventHandler);
+    },
 });

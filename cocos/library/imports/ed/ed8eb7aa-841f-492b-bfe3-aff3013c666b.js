@@ -115,7 +115,7 @@ cc.Class({
               _this.fighting_history(fighting_history[boat_count]); //执行战斗顺序 
 
             }
-          }, 1, boat_length, 0.3); ////10秒后执行1次间隔5秒
+          }, 1, boat_length, 3); ////2秒后执行1次间隔5秒
 
         }
       });

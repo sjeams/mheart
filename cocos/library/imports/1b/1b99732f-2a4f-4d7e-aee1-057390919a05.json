@@ -7,7 +7,7 @@
     "data": {
       "__id__": 1
     },
-    "optimizationPolicy": 0,
+    "optimizationPolicy": 2,
     "asyncLoadAssets": false,
     "readonly": false
   },
