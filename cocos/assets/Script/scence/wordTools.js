@@ -24,7 +24,11 @@ cc.Class({
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                if(texture!=null){
+                if (err) {
+                    cc.error(err.message || err);
+                    return;
+                }
+                if(texture){
                     _self.node.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                 }
             });

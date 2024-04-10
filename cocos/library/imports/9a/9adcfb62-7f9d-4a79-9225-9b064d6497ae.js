@@ -79,8 +79,8 @@ var FightingExtend = cc.Class({
         // node.getChildByName('加血s').runAction(cc.fadeOut(1),cc.callFunc(function(){  node.getChildByName('加血s').active=false },this));
         // node.getChildByName('加血s').runAction(cc.moveBy(0.01,cc.v2(0,-60)));
       } else {
-        cc.log(biology.hurt_go); //扣血渐隐
-
+        // cc.log(biology.hurt_go)
+        //扣血渐隐
         node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg;
         node.getChildByName('扣血s').active = true;
         node.getChildByName('扣血s').opacity = 255;

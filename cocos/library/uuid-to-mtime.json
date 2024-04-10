@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1712717236147,
+    "asset": 1712717852714,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
@@ -1099,11 +1099,6 @@
     "meta": 1712717538848,
     "relativePath": "prefabs\\biology_普通.prefab"
   },
-  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
-    "asset": 1712562177983,
-    "meta": 1712717543767,
-    "relativePath": "Script\\fighting\\figthingExtend.js"
-  },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1712565118230,
     "meta": 1712717543812,
@@ -1159,16 +1154,6 @@
     "meta": 1712717538876,
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1712651424466,
-    "meta": 1712717545236,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1712651424473,
-    "meta": 1712717545385,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1712714005626,
     "meta": 1712717542911,
@@ -1200,8 +1185,8 @@
     "relativePath": "resources\\背景\\dating.png"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1712714005623,
-    "meta": 1712717544753,
+    "asset": 1712730298359,
+    "meta": 1712730298555,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
@@ -2359,29 +2344,44 @@
     "meta": 1712717542885,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1712717487124,
-    "meta": 1712717544056,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1712718034168,
     "meta": 1712718038452,
     "relativePath": "Script\\http.js"
   },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
-    "asset": 1712719710879,
-    "meta": 1712719710902,
+    "asset": 1712730287615,
+    "meta": 1712730287665,
     "relativePath": "resources\\弹窗模型\\biology_生物_战斗详情.prefab"
   },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1712719695301,
-    "meta": 1712719695317,
-    "relativePath": "Scene\\战斗场景.fire"
+  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
+    "asset": 1712729018606,
+    "meta": 1712729039914,
+    "relativePath": "Script\\fighting\\figthingExtend.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1712729036658,
+    "meta": 1712729041461,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1712719780304,
-    "meta": 1712719780768,
+    "asset": 1712729980384,
+    "meta": 1712730010131,
     "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1712730007604,
+    "meta": 1712730010435,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1712729991938,
+    "meta": 1712730010576,
+    "relativePath": "Script\\scence\\wordTools.js"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1712730019639,
+    "meta": 1712730074732,
+    "relativePath": "Scene\\战斗场景.fire"
   }
 }

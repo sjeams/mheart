@@ -29,7 +29,11 @@ cc.Class({
             // });
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                if(texture!=null){
+                if (err) {
+                    cc.error(err.message || err);
+                    return;
+                }
+                if(texture){
                     _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                 }
             });

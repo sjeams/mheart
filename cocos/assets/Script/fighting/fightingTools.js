@@ -29,7 +29,11 @@ cc.Class({
             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                 // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
                 // console.log(texture)
-                if(texture!=null){
+                if (err) {
+                    cc.error(err.message || err);
+                    return;
+                }
+                if(texture){
                     _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                     //销毁
                     // this.image.spriteFrame=null;
@@ -169,7 +173,7 @@ cc.Class({
         TipBoxPrefab.getChildByName('生物等级s').getComponent(cc.Label).string='等级'+info.grade
         TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
 
-        TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame
+        TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame
 
 
         TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string='力量:'+info.power
@@ -192,10 +196,16 @@ cc.Class({
         var i=0;
         for (var prop in info.position_skill) {
             i++;
-            cc.log('P技能'+i)
+            // cc.log('P技能'+i)
             if(info.position_skill[prop].image!=''){
-                cc.loader.loadRes('/技能图标/'+info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) {   
-                    TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+                cc.loader.loadRes('/技能图标/'+info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) { 
+                    if (err) {
+                        cc.error(err.message || err);
+                        return;
+                    }
+                    if(spriteFrame){
+                        TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = spriteFrame; 
+                    }
                 });
             }else{
                 TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = false; 
