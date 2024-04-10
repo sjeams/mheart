@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3415d04b-7cc9-4eca-89ac-bfc619e72a49",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_Explode_Ghoul": {
+      "ver": "1.0.4",
+      "uuid": "7c9f7557-9a9d-470d-9cb8-bb975ac3e730",
+      "rawTextureUuid": "3415d04b-7cc9-4eca-89ac-bfc619e72a49",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

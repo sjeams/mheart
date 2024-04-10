@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1aa5dd46-262e-4c96-b457-d9e118ae194a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ticket_Tarot_Wrath": {
+      "ver": "1.0.4",
+      "uuid": "756ceff3-412a-45fa-91b3-54ef08392c9d",
+      "rawTextureUuid": "1aa5dd46-262e-4c96-b457-d9e118ae194a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

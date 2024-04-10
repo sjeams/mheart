@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4a006aae-cf24-46d4-bd26-16397aba03b3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_WartornScrap_Cloth": {
+      "ver": "1.0.4",
+      "uuid": "12bda017-40f8-4819-95d6-ec6d0ef4d1f7",
+      "rawTextureUuid": "4a006aae-cf24-46d4-bd26-16397aba03b3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

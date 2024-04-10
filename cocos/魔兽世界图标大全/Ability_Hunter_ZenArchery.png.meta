@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "81fe5ddf-1daa-4299-a7fd-e7802dab2642",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Hunter_ZenArchery": {
+      "ver": "1.0.4",
+      "uuid": "f924aa78-9b4b-4a71-a486-48466db1a234",
+      "rawTextureUuid": "81fe5ddf-1daa-4299-a7fd-e7802dab2642",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

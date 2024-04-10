@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "64d06cb8-8127-4bcb-8718-4bbc6f681e60",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_DivineHymn": {
+      "ver": "1.0.4",
+      "uuid": "3b0cae88-a634-4169-abba-5d86f8336cc5",
+      "rawTextureUuid": "64d06cb8-8127-4bcb-8718-4bbc6f681e60",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

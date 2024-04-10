@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b9dcc6c5-d0ab-4d6c-8732-0de5bbf4faf3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_ValentinesChocolate03": {
+      "ver": "1.0.4",
+      "uuid": "c5f4e211-1f96-47e4-a23e-e7ce03d4f731",
+      "rawTextureUuid": "b9dcc6c5-d0ab-4d6c-8732-0de5bbf4faf3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

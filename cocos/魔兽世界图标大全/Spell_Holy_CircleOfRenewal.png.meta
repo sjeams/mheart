@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8a51846d-a74d-45b7-bca2-b143a6d5b27b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_CircleOfRenewal": {
+      "ver": "1.0.4",
+      "uuid": "ada04259-c4ca-4c5e-8f83-9ae0e7917373",
+      "rawTextureUuid": "8a51846d-a74d-45b7-bca2-b143a6d5b27b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

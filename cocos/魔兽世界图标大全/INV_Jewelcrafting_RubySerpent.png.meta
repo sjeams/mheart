@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4867469f-f2e0-47aa-9225-599a58aa1fdb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_RubySerpent": {
+      "ver": "1.0.4",
+      "uuid": "d72ff768-6367-411d-89e5-04b7b9caf45f",
+      "rawTextureUuid": "4867469f-f2e0-47aa-9225-599a58aa1fdb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

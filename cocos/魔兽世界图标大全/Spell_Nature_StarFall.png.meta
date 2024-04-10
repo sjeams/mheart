@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "eb560338-2d83-465b-a9b8-dfbc1567d647",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_StarFall": {
+      "ver": "1.0.4",
+      "uuid": "5d119b07-68b1-4a44-bfeb-39af8ca40ce5",
+      "rawTextureUuid": "eb560338-2d83-465b-a9b8-dfbc1567d647",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

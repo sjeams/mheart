@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "54997188-be77-4ddc-912b-9458fe734ad2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_TremorTotem": {
+      "ver": "1.0.4",
+      "uuid": "3a1e14fc-5467-4791-95eb-a30adcece2b8",
+      "rawTextureUuid": "54997188-be77-4ddc-912b-9458fe734ad2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "cbe2859b-5189-4b22-b580-bd9931a0a1fb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_TeleportDalaran": {
+      "ver": "1.0.4",
+      "uuid": "82610900-0a49-43fd-8c63-32ef04019058",
+      "rawTextureUuid": "cbe2859b-5189-4b22-b580-bd9931a0a1fb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

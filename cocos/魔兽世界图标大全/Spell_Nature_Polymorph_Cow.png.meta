@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fcc3a7c5-91d2-47f2-bc10-d31e6b12cc00",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_Polymorph_Cow": {
+      "ver": "1.0.4",
+      "uuid": "5a2393b3-4f1d-4c96-87af-0a40a46be78e",
+      "rawTextureUuid": "fcc3a7c5-91d2-47f2-bc10-d31e6b12cc00",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

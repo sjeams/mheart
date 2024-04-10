@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "652ae4fe-6f70-4d66-b61a-d0317e0852c4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warlock_ImprovedSoulLeech": {
+      "ver": "1.0.4",
+      "uuid": "03b463d0-21a4-4f51-afbd-f023fdc41f99",
+      "rawTextureUuid": "652ae4fe-6f70-4d66-b61a-d0317e0852c4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7b42219f-8472-43ba-83c3-2377ab3e6275",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Holiday_BeerfestPretzel01": {
+      "ver": "1.0.4",
+      "uuid": "3e69770d-7395-4093-994a-951e354b6a90",
+      "rawTextureUuid": "7b42219f-8472-43ba-83c3-2377ab3e6275",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

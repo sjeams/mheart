@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d3b8e3fe-1eeb-48a6-ade4-6674734fa4ff",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_RemoveCurse": {
+      "ver": "1.0.4",
+      "uuid": "41b5a7b8-fa11-4cf5-b13d-e3d2c0081069",
+      "rawTextureUuid": "d3b8e3fe-1eeb-48a6-ade4-6674734fa4ff",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

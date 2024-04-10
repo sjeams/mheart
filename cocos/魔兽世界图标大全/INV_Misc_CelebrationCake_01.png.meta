@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6fbc7c49-7b48-463f-a631-12237409f4a4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_CelebrationCake_01": {
+      "ver": "1.0.4",
+      "uuid": "2c11c8c2-f1ba-4d64-9bbf-79892aee06be",
+      "rawTextureUuid": "6fbc7c49-7b48-463f-a631-12237409f4a4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

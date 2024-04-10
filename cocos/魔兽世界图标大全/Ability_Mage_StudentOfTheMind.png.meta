@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6e299509-3319-49dc-9d73-cf42bd78d279",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mage_StudentOfTheMind": {
+      "ver": "1.0.4",
+      "uuid": "61cc7177-8d76-41ca-ab26-f1159a8b1ef2",
+      "rawTextureUuid": "6e299509-3319-49dc-9d73-cf42bd78d279",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

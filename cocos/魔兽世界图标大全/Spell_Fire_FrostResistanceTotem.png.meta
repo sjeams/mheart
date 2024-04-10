@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e5aaf473-8ef8-464c-af88-d8399f8ea68e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_FrostResistanceTotem": {
+      "ver": "1.0.4",
+      "uuid": "b95c7823-4c74-4f08-801d-4d73417eba24",
+      "rawTextureUuid": "e5aaf473-8ef8-464c-af88-d8399f8ea68e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

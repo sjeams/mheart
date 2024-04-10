@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "834e53e6-df87-46de-a172-c93e3f4733bf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_WAEPON_BOW_ZULGRUB_D_01": {
+      "ver": "1.0.4",
+      "uuid": "5176b308-c482-48df-a075-e20414aa68c4",
+      "rawTextureUuid": "834e53e6-df87-46de-a172-c93e3f4733bf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

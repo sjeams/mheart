@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6164e2a9-850a-409d-b3e2-72239cfb9cfb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_StoneClawTotem": {
+      "ver": "1.0.4",
+      "uuid": "5381b085-40db-4251-8fb2-3f6ee772ea6f",
+      "rawTextureUuid": "6164e2a9-850a-409d-b3e2-72239cfb9cfb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4a581773-e16a-4262-995d-1de1912c3254",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_Topaz_03": {
+      "ver": "1.0.4",
+      "uuid": "c28c997f-dcf5-4a38-82eb-2fe629d5ec43",
+      "rawTextureUuid": "4a581773-e16a-4262-995d-1de1912c3254",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

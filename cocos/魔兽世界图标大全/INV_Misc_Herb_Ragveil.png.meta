@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "47013171-ffaa-4284-84fc-2ab08303fcb2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_Ragveil": {
+      "ver": "1.0.4",
+      "uuid": "81558e07-965f-4f2d-b287-9d15ff2c21b3",
+      "rawTextureUuid": "47013171-ffaa-4284-84fc-2ab08303fcb2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

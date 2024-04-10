@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ea80107f-5c1b-403d-bb19-30cfcab1b4d5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_GreaterBlessingofSanctuary": {
+      "ver": "1.0.4",
+      "uuid": "4bf139e7-acb7-493c-9eb5-ee19176b2288",
+      "rawTextureUuid": "ea80107f-5c1b-403d-bb19-30cfcab1b4d5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

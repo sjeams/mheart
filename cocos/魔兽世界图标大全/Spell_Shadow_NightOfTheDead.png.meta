@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "24d5d6b9-95a0-455e-8f2a-35b85b918556",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shadow_NightOfTheDead": {
+      "ver": "1.0.4",
+      "uuid": "8dbc8b4d-8ac4-4464-a3ab-b44b9e9af190",
+      "rawTextureUuid": "24d5d6b9-95a0-455e-8f2a-35b85b918556",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

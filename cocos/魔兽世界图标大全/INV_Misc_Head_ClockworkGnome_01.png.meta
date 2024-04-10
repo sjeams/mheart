@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e7d67474-50f9-4ae8-8a90-36ae3f0c9b3d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Head_ClockworkGnome_01": {
+      "ver": "1.0.4",
+      "uuid": "0236420e-d729-450d-be37-81a96eaced4c",
+      "rawTextureUuid": "e7d67474-50f9-4ae8-8a90-36ae3f0c9b3d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

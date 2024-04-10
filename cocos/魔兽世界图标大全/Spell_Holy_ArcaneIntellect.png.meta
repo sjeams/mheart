@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b98c07b4-6ceb-4ce7-8214-84c7bb4530a9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_ArcaneIntellect": {
+      "ver": "1.0.4",
+      "uuid": "398f9eac-6af6-4259-ace4-fa0f35db866c",
+      "rawTextureUuid": "b98c07b4-6ceb-4ce7-8214-84c7bb4530a9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

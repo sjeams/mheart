@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "2fba0312-30cf-4cf3-a8ea-33994190c6ba",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_106_FjordPeach": {
+      "ver": "1.0.4",
+      "uuid": "756d878b-5d22-4715-8e37-0761a1abe52c",
+      "rawTextureUuid": "2fba0312-30cf-4cf3-a8ea-33994190c6ba",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f4df014f-0dfd-4a19-b506-58ca75df1b50",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_BlessedLife": {
+      "ver": "1.0.4",
+      "uuid": "9d7b5e6c-5c13-4ff9-ab64-9688a8d3dafe",
+      "rawTextureUuid": "f4df014f-0dfd-4a19-b506-58ca75df1b50",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

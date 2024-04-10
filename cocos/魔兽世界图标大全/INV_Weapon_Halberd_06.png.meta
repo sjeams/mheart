@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "572d9581-d350-47e5-b5c6-0a6b04d14d9a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Weapon_Halberd_06": {
+      "ver": "1.0.4",
+      "uuid": "4aa2b623-7a29-46ff-894c-2313073dac22",
+      "rawTextureUuid": "572d9581-d350-47e5-b5c6-0a6b04d14d9a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

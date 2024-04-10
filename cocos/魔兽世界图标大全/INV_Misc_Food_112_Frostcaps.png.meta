@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "21c8bcac-14a4-4353-a98e-e7a159350ab3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_112_Frostcaps": {
+      "ver": "1.0.4",
+      "uuid": "4fe6b5ab-6d9a-4dc1-95a7-358853d24023",
+      "rawTextureUuid": "21c8bcac-14a4-4353-a98e-e7a159350ab3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a009bcea-7d98-4dd2-9c29-974b4b8e49ee",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Rogue_SlaughterfromtheShadows": {
+      "ver": "1.0.4",
+      "uuid": "16b117e7-8e32-41df-bc7a-8d9841d43c8e",
+      "rawTextureUuid": "a009bcea-7d98-4dd2-9c29-974b4b8e49ee",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

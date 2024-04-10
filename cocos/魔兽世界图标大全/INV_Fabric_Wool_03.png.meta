@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "72bbbfd0-a5e1-4057-8482-8577c03ecc2d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Fabric_Wool_03": {
+      "ver": "1.0.4",
+      "uuid": "b905b027-0e71-4435-abff-5090e13d5b8e",
+      "rawTextureUuid": "72bbbfd0-a5e1-4057-8482-8577c03ecc2d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

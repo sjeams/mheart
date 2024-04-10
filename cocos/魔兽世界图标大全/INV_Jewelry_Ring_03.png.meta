@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0db3bdc8-2015-43ce-982a-9079796a5cee",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Ring_03": {
+      "ver": "1.0.4",
+      "uuid": "ec89be90-fea0-4c45-94be-02a4e6e57d41",
+      "rawTextureUuid": "0db3bdc8-2015-43ce-982a-9079796a5cee",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

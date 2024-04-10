@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "481ed980-fb78-42e0-96a4-a75f287d5dc3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_SearingLightPriest": {
+      "ver": "1.0.4",
+      "uuid": "f24c9892-0778-4a61-8d88-5706d8d9c341",
+      "rawTextureUuid": "481ed980-fb78-42e0-96a4-a75f287d5dc3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

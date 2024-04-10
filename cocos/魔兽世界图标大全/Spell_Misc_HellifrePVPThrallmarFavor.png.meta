@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6084d99b-e879-4ff0-9866-d15f2fb418b5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Misc_HellifrePVPThrallmarFavor": {
+      "ver": "1.0.4",
+      "uuid": "f4427b4e-d5e3-477b-9da0-d1a7e981fe41",
+      "rawTextureUuid": "6084d99b-e879-4ff0-9866-d15f2fb418b5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5bd3d966-6073-48c3-aa57-868c1240c852",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_GoldenBoar": {
+      "ver": "1.0.4",
+      "uuid": "5c6e44db-574d-4420-8f05-b1990bb90d05",
+      "rawTextureUuid": "5bd3d966-6073-48c3-aa57-868c1240c852",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

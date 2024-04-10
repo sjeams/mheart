@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0e3fcbd1-f937-4f79-a52c-9146e2f6bfbe",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Fabric_MoonRag_Primal": {
+      "ver": "1.0.4",
+      "uuid": "3728b29b-851d-4869-8aa1-08b952fbbc64",
+      "rawTextureUuid": "0e3fcbd1-f937-4f79-a52c-9146e2f6bfbe",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

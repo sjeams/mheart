@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "cc3432bd-5c09-4e80-a495-f328f167de51",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shadow_SoulGem": {
+      "ver": "1.0.4",
+      "uuid": "8b43a36e-127a-4892-b730-a817f440a722",
+      "rawTextureUuid": "cc3432bd-5c09-4e80-a495-f328f167de51",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ba098306-663e-4eb1-a38b-c072b066d58b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Racial_Dwarf_FindTreasure": {
+      "ver": "1.0.4",
+      "uuid": "e70c1e73-793a-4fb5-bbfd-18d9723c6c1a",
+      "rawTextureUuid": "ba098306-663e-4eb1-a38b-c072b066d58b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

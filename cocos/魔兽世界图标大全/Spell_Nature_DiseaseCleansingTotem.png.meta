@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c0ef4482-97a7-46f5-9276-dd563ca7103d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_DiseaseCleansingTotem": {
+      "ver": "1.0.4",
+      "uuid": "a71e33fb-f6f9-41ff-8041-08b1ae7f5b7b",
+      "rawTextureUuid": "c0ef4482-97a7-46f5-9276-dd563ca7103d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

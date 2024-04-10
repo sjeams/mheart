@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "97ba0ee4-7816-426f-a6c0-ce5370e202ad",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Sword_2H_AshbringerCorrupt": {
+      "ver": "1.0.4",
+      "uuid": "84d15ea6-2ff3-467b-8b4d-fd3d420037be",
+      "rawTextureUuid": "97ba0ee4-7816-426f-a6c0-ce5370e202ad",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

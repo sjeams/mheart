@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "27cdcae1-9c5b-48ac-bd32-471641172733",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_FaerieFire": {
+      "ver": "1.0.4",
+      "uuid": "21200b43-0d8e-465f-9966-83b4096ceb5c",
+      "rawTextureUuid": "27cdcae1-9c5b-48ac-bd32-471641172733",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

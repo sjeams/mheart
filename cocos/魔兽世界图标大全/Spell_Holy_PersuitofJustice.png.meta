@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d9da1637-a981-4492-a041-74141ce891b3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_PersuitofJustice": {
+      "ver": "1.0.4",
+      "uuid": "d36a5426-8176-4ebd-b6c6-ead6ddc88883",
+      "rawTextureUuid": "d9da1637-a981-4492-a041-74141ce891b3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

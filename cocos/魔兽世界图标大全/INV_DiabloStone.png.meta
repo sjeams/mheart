@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e346d82d-3a27-4959-8924-21b2f649da71",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_DiabloStone": {
+      "ver": "1.0.4",
+      "uuid": "10c52d28-9852-4460-a0c2-4f3f1db188cb",
+      "rawTextureUuid": "e346d82d-3a27-4959-8924-21b2f649da71",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5617e13e-b299-465f-8905-c6d5858ffdc1",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Desecrated_PlateBelt": {
+      "ver": "1.0.4",
+      "uuid": "55f3244a-993b-4146-b6b0-7c680613a4f0",
+      "rawTextureUuid": "5617e13e-b299-465f-8905-c6d5858ffdc1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f7c176d3-94ff-48d8-b359-6c7d542be5e9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_FrostwolfTrinket_01": {
+      "ver": "1.0.4",
+      "uuid": "2c36a258-86e0-4016-9011-c6eff5c80956",
+      "rawTextureUuid": "f7c176d3-94ff-48d8-b359-6c7d542be5e9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

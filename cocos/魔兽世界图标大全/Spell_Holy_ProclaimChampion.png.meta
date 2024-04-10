@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "94432764-1760-455e-8aae-67e82c51198a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_ProclaimChampion": {
+      "ver": "1.0.4",
+      "uuid": "c5f9f132-5c2f-4d19-9413-cdd2177a87ab",
+      "rawTextureUuid": "94432764-1760-455e-8aae-67e82c51198a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

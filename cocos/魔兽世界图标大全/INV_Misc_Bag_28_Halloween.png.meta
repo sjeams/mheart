@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f81cd8c3-6b5c-49e8-8340-f480686cd252",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Bag_28_Halloween": {
+      "ver": "1.0.4",
+      "uuid": "7a0b5c2c-22dd-4312-9772-1baa880e7f52",
+      "rawTextureUuid": "f81cd8c3-6b5c-49e8-8340-f480686cd252",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

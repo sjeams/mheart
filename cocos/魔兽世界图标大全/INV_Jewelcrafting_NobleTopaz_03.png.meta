@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3a971bef-7935-4856-a42b-e151431e19a6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_NobleTopaz_03": {
+      "ver": "1.0.4",
+      "uuid": "38da92bb-5c87-4291-8de4-b31e679a0ad9",
+      "rawTextureUuid": "3a971bef-7935-4856-a42b-e151431e19a6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

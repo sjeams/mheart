@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "82e799bb-1b46-45ac-b93f-f225cc12f062",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_Bloodstone_01": {
+      "ver": "1.0.4",
+      "uuid": "c2d0a71c-3239-4965-9c45-333456e5f561",
+      "rawTextureUuid": "82e799bb-1b46-45ac-b93f-f225cc12f062",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

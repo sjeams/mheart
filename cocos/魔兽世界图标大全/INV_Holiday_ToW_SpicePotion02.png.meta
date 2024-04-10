@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7265921c-8abc-4cf0-903d-30c0c1452859",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Holiday_ToW_SpicePotion02": {
+      "ver": "1.0.4",
+      "uuid": "3cbe6184-3f21-4f2b-8d9d-91eddd92be5f",
+      "rawTextureUuid": "7265921c-8abc-4cf0-903d-30c0c1452859",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

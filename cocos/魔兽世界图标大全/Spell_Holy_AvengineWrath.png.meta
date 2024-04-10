@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b00c4bf1-1cb1-449e-b462-f34120c8c33b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_AvengineWrath": {
+      "ver": "1.0.4",
+      "uuid": "d2a26aec-5aa0-4e78-b321-d557fa7f33d6",
+      "rawTextureUuid": "b00c4bf1-1cb1-449e-b462-f34120c8c33b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

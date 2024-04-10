@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "28fb743c-09c9-4989-8e12-cb30bce6361c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_FelFireward": {
+      "ver": "1.0.4",
+      "uuid": "0f48aa15-e2b6-4a9f-98cd-f62319049f70",
+      "rawTextureUuid": "28fb743c-09c9-4989-8e12-cb30bce6361c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f74c3993-484d-4c24-a05b-771716762c89",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Bag_SatchelofCenarius": {
+      "ver": "1.0.4",
+      "uuid": "6b5c060f-5b31-4ac3-99b7-41b3118b0a9e",
+      "rawTextureUuid": "f74c3993-484d-4c24-a05b-771716762c89",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

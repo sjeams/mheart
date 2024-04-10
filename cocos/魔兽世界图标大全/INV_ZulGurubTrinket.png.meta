@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "900701ca-16dd-4837-abbf-8ea21f256685",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_ZulGurubTrinket": {
+      "ver": "1.0.4",
+      "uuid": "84dc28d8-182e-4479-ae31-2fdb08538a30",
+      "rawTextureUuid": "900701ca-16dd-4837-abbf-8ea21f256685",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

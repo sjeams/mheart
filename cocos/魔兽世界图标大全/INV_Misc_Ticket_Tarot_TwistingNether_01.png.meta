@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9f844464-4797-48e6-b49f-37438fcb9a9f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ticket_Tarot_TwistingNether_01": {
+      "ver": "1.0.4",
+      "uuid": "0e1043f6-a53c-420d-ab22-1bce8c3bbc71",
+      "rawTextureUuid": "9f844464-4797-48e6-b49f-37438fcb9a9f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

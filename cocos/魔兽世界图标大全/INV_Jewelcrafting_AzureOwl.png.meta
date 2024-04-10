@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "09c96c21-ff30-4e6d-9240-61458416d099",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_AzureOwl": {
+      "ver": "1.0.4",
+      "uuid": "12524f53-5723-494c-a523-b88a2722d766",
+      "rawTextureUuid": "09c96c21-ff30-4e6d-9240-61458416d099",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

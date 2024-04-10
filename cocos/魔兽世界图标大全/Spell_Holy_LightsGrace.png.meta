@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c83638e5-7a25-4d0b-8e4e-0aea2435a2b5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_LightsGrace": {
+      "ver": "1.0.4",
+      "uuid": "a034ab5a-588c-4dd6-a0aa-fb204558ede2",
+      "rawTextureUuid": "c83638e5-7a25-4d0b-8e4e-0aea2435a2b5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "47ef538a-3d55-407b-83f7-c1584098d0f3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_PathOfFrost": {
+      "ver": "1.0.4",
+      "uuid": "1f5e8ca1-69d6-4c2f-8ca1-9abf7ac60ac2",
+      "rawTextureUuid": "47ef538a-3d55-407b-83f7-c1584098d0f3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

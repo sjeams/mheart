@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a4942979-8e7b-42e6-afc6-1047dcd04fab",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Qiraj_DrapeRegal": {
+      "ver": "1.0.4",
+      "uuid": "f84842a3-c1f2-4df1-ae3f-94ebbe110d4d",
+      "rawTextureUuid": "a4942979-8e7b-42e6-afc6-1047dcd04fab",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "afe8ea69-fda8-4857-9550-dfe31b898ed6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Desecrated_MailGlove": {
+      "ver": "1.0.4",
+      "uuid": "c0f8899d-ca2f-4e9a-97dd-a76d66ce711b",
+      "rawTextureUuid": "afe8ea69-fda8-4857-9550-dfe31b898ed6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

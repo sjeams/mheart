@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fa4a5a20-66df-44cf-8dfa-aa207cc6e796",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_TeleportExodar": {
+      "ver": "1.0.4",
+      "uuid": "046e6ce6-2ad9-4f7f-98b8-6720ea1c1fbb",
+      "rawTextureUuid": "fa4a5a20-66df-44cf-8dfa-aa207cc6e796",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

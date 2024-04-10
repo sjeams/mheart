@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a112907f-7392-4b19-97b7-f561a5553538",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_HealingWaveLesser": {
+      "ver": "1.0.4",
+      "uuid": "5d58ee2b-69d2-49f4-a379-af2708dd50f8",
+      "rawTextureUuid": "a112907f-7392-4b19-97b7-f561a5553538",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

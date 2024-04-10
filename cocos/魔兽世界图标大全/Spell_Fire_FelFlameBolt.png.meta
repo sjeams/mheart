@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d474ac0c-cea5-4073-b4df-19e72485900b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_FelFlameBolt": {
+      "ver": "1.0.4",
+      "uuid": "41d359ac-0809-4b6e-9f19-7656e59328e7",
+      "rawTextureUuid": "d474ac0c-cea5-4073-b4df-19e72485900b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

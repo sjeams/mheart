@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "77037b2c-d092-4390-8c8a-8512894f1aca",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Pelt_Wolf_Ruin_02": {
+      "ver": "1.0.4",
+      "uuid": "66e21091-2b28-4e7f-a324-268102b1b981",
+      "rawTextureUuid": "77037b2c-d092-4390-8c8a-8512894f1aca",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

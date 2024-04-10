@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b8806f58-542e-4cc1-a81d-f4a4da8fe24f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_Nightseye_02": {
+      "ver": "1.0.4",
+      "uuid": "dbf39e69-55b1-4a1b-b0c8-c8926816b6dc",
+      "rawTextureUuid": "b8806f58-542e-4cc1-a81d-f4a4da8fe24f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

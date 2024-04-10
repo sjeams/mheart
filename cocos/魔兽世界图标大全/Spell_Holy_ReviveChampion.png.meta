@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "2c621a2b-95c7-483b-ae07-4c861472c25c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_ReviveChampion": {
+      "ver": "1.0.4",
+      "uuid": "1d3accd9-71f9-435c-9b69-2572b0bd3006",
+      "rawTextureUuid": "2c621a2b-95c7-483b-ae07-4c861472c25c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

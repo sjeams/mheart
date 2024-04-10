@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c9fc40eb-2ca4-45ba-8694-53c02cc475c5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_PurpleHare": {
+      "ver": "1.0.4",
+      "uuid": "4ecb7c99-36e6-449e-adbc-aebdb1b6c263",
+      "rawTextureUuid": "c9fc40eb-2ca4-45ba-8694-53c02cc475c5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

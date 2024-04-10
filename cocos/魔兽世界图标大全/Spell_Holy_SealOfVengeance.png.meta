@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "17e98ecf-3ff2-49cf-bd8f-187250d0e84b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_SealOfVengeance": {
+      "ver": "1.0.4",
+      "uuid": "672df6a8-45c2-4d9c-ba89-59bf82ff65dc",
+      "rawTextureUuid": "17e98ecf-3ff2-49cf-bd8f-187250d0e84b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

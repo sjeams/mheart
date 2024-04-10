@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "bb6cf379-01d6-49aa-a15f-75c8a9bb3d95",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ore_Khorium": {
+      "ver": "1.0.4",
+      "uuid": "78b9ada8-fbb7-458f-9613-f411bafda2e6",
+      "rawTextureUuid": "bb6cf379-01d6-49aa-a15f-75c8a9bb3d95",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

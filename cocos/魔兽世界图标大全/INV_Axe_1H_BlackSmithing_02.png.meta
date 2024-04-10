@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e44f7201-577b-4e3e-8724-0bb884e0bd1e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Axe_1H_BlackSmithing_02": {
+      "ver": "1.0.4",
+      "uuid": "3b176fa9-48ad-4f63-ac3a-87c863fd5c4a",
+      "rawTextureUuid": "e44f7201-577b-4e3e-8724-0bb884e0bd1e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

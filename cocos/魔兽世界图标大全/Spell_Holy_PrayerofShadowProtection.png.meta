@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dd91f19c-baa4-4db8-9ee8-d0bcc2bac5d2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_PrayerofShadowProtection": {
+      "ver": "1.0.4",
+      "uuid": "4c5172a4-f183-4780-8c53-271ba7b02c1a",
+      "rawTextureUuid": "dd91f19c-baa4-4db8-9ee8-d0bcc2bac5d2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

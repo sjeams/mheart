@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c851c115-9efe-4b44-a4e6-bf6aab5d3ef9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Relics_LibramofTruth": {
+      "ver": "1.0.4",
+      "uuid": "265b0ed4-6fb4-40f5-84a6-8020011a15c0",
+      "rawTextureUuid": "c851c115-9efe-4b44-a4e6-bf6aab5d3ef9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

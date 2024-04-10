@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9f8d1780-9912-443f-9bc5-913dea2d6925",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_PortalSilvermoon": {
+      "ver": "1.0.4",
+      "uuid": "fffd8ae4-8f3c-4fe1-a2dc-63e6f1f7f835",
+      "rawTextureUuid": "9f8d1780-9912-443f-9bc5-913dea2d6925",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

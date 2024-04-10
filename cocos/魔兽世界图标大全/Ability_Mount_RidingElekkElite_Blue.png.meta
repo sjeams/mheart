@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "53a309c5-c757-4542-9cc3-c734d478487f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mount_RidingElekkElite_Blue": {
+      "ver": "1.0.4",
+      "uuid": "8061e8bc-84f6-448f-b5a5-d8b9a0d915b8",
+      "rawTextureUuid": "53a309c5-c757-4542-9cc3-c734d478487f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

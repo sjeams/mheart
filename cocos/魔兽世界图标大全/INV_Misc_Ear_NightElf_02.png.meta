@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "92dfddaa-f161-4265-8eaa-8b45aa118257",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ear_NightElf_02": {
+      "ver": "1.0.4",
+      "uuid": "81d5c0c1-6aa2-4811-8f2d-aa022a452a72",
+      "rawTextureUuid": "92dfddaa-f161-4265-8eaa-8b45aa118257",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

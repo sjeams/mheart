@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4742b174-9dfc-4b94-a387-b45d3cb3847f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Hunter_BeastTaming": {
+      "ver": "1.0.4",
+      "uuid": "c45e9bb1-8626-47e9-8043-5c5195669aea",
+      "rawTextureUuid": "4742b174-9dfc-4b94-a387-b45d3cb3847f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

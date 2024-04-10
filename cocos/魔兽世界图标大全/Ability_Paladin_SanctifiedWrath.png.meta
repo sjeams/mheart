@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ebcdd665-1191-4e44-b27e-fc198d09e38b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Paladin_SanctifiedWrath": {
+      "ver": "1.0.4",
+      "uuid": "e9e83607-281a-4890-8128-450bf197b931",
+      "rawTextureUuid": "ebcdd665-1191-4e44-b27e-fc198d09e38b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

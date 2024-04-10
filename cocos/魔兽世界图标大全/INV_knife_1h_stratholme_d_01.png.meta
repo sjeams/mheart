@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "56041f36-8bd5-484f-887f-213dd9f6d8b7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_knife_1h_stratholme_d_01": {
+      "ver": "1.0.4",
+      "uuid": "9a010867-d747-46e8-ad0d-ecebc809b892",
+      "rawTextureUuid": "56041f36-8bd5-484f-887f-213dd9f6d8b7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

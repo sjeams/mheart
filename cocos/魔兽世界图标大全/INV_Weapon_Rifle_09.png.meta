@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dc785382-9ca6-46d6-9ed7-9e35e3532f5e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Weapon_Rifle_09": {
+      "ver": "1.0.4",
+      "uuid": "b8e70c78-7238-4519-8425-3a2e6313caf9",
+      "rawTextureUuid": "dc785382-9ca6-46d6-9ed7-9e35e3532f5e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

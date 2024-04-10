@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "419fb41d-8416-4c95-b607-f7b7940bf001",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_103_PotatoBread": {
+      "ver": "1.0.4",
+      "uuid": "c671eca4-417f-4350-9369-a6e7fe25aa63",
+      "rawTextureUuid": "419fb41d-8416-4c95-b607-f7b7940bf001",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

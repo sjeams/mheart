@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f6bb7168-55cd-4fd9-9f3a-99d2384bf4d9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ticket_Tarot_Maelstrom_01": {
+      "ver": "1.0.4",
+      "uuid": "944e972d-9fe7-4861-a358-e332c2ef1f23",
+      "rawTextureUuid": "f6bb7168-55cd-4fd9-9f3a-99d2384bf4d9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

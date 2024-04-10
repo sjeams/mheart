@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dd01e03e-53c3-42b5-8117-dc2cfc830ee2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_BannerPVP_02": {
+      "ver": "1.0.4",
+      "uuid": "36e53c7c-686b-4056-bb89-752abfdb7848",
+      "rawTextureUuid": "dd01e03e-53c3-42b5-8117-dc2cfc830ee2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

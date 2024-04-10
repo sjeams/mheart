@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9ed0b490-8680-4baf-b232-793ffa1afb31",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_UpgradeMoonGlaive": {
+      "ver": "1.0.4",
+      "uuid": "eb782df3-fc16-40e4-b7d7-39d6ee44d8d0",
+      "rawTextureUuid": "9ed0b490-8680-4baf-b232-793ffa1afb31",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

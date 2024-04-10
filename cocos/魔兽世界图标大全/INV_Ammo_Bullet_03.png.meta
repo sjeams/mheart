@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "143a0b2a-175a-480d-8627-5a96dcfc6dbf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ammo_Bullet_03": {
+      "ver": "1.0.4",
+      "uuid": "db5c808e-0c39-4093-843f-80b148e6d9c6",
+      "rawTextureUuid": "143a0b2a-175a-480d-8627-5a96dcfc6dbf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

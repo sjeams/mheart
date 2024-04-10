@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "12bd022d-73be-4113-ba31-a027068ad1f6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_SearingTotem": {
+      "ver": "1.0.4",
+      "uuid": "5c16cc16-4cda-4498-be69-66f35ee3bbf1",
+      "rawTextureUuid": "12bd022d-73be-4113-ba31-a027068ad1f6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

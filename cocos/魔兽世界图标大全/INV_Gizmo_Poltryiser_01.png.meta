@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9f862e18-cec0-4c82-9106-e2b65e9a29bc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Gizmo_Poltryiser_01": {
+      "ver": "1.0.4",
+      "uuid": "92e9575a-07db-418c-997c-e3c0d3c67ea4",
+      "rawTextureUuid": "9f862e18-cec0-4c82-9106-e2b65e9a29bc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

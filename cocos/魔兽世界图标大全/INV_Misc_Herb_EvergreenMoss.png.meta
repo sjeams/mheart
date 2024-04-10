@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d643040b-b5e5-4b5b-93a4-399b2ae2725c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_EvergreenMoss": {
+      "ver": "1.0.4",
+      "uuid": "4b56e85c-b50f-421d-a047-64a0f64df8f5",
+      "rawTextureUuid": "d643040b-b5e5-4b5b-93a4-399b2ae2725c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

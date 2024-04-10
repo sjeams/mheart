@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e24f7eba-b5a7-466a-b20b-b74fb46c3869",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_AhnQirajTrinket_06": {
+      "ver": "1.0.4",
+      "uuid": "b8a795d5-d0e6-449f-85bd-3beb5f73cb00",
+      "rawTextureUuid": "e24f7eba-b5a7-466a-b20b-b74fb46c3869",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

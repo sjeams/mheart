@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b69b9533-14c3-4000-ad1e-eefd2c5380c8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Petbiscuit_01": {
+      "ver": "1.0.4",
+      "uuid": "988a59a0-1980-48e9-9529-6c84306564ac",
+      "rawTextureUuid": "b69b9533-14c3-4000-ad1e-eefd2c5380c8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "383611b3-c729-4be2-a3d1-820979cbda89",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shadow_CurseOfAchimonde": {
+      "ver": "1.0.4",
+      "uuid": "0fd207b3-c2a1-49fa-9cfa-cef300eebe77",
+      "rawTextureUuid": "383611b3-c729-4be2-a3d1-820979cbda89",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

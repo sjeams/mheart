@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ad20d19f-4001-4553-a03d-e32ca5e12e05",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Necklace_17": {
+      "ver": "1.0.4",
+      "uuid": "3cbe0142-7ce9-492e-85ab-95b287d0f02d",
+      "rawTextureUuid": "ad20d19f-4001-4553-a03d-e32ca5e12e05",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

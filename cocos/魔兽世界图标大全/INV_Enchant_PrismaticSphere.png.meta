@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a951370b-9d3e-4dc1-8c03-71c19cb8f420",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Enchant_PrismaticSphere": {
+      "ver": "1.0.4",
+      "uuid": "f07574cf-8724-426f-9005-b6af6bdbe39b",
+      "rawTextureUuid": "a951370b-9d3e-4dc1-8c03-71c19cb8f420",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

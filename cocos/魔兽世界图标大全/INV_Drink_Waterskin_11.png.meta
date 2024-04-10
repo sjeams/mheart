@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "cc689054-2ff0-46e4-8a8b-4eb73671af9d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Drink_Waterskin_11": {
+      "ver": "1.0.4",
+      "uuid": "1183373a-d84a-462c-ba86-ea05dba79326",
+      "rawTextureUuid": "cc689054-2ff0-46e4-8a8b-4eb73671af9d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

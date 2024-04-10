@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0a441a4e-0d00-4ff5-8261-8deeb72248ca",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ore_FelIron": {
+      "ver": "1.0.4",
+      "uuid": "d9a182d7-f7c7-4ef3-be7e-fe44b986b6a8",
+      "rawTextureUuid": "0a441a4e-0d00-4ff5-8261-8deeb72248ca",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

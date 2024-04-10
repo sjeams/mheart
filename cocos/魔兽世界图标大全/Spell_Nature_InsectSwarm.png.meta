@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "321a8162-08a3-4558-b98d-b3e80e1e020a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_InsectSwarm": {
+      "ver": "1.0.4",
+      "uuid": "53eab65d-8cbf-466b-b563-39d0ee97f3be",
+      "rawTextureUuid": "321a8162-08a3-4558-b98d-b3e80e1e020a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

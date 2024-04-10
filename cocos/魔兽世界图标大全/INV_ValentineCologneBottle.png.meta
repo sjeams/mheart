@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "80532bc9-7136-4e53-b738-4e7ef3defa7a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_ValentineCologneBottle": {
+      "ver": "1.0.4",
+      "uuid": "b728836b-2300-49ee-bdf4-72f9b6a19532",
+      "rawTextureUuid": "80532bc9-7136-4e53-b738-4e7ef3defa7a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8744c9f3-3ebc-4cc1-8b3b-ef8ace30c1e0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Elemental_Primal_Earth": {
+      "ver": "1.0.4",
+      "uuid": "e9ca3889-7223-4e23-90dd-a11f66b1061f",
+      "rawTextureUuid": "8744c9f3-3ebc-4cc1-8b3b-ef8ace30c1e0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

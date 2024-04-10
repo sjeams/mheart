@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "08fcd33a-6246-4d37-9195-da1ba7432e89",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_HealingAura": {
+      "ver": "1.0.4",
+      "uuid": "390489bc-a40f-4e60-be5f-2d329ed54127",
+      "rawTextureUuid": "08fcd33a-6246-4d37-9195-da1ba7432e89",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

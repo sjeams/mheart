@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "731d2b0f-4bd2-4c81-99c0-ce0fe0ccffbc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Achievement_Arena_3v3_7": {
+      "ver": "1.0.4",
+      "uuid": "bbf36c40-7f05-48c9-9a5c-bc8b996e50f5",
+      "rawTextureUuid": "731d2b0f-4bd2-4c81-99c0-ce0fe0ccffbc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

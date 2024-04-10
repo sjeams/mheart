@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d153cb74-d184-459b-86e8-f06a9b6d0aa8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mage_NetherWindPresence": {
+      "ver": "1.0.4",
+      "uuid": "708ff6e2-787f-4b89-8da6-c2231cf0f009",
+      "rawTextureUuid": "d153cb74-d184-459b-86e8-f06a9b6d0aa8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

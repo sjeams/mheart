@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "50734508-4414-42f7-bfc0-1fd534a717de",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_IceThorn": {
+      "ver": "1.0.4",
+      "uuid": "ed52f1e1-cdcc-432a-aaba-1e8674f93ff0",
+      "rawTextureUuid": "50734508-4414-42f7-bfc0-1fd534a717de",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

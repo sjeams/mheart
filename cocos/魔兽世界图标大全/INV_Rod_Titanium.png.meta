@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "27cdaed1-7324-4606-8717-9080ee6e1947",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Rod_Titanium": {
+      "ver": "1.0.4",
+      "uuid": "a9f87f67-e56d-4032-9e72-e851b66dadb8",
+      "rawTextureUuid": "27cdaed1-7324-4606-8717-9080ee6e1947",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -0.5,
+      "trimX": 0,
+      "trimY": 1,
+      "width": 64,
+      "height": 63,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

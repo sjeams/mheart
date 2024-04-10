@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a388eb3e-0c8e-4e14-842b-085445091be7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_ValentinesCard02": {
+      "ver": "1.0.4",
+      "uuid": "333db877-995e-4b81-b58b-84316f80078c",
+      "rawTextureUuid": "a388eb3e-0c8e-4e14-842b-085445091be7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

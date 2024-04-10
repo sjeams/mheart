@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d4dac01a-351f-459b-98c1-811dc5a376cd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Qiraj_HuskOldGod": {
+      "ver": "1.0.4",
+      "uuid": "b8ae17d8-db5d-40d2-a239-a2238441bff9",
+      "rawTextureUuid": "d4dac01a-351f-459b-98c1-811dc5a376cd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

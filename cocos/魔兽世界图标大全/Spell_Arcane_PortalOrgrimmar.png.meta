@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f124ee95-d022-45fd-bc3d-808c69744fb8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_PortalOrgrimmar": {
+      "ver": "1.0.4",
+      "uuid": "78f7dcd1-b679-418a-aabf-fc0f328d941d",
+      "rawTextureUuid": "f124ee95-d022-45fd-bc3d-808c69744fb8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

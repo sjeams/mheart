@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "807ccfe9-e2db-48cb-aa20-3341ee3aa772",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_127_Fish": {
+      "ver": "1.0.4",
+      "uuid": "0f253ddd-9650-47b9-890d-20a0ad304066",
+      "rawTextureUuid": "807ccfe9-e2db-48cb-aa20-3341ee3aa772",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

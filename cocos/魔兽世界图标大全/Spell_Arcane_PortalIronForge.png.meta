@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "2d09e59b-1ac4-443e-a7c1-649d75b10c2b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_PortalIronForge": {
+      "ver": "1.0.4",
+      "uuid": "be87dcf7-04d1-4df7-a313-543822af7050",
+      "rawTextureUuid": "2d09e59b-1ac4-443e-a7c1-649d75b10c2b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

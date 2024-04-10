@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "792e3c78-12aa-4231-b64d-8b1c49377388",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_PortalStonard": {
+      "ver": "1.0.4",
+      "uuid": "5ae83226-fca9-4e4b-8119-085318c30ca2",
+      "rawTextureUuid": "792e3c78-12aa-4231-b64d-8b1c49377388",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "11029578-7954-415d-aacf-e0261d517887",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ore_Copper_01": {
+      "ver": "1.0.4",
+      "uuid": "b1ca0195-2414-4884-8cf4-cc5ca5696114",
+      "rawTextureUuid": "11029578-7954-415d-aacf-e0261d517887",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

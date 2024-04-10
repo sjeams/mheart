@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c5b2b671-ae1d-48f8-9fe2-9f58137adba4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_CrimsonCrab": {
+      "ver": "1.0.4",
+      "uuid": "83731de4-fada-476c-b4cb-ddb5b82a11bb",
+      "rawTextureUuid": "c5b2b671-ae1d-48f8-9fe2-9f58137adba4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

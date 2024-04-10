@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3ed59c04-ce18-43cb-8c10-dae4ca7e6a4d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_StarOfElune_02": {
+      "ver": "1.0.4",
+      "uuid": "801f48ab-2d77-4ceb-8d99-bec0ebe0d53d",
+      "rawTextureUuid": "3ed59c04-ce18-43cb-8c10-dae4ca7e6a4d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "57ef8800-c480-4a87-b87d-729d698d0515",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_TrinketPVP_01": {
+      "ver": "1.0.4",
+      "uuid": "c8fcf943-e19f-470d-946f-b13e78544c0a",
+      "rawTextureUuid": "57ef8800-c480-4a87-b87d-729d698d0515",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

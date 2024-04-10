@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ae03463a-2c5f-4bd1-be3c-066b5da26280",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Cauldron_Arcane": {
+      "ver": "1.0.4",
+      "uuid": "d85f2673-54fb-4b0c-b5f0-ff3663f92acc",
+      "rawTextureUuid": "ae03463a-2c5f-4bd1-be3c-066b5da26280",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

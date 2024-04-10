@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a1d7b6c9-ad09-4bd9-be19-9972148fd4cf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_DeepPeridot_01": {
+      "ver": "1.0.4",
+      "uuid": "787883c9-a28a-496b-acb5-4b6b2d4401c2",
+      "rawTextureUuid": "a1d7b6c9-ad09-4bd9-be19-9972148fd4cf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

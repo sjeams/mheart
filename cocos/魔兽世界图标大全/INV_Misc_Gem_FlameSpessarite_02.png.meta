@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5220f19e-0fa2-4227-ae8d-60b3e2c1dbad",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_FlameSpessarite_02": {
+      "ver": "1.0.4",
+      "uuid": "db67060f-f33c-4b6e-9e4d-7d233f9a09f5",
+      "rawTextureUuid": "5220f19e-0fa2-4227-ae8d-60b3e2c1dbad",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

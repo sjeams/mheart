@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fd63bcbc-beb9-4234-8408-1ca6ca578588",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Pelt_Arctic_02": {
+      "ver": "1.0.4",
+      "uuid": "8d8334ad-28f9-4705-bf25-ebcf9be45822",
+      "rawTextureUuid": "fd63bcbc-beb9-4234-8408-1ca6ca578588",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

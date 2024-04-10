@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8b13d5e6-0d95-4769-a9aa-d914ef67761f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_Devastate": {
+      "ver": "1.0.4",
+      "uuid": "222c5633-4f13-48a7-8f10-3b5d87bfca1d",
+      "rawTextureUuid": "8b13d5e6-0d95-4769-a9aa-d914ef67761f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

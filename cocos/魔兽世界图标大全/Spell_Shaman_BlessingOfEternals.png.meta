@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c908ede8-a87a-4470-a9b7-6b77d4aba739",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shaman_BlessingOfEternals": {
+      "ver": "1.0.4",
+      "uuid": "621645f2-83f8-4c41-9e66-9498279ed478",
+      "rawTextureUuid": "c908ede8-a87a-4470-a9b7-6b77d4aba739",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

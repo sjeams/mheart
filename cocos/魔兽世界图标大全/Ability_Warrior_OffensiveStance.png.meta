@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "342ae5a0-0468-4d11-92e1-cbfa1a3daafc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_OffensiveStance": {
+      "ver": "1.0.4",
+      "uuid": "52c5c795-5054-46cb-995b-151ff91d807b",
+      "rawTextureUuid": "342ae5a0-0468-4d11-92e1-cbfa1a3daafc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d70f523b-e284-4b89-a95f-33ec9e9f45d2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Stone_GrindingStone_03": {
+      "ver": "1.0.4",
+      "uuid": "9ad138cf-36fa-4705-969f-0d3191506f47",
+      "rawTextureUuid": "d70f523b-e284-4b89-a95f-33ec9e9f45d2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

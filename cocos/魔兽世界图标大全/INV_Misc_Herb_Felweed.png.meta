@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "77cd30fd-f6ca-4b32-869f-51a1bfa9efca",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_Felweed": {
+      "ver": "1.0.4",
+      "uuid": "4fa8ad93-3a65-40e0-8a94-613aa6c0dbc1",
+      "rawTextureUuid": "77cd30fd-f6ca-4b32-869f-51a1bfa9efca",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

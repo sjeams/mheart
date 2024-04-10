@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0b118c75-199d-4026-bd4e-d37dc7c7b15d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_BlessingOfStamina": {
+      "ver": "1.0.4",
+      "uuid": "6d6ed644-064c-4bda-a60e-8e5a2316ce0c",
+      "rawTextureUuid": "0b118c75-199d-4026-bd4e-d37dc7c7b15d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

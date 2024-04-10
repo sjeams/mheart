@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "62eb2402-4bcb-415d-b174-f46bf176a5df",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mage_WorldInFlames": {
+      "ver": "1.0.4",
+      "uuid": "69475b4d-b1e8-4151-b048-99083a6039b9",
+      "rawTextureUuid": "62eb2402-4bcb-415d-b174-f46bf176a5df",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

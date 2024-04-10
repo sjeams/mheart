@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "cb903a24-0005-4722-967c-2b1c8370a934",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Bag_CenarionHerbBag": {
+      "ver": "1.0.4",
+      "uuid": "00de82a3-f8f6-4352-92a8-b7481651c9b6",
+      "rawTextureUuid": "cb903a24-0005-4722-967c-2b1c8370a934",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

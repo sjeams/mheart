@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3f6629c7-688c-4043-9799-329b11185725",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_Talasite_01": {
+      "ver": "1.0.4",
+      "uuid": "44b90d70-3e6a-481c-94c2-c0fd3f702211",
+      "rawTextureUuid": "3f6629c7-688c-4043-9799-329b11185725",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

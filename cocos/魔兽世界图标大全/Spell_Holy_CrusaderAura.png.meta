@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5d68b7ed-9c98-4431-ba47-5430113c648a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_CrusaderAura": {
+      "ver": "1.0.4",
+      "uuid": "a27fe106-f8dd-4f43-a819-08289183c482",
+      "rawTextureUuid": "5d68b7ed-9c98-4431-ba47-5430113c648a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

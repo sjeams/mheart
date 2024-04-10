@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5676167e-1ca4-4521-b5a1-7e5ba3bd3196",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Rod_EnchantedFelsteel": {
+      "ver": "1.0.4",
+      "uuid": "0659e28f-616f-4cd4-9558-9bd140b95c70",
+      "rawTextureUuid": "5676167e-1ca4-4521-b5a1-7e5ba3bd3196",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

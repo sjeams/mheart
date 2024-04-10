@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f170ea19-0ab4-4a2b-9c2a-c70479550c77",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_TruesilverBoar": {
+      "ver": "1.0.4",
+      "uuid": "14377afc-b7e3-48aa-8940-119e33e6dd4d",
+      "rawTextureUuid": "f170ea19-0ab4-4a2b-9c2a-c70479550c77",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

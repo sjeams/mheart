@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c7acf2be-bcf1-47c6-96e3-b539e60d225d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Sword_2H_Blood_B_01": {
+      "ver": "1.0.4",
+      "uuid": "bbde9cdc-8dd2-4816-9ed0-5f7766049310",
+      "rawTextureUuid": "c7acf2be-bcf1-47c6-96e3-b539e60d225d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

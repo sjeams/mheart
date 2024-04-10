@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "bb9ab419-d73b-498d-9d8b-b286edc5620e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_TestOfFaith": {
+      "ver": "1.0.4",
+      "uuid": "b73ced35-ecc9-4e9a-9521-1ff647a968f6",
+      "rawTextureUuid": "bb9ab419-d73b-498d-9d8b-b286edc5620e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -194,11 +194,11 @@ cc.Class({
             i++;
             cc.log('P技能'+i)
             if(info.position_skill[prop].image!=''){
-                cc.loader.loadRes('/skill_icon/'+info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) {   
+                cc.loader.loadRes('/技能图标/'+info.position_skill[prop].image, cc.SpriteFrame, function (err, spriteFrame) {   
                     TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = spriteFrame; 
                 });
             }else{
-                TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = ''; 
+                TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = false; 
             }
             // TipBoxPrefab.getChildByName('P技能'+i).getComponent(cc.Sprite).spriteFrame = _this.node.getChildByName('生物').getComponent(cc.Sprite).spriteFrame
             // var remoteUrl = httpRequest.httpUrl(info.position_skill[prop].image);

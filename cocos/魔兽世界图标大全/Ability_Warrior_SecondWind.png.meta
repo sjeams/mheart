@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7db5cb88-5dd1-47ee-90d7-1d14647da5ef",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_SecondWind": {
+      "ver": "1.0.4",
+      "uuid": "763f00d7-be66-4959-99ba-c336afd475e6",
+      "rawTextureUuid": "7db5cb88-5dd1-47ee-90d7-1d14647da5ef",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

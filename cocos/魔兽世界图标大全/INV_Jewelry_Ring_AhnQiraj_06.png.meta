@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0fbd97bf-9042-4722-a534-19b21b6d071e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Ring_AhnQiraj_06": {
+      "ver": "1.0.4",
+      "uuid": "7ed2bd78-0911-400c-944d-c1910c2747b4",
+      "rawTextureUuid": "0fbd97bf-9042-4722-a534-19b21b6d071e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

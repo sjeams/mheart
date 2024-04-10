@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "58e1c65f-f7d6-484a-b4c6-7e474b59d8a6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_Windfury": {
+      "ver": "1.0.4",
+      "uuid": "b84d6d23-b559-43f1-ab31-d6cec39811ec",
+      "rawTextureUuid": "58e1c65f-f7d6-484a-b4c6-7e474b59d8a6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

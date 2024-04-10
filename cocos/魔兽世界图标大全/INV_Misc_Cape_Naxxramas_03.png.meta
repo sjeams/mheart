@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e2511016-1329-4315-9f94-47f7e011e678",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Cape_Naxxramas_03": {
+      "ver": "1.0.4",
+      "uuid": "77077344-78ec-4e9b-ab63-6ae9cc55a93e",
+      "rawTextureUuid": "e2511016-1329-4315-9f94-47f7e011e678",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

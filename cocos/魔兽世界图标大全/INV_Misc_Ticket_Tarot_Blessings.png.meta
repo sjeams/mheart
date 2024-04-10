@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6033fe68-2220-4c6e-818f-b39c5d25aa73",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ticket_Tarot_Blessings": {
+      "ver": "1.0.4",
+      "uuid": "bda16856-7284-4e08-8c36-859411a4363c",
+      "rawTextureUuid": "6033fe68-2220-4c6e-818f-b39c5d25aa73",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "af78e548-7a19-4b48-b5b3-f5d7618b6eff",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_EmpowerChampion": {
+      "ver": "1.0.4",
+      "uuid": "c08f47ef-5fb0-403f-ad9c-bdd76a4a87bc",
+      "rawTextureUuid": "af78e548-7a19-4b48-b5b3-f5d7618b6eff",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

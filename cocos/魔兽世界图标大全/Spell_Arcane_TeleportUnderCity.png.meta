@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c0967954-2ae2-4f89-beed-568274d8c7c8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Arcane_TeleportUnderCity": {
+      "ver": "1.0.4",
+      "uuid": "1ccdccc6-a8f4-4791-b01b-e6ed4d8d9ff2",
+      "rawTextureUuid": "c0967954-2ae2-4f89-beed-568274d8c7c8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

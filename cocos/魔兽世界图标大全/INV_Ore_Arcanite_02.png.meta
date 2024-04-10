@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "99512c78-e99f-4855-89ec-b3be43c27c1d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ore_Arcanite_02": {
+      "ver": "1.0.4",
+      "uuid": "56c510f4-6074-4953-9f2d-cab6f7cdc3b5",
+      "rawTextureUuid": "99512c78-e99f-4855-89ec-b3be43c27c1d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3e75005c-7346-4b86-9f72-de1b3f6b8a68",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_SymbolofKings_01": {
+      "ver": "1.0.4",
+      "uuid": "9d72ec97-772c-4b3f-a18b-2198ea175b1a",
+      "rawTextureUuid": "3e75005c-7346-4b86-9f72-de1b3f6b8a68",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

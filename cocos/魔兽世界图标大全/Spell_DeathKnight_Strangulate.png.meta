@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7c678537-f57b-44ae-9ba8-fb4049ff712d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_Strangulate": {
+      "ver": "1.0.4",
+      "uuid": "1eefbc53-df1f-4102-9e5c-4e7678836b00",
+      "rawTextureUuid": "7c678537-f57b-44ae-9ba8-fb4049ff712d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

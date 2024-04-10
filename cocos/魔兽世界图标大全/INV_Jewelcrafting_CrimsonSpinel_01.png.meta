@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6dcb632d-786a-4eb6-8bd5-7cbfb63d7c91",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_CrimsonSpinel_01": {
+      "ver": "1.0.4",
+      "uuid": "070cccdd-96bb-499c-bda3-e7f1e108b9cf",
+      "rawTextureUuid": "6dcb632d-786a-4eb6-8bd5-7cbfb63d7c91",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

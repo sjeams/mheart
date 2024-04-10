@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4af8ec2f-f90c-47a7-b1f6-58a6ecf01321",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Offhand_Stratholme_A_01": {
+      "ver": "1.0.4",
+      "uuid": "bb97ce27-a865-40f2-876f-d2492a57da00",
+      "rawTextureUuid": "4af8ec2f-f90c-47a7-b1f6-58a6ecf01321",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

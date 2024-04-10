@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3e964659-c742-4620-9a73-d268a90d0a08",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_RockBiter": {
+      "ver": "1.0.4",
+      "uuid": "0096dfca-aba3-4a42-b36d-15c1fa93d158",
+      "rawTextureUuid": "3e964659-c742-4620-9a73-d268a90d0a08",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "45109493-0127-4573-bbbf-75075619e210",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_ShieldMastery": {
+      "ver": "1.0.4",
+      "uuid": "56cddfb4-11f2-439d-a56d-92bfdc318c1a",
+      "rawTextureUuid": "45109493-0127-4573-bbbf-75075619e210",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a9657f20-8011-4fc5-a006-1b5f42931e02",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Enchant_DustStrange": {
+      "ver": "1.0.4",
+      "uuid": "93858100-f0f6-4467-a829-2b7f7fd9d1ba",
+      "rawTextureUuid": "a9657f20-8011-4fc5-a006-1b5f42931e02",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

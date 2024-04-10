@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e730bd23-0ab6-48f2-97bf-2bdca935ddb0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Enchant_ShardBrilliantSmall": {
+      "ver": "1.0.4",
+      "uuid": "577aa239-eee3-4466-b5a8-4a0cdf2d844a",
+      "rawTextureUuid": "e730bd23-0ab6-48f2-97bf-2bdca935ddb0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "133138ed-d065-4195-912f-f75580044966",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mount_WarHippogryph": {
+      "ver": "1.0.4",
+      "uuid": "049b2d28-795a-44e4-ac3b-6fd86d930cd5",
+      "rawTextureUuid": "133138ed-d065-4195-912f-f75580044966",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 62,
+      "height": 62,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

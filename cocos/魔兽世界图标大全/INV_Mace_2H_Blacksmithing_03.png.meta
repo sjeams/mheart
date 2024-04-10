@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c9cb87b3-c4fe-48b6-8edb-103880cbc25e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Mace_2H_Blacksmithing_03": {
+      "ver": "1.0.4",
+      "uuid": "7b1123ae-5155-4150-aceb-63f637a1c7f4",
+      "rawTextureUuid": "c9cb87b3-c4fe-48b6-8edb-103880cbc25e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

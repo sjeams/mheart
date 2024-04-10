@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ef1e061f-d906-4e3b-9aaa-103b99f0651f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_TabardPVP_03": {
+      "ver": "1.0.4",
+      "uuid": "03fcb0bf-b0a3-491b-90a2-60db1347d634",
+      "rawTextureUuid": "ef1e061f-d906-4e3b-9aaa-103b99f0651f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

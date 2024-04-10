@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "bc621d26-021e-4244-96bc-48c8325b261d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Gizmo_GoblinBoomBox_01": {
+      "ver": "1.0.4",
+      "uuid": "64b95af1-c126-43c3-aaa5-24fd99408fce",
+      "rawTextureUuid": "bc621d26-021e-4244-96bc-48c8325b261d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

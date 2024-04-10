@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8afe80b6-4cc2-4532-b3eb-288e7c7eccb3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_SealOfWrath": {
+      "ver": "1.0.4",
+      "uuid": "12f16cda-4300-4fb0-981b-57830b0b194d",
+      "rawTextureUuid": "8afe80b6-4cc2-4532-b3eb-288e7c7eccb3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

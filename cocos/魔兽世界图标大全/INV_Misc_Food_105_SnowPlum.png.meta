@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ad23a5a2-b798-4384-8626-f01d43027c08",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_105_SnowPlum": {
+      "ver": "1.0.4",
+      "uuid": "e0ade7ce-607f-49a9-89d5-6562496425a2",
+      "rawTextureUuid": "ad23a5a2-b798-4384-8626-f01d43027c08",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

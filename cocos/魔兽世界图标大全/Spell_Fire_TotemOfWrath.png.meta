@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7a9a904c-3e84-4d90-a4c3-faf9382665be",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_TotemOfWrath": {
+      "ver": "1.0.4",
+      "uuid": "431dae72-de3b-4f65-b5ac-eb3fed29effc",
+      "rawTextureUuid": "7a9a904c-3e84-4d90-a4c3-faf9382665be",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

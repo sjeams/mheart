@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "66f96d19-a2aa-4b70-99b3-ad9baa129be2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_FrostFever": {
+      "ver": "1.0.4",
+      "uuid": "55a0205d-226b-4a72-9be4-bd5a9a235a42",
+      "rawTextureUuid": "66f96d19-a2aa-4b70-99b3-ad9baa129be2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

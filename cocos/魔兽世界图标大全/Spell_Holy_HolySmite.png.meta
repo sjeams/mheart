@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1406c7ae-b1fc-4442-97f4-fbb056f29500",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_HolySmite": {
+      "ver": "1.0.4",
+      "uuid": "479e3a7e-af22-43dc-8966-aaa0e1f0605f",
+      "rawTextureUuid": "1406c7ae-b1fc-4442-97f4-fbb056f29500",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

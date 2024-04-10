@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "648ccd56-50a2-4ee6-bee4-3a9b65c3cb8f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_Butcher2": {
+      "ver": "1.0.4",
+      "uuid": "5bc2936a-99f9-41cc-81b5-84e3ab2d9581",
+      "rawTextureUuid": "648ccd56-50a2-4ee6-bee4-3a9b65c3cb8f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

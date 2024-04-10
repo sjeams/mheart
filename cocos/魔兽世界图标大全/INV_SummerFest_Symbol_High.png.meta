@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1dd0293c-a8be-4c1c-ac2d-0b4fd29568e8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_SummerFest_Symbol_High": {
+      "ver": "1.0.4",
+      "uuid": "f7fc7616-cf0e-48d6-88fe-3bf3611f9d45",
+      "rawTextureUuid": "1dd0293c-a8be-4c1c-ac2d-0b4fd29568e8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5be0db03-a5d0-4d2b-91aa-393ab3c4dc7d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_MonsterClaw_03": {
+      "ver": "1.0.4",
+      "uuid": "41865e7b-dff5-4bf1-9438-a6113cc6f163",
+      "rawTextureUuid": "5be0db03-a5d0-4d2b-91aa-393ab3c4dc7d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b147e7ad-a1ec-4215-8345-151e3af0f516",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_PocketWatch_02": {
+      "ver": "1.0.4",
+      "uuid": "2901a2ce-7606-4129-8d96-72acad30735d",
+      "rawTextureUuid": "b147e7ad-a1ec-4215-8345-151e3af0f516",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

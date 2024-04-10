@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "feb5d349-3214-4163-b2fb-babba9b86a98",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Rogue_HungerforBlood": {
+      "ver": "1.0.4",
+      "uuid": "7d1487cc-4610-400c-8021-244c1ca702a3",
+      "rawTextureUuid": "feb5d349-3214-4163-b2fb-babba9b86a98",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

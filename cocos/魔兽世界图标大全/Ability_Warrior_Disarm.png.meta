@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "eef93d7b-bf62-496b-b0a3-999e01628e00",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_Disarm": {
+      "ver": "1.0.4",
+      "uuid": "3179b34c-48e1-4607-9983-4def26e63cfd",
+      "rawTextureUuid": "eef93d7b-bf62-496b-b0a3-999e01628e00",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

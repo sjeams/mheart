@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e60d2356-72ea-44cc-9e73-a5eebb10934c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_BlackLotus": {
+      "ver": "1.0.4",
+      "uuid": "f451fedc-affe-44cd-9ca8-06866b27e42d",
+      "rawTextureUuid": "e60d2356-72ea-44cc-9e73-a5eebb10934c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

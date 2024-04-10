@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "07425f10-95e8-42cc-9002-3da98aeed8fc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_117_HeartySoup": {
+      "ver": "1.0.4",
+      "uuid": "73890293-2230-4a27-aef1-b5a1514271f8",
+      "rawTextureUuid": "07425f10-95e8-42cc-9002-3da98aeed8fc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

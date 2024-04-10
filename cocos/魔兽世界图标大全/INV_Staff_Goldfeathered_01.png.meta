@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6f60bfd2-6810-4184-a7f5-eb2f9d7aa278",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Staff_Goldfeathered_01": {
+      "ver": "1.0.4",
+      "uuid": "98f5743f-2183-4e99-a413-98f47a7e5bf8",
+      "rawTextureUuid": "6f60bfd2-6810-4184-a7f5-eb2f9d7aa278",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

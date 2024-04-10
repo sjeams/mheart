@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "2947aaf7-af09-4db7-ac2d-18eeecf22282",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_NaturesWrath": {
+      "ver": "1.0.4",
+      "uuid": "926ad2b6-0a8d-4c77-93d6-4cdf8a017dc3",
+      "rawTextureUuid": "2947aaf7-af09-4db7-ac2d-18eeecf22282",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

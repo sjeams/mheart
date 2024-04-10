@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "eccf3543-9560-4719-a3d9-49a81c13fdad",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ingot_Thorium": {
+      "ver": "1.0.4",
+      "uuid": "f2155389-76bb-4245-b346-200a55ded469",
+      "rawTextureUuid": "eccf3543-9560-4719-a3d9-49a81c13fdad",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

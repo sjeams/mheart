@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "346f0c21-3822-4fc1-b925-58b4f0016be8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_NerubianChitin_01": {
+      "ver": "1.0.4",
+      "uuid": "c8e39be6-25dc-4e9c-b5fa-3fd0f25188fc",
+      "rawTextureUuid": "346f0c21-3822-4fc1-b925-58b4f0016be8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

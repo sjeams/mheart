@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "45a859b5-588e-438a-ba48-3fb58773ddf6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_Wheat_02": {
+      "ver": "1.0.4",
+      "uuid": "3626308d-8e41-41b4-9464-878dbeb109b7",
+      "rawTextureUuid": "45a859b5-588e-438a-ba48-3fb58773ddf6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

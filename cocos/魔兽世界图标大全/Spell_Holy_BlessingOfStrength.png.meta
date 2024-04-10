@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4a1f5891-8d28-4bd7-91eb-919347540116",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_BlessingOfStrength": {
+      "ver": "1.0.4",
+      "uuid": "77ff7087-5ad1-4db0-b97f-98e98c1fd9b1",
+      "rawTextureUuid": "4a1f5891-8d28-4bd7-91eb-919347540116",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

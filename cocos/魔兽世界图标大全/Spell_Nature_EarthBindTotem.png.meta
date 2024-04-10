@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "02fc816e-6f45-41cd-a2d2-75a4f53190d2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_EarthBindTotem": {
+      "ver": "1.0.4",
+      "uuid": "b638ad3b-682a-463e-afdc-22de4597ea3f",
+      "rawTextureUuid": "02fc816e-6f45-41cd-a2d2-75a4f53190d2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

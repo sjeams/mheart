@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f25d1dbb-b5d6-47d6-96cc-9a82aa44745f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_MoonGlow": {
+      "ver": "1.0.4",
+      "uuid": "7af3e0af-1c99-422e-9bd3-1d347a84b57e",
+      "rawTextureUuid": "f25d1dbb-b5d6-47d6-96cc-9a82aa44745f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

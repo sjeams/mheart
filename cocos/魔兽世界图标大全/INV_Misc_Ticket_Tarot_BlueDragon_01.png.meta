@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "74476de7-739d-4fa6-b6f8-74ecc382c08a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Ticket_Tarot_BlueDragon_01": {
+      "ver": "1.0.4",
+      "uuid": "204221b5-2af6-4ec6-9112-a7c56d03fc94",
+      "rawTextureUuid": "74476de7-739d-4fa6-b6f8-74ecc382c08a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

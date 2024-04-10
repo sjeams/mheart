@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "88f93b90-530c-4833-a80e-e55cbc1db18c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_MISC_FOOD_83_TALBUKSTEAK": {
+      "ver": "1.0.4",
+      "uuid": "fcc69201-20cb-4482-ba80-738eaf83a395",
+      "rawTextureUuid": "88f93b90-530c-4833-a80e-e55cbc1db18c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

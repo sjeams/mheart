@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "42bb0451-3e76-494d-8ac1-ce579f45495f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "SPELL_NATURE_HEALINGWAY": {
+      "ver": "1.0.4",
+      "uuid": "4d22d089-b5f4-4147-94ea-bff67a92aeb7",
+      "rawTextureUuid": "42bb0451-3e76-494d-8ac1-ce579f45495f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

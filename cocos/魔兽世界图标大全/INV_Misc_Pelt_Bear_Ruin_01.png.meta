@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "207b89b7-ca59-409e-b8b5-d89aa749935d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Pelt_Bear_Ruin_01": {
+      "ver": "1.0.4",
+      "uuid": "77fe9bd0-a52d-433b-9e4a-95d9b1fe4507",
+      "rawTextureUuid": "207b89b7-ca59-409e-b8b5-d89aa749935d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

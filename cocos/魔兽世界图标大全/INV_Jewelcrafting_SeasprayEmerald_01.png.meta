@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "90324181-2c6e-4f49-b6d5-24e2c212a28c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_SeasprayEmerald_01": {
+      "ver": "1.0.4",
+      "uuid": "80b2b63a-2179-4a20-ba48-3a06f2feceb0",
+      "rawTextureUuid": "90324181-2c6e-4f49-b6d5-24e2c212a28c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "235ebefb-bf07-4eb2-bdcc-ca3ec781338b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Necklace_29Naxxramas": {
+      "ver": "1.0.4",
+      "uuid": "9e9a974a-9596-4c6b-a828-086f9cc9ab84",
+      "rawTextureUuid": "235ebefb-bf07-4eb2-bdcc-ca3ec781338b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

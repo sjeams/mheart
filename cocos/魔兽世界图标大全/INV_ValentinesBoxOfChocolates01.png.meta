@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "39f9633a-9cba-47d3-abbd-1f8704e6c28f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_ValentinesBoxOfChocolates01": {
+      "ver": "1.0.4",
+      "uuid": "33582a63-56aa-4ffc-9ce2-9356b32c4d77",
+      "rawTextureUuid": "39f9633a-9cba-47d3-abbd-1f8704e6c28f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

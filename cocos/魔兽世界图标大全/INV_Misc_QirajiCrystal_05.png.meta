@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "083abdc3-22d0-4cd1-9f0f-8cacd773f201",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_QirajiCrystal_05": {
+      "ver": "1.0.4",
+      "uuid": "9c35035b-4710-4899-986d-570c37c80099",
+      "rawTextureUuid": "083abdc3-22d0-4cd1-9f0f-8cacd773f201",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

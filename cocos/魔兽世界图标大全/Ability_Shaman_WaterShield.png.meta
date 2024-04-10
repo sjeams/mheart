@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9455f92a-07c4-4806-82c9-06f4247e6c66",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Shaman_WaterShield": {
+      "ver": "1.0.4",
+      "uuid": "e0cb857d-cace-4a27-a837-200fb07f292e",
+      "rawTextureUuid": "9455f92a-07c4-4806-82c9-06f4247e6c66",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

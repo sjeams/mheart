@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a1b3b8bd-15f1-4064-84b0-de92c0633bd3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warrior_StalwartProtector": {
+      "ver": "1.0.4",
+      "uuid": "4e1d0a17-55be-4269-8020-336f0fc02cf3",
+      "rawTextureUuid": "a1b3b8bd-15f1-4064-84b0-de92c0633bd3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

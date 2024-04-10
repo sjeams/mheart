@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "69fafefa-dc49-40f3-8379-34d0e0f4a60d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_EmpyreanSapphire_02": {
+      "ver": "1.0.4",
+      "uuid": "5f0d249a-fb87-4d31-bc71-07e3e406d2f8",
+      "rawTextureUuid": "69fafefa-dc49-40f3-8379-34d0e0f4a60d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

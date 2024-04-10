@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "39cb35d0-1283-470d-a62f-5230a1633a8c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_ThoriumSetting": {
+      "ver": "1.0.4",
+      "uuid": "21629448-91c5-4967-b293-95363061b49b",
+      "rawTextureUuid": "39cb35d0-1283-470d-a62f-5230a1633a8c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "71079505-a2d3-4bc2-b31d-4b33fb6730d4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shadow_DemonBreath": {
+      "ver": "1.0.4",
+      "uuid": "03d66fa5-d287-4d86-ad34-f0b88b681c82",
+      "rawTextureUuid": "71079505-a2d3-4bc2-b31d-4b33fb6730d4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

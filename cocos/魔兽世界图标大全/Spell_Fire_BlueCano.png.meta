@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a49cdb20-e0f7-494b-b697-fd8de57a6781",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_BlueCano": {
+      "ver": "1.0.4",
+      "uuid": "8fa44d1b-2a1f-48d0-a079-7c9213d4bdc3",
+      "rawTextureUuid": "a49cdb20-e0f7-494b-b697-fd8de57a6781",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

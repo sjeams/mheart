@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ac06085c-d34f-48d5-b812-2af3a4e72f25",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Drink_Milk_01": {
+      "ver": "1.0.4",
+      "uuid": "d707ce33-fe7a-411f-a7f9-88e45fcc55a0",
+      "rawTextureUuid": "ac06085c-d34f-48d5-b812-2af3a4e72f25",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

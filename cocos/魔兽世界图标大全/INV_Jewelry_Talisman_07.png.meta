@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e4356ffe-cdb9-4561-b4de-83e4621bfc3d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Talisman_07": {
+      "ver": "1.0.4",
+      "uuid": "8da4580f-a40d-4d66-8da4-adf5c0c0eae8",
+      "rawTextureUuid": "e4356ffe-cdb9-4561-b4de-83e4621bfc3d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

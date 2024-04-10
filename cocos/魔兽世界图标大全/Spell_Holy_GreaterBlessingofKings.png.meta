@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "85e174bd-eb6b-4e0d-9d01-f0c4ca1dc099",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_GreaterBlessingofKings": {
+      "ver": "1.0.4",
+      "uuid": "2e8b5b84-b658-483f-88a6-ee4366a84b9e",
+      "rawTextureUuid": "85e174bd-eb6b-4e0d-9d01-f0c4ca1dc099",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

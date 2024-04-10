@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dd49e65d-cfe3-4df7-a7c7-eff95207c696",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Weapon_Crossbow_28": {
+      "ver": "1.0.4",
+      "uuid": "27fb17d6-a0b4-427c-84fd-4dc79d6f0ad4",
+      "rawTextureUuid": "dd49e65d-cfe3-4df7-a7c7-eff95207c696",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

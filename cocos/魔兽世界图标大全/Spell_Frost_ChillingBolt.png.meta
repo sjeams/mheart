@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "21930595-c483-4f9c-a162-63db1b78cfc9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Frost_ChillingBolt": {
+      "ver": "1.0.4",
+      "uuid": "4e562439-8fb2-4654-a148-1f509be4ee7b",
+      "rawTextureUuid": "21930595-c483-4f9c-a162-63db1b78cfc9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

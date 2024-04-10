@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "271034c6-eade-4fd8-b68b-433a5cebc38c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Bone_TaurenSkull_01": {
+      "ver": "1.0.4",
+      "uuid": "30bce07b-193d-4ade-9e90-707b12ce8c8a",
+      "rawTextureUuid": "271034c6-eade-4fd8-b68b-433a5cebc38c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dd3454a8-c285-4e99-81fa-3ba1936b723a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_Dawnstone_02": {
+      "ver": "1.0.4",
+      "uuid": "43433766-9d87-417e-bc55-67bb31ac5a4b",
+      "rawTextureUuid": "dd3454a8-c285-4e99-81fa-3ba1936b723a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

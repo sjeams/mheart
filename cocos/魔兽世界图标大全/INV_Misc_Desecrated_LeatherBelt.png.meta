@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8907a8aa-40a4-4884-b10b-5a8efa0339b3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Desecrated_LeatherBelt": {
+      "ver": "1.0.4",
+      "uuid": "d5b4c5bf-f90e-4e3a-9df3-ed413f4296d4",
+      "rawTextureUuid": "8907a8aa-40a4-4884-b10b-5a8efa0339b3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

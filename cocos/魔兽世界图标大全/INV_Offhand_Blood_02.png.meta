@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "05aaed5f-349f-4a45-9496-88afa0f46f65",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Offhand_Blood_02": {
+      "ver": "1.0.4",
+      "uuid": "5357e677-6f4f-4aac-a27f-d1b1df409326",
+      "rawTextureUuid": "05aaed5f-349f-4a45-9496-88afa0f46f65",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "97a1d356-ec8e-43f9-8d66-99605a56befe",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Enchant_ShardNexusLarge": {
+      "ver": "1.0.4",
+      "uuid": "10a87fcf-602d-49ee-b80d-d95ac7b5ace3",
+      "rawTextureUuid": "97a1d356-ec8e-43f9-8d66-99605a56befe",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

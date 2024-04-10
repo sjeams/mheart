@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "994d6121-d20c-46e6-bdda-57821838edf8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_ManaRegenTotem": {
+      "ver": "1.0.4",
+      "uuid": "3190a5c6-f736-42db-97e3-6ff600208ed4",
+      "rawTextureUuid": "994d6121-d20c-46e6-bdda-57821838edf8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

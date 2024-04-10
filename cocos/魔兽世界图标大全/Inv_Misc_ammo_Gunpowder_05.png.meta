@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ec491db5-5c3e-4104-bc09-f4c5a6a0dd1d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Inv_Misc_ammo_Gunpowder_05": {
+      "ver": "1.0.4",
+      "uuid": "b1f2c804-b89a-4b4b-83da-f34c13b8e74b",
+      "rawTextureUuid": "ec491db5-5c3e-4104-bc09-f4c5a6a0dd1d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

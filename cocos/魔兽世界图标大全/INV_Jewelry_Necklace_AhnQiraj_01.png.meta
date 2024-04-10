@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "dc7916ba-69a6-44e9-952b-c5af4f3007d7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Necklace_AhnQiraj_01": {
+      "ver": "1.0.4",
+      "uuid": "a30f0f31-5bd1-43c9-a87b-6e7e60774567",
+      "rawTextureUuid": "dc7916ba-69a6-44e9-952b-c5af4f3007d7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

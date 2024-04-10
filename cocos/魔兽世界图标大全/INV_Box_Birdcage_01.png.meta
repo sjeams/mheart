@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "20b0b341-c4cb-4f3a-a248-f897f336b317",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Box_Birdcage_01": {
+      "ver": "1.0.4",
+      "uuid": "236745a9-2667-4b24-a387-d869c58f1d7e",
+      "rawTextureUuid": "20b0b341-c4cb-4f3a-a248-f897f336b317",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

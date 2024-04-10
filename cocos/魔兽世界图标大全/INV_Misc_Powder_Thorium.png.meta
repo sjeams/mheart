@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "05b6f3a5-4c8b-4da5-87f3-6667125b0483",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Powder_Thorium": {
+      "ver": "1.0.4",
+      "uuid": "d6f13997-68be-4033-9cde-bfcf2a81c1f2",
+      "rawTextureUuid": "05b6f3a5-4c8b-4da5-87f3-6667125b0483",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

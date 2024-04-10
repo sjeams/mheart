@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "71682f9d-d0f7-4b33-a474-9c2c6bf0607c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ore_Adamantium_01": {
+      "ver": "1.0.4",
+      "uuid": "4f6b596c-08fa-4ad6-9d3e-96e8e64543d2",
+      "rawTextureUuid": "71682f9d-d0f7-4b33-a474-9c2c6bf0607c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

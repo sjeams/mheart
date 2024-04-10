@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "867543be-14c0-488c-9ccb-f28e31593a4d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_85_StegadonBite": {
+      "ver": "1.0.4",
+      "uuid": "61ecb593-bca7-4a4c-b99b-36a0c1bee05e",
+      "rawTextureUuid": "867543be-14c0-488c-9ccb-f28e31593a4d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5e458c4d-30ad-441a-b26e-24e6f6db22f3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Stone_WeightStone_05": {
+      "ver": "1.0.4",
+      "uuid": "8cb45b54-6007-4bb2-9127-2722bdd1385b",
+      "rawTextureUuid": "5e458c4d-30ad-441a-b26e-24e6f6db22f3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

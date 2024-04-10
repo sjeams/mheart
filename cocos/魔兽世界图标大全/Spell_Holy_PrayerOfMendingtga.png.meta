@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "0e2edea0-a652-4525-aadf-18544d3e572b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_PrayerOfMendingtga": {
+      "ver": "1.0.4",
+      "uuid": "c204d3f8-bd01-4d47-b4a6-380126e92983",
+      "rawTextureUuid": "0e2edea0-a652-4525-aadf-18544d3e572b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3f0c233c-9edc-4287-a9a9-e4d3a79898f7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_ArmorKit_18": {
+      "ver": "1.0.4",
+      "uuid": "4fbbbb9b-9e77-42c3-91f6-09a841a8384c",
+      "rawTextureUuid": "3f0c233c-9edc-4287-a9a9-e4d3a79898f7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

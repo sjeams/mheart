@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3373e7f6-984f-40d6-bdda-f5ca9b38eac6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_ShadowsongAmethyst_01": {
+      "ver": "1.0.4",
+      "uuid": "dbabfd73-bf86-493d-9f2c-035b4f6bee5b",
+      "rawTextureUuid": "3373e7f6-984f-40d6-bdda-f5ca9b38eac6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

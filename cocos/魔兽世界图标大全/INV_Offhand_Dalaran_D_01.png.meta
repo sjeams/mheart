@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "59fd7179-e7a5-4f96-a467-2093a4072282",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Offhand_Dalaran_D_01": {
+      "ver": "1.0.4",
+      "uuid": "f661baf5-a11b-4ccc-a2f0-3097aa3017a5",
+      "rawTextureUuid": "59fd7179-e7a5-4f96-a467-2093a4072282",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

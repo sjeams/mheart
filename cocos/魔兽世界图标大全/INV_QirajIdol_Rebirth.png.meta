@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a91ac530-2163-4ce3-8785-41d5e359879b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_QirajIdol_Rebirth": {
+      "ver": "1.0.4",
+      "uuid": "9aa37654-9a99-47c2-853c-6ec32e456165",
+      "rawTextureUuid": "a91ac530-2163-4ce3-8785-41d5e359879b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

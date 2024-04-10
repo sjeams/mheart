@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f9532ea6-01b7-4274-9a64-b3937707ed1b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_Resurrection": {
+      "ver": "1.0.4",
+      "uuid": "11d247df-5e5e-41f8-8dc2-9fd07c0d9947",
+      "rawTextureUuid": "f9532ea6-01b7-4274-9a64-b3937707ed1b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

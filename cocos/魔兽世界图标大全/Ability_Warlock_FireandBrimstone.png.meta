@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "775c2167-f5e9-4189-b595-a43bcc059e0e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Warlock_FireandBrimstone": {
+      "ver": "1.0.4",
+      "uuid": "f0ecb1f0-3e06-4b49-94df-d5fa6ab1e59f",
+      "rawTextureUuid": "775c2167-f5e9-4189-b595-a43bcc059e0e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

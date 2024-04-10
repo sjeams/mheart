@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e673d5c6-675f-4949-9546-3d62bcb516a3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Bag_CoreFelclothBag": {
+      "ver": "1.0.4",
+      "uuid": "05cfdda0-df0c-4df1-8f5b-959ac76c95d5",
+      "rawTextureUuid": "e673d5c6-675f-4949-9546-3d62bcb516a3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

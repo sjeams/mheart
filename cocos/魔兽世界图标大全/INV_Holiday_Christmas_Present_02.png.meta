@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "75b782b2-9c59-432a-8518-ddcb7b696437",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Holiday_Christmas_Present_02": {
+      "ver": "1.0.4",
+      "uuid": "934b3af3-d7b2-4dd2-8795-d73bd50dd65c",
+      "rawTextureUuid": "75b782b2-9c59-432a-8518-ddcb7b696437",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "89656d91-31eb-4f6f-b51c-311970d63306",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Nature_GiftoftheWild": {
+      "ver": "1.0.4",
+      "uuid": "8f905fb5-e442-4a49-a4ab-13f74bba78ec",
+      "rawTextureUuid": "89656d91-31eb-4f6f-b51c-311970d63306",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

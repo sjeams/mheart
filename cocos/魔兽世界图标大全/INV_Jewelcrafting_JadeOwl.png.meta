@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "40a00d7e-16bf-4267-8049-d7428dd0730d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_JadeOwl": {
+      "ver": "1.0.4",
+      "uuid": "0da1f0fb-55fd-4818-aa74-22e415610ede",
+      "rawTextureUuid": "40a00d7e-16bf-4267-8049-d7428dd0730d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

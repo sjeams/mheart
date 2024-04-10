@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "de0e57ec-8b0f-4b73-b1dd-f3c874b62d0e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Qiraj_RingCeremonial": {
+      "ver": "1.0.4",
+      "uuid": "b4709865-4c08-45b1-ac5b-0f9ef728e513",
+      "rawTextureUuid": "de0e57ec-8b0f-4b73-b1dd-f3c874b62d0e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

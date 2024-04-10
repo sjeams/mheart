@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8cfc5509-ba83-46e4-863f-4b733e1f2589",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_108_MeadCaribou": {
+      "ver": "1.0.4",
+      "uuid": "ae95b050-94e4-4ad1-9a45-418ee400418b",
+      "rawTextureUuid": "8cfc5509-ba83-46e4-863f-4b733e1f2589",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

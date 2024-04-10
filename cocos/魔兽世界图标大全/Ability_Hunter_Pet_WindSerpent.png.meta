@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fa72c201-cffd-4112-af75-c518de6adbb4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Hunter_Pet_WindSerpent": {
+      "ver": "1.0.4",
+      "uuid": "344b2968-d1bb-448e-96d8-b554bb1da58e",
+      "rawTextureUuid": "fa72c201-cffd-4112-af75-c518de6adbb4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

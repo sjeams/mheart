@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ace3d99e-9f4c-42be-90d4-4b33cfda6203",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Gizmo_MithrilCasing_02": {
+      "ver": "1.0.4",
+      "uuid": "2ee8c55e-21a4-4601-972c-ae37c440235b",
+      "rawTextureUuid": "ace3d99e-9f4c-42be-90d4-4b33cfda6203",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

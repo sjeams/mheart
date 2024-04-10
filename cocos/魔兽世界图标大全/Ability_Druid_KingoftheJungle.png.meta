@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "200c08ac-2fc5-4273-8352-33601214ec79",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Druid_KingoftheJungle": {
+      "ver": "1.0.4",
+      "uuid": "033f9c56-6546-4fd0-8036-b8ef26b83c93",
+      "rawTextureUuid": "200c08ac-2fc5-4273-8352-33601214ec79",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

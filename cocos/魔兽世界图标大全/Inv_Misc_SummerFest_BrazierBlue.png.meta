@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "236fe960-ce5a-4400-9f6f-f96cd33bf871",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Inv_Misc_SummerFest_BrazierBlue": {
+      "ver": "1.0.4",
+      "uuid": "39ea7928-1554-47e0-8cf9-6463b2218af8",
+      "rawTextureUuid": "236fe960-ce5a-4400-9f6f-f96cd33bf871",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

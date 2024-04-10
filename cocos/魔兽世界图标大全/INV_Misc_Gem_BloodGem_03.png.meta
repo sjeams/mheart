@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "de737862-d078-426c-a811-3d80fb8b6b5e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_BloodGem_03": {
+      "ver": "1.0.4",
+      "uuid": "414c5103-1e00-45d3-bb29-b4949a1ff2a5",
+      "rawTextureUuid": "de737862-d078-426c-a811-3d80fb8b6b5e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

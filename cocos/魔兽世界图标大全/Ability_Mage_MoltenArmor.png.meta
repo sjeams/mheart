@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "07119f35-df96-430d-8b9b-1d3a8011e9e7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mage_MoltenArmor": {
+      "ver": "1.0.4",
+      "uuid": "ac458699-70c5-4446-ad7f-07677aaedf72",
+      "rawTextureUuid": "07119f35-df96-430d-8b9b-1d3a8011e9e7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

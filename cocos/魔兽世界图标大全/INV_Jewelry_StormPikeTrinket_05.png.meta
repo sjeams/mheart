@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e806d831-beb4-4658-a037-e3f47bcdd50d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_StormPikeTrinket_05": {
+      "ver": "1.0.4",
+      "uuid": "d5f6b0a5-3cec-4897-9ffe-c45a9a4ac6e7",
+      "rawTextureUuid": "e806d831-beb4-4658-a037-e3f47bcdd50d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f805328a-13df-4377-8033-09857916ea66",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_Power": {
+      "ver": "1.0.4",
+      "uuid": "90f08a55-af3d-4789-b457-ac4e38b64691",
+      "rawTextureUuid": "f805328a-13df-4377-8033-09857916ea66",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

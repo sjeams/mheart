@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "67d2b742-cacf-4171-a12f-becdeb8b6205",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_Dreamingglory": {
+      "ver": "1.0.4",
+      "uuid": "683dcc47-8788-44c6-a929-354ce85ce378",
+      "rawTextureUuid": "67d2b742-cacf-4171-a12f-becdeb8b6205",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

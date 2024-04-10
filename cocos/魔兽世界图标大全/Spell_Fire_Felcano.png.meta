@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "59494490-9523-4854-afab-ec03e3281ce8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Fire_Felcano": {
+      "ver": "1.0.4",
+      "uuid": "21e6d0e2-b7bd-4100-9d5b-3cecf42f6421",
+      "rawTextureUuid": "59494490-9523-4854-afab-ec03e3281ce8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

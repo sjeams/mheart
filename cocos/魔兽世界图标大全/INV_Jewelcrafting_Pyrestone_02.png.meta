@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3775fb0c-995e-4ee4-b5d6-fcc3261da1d1",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_Pyrestone_02": {
+      "ver": "1.0.4",
+      "uuid": "10676342-d715-43b8-b210-03bfaa60cc0c",
+      "rawTextureUuid": "3775fb0c-995e-4ee4-b5d6-fcc3261da1d1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

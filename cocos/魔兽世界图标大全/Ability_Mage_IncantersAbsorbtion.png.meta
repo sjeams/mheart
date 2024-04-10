@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "46be0ed0-2c65-49ea-9766-8f713ef4870a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Mage_IncantersAbsorbtion": {
+      "ver": "1.0.4",
+      "uuid": "60e142c2-b8a1-4333-9ce6-ff62754627b3",
+      "rawTextureUuid": "46be0ed0-2c65-49ea-9766-8f713ef4870a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

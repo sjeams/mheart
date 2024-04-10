@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "681bd620-fa94-4c35-b3e8-723ae2dde9bd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Sword_Draenei_07": {
+      "ver": "1.0.4",
+      "uuid": "31b11502-73f0-44b9-bd6b-e0b9c8c14ab1",
+      "rawTextureUuid": "681bd620-fa94-4c35-b3e8-723ae2dde9bd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "de85ed83-1ace-41da-bb6e-63d936bbe352",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_TalandrasRose": {
+      "ver": "1.0.4",
+      "uuid": "d00b8e6b-54ff-457b-8da7-5bc7559d3b62",
+      "rawTextureUuid": "de85ed83-1ace-41da-bb6e-63d936bbe352",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

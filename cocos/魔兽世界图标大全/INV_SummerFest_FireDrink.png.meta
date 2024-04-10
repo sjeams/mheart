@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4739fbd0-eb32-44fa-a47c-3059ab95dfd6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_SummerFest_FireDrink": {
+      "ver": "1.0.4",
+      "uuid": "49bc65d7-0aa4-4a78-ad80-9ecf7d78046f",
+      "rawTextureUuid": "4739fbd0-eb32-44fa-a47c-3059ab95dfd6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

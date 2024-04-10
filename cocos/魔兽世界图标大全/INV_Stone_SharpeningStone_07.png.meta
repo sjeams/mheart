@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "bc822928-1511-4dbf-8554-d565389988f6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Stone_SharpeningStone_07": {
+      "ver": "1.0.4",
+      "uuid": "2c26c56a-fc91-4f58-8c4f-5bb91e9cde1d",
+      "rawTextureUuid": "bc822928-1511-4dbf-8554-d565389988f6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "71713934-84a6-4f65-a911-c60b51ad5813",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Rod_EnchantedEternium": {
+      "ver": "1.0.4",
+      "uuid": "c277f2d0-30d2-4b22-8637-29ea2200fdf5",
+      "rawTextureUuid": "71713934-84a6-4f65-a911-c60b51ad5813",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

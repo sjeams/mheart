@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "31c70fab-eebe-4b5c-a041-209f55fd560c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Desecrated_ClothGlove": {
+      "ver": "1.0.4",
+      "uuid": "b997d781-afa6-4632-ac85-16c975fb7578",
+      "rawTextureUuid": "31c70fab-eebe-4b5c-a041-209f55fd560c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

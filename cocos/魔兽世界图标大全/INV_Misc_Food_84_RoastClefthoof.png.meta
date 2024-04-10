@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5804be49-9cd2-4731-bc61-ae5d2c26091a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_84_RoastClefthoof": {
+      "ver": "1.0.4",
+      "uuid": "bf84c1a0-5767-40ad-aada-7c64f750d240",
+      "rawTextureUuid": "5804be49-9cd2-4731-bc61-ae5d2c26091a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

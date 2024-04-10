@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f09ac5bf-c074-4e4f-8d3e-7351cebe5ba4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Powder_Iron": {
+      "ver": "1.0.4",
+      "uuid": "fb6942e8-72ec-40b4-8a48-f87f0443ccb6",
+      "rawTextureUuid": "f09ac5bf-c074-4e4f-8d3e-7351cebe5ba4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

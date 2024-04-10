@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ea14b807-0cd6-46bd-bd14-755636b34327",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Weapon_Shortblade_52": {
+      "ver": "1.0.4",
+      "uuid": "0c0b8ed4-4c23-44ec-9af2-f0916e233dd4",
+      "rawTextureUuid": "ea14b807-0cd6-46bd-bd14-755636b34327",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

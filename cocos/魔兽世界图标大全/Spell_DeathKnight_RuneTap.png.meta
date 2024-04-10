@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "81b58bef-c87c-4508-8619-e2ee16bbdb76",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_RuneTap": {
+      "ver": "1.0.4",
+      "uuid": "2bdd8a25-5bbd-47c6-9509-afcf9bd80b21",
+      "rawTextureUuid": "81b58bef-c87c-4508-8619-e2ee16bbdb76",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

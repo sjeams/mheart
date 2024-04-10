@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4754a956-f94b-44fc-84d2-3484b138e35d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Fabric_Netherweave_Bolt": {
+      "ver": "1.0.4",
+      "uuid": "4be15cec-01b0-4bb3-8e05-85f52bc09ac6",
+      "rawTextureUuid": "4754a956-f94b-44fc-84d2-3484b138e35d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

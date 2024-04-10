@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "17fb7d55-4db3-4c49-8e9e-4714242a8c8f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Amulet_05": {
+      "ver": "1.0.4",
+      "uuid": "31c827a7-af4b-41c5-a3f6-941a882c64ae",
+      "rawTextureUuid": "17fb7d55-4db3-4c49-8e9e-4714242a8c8f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

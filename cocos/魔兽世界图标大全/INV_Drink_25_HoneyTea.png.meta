@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3abc9e3f-3698-4fcf-9d8a-9bbdb2f3afdb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Drink_25_HoneyTea": {
+      "ver": "1.0.4",
+      "uuid": "6c907b65-56c8-45e3-9526-15f3ce92d03d",
+      "rawTextureUuid": "3abc9e3f-3698-4fcf-9d8a-9bbdb2f3afdb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

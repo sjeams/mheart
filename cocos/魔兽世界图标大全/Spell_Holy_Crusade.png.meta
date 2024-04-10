@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "88ae2dce-6a22-4b64-8d27-aa338eea5de6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_Crusade": {
+      "ver": "1.0.4",
+      "uuid": "a10e452f-6482-405e-87a1-935e7bf82207",
+      "rawTextureUuid": "88ae2dce-6a22-4b64-8d27-aa338eea5de6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

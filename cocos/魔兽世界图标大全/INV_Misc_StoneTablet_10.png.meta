@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "006606fd-ce99-4641-9d6f-359ebf9227f2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_StoneTablet_10": {
+      "ver": "1.0.4",
+      "uuid": "560c5cd5-42dc-44ed-a6a8-a01010401646",
+      "rawTextureUuid": "006606fd-ce99-4641-9d6f-359ebf9227f2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

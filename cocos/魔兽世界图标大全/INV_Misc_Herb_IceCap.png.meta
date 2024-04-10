@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b56cc31d-09cc-42ec-be0a-35e1a8a1283c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_IceCap": {
+      "ver": "1.0.4",
+      "uuid": "b4c6f112-086b-42fc-b3b1-0c9bff542ad3",
+      "rawTextureUuid": "b56cc31d-09cc-42ec-be0a-35e1a8a1283c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

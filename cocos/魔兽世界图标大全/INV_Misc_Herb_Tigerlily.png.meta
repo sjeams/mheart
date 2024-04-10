@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "84a91aaf-a697-4c80-844f-78501c0e5e86",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_Tigerlily": {
+      "ver": "1.0.4",
+      "uuid": "abc78a39-7e37-4aac-bda5-a5c719ac8190",
+      "rawTextureUuid": "84a91aaf-a697-4c80-844f-78501c0e5e86",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

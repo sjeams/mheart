@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a12f95fb-89df-4fe1-99b9-68976c4e8a90",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_RetributionAura": {
+      "ver": "1.0.4",
+      "uuid": "4ab84fdb-b240-49f0-88dc-af2fd64c6be4",
+      "rawTextureUuid": "a12f95fb-89df-4fe1-99b9-68976c4e8a90",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

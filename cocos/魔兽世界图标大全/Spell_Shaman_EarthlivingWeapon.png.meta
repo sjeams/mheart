@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4baf7ea3-a41d-40ad-a72f-e5a4229e953e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Shaman_EarthlivingWeapon": {
+      "ver": "1.0.4",
+      "uuid": "28ef1bbd-675c-451a-86ff-5fc05c0add3f",
+      "rawTextureUuid": "4baf7ea3-a41d-40ad-a72f-e5a4229e953e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "8098fa7b-4e1b-4256-9296-1d0208421c2b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Armor_Shoulder_Plate_Naxxramas_RaidWarrior_C_01": {
+      "ver": "1.0.4",
+      "uuid": "29d8664e-889b-47cf-8aed-a0ad17700236",
+      "rawTextureUuid": "8098fa7b-4e1b-4256-9296-1d0208421c2b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

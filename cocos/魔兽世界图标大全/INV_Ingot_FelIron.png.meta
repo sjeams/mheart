@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ee7b7074-bde1-44df-bebe-703635ecb016",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Ingot_FelIron": {
+      "ver": "1.0.4",
+      "uuid": "2d7dfdf6-1975-4b32-ab31-cbdfc2d564dd",
+      "rawTextureUuid": "ee7b7074-bde1-44df-bebe-703635ecb016",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

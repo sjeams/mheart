@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f6497cb6-7a9c-480f-86a4-a0812c3e3efd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_BRD_Banner": {
+      "ver": "1.0.4",
+      "uuid": "c85ee9e8-5852-46fe-b251-051193662039",
+      "rawTextureUuid": "f6497cb6-7a9c-480f-86a4-a0812c3e3efd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

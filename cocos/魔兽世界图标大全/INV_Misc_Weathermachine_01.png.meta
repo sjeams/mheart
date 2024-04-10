@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "43e84d1f-3037-4a67-b207-33485dd8ecf2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Weathermachine_01": {
+      "ver": "1.0.4",
+      "uuid": "96bff8ff-a728-42eb-9e82-1871c35e3115",
+      "rawTextureUuid": "43e84d1f-3037-4a67-b207-33485dd8ecf2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

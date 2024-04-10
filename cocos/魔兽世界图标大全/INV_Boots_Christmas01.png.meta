@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "90d5a866-0bed-445d-82a9-b1f3f7f653af",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Boots_Christmas01": {
+      "ver": "1.0.4",
+      "uuid": "70118e85-8875-4ea9-a22c-014ab7bd4622",
+      "rawTextureUuid": "90d5a866-0bed-445d-82a9-b1f3f7f653af",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

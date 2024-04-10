@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7b6789fe-9a7a-4d1a-a180-cc1255c5162d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_HolyBolt": {
+      "ver": "1.0.4",
+      "uuid": "e420b5b5-cc94-492a-853e-21252ea94beb",
+      "rawTextureUuid": "7b6789fe-9a7a-4d1a-a180-cc1255c5162d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

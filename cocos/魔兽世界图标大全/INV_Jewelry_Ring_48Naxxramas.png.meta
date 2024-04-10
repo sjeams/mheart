@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "622b9c2c-d12d-4f52-9407-019f364b36ce",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelry_Ring_48Naxxramas": {
+      "ver": "1.0.4",
+      "uuid": "3cc2bde1-08ee-47c6-bf28-7c1bfac82e04",
+      "rawTextureUuid": "622b9c2c-d12d-4f52-9407-019f364b36ce",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

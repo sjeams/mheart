@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "67fa6c4f-4fa9-4627-8e97-9b134e5e374b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_121_ButterMeat": {
+      "ver": "1.0.4",
+      "uuid": "96c70fa3-b21f-4fac-84cf-a9db43176bd7",
+      "rawTextureUuid": "67fa6c4f-4fa9-4627-8e97-9b134e5e374b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

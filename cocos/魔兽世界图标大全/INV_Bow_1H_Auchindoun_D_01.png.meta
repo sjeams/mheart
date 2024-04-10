@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "de8eaa71-12eb-4e03-9b9e-a48da154947d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Bow_1H_Auchindoun_D_01": {
+      "ver": "1.0.4",
+      "uuid": "c68a71f9-9828-44fa-941c-fe2b24f243f6",
+      "rawTextureUuid": "de8eaa71-12eb-4e03-9b9e-a48da154947d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

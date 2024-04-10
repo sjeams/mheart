@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5658a614-4b9e-4738-82f9-489c55b0c739",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Herb_Felblossom": {
+      "ver": "1.0.4",
+      "uuid": "116fa510-366d-41e1-add8-c651839bd522",
+      "rawTextureUuid": "5658a614-4b9e-4738-82f9-489c55b0c739",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

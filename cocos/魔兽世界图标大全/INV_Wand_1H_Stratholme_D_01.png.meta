@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "11afaf3f-e5d7-4ff2-b17f-acf59e91afe6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Wand_1H_Stratholme_D_01": {
+      "ver": "1.0.4",
+      "uuid": "1461a1e9-6513-4b76-b8b1-40ff8ee602aa",
+      "rawTextureUuid": "11afaf3f-e5d7-4ff2-b17f-acf59e91afe6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

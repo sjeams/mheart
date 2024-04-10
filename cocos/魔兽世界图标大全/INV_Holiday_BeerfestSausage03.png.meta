@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "592011f1-9155-4bb3-b4f8-e99ddb8b2be4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Holiday_BeerfestSausage03": {
+      "ver": "1.0.4",
+      "uuid": "b1713b81-3cfc-4e1f-a0a1-d83b81367e80",
+      "rawTextureUuid": "592011f1-9155-4bb3-b4f8-e99ddb8b2be4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

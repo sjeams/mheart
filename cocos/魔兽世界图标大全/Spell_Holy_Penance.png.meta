@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "54999dc5-d2bf-400a-ad47-ea97bcc5414b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Holy_Penance": {
+      "ver": "1.0.4",
+      "uuid": "1439d109-01e9-4e42-9a9e-6b3e7c846652",
+      "rawTextureUuid": "54999dc5-d2bf-400a-ad47-ea97bcc5414b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

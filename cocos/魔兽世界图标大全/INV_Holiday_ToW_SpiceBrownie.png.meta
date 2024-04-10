@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "bae909d1-1a70-4c15-883e-35588c584c2a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Holiday_ToW_SpiceBrownie": {
+      "ver": "1.0.4",
+      "uuid": "f714e064-5beb-4863-8f4e-fb8984e316be",
+      "rawTextureUuid": "bae909d1-1a70-4c15-883e-35588c584c2a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

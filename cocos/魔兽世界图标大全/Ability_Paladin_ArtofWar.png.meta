@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "58f074b9-b815-4f16-8edf-a18cacf091f4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Paladin_ArtofWar": {
+      "ver": "1.0.4",
+      "uuid": "b1c7cf57-968b-47c8-bc29-361b8505f44f",
+      "rawTextureUuid": "58f074b9-b815-4f16-8edf-a18cacf091f4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

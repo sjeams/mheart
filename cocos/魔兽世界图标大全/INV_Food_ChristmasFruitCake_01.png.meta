@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d0270012-17f6-4543-be0c-92f7c59a765d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Food_ChristmasFruitCake_01": {
+      "ver": "1.0.4",
+      "uuid": "da18145d-951c-4fda-b9f7-e6deac796a1e",
+      "rawTextureUuid": "d0270012-17f6-4543-be0c-92f7c59a765d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

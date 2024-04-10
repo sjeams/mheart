@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "13cddd16-8e09-4358-a711-17a0d8d1dc0c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Enchant_EssenceMysticalLarge": {
+      "ver": "1.0.4",
+      "uuid": "f6738321-28e9-4968-8bb7-6316bdc0396e",
+      "rawTextureUuid": "13cddd16-8e09-4358-a711-17a0d8d1dc0c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

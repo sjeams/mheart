@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "c40c4855-2277-4f56-89d5-574e5660de11",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Gem_EbonDraenite_03": {
+      "ver": "1.0.4",
+      "uuid": "37d551cf-4ede-4d98-a8c1-5d49639abdae",
+      "rawTextureUuid": "c40c4855-2277-4f56-89d5-574e5660de11",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4211294e-f633-46ca-896b-9be9b6abc202",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Gizmo_GoblingTonkController": {
+      "ver": "1.0.4",
+      "uuid": "d20ec3ee-223d-4ed0-90c6-47ee71c7d709",
+      "rawTextureUuid": "4211294e-f633-46ca-896b-9be9b6abc202",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

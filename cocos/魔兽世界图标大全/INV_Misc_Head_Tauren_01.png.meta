@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "32bdceb7-cfd7-4b81-9c00-0f5f9edd22dc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Head_Tauren_01": {
+      "ver": "1.0.4",
+      "uuid": "660dbf00-7030-43fc-b042-3a9d3735298b",
+      "rawTextureUuid": "32bdceb7-cfd7-4b81-9c00-0f5f9edd22dc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

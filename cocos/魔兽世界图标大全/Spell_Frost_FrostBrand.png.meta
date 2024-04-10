@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fbdb6d32-cd20-4686-a729-534abc0eee58",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_Frost_FrostBrand": {
+      "ver": "1.0.4",
+      "uuid": "49454e18-9af0-4786-a76b-0bef40364689",
+      "rawTextureUuid": "fbdb6d32-cd20-4686-a729-534abc0eee58",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

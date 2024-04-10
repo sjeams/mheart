@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fab379a2-396e-41f4-bbab-937705c0df99",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Staff_Draenei_A_01": {
+      "ver": "1.0.4",
+      "uuid": "c93f967b-56db-4a88-b2b1-1401e1fffcd5",
+      "rawTextureUuid": "fab379a2-396e-41f4-bbab-937705c0df99",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

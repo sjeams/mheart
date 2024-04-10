@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1daeba50-5235-4611-87e0-1d1c2fedb210",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Spell_DeathKnight_EmpowerRuneBlade": {
+      "ver": "1.0.4",
+      "uuid": "5773f3e6-483c-4ef6-add9-ad9cc4568432",
+      "rawTextureUuid": "1daeba50-5235-4611-87e0-1d1c2fedb210",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d21e9ac6-cee2-4563-9175-54718fffd6cb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Rogue_HonorAmongstThieves": {
+      "ver": "1.0.4",
+      "uuid": "cbf25e7d-4abf-4c54-aaa5-f0ad7eeab784",
+      "rawTextureUuid": "d21e9ac6-cee2-4563-9175-54718fffd6cb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

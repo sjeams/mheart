@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5afee353-ba09-4206-be17-a114a9f66c04",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Misc_Food_115_CondorSoup": {
+      "ver": "1.0.4",
+      "uuid": "6dc0a93c-4541-4acf-a33a-498bf63691a7",
+      "rawTextureUuid": "5afee353-ba09-4206-be17-a114a9f66c04",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

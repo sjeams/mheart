@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d9bb73c9-7919-4517-a398-e19eec13542a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Trinket_Thrallmar": {
+      "ver": "1.0.4",
+      "uuid": "d900cabb-3803-493e-9dc0-a422e8e3a763",
+      "rawTextureUuid": "d9bb73c9-7919-4517-a398-e19eec13542a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

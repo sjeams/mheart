@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9657fe94-19f7-4e6b-993a-1ce83fd54d4a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "INV_Jewelcrafting_PurpleSerpent": {
+      "ver": "1.0.4",
+      "uuid": "5704a355-f995-4b7c-acf9-6bec16d36794",
+      "rawTextureUuid": "9657fe94-19f7-4e6b-993a-1ce83fd54d4a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

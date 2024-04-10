@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "65af2d83-2f75-4f93-8883-423433e4cfa3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Ability_Hunter_MasterMarksman": {
+      "ver": "1.0.4",
+      "uuid": "fdf5c219-305c-4c94-a64e-10b650348961",
+      "rawTextureUuid": "65af2d83-2f75-4f93-8883-423433e4cfa3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
