@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "加黑",
+    "texture": "d115405e-7195-47b4-ac64-4caf190c4acc",
+    "atlas": "",
+    "rect": [
+      1,
+      2,
+      36,
+      37
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      38,
+      40
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
