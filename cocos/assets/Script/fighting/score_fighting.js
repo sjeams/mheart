@@ -98,7 +98,10 @@ cc.Class({
                       cc.find('Canvas/大厅/time').runAction(cc.sequence(cc.scaleTo(0.3, 2, 2),cc.scaleTo(0.3, 1,1)));//建一个缩放到1.5倍大小的动作，持续时间2秒
                     }
                     // cc.log(fighting_history[boat_count])
-                    _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
+                    //如果是空回合 ，等待跳过
+                    if(fighting_history[boat_count]){
+                      _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
+                    }
                   }
               },1,boat_length,3);////2秒后执行1次间隔5秒
             }

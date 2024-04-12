@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        251.72907472719902,
+        649.519052838329,
         0,
         0,
         0,
@@ -520,8 +520,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "第1回合",
-    "_N$string": "第1回合",
+    "_string": "准备回合",
+    "_N$string": "准备回合",
     "_fontSize": 36,
     "_lineHeight": 36,
     "_enableWrapText": false,
