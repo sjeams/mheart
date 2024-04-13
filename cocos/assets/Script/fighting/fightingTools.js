@@ -101,7 +101,7 @@ cc.Class({
 
     //按钮点击回调
     onConfirBtn:function(e,info){
-        console.log(info)
+        // console.log(info)
 
         var _this=this;
         _this.biology_detail_alert(info)
