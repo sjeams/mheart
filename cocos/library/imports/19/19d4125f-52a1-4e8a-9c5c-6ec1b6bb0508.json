@@ -1,13 +1,13 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "biology_普通",
+    "_name": "biology_生物详情",
     "_objFlags": 0,
     "_native": "",
     "data": {
       "__id__": 1
     },
-    "optimizationPolicy": 2,
+    "optimizationPolicy": 0,
     "asyncLoadAssets": false,
     "readonly": false
   },
@@ -73,22 +73,31 @@
       },
       {
         "__id__": 64
+      },
+      {
+        "__id__": 67
+      },
+      {
+        "__id__": 70
+      },
+      {
+        "__id__": 73
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 67
+        "__id__": 76
       },
       {
-        "__id__": 68
+        "__id__": 77
       },
       {
-        "__id__": 70
+        "__id__": 79
       }
     ],
     "_prefab": {
-      "__id__": 71
+      "__id__": 80
     },
     "_opacity": 255,
     "_color": {
@@ -239,7 +248,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "06G4s/ND1DyokJGWuI2TLI",
     "sync": false
@@ -417,7 +426,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "a2gdiimw1N+4OPLWt+hU7x",
     "sync": false
@@ -477,7 +486,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "43BK6i8EBLP63vapsE4Br2",
     "sync": false
@@ -655,7 +664,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "18uAkRfj5B3p7OnjL7XG/v",
     "sync": false
@@ -715,7 +724,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "72qYb2Q9pG4ZkC+HikYMpz",
     "sync": false
@@ -822,7 +831,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "a05VcxCyRHHq6AUySepF8Y",
     "sync": false
@@ -927,14 +936,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "6a8p4zYSxOCYKeWt/+hWNQ",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "受伤",
+    "_name": "技能背景",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -959,8 +968,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 160
+      "width": 200,
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -972,7 +981,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        100,
         0,
         0,
         0,
@@ -1012,7 +1021,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "100a9723-8c11-4a8d-a961-82cb13bc04a1"
+      "__uuid__": "5fff41e7-937b-4977-8e73-a625be1402b5"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1025,9 +1034,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "2bcf1a05-c864-4043-bc42-b65e468d8eb3"
-    },
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -1036,14 +1043,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "210W6wMwVMKKwvxuH93Szs",
+    "fileId": "8crfiivINOs7xC3hqYnOND",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能效果",
+    "_name": "悟性动作",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1058,7 +1065,7 @@
     "_prefab": {
       "__id__": 30
     },
-    "_opacity": 255,
+    "_opacity": 180,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -1081,7 +1088,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -20,
+        -30,
         0,
         0,
         0,
@@ -1121,7 +1128,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "e6042c6d-9224-4ab8-9bed-41ffe5e7e860"
+      "__uuid__": "4e7a77dd-492b-4b12-8a67-f73231e29309"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1143,14 +1150,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "98XHOy39lNjLTRjuNfheUl",
+    "fileId": "ceauFwP4FN9aSKPw096+Iz",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能图标",
+    "_name": "受伤",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1175,8 +1182,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 60,
-      "height": 60
+      "width": 160,
+      "height": 160
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1187,8 +1194,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -70,
-        60,
+        0,
+        -30,
         0,
         0,
         0,
@@ -1252,14 +1259,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "0bgb/1T3FJvq7x6vyJccZR",
+    "fileId": "210W6wMwVMKKwvxuH93Szs",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "死亡",
+    "_name": "技能效果",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1284,8 +1291,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 100
+      "width": 160,
+      "height": 160
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1297,7 +1304,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -40,
+        -30,
         0,
         0,
         0,
@@ -1337,6 +1344,113 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
+      "__uuid__": "ef1d319a-4561-4b05-809b-a370491411c5"
+    },
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
+    },
+    "fileId": "98XHOy39lNjLTRjuNfheUl",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "死亡",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 38
+      }
+    ],
+    "_prefab": {
+      "__id__": 39
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 100
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        -30,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 37
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
       "__uuid__": "b5939151-5956-4bfc-b1ac-8a316212b231"
     },
     "_type": 1,
@@ -1361,7 +1475,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "9dHLgPM8RESaXb1qtFL+eA",
     "sync": false
@@ -1377,11 +1491,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 38
+        "__id__": 41
       }
     ],
     "_prefab": {
-      "__id__": 39
+      "__id__": 42
     },
     "_opacity": 255,
     "_color": {
@@ -1435,7 +1549,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 37
+      "__id__": 40
     },
     "_enabled": true,
     "_materials": [
@@ -1468,7 +1582,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "7c3/b34TlJBLVGwnin0xyP",
     "sync": false
@@ -1484,11 +1598,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 41
+        "__id__": 44
       }
     ],
     "_prefab": {
-      "__id__": 42
+      "__id__": 45
     },
     "_opacity": 255,
     "_color": {
@@ -1542,7 +1656,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 40
+      "__id__": 43
     },
     "_enabled": true,
     "_materials": [
@@ -1575,7 +1689,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "f02CPJuXlMjoKj5WsJTyWS",
     "sync": false
@@ -1591,11 +1705,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 44
+        "__id__": 47
       }
     ],
     "_prefab": {
-      "__id__": 45
+      "__id__": 48
     },
     "_opacity": 255,
     "_color": {
@@ -1649,7 +1763,7 @@
     "_name": "server_name<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 43
+      "__id__": 46
     },
     "_enabled": true,
     "_materials": [
@@ -1682,7 +1796,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "7bKpe/jzxGg7Vwrt1yql3b",
     "sync": false
@@ -1698,11 +1812,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 47
+        "__id__": 50
       }
     ],
     "_prefab": {
-      "__id__": 48
+      "__id__": 51
     },
     "_opacity": 255,
     "_color": {
@@ -1756,7 +1870,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 49
     },
     "_enabled": true,
     "_materials": [
@@ -1789,121 +1903,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "b3NIPJNjVFvpGT9HN8WKWx",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "扣蓝s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": false,
-    "_components": [
-      {
-        "__id__": 50
-      }
-    ],
-    "_prefab": {
-      "__id__": 51
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 47,
-      "b": 148,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 300,
-      "height": 45.36
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        80,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_star<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 49
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "-100000000",
-    "_N$string": "-100000000",
-    "_fontSize": 28,
-    "_lineHeight": 36,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 3,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
-    },
-    "fileId": "63SVF60/hKwYwGZI31Vmix",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "扣血s",
+    "_name": "技能s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1921,15 +1928,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 233,
-      "g": 11,
-      "b": 11,
+      "r": 255,
+      "g": 127,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 45.36
+      "width": 200,
+      "height": 30.240000000000002
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1941,7 +1948,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        90,
+        100,
         0,
         0,
         0,
@@ -1979,20 +1986,20 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "-100000000",
-    "_N$string": "-100000000",
-    "_fontSize": 32,
-    "_lineHeight": 36,
+    "_string": "【降龙十八掌】",
+    "_N$string": "【降龙十八掌】",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 3,
+    "_styleFlags": 2,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -2003,14 +2010,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "b33maH/BZN6LdJK+zy4i29",
+    "fileId": "e0hlqQ5B9AuolikKcbOtLP",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "加血s",
+    "_name": "扣蓝s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2028,8 +2035,222 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 39,
-      "g": 195,
+      "r": 105,
+      "g": 190,
+      "b": 251,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 300,
+      "height": 45.36
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        60,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_star<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 55
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "-100000000",
+    "_N$string": "-100000000",
+    "_fontSize": 32,
+    "_lineHeight": 36,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 3,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
+    },
+    "fileId": "63SVF60/hKwYwGZI31Vmix",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "加蓝s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 59
+      }
+    ],
+    "_prefab": {
+      "__id__": 60
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 54,
+      "g": 138,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 300,
+      "height": 45.36
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_star<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 58
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "-100000000",
+    "_N$string": "-100000000",
+    "_fontSize": 34,
+    "_lineHeight": 36,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 3,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
+    },
+    "fileId": "a7/a2Lzd5Ka7Ui8tmFE3DL",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "暴击s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 62
+      }
+    ],
+    "_prefab": {
+      "__id__": 63
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 20,
       "b": 0,
       "a": 255
     },
@@ -2077,7 +2298,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 55
+      "__id__": 61
     },
     "_enabled": true,
     "_materials": [
@@ -2086,9 +2307,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "-100000000",
-    "_N$string": "-100000000",
-    "_fontSize": 30,
+    "_string": "暴击-100000000",
+    "_N$string": "暴击-100000000",
+    "_fontSize": 34,
     "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2099,7 +2320,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -2110,14 +2331,14 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "f7ohU25JdEfoSOWDimTQos",
+    "fileId": "fcEp6l0gNFlKNosYpuSQJA",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能s",
+    "_name": "扣血s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2126,24 +2347,24 @@
     "_active": false,
     "_components": [
       {
-        "__id__": 59
+        "__id__": 65
       }
     ],
     "_prefab": {
-      "__id__": 60
+      "__id__": 66
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 194,
-      "g": 255,
+      "r": 255,
+      "g": 87,
       "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 35.28
+      "height": 45.36
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2154,8 +2375,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        10,
-        110,
+        0,
+        80,
         0,
         0,
         0,
@@ -2184,7 +2405,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 58
+      "__id__": 64
     },
     "_enabled": true,
     "_materials": [
@@ -2193,10 +2414,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "降龙十八掌",
-    "_N$string": "降龙十八掌",
-    "_fontSize": 28,
-    "_lineHeight": 28,
+    "_string": "暴击-100000000",
+    "_N$string": "暴击-100000000",
+    "_fontSize": 32,
+    "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2217,9 +2438,116 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
-    "fileId": "e0hlqQ5B9AuolikKcbOtLP",
+    "fileId": "b33maH/BZN6LdJK+zy4i29",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "加血s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 68
+      }
+    ],
+    "_prefab": {
+      "__id__": 69
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 39,
+      "g": 195,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 300,
+      "height": 45.36
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        -20,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_star<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 67
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "-100000000",
+    "_N$string": "-100000000",
+    "_fontSize": 34,
+    "_lineHeight": 36,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 3,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 3,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
+    },
+    "fileId": "f7ohU25JdEfoSOWDimTQos",
     "sync": false
   },
   {
@@ -2233,11 +2561,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 62
+        "__id__": 71
       }
     ],
     "_prefab": {
-      "__id__": 63
+      "__id__": 72
     },
     "_opacity": 255,
     "_color": {
@@ -2291,7 +2619,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 61
+      "__id__": 70
     },
     "_enabled": true,
     "_materials": [
@@ -2324,7 +2652,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "f3HcMD7g1HHJOQt/c1xlrA",
     "sync": false
@@ -2340,11 +2668,11 @@
     "_active": false,
     "_components": [
       {
-        "__id__": 65
+        "__id__": 74
       }
     ],
     "_prefab": {
-      "__id__": 66
+      "__id__": 75
     },
     "_opacity": 255,
     "_color": {
@@ -2398,7 +2726,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 64
+      "__id__": 73
     },
     "_enabled": true,
     "_materials": [
@@ -2431,7 +2759,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "ec78YjbE5KMoMZ9SpQra6P",
     "sync": false
@@ -2480,7 +2808,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 69
+        "__id__": 78
       }
     ],
     "_N$interactable": true,
@@ -2564,7 +2892,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "993cff71-b628-4e19-87a9-e4ee800cd4ee"
+      "__uuid__": "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508"
     },
     "fileId": "39HqaZn9RN0LxJ7I+8LlSV",
     "sync": false

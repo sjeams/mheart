@@ -944,6 +944,11 @@ class Method
         $name = time().'_'.$name;
         $mkdir_path = '/app_resources/fighting/history';
         $file_path = $_SERVER['DOCUMENT_ROOT'].$mkdir_path;
+
+        // 确保目录存在，如果不存在则创建
+        if (!is_dir($file_path)) {
+            mkdir($file_path, 0777, true); // 第三个参数 true 表示可以创建多级目录
+        }
         // 生成目录
         // if(!file_exists($file_path)){
         //     mkdir($file_path,0777);

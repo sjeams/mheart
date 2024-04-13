@@ -248,6 +248,9 @@ cc.Class({
         // cc.log(skill)
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
+        // 销毁所有弹窗--节点
+        TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
+
         let move_type= ['初始化','回合化','被击前触发','被击后触发','攻击前触发','主动','攻击后']
         cc.loader.loadRes('/弹窗模型/biology_生物_战斗技能提示', function(errorMessage,loadedResource){
             //检查资源加载
