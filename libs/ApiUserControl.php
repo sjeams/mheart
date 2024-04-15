@@ -19,7 +19,7 @@
         public $description;
 		public function init() {
             $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
-            $token ='9924b70e3881b2d3bb38ae4f4025f039';
+            // $token ='9924b70e3881b2d3bb38ae4f4025f039';
             // // // $update = isset($_SERVER['HTTP_UPDATE']) && !empty($_SERVER['HTTP_UPDATE'])?$_SERVER['HTTP_UPDATE']:false;
             if(!$token){  // 登录状态
                 $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
