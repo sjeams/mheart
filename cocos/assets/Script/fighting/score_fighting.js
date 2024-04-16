@@ -129,11 +129,10 @@ cc.Class({
     },
 
     fighting_history(his_log) {
-
+      var _this = this;
       //预备回合
-   
-
       if(his_log.h_yubei.length!=0){
+        _this.readySkill(his_log.h_yubei)
         cc.log('预备回合')
       }
       //回合结束
@@ -141,7 +140,7 @@ cc.Class({
       //   cc.log('回合结束')
       // }
       // cc.log(his_log)
-      var _this = this;
+
       //反击
       // if(his_log.h_back.length!=0){
       //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)

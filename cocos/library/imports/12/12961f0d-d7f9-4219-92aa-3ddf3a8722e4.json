@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "灵石",
+    "texture": "041b5657-eb23-4a9d-859b-07e7317f354b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      69
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      69
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

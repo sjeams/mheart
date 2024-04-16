@@ -22,8 +22,27 @@ const FightingExtend = cc.Class({
 
         }
   },
+
   //攻击动作
   playAction(node,biology,is_skill){
+    var is_skill=is_skill||0
+    //准备动作
+    var _this =this;
+    _this.playReady(node,biology)
+    _this.playMove(node,biology,is_skill)
+  },
+  // 准备动作--悟性-治疗-中毒-冰冻-眩晕 持续伤害--回合前结算等
+  playReady(node,biology){
+    if(biology.extend=='wuXingTotal'){
+        node.getChildByName('悟性s').getComponent(cc.Label).string=biology.hurt_go;
+        node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3),cc.moveBy(0.5,cc.v2(0,5)),cc.fadeOut(0.1),cc.scaleTo(0.01, 1, 1),cc.moveBy(0.01,cc.v2(0,-5))),cc.callFunc(function(){   },this));
+
+    }
+  },
+  //行动--技能攻击 和 普通攻击
+  playMove(node,biology){
+
+    //攻击动作
     var is_skill=is_skill||0
     //技能--攻击动画
     if(is_skill!=0){

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "加",
+    "texture": "71d9413a-cd8e-44dc-97f9-a0850dde0431",
+    "atlas": "",
+    "rect": [
+      1,
+      2,
+      36,
+      37
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      38,
+      40
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

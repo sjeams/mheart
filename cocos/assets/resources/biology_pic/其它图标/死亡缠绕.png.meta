@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "378e230f-7adb-4b60-8578-aeb8780dc7b3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "死亡缠绕": {
+      "ver": "1.0.4",
+      "uuid": "a3deb258-e8ef-4383-93a2-60742c689ef5",
+      "rawTextureUuid": "378e230f-7adb-4b60-8578-aeb8780dc7b3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

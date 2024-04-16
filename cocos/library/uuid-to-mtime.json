@@ -30,7 +30,7 @@
     "relativePath": "effects\\builtin-toon.effect"
   },
   "f8e6b000-5643-4b86-9080-aa680ce1f599": {
-    "asset": 1655187245151,
+    "asset": 1713164626758,
     "meta": 1655187245102,
     "relativePath": "image"
   },
@@ -480,12 +480,12 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1712804523009,
+    "asset": 1713251263968,
     "meta": 1655109292783,
     "relativePath": "resources"
   },
   "1a60bfb7-074b-4f3b-9a8f-effe69eda3d4": {
-    "asset": 1713149668363,
+    "asset": 1713251263958,
     "meta": 1655109292658,
     "relativePath": "Scene"
   },
@@ -515,7 +515,7 @@
     "relativePath": "Script\\commonjs"
   },
   "11419367-4da7-4096-a9a4-51666f1d1905": {
-    "asset": 1713149668383,
+    "asset": 1713251263965,
     "meta": 1655109292779,
     "relativePath": "prefabs"
   },
@@ -560,7 +560,7 @@
     "relativePath": "Textrue\\tools"
   },
   "899733b9-9f39-4164-bed9-45809a91a125": {
-    "asset": 1713149668379,
+    "asset": 1713239424603,
     "meta": 1698830078565,
     "relativePath": "Script\\fighting"
   },
@@ -575,7 +575,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1712803865907,
+    "asset": 1713239473592,
     "meta": 1702435055137,
     "relativePath": "resources\\biology_pic"
   },
@@ -984,11 +984,6 @@
     "meta": 1713149791677,
     "relativePath": "resources\\biology_pic\\8边框.png"
   },
-  "57043434-c331-44d9-b43b-1d84ffc43f94": {
-    "asset": 1703644793299,
-    "meta": 1713149791682,
-    "relativePath": "resources\\biology_pic\\9标准弹窗.png"
-  },
   "f0121585-cf7d-4bad-91b8-11b387bb6106": {
     "asset": 1704446122379,
     "meta": 1713149791518,
@@ -1138,11 +1133,6 @@
     "asset": 1712651424509,
     "meta": 1713149788232,
     "relativePath": "prefabs\\sprite_server_login.prefab"
-  },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1713149668359,
-    "meta": 1713149791768,
-    "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "5fb7e54c-a2f3-42ef-afd5-9e5d902df33c": {
     "asset": 1712717236828,
@@ -2160,49 +2150,14 @@
     "relativePath": "resources\\技能图标\\Ability_SteelMelee.png"
   },
   "629afa66-6af7-4f54-9eb0-57b1144d0662": {
-    "asset": 1712822458257,
-    "meta": 1712714017182,
+    "asset": 1713251264002,
+    "meta": 1713251263968,
     "relativePath": "resources\\其它图标"
   },
   "da33b0d7-8e01-45a5-8e70-a068253adaba": {
     "asset": 1712714017695,
     "meta": 1713149790913,
     "relativePath": "resources\\技能图标\\Ability_Suffocate.png"
-  },
-  "b68c3e96-6af1-49a8-b84c-f8cc1708dcf4": {
-    "asset": 1712714017196,
-    "meta": 1713149790948,
-    "relativePath": "resources\\其它图标\\恶魔召唤.png"
-  },
-  "9fc462e7-77a5-422b-89ed-5498cbb8594e": {
-    "asset": 1712714017201,
-    "meta": 1713149790941,
-    "relativePath": "resources\\其它图标\\抵消疾病.png"
-  },
-  "3bd227bb-e56f-46d8-b3bf-afd4fd726ee6": {
-    "asset": 1712714017189,
-    "meta": 1713149790954,
-    "relativePath": "resources\\其它图标\\刚毅.png"
-  },
-  "2104965e-009a-49db-88f1-ee080f9733eb": {
-    "asset": 1712714017217,
-    "meta": 1713149790987,
-    "relativePath": "resources\\其它图标\\金币.png"
-  },
-  "58fe9e2b-74b9-4fc7-a0a4-84b098116a91": {
-    "asset": 1712714017204,
-    "meta": 1713149791015,
-    "relativePath": "resources\\其它图标\\死亡缠绕.png"
-  },
-  "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
-    "asset": 1712714017207,
-    "meta": 1713149791038,
-    "relativePath": "resources\\其它图标\\消耗.png"
-  },
-  "83d0fc9f-fdb1-44f4-8c76-9148a236b723": {
-    "asset": 1712714017214,
-    "meta": 1713149791056,
-    "relativePath": "resources\\其它图标\\药水绿色.png"
   },
   "725cd49e-44d5-4557-8876-17c6cbbd5c43": {
     "asset": 1712822221520,
@@ -2243,11 +2198,6 @@
     "asset": 1712714017712,
     "meta": 1713149791417,
     "relativePath": "resources\\装备图标\\药水绿色.png"
-  },
-  "6ee0f389-85dc-4c87-a6bf-799c298dfa5d": {
-    "asset": 1712714017183,
-    "meta": 1713149791042,
-    "relativePath": "resources\\其它图标\\AutoAtlas.pac"
   },
   "d6cffba2-485d-4249-91db-fb84d18af3ed": {
     "asset": 1712714017697,
@@ -2309,30 +2259,10 @@
     "meta": 1713149791210,
     "relativePath": "resources\\图片\\AutoAtlas.pac"
   },
-  "80b85a87-eb45-4dbb-944d-7f821233eaca": {
-    "asset": 1712714017186,
-    "meta": 1713149791018,
-    "relativePath": "resources\\其它图标\\体力.png"
-  },
-  "9ec95e88-a2b2-4974-b27a-108f043d13f8": {
-    "asset": 1712714017192,
-    "meta": 1713149790967,
-    "relativePath": "resources\\其它图标\\加.png"
-  },
-  "9062c045-3fdb-4957-bac5-6dca69fc0fa4": {
-    "asset": 1712714017211,
-    "meta": 1713149790993,
-    "relativePath": "resources\\其它图标\\灵石.png"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
     "asset": 1712912640903,
     "meta": 1713149791735,
     "relativePath": "Scene\\home\\大厅.fire"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1712735797843,
-    "meta": 1713149793808,
-    "relativePath": "Script\\scence\\mapTools.js"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
     "asset": 1712735782573,
@@ -2348,11 +2278,6 @@
     "asset": 1713150969083,
     "meta": 1713150969094,
     "relativePath": "resources\\弹窗模型\\biology_生物_技能图标.prefab"
-  },
-  "a57fc618-a4e9-4ebf-8f49-c1d41eab2db2": {
-    "asset": 1712803792009,
-    "meta": 1713149791652,
-    "relativePath": "resources\\biology_pic\\6标准按钮3.png"
   },
   "d51ef8a8-ae2d-4d82-83ec-7c54823d690a": {
     "asset": 1712803472938,
@@ -2384,13 +2309,8 @@
     "meta": 1713149788367,
     "relativePath": "resources\\弹窗生物\\a生物大厅.prefab"
   },
-  "d115405e-7195-47b4-ac64-4caf190c4acc": {
-    "asset": 1712822432194,
-    "meta": 1713149790976,
-    "relativePath": "resources\\其它图标\\加黑.png"
-  },
   "9e76d68d-1dd0-482b-b2b7-5ec4fda9b895": {
-    "asset": 1712912635332,
+    "asset": 1713150822897,
     "meta": 1712912527701,
     "relativePath": "Script\\basic"
   },
@@ -2398,21 +2318,6 @@
     "asset": 1713149668383,
     "meta": 1713149788311,
     "relativePath": "resources\\弹窗模型\\biology_结算.prefab"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1713149668375,
-    "meta": 1713149793246,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
-  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1713153124191,
-    "meta": 1713153124201,
-    "relativePath": "Scene\\战斗场景.fire"
-  },
-  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
-    "asset": 1713149668375,
-    "meta": 1713149793036,
-    "relativePath": "Script\\fighting\\figthingExtend.js"
   },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
     "asset": 1713149668379,
@@ -2429,19 +2334,204 @@
     "meta": 1713151539788,
     "relativePath": "Script\\fighting\\skill_iconTools.js"
   },
-  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
-    "asset": 1713153708154,
-    "meta": 1713153708164,
-    "relativePath": "prefabs\\biology_生物详情.prefab"
-  },
   "fcbcc85d-91ad-480e-a5ed-3d742c043613": {
     "asset": 1713159479877,
     "meta": 1713160276797,
     "relativePath": "Script\\fighting\\biology_detailTools.js"
   },
+  "7429807a-f69f-4882-ae63-1e53741c283c": {
+    "asset": 1713162915302,
+    "meta": 1713251301954,
+    "relativePath": "image\\血条格子.prefab"
+  },
+  "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
+    "asset": 1713174177570,
+    "meta": 1713251303057,
+    "relativePath": "prefabs\\血条格子.prefab"
+  },
+  "4c2c28d0-843c-471f-adee-9a34c065b20a": {
+    "asset": 1713167268794,
+    "meta": 1713251303061,
+    "relativePath": "prefabs\\血条背景.prefab"
+  },
+  "e58e2502-b732-4c7f-802c-64f81f2307e7": {
+    "asset": 1712822458257,
+    "meta": 1713251302296,
+    "relativePath": "resources\\biology_pic\\其它图标"
+  },
+  "94c139dc-7a30-4661-98da-c3008acb96c7": {
+    "asset": 1713170870504,
+    "meta": 1713251303208,
+    "relativePath": "resources\\biology_pic\\墓碑.png"
+  },
+  "479e608e-d7d3-41c3-8be4-18b12404c2d6": {
+    "asset": 1712714017196,
+    "meta": 1713251303220,
+    "relativePath": "resources\\biology_pic\\其它图标\\恶魔召唤.png"
+  },
+  "bdde8e34-23c5-4b73-a0a6-d001676259e4": {
+    "asset": 1712714017201,
+    "meta": 1713251303229,
+    "relativePath": "resources\\biology_pic\\其它图标\\抵消疾病.png"
+  },
+  "c383d643-53ce-4298-b85e-a1945445c8b4": {
+    "asset": 1712714017189,
+    "meta": 1713251303232,
+    "relativePath": "resources\\biology_pic\\其它图标\\刚毅.png"
+  },
+  "71d9413a-cd8e-44dc-97f9-a0850dde0431": {
+    "asset": 1712714017192,
+    "meta": 1713251303243,
+    "relativePath": "resources\\biology_pic\\其它图标\\加.png"
+  },
+  "1ff10675-427a-445f-8cf8-52398bf920c4": {
+    "asset": 1712822432194,
+    "meta": 1713251303246,
+    "relativePath": "resources\\biology_pic\\其它图标\\加黑.png"
+  },
+  "041b5657-eb23-4a9d-859b-07e7317f354b": {
+    "asset": 1712714017211,
+    "meta": 1713251303259,
+    "relativePath": "resources\\biology_pic\\其它图标\\灵石.png"
+  },
+  "6bc159da-b281-4ad6-897a-53da921d4e5b": {
+    "asset": 1712714017217,
+    "meta": 1713251303266,
+    "relativePath": "resources\\biology_pic\\其它图标\\金币.png"
+  },
+  "378e230f-7adb-4b60-8578-aeb8780dc7b3": {
+    "asset": 1712714017204,
+    "meta": 1713251303283,
+    "relativePath": "resources\\biology_pic\\其它图标\\死亡缠绕.png"
+  },
+  "4b0624f7-1958-4fc1-87a7-c0327694d779": {
+    "asset": 1712714017186,
+    "meta": 1713251303288,
+    "relativePath": "resources\\biology_pic\\其它图标\\体力.png"
+  },
+  "8586e8a9-2ab7-441f-98ed-ddd4c467efc2": {
+    "asset": 1712714017207,
+    "meta": 1713251303300,
+    "relativePath": "resources\\biology_pic\\其它图标\\消耗.png"
+  },
+  "044d7f21-7481-40c9-913b-aab05c59f47c": {
+    "asset": 1712714017183,
+    "meta": 1713251303303,
+    "relativePath": "resources\\biology_pic\\其它图标\\AutoAtlas.pac"
+  },
+  "dad37d42-4826-4117-92da-0a7b8090b172": {
+    "asset": 1712714017214,
+    "meta": 1713251303314,
+    "relativePath": "resources\\biology_pic\\其它图标\\药水绿色.png"
+  },
+  "1d25f592-ea8c-468c-a911-8e7155ca688d": {
+    "asset": 1713170863375,
+    "meta": 1713251303318,
+    "relativePath": "resources\\biology_pic\\血条格子.png"
+  },
+  "b68c3e96-6af1-49a8-b84c-f8cc1708dcf4": {
+    "asset": 1713251263985,
+    "meta": 1713252252349,
+    "relativePath": "resources\\其它图标\\恶魔召唤.png"
+  },
+  "9fc462e7-77a5-422b-89ed-5498cbb8594e": {
+    "asset": 1713251263988,
+    "meta": 1713252252360,
+    "relativePath": "resources\\其它图标\\抵消疾病.png"
+  },
+  "3bd227bb-e56f-46d8-b3bf-afd4fd726ee6": {
+    "asset": 1713251263976,
+    "meta": 1713252252364,
+    "relativePath": "resources\\其它图标\\刚毅.png"
+  },
+  "9ec95e88-a2b2-4974-b27a-108f043d13f8": {
+    "asset": 1713251263979,
+    "meta": 1713252252380,
+    "relativePath": "resources\\其它图标\\加.png"
+  },
+  "d115405e-7195-47b4-ac64-4caf190c4acc": {
+    "asset": 1713251263982,
+    "meta": 1713252252383,
+    "relativePath": "resources\\其它图标\\加黑.png"
+  },
+  "9062c045-3fdb-4957-bac5-6dca69fc0fa4": {
+    "asset": 1713251263996,
+    "meta": 1713252252400,
+    "relativePath": "resources\\其它图标\\灵石.png"
+  },
+  "2104965e-009a-49db-88f1-ee080f9733eb": {
+    "asset": 1713251264001,
+    "meta": 1713252252408,
+    "relativePath": "resources\\其它图标\\金币.png"
+  },
+  "58fe9e2b-74b9-4fc7-a0a4-84b098116a91": {
+    "asset": 1713251263991,
+    "meta": 1713252252428,
+    "relativePath": "resources\\其它图标\\死亡缠绕.png"
+  },
+  "80b85a87-eb45-4dbb-944d-7f821233eaca": {
+    "asset": 1713251263971,
+    "meta": 1713252252434,
+    "relativePath": "resources\\其它图标\\体力.png"
+  },
+  "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
+    "asset": 1713251263993,
+    "meta": 1713252252449,
+    "relativePath": "resources\\其它图标\\消耗.png"
+  },
+  "6ee0f389-85dc-4c87-a6bf-799c298dfa5d": {
+    "asset": 1713251263969,
+    "meta": 1713252252452,
+    "relativePath": "resources\\其它图标\\AutoAtlas.pac"
+  },
+  "83d0fc9f-fdb1-44f4-8c76-9148a236b723": {
+    "asset": 1713251263999,
+    "meta": 1713252252461,
+    "relativePath": "resources\\其它图标\\药水绿色.png"
+  },
+  "a57fc618-a4e9-4ebf-8f49-c1d41eab2db2": {
+    "asset": 1712803792009,
+    "meta": 1713252252472,
+    "relativePath": "resources\\biology_pic\\6标准按钮3.png"
+  },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1713159693434,
-    "meta": 1713160276832,
+    "asset": 1713252186533,
+    "meta": 1713252252556,
     "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "57043434-c331-44d9-b43b-1d84ffc43f94": {
+    "asset": 1703644793299,
+    "meta": 1713252252868,
+    "relativePath": "resources\\biology_pic\\9标准弹窗.png"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1713254668461,
+    "meta": 1713254683607,
+    "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1713261511185,
+    "meta": 1713261511204,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1713261194073,
+    "meta": 1713261254659,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
+    "asset": 1713261726571,
+    "meta": 1713261729034,
+    "relativePath": "Script\\fighting\\figthingExtend.js"
+  },
+  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
+    "asset": 1713261897279,
+    "meta": 1713261897304,
+    "relativePath": "prefabs\\biology_生物详情.prefab"
+  },
+  "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
+    "asset": 1713262010131,
+    "meta": 1713262010188,
+    "relativePath": "Scene\\战斗场景.fire"
   }
 }

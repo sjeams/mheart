@@ -489,7 +489,10 @@ class UserBiologyNatureDo extends ActiveRecord
                 // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][0]['h_back']=[];//技能 被动（反击）
                 //声明数组，添加一条空的准备回合
                 $this->action_move=0;//0为准备回合   行动次数--当前生物技能和攻击行动次数
-                // $this->startHistory($this->action_move); //每个生物行动前，的操作--中毒--眩晕--冰冻等--暂时未写
+                //初始化行动--写到每个生物行动前--插入一个准备回合的列
+                $this->startHistory($this->action_move);
+                $this->attackNeedReady($attack_biology);
+                // $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['yu_bei'][]= $hurt_go_list; //技能--消耗（发起消耗）
                 // 攻击位置计算
                 $this->attackPosition($attack_biology); //主动攻击
                 // $this->startHistory(); //回合结束-(解除)-眩晕--中毒--冰冻计算
@@ -509,6 +512,66 @@ class UserBiologyNatureDo extends ActiveRecord
         // var_dump($position_skill);die;
 
     }
+    //每个生物行动前，的操作--中毒--眩晕--冰冻等--暂时未写
+    public function attackNeedReady($attack_biology){
+
+
+        // --暂时 这几个 持续回合状态
+        // 定义持续回合效果 列表
+        // $this->merge_biology_extend[$attack_biology['id']]['paly_status']=[];
+        // foreach($this->merge_biology_extend[$attack_biology['id']]['paly_status'] as $xiaoguo){
+
+        //     foreach($xiaoguo as $v){
+        //         //持续伤害累计--中毒回合
+        //         if($this->merge_biology_extend[$attack_biology['id']]['zhongDu_time']['time']>0){
+        //             $this->merge_biology_extend[$attack_biology['id']]['zhongDu_time']['time'] -=1;
+        //             //持续伤害累计--中毒
+        //             $this->merge_biology_extend[$attack_biology['id']]['zhongDu'] +=$attack_biology['zhongDu'];
+        //         }else{
+        //             $this->merge_biology_extend[$attack_biology['id']]['zhongDu'] =0; 
+        //         }
+        //     }
+        //     // //中毒
+        //     // $this->merge_biology_extend[$attack_biology['id']]['zhongDu']=[];
+        //     // //冰冻
+        //     // $this->merge_biology_extend[$attack_biology['id']]['bingDong']=[];
+        //     // //眩晕
+        //     // $this->merge_biology_extend[$attack_biology['id']]['xuanYun']=[];
+        //     // //治疗
+        //     // $this->merge_biology_extend[$attack_biology['id']]['zhiLiao']=[];
+        //     // //流血
+        //     // $this->merge_biology_extend[$attack_biology['id']]['liuXue']=[];
+        //     // //强化
+        //     // $this->merge_biology_extend[$attack_biology['id']]['qiangHua']=[];
+        // }
+        // //悟性累计
+        // 发起消耗属性--魔法等--回血,回蓝等多种状态
+        $goid =$attack_biology['id'];
+        //发起伤害
+        $hurt_go_list = array(
+            'position_my'=>$attack_biology['position_my'],//发起单位 1己方 2敌方 
+            'type'=>HURT_READY,// 0普通攻击 1技能 2消耗
+            'pid'=>$goid,//发起攻击位置
+            'attack'=>1,//攻击类型
+            'goid'=>$goid,//发起攻击位置
+            'doid'=>$goid,//攻击单位id
+            'is_do'=>SKILL_GOING,//0反击 1主动攻击
+            'attack_biology_go'=>$attack_biology,//发起攻击单位
+            'attack_biology_do'=>$attack_biology,//被攻击单位
+            'skill'=>[],//发起攻击技能
+            'hurt_go'=>$attack_biology['wuXing'],//发起伤害
+            'extend'=>'wuXingTotal',//伤害类型
+            'keeptime'=>$this->bout,//发起伤害持续回合
+            'dobout'=>$this->bout,//执行回合数
+            'not_out'=>0,//是否跳过
+            'is_baoji'=>0,//是否暴击
+            'is_shanbi'=>0,//是否闪避
+        );
+        $this->merge_biology_extend[$goid]=$attack_biology; //自己伤害结算--攻击走hurt ，消耗单独结算
+        $this->getTips($hurt_go_list);
+        return $attack_biology;
+    }
+
 
     //发起消耗
     public function attackNeedValue($attack_biology,$skill){
@@ -1096,6 +1159,15 @@ class UserBiologyNatureDo extends ActiveRecord
             }
             $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
             $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_need'][]= $hurt_go_list; //技能--消耗（发起消耗）
+        }else if($type==HURT_READY){  
+            // $need =$skill['needValue']!=0? $this->skill_extend[$skill['need']]['name'].$skill['needValue']:'';
+            // $hurt_go_list['descript_go'] =$sm_go.'触发技能【'.$skill['name'].$skill['belong'].'】';
+            // $hurt_go_list['descript_go_msg'] = '【'.$skill['name'].'】';
+            // if($need){    //无消耗为空
+            //     $hurt_go_list['descript_do'] =$sm_do.$need;  
+            // }
+            $hurt_go_list =$this->goFightBout($hurt_go_list,$attack_biology_do);   //生物回合状态结算
+            $this->fighting_history[$this->bout]['fighting_history'][$this->attack_bout][$this->action_move]['h_yubei'][]= $hurt_go_list; //技能--消耗（发起消耗）
         }
         return $hurt_go_list;
     }

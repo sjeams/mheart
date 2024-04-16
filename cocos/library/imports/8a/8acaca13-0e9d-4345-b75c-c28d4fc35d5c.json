@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "血条格子",
+    "texture": "1d25f592-ea8c-468c-a911-8e7155ca688d",
+    "atlas": "",
+    "rect": [
+      9,
+      0,
+      2,
+      20
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      20,
+      20
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

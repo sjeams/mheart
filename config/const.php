@@ -43,6 +43,7 @@ define('ATTACK6',6, true);  //6攻击后触发）
 define('HURT_PUTONG',0, true);  //0普通攻击
 define('HURT_SKILL',1, true);  //1技能攻击
 define('HURT_NEED',2, true);  //2发起消耗
+define('HURT_READY',3, true);  //3准备回合
 
 //技能   0被动反击   1 主动攻击 和主动触发
 define('SKILL_DOING',0, true);   

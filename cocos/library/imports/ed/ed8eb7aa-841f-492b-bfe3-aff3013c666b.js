@@ -151,6 +151,8 @@ cc.Class({
   fighting_history: function fighting_history(his_log) {
     //预备回合
     if (his_log.h_yubei.length != 0) {
+      _this.readySkill(his_log.h_yubei);
+
       cc.log('预备回合');
     } //回合结束
     // if(his_log.h_end.length!=0){

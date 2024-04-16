@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "94c139dc-7a30-4661-98da-c3008acb96c7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 136,
+  "height": 177,
+  "platformSettings": {},
+  "subMetas": {
+    "墓碑": {
+      "ver": "1.0.4",
+      "uuid": "868a6237-8524-460c-9e8f-edca1c452795",
+      "rawTextureUuid": "94c139dc-7a30-4661-98da-c3008acb96c7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 136,
+      "height": 177,
+      "rawWidth": 136,
+      "rawHeight": 177,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

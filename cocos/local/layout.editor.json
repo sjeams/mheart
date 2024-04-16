@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1043,
-      "y": 193,
+      "x": 511,
+      "y": 348,
       "width": 1140,
-      "height": 678,
+      "height": 654,
       "layout": {
         "children": [
           {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 266.765625,
+                "height": 254.765625,
                 "type": "panel",
                 "width": 310
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 287.734375,
+                "height": 275.734375,
                 "type": "panel",
                 "width": 310
               }
             ],
-            "height": 557.5,
+            "height": 533.5,
             "type": "dock-v",
             "width": 310
           },
@@ -42,7 +42,7 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 557.5,
+            "height": 556,
             "type": "panel",
             "width": 304
           },
@@ -53,7 +53,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 266.765625,
+                "height": 254.765625,
                 "type": "panel",
                 "width": 504
               },
@@ -64,12 +64,12 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 287.734375,
+                "height": 275.734375,
                 "type": "panel",
                 "width": 504
               }
             ],
-            "height": 557.5,
+            "height": 533.5,
             "type": "dock-v",
             "width": 504
           }
@@ -86,8 +86,7 @@
         "timeline",
         "game-window"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "project-settings": {
