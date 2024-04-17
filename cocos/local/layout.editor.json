@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 450,
-      "y": 731,
+      "x": 505,
+      "y": 517,
       "width": 1140,
-      "height": 654,
+      "height": 717,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 254.765625,
+                "height": 319.765625,
                 "type": "panel",
-                "width": 307
+                "width": 310
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 275.734375,
+                "height": 346.734375,
                 "type": "panel",
-                "width": 307
+                "width": 310
               }
             ],
-            "height": 533.5,
+            "height": 669.5,
             "type": "dock-v",
-            "width": 307
+            "width": 310
           },
           {
             "active": 0,
@@ -42,9 +42,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 556,
+            "height": 669.5,
             "type": "panel",
-            "width": 307
+            "width": 304
           },
           {
             "children": [
@@ -53,7 +53,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 254.765625,
+                "height": 330.75,
                 "type": "panel",
                 "width": 504
               },
@@ -64,12 +64,12 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 275.734375,
+                "height": 335.75,
                 "type": "panel",
                 "width": 504
               }
             ],
-            "height": 533.5,
+            "height": 669.5,
             "type": "dock-v",
             "width": 504
           }

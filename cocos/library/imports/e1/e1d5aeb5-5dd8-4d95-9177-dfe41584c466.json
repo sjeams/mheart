@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "生物列表",
+    "_name": "图标生物",
     "_objFlags": 0,
     "_native": "",
     "data": {

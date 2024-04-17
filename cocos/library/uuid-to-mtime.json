@@ -575,7 +575,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1713252186555,
+    "asset": 1713342929586,
     "meta": 1702435055137,
     "relativePath": "resources\\biology_pic"
   },
@@ -1039,11 +1039,6 @@
     "meta": 1713149793489,
     "relativePath": "Script\\login\\myserver.js"
   },
-  "cb9c99ea-d404-4210-819d-3a17718b001f": {
-    "asset": 1709697087527,
-    "meta": 1713149793271,
-    "relativePath": "Script\\home_js\\userinfo.js"
-  },
   "5b7b73f9-1581-4589-862c-77f46711f06f": {
     "asset": 1709697126692,
     "meta": 1713149793603,
@@ -1055,8 +1050,8 @@
     "relativePath": "Script\\scence\\loading_fist.js"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1712714005620,
-    "meta": 1713149791756,
+    "asset": 1713345970742,
+    "meta": 1713345970750,
     "relativePath": "Scene\\login\\加载.fire"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
@@ -1160,8 +1155,8 @@
     "relativePath": "resources\\背景\\dating.png"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1712730298359,
-    "meta": 1713149792307,
+    "asset": 1713346159197,
+    "meta": 1713346159254,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
@@ -2150,7 +2145,7 @@
     "relativePath": "resources\\技能图标\\Ability_SteelMelee.png"
   },
   "629afa66-6af7-4f54-9eb0-57b1144d0662": {
-    "asset": 1713252186569,
+    "asset": 1713340540940,
     "meta": 1713251263968,
     "relativePath": "resources\\其它图标"
   },
@@ -2259,11 +2254,6 @@
     "meta": 1713149791210,
     "relativePath": "resources\\图片\\AutoAtlas.pac"
   },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1712912640903,
-    "meta": 1713149791735,
-    "relativePath": "Scene\\home\\大厅.fire"
-  },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
     "asset": 1712735782573,
     "meta": 1713149793868,
@@ -2285,29 +2275,24 @@
     "relativePath": "resources\\biology_pic\\10标准弹窗.png"
   },
   "9657da19-0825-4059-8c07-39af399daf61": {
-    "asset": 1712820573293,
+    "asset": 1713346832157,
     "meta": 1712804433959,
-    "relativePath": "resources\\弹窗生物"
+    "relativePath": "resources\\弹窗背包"
   },
   "e1d5aeb5-5dd8-4d95-9177-dfe41584c466": {
-    "asset": 1712806246186,
-    "meta": 1713149788340,
-    "relativePath": "resources\\弹窗生物\\生物列表.prefab"
+    "asset": 1713344621577,
+    "meta": 1713344621594,
+    "relativePath": "resources\\弹窗背包\\图标生物.prefab"
   },
   "651de370-cbcd-44e1-8d8c-f8b782ac177d": {
     "asset": 1712820559343,
-    "meta": 1713149788345,
-    "relativePath": "resources\\弹窗生物\\物品图标.prefab"
+    "meta": 1713344585813,
+    "relativePath": "resources\\弹窗背包\\图标物品.prefab"
   },
   "1c809480-ce59-43da-977e-9783713e4ede": {
     "asset": 1712822221515,
     "meta": 1713149791299,
     "relativePath": "resources\\装备图标\\加.png"
-  },
-  "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
-    "asset": 1712826447565,
-    "meta": 1713149788367,
-    "relativePath": "resources\\弹窗生物\\a生物大厅.prefab"
   },
   "9e76d68d-1dd0-482b-b2b7-5ec4fda9b895": {
     "asset": 1713150822897,
@@ -2440,8 +2425,8 @@
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1713338512220,
-    "meta": 1713338512238,
+    "asset": 1713347207398,
+    "meta": 1713347207415,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
@@ -2468,5 +2453,55 @@
     "asset": 1713343172031,
     "meta": 1713343227991,
     "relativePath": "prefabs\\biology_生物详情.prefab"
+  },
+  "ba0c7e27-af85-477c-b021-b8fd4bd81256": {
+    "asset": 1713344837848,
+    "meta": 1713344837876,
+    "relativePath": "resources\\弹窗背包\\生物列表.prefab"
+  },
+  "4799f07c-bbaa-442b-9dd8-9d2c652cbff4": {
+    "asset": 1713343536609,
+    "meta": 1713343536633,
+    "relativePath": "resources\\弹窗背包\\a生物大厅 - 001.prefab"
+  },
+  "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
+    "asset": 1713346871218,
+    "meta": 1713346871251,
+    "relativePath": "resources\\弹窗背包\\A生物背包.prefab"
+  },
+  "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96": {
+    "asset": 1713344295744,
+    "meta": 1713344295782,
+    "relativePath": "resources\\弹窗背包\\生物详情.prefab"
+  },
+  "82562dde-51e3-4b7a-ae1a-6b98a48965e0": {
+    "asset": 1713345418835,
+    "meta": 1713345418845,
+    "relativePath": "resources\\弹窗背包\\技能列表 .prefab"
+  },
+  "3683396a-e14e-45bd-aad4-8030d1c4c598": {
+    "asset": 1713345801789,
+    "meta": 1713345762054,
+    "relativePath": "Script\\home"
+  },
+  "cb9c99ea-d404-4210-819d-3a17718b001f": {
+    "asset": 1713345958245,
+    "meta": 1713345958323,
+    "relativePath": "Script\\home_js\\userinfo.js"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1713348305085,
+    "meta": 1713348319513,
+    "relativePath": "Script\\home\\biology_bagTools.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1713348317985,
+    "meta": 1713348319557,
+    "relativePath": "Script\\home\\score_home.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1713348455039,
+    "meta": 1713348455092,
+    "relativePath": "Scene\\home\\大厅.fire"
   }
 }
