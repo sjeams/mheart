@@ -283,7 +283,6 @@ class UserBiologyNatureDo extends ActiveRecord
     public function getFightingData(){
         $new_fighting_history = array_merge($this->fighting_history);
         $fighting_history =  array_column($new_fighting_history,'fighting_history');
-        // var_dump($fighting_history[0]);die;
         $history_count=0;
         $new_data=[];
 
@@ -546,7 +545,9 @@ class UserBiologyNatureDo extends ActiveRecord
         // }
         // //悟性累计
         // 发起消耗属性--魔法等--回血,回蓝等多种状态
-        $goid =$attack_biology['id'];
+        $goid = $attack_biology['id'];
+        $need="wuXingTotal";
+        $attack_biology[$need] = $attack_biology[$need]+$attack_biology['wuXing'];
         //发起伤害
         $hurt_go_list = array(
             'position_my'=>$attack_biology['position_my'],//发起单位 1己方 2敌方 
@@ -560,7 +561,7 @@ class UserBiologyNatureDo extends ActiveRecord
             'attack_biology_do'=>$attack_biology,//被攻击单位
             'skill'=>[],//发起攻击技能
             'hurt_go'=>$attack_biology['wuXing'],//发起伤害
-            'extend'=>'wuXingTotal',//伤害类型
+            'extend'=>$need,//伤害类型
             'keeptime'=>$this->bout,//发起伤害持续回合
             'dobout'=>$this->bout,//执行回合数
             'not_out'=>0,//是否跳过

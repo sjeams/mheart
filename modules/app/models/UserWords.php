@@ -224,7 +224,7 @@ class UserWords extends ActiveRecord
             $map_int[$key]['map_status']=1;//1正常，0死亡
             $difficult= intval($this->user_in_word['difficult']);//1-5世界等级--低武，高武
             $star= intval($this->user_in_word['star']);//1-5难度--世界难度--普通，仙人
-            $total=rand($difficult,($star+$difficult));//阵容个数--最多9个
+            $total=rand(1,($star+$difficult));//阵容个数--最多9个
             $total= $total>9?9:$total;//生物数量
             $map_int[$key]['total']=$total;//生物数量
             $yiXing=rand(1,BIOLOGY_STATE_GRADE_SYSTEM_NUM);//1倍 2倍 境界*10难度等级

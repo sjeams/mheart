@@ -42,12 +42,23 @@ var FightingExtend = cc.Class({
   // 准备动作--悟性-治疗-中毒-冰冻-眩晕 持续伤害--回合前结算等
   playReady: function playReady(node, biology) {
     if (biology.extend == 'wuXingTotal') {
-      node.getChildByName('悟性s').getComponent(cc.Label).string = biology.hurt_go;
-      node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 5)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -5))), cc.callFunc(function () {}, this));
+      node.getChildByName('悟性s').getComponent(cc.Label).string = biology.hurt_go_value % 100; //除100 取余
+
+      node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this)); //向下取整
+
+      var wuxing_floor = Math.floor(biology.hurt_go_value / 100);
+
+      if (wuxing_floor > 0) {
+        node.getChildByName('悟性星星').active = true;
+        node.getChildByName('进化s').active = true;
+        node.getChildByName('进化s').getComponent(cc.Label).string = wuxing_floor;
+        node.getChildByName('进化s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
+        node.getChildByName('悟性星星').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
+      }
     }
   },
   //行动--技能攻击 和 普通攻击
-  playMove: function playMove(node, biology) {
+  playMove: function playMove(node, biology, is_skill) {
     //攻击动作
     var is_skill = is_skill || 0; //技能--攻击动画
 
@@ -147,7 +158,9 @@ var FightingExtend = cc.Class({
         node.getChildByName('魔法s').active = false;
         node.getChildByName('魔法s').active = false;
         node.getChildByName('魔法s').active = false;
-        node.getChildByName('生物').active = false; // 死亡
+        node.getChildByName('生物').active = false;
+        node.getChildByName('悟性星星').active = false;
+        node.getChildByName('进化s').active = false; // 死亡
 
         node.getChildByName('死亡').active = true; // cc.loader.loadRes('biology_pic/1墓碑', function (err, texture) {  
         //   node.getChildByName('受伤').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
