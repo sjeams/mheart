@@ -32,7 +32,7 @@ var HttpHelper = cc.Class({
    * @param {function} callback 
    */
   httpUrl: function httpUrl(new_url) {
-    return https_url + '/app/api/file-content?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
+    return new_url ? https_url + '/app/api/file-content?url=' + https_url + new_url : ''; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
   },
   httpUrlJson: function httpUrlJson(new_url) {
     return https_url + '/app/api/file-json?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg

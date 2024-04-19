@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'c11295LCyNAsZsJFE9jtZru', 'biology_infoTools');
-// Script/home/biology_infoTools.js
+cc._RF.push(module, '6d82bslU5tFU7IGldQC3bnX', 'biology_skillTools');
+// Script/home/biology_skillTools.js
 
 "use strict";
 
@@ -13,10 +13,10 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info) {
+  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info_list) {
     var _this = this;
 
-    cc.loader.loadRes('/弹窗背包/生物详情', function (errorMessage, loadedResource_icon) {
+    cc.loader.loadRes('/弹窗背包/生物技能', function (errorMessage, loadedResource_icon) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -32,59 +32,74 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+      // _this.biology_detail_list(TipBoxPrefab,info_list)
+      //写入icon
 
-      _this.biology_detail_list(TipBoxPrefab, info); //写入icon
-
-
-      TipBoxPrefab_model.getChildByName('生物详情').addChild(TipBoxPrefab);
+      TipBoxPrefab_model.getChildByName('生物技能').addChild(TipBoxPrefab);
       return TipBoxPrefab_model;
     });
     return TipBoxPrefab_model;
   },
   //技能图片渲染
-  biology_detail_list: function biology_detail_list(TipBoxPrefab, info) {
-    // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
-    // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
-    TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
-    TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string = info.zhong_zhu + '族';
-    TipBoxPrefab.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade; // TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
-    // //生物命名必须叫生物
-    //载入技能图片
+  biology_detail_list: function biology_detail_list(TipBoxPrefab, info_list) {
+    var _this = this;
 
-    var image = httpRequest.httpUrl(info.picture);
+    var TOOLS = [];
+    var TOOLS = info_list; // var TipBoxPrefab_icon=[];
 
-    if (image) {
-      cc.loader.load({
-        url: image
-      }, function (err, texture) {
-        // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-        if (err) {
+    var _loop = function _loop() {
+      var info = TOOLS[prop]; // let image = '/技能图标/'+skill.image;
+
+      var image = httpRequest.httpUrl(info.picture); //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+
+      cc.loader.loadRes('/弹窗背包/图标生物', function (errorMessage, loadedResource_icon) {
+        //检查资源加载
+        if (errorMessage) {
+          cc.log('载入预制资源失败, 原因:' + errorMessage);
           return;
-        } // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
+        }
+
+        if (!(loadedResource_icon instanceof cc.Prefab)) {
+          cc.log('你载入的不是预制资源!');
+          return;
+        } //开始实例化预制资源
 
 
-        TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+        var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //载入技能图片
+
+        if (image) {
+          cc.loader.load({
+            url: image
+          }, function (err, texture) {
+            // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+            if (err) {
+              return;
+            } // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
+
+
+            TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+          });
+        } else {
+          TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false;
+        } //技能等级
+
+
+        TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
+        TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+        // 此处进行事件绑定
+
+        TipBoxPrefab_icon.on('click', function () {
+          // 事件处理逻辑
+          _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button), info, TipBoxPrefab, TipBoxPrefab_icon);
+        }, this); //写入icon
+
+        cc.find("列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
       });
-    } else {
-      TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = false;
-    } // TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= biology_image
-    // TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string='力量:'+info.power
-    // TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string='敏捷:'+info.agile
-    // TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string='智力:'+info.intelligence
-    // TipBoxPrefab.getChildByName('攻击s').getComponent(cc.Label).string='攻击:'+info.gongJi
-    // TipBoxPrefab.getChildByName('护甲s').getComponent(cc.Label).string='护甲:'+info.huJia
-    // TipBoxPrefab.getChildByName('速度s').getComponent(cc.Label).string='速度:'+info.suDu
-    // TipBoxPrefab.getChildByName('特攻s').getComponent(cc.Label).string='特攻:'+info.faGong
-    // TipBoxPrefab.getChildByName('灵气s').getComponent(cc.Label).string='灵气:'+info.reiki
-    // TipBoxPrefab.getChildByName('悟性s').getComponent(cc.Label).string='悟性:'+info.wuXing
-    // TipBoxPrefab.getChildByName('暴击s').getComponent(cc.Label).string='暴击:'+info.baojilv+'%'
-    // TipBoxPrefab.getChildByName('吸血s').getComponent(cc.Label).string='吸血:'+info.xiXue+'%'
-    // TipBoxPrefab.getChildByName('暴伤s').getComponent(cc.Label).string='暴伤:'+info.baoji+'%'
-    // TipBoxPrefab.getChildByName('闪避s').getComponent(cc.Label).string='闪避:'+info.shanbi+'%'
-    // TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string='闪避'+'0%'
-    // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
-    // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
+    };
 
+    for (var prop in info_list) {
+      _loop();
+    }
 
     return TipBoxPrefab;
   },

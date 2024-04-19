@@ -4,6 +4,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -55,14 +56,10 @@ cc.Class({
         // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
         // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
 
-        //生物列表挂载
-        var tool = cc.instantiate(TipBoxPrefab);
-        tool.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab,info)
-        // //生物详情挂载
-        tool.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab,info[0])
-        // //技能列表挂载
-        tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab,info[0])
 
+        //技能图标挂载
+        var tool = cc.instantiate(TipBoxPrefab);
+        // tool.getComponent('skill_iconTools').biology_detail_skill(TipBoxPrefab,info.position_skill)
         BoxPrefab.addChild(TipBoxPrefab,1);
     },
     start () {

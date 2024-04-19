@@ -21,19 +21,19 @@
         "__id__": 2
       },
       {
-        "__id__": 5
+        "__id__": 6
       },
       {
-        "__id__": 8
+        "__id__": 40
       },
       {
-        "__id__": 11
+        "__id__": 43
       },
       {
-        "__id__": 14
+        "__id__": 46
       },
       {
-        "__id__": 18
+        "__id__": 49
       },
       {
         "__id__": 52
@@ -71,7 +71,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 260,
-      "height": 520
+      "height": 5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -109,7 +109,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "信息",
+    "_name": "技能列表",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -119,23 +119,26 @@
     "_components": [
       {
         "__id__": 3
+      },
+      {
+        "__id__": 4
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 5
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 139,
-      "g": 139,
-      "b": 139,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90,
-      "height": 60
+      "width": 240,
+      "height": 520
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -146,8 +149,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -90,
-        280,
+        0,
+        0,
         0,
         0,
         0,
@@ -186,437 +189,6 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
-    },
-    "_type": 1,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
-    },
-    "fileId": "c79iQWoPVBHKdqtuF+Fq9R",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "技能",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 6
-      }
-    ],
-    "_prefab": {
-      "__id__": 7
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 139,
-      "g": 139,
-      "b": 139,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 90,
-      "height": 60
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        280,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 5
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
-    },
-    "_type": 1,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
-    },
-    "fileId": "d8rbaUpRFMSIfDwv0P087R",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "缘分",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 9
-      }
-    ],
-    "_prefab": {
-      "__id__": 10
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 139,
-      "g": 139,
-      "b": 139,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 90,
-      "height": 60
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        90,
-        280,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 8
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
-    },
-    "_type": 1,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
-    },
-    "fileId": "2893Sf65BLG6BjkHbWeue5",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "技能绑定",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 12
-      }
-    ],
-    "_prefab": {
-      "__id__": 13
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 139,
-      "g": 139,
-      "b": 139,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 160,
-      "height": 60
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        -280,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 11
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
-    },
-    "_type": 1,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
-    },
-    "fileId": "489SN/Fa1BLK/sWkm+Hhii",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "技能列表",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 15
-      },
-      {
-        "__id__": 16
-      }
-    ],
-    "_prefab": {
-      "__id__": 17
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 260,
-      "height": 520
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 14
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
@@ -637,12 +209,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 14
+      "__id__": 2
     },
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 260,
+      "width": 240,
       "height": 520
     },
     "_resize": 0,
@@ -653,9 +225,9 @@
       "height": 120
     },
     "_N$startAxis": 0,
-    "_N$paddingLeft": 40,
+    "_N$paddingLeft": 30,
     "_N$paddingRight": 0,
-    "_N$paddingTop": 20,
+    "_N$paddingTop": 10,
     "_N$paddingBottom": 0,
     "_N$spacingX": 5,
     "_N$spacingY": 5,
@@ -684,6 +256,18 @@
     },
     "_children": [
       {
+        "__id__": 7
+      },
+      {
+        "__id__": 10
+      },
+      {
+        "__id__": 13
+      },
+      {
+        "__id__": 16
+      },
+      {
         "__id__": 19
       },
       {
@@ -700,31 +284,19 @@
       },
       {
         "__id__": 34
-      },
-      {
-        "__id__": 37
-      },
-      {
-        "__id__": 40
-      },
-      {
-        "__id__": 43
-      },
-      {
-        "__id__": 46
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 49
+        "__id__": 37
       },
       {
-        "__id__": 50
+        "__id__": 38
       }
     ],
     "_prefab": {
-      "__id__": 51
+      "__id__": 39
     },
     "_opacity": 255,
     "_color": {
@@ -736,8 +308,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 260,
-      "height": 520
+      "width": 240,
+      "height": 500
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -778,7 +350,435 @@
     "_name": "技能1",
     "_objFlags": 0,
     "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 8
+      }
+    ],
+    "_prefab": {
+      "__id__": 9
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 90,
+      "height": 90
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -45,
+        195,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+    },
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
+    },
+    "fileId": "968op9NodMh5aFaBByqpx2",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 11
+      }
+    ],
+    "_prefab": {
+      "__id__": 12
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 90,
+      "height": 90
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        50,
+        195,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 10
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+    },
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
+    },
+    "fileId": "e6i4aPX9FPH4qxr1gJ3XmD",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 14
+      }
+    ],
+    "_prefab": {
+      "__id__": 15
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 90,
+      "height": 90
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -45,
+        100,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 13
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+    },
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
+    },
+    "fileId": "a2b6zDJqFKtIFb3XyUfkuz",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 17
+      }
+    ],
+    "_prefab": {
       "__id__": 18
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 90,
+      "height": 90
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        50,
+        100,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 16
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+    },
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
+    },
+    "fileId": "9cjguedTtKjIh6Qx2xC3mT",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能5",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -813,7 +813,7 @@
       "ctor": "Float64Array",
       "array": [
         -45,
-        195,
+        5,
         0,
         0,
         0,
@@ -877,15 +877,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "968op9NodMh5aFaBByqpx2",
+    "fileId": "45pUwAyblKQb2WMCQZTMZy",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能2",
+    "_name": "技能6",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -920,7 +920,7 @@
       "ctor": "Float64Array",
       "array": [
         50,
-        195,
+        5,
         0,
         0,
         0,
@@ -984,15 +984,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "e6i4aPX9FPH4qxr1gJ3XmD",
+    "fileId": "e5IL5QktFCBblqbXaBh26R",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能3",
+    "_name": "技能7",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -1027,7 +1027,7 @@
       "ctor": "Float64Array",
       "array": [
         -45,
-        100,
+        -90,
         0,
         0,
         0,
@@ -1091,15 +1091,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "a2b6zDJqFKtIFb3XyUfkuz",
+    "fileId": "c4QL2D9bNFh4D0rUI4k6ZC",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能4",
+    "_name": "技能8",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -1134,7 +1134,7 @@
       "ctor": "Float64Array",
       "array": [
         50,
-        100,
+        -90,
         0,
         0,
         0,
@@ -1198,15 +1198,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "9cjguedTtKjIh6Qx2xC3mT",
+    "fileId": "09M/clTJFNo4w48PPo0HAq",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能5",
+    "_name": "技能9",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -1241,7 +1241,7 @@
       "ctor": "Float64Array",
       "array": [
         -45,
-        5,
+        -185,
         0,
         0,
         0,
@@ -1305,15 +1305,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "45pUwAyblKQb2WMCQZTMZy",
+    "fileId": "94siOKCtdAupZbKI12QukD",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能6",
+    "_name": "技能10",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 6
     },
     "_children": [],
     "_active": true,
@@ -1348,7 +1348,7 @@
       "ctor": "Float64Array",
       "array": [
         50,
-        5,
+        -185,
         0,
         0,
         0,
@@ -1412,79 +1412,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "e5IL5QktFCBblqbXaBh26R",
+    "fileId": "018uTDd9NAf5SYRRAcbUe0",
     "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "技能7",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 18
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 38
-      }
-    ],
-    "_prefab": {
-      "__id__": 39
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 90,
-      "height": 90
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -45,
-        -90,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 37
+      "__id__": 6
     },
     "_enabled": true,
     "_materials": [
@@ -1495,9 +1431,9 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+      "__uuid__": "16b26ad7-99a5-405c-9bef-43e8150e4dd1"
     },
-    "_type": 1,
+    "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
@@ -1512,6 +1448,38 @@
     "_id": ""
   },
   {
+    "__type__": "cc.Layout",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 6
+    },
+    "_enabled": true,
+    "_layoutSize": {
+      "__type__": "cc.Size",
+      "width": 240,
+      "height": 500
+    },
+    "_resize": 0,
+    "_N$layoutType": 3,
+    "_N$cellSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 120
+    },
+    "_N$startAxis": 0,
+    "_N$paddingLeft": 30,
+    "_N$paddingRight": 0,
+    "_N$paddingTop": 10,
+    "_N$paddingBottom": 0,
+    "_N$spacingX": 5,
+    "_N$spacingY": 5,
+    "_N$verticalDirection": 1,
+    "_N$horizontalDirection": 0,
+    "_N$affectedByScale": true,
+    "_id": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -1519,15 +1487,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "c4QL2D9bNFh4D0rUI4k6ZC",
+    "fileId": "b9k0mNuAlAYbi3WTI/RwI7",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能8",
+    "_name": "信息",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 1
     },
     "_children": [],
     "_active": true,
@@ -1542,15 +1510,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 139,
+      "g": 139,
+      "b": 139,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 90,
-      "height": 90
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1561,8 +1529,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        50,
         -90,
+        265,
         0,
         0,
         0,
@@ -1602,7 +1570,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1626,15 +1594,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "09M/clTJFNo4w48PPo0HAq",
+    "fileId": "c79iQWoPVBHKdqtuF+Fq9R",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能9",
+    "_name": "技能",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 1
     },
     "_children": [],
     "_active": true,
@@ -1649,15 +1617,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 139,
+      "g": 139,
+      "b": 139,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 90,
-      "height": 90
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1668,8 +1636,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -45,
-        -185,
+        0,
+        265,
         0,
         0,
         0,
@@ -1709,7 +1677,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1733,15 +1701,15 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "94siOKCtdAupZbKI12QukD",
+    "fileId": "d8rbaUpRFMSIfDwv0P087R",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能10",
+    "_name": "缘分",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 18
+      "__id__": 1
     },
     "_children": [],
     "_active": true,
@@ -1756,15 +1724,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 139,
+      "g": 139,
+      "b": 139,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 90,
-      "height": 90
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1775,8 +1743,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        50,
-        -185,
+        90,
+        265,
         0,
         0,
         0,
@@ -1816,7 +1784,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6a191bf-55a7-42f3-b576-2a8e2f14ddfa"
+      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1840,15 +1808,79 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "018uTDd9NAf5SYRRAcbUe0",
+    "fileId": "2893Sf65BLG6BjkHbWeue5",
     "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能绑定",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 50
+      }
+    ],
+    "_prefab": {
+      "__id__": 51
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 139,
+      "g": 139,
+      "b": 139,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 160,
+      "height": 60
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        -265,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 18
+      "__id__": 49
     },
     "_enabled": true,
     "_materials": [
@@ -1859,9 +1891,9 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "16b26ad7-99a5-405c-9bef-43e8150e4dd1"
+      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
-    "_type": 0,
+    "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
@@ -1876,38 +1908,6 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Layout",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 18
-    },
-    "_enabled": true,
-    "_layoutSize": {
-      "__type__": "cc.Size",
-      "width": 260,
-      "height": 520
-    },
-    "_resize": 0,
-    "_N$layoutType": 3,
-    "_N$cellSize": {
-      "__type__": "cc.Size",
-      "width": 100,
-      "height": 120
-    },
-    "_N$startAxis": 0,
-    "_N$paddingLeft": 40,
-    "_N$paddingRight": 0,
-    "_N$paddingTop": 20,
-    "_N$paddingBottom": 0,
-    "_N$spacingX": 5,
-    "_N$spacingY": 5,
-    "_N$verticalDirection": 1,
-    "_N$horizontalDirection": 0,
-    "_N$affectedByScale": true,
-    "_id": ""
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -1915,7 +1915,7 @@
     "asset": {
       "__uuid__": "82562dde-51e3-4b7a-ae1a-6b98a48965e0"
     },
-    "fileId": "b9k0mNuAlAYbi3WTI/RwI7",
+    "fileId": "489SN/Fa1BLK/sWkm+Hhii",
     "sync": false
   },
   {
@@ -1958,7 +1958,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -280,
+        -265,
         0,
         0,
         0,
@@ -2065,7 +2065,7 @@
       "ctor": "Float64Array",
       "array": [
         -90,
-        280,
+        265,
         0,
         0,
         0,
@@ -2172,7 +2172,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        280,
+        265,
         0,
         0,
         0,
@@ -2279,7 +2279,7 @@
       "ctor": "Float64Array",
       "array": [
         90,
-        280,
+        265,
         0,
         0,
         0,

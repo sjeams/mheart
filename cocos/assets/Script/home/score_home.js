@@ -4,43 +4,44 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+
+        cc.globalData={}
+        // var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
+        // cc.loader.load({ url: remoteUrl }, function (err, data) {
+        httpRequest.httpPost('/app/app-apinew/biology-list',{}, function (data) {
+          //定义常量
+          cc.globalData.biology = data.data;
+          //开启战斗
+        //   _this.goPlay( )
+        });  
+
+    },
 
     start () {
 
     },
-
     //打开背包
     openBag() {
-
-        cc.log(111)
-        var _this=this;  
-        var info =[]
-        // _this.biology_detail_alert(info)
-        //技能图标挂载
-        var BoxPrefab = cc.find('Canvas/弹窗')
-        BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
+        info =  cc.globalData.biology;
+        cc.log(info)
+        if(info){
+            //技能图标挂载
+            var BoxPrefab = cc.find('Canvas/弹窗')
+            BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
+        }else{
+        //如果没有生物需要弹窗另一个提示
+        }
     },
 
-  
+    openBag_hidden(){
+        // cc.find('Canvas/弹窗').active =false;
+        cc.find('Canvas/弹窗').removeAllChildren();
+    }
     // update (dt) {},
 });
