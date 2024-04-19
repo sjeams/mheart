@@ -34,34 +34,31 @@
       },
       {
         "__id__": 21
-      },
-      {
-        "__id__": 23
-      },
-      {
-        "__id__": 25
       }
     ],
     "_active": true,
     "_components": [
       {
+        "__id__": 23
+      },
+      {
+        "__id__": 24
+      },
+      {
+        "__id__": 25
+      },
+      {
+        "__id__": 26
+      },
+      {
         "__id__": 27
       },
       {
         "__id__": 28
-      },
-      {
-        "__id__": 29
-      },
-      {
-        "__id__": 30
-      },
-      {
-        "__id__": 31
       }
     ],
     "_prefab": {
-      "__id__": 32
+      "__id__": 29
     },
     "_opacity": 255,
     "_color": {
@@ -793,7 +790,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 260,
-      "height": 650
+      "height": 600
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -841,148 +838,6 @@
     "sync": false
   },
   {
-    "__type__": "cc.Node",
-    "_name": "生物技能",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [],
-    "_prefab": {
-      "__id__": 24
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 260,
-      "height": 600
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        460,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "63c4ddcb-2276-4108-b8e4-25abf2b4455b"
-    },
-    "fileId": "e0UAMo9YpBI6AmRvIIaqnv",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "生物缘分",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [],
-    "_prefab": {
-      "__id__": 26
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 260,
-      "height": 600
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        460,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "63c4ddcb-2276-4108-b8e4-25abf2b4455b"
-    },
-    "fileId": "93S94kEtdF0riD6Hc9uEA9",
-    "sync": false
-  },
-  {
     "__type__": "37703xGpr5GwYxzJ+3bIl/3",
     "_name": "",
     "_objFlags": 0,
@@ -1024,6 +879,16 @@
   },
   {
     "__type__": "7768fjHlyhDLomwZw1Zn50w",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_id": ""
+  },
+  {
+    "__type__": "6d8b5Q0V+NPA6XWH76PX0o5",
     "_name": "",
     "_objFlags": 0,
     "node": {

@@ -385,7 +385,8 @@ class UserBiologyNatureDo extends ActiveRecord
                 $skill=$data["$dofind"]['skill'];
                 if($skill){
                     //查询所有技能
-                    $skill_list = BiologySkill::find()->where("id in ($skill)")->asArray()->All();
+                    // $skill_list = BiologySkill::find()->where("id in ($skill)")->asArray()->All();
+                    $skill_list =  BiologySkill::getSkill($skill,$data["$dofind"]['id']);
                     //获取技能属性
                     foreach($skill_list as $key=>$v){
                         $position = $v['position'];

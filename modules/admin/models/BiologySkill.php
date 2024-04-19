@@ -1,7 +1,7 @@
 <?php
 // 技能
 namespace app\modules\admin\models;
-
+use yii;
 use yii\db\ActiveRecord;
 class BiologySkill extends ActiveRecord
 {
@@ -33,5 +33,16 @@ class BiologySkill extends ActiveRecord
         // $data=  AdminInit::getTree($adminIint);
         return $data;
     }
+
+    public static function getSkill($skill,$biology_id=0){
+        $data=[];
+        if($skill){
+            // $data= BiologySkill::find()->where("id in ($skill)")->asArray()->All();
+            $sql ="SELECT a.*,if(b.id,b.grade,1) as skill_grade from {{%biology_skill}} a left JOIN {{%user_biology_skill}} b on (a.id=b.skillid  and b.userBiologyid = $biology_id ) where  a.id in ($skill)";
+            $data= Yii::$app->db->createCommand($sql)->queryAll();
+        } 
+        return $data;
+    }
+
 
 }

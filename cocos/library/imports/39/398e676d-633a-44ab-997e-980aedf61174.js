@@ -73,7 +73,11 @@ cc.Class({
 
     tool.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab, info[0]); // //技能列表挂载
 
-    tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab, info[0]);
+    tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab, info[0]); // //信息列表挂载
+    // tool.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab,info[0])
+    // // //缘分列表挂载
+    // tool.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab,info[0])
+
     BoxPrefab.addChild(TipBoxPrefab, 1);
   },
   start: function start() {} // update (dt) {},

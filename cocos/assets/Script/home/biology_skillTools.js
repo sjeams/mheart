@@ -11,7 +11,7 @@ cc.Class({
 
     // onLoad () {},
      //技能图片渲染
-     biology_detail_alert(TipBoxPrefab_model,info_list){
+     biology_detail_alert(TipBoxPrefab_model,info){
         var _this=this;
         cc.loader.loadRes('/弹窗背包/生物技能', function(errorMessage,loadedResource_icon){
             //检查资源加载
@@ -22,12 +22,34 @@ cc.Class({
             //技能等级
             // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
             // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-            // _this.biology_detail_list(TipBoxPrefab,info_list)
+            
+            
+               // 此处进行事件绑定
+            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
             //写入icon
-            TipBoxPrefab_model.getChildByName('生物技能').addChild(TipBoxPrefab);
+            TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
             return TipBoxPrefab_model
         })
         return TipBoxPrefab_model
+    },
+    //绑定点击事件
+    bind_button(TipBoxPrefab_model,TipBoxPrefab,info){
+        
+        //  cc.find("列表/content/gridLayout",TipBoxPrefab)
+        TipBoxPrefab.getChildByName('信息').on('click', function () {
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model,info)
+        }, this);
+        TipBoxPrefab.getChildByName('缘分').on('click', function () {
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
+        }, this);
     },
 
     //技能图片渲染
@@ -78,6 +100,7 @@ cc.Class({
         return TipBoxPrefab
     },
 
+    
     // 绑定按钮事件---挂载生物详情
     bindClickEventIcon: function (button, info,TipBoxPrefab,TipBoxPrefab_icon) {
         // cc.log(info)

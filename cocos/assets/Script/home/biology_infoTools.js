@@ -35,7 +35,7 @@ cc.Class({
         // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
         // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
         TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
-        TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string=info.zhong_zhu+'族'
+        TipBoxPrefab.getChildByName('种族s').getComponent(cc.Label).string=info.zhong_zhu+'族'
         TipBoxPrefab.getChildByName('生物等级s').getComponent(cc.Label).string='等级'+info.grade
         // TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
         // //生物命名必须叫生物
@@ -53,7 +53,30 @@ cc.Class({
         }else{
             TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = false; 
         }
-        // TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= biology_image
+        TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='战力'+info.special
+        TipBoxPrefab.getChildByName('评分s').getComponent(cc.Label).string='评分:'+info.score/10
+
+
+        if(info.yiXing==1){
+            cc.log(1111)
+            TipBoxPrefab.getChildByName('异形').active=true;
+        }else{
+            cc.log(222)
+            TipBoxPrefab.getChildByName('异形').active=false;
+        }
+        cc.log(info)
+        TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
+        TipBoxPrefab.getChildByName('慧根值s').getComponent(cc.Label).string= info.maxNature
+        TipBoxPrefab.getChildByName('经验s').getComponent(cc.Label).string= info.need_expe
+
+        TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string= info.state_name
+        // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
+        // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
+        // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
+        // TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='力量:'+info.power
+        // TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='力量:'+info.power
+        // TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='力量:'+info.power
+
 
         // TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string='力量:'+info.power
         // TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string='敏捷:'+info.agile

@@ -19,7 +19,7 @@ class BiologyCreate extends ActiveRecord
     }
     
     //等级写入方法--add_grade指定的等级，max_grade 等级上限
-    public static function getExperience($param,$create,$add_grade=0,$max_grade=200){
+    public static function getExperience($param,$create=[],$add_grade=0,$max_grade=200){
     //   $createid =  (int)$param['createid'];
       $power =  (int)$param['power'];
       $agile =  (int)$param['agile'];
@@ -59,11 +59,14 @@ class BiologyCreate extends ActiveRecord
               // 白值属性计算
             //   $create = BiologyCreate::find()->where("id=$createid")->One();
               // var_dump($create);die;
-              $res['experience'] = $sum;
-              $res['power'] = ($i - $grade)*$create['power'] +$power;
-              $res['agile'] =($i - $grade)*$create['agile'] +$agile;
-              $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
-              $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
+              if($create){
+                $res['experience'] = $sum;
+                $res['power'] = ($i - $grade)*$create['power'] +$power;
+                $res['agile'] =($i - $grade)*$create['agile'] +$agile;
+                $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
+                $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
+            
+              }
               return $res;
               break;
             }
@@ -94,11 +97,13 @@ class BiologyCreate extends ActiveRecord
               // 白值属性计算
             //   $create = BiologyCreate::find()->where("id=$createid")->One();
               // var_dump($create);die;
-              $res['experience'] = $sum;
-              $res['power'] = ($i - $grade)*$create['power'] +$power;
-              $res['agile'] =($i - $grade)*$create['agile'] +$agile;
-              $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
-              $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
+              if($create){
+                $res['experience'] = $sum;
+                $res['power'] = ($i - $grade)*$create['power'] +$power;
+                $res['agile'] =($i - $grade)*$create['agile'] +$agile;
+                $res['intelligence'] =($i - $grade)*$create['intelligence'] +$intelligence;
+                $res['reiki'] =  intval( ($create['reiki']*($i - $grade) + ($i - $grade)*( $create['power'] + $create['agile'] + $create['intelligence']))*0.1)+$reiki;//灵气
+              }
               return $res;
               break;
             }

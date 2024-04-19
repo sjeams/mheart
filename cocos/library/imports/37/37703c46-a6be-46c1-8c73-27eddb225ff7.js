@@ -25,7 +25,6 @@ cc.Class({
   //打开背包
   openBag: function openBag() {
     info = cc.globalData.biology;
-    cc.log(info);
 
     if (info) {
       //技能图标挂载

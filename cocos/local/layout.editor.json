@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 294,
-      "y": 354,
+      "x": 400,
+      "y": 98,
       "width": 1427,
-      "height": 654,
+      "height": 841,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 304.5,
+                "height": 442.6875,
                 "type": "panel",
-                "width": 221
+                "width": 254
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 226,
+                "height": 274.8125,
                 "type": "panel",
-                "width": 221
+                "width": 254
               }
             ],
-            "height": 533.5,
+            "height": 720.5,
             "type": "dock-v",
-            "width": 221
+            "width": 254
           },
           {
             "active": 0,
@@ -42,9 +42,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 556,
+            "height": 720.5,
             "type": "panel",
-            "width": 319
+            "width": 304
           },
           {
             "children": [
@@ -53,9 +53,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 263.75,
+                "height": 420.703125,
                 "type": "panel",
-                "width": 864.984375
+                "width": 847
               },
               {
                 "active": 0,
@@ -64,14 +64,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 266.734375,
+                "height": 296.796875,
                 "type": "panel",
-                "width": 864.984375
+                "width": 847
               }
             ],
-            "height": 533.5,
+            "height": 720.5,
             "type": "dock-v",
-            "width": 864.984375
+            "width": 847
           }
         ],
         "type": "dock-h"
@@ -86,7 +86,8 @@
         "timeline",
         "game-window"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "project-settings": {

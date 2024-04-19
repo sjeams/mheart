@@ -8,11 +8,15 @@
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
 use app\modules\app\models\Words;
+
+use app\modules\admin\models\BiologyCreate;
 use app\modules\app\models\UserWords;
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
 
 use app\modules\admin\models\BiologyBiology;
+use app\modules\admin\models\BiologySkill;
+
 
 use yii;
 class UserBiologyAttribute extends ActiveRecord
@@ -35,7 +39,23 @@ class UserBiologyAttribute extends ActiveRecord
     }
 
     public  function  myAttributesList(){  
+        $UserWords =new UserWords();
+        //境界
+        $BiologyState = BiologyState::getValueList();
+        $BiologyState =   array_column($BiologyState,null,'id');
+        //种族
+        $BiologyBiology = BiologyBiology::getValueList();
+        $BiologyBiology =   array_column($BiologyBiology,null,'id');  
+
         $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userId")->asarray()->All();  
+        foreach($data as $k=>$v){
+            //计算需要晋级的经验
+            $res = BiologyCreate::getExperience($v,[]);
+            $data[$k]['need_expe'] ='exp:'.$res['lessExp'].'/'.$res['nowExp'];
+            $data[$k]['state_name']= $BiologyState[$v['state']]['text'];//境界名称  
+            $data[$k]['zhong_zhu']= $BiologyBiology[$v['biology']]['text'];//种族 
+            $data[$k]['position_skill']=  BiologySkill::getSkill($v['skill'],$v['id']);
+        }
         return $data;
     }
    
