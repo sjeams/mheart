@@ -520,8 +520,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
-      "height": 32.76
+      "width": 120,
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -571,10 +571,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "彼岸花",
-    "_N$string": "彼岸花",
-    "_fontSize": 20,
-    "_lineHeight": 26,
+    "_string": "天下第一人最帅",
+    "_N$string": "天下第一人最帅",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -585,7 +585,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -627,8 +627,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140,
-      "height": 32.76
+      "width": 120,
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -680,8 +680,8 @@
     "_useOriginalSize": false,
     "_string": "等级190",
     "_N$string": "等级190",
-    "_fontSize": 20,
-    "_lineHeight": 26,
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -692,7 +692,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },

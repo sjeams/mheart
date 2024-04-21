@@ -109,7 +109,7 @@
     "_prefab": {
       "__id__": 4
     },
-    "_opacity": 180,
+    "_opacity": 100,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -397,8 +397,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -453,7 +453,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        50,
+        55,
         0,
         0,
         0,
@@ -493,7 +493,7 @@
     "_useOriginalSize": false,
     "_string": "LV.10",
     "_N$string": "LV.10",
-    "_fontSize": 20,
+    "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
     "_N$file": null,
@@ -504,8 +504,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -548,7 +548,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 160,
-      "height": 25.2
+      "height": 30.240000000000002
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -560,7 +560,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -65,
+        -60,
         0,
         0,
         0,
@@ -598,10 +598,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "⭐",
-    "_N$string": "⭐",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "⭐⭐⭐⭐",
+    "_N$string": "⭐⭐⭐⭐",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -612,7 +612,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },

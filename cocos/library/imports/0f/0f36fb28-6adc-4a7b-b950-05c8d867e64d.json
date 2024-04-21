@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "上古秘境",
+    "texture": "7e50f21d-3bbe-4abc-9511-6cb13956e01f",
+    "atlas": "",
+    "rect": [
+      2,
+      0,
+      122,
+      120
+    ],
+    "offset": [
+      1,
+      0
+    ],
+    "originalSize": [
+      124,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

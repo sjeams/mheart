@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "4a7dcf00-7385-4705-8e23-6a9d80959431",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 123,
+  "height": 120,
+  "platformSettings": {},
+  "subMetas": {
+    "天地熔炉": {
+      "ver": "1.0.4",
+      "uuid": "831dd8a3-0d9d-4c4e-844a-d67d2e2fd0ff",
+      "rawTextureUuid": "4a7dcf00-7385-4705-8e23-6a9d80959431",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 0,
+      "width": 122,
+      "height": 120,
+      "rawWidth": 123,
+      "rawHeight": 120,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

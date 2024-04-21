@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "天地熔炉",
+    "texture": "4a7dcf00-7385-4705-8e23-6a9d80959431",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      122,
+      120
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      123,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

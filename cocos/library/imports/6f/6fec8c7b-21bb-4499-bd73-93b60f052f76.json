@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        238.35996074473263,
+        414.24430759457846,
         0,
         0,
         0,
@@ -472,7 +472,7 @@
         "__id__": 16
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 18
@@ -1728,7 +1728,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "24d00b25-37de-4f80-a114-4e6e11a75c6a"
+      "__uuid__": "24fcab90-5797-4c8f-ad96-ddc083dab803"
     },
     "_type": 0,
     "_sizeMode": 0,

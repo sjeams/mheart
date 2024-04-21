@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "上古仙门",
+    "texture": "0d27af22-912f-4d94-952d-d82b9f4e84c3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      126,
+      120
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      126,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

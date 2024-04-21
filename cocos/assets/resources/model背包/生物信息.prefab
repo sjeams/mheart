@@ -1728,7 +1728,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 95,
+      "width": 80,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -1740,7 +1740,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        10,
         200,
         0,
         0,
@@ -1779,9 +1779,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "8900",
-    "_N$string": "8900",
-    "_fontSize": 20,
+    "_string": "8900355",
+    "_N$string": "8900355",
+    "_fontSize": 24,
     "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1793,7 +1793,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1835,7 +1835,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 95,
+      "width": 80,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -1847,7 +1847,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        10,
         160,
         0,
         0,
@@ -1888,7 +1888,7 @@
     "_useOriginalSize": false,
     "_string": "360",
     "_N$string": "360",
-    "_fontSize": 20,
+    "_fontSize": 24,
     "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1900,7 +1900,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1942,7 +1942,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 95,
+      "width": 80,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -1954,7 +1954,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        15,
+        10,
         120,
         0,
         0,
@@ -1995,7 +1995,7 @@
     "_useOriginalSize": false,
     "_string": "7866",
     "_N$string": "7866",
-    "_fontSize": 20,
+    "_fontSize": 24,
     "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2007,7 +2007,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2049,8 +2049,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 30.240000000000002
+      "width": 60,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2061,7 +2061,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        80,
+        90,
         200,
         0,
         0,
@@ -2100,21 +2100,21 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "(+5.6)",
-    "_N$string": "(+5.6)",
-    "_fontSize": 22,
-    "_lineHeight": 24,
+    "_string": "+5.6",
+    "_N$string": "+5.6",
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2156,8 +2156,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 30.240000000000002
+      "width": 60,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2168,7 +2168,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        80,
+        90,
         160,
         0,
         0,
@@ -2207,21 +2207,21 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "(+5.6)",
-    "_N$string": "(+5.6)",
-    "_fontSize": 22,
-    "_lineHeight": 24,
+    "_string": "+5.6",
+    "_N$string": "+5.6",
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2263,8 +2263,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 30.240000000000002
+      "width": 60,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2275,7 +2275,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        80,
+        90,
         120,
         0,
         0,
@@ -2314,21 +2314,21 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "(+5.6)",
-    "_N$string": "(+5.6)",
-    "_fontSize": 22,
-    "_lineHeight": 24,
+    "_string": "+5.6",
+    "_N$string": "+5.6",
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2435,7 +2435,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2542,7 +2542,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2649,7 +2649,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2756,7 +2756,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2863,7 +2863,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2970,7 +2970,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3077,7 +3077,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "微软雅黑",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },

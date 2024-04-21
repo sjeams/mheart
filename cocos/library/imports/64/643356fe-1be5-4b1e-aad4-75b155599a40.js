@@ -43,7 +43,7 @@ cc.Class({
       var skill = TOOLS[prop];
       var image = '/技能图标/' + skill.image; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-      cc.loader.loadRes('/弹窗模型/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
+      cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
         //检查资源加载
         if (errorMessage) {
           cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -97,7 +97,7 @@ cc.Class({
     // 销毁所有弹窗--节点
     TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
     var move_type = ['初始化', '回合化', '被击前触发', '被击后触发', '攻击前触发', '主动', '攻击后'];
-    cc.loader.loadRes('/弹窗模型/biology_生物_战斗技能提示', function (errorMessage, loadedResource) {
+    cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function (errorMessage, loadedResource) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -113,7 +113,7 @@ cc.Class({
       var tips_Prefab = cc.instantiate(loadedResource);
       tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame;
       tips_Prefab.getChildByName('D技能名称s').getComponent(cc.Label).string = skill.name + '-[' + skill.type + ']';
-      tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = '消耗:   ' + Math.abs(skill.needValue);
+      tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = '消耗：' + Math.abs(skill.needValue);
       var attack = skill.attack == 0 ? '被动' : '主动';
       tips_Prefab.getChildByName('D技能类型s').getComponent(cc.Label).string = '触发: ' + attack;
       var star = '';

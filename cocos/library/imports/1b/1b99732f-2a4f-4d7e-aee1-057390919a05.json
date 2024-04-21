@@ -52,19 +52,16 @@
       },
       {
         "__id__": 62
-      },
-      {
-        "__id__": 65
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 68
+        "__id__": 65
       }
     ],
     "_prefab": {
-      "__id__": 69
+      "__id__": 66
     },
     "_opacity": 255,
     "_color": {
@@ -1440,7 +1437,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "D技能消耗",
+    "_name": "D技能名称s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1459,113 +1456,6 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 30,
-      "height": 30
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        10,
-        160,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 38
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "af804c7b-afc2-4ef2-9627-36cdd3c4d752"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "1b99732f-2a4f-4d7e-aee1-057390919a05"
-    },
-    "fileId": "f9YgswbgNKlKSOr5nqCehK",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "D技能名称s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 42
-      }
-    ],
-    "_prefab": {
-      "__id__": 43
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
       "g": 120,
       "b": 29,
       "a": 255
@@ -1573,7 +1463,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 260,
-      "height": 30.240000000000002
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1614,7 +1504,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 41
+      "__id__": 38
     },
     "_enabled": true,
     "_materials": [
@@ -1623,10 +1513,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "恶魔召唤-[等级2]",
-    "_N$string": "恶魔召唤-[等级2]",
-    "_fontSize": 24,
-    "_lineHeight": 24,
+    "_string": "恶魔召唤-[等级2]3123213",
+    "_N$string": "恶魔召唤-[等级2]3123213",
+    "_fontSize": 30,
+    "_lineHeight": 30,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1636,8 +1526,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1663,11 +1553,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 45
+        "__id__": 42
       }
     ],
     "_prefab": {
-      "__id__": 46
+      "__id__": 43
     },
     "_opacity": 255,
     "_color": {
@@ -1680,7 +1570,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 260,
-      "height": 30.240000000000002
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1721,7 +1611,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 44
+      "__id__": 41
     },
     "_enabled": true,
     "_materials": [
@@ -1730,8 +1620,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "消耗：   250",
-    "_N$string": "消耗：   250",
+    "_string": "消耗：250",
+    "_N$string": "消耗：250",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -1743,8 +1633,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 3,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1770,11 +1660,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 48
+        "__id__": 45
       }
     ],
     "_prefab": {
-      "__id__": 49
+      "__id__": 46
     },
     "_opacity": 255,
     "_color": {
@@ -1787,7 +1677,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 260,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1828,7 +1718,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 47
+      "__id__": 44
     },
     "_enabled": true,
     "_materials": [
@@ -1840,7 +1730,7 @@
     "_string": "触发：【被动】",
     "_N$string": "触发：【被动】",
     "_fontSize": 24,
-    "_lineHeight": 26,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1850,8 +1740,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1877,11 +1767,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 51
+        "__id__": 48
       }
     ],
     "_prefab": {
-      "__id__": 52
+      "__id__": 49
     },
     "_opacity": 255,
     "_color": {
@@ -1894,7 +1784,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 380,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1935,7 +1825,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 50
+      "__id__": 47
     },
     "_enabled": true,
     "_materials": [
@@ -1944,9 +1834,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "稀有程度：☆☆☆☆☆☆☆☆☆☆",
-    "_N$string": "稀有程度：☆☆☆☆☆☆☆☆☆☆",
-    "_fontSize": 22,
+    "_string": "稀有程度：☆☆☆☆☆☆☆",
+    "_N$string": "稀有程度：☆☆☆☆☆☆☆",
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1957,8 +1847,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -1984,11 +1874,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 54
+        "__id__": 51
       }
     ],
     "_prefab": {
-      "__id__": 55
+      "__id__": 52
     },
     "_opacity": 255,
     "_color": {
@@ -2001,7 +1891,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 380,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2042,7 +1932,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 53
+      "__id__": 50
     },
     "_enabled": true,
     "_materials": [
@@ -2053,7 +1943,7 @@
     "_useOriginalSize": false,
     "_string": "攻击类型：法术",
     "_N$string": "攻击类型：法术",
-    "_fontSize": 22,
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2064,8 +1954,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2091,11 +1981,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 57
+        "__id__": 54
       }
     ],
     "_prefab": {
-      "__id__": 58
+      "__id__": 55
     },
     "_opacity": 255,
     "_color": {
@@ -2108,7 +1998,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 380,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2149,7 +2039,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 56
+      "__id__": 53
     },
     "_enabled": true,
     "_materials": [
@@ -2160,7 +2050,7 @@
     "_useOriginalSize": false,
     "_string": "触发几率：100%",
     "_N$string": "触发几率：100%",
-    "_fontSize": 22,
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2171,8 +2061,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2198,11 +2088,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 60
+        "__id__": 57
       }
     ],
     "_prefab": {
-      "__id__": 61
+      "__id__": 58
     },
     "_opacity": 255,
     "_color": {
@@ -2215,7 +2105,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 380,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2256,7 +2146,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 59
+      "__id__": 56
     },
     "_enabled": true,
     "_materials": [
@@ -2265,9 +2155,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "发动时机：被攻击\n",
-    "_N$string": "发动时机：被攻击\n",
-    "_fontSize": 22,
+    "_string": "技能种族：人族",
+    "_N$string": "技能种族：人族",
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2278,8 +2168,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2305,11 +2195,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 63
+        "__id__": 60
       }
     ],
     "_prefab": {
-      "__id__": 64
+      "__id__": 61
     },
     "_opacity": 255,
     "_color": {
@@ -2322,7 +2212,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 380,
-      "height": 30
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2363,7 +2253,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 59
     },
     "_enabled": true,
     "_materials": [
@@ -2374,7 +2264,7 @@
     "_useOriginalSize": false,
     "_string": "技能来源：魔兽世界",
     "_N$string": "技能来源：魔兽世界",
-    "_fontSize": 22,
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2385,8 +2275,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -2412,11 +2302,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 66
+        "__id__": 63
       }
     ],
     "_prefab": {
-      "__id__": 67
+      "__id__": 64
     },
     "_opacity": 255,
     "_color": {
@@ -2441,7 +2331,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -135,
+        -140,
         0,
         0,
         0,
@@ -2470,7 +2360,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 65
+      "__id__": 62
     },
     "_enabled": true,
     "_materials": [
@@ -2479,10 +2369,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。\n\n",
-    "_N$string": "技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。\n\n",
-    "_fontSize": 22,
-    "_lineHeight": 28,
+    "_string": "技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。",
+    "_N$string": "技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。技能说明：召唤影子围绕着自己给予守护，智力x1+等级*2000伤害吸收护盾。",
+    "_fontSize": 24,
+    "_lineHeight": 26,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2492,8 +2382,8 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 1,
+    "_N$fontFamily": "微软雅黑",
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },

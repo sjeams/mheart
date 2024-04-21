@@ -16,7 +16,7 @@ cc.Class({
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info) {
     var _this = this;
 
-    cc.loader.loadRes('/弹窗背包/生物技能', function (errorMessage, loadedResource_icon) {
+    cc.loader.loadRes('/model背包/生物技能', function (errorMessage, loadedResource_icon) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -72,7 +72,7 @@ cc.Class({
 
       var image = httpRequest.httpUrl(info.picture); //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-      cc.loader.loadRes('/弹窗背包/图标生物', function (errorMessage, loadedResource_icon) {
+      cc.loader.loadRes('/model背包/图标生物', function (errorMessage, loadedResource_icon) {
         //检查资源加载
         if (errorMessage) {
           cc.log('载入预制资源失败, 原因:' + errorMessage);

@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "金币",
-    "texture": "2104965e-009a-49db-88f1-ee080f9733eb",
+    "name": "诸天万界",
+    "texture": "3daedcc0-3c10-4149-b31b-7e7bdf2178b1",
     "atlas": "",
     "rect": [
-      2,
       0,
-      61,
-      62
+      27,
+      318,
+      254
     ],
     "offset": [
-      0.5,
-      1
+      0,
+      2
     ],
     "originalSize": [
-      64,
-      64
+      318,
+      312
     ],
     "capInsets": [
       0,

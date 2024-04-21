@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "布阵",
+    "texture": "331030f2-05e3-4870-b4e7-e355ed2aed35",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      90,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      90,
+      100
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

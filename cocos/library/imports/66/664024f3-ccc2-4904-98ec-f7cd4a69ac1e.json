@@ -146,7 +146,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 650
+      "height": 600
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -422,8 +422,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 800,
-      "height": 600
+      "width": 900,
+      "height": 560
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -823,7 +823,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -40,
+        -60,
         0,
         0,
         0,
@@ -918,8 +918,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
-      "height": 160
+      "width": 160,
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1037,7 +1037,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -260,
+        -300,
         190,
         0,
         0,
@@ -1144,7 +1144,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -340,
+        -380,
         30,
         0,
         0,
@@ -1251,7 +1251,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -340,
+        -380,
         -10,
         0,
         0,
@@ -1392,7 +1392,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        250,
+        300,
         0,
         0,
         0,
@@ -2602,7 +2602,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        250,
+        300,
         0,
         0,
         0,
@@ -2739,7 +2739,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -230,
+        -270,
         30,
         0,
         0,
@@ -2846,7 +2846,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -230,
+        -270,
         -10,
         0,
         0,
@@ -2942,7 +2942,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 32.76
+      "height": 28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2953,7 +2953,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -260,
+        -300,
         120,
         0,
         0,
@@ -3006,7 +3006,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3060,7 +3060,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -260,
+        -300,
         80,
         0,
         0,
@@ -3113,7 +3113,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3167,7 +3167,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -260,
+        -300,
         190,
         0,
         0,
@@ -3220,7 +3220,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3327,7 +3327,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3369,7 +3369,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 200,
       "height": 32.76
     },
     "_anchorPoint": {
@@ -3381,7 +3381,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        240,
+        300,
         240,
         0,
         0,
@@ -3434,7 +3434,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3477,7 +3477,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3488,7 +3488,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -280,
+        -320,
         -70,
         0,
         0,
@@ -3529,8 +3529,8 @@
     "_useOriginalSize": false,
     "_string": "力量:5660 ",
     "_N$string": "力量:5660 ",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3541,7 +3541,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3558,7 +3558,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "敏捷s",
+    "_name": "攻击s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -3576,15 +3576,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 255,
-      "b": 178,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3595,8 +3595,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -120,
-        -70,
+        -320,
+        -100,
         0,
         0,
         0,
@@ -3634,10 +3634,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "敏捷:4800",
-    "_N$string": "敏捷:4800",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "攻击:256600",
+    "_N$string": "攻击:256600",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3648,7 +3648,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3660,12 +3660,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "69zweWFyhJo4S/uELE5KPE",
+    "fileId": "8a06cCA8xINrWZSKSlka24",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "智力s",
+    "_name": "特攻s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -3683,15 +3683,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 255,
-      "b": 178,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3702,8 +3702,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        40,
-        -70,
+        -320,
+        -130,
         0,
         0,
         0,
@@ -3741,10 +3741,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "智力:3655",
-    "_N$string": "智力:3655",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "特攻:45660",
+    "_N$string": "特攻:45660",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3755,7 +3755,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3767,12 +3767,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "64+kIHsgRM+qK4Lk3bsZcz",
+    "fileId": "b8r4qvDcdBJ5qdHNDB3NMB",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "攻击s",
+    "_name": "悟性s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -3798,7 +3798,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3809,8 +3809,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -280,
-        -100,
+        -320,
+        -160,
         0,
         0,
         0,
@@ -3848,10 +3848,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "攻击:256600",
-    "_N$string": "攻击:256600",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "悟性:20",
+    "_N$string": "悟性:20",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3862,7 +3862,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3874,12 +3874,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "8a06cCA8xINrWZSKSlka24",
+    "fileId": "ebL8798IpCEaHEYtz/qpuv",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "护甲s",
+    "_name": "暴伤s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -3905,7 +3905,221 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -320,
+        -190,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_name<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 105
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "暴伤:1.5",
+    "_N$string": "暴伤:1.5",
+    "_fontSize": 24,
+    "_lineHeight": 24,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 1,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 0,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "宋体",
+    "_N$overflow": 2,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
+    },
+    "fileId": "acMLVFQQNB7ZPkHyyk5GtV",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "增伤s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 109
+      }
+    ],
+    "_prefab": {
+      "__id__": 110
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 176,
+      "g": 176,
+      "b": 176,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 150,
+      "height": 24
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -320,
+        -220,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_name<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 108
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "增伤:50%",
+    "_N$string": "增伤:50%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 1,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 0,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "宋体",
+    "_N$overflow": 2,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
+    },
+    "fileId": "17XuT9PqFGk7P4mKUKqDIU",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "护甲s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 112
+      }
+    ],
+    "_prefab": {
+      "__id__": 113
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 150,
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3946,7 +4160,7 @@
     "_name": "server_name<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 105
+      "__id__": 111
     },
     "_enabled": true,
     "_materials": [
@@ -3957,8 +4171,8 @@
     "_useOriginalSize": false,
     "_string": "护甲:960",
     "_N$string": "护甲:960",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3969,7 +4183,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -3982,220 +4196,6 @@
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
     "fileId": "8bfXkKFn1DGI10hJ6uJ3JT",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "速度s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 109
-      }
-    ],
-    "_prefab": {
-      "__id__": 110
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 150,
-      "height": 25.2
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        40,
-        -100,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_name<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 108
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "速度:2700",
-    "_N$string": "速度:2700",
-    "_fontSize": 20,
-    "_lineHeight": 20,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 1,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
-    },
-    "fileId": "d7PoIPyd1MWq1SiQZhfAH2",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "特攻s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 112
-      }
-    ],
-    "_prefab": {
-      "__id__": 113
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 150,
-      "height": 25.2
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -280,
-        -130,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_name<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 111
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "特攻:45660",
-    "_N$string": "特攻:45660",
-    "_fontSize": 20,
-    "_lineHeight": 20,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 1,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
-    },
-    "fileId": "b8r4qvDcdBJ5qdHNDB3NMB",
     "sync": false
   },
   {
@@ -4226,7 +4226,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4278,8 +4278,8 @@
     "_useOriginalSize": false,
     "_string": "法抗:80060",
     "_N$string": "法抗:80060",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4290,7 +4290,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4307,7 +4307,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "灵气s",
+    "_name": "暴击s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4333,7 +4333,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4344,8 +4344,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        40,
-        -130,
+        -120,
+        -160,
         0,
         0,
         0,
@@ -4383,10 +4383,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "灵气:300",
-    "_N$string": "灵气:300",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "暴击:0%",
+    "_N$string": "暴击:0%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4397,7 +4397,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4409,12 +4409,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "f42XASjNtFDIPN1vLvIvE4",
+    "fileId": "e4K/RYnnZAcp1AV+4Ke/DP",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "悟性s",
+    "_name": "闪避s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4440,7 +4440,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4451,8 +4451,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -280,
-        -160,
+        -120,
+        -190,
         0,
         0,
         0,
@@ -4490,10 +4490,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "悟性:20",
-    "_N$string": "悟性:20",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "闪避:0%",
+    "_N$string": "闪避:0%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4504,7 +4504,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4516,12 +4516,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "ebL8798IpCEaHEYtz/qpuv",
+    "fileId": "e0oWFQSklFiahTL8MS1nc0",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "暴击s",
+    "_name": "减伤s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4539,15 +4539,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 176,
+      "g": 176,
+      "b": 176,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4559,7 +4559,7 @@
       "ctor": "Float64Array",
       "array": [
         -120,
-        -160,
+        -220,
         0,
         0,
         0,
@@ -4597,10 +4597,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "暴击:0%",
-    "_N$string": "暴击:0%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "减伤:0%",
+    "_N$string": "减伤:0%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4611,7 +4611,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4623,12 +4623,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "e4K/RYnnZAcp1AV+4Ke/DP",
+    "fileId": "60Zgvm6BlPWrf5vZGKd2oa",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "吸血s",
+    "_name": "敏捷s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4646,15 +4646,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 255,
-      "b": 255,
+      "b": 178,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4665,8 +4665,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        40,
-        -160,
+        -120,
+        -70,
         0,
         0,
         0,
@@ -4704,10 +4704,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "吸血:0%",
-    "_N$string": "吸血:0%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "敏捷:4800",
+    "_N$string": "敏捷:4800",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4718,7 +4718,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4730,12 +4730,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "deKg9FM0JAfrztbxngDzdL",
+    "fileId": "69zweWFyhJo4S/uELE5KPE",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "暴伤s",
+    "_name": "智力s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4753,15 +4753,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 255,
-      "b": 255,
+      "b": 178,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4772,8 +4772,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -280,
-        -190,
+        60,
+        -70,
         0,
         0,
         0,
@@ -4811,10 +4811,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "暴伤:1.5",
-    "_N$string": "暴伤:1.5",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "智力:3655",
+    "_N$string": "智力:3655",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4825,7 +4825,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4837,12 +4837,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "acMLVFQQNB7ZPkHyyk5GtV",
+    "fileId": "64+kIHsgRM+qK4Lk3bsZcz",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "闪避s",
+    "_name": "速度s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4868,7 +4868,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4879,8 +4879,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -120,
-        -190,
+        60,
+        -100,
         0,
         0,
         0,
@@ -4918,10 +4918,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "闪避:0%",
-    "_N$string": "闪避:0%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "速度:2700",
+    "_N$string": "速度:2700",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -4932,7 +4932,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -4944,12 +4944,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "e0oWFQSklFiahTL8MS1nc0",
+    "fileId": "d7PoIPyd1MWq1SiQZhfAH2",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "命中s",
+    "_name": "灵气s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -4975,7 +4975,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4986,8 +4986,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        40,
-        -190,
+        60,
+        -130,
         0,
         0,
         0,
@@ -5025,10 +5025,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "命中:100%",
-    "_N$string": "命中:100%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "灵气:300",
+    "_N$string": "灵气:300",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -5039,7 +5039,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -5051,12 +5051,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "23qXB09shAPbNmGTACghUN",
+    "fileId": "f42XASjNtFDIPN1vLvIvE4",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "增伤s",
+    "_name": "吸血s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -5074,15 +5074,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 176,
-      "g": 176,
-      "b": 176,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5093,8 +5093,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -280,
-        -220,
+        60,
+        -160,
         0,
         0,
         0,
@@ -5132,10 +5132,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "增伤:50%",
-    "_N$string": "增伤:50%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "吸血:0%",
+    "_N$string": "吸血:0%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -5146,7 +5146,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -5158,12 +5158,12 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "17XuT9PqFGk7P4mKUKqDIU",
+    "fileId": "deKg9FM0JAfrztbxngDzdL",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "减伤s",
+    "_name": "命中s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -5181,15 +5181,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 176,
-      "g": 176,
-      "b": 176,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 25.2
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5200,8 +5200,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -120,
-        -220,
+        60,
+        -190,
         0,
         0,
         0,
@@ -5239,10 +5239,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "减伤:0%",
-    "_N$string": "减伤:0%",
-    "_fontSize": 20,
-    "_lineHeight": 20,
+    "_string": "命中:100%",
+    "_N$string": "命中:100%",
+    "_fontSize": 24,
+    "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -5253,7 +5253,7 @@
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "宋体",
-    "_N$overflow": 3,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
   },
@@ -5265,7 +5265,7 @@
     "asset": {
       "__uuid__": "664024f3-ccc2-4904-98ec-f7cd4a69ac1e"
     },
-    "fileId": "60Zgvm6BlPWrf5vZGKd2oa",
+    "fileId": "23qXB09shAPbNmGTACghUN",
     "sync": false
   },
   {

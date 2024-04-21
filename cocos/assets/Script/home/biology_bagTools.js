@@ -15,7 +15,7 @@ cc.Class({
         BoxPrefab.removeAllChildren();
         var _this =this;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-        cc.loader.loadRes('/弹窗背包/A生物背包', function(errorMessage,loadedResource){
+        cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
             //检查资源加载
             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
