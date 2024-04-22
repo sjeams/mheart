@@ -22,7 +22,7 @@ cc.Class({
             //技能等级
             TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
             // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-            _this.biology_detail_list(TipBoxPrefab,info_list)
+            _this.biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_list)
             //写入icon
             TipBoxPrefab_model.getChildByName('生物头像').addChild(TipBoxPrefab);
             return TipBoxPrefab_model
@@ -31,7 +31,7 @@ cc.Class({
     },
 
     //技能图片渲染
-    biology_detail_list(TipBoxPrefab,info_list){
+    biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_list){
         var _this =this;
         var TOOLS =[];
         var TOOLS = info_list;
@@ -69,10 +69,14 @@ cc.Class({
                 // 此处进行事件绑定
                 TipBoxPrefab_icon.on('click', function () {
                     // 事件处理逻辑
-                    _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button), info,TipBoxPrefab,TipBoxPrefab_icon);
+                    //移除挂载
+                    TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
+                    //重新挂载
+                    TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,info)
+                    // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
                 }, this);
                 //写入icon
-                cc.find("列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
+                cc.find("server_scrollView/列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
             })
             
         }
@@ -80,8 +84,18 @@ cc.Class({
     },
 
     // 绑定按钮事件---挂载生物详情
-    bindClickEventIcon: function (button, info,TipBoxPrefab,TipBoxPrefab_icon) {
-        // cc.log(info)
+    bindClickEventIcon: function (button, info,TipBoxPrefab_model) {
+
+        cc.log(111)
+        cc.log(info)
+        // TipBoxPrefab.getChildByName('缘分').on('click', function () {
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,info)
+        // }, this);
+
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
         // 销毁所有弹窗--节点

@@ -182,7 +182,7 @@ class AppApinewController extends ApiUserControl{
      * biologyid  gooduse
      */
     public function actionAddBackpaker(){
-        $param['biologyid']=170;
+        // $param['biologyid']=170;
         $UserGoods= new UserGoods();
         $data=$UserGoods->addBiologyBackpaker($this->param);
         die(Method::jsonApp(1,$data,'succes'));    

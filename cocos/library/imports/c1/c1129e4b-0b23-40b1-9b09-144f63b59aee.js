@@ -73,10 +73,10 @@ cc.Class({
     TipBoxPrefab.getChildByName('评分s').getComponent(cc.Label).string = '评分:' + info.score / 10;
 
     if (info.yiXing == 1) {
-      cc.log(1111);
+      // cc.log(1111)
       TipBoxPrefab.getChildByName('异形').active = true;
     } else {
-      cc.log(222);
+      // cc.log(222)
       TipBoxPrefab.getChildByName('异形').active = false;
     }
 

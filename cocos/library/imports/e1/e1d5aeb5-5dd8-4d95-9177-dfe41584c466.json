@@ -513,15 +513,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 184,
+      "g": 192,
+      "b": 192,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 120,
-      "height": 35.28
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -533,7 +533,7 @@
       "ctor": "Float64Array",
       "array": [
         40,
-        20,
+        15,
         0,
         0,
         0,
@@ -573,8 +573,8 @@
     "_useOriginalSize": false,
     "_string": "天下第一人最帅",
     "_N$string": "天下第一人最帅",
-    "_fontSize": 24,
-    "_lineHeight": 24,
+    "_fontSize": 20,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -582,9 +582,9 @@
     "_batchAsBitmap": false,
     "_styleFlags": 0,
     "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
+    "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
@@ -628,7 +628,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 120,
-      "height": 35.28
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -640,7 +640,7 @@
       "ctor": "Float64Array",
       "array": [
         40,
-        -20,
+        -15,
         0,
         0,
         0,
@@ -680,8 +680,8 @@
     "_useOriginalSize": false,
     "_string": "等级190",
     "_N$string": "等级190",
-    "_fontSize": 24,
-    "_lineHeight": 24,
+    "_fontSize": 20,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -689,9 +689,9 @@
     "_batchAsBitmap": false,
     "_styleFlags": 0,
     "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
+    "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "微软雅黑",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
@@ -708,14 +708,71 @@
     "sync": false
   },
   {
-    "__type__": "2e810gPIYdMIbdgLhTM821Z",
+    "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "toolsArray": [],
+    "_normalMaterial": null,
+    "_grayMaterial": null,
+    "duration": 0.1,
+    "zoomScale": 1.2,
+    "clickEvents": [],
+    "_N$interactable": true,
+    "_N$enableAutoGrayEffect": false,
+    "_N$transition": 0,
+    "transition": 0,
+    "_N$normalColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_N$pressedColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "pressedColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "_N$hoverColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "hoverColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_N$disabledColor": {
+      "__type__": "cc.Color",
+      "r": 124,
+      "g": 124,
+      "b": 124,
+      "a": 255
+    },
+    "_N$normalSprite": null,
+    "_N$pressedSprite": null,
+    "pressedSprite": null,
+    "_N$hoverSprite": null,
+    "hoverSprite": null,
+    "_N$disabledSprite": null,
+    "_N$target": null,
     "_id": ""
   },
   {

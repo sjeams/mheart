@@ -58,10 +58,10 @@ cc.Class({
 
 
         if(info.yiXing==1){
-            cc.log(1111)
+            // cc.log(1111)
             TipBoxPrefab.getChildByName('异形').active=true;
         }else{
-            cc.log(222)
+            // cc.log(222)
             TipBoxPrefab.getChildByName('异形').active=false;
         }
         cc.log(info)
