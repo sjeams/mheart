@@ -88,37 +88,37 @@ cc.Class({
 
         TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
         TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-        // 此处进行事件绑定
+        //绑定按钮事件
 
-        TipBoxPrefab_icon.on('click', function () {
-          // 事件处理逻辑
-          //移除挂载
-          TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
+        _this.bindClickEventIcon(TipBoxPrefab_model, TipBoxPrefab_icon, info); //写入icon
 
-          TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model, info); // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
-        }, this); //写入icon
 
-        cc.find("server_scrollView/列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
+        cc.find("列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
       });
     };
 
     for (var prop in info_list) {
       _loop();
-    }
+    } // 定义content滚动条高度
 
+
+    var scorllheight = cc.find("列表/content/gridLayout", TipBoxPrefab).parent; //滚动高度= 预制体100*个数+ 上下 预留10 的位置
+
+    var height = 110 * Math.ceil(info_list.length) + 20;
+    scorllheight.setContentSize(520, height);
     return TipBoxPrefab;
   },
   // 绑定按钮事件---挂载生物详情
-  bindClickEventIcon: function bindClickEventIcon(button, info, TipBoxPrefab_model) {
-    cc.log(111);
-    cc.log(info); // TipBoxPrefab.getChildByName('缘分').on('click', function () {
-    // 事件处理逻辑
-    //移除挂载
+  bindClickEventIcon: function bindClickEventIcon(TipBoxPrefab_model, TipBoxPrefab_icon, info) {
+    // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+    // 此处进行事件绑定
+    TipBoxPrefab_icon.on('click', function () {
+      // 事件处理逻辑
+      //移除挂载
+      TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
 
-    TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
-
-    TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model, info); // }, this);
-    //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+      TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model, info); // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
+    }, this); //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
     // 销毁所有弹窗--节点
     // TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
     // let move_type= ['初始化','回合化','被击前触发','被击后触发','攻击前触发','主动','攻击后']
