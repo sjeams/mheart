@@ -12,6 +12,12 @@ cc.Class({
     // onLoad () {},
     //技能图片渲染
     biology_detail_alert(TipBoxPrefab_model,info_list){
+
+        //尽量先关闭所有弹窗
+        TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+        TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+        TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+
         var _this=this;
         cc.loader.loadRes('/model背包/生物头像', function(errorMessage,loadedResource_icon){
             //检查资源加载
@@ -96,6 +102,11 @@ cc.Class({
             TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
             //重新挂载
             TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,info)
+            //切换默认挂载技能列表
+            TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+            // TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model,info)
+            // TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
+
             // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
         }, this);
  

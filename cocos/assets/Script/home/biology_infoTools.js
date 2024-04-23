@@ -12,6 +12,11 @@ cc.Class({
     // onLoad () {},
     //技能图片渲染
     biology_detail_alert(TipBoxPrefab_model,info){
+
+        TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+        TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+        TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+        
         var _this=this;
         cc.loader.loadRes('/model背包/生物详情', function(errorMessage,loadedResource_icon){
             //检查资源加载

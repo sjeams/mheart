@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "图标物品",
+    "_name": "图标技能",
     "_objFlags": 0,
     "_native": "",
     "data": {

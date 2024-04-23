@@ -12,6 +12,14 @@ cc.Class({
     // onLoad () {},
        //技能图片渲染
        biology_detail_alert(TipBoxPrefab_model,info){
+
+         //尽量先关闭所有弹窗
+         TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+         TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+         TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+
+
+
         var _this=this;
         cc.loader.loadRes('/model背包/生物缘分', function(errorMessage,loadedResource_icon){
             //检查资源加载
@@ -25,7 +33,7 @@ cc.Class({
             
             
                // 此处进行事件绑定
-            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
+            // _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
             //写入icon
             TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
             return TipBoxPrefab_model
