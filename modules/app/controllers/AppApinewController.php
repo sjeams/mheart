@@ -159,6 +159,7 @@ class AppApinewController extends ApiUserControl{
     public function actionBiologyList(){
         $UserBiologyNatureDo=new UserBiologyAttribute();
         $data=$UserBiologyNatureDo->myAttributesList();
+        // var_dump($data);die;
         die(Method::jsonApp(1,$data,'succes')); 
     }
 
@@ -172,6 +173,7 @@ class AppApinewController extends ApiUserControl{
     public function actionGooduseType(){
         $UserGoods= new UserGoods();
         $data=$UserGoods->getGooduseType();
+
         die(Method::jsonApp(1,$data,'succes'));
     }
 
@@ -195,7 +197,7 @@ class AppApinewController extends ApiUserControl{
     public function actionBiologyBackpaker(){
         //可用物品--12技能书   1武器
         // $good_use = $param['good_use']?$param['good_use']:1;
-        $param['biologyid']=170;
+        // $param['biologyid']=170;
         $UserGoods= new UserGoods();
         $data=$UserGoods->getBiologyBackpaker($this->param);
         die(Method::jsonApp(1,$data,'succes'));   
@@ -204,8 +206,17 @@ class AppApinewController extends ApiUserControl{
 
 
 
+
+
+
+
+
+    
+    // -------------------
+
+
     /**
-     * 用户背包
+     * 用户背包--隐藏背包--放在背包可以叠加属性===特殊道具背包
      * http://cs.aheart.com/app/app-apinew/user-backpaker
      * gooduse
      */

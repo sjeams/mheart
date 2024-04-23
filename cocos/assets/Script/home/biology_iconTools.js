@@ -36,47 +36,53 @@ cc.Class({
         var TOOLS =[];
         var TOOLS = info_list;
         // var TipBoxPrefab_icon=[];
-        for (var prop in info_list) {
-            let info = TOOLS[prop];
-            // let image = '/技能图标/'+skill.image;
 
+            // let image = '/技能图标/'+skill.image;
             //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
             cc.loader.loadRes('/model背包/图标生物', function(errorMessage,loadedResource_icon){
-                //检查资源加载
-                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-                if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-                //开始实例化预制资源
-                let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
-                //载入技能图片
-                let image =  httpRequest.httpUrl(info.picture);
-                if(image){
-                    cc.loader.load({ url: image }, function (err, texture) {  
-                    // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                        if (err) {
-                            return;
-                        }
-                        // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-                        TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                    });
-                }else{
-                    TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false; 
-                }
-                //技能等级
-                TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
-                TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string='等级'+info.grade
+                for (var prop in info_list) {
+                    let info = TOOLS[prop];
+                    //检查资源加载
+                    if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                    if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+                    //开始实例化预制资源
+                    let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                    //载入技能图片
+                    let image =  httpRequest.httpUrl(info.picture);
+                    if(image){
+                        cc.loader.load({ url: image }, function (err, texture) {  
+                        // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                            if (err) {
+                                return;
+                            }
+                            // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
+                            TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                        });
+                    }else{
+                        TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false; 
+                    }
+                    //技能等级
+                    TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
+                    TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string='等级'+info.grade
+                    // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+                    //绑定按钮事件
+                    _this.bindClickEventIcon(TipBoxPrefab_model,TipBoxPrefab_icon,info);
+                    //写入icon
+                    cc.find("列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
 
-                // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-                //绑定按钮事件
-                  _this.bindClickEventIcon(TipBoxPrefab_model,TipBoxPrefab_icon,info);
-                //写入icon
-                cc.find("列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
-            })
-        }
+            }
+        })
+    
         // 定义content滚动条高度
         let scorllheight =  cc.find("列表/content/gridLayout",TipBoxPrefab).parent;
         //滚动高度= 预制体100*个数+ 上下 预留10 的位置
-        let  height =  110*( Math.ceil(info_list.length))+20;
-        scorllheight.setContentSize(520,height);
+
+        let cellHeight =  cc.find("列表/content/gridLayout",TipBoxPrefab).height * 0.2;
+        let  height =  cellHeight*( Math.ceil(info_list.length))+20;;
+        if(height<=500){
+            let height = 500
+        }
+        scorllheight.setContentSize(500,height)
         return TipBoxPrefab
     },
     // 绑定按钮事件---挂载生物详情

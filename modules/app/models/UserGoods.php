@@ -40,7 +40,6 @@ class UserGoods extends ActiveRecord
         }
         return $goods;
     }
-
     //查看物品--属性
     public  function getUserGoodsExtend($attack_biology_do,$goodsid=0,$moreExtend=[]){
 
@@ -182,6 +181,13 @@ class UserGoods extends ActiveRecord
     public  function  addBiologyBackpaker($param){
         
     }
+
+
+
+
+
+
+
 
 
 

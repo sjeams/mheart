@@ -4,6 +4,8 @@ cc._RF.push(module, '64335b+G+VLHqrUdbFVWZpA', 'skill_iconTools');
 
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 // Learn cc.Class:
 //  - https://docs.cocos.com/creator/manual/en/scripting/class.html
 // Learn Attribute:
@@ -37,22 +39,27 @@ cc.Class({
 
     var TOOLS = [];
     var TOOLS = position_skill;
-    var TipBoxPrefab_icon = [];
+    var TipBoxPrefab_icon = []; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-    var _loop = function _loop() {
-      var skill = TOOLS[prop];
-      var image = '/技能图标/' + skill.image; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
+      var _this2 = this;
 
-      cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
-        //检查资源加载
+      var _loop = function _loop() {
+        var skill = TOOLS[prop];
+        var image = '/技能图标/' + skill.image; //检查资源加载
+
         if (errorMessage) {
           cc.log('载入预制资源失败, 原因:' + errorMessage);
-          return;
+          return {
+            v: void 0
+          };
         }
 
         if (!(loadedResource_icon instanceof cc.Prefab)) {
           cc.log('你载入的不是预制资源!');
-          return;
+          return {
+            v: void 0
+          };
         } //开始实例化预制资源
 
 
@@ -78,16 +85,17 @@ cc.Class({
         TipBoxPrefab_icon.on('click', function () {
           // 事件处理逻辑
           _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button), skill, TipBoxPrefab, TipBoxPrefab_icon);
-        }, this); //写入icon
+        }, _this2); //写入icon
 
         TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
-      });
-    };
+      };
 
-    for (var prop in position_skill) {
-      _loop();
-    }
+      for (var prop in position_skill) {
+        var _ret = _loop();
 
+        if (_typeof(_ret) === "object") return _ret.v;
+      }
+    });
     return TipBoxPrefab;
   },
   // 绑定按钮事件

@@ -11,6 +11,9 @@ use app\modules\app\models\Words;
 
 use app\modules\admin\models\BiologyCreate;
 use app\modules\app\models\UserWords;
+
+use app\modules\app\models\UserGoods;
+
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
 
@@ -40,6 +43,8 @@ class UserBiologyAttribute extends ActiveRecord
 
     public  function  myAttributesList(){  
         $UserWords =new UserWords();
+        $UserGoods = new UserGoods();
+
         //境界
         $BiologyState = BiologyState::getValueList();
         $BiologyState =   array_column($BiologyState,null,'id');
@@ -55,6 +60,18 @@ class UserBiologyAttribute extends ActiveRecord
             $data[$k]['state_name']= $BiologyState[$v['state']]['text'];//境界名称  
             $data[$k]['zhong_zhu']= $BiologyBiology[$v['biology']]['text'];//种族 
             $data[$k]['position_skill']=  BiologySkill::getSkill($v['skill'],$v['id']);
+            //装备1
+            if($v['gooduse1']){
+                $data[$k]['gooduse1']=  $UserGoods->getUserGoods($v['gooduse1']);
+            }
+            //装备2
+            if($v['gooduse2']){
+                $data[$k]['gooduse2']=  $UserGoods->getUserGoods($v['gooduse2']);
+            }
+            //元神
+            if($v['yuanSehn']){
+                $data[$k]['yuanSehn']=  $UserGoods->getUserGoods($v['yuanSehn']);
+            }
         }
         return $data;
     }

@@ -4,28 +4,52 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
-     //查看生物详情_弹窗
-     biology_detail_alert(BoxPrefab,info) {
-        // 销毁所有弹窗
-        BoxPrefab.removeAllChildren();
-        var _this =this;
-        //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-        cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
+     //技能图片渲染
+     biology_detail_alert(TipBoxPrefab_model,info){
+        var _this=this;
+        cc.loader.loadRes('/model背包/生物信息', function(errorMessage,loadedResource_icon){
             //检查资源加载
             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-            if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+            if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
-            var TipBoxPrefab = cc.instantiate(loadedResource);
-            //载入生物详情
-            _this.biology_detail_info(BoxPrefab,TipBoxPrefab,info)
-            //将预制资源添加到父节点
-            // CanvasNode.addChild(TipBoxPrefab);
-        });
+            let   TipBoxPrefab =  cc.instantiate(loadedResource_icon);
+            //技能等级
+            // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
+            // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+            
+            
+               // 此处进行事件绑定
+            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
+            //写入icon
+            TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
+            return TipBoxPrefab_model
+        })
+        return TipBoxPrefab_model
+    },
+    //绑定点击事件
+    bind_button(TipBoxPrefab_model,TipBoxPrefab,info){
+        
+        //  cc.find("列表/content/gridLayout",TipBoxPrefab)
+        TipBoxPrefab.getChildByName('技能').on('click', function () {
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+        }, this);
+        TipBoxPrefab.getChildByName('缘分').on('click', function () {
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
+        }, this);
     },
     biology_detail_info(BoxPrefab,TipBoxPrefab,info) {
         var _this =this;
@@ -55,22 +79,15 @@ cc.Class({
         // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
         // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
 
-        //生物列表挂载
+
+        //技能图标挂载
         var tool = cc.instantiate(TipBoxPrefab);
-        tool.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab,info)
-        // //生物详情挂载
-        tool.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab,info[1])
-        // //技能列表挂载
-        tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab,info[1])
-        // //信息列表挂载
-        // tool.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab,info[0])
-        // // //缘分列表挂载
-        // tool.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab,info[0])
+        // tool.getComponent('skill_iconTools').biology_detail_skill(TipBoxPrefab,info.position_skill)
         BoxPrefab.addChild(TipBoxPrefab,1);
     },
     start () {
 
     },
-    
+
     // update (dt) {},
 });

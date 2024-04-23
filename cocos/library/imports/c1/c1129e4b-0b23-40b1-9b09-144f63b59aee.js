@@ -78,13 +78,46 @@ cc.Class({
     } else {
       // cc.log(222)
       TipBoxPrefab.getChildByName('异形').active = false;
-    }
+    } // cc.log(info)
 
-    cc.log(info);
+
     TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string = info.scoreGrade;
     TipBoxPrefab.getChildByName('慧根值s').getComponent(cc.Label).string = info.maxNature;
     TipBoxPrefab.getChildByName('经验s').getComponent(cc.Label).string = info.need_expe;
-    TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string = info.state_name; // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
+    TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string = info.state_name;
+
+    if (info.gooduse1) {
+      cc.loader.loadRes(info.gooduse1.point, cc.SpriteFrame, function (err, texture) {
+        if (err) {
+          // cc.error(err.message || err);
+          return;
+        }
+
+        TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = texture;
+      });
+    }
+
+    if (info.gooduse2) {
+      cc.loader.loadRes(info.gooduse2.point, cc.SpriteFrame, function (err, texture) {
+        if (err) {
+          // cc.error(err.message || err);
+          return;
+        }
+
+        TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = texture;
+      });
+    }
+
+    if (info.yuanShen) {
+      cc.loader.loadRes(info.yuanShen.point, cc.SpriteFrame, function (err, texture) {
+        if (err) {
+          // cc.error(err.message || err);
+          return;
+        }
+
+        TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = texture;
+      });
+    } // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
     // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
     // TipBoxPrefab.getChildByName('稀有s').getComponent(cc.Label).string= info.scoreGrade
     // TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='力量:'+info.power
@@ -106,6 +139,7 @@ cc.Class({
     // TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string='闪避'+'0%'
     // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
     // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
+
 
     return TipBoxPrefab;
   },

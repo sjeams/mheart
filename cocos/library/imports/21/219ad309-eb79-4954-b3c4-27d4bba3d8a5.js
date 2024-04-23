@@ -4,6 +4,8 @@ cc._RF.push(module, '219adMJ63lJVLPEJ9S7o9il', 'biology_iconTools');
 
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 var HttpHelper = require("../http");
 
 var httpRequest = new HttpHelper();
@@ -47,21 +49,25 @@ cc.Class({
 
     var TOOLS = [];
     var TOOLS = info_list; // var TipBoxPrefab_icon=[];
+    // let image = '/技能图标/'+skill.image;
+    //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-    var _loop = function _loop() {
-      var info = TOOLS[prop]; // let image = '/技能图标/'+skill.image;
-      //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    cc.loader.loadRes('/model背包/图标生物', function (errorMessage, loadedResource_icon) {
+      var _loop = function _loop() {
+        var info = TOOLS[prop]; //检查资源加载
 
-      cc.loader.loadRes('/model背包/图标生物', function (errorMessage, loadedResource_icon) {
-        //检查资源加载
         if (errorMessage) {
           cc.log('载入预制资源失败, 原因:' + errorMessage);
-          return;
+          return {
+            v: void 0
+          };
         }
 
         if (!(loadedResource_icon instanceof cc.Prefab)) {
           cc.log('你载入的不是预制资源!');
-          return;
+          return {
+            v: void 0
+          };
         } //开始实例化预制资源
 
 
@@ -94,18 +100,26 @@ cc.Class({
 
 
         cc.find("列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
-      });
-    };
+      };
 
-    for (var prop in info_list) {
-      _loop();
-    } // 定义content滚动条高度
+      for (var prop in info_list) {
+        var _ret = _loop();
 
+        if (_typeof(_ret) === "object") return _ret.v;
+      }
+    }); // 定义content滚动条高度
 
     var scorllheight = cc.find("列表/content/gridLayout", TipBoxPrefab).parent; //滚动高度= 预制体100*个数+ 上下 预留10 的位置
 
-    var height = 110 * Math.ceil(info_list.length) + 20;
-    scorllheight.setContentSize(520, height);
+    var cellHeight = cc.find("列表/content/gridLayout", TipBoxPrefab).height * 0.2;
+    var height = cellHeight * Math.ceil(info_list.length) + 20;
+    ;
+
+    if (height <= 500) {
+      var _height = 500;
+    }
+
+    scorllheight.setContentSize(500, height);
     return TipBoxPrefab;
   },
   // 绑定按钮事件---挂载生物详情

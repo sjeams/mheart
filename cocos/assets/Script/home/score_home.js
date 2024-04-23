@@ -10,21 +10,23 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-
         cc.globalData={}
         // var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         // cc.loader.load({ url: remoteUrl }, function (err, data) {
-        httpRequest.httpPost('/app/app-apinew/biology-list',{}, function (data) {
-          //定义常量
-          cc.globalData.biology = data.data;
-          //开启战斗
-        //   _this.goPlay( )
-        });  
-
+        this.brushBag();
     },
 
     start () {
 
+    },
+    //刷新背包--每次操作后需要刷新背包
+    brushBag(){
+        httpRequest.httpPost('/app/app-apinew/biology-list',{}, function (data) {
+            //定义常量
+            cc.globalData.biology = data.data;
+            //开启战斗
+          //   _this.goPlay( )
+        });  
     },
     //打开背包
     openBag() {

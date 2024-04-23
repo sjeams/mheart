@@ -1405,8 +1405,8 @@
     "relativePath": "resources\\model背包"
   },
   "e1d5aeb5-5dd8-4d95-9177-dfe41584c466": {
-    "asset": 1713836195025,
-    "meta": 1713841823544,
+    "asset": 1713863306862,
+    "meta": 1713863306868,
     "relativePath": "resources\\model背包\\图标生物.prefab"
   },
   "651de370-cbcd-44e1-8d8c-f8b782ac177d": {
@@ -1505,8 +1505,8 @@
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1713765920683,
-    "meta": 1713841823594,
+    "asset": 1713863444317,
+    "meta": 1713863444333,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
@@ -1555,8 +1555,8 @@
     "relativePath": "resources\\model背包\\生物信息.prefab"
   },
   "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96": {
-    "asset": 1713843259520,
-    "meta": 1713843259530,
+    "asset": 1713856797888,
+    "meta": 1713856797901,
     "relativePath": "resources\\model背包\\生物详情.prefab"
   },
   "82562dde-51e3-4b7a-ae1a-6b98a48965e0": {
@@ -1574,26 +1574,6 @@
     "meta": 1713765920706,
     "relativePath": "resources\\大厅图片"
   },
-  "6d82bb25-539b-4553-b206-95d402ddb9d7": {
-    "asset": 1713765920687,
-    "meta": 1713841824234,
-    "relativePath": "Script\\home\\biology_skillTools.js"
-  },
-  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
-    "asset": 1713765920687,
-    "meta": 1713841824246,
-    "relativePath": "Script\\home\\biology_xinxiTools.js"
-  },
-  "7768f8c7-9728-432e-89b0-670d599f9d30": {
-    "asset": 1713765920688,
-    "meta": 1713841824258,
-    "relativePath": "Script\\home\\biology_yuanfenTools.js"
-  },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1713765920688,
-    "meta": 1713841824265,
-    "relativePath": "Script\\home\\score_home.js"
-  },
   "fcbcc85d-91ad-480e-a5ed-3d742c043613": {
     "asset": 1713765920684,
     "meta": 1713841823915,
@@ -1604,30 +1584,15 @@
     "meta": 1713841823557,
     "relativePath": "resources\\model弹窗\\biology_结算.prefab"
   },
-  "643356fe-1be5-4b1e-aad4-75b155599a40": {
-    "asset": 1713765920685,
-    "meta": 1713841824148,
-    "relativePath": "Script\\fighting\\skill_iconTools.js"
-  },
   "8ce4ef1d-0e85-4a19-92af-3eac6fa4c94d": {
     "asset": 1713778646062,
     "meta": 1713841823548,
     "relativePath": "resources\\model背包\\图标缘分.prefab"
   },
   "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
-    "asset": 1713782166107,
-    "meta": 1713841823550,
+    "asset": 1713855846985,
+    "meta": 1713855846991,
     "relativePath": "resources\\model背包\\A生物背包.prefab"
-  },
-  "398e676d-633a-44ab-997e-980aedf61174": {
-    "asset": 1713779205376,
-    "meta": 1713841824169,
-    "relativePath": "Script\\home\\biology_bagTools.js"
-  },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1713779476512,
-    "meta": 1713841824207,
-    "relativePath": "Script\\home\\biology_infoTools.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1713776826366,
@@ -1635,8 +1600,8 @@
     "relativePath": "Script\\http.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1713782123933,
-    "meta": 1713841823614,
+    "asset": 1713863470182,
+    "meta": 1713863470197,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
@@ -2614,14 +2579,9 @@
     "meta": 1713841822979,
     "relativePath": "resources\\技能图标\\Ability_Rogue_Disguise.png"
   },
-  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
-    "asset": 1713836195025,
-    "meta": 1713841824191,
-    "relativePath": "Script\\home\\biology_iconTools.js"
-  },
   "ba0c7e27-af85-477c-b021-b8fd4bd81256": {
-    "asset": 1713836195027,
-    "meta": 1713841823527,
+    "asset": 1713863283307,
+    "meta": 1713863283319,
     "relativePath": "resources\\model背包\\生物头像.prefab"
   },
   "79045060-2398-402a-bfd5-702dd159aae8": {
@@ -2638,5 +2598,70 @@
     "asset": 1713836195027,
     "meta": 1713841823541,
     "relativePath": "resources\\model背包\\图标背包装备.prefab"
+  },
+  "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
+    "asset": 1713855752524,
+    "meta": 1713855775360,
+    "relativePath": "Script\\home\\bag_武器Tools.js"
+  },
+  "1afe6f69-cf63-449c-816f-f97b5e0ce622": {
+    "asset": 1713855779264,
+    "meta": 1713855800419,
+    "relativePath": "Script\\home\\bag_技能Tools.js"
+  },
+  "6a66811c-a6a4-4a20-8ab8-3dfa17b62e3e": {
+    "asset": 1713855803226,
+    "meta": 1713855814278,
+    "relativePath": "Script\\home\\bag_元神Tools.js"
+  },
+  "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
+    "asset": 1713855826292,
+    "meta": 1713855838322,
+    "relativePath": "Script\\home\\bag_描述Tools.js"
+  },
+  "2b1f7af7-8281-43e3-a61c-aa1eabfa6dff": {
+    "asset": 1713856056143,
+    "meta": 1713856062136,
+    "relativePath": "resources\\装备图标\\仙剑.png"
+  },
+  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
+    "asset": 1713856379454,
+    "meta": 1713856385031,
+    "relativePath": "Script\\home\\biology_xinxiTools.js"
+  },
+  "7768f8c7-9728-432e-89b0-670d599f9d30": {
+    "asset": 1713856383059,
+    "meta": 1713856385046,
+    "relativePath": "Script\\home\\biology_yuanfenTools.js"
+  },
+  "398e676d-633a-44ab-997e-980aedf61174": {
+    "asset": 1713861323845,
+    "meta": 1713861324704,
+    "relativePath": "Script\\home\\biology_bagTools.js"
+  },
+  "643356fe-1be5-4b1e-aad4-75b155599a40": {
+    "asset": 1713863431258,
+    "meta": 1713863434213,
+    "relativePath": "Script\\fighting\\skill_iconTools.js"
+  },
+  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
+    "asset": 1713863338134,
+    "meta": 1713863434266,
+    "relativePath": "Script\\home\\biology_iconTools.js"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1713863343762,
+    "meta": 1713863434330,
+    "relativePath": "Script\\home\\biology_infoTools.js"
+  },
+  "6d82bb25-539b-4553-b206-95d402ddb9d7": {
+    "asset": 1713863374527,
+    "meta": 1713863434379,
+    "relativePath": "Script\\home\\biology_skillTools.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1713863390508,
+    "meta": 1713863434397,
+    "relativePath": "Script\\home\\score_home.js"
   }
 }

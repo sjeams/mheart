@@ -58,13 +58,15 @@ cc.Class({
         var TOOLS =[];
         var TOOLS = info_list;
         // var TipBoxPrefab_icon=[];
-        for (var prop in info_list) {
-            let info = TOOLS[prop];
-            // let image = '/技能图标/'+skill.image;
-            let image =  httpRequest.httpUrl(info.picture);
+
             //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
             cc.loader.loadRes('/model背包/图标生物', function(errorMessage,loadedResource_icon){
+                for (var prop in info_list) {
+                    let info = TOOLS[prop];
+                    // let image = '/技能图标/'+skill.image;
+                    let image =  httpRequest.httpUrl(info.picture);
                 //检查资源加载
+                
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
@@ -94,9 +96,10 @@ cc.Class({
                 }, this);
                 //写入icon
                 cc.find("列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
-            })
+            }
+        })
             
-        }
+     
         return TipBoxPrefab
     },
 

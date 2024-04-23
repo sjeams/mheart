@@ -39,11 +39,14 @@ cc.Class({
         var TOOLS =[];
         var TOOLS = position_skill;
         var TipBoxPrefab_icon=[];
-        for (var prop in position_skill) {
-            let skill = TOOLS[prop];
-            let image = '/技能图标/'+skill.image;
+
             //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
             cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource_icon){
+              
+                for (var prop in position_skill) {
+                    let skill = TOOLS[prop];
+                    let image = '/技能图标/'+skill.image;
+              
                 //检查资源加载
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
@@ -73,9 +76,8 @@ cc.Class({
 
                 //写入icon
                 TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
-            })
-            
-        }
+            }
+        })
         return TipBoxPrefab
     },
     // 绑定按钮事件
