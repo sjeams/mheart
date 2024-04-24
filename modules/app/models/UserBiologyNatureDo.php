@@ -552,7 +552,7 @@ class UserBiologyNatureDo extends ActiveRecord
         //发起伤害
         $hurt_go_list = array(
             'position_my'=>$attack_biology['position_my'],//发起单位 1己方 2敌方 
-            'type'=>HURT_READY,// 0普通攻击 1技能 2消耗
+            'type'=>HURT_READY,// 0普通攻击 1技能 2消耗 3准备回合
             'pid'=>$goid,//发起攻击位置
             'attack'=>1,//攻击类型
             'goid'=>$goid,//发起攻击位置
@@ -1108,6 +1108,8 @@ class UserBiologyNatureDo extends ActiveRecord
         //不是普通攻击，技能攻击时
         if($type==HURT_PUTONG){
             $attack=$hurt_go_list['attack'];//攻击对象 
+        }else  if($type==HURT_READY){
+            $attack=$hurt_go_list['attack'];//攻击对象
         }else{
             $attack=$skill['attack'];//攻击对象
             $belong = intval($skill['belong']);//主动--技能
