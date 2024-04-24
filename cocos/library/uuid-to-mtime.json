@@ -895,8 +895,8 @@
     "relativePath": "resources\\背景"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1713939169709,
-    "meta": 1713939169734,
+    "asset": 1713943652212,
+    "meta": 1713943652239,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
@@ -2460,8 +2460,8 @@
     "relativePath": "Script\\home\\score_home.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1713939164918,
-    "meta": 1713939169546,
+    "asset": 1713944055445,
+    "meta": 1713944073225,
     "relativePath": "Script\\http.js"
   }
 }

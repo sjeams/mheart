@@ -103,9 +103,9 @@ var HttpHelper = cc.Class({
     var xhr = cc.loader.getXMLHttpRequest();
 
     xhr.onreadystatechange = function () {
-      // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
+      var respone = xhr.responseText; // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
+
       if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
-        var respone = xhr.responseText;
         var new_respone = JSON.parse(respone);
 
         if (new_respone.code == 0) {
@@ -115,8 +115,9 @@ var HttpHelper = cc.Class({
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }
-      } else {//   callback(-1);
-        }
+      } else {
+        cc.log(respone); //   callback(-1);
+      }
     };
 
     xhr.open("POST", url, true);

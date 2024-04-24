@@ -94,9 +94,9 @@ const HttpHelper = cc.Class({
             var url =https_url+url;
             var xhr = cc.loader.getXMLHttpRequest();
             xhr.onreadystatechange = function () {
+                var respone = xhr.responseText;
                 // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
                 if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status < 300)) {
-                    var respone = xhr.responseText;
                     var new_respone =JSON.parse(respone);
                     if(new_respone.code==0){
                         //未登录
@@ -106,6 +106,7 @@ const HttpHelper = cc.Class({
                         callback(JSON.parse(respone));  // json 转数组
                     }
                 }else{
+                    cc.log(respone)
                     //   callback(-1);
                 }
             };
