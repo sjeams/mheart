@@ -830,8 +830,8 @@
     "relativePath": "Script\\scence\\loading_fist.js"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1713929764265,
-    "meta": 1713929764270,
+    "asset": 1713947889377,
+    "meta": 1713947889388,
     "relativePath": "Scene\\login\\加载.fire"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
@@ -895,8 +895,8 @@
     "relativePath": "resources\\背景"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1713943652212,
-    "meta": 1713943652239,
+    "asset": 1713946672112,
+    "meta": 1713946672131,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
@@ -1313,11 +1313,6 @@
     "asset": 1713491582487,
     "meta": 1713841824154,
     "relativePath": "Script\\home_js\\userinfo.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1713506949031,
-    "meta": 1713841824109,
-    "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1713517365268,
@@ -2459,9 +2454,14 @@
     "meta": 1713930346930,
     "relativePath": "Script\\home\\score_home.js"
   },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1713947392153,
+    "meta": 1713947468681,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1713944055445,
-    "meta": 1713944073225,
+    "asset": 1713947883389,
+    "meta": 1713947884850,
     "relativePath": "Script\\http.js"
   }
 }

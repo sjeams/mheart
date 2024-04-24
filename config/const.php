@@ -16,7 +16,7 @@ define('BIOLOGY_STATE_GRADE_SYSTEM',2, true);  //默认生物等级
 define('BIOLOGY_EXP',100, true);  //默认生物上限不能超过20个
 //基础
 define('BIOLOGY_COUNT',20, true);  //默认生物上限不能超过20个
-define('FIGHT_BOUT',20, true);  //战斗回合
+define('FIGHT_BOUT',60, true);  //战斗回合
 
 //物品爆率
 define('GOODS_BAOLV',10000, true);  //物品爆率--越高，越低

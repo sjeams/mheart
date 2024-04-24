@@ -20,6 +20,7 @@ const HttpHelper = cc.Class({
         this.image_cache();
         this.current = cc.audioEngine.play(res.url, false, 1);  
         //配置路径
+        cc.sys.isNative =0;
     },
     /**
      * get请求
@@ -27,10 +28,12 @@ const HttpHelper = cc.Class({
      * @param {function} callback 
      */
         httpUrl(new_url){
+            cc.sys.isNative =1;
             return new_url?https_url+'/app/api/file-content?url='+https_url+new_url:'';
             //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
         },
         httpUrlJson(new_url){
+            cc.sys.isNative =1;
             return https_url+'/app/api/file-json?url='+https_url+new_url;
             //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
         },
@@ -94,9 +97,9 @@ const HttpHelper = cc.Class({
             var url =https_url+url;
             var xhr = cc.loader.getXMLHttpRequest();
             xhr.onreadystatechange = function () {
-                var respone = xhr.responseText;
                 // cc.log('xhr.readyState='+xhr.readyState+'  xhr.status='+xhr.status);
                 if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status < 300)) {
+                    var respone = xhr.responseText;
                     var new_respone =JSON.parse(respone);
                     if(new_respone.code==0){
                         //未登录
@@ -106,7 +109,6 @@ const HttpHelper = cc.Class({
                         callback(JSON.parse(respone));  // json 转数组
                     }
                 }else{
-                    cc.log(respone)
                     //   callback(-1);
                 }
             };
@@ -136,7 +138,7 @@ const HttpHelper = cc.Class({
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
-                var TipBoxPrefab = cc.instantiate(loadedResource);
+                let TipBoxPrefab = cc.instantiate(loadedResource);
                 //将预制资源添加到父节点
                 // CanvasNode.addChild(TipBoxPrefab);
                 cc.find('Canvas').addChild(TipBoxPrefab);
@@ -215,6 +217,7 @@ const HttpHelper = cc.Class({
                         _this.progress(sence)
                     }else{
                         callback(JSON.parse(data));  // json 转数组
+                        // callback(-1);
                     }
                 })   
             }
