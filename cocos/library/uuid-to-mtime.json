@@ -830,8 +830,8 @@
     "relativePath": "Script\\scence\\loading_fist.js"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1713947889377,
-    "meta": 1713947889388,
+    "asset": 1713948134335,
+    "meta": 1713948134394,
     "relativePath": "Scene\\login\\加载.fire"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
@@ -1370,8 +1370,8 @@
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1713929618224,
-    "meta": 1713929618238,
+    "asset": 1713948380789,
+    "meta": 1713948380818,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
@@ -2460,8 +2460,8 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1713947883389,
-    "meta": 1713947884850,
+    "asset": 1713948362924,
+    "meta": 1713948379656,
     "relativePath": "Script\\http.js"
   }
 }

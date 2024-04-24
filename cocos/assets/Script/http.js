@@ -205,16 +205,16 @@ const HttpHelper = cc.Class({
                     if(data.code==1){
                         cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
                         for (let i=0; i<data.data.img_list; i++) {
-                            var remoteUrl = httpRequest.httpUrl(img_list[i]);
+                            let remoteUrl = httpRequest.httpUrl(img_list[i]);
                             cc.resources.preload(remoteUrl, cc.SpriteFrame);
                             cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+                                _this.progress(sence)
                             });
                         }
                         // // console.log(remoteUrl)
                         // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
                         //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
                         // });
-                        _this.progress(sence)
                     }else{
                         callback(JSON.parse(data));  // json 转数组
                         // callback(-1);

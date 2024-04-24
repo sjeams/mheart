@@ -231,14 +231,14 @@ var HttpHelper = cc.Class({
             cc.resources.preload(remoteUrl, cc.SpriteFrame);
             cc.loader.load({
               url: remoteUrl
-            }, function (err, texture) {});
+            }, function (err, texture) {
+              _this.progress(sence);
+            });
           } // // console.log(remoteUrl)
           // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
           //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
           // });
 
-
-          _this.progress(sence);
         } else {
           callback(JSON.parse(data)); // json 转数组
           // callback(-1);
