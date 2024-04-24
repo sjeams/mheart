@@ -548,7 +548,10 @@ class UserBiologyNatureDo extends ActiveRecord
         // 发起消耗属性--魔法等--回血,回蓝等多种状态
         $goid = $attack_biology['id'];
         $need="wuXingTotal";
-        $attack_biology[$need] = $attack_biology[$need]+$attack_biology['wuXing'];
+        $wuXingTotal= isset($attack_biology[$need]) ? intval($attack_biology[$need]):0;
+        $attack_biology[$need] = $wuXingTotal+$attack_biology['wuXing'];
+
+
         //发起伤害
         $hurt_go_list = array(
             'position_my'=>$attack_biology['position_my'],//发起单位 1己方 2敌方 
