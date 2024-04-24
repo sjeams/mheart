@@ -539,21 +539,6 @@
     "meta": 1713491582486,
     "relativePath": "Script\\home_js"
   },
-  "0a7fee4f-d838-42e7-a302-b0fd4a53175a": {
-    "asset": 1713491582519,
-    "meta": 1713491582508,
-    "relativePath": "Textrue\\login"
-  },
-  "0c0dbb1e-cbde-40a9-8be5-515480cc6520": {
-    "asset": 1713491582539,
-    "meta": 1713491582520,
-    "relativePath": "Textrue\\model"
-  },
-  "1ce798e8-8c3e-4853-b85a-2401c747c366": {
-    "asset": 1713491582538,
-    "meta": 1713491582520,
-    "relativePath": "Textrue\\model\\dating"
-  },
   "3742f2e6-3c00-4908-a3e9-6cd3e607161c": {
     "asset": 1713491582545,
     "meta": 1713491582540,
@@ -563,11 +548,6 @@
     "asset": 1713765920684,
     "meta": 1713491582480,
     "relativePath": "Script\\fighting"
-  },
-  "e583c8b8-caa0-4ffc-9919-2c84dc378f88": {
-    "asset": 1713491582540,
-    "meta": 1713491582539,
-    "relativePath": "Textrue\\model\\word"
   },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
     "asset": 1713765920682,
@@ -709,196 +689,6 @@
     "meta": 1713841824580,
     "relativePath": "Textrue\\bagBtn.png"
   },
-  "0b4def80-0f5b-48b0-badc-4bc8383ef3b3": {
-    "asset": 1713491582509,
-    "meta": 1713841824582,
-    "relativePath": "Textrue\\login\\1331.png"
-  },
-  "c17bce7d-8aa9-416a-b6d1-9162156c1444": {
-    "asset": 1713491582509,
-    "meta": 1713841824591,
-    "relativePath": "Textrue\\login\\13330.png"
-  },
-  "6e84f30f-b57f-4cf8-aa09-57512135d508": {
-    "asset": 1713491582510,
-    "meta": 1713841824594,
-    "relativePath": "Textrue\\login\\13333.png"
-  },
-  "7a1ba5fc-9eab-44c0-94ab-6b10849093ca": {
-    "asset": 1713491582511,
-    "meta": 1713841824610,
-    "relativePath": "Textrue\\login\\13334.png"
-  },
-  "b61107e5-88c6-4463-b502-5dcc0ae4eebb": {
-    "asset": 1713491582512,
-    "meta": 1713841824607,
-    "relativePath": "Textrue\\login\\13335.png"
-  },
-  "c8cd5da7-1e8e-4698-aa59-11bd87c7a72f": {
-    "asset": 1713491582519,
-    "meta": 1713841824621,
-    "relativePath": "Textrue\\login\\骰子.png"
-  },
-  "712f0190-fa74-4753-893f-811f4f568c22": {
-    "asset": 1713491582513,
-    "meta": 1713841824625,
-    "relativePath": "Textrue\\login\\20200819100346.png"
-  },
-  "89e3adbb-010b-4d47-ab9b-a38017b7b36c": {
-    "asset": 1713491582516,
-    "meta": 1713841824637,
-    "relativePath": "Textrue\\login\\caa20200819100337.png"
-  },
-  "7d55b773-b808-433b-aa68-27c1885f5785": {
-    "asset": 1713491582515,
-    "meta": 1713841824641,
-    "relativePath": "Textrue\\login\\c20200819100346.png"
-  },
-  "03a7dad8-df56-466b-a61c-329297a74702": {
-    "asset": 1713491582517,
-    "meta": 1713841824652,
-    "relativePath": "Textrue\\login\\cac20200819100338.png"
-  },
-  "2f79e2ca-9d55-462a-86df-6bd0b4d12626": {
-    "asset": 1713491582517,
-    "meta": 1713841824653,
-    "relativePath": "Textrue\\login\\canser.png"
-  },
-  "3f5acb27-b08c-4a3f-b9f0-65bbcfb3b3e0": {
-    "asset": 1713491582528,
-    "meta": 1713841824663,
-    "relativePath": "Textrue\\model\\dating\\布阵.png"
-  },
-  "c84dbb43-96b7-4fd5-b917-d0d0574d970a": {
-    "asset": 1713491582518,
-    "meta": 1713841824665,
-    "relativePath": "Textrue\\login\\login_home.jpg"
-  },
-  "4808b035-590e-49bf-9fb7-0f1591fbc9d9": {
-    "asset": 1713491582530,
-    "meta": 1713841824675,
-    "relativePath": "Textrue\\model\\dating\\法阵.jpg"
-  },
-  "34fe89cf-1a5d-44f8-98f3-220279b43147": {
-    "asset": 1713491582526,
-    "meta": 1713841824678,
-    "relativePath": "Textrue\\model\\dating\\创造生物.webp"
-  },
-  "b96e1d86-a149-48b0-9968-2fd6353d6bee": {
-    "asset": 1713491582531,
-    "meta": 1713841824692,
-    "relativePath": "Textrue\\model\\dating\\混沌.png"
-  },
-  "4acf2a63-f577-4b4d-982a-c2dc55eca302": {
-    "asset": 1713491582531,
-    "meta": 1713841824695,
-    "relativePath": "Textrue\\model\\dating\\活动.png"
-  },
-  "ee1708ad-7223-460c-b571-6a00054285a9": {
-    "asset": 1713491582526,
-    "meta": 1713841824708,
-    "relativePath": "Textrue\\model\\dating\\加.png"
-  },
-  "f825c35d-0e47-4e82-be58-29c16f3ef328": {
-    "asset": 1713491582535,
-    "meta": 1713841824719,
-    "relativePath": "Textrue\\model\\dating\\金币.png"
-  },
-  "e8e940ff-0b84-42d7-9576-842663f2273d": {
-    "asset": 1713491582529,
-    "meta": 1713841824721,
-    "relativePath": "Textrue\\model\\dating\\昆仑.jpg"
-  },
-  "5d968950-3bf3-464a-9d3d-7f28355ebf04": {
-    "asset": 1713491582533,
-    "meta": 1713841824735,
-    "relativePath": "Textrue\\model\\dating\\炼器.png"
-  },
-  "1c1553e3-3fcd-4849-8df2-21e0fc1ea47e": {
-    "asset": 1713491582532,
-    "meta": 1713841824733,
-    "relativePath": "Textrue\\model\\dating\\灵石.png"
-  },
-  "8dee5719-71b4-43e3-be4a-11b9377099f5": {
-    "asset": 1713491582534,
-    "meta": 1713841824752,
-    "relativePath": "Textrue\\model\\dating\\秘境.jpg"
-  },
-  "0c0a7ce3-730f-4273-8a92-19f7b19b8912": {
-    "asset": 1713491582524,
-    "meta": 1713841824748,
-    "relativePath": "Textrue\\model\\dating\\任务.png"
-  },
-  "b933fc45-60d4-4ba2-9da5-33a1467b4ec0": {
-    "asset": 1713491582527,
-    "meta": 1713841824760,
-    "relativePath": "Textrue\\model\\dating\\商店.png"
-  },
-  "3e268406-af1c-476b-96ad-2df5e4bdcb13": {
-    "asset": 1713491582534,
-    "meta": 1713841824768,
-    "relativePath": "Textrue\\model\\dating\\神魔炼狱.jpg"
-  },
-  "f2817bbd-d320-4f49-80a4-917fa3aefb39": {
-    "asset": 1713491582533,
-    "meta": 1713841824771,
-    "relativePath": "Textrue\\model\\dating\\生物.png"
-  },
-  "b2fba116-45c4-4fcf-95e1-b971e06654b7": {
-    "asset": 1713491582521,
-    "meta": 1713841824781,
-    "relativePath": "Textrue\\model\\dating\\世界.png"
-  },
-  "a615bbb0-3988-45cb-8d3d-c97c149f6dea": {
-    "asset": 1713491582537,
-    "meta": 1713841824782,
-    "relativePath": "Textrue\\model\\dating\\首充.png"
-  },
-  "f21e7866-3ca3-40bc-b947-28b645eecd11": {
-    "asset": 1713491582536,
-    "meta": 1713841824792,
-    "relativePath": "Textrue\\model\\dating\\锁妖塔.jpg"
-  },
-  "1bd45bc7-0daa-4c20-af25-26dfc759732a": {
-    "asset": 1713491582525,
-    "meta": 1713841824799,
-    "relativePath": "Textrue\\model\\dating\\体力.png"
-  },
-  "d6012729-839a-48f0-a4f1-493905517415": {
-    "asset": 1713491582528,
-    "meta": 1713841824830,
-    "relativePath": "Textrue\\model\\dating\\天赋.jpg"
-  },
-  "31e36b80-efca-46f4-a79b-9feed039b6cf": {
-    "asset": 1713491582523,
-    "meta": 1713841824846,
-    "relativePath": "Textrue\\model\\dating\\仙境.jpg"
-  },
-  "a10d2b16-71fd-48f8-a776-c144fdb28f0f": {
-    "asset": 1713491582524,
-    "meta": 1713841824848,
-    "relativePath": "Textrue\\model\\dating\\仙女.png"
-  },
-  "31c12a42-4fc1-4b71-8245-0dbbeac0f7ae": {
-    "asset": 1713491582536,
-    "meta": 1713841824860,
-    "relativePath": "Textrue\\model\\dating\\镇妖塔.jpg"
-  },
-  "fe7a1cea-765a-42a5-b917-db174ef68f7f": {
-    "asset": 1713491582522,
-    "meta": 1713841824861,
-    "relativePath": "Textrue\\model\\dating\\主线.jpg"
-  },
-  "260f80c7-ef4f-460d-8190-6875fca43b84": {
-    "asset": 1713491582520,
-    "meta": 1713841824876,
-    "relativePath": "Textrue\\model\\dating\\dating.png"
-  },
-  "a8c941de-ba49-4dc0-8f11-0c8a06794767": {
-    "asset": 1713491582539,
-    "meta": 1713841824874,
-    "relativePath": "Textrue\\model\\word\\星空.jpg"
-  },
   "3cc13c11-e12b-4267-b80f-06466de811ad": {
     "asset": 1713491582545,
     "meta": 1713841824890,
@@ -968,11 +758,6 @@
     "asset": 1713491582552,
     "meta": 1713841823399,
     "relativePath": "resources\\biology_pic\\0AutoAtlas.pac"
-  },
-  "4262e99b-4018-4d8c-a6b8-c0e4c8e857d5": {
-    "asset": 1713491582514,
-    "meta": 1713841824623,
-    "relativePath": "Textrue\\login\\AutoAtlas.pac"
   },
   "2c2b1d6e-0a7d-45fd-a346-180be98e84e1": {
     "asset": 1713491582561,
@@ -1045,8 +830,8 @@
     "relativePath": "Script\\scence\\loading_fist.js"
   },
   "8ec67a9e-6d17-4e2d-a168-9480379a78e8": {
-    "asset": 1713491582468,
-    "meta": 1713841823628,
+    "asset": 1713929764265,
+    "meta": 1713929764270,
     "relativePath": "Scene\\login\\加载.fire"
   },
   "9acd6b6d-3876-4e1e-bd83-3e12c9619d82": {
@@ -1081,12 +866,12 @@
   },
   "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
     "asset": 1713491583428,
-    "meta": 1713491582675,
+    "meta": 1713929197056,
     "relativePath": "resources\\技能图标"
   },
   "d26831db-7435-43ec-addc-7e8ae543575c": {
     "asset": 1713491583432,
-    "meta": 1713491583429,
+    "meta": 1713929214817,
     "relativePath": "resources\\技能效果"
   },
   "1902624f-80dd-47e3-bb1b-0f04a33db756": {
@@ -1109,14 +894,9 @@
     "meta": 1713491583432,
     "relativePath": "resources\\背景"
   },
-  "de0940f0-dfb0-4115-8ece-ac79e693d6a8": {
-    "asset": 1713491582538,
-    "meta": 1713841824821,
-    "relativePath": "Textrue\\model\\dating\\骰子.png"
-  },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1713491582470,
-    "meta": 1713841823641,
+    "asset": 1713929987153,
+    "meta": 1713929987178,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
@@ -1281,7 +1061,7 @@
   },
   "725cd49e-44d5-4557-8876-17c6cbbd5c43": {
     "asset": 1713856062126,
-    "meta": 1713491583438,
+    "meta": 1713929207804,
     "relativePath": "resources\\装备图标"
   },
   "848d1e49-48f3-4dc0-a8be-7a63c6cd3334": {
@@ -1400,7 +1180,7 @@
     "relativePath": "resources\\biology_pic\\10标准弹窗.png"
   },
   "9657da19-0825-4059-8c07-39af399daf61": {
-    "asset": 1713836195032,
+    "asset": 1713864980415,
     "meta": 1713765920695,
     "relativePath": "resources\\model背包"
   },
@@ -1525,7 +1305,7 @@
     "relativePath": "resources\\model背包\\a生物大厅 - 001.prefab"
   },
   "3683396a-e14e-45bd-aad4-8030d1c4c598": {
-    "asset": 1713856331026,
+    "asset": 1713864903379,
     "meta": 1713491582484,
     "relativePath": "Script\\home"
   },
@@ -1594,14 +1374,9 @@
     "meta": 1713866407585,
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1713776826366,
-    "meta": 1713841824305,
-    "relativePath": "Script\\http.js"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1713864226444,
-    "meta": 1713864226555,
+    "asset": 1713929618224,
+    "meta": 1713929618238,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
@@ -2649,11 +2424,6 @@
     "meta": 1713866196451,
     "relativePath": "Script\\home\\biology_yuanfenTools.js"
   },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1713866049259,
-    "meta": 1713866196467,
-    "relativePath": "Script\\home\\score_home.js"
-  },
   "398e676d-633a-44ab-997e-980aedf61174": {
     "asset": 1713866405875,
     "meta": 1713866406907,
@@ -2663,5 +2433,35 @@
     "asset": 1713866378293,
     "meta": 1713866406979,
     "relativePath": "Script\\home\\biology_iconTools.js"
+  },
+  "83d38215-0c69-4f46-9a6a-4b9cca0c29df": {
+    "asset": 1713929149861,
+    "meta": 1713929157712,
+    "relativePath": "resources\\biology_pic\\按钮.png"
+  },
+  "95bc9aaa-fe92-4248-a867-f96eeb3e2dc5": {
+    "asset": 1713929264856,
+    "meta": 1713929264871,
+    "relativePath": "resources\\背景\\神魔炼狱.jpg"
+  },
+  "482ff8b2-944a-40a8-8e74-1558b3cc0b66": {
+    "asset": 1713929270156,
+    "meta": 1713929270293,
+    "relativePath": "resources\\背景\\仙境.jpg"
+  },
+  "f0bfe780-3ba6-4cb5-8245-3aad24c64b43": {
+    "asset": 1713929279087,
+    "meta": 1713929279228,
+    "relativePath": "resources\\背景\\昆仑.jpg"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1713930282442,
+    "meta": 1713930346930,
+    "relativePath": "Script\\home\\score_home.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1713930491764,
+    "meta": 1713930560960,
+    "relativePath": "Script\\http.js"
   }
 }

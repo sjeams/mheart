@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "按钮",
+    "texture": "83d38215-0c69-4f46-9a6a-4b9cca0c29df",
+    "atlas": "",
+    "rect": [
+      33,
+      8,
+      334,
+      109
+    ],
+    "offset": [
+      1,
+      3.5
+    ],
+    "originalSize": [
+      398,
+      132
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
