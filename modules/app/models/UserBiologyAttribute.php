@@ -69,8 +69,8 @@ class UserBiologyAttribute extends ActiveRecord
                 $data[$k]['gooduse2']=  $UserGoods->getUserGoods($v['gooduse2']);
             }
             //元神
-            if($v['yuanSehn']){
-                $data[$k]['yuanSehn']=  $UserGoods->getUserGoods($v['yuanSehn']);
+            if($v['yuanShen']){
+                $data[$k]['yuanShen']=  $UserGoods->getUserGoods($v['yuanShen']);
             }
         }
         return $data;
