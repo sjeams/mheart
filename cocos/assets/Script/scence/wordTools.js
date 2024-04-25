@@ -2,110 +2,85 @@ var HttpHelper = require("../http");
 var httpRequest = new HttpHelper();
 cc.Class({
     extends: cc.Component,
-
     properties: {
-        // server_picture: cc.Node,
-        // server_type: cc.Node,
-        // server_name: cc.Node,
-        // server_star: cc.Node,
-        // sprite_server_login: cc.Button
     },
-    initInfo (info) {
-        // 初始化该道具相关信息
-        // 图片
-        var _self = this;
- 
-        if(info['picture']){
-
-            var remoteUrl = httpRequest.httpUrl(info['picture']);
-            // cc.loader.loadRes(httpRequest.httpUrl(info['picture']), cc.SpriteFrame, function (err, spriteFrame) {   
-            //     console.log(_self)
-            //     _self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame; 
-            // });
-            cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-                // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
-                if (err) {
-                    // cc.error(err.message || err);
-                    return;
+    //技能图片渲染
+    biology_detail_list(TipBoxPrefab_model,info_list){
+        var _this =this;
+        var TOOLS =[];
+        var TOOLS = info_list;
+        // let image = '/技能图标/'+skill.image;
+        //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+        cc.loader.loadRes('/fighting/sprite_世界', function(errorMessage,loadedResource_icon){
+            //检查资源加载
+            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+            if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+            //开始实例化预制资源
+            for (var prop in info_list) {
+                //声明节点对象
+                let TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                let info = TOOLS[prop];
+                //放在资源下面
+                let image = info.picture;
+                cc.log(image)
+                cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                    if (err) {
+                        // cc.error(err.message || err);
+                        return;
+                    }
+                    TipBoxPrefab_icon.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = texture; 
+                });
+                var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
+                var type_color = color[info['type']];
+                // console.log(info)
+                var star ='';    
+                for(var i=0;i<=info['star'];i++){
+                    star +='⭐';
                 }
-                if(texture){
-                    _self.node.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                }
-            });
-        }
-        // this.server_type.getComponent(cc.Label).string=info['type'];
-        // if(info['type']==1){
-        //     this.server_type.getComponent(cc.Label).string='空闲';
-        //     this.node.getChildByName('server_type').color = new cc.color('green');
-        // }else if(info['num']<500&&info['num']>=100){
-        //     this.server_type.getComponent(cc.Label).string='流畅';
-        //     this.node.getChildByName('server_type').color = new cc.color('#BDFF00');
-        // }else if(info['num']<1000&&info['num']>=500){
-        //     this.server_type.getComponent(cc.Label).string='拥挤';
-        //     this.node.getChildByName('server_type').color = new cc.color('#FFD100');
-        // }else{
-        //     this.server_type.getComponent(cc.Label).string='爆满';
-        //     this.node.getChildByName('server_type').color = new cc.color('#FF0000'); 
-        // }
-        var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-        var type_color = color[info['type']];
-        // console.log(info)
-        var star ='';    
-        for(var i=0;i<=info['star'];i++){
-            star +='⭐';
-        }
-        this.node.getChildByName('名称').getComponent(cc.Label).string=info['name'];
-        this.node.getChildByName('名称').color = new cc.color(type_color);
-        this.node.getChildByName('世界等级').getComponent(cc.Label).string= info['type_name'];
-        this.node.getChildByName('世界等级').color = new cc.color(type_color);
-        this.node.getChildByName('星级').getComponent(cc.Label).string= star;
- 
-        //创建一个新button 并将其挂载到创建的精灵下
-        this.bindClickEvent( this.node.getComponent(cc.Button), info);
-    },
-    // 绑定按钮事件
-    bindClickEvent: function (button, index) {
-        // console.log(index)
-        var clickEventHandler = new cc.Component.EventHandler();
-        //这个 node 节点是你的事件处理代码组件所属的节点
-        clickEventHandler.target = this.node; 
-        //这个是代码文件名
-        clickEventHandler.component = "wordTools";  // js脚本文件-绑定
-        clickEventHandler.handler = "onConfirBtn";// js方法名称--绑定
-        clickEventHandler.customEventData = index; // 回调内容
-        button.clickEvents.push(clickEventHandler);
-    },
- 
-
-    //按钮点击回调
-    onConfirBtn:function(e,info){
-        // console.log(info)
-        httpRequest.httpPost('/app/app-apiword/in-word', {
-            'wordid': info['id'],
-            'star': info['star'],
-        }, function (data) {
-            //跳转到世界
-            httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
-            // console.log(data);
-            // var server_choes_label  =cc.find("Canvas/server/server_choes/server_choes_label");
-            // server_choes_label.getComponent(cc.Label).string=info['name'];
-            // var server_choes_type  =cc.find("Canvas/server/server_choes/server_choes_type");
-            // server_choes_type.getComponent(cc.Label).string=info['type'];
-            // server_choes_type.color = new cc.color(info['color']); 
+                TipBoxPrefab_icon.getChildByName('名称').getComponent(cc.Label).string=info.name;
+                TipBoxPrefab_icon.getChildByName('名称').color = new cc.color(type_color);
+                TipBoxPrefab_icon.getChildByName('世界等级').getComponent(cc.Label).string= info.type_name;
+                TipBoxPrefab_icon.getChildByName('世界等级').color = new cc.color(type_color);
+                TipBoxPrefab_icon.getChildByName('星级').getComponent(cc.Label).string= star;
+                //创建一个新button 并将其挂载到创建的精灵下
+                _this.onConfirBtn(TipBoxPrefab_icon,info);
+                //写入icon
+                TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
+       
+            }
         })
-
-        // var mask =cc.find("Canvas/mask");
-        // mask.active=false
-        // var mask =  this.node.getChildByName('mask')
-    
-        // console.log(this.node.getSiblingIndex())
-        // console.log( this.node.parent.getComponent(cc.Button));
-     
-        // this.node.getChildByName("sprite_server_login").on('click',function(event){
-        //     console.log("点击到按钮");
-        //     callback();
-        // },this);
-        // this.node.active =false; // 直接去掉模型节点
+        return TipBoxPrefab_model
     },
+    // initInfo (info) {
+    //     // 初始化该道具相关信息
+    //     // 图片
+    //     // var _self = this;
+    //     // var remoteUrl = httpRequest.httpUrl(info['picture']);
+    //     // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+    //     //     // _self.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+    //     //     if (err) {
+    //     //         // cc.error(err.message || err);
+    //     //         return;
+    //     //     }
+    //     //     if(texture){
+    //     //         _self.node.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+    //     //     }
+    //     // });
+    // },
+ 
+    //按钮点击回调
+    onConfirBtn:function(TipBoxPrefab_icon,info){
+        var _this =this;
+        TipBoxPrefab_icon.on('click', function () {
+            httpRequest.httpPost('/app/app-apiword/in-word', {
+                'wordid': info.id,
+                'star': info.star,
+            }, function (data) {
+                //跳转到世界
+                httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+            })
+        })
+    },
+ 
  
 });

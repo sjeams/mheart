@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "僵尸道长",
+    "texture": "76889a02-edb5-426f-b4fe-281aa8502640",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      118,
+      180
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      118,
+      180
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

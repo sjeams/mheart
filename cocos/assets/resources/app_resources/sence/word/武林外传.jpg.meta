@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e7dcb2dc-9d2e-4b24-a3d6-d9e85c5b3e0a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 120,
+  "height": 180,
+  "platformSettings": {},
+  "subMetas": {
+    "武林外传": {
+      "ver": "1.0.4",
+      "uuid": "a004f273-6634-4fd8-be66-f3eb6968c93f",
+      "rawTextureUuid": "e7dcb2dc-9d2e-4b24-a3d6-d9e85c5b3e0a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 120,
+      "height": 180,
+      "rawWidth": 120,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

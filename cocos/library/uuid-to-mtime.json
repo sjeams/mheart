@@ -849,16 +849,6 @@
     "meta": 1713765920691,
     "relativePath": "resources\\model弹窗"
   },
-  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1713491582504,
-    "meta": 1713841824549,
-    "relativePath": "Script\\scence\\word_score.js"
-  },
-  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1713765920682,
-    "meta": 1713841823624,
-    "relativePath": "Scene\\home\\诸天万界.fire"
-  },
   "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
     "asset": 1713491583428,
     "meta": 1713929197056,
@@ -1154,11 +1144,6 @@
     "meta": 1713841823331,
     "relativePath": "resources\\图片\\AutoAtlas.pac"
   },
-  "9fe905ee-0661-4005-b78b-bd7533462e79": {
-    "asset": 1713491582503,
-    "meta": 1713841824560,
-    "relativePath": "Script\\scence\\wordTools.js"
-  },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
     "asset": 1713765920693,
     "meta": 1713841823582,
@@ -1270,8 +1255,8 @@
     "relativePath": "resources\\biology_pic\\9标准弹窗.png"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1713863444317,
-    "meta": 1713863444333,
+    "asset": 1714034318088,
+    "meta": 1714034318101,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
@@ -1298,11 +1283,6 @@
     "asset": 1713491582487,
     "meta": 1713841824154,
     "relativePath": "Script\\home_js\\userinfo.js"
-  },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1713517365268,
-    "meta": 1713841823940,
-    "relativePath": "Script\\fighting\\fightingTools.js"
   },
   "7f062c96-a7bf-45ab-bce6-ac7312bb1b4a": {
     "asset": 1713778006889,
@@ -1368,11 +1348,6 @@
     "asset": 1713491582546,
     "meta": 1713841821562,
     "relativePath": "prefabs\\biology_boss.prefab"
-  },
-  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
-    "asset": 1713765920689,
-    "meta": 1713841821564,
-    "relativePath": "prefabs\\biology_生物详情.prefab"
   },
   "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
     "asset": 1713765920691,
@@ -2434,11 +2409,6 @@
     "meta": 1713930346930,
     "relativePath": "Script\\home\\score_home.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1713947392153,
-    "meta": 1713947468681,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
     "asset": 1714029168641,
     "meta": 1714029168896,
@@ -2455,8 +2425,8 @@
     "relativePath": "resources\\fighting\\sprite_地图.prefab"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1714029409883,
-    "meta": 1714029409895,
+    "asset": 1714031144349,
+    "meta": 1714031144369,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
@@ -3094,19 +3064,154 @@
     "meta": 1714028979097,
     "relativePath": "resources\\files\\attach\\images\\20231227\\1703687072256359.png"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1714028988696,
-    "meta": 1714029127218,
-    "relativePath": "Script\\http.js"
-  },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1714029145403,
-    "meta": 1714029168291,
+    "asset": 1714031148888,
+    "meta": 1714032113704,
     "relativePath": "Script\\scence\\mapTools.js"
   },
+  "40bedcd0-c109-4f66-aa9d-ca142724f729": {
+    "asset": 1714032381912,
+    "meta": 1714032381921,
+    "relativePath": "resources\\fighting\\biology_生物详情.prefab"
+  },
+  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
+    "asset": 1714032621150,
+    "meta": 1714032621165,
+    "relativePath": "prefabs\\biology_生物详情.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1714033699748,
+    "meta": 1714033745464,
+    "relativePath": "Script\\fighting\\fightingTools.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1714034144573,
+    "meta": 1714034147795,
+    "relativePath": "Script\\fighting\\score_fighting.js"
+  },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1714029388050,
-    "meta": 1714029388997,
+    "asset": 1714034079066,
+    "meta": 1714034147825,
     "relativePath": "Script\\scence\\map_score.js"
+  },
+  "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
+    "asset": 1714034865410,
+    "meta": 1714035139378,
+    "relativePath": "Script\\scence\\word_score.js"
+  },
+  "9f761f6a-7bdd-417c-bd52-eeaee3d78ebb": {
+    "asset": 1714035229716,
+    "meta": 1714035229722,
+    "relativePath": "resources\\fighting\\sprite_世界.prefab"
+  },
+  "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
+    "asset": 1714035417846,
+    "meta": 1714035417853,
+    "relativePath": "Scene\\home\\诸天万界.fire"
+  },
+  "2e0d6625-7e3a-404c-96ed-279d6cb0d479": {
+    "asset": 1714035413312,
+    "meta": 1714035413310,
+    "relativePath": "resources\\app_resources"
+  },
+  "397e01a0-9191-4a71-a26f-16cf19ad3b16": {
+    "asset": 1714034316809,
+    "meta": 1714035413312,
+    "relativePath": "resources\\app_resources\\sence"
+  },
+  "9ff5e8a3-9621-427f-9179-11f4a9c77bda": {
+    "asset": 1714034316824,
+    "meta": 1714034316809,
+    "relativePath": "resources\\app_resources\\sence\\word"
+  },
+  "dc9535fa-1620-4cc8-ba0a-a697b075268a": {
+    "asset": 1713491589812,
+    "meta": 1714035413340,
+    "relativePath": "resources\\app_resources\\sence\\word\\大唐双龙传.jpg"
+  },
+  "41b32799-ce31-4489-9102-1a15ec3477e1": {
+    "asset": 1713491589812,
+    "meta": 1714035413343,
+    "relativePath": "resources\\app_resources\\sence\\word\\楚汉传奇.jpg"
+  },
+  "e58b7e59-3d56-49c4-bc94-805edcf8d2ee": {
+    "asset": 1713491589828,
+    "meta": 1714035413356,
+    "relativePath": "resources\\app_resources\\sence\\word\\风云.jpg"
+  },
+  "83fda3ec-4ff9-4a09-bf5e-071d32263026": {
+    "asset": 1713491589812,
+    "meta": 1714035413359,
+    "relativePath": "resources\\app_resources\\sence\\word\\蝶舞天涯.jpg"
+  },
+  "f70a4cfe-77f3-4b51-9403-cee7ad0c585f": {
+    "asset": 1713491589812,
+    "meta": 1714035413372,
+    "relativePath": "resources\\app_resources\\sence\\word\\功夫.jpg"
+  },
+  "76889a02-edb5-426f-b4fe-281aa8502640": {
+    "asset": 1713491589812,
+    "meta": 1714035413374,
+    "relativePath": "resources\\app_resources\\sence\\word\\僵尸道长.jpg"
+  },
+  "1e7bba10-8f45-46a4-a72e-577544d7a806": {
+    "asset": 1713491589828,
+    "meta": 1714035413390,
+    "relativePath": "resources\\app_resources\\sence\\word\\连城诀.jpg"
+  },
+  "3beac9f0-beb5-4b15-bbb3-8051142f0259": {
+    "asset": 1713491589812,
+    "meta": 1714035413393,
+    "relativePath": "resources\\app_resources\\sence\\word\\蓝星.jpg"
+  },
+  "7505dc44-4b08-44f8-9874-e309e20c849b": {
+    "asset": 1713491589812,
+    "meta": 1714035413404,
+    "relativePath": "resources\\app_resources\\sence\\word\\倩女幽魂.jpg"
+  },
+  "aa57bfe8-56bc-4201-8050-84948a99ab29": {
+    "asset": 1713491589828,
+    "meta": 1714035413406,
+    "relativePath": "resources\\app_resources\\sence\\word\\鹿鼎记.jpg"
+  },
+  "4db03020-e096-4561-9bb6-b8c06982d8bc": {
+    "asset": 1713491589812,
+    "meta": 1714035413419,
+    "relativePath": "resources\\app_resources\\sence\\word\\三国演义.jpg"
+  },
+  "fc113ee6-f739-4e82-a65d-aacc49883541": {
+    "asset": 1713491589812,
+    "meta": 1714035413421,
+    "relativePath": "resources\\app_resources\\sence\\word\\少年张三丰.jpg"
+  },
+  "08bbf54a-2997-49df-98cf-8e7c68a7f78b": {
+    "asset": 1713491589828,
+    "meta": 1714035413432,
+    "relativePath": "resources\\app_resources\\sence\\word\\隋唐英雄传.jpg"
+  },
+  "76a6fa82-92d7-41f8-ace2-7a8f9b6a2e6d": {
+    "asset": 1713491589812,
+    "meta": 1714035413433,
+    "relativePath": "resources\\app_resources\\sence\\word\\水浒传.jpg"
+  },
+  "e7dcb2dc-9d2e-4b24-a3d6-d9e85c5b3e0a": {
+    "asset": 1713491589812,
+    "meta": 1714035413443,
+    "relativePath": "resources\\app_resources\\sence\\word\\武林外传.jpg"
+  },
+  "663f921b-2221-4c4d-af0c-4a5e3b57681f": {
+    "asset": 1713491589812,
+    "meta": 1714035413446,
+    "relativePath": "resources\\app_resources\\sence\\word\\天下第一.jpg"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1714035510146,
+    "meta": 1714035513634,
+    "relativePath": "Script\\http.js"
+  },
+  "9fe905ee-0661-4005-b78b-bd7533462e79": {
+    "asset": 1714035495554,
+    "meta": 1714035513671,
+    "relativePath": "Script\\scence\\wordTools.js"
   }
 }

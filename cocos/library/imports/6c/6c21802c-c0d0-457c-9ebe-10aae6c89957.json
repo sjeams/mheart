@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "少年张三丰",
+    "texture": "fc113ee6-f739-4e82-a65d-aacc49883541",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      448,
+      672
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      448,
+      672
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

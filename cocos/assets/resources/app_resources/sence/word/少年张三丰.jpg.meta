@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "fc113ee6-f739-4e82-a65d-aacc49883541",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 448,
+  "height": 672,
+  "platformSettings": {},
+  "subMetas": {
+    "少年张三丰": {
+      "ver": "1.0.4",
+      "uuid": "6c21802c-c0d0-457c-9ebe-10aae6c89957",
+      "rawTextureUuid": "fc113ee6-f739-4e82-a65d-aacc49883541",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 448,
+      "height": 672,
+      "rawWidth": 448,
+      "rawHeight": 672,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

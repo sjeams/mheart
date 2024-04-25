@@ -43,6 +43,10 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
+    //全局定义容器节点
+    cc.sys.BoxPrefab = cc.find('Canvas/大厅/content');
+    cc.sys.fightingArray = [];
+    cc.sys.toolsArray = [];
     this.spawnTools();
   },
   start: function start() {},
@@ -71,25 +75,19 @@ cc.Class({
   goPlay: function goPlay() {
     data = cc.globalData;
 
-    var _this = this; // console.log(data) 
-    //移除节点
-    // _this.content.removeAllChildren();
-    // _this.content.destroyAllChildren();
-    //先让透明度为0
-    // _this.nodefadeIn(1,0,_this.content)
-    // 初始化阵容
+    var _this = this;
 
+    var biolgy_state = data.data.biolgy_state;
+    var poition_my = data.data.poition_my;
+    var poition_enemy = data.data.poition_enemy; //生物挂载
 
-    var star = 0; //阵容序号
+    var BoxPrefab = cc.sys.BoxPrefab;
+    BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_my, biolgy_state, 1, 0); //挂载生物--position_my
 
-    var star = _this.init_postion(data.data.poition_my, data.data.biolgy_state, -0, 1, star); //生成生物--position_my
-
-
-    var star = _this.init_postion(data.data.poition_enemy, data.data.biolgy_state, 0, 0, star); //生成生物--position_ememy
+    BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_enemy, biolgy_state, 0, poition_my.length); //挂载生物--position_ememy
     // _this.addMapPic(data) //生成地图
     // console.log( _this.toolsArray)
-    // console.log( _this.fightingArray )
-
+    // console.log( _cc.sys.fightingArray )
 
     var fighting_list = data.data;
     var boat_length = fighting_list.fighting_history.length;
@@ -241,57 +239,6 @@ cc.Class({
       }
     });
   },
-  //生成生物
-  init_postion: function init_postion(postion, biolgy_state, int_px, is_my, star) {
-    var _this = this;
-
-    var TOOLS = [];
-    var TOOLS = postion;
-    var total = postion.length; // const maps = new Map();
-    //添加节点
-
-    for (var i = 0; i < total; i++) {
-      //死亡移除map_status
-      var map = TOOLS[i]; // console.log(map) 
-
-      if (map.biology.length != 0) {
-        star++;
-        var tool = cc.instantiate(_this.person);
-        tool.getComponent('fightingTools').initInfo(map.biology, biolgy_state, is_my);
-        tool.x = parseInt(map.x + int_px);
-        tool.getChildByName('阵法s').getComponent(cc.Label).string = star - 1;
-        tool.y = map.y;
-        tool.is_my = is_my; //阵容
-
-        tool.jing_bi = map.biology.jingBi; //金币
-
-        tool.biology_int = star; //阵法编号
-
-        tool.shengMing = map.biology.shengMing;
-        tool.moFa = map.biology.moFa;
-        tool.biology = map.biology.id;
-        tool.biology_name = map.biology.name;
-
-        _this.toolsArray.push(tool);
-
-        _this.fightingArray[map.biology.id] = tool; //永久重复移动
-        // var randomNumup = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-        // var randomNumdown = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-        // var seq = cc.repeatForever(
-        //   cc.sequence(
-        //       cc.moveBy(randomNumup, 0,5),
-        //       // cc.scaleTo(randomNumup, 1, 1.05),
-        //       // cc.scaleTo(randomNumdown, 1.05,1),
-        //       cc.moveBy(randomNumdown, 0,-5)
-        //   ));
-        // tool.runAction(seq);
-
-        _this.content.addChild(tool);
-      }
-    }
-
-    return star;
-  },
   //技能准备动作
   readySkill: function readySkill(his_log_extend) {
     // console.log(his_log_extend)
@@ -300,8 +247,8 @@ cc.Class({
 
       for (var npage = 0; npage < his_log_extend.length; npage++) {
         var biology = his_log_extend[npage];
-        var _this_hero_node = this.fightingArray[biology.goid];
-        var _targ_hero_node = this.fightingArray[biology.doid];
+        var _this_hero_node = cc.sys.fightingArray[biology.goid];
+        var _targ_hero_node = cc.sys.fightingArray[biology.doid];
 
         _this.buttonReady(_this_hero_node, biology); //自己变大--加载技能动作
 
@@ -319,8 +266,8 @@ cc.Class({
 
       for (var npage = 0; npage < his_log_extend.length; npage++) {
         var biology = his_log_extend[npage];
-        var _this_hero_node = this.fightingArray[biology.goid];
-        var _targ_hero_node = this.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
+        var _this_hero_node = cc.sys.fightingArray[biology.goid];
+        var _targ_hero_node = cc.sys.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
         // _this.schedule(function(){
 
         getFightingExtend.playAction(_targ_hero_node, biology, 0); //不需要其它动作，瞬发伤害动作
@@ -339,8 +286,8 @@ cc.Class({
 
       for (var npage = 0; npage < his_log_extend.length; npage++) {
         var biology = his_log_extend[npage];
-        var _this_hero_node = this.fightingArray[biology.goid];
-        var _targ_hero_node = this.fightingArray[biology.doid]; //2个攻击类型只能二选一 
+        var _this_hero_node = cc.sys.fightingArray[biology.goid];
+        var _targ_hero_node = cc.sys.fightingArray[biology.doid]; //2个攻击类型只能二选一 
         // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
 
         getFightingExtend.playAction(_targ_hero_node, biology, 1); //不需要其它动作，瞬发伤害动作
@@ -357,10 +304,10 @@ cc.Class({
       var _this = this;
 
       for (var npage = 0; npage < his_log_extend.length; npage++) {
-        var biology = his_log_extend[npage]; // cc.log(this.fightingArray)
+        var biology = his_log_extend[npage]; // cc.log(cc.sys.fightingArray)
 
-        var _this_hero_node = this.fightingArray[biology.goid];
-        var _targ_hero_node = this.fightingArray[biology.doid];
+        var _this_hero_node = cc.sys.fightingArray[biology.goid];
+        var _targ_hero_node = cc.sys.fightingArray[biology.doid];
 
         if (biology.goid == biology.doid) {
           // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
@@ -531,8 +478,11 @@ cc.Class({
     if (this.gridLayout.parent.active) {
       // 隐藏节点
       this.gridLayout.parent.active = false; // 删除所有道具(或者不删，只是隐藏，自己决定)
+      // this.toolsArray.forEach(element => {
+      //     element.removeFromParent();
+      // });
 
-      this.toolsArray.forEach(function (element) {
+      cc.sys.toolsArray.forEach(function (element) {
         element.removeFromParent();
       });
     } else {
@@ -572,9 +522,7 @@ cc.Class({
     //移除节点
     var _this = this;
 
-    _this.content.removeAllChildren();
-
-    _this.content.destroyAllChildren();
+    _this.removeBoxprefab();
 
     httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
   },
@@ -583,27 +531,17 @@ cc.Class({
     //移除节点
     var _this = this;
 
-    _this.content.removeAllChildren();
-
-    _this.content.destroyAllChildren(); // this.parent.active=false
-    // httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
-
+    _this.removeBoxprefab();
 
     _this.goPlay();
 
     cc.find('Canvas/结算').active = false; // 结束弹窗结果
-    // cc.find('Canvas/弹窗').removeAllChildren();
-    //触发点击事件
-    // this.nBtn= this.node.getChildByName("newBtn").addComponent(cc.Button);
-    // this.nBtn.clickEvents;
   },
   back_home: function back_home() {
     //移除节点
     var _this = this;
 
-    _this.content.removeAllChildren();
-
-    _this.content.destroyAllChildren();
+    _this.removeBoxprefab();
 
     httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
   },
@@ -611,6 +549,11 @@ cc.Class({
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
     node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
     node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
+  },
+  //移除容器
+  removeBoxprefab: function removeBoxprefab() {
+    cc.sys.BoxPrefab.removeAllChildren();
+    cc.sys.BoxPrefab.destroyAllChildren();
   }
 });
 

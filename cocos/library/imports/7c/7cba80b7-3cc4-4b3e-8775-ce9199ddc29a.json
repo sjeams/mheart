@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "蓝星",
+    "texture": "3beac9f0-beb5-4b15-bbb3-8051142f0259",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      530,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      530,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

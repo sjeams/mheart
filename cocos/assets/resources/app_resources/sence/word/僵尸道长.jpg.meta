@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "76889a02-edb5-426f-b4fe-281aa8502640",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 118,
+  "height": 180,
+  "platformSettings": {},
+  "subMetas": {
+    "僵尸道长": {
+      "ver": "1.0.4",
+      "uuid": "2c0b2056-8be9-45a0-b994-453c4ed67e1b",
+      "rawTextureUuid": "76889a02-edb5-426f-b4fe-281aa8502640",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 118,
+      "height": 180,
+      "rawWidth": 118,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
