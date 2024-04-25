@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1713765920706,
+    "asset": 1714035413310,
     "meta": 1713491582551,
     "relativePath": "resources"
   },
@@ -555,7 +555,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1713929157696,
+    "asset": 1714025005368,
     "meta": 1713491582551,
     "relativePath": "resources\\biology_pic"
   },
@@ -2415,7 +2415,7 @@
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "145eddda-5d2d-4869-9c39-47bfe2697bed": {
-    "asset": 1714025001834,
+    "asset": 1714035229719,
     "meta": 1714025001835,
     "relativePath": "resources\\fighting"
   },
@@ -2746,7 +2746,7 @@
   },
   "2d00141b-1a91-4345-b4d0-bde093c8f6d9": {
     "asset": 1714028977923,
-    "meta": 1714028977922,
+    "meta": 1714035617395,
     "relativePath": "resources\\files"
   },
   "400e7557-6b06-4aee-be02-a9af9afb87a1": {
@@ -3111,7 +3111,7 @@
   },
   "2e0d6625-7e3a-404c-96ed-279d6cb0d479": {
     "asset": 1714035413312,
-    "meta": 1714035413310,
+    "meta": 1714035609971,
     "relativePath": "resources\\app_resources"
   },
   "397e01a0-9191-4a71-a26f-16cf19ad3b16": {

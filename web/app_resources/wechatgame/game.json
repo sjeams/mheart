@@ -8,6 +8,14 @@
     },
     "subpackages": [
         {
+            "name": "app_resources",
+            "root": "subpackages/app_resources/"
+        },
+        {
+            "name": "files",
+            "root": "subpackages/files/"
+        },
+        {
             "name": "技能图标",
             "root": "subpackages/技能图标/"
         },
