@@ -31,7 +31,7 @@ cc.Class({
             
             
                // 此处进行事件绑定
-            // _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
+            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
             //写入icon
             TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
             return TipBoxPrefab_model

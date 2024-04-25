@@ -18,7 +18,7 @@ cc.Class({
     var TOOLS = info_list; // let image = '/技能图标/'+skill.image;
     //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-    cc.loader.loadRes('/fighting/sprite_世界', function (errorMessage, loadedResource_icon) {
+    cc.loader.loadRes('/model战斗/sprite_世界', function (errorMessage, loadedResource_icon) {
       //检查资源加载
       if (errorMessage) {
         cc.log('载入预制资源失败, 原因:' + errorMessage);
