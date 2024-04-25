@@ -2349,11 +2349,6 @@
     "meta": 1713863434213,
     "relativePath": "Script\\fighting\\skill_iconTools.js"
   },
-  "398e676d-633a-44ab-997e-980aedf61174": {
-    "asset": 1713866405875,
-    "meta": 1713866406907,
-    "relativePath": "Script\\home\\biology_bagTools.js"
-  },
   "83d38215-0c69-4f46-9a6a-4b9cca0c29df": {
     "asset": 1713929149861,
     "meta": 1713929157712,
@@ -2378,11 +2373,6 @@
     "asset": 1713930282442,
     "meta": 1713930346930,
     "relativePath": "Script\\home\\score_home.js"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1714029168641,
-    "meta": 1714029168896,
-    "relativePath": "Scene\\home\\大厅.fire"
   },
   "145eddda-5d2d-4869-9c39-47bfe2697bed": {
     "asset": 1714035229719,
@@ -2559,16 +2549,6 @@
     "meta": 1714037502322,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
-  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
-    "asset": 1714037758669,
-    "meta": 1714037791007,
-    "relativePath": "Script\\home\\biology_iconTools.js"
-  },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1714037875313,
-    "meta": 1714037882516,
-    "relativePath": "Script\\home\\biology_infoTools.js"
-  },
   "6d82bb25-539b-4553-b206-95d402ddb9d7": {
     "asset": 1714037941184,
     "meta": 1714037967040,
@@ -2595,13 +2575,33 @@
     "relativePath": "Script\\home\\biology_yuanfenTools.js"
   },
   "62f95362-361a-46b6-800a-552e75eb1aec": {
-    "asset": 1714038959771,
-    "meta": 1714038959780,
+    "asset": 1714039333053,
+    "meta": 1714039333067,
     "relativePath": "resources\\model背包\\生物信息.prefab"
   },
+  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
+    "asset": 1714039286218,
+    "meta": 1714039332155,
+    "relativePath": "Script\\home\\biology_iconTools.js"
+  },
+  "398e676d-633a-44ab-997e-980aedf61174": {
+    "asset": 1714039532697,
+    "meta": 1714039539493,
+    "relativePath": "Script\\home\\biology_bagTools.js"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1714039537391,
+    "meta": 1714039539562,
+    "relativePath": "Script\\home\\biology_infoTools.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1714039630110,
+    "meta": 1714039630143,
+    "relativePath": "Scene\\home\\大厅.fire"
+  },
   "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
-    "asset": 1714038958423,
-    "meta": 1714038959417,
+    "asset": 1714039624631,
+    "meta": 1714039629557,
     "relativePath": "Script\\home\\biology_xinxiTools.js"
   }
 }

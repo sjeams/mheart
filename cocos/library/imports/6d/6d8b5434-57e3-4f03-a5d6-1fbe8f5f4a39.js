@@ -83,8 +83,8 @@ cc.Class({
     TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string = '力量:' + info.power;
     TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string = '敏捷:' + info.agile;
     TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string = '智力:' + info.intelligence;
-    TipBoxPrefab.getChildByName('生命s').getComponent(cc.Label).string = info.shengMing;
-    TipBoxPrefab.getChildByName('魔法s').getComponent(cc.Label).string = info.moFa;
+    TipBoxPrefab.getChildByName('生命s').getComponent(cc.Label).string = '生命:' + info.shengMing;
+    TipBoxPrefab.getChildByName('魔法s').getComponent(cc.Label).string = '魔法:' + info.moFa;
     TipBoxPrefab.getChildByName('攻击s').getComponent(cc.Label).string = '攻击:' + info.gongJi;
     TipBoxPrefab.getChildByName('护甲s').getComponent(cc.Label).string = '护甲:' + info.huJia;
     TipBoxPrefab.getChildByName('特攻s').getComponent(cc.Label).string = '特攻:' + info.faGong;

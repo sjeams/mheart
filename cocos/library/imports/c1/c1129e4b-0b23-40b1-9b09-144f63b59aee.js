@@ -42,7 +42,9 @@ cc.Class({
 
       TipBoxPrefab_model.getChildByName('生物详情').addChild(TipBoxPrefab);
       return TipBoxPrefab_model;
-    });
+    }); // //技能列表挂载--默认挂载信息
+
+    TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model, info);
     return TipBoxPrefab_model;
   },
   //技能图片渲染

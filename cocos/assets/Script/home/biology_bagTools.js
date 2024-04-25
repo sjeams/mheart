@@ -58,10 +58,10 @@ cc.Class({
         //生物列表挂载
         var tool = cc.instantiate(TipBoxPrefab);
         tool.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab,info)
-        // //生物详情挂载
+        // //生物详情挂载--默认加载第一个
         tool.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab,info[0])
-        // //技能列表挂载--默认挂载技能列表
-        tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab,info[0])
+        // // //技能列表挂载--默认挂载技能列表
+        // tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab,info[0])
         // // //信息列表挂载
         // tool.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab,info[0])
         // // //缘分列表挂载

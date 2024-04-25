@@ -97,8 +97,8 @@ cc.Class({
             TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
             //重新挂载
             TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,info)
-            //切换默认挂载技能列表
-            TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+            // 切换默认挂载信息列表
+            // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
             // TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model,info)
             // TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
 
