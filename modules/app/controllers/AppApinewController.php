@@ -96,7 +96,7 @@ class AppApinewController extends ApiUserControl{
      */
     public function actionFight(){
         $param =$this->param;
-        $map_int =$param['map_int']?:3;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
+        $map_int =$param['map_int']?:0;//生物地图序号_阵容编号--系统战斗，获取地图编号时才回用到
         $UserBiologyNatureDo=new UserBiologyNatureDo();
         $UserWords =new UserWords();
         //获取自己战斗阵容
@@ -128,9 +128,6 @@ class AppApinewController extends ApiUserControl{
         $img_list = array_column(array_filter($img_list),'picture');
         $img_list =  array_merge(array($data['map_pic']),$img_list);
         $data['img_list'] =$img_list;
-
-        var_dump(111);die;
-
         // die;
         // var_dump($data['fighting_history'][0]['fighting_history'][2]);die;
         // var_dump($data['fighting_history']);die;

@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 267.0625,
+                "height": 294.453125,
                 "type": "panel",
-                "width": 314
+                "width": 357.3125
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 267.9375,
+                "height": 295.546875,
                 "type": "panel",
-                "width": 314
+                "width": 357.3125
               }
             ],
-            "height": 538,
+            "height": 593,
             "type": "dock-v",
-            "width": 314
+            "width": 357.3125
           },
           {
             "active": 0,
@@ -42,9 +42,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 556,
+            "height": 593,
             "type": "panel",
-            "width": 319
+            "width": 363
           },
           {
             "children": [
@@ -53,9 +53,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 171.65625,
+                "height": 189.671875,
                 "type": "panel",
-                "width": 556
+                "width": 632.6875
               },
               {
                 "active": 0,
@@ -64,14 +64,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 363.34375,
+                "height": 400.3125,
                 "type": "panel",
-                "width": 556
+                "width": 632.6875
               }
             ],
-            "height": 538,
+            "height": 593,
             "type": "dock-v",
-            "width": 556
+            "width": 632.6875
           }
         ],
         "type": "dock-h"
@@ -87,7 +87,7 @@
         "game-window"
       ]
     },
-    "window-1713943973220": {}
+    "worker": {}
   },
   "panels": {
     "project-settings": {
