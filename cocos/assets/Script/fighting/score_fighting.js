@@ -65,7 +65,7 @@ cc.Class({
     },
     //开启战斗
     goPlay( ){
-        data = cc.globalData
+        let  data = cc.globalData
         var _this =this;
         var biolgy_state = data.data.biolgy_state;
         var poition_my = data.data.poition_my;

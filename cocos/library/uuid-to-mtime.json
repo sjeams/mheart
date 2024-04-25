@@ -2454,11 +2454,6 @@
     "meta": 1714033745464,
     "relativePath": "Script\\fighting\\fightingTools.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1714034144573,
-    "meta": 1714034147795,
-    "relativePath": "Script\\fighting\\score_fighting.js"
-  },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
     "asset": 1714034079066,
     "meta": 1714034147825,
@@ -2603,5 +2598,10 @@
     "asset": 1713491589812,
     "meta": 1714036985591,
     "relativePath": "resources\\图标世界\\word\\武林外传.jpg"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1714037474731,
+    "meta": 1714037502322,
+    "relativePath": "Script\\fighting\\score_fighting.js"
   }
 }

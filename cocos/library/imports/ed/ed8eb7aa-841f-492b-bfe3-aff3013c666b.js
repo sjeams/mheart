@@ -73,7 +73,7 @@ cc.Class({
   },
   //开启战斗
   goPlay: function goPlay() {
-    data = cc.globalData;
+    var data = cc.globalData;
 
     var _this = this;
 
