@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "6593d4d8-2252-44b8-8da0-59b9dbb52bcb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 214,
+  "height": 300,
+  "platformSettings": {},
+  "subMetas": {
+    "水浒传": {
+      "ver": "1.0.4",
+      "uuid": "d3346a3f-92a2-4063-9fd1-ada485714292",
+      "rawTextureUuid": "6593d4d8-2252-44b8-8da0-59b9dbb52bcb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 214,
+      "height": 300,
+      "rawWidth": 214,
+      "rawHeight": 300,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "863737f1-602c-4db4-8d22-95ed07819172",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 215,
+  "height": 300,
+  "platformSettings": {},
+  "subMetas": {
+    "楚汉传奇": {
+      "ver": "1.0.4",
+      "uuid": "8d0af1c9-9648-478f-9edf-c10ede54d69c",
+      "rawTextureUuid": "863737f1-602c-4db4-8d22-95ed07819172",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 215,
+      "height": 300,
+      "rawWidth": 215,
+      "rawHeight": 300,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

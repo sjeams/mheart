@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "楚汉传奇",
+    "texture": "863737f1-602c-4db4-8d22-95ed07819172",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      215,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      215,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

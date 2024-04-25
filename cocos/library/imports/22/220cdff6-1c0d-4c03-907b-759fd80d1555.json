@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "风云",
+    "texture": "7e3af2ed-de80-4f01-bdcb-a6c5ca8d1241",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      179,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      179,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

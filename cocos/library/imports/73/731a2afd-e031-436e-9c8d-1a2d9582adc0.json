@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "倩女幽魂",
+    "texture": "ab4c91b4-d8aa-441a-ac0b-0c70895b395f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      128,
+      192
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      128,
+      192
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

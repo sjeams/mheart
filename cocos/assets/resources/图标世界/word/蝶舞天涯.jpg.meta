@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "f2c97552-727b-4f80-90b8-a49281fc637d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 207,
+  "height": 300,
+  "platformSettings": {},
+  "subMetas": {
+    "蝶舞天涯": {
+      "ver": "1.0.4",
+      "uuid": "72e47f94-1c88-4eaf-a8b5-2756a6024d0d",
+      "rawTextureUuid": "f2c97552-727b-4f80-90b8-a49281fc637d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 207,
+      "height": 300,
+      "rawWidth": 207,
+      "rawHeight": 300,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

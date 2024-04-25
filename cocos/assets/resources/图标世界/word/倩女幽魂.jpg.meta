@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "ab4c91b4-d8aa-441a-ac0b-0c70895b395f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 128,
+  "height": 192,
+  "platformSettings": {},
+  "subMetas": {
+    "倩女幽魂": {
+      "ver": "1.0.4",
+      "uuid": "731a2afd-e031-436e-9c8d-1a2d9582adc0",
+      "rawTextureUuid": "ab4c91b4-d8aa-441a-ac0b-0c70895b395f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 128,
+      "height": 192,
+      "rawWidth": 128,
+      "rawHeight": 192,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

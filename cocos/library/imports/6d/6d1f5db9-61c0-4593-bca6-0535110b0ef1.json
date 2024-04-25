@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "三国演义",
+    "texture": "85911566-3a47-43d9-9fcd-1503785381c2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      179,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      179,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

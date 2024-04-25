@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "貂蝉",
+    "texture": "7e6b9bb9-77d5-43e5-b8a9-f509313c41e9",
+    "atlas": "",
+    "rect": [
+      0,
+      7,
+      197,
+      307
+    ],
+    "offset": [
+      -1.5,
+      -3.5
+    ],
+    "originalSize": [
+      200,
+      314
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

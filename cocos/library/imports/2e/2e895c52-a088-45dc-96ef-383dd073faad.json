@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "鹿鼎记",
+    "texture": "c12172e5-5083-4f48-a994-71a05e714e03",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      205,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      205,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

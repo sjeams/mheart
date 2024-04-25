@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a06c61b0-96fb-46b9-9a3f-e9960465a5c6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 200,
+  "height": 283,
+  "platformSettings": {},
+  "subMetas": {
+    "司马懿": {
+      "ver": "1.0.4",
+      "uuid": "5689fc56-096f-44f6-8b37-c9e195118d58",
+      "rawTextureUuid": "a06c61b0-96fb-46b9-9a3f-e9960465a5c6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 0.5,
+      "trimX": 5,
+      "trimY": 3,
+      "width": 191,
+      "height": 276,
+      "rawWidth": 200,
+      "rawHeight": 283,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

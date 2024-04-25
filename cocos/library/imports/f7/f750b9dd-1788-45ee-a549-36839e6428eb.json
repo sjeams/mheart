@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "连城诀",
+    "texture": "a513a375-dc4b-4678-b9ae-23e10bae31fd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      550,
+      953
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      550,
+      953
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

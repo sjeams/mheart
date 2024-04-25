@@ -8,12 +8,12 @@
     },
     "subpackages": [
         {
-            "name": "app_resources",
-            "root": "subpackages/app_resources/"
+            "name": "图标世界",
+            "root": "subpackages/图标世界/"
         },
         {
-            "name": "files",
-            "root": "subpackages/files/"
+            "name": "图标生物",
+            "root": "subpackages/图标生物/"
         },
         {
             "name": "技能图标",
