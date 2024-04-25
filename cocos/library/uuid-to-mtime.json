@@ -2440,8 +2440,8 @@
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1714024417966,
-    "meta": 1714024417985,
+    "asset": 1714029168641,
+    "meta": 1714029168896,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "145eddda-5d2d-4869-9c39-47bfe2697bed": {
@@ -2454,24 +2454,659 @@
     "meta": 1714025022887,
     "relativePath": "resources\\fighting\\sprite_地图.prefab"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1714026019066,
-    "meta": 1714026020563,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1714028542978,
-    "meta": 1714028542994,
+    "asset": 1714029409883,
+    "meta": 1714029409895,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
+  "8e02a277-d607-4fd2-921a-ac3687de3b98": {
+    "asset": 1714028977857,
+    "meta": 1714028977857,
+    "relativePath": "resources\\图标生物"
+  },
+  "a003f81a-b317-4703-8982-55fcf4e3cf33": {
+    "asset": 1714028977857,
+    "meta": 1714028977857,
+    "relativePath": "resources\\图标生物\\files"
+  },
+  "b4fc395e-6165-4d77-b2ad-ccf4f0d48613": {
+    "asset": 1714028977860,
+    "meta": 1714028977858,
+    "relativePath": "resources\\图标生物\\files\\attach"
+  },
+  "fa323394-baf5-4251-810a-cef3ed5359a6": {
+    "asset": 1714028977877,
+    "meta": 1714028977861,
+    "relativePath": "resources\\图标生物\\files\\attach\\images"
+  },
+  "67f2676a-5918-4986-bacd-2a057505b9a4": {
+    "asset": 1714028977864,
+    "meta": 1714028977864,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200610"
+  },
+  "a228baa7-8c49-40fa-97a5-10f7e246c6a6": {
+    "asset": 1714028977871,
+    "meta": 1714028977865,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617"
+  },
+  "63a79758-078b-43db-9412-2a0c46336fc2": {
+    "asset": 1713491590860,
+    "meta": 1714028978017,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200610\\1591780494723708.png"
+  },
+  "70b65abc-44e9-4215-bb91-c4a7f9ddf208": {
+    "asset": 1713491590862,
+    "meta": 1714028978028,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592402963666175.png"
+  },
+  "b37936b8-6e87-4d4a-9966-608af1909fc5": {
+    "asset": 1713491590866,
+    "meta": 1714028978049,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592403048431909.jpg"
+  },
+  "c3214083-d2df-4d0b-bc57-87af6cae73b2": {
+    "asset": 1713491590864,
+    "meta": 1714028978069,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592402978508076.png"
+  },
+  "57823421-3057-4827-a860-3dc37152cc71": {
+    "asset": 1713491590870,
+    "meta": 1714028978080,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592403060888132.jpg"
+  },
+  "5b2d79fe-5c77-4305-9921-805aae7805e5": {
+    "asset": 1713491590871,
+    "meta": 1714028978095,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592404280150482.jpeg"
+  },
+  "082a7450-8509-4648-bbd2-c662f4ced9b9": {
+    "asset": 1713491590873,
+    "meta": 1714028978105,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592404465100035.jpg"
+  },
+  "435831a9-cbf1-49bb-b0fc-decd4dc11b4d": {
+    "asset": 1714028977872,
+    "meta": 1714028977872,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200811"
+  },
+  "55c1dc7e-ab66-4657-81e8-57fc73e75b7a": {
+    "asset": 1713491590874,
+    "meta": 1714028978115,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200617\\1592404474965547.jpg"
+  },
+  "2d16ae8c-716a-47cb-9bf9-06f7b9dcc478": {
+    "asset": 1714028977874,
+    "meta": 1714028977873,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20220329"
+  },
+  "11e1e18b-e429-403c-828a-7c89f9985ed8": {
+    "asset": 1713491590875,
+    "meta": 1714028978118,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20200811\\1597113740121818.png"
+  },
+  "152bf3c0-f2eb-4fcd-82cd-509feef80df0": {
+    "asset": 1713491590875,
+    "meta": 1714028978129,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20220329\\1648548783106826.png"
+  },
+  "bc3fe3d3-677d-4a5e-a1cf-6889b4485589": {
+    "asset": 1714028977914,
+    "meta": 1714028977877,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227"
+  },
+  "b7dbc281-c7e1-4b0d-8b91-3fb6b0d88a4c": {
+    "asset": 1713491590875,
+    "meta": 1714028978131,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20220329\\1648548956583338.png"
+  },
+  "680eafd2-eea5-4dfc-bd19-43b108d3b02b": {
+    "asset": 1713491590876,
+    "meta": 1714028978146,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703682069195640.png"
+  },
+  "57ca4133-1d7f-457f-acab-544e561e25d9": {
+    "asset": 1713491590877,
+    "meta": 1714028978151,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703682108688085.png"
+  },
+  "02d16518-3113-44b0-96cb-dceaead9e2b4": {
+    "asset": 1713491590878,
+    "meta": 1714028978165,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703684122371572.png"
+  },
+  "0314fa25-f8f3-4269-9049-090e5bf8728c": {
+    "asset": 1713491590878,
+    "meta": 1714028978168,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703682605991874.png"
+  },
+  "0ca8877c-1fcb-4b56-ada9-af635ac6054f": {
+    "asset": 1713491590879,
+    "meta": 1714028978180,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703684136914830.png"
+  },
+  "74561546-3a3b-42f3-8688-3899f5a0e3f2": {
+    "asset": 1713491590880,
+    "meta": 1714028978185,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703684160661219.png"
+  },
+  "730aee9f-f114-473d-a71d-bc2d182a8eb4": {
+    "asset": 1713491590880,
+    "meta": 1714028978201,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703684186794604.png"
+  },
+  "73ad9bac-1b4a-4b33-85fa-856f82a37134": {
+    "asset": 1713491590881,
+    "meta": 1714028978202,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685110710848.png"
+  },
+  "92b1b5f9-57e2-4fa2-a658-1e34dbf1d3be": {
+    "asset": 1713491590882,
+    "meta": 1714028978216,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685125282970.png"
+  },
+  "f8ba387d-c029-4a8e-8366-5367ebd13c69": {
+    "asset": 1713491590883,
+    "meta": 1714028978220,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685149885948.png"
+  },
+  "8ed513f8-e327-4cf6-941c-2c6f6bf67330": {
+    "asset": 1713491590884,
+    "meta": 1714028978240,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685171864428.png"
+  },
+  "12117129-a67a-4560-b12d-1744f17ff44d": {
+    "asset": 1713491590884,
+    "meta": 1714028978242,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685189321795.png"
+  },
+  "2ad5822c-1e4a-4d49-adab-e340f58c7106": {
+    "asset": 1713491590885,
+    "meta": 1714028978254,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685203448335.png"
+  },
+  "b78bc24e-3352-4108-adeb-0ff4a28a860e": {
+    "asset": 1713491590886,
+    "meta": 1714028978256,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685218177525.png"
+  },
+  "ed40e6a7-f744-4973-a106-5ba0f26e4fb1": {
+    "asset": 1713491590886,
+    "meta": 1714028978268,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685236865063.png"
+  },
+  "59f9064f-b9a0-4241-837d-614a2e557bda": {
+    "asset": 1713491590887,
+    "meta": 1714028978270,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685255602982.png"
+  },
+  "26e550f2-17a6-4a6c-a2f1-f6f5d8a0f539": {
+    "asset": 1713491590888,
+    "meta": 1714028978286,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685267811876.png"
+  },
+  "394842ff-a7cc-419e-945f-e136ca7a1a89": {
+    "asset": 1713491590888,
+    "meta": 1714028978295,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685280313929.png"
+  },
+  "a9a0714e-9983-475a-9933-4c7bba881503": {
+    "asset": 1713491590889,
+    "meta": 1714028978301,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685299285750.png"
+  },
+  "bd343a43-fbb9-46a3-8716-c3c2c47ddf46": {
+    "asset": 1713491590890,
+    "meta": 1714028978308,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685311953671.png"
+  },
+  "d18f5eb2-fc20-4bca-9312-8161b80c4175": {
+    "asset": 1713491590890,
+    "meta": 1714028978318,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685322795733.png"
+  },
+  "f7b066ca-2c10-4aa9-9ef2-dd2fb7ff3176": {
+    "asset": 1713491590891,
+    "meta": 1714028978329,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685336886571.png"
+  },
+  "113a7de0-1595-41a8-973e-d0d783f67dbb": {
+    "asset": 1713491590892,
+    "meta": 1714028978334,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685348230367.png"
+  },
+  "c6c31222-4fa7-4a11-a8db-935f3bdf2058": {
+    "asset": 1713491590892,
+    "meta": 1714028978345,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685358505621.png"
+  },
+  "4c4a2d06-cb9b-4ba8-bd43-abe011e91f45": {
+    "asset": 1713491590893,
+    "meta": 1714028978348,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685371636014.png"
+  },
+  "38d2b795-d74a-496a-b41f-a64a01604cd4": {
+    "asset": 1713491590895,
+    "meta": 1714028978362,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685384366793.png"
+  },
+  "2fd82486-a533-497c-a0a3-ed27b787611e": {
+    "asset": 1713491590895,
+    "meta": 1714028978364,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685395934717.png"
+  },
+  "51e3a9db-eeaa-485e-85a4-f74b41fb1b3a": {
+    "asset": 1713491590896,
+    "meta": 1714028978377,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685896923469.png"
+  },
+  "f3c79b32-70f9-4582-aaa9-f380defcde05": {
+    "asset": 1713491590897,
+    "meta": 1714028978380,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685905546655.png"
+  },
+  "49de9ac7-c076-4b36-8283-797f85d729fd": {
+    "asset": 1713491590898,
+    "meta": 1714028978395,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703685997192544.png"
+  },
+  "714b836c-19c7-4f67-9522-4db6d254c68e": {
+    "asset": 1713491590899,
+    "meta": 1714028978398,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686026358466.png"
+  },
+  "1f3db1e6-eb28-43f6-87d7-d651f26218ec": {
+    "asset": 1713491590900,
+    "meta": 1714028978412,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686173108561.png"
+  },
+  "75e0d09b-5b3c-4669-a9fa-853b0183dbfc": {
+    "asset": 1713491590901,
+    "meta": 1714028978414,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686329308948.png"
+  },
+  "ff068ff1-1cc0-4a7f-ad28-b371f3072c2c": {
+    "asset": 1713491590903,
+    "meta": 1714028978427,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686540611104.png"
+  },
+  "3a03fab2-023e-421d-b75d-051be7736b41": {
+    "asset": 1713491590902,
+    "meta": 1714028978430,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686520339974.png"
+  },
+  "23cdb36e-afa4-43a2-949b-b99ecda34e7a": {
+    "asset": 1713491590904,
+    "meta": 1714028978445,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686634185960.png"
+  },
+  "5bf5395c-4ef9-41a4-be8b-3348fc42fa19": {
+    "asset": 1713491590904,
+    "meta": 1714028978449,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686555229965.png"
+  },
+  "27b7ccc0-6375-4584-ab6b-da8a8ba7a818": {
+    "asset": 1713491590905,
+    "meta": 1714028978462,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686647458929.png"
+  },
+  "7c31489a-a4d6-4670-8b1d-974d0ebeb026": {
+    "asset": 1713491590905,
+    "meta": 1714028978463,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686657826651.png"
+  },
+  "d14bca35-916e-439a-860b-bf3f3f84e9ec": {
+    "asset": 1713491590907,
+    "meta": 1714028978478,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686979525672.png"
+  },
+  "dcbae45b-b8c6-4e62-86e9-d9ef41386197": {
+    "asset": 1713491590906,
+    "meta": 1714028978480,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703686673801306.png"
+  },
+  "695c4495-fdef-4df9-80ac-b7c00a17040c": {
+    "asset": 1713491590908,
+    "meta": 1714028978491,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703687015670821.png"
+  },
+  "7f4512af-0167-4807-8cd3-c51e7e930096": {
+    "asset": 1713491590908,
+    "meta": 1714028978494,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703687041511441.png"
+  },
+  "2d00141b-1a91-4345-b4d0-bde093c8f6d9": {
+    "asset": 1714028977923,
+    "meta": 1714028977922,
+    "relativePath": "resources\\files"
+  },
+  "400e7557-6b06-4aee-be02-a9af9afb87a1": {
+    "asset": 1714028977924,
+    "meta": 1714028977923,
+    "relativePath": "resources\\files\\attach"
+  },
+  "c29af3d2-e051-425d-8092-7b3dc80ee378": {
+    "asset": 1714028977937,
+    "meta": 1714028977924,
+    "relativePath": "resources\\files\\attach\\images"
+  },
+  "f9b4e4d9-c9b0-41ca-b484-c3dcf546e8f3": {
+    "asset": 1714028977926,
+    "meta": 1714028977926,
+    "relativePath": "resources\\files\\attach\\images\\20200610"
+  },
+  "ea1f578e-0e4f-4470-9581-04c8ef8729b0": {
+    "asset": 1713491590860,
+    "meta": 1714028978505,
+    "relativePath": "resources\\files\\attach\\images\\20200610\\1591780494723708.png"
+  },
+  "ddcbc4c9-3526-4359-a4c4-fbd4d0e6719c": {
+    "asset": 1714028977933,
+    "meta": 1714028977928,
+    "relativePath": "resources\\files\\attach\\images\\20200617"
+  },
+  "59206729-e28e-45c2-9891-f148dbae2a53": {
+    "asset": 1713491590910,
+    "meta": 1714028978507,
+    "relativePath": "resources\\图标生物\\files\\attach\\images\\20231227\\1703687072256359.png"
+  },
+  "b4577469-186d-418c-ba9f-688261cc7025": {
+    "asset": 1713491590862,
+    "meta": 1714028978526,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592402963666175.png"
+  },
+  "cce377fd-8e74-4b33-bf36-1ceab5772af9": {
+    "asset": 1713491590864,
+    "meta": 1714028978549,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592402978508076.png"
+  },
+  "2c15f2b0-05af-4ae4-b051-3c4684bf91e2": {
+    "asset": 1713491590866,
+    "meta": 1714028978550,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592403048431909.jpg"
+  },
+  "f7cd05be-1f93-42eb-9c16-8a62b26f231d": {
+    "asset": 1713491590871,
+    "meta": 1714028978570,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592404280150482.jpeg"
+  },
+  "821a3497-1c5a-4d09-836e-4a7d55676063": {
+    "asset": 1713491590870,
+    "meta": 1714028978579,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592403060888132.jpg"
+  },
+  "da9e8431-34c4-4b4c-9bd3-40c88b030aea": {
+    "asset": 1713491590874,
+    "meta": 1714028978596,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592404474965547.jpg"
+  },
+  "6daa8616-38ac-47bd-9218-eb0943d8a255": {
+    "asset": 1714028977934,
+    "meta": 1714028977934,
+    "relativePath": "resources\\files\\attach\\images\\20200811"
+  },
+  "a847e432-6244-4e1c-973c-c331fcd4c211": {
+    "asset": 1713491590873,
+    "meta": 1714028978602,
+    "relativePath": "resources\\files\\attach\\images\\20200617\\1592404465100035.jpg"
+  },
+  "55497211-11e0-4aaa-ad87-99acd0882a1c": {
+    "asset": 1714028977935,
+    "meta": 1714028977935,
+    "relativePath": "resources\\files\\attach\\images\\20220329"
+  },
+  "cf13d4d8-c596-4ebd-947a-de180e5abbfd": {
+    "asset": 1713491590875,
+    "meta": 1714028978609,
+    "relativePath": "resources\\files\\attach\\images\\20200811\\1597113740121818.png"
+  },
+  "a8ae6a78-111a-4a5f-9845-1a121a5fff43": {
+    "asset": 1713491590875,
+    "meta": 1714028978612,
+    "relativePath": "resources\\files\\attach\\images\\20220329\\1648548783106826.png"
+  },
+  "877e114a-3cff-4ecd-aa74-dc4328016194": {
+    "asset": 1714028977969,
+    "meta": 1714028977937,
+    "relativePath": "resources\\files\\attach\\images\\20231227"
+  },
+  "3ec3ce80-8b2c-452c-8f3c-2f59310883ff": {
+    "asset": 1713491590875,
+    "meta": 1714028978622,
+    "relativePath": "resources\\files\\attach\\images\\20220329\\1648548956583338.png"
+  },
+  "ab1564df-0136-44c0-81c8-e4488bd6fc63": {
+    "asset": 1713491590876,
+    "meta": 1714028978628,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703682069195640.png"
+  },
+  "51e89286-a816-4867-b12c-69517db15d65": {
+    "asset": 1713491590877,
+    "meta": 1714028978646,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703682108688085.png"
+  },
+  "09320c73-c0e4-479f-86ff-585a9770bdfc": {
+    "asset": 1713491590878,
+    "meta": 1714028978648,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703682605991874.png"
+  },
+  "ae95577f-03c4-421e-b6e0-e96fd8c0bf00": {
+    "asset": 1713491590879,
+    "meta": 1714028978658,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703684136914830.png"
+  },
+  "02141bcc-c2ca-4f26-94c4-b91d392e7bee": {
+    "asset": 1713491590878,
+    "meta": 1714028978664,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703684122371572.png"
+  },
+  "8c1f1fad-bc2f-4776-a565-58f78bc3a437": {
+    "asset": 1713491590880,
+    "meta": 1714028978761,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703684160661219.png"
+  },
+  "552fab02-dc8c-4126-99e0-ad4755df9d62": {
+    "asset": 1713491590880,
+    "meta": 1714028978763,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703684186794604.png"
+  },
+  "ae4eaef7-4a26-4927-82ba-2a0dc4bbfdc6": {
+    "asset": 1713491590881,
+    "meta": 1714028978778,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685110710848.png"
+  },
+  "301a3c5c-8c71-4170-b938-6174995aefda": {
+    "asset": 1713491590882,
+    "meta": 1714028978780,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685125282970.png"
+  },
+  "9394ca36-cc8a-4b45-a888-5870fcf10cc5": {
+    "asset": 1713491590883,
+    "meta": 1714028978791,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685149885948.png"
+  },
+  "f15983e3-26df-42be-a5c3-c6c8a729c92d": {
+    "asset": 1713491590884,
+    "meta": 1714028978799,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685171864428.png"
+  },
+  "e229f2b6-bb1c-47c9-ac17-332bdf145804": {
+    "asset": 1713491590885,
+    "meta": 1714028978811,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685203448335.png"
+  },
+  "9cf6b5ab-7ac7-4e1e-9b6b-49871c11dae6": {
+    "asset": 1713491590884,
+    "meta": 1714028978814,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685189321795.png"
+  },
+  "7183a720-4494-403a-9a07-37222cc40c28": {
+    "asset": 1713491590886,
+    "meta": 1714028978824,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685218177525.png"
+  },
+  "df772b1a-dfa8-4424-82d4-fdb4a31b749d": {
+    "asset": 1713491590886,
+    "meta": 1714028978828,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685236865063.png"
+  },
+  "da389c72-85c7-4de9-b2c4-30fb58e3bace": {
+    "asset": 1713491590887,
+    "meta": 1714028978843,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685255602982.png"
+  },
+  "391159df-3800-4bfa-8c9d-a42492acbacd": {
+    "asset": 1713491590888,
+    "meta": 1714028978846,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685267811876.png"
+  },
+  "f26eea01-4b44-458e-93fa-7e8a67a8a5fd": {
+    "asset": 1713491590889,
+    "meta": 1714028978863,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685299285750.png"
+  },
+  "40267753-40fc-445a-aa7b-055a222d6d23": {
+    "asset": 1713491590888,
+    "meta": 1714028978872,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685280313929.png"
+  },
+  "97c27c66-82f2-46f4-9041-6257101a3fd5": {
+    "asset": 1713491590890,
+    "meta": 1714028978880,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685311953671.png"
+  },
+  "d91cf5c1-7997-4fb3-8af8-b16abd3833fb": {
+    "asset": 1713491590890,
+    "meta": 1714028978897,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685322795733.png"
+  },
+  "b69115e9-d26e-4870-ba07-0ff16a2b5a43": {
+    "asset": 1713491590891,
+    "meta": 1714028978902,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685336886571.png"
+  },
+  "8b62c29e-b5da-4e14-af9c-fc46794d6c66": {
+    "asset": 1713491590892,
+    "meta": 1714028978917,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685348230367.png"
+  },
+  "6fd87481-59a8-477c-a642-8c551abc5946": {
+    "asset": 1713491590892,
+    "meta": 1714028978918,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685358505621.png"
+  },
+  "fd21d1f1-cfbe-4279-83d9-0139797f50ef": {
+    "asset": 1713491590895,
+    "meta": 1714028978933,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685384366793.png"
+  },
+  "d0ad8172-af9e-406d-a7cf-c125051dd8e4": {
+    "asset": 1713491590893,
+    "meta": 1714028978935,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685371636014.png"
+  },
+  "c16f56be-4f6d-41c9-ba35-761d7b327ff2": {
+    "asset": 1713491590896,
+    "meta": 1714028978951,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685896923469.png"
+  },
+  "b98045a9-d3b0-4166-baf1-2f9ec7e260d2": {
+    "asset": 1713491590895,
+    "meta": 1714028978953,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685395934717.png"
+  },
+  "71ae704c-1603-4995-8165-90fe3dc4d6a3": {
+    "asset": 1713491590898,
+    "meta": 1714028978970,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685997192544.png"
+  },
+  "285425d3-cf05-420c-9ee6-ef5554e978da": {
+    "asset": 1713491590897,
+    "meta": 1714028978972,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703685905546655.png"
+  },
+  "aa3f3c5a-0f42-4e32-83ce-fa1bbb0ac6ba": {
+    "asset": 1713491590899,
+    "meta": 1714028978989,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686026358466.png"
+  },
+  "7bf7e245-8b2a-45a3-9c72-9faa25308bb2": {
+    "asset": 1713491590900,
+    "meta": 1714028978991,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686173108561.png"
+  },
+  "b3c3de6e-07fd-49f4-a030-cf1e63472d35": {
+    "asset": 1713491590902,
+    "meta": 1714028979009,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686520339974.png"
+  },
+  "f5bf2b65-fc4d-49d1-b812-6e43e97cd934": {
+    "asset": 1713491590901,
+    "meta": 1714028979013,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686329308948.png"
+  },
+  "f93a2bf2-88d3-446a-a2a9-15fcbb66fcec": {
+    "asset": 1713491590903,
+    "meta": 1714028979030,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686540611104.png"
+  },
+  "538beaa6-6aaf-4b50-a0b8-cf527fd0ec55": {
+    "asset": 1713491590904,
+    "meta": 1714028979038,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686555229965.png"
+  },
+  "c4159910-3c90-403f-b466-b15ba0f1a969": {
+    "asset": 1713491590904,
+    "meta": 1714028979048,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686634185960.png"
+  },
+  "810affee-4c81-491a-ae52-2f7b4ba1da07": {
+    "asset": 1713491590905,
+    "meta": 1714028979053,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686647458929.png"
+  },
+  "bb4cd6bd-59ef-4084-b169-a446e881246b": {
+    "asset": 1713491590905,
+    "meta": 1714028979063,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686657826651.png"
+  },
+  "fe57c35b-271c-4073-bfa2-e6bd7795b77d": {
+    "asset": 1713491590906,
+    "meta": 1714028979069,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686673801306.png"
+  },
+  "6ac846be-ca23-4231-b6f6-72925080ba8d": {
+    "asset": 1713491590907,
+    "meta": 1714028979078,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703686979525672.png"
+  },
+  "aad5c5b6-fa4c-45a8-9778-91a6099f3134": {
+    "asset": 1713491590908,
+    "meta": 1714028979081,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703687015670821.png"
+  },
+  "2bccbedf-22a5-4b50-ab83-d79c3ff724d6": {
+    "asset": 1713491590908,
+    "meta": 1714028979095,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703687041511441.png"
+  },
+  "9a35a1b7-2ecd-435c-8d8a-0d215317048e": {
+    "asset": 1713491590910,
+    "meta": 1714028979097,
+    "relativePath": "resources\\files\\attach\\images\\20231227\\1703687072256359.png"
+  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1714026967845,
-    "meta": 1714026969521,
+    "asset": 1714028988696,
+    "meta": 1714029127218,
     "relativePath": "Script\\http.js"
   },
   "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1714028564359,
-    "meta": 1714028569735,
+    "asset": 1714029145403,
+    "meta": 1714029168291,
     "relativePath": "Script\\scence\\mapTools.js"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1714029388050,
+    "meta": 1714029388997,
+    "relativePath": "Script\\scence\\map_score.js"
   }
 }

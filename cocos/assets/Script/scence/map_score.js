@@ -3,24 +3,22 @@ var httpRequest = new HttpHelper();
 cc.Class({
     extends: cc.Component,
     properties: {  
-      content: cc.Node,
-      person: cc.Prefab,
-      home: cc.Node,
-      reload: cc.Node,
-      //列表
-      test_scrollView: {
-        default: null,
-        type: cc.ScrollView
-      },
-      //翻页容器
-      test_pageView: {
-        default: null,
-        type: cc.PageView
-      },
+      // content: cc.Node,
+      // // person: cc.Prefab,
+      // // home: cc.Node,
+      // // reload: cc.Node,
+      // //列表
+      // test_scrollView: {
+      //   default: null,
+      //   type: cc.ScrollView
+      // },
+      // //翻页容器
+      // test_pageView: {
+      //   default: null,
+      //   type: cc.PageView
+      // },
 
     },
-
-
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function () {
@@ -57,15 +55,15 @@ cc.Class({
               _this.reloadWord()//刷新世界地图
           }else{
               //生成世界
-              // let cellWidth = _this.content.width * 0.105;
-              // let cellHeight = _this.content.height * 0.215;
-              // let spacingX = _this.content.width * 0.022;
-              // let spacingY = _this.content.height * 0.045;
+              // let cellWidth = cc.find('Canvas/战斗/content').width * 0.105;
+              // let cellHeight = cc.find('Canvas/战斗/content').height * 0.215;
+              // let spacingX = cc.find('Canvas/战斗/content').width * 0.022;
+              // let spacingY = cc.find('Canvas/战斗/content').height * 0.045;
 
-              // _this.content.getComponent(cc.Layout).cellSize.width = cellWidth;
-              // _this.content.getComponent(cc.Layout).cellSize.height = cellHeight;
-              // _this.content.getComponent(cc.Layout).spacingX = spacingX;
-              // _this.content.getComponent(cc.Layout).spacingY = spacingY;
+              // cc.find('Canvas/战斗/content').getComponent(cc.Layout).cellSize.width = cellWidth;
+              // cc.find('Canvas/战斗/content').getComponent(cc.Layout).cellSize.height = cellHeight;
+              // cc.find('Canvas/战斗/content').getComponent(cc.Layout).spacingX = spacingX;
+              // cc.find('Canvas/战斗/content').getComponent(cc.Layout).spacingY = spacingY;
               _this.addWordMap(data) //生成生物
           }
       })
@@ -93,15 +91,15 @@ cc.Class({
       // };
       httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
         //移除节点
-        _this.content.removeAllChildren();
-        _this.content.destroyAllChildren();
+        cc.find('Canvas/战斗/content').removeAllChildren();
+        cc.find('Canvas/战斗/content').destroyAllChildren();
         //写入地图数据
         _this.addWordMap(data)
         })
     },
     //生成生物
     addWordMap(data){
-        cc.log(data)
+        // cc.log(data)
         cc.find('Canvas/tips/当前世界').getComponent(cc.Label).string = data.data.name+'('+data.data.time+'年)' 
         cc.find('Canvas/tips/流速').getComponent(cc.Label).string = '流速: '+data.data.time+'年/S' 
         cc.find('Canvas/tips/类型').getComponent(cc.Label).string = '类型: '+data.data.type_name
@@ -111,33 +109,6 @@ cc.Class({
         //技能图标挂载
         var BoxPrefab = cc.find('Canvas/战斗/content')
         BoxPrefab.getComponent('mapTools').biology_detail_list(BoxPrefab,info)
-      return false;
-        var _this = this;
-        // 根据MapTools生成相应的道具
-        // _this.toolsArray = [];
-        let TOOLS = data.data.user_in_word_map;
-        var total = data.data.user_in_word_map.length;
-        // var fi = cc.fadeIn(2)//渐显效果
-        // _this.content.runAction(fi);
-        // var fo = cc.fadeOut(1)//渐隐效果
-        // _this.content.runAction(fo);
-        //添加节点
-        for (let i=0; i<total; i++) {
-            // console.log(i) 
-            //死亡移除map_status
-            var map =TOOLS[i];
-            if(map.map_status==1){
-              // console.log(map.x)
-              // console.log(map.y)
-              let tool = cc.instantiate(_this.person);
-              tool.getComponent('mapTools').initInfo(map);
-              tool.x=map.x
-              tool.y=map.y
-              // _this.toolsArray.push(tool);
-              // tool.setPosition(map.x,map.y);  
-              _this.content.addChild(tool);   
-            }
-        }
     },
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
@@ -147,8 +118,8 @@ cc.Class({
       back_map(){
         //移除节点
         var _this = this;
-        _this.content.removeAllChildren();
-        _this.content.destroyAllChildren();
+        cc.find('Canvas/战斗/content').removeAllChildren();
+        cc.find('Canvas/战斗/content').destroyAllChildren();
         httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
       },
     // start: function() {

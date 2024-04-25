@@ -38,20 +38,28 @@ cc.Class({
                         TipBoxPrefab_icon.y=map.y
                         // TipBoxPrefab_icon.setPosition(map.x,map.y);  
                         //载入技能图片
-                        let image =  httpRequest.httpUrl(info.picture);
-                        if(image){
-                            cc.loader.load({ url: image }, function (err, texture) {  
-                            // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                                if (err) {
-                                    return;
-                                }
-                                // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-                                TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                            });
-                        }else{
-                            TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false; 
-                        }
-
+                        // let image =  httpRequest.httpUrl(info.picture);
+                        // if(image){
+                        //     cc.loader.load({ url: image }, function (err, texture) {  
+                        //     // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                        //         if (err) {
+                        //             return;
+                        //         }
+                        //         // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
+                        //         TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                        //     });
+                        // }else{
+                        //     TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false; 
+                        // }
+                        //放在资源下面
+                        let image = info.picture;
+                        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                            if (err) {
+                                // cc.error(err.message || err);
+                                return;
+                            }
+                            TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture; 
+                        });
                         var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
                         var type_color = color[info['yiXing']];
                         // console.log(info)
