@@ -78,24 +78,15 @@ cc.Class({
 
         var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //载入技能图片
 
-        var image = httpRequest.httpUrl(info.picture);
+        var image = info.picture;
+        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
+          if (err) {
+            // cc.error(err.message || err);
+            return;
+          }
 
-        if (image) {
-          cc.loader.load({
-            url: image
-          }, function (err, texture) {
-            // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-            if (err) {
-              return;
-            } // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-
-
-            TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-          });
-        } else {
-          TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false;
-        } //技能等级
-
+          TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture;
+        }); //技能等级
 
         TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
         TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。

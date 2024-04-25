@@ -54,19 +54,14 @@ cc.Class({
                     //开始实例化预制资源
                     let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
                     //载入技能图片
-                    let image =  httpRequest.httpUrl(info.picture);
-                    if(image){
-                        cc.loader.load({ url: image }, function (err, texture) {  
-                        // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                            if (err) {
-                                return;
-                            }
-                            // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-                            TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                        });
-                    }else{
-                        TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = false; 
-                    }
+                    let image = info.picture;
+                    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                        if (err) {
+                            // cc.error(err.message || err);
+                            return;
+                        }
+                        TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
+                    });
                     //技能等级
                     TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
                     TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string='等级'+info.grade

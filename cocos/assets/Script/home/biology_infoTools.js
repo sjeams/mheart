@@ -45,22 +45,16 @@ cc.Class({
         // TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
         // //生物命名必须叫生物
         //载入技能图片
-        let image =  httpRequest.httpUrl(info.picture);
-        if(image){
-            cc.loader.load({ url: image }, function (err, texture) {  
-            // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                if (err) {
-                    return;
-                }
-                // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-                TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-            });
-        }else{
-            TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = false; 
-        }
+        let image = info.picture;
+        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+            if (err) {
+                // cc.error(err.message || err);
+                return;
+            }
+            TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture; 
+        });
         TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string='战力'+info.special
         TipBoxPrefab.getChildByName('评分s').getComponent(cc.Label).string='评分:'+info.score/10
-
 
         if(info.yiXing==1){
             // cc.log(1111)

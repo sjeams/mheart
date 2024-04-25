@@ -55,24 +55,15 @@ cc.Class({
     // //生物命名必须叫生物
     //载入技能图片
 
-    var image = httpRequest.httpUrl(info.picture);
+    var image = info.picture;
+    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
+      if (err) {
+        // cc.error(err.message || err);
+        return;
+      }
 
-    if (image) {
-      cc.loader.load({
-        url: image
-      }, function (err, texture) {
-        // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-        if (err) {
-          return;
-        } // TipBoxPrefab_icon.getChildByName('P头像').getComponent(cc.Sprite).spriteFrame = texture; 
-
-
-        TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-      });
-    } else {
-      TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = false;
-    }
-
+      TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
+    });
     TipBoxPrefab.getChildByName('战力s').getComponent(cc.Label).string = '战力' + info.special;
     TipBoxPrefab.getChildByName('评分s').getComponent(cc.Label).string = '评分:' + info.score / 10;
 

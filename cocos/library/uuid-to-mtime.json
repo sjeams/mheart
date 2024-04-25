@@ -2354,11 +2354,6 @@
     "meta": 1713863434213,
     "relativePath": "Script\\fighting\\skill_iconTools.js"
   },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1713865952676,
-    "meta": 1713866004307,
-    "relativePath": "Script\\home\\biology_infoTools.js"
-  },
   "6d82bb25-539b-4553-b206-95d402ddb9d7": {
     "asset": 1713865939801,
     "meta": 1713866004372,
@@ -2378,11 +2373,6 @@
     "asset": 1713866405875,
     "meta": 1713866406907,
     "relativePath": "Script\\home\\biology_bagTools.js"
-  },
-  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
-    "asset": 1713866378293,
-    "meta": 1713866406979,
-    "relativePath": "Script\\home\\biology_iconTools.js"
   },
   "83d38215-0c69-4f46-9a6a-4b9cca0c29df": {
     "asset": 1713929149861,
@@ -2470,8 +2460,8 @@
     "relativePath": "resources\\fighting\\sprite_世界.prefab"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1714037165944,
-    "meta": 1714037165952,
+    "asset": 1714037839366,
+    "meta": 1714037839375,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "9fe905ee-0661-4005-b78b-bd7533462e79": {
@@ -2603,5 +2593,15 @@
     "asset": 1714037474731,
     "meta": 1714037502322,
     "relativePath": "Script\\fighting\\score_fighting.js"
+  },
+  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
+    "asset": 1714037758669,
+    "meta": 1714037791007,
+    "relativePath": "Script\\home\\biology_iconTools.js"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1714037875313,
+    "meta": 1714037882516,
+    "relativePath": "Script\\home\\biology_infoTools.js"
   }
 }
