@@ -115,6 +115,12 @@ cc.Class({
     cc.find('Canvas/tips/流速').getComponent(cc.Label).string = '流速: ' + data.data.time + '年/S';
     cc.find('Canvas/tips/类型').getComponent(cc.Label).string = '类型: ' + data.data.type_name; // cc.find('Canvas/tips/时间').getComponent(cc.Label).string = '世界时间: '+data.data.name+'('+data.data.time+'年)' 
 
+    var info = data.data.user_in_word_map; //技能图标挂载
+
+    var BoxPrefab = cc.find('Canvas/战斗/content');
+    BoxPrefab.getComponent('mapTools').biology_detail_list(BoxPrefab, info);
+    return false;
+
     var _this = this; // 根据MapTools生成相应的道具
     // _this.toolsArray = [];
 

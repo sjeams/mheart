@@ -7,8 +7,8 @@ cc._RF.push(module, '37519x8HVRNp7PiAVwxTFrW', 'http');
 /**
  * Http 请求封装
  */
-var https_url = 'https://www.aheart.cn'; // var https_url = 'http://cs.aheart.com';
-
+// var https_url = 'https://www.aheart.cn';
+var https_url = 'http://cs.aheart.com';
 var HttpHelper = cc.Class({
   "extends": cc.Component,
   // statics: {
@@ -24,8 +24,6 @@ var HttpHelper = cc.Class({
     //动态合图
     this.image_cache();
     this.current = cc.audioEngine.play(res.url, false, 1); //配置路径
-
-    cc.sys.isNative = 0;
   },
 
   /**
@@ -34,11 +32,9 @@ var HttpHelper = cc.Class({
    * @param {function} callback 
    */
   httpUrl: function httpUrl(new_url) {
-    cc.sys.isNative = 1;
     return new_url ? https_url + '/app/api/file-content?url=' + https_url + new_url : ''; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
   },
   httpUrlJson: function httpUrlJson(new_url) {
-    cc.sys.isNative = 1;
     return https_url + '/app/api/file-json?url=' + https_url + new_url; //https://www.aheart.cn/app/api/file-content?url=https://www.aheart.cn/app/loading/loading.jpg
   },
   httpGets: function httpGets(url, callback) {
@@ -52,13 +48,11 @@ var HttpHelper = cc.Class({
       }
     };
 
-    xhr.open("GET", url, true);
-
-    if (cc.sys.isNative) {
-      xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
-    } // note: In Internet Explorer, the timeout property may be set only after calling the open()
+    xhr.open("GET", url, true); // if (cc.sys.isNative) {
+    //     xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
+    // }
+    // note: In Internet Explorer, the timeout property may be set only after calling the open()
     // method and before calling the send() method.
-
 
     xhr.timeout = 5000; // 5 seconds for timeout
 
@@ -80,14 +74,12 @@ var HttpHelper = cc.Class({
         }
     };
 
-    xhr.open("POST", url, true);
-
-    if (cc.sys.isNative) {
-      xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
-    } // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
+    xhr.open("POST", url, true); // if (cc.sys.isNative) {
+    //     xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
+    // }
+    // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
     // xhr.setRequestHeader("Ip", "192.168.1.1");
     // xhr.setRequestHeader("Http-Token", "gzipdeflate");
-
 
     xhr.timeout = 5000; // 5 seconds for timeout
     // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
@@ -123,14 +115,12 @@ var HttpHelper = cc.Class({
         }
     };
 
-    xhr.open("POST", url, true);
-
-    if (cc.sys.isNative) {
-      xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
-    } // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
+    xhr.open("POST", url, true); // if (cc.sys.isNative) {
+    //     xhr.setRequestHeader("Accept-Encoding", "gzip,deflate");
+    // }
+    // xhr.setRequestHeader("Http-Edition", "1.0.0.0");  // 版本
     // xhr.setRequestHeader("Ip", "192.168.1.1");
     // xhr.setRequestHeader("Http-Token", "gzipdeflate");
-
 
     xhr.timeout = 5000; // 5 seconds for timeout
     // xhr.setRequestHeader('Content-Type', 'application/json,multipart/form-data');
@@ -224,21 +214,18 @@ var HttpHelper = cc.Class({
       }, function (data) {
         //战斗历史路径
         if (data.code == 1) {
-          cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid);
-
-          for (var i = 0; i < data.data.img_list; i++) {
-            var remoteUrl = httpRequest.httpUrl(img_list[i]);
-            cc.resources.preload(remoteUrl, cc.SpriteFrame);
-            cc.loader.load({
-              url: remoteUrl
-            }, function (err, texture) {
-              _this.progress(sence);
-            });
-          } // // console.log(remoteUrl)
+          cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); // for (let i=0; i<data.data.img_list; i++) {
+          //     let remoteUrl = httpRequest.httpUrl(img_list[i]);
+          //     cc.resources.preload(remoteUrl, cc.SpriteFrame);
+          //     cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+          //     });
+          // }
+          // // console.log(remoteUrl)
           // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
           //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
           // });
 
+          _this.progress(sence);
         } else {
           callback(JSON.parse(data)); // json 转数组
           // callback(-1);

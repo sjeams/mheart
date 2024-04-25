@@ -589,6 +589,7 @@ class Method
     $result = ''; 
     //概率数组的总概率精度 
     $proSum = array_sum($proArr); 
+    $proSum =$proSum >0?$proSum:1;//最少为1
     //概率数组循环 
     foreach ($proArr as $key => $proCur) { 
         $randNum = mt_rand(1, $proSum);             //抽取随机数

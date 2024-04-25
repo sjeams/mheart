@@ -849,11 +849,6 @@
     "meta": 1713765920691,
     "relativePath": "resources\\model弹窗"
   },
-  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
-    "asset": 1713491582501,
-    "meta": 1713841824515,
-    "relativePath": "Script\\scence\\map_score.js"
-  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1713491582504,
     "meta": 1713841824549,
@@ -1274,16 +1269,6 @@
     "meta": 1713841823505,
     "relativePath": "resources\\biology_pic\\9标准弹窗.png"
   },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1713491582501,
-    "meta": 1713841824528,
-    "relativePath": "Script\\scence\\mapTools.js"
-  },
-  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1713939473512,
-    "meta": 1713939473520,
-    "relativePath": "Scene\\map\\诸天地图.fire"
-  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
     "asset": 1713863444317,
     "meta": 1713863444333,
@@ -1368,11 +1353,6 @@
     "asset": 1713866407541,
     "meta": 1713866407585,
     "relativePath": "resources\\model背包\\A生物背包.prefab"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1713948380789,
-    "meta": 1713948380818,
-    "relativePath": "Scene\\home\\大厅.fire"
   },
   "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
     "asset": 1713491582550,
@@ -2459,9 +2439,39 @@
     "meta": 1713947468681,
     "relativePath": "Script\\fighting\\score_fighting.js"
   },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1714024417966,
+    "meta": 1714024417985,
+    "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "145eddda-5d2d-4869-9c39-47bfe2697bed": {
+    "asset": 1714025001834,
+    "meta": 1714025001835,
+    "relativePath": "resources\\fighting"
+  },
+  "75f9cb2a-ca7c-4e7f-9f31-b73b31a78de2": {
+    "asset": 1714025022876,
+    "meta": 1714025022887,
+    "relativePath": "resources\\fighting\\sprite_地图.prefab"
+  },
+  "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
+    "asset": 1714026019066,
+    "meta": 1714026020563,
+    "relativePath": "Script\\scence\\map_score.js"
+  },
+  "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
+    "asset": 1714028542978,
+    "meta": 1714028542994,
+    "relativePath": "Scene\\map\\诸天地图.fire"
+  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1713948362924,
-    "meta": 1713948379656,
+    "asset": 1714026967845,
+    "meta": 1714026969521,
     "relativePath": "Script\\http.js"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1714028564359,
+    "meta": 1714028569735,
+    "relativePath": "Script\\scence\\mapTools.js"
   }
 }
