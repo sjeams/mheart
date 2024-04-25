@@ -37,7 +37,10 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-      // 此处进行事件绑定
+      //挂载信息
+
+      _this.biology_detail_info(TipBoxPrefab, info); // 此处进行事件绑定
+
 
       _this.bind_button(TipBoxPrefab_model, TipBoxPrefab, info); //写入icon
 
@@ -65,8 +68,10 @@ cc.Class({
       TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model, info);
     }, this);
   },
-  biology_detail_info: function biology_detail_info(BoxPrefab, TipBoxPrefab, info) {
-    var _this = this; // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
+  biology_detail_info: function biology_detail_info(TipBoxPrefab, info) {
+    var _this = this;
+
+    cc.log(info); // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
     // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
     // TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
     // TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string=info.zhong_zhu+'族'
@@ -74,14 +79,17 @@ cc.Class({
     // TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
     // //生物命名必须叫生物
     // // TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= biology_image
-    // TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string='力量:'+info.power
-    // TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string='敏捷:'+info.agile
-    // TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string='智力:'+info.intelligence
-    // TipBoxPrefab.getChildByName('攻击s').getComponent(cc.Label).string='攻击:'+info.gongJi
-    // TipBoxPrefab.getChildByName('护甲s').getComponent(cc.Label).string='护甲:'+info.huJia
-    // TipBoxPrefab.getChildByName('速度s').getComponent(cc.Label).string='速度:'+info.suDu
-    // TipBoxPrefab.getChildByName('特攻s').getComponent(cc.Label).string='特攻:'+info.faGong
-    // TipBoxPrefab.getChildByName('灵气s').getComponent(cc.Label).string='灵气:'+info.reiki
+
+    TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string = '力量:' + info.power;
+    TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string = '敏捷:' + info.agile;
+    TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string = '智力:' + info.intelligence;
+    TipBoxPrefab.getChildByName('生命s').getComponent(cc.Label).string = info.shengMing;
+    TipBoxPrefab.getChildByName('魔法s').getComponent(cc.Label).string = info.moFa;
+    TipBoxPrefab.getChildByName('攻击s').getComponent(cc.Label).string = '攻击:' + info.gongJi;
+    TipBoxPrefab.getChildByName('护甲s').getComponent(cc.Label).string = '护甲:' + info.huJia;
+    TipBoxPrefab.getChildByName('特攻s').getComponent(cc.Label).string = '特攻:' + info.faGong;
+    TipBoxPrefab.getChildByName('法抗s').getComponent(cc.Label).string = '护甲:' + info.fakang;
+    TipBoxPrefab.getChildByName('速度s').getComponent(cc.Label).string = '速度:' + info.suDu; // TipBoxPrefab.getChildByName('灵气s').getComponent(cc.Label).string='灵气:'+info.reiki
     // TipBoxPrefab.getChildByName('悟性s').getComponent(cc.Label).string='悟性:'+info.wuXing
     // TipBoxPrefab.getChildByName('暴击s').getComponent(cc.Label).string='暴击:'+info.baojilv+'%'
     // TipBoxPrefab.getChildByName('吸血s').getComponent(cc.Label).string='吸血:'+info.xiXue+'%'
@@ -90,12 +98,12 @@ cc.Class({
     // TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string='闪避'+'0%'
     // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
     // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
-    //技能图标挂载
+    // //技能图标挂载
+    // var tool = cc.instantiate(TipBoxPrefab);
+    // // tool.getComponent('skill_iconTools').biology_detail_skill(TipBoxPrefab,info.position_skill)
+    // BoxPrefab.addChild(TipBoxPrefab,1);
 
-
-    var tool = cc.instantiate(TipBoxPrefab); // tool.getComponent('skill_iconTools').biology_detail_skill(TipBoxPrefab,info.position_skill)
-
-    BoxPrefab.addChild(TipBoxPrefab, 1);
+    return TipBoxPrefab;
   },
   start: function start() {} // update (dt) {},
 

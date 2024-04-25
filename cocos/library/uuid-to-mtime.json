@@ -1289,11 +1289,6 @@
     "meta": 1713841823537,
     "relativePath": "resources\\model背包\\生物缘分.prefab"
   },
-  "62f95362-361a-46b6-800a-552e75eb1aec": {
-    "asset": 1714038483954,
-    "meta": 1714038483965,
-    "relativePath": "resources\\model背包\\生物信息.prefab"
-  },
   "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96": {
     "asset": 1713856797888,
     "meta": 1713856797901,
@@ -2594,14 +2589,19 @@
     "meta": 1714038378590,
     "relativePath": "Script\\scence\\wordTools.js"
   },
-  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
-    "asset": 1714038475774,
-    "meta": 1714038483158,
-    "relativePath": "Script\\home\\biology_xinxiTools.js"
-  },
   "7768f8c7-9728-432e-89b0-670d599f9d30": {
-    "asset": 1714038481235,
-    "meta": 1714038483191,
+    "asset": 1714038588720,
+    "meta": 1714038674207,
     "relativePath": "Script\\home\\biology_yuanfenTools.js"
+  },
+  "62f95362-361a-46b6-800a-552e75eb1aec": {
+    "asset": 1714038959771,
+    "meta": 1714038959780,
+    "relativePath": "resources\\model背包\\生物信息.prefab"
+  },
+  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
+    "asset": 1714038958423,
+    "meta": 1714038959417,
+    "relativePath": "Script\\home\\biology_xinxiTools.js"
   }
 }

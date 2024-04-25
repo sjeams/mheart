@@ -1382,7 +1382,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "力量s",
+    "_name": "p力量s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1489,7 +1489,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "敏捷s",
+    "_name": "p敏捷s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1596,7 +1596,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "智力s",
+    "_name": "p智力s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1703,7 +1703,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "力量值s",
+    "_name": "力量s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1810,7 +1810,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "敏捷值s",
+    "_name": "敏捷s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1917,7 +1917,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "智力值s",
+    "_name": "智力s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
