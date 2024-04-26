@@ -52,7 +52,14 @@ class UserBiologyAttribute extends ActiveRecord
         $BiologyBiology = BiologyBiology::getValueList();
         $BiologyBiology =   array_column($BiologyBiology,null,'id');  
 
-        $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userId")->asarray()->All();  
+        // $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userId")->asarray()->All();  
+        $data = (new \yii\db\Query())
+        ->select("a.*,b.power max_power,b.agile max_agile,b.intelligence max_intelligence")
+        ->from("x2_user_biology_attribute AS a")
+        ->innerJoin("x2_user_biology AS b","a.userBiologyid = b.id")
+        ->where("a.userid=$this->userId")
+        ->All();
+
         foreach($data as $k=>$v){
             //计算需要晋级的经验
             $res = BiologyCreate::getExperience($v,[]);
@@ -72,9 +79,21 @@ class UserBiologyAttribute extends ActiveRecord
             if($v['yuanShen']){
                 $data[$k]['yuanShen']=  $UserGoods->getUserGoods($v['yuanShen']);
             }
+            //颜色品质
+            $data[$k]['max_power_color']=     UserBiologyAttribute::natureColor($v['max_power']);
+            $data[$k]['max_agile_color']=     UserBiologyAttribute::natureColor($v['max_agile']);
+            $data[$k]['max_intelligence_color']=     UserBiologyAttribute::natureColor($v['max_intelligence']);
+       
         }
         return $data;
     }
+    //颜色品质 -- 白 绿  蓝  橙  紫  红 朱
+    public  function natureColor($nature){
+        $color = ['#F0F0F0','#68FF3E','#FFFF00','#0070FF','#CF29FE','#FF4444','#FF0000'];
+        $int = intval($nature/12);
+        return $color[$int];
+    }
+
    
     /**
      * 属性详情

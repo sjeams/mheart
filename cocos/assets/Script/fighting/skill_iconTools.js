@@ -45,25 +45,21 @@ cc.Class({
               
                 for (var prop in position_skill) {
                     let skill = TOOLS[prop];
-                    let image = '/技能图标/'+skill.image;
-              
                 //检查资源加载
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
                 let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
                 //载入技能图片
-                if(image!=''){
-                    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                        if (err) {
-                            // cc.error(err.message || err);
-                            return;
-                        }
-                        TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
-                    });
-                }else{
-                    TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = false; 
-                }
+                let image = '/图标技能/'+skill.image;
+                cc.log(image)
+                cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                    if (err) {
+                        // cc.error(err.message || err);
+                        return;
+                    }
+                    TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
+                });
                 //技能等级
                 TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=skill.type
 

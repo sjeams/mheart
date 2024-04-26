@@ -74,15 +74,13 @@ cc.Class({
     var _this = this;
 
     var TOOLS = [];
-    var TOOLS = position_skill;
-    var TipBoxPrefab_icon = []; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    var TOOLS = position_skill; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
     cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
       var _this2 = this;
 
       var _loop = function _loop() {
-        var skill = TOOLS[prop];
-        var image = '/技能图标/' + skill.image; //检查资源加载
+        var skill = TOOLS[prop]; //检查资源加载
 
         if (errorMessage) {
           cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -101,19 +99,16 @@ cc.Class({
 
         var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //载入技能图片
 
-        if (image != '') {
-          cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
-            if (err) {
-              // cc.error(err.message || err);
-              return;
-            }
+        var image = '/图标技能/' + skill.image;
+        cc.log(image);
+        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
+          if (err) {
+            // cc.error(err.message || err);
+            return;
+          }
 
-            TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
-          });
-        } else {
-          TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = false;
-        } //技能等级
-
+          TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
+        }); //技能等级
 
         TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = skill.type; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
         // 此处进行事件绑定

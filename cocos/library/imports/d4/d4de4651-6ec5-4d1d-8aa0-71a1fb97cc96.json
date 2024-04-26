@@ -897,7 +897,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物名称",
+    "_name": "生物等级",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -922,8 +922,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 70
+      "width": 360,
+      "height": 60
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -935,7 +935,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        270,
+        210,
         0,
         0,
         0,
@@ -975,7 +975,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
+      "__uuid__": "e4364009-e825-4a4a-9c01-d3391e63edef"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -999,12 +999,12 @@
     "asset": {
       "__uuid__": "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96"
     },
-    "fileId": "3faef6uZxL0pYkB6cVeuhS",
+    "fileId": "cbMOwqeQhGM5HZnzs4epaT",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物等级",
+    "_name": "生物名称",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1029,8 +1029,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
-      "height": 60
+      "width": 300,
+      "height": 70
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1042,7 +1042,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        205,
+        270,
         0,
         0,
         0,
@@ -1106,7 +1106,7 @@
     "asset": {
       "__uuid__": "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96"
     },
-    "fileId": "cbMOwqeQhGM5HZnzs4epaT",
+    "fileId": "3faef6uZxL0pYkB6cVeuhS",
     "sync": false
   },
   {
@@ -3030,7 +3030,7 @@
       "ctor": "Float64Array",
       "array": [
         220,
-        205,
+        210,
         0,
         0,
         0,
@@ -3141,7 +3141,7 @@
       "ctor": "Float64Array",
       "array": [
         200,
-        -20,
+        -40,
         0,
         0,
         0,
@@ -3205,7 +3205,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        20,
+        0,
         0,
         0,
         0,
@@ -3764,14 +3764,14 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 102,
-      "b": 43,
+      "g": 92,
+      "b": 29,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 240,
-      "height": 151.2
+      "height": 100.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3782,8 +3782,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -200,
-        40,
+        200,
+        100,
         0,
         0,
         0,
@@ -3823,8 +3823,8 @@
     "_useOriginalSize": false,
     "_string": "sss",
     "_N$string": "sss",
-    "_fontSize": 120,
-    "_lineHeight": 120,
+    "_fontSize": 80,
+    "_lineHeight": 80,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3834,7 +3834,7 @@
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 0,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -3871,8 +3871,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 79,
+      "b": 79,
       "a": 255
     },
     "_contentSize": {
@@ -3889,8 +3889,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        200,
-        80,
+        -200,
+        0,
         0,
         0,
         0,
@@ -3928,8 +3928,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "凡人",
-    "_N$string": "凡人",
+    "_string": "普通",
+    "_N$string": "普通",
     "_fontSize": 38,
     "_lineHeight": 38,
     "_enableWrapText": true,
@@ -3996,8 +3996,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -209.348,
-        -40,
+        200,
+        40,
         0,
         0,
         0,

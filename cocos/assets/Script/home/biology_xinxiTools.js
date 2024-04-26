@@ -82,6 +82,18 @@ cc.Class({
         TipBoxPrefab.getChildByName('法抗s').getComponent(cc.Label).string='护甲:'+info.fakang
         TipBoxPrefab.getChildByName('速度s').getComponent(cc.Label).string='速度:'+info.suDu
 
+
+        TipBoxPrefab.getChildByName('力量成长s').getComponent(cc.Label).string= '+'+info.max_power
+        TipBoxPrefab.getChildByName('敏捷成长s').getComponent(cc.Label).string= '+'+info.max_agile
+        TipBoxPrefab.getChildByName('智力成长s').getComponent(cc.Label).string= '+'+info.max_intelligence
+
+
+
+        TipBoxPrefab.getChildByName('力量成长s').color = new cc.color(info.max_power_color);
+        TipBoxPrefab.getChildByName('敏捷成长s').color = new cc.color(info.max_agile_color);
+        TipBoxPrefab.getChildByName('智力成长s').color = new cc.color(info.max_intelligence_color);
+        
+
         // TipBoxPrefab.getChildByName('灵气s').getComponent(cc.Label).string='灵气:'+info.reiki
         // TipBoxPrefab.getChildByName('悟性s').getComponent(cc.Label).string='悟性:'+info.wuXing
         // TipBoxPrefab.getChildByName('暴击s').getComponent(cc.Label).string='暴击:'+info.baojilv+'%'

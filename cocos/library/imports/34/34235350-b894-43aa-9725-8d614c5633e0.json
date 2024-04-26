@@ -178,7 +178,7 @@
       "array": [
         0,
         0,
-        109.98522628062372,
+        207.19657785542697,
         0,
         0,
         0,
@@ -1415,11 +1415,11 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": "ccaJBWEJVDQoKKkbAPSCJF"
@@ -1801,11 +1801,11 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": "0d7siJOn1LooLuF46De3aF"
@@ -2187,11 +2187,11 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": "9fb3nBy39C95Z293XXlpWB"
@@ -6049,7 +6049,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6101,18 +6101,18 @@
     "_useOriginalSize": false,
     "_string": "诸天万界",
     "_N$string": "诸天万界",
-    "_fontSize": 46,
-    "_lineHeight": 46,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "3fCUTwBrFNG6hx8ZGiREpG"
@@ -6605,7 +6605,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6657,18 +6657,18 @@
     "_useOriginalSize": false,
     "_string": "万古仙门",
     "_N$string": "万古仙门",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "51ZaA+IRlD4aOGpq7jot1e"
@@ -7161,7 +7161,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -7213,18 +7213,18 @@
     "_useOriginalSize": false,
     "_string": "上古秘境",
     "_N$string": "上古秘境",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "a7fr5a3StO/5ZKkL3xdRJi"
@@ -7717,7 +7717,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -7769,18 +7769,18 @@
     "_useOriginalSize": false,
     "_string": "天地熔炉",
     "_N$string": "天地熔炉",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "84VEg3nzZMO4sobhKKVadv"
@@ -8273,7 +8273,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -8325,18 +8325,18 @@
     "_useOriginalSize": false,
     "_string": "锁妖塔",
     "_N$string": "锁妖塔",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "24mq19ttBKzaThuCdr1fh0"
@@ -8829,7 +8829,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -8881,18 +8881,18 @@
     "_useOriginalSize": false,
     "_string": "创造生物",
     "_N$string": "创造生物",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "019jlHQvxOu7EZcRg8kmTy"
@@ -9288,7 +9288,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 40
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -9340,18 +9340,18 @@
     "_useOriginalSize": false,
     "_string": "神魔炼狱",
     "_N$string": "神魔炼狱",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 42,
+    "_lineHeight": 42,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "微软雅黑",
+    "_N$fontFamily": "宋体",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
     "_id": "7cIJCVa7VJUqXRD+nozaOi"

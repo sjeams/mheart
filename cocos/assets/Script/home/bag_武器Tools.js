@@ -13,7 +13,7 @@ cc.Class({
      //技能图片渲染
      biology_detail_alert(TipBoxPrefab_model,info){
         var _this=this;
-        cc.loader.loadRes('/model背包/生物信息', function(errorMessage,loadedResource_icon){
+        cc.loader.loadRes('/model背包/背包装备', function(errorMessage,loadedResource_icon){
             //检查资源加载
             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
             if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
@@ -25,9 +25,9 @@ cc.Class({
             
             
                // 此处进行事件绑定
-            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
+            // _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
             //写入icon
-            TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
+            TipBoxPrefab_model.getChildByName('左边弹窗').addChild(TipBoxPrefab);
             return TipBoxPrefab_model
         })
         return TipBoxPrefab_model
@@ -39,14 +39,14 @@ cc.Class({
         TipBoxPrefab.getChildByName('技能').on('click', function () {
             // 事件处理逻辑
             //移除挂载
-            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
             //重新挂载
             TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
         }, this);
         TipBoxPrefab.getChildByName('缘分').on('click', function () {
             // 事件处理逻辑
             //移除挂载
-            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
             //重新挂载
             TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
         }, this);

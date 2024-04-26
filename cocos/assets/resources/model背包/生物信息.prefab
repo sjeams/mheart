@@ -2042,9 +2042,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 207,
-      "g": 41,
-      "b": 254,
+      "r": 104,
+      "g": 255,
+      "b": 62,
       "a": 255
     },
     "_contentSize": {
@@ -2109,7 +2109,7 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
@@ -2149,9 +2149,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 207,
-      "g": 41,
-      "b": 254,
+      "r": 240,
+      "g": 240,
+      "b": 240,
       "a": 255
     },
     "_contentSize": {
@@ -2216,7 +2216,7 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
@@ -2256,9 +2256,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 207,
-      "g": 41,
-      "b": 254,
+      "r": 104,
+      "g": 255,
+      "b": 62,
       "a": 255
     },
     "_contentSize": {
@@ -2323,7 +2323,7 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
