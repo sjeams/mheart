@@ -68,6 +68,7 @@ cc.Class({
     //生物列表挂载
 
 
+    cc.log(info);
     var tool = cc.instantiate(TipBoxPrefab);
     tool.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab, info); // //生物详情挂载--默认加载第一个
 

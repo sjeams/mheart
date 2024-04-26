@@ -14,6 +14,7 @@ cc.Class({
   // onLoad () {},
   //技能图片渲染
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info) {
+    var gooduse = cc.globalData.bag;
     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
     TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
     TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
@@ -37,7 +38,7 @@ cc.Class({
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
 
-      _this.biology_detail_list(TipBoxPrefab, info); //绑定按钮事件
+      _this.biology_detail_list(TipBoxPrefab, info, gooduse); //绑定按钮事件
 
 
       _this.bind_button(TipBoxPrefab_model, TipBoxPrefab, info); //写入icon
@@ -51,7 +52,7 @@ cc.Class({
     return TipBoxPrefab_model;
   },
   //技能图片渲染
-  biology_detail_list: function biology_detail_list(TipBoxPrefab, info) {
+  biology_detail_list: function biology_detail_list(TipBoxPrefab, info, gooduse) {
     // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
     // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
     TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
@@ -87,7 +88,8 @@ cc.Class({
     TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string = info.state_name;
 
     if (info.gooduse1) {
-      cc.loader.loadRes(info.gooduse1.point, cc.SpriteFrame, function (err, texture) {
+      var goods_image = gooduse[info.gooduse1].point;
+      cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) {
         if (err) {
           // cc.error(err.message || err);
           return;
@@ -98,7 +100,8 @@ cc.Class({
     }
 
     if (info.gooduse2) {
-      cc.loader.loadRes(info.gooduse2.point, cc.SpriteFrame, function (err, texture) {
+      var goods_image = gooduse[info.gooduse2].point;
+      cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) {
         if (err) {
           // cc.error(err.message || err);
           return;
@@ -109,7 +112,8 @@ cc.Class({
     }
 
     if (info.yuanShen) {
-      cc.loader.loadRes(info.yuanShen.point, cc.SpriteFrame, function (err, texture) {
+      var goods_image = gooduse[info.yuanShen].point;
+      cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) {
         if (err) {
           // cc.error(err.message || err);
           return;
@@ -154,21 +158,21 @@ cc.Class({
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_武器Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse1);
+      TipBoxPrefab_model.getComponent('bag_武器Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse1, 1);
     }, this);
     TipBoxPrefab.getChildByName('装备2').on('click', function () {
       // 事件处理逻辑
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_武器Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse2);
+      TipBoxPrefab_model.getComponent('bag_武器Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse2, 1);
     }, this);
     TipBoxPrefab.getChildByName('元神').on('click', function () {
       // 事件处理逻辑
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_元神Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse1);
+      TipBoxPrefab_model.getComponent('bag_武器Tools').biology_detail_alert(TipBoxPrefab_model, info.yuanShen, 7);
     }, this); // TipBoxPrefab.getChildByName('缘分').on('click', function () {
     //     // 事件处理逻辑
     //     //移除挂载

@@ -67,34 +67,44 @@ class UserBiologyAttribute extends ActiveRecord
             $data[$k]['state_name']= $BiologyState[$v['state']]['text'];//境界名称  
             $data[$k]['zhong_zhu']= $BiologyBiology[$v['biology']]['text'];//种族 
             $data[$k]['position_skill']=  BiologySkill::getSkill($v['skill'],$v['id']);
-            //装备1
-            if($v['gooduse1']){
-                $data[$k]['gooduse1']=  $UserGoods->getUserGoods($v['gooduse1']);
-            }
-            //装备2
-            if($v['gooduse2']){
-                $data[$k]['gooduse2']=  $UserGoods->getUserGoods($v['gooduse2']);
-            }
-            //元神
-            if($v['yuanShen']){
-                $data[$k]['yuanShen']=  $UserGoods->getUserGoods($v['yuanShen']);
-            }
+            // //装备1
+            // if($v['gooduse1']){
+            //     $data[$k]['gooduse1']=  $UserGoods->getUserGoods($v['gooduse1']);
+            // }
+            // //装备2
+            // if($v['gooduse2']){
+            //     $data[$k]['gooduse2']=  $UserGoods->getUserGoods($v['gooduse2']);
+            // }
+            // //元神
+            // if($v['yuanShen']){
+            //     $data[$k]['yuanShen']=  $UserGoods->getUserGoods($v['yuanShen']);
+            // }
             //颜色品质
             $data[$k]['max_power_color']=     UserBiologyAttribute::natureColor($v['max_power']);
             $data[$k]['max_agile_color']=     UserBiologyAttribute::natureColor($v['max_agile']);
             $data[$k]['max_intelligence_color']=     UserBiologyAttribute::natureColor($v['max_intelligence']);
        
         }
+
+        
         return $data;
     }
-    //颜色品质 -- 白 绿  蓝  橙  紫  红 朱
-    public  function natureColor($nature){
-        $color = ['#F0F0F0','#68FF3E','#FFFF00','#0070FF','#CF29FE','#FF4444','#FF0000'];
+
+    public static  function natureColor($nature){
         $int = intval($nature/12);
+        return  UserBiologyAttribute:: getNatureColor($int);
+    }
+    //颜色品质 -- 白 绿  蓝  黄  紫  红 朱   粉 蓝绿 橙 
+    public static  function getNatureColor($int){
+        $color = ['#F0F0F0','#68FF3E','#FFFF00','#0070FF','#CF29FE','#FF4444','#FF0000','#EB6DFF','#00FFA8','#FB9C00'];
+        return $color[$int];
+    }
+    public static  function getNatureGrade($int){
+        $color = ['C','B','A','S','SS','SSS','人','鬼','仙','神'];
         return $color[$int];
     }
 
-   
+
     /**
      * 属性详情
      */

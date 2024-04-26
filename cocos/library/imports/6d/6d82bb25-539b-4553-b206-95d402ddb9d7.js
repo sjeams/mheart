@@ -99,8 +99,7 @@ cc.Class({
 
         var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //载入技能图片
 
-        var image = '/图标技能/' + skill.image;
-        cc.log(image);
+        var image = skill.image;
         cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
           if (err) {
             // cc.error(err.message || err);

@@ -11,7 +11,17 @@ cc.Class({
 
     // onLoad () {},
      //技能图片渲染
-     biology_detail_alert(TipBoxPrefab_model,info,gooduse_type){
+     biology_detail_alert(TipBoxPrefab_model,goodsid,gooduse_type){
+        //加载背包 和  背包列表
+        let info = cc.globalData.bag
+        let gooduse_type_name = cc.globalData.gooduse;
+        //查看详情--弹出一次已装备详情
+        if(goodsid){
+            cc.log(goodsid)
+            TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info[goodsid],gooduse_type)
+        }
+  
+   
         // gooduse_type  1武器
         var gooduse_type=gooduse_type||1;
         var _this=this;
@@ -24,14 +34,12 @@ cc.Class({
             //技能等级
             // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
             // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-            
+            //修改背包标题
+            TipBoxPrefab.getChildByName('标题s').getComponent(cc.Label).string=gooduse_type_name[gooduse_type].name
             // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-            _this.biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info,gooduse_type)
+            _this.biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info,gooduse_type) 
                // 此处进行事件绑定
             _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
-
-
-
             //写入icon
             TipBoxPrefab_model.getChildByName('左边弹窗').addChild(TipBoxPrefab);
             return TipBoxPrefab_model
@@ -39,11 +47,11 @@ cc.Class({
         return TipBoxPrefab_model
     },
     //list渲染
-    biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_goods,gooduse_type){
+    biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_list,gooduse_type){
         //获取点击物品的类型
         var _this =this;
         var TOOLS =[];
-        var TOOLS = cc.globalData.bag;
+        var TOOLS = info_list
  
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         cc.loader.loadRes('/model背包/图标背包装备', function(errorMessage,loadedResource_icon){
@@ -60,7 +68,7 @@ cc.Class({
                         let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
                         // //载入技能图片
                         let image = info.point;
-                        cc.log(image)
+           
                         cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
                             if (err) {
                                 // cc.error(err.message || err);
@@ -69,12 +77,11 @@ cc.Class({
                             TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
                         });
                         // //技能等级
-                        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=num_height
+                        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=info.name
 
                         // // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-                        // // 此处进行事件绑定
-                        // _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info);
-
+                        //重新挂载
+                        _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type)
                         // //写入icon
                         // TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
                         //写入icon
@@ -117,7 +124,7 @@ cc.Class({
            var page_size =12/3
            let cellHeight =  cc.find("列表/content/gridLayout",TipBoxPrefab_icon).height * 0.25+10;
            var scorll_page = (cellHeight*page_size*(page-1))+210;
-           cc.log(scorll_page)
+   
            // 获取ScrollBar组件
            var scrollView = TipBoxPrefab_icon.getComponent(cc.ScrollView)
            cc.find("列表/content/gridLayout",TipBoxPrefab_icon).parent.y = scorll_page; // 水平居中
@@ -136,7 +143,7 @@ cc.Class({
            var page_size =12/3
            let cellHeight =  cc.find("列表/content/gridLayout",TipBoxPrefab_icon).height * 0.25+10;
            var scorll_page = (cellHeight*page_size*(page-1))+210;
-           cc.log(scorll_page)
+         
            // 获取ScrollBar组件
            var scrollView = TipBoxPrefab_icon.getComponent(cc.ScrollView)
            cc.find("列表/content/gridLayout",TipBoxPrefab_icon).parent.y = scorll_page; // 水平居中
@@ -144,59 +151,26 @@ cc.Class({
         }, this);
 
     },
-    //绑定点击事件--背包点击
-    bind_button(TipBoxPrefab_model,TipBoxPrefab_icon,info){
-
-
+    //绑定点击事件--关闭遮罩
+    bind_button(TipBoxPrefab_model,TipBoxPrefab_icon){
         TipBoxPrefab_icon.getChildByName('遮罩').on('click', function () {
-            cc.log(11)
             // 事件处理逻辑
             //移除挂载
             TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-            //重新挂载
-            // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+
         }, this);
-        //  cc.find("列表/content/gridLayout",TipBoxPrefab)
-        // TipBoxPrefab.getChildByName('技能').on('click', function () {
-        //     // 事件处理逻辑
-        //     //移除挂载
-        //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-        //     //重新挂载
-        //     TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
-        // }, this);
-        // TipBoxPrefab.getChildByName('缘分').on('click', function () {
-        //     // 事件处理逻辑
-        //     //移除挂载
-        //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-        //     //重新挂载
-        //     TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
-        // }, this);
+
     },
     //绑定点击事件--alert详情
-    bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,info){
-        TipBoxPrefab.on('click', function () {
-            cc.log(11)
+    bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type){
+        TipBoxPrefab_icon.on('click', function () {
+        TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info,gooduse_type)
         //     // 事件处理逻辑
         //     //移除挂载
         //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
         //     //重新挂载
         //     // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
         }, this);
-        //  cc.find("列表/content/gridLayout",TipBoxPrefab)
-        // TipBoxPrefab.getChildByName('技能').on('click', function () {
-        //     // 事件处理逻辑
-        //     //移除挂载
-        //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-        //     //重新挂载
-        //     TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
-        // }, this);
-        // TipBoxPrefab.getChildByName('缘分').on('click', function () {
-        //     // 事件处理逻辑
-        //     //移除挂载
-        //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-        //     //重新挂载
-        //     TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
-        // }, this);
     },
 
 

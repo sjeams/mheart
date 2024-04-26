@@ -10860,7 +10860,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能",
+    "_name": "标题",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -11608,7 +11608,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "装备s",
+    "_name": "标题s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -12046,7 +12046,7 @@
         "__id__": 319
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 322

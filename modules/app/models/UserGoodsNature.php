@@ -35,5 +35,15 @@ class UserGoodsNature extends ActiveRecord
         return $data;
     }
 
+    // 获取属性描述
+    public static  function UserGoodsNatureExtend($goodsid){  
+        $data = UserGoodsNature::find()->select('describe')->where("goodsid=$goodsid")->asarray()->All();
+        $res ='';
+        if($data){
+$res=implode('
+', array_column($data,'describe')) ;
+        }
+        return $res;
+    }
 
 }

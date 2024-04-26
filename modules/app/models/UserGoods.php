@@ -169,7 +169,16 @@ class UserGoods extends ActiveRecord
     public  function  getGooduseBag(){
        $gooduse= $this->getUserGoodsList();
         foreach($gooduse as$key=> $v){
-            $goods[$key]['nature']= UserGoodsNature::UserGoodsNatureList($v['id']);
+            // $gooduse[$key]['nature']= UserGoodsNature::UserGoodsNatureList($v['id']);
+
+            //属性
+            $gooduse[$key]['nature']= UserGoodsNature::UserGoodsNatureExtend($v['id']);
+            //从0 开始，需要-1
+            $int = ceil(intval($v['percent'])/10)-1;
+            $int = $int>=0?$int:0;
+            $gooduse[$key]['nature_color']=  UserBiologyAttribute:: getNatureColor($int);        //属性颜色
+            $gooduse[$key]['nature_grade']=  UserBiologyAttribute:: getNatureGrade($int);        //属性评分
+            
         }
         return $gooduse;
     }

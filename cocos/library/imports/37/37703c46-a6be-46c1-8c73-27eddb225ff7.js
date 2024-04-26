@@ -30,6 +30,10 @@ cc.Class({
 
     httpRequest.httpPost('/app/app-apinew/gooduse-bag', {}, function (data) {
       cc.globalData.bag = data.data;
+    }); //获取背包
+
+    httpRequest.httpPost('/app/app-apinew/gooduse-type', {}, function (data) {
+      cc.globalData.gooduse = data.data;
     });
   },
   //打开背包

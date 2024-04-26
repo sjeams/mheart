@@ -75,8 +75,7 @@ cc.Class({
                 //开始实例化预制资源
                 let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
                 //载入技能图片
-                let image = '/图标技能/'+skill.image;
-                cc.log(image)
+                let image = skill.image;
                 cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
                     if (err) {
                         // cc.error(err.message || err);

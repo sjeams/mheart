@@ -23,6 +23,8 @@ use app\modules\app\models\Words;
 use app\modules\app\models\UserWords;
 use app\modules\app\models\UserServer;
 use app\modules\app\models\UserGoods;
+use app\modules\app\models\GoodsUse;
+
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: content-type,x-requested-with,Authorization, x-ui-request,lang');
@@ -172,10 +174,10 @@ class AppApinewController extends ApiUserControl{
     public function actionGooduseBag(){
         $UserGoods= new UserGoods();
         $data=$UserGoods->getGooduseBag();
+        //id作为索引
+        $data=array_column($data,null,'id');
         die(Method::jsonApp(1,$data,'succes'));
     }
-
-
 
     /**
      * 背包类型
@@ -183,11 +185,25 @@ class AppApinewController extends ApiUserControl{
      * biologyid  gooduse
      */
     public function actionGooduseType(){
-        $UserGoods= new UserGoods();
-        $data=$UserGoods->getGooduseType();
-
+        $data=GoodsUse::find()->asarray()->All();
+        // $UserGoods= new UserGoods();
+        // $data=$UserGoods->getGooduseType();
+        $data=array_column($data,null,'id');
         die(Method::jsonApp(1,$data,'succes'));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    /**

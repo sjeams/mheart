@@ -133,7 +133,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1200,
+      "width": 800,
       "height": 560
     },
     "_anchorPoint": {
@@ -145,7 +145,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
+        200,
         0,
         0,
         0,
@@ -829,7 +829,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "装备s",
+    "_name": "名称s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -867,7 +867,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        210,
+        220,
         0,
         0,
         0,
@@ -954,9 +954,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 234,
-      "g": 169,
-      "b": 63,
+      "r": 255,
+      "g": 159,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -974,7 +974,7 @@
       "ctor": "Float64Array",
       "array": [
         120,
-        120,
+        130,
         0,
         0,
         0,
@@ -1021,11 +1021,11 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 3,
     "_N$cacheMode": 1,
     "_id": ""
@@ -1081,7 +1081,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        165,
+        170,
         0,
         0,
         0,
@@ -1333,20 +1333,20 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800",
-    "_N$string": "法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800",
-    "_fontSize": 20,
+    "_string": "法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n",
+    "_N$string": "法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n护甲+72\n生命+40000\n悟性+12\n法抗：+800\n",
+    "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "宋体",
+    "_N$fontFamily": "仿宋",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": ""
