@@ -1325,8 +1325,8 @@
     "relativePath": "resources\\model背包\\图标缘分.prefab"
   },
   "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
-    "asset": 1714103253708,
-    "meta": 1714103253718,
+    "asset": 1714111175019,
+    "meta": 1714111175027,
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
@@ -2304,19 +2304,14 @@
     "meta": 1713863283319,
     "relativePath": "resources\\model背包\\生物头像.prefab"
   },
-  "79045060-2398-402a-bfd5-702dd159aae8": {
-    "asset": 1714103472979,
-    "meta": 1714103472990,
-    "relativePath": "resources\\model背包\\背包装备.prefab"
-  },
   "a51fba90-4dda-48b5-a6f1-7da1929f6212": {
-    "asset": 1713836195031,
-    "meta": 1713841823516,
+    "asset": 1714114761045,
+    "meta": 1714114761051,
     "relativePath": "resources\\model背包\\背包装备详情.prefab"
   },
   "293102ac-b79a-41c1-82c0-f86c3c40a9a7": {
-    "asset": 1713836195027,
-    "meta": 1713841823541,
+    "asset": 1714118416699,
+    "meta": 1714118416704,
     "relativePath": "resources\\model背包\\图标背包装备.prefab"
   },
   "1afe6f69-cf63-449c-816f-f97b5e0ce622": {
@@ -2358,11 +2353,6 @@
     "asset": 1713929279087,
     "meta": 1713929279228,
     "relativePath": "resources\\图片背景\\昆仑.jpg"
-  },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1713930282442,
-    "meta": 1713930346930,
-    "relativePath": "Script\\home\\score_home.js"
   },
   "145eddda-5d2d-4869-9c39-47bfe2697bed": {
     "asset": 1714035229719,
@@ -2599,9 +2589,19 @@
     "meta": 1714103350267,
     "relativePath": "Script\\home\\biology_infoTools.js"
   },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1714113980429,
+    "meta": 1714113987452,
+    "relativePath": "Script\\home\\score_home.js"
+  },
+  "79045060-2398-402a-bfd5-702dd159aae8": {
+    "asset": 1714126788372,
+    "meta": 1714126788389,
+    "relativePath": "resources\\model背包\\背包装备.prefab"
+  },
   "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
-    "asset": 1714103471928,
-    "meta": 1714103472574,
+    "asset": 1714126650639,
+    "meta": 1714126651485,
     "relativePath": "Script\\home\\bag_武器Tools.js"
   }
 }

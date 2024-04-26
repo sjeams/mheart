@@ -165,7 +165,14 @@ class UserGoods extends ActiveRecord
         return $goods;
     }
     
-
+    //生物背包
+    public  function  getGooduseBag(){
+       $gooduse= $this->getUserGoodsList();
+        foreach($gooduse as$key=> $v){
+            $goods[$key]['nature']= UserGoodsNature::UserGoodsNatureList($v['id']);
+        }
+        return $gooduse;
+    }
     // x2_user_goods_nature
 
     // ------------背包

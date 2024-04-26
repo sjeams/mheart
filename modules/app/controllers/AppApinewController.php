@@ -164,6 +164,18 @@ class AppApinewController extends ApiUserControl{
     }
 
     
+    /**
+     * 生物背包
+     * http://cs.aheart.com/app/app-apinew/gooduse-bag
+     * biologyid  gooduse
+     */
+    public function actionGooduseBag(){
+        $UserGoods= new UserGoods();
+        $data=$UserGoods->getGooduseBag();
+        die(Method::jsonApp(1,$data,'succes'));
+    }
+
+
 
     /**
      * 背包类型

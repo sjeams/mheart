@@ -12,6 +12,7 @@ cc.Class({
   properties: {},
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
+    //大厅需要加载的全局变量
     cc.globalData = {}; // var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
     // cc.loader.load({ url: remoteUrl }, function (err, data) {
 
@@ -20,10 +21,15 @@ cc.Class({
   start: function start() {},
   //刷新背包--每次操作后需要刷新背包
   brushBag: function brushBag() {
+    //获取生物列表
     httpRequest.httpPost('/app/app-apinew/biology-list', {}, function (data) {
       //定义常量
       cc.globalData.biology = data.data; //开启战斗
       //   _this.goPlay( )
+    }); //获取背包
+
+    httpRequest.httpPost('/app/app-apinew/gooduse-bag', {}, function (data) {
+      cc.globalData.bag = data.data;
     });
   },
   //打开背包
