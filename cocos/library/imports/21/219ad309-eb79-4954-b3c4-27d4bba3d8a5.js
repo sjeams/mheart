@@ -123,8 +123,10 @@ cc.Class({
     // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
     // 此处进行事件绑定
     TipBoxPrefab_icon.on('click', function () {
-      // 事件处理逻辑
+      //当前选中的生物序号 index---定义全局变量
+      cc.globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); // 事件处理逻辑
       //移除挂载
+
       TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
 
       TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model, info); // 切换默认挂载信息列表

@@ -1271,8 +1271,8 @@
   },
   "4799f07c-bbaa-442b-9dd8-9d2c652cbff4": {
     "asset": 1713765920698,
-    "meta": 1714273943897,
-    "relativePath": "resources\\model背包\\a生物大厅 - 001.prefab"
+    "meta": 1714278861017,
+    "relativePath": "resources\\model背包\\a生物大厅 -备份.prefab"
   },
   "3683396a-e14e-45bd-aad4-8030d1c4c598": {
     "asset": 1714273311752,
@@ -2524,89 +2524,94 @@
     "meta": 1714273944514,
     "relativePath": "Script\\fighting\\skill_iconTools.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1714096979222,
-    "meta": 1714273944785,
-    "relativePath": "Script\\http.js"
-  },
-  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
-    "asset": 1714099297651,
-    "meta": 1714273944743,
-    "relativePath": "Script\\home\\biology_xinxiTools.js"
-  },
   "293102ac-b79a-41c1-82c0-f86c3c40a9a7": {
     "asset": 1714118416699,
     "meta": 1714273943862,
     "relativePath": "resources\\model背包\\图标背包装备.prefab"
   },
   "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96": {
-    "asset": 1714273311756,
-    "meta": 1714273943856,
+    "asset": 1714296676202,
+    "meta": 1714296676223,
     "relativePath": "resources\\model背包\\生物详情.prefab"
-  },
-  "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
-    "asset": 1714273311754,
-    "meta": 1714273943873,
-    "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "6d82bb25-539b-4553-b206-95d402ddb9d7": {
     "asset": 1714273311751,
     "meta": 1714273944726,
     "relativePath": "Script\\home\\biology_skillTools.js"
   },
-  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
-    "asset": 1714039286218,
-    "meta": 1714273944673,
-    "relativePath": "Script\\home\\biology_iconTools.js"
-  },
-  "398e676d-633a-44ab-997e-980aedf61174": {
-    "asset": 1714273311749,
-    "meta": 1714273944645,
-    "relativePath": "Script\\home\\biology_bagTools.js"
-  },
-  "a51fba90-4dda-48b5-a6f1-7da1929f6212": {
-    "asset": 1714276059916,
-    "meta": 1714276059923,
-    "relativePath": "resources\\model背包\\背包装备详情按钮.prefab"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
     "asset": 1714273311745,
     "meta": 1714273943933,
     "relativePath": "Scene\\home\\大厅.fire"
-  },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1714273311751,
-    "meta": 1714273944701,
-    "relativePath": "Script\\home\\biology_infoTools.js"
   },
   "6a66811c-a6a4-4a20-8ab8-3dfa17b62e3e": {
     "asset": 1713855803226,
     "meta": 1714273944634,
     "relativePath": "Script\\home\\bag_元神Tools.js"
   },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1714273311752,
-    "meta": 1714273944764,
-    "relativePath": "Script\\home\\score_home.js"
-  },
   "79045060-2398-402a-bfd5-702dd159aae8": {
     "asset": 1714273311757,
     "meta": 1714273943841,
     "relativePath": "resources\\model背包\\背包装备.prefab"
   },
-  "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
-    "asset": 1714275111685,
-    "meta": 1714275155790,
-    "relativePath": "Script\\home\\bag_武器Tools.js"
-  },
   "941775f2-9f0b-4ef5-8604-ab073caedf8d": {
-    "asset": 1714276878761,
-    "meta": 1714276878772,
+    "asset": 1714278773801,
+    "meta": 1714278773811,
     "relativePath": "resources\\model背包\\背包装备详情.prefab"
   },
   "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
-    "asset": 1714276915586,
-    "meta": 1714276919400,
+    "asset": 1714285535930,
+    "meta": 1714285568732,
     "relativePath": "Script\\home\\bag_详情Tools.js"
+  },
+  "398e676d-633a-44ab-997e-980aedf61174": {
+    "asset": 1714286010598,
+    "meta": 1714286072487,
+    "relativePath": "Script\\home\\biology_bagTools.js"
+  },
+  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
+    "asset": 1714286643421,
+    "meta": 1714286734274,
+    "relativePath": "Script\\home\\biology_iconTools.js"
+  },
+  "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
+    "asset": 1714287406723,
+    "meta": 1714287576370,
+    "relativePath": "Script\\home\\biology_xinxiTools.js"
+  },
+  "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
+    "asset": 1714293611627,
+    "meta": 1714293790277,
+    "relativePath": "Script\\home\\bag_物品Tools.js"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1714295253192,
+    "meta": 1714295254052,
+    "relativePath": "Script\\home\\biology_infoTools.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1714297472667,
+    "meta": 1714297555874,
+    "relativePath": "Script\\home\\score_home.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1714297731243,
+    "meta": 1714297732544,
+    "relativePath": "Script\\http.js"
+  },
+  "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
+    "asset": 1714299700291,
+    "meta": 1714299700299,
+    "relativePath": "resources\\model背包\\A生物背包.prefab"
+  },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1714298466777,
+    "meta": 1714298470653,
+    "relativePath": "Script\\home\\bag_api.js"
+  },
+  "d679e419-181f-46f7-b526-c8c28ece4ed8": {
+    "asset": 1714299373246,
+    "meta": 1714299395924,
+    "relativePath": "Script\\home\\bag_详情按钮Tools.js"
   }
 }

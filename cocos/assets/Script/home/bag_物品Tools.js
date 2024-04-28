@@ -11,17 +11,15 @@ cc.Class({
 
     // onLoad () {},
      //技能图片渲染
-     biology_detail_alert(TipBoxPrefab_model,goodsid,gooduse_type){
+     biology_detail_alert(TipBoxPrefab_model,goodsid,gooduse_type,button_name){
         //加载背包 和  背包列表
         let info = cc.globalData.bag
         let gooduse_type_name = cc.globalData.gooduse;
-        //查看详情--弹出一次已装备详情
-        if(goodsid){
-            // cc.log(goodsid)
-            TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info[goodsid],gooduse_type,0)
-        }
-  
-   
+        // //查看详情--弹出一次已装备详情
+        // if(goodsid){
+        //     // cc.log(goodsid)
+        //     TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info[goodsid],gooduse_type,button_name,0)
+        // }
         // gooduse_type  1武器
         var gooduse_type=gooduse_type||1;
         var _this=this;
@@ -41,7 +39,7 @@ cc.Class({
 
 
             // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-            _this.biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info,gooduse_type) 
+            _this.biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info,gooduse_type,button_name,goodsid) 
                // 此处进行事件绑定
             _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
             //写入icon
@@ -51,7 +49,7 @@ cc.Class({
         return TipBoxPrefab_model
     },
     //list渲染
-    biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_list,gooduse_type){
+    biology_detail_list(TipBoxPrefab_model,TipBoxPrefab,info_list,gooduse_type,button_name,goodsid){
         //获取点击物品的类型
         var _this =this;
         var TOOLS =[];
@@ -81,13 +79,16 @@ cc.Class({
                             TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
                         });
                         // //技能等级
-                        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=info.name
-
+                        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=info.name        
                         // // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
                         //重新挂载
-                        _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type)
+                        _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,goodsid)
                         // //写入icon
                         // TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
+                        //隐藏已经使用的装备
+                        if(info.is_bag==1){
+                            TipBoxPrefab_icon.active=false
+                        }
                         //写入icon
                         cc.find("列表/content/gridLayout",TipBoxPrefab).addChild(TipBoxPrefab_icon);
                 }
@@ -166,15 +167,24 @@ cc.Class({
 
     },
     //绑定点击事件--alert详情
-    bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type){
+    bind_button_detail(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,goodsid){
         TipBoxPrefab_icon.on('click', function () {
-            TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info,gooduse_type,1)
+            TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,1)
         //     // 事件处理逻辑
         //     //移除挂载
         //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
         //     //重新挂载
         //     // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
         }, this);
+        // //查看详情--弹出一次已装备详情--如果点击带id，并且相等，弹窗窗口
+        if(goodsid==info.id){
+            
+            //当前弹出的预制节点
+            cc.globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon;
+            // cc.log(goodsid)
+            TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,0)
+        }
+
     },
 
 

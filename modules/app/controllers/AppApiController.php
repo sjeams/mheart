@@ -79,29 +79,75 @@ class AppApiController extends ApiUserControl{
         die(Method::jsonApp(1,$data,'succes'));
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    // ------------------------所有前端请求更新的api
+
+
     /**
-     * 生物列表
-     * app/app-api/biology-list
-     * http://localhost/monster/web/app/app-api/biology-list
+     * 获取用户信息--体力随时更新的
+     * app/app-api/get-user
+     * http://cs.mheart.cn/app/app-api/biology-goods-update
      */
-    public function actionBiologyList(){
-        $data=array(
-            'count' => UserBiology::getUserBiologyCount(),//生物统计
-            'list'  => UserBiology::getUserBiologyList(),//生物列表
-        );
+    public function actionBiologyGoodsUpdate(){
+        // $data=User::getUserEnergy();
+        // var_dump($this->param);die;
+        if($this->param['is_bag']){
+            $userbiology = array($this->param['goods_key']=>$this->param['goodsid']);
+        }else{
+            $userbiology = array($this->param['goods_key']=>null);  
+        }
+        UserBiologyAttribute::updateAll($userbiology,"id=".$this->param['biology_id']);
+        $data = (new UserBiologyAttribute())->getBiologyDetail($this->param['biology_id']);
         die(Method::jsonApp(1,$data,'succes'));
     }
 
-    /**
-     * 获取生物布阵
-     * app/app-api/biology-position
-     * http://localhost/monster/web/app/app-api/biology-position
-     */
-    public function actionBiologyPosition(){
-        $UserBiologyNatureDo=new UserBiologyNatureDo();
-        $data=$UserBiologyNatureDo->getValueList();
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+
+
+
+
+
+    // /**
+    //  * 生物列表
+    //  * app/app-api/biology-list
+    //  * http://localhost/monster/web/app/app-api/biology-list
+    //  */
+    // public function actionBiologyList(){
+    //     $data=array(
+    //         'count' => UserBiology::getUserBiologyCount(),//生物统计
+    //         'list'  => UserBiology::getUserBiologyList(),//生物列表
+    //     );
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
+
+    // /**
+    //  * 获取生物布阵
+    //  * app/app-api/biology-position
+    //  * http://localhost/monster/web/app/app-api/biology-position
+    //  */
+    // public function actionBiologyPosition(){
+    //     $UserBiologyNatureDo=new UserBiologyNatureDo();
+    //     $data=$UserBiologyNatureDo->getValueList();
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
+
+
+
+
+
+
 
     // /**
     //  * 生物属性

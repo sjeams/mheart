@@ -42,16 +42,10 @@ class UserBiologyAttribute extends ActiveRecord
     }
 
     public  function  myAttributesList(){  
-        $UserWords =new UserWords();
-        $UserGoods = new UserGoods();
-
-        //境界
-        $BiologyState = BiologyState::getValueList();
-        $BiologyState =   array_column($BiologyState,null,'id');
-        //种族
-        $BiologyBiology = BiologyBiology::getValueList();
-        $BiologyBiology =   array_column($BiologyBiology,null,'id');  
-
+        // $UserWords =new UserWords();
+        // $UserGoods = new UserGoods();
+        $BiologyState= $this->BiologyState();
+        $BiologyBiology= $this->BiologyBiology();
         // $data = UserBiologyAttribute::find()->select('*')->where("userid=$this->userId")->asarray()->All();  
         $data = (new \yii\db\Query())
         ->select("a.*,b.power max_power,b.agile max_agile,b.intelligence max_intelligence")
@@ -60,35 +54,66 @@ class UserBiologyAttribute extends ActiveRecord
         ->where("a.userid=$this->userId")
         ->All();
 
-        foreach($data as $k=>$v){
-            //计算需要晋级的经验
-            $res = BiologyCreate::getExperience($v,[]);
-            $data[$k]['need_expe'] ='exp:'.$res['lessExp'].'/'.$res['nowExp'];
-            $data[$k]['state_name']= $BiologyState[$v['state']]['text'];//境界名称  
-            $data[$k]['zhong_zhu']= $BiologyBiology[$v['biology']]['text'];//种族 
-            $data[$k]['position_skill']=  BiologySkill::getSkill($v['skill'],$v['id']);
-            // //装备1
-            // if($v['gooduse1']){
-            //     $data[$k]['gooduse1']=  $UserGoods->getUserGoods($v['gooduse1']);
-            // }
-            // //装备2
-            // if($v['gooduse2']){
-            //     $data[$k]['gooduse2']=  $UserGoods->getUserGoods($v['gooduse2']);
-            // }
-            // //元神
-            // if($v['yuanShen']){
-            //     $data[$k]['yuanShen']=  $UserGoods->getUserGoods($v['yuanShen']);
-            // }
-            //颜色品质
-            $data[$k]['max_power_color']=     UserBiologyAttribute::natureColor($v['max_power']);
-            $data[$k]['max_agile_color']=     UserBiologyAttribute::natureColor($v['max_agile']);
-            $data[$k]['max_intelligence_color']=     UserBiologyAttribute::natureColor($v['max_intelligence']);
-       
+        foreach($data as $k=>$info){
+            $data[$k] = $this-> biologyInfo($info,$BiologyState,$BiologyBiology);      
         }
-
-        
         return $data;
     }
+
+    public   function BiologyState(){
+        //境界
+        $BiologyState = BiologyState::getValueList();
+        $BiologyState =   array_column($BiologyState,null,'id');
+        return $BiologyState;
+    }
+    public   function BiologyBiology(){
+        //种族
+        $BiologyBiology = BiologyBiology::getValueList();
+        $BiologyBiology =   array_column($BiologyBiology,null,'id');  
+        return $BiologyBiology;
+    }
+
+
+   public   function getBiologyDetail($biology_id){
+        $info = (new \yii\db\Query())
+        ->select("a.*,b.power max_power,b.agile max_agile,b.intelligence max_intelligence")
+        ->from("x2_user_biology_attribute AS a")
+        ->innerJoin("x2_user_biology AS b","a.userBiologyid = b.id")
+        ->where("a.userid=$this->userId and a.id =$biology_id")
+        ->One();
+        $BiologyState= $this->BiologyState();
+        $BiologyBiology= $this->BiologyBiology();
+        return  $this-> biologyInfo($info,$BiologyState,$BiologyBiology);   
+   }
+
+    //查看详情
+    public    function biologyInfo($info,$BiologyState,$BiologyBiology){
+        
+        //计算需要晋级的经验
+        $res = BiologyCreate::getExperience($info,[]);
+        $info['need_expe'] ='exp:'.$res['lessExp'].'/'.$res['nowExp'];
+        $info['state_name']= $BiologyState[$info['state']]['text'];//境界名称  
+        $info['zhong_zhu']= $BiologyBiology[$info['biology']]['text'];//种族 
+        $info['position_skill']=  BiologySkill::getSkill($info['skill'],$info['id']);
+        // //装备1
+        // if($info['gooduse1']){
+        //     $data['gooduse1']=  $UserGoods->getUserGoods($info['gooduse1']);
+        // }
+        // //装备2
+        // if($info['gooduse2']){
+        //     $data['gooduse2']=  $UserGoods->getUserGoods($info['gooduse2']);
+        // }
+        // //元神
+        // if($info['yuanShen']){
+        //     $data['yuanShen']=  $UserGoods->getUserGoods($info['yuanShen']);
+        // }
+        //颜色品质
+        $info['max_power_color']=     UserBiologyAttribute::natureColor($info['max_power']);
+        $info['max_agile_color']=     UserBiologyAttribute::natureColor($info['max_agile']);
+        $info['max_intelligence_color']=     UserBiologyAttribute::natureColor($info['max_intelligence']);
+        return $info;
+    }
+
 
     public static  function natureColor($nature){
         $int = intval($nature/12);

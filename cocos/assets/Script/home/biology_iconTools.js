@@ -88,10 +88,12 @@ cc.Class({
     },
     // 绑定按钮事件---挂载生物详情
     bindClickEventIcon: function (TipBoxPrefab_model,TipBoxPrefab_icon,info) {
-
         // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
         // 此处进行事件绑定
         TipBoxPrefab_icon.on('click', function () {
+           
+            //当前选中的生物序号 index---定义全局变量
+            cc.globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon);
             // 事件处理逻辑
             //移除挂载
             TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();

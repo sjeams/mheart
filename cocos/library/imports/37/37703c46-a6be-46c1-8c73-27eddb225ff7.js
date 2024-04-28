@@ -24,7 +24,11 @@ cc.Class({
     //获取生物列表
     httpRequest.httpPost('/app/app-apinew/biology-list', {}, function (data) {
       //定义常量
-      cc.globalData.biology = data.data; //开启战斗
+      cc.globalData.biology = data.data; //当前选中的生物id
+
+      cc.globalData.biology_id = 0; //当前弹出的预制节点--物品详情--装备-卸载
+
+      cc.globalData.TipBoxPrefab_biology_detail = null; //开启战斗
       //   _this.goPlay( )
     }); //获取背包
 

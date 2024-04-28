@@ -106,7 +106,7 @@ const HttpHelper = cc.Class({
                         callback(JSON.parse(respone));  // json 转数组
                     }
                 }else{
-                    //   callback(-1);
+                      callback(-1);
                 }
             };
             xhr.open("POST", url, true);

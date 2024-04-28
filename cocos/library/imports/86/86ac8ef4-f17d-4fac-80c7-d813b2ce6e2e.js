@@ -13,11 +13,9 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染  is_use  0卸下  1使用
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info, gooduse_type, is_use) {
-    //加载背包 和  背包列表
-    var bag_list = cc.globalData.bag;
-    var gooduse_list = cc.globalData.gooduse;
-    cc.log(gooduse_list); // gooduse_type  1武器  详情类型必传，不然无法区分类型
+  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, TipBoxPrefab_icon, info, gooduse_type, button_name, is_use) {
+    var gooduse_list = cc.globalData.gooduse; // cc.log(gooduse_list)
+    // gooduse_type  1武器  详情类型必传，不然无法区分类型
 
     var _this = this;
 
@@ -48,7 +46,7 @@ cc.Class({
       _this.biology_detail_list(TipBoxPrefab, info, gooduse_type); // 此处进行事件绑定
 
 
-      _this.bind_button(TipBoxPrefab_model, TipBoxPrefab, info); //写入icon
+      _this.bind_button(TipBoxPrefab_model, TipBoxPrefab_icon, TipBoxPrefab, info, button_name, is_use); //写入icon
 
 
       TipBoxPrefab_model.getChildByName('中间弹窗').addChild(TipBoxPrefab);
@@ -57,7 +55,7 @@ cc.Class({
     return TipBoxPrefab_model;
   },
   //绑定点击事件--关闭遮罩
-  bind_button: function bind_button(TipBoxPrefab_model, TipBoxPrefab, info) {
+  bind_button: function bind_button(TipBoxPrefab_model, TipBoxPrefab_icon, TipBoxPrefab, info, button_name, is_use) {
     TipBoxPrefab.getChildByName('遮罩').on('click', function () {
       // 事件处理逻辑
       //移除挂载
@@ -66,11 +64,11 @@ cc.Class({
     }, this); //物品使用事件
 
     TipBoxPrefab.getChildByName('卸下').on('click', function () {
-      cc.log('卸下'); // 事件处理逻辑
+      // 事件处理逻辑
       //移除挂载
+      TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren(); //重新挂载--按钮事件类型--定义按钮事件类型
 
-      TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren(); //重新挂载
-      // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+      TipBoxPrefab_model.getComponent('bag_详情按钮Tools').biology_init(TipBoxPrefab_model, TipBoxPrefab_icon, info.id, button_name, is_use);
     }, this);
   },
   biology_detail_list: function biology_detail_list(TipBoxPrefab, info, gooduse_type) {

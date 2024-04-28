@@ -60,7 +60,7 @@ cc.Class({
     },
     biology_detail_info(TipBoxPrefab,info) {
         var _this =this;
-        cc.log(info)
+        // cc.log(info)
         // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
         // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
         // TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
