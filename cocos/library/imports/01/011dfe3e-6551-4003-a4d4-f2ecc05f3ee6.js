@@ -21,8 +21,8 @@ cc.Class({
     var gooduse_type_name = cc.globalData.gooduse; //查看详情--弹出一次已装备详情
 
     if (goodsid) {
-      cc.log(goodsid);
-      TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model, info[goodsid], gooduse_type);
+      // cc.log(goodsid)
+      TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model, info[goodsid], gooduse_type, 0);
     } // gooduse_type  1武器
 
 
@@ -46,6 +46,7 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+      //修改背包标题-----弹窗的标题修改
 
       TipBoxPrefab.getChildByName('标题s').getComponent(cc.Label).string = gooduse_type_name[gooduse_type].name; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
 
@@ -194,7 +195,7 @@ cc.Class({
   //绑定点击事件--alert详情
   bind_button_detail: function bind_button_detail(TipBoxPrefab_model, TipBoxPrefab_icon, info, gooduse_type) {
     TipBoxPrefab_icon.on('click', function () {
-      TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model, info, gooduse_type); //     // 事件处理逻辑
+      TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model, info, gooduse_type, 1); //     // 事件处理逻辑
       //     //移除挂载
       //     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
       //     //重新挂载

@@ -12,9 +12,13 @@ cc.Class({
   properties: {},
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
-  //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info, gooduse_type) {
-    // gooduse_type  1武器  详情类型必传，不然无法区分类型
+  //技能图片渲染  is_use  0卸下  1使用
+  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info, gooduse_type, is_use) {
+    //加载背包 和  背包列表
+    var bag_list = cc.globalData.bag;
+    var gooduse_list = cc.globalData.gooduse;
+    cc.log(gooduse_list); // gooduse_type  1武器  详情类型必传，不然无法区分类型
+
     var _this = this;
 
     cc.loader.loadRes('/model背包/背包装备详情', function (errorMessage, loadedResource_icon) {
@@ -30,11 +34,16 @@ cc.Class({
       } //开始实例化预制资源
 
 
-      var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
+      var TipBoxPrefab = cc.instantiate(loadedResource_icon); //按钮
+
+      if (is_use == 1) {
+        TipBoxPrefab.getChildByName('卸下s').getComponent(cc.Label).string = gooduse_list[gooduse_type].button_name;
+      } //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
       //渲染详情
+
 
       _this.biology_detail_list(TipBoxPrefab, info, gooduse_type); // 此处进行事件绑定
 
@@ -52,6 +61,14 @@ cc.Class({
     TipBoxPrefab.getChildByName('遮罩').on('click', function () {
       // 事件处理逻辑
       //移除挂载
+      TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren(); //重新挂载
+      // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+    }, this); //物品使用事件
+
+    TipBoxPrefab.getChildByName('卸下').on('click', function () {
+      cc.log('卸下'); // 事件处理逻辑
+      //移除挂载
+
       TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren(); //重新挂载
       // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
     }, this);
