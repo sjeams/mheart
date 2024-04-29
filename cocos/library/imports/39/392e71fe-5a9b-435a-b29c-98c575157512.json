@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "底座1",
+    "texture": "c0b3d456-9789-4287-bdaa-0da4f56a3468",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      511,
+      256
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      512,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

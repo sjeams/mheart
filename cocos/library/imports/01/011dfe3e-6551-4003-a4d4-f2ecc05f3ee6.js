@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '011df4+ZVFAA6TU8uzAXz7m', 'bag_物品Tools');
-// Script/home/bag_物品Tools.js
+// Script/背包/bag_物品Tools.js
 
 "use strict";
 

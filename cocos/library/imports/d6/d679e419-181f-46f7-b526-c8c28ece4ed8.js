@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'd679eQZGB9G97UmyMKOzk7Y', 'bag_详情按钮Tools');
-// Script/home/bag_详情按钮Tools.js
+// Script/背包/bag_详情按钮Tools.js
 
 "use strict";
 
@@ -112,7 +112,7 @@ cc.Class({
 
     cc.globalData.bag[goodsid].is_bag = 1;
     TipBoxPrefab_icon.active = false;
-    cc.globalData.biology[cc.globalData.biology_id][goods_key] = goodsid; //icon显示
+    cc.globalData.biology[cc.globalData.biology_id][goods_key] = goodsid; //info icon显示
 
     var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + button_name, TipBoxPrefab_model);
     this.biology_icon(TipBoxPrefab_biology, goodsid);

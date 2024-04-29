@@ -111,9 +111,8 @@ var HttpHelper = cc.Class({
         } else {
           callback(JSON.parse(respone)); // json 转数组
         }
-      } else {
-        callback(-1);
-      }
+      } else {//   callback(-1);
+        }
     };
 
     xhr.open("POST", url, true); // if (cc.sys.isNative) {

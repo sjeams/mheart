@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'c11295LCyNAsZsJFE9jtZru', 'biology_infoTools');
-// Script/home/biology_infoTools.js
+// Script/背包/biology_infoTools.js
 
 "use strict";
 
@@ -13,9 +13,11 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info) {
-    var gooduse = cc.globalData.bag;
-    cc.log(cc.globalData.bag);
+  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model) {
+    var gooduse = cc.globalData.bag; //info 为选中生物的info
+
+    var info = cc.globalData.biology[cc.globalData.biology_id]; // cc.log(cc.globalData.bag)
+
     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
     TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
     TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();

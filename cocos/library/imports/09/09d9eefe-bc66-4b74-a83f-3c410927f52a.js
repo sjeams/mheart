@@ -28,38 +28,33 @@ cc.Class({
 
       } else {
         //生成世界
-        _this.addWordMap(data); //生成生物
+        _this.addWordMap(data.data); //生成生物
 
       }
     });
   },
-  //生成地图
-  addMapPic: function addMapPic(data) {
-    var _this = this;
-
-    if (data.data['map_pic']) {
-      var map_pic = data.data['map_pic'];
-    } else {
-      var map_pic = data.data['picture'];
-    }
-
-    var remoteUrl = httpRequest.httpUrl(map_pic);
-    cc.loader.load({
-      url: remoteUrl
-    }, function (err, texture) {
-      if (texture != null) {
-        _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-      }
-    });
-  },
+  // //生成地图
+  // addMapPic(data){
+  //     var _this = this;
+  //     if(data.data['map_pic']){
+  //       var  map_pic =data.data['map_pic'];
+  //     }else{
+  //       var  map_pic =data.data['picture'];
+  //     }
+  //     var remoteUrl = httpRequest.httpUrl(map_pic);
+  //       cc.loader.load({ url: remoteUrl }, function (err, texture) {  
+  //         if(texture!=null){
+  //           _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+  //         }
+  //     });
+  // },
   //生成生物
   addWordMap: function addWordMap(data) {
-    // cc.log(data)
-    cc.find('Canvas/tips/当前世界').getComponent(cc.Label).string = data.data.name + '(' + data.data.time + '年)';
-    cc.find('Canvas/tips/流速').getComponent(cc.Label).string = '流速: ' + data.data.time + '年/S';
-    cc.find('Canvas/tips/类型').getComponent(cc.Label).string = '类型: ' + data.data.type_name; // cc.find('Canvas/tips/时间').getComponent(cc.Label).string = '世界时间: '+data.data.name+'('+data.data.time+'年)' 
-
-    var info = data.data.user_in_word_map; //技能图标挂载
+    cc.log(data);
+    cc.find('Canvas/当前世界').getComponent(cc.Label).string = data.name + '(' + data.time + '年)';
+    cc.find('Canvas/流速').getComponent(cc.Label).string = '流速: ' + data.time + '年/S';
+    cc.find('Canvas/类型').getComponent(cc.Label).string = '类型: ' + data.type_name;
+    var info = data.user_in_word_map; //技能图标挂载
 
     var BoxPrefab = cc.sys.BoxPrefab;
     BoxPrefab.getComponent('mapTools').biology_detail_list(BoxPrefab, info);
@@ -77,7 +72,7 @@ cc.Class({
       _this.removeBoxprefab(); //写入地图数据
 
 
-      _this.addWordMap(data);
+      _this.addWordMap(data.data);
     });
   },
   back_map: function back_map() {

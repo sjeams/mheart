@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '398e6dtYzpEq5l+mArt9hF0', 'biology_bagTools');
-// Script/home/biology_bagTools.js
+// Script/背包/biology_bagTools.js
 
 "use strict";
 
@@ -13,35 +13,25 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //查看生物详情_弹窗
-  biology_detail_alert: function biology_detail_alert(BoxPrefab, info) {
-    // 销毁所有弹窗
-    BoxPrefab.removeAllChildren();
-
-    var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-
-
-    cc.loader.loadRes('/model背包/A生物背包', function (errorMessage, loadedResource) {
-      //检查资源加载
-      if (errorMessage) {
-        cc.log('载入预制资源失败, 原因:' + errorMessage);
-        return;
-      }
-
-      if (!(loadedResource instanceof cc.Prefab)) {
-        cc.log('你载入的不是预制资源!');
-        return;
-      } //开始实例化预制资源
-
-
-      var TipBoxPrefab = cc.instantiate(loadedResource); //载入生物详情
-
-      _this.biology_detail_info(BoxPrefab, TipBoxPrefab, info); //将预制资源添加到父节点
-      // CanvasNode.addChild(TipBoxPrefab);
-
-    });
+  biology_detail_alert: function biology_detail_alert(BoxPrefab, TipBoxPrefab) {
+    // // 销毁所有弹窗
+    // BoxPrefab.removeAllChildren();
+    // var _this =this;
+    // //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    // cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
+    //     //检查资源加载
+    //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+    //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+    //     //开始实例化预制资源
+    //     var TipBoxPrefab = cc.instantiate(loadedResource);
+    //载入生物详情
+    this.biology_detail_info(BoxPrefab, TipBoxPrefab); //将预制资源添加到父节点
+    // CanvasNode.addChild(TipBoxPrefab);
+    // });
   },
-  biology_detail_info: function biology_detail_info(BoxPrefab, TipBoxPrefab, info) {
-    var _this = this; // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
+  biology_detail_info: function biology_detail_info(BoxPrefab, TipBoxPrefab) {
+    // var _this =this;
+    // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
     // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
     // TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
     // TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string=info.zhong_zhu+'族'
@@ -66,12 +56,10 @@ cc.Class({
     // TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string='增伤:'+info.jianShang+'%'
     // TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string='减伤:'+info.zhenShang+'%'
     //生物列表挂载
+    // var tool = cc.instantiate(TipBoxPrefab);
+    TipBoxPrefab.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab); // //生物详情挂载--默认加载第一个
 
-
-    var tool = cc.instantiate(TipBoxPrefab);
-    tool.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab, info); // //生物详情挂载--默认加载第一个
-
-    tool.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab, info[cc.globalData.biology_id]); // // //技能列表挂载--默认挂载技能列表
+    TipBoxPrefab.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab); // // //技能列表挂载--默认挂载技能列表
     // tool.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab,info[0])
     // // //信息列表挂载
     // tool.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab,info[0])

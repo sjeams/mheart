@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        126.37709023771399,
+        192.25763964014538,
         0,
         0,
         0,
@@ -338,7 +338,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 100,
+    "_opacity": 180,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -348,7 +348,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1200,
+      "width": 1334,
       "height": 750
     },
     "_anchorPoint": {

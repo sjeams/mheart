@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "238d70df-3827-480e-a1b6-b454d0e5c90a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 120,
+  "height": 120,
+  "platformSettings": {},
+  "subMetas": {
+    "出战": {
+      "ver": "1.0.4",
+      "uuid": "cd9b4040-8db9-4120-811e-add6ebb3c3e4",
+      "rawTextureUuid": "238d70df-3827-480e-a1b6-b454d0e5c90a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": -2,
+      "trimX": 35,
+      "trimY": 15,
+      "width": 49,
+      "height": 94,
+      "rawWidth": 120,
+      "rawHeight": 120,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

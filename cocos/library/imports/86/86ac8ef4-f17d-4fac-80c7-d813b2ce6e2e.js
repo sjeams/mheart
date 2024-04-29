@@ -14,8 +14,7 @@ cc.Class({
   // onLoad () {},
   //技能图片渲染  is_use  0卸下  1使用
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, TipBoxPrefab_icon, info, gooduse_type, button_name, is_use) {
-    var gooduse_list = cc.globalData.gooduse; // cc.log(gooduse_list)
-    // gooduse_type  1武器  详情类型必传，不然无法区分类型
+    var gooduse_list = cc.globalData.gooduse; // gooduse_type  1武器  详情类型必传，不然无法区分类型
 
     var _this = this;
 

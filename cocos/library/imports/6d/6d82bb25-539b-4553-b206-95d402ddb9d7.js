@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '6d82bslU5tFU7IGldQC3bnX', 'biology_skillTools');
-// Script/home/biology_skillTools.js
+// Script/背包/biology_skillTools.js
 
 "use strict";
 

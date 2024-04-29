@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "出战",
+    "texture": "238d70df-3827-480e-a1b6-b454d0e5c90a",
+    "atlas": "",
+    "rect": [
+      35,
+      15,
+      49,
+      94
+    ],
+    "offset": [
+      -0.5,
+      -2
+    ],
+    "originalSize": [
+      120,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

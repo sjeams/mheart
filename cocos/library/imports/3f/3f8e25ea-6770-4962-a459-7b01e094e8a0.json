@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "金",
+    "texture": "6a2ce939-3de2-47c2-b3d8-a0805df8330a",
+    "atlas": "",
+    "rect": [
+      33,
+      0,
+      122,
+      185
+    ],
+    "offset": [
+      4,
+      0
+    ],
+    "originalSize": [
+      180,
+      185
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

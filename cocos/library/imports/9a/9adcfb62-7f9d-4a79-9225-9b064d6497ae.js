@@ -44,7 +44,12 @@ var FightingExtend = cc.Class({
     if (biology.extend == 'wuXingTotal') {
       node.getChildByName('悟性s').getComponent(cc.Label).string = biology.hurt_go_value % 100; //除100 取余
 
-      node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this)); //向下取整
+      node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
+      node.getChildByName('悟性动作').active = true;
+      node.getChildByName('悟性动作').opacity = 255;
+      node.getChildByName('悟性动作').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(0.1, 1, 1)), cc.callFunc(function () {
+        node.getChildByName('悟性动作').active = false;
+      }, this)); //向下取整
 
       var wuxing_floor = Math.floor(biology.hurt_go_value / 100);
 

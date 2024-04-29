@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "彩蛋",
+    "texture": "7025811b-b2c5-4259-821f-8e522449ff93",
+    "atlas": "",
+    "rect": [
+      17,
+      7,
+      90,
+      112
+    ],
+    "offset": [
+      2,
+      -3
+    ],
+    "originalSize": [
+      120,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

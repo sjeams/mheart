@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "光晕",
+    "texture": "b5b1916b-9379-4e60-ab34-99f55abfe9bb",
+    "atlas": "",
+    "rect": [
+      85,
+      49,
+      454,
+      401
+    ],
+    "offset": [
+      -7,
+      26.5
+    ],
+    "originalSize": [
+      638,
+      552
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

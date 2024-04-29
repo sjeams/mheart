@@ -77,20 +77,6 @@ class AppApinewController extends ApiUserControl{
         }
     }
 
-    /**
-     * 写入阵法--布阵
-     * http://cs.aheart.com/app/app-apinew/add-position
-     */
-    public function actionAddPosition(){
-        $param =$this->param;
-        $UserBiologyNatureDo=new UserBiologyNatureDo();
-        $data=$UserBiologyNatureDo->addPosition($param['biologyid'],$param['doid'],$param['is_add']);
-        if($data){
-            die(Method::jsonApp(1,null,'succes'));
-        }else{
-            die(Method::jsonApp(0,null,'最多只能放置5个'));
-        }
-    }
 
     /**
      * 请求战斗--战斗
@@ -154,8 +140,11 @@ class AppApinewController extends ApiUserControl{
         // die(Method::jsonApp(1,$data,'succes')); 
     }
 
+
+
+    // ------------背包------------
     /**
-     * 生物列表
+     * bag背包---生物列表
      * http://cs.aheart.com/app/app-apinew/biology-list
      */
     public function actionBiologyList(){
@@ -167,7 +156,7 @@ class AppApinewController extends ApiUserControl{
 
     
     /**
-     * 生物背包
+     * bag背包---生物背包
      * http://cs.aheart.com/app/app-apinew/gooduse-bag
      * biologyid  gooduse
      */
@@ -180,7 +169,7 @@ class AppApinewController extends ApiUserControl{
     }
 
     /**
-     * 背包类型
+     * bag背包---背包类型
      * http://cs.aheart.com/app/app-apinew/gooduse-type
      * biologyid  gooduse
      */
@@ -195,45 +184,76 @@ class AppApinewController extends ApiUserControl{
 
 
 
+    // ------------阵法------------
 
-
-
-
-
-
-
-
-
-
-
-   /**
-     * 添加装备栏--武器--元神
-     * http://cs.aheart.com/app/app-apinew/add-backpaker
-     * biologyid  gooduse
+    /**
+     * 阵法--写入阵法
+     * http://cs.aheart.com/app/app-apinew/add-position
      */
-    public function actionAddBackpaker(){
-        // $param['biologyid']=170;
-        $UserGoods= new UserGoods();
-        $data=$UserGoods->addBiologyBackpaker($this->param);
-        die(Method::jsonApp(1,$data,'succes'));    
+    public function actionAddPosition(){
+        $param =$this->param;
+        $UserBiologyNatureDo=new UserBiologyNatureDo();
+        $data=$UserBiologyNatureDo->addPosition($param['biologyid'],$param['doid'],$param['is_add']);
+        if($data){
+            die(Method::jsonApp(1,null,'succes'));
+        }else{
+            die(Method::jsonApp(0,null,'最多只能放置5个'));
+        }
     }
     /**
-     * 生物背包--武器--元神
-     * http://cs.aheart.com/app/app-apinew/biology-backpaker
-     * biologyid  gooduse
+     * 阵法--布阵
+     * http://cs.aheart.com/app/app-apinew/get-position
      */
-    public function actionBiologyBackpaker(){
-        //可用物品--12技能书   1武器
-        // $good_use = $param['good_use']?$param['good_use']:1;
-        // $param['biologyid']=170;
-        $UserGoods= new UserGoods();
-        $data=$UserGoods->getBiologyBackpaker($this->param);
-        die(Method::jsonApp(1,$data,'succes'));   
+    public function actionGetPosition(){
+        $UserBiologyAttribute=new UserBiologyAttribute();
+        $data= $UserBiologyAttribute->myAttributesListPositionNum();
+        // var_dump($data);die;
+        die(Method::jsonApp(1,$data,'succes'));
     }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    /**
+//      * 添加装备栏--武器--元神
+//      * http://cs.aheart.com/app/app-apinew/add-backpaker
+//      * biologyid  gooduse
+//      */
+//     public function actionAddBackpaker(){
+//         // $param['biologyid']=170;
+//         $UserGoods= new UserGoods();
+//         $data=$UserGoods->addBiologyBackpaker($this->param);
+//         die(Method::jsonApp(1,$data,'succes'));    
+//     }
+//     /**
+//      * 生物背包--武器--元神
+//      * http://cs.aheart.com/app/app-apinew/biology-backpaker
+//      * biologyid  gooduse
+//      */
+//     public function actionBiologyBackpaker(){
+//         //可用物品--12技能书   1武器
+//         // $good_use = $param['good_use']?$param['good_use']:1;
+//         // $param['biologyid']=170;
+//         $UserGoods= new UserGoods();
+//         $data=$UserGoods->getBiologyBackpaker($this->param);
+//         die(Method::jsonApp(1,$data,'succes'));   
+//     }
 
 
 
@@ -243,18 +263,18 @@ class AppApinewController extends ApiUserControl{
     // -------------------
 
 
-    /**
-     * 用户背包--隐藏背包--放在背包可以叠加属性===特殊道具背包
-     * http://cs.aheart.com/app/app-apinew/user-backpaker
-     * gooduse
-     */
-    public function actionUserBackpaker(){
-        $param['gooduse']=5;
-        //可用物品--12技能书   1武器
-        $UserGoods=new UserGoods();
-        $data=$UserGoods->getUserBackpaker($this->param);
-        die(Method::jsonApp(1,$data,'succes'));   
-    }
+    // /**
+    //  * 用户背包--隐藏背包--放在背包可以叠加属性===特殊道具背包
+    //  * http://cs.aheart.com/app/app-apinew/user-backpaker
+    //  * gooduse
+    //  */
+    // public function actionUserBackpaker(){
+    //     $param['gooduse']=5;
+    //     //可用物品--12技能书   1武器
+    //     $UserGoods=new UserGoods();
+    //     $data=$UserGoods->getUserBackpaker($this->param);
+    //     die(Method::jsonApp(1,$data,'succes'));   
+    // }
     
 
     

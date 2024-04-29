@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "五行",
+    "texture": "c79a8f24-29d0-4a9e-b128-42f18f0a3637",
+    "atlas": "",
+    "rect": [
+      7,
+      0,
+      150,
+      176
+    ],
+    "offset": [
+      -5,
+      0
+    ],
+    "originalSize": [
+      174,
+      176
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

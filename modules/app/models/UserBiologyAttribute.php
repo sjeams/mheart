@@ -10,15 +10,19 @@ use yii\db\ActiveRecord;
 use app\modules\app\models\Words;
 
 use app\modules\admin\models\BiologyCreate;
-use app\modules\app\models\UserWords;
 
-use app\modules\app\models\UserGoods;
 
 use app\modules\admin\models\User;
 use app\modules\admin\models\BiologyState;
 
 use app\modules\admin\models\BiologyBiology;
 use app\modules\admin\models\BiologySkill;
+use app\modules\app\models\UserWords;
+
+use app\modules\app\models\UserGoods;
+
+use app\modules\app\models\UserBiologyNatureDo;
+
 
 
 use yii;
@@ -40,6 +44,34 @@ class UserBiologyAttribute extends ActiveRecord
         $count = UserBiologyAttribute::find()->where("userid=$this->userId")->count();
         return $count;
     }
+
+
+
+    //上阵序号 排列  0-9
+    public  function  myAttributesListPositionNum(){  
+        $info = UserBiologyNatureDo::find()->where("userid=$this->userId")->asarray()->One();
+        $data = (new \yii\db\Query())
+        ->select("a.userBiologyid")
+        ->from("x2_user_biology_attribute AS a")
+        ->innerJoin("x2_user_biology AS b","a.userBiologyid = b.id")
+        ->where("a.userid=$this->userId")
+        ->All();
+        $data =array_column($data,'userBiologyid');
+
+        $new_data =[];
+        for($i=1;$i<=9;$i++){
+            $dofind ='do'.$i;
+            if(intval($info["$dofind"])>0){
+                //获取生物序号
+                $new_data[] =   array_search($info["$dofind"],$data);
+            }else{
+                $new_data[] =null; 
+            }
+        }
+        return $new_data;
+    }
+
+
 
     public  function  myAttributesList(){  
         // $UserWords =new UserWords();

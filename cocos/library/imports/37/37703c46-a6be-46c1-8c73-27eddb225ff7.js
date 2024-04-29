@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '37703xGpr5GwYxzJ+3bIl/3', 'score_home');
-// Script/home/score_home.js
+// Script/背包/score_home.js
 
 "use strict";
 
@@ -38,18 +38,63 @@ cc.Class({
 
     httpRequest.httpPost('/app/app-apinew/gooduse-type', {}, function (data) {
       cc.globalData.gooduse = data.data;
+    }); //获取阵法
+
+    httpRequest.httpPost('/app/app-apinew/get-position', {}, function (data) {
+      cc.globalData.zhengfa = data.data;
     });
   },
   //打开背包
   openBag: function openBag() {
-    var info = cc.globalData.biology;
-
-    if (info) {
+    if (cc.globalData.biology) {
       //技能图标挂载
-      var BoxPrefab = cc.find('Canvas/弹窗');
-      BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab, info);
+      var BoxPrefab = cc.find('Canvas/弹窗'); // 销毁所有弹窗
+
+      BoxPrefab.removeAllChildren();
+      cc.loader.loadRes('/model背包/A生物背包', function (errorMessage, loadedResource) {
+        //检查资源加载
+        if (errorMessage) {
+          cc.log('载入预制资源失败, 原因:' + errorMessage);
+          return;
+        }
+
+        if (!(loadedResource instanceof cc.Prefab)) {
+          cc.log('你载入的不是预制资源!');
+          return;
+        } //开始实例化预制资源
+
+
+        var TipBoxPrefab = cc.instantiate(loadedResource);
+        TipBoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab, TipBoxPrefab);
+      }); // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
     } else {//如果没有生物需要弹窗另一个提示
-    }
+      }
+  },
+  //打开阵法
+  openZhengfa: function openZhengfa() {
+    if (cc.globalData.biology) {
+      //技能图标挂载
+      var BoxPrefab = cc.find('Canvas/弹窗'); // 销毁所有弹窗
+
+      BoxPrefab.removeAllChildren();
+      cc.loader.loadRes('/model布阵/A生物布阵', function (errorMessage, loadedResource) {
+        //检查资源加载
+        if (errorMessage) {
+          cc.log('载入预制资源失败, 原因:' + errorMessage);
+          return;
+        }
+
+        if (!(loadedResource instanceof cc.Prefab)) {
+          cc.log('你载入的不是预制资源!');
+          return;
+        } //开始实例化预制资源
+
+
+        var TipBoxPrefab = cc.instantiate(loadedResource);
+        TipBoxPrefab.getComponent('bag_zhengfaTools').biology_detail_alert(BoxPrefab, TipBoxPrefab);
+      }); // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
+    } else {//如果没有生物需要弹窗另一个提示
+      }
   },
   openBag_hidden: function openBag_hidden() {
     // cc.find('Canvas/弹窗').active =false;

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "龙卷风",
+    "texture": "062c300f-dae4-4325-856d-2649da614fb8",
+    "atlas": "",
+    "rect": [
+      20,
+      0,
+      246,
+      199
+    ],
+    "offset": [
+      3,
+      0.5
+    ],
+    "originalSize": [
+      280,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

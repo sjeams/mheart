@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "土",
+    "texture": "e080e7a0-9238-4600-b7e9-758ce7ee3161",
+    "atlas": "",
+    "rect": [
+      34,
+      0,
+      122,
+      182
+    ],
+    "offset": [
+      5,
+      0
+    ],
+    "originalSize": [
+      180,
+      182
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
