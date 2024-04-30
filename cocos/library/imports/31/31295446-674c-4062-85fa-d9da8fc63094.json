@@ -627,7 +627,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物头像",
+    "_name": "背包生物",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -648,7 +648,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
+      "width": 1200,
       "height": 600
     },
     "_anchorPoint": {
@@ -660,7 +660,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -400,
+        0,
         0,
         0,
         0,
@@ -704,7 +704,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 20
@@ -833,7 +833,7 @@
     "asset": {
       "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
     },
-    "fileId": "e2nbiv7DtBwrRZdED/GG5V",
+    "fileId": "33OJpVYU5E6aYySpU+W6ib",
     "sync": false
   },
   {
