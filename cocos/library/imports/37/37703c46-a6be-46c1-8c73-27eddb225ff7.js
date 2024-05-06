@@ -41,7 +41,7 @@ cc.Class({
     }); //获取阵法
 
     httpRequest.httpPost('/app/app-apinew/get-position', {}, function (data) {
-      cc.globalData.zhengfa = data.data;
+      cc.globalData.zhenfa = data.data;
     });
   },
   //打开背包
@@ -71,7 +71,7 @@ cc.Class({
       }
   },
   //打开阵法
-  openZhengfa: function openZhengfa() {
+  openZhenfa: function openZhenfa() {
     if (cc.globalData.biology) {
       //技能图标挂载
       var BoxPrefab = cc.find('Canvas/弹窗'); // 销毁所有弹窗
@@ -91,7 +91,7 @@ cc.Class({
 
 
         var TipBoxPrefab = cc.instantiate(loadedResource);
-        TipBoxPrefab.getComponent('bag_zhengfaTools').biology_detail_alert(BoxPrefab, TipBoxPrefab);
+        TipBoxPrefab.getComponent('bag_zhenfaTools').biology_detail_alert(BoxPrefab, TipBoxPrefab);
       }); // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
     } else {//如果没有生物需要弹窗另一个提示
       }

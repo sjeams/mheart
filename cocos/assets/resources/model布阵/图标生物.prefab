@@ -100,7 +100,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 3
@@ -411,7 +411,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "P技能",
+    "_name": "P出战",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

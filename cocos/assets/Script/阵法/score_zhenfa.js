@@ -1,14 +1,14 @@
-"use strict";
-cc._RF.push(module, 'c43a0BuT61IlassWnBUQDpD', 'score_zhenfa');
-// Script/阵法/score_zhenfa.js
-
 // var HttpHelper = require("../http"); 
 // var httpRequest = new HttpHelper();
 // cc.Class({
 //     extends: cc.Component,
+
 //     properties: {
+
 //     },
+
 //     // LIFE-CYCLE CALLBACKS:
+
 //     onLoad () {
 //         //大厅需要加载的全局变量
 //         cc.globalData={}
@@ -16,7 +16,9 @@ cc._RF.push(module, 'c43a0BuT61IlassWnBUQDpD', 'score_zhenfa');
 //         // cc.loader.load({ url: remoteUrl }, function (err, data) {
 //         this.brushBag();
 //     },
+
 //     start () {
+
 //     },
 //     //刷新背包--每次操作后需要刷新背包
 //     brushBag(){
@@ -31,6 +33,7 @@ cc._RF.push(module, 'c43a0BuT61IlassWnBUQDpD', 'score_zhenfa');
 //             //开启战斗
 //           //   _this.goPlay( )
 //         }); 
+
 //         //获取阵法
 //         httpRequest.httpPost('/app/app-apinew/get-position',{}, function (data) {
 //             cc.globalData.zhengfa = data.data;  
@@ -64,12 +67,10 @@ cc._RF.push(module, 'c43a0BuT61IlassWnBUQDpD', 'score_zhenfa');
 //         //如果没有生物需要弹窗另一个提示
 //         }
 //     },
+
 //     openBag_hidden(){
 //         // cc.find('Canvas/弹窗').active =false;
 //         cc.find('Canvas/弹窗').removeAllChildren();
 //     }
 //     // update (dt) {},
 // });
-"use strict";
-
-cc._RF.pop();

@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '9adcftif51KeZIlmwZNZJeu', 'figthingExtend');
-// Script/fighting/figthingExtend.js
+// Script/战斗/figthingExtend.js
 
 "use strict";
 
@@ -20,13 +20,12 @@ var FightingExtend = cc.Class({
       node.getChildByName('技能背景').opacity = 255;
       node.getChildByName('技能s').active = true;
       node.getChildByName('技能s').opacity = 255;
-      node.getChildByName('技能背景').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0))), cc.callFunc(function () {
+      node.getChildByName('技能背景').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0)), cc.callFunc(function () {
         node.getChildByName('技能背景').active = false;
-      }, this));
-      node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0))), cc.callFunc(function () {
+      }, this)));
+      node.getChildByName('技能s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0)), cc.callFunc(function () {
         node.getChildByName('技能s').active = false;
-      }, this)); // node.getChildByName('技能背景').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能背景').active=false  },this));
-      // node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能s').active=false  },this));
+      }, this)));
     }
   },
   //攻击动作
@@ -44,12 +43,12 @@ var FightingExtend = cc.Class({
     if (biology.extend == 'wuXingTotal') {
       node.getChildByName('悟性s').getComponent(cc.Label).string = biology.hurt_go_value % 100; //除100 取余
 
-      node.getChildByName('悟性s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
+      node.getChildByName('悟性s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1), cc.callFunc(function () {}, this)));
       node.getChildByName('悟性动作').active = true;
       node.getChildByName('悟性动作').opacity = 255;
-      node.getChildByName('悟性动作').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(0.1, 1, 1)), cc.callFunc(function () {
+      node.getChildByName('悟性动作').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.5, 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
         node.getChildByName('悟性动作').active = false;
-      }, this)); //向下取整
+      }, this))); //向下取整
 
       var wuxing_floor = Math.floor(biology.hurt_go_value / 100);
 
@@ -57,8 +56,8 @@ var FightingExtend = cc.Class({
         node.getChildByName('悟性星星').active = true;
         node.getChildByName('进化s').active = true;
         node.getChildByName('进化s').getComponent(cc.Label).string = wuxing_floor;
-        node.getChildByName('进化s').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
-        node.getChildByName('悟性星星').runAction(cc.sequence(cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1)), cc.callFunc(function () {}, this));
+        node.getChildByName('进化s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1), cc.callFunc(function () {}, this)));
+        node.getChildByName('悟性星星').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.5, 1.5), cc.moveBy(0.3, cc.v2(0, 0)), cc.scaleTo(0.2, 1, 1), cc.callFunc(function () {}, this)));
       }
     }
   },
@@ -70,9 +69,9 @@ var FightingExtend = cc.Class({
     if (is_skill != 0) {
       node.getChildByName('技能效果').active = true;
       node.getChildByName('技能效果').opacity = 255;
-      node.getChildByName('技能效果').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(0.1, 1, 1)), cc.callFunc(function () {
+      node.getChildByName('技能效果').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.5, 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
         node.getChildByName('技能效果').active = false;
-      }, this));
+      }, this)));
     }
 
     if (biology.extend == 'moFa') {
@@ -91,17 +90,17 @@ var FightingExtend = cc.Class({
         node.getChildByName('扣蓝s').getComponent(cc.Label).string = biology.hurt_msg;
         node.getChildByName('扣蓝s').active = true;
         node.getChildByName('扣蓝s').opacity = 255;
-        node.getChildByName('扣蓝s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40))), cc.callFunc(function () {
+        node.getChildByName('扣蓝s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40)), cc.callFunc(function () {
           node.getChildByName('扣蓝s').active = false;
-        }, this));
+        }, this)));
       } else if (biology.hurt_msg > 0) {
         //扣蓝渐隐
         node.getChildByName('加蓝s').getComponent(cc.Label).string = biology.hurt_msg;
         node.getChildByName('加蓝s').active = true;
         node.getChildByName('加蓝s').opacity = 255;
-        node.getChildByName('加蓝s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40))), cc.callFunc(function () {
+        node.getChildByName('加蓝s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40)), cc.callFunc(function () {
           node.getChildByName('加蓝s').active = false;
-        }, this));
+        }, this)));
       }
     }
 
@@ -120,9 +119,9 @@ var FightingExtend = cc.Class({
         node.getChildByName('加血s').getComponent(cc.Label).string = biology.hurt_msg;
         node.getChildByName('加血s').active = true;
         node.getChildByName('加血s').opacity = 255;
-        node.getChildByName('加血s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40))), cc.callFunc(function () {
+        node.getChildByName('加血s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40)), cc.callFunc(function () {
           node.getChildByName('加血s').active = false;
-        }, this));
+        }, this)));
       } else {
         //扣血渐隐
         if (biology.is_baoji == 1) {
@@ -131,18 +130,18 @@ var FightingExtend = cc.Class({
           node.getChildByName('暴击s').opacity = 255;
           node.getChildByName('暴击s').getComponent(cc.Label).string = '暴击' + biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FF5700');
 
-          node.getChildByName('暴击s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.5), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40))), cc.callFunc(function () {
+          node.getChildByName('暴击s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.5), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40)), cc.callFunc(function () {
             node.getChildByName('暴击s').active = false;
-          }, this));
+          }, this)));
         } else {
           //普通样式
           node.getChildByName('扣血s').active = true;
           node.getChildByName('扣血s').opacity = 255;
           node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FBD800');
 
-          node.getChildByName('扣血s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40))), cc.callFunc(function () {
+          node.getChildByName('扣血s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, -40)), cc.callFunc(function () {
             node.getChildByName('扣血s').active = false;
-          }, this));
+          }, this)));
         } //受伤动画
 
 
@@ -175,13 +174,13 @@ var FightingExtend = cc.Class({
           //图片翻转
           node.getChildByName('生物').setScale(-1, 1);
         } // cc.log(biology)
-        // node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
+        // node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this)));
         //金币
         // node.getChildByName('金币s').getComponent(cc.Label).string= '+$'+node.jing_bi
         // node.getChildByName('金币s').active=true
         // node.getChildByName('金币s').opacity=255
         // // node.getChildByName('金币s').runAction(cc.moveBy(3,cc.v2(0,60)));
-        // node.getChildByName('金币s').runAction(cc.fadeOut(3),cc.callFunc(function(){  node.getChildByName('金币s').active=false },this));
+        // node.getChildByName('金币s').runAction(cc.fadeOut(3),cc.callFunc(function(){  node.getChildByName('金币s').active=false },this)));
         // // node.getChildByName('金币s').runAction(cc.moveBy(0.01,cc.v2(0,-40)));
 
       }
@@ -191,11 +190,11 @@ var FightingExtend = cc.Class({
       node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
       node.getChildByName('技能s').active = true;
       node.getChildByName('技能s').opacity = 255; // node.getChildByName('技能s').runAction(cc.moveBy(3,cc.v2(0,60)));
-      // node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1)),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this));
+      // node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this)));
 
-      node.getChildByName('技能s').runAction(cc.sequence(cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0))), cc.callFunc(function () {
+      node.getChildByName('技能s').runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.1, 1.1, 1.3), cc.moveBy(0.5, cc.v2(0, 0)), cc.fadeOut(0.1), cc.scaleTo(0.01, 1, 1), cc.moveBy(0.01, cc.v2(0, 0)), cc.callFunc(function () {
         node.getChildByName('技能s').active = false;
-      }, this));
+      }, this)));
     }
   }
 });

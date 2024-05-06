@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'score_fighting');
-// Script/fighting/score_fighting.js
+// Script/战斗/score_fighting.js
 
 "use strict";
 

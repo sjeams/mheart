@@ -205,8 +205,8 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/get-position
      */
     public function actionGetPosition(){
-        $UserBiologyAttribute=new UserBiologyAttribute();
-        $data= $UserBiologyAttribute->myAttributesListPositionNum();
+      
+        $data= UserBiologyAttribute::getmyAttributesListPositionNum();
         // var_dump($data);die;
         die(Method::jsonApp(1,$data,'succes'));
     }

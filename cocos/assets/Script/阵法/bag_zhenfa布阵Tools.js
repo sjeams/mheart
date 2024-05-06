@@ -9,32 +9,31 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     //技能图片渲染
-    biology_buzhen_list(TipBoxPrefab_model,TipBoxPrefab,biology,zhenfa){
-        // var biology = cc.globalData.biology
+    biology_buzhen_list(TipBoxPrefab_model,TipBoxPrefab){
+        // var biology = cc.globalData.zhenfa
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         var _this =this;
         cc.loader.loadRes('/model布阵/图标阵法', function(errorMessage,loadedResource_icon){
-            for (var prop in zhenfa) {
-                let key = zhenfa[prop];
+            for (var prop in cc.globalData.zhenfa) {
+                var key = cc.globalData.zhenfa[prop];
                 //开始实例化预制资源
-                let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon)
+                var   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon)
                 //写入详情
-                _this.biology_buzhen_detail(TipBoxPrefab_icon,biology,key) 
+                _this.biology_buzhen_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,key) 
                 // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
                 // 此处进行事件绑定
-                // TipBoxPrefab_icon.on('click', function () {
-                //     // 事件处理逻辑
-                //     _this.bindClickEventIcon(TipBoxPrefab_model,TipBoxPrefab_icon);
-                // }, this);
-                //写入icon
-                // TipBoxPrefab_model.getChildByName('阵法详情').addChild(TipBoxPrefab_icon);
+                // 事件处理逻辑
+                _this.bindClickRemove(TipBoxPrefab_model,TipBoxPrefab_icon);
                 TipBoxPrefab.getChildByName('阵法详情').addChild(TipBoxPrefab_icon);
             }
         })
     },
-    biology_buzhen_detail(TipBoxPrefab_icon,biology,key){
-        if(key){
-            var info = biology[key] 
+ 
+    biology_buzhen_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,key){
+
+        var biology_id = cc.globalData.zhenfa[key]
+        if(biology_id!=null){
+            var info = cc.globalData.biology[biology_id] 
             TipBoxPrefab_icon.getChildByName('生物').active=true
             // //载入技能图片
             let image = info.picture;
@@ -44,19 +43,35 @@ cc.Class({
                     return;
                 }
                 TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture; 
+                //拖拽逻辑
+                TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,texture)
             });
             //技能等级
             TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=info.name
         }else{
-
             TipBoxPrefab_icon.getChildByName('生物').active=false
             TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=''
         }
     },
 
+    biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab_icon) {
+        TipBoxPrefab_icon.getChildByName('生物').active=false
+        TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=''
+        TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
+        var zhenfa_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon) //阵法的序号key
+        var biology_id = cc.globalData.zhenfa[zhenfa_id] //生物id biology_id
+        //移出阵法
+        cc.globalData.zhenfa[zhenfa_id] =null
+        cc.globalData.biology[biology_id].is_chuzhan=0
+        // cc.log(biology_id)
+    },
+
     // 绑定按钮事件
-    bindClickEventIcon: function (TipBoxPrefab_model,TipBoxPrefab_icon) {
-        // cc.log(skill)
+    bindClickRemove(TipBoxPrefab_model,TipBoxPrefab_icon) {
+        var _this =this;
+        TipBoxPrefab_icon.on('click', function () {
+            _this.biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab_icon);
+        }, this);
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
         // 销毁所有弹窗--节点
@@ -65,8 +80,6 @@ cc.Class({
         // let move_type= ['初始化','回合化','被击前触发','被击后触发','攻击前触发','主动','攻击后']
         // cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function(errorMessage,loadedResource){
         //     //检查资源加载
-        //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-        //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
         //     //开始实例化预制资源
         //     let tips_Prefab = cc.instantiate(loadedResource);
         //     tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame
@@ -88,10 +101,7 @@ cc.Class({
 
         //     //载入生物详情
         //     TipBoxPrefab_model.getChildByName('中间弹窗').addChild(tips_Prefab);
-
         // });
-
-
     },
  
 });

@@ -48,7 +48,12 @@ class UserBiologyAttribute extends ActiveRecord
 
 
     //上阵序号 排列  0-9
-    public  function  myAttributesListPositionNum(){  
+    public static  function  getmyAttributesListPositionNum(){ 
+        $UserBiologyAttribute=new UserBiologyAttribute();
+        return   $UserBiologyAttribute->myAttributesListPositionNum();
+    }
+
+    public  function  myAttributesListPositionNum(){ 
         $info = UserBiologyNatureDo::find()->where("userid=$this->userId")->asarray()->One();
         $data = (new \yii\db\Query())
         ->select("a.userBiologyid")
@@ -71,8 +76,6 @@ class UserBiologyAttribute extends ActiveRecord
         return $new_data;
     }
 
-
-
     public  function  myAttributesList(){  
         // $UserWords =new UserWords();
         // $UserGoods = new UserGoods();
@@ -85,8 +88,14 @@ class UserBiologyAttribute extends ActiveRecord
         ->innerJoin("x2_user_biology AS b","a.userBiologyid = b.id")
         ->where("a.userid=$this->userId")
         ->All();
-
+        $zhenfa = UserBiologyAttribute::getmyAttributesListPositionNum();
         foreach($data as $k=>$info){
+            if(array_search($k,$zhenfa)===false){
+                $info['is_chuzhan']=0;
+            }else{
+                $info['is_chuzhan']=1;
+            }
+            // $info['is_chuzhan']= UserBiologyAttribute::getmyAttributesListPositionNum();
             $data[$k] = $this-> biologyInfo($info,$BiologyState,$BiologyBiology);      
         }
         return $data;

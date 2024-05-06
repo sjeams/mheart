@@ -2424,11 +2424,6 @@
     "meta": 1714273943462,
     "relativePath": "resources\\图标世界\\word\\武林外传.jpg"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1714037474731,
-    "meta": 1714273944444,
-    "relativePath": "Script\\战斗\\score_fighting.js"
-  },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1714038256196,
     "meta": 1714273944288,
@@ -2465,8 +2460,8 @@
     "relativePath": "resources\\model背包\\生物详情.prefab"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1714445294913,
-    "meta": 1714445294923,
+    "asset": 1714978666775,
+    "meta": 1714978666797,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "6a66811c-a6a4-4a20-8ab8-3dfa17b62e3e": {
@@ -2560,8 +2555,8 @@
     "relativePath": "resources\\model布阵"
   },
   "b1c7aef8-a5d2-402d-bb34-82338dce0f8d": {
-    "asset": 1714448407252,
-    "meta": 1714448407265,
+    "asset": 1714978419078,
+    "meta": 1714978419089,
     "relativePath": "resources\\model布阵\\图标阵法.prefab"
   },
   "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
@@ -2589,11 +2584,6 @@
     "meta": 1714370385159,
     "relativePath": "Script\\场景\\map_score.js"
   },
-  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
-    "asset": 1714371008330,
-    "meta": 1714371113339,
-    "relativePath": "Script\\战斗\\figthingExtend.js"
-  },
   "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
     "asset": 1714373479593,
     "meta": 1714373748330,
@@ -2603,11 +2593,6 @@
     "asset": 1714378712178,
     "meta": 1714378886803,
     "relativePath": "Script\\背包\\biology_skillTools.js"
-  },
-  "31295446-674c-4062-85fa-d9da8fc63094": {
-    "asset": 1714468885695,
-    "meta": 1714468885706,
-    "relativePath": "resources\\model布阵\\A生物布阵.prefab"
   },
   "398e676d-633a-44ab-997e-980aedf61174": {
     "asset": 1714379326185,
@@ -2649,39 +2634,54 @@
     "meta": 1714385459392,
     "relativePath": "Script\\背包\\biology_infoTools.js"
   },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1714386208602,
-    "meta": 1714386215439,
-    "relativePath": "Script\\背包\\score_home.js"
-  },
-  "c43a006e-4fad-4895-ab2c-5a7054403a43": {
-    "asset": 1714386211293,
-    "meta": 1714386215469,
-    "relativePath": "Script\\阵法\\score_zhengfa.js"
-  },
-  "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
-    "asset": 1714470895463,
-    "meta": 1714470895475,
-    "relativePath": "resources\\model布阵\\背包生物.prefab"
-  },
   "be0166eb-f3a5-47e5-877f-338b0116276e": {
-    "asset": 1714467657413,
-    "meta": 1714467657422,
+    "asset": 1714981573317,
+    "meta": 1714981573327,
     "relativePath": "resources\\model布阵\\图标生物.prefab"
   },
-  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
-    "asset": 1714469357787,
-    "meta": 1714469387465,
-    "relativePath": "Script\\阵法\\bag_zhengfa布阵Tools.js"
+  "c43a006e-4fad-4895-ab2c-5a7054403a43": {
+    "asset": 1714965942743,
+    "meta": 1714978417915,
+    "relativePath": "Script\\阵法\\score_zhenfa.js"
   },
-  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
-    "asset": 1714469383492,
-    "meta": 1714469387488,
-    "relativePath": "Script\\阵法\\bag_zhengfaTools.js"
+  "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
+    "asset": 1714981698267,
+    "meta": 1714981698292,
+    "relativePath": "resources\\model布阵\\背包生物.prefab"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1714982262668,
+    "meta": 1714982388789,
+    "relativePath": "Script\\战斗\\score_fighting.js"
+  },
+  "9adcfb62-7f9d-4a79-9225-9b064d6497ae": {
+    "asset": 1714983408134,
+    "meta": 1714983448108,
+    "relativePath": "Script\\战斗\\figthingExtend.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1714990042679,
+    "meta": 1714990060852,
+    "relativePath": "Script\\背包\\score_home.js"
+  },
+  "31295446-674c-4062-85fa-d9da8fc63094": {
+    "asset": 1714990649446,
+    "meta": 1714990649499,
+    "relativePath": "resources\\model布阵\\A生物布阵.prefab"
+  },
+  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
+    "asset": 1714990589558,
+    "meta": 1714990648759,
+    "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
   "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
-    "asset": 1714471255153,
-    "meta": 1714471256570,
-    "relativePath": "Script\\阵法\\bag_zhengfa头像Tools.js"
+    "asset": 1714990647565,
+    "meta": 1714990648839,
+    "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
+  },
+  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
+    "asset": 1714990640570,
+    "meta": 1714990648862,
+    "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
   }
 }
