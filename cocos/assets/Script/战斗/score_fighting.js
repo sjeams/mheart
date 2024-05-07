@@ -57,7 +57,7 @@ cc.Class({
         var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         cc.loader.load({ url: remoteUrl }, function (err, data) {
           //定义常量
-          cc.globalData = data;
+          http_globalData.fighting = data;
           //开启战斗
           _this.goPlay( )
         });    
@@ -65,7 +65,9 @@ cc.Class({
     },
     //开启战斗
     goPlay( ){
-        let  data = cc.globalData
+        //播放器先清除所有定时器
+        this.unscheduleAllCallbacks();//停止某组件的所有计时器
+        let data = http_globalData.fighting
         var _this =this;
         var biolgy_state = data.data.biolgy_state;
         var poition_my = data.data.poition_my;

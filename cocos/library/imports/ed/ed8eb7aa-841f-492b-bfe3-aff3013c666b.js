@@ -65,7 +65,7 @@ cc.Class({
         url: remoteUrl
       }, function (err, data) {
         //定义常量
-        cc.globalData = data; //开启战斗
+        http_globalData.fighting = data; //开启战斗
 
         _this.goPlay();
       });
@@ -73,7 +73,10 @@ cc.Class({
   },
   //开启战斗
   goPlay: function goPlay() {
-    var data = cc.globalData;
+    //播放器先清除所有定时器
+    this.unscheduleAllCallbacks(); //停止某组件的所有计时器
+
+    var data = http_globalData.fighting;
 
     var _this = this;
 

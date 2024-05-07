@@ -15,8 +15,8 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, info_list) {
-    var info_list = cc.globalData.biology; //尽量先关闭所有弹窗
+  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model) {
+    var info_list = http_globalData.biology; //尽量先关闭所有弹窗
 
     TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
     TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
@@ -125,7 +125,7 @@ cc.Class({
     // 此处进行事件绑定
     TipBoxPrefab_icon.on('click', function () {
       //当前选中的生物序号 index---定义全局变量
-      cc.globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); // 事件处理逻辑
+      http_globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); // 事件处理逻辑
       //移除挂载
 
       TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载

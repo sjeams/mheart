@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '86ac8708X1PrIDH2BOyzm4u', 'bag_详情Tools');
-// Script/home/bag_详情Tools.js
+// Script/背包/bag_详情Tools.js
 
 "use strict";
 
@@ -14,7 +14,7 @@ cc.Class({
   // onLoad () {},
   //技能图片渲染  is_use  0卸下  1使用
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, TipBoxPrefab_icon, info, gooduse_type, button_name, is_use) {
-    var gooduse_list = cc.globalData.gooduse; // gooduse_type  1武器  详情类型必传，不然无法区分类型
+    var gooduse_list = http_globalData.gooduse; // gooduse_type  1武器  详情类型必传，不然无法区分类型
 
     var _this = this;
 

@@ -264,8 +264,19 @@ var HttpHelper = cc.Class({
       sence_zhandou: "战斗场景"
     };
     return sence[url];
-  }
+  } // cc.director.loadScene(_this.globalData().globalData);
+
 }); // httpRequest = new HttpHelper();
 // window.HttpHelper = new HttpHelper();
+//全局变量
+
+window.http_globalData = {
+  fighting: [],
+  biology: [],
+  biology_id: [],
+  bag: [],
+  gooduse: [],
+  zhenfa: []
+};
 
 cc._RF.pop();

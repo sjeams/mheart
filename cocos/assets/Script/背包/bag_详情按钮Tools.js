@@ -13,12 +13,7 @@ cc.Class({
     //定义按钮事件类型 is_bag  0卸下 1装备
     biology_init(TipBoxPrefab_model,TipBoxPrefab_icon,goodsid,button_name,is_bag){
         //加载背包 和  背包列表
-        // let bag_list = cc.globalData.bag
-        // cc.log(goodsid)
-        // cc.log(button_name)
-        // cc.log(is_bag)
-        // return 
-       var biology_id =  cc.globalData.biology[cc.globalData.biology_id].id;
+       var biology_id =  http_globalData.biology[http_globalData.biology_id].id;
         
         switch (button_name) {
             case ("装备1"):
@@ -44,7 +39,7 @@ cc.Class({
 
         // TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
         //重新挂载info
-        // TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,cc.globalData.biology[goodsid])
+        // TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model,http_globalData.biology[goodsid])
 
     },
 
@@ -58,7 +53,7 @@ cc.Class({
     //图标回填
     biology_icon(TipBoxPrefab_biology,goodsid){
         if(goodsid){
-            var goods_image = cc.globalData.bag[goodsid].point
+            var goods_image = http_globalData.bag[goodsid].point
             cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
                 if (err) {
                     // cc.error(err.message || err);
@@ -73,25 +68,25 @@ cc.Class({
     },
     //移除预制节点--选中的节点
     TipBoxPrefab_biology_detail_shown(){
-        if(cc.globalData.TipBoxPrefab_biology_detail){
-            cc.globalData.TipBoxPrefab_biology_detail.active =true;
+        if(http_globalData.TipBoxPrefab_biology_detail){
+            http_globalData.TipBoxPrefab_biology_detail.active =true;
         }
     },
     //隐藏
     TipBoxPrefab_biology_detail_hidden(){
-        cc.globalData.TipBoxPrefab_biology_detail = null
+        http_globalData.TipBoxPrefab_biology_detail = null
     },
     //选中节点
     TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon){
-        cc.globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon
+        http_globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon
     },
     zhuangbei_down(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key){
         //移除预制节点
         this.TipBoxPrefab_biology_detail_hidden()
         // 移除装备栏--返回背包
-        cc.globalData.bag[goodsid].is_bag=0;
+        http_globalData.bag[goodsid].is_bag=0;
         TipBoxPrefab_icon.active=true //背包显示
-        cc.globalData.biology[cc.globalData.biology_id][goods_key]=null; //装备栏不显示
+        http_globalData.biology[http_globalData.biology_id][goods_key]=null; //装备栏不显示
          //icon显示     
         let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
         this.biology_icon(TipBoxPrefab_biology,null)
@@ -100,17 +95,17 @@ cc.Class({
     zhuangbe_up(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key){
         // 添加到装备栏--移出背包
         //如果原来装备栏有--装备，难么要返回背包
-        if(cc.globalData.biology[cc.globalData.biology_id][goods_key]){
+        if(http_globalData.biology[http_globalData.biology_id][goods_key]){
             //返回背包
-            cc.globalData.bag[cc.globalData.biology[cc.globalData.biology_id][goods_key]].is_bag=0;
+            http_globalData.bag[http_globalData.biology[http_globalData.biology_id][goods_key]].is_bag=0;
             this.TipBoxPrefab_biology_detail_shown()
         }else{
             this.TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon)
         }
         //隐藏当前物品
-        cc.globalData.bag[goodsid].is_bag=1;
+        http_globalData.bag[goodsid].is_bag=1;
         TipBoxPrefab_icon.active=false
-        cc.globalData.biology[cc.globalData.biology_id][goods_key]=goodsid;
+        http_globalData.biology[http_globalData.biology_id][goods_key]=goodsid;
         //info icon显示
         let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
         this.biology_icon(TipBoxPrefab_biology,goodsid)
@@ -121,9 +116,9 @@ cc.Class({
     //     //移除预制节点
     //     this.TipBoxPrefab_biology_detail_hidden()
     //     // 移除装备栏--返回背包
-    //     cc.globalData.bag[goodsid].is_bag=0;
+    //     http_globalData.bag[goodsid].is_bag=0;
     //     TipBoxPrefab_icon.active=true //背包显示
-    //     cc.globalData.biology[cc.globalData.biology_id].gooduse2=null; //装备栏不显示
+    //     http_globalData.biology[http_globalData.biology_id].gooduse2=null; //装备栏不显示
     //     //icon显示
     //     let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
     //     this.biology_icon(TipBoxPrefab_biology,null)
@@ -131,16 +126,16 @@ cc.Class({
     // zhuangbe2_up(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid){
     //     // 添加到装备栏--移出背包
     //     //如果原来装备栏有--装备，难么要返回背包
-    //     if(cc.globalData.biology[cc.globalData.biology_id].gooduse2){
+    //     if(http_globalData.biology[http_globalData.biology_id].gooduse2){
     //         //返回背包
-    //         cc.globalData.bag[cc.globalData.biology[cc.globalData.biology_id].gooduse2].is_bag=0;
+    //         http_globalData.bag[http_globalData.biology[http_globalData.biology_id].gooduse2].is_bag=0;
     //         this.TipBoxPrefab_biology_detail_shown()
     //     }else{
     //         this.TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon)
     //     }
-    //     cc.globalData.bag[goodsid].is_bag=1;
+    //     http_globalData.bag[goodsid].is_bag=1;
     //     TipBoxPrefab_icon.active=false
-    //     cc.globalData.biology[cc.globalData.biology_id].gooduse2=goodsid;
+    //     http_globalData.biology[http_globalData.biology_id].gooduse2=goodsid;
     //     //icon显示
     //     let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
     //     this.biology_icon(TipBoxPrefab_biology,goodsid)
@@ -149,9 +144,9 @@ cc.Class({
     //     //移除预制节点
     //     this.TipBoxPrefab_biology_detail_hidden()
     //     // 移除装备栏--返回背包
-    //     cc.globalData.bag[goodsid].is_bag=0;
+    //     http_globalData.bag[goodsid].is_bag=0;
     //     TipBoxPrefab_icon.active=true //背包显示
-    //     cc.globalData.biology[cc.globalData.biology_id].yuanShen=null; //装备栏不显示
+    //     http_globalData.biology[http_globalData.biology_id].yuanShen=null; //装备栏不显示
     //     //icon显示
     //     let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
     //     this.biology_icon(TipBoxPrefab_biology,null)
@@ -159,16 +154,16 @@ cc.Class({
     // yuansehn_up(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid){
     //     // 添加到装备栏--移出背包
     //     //如果原来装备栏有--装备，难么要返回背包
-    //     if(cc.globalData.biology[cc.globalData.biology_id].yuanShen){
+    //     if(http_globalData.biology[http_globalData.biology_id].yuanShen){
     //         //返回背包
-    //         cc.globalData.bag[cc.globalData.biology[cc.globalData.biology_id].yuanShen].is_bag=0;
+    //         http_globalData.bag[http_globalData.biology[http_globalData.biology_id].yuanShen].is_bag=0;
     //         this.TipBoxPrefab_biology_detail_shown()
     //     }else{
     //         this.TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon)
     //     }
-    //     cc.globalData.bag[goodsid].is_bag=1;
+    //     http_globalData.bag[goodsid].is_bag=1;
     //     TipBoxPrefab_icon.active=false
-    //     cc.globalData.biology[cc.globalData.biology_id].yuanShen=goodsid;
+    //     http_globalData.biology[http_globalData.biology_id].yuanShen=goodsid;
     //     //icon显示
     //     let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+button_name,TipBoxPrefab_model)
     //     this.biology_icon(TipBoxPrefab_biology,goodsid)
@@ -184,8 +179,8 @@ cc.Class({
     //  //技能图片渲染  is_use  0卸下  1使用
     //  biology_detail_alert(TipBoxPrefab_model,info,gooduse_type,is_use){
     //     //加载背包 和  背包列表
-    //     let bag_list = cc.globalData.bag
-    //     let gooduse_list = cc.globalData.gooduse;
+    //     let bag_list = http_globalData.bag
+    //     let gooduse_list = http_globalData.gooduse;
     //     cc.log(gooduse_list)
     //     // gooduse_type  1武器  详情类型必传，不然无法区分类型
     //     var _this=this;

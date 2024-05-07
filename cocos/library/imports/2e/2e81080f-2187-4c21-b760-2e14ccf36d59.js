@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '2e810gPIYdMIbdgLhTM821Z', 'score_fighting_alert');
-// Script/fighting/score_fighting_alert.js
+// Script/战斗/score_fighting_alert.js
 
 "use strict";
 
@@ -61,8 +61,7 @@ cc.Class({
   },
   //跳过回合
   back_time_show: function back_time_show() {
-    this.unscheduleAllCallbacks(); //停止某组件的所有计时器
-
+    // this.unscheduleAllCallbacks();//停止某组件的所有计时器
     cc.find('Canvas/结算').active = true;
   },
   back_time_hidden: function back_time_hidden() {

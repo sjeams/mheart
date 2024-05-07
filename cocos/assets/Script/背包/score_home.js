@@ -10,8 +10,9 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        // cc.log(http_globalData.playerName)
         //大厅需要加载的全局变量
-        cc.globalData={}
+        // http_globalData={}
         // var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         // cc.loader.load({ url: remoteUrl }, function (err, data) {
         this.brushBag();
@@ -25,30 +26,30 @@ cc.Class({
         //获取生物列表
         httpRequest.httpPost('/app/app-apinew/biology-list',{}, function (data) {
             //定义常量
-            cc.globalData.biology = data.data;
+            http_globalData.biology = data.data;
             //当前选中的生物id
-            cc.globalData.biology_id = 0;
+            http_globalData.biology_id = 0;
             //当前弹出的预制节点--物品详情--装备-卸载
-            cc.globalData.TipBoxPrefab_biology_detail = null;
+            http_globalData.TipBoxPrefab_biology_detail = null;
             //开启战斗
           //   _this.goPlay( )
         }); 
         //获取背包
         httpRequest.httpPost('/app/app-apinew/gooduse-bag',{}, function (data) {
-            cc.globalData.bag = data.data;  
+            http_globalData.bag = data.data;  
         })
         //获取背包
         httpRequest.httpPost('/app/app-apinew/gooduse-type',{}, function (data) {
-            cc.globalData.gooduse = data.data;  
+            http_globalData.gooduse = data.data;  
         })
         //获取阵法
         httpRequest.httpPost('/app/app-apinew/get-position',{}, function (data) {
-            cc.globalData.zhenfa = data.data;  
+            http_globalData.zhenfa = data.data;  
         })
     },
     //打开背包
     openBag() {
-        if(cc.globalData.biology){
+        if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
             //技能图标挂载
             var BoxPrefab = cc.find('Canvas/弹窗')
             // 销毁所有弹窗
@@ -69,7 +70,7 @@ cc.Class({
 
     //打开阵法
     openZhenfa() {
-        if(cc.globalData.biology){
+        if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
             //技能图标挂载
             var BoxPrefab = cc.find('Canvas/弹窗')
             // 销毁所有弹窗

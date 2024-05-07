@@ -66,7 +66,7 @@ cc.Class({
     },
     //跳过回合
     back_time_show(){ 
-      this.unscheduleAllCallbacks();//停止某组件的所有计时器
+      // this.unscheduleAllCallbacks();//停止某组件的所有计时器
       cc.find('Canvas/结算').active =true;
     },
     back_time_hidden(){

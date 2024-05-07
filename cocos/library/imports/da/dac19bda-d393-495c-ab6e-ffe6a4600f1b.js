@@ -15,14 +15,11 @@ cc.Class({
     this.biology_detail_info(BoxPrefab, TipBoxPrefab_model);
   },
   biology_detail_info: function biology_detail_info(BoxPrefab, TipBoxPrefab_model) {
-    var biology = cc.globalData.biology;
-    var zhenfa = cc.globalData.zhenfa;
     cc.loader.loadRes('/model布阵/背包生物', function (errorMessage, loadedResource_icon) {
       //开始实例化预制资源
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //生物列表挂载
 
-      TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').biology_detail_list(TipBoxPrefab_model, TipBoxPrefab);
-      TipBoxPrefab_model.getComponent('bag_zhenfa布阵Tools').biology_buzhen_list(TipBoxPrefab_model, TipBoxPrefab); //写入icon
+      TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').biology_detail_list(TipBoxPrefab_model, TipBoxPrefab); //写入icon
 
       TipBoxPrefab_model.getChildByName('背包生物').addChild(TipBoxPrefab);
     });

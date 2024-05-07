@@ -17,8 +17,8 @@ cc.Class({
   //技能图片渲染
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, goodsid, gooduse_type, button_name) {
     //加载背包 和  背包列表
-    var info = cc.globalData.bag;
-    var gooduse_type_name = cc.globalData.gooduse; // //查看详情--弹出一次已装备详情
+    var info = http_globalData.bag;
+    var gooduse_type_name = http_globalData.gooduse; // //查看详情--弹出一次已装备详情
     // if(goodsid){
     //     // cc.log(goodsid)
     //     TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info[goodsid],gooduse_type,button_name,0)
@@ -208,7 +208,7 @@ cc.Class({
 
     if (goodsid == info.id) {
       //当前弹出的预制节点
-      cc.globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon; // cc.log(goodsid)
+      http_globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon; // cc.log(goodsid)
 
       TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model, TipBoxPrefab_icon, info, gooduse_type, button_name, 0);
     }
