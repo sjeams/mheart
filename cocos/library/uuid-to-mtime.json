@@ -2665,18 +2665,18 @@
     "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
   },
   "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
-    "asset": 1715074227100,
-    "meta": 1715074227109,
+    "asset": 1715076002298,
+    "meta": 1715076002313,
     "relativePath": "resources\\model布阵\\背包生物.prefab"
   },
   "0a4d7796-cd18-425c-9469-5773d6bee99b": {
-    "asset": 1715074157888,
-    "meta": 1715074226566,
+    "asset": 1715075300811,
+    "meta": 1715075365153,
     "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
   "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
-    "asset": 1715074225301,
-    "meta": 1715074226676,
+    "asset": 1715076000323,
+    "meta": 1715076001608,
     "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
   }
 }
