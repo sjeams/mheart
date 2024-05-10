@@ -148,68 +148,60 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/biology-list
      */
     public function actionBiologyList(){
+        // $UserBiologyNatureDo=new UserBiologyAttribute();
+        // $data=$UserBiologyNatureDo->myAttributesList();
         $UserBiologyNatureDo=new UserBiologyAttribute();
-        $data=$UserBiologyNatureDo->myAttributesList();
+        $UserGoods= new UserGoods();
+        $data =[
+            'biology'=>$UserBiologyNatureDo->myAttributesList(),
+            'gooduse'=>$UserGoods->getGooduseBag(),
+            'bag'=>$UserGoods->getGooduseType(),
+            'zhenfa'=>$UserBiologyNatureDo->getmyAttributesListPositionNum(),
+        ];
         // var_dump($data);die;
         die(Method::jsonApp(1,$data,'succes')); 
     }
 
     
-    /**
-     * bag背包---生物背包
-     * http://cs.aheart.com/app/app-apinew/gooduse-bag
-     * biologyid  gooduse
-     */
-    public function actionGooduseBag(){
-        $UserGoods= new UserGoods();
-        $data=$UserGoods->getGooduseBag();
-        //id作为索引
-        $data=array_column($data,null,'id');
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    // /**
+    //  * bag背包---生物背包
+    //  * http://cs.aheart.com/app/app-apinew/gooduse-bag
+    //  * biologyid  gooduse
+    //  */
+    // public function actionGooduseBag(){
+    //     $UserGoods= new UserGoods();
+    //     $data=$UserGoods->getGooduseBag();
+    //     //id作为索引
+    //     $data=array_column($data,null,'id');
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
 
-    /**
-     * bag背包---背包类型
-     * http://cs.aheart.com/app/app-apinew/gooduse-type
-     * biologyid  gooduse
-     */
-    public function actionGooduseType(){
-        $data=GoodsUse::find()->asarray()->All();
-        // $UserGoods= new UserGoods();
-        // $data=$UserGoods->getGooduseType();
-        $data=array_column($data,null,'id');
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    // /**
+    //  * bag背包---背包类型
+    //  * http://cs.aheart.com/app/app-apinew/gooduse-type
+    //  * biologyid  gooduse
+    //  */
+    // public function actionGooduseType(){
+    //     $GoodsUse= new GoodsUse();
+    //     $data=$GoodsUse->getGooduseType();
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
 
 
-
-
-    // ------------阵法------------
-
-    /**
-     * 阵法--写入阵法
-     * http://cs.aheart.com/app/app-apinew/add-position
-     */
-    public function actionAddPosition(){
-        $param =$this->param;
-        $UserBiologyNatureDo=new UserBiologyNatureDo();
-        $data=$UserBiologyNatureDo->addPosition($param['biologyid'],$param['doid'],$param['is_add']);
-        if($data){
-            die(Method::jsonApp(1,null,'succes'));
-        }else{
-            die(Method::jsonApp(0,null,'最多只能放置5个'));
-        }
-    }
-    /**
-     * 阵法--布阵
-     * http://cs.aheart.com/app/app-apinew/get-position
-     */
-    public function actionGetPosition(){
+ 
+    // /**
+    //  * 阵法--布阵
+    //  * http://cs.aheart.com/app/app-apinew/get-position
+    //  */
+    // public function actionGetPosition(){
       
-        $data= UserBiologyAttribute::getmyAttributesListPositionNum();
-        // var_dump($data);die;
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    //     $data= UserBiologyAttribute::getmyAttributesListPositionNum();
+    //     // var_dump($data);die;
+    //     die(Method::jsonApp(1,$data,'succes'));
+
+
+
+    // }
 
 
 

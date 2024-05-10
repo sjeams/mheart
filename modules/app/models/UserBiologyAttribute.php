@@ -48,11 +48,11 @@ class UserBiologyAttribute extends ActiveRecord
 
 
     //上阵序号 排列  0-9
-    public static  function  getmyAttributesListPositionNum(){ 
+    public  function  getmyAttributesListPositionNum(){ 
         $UserBiologyAttribute=new UserBiologyAttribute();
         return   $UserBiologyAttribute->myAttributesListPositionNum();
     }
-
+    // 阵法返回 生物顺序所在的序号0-60
     public  function  myAttributesListPositionNum(){ 
         $info = UserBiologyNatureDo::find()->where("userid=$this->userId")->asarray()->One();
         $data = (new \yii\db\Query())
@@ -75,7 +75,7 @@ class UserBiologyAttribute extends ActiveRecord
         }
         return $new_data;
     }
-
+    //生物列表
     public  function  myAttributesList(){  
         // $UserWords =new UserWords();
         // $UserGoods = new UserGoods();
@@ -88,18 +88,34 @@ class UserBiologyAttribute extends ActiveRecord
         ->innerJoin("x2_user_biology AS b","a.userBiologyid = b.id")
         ->where("a.userid=$this->userId")
         ->All();
-        $zhenfa = UserBiologyAttribute::getmyAttributesListPositionNum();
+        $zhenfa =$this->myAttrPosition();
         foreach($data as $k=>$info){
-            if(array_search($k,$zhenfa)===false){
+           $userBiologyid = $info['userBiologyid'];
+            if(array_search($userBiologyid,$zhenfa)===false){
                 $info['is_chuzhan']=0;
             }else{
                 $info['is_chuzhan']=1;
             }
-            // $info['is_chuzhan']= UserBiologyAttribute::getmyAttributesListPositionNum();
             $data[$k] = $this-> biologyInfo($info,$BiologyState,$BiologyBiology);      
         }
         return $data;
     }
+    //阵法列表id--返回存在的数组
+    public  function  myAttrPosition(){  
+        $info = UserBiologyNatureDo::find()->where("userid=$this->userId")->asarray()->One();
+        $new_data =[];
+        for($i=1;$i<=9;$i++){
+            $dofind ='do'.$i;
+            if(intval($info["$dofind"])>0){
+                //获取生物序号
+                $new_data[] =  $info["$dofind"];
+            }
+        } 
+        return $new_data;
+    }
+
+
+
 
     public   function BiologyState(){
         //境界

@@ -170,38 +170,54 @@ class UserBiologyNatureDo extends ActiveRecord
     }
 
 
-
-    // 写入阵法-生物id  阵法编号  is_add 1 添加 0 移除
-    public  function addPosition($biologyid=0,$doid=1,$is_add=1){
+    public  function updatePosition($zhenfa){
         //统计位置数量
-        $count=$this->addPositionCount();
-        $do ='do'.$doid;
-        if($biologyid) {
-            // 写入位置
-            if($is_add){
-                if($count<5){
-                    UserBiologyNatureDo::updateAll(["$do"=>$biologyid]," userid = $this->userId");
-                }else{
-                    return false; //位置已经满5个，需要移除
-                }          
-            }else{
-                UserBiologyNatureDo::updateAll(["$do"=>'']," userid = $this->userId");
-            }
+        $array=[];
+
+        $doid=0;
+        foreach($zhenfa as $biology_id){
+            $doid++;
+            $do ='do'.$doid;
+            $array[$do]=$biology_id;
+
         }
+        // $count=$this->addPositionCount();
+        UserBiologyNatureDo::updateAll($array," userid = $this->userId");
         return true;
     }
-    //统计位置数量
-    public  function addPositionCount(){
-        $data = UserBiologyNatureDo::find()->where("userid = $this->userId")->asArray()->one();
-        $num=0;
-        for($i=1;$i<=9;$i++){
-            $dofind ='do'.$i;
-            if( intval($data["$dofind"])>0){
-                    $num++;
-            }
-        }
-        return $num;
-    }
+
+
+    // // 写入阵法-生物id  阵法编号  is_add 1 添加 0 移除
+    // public  function addPosition($biologyid=0,$doid=1,$is_add=1){
+    //     //统计位置数量
+    //     $count=$this->addPositionCount();
+    //     $do ='do'.$doid;
+    //     if($biologyid) {
+    //         // 写入位置
+    //         if($is_add){
+    //             if($count<5){
+    //                 UserBiologyNatureDo::updateAll(["$do"=>$biologyid]," userid = $this->userId");
+    //             }else{
+    //                 return false; //位置已经满5个，需要移除
+    //             }          
+    //         }else{
+    //             UserBiologyNatureDo::updateAll(["$do"=>'']," userid = $this->userId");
+    //         }
+    //     }
+    //     return true;
+    // }
+    // //统计位置数量
+    // public  function addPositionCount(){
+    //     $data = UserBiologyNatureDo::find()->where("userid = $this->userId")->asArray()->one();
+    //     $num=0;
+    //     for($i=1;$i<=9;$i++){
+    //         $dofind ='do'.$i;
+    //         if( intval($data["$dofind"])>0){
+    //                 $num++;
+    //         }
+    //     }
+    //     return $num;
+    // }
 
 
 // ----------------------------------------

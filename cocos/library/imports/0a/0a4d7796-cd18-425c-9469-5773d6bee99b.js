@@ -24,7 +24,7 @@ cc.Class({
 
         var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //写入详情
 
-        _this.biology_buzhen_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, biology_id, true); //拖拽逻辑
+        _this.biology_buzhen_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, biology_id); //拖拽逻辑
 
 
         TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, null, prop); // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
@@ -38,12 +38,15 @@ cc.Class({
   },
   //布阵详情
   biology_buzhen_detail: function biology_buzhen_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, biology_id) {
-    if (biology_id != null) {
+    if (http_globalData.biology[biology_id]) {
       var info = http_globalData.biology[biology_id];
       TipBoxPrefab_icon.getChildByName('生物').active = true; //查找头部的生物信息
+      // var texture =  cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame 
+      //加载头像
 
-      var texture = cc.find("content/列表/content/gridLayout", TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame;
-      TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture; //技能等级
+      cc.loader.loadRes(http_globalData.biology[biology_id].picture, cc.SpriteFrame, function (err, texture) {
+        TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
+      }); //技能等级
 
       TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string = info.name;
     } else {

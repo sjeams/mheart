@@ -25,24 +25,15 @@ cc.Class({
     //获取生物列表
     httpRequest.httpPost('/app/app-apinew/biology-list', {}, function (data) {
       //定义常量
-      http_globalData.biology = data.data; //当前选中的生物id
+      http_globalData.biology = data.data.biology; //当前选中的生物id
 
       http_globalData.biology_id = 0; //当前弹出的预制节点--物品详情--装备-卸载
 
       http_globalData.TipBoxPrefab_biology_detail = null; //开启战斗
-      //   _this.goPlay( )
-    }); //获取背包
 
-    httpRequest.httpPost('/app/app-apinew/gooduse-bag', {}, function (data) {
-      http_globalData.bag = data.data;
-    }); //获取背包
-
-    httpRequest.httpPost('/app/app-apinew/gooduse-type', {}, function (data) {
-      http_globalData.gooduse = data.data;
-    }); //获取阵法
-
-    httpRequest.httpPost('/app/app-apinew/get-position', {}, function (data) {
-      http_globalData.zhenfa = data.data;
+      http_globalData.bag = data.data.bag;
+      http_globalData.gooduse = data.data.gooduse;
+      http_globalData.zhenfa = data.data.zhenfa;
     });
   },
   //打开背包
@@ -97,8 +88,15 @@ cc.Class({
     } else {//如果没有生物需要弹窗另一个提示
       }
   },
+  //没有处理逻辑，可以共用--关闭窗口
   openBag_hidden: function openBag_hidden() {
     // cc.find('Canvas/弹窗').active =false;
+    cc.find('Canvas/弹窗').removeAllChildren();
+  },
+  //阵法 关闭 提交结果，需要单独处理了
+  openzhenfa_hidden: function openzhenfa_hidden() {
+    // cc.log(http_globalData.zhenfa)   
+    cc.find('Canvas/弹窗').getComponent('bag_api').http_update_zhenfa();
     cc.find('Canvas/弹窗').removeAllChildren();
   } // update (dt) {},
 

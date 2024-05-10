@@ -33,5 +33,14 @@ class GoodsUse extends ActiveRecord
          $goods_type[0]=GOODS_BAOLV;//空的概率为10000
          return $goods_type;
     }
+
+    //背包类型
+    public function getGooduseType(){
+        $data=GoodsUse::find()->asarray()->All();
+        // $UserGoods= new UserGoods();
+        // $data=$UserGoods->getGooduseType();
+        $data=array_column($data,null,'id');
+        return $data;
+    }
     
 }

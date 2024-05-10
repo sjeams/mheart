@@ -17,18 +17,18 @@ cc.Class({
                     var num_height =num_height+1
                     // //开始实例化预制资源
                     let   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                 
                     // //载入技能图片
-                    let image = info.picture;
-                    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                    cc.loader.loadRes(http_globalData.biology[prop].picture, cc.SpriteFrame, function (err, texture) { 
                         if (err) {
                             // cc.error(err.message || err);
                             return;
                         }
                         TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
                         // TipBoxPrefab_icon.getChildByName('P移动').getComponent(cc.Sprite).spriteFrame = texture; 
+                        // var   biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
                         //拖拽
-                        var biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
-                        _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,biology_id,null)
+                        _this.bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,prop,null)
                     });
                     // //技能等级
                     TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=info.name        
@@ -131,10 +131,14 @@ cc.Class({
                 biology_id = http_globalData.zhenfa[zhenfa_id]  //点击阵法时, 生物id取阵法 里面的id
             }
             // cc.log(http_globalData.zhenfa)
-             if(biology_id!=null){
+             if(http_globalData.biology[biology_id]){
                 TipBoxPrefab.getChildByName('生物移动').position=startPos;
-                var texture =  cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame  
-                TipBoxPrefab.getChildByName('生物移动').getComponent(cc.Sprite).spriteFrame =  texture   
+                // var texture =  cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame  
+                //加载头像
+                cc.loader.loadRes(http_globalData.biology[biology_id].picture, cc.SpriteFrame, function (err, texture) { 
+                    TipBoxPrefab.getChildByName('生物移动').getComponent(cc.Sprite).spriteFrame =  texture   
+                });
+
              }
             // new_prefab.position = startPos;
             // 标记为正在拖拽
@@ -173,6 +177,7 @@ cc.Class({
             isDragging = false;
             //单击移除事件
             if(is_click){
+                cc.log('移除')
                 _this.biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon)
                 is_click = true;
             }
@@ -187,7 +192,7 @@ cc.Class({
             if(zhenfa_id!=null){
                 biology_id = http_globalData.zhenfa[zhenfa_id]  //点击阵法时, 生物id取阵法 里面的id
             }
-            if(biology_id!=null){
+            if(http_globalData.biology[biology_id]){
                 _this.movingInt(event,TipBoxPrefab_model,TipBoxPrefab,biology_id)
                 is_click = true;
             }
@@ -203,7 +208,7 @@ cc.Class({
         TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=''
         var zhenfa_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon) //阵法的序号key
         var biology_id = http_globalData.zhenfa[zhenfa_id] //生物id biology_id
-        if(biology_id!=null){
+        if(http_globalData.biology[biology_id]){
             cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P出战').active=false  
             //移出阵法
             http_globalData.zhenfa[zhenfa_id] =null

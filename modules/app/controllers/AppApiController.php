@@ -59,35 +59,26 @@ class AppApiController extends ApiUserControl{
      * app/app-api/biology-list
      * http://localhost/monster/web/app/app-api/index
      */
-    public function actionIndex(){
-        // 第一次进来时，弹窗，随机获取一个生物
-        $data=array(
-            'user_info' => $this->user_info,//用户信息
-            'work'  =>false,//任务
-        );
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    // public function actionIndex(){
+    //     // 第一次进来时，弹窗，随机获取一个生物
+    //     $data=array(
+    //         'user_info' => $this->user_info,//用户信息
+    //         'work'  =>false,//任务
+    //     );
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
 
 
-    /**
-     * 获取用户信息--体力随时更新的
-     * app/app-api/get-user
-     * http://localhost/monster/web/app/app-api/get-user
-     */
-    public function actionGetUser(){
-        $data=User::getUserEnergy();
-        die(Method::jsonApp(1,$data,'succes'));
-    }
+    // /**
+    //  * 获取用户信息--体力随时更新的
+    //  * app/app-api/get-user
+    //  * http://localhost/monster/web/app/app-api/get-user
+    //  */
+    // public function actionGetUser(){
+    //     $data=User::getUserEnergy();
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
     
-
-
-
-
-
-
-
-
-
 
 
 
@@ -97,8 +88,7 @@ class AppApiController extends ApiUserControl{
 
 
     /**
-     * 获取用户信息--体力随时更新的
-     * app/app-api/get-user
+     * 更新装备
      * http://cs.mheart.cn/app/app-api/biology-goods-update
      */
     public function actionBiologyGoodsUpdate(){
@@ -113,8 +103,15 @@ class AppApiController extends ApiUserControl{
         $data = (new UserBiologyAttribute())->getBiologyDetail($this->param['biology_id']);
         die(Method::jsonApp(1,$data,'succes'));
     }
-
-
+    /**
+     * 更新阵法
+     * http://cs.mheart.cn/app/app-api/biology-zhenfa-update
+     */
+    public function actionBiologyZhenfaUpdate(){
+        $UserBiologyNatureDo=new UserBiologyNatureDo();
+        $data=$UserBiologyNatureDo->updatePosition($this->param['zhenfa']);
+        die(Method::jsonApp(1,$data,'succes'));
+    }
 
 
 
