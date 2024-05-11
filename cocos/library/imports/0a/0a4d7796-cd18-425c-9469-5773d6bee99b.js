@@ -27,7 +27,7 @@ cc.Class({
         _this.biology_buzhen_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, biology_id); //拖拽逻辑
 
 
-        TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, null, prop); // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+        TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, true); // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
         // 此处进行事件绑定
         // 事件处理逻辑
         // _this.bindClickRemove(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon);

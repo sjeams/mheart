@@ -263,10 +263,15 @@ const HttpHelper = cc.Class({
 window.http_globalData = {
     fighting:[],
     biology:[],
-    biology_id:[],
     bag:[],
     gooduse:[],
     zhenfa:[],
+    //临时操作存储id
+    biology_id:0,//生物id
+    zhenfa_id:0,//阵法id
+    move_biology_id:0,//生物id
+    move_zhenfa_id:0,//阵法id
+
 };
 
 

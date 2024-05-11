@@ -27,14 +27,16 @@ cc.Class({
         httpRequest.httpPost('/app/app-apinew/biology-list',{}, function (data) {
             //定义常量
             http_globalData.biology = data.data.biology;
-            //当前选中的生物id
-            http_globalData.biology_id = 0;
             //当前弹出的预制节点--物品详情--装备-卸载
             http_globalData.TipBoxPrefab_biology_detail = null;
             //开启战斗
             http_globalData.bag = data.data.bag;  
             http_globalData.gooduse = data.data.gooduse;  
-            http_globalData.zhenfa = data.data.zhenfa;  
+            http_globalData.zhenfa = data.data.zhenfa;
+
+            // 临时字段
+            // http_globalData.biology_id = 0;
+            // http_globalData.zhenfa_id=0;
         })
     },
     //打开背包

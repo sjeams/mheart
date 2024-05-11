@@ -16,13 +16,13 @@ cc.Class({
         cc.loader.loadRes('/model布阵/图标阵法', function(errorMessage,loadedResource_icon){
             for (var prop in http_globalData.zhenfa) {
                 // var key = http_globalData.zhenfa[prop];
-                let biology_id = http_globalData.zhenfa[prop]
+                var biology_id = http_globalData.zhenfa[prop]
                 //开始实例化预制资源
                 var   TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon)
                 //写入详情
                 _this.biology_buzhen_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,biology_id)
                 //拖拽逻辑
-                TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,null,prop)
+                TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').bind_button_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,true)
                 // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
                 // 此处进行事件绑定
                 // 事件处理逻辑
