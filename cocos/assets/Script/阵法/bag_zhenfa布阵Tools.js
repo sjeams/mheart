@@ -34,7 +34,6 @@ cc.Class({
      //布阵详情
      biology_buzhen_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,biology_id){
         if(http_globalData.biology[biology_id]){
-            var info = http_globalData.biology[biology_id] 
             TipBoxPrefab_icon.getChildByName('生物').active=true
             //查找头部的生物信息
             // var texture =  cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame 
@@ -43,7 +42,7 @@ cc.Class({
                 TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
             });
             //技能等级
-            TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=info.name
+            TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=http_globalData.biology[biology_id].name
         }else{
             TipBoxPrefab_icon.getChildByName('生物').active=false
             TipBoxPrefab_icon.getChildByName('名称s').getComponent(cc.Label).string=''

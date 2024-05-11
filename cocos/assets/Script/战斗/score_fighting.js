@@ -280,7 +280,7 @@ cc.Class({
     buttonReady(node,biology) {
         // var _this =this
         // var waite_time=waite_time||0
-        const actionhiddenBig =   cc.spawn(cc.scaleTo(0.2, 1.1, 1.1),cc.callFunc(function(){
+        const actionhiddenBig =   cc.spawn(cc.scaleTo(0.1, 1.1, 1.1),cc.callFunc(function(){
           //等待攻击完成
             getFightingExtend.playTips(node,biology)
         },this));//变大还原//变大
@@ -327,7 +327,7 @@ cc.Class({
       if (node.x != m_node.x) m_x = m_node.x - node.x+m_x_move
       if (node.y != m_node.y) m_y = m_node.y - node.y 
       //普通攻击
-      const actionLeft = cc.spawn(cc.moveBy(0.2,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
+      const actionLeft = cc.spawn(cc.moveBy(0.1,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
               //等待攻击完成  
               if(biology.is_shanbi){
                 //闪避，后移
@@ -340,7 +340,7 @@ cc.Class({
       },this)) 
       // const actionWaite = cc.delayTime(0.01) 
       //返回位置
-      const actionRight =cc.spawn(cc.moveBy(0.2,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){
+      const actionRight =cc.spawn(cc.moveBy(0.1,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){
           // //等待攻击完成
           // _this.buttonShake(m_node,biology)
       },this))
@@ -360,8 +360,8 @@ cc.Class({
   buttonMoveOut(node,biology) {
       if(biology.position_my==1){
         //己方 后移
-        const actionLeft = cc.moveBy(0.2, cc.v2(30, 5));
-        const actionRightSecond = cc.moveBy(0.2, cc.v2(-30, -5));
+        const actionLeft = cc.moveBy(0.1, cc.v2(30, 5));
+        const actionRightSecond = cc.moveBy(0.1, cc.v2(-30, -5));
         return new Promise(resolve => {
           node.runAction(
                 cc.sequence(actionLeft,actionRightSecond,
@@ -377,8 +377,8 @@ cc.Class({
         });
       }else{
         //敌方方 前移
-        const actionLeft = cc.moveBy(0.2, cc.v2(-30, 5));
-        const actionRightSecond = cc.moveBy(0.2, cc.v2(30, -5));
+        const actionLeft = cc.moveBy(0.1, cc.v2(-30, 5));
+        const actionRightSecond = cc.moveBy(0.1, cc.v2(30, -5));
         return new Promise(resolve => {
             node.runAction(
                 cc.sequence(actionLeft,actionRightSecond,

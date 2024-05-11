@@ -33,12 +33,12 @@ const FightingExtend = cc.Class({
   playReady(node,biology){
     if(biology.extend=='wuXingTotal'){
         node.getChildByName('悟性s').getComponent(cc.Label).string= biology.hurt_go_value%100;  //除100 取余
-        node.getChildByName('悟性s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.3,cc.v2(0,0)),cc.scaleTo(0.2, 1, 1),cc.callFunc(function(){   },this)));
+        node.getChildByName('悟性s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this)));
       
         node.getChildByName('悟性动作').active=true
         node.getChildByName('悟性动作').opacity=255
   
-        node.getChildByName('悟性动作').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.5, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){  node.getChildByName('悟性动作').active=false  },this)));
+        node.getChildByName('悟性动作').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.3, 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){  node.getChildByName('悟性动作').active=false  },this)));
         
         //向下取整
         var wuxing_floor = Math.floor(biology.hurt_go_value/100)
@@ -46,8 +46,8 @@ const FightingExtend = cc.Class({
           node.getChildByName('悟性星星').active=true
           node.getChildByName('进化s').active=true
           node.getChildByName('进化s').getComponent(cc.Label).string= wuxing_floor;
-          node.getChildByName('进化s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.3,cc.v2(0,0)),cc.scaleTo(0.2, 1, 1),cc.callFunc(function(){   },this))); 
-          node.getChildByName('悟性星星').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.3,cc.v2(0,0)),cc.scaleTo(0.2, 1, 1),cc.callFunc(function(){   },this))); 
+          node.getChildByName('进化s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this))); 
+          node.getChildByName('悟性星星').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this))); 
         }
     }
 

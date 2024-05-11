@@ -154,8 +154,8 @@ class AppApinewController extends ApiUserControl{
         $UserGoods= new UserGoods();
         $data =[
             'biology'=>$UserBiologyNatureDo->myAttributesList(),
-            'gooduse'=>$UserGoods->getGooduseBag(),
-            'bag'=>$UserGoods->getGooduseType(),
+            'bag'=>$UserGoods->getGooduseBag(),
+            'gooduse'=>$UserGoods->getGooduseType(),
             'zhenfa'=>$UserBiologyNatureDo->getmyAttributesListPositionNum(),
         ];
         // var_dump($data);die;
