@@ -129,8 +129,14 @@ cc.Class({
                 http_globalData.biology_id = http_globalData.zhenfa[http_globalData.zhenfa_id]  //点击阵法时, 生物id取阵法 里面的id
             }else{
                 //点击头像id
-                http_globalData.zhenfa_id = null;
+                // http_globalData.zhenfa_id = null;
+                // 检查阵法是否存在生物id
                 http_globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon) //阵法的序号key
+                if (http_globalData.zhenfa.includes(http_globalData.biology_id)) {
+                    http_globalData.zhenfa_id = http_globalData.zhenfa.indexOf(http_globalData.biology_id); //--原始位置
+                }else{
+                    http_globalData.zhenfa_id = null;
+                }
             }
             //生物不存在，不能拖拽
             if(http_globalData.biology[http_globalData.biology_id]){
@@ -177,6 +183,11 @@ cc.Class({
                 //单击移除事件--只有点击阵法才会触发移除事件
                 if(is_zhenfa){
                     _this.biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab)
+                    // cc.log('点击阵法')
+                }else{
+                    // cc.log('点击头像')
+                    //绑定按钮事件
+                    _this.bindClickEventIcon(TipBoxPrefab_model,TipBoxPrefab_icon);
                 }
             }
             // 松开不做任何操作
@@ -199,17 +210,34 @@ cc.Class({
 
     },
 
+    // 绑定按钮事件---挂载生物详情
+    bindClickEventIcon: function (TipBoxPrefab_model,TipBoxPrefab_icon) {
+        // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+        // 此处进行事件绑定
+        TipBoxPrefab_icon.on('click', function () {
+           
+            //当前选中的生物序号 index---定义全局变量
+            http_globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon);
+            // 事件处理逻辑
+            //移除挂载
+            TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren();
+            //重新挂载
+            TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model)
+            // 切换默认挂载信息列表
+            // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+            // TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model,info)
+            // TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
 
+            // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
+        }, this);
+    },
     //移动定位
     movingInt(event,TipBoxPrefab_model,TipBoxPrefab){
         var _this =this;
         //-原始位置
-        var biology_id = http_globalData.biology_id 
-        var zhenfa_id = http_globalData.zhenfa_id 
         //移动图标，放回头像位置
-        TipBoxPrefab.getChildByName('生物移动').position = cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].position
+        TipBoxPrefab.getChildByName('生物移动').position = cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[ http_globalData.biology_id].position
         //已存在的阵法位置--需要移除--原始位置
-        // var zhenfa_index = http_globalData.zhenfa.indexOf(biology_id); //--原始位置
         //需要移除已存在的节点
         TipBoxPrefab.getChildByName('阵法详情').children.forEach((targetNode) => {
             var rect = targetNode.getBoundingBox();
@@ -221,17 +249,28 @@ cc.Class({
                 http_globalData.move_zhenfa_id =  targetNode.parent.children.indexOf(targetNode); //移动阵法id
                 http_globalData.move_biology_id = http_globalData.zhenfa[http_globalData.move_zhenfa_id]  //点击阵法时, 生物id取阵法 里面的id
                 // 使用includes方法来判断值是否在数组内
-                var TipBoxPrefab_icon_move =  TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id]      //拖动的起始位置--先删除和添加移动的
+                var TipBoxPrefab_icon_move =  TipBoxPrefab.getChildByName('阵法详情').children[http_globalData.zhenfa_id]      //拖动的起始位置--先删除和添加移动的
                 var TipBoxPrefab_icon_new =  TipBoxPrefab.getChildByName('阵法详情').children[http_globalData.move_zhenfa_id]     //落下的位置
                 //替换原始位置
                 // _this.biologyClickChange(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_move,TipBoxPrefab_icon_new,true) //拖动的对象
-
                 //替换操作--如果不是移动的同一个生物，生物存在，那么要替换--判断有没有阵法id ，没有就是拖拽头像，有就是拖拽阵法
                 _this.biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab)//删除移动
-                _this.biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_new,http_globalData.move_zhenfa_id,http_globalData.biology_id) //拖动的对象--写入
+                if (TipBoxPrefab_icon_move) {
+                    remove_num=1
+                }else{
+                    remove_num=0 
+                }
+                _this.biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_new,http_globalData.move_zhenfa_id,http_globalData.biology_id,remove_num) //拖动的对象--写入
                 //写入拖动对象--如果已经存在，就替换
                 if (TipBoxPrefab_icon_move) {
-                    _this.biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_move,http_globalData.zhenfa_id,http_globalData.move_biology_id) //替换的对象--替换
+                    //如果是同一个位置
+                    if(http_globalData.move_biology_id!=http_globalData.biology_id&&(http_globalData.move_biology_id!=null||http_globalData.zhenfa_id==null)){
+                        http_globalData.zhenfa_info.num  =  parseInt(http_globalData.zhenfa_info.num-1)
+                        remove_num=1
+                    }else{
+                        remove_num=0
+                    }
+                    _this.biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_move,http_globalData.zhenfa_id,http_globalData.move_biology_id,remove_num) //替换的对象--替换
                 }
                 //操作提示
                 TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
@@ -239,8 +278,15 @@ cc.Class({
         });
     },
     //放入布阵
-    biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,zhenfa_id,biology_id){
+    biologyClickAdd(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,zhenfa_id,biology_id,remove_num){
         if(http_globalData.biology[biology_id]){
+            //如果阵法上没有这生物，那么加1
+            // 如果发起拖拽的，不是头像，或者空阵法 就加1
+            if(remove_num==1){
+                http_globalData.zhenfa_info.num  = parseInt(http_globalData.zhenfa_info.num+1)
+                // cc.log(http_globalData.zhenfa_info.num)
+                TipBoxPrefab.getChildByName('上阵数s').getComponent(cc.Label).string=  http_globalData.zhenfa_info.num   
+            }
             TipBoxPrefab_model.getComponent('bag_zhenfa布阵Tools').biology_buzhen_detail(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon,biology_id) 
             cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[http_globalData.biology_id].getChildByName('P出战').active=true
             http_globalData.zhenfa[zhenfa_id]=biology_id
@@ -252,20 +298,20 @@ cc.Class({
     biologyClickRemove(TipBoxPrefab_model,TipBoxPrefab) {
         //如果阵容已存在，就获取阵容id，并且移除
         var biology_id =http_globalData.biology_id
+        var zhenfa_id =http_globalData.zhenfa_id
         if (http_globalData.zhenfa.includes(biology_id)) {
-            zhenfa_id = http_globalData.zhenfa.indexOf(biology_id); //--原始位置
-            TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id].getChildByName('生物').active=false
-            TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id].getChildByName('名称s').getComponent(cc.Label).string=''
             if(http_globalData.biology[biology_id]){
+                TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id].getChildByName('生物').active=false
+                TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id].getChildByName('名称s').getComponent(cc.Label).string=''
                 cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P出战').active=false  
-                //移出阵法
+                http_globalData.zhenfa_info.num  =  parseInt(http_globalData.zhenfa_info.num-1)
+                TipBoxPrefab.getChildByName('上阵数s').getComponent(cc.Label).string=  http_globalData.zhenfa_info.num   
                 http_globalData.zhenfa[zhenfa_id] =null
                 http_globalData.biology[biology_id].is_chuzhan=0
                 TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
-            }
+            } 
             TipBoxPrefab.getChildByName('阵法详情').children[zhenfa_id].getChildByName('生物').color = new cc.color('#FFFFFF');
         }
-
     },
 });
 

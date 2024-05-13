@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '64335b+G+VLHqrUdbFVWZpA', 'skill_iconTools');
-// Script/fighting/skill_iconTools.js
+// Script/战斗/skill_iconTools.js
 
 "use strict";
 

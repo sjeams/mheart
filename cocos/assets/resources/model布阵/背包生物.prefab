@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "生物头像",
+    "_name": "背包生物",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -2696,7 +2696,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "上阵页码s",
+    "_name": "上阵数s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

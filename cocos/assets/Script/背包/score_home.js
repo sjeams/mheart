@@ -32,8 +32,9 @@ cc.Class({
             //开启战斗
             http_globalData.bag = data.data.bag;  
             http_globalData.gooduse = data.data.gooduse;  
-            http_globalData.zhenfa = data.data.zhenfa;
-
+            http_globalData.zhenfa = data.data.zhenfa.data;
+            http_globalData.zhenfa_info = data.data.zhenfa.info;
+            cc.log(http_globalData.zhenfa_info)
             // 临时字段
             // http_globalData.biology_id = 0;
             // http_globalData.zhenfa_id=0;

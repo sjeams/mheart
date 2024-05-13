@@ -189,7 +189,7 @@
       "array": [
         0,
         0,
-        175.80315696824107,
+        126.48889452395667,
         0,
         0,
         0,
@@ -280,7 +280,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1200,
+      "width": 1334,
       "height": 750
     },
     "_anchorPoint": {
@@ -445,8 +445,8 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 45,
-    "_left": 67,
-    "_right": 67,
+    "_left": 0,
+    "_right": 0,
     "_top": 0,
     "_bottom": 0,
     "_verticalCenter": 0,

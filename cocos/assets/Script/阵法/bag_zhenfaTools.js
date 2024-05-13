@@ -13,6 +13,8 @@ cc.Class({
             let   TipBoxPrefab =  cc.instantiate(loadedResource_icon);
             //生物列表挂载
             TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').biology_detail_list(TipBoxPrefab_model,TipBoxPrefab)
+
+            TipBoxPrefab.getChildByName('上阵数s').getComponent(cc.Label).string=  http_globalData.zhenfa_info.num
             //写入icon
             TipBoxPrefab_model.getChildByName('背包生物').addChild(TipBoxPrefab);
         })

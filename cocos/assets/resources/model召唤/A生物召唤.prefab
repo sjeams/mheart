@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "A生物布阵",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "data": {
@@ -297,7 +297,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "b1d5b8csRFaJqJDSd/rFzw",
     "sync": false
@@ -417,7 +417,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "329TO13g5CpqRY91YsXeCk",
     "sync": false
@@ -620,7 +620,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "5d7AGC9g5AQ4k+SPxeqglz",
     "sync": false
@@ -691,7 +691,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "63PZbpcuFBSYHYzFcMVqcW",
     "sync": false
@@ -866,7 +866,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "8e7e3J85NAnL5X26uBo8CK",
     "sync": false
@@ -909,7 +909,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "33OJpVYU5E6aYySpU+W6ib",
     "sync": false
@@ -922,7 +922,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 26
@@ -980,7 +980,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "22b6z/fFhPf6gUm1WTonVG",
     "sync": false
@@ -1051,7 +1051,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "bdwV7yO/VD7LgDlwiwLomm",
     "sync": false
@@ -1122,7 +1122,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "45Ze5ks1NFkb5c5fgdqALg",
     "sync": false
@@ -1193,7 +1193,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "ccS0Zn4dJLhZ0IrPr/WuLN",
     "sync": false
@@ -1244,7 +1244,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "31295446-674c-4062-85fa-d9da8fc63094"
+      "__uuid__": "eea50269-f225-4935-9406-5677bca6290b"
     },
     "fileId": "39HqaZn9RN0LxJ7I+8LlSV",
     "sync": false

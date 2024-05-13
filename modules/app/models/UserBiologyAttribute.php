@@ -64,16 +64,20 @@ class UserBiologyAttribute extends ActiveRecord
         $data =array_column($data,'userBiologyid');
 
         $new_data =[];
+        $num=0;
         for($i=1;$i<=9;$i++){
             $dofind ='do'.$i;
             if(intval($info["$dofind"])>0){
+                $num++;
                 //获取生物序号
                 $new_data[] =   array_search($info["$dofind"],$data);
             }else{
                 $new_data[] =null; 
             }
         }
-        return $new_data;
+
+        $info['num']=$num;
+        return array('data'=>$new_data,'info'=>$info);
     }
     //生物列表
     public  function  myAttributesList(){  
