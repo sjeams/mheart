@@ -188,10 +188,17 @@ class UserGoods extends ActiveRecord
     // 背包枚举  
     public  function  getGooduseType(){
         //武器  道具  技能 元神 丹药
-       $data =Yii::$app->db->createCommand("select a.*,group_concat(b.id) as gooduse from {{%goods_use_type}} a left join {{%goods_use}} b on a.id=b.type  group by a.id")->queryAll();  
+       $data =Yii::$app->db->createCommand("select a.*,group_concat(b.id) as gooduse from {{%goods_use_type}} a right join {{%goods_use}} b on a.id=b.type  group by a.id")->queryAll();  
        return $data;
     }
     
+    // // ------------背包
+    // // 背包枚举 --物品按钮--使用类型
+    // public  function  getGooduseTypeList(){
+    //     //武器  道具  技能 元神 丹药
+    //    $data =Yii::$app->db->createCommand("select * from  {{%goods_use}} ")->queryAll();  
+    //    return $data;
+    // }  
 
     //添加生物背包
     public  function  addBiologyBackpaker($param){

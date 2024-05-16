@@ -13,8 +13,9 @@ class BiologySkillPosition extends ActiveRecord
     // 此方法用于返回攻击位置 -----自己位置 攻击位置  攻击类型   位置列表   是否是自己
     public static function getPositionExtend($position_in,$position,$position_type,$att_position,$attack){
         // var_dump($attack);
-        // var_dump($position);
-        // var_dump($att_position);
+        // var_dump($attack);
+   
+       
         //生物位置是必有得，没有的时候，直接胜利
         // $use=[]; //治疗  增加攻击 属性 伤害
         $int=[];//返回位置
@@ -27,7 +28,47 @@ class BiologySkillPosition extends ActiveRecord
                 if($attack==POSITION_MY){ 
                     $int[]=$position_in;//自己生物位置
                 }else{
-                    $int[]=$att_position[0];//敌方生物位置
+                    //定义默认攻击对象
+                   $new_att= $att_position[0];
+                    $arra_list=array(
+                        [1,4,7],
+                        [2,5,8],
+                        [3,6,9],
+                    );
+                    $arra_lie=array(
+                        [1,2,3],
+                        [4,5,6],
+                        [7,8,9],
+                    );
+                    //获取当前生物所在的列
+                    $user_positon =[];
+                    foreach( $arra_list as $v){
+                        if(in_array($position_in,$v)){
+                            $user_positon  =$v;
+                        }
+                    }
+                    // 所有生物的位置
+          
+                    foreach($att_position as $position_id){
+                        // var_dump());die;
+                        if(in_array($position_id,$user_positon)){
+                            $arry_fisrt_li = $arra_lie[intval($position_id/3)][0];//当前列的最小值 147
+                
+                            //查看还有没小于当前列最小值的。
+                            $has_values_less_than_one = array_filter($att_position, function($value) use($arry_fisrt_li) {
+                                return  $value < $arry_fisrt_li;
+                            }); 
+             
+                            //没有比当前值小的了
+                            if($has_values_less_than_one){
+                                $new_att=$has_values_less_than_one[0];//敌方生物位置 --去比当前值小的 
+                            }else{
+                                $new_att=$position_id;//敌方生物位置  
+                            }
+                             break;
+                        }
+                    }
+                    $int[]=$new_att;//敌方生物位置
                 }
             break;
             case 1: //随机5个单位

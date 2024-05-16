@@ -31,7 +31,7 @@ cc.Class({
             http_globalData.TipBoxPrefab_biology_detail = null;
             //开启战斗
             http_globalData.bag = data.data.bag;  
-            http_globalData.gooduse = data.data.gooduse;  
+            http_globalData.gooduse = data.data.gooduse;  //物品类型
             http_globalData.zhenfa = data.data.zhenfa.data;
             http_globalData.zhenfa_info = data.data.zhenfa.info;
             cc.log(http_globalData.zhenfa_info)

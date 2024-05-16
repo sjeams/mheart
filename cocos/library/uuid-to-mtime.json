@@ -2445,13 +2445,13 @@
     "relativePath": "resources\\model背包\\图标背包装备.prefab"
   },
   "d4de4651-6ec5-4d1d-8aa0-71a1fb97cc96": {
-    "asset": 1714296676202,
-    "meta": 1714296676223,
+    "asset": 1715843297539,
+    "meta": 1715843297554,
     "relativePath": "resources\\model背包\\生物详情.prefab"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1715586441395,
-    "meta": 1715586441412,
+    "asset": 1715843117403,
+    "meta": 1715843117426,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "6a66811c-a6a4-4a20-8ab8-3dfa17b62e3e": {
@@ -2460,13 +2460,13 @@
     "relativePath": "Script\\背包\\bag_元神Tools.js"
   },
   "79045060-2398-402a-bfd5-702dd159aae8": {
-    "asset": 1714273311757,
-    "meta": 1714273943841,
+    "asset": 1715843156632,
+    "meta": 1715843156649,
     "relativePath": "resources\\model背包\\背包装备.prefab"
   },
   "941775f2-9f0b-4ef5-8604-ab073caedf8d": {
-    "asset": 1714278773801,
-    "meta": 1714278773811,
+    "asset": 1715844959368,
+    "meta": 1715844959388,
     "relativePath": "resources\\model背包\\背包装备详情.prefab"
   },
   "6d8b5434-57e3-4f03-a5d6-1fbe8f5f4a39": {
@@ -2584,21 +2584,6 @@
     "meta": 1715067285735,
     "relativePath": "resources\\model布阵\\图标生物.prefab"
   },
-  "31295446-674c-4062-85fa-d9da8fc63094": {
-    "asset": 1715585382080,
-    "meta": 1715585382090,
-    "relativePath": "resources\\model布阵\\A生物布阵.prefab"
-  },
-  "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
-    "asset": 1715051762409,
-    "meta": 1715051777115,
-    "relativePath": "Script\\背包\\bag_物品Tools.js"
-  },
-  "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
-    "asset": 1715051704797,
-    "meta": 1715051777205,
-    "relativePath": "Script\\背包\\bag_详情Tools.js"
-  },
   "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
     "asset": 1715051663824,
     "meta": 1715051777248,
@@ -2610,8 +2595,8 @@
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
   },
   "b1c7aef8-a5d2-402d-bb34-82338dce0f8d": {
-    "asset": 1715066438396,
-    "meta": 1715066438403,
+    "asset": 1715845547802,
+    "meta": 1715845547811,
     "relativePath": "resources\\model布阵\\图标阵法.prefab"
   },
   "d679e419-181f-46f7-b526-c8c28ece4ed8": {
@@ -2638,11 +2623,6 @@
     "asset": 1715404497719,
     "meta": 1715404953417,
     "relativePath": "Script\\战斗\\score_fighting.js"
-  },
-  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
-    "asset": 1715413313069,
-    "meta": 1715413394580,
-    "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
   "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
     "asset": 1715418445686,
@@ -2674,24 +2654,44 @@
     "meta": 1715585598471,
     "relativePath": "Script\\背包\\biology_infoTools.js"
   },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1715586413848,
-    "meta": 1715586415375,
-    "relativePath": "Script\\背包\\score_home.js"
-  },
-  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
-    "asset": 1715586779169,
-    "meta": 1715586814276,
-    "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
-  },
   "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
-    "asset": 1715598638909,
-    "meta": 1715598638925,
+    "asset": 1715851703701,
+    "meta": 1715851703716,
     "relativePath": "resources\\model布阵\\背包生物.prefab"
   },
+  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
+    "asset": 1715831449694,
+    "meta": 1715831609054,
+    "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
+  },
+  "31295446-674c-4062-85fa-d9da8fc63094": {
+    "asset": 1715845725130,
+    "meta": 1715845725139,
+    "relativePath": "resources\\model布阵\\A生物布阵.prefab"
+  },
+  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
+    "asset": 1715843360656,
+    "meta": 1715843400816,
+    "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1715844239875,
+    "meta": 1715844669267,
+    "relativePath": "Script\\背包\\score_home.js"
+  },
+  "011dfe3e-6551-4003-a4d4-f2ecc05f3ee6": {
+    "asset": 1715844916685,
+    "meta": 1715844958899,
+    "relativePath": "Script\\背包\\bag_物品Tools.js"
+  },
+  "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
+    "asset": 1715846122706,
+    "meta": 1715847296427,
+    "relativePath": "Script\\背包\\bag_详情Tools.js"
+  },
   "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
-    "asset": 1715598637884,
-    "meta": 1715598638765,
+    "asset": 1715851698459,
+    "meta": 1715851703472,
     "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
   }
 }

@@ -749,15 +749,17 @@
       "__id__": 13
     },
     "_enabled": true,
-    "_normalMaterial": null,
+    "_normalMaterial": {
+      "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+    },
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
     "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 0,
-    "transition": 0,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -806,7 +808,9 @@
     "_N$hoverSprite": null,
     "hoverSprite": null,
     "_N$disabledSprite": null,
-    "_N$target": null,
+    "_N$target": {
+      "__id__": 13
+    },
     "_id": ""
   },
   {
@@ -1038,15 +1042,17 @@
       "__id__": 20
     },
     "_enabled": true,
-    "_normalMaterial": null,
+    "_normalMaterial": {
+      "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+    },
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
     "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 0,
-    "transition": 0,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -1095,7 +1101,9 @@
     "_N$hoverSprite": null,
     "hoverSprite": null,
     "_N$disabledSprite": null,
-    "_N$target": null,
+    "_N$target": {
+      "__id__": 20
+    },
     "_id": ""
   },
   {
@@ -1140,7 +1148,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 800,
-      "height": 600
+      "height": 560
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1217,7 +1225,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 800,
-      "height": 600
+      "height": 560
     },
     "_resize": 0,
     "_N$layoutType": 3,
@@ -1226,15 +1234,15 @@
       "width": 100,
       "height": 120
     },
-    "_N$startAxis": 0,
-    "_N$paddingLeft": 80,
-    "_N$paddingRight": 0,
-    "_N$paddingTop": 40,
+    "_N$startAxis": 1,
+    "_N$paddingLeft": 0,
+    "_N$paddingRight": 80,
+    "_N$paddingTop": 20,
     "_N$paddingBottom": 0,
     "_N$spacingX": 80,
     "_N$spacingY": 20,
     "_N$verticalDirection": 1,
-    "_N$horizontalDirection": 0,
+    "_N$horizontalDirection": 1,
     "_N$affectedByScale": true,
     "_id": ""
   },
@@ -2627,7 +2635,7 @@
       "ctor": "Float64Array",
       "array": [
         370,
-        260,
+        270,
         0,
         0,
         0,
@@ -2734,7 +2742,7 @@
       "ctor": "Float64Array",
       "array": [
         477.764,
-        260,
+        270,
         0,
         0,
         0,
@@ -2841,7 +2849,7 @@
       "ctor": "Float64Array",
       "array": [
         507.764,
-        260,
+        270,
         0,
         0,
         0,
@@ -2948,7 +2956,7 @@
       "ctor": "Float64Array",
       "array": [
         537.764,
-        260,
+        270,
         0,
         0,
         0,

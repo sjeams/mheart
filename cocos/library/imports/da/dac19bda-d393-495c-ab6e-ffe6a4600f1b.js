@@ -38,7 +38,7 @@ cc.Class({
     }
 
     box_tips.active = true;
-    box_tips.runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.3, 1.1, 1.3), cc.fadeOut(0.1), cc.scaleTo(0.3, 1, 1), cc.callFunc(function () {
+    box_tips.runAction(cc.sequence(cc.fadeIn(0.01), cc.scaleTo(0.3, 1.1, 1.3), cc.fadeOut(0.1), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
       box_tips.active = false;
     }, this)));
   }

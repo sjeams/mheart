@@ -34,7 +34,7 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //按钮
 
       if (is_use == 1) {
-        TipBoxPrefab.getChildByName('卸下s').getComponent(cc.Label).string = gooduse_list[gooduse_type].button_name;
+        TipBoxPrefab.getChildByName('卸下s').getComponent(cc.Label).string = gooduse_list[gooduse_type].type_name;
       } //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
