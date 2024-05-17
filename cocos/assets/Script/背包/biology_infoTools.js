@@ -133,7 +133,7 @@ cc.Class({
             //移除挂载
             // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
             //重新挂载
-            TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(TipBoxPrefab_model,info.yuanShen,7,'元神')
+            TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(TipBoxPrefab_model,info.yuanShen,4,'元神')
         }, this);
         // TipBoxPrefab.getChildByName('缘分').on('click', function () {
         //     // 事件处理逻辑

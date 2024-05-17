@@ -14,18 +14,17 @@ cc.Class({
   properties: {},
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
-  //技能图片渲染
+  //技能图片渲染       // gooduse_type  1武器
   biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model, goodsid, gooduse_type, button_name) {
     //加载背包 和  背包列表
     var info = http_globalData.bag;
-    var gooduse_type_name = http_globalData.gooduse; // //查看详情--弹出一次已装备详情
+    var gooduse_type_name = http_globalData.gooduse;
+    cc.log(http_globalData.gooduse);
+    cc.log(http_globalData.bag); // //查看详情--弹出一次已装备详情
     // if(goodsid){
     //     // cc.log(goodsid)
     //     TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model,info[goodsid],gooduse_type,button_name,0)
     // }
-    // gooduse_type  1武器
-
-    var gooduse_type = gooduse_type || 1;
 
     var _this = this;
 
@@ -45,7 +44,8 @@ cc.Class({
       var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
       // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
       // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-      //修改背包标题-----弹窗的标题修改
+
+      cc.log(); //修改背包标题-----弹窗的标题修改
 
       TipBoxPrefab.getChildByName('标题s').getComponent(cc.Label).string = gooduse_type_name[gooduse_type].name; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
 
