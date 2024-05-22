@@ -1,5 +1,4 @@
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../common"); 
 cc.Class({
     extends: cc.Component,
 
@@ -70,7 +69,7 @@ cc.Class({
         TipBoxPrefab_icon.on('click', function () {
             //session设置战斗请求id
             cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
-            httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"),1);
+            httpRequest.playGame("sence_zhandou",1)
         })
     },
  

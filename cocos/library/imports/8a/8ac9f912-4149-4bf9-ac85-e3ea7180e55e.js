@@ -1,13 +1,11 @@
 "use strict";
 cc._RF.push(module, '8ac9fkSQUlL+ayF4+pxgOVe', 'fightingTools');
-// Script/fighting/fightingTools.js
+// Script/战斗/fightingTools.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
-var params = [];
 cc.Class({
   "extends": cc.Component,
   properties: {// server_picture: cc.Node,

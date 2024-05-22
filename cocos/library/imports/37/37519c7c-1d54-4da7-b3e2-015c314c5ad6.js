@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '37519x8HVRNp7PiAVwxTFrW', 'http');
-// Script/http.js
+// Script/commonApi/http.js
 
 "use strict";
 
@@ -131,36 +131,48 @@ var HttpHelper = cc.Class({
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   },
   //场景加载--进度条
-  playGame: function playGame(sence, task) {
+  playGame: function playGame(sence, task, no_progress) {
+    //场景转译
+    var sence = this.urlConfig(sence);
+
     var _task = task || 0;
 
-    var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径--预加载的进度条
+    var _no_progress = no_progress || 0;
+
+    var _this = this; //是否加载场景--loading
 
 
-    cc.loader.loadRes('./sprite_loading', function (errorMessage, loadedResource) {
-      //检查资源加载
-      if (errorMessage) {
-        cc.log('载入预制资源失败, 原因:' + errorMessage);
-        return;
-      }
+    if (_no_progress) {
+      //加载预制资源 PrefabUrl为 预制资源在 资源中的路径--预加载的进度条
+      cc.loader.loadRes('./sprite_loading', function (errorMessage, loadedResource) {
+        //检查资源加载
+        if (errorMessage) {
+          cc.log('载入预制资源失败, 原因:' + errorMessage);
+          return;
+        }
 
-      if (!(loadedResource instanceof cc.Prefab)) {
-        cc.log('你载入的不是预制资源!');
-        return;
-      } //开始实例化预制资源
+        if (!(loadedResource instanceof cc.Prefab)) {
+          cc.log('你载入的不是预制资源!');
+          return;
+        } //开始实例化预制资源
 
 
-      var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
-      // CanvasNode.addChild(TipBoxPrefab);
+        var TipBoxPrefab = cc.instantiate(loadedResource); //将预制资源添加到父节点
+        // CanvasNode.addChild(TipBoxPrefab);
 
-      cc.find('Canvas').addChild(TipBoxPrefab); //请求战斗记录
+        cc.find('Canvas').addChild(TipBoxPrefab); //请求战斗记录
 
-      if (_task == 1) {
-        _this.fightint(sence);
-      } else {
-        _this.progress(sence);
-      }
-    });
+        if (_task == 1) {
+          _this.fightint(sence);
+        } else {
+          _this.progress(sence);
+        }
+      });
+    } else {
+      //加载场景--不加载进度条
+      cc.director.loadScene(sence, function () {// spawnTools();
+      });
+    }
   },
   progress: function progress(sence) {
     //预加载场景并获得加载进度
@@ -264,27 +276,8 @@ var HttpHelper = cc.Class({
       sence_zhandou: "战斗场景"
     };
     return sence[url];
-  } // cc.director.loadScene(_this.globalData().globalData);
-
-}); // httpRequest = new HttpHelper();
-// window.HttpHelper = new HttpHelper();
-//全局变量
-
-window.http_globalData = {
-  fighting: [],
-  biology: [],
-  bag: [],
-  gooduse: [],
-  zhenfa: [],
-  //临时操作存储id
-  biology_id: 0,
-  //生物id
-  zhenfa_id: 0,
-  //阵法id
-  move_biology_id: 0,
-  //生物id
-  move_zhenfa_id: 0 //阵法id
-
-};
+  }
+});
+httpRequest = new HttpHelper(); // window.HttpHelper = new HttpHelper();
 
 cc._RF.pop();

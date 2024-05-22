@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '6d8b5Q0V+NPA6XWH76PX0o5', 'biology_xinxiTools');
-// Script/home/biology_xinxiTools.js
+// Script/背包/biology_xinxiTools.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},

@@ -2,8 +2,7 @@
 cc._RF.push(module, 'cb9c9nq1ARCEIGdOhdxiwAf', 'userinfo');
 // Script/home_js/userinfo.js
 
-// var HttpHelper = require("../http"); 
-// var httpRequest = new HttpHelper();
+// require("../common"); 
 // cc.Class({
 //     extends: cc.Component,
 //     properties: {
@@ -72,7 +71,7 @@ cc._RF.push(module, 'cb9c9nq1ARCEIGdOhdxiwAf', 'userinfo');
 //                 if(data.code==1){// 登录成功，进入游戏
 //                     // cc.log(data.data.userinfo); 
 //                     cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo)); 
-//                     httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+//                     httpRequest.playGame("sence_dating")
 //                     // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
 //                     // cc.sys.localStorage.getItem(key); //读取数据
 //                 }
@@ -81,7 +80,7 @@ cc._RF.push(module, 'cb9c9nq1ARCEIGdOhdxiwAf', 'userinfo');
 //                     var server = JSON.parse(cc.sys.localStorage.getItem('server'));
 //                     // cc.log(server); 
 //                     // 创建角色
-//                     httpRequest.playGame(httpRequest.urlConfig("sence_jiaose"));
+//                    httpRequest.playGame("sence_jiaose")
 //                 }
 //             }
 //         });

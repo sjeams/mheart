@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, 'bfe2c9uBzZLZbQL4m1ej4tE', 'myserver');
-// Script/login/myserver.js
+// Script/登录/myserver.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -136,7 +135,7 @@ cc.Class({
           // 登录成功，进入游戏
           // cc.log(data.data.userinfo); 
           cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
-          httpRequest.playGame(httpRequest.urlConfig("sence_dating")); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
+          httpRequest.playGame("sence_dating"); // cc.sys.localStorage.setItem('userinfo', JSON.stringify(data.data.userinfo));
           // cc.sys.localStorage.getItem(key); //读取数据
         } else if (data.code == 2) {
           // 登录成功，未定义角色

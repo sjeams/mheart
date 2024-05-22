@@ -1,6 +1,4 @@
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
-var params =[];
+require("../common"); 
 cc.Class({
     extends: cc.Component,
 

@@ -1,10 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -38,10 +31,8 @@ cc.Class({
         var _this =this;
         var TOOLS =[];
         var TOOLS = position_skill;
-        var TipBoxPrefab_icon=[];
-
-            //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-            cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource_icon){
+        //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+        cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource_icon){
               
                 for (var prop in position_skill) {
                     let skill = TOOLS[prop];

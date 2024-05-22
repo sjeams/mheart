@@ -1,5 +1,4 @@
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../common"); 
 cc.Class({
     extends: cc.Component,
 
@@ -89,7 +88,7 @@ cc.Class({
     //阵法 关闭 提交结果，需要单独处理了
     openzhenfa_hidden(){
         // cc.log(http_globalData.zhenfa)   
-        cc.find('Canvas/弹窗').getComponent('bag_api').http_update_zhenfa()
+        httpRequestBagApi.http_update_zhenfa()
         cc.find('Canvas/弹窗').removeAllChildren();
     }
     // update (dt) {},

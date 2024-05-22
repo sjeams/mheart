@@ -1,12 +1,11 @@
 "use strict";
-cc._RF.push(module, '37703xGpr5GwYxzJ+3bIl/3', 'score_home');
-// Script/背包/score_home.js
+cc._RF.push(module, '37703xGpr5GwYxzJ+3bIl/3', 'bag_home');
+// Script/背包/bag_home.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -22,22 +21,8 @@ cc.Class({
   start: function start() {},
   //刷新背包--每次操作后需要刷新背包
   brushBag: function brushBag() {
-    //获取生物列表
-    httpRequest.httpPost('/app/app-apinew/biology-list', {}, function (data) {
-      //定义常量
-      http_globalData.biology = data.data.biology; //当前弹出的预制节点--物品详情--装备-卸载
-
-      http_globalData.TipBoxPrefab_biology_detail = null; //开启战斗
-
-      http_globalData.bag = data.data.bag;
-      http_globalData.gooduse = data.data.gooduse; //物品类型
-
-      http_globalData.zhenfa = data.data.zhenfa.data;
-      http_globalData.zhenfa_info = data.data.zhenfa.info;
-      cc.log(http_globalData.zhenfa_info); // 临时字段
-      // http_globalData.biology_id = 0;
-      // http_globalData.zhenfa_id=0;
-    });
+    //获取生物列表--实例化背包信息
+    httpRequestBagApi.http_bag_info();
   },
   //打开背包
   openBag: function openBag() {
@@ -99,7 +84,7 @@ cc.Class({
   //阵法 关闭 提交结果，需要单独处理了
   openzhenfa_hidden: function openzhenfa_hidden() {
     // cc.log(http_globalData.zhenfa)   
-    cc.find('Canvas/弹窗').getComponent('bag_api').http_update_zhenfa();
+    httpRequestBagApi.http_update_zhenfa();
     cc.find('Canvas/弹窗').removeAllChildren();
   } // update (dt) {},
 

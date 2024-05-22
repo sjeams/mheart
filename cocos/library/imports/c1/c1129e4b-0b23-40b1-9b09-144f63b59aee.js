@@ -4,9 +4,8 @@ cc._RF.push(module, 'c11295LCyNAsZsJFE9jtZru', 'biology_infoTools');
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},

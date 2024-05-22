@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'map_score');
-// Script/scence/map_score.js
+// Script/场景/map_score.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -23,7 +22,7 @@ cc.Class({
       // _this.addMapPic(data) //生成地图
       if (!data.data) {
         //刷新地图
-        // httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+        // httpRequest.playGame( "sence_ditu")
         _this.reloadWord(); //刷新世界地图
 
       } else {
@@ -81,7 +80,7 @@ cc.Class({
 
     _this.removeBoxprefab();
 
-    httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
+    httpRequest.playGame("sence_zhutian");
   },
   //移除容器
   removeBoxprefab: function removeBoxprefab() {

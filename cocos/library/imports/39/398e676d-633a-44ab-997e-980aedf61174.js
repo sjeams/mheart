@@ -4,9 +4,8 @@ cc._RF.push(module, '398e6dtYzpEq5l+mArt9hF0', 'biology_bagTools');
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},

@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '99bc1iOpDlNZIWwGo6PgUtK', 'register_knows');
-// Script/login/register_knows.js
+// Script/登录/register_knows.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {

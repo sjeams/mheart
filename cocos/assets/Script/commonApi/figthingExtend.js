@@ -1,9 +1,4 @@
-/*
- * @Author: sjeam
- * @Date: 2024-01-08 15:33:42
- * @Description: 
- */
-const FightingExtend = cc.Class({
+ const httpFightingExtend = cc.Class({
   //提示动作
   playTips(node,biology,is_skill){
         //技能名称
@@ -181,3 +176,5 @@ const FightingExtend = cc.Class({
 
   }
 });
+ 
+httpRequestFightingExtend = new httpFightingExtend();

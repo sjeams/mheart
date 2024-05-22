@@ -1,5 +1,4 @@
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../common"); 
 cc.Class({
     extends: cc.Component,
     properties: {  
@@ -18,7 +17,7 @@ cc.Class({
           // _this.addMapPic(data) //生成地图
           if(!data.data){
               //刷新地图
-              // httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+              // httpRequest.playGame( "sence_ditu")
               _this.reloadWord()//刷新世界地图
           }else{
               //生成世界
@@ -73,7 +72,7 @@ cc.Class({
       //移除节点
       var _this = this;
       _this.removeBoxprefab()
-      httpRequest.playGame(httpRequest.urlConfig("sence_zhutian"));
+      httpRequest.playGame("sence_zhutian")
     },
     //移除容器
     removeBoxprefab(){

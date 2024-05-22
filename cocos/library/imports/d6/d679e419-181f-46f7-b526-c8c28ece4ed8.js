@@ -4,9 +4,8 @@ cc._RF.push(module, 'd679eQZGB9G97UmyMKOzk7Y', 'bag_详情按钮Tools');
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -20,20 +19,20 @@ cc.Class({
     switch (button_name) {
       case "装备1":
         var goods_key = 'gooduse1';
-        cc.find('Canvas/弹窗').getComponent('bag_api').http_update_goods(biology_id, goods_key, goodsid, is_bag); //1装备  0卸下
+        httpRequestBagApi.http_update_goods(biology_id, goods_key, goodsid, is_bag); //1装备  0卸下
 
         this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, goodsid, goods_key, is_bag);
         break;
 
       case "装备2":
         var goods_key = 'gooduse2';
-        cc.find('Canvas/弹窗').getComponent('bag_api').http_update_goods(biology_id, goods_key, goodsid, is_bag);
+        httpRequestBagApi.http_update_goods(biology_id, goods_key, goodsid, is_bag);
         this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, goodsid, goods_key, is_bag);
         break;
 
       case "元神":
         var goods_key = 'yuanShen';
-        cc.find('Canvas/弹窗').getComponent('bag_api').http_update_goods(biology_id, goods_key, goodsid, is_bag);
+        httpRequestBagApi.http_update_goods(biology_id, goods_key, goodsid, is_bag);
         this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, goodsid, goods_key, is_bag);
         break;
 

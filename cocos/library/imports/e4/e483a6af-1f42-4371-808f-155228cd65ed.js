@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, 'e483aavH0JDcYCPFVIozWXt', 'background');
-// Script/login/background.js
+// Script/登录/background.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {// foo: {

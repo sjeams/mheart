@@ -1,15 +1,10 @@
 "use strict";
-cc._RF.push(module, '9adcftif51KeZIlmwZNZJeu', 'figthingExtend');
-// Script/战斗/figthingExtend.js
+cc._RF.push(module, '407ebIwYo5I7qZvJQ2xgI0h', 'figthingExtend');
+// Script/commonApi/figthingExtend.js
 
 "use strict";
 
-/*
- * @Author: sjeam
- * @Date: 2024-01-08 15:33:42
- * @Description: 
- */
-var FightingExtend = cc.Class({
+var httpFightingExtend = cc.Class({
   //提示动作
   playTips: function playTips(node, biology, is_skill) {
     //技能名称
@@ -198,5 +193,6 @@ var FightingExtend = cc.Class({
     }
   }
 });
+httpRequestFightingExtend = new httpFightingExtend();
 
 cc._RF.pop();

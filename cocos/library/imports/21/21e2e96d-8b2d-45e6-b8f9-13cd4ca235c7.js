@@ -4,9 +4,8 @@ cc._RF.push(module, '21e2eltiy1F5rj5E81MojXH', 'bag_zhenfa头像Tools');
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   //list渲染

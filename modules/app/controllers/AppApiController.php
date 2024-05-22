@@ -72,12 +72,12 @@ class AppApiController extends ApiUserControl{
     // /**
     //  * 获取用户信息--体力随时更新的
     //  * app/app-api/get-user
-    //  * http://localhost/monster/web/app/app-api/get-user
+    //  * http://cs.mheart.cn/app/app-api/get-user
     //  */
-    // public function actionGetUser(){
-    //     $data=User::getUserEnergy();
-    //     die(Method::jsonApp(1,$data,'succes'));
-    // }
+    public function actionGetUser(){
+        $data=User::getUserEnergy();
+        die(Method::jsonApp(1,$data,'succes'));
+    }
     
 
 

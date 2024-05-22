@@ -4,9 +4,8 @@ cc._RF.push(module, 'dac19va05NJXKtu/+akYA8b', 'bag_zhenfaTools');
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   // onLoad () {},

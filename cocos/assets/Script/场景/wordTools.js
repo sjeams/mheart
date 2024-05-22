@@ -1,5 +1,4 @@
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../common"); 
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -77,7 +76,7 @@ cc.Class({
                 'star': info.star,
             }, function (data) {
                 //跳转到世界
-                httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+                httpRequest.playGame("sence_ditu")
             })
         })
     },

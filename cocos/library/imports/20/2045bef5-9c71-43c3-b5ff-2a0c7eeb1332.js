@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '2045b71nHFDw7X/Kgx+6xMy', 'Alert');
-// Script/login/Alert.js
+// Script/登录/Alert.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {

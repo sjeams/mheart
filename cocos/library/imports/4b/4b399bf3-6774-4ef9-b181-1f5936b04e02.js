@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '4b399vzZ3RO+bGBH1k2sE4C', 'mapTools');
-// Script/scence/mapTools.js
+// Script/场景/mapTools.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {// server_picture: cc.Node,
@@ -95,7 +94,7 @@ cc.Class({
     TipBoxPrefab_icon.on('click', function () {
       //session设置战斗请求id
       cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
-      httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"), 1);
+      httpRequest.playGame("sence_zhandou", 1);
     });
   }
 });

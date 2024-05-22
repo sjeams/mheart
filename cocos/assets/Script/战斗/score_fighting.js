@@ -1,10 +1,4 @@
-// 世界操作  
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
-var FightingExtend = require("figthingExtend"); 
-var getFightingExtend = new FightingExtend();
-// var httpRequest = new HttpHelper();
-var params =[];
+require("../common"); 
 cc.Class({
     extends: cc.Component,
 
@@ -52,7 +46,7 @@ cc.Class({
       var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
 
       if(figthing_remote_url==null){
-          httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+          httpRequest.playGame("sence_ditu")
       }else{
         var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
         cc.loader.load({ url: remoteUrl }, function (err, data) {
@@ -235,7 +229,7 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
           // _this.schedule(function(){
-          getFightingExtend.playAction(_targ_hero_node,biology,0) //不需要其它动作，瞬发伤害动作
+          httpRequestFightingExtend.playAction(_targ_hero_node,biology,0) //不需要其它动作，瞬发伤害动作
           // },1)
         }
       }
@@ -252,7 +246,7 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           //2个攻击类型只能二选一 
           // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
-            getFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
+            httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
         }
       }
       return new Promise(resolve => {resolve();})
@@ -282,7 +276,7 @@ cc.Class({
         // var waite_time=waite_time||0
         const actionhiddenBig =   cc.spawn(cc.scaleTo(0.1, 1.1, 1.1),cc.callFunc(function(){
           //等待攻击完成
-            getFightingExtend.playTips(node,biology)
+            httpRequestFightingExtend.playTips(node,biology)
         },this));//变大还原//变大
         // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
 
@@ -304,8 +298,8 @@ cc.Class({
  
                     //先走提示再动作
                     // _this.schedule(function(){
-                    // getFightingExtend.playTips(node,biology)
-                    getFightingExtend.playAction(node,biology)
+                    // httpRequestFightingExtend.playTips(node,biology)
+                    httpRequestFightingExtend.playAction(node,biology)
                     // },1)
                     resolve();
                 }) )
@@ -369,7 +363,7 @@ cc.Class({
                     cc.callFunc(() => {
  
                         // _this.schedule(function(){
-                        getFightingExtend.playAction(node,biology)
+                        httpRequestFightingExtend.playAction(node,biology)
                         // },1)
                         resolve();
                   }) )
@@ -386,7 +380,7 @@ cc.Class({
                     cc.callFunc(() => {
  
                         // _this.schedule(function(){
-                        getFightingExtend.playAction(node,biology)
+                        httpRequestFightingExtend.playAction(node,biology)
                         // },1)
                         resolve();
                   }) )
@@ -415,7 +409,7 @@ cc.Class({
                 cc.callFunc(() => {
 
                     // _this.schedule(function(){
-                    getFightingExtend.playAction(node,biology)
+                    httpRequestFightingExtend.playAction(node,biology)
                     // },1)
                     resolve();
                 }) )
@@ -485,7 +479,7 @@ cc.Class({
     },
     reloadWord(){
       var _this =this;
-      httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+      httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
         //写入地图数据
         _this.addWordMap(data)
         })
@@ -494,7 +488,7 @@ cc.Class({
       //移除节点
       var _this = this;
       _this.removeBoxprefab()
-      httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+      httpRequest.playGame("sence_ditu")
     },
     //重播
     back_reload(){
@@ -508,7 +502,7 @@ cc.Class({
       //移除节点
       var _this = this;
       _this.removeBoxprefab()
-      httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+      httpRequest.playGame("sence_dating")
     },
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);

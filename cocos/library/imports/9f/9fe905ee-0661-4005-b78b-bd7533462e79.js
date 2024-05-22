@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '9fe90XuBmFABbeLvXUzRi55', 'wordTools');
-// Script/scence/wordTools.js
+// Script/场景/wordTools.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -104,7 +103,7 @@ cc.Class({
         'star': info.star
       }, function (data) {
         //跳转到世界
-        httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+        httpRequest.playGame("sence_ditu");
       });
     });
   }

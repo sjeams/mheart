@@ -1,12 +1,3 @@
-/*
- * @Author: sjeam
- * @Date: 2024-01-05 16:13:51
- * @Description: 
- */
-// 世界操作  
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
-var params =[];
 cc.Class({
     extends: cc.Component,
  
@@ -31,7 +22,7 @@ cc.Class({
     
     reloadWord(){
       var _this =this;
-      httpRequest.httpPost('/app/app-apiword/map-word', params, function (data) {
+      httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
         //写入地图数据
         _this.addWordMap(data)
         })
@@ -39,11 +30,11 @@ cc.Class({
     back_map(){
       //销毁动态合图
       // cc.dynamicAtlasManager.reset()
-      httpRequest.playGame(httpRequest.urlConfig("sence_ditu"));
+      httpRequest.playGame("sence_ditu")
     },
     back_reload(){
       // this.parent.active=false
-      // httpRequest.playGame(httpRequest.urlConfig("sence_zhandou"));
+      // httpRequest.playGame("sence_zhandou") 
       // cc.find('Canvas/重播').click()
       // cc.find('Canvas/重播', this.node).on('touchstart', this.onButtonClick, this);
       //这个 node 节点是你的事件处理代码组件所属的节点
@@ -62,7 +53,7 @@ cc.Class({
        
 
     back_home(){
-      httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+      httpRequest.playGame("sence_dating")
     },
     //跳过回合
     back_time_show(){ 

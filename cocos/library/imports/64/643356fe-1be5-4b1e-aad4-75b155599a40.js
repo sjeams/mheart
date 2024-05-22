@@ -6,12 +6,6 @@ cc._RF.push(module, '64335b+G+VLHqrUdbFVWZpA', 'skill_iconTools');
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 cc.Class({
   "extends": cc.Component,
   properties: {// foo: {
@@ -38,8 +32,7 @@ cc.Class({
     var _this = this;
 
     var TOOLS = [];
-    var TOOLS = position_skill;
-    var TipBoxPrefab_icon = []; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    var TOOLS = position_skill; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
     cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
       var _this2 = this;

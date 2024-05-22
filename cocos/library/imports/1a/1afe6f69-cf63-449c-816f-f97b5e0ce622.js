@@ -1,12 +1,11 @@
 "use strict";
 cc._RF.push(module, '1afe69pz2NEnIFv+XteDOYi', 'bag_技能Tools');
-// Script/home/bag_技能Tools.js
+// Script/背包/bag_技能Tools.js
 
 "use strict";
 
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},

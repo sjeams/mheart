@@ -1,6 +1,4 @@
-// 世界操作  
-var HttpHelper = require("../http"); 
-var httpRequest = new HttpHelper();
+require("../common"); 
 cc.Class({
     extends: cc.Component,
 
@@ -59,7 +57,7 @@ cc.Class({
         //移除节点
         var _this = this;
         _this.removeBoxprefab()
-        httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+        httpRequest.playGame("sence_dating")
     },
       searchShow(){
         cc.find("Canvas/大厅/探索世界").active = true;

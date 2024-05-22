@@ -4,9 +4,8 @@ cc._RF.push(module, '236d34ndr5Le5KyhPYJE5sU', 'progressTools');
 
 "use strict";
 
-var HttpHelper = require("http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {

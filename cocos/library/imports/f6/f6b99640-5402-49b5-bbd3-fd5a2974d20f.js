@@ -1,13 +1,11 @@
 "use strict";
 cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'word_score');
-// Script/scence/word_score.js
+// Script/场景/word_score.js
 
 "use strict";
 
-// 世界操作  
-var HttpHelper = require("../http");
+require("../common");
 
-var httpRequest = new HttpHelper();
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -72,7 +70,7 @@ cc.Class({
 
     _this.removeBoxprefab();
 
-    httpRequest.playGame(httpRequest.urlConfig("sence_dating"));
+    httpRequest.playGame("sence_dating");
   },
   searchShow: function searchShow() {
     cc.find("Canvas/大厅/探索世界").active = true;
