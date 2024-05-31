@@ -12,7 +12,7 @@
     <input type="hidden" name="" id="hiddenvalue" value="0">
     <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
-        <div class="video" id="dplay_video"> </div>
+        <div class="video" id="dplay_video" style="z-index: 1;"> </div>
     </div>
 </div>
 <!-- new 视频 0-->

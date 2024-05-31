@@ -452,7 +452,7 @@
 				video.attr('x5-video-player-fullscreen','true');
 				video.attr('controls','controls');
 				video.attr('x5-video-player-type','h5'); //不要与x5-playsinline同时存在
-				video.attr('x5-video-orientation','landscape');
+				video.attr('x5-video-orientation','landscape|portrait');
 				// x5-video-orientation="landscape|portrait" // 播放器的方向，
 				// landscape横屏，portraint竖屏，默认值为竖屏
 				if(vars['crossOrigin']){
