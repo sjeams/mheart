@@ -446,7 +446,7 @@
 				// video.attr('controlslist','nodownload');
 				video.attr('playsinline','true');
 				video.attr('x-webkit-airplay','true');
-				// video.attr('controls','controls');
+				video.attr('controls','controls');
 				// video.attr('x5-video-orientation','portraint');
 			
 				// video.attr('webkit-playsinline','true');

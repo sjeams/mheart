@@ -177,7 +177,7 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
             crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
             // loop: true,//是否需要循环播放 
             // seek: 42,//默认需要跳转的秒数
-            controls:0, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
+            controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
             // // language:'en',
             // // rotate:90,//旋转90度
             // documentFocusPause:false,//窗口失去焦点后暂停播放
