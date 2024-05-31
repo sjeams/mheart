@@ -15,6 +15,8 @@
         <div class="video" id="dplay_video" style="z-index: 1;"> </div>
     </div>
 </div>
+
+
 <!-- new 视频 0-->
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="0" id="now_video_key"> 
