@@ -152,10 +152,11 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
             autoplay:true,
-            video:[ 
-                [url, 'video/m3u8', '标清', 0],
-                ['05cacb4e02f9d9e.mp4', 'video/mp4', '高清', 0],//视频地址
-            ],
+            video:url,
+            // [ 
+            //     [url, 'video/m3u8', '标清', 0],
+            //     ['05cacb4e02f9d9e.mp4', 'video/mp4', '高清', 0],//视频地址
+            // ],
             live: false,//是否是直播
             rightBar: true,//右边控制栏
             // poster:imageurl,//封面图片
