@@ -454,7 +454,7 @@
 				video.attr('x5-video-player-fullscreen','');// 全屏设置，设置为 true 是防止横屏
 
 				video.attr('x5-video-player-type','h5'); //不要与x5-playsinline同时存在
-				video.attr('x5-video-orientation','landscape|portrait');  // 播放器的方向，landscape横屏，portraint竖屏，默认值为竖屏
+				// video.attr('x5-video-orientation','landscape|portrait');  // 播放器的方向，landscape横屏，portraint竖屏，默认值为竖屏
 
 				if(vars['crossOrigin']){
 					video.useCORS=true;//解决跨域
