@@ -443,16 +443,17 @@
 				video.controls=false;
 			}
 			try{
-				video.attr('controlslist','nodownload');
-				video.attr('x-webkit-airplay','true');
-				// video.attr('x5-video-orientation','portraint');
+				// video.attr('controlslist','nodownload');
 				video.attr('playsinline','true');
-				video.attr('webkit-playsinline','true');
+				video.attr('x-webkit-airplay','true');
+				// video.attr('controls','controls');
+				// video.attr('x5-video-orientation','portraint');
+			
+				// video.attr('webkit-playsinline','true');
 				// video.attr('x5-playsinline','true');
 				video.attr('x5-video-player-fullscreen','true');
-				video.attr('controls','controls');
 				video.attr('x5-video-player-type','h5'); //不要与x5-playsinline同时存在
-				video.attr('x5-video-orientation','landscape|portrait');
+				video.attr('x5-video-orientation','landscape');
 				// x5-video-orientation="landscape|portrait" // 播放器的方向，
 				// landscape横屏，portraint竖屏，默认值为竖屏
 				if(vars['crossOrigin']){
