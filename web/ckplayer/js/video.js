@@ -110,7 +110,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         hotkey: true, // 热键
         preload: 'auto', // 预加载
         // logo: '/assets/octocat.png', // 左上角logo
-        volume: 0.5, // 音量
+        volume: 0, // 音量
         mutex: true, // 多个视频互斥
         landscape: true,        //手机端默认进入横屏全屏时设置true  默认false
         playNext: true,           //全屏时是否显示下一集图标   选集数组小于等于1时不显示
@@ -152,13 +152,18 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
             plug:'hls.js',//设置使用hls插件
             autoplay:true,
-            video: url,//视频地址
+            video:[ 
+                [url, 'video/m3u8', '标清', 0],
+                ['05cacb4e02f9d9e.mp4', 'video/mp4', '高清', 0],//视频地址
+            ],
             live: false,//是否是直播
+            rightBar: true,//右边控制栏
             // poster:imageurl,//封面图片
-            // title:title,//视频标题
+            title:title,//视频标题
             // rotate:90,//旋转90度
             // seek:180,
             // debug:true,//开启调试模式
+            next:false,
             rightBar:true,
             screenshot:true,
             smallWindows:true,
@@ -172,13 +177,15 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
             // loop: true,//是否需要循环播放 
             // seek: 42,//默认需要跳转的秒数
             controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
-            // playbackrateOpen:true,
             // // language:'en',
             // // rotate:90,//旋转90度
             // documentFocusPause:false,//窗口失去焦点后暂停播放
             // playbackrate: 1,//默认倍速
             // debug: false,//是否开启调试模式
-            // overspread:true,//是否让视频铺满播放器
+            volume:0,//音量
+            overspread:true,//是否让视频铺满播放器
+            playbackrateOpen: true, // 是否开启控制栏倍速选项
+            playbackrateList: [0.75, 1, 1.25, 1.5, 2, 4], // 倍速配置值
             loaded:'loadHandler',// 监听播放时间方法
             seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
 		    cookie:videoID,//cookie名称,请在同一域中保持唯一

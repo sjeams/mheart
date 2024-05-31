@@ -1,8 +1,8 @@
-require("commonApi/http"); 
+require("commonApi/http"); //引入基础http请求
 // var httpRequest = new HttpHelper();
-require("commonApi/bag_api"); 
+require("commonApi/bag_api"); //引入背包
 // var httpBagApi = new httpBagApi();
-require("commonApi/figthingExtend"); 
+require("commonApi/figthingExtend"); //引入战斗动作
 // var getFightingExtend = new FightingExtend();
 
 //全局变量

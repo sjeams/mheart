@@ -2704,14 +2704,14 @@
     "meta": 1716365495674,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
-    "asset": 1716365493932,
-    "meta": 1716365495060,
-    "relativePath": "Script\\common.js"
-  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1716365487402,
     "meta": 1716365495136,
     "relativePath": "Script\\commonApi\\http.js"
+  },
+  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
+    "asset": 1716365585398,
+    "meta": 1716370236940,
+    "relativePath": "Script\\common.js"
   }
 }
