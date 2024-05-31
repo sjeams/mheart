@@ -130,11 +130,11 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     _this.newplayer.remove();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
     _this.newplayer.play()//点击播放
-    if (isQQBrowser()) {
-        // 用户正在使用QQ浏览器
-        console.log("当前是QQ浏览器");
-        videoHidden(0);//隐藏窗口
-    }
+    // if (isQQBrowser()) {
+    //     // 用户正在使用QQ浏览器
+    //     console.log("当前是QQ浏览器");
+    //     videoHidden(0);//隐藏窗口
+    // }
  
 }
 //ckplayer 播放器
@@ -222,11 +222,11 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         // function VideoPlayEndedHandler(){//监听视频播放完成
         //     // alert('本视频已结束');
         // }
-        if (isQQBrowser()) {
-            // 用户正在使用QQ浏览器
-            console.log("当前是QQ浏览器");
-            videoHidden(0);//隐藏窗口
-        }
+        // if (isQQBrowser()) {
+        //     // 用户正在使用QQ浏览器
+        //     console.log("当前是QQ浏览器");
+        //     videoHidden(0);//隐藏窗口
+        // }
         //  else {
         //     // 用户不是使用QQ浏览器
         //     console.log("当前不是QQ浏览器");
