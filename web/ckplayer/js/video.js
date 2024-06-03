@@ -111,6 +111,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         preload: 'auto', // 预加载
         // logo: '/assets/octocat.png', // 左上角logo
         volume: 0, // 音量
+        playbackSpeed:[0.5, 1, 1.5, 2],
         mutex: true, // 多个视频互斥
         landscape: true,        //手机端默认进入横屏全屏时设置true  默认false
         playNext: true,           //全屏时是否显示下一集图标   选集数组小于等于1时不显示
