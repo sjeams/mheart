@@ -902,7 +902,7 @@ var hlsDefaultConfig = _objectSpread(_objectSpread({
   // used by cap-level-controller
   initialLiveManifestSize: 1,
   // used by stream-controller
-  maxBufferLength: 30,
+  maxBufferLength: 10000,
   // used by stream-controller
   backBufferLength: Infinity,
   // used by buffer-controller
