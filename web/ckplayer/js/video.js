@@ -66,7 +66,7 @@ function  videoList(id,key,isbofang){
     // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
 
 
-  
+    
     //选择视频
     if(isbofang==1){
     //1 ckplayer 播放器

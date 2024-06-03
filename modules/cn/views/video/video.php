@@ -33,7 +33,7 @@
                         </div>
                         <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                         <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
-                        <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
+                        <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>',1)" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
                         <?php } }?>
                         </span>
                     </td>
@@ -47,7 +47,7 @@
     $(function(){
         $("#defult_video").trigger("click");
         // 默认播放第一个视频
-        // videoList(1,'1c0');
+        videoList(1,'1c0',1);
         // 列表模式播放
         $('.model_name').text('列表×');
         $('.model_name').removeClass('btn-success');
