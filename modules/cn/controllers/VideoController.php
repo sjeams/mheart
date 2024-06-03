@@ -430,7 +430,7 @@ class VideoController extends VideoApiControl
             $list['name'] = $list['title'];
             $list['url'] = $list['video'][$num]['url'];
             unset( $list['video']);
-            $res=['m3u8'=>$list,'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
+            $res=['m3u8'=>$list,'data' =>$data,'sessionkey'=>$sessionkey,'kss' =>$key+1,'do_num' =>$num];
         }else{
             $id = Yii::$app->request->get('id',1);
             $m3u8 = Jian::find()->where("id=$id")->asArray()->one();

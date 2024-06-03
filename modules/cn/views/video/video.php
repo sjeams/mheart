@@ -15,6 +15,10 @@
     }
 </style>
     <body>
+        <!-- //只有视频页面才有这个 去的 0c0格式的key -->
+        
+        <input type="hidden" id="goBelong"  value="0">
+        <input type="hidden" id="isCollect"  value="1">
         <table class="table table-bordered  tablestyle" >
                 <tr>
                     <td>
@@ -33,7 +37,8 @@
                         </div>
                         <!-- <a href="<?php $vdieo['url'] = str_replace('在线播放$','',$vdieo['url']);  echo $vdieo['url']   ?>" target="blank"> <?php echo $vdieo['title']?>  </a> -->
                         <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
-                        <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>',1)" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
+                        <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
+
                         <?php } }?>
                         </span>
                     </td>
@@ -47,7 +52,7 @@
     $(function(){
         $("#defult_video").trigger("click");
         // 默认播放第一个视频
-        videoList(1,'1c0',1);
+        // videoList(1,'0c0',1);
         // 列表模式播放
         $('.model_name').text('列表×');
         $('.model_name').removeClass('btn-success');

@@ -149,8 +149,8 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         var container_id=   '.video';
         videoHidden(1);//显示窗口
     }
-
-
+    
+    
     //获取播cookie放时间
     // var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
     var videoID = md5(url);
