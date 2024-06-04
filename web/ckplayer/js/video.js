@@ -120,13 +120,16 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         // 常规方式
         video: {
             url: url,
-            type: 'auto',
+            type: 'hls',
             pic: imageurl, // 封面
             thumbnails: imageurl, // 缩略图
         },
     }
     var _this=this;
+    console.log(_this);
     // console.log(_this.newdplayer)
+    // var hls = Hls()
+    // hls.destroy()
     _this.newdplayer.destroy();
     _this.newplayer.remove();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器

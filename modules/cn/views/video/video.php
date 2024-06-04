@@ -2,9 +2,9 @@
     <head>
         <title>在线视频</title>
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
-        <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-        <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css"> -->
+        <!-- <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script> -->
+        <!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script> -->
     </head>
 <style>
     .video_center {
@@ -43,7 +43,6 @@
                         </span>
                     </td>
                 </tr>
-            <?php     ?>
         </table>
     </body>
 </html>
@@ -54,11 +53,11 @@
         // 默认播放第一个视频
         // videoList(1,'0c0',1);
         // 列表模式播放
-        $('.model_name').text('列表×');
-        $('.model_name').removeClass('btn-success');
-        $('.model_name').addClass('btn-defult');
-        $('#is_model_type').val(0)
+        // $('.model_name').text('列表×');
+        // $('.model_name').removeClass('btn-success');
+        // $('.model_name').addClass('btn-defult');
+        // $('#is_model_type').val(0)
         //隐藏窗口播放栏
-        $('.video_old').css('display','none');
+        // $('.video_old').css('display','none');
     })
 </script>

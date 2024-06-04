@@ -481,8 +481,8 @@ class VideoController extends VideoApiControl
     //dplayer 全屏
     public function actionDplay()
     { 
-        $url = Yii::$app->request->get('url');
-        $url='https://sd6.taopianplay1.com:43333/c56b1bc09da3/HD/2023-07-29/30/98d556be2572/27980a9cd160/playlist.m3u8';
+        $url = Yii::$app->request->get('url','https://sd6.taopianplay1.com:43333/c56b1bc09da3/HD/2023-07-29/30/98d556be2572/27980a9cd160/playlist.m3u8');
+        // $url='https://sd6.taopianplay1.com:43333/c56b1bc09da3/HD/2023-07-29/30/98d556be2572/27980a9cd160/playlist.m3u8';
         $image = Yii::$app->request->get('image');
         $this->layout = 'kongbai';
         $res=['url'=>$url];

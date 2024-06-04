@@ -119,7 +119,7 @@ function dplayDetail(url){
         // 常规方式
         video: {
             url: false,
-            type: 'auto',
+            type: 'hls',
             pic: '', // 封面
             thumbnails: '', // 缩略图
         },
