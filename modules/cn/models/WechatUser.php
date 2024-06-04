@@ -38,7 +38,8 @@ class WechatUser extends ActiveRecord {
 
     public static function loginMethod($token,$userId){
         //更新token
-        WechatUser::updateAll(['token' => $token],"id=$userId");
+        $time = date('Y-m-d H:i:s',strtotime('+1 day')); //1天后失效
+        WechatUser::updateAll(['token' => $token,'createTime'=> $time ],"id=$userId");
         //设置缓存
         WechatUser::getUserlogin($token);
     }

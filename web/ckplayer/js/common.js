@@ -446,6 +446,7 @@ $(document).ajaxSuccess(function( ) {
             },
             dataType: 'json',
             success: function (data) {
+                localStorage.setItem('sslToken','');
                 window.location.reload();   
             },
         });

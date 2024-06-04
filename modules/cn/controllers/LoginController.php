@@ -26,7 +26,7 @@ class LoginController extends ApiControl
             WechatUser::headerLocation();
         }
     }
-
+    // login-phone
     public function actionLoginPhone(){
         $phone = Yii::$app->request->post('phone');
         $password = Yii::$app->request->post('password');
@@ -43,9 +43,25 @@ class LoginController extends ApiControl
         }else{
             //游客登录
             $this->LoginIn($phone,$password);
-            die(Method::jsonGenerate(1,[],'游客'));
+            // die(Method::jsonGenerate(1,[],'游客'));
         }
     }
+    // login-phone
+    public function actionLoginToken(){
+        //更新token
+        $token = Yii::$app->request->post('token');
+        $res = WechatUser::find()->where("token ='$token'")->one();
+        // token 1天后失效
+        $yesterday = date('Y-m-d H:i:s', time());
+        if($yesterday<=$res['createTime']){
+            //更新token
+            WechatUser::loginMethod($token,$res['id']);
+            die(Method::jsonGenerate(1,$token,'succes'));
+        }else{
+            die(Method::jsonGenerate(0,[],'登录失效'));    
+        }
+    }
+
 
     /**
     * 注册
@@ -82,7 +98,7 @@ class LoginController extends ApiControl
             //更新token
             WechatUser::loginMethod($token,$userId);
         }
-        die(Method::jsonGenerate(1,[],'succes'));
+        die(Method::jsonGenerate(1,$token,'succes'));
     }
     
     //登录
@@ -101,12 +117,13 @@ class LoginController extends ApiControl
                 $password='111';
             }
         }
+
         $res = WechatUser::find()->where("password ='$password'  and (name ='$name' or phone ='$name') ")->one(); 
         if($res){
             $token =md5($password.time());
             //更新token
             WechatUser::loginMethod($token,$res['id']);
-            die(Method::jsonGenerate(1,[],'succes'));
+            die(Method::jsonGenerate(1,$token,'succes'));
         }else{
             die(Method::jsonGenerate(0,[],'账号密码错误'));
         }
@@ -114,7 +131,6 @@ class LoginController extends ApiControl
     //退出
     public function actionLoginOut()
     {
-
         $userId = Yii::$app->session->get('userId');
         WechatUser::updateAll(['token' => ''],"id='$userId'");
         // Yii::$app->session->destroy();

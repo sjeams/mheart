@@ -94,6 +94,33 @@
 
 </div>
 <script>
+    $(function(){
+        var sslToken =  localStorage.getItem('sslToken');
+
+        sslToken='98ec53f85721fcef2c47d198e5ca2149'
+        if(sslToken){
+            $.ajax({
+                url: '/cn/login/login-token', // 跳转到 action 
+                data:{
+                    token:sslToken,
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data)
+                    if(data.code==1){
+                        //登录后设置session
+                        // localStorage.setItem('sslToken',data.data);
+                        window.location.reload();   
+                    }else{
+                        localStorage.setItem('sslToken','');
+                    }
+                    // window.location.reload();
+                },
+            });
+        }
+    })
+
     function  loginPhone(){
         phone = $("#phone").val();
         password = $("#password").val();
@@ -108,6 +135,8 @@
             success: function (data) {
                 console.log(data)
                 if(data.code==1){
+                    //登录后设置session
+                    localStorage.setItem('sslToken',data.data);
                     window.location.reload();   
                 }else{
                     $('.error').text(data.message);
