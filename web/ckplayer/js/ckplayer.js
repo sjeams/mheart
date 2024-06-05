@@ -446,15 +446,15 @@
 				// video.attr('controlslist','nodownload');
 				video.attr('playsinline','true');
 				video.attr('x-webkit-airplay','allow');
-				video.attr('controls','controls');
+				// video.attr('controls','controls');
 				// video.attr('x5-video-orientation','portraint');
 			
 				video.attr('webkit-playsinline','true');////这个属性是ios 10中设置可以让视频在小窗内播放，也就是不是全屏播放
 				// video.attr('x5-playsinline','true');
 				video.attr('x5-video-player-fullscreen','');// 全屏设置，设置为 true 是防止横屏
 
-				video.attr('x5-video-player-type','h5-page'); //不要与x5-playsinline同时存在
-				video.attr('x5-video-orientation','landscape|portrait');  // 播放器的方向，landscape横屏，portraint竖屏，默认值为竖屏
+				video.attr('x5-video-player-type','h5'); //不要与x5-playsinline同时存在
+				// video.attr('x5-video-orientation','landscape|portrait');  // 播放器的方向，landscape横屏，portraint竖屏，默认值为竖屏
 
 				if(vars['crossOrigin']){
 					video.useCORS=true;//解决跨域
