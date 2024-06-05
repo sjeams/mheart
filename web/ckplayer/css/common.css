@@ -92,7 +92,7 @@ video{
 .table td, .table th {
     padding: 1px!important;
     vertical-align: top;
-    line-height: 40px!important;
+    line-height: 35px!important;
     border-top: 1px solid #dee2e6!important;
 }
 .table-bordered td, .table-bordered th {

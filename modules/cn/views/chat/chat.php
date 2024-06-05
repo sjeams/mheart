@@ -48,15 +48,19 @@
 		position: relative;
 		cursor: pointer;
         /* line-height: 45px; */
-        height:45px;
+        /* height:45px; */
         float: right;
 		text-align:right;
+		padding: 10px;
+		width: 100%;
     }
     .user_information_left{
 		cursor: pointer;
 		text-align: left;
-		margin:30px 30px;
-		margin-left: 10px;
+		/* margin:30px 30px;
+		margin-left: 10px; */
+		padding: 10px;
+		width: 100%;
     }
 	.user_photo{
 		height:40px;

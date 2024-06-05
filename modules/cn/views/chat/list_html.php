@@ -40,8 +40,8 @@
     }
     .user_information_left{
 		cursor: pointer;
-        line-height: 70px;
-        height:70px;
+        /* line-height: 70px;
+        height:70px; */
      	float: left;
     }
 	.user_photo{
@@ -69,6 +69,7 @@
 		word-wrap: break-word;
 		display: inline-block;
 	 	max-width: 200px;
+		line-height: 20px;
 	}
 
 	.user_float_left_10{
