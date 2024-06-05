@@ -56,7 +56,8 @@
                         </div>
                         <!-- <label class="layui-form-label">采集页码</label> -->
                         <div class="layui-input-inline center">
-                            <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
+                            <!-- <span  class="btn btn-primary" onclick="prevPage()">上一页</span> -->
+                            <span class="is_last_page_button"></span>
                             <input type="text" class="btn_style"   value="<?php echo $data['page_list'] ?>" id="goPage_list">
                             <span class="is_next_page_button"></span>
                         </div>

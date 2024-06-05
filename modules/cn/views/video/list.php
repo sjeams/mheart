@@ -63,7 +63,8 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
 <tr>
     <td class="center"  >
         <p class="center">
-            <span  class="btn btn-primary" onclick="prevPage()">上一页</span>
+            <!-- <span  class="btn btn-primary" onclick="prevPage()">上一页</span> -->
+            <span class="is_last_page_button"></span>
             <span  class="btn btn-primary" onclick="clearRload()"> 刷新 </span>
             <span class="is_next_page_button"></span>
         </p>

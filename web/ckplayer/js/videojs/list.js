@@ -280,12 +280,23 @@
                 $('.list_html').html(list_html)
             }
             //回填
+            is_last_button() //上一页
             is_next_button() //下一页
             // var t = $("#top").offset().top;
             // $(window).scrollTop(t);
             scllTop()
             removeLoading()
         }
+    }
+    
+    function is_last_button(){
+        var is_last_page = $("#goPage_list").val()
+        if(is_last_page>1){
+          var is_next_page_html ='<span  class="btn btn-primary" onclick="prevPage()">上一页</span>'
+        }else{
+            var is_next_page_html = '<span  class="btn btn-defult"  >上一页</span>  '
+        }
+        $('.is_last_page_button').html(is_next_page_html)
     }
 
     function is_next_button(){
