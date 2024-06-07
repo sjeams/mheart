@@ -312,6 +312,10 @@ $(document).ajaxSuccess(function( ) {
 
 
   /*  header ______________________ */
+    //首页 
+    function video_list(){
+        window.location.href='/cn/video/list';
+    }
 
     function my_collect(){
         window.location.href='/cn/video/query-video';  

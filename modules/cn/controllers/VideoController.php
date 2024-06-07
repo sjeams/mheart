@@ -489,4 +489,14 @@ class VideoController extends VideoApiControl
         return $this->render('dplay_full_screen', $res);  
     }
 
+    //第三方链接
+    public function actionOtherlink()
+    {
+        // var_dump(111);die;
+        // $this->layout = 'kongbai';
+        $url = Yii::$app->request->get('url');
+        $res=['url'=>$url];
+        return $this->render('other_link',$res);      
+    }
+
 }
