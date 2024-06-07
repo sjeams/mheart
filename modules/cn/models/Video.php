@@ -100,17 +100,17 @@ class Video extends ActiveRecord {
 					}
 				}
 			}else if($belong==5){
-				// siwazyw.cc  siwazyw.tv
+				// siwazyw.cc  siwazyw.tv https://siwazyw.com/
 				$type = $type?$type:1;
 				// https://siwazyw.cc/index.php/vod/type/id/20/page/2.html
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.cc'),
+							array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.com/'),
 						);
 					}else{
 						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.cc'),
+							array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.com/'),
 						);
 					}
 			}else if($belong==6){
