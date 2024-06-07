@@ -44,7 +44,9 @@
 		/* max-width:420px; */
 		margin:auto; height:300px;
 		position:relative;
-		background-repeat: no-repeat;background-position: center;background-size:auto 100%;
+		background-repeat: no-repeat;background-position: center;
+		background-size:auto 100%;
+		/* background-size: 100% 300px; */
     }
     .video_img{
         display: none;

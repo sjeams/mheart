@@ -106,11 +106,11 @@ class Video extends ActiveRecord {
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv'),
+							array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.cc'),
 						);
 					}else{
 						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv'),
+							array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.cc'),
 						);
 					}
 			}else if($belong==6){
