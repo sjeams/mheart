@@ -62,7 +62,8 @@ cc.Class({
         //     return star;
         // },
     //生成生物
-    biology_detail_list(TipBoxPrefab_model,info_list,biolgy_state,is_my,star){
+    async biology_detail_list(TipBoxPrefab_model,info_list,biolgy_state,is_my,star){
+         return new Promise(resolve => {
         var _this =this;
         var TOOLS =[];
         var TOOLS = info_list;
@@ -119,6 +120,9 @@ cc.Class({
                 }
       
             }
+            resolve();
+        })
+
         })
         return TipBoxPrefab_model
     },
