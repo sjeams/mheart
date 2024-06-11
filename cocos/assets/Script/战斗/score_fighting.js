@@ -90,7 +90,7 @@ cc.Class({
         // await this.biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
       // _this.addMapPic(data) //生成地图
       // console.log( _this.toolsArray)
-      console.log( cc.sys.fightingArray )
+      // console.log( cc.sys.fightingArray )
         // resolve();})
     },
     // 战斗回合
