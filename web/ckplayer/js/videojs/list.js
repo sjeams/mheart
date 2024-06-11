@@ -287,16 +287,16 @@
             scllTop()
             removeLoading()
         }
-    }
+    } 
     
     function is_last_button(){
         var is_last_page = $("#goPage_list").val()
         if(is_last_page>1){
-          var is_next_page_html ='<span  class="btn btn-primary" onclick="prevPage()">上一页</span>'
+          var is_last_page_html ='<span  class="btn btn-primary" onclick="prevPage()">上一页</span>'
         }else{
-            var is_next_page_html = '<span  class="btn btn-defult"  >上一页</span>  '
+            var is_last_page_html = '<span  class="btn btn-defult"  >上一页</span>  '
         }
-        $('.is_last_page_button').html(is_next_page_html)
+        $('.is_last_page_button').html(is_last_page_html)
     }
 
     function is_next_button(){

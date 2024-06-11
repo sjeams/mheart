@@ -146,7 +146,7 @@ function removeLoading(){
 // 异步html
 function getprintHtml(url){
     var getHtml =$.ajax({
-        type:"get",
+        type:"post",
         url: url,
         cache:true,
         dataType: 'json',
@@ -169,12 +169,12 @@ $(document).ajaxError(function( ) {
     removeLoading()
  
 });
-// $(document).ajaxStop(function( ) {
-//     removeLoading()
-// });
-$(document).ajaxSuccess(function( ) {
+$(document).ajaxStop(function( ) {
     removeLoading()
 });
+// $(document).ajaxSuccess(function( ) {
+//     removeLoading()
+// });
  
 
 
