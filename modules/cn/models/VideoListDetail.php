@@ -37,12 +37,11 @@ class VideoListDetail extends ActiveRecord {
             $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
         }
         $link =  "'" .implode("','",array_column($listvideo,'link'))."'" ;
-        $find_collect =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        $find_collect =VideoListDetail::find()->select('link')->where("link in ($link)")->asarray()->all();
         $find_link = array_column($find_collect,'link');
         $video_list =[];
         // $new_list=[];
         $update_list=[];
-        // var_dump($listvideo);die;
         foreach($listvideo as$key=> $val){
             $video_link= $val['link'];
             if(in_array($video_link,$find_link)){

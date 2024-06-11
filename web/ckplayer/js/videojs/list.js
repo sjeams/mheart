@@ -106,10 +106,8 @@
                 }else{
                     $('.caiji_name').text('采集×')
                 }
-                removeLoading()
+                // removeLoading()
                 // window.location.reload();   
-            },error:function(data){
-                removeLoading()
             }
         });
     }
@@ -180,8 +178,6 @@
                     $("#goPage_list").val(1);
                     gou();
                 }
-            },error:function(data){
-                removeLoading()
             }
         }); 
     }
