@@ -94,7 +94,7 @@ cc.Class({
     TipBoxPrefab_icon.on('click', function () {
       //session设置战斗请求id
       cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
-      httpRequest.playGame("sence_zhandou", 1);
+      httpRequest.playGame("sence_zhandou", 1, 1);
     });
   }
 });

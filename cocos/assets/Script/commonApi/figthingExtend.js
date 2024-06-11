@@ -39,9 +39,9 @@
         var wuxing_floor = Math.floor(biology.hurt_go_value/100)
         if(wuxing_floor>0){
           node.getChildByName('悟性星星').active=true
-          node.getChildByName('进化s').active=true
-          node.getChildByName('进化s').getComponent(cc.Label).string= wuxing_floor;
-          node.getChildByName('进化s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this))); 
+          node.getChildByName('悟性星星s').active=true
+          node.getChildByName('悟性星星s').getComponent(cc.Label).string= wuxing_floor;
+          node.getChildByName('悟性星星s').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this))); 
           node.getChildByName('悟性星星').runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.1, 1.5, 1.5),cc.moveBy(0.5,cc.v2(0,0)),cc.scaleTo(0.01, 1, 1),cc.callFunc(function(){   },this))); 
         }
     }
@@ -140,7 +140,7 @@
         node.getChildByName('魔法s').active=false
         node.getChildByName('生物').active=false
         node.getChildByName('悟性星星').active=false
-        node.getChildByName('进化s').active=false
+        node.getChildByName('悟性星星s').active=false
         // 死亡
         node.getChildByName('死亡').active=true
         // cc.loader.loadRes('biology_pic/1墓碑', function (err, texture) {  

@@ -4,6 +4,8 @@ cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'score_fighting');
 
 "use strict";
 
+var _this2 = void 0;
+
 require("../common");
 
 cc.Class({
@@ -97,7 +99,8 @@ cc.Class({
       // _this.schedule(function(){
       //循环历史行动条数
 
-      _this.schedule(function () {
+      for (var bpage = 0; npage < boat_length; bpage++) {
+        // _this.schedule(function(){
         boat_count++;
 
         if (history_count[boat].total < boat_count) {
@@ -130,9 +133,9 @@ cc.Class({
         } // 绑定点击事件
 
 
-        _this.back_time.on('click', _this.onButtonClicked, this);
-      }, 1, boat_length, 1.5); ////2秒后执行1次间隔5秒
+        _this.back_time.on('click', _this.onButtonClicked, this); // },1,boat_length,1.5);////2秒后执行1次间隔5秒
 
+      }
     }
   },
   //暂停并且跳过回合
@@ -140,6 +143,19 @@ cc.Class({
     // var _this =this
     // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
     //   cc.log('跳过')
+  },
+  // 这是传统的传入回调函数法
+  func: function func(callback) {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        // let ret: cc.Node = new cc.Node();
+        callback && callback(ret);
+        resolve();
+      }, 1500);
+    });
+  },
+  callback: function callback() {
+    _this2._picNode = res;
   },
   fighting_history: function fighting_history(his_log) {
     var _this = this; //预备回合

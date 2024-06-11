@@ -87,7 +87,8 @@ cc.Class({
           //一条或多条执行语句
           // _this.schedule(function(){
           //循环历史行动条数
-          _this.schedule(function(){
+          for (var bpage=0; npage<boat_length; bpage++){
+          // _this.schedule(function(){
               boat_count++
               if(history_count[boat].total<boat_count){
                 boat++;
@@ -114,8 +115,8 @@ cc.Class({
               }
             // 绑定点击事件
             _this.back_time.on('click', _this.onButtonClicked,this);    
-          },1,boat_length,1.5);////2秒后执行1次间隔5秒
-
+          // },1,boat_length,1.5);////2秒后执行1次间隔5秒
+            }
         }
     },
     //暂停并且跳过回合
@@ -125,6 +126,20 @@ cc.Class({
       // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
       //   cc.log('跳过')
     },
+
+   // 这是传统的传入回调函数法
+  func(callback) {
+      return new Promise((resolve) => {
+          setTimeout(() => {
+              // let ret: cc.Node = new cc.Node();
+              callback && callback(ret);
+              resolve();
+          }, 1500);
+      });
+  },
+ callback: ( ) => {
+      this._picNode = res;
+  },
 
     fighting_history(his_log) {
       var _this = this;

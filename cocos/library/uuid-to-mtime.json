@@ -490,7 +490,7 @@
     "relativePath": "Scene"
   },
   "29978e1b-82fa-4262-ab33-2c46e787facd": {
-    "asset": 1716363516929,
+    "asset": 1716365137999,
     "meta": 1713491582475,
     "relativePath": "Script"
   },
@@ -545,7 +545,7 @@
     "relativePath": "Textrue\\tools"
   },
   "899733b9-9f39-4164-bed9-45809a91a125": {
-    "asset": 1716357390084,
+    "asset": 1716364437271,
     "meta": 1713491582480,
     "relativePath": "Script\\战斗"
   },
@@ -830,8 +830,8 @@
     "relativePath": "resources\\图片背景"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1713946672112,
-    "meta": 1714273943959,
+    "asset": 1718086035427,
+    "meta": 1718086035458,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "fc19e870-7010-47dc-9892-1b455bc95d30": {
@@ -1140,8 +1140,8 @@
     "relativePath": "resources\\biology\\9标准弹窗.png"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1715572243481,
-    "meta": 1715572243491,
+    "asset": 1718088835354,
+    "meta": 1718088835363,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
@@ -1155,7 +1155,7 @@
     "relativePath": "resources\\model背包\\a生物大厅 -备份.prefab"
   },
   "3683396a-e14e-45bd-aad4-8030d1c4c598": {
-    "asset": 1716357444056,
+    "asset": 1716364565834,
     "meta": 1713491582484,
     "relativePath": "Script\\背包"
   },
@@ -2199,14 +2199,9 @@
     "meta": 1714025001835,
     "relativePath": "resources\\model战斗"
   },
-  "75f9cb2a-ca7c-4e7f-9f31-b73b31a78de2": {
-    "asset": 1714370504881,
-    "meta": 1714370504890,
-    "relativePath": "resources\\model战斗\\sprite_地图.prefab"
-  },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1715572295670,
-    "meta": 1715572295678,
+    "asset": 1718084731121,
+    "meta": 1718084731128,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
@@ -2215,8 +2210,8 @@
     "relativePath": "resources\\图标生物"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1714381820706,
-    "meta": 1714381820720,
+    "asset": 1718086094499,
+    "meta": 1718086094510,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
@@ -2230,8 +2225,8 @@
     "relativePath": "resources\\model战斗\\sprite_世界.prefab"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1715572331097,
-    "meta": 1715572331106,
+    "asset": 1718084711256,
+    "meta": 1718084711268,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "5c7fae98-d310-4ab7-a14e-faac31300165": {
@@ -2564,11 +2559,6 @@
     "meta": 1716363856588,
     "relativePath": "Script\\场景\\map_score.js"
   },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1716363616458,
-    "meta": 1716363856608,
-    "relativePath": "Script\\场景\\mapTools.js"
-  },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1716363627700,
     "meta": 1716363856623,
@@ -2689,19 +2679,9 @@
     "meta": 1716365138358,
     "relativePath": "Script\\commonApi\\bag_api.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1716365394432,
-    "meta": 1716365396192,
-    "relativePath": "Script\\战斗\\score_fighting.js"
-  },
-  "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1716365364742,
-    "meta": 1716365396338,
-    "relativePath": "Script\\commonApi\\figthingExtend.js"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1716365495657,
-    "meta": 1716365495674,
+    "asset": 1718084439317,
+    "meta": 1718084439332,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
@@ -2713,5 +2693,25 @@
     "asset": 1716365585398,
     "meta": 1716370236940,
     "relativePath": "Script\\common.js"
+  },
+  "75f9cb2a-ca7c-4e7f-9f31-b73b31a78de2": {
+    "asset": 1718085089585,
+    "meta": 1718085089592,
+    "relativePath": "resources\\model战斗\\sprite_地图.prefab"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1718085085691,
+    "meta": 1718085087316,
+    "relativePath": "Script\\场景\\mapTools.js"
+  },
+  "407eb230-628e-48ee-a66f-250db1808d21": {
+    "asset": 1718085353724,
+    "meta": 1718085355014,
+    "relativePath": "Script\\commonApi\\figthingExtend.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1718089014980,
+    "meta": 1718089045703,
+    "relativePath": "Script\\战斗\\score_fighting.js"
   }
 }
