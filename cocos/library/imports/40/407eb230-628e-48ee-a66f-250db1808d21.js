@@ -71,31 +71,6 @@ var httpFightingExtend = cc.Class({
       }, this)));
     }
   },
-  //攻击动作
-  playAction: function playAction(node, biology, is_skill) {
-    var _this3 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      var _this;
-
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              //准备动作
-              _this = _this3; // _this.playReady(node,biology)
-
-              _this.playMove(node, biology, is_skill); // return new Promise(resolve => {resolve(); });  
-
-
-            case 2:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }))();
-  },
   // 准备动作--悟性-治疗-中毒-冰冻-眩晕 持续伤害--回合前结算等
   playReady: function playReady(node, biology) {
     var _this = this;
@@ -125,184 +100,221 @@ var httpFightingExtend = cc.Class({
       }
     }
   },
+  //攻击动作
+  playAction: function playAction(node, biology, is_skill) {
+    var _this3 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      var _this;
+
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              //准备动作
+              _this = _this3; // _this.playReady(node,biology)
+
+              _context2.next = 3;
+              return _this.playMove(node, biology, is_skill);
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
   //行动--技能攻击 和 普通攻击
   playMove: function playMove(node, biology, is_skill) {
-    var _this = this; //攻击动作
-    //技能--攻击动画
-
-
-    if (is_skill != 0) {
-      // cc.log(biology)
-      node.getChildByName('技能效果').active = true;
-      node.getChildByName('技能效果').opacity = 255; // cc.loader.loadRes('图标技能效果/'+biology.skill.xiaoguo, cc.SpriteFrame, function (err, texture) { 
-      //   node.getChildByName('技能效果').getComponent(cc.Sprite).spriteFrame = texture; 
-      // });
-
-      if (!biology.skill.xiaoguo) {
-        biology.skill.xiaoguo = '血爆'; //默认效果
-      }
-
-      node.getChildByName('技能效果').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(cc.loader.getRes('图标技能效果/' + biology.skill.xiaoguo));
-      node.getChildByName('技能效果').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(_this.sudu(0.5), 1, 1), cc.callFunc(function () {
-        node.getChildByName('技能效果').active = false;
-      }, this)));
-    }
-
-    if (biology.extend == 'moFa') {
-      // cc.log(biology.hurt_msg)
-      // cc.log(biology)
-      // node.getChildByName('扣血s').color = new cc.color('#3568D5');
-      // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
-      node.getChildByName('魔法s').getComponent(cc.Label).string = biology.hurt_go_value;
-      var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar);
-      progressBar.progress = biology.hurt_go_value / node.moFa;
-      progressBar.completeCount = biology.hurt_go_value;
-      progressBar.totalCount = node.moFa; //  耗蓝为0跳过0跳过
-
-      if (biology.hurt_msg < 0) {
-        //扣蓝渐隐
-        node.getChildByName('扣蓝s').getComponent(cc.Label).string = biology.hurt_msg;
-        node.getChildByName('扣蓝s').active = true;
-        node.getChildByName('扣蓝s').opacity = 255;
-        node.getChildByName('扣蓝s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
-          node.getChildByName('扣蓝s').active = false;
-        }, this)));
-      } else if (biology.hurt_msg > 0) {
-        //扣蓝渐隐
-        node.getChildByName('加蓝s').getComponent(cc.Label).string = biology.hurt_msg;
-        node.getChildByName('加蓝s').active = true;
-        node.getChildByName('加蓝s').opacity = 255;
-        node.getChildByName('加蓝s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
-          node.getChildByName('加蓝s').active = false;
-        }, this)));
-      }
-    }
-
-    if (biology.extend == 'shengMing') {
-      //血条动作
-      // node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
-      node.getChildByName('生命s').getComponent(cc.Label).string = biology.hurt_go_value;
-      var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar);
-      progressBar.progress = biology.hurt_go_value / node.shengMing;
-      progressBar.completeCount = biology.hurt_go_value;
-      progressBar.totalCount = node.shengMing;
-
-      if (biology.hurt_go >= 0) {
-        //加血渐隐
-        // node.getChildByName('加血s').color = new cc.color('FF0000');
-        node.getChildByName('加血s').getComponent(cc.Label).string = biology.hurt_msg;
-        node.getChildByName('加血s').active = true;
-        node.getChildByName('加血s').opacity = 255;
-        node.getChildByName('加血s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
-          node.getChildByName('加血s').active = false;
-        }, this)));
-      } else {
-        //扣血渐隐
-        if (biology.is_baoji == 1) {
-          //暴击样式
-          node.getChildByName('暴击s').active = true;
-          node.getChildByName('暴击s').opacity = 255;
-          node.getChildByName('暴击s').getComponent(cc.Label).string = '暴击' + biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FF5700');
-
-          node.getChildByName('暴击s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.5, 1.5), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
-            node.getChildByName('暴击s').active = false;
-          }, this)));
-        } else {
-          //普通样式
-          node.getChildByName('扣血s').active = true;
-          node.getChildByName('扣血s').opacity = 255;
-          node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FBD800');
-
-          node.getChildByName('扣血s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
-            node.getChildByName('扣血s').active = false;
-          }, this)));
-        } //受伤动画
-
-
-        node.getChildByName('受伤').active = true;
-        node.getChildByName('受伤').opacity = 255;
-        node.getChildByName('受伤').runAction(cc.fadeOut(1), cc.callFunc(function () {
-          node.getChildByName('受伤').active = false;
-        }, this));
-      } //死亡
-
-
-      if (biology.hurt_go_value == 0) {
-        node.getChildByName('悟性').active = false;
-        node.getChildByName('生命').active = false;
-        node.getChildByName('魔法').active = false;
-        node.getChildByName('悟性s').active = false;
-        node.getChildByName('生命s').active = false;
-        node.getChildByName('魔法s').active = false;
-        node.getChildByName('魔法s').active = false;
-        node.getChildByName('魔法s').active = false;
-        node.getChildByName('生物').active = false;
-        node.getChildByName('悟性星星').active = false;
-        node.getChildByName('悟性星星s').active = false; // 死亡
-
-        node.getChildByName('死亡').active = true; // cc.loader.loadRes('biology_pic/1墓碑', function (err, texture) {  
-        //   node.getChildByName('受伤').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-        // })
-
-        if (node.is_my == 0) {
-          //图片翻转
-          node.getChildByName('生物').setScale(-1, 1);
-        } // cc.log(biology)
-        // node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this)));
-        //金币
-        // node.getChildByName('金币s').getComponent(cc.Label).string= '+$'+node.jing_bi
-        // node.getChildByName('金币s').active=true
-        // node.getChildByName('金币s').opacity=255
-        // // node.getChildByName('金币s').runAction(cc.moveBy(3,cc.v2(0,60)));
-        // node.getChildByName('金币s').runAction(cc.fadeOut(3),cc.callFunc(function(){  node.getChildByName('金币s').active=false },this)));
-        // // node.getChildByName('金币s').runAction(cc.moveBy(_this.sudu(0.1),cc.v2(0,-40)));
-
-      }
-    }
-
-    if (biology.extend == '闪避') {
-      node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
-      node.getChildByName('技能s').active = true;
-      node.getChildByName('技能s').opacity = 255;
-      node.getChildByName('技能s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.delayTime(_this.sudu(1)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, 0)), cc.callFunc(function () {
-        node.getChildByName('技能s').active = false;
-      }, this)));
-    }
-
-    return new Promise(function (resolve) {
-      resolve();
-    });
-  },
-  //准备动作--变大
-  buttonReady: function buttonReady(node, biology) {
     var _this4 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      var _this, actionhiddenBig, actionhiddenSmoll;
-
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              _this = _this4; // var _this =this
-              // var waite_time=waite_time||0
-              // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
-
-              actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.4)), 1), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.callFunc(function () {
-                // //等待攻击完成
-                _this.playTips(node, biology);
-
-                _this.playReady(node, biology);
-              }, _this4)); //变大还原//变大
-              // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
-              //闪烁
-              // const actionhiddenOn = cc.fadeTo(0.1,0);
-              // const actionhiddenoff = cc.fadeTo(0.1,255); 
-
-              actionhiddenSmoll = cc.scaleTo(_this.sudu(0.5), 1, 1); //变大还原
-              // cc.spwan( 同时完成
-
               return _context3.abrupt("return", new Promise(function (resolve) {
+                var _this = _this4; //攻击动作
+                //技能--攻击动画
+
+                if (is_skill != 0) {
+                  // cc.log(biology)
+                  node.getChildByName('技能效果').active = true;
+                  node.getChildByName('技能效果').opacity = 255; // cc.loader.loadRes('图标技能效果/'+biology.skill.xiaoguo, cc.SpriteFrame, function (err, texture) { 
+                  //   node.getChildByName('技能效果').getComponent(cc.Sprite).spriteFrame = texture; 
+                  // });
+
+                  if (!biology.skill.xiaoguo) {
+                    biology.skill.xiaoguo = '血爆'; //默认效果
+                  }
+
+                  node.getChildByName('技能效果').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(cc.loader.getRes('图标技能效果/' + biology.skill.xiaoguo));
+                  node.getChildByName('技能效果').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.1, 1.1), cc.fadeOut(0.2), cc.scaleTo(_this.sudu(0.5), 1, 1), cc.callFunc(function () {
+                    node.getChildByName('技能效果').active = false;
+                  }, _this4)));
+                }
+
+                if (biology.extend == 'moFa') {
+                  // cc.log(biology.hurt_msg)
+                  // cc.log(biology)
+                  // node.getChildByName('扣血s').color = new cc.color('#3568D5');
+                  // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
+                  node.getChildByName('魔法s').getComponent(cc.Label).string = biology.hurt_go_value;
+                  var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar);
+                  progressBar.progress = biology.hurt_go_value / node.moFa;
+                  progressBar.completeCount = biology.hurt_go_value;
+                  progressBar.totalCount = node.moFa; //  耗蓝为0跳过0跳过
+
+                  if (biology.hurt_msg < 0) {
+                    //扣蓝渐隐
+                    node.getChildByName('扣蓝s').getComponent(cc.Label).string = biology.hurt_msg;
+                    node.getChildByName('扣蓝s').active = true;
+                    node.getChildByName('扣蓝s').opacity = 255;
+                    node.getChildByName('扣蓝s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
+                      node.getChildByName('扣蓝s').active = false;
+                    }, _this4)));
+                  } else if (biology.hurt_msg > 0) {
+                    //扣蓝渐隐
+                    node.getChildByName('加蓝s').getComponent(cc.Label).string = biology.hurt_msg;
+                    node.getChildByName('加蓝s').active = true;
+                    node.getChildByName('加蓝s').opacity = 255;
+                    node.getChildByName('加蓝s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
+                      node.getChildByName('加蓝s').active = false;
+                    }, _this4)));
+                  }
+                }
+
+                if (biology.extend == 'shengMing') {
+                  //血条动作
+                  // node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
+                  node.getChildByName('生命s').getComponent(cc.Label).string = biology.hurt_go_value;
+                  var progressBar = node.getChildByName('生命').getComponent(cc.ProgressBar);
+                  progressBar.progress = biology.hurt_go_value / node.shengMing;
+                  progressBar.completeCount = biology.hurt_go_value;
+                  progressBar.totalCount = node.shengMing;
+
+                  if (biology.hurt_go >= 0) {
+                    //加血渐隐
+                    // node.getChildByName('加血s').color = new cc.color('FF0000');
+                    node.getChildByName('加血s').getComponent(cc.Label).string = biology.hurt_msg;
+                    node.getChildByName('加血s').active = true;
+                    node.getChildByName('加血s').opacity = 255;
+                    node.getChildByName('加血s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
+                      node.getChildByName('加血s').active = false;
+                    }, _this4)));
+                  } else {
+                    //扣血渐隐
+                    if (biology.is_baoji == 1) {
+                      //暴击样式
+                      node.getChildByName('暴击s').active = true;
+                      node.getChildByName('暴击s').opacity = 255;
+                      node.getChildByName('暴击s').getComponent(cc.Label).string = '暴击' + biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FF5700');
+
+                      node.getChildByName('暴击s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.5, 1.5), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
+                        node.getChildByName('暴击s').active = false;
+                      }, _this4)));
+                    } else {
+                      //普通样式
+                      node.getChildByName('扣血s').active = true;
+                      node.getChildByName('扣血s').opacity = 255;
+                      node.getChildByName('扣血s').getComponent(cc.Label).string = biology.hurt_msg; // node.getChildByName('扣血s').color = new cc.color('#FBD800');
+
+                      node.getChildByName('扣血s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.moveBy(_this.sudu(1), cc.v2(0, 40)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, -40)), cc.callFunc(function () {
+                        node.getChildByName('扣血s').active = false;
+                      }, _this4)));
+                    } //受伤动画
+
+
+                    node.getChildByName('受伤').active = true;
+                    node.getChildByName('受伤').opacity = 255;
+                    node.getChildByName('受伤').runAction(cc.fadeOut(1), cc.callFunc(function () {
+                      node.getChildByName('受伤').active = false;
+                    }, _this4));
+                  } //死亡
+
+
+                  if (biology.hurt_go_value == 0) {
+                    node.getChildByName('悟性').active = false;
+                    node.getChildByName('生命').active = false;
+                    node.getChildByName('魔法').active = false;
+                    node.getChildByName('悟性s').active = false;
+                    node.getChildByName('生命s').active = false;
+                    node.getChildByName('魔法s').active = false;
+                    node.getChildByName('魔法s').active = false;
+                    node.getChildByName('魔法s').active = false;
+                    node.getChildByName('生物').active = false;
+                    node.getChildByName('悟性星星').active = false;
+                    node.getChildByName('悟性星星s').active = false; // 死亡
+
+                    node.getChildByName('死亡').active = true; // cc.loader.loadRes('biology_pic/1墓碑', function (err, texture) {  
+                    //   node.getChildByName('受伤').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                    // })
+
+                    if (node.is_my == 0) {
+                      //图片翻转
+                      node.getChildByName('生物').setScale(-1, 1);
+                    } // cc.log(biology)
+                    // node.getChildByName('受伤').runAction(cc.fadeIn(1),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this)));
+                    //金币
+                    // node.getChildByName('金币s').getComponent(cc.Label).string= '+$'+node.jing_bi
+                    // node.getChildByName('金币s').active=true
+                    // node.getChildByName('金币s').opacity=255
+                    // // node.getChildByName('金币s').runAction(cc.moveBy(3,cc.v2(0,60)));
+                    // node.getChildByName('金币s').runAction(cc.fadeOut(3),cc.callFunc(function(){  node.getChildByName('金币s').active=false },this)));
+                    // // node.getChildByName('金币s').runAction(cc.moveBy(_this.sudu(0.1),cc.v2(0,-40)));
+
+                  }
+                }
+
+                if (biology.extend == '闪避') {
+                  node.getChildByName('技能s').getComponent(cc.Label).string = '闪避';
+                  node.getChildByName('技能s').active = true;
+                  node.getChildByName('技能s').opacity = 255;
+                  node.getChildByName('技能s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.delayTime(_this.sudu(1)), cc.fadeOut(0.1), cc.scaleTo(_this.sudu(0.1), 1, 1), cc.moveBy(_this.sudu(0.1), cc.v2(0, 0)), cc.callFunc(function () {
+                    node.getChildByName('技能s').active = false;
+                  }, _this4)));
+                }
+
+                resolve();
+              }));
+
+            case 1:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  //准备动作--变大
+  buttonReady: function buttonReady(node, biology) {
+    var _this5 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              return _context4.abrupt("return", new Promise(function (resolve) {
+                var _this = _this5; // var _this =this
+                // var waite_time=waite_time||0
+                // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
+
+                var actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.4)), 1), cc.scaleTo(_this.sudu(0.5), 1.3, 1.3), cc.callFunc(function () {
+                  // //等待攻击完成
+                  _this.playTips(node, biology);
+
+                  _this.playReady(node, biology);
+                }, _this5)); //变大还原//变大
+                // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
+                //闪烁
+                // const actionhiddenOn = cc.fadeTo(0.1,0);
+                // const actionhiddenoff = cc.fadeTo(0.1,255); 
+
+                var actionhiddenSmoll = cc.scaleTo(_this.sudu(0.5), 1, 1); //变大还原
+                // cc.spwan( 同时完成
+
                 node.runAction(cc.sequence(actionhiddenBig, actionhiddenSmoll, // 执行动作完成之后调用的方法
                 cc.callFunc(function () {
                   //先走提示再动作
@@ -314,28 +326,28 @@ var httpFightingExtend = cc.Class({
                 })));
               }));
 
-            case 4:
+            case 1:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }
-      }, _callee3);
+      }, _callee4);
     }))();
   },
   //移动
   buttonMove: function buttonMove(node, m_node, biology) {
-    var _this5 = this;
+    var _this6 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
       var _this, arr, m_x, m_y, m_x_move, actionLeft, actionRight;
 
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
-              _this = _this5;
+              _this = _this6;
               arr = [];
-              _this = _this5;
+              _this = _this6;
               m_x = 10;
               m_y = 0;
               m_x_move = 0;
@@ -358,14 +370,14 @@ var httpFightingExtend = cc.Class({
                   //受伤，闪烁
                   _this.buttonShake(m_node, biology);
                 }
-              }, _this5)); // const actionWaite = cc.delayTime(_this.sudu(0.1)) 
+              }, _this6)); // const actionWaite = cc.delayTime(_this.sudu(0.1)) 
               //返回位置
 
               actionRight = cc.spawn(cc.moveBy(0.1, cc.v2(-m_x, -m_y)), cc.scaleTo(_this.sudu(0.3), 1, 1), cc.callFunc(function () {// //等待攻击完成
-              }, _this5)); // 让节点在向上移动的同时缩放
+              }, _this6)); // 让节点在向上移动的同时缩放
               // arr.push(cc.scaleTo(_this.sudu(0.5), 1,1))
 
-              return _context4.abrupt("return", new Promise(function (resolve) {
+              return _context5.abrupt("return", new Promise(function (resolve) {
                 node.runAction(cc.sequence(actionLeft, actionRight, cc.callFunc(function () {
                   resolve();
                 })));
@@ -373,10 +385,10 @@ var httpFightingExtend = cc.Class({
 
             case 12:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }))();
   },
   //闪避     // cc.spwan( 同时完成  cc.sequence( 按顺序执行

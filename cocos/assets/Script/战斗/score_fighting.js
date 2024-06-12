@@ -174,7 +174,7 @@ cc.Class({
         // }
         //消耗魔法 --技能名称和消耗放一起了
         if(his_log.h_need.length!=0){
-          await     _this.readySkill(his_log.h_need)
+          await     _this.needSkill(his_log.h_need)
         }
         // //go和do 二选一 ，need 必有   
         // // 发起技能名称被动
@@ -248,14 +248,13 @@ cc.Class({
             var _this_hero_node =cc.sys.fightingArray[biology.goid]
             var _targ_hero_node =cc.sys.fightingArray[biology.doid]
             await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
-            await httpRequestFightingExtend.playAction(_this_hero_node,biology,1)
+            // await httpRequestFightingExtend.playAction(_this_hero_node,biology,1)
             }
         } 
       // resolve();})
     },
     //技能消耗动作
     async needSkill(his_log_extend){
-    
       if(his_log_extend.length!=0){
         var _this =this
         for (var npage=0; npage<his_log_extend.length; npage++){
@@ -265,7 +264,8 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
           // _this.schedule(function(){
-            await  httpRequestFightingExtend.playAction(_targ_hero_node,biology,0) //不需要其它动作，瞬发伤害动作
+            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
           // },1)
         }
       }

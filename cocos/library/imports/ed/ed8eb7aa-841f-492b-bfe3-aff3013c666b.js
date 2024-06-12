@@ -289,7 +289,7 @@ cc.Class({
               }
 
               _context5.next = 7;
-              return _this.readySkill(his_log.h_need);
+              return _this.needSkill(his_log.h_need);
 
             case 7:
               if (!(his_log.h_go.length != 0)) {
@@ -409,7 +409,7 @@ cc.Class({
           switch (_context7.prev = _context7.next) {
             case 0:
               if (!(his_log_extend.length != 0)) {
-                _context7.next = 14;
+                _context7.next = 12;
                 break;
               }
 
@@ -418,7 +418,7 @@ cc.Class({
 
             case 3:
               if (!(npage < his_log_extend.length)) {
-                _context7.next = 14;
+                _context7.next = 12;
                 break;
               }
 
@@ -429,15 +429,11 @@ cc.Class({
               return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
 
             case 9:
-              _context7.next = 11;
-              return httpRequestFightingExtend.playAction(_this_hero_node, biology, 1);
-
-            case 11:
               npage++;
               _context7.next = 3;
               break;
 
-            case 14:
+            case 12:
             case "end":
               return _context7.stop();
           }
@@ -457,7 +453,7 @@ cc.Class({
           switch (_context8.prev = _context8.next) {
             case 0:
               if (!(his_log_extend.length != 0)) {
-                _context8.next = 12;
+                _context8.next = 14;
                 break;
               }
 
@@ -466,7 +462,7 @@ cc.Class({
 
             case 3:
               if (!(npage < his_log_extend.length)) {
-                _context8.next = 12;
+                _context8.next = 14;
                 break;
               }
 
@@ -476,14 +472,18 @@ cc.Class({
               // _this.schedule(function(){
 
               _context8.next = 9;
-              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 0);
+              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
 
             case 9:
+              _context8.next = 11;
+              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1);
+
+            case 11:
               npage++;
               _context8.next = 3;
               break;
 
-            case 12:
+            case 14:
             case "end":
               return _context8.stop();
           }

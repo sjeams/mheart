@@ -34,16 +34,6 @@
       },this)));
     }
   },
-
-  //攻击动作
-  async playAction(node,biology,is_skill){ 
-    //准备动作
-    var _this =this;
-    // _this.playReady(node,biology)
-    _this.playMove(node,biology,is_skill)
-  
-    // return new Promise(resolve => {resolve(); });  
-  },
   // 准备动作--悟性-治疗-中毒-冰冻-眩晕 持续伤害--回合前结算等
   playReady(node,biology){
     var _this =this;
@@ -72,9 +62,17 @@
     }
 
   },
+  //攻击动作
+  async playAction(node,biology,is_skill){ 
+    //准备动作
+    var _this =this;
+    // _this.playReady(node,biology)
+    await _this.playMove(node,biology,is_skill)
+  },
+
   //行动--技能攻击 和 普通攻击
-  playMove(node,biology,is_skill){
-    
+  async playMove(node,biology,is_skill){
+    return new Promise(resolve => {  
       var _this =this;
       //攻击动作
       //技能--攻击动画
@@ -88,7 +86,6 @@
         if(!biology.skill.xiaoguo){
           biology.skill.xiaoguo ='血爆'; //默认效果
         }
-      
         node.getChildByName('技能效果').getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(cc.loader.getRes('图标技能效果/'+biology.skill.xiaoguo));
         node.getChildByName('技能效果').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)),cc.scaleTo(_this.sudu(0.5), 1.1, 1.1),cc.fadeOut(0.2),cc.scaleTo(_this.sudu(0.5), 1, 1),cc.callFunc(function(){  node.getChildByName('技能效果').active=false  },this)));
       }
@@ -200,8 +197,8 @@
         node.getChildByName('技能s').opacity=255
         node.getChildByName('技能s').runAction(cc.sequence(cc.fadeIn(_this.sudu(0.1)),cc.scaleTo(_this.sudu(0.5), 1.3, 1.3),cc.delayTime(_this.sudu(1)),cc.fadeOut(0.1),cc.scaleTo(_this.sudu(0.1), 1, 1),cc.moveBy(_this.sudu(0.1),cc.v2(0,0)),cc.callFunc(function(){  node.getChildByName('技能s').active=false },this)));
       }
-      return new Promise(resolve => {     resolve() })
 
+      resolve() })
     },
 
 
@@ -210,6 +207,7 @@
 
       //准备动作--变大
       async buttonReady(node,biology) {
+        return new Promise(resolve => {
         var _this =this;
           // var _this =this
           // var waite_time=waite_time||0
@@ -225,7 +223,7 @@
           // const actionhiddenoff = cc.fadeTo(0.1,255); 
           const actionhiddenSmoll =  cc.scaleTo(_this.sudu(0.5),1,1)//变大还原
           // cc.spwan( 同时完成
-          return new Promise(resolve => {
+
           node.runAction(
                   cc.sequence(actionhiddenBig,actionhiddenSmoll,
                   // 执行动作完成之后调用的方法
@@ -241,6 +239,11 @@
           });
 
       },
+
+
+ 
+
+
       //移动
       async buttonMove(node,m_node,biology) {
           var _this =this;
