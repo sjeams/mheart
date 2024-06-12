@@ -46,6 +46,17 @@ cc.Class({
     // // clickEventHandler.customEventData = index;
     // button.clickEvents.push(clickEventHandler);
   },
+  button_beishu: function button_beishu() {
+    // var beisu_arr =[1,2,3,4,8];
+    if (http_globalData.user_info.beishu < 4) {
+      http_globalData.user_info.beishu = parseInt(http_globalData.user_info.beishu) + 1;
+    } else {
+      http_globalData.user_info.beishu = 1;
+    } // http_globalData.user_info.beishu
+
+
+    cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
+  },
   back_home: function back_home() {
     httpRequest.playGame("sence_dating");
   },

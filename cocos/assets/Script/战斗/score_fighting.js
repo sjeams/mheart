@@ -5,22 +5,21 @@ cc.Class({
       // 根据TOOLS生成相应的道具
       toolsArray:[],
       fightingArray:[],   
-      content: cc.Node,
-      person: cc.Prefab,
+      // content: cc.Node,
+      // person: cc.Prefab,
       home: cc.Node,
-      reload: cc.Node,
-      back: cc.Node,
+      // back: cc.Node,
       back_time: cc.Node, //跳过回合
-      //列表
-      test_scrollView: {
-        default: null,
-        type: cc.ScrollView
-      },
-      //翻页容器
-      test_pageView: {
-        default: null,
-        type: cc.PageView
-      },
+      // //列表
+      // test_scrollView: {
+      //   default: null,
+      //   type: cc.ScrollView
+      // },
+      // //翻页容器
+      // test_pageView: {
+      //   default: null,
+      //   type: cc.PageView
+      // },
 
     },
     init(){
@@ -33,12 +32,15 @@ cc.Class({
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
       // this.spawnTools()
+      await httpRequestBagApi.http_user_info()
       await this.spawnTools() //加载数据
-      this.playTask()
+      await this.playTask()
     },
     //task
     async playTask(){
       await this.goPlay() //实例化对象
+      await this.fightingEnd() //先加载战斗结果
+      await httpRequestFightingExtend.alertBoat('准备回合') //准备回合
       await this.fighting_boat() //开启回合战斗
 	  },
 
@@ -101,8 +103,6 @@ cc.Class({
       var boat_length = fighting_list.fighting_history.length
       var history_count =  fighting_list.history_count
       var fighting_history= fighting_list.fighting_history;
-      //先加载弹窗结果
-      _this.fightingEnd(fighting_list)
       if(boat_length!=0){
         var boat=0;
         var boat_count=-1;
@@ -115,31 +115,25 @@ cc.Class({
             if(history_count[boat].total<boat_count){
               boat++;
             }
-            //因为是从0开始，所以相等就结束 
-            if(boat_count==boat_length){
-              // cc.log(111)
-              // 在第六次执行回调时取消这个计时器
-              // _this.fightingEnd(fighting_list)
-              cc.find('Canvas/结算').active =true;// 结束弹窗结果
-              // _this.unschedule();
-              _this.unscheduleAllCallbacks();//停止某组件的所有计时器
-            }else{
-              //判断下动作是否已经下一回合
-              if(cc.find('Canvas/大厅/time').getComponent(cc.Label).string!='第'+ parseInt(boat+1)+'回合' ){
-                cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第'+ parseInt(boat+1)+'回合'                    
-                cc.find('Canvas/大厅/time').runAction(cc.sequence(cc.scaleTo(0.3, 2, 2),cc.scaleTo(0.3, 1,1)));//建一个缩放到1.5倍大小的动作，持续时间2秒
-              }
-              // cc.log(fighting_history[boat_count])
-              //如果是空回合 ，等待跳过
-              if(fighting_history[boat_count]){
-                await   _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
-              }
+            await httpRequestFightingExtend.alertBoat('第'+ parseInt(boat+1)+'回合')
+            //判断下动作是否已经下一回合
+            // if(cc.find('Canvas/大厅/time').getComponent(cc.Label).string!='第'+ parseInt(boat+1)+'回合' ){
+            //   await this.alertBoat('第'+ parseInt(boat+1)+'回合')
+            //   // cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第'+ parseInt(boat+1)+'回合'                    
+            //   // return new Promise(resolve => {  cc.find('Canvas/大厅/time').runAction(   cc.sequence(cc.scaleTo(0.2, 2, 2),cc.scaleTo(0.2, 1,1),cc.callFunc(function(){   resolve()},this)));//建一个缩放到1.5倍大小的动作，持续时间2秒
+            //   //  }) 
+            // }
+            // cc.log(fighting_history[boat_count])
+            //如果是空回合 ，等待跳过
+            if(fighting_history[boat_count]){
+              await   _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
             }
           // 绑定点击事件
           _this.back_time.on('click', _this.onButtonClicked,this);    
         // },1,boat_length,1.5);////2秒后执行1次间隔5秒
           }
       }
+      return new Promise(resolve => {         _this.alertResult(); resolve() })
       // resolve();})
     },
  
@@ -149,6 +143,13 @@ cc.Class({
       // var _this =this
       // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
       //   cc.log('跳过')
+    },
+
+    alertResult(){
+      var _this =this;
+      cc.find('Canvas/结算').active =true;// 结束弹窗结果
+      // _this.unschedule();
+      _this.unscheduleAllCallbacks();//停止某组件的所有计时器
     },
 
     async fighting_history(his_log) {
@@ -189,33 +190,37 @@ cc.Class({
       // resolve();})
     },
       //战斗结束
-    fightingEnd(fighting_list) {
+   async fightingEnd() {
+        // var _this =this;
+        var fighting_list =  http_globalData.fighting.data; 
         // var _task =task||0;
-        var _this =this;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+        return new Promise(resolve => { 
         cc.loader.loadRes('/model弹窗/biology_结算', function(errorMessage,loadedResource){
-            //检查资源加载
-            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-            if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-            //开始实例化预制资源
-            var TipBoxPrefab = cc.instantiate(loadedResource);
-            // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
-            if(fighting_list.poition_winner==1){
-              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
-            }else{
-              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
-            }
-            //将预制资源添加到父节点
-            // CanvasNode.addChild(TipBoxPrefab);
-            cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
-            //请求战斗记录
-            // if(_task==1){
-            //     console.log(11111)
-            //     _this.fightint(sence);
-            // }else{
-            //     _this.progress(sence);
-            // }
-        });
+              //检查资源加载
+              if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+              if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+              //开始实例化预制资源
+              var TipBoxPrefab = cc.instantiate(loadedResource);
+              // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+              if(fighting_list.poition_winner==1){
+                TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
+              }else{
+                TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
+              }
+              //将预制资源添加到父节点
+              // CanvasNode.addChild(TipBoxPrefab);
+              cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
+              //请求战斗记录
+              // if(_task==1){
+              //     console.log(11111)
+              //     _this.fightint(sence);
+              // }else{
+              //     _this.progress(sence);
+              // }
+              resolve()
+          });
+        }) 
     },
 
     //生成地图
@@ -240,15 +245,15 @@ cc.Class({
             var biology = his_log_extend[npage];
             var _this_hero_node =cc.sys.fightingArray[biology.goid]
             var _targ_hero_node =cc.sys.fightingArray[biology.doid]
-          
-            await  _this.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.playAction(_this_hero_node,biology,1)
             }
         } 
       // resolve();})
     },
     //技能消耗动作
-    needSkill(his_log_extend){
-      return new Promise(resolve => {
+    async needSkill(his_log_extend){
+    
       if(his_log_extend.length!=0){
         var _this =this
         for (var npage=0; npage<his_log_extend.length; npage++){
@@ -258,15 +263,15 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
           // _this.schedule(function(){
-          httpRequestFightingExtend.playAction(_targ_hero_node,biology,0) //不需要其它动作，瞬发伤害动作
+            await  httpRequestFightingExtend.playAction(_targ_hero_node,biology,0) //不需要其它动作，瞬发伤害动作
           // },1)
         }
       }
-     resolve();})
+ 
     },
     //技能攻击动作
-    playSkill(his_log_extend){
-      return new Promise(resolve => {
+    async playSkill(his_log_extend){
+     
       if(his_log_extend.length!=0){
         var _this =this
         for (var npage=0; npage<his_log_extend.length; npage++){
@@ -276,10 +281,11 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           //2个攻击类型只能二选一 
           // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
-            httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
+          await httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
+  
         }
       }
-    resolve();})
+ 
     },
     //普通攻击动作
     async  playFight(his_log_extend){
@@ -294,163 +300,17 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           if(biology.goid==biology.doid){
               // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
-            await  _this.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.playAction(_this_hero_node,biology,0)
           }else{
-            await _this.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
+            await httpRequestFightingExtend.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
+            await httpRequestFightingExtend.playAction(_targ_hero_node,biology,0)
           }
         }
       }
     // resolve();})
     },
-    //准备动作--变大
-    async buttonReady(node,biology) {
-      return new Promise(resolve => {
-        // var _this =this
-        // var waite_time=waite_time||0
-        const actionhiddenBig =   cc.spawn(cc.scaleTo(0.1, 1.1, 1.1),cc.callFunc(function(){
-          //等待攻击完成
-            httpRequestFightingExtend.playTips(node,biology)
-        },this));//变大还原//变大
-        // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
 
-        // const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
-        // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
-        // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-        // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
-        // actionLeft, actionRight, actionLeftSecond, actionRightSecond,
-        //闪烁
-        // const actionhiddenOn = cc.fadeTo(0.1,0);
-        // const actionhiddenoff = cc.fadeTo(0.1,255); 
-        const actionhiddenSmoll =  cc.scaleTo(0.2,1,1)//变大还原
-        // cc.spwan( 同时完成
-
-            node.runAction(
-                cc.sequence(actionhiddenBig,actionhiddenSmoll,
-                // 执行动作完成之后调用的方法
-                cc.callFunc(() => {
- 
-                    //先走提示再动作
-                    // _this.schedule(function(){
-                    // httpRequestFightingExtend.playTips(node,biology)
-                    httpRequestFightingExtend.playAction(node,biology)
-                    // },1)
-                    resolve();
-                }) )
-            );
-        });
-    },
-    //移动
-    async buttonMove(node,m_node,biology) {
-      return new Promise(resolve => {
-        var arr =[];
-        var _this =this;
-        var m_x=10
-        var m_y=0
-        var m_x_move =0
-        if (node.is_my==1){
-          m_x_move =-120
-        }else{
-          m_x_move =120
-        }    
-        if (node.x != m_node.x) m_x = m_node.x - node.x+m_x_move
-        if (node.y != m_node.y) m_y = m_node.y - node.y 
-        //普通攻击
-        const actionLeft = cc.spawn(cc.moveBy(0.1,cc.v2(m_x,m_y)),cc.scaleTo(0.1, 1, 1.2),cc.callFunc(function(){
-                //等待攻击完成  
-                if(biology.is_shanbi){
-                  //闪避，后移
-                    _this.buttonMoveOut(m_node,biology)
-                }else{
-                  //受伤，闪烁
-                  _this.buttonShake(m_node,biology)
-                }
-
-        },this)) 
-        // const actionWaite = cc.delayTime(0.01) 
-        //返回位置
-        const actionRight =cc.spawn(cc.moveBy(0.1,cc.v2(-m_x,-m_y)),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){
-            // //等待攻击完成
-            // _this.buttonShake(m_node,biology)
-        },this))
-        // 让节点在向上移动的同时缩放
-        // arr.push(cc.scaleTo(0.1, 1,1))
-        node.runAction(
-            cc.sequence(actionLeft,actionRight,cc.callFunc(() => {    
-              resolve(); //执行完动作再回调
-            }))
-        );
-      });
-  },
-
-
-  //闪避     // cc.spwan( 同时完成  cc.sequence( 按顺序执行
-    buttonMoveOut(node,biology) {
- 
-      if(biology.position_my==1){
-        //己方 后移
-        const actionLeft = cc.moveBy(0.1, cc.v2(30, 5));
-        const actionRightSecond = cc.moveBy(0.1, cc.v2(-30, -5));
-
-          node.runAction(
-                cc.sequence(actionLeft,actionRightSecond,
-                // 执行动作完成之后调用的方法
-                    cc.callFunc(() => {
- 
-                        // _this.schedule(function(){
-                        httpRequestFightingExtend.playAction(node,biology)
-                        // },1)
-                        // resolve();
-                  }) )
-            );
-
-      }else{
-        //敌方方 前移
-        const actionLeft = cc.moveBy(0.1, cc.v2(-30, 5));
-        const actionRightSecond = cc.moveBy(0.1, cc.v2(30, -5));
- 
-            node.runAction(
-                cc.sequence(actionLeft,actionRightSecond,
-                // 执行动作完成之后调用的方法
-                    cc.callFunc(() => {
- 
-                        // _this.schedule(function(){
-                        httpRequestFightingExtend.playAction(node,biology)
-                        // },1)
-                        // resolve();
-                  }) )
-            );
-      
-      }
-   
-  },
-  //受击
-  buttonShake(node,biology) {
-    // var _this =this;
-    // var waite_time=waite_time||0
-    // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
-    const actionhiddenOn = cc.fadeTo(0.1,0);
-    // const actionLeft = cc.moveBy(0.1, cc.v2(-10, 0));
-    // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
-    // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-    // const actionRightSecond = cc.moveBy(0.1, cc.v2(10, 0));
-    const actionhiddenoff = cc.fadeTo(0.1,255);
-    // cc.spwan( 同时完成
-    // return new Promise(resolve => {
-        node.runAction(
-            cc.sequence(actionhiddenOn,actionhiddenoff,
-            // cc.sequence(actionhiddenOn,actionLeft,actionhiddenoff,actionhiddenoff,
-            // cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
-            // 执行动作完成之后调用的方法
-                cc.callFunc(() => {
-
-                    // _this.schedule(function(){
-                    httpRequestFightingExtend.playAction(node,biology)
-                    // },1)
-                    // resolve();
-                }) )
-        );
-    // });
-},
     //生物渐隐-淡出-淡入
     // nodefadeIn(time,type,node){
     //   // cc.log(node)
@@ -548,7 +408,13 @@ cc.Class({
     removeBoxprefab(){
       cc.sys.BoxPrefab.removeAllChildren();
       cc.sys.BoxPrefab.destroyAllChildren();
-    }
+    },
+
+
+    // onDestroy() {
+    //     // 停止定时器
+    //     this.unschedule(this.fighting_history);
+    // }
 
  
 });

@@ -161,10 +161,10 @@ class UserWords extends ActiveRecord
     public  function getFightingPosition($myint=POSITION_MY,$biology,$doid=0){
         if($myint==POSITION_MY){
             //自己位置
-            $postition=$this->getFightingMap(0);
+            $postition=$this->getFightingMap(0,POSITION_MY);
         }else{
             //敌方位置
-            $postition=$this->getFightingMap(15);
+            $postition=$this->getFightingMap(15,POSITION_ENEMY);
         }
         //生物入阵
         foreach($postition as $k=>$v){

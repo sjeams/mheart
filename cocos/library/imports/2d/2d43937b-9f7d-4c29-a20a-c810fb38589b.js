@@ -4,6 +4,10 @@ cc._RF.push(module, '2d439N7n31MKaIKyBD7OFib', 'zhaohuan_home');
 
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 require("../common");
 
 cc.Class({
@@ -80,9 +84,21 @@ cc.Class({
   },
   //阵法 关闭 提交结果，需要单独处理了
   openzhenfa_hidden: function openzhenfa_hidden() {
-    // cc.log(http_globalData.zhenfa)   
-    httpRequestBagApi.http_update_zhenfa();
-    cc.find('Canvas/弹窗').removeAllChildren();
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return httpRequestBagApi.http_update_zhenfa();
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   // update (dt) {},
   back_home: function back_home() {

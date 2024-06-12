@@ -86,10 +86,10 @@ cc.Class({
         cc.find('Canvas/弹窗').removeAllChildren();
     },
     //阵法 关闭 提交结果，需要单独处理了
-    openzhenfa_hidden(){
+    async openzhenfa_hidden(){
         // cc.log(http_globalData.zhenfa)   
-        httpRequestBagApi.http_update_zhenfa()
-        cc.find('Canvas/弹窗').removeAllChildren();
+        await httpRequestBagApi.http_update_zhenfa()
+        // cc.find('Canvas/弹窗').removeAllChildren();
     }
     // update (dt) {},
 });

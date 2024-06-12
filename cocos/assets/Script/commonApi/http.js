@@ -267,5 +267,5 @@ const HttpHelper = cc.Class({
             return sence[url];
         },
 });
-httpRequest = new HttpHelper();
+httpRequest =  new HttpHelper();
 // window.HttpHelper = new HttpHelper();

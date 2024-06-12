@@ -6,10 +6,13 @@ cc.Class({
      properties: {
 
      },
-     onLoad () {
+   async  onLoad () {
           // 常驻节点
           // cc.game.addPersistRootNode( myNode)
           // cc.game.removePersistRootNode( myNode)
+         //获取生物列表--实例化用户登录信息
+         await httpRequestBagApi.http_user_info()
+         await httpRequestBagApi.http_bag_info()
      },
 
      start () {

@@ -97,12 +97,19 @@ cc.Class({
                     //声明节点对象
                     var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon);
                     var map = TOOLS[prop];
-                    var info = map.biology;
+                    var info = map.biology; //设置距离
+
+                    map_value = 50;
+
+                    if (is_my) {
+                      map_x = map.x - map_value;
+                    } else {
+                      map_x = map.x + map_value;
+                    }
 
                     if (info.length != 0) {
                       //放在资源下面
-                      var image = info.picture;
-                      cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
+                      cc.loader.loadRes(info.picture, cc.SpriteFrame, function (err, texture) {
                         if (err) {
                           // cc.error(err.message || err);
                           return;
@@ -125,7 +132,8 @@ cc.Class({
                       _this.onConfirBtn(TipBoxPrefab_icon, info); //写入icon
 
 
-                      TipBoxPrefab_icon.x = parseInt(map.x);
+                      TipBoxPrefab_icon.x = parseInt(map_x); //重新定义了间距
+
                       TipBoxPrefab_icon.getChildByName('阵法s').getComponent(cc.Label).string = star - 1;
                       TipBoxPrefab_icon.y = map.y;
                       TipBoxPrefab_icon.is_my = is_my; //阵容
@@ -145,6 +153,8 @@ cc.Class({
                   };
 
                   for (var prop in info_list) {
+                    var map_value;
+
                     _loop();
                   }
 

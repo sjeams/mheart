@@ -16,23 +16,22 @@ cc.Class({
     // 根据TOOLS生成相应的道具
     toolsArray: [],
     fightingArray: [],
-    content: cc.Node,
-    person: cc.Prefab,
+    // content: cc.Node,
+    // person: cc.Prefab,
     home: cc.Node,
-    reload: cc.Node,
-    back: cc.Node,
-    back_time: cc.Node,
-    //跳过回合
-    //列表
-    test_scrollView: {
-      "default": null,
-      type: cc.ScrollView
-    },
-    //翻页容器
-    test_pageView: {
-      "default": null,
-      type: cc.PageView
-    }
+    // back: cc.Node,
+    back_time: cc.Node //跳过回合
+    // //列表
+    // test_scrollView: {
+    //   default: null,
+    //   type: cc.ScrollView
+    // },
+    // //翻页容器
+    // test_pageView: {
+    //   default: null,
+    //   type: cc.PageView
+    // },
+
   },
   init: function init() {
     cc.director.getScene(); //获取当前场景
@@ -52,13 +51,17 @@ cc.Class({
               cc.sys.toolsArray = []; // this.spawnTools()
 
               _context.next = 5;
-              return _this2.spawnTools();
+              return httpRequestBagApi.http_user_info();
 
             case 5:
-              //加载数据
-              _this2.playTask();
+              _context.next = 7;
+              return _this2.spawnTools();
 
-            case 6:
+            case 7:
+              _context.next = 9;
+              return _this2.playTask();
+
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -80,9 +83,17 @@ cc.Class({
 
             case 2:
               _context2.next = 4;
-              return _this3.fighting_boat();
+              return _this3.fightingEnd();
 
             case 4:
+              _context2.next = 6;
+              return httpRequestFightingExtend.alertBoat('准备回合');
+
+            case 6:
+              _context2.next = 8;
+              return _this3.fighting_boat();
+
+            case 8:
             case "end":
               return _context2.stop();
           }
@@ -146,14 +157,6 @@ cc.Class({
               return BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_enemy, biolgy_state, 0, poition_my.length);
 
             case 10:
-              //挂载生物--position_ememy
-              // await this.biology_detail_list(BoxPrefab,poition_my,biolgy_state,1,0) //挂载生物--position_my
-              // await this.biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
-              // _this.addMapPic(data) //生成地图
-              // console.log( _this.toolsArray)
-              console.log(cc.sys.fightingArray); // resolve();})
-
-            case 11:
             case "end":
               return _context3.stop();
           }
@@ -177,12 +180,10 @@ cc.Class({
               fighting_list = http_globalData.fighting.data;
               boat_length = fighting_list.fighting_history.length;
               history_count = fighting_list.history_count;
-              fighting_history = fighting_list.fighting_history; //先加载弹窗结果
-
-              _this.fightingEnd(fighting_list);
+              fighting_history = fighting_list.fighting_history;
 
               if (!(boat_length != 0)) {
-                _context4.next = 26;
+                _context4.next = 21;
                 break;
               }
 
@@ -193,9 +194,9 @@ cc.Class({
 
               bpage = 0;
 
-            case 10:
+            case 9:
               if (!(bpage < boat_length)) {
-                _context4.next = 26;
+                _context4.next = 21;
                 break;
               }
 
@@ -204,54 +205,38 @@ cc.Class({
 
               if (history_count[boat].total < boat_count) {
                 boat++;
-              } //因为是从0开始，所以相等就结束 
-
-
-              if (!(boat_count == boat_length)) {
-                _context4.next = 18;
-                break;
               }
 
-              // cc.log(111)
-              // 在第六次执行回调时取消这个计时器
-              // _this.fightingEnd(fighting_list)
-              cc.find('Canvas/结算').active = true; // 结束弹窗结果
-              // _this.unschedule();
+              _context4.next = 14;
+              return httpRequestFightingExtend.alertBoat('第' + parseInt(boat + 1) + '回合');
 
-              _this.unscheduleAllCallbacks(); //停止某组件的所有计时器
-
-
-              _context4.next = 22;
-              break;
-
-            case 18:
-              //判断下动作是否已经下一回合
-              if (cc.find('Canvas/大厅/time').getComponent(cc.Label).string != '第' + parseInt(boat + 1) + '回合') {
-                cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第' + parseInt(boat + 1) + '回合';
-                cc.find('Canvas/大厅/time').runAction(cc.sequence(cc.scaleTo(0.3, 2, 2), cc.scaleTo(0.3, 1, 1))); //建一个缩放到1.5倍大小的动作，持续时间2秒
-              } // cc.log(fighting_history[boat_count])
-              //如果是空回合 ，等待跳过
-
-
+            case 14:
               if (!fighting_history[boat_count]) {
-                _context4.next = 22;
+                _context4.next = 17;
                 break;
               }
 
-              _context4.next = 22;
+              _context4.next = 17;
               return _this.fighting_history(fighting_history[boat_count]);
 
-            case 22:
+            case 17:
               // 绑定点击事件
               _this.back_time.on('click', _this.onButtonClicked, _this6); // },1,boat_length,1.5);////2秒后执行1次间隔5秒
 
 
-            case 23:
+            case 18:
               bpage++;
-              _context4.next = 10;
+              _context4.next = 9;
               break;
 
-            case 26:
+            case 21:
+              return _context4.abrupt("return", new Promise(function (resolve) {
+                _this.alertResult();
+
+                resolve();
+              }));
+
+            case 22:
             case "end":
               return _context4.stop();
           }
@@ -264,6 +249,15 @@ cc.Class({
     // var _this =this
     // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
     //   cc.log('跳过')
+  },
+  alertResult: function alertResult() {
+    var _this = this;
+
+    cc.find('Canvas/结算').active = true; // 结束弹窗结果
+    // _this.unschedule();
+
+    _this.unscheduleAllCallbacks(); //停止某组件的所有计时器
+
   },
   fighting_history: function fighting_history(his_log) {
     var _this7 = this;
@@ -331,42 +325,60 @@ cc.Class({
     }))();
   },
   //战斗结束
-  fightingEnd: function fightingEnd(fighting_list) {
-    // var _task =task||0;
-    var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+  fightingEnd: function fightingEnd() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+      var fighting_list;
+      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              // var _this =this;
+              fighting_list = http_globalData.fighting.data; // var _task =task||0;
+              //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+
+              return _context6.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model弹窗/biology_结算', function (errorMessage, loadedResource) {
+                  //检查资源加载
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  if (!(loadedResource instanceof cc.Prefab)) {
+                    cc.log('你载入的不是预制资源!');
+                    return;
+                  } //开始实例化预制资源
 
 
-    cc.loader.loadRes('/model弹窗/biology_结算', function (errorMessage, loadedResource) {
-      //检查资源加载
-      if (errorMessage) {
-        cc.log('载入预制资源失败, 原因:' + errorMessage);
-        return;
-      }
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
 
-      if (!(loadedResource instanceof cc.Prefab)) {
-        cc.log('你载入的不是预制资源!');
-        return;
-      } //开始实例化预制资源
+                  if (fighting_list.poition_winner == 1) {
+                    TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';
+                  } else {
+                    TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '失败！';
+                  } //将预制资源添加到父节点
+                  // CanvasNode.addChild(TipBoxPrefab);
 
 
-      var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+                  cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab, this); //请求战斗记录
+                  // if(_task==1){
+                  //     console.log(11111)
+                  //     _this.fightint(sence);
+                  // }else{
+                  //     _this.progress(sence);
+                  // }
 
-      if (fighting_list.poition_winner == 1) {
-        TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';
-      } else {
-        TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '失败！';
-      } //将预制资源添加到父节点
-      // CanvasNode.addChild(TipBoxPrefab);
+                  resolve();
+                });
+              }));
 
-
-      cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab, this); //请求战斗记录
-      // if(_task==1){
-      //     console.log(11111)
-      //     _this.fightint(sence);
-      // }else{
-      //     _this.progress(sence);
-      // }
-    });
+            case 2:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }))();
   },
   //生成地图
   addMapPic: function addMapPic(data) {
@@ -387,93 +399,6 @@ cc.Class({
   readySkill: function readySkill(his_log_extend) {
     var _this8 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-      var _this, npage, biology, _this_hero_node, _targ_hero_node;
-
-      return regeneratorRuntime.wrap(function _callee6$(_context6) {
-        while (1) {
-          switch (_context6.prev = _context6.next) {
-            case 0:
-              if (!(his_log_extend.length != 0)) {
-                _context6.next = 12;
-                break;
-              }
-
-              _this = _this8;
-              npage = 0;
-
-            case 3:
-              if (!(npage < his_log_extend.length)) {
-                _context6.next = 12;
-                break;
-              }
-
-              biology = his_log_extend[npage];
-              _this_hero_node = cc.sys.fightingArray[biology.goid];
-              _targ_hero_node = cc.sys.fightingArray[biology.doid];
-              _context6.next = 9;
-              return _this.buttonReady(_this_hero_node, biology);
-
-            case 9:
-              npage++;
-              _context6.next = 3;
-              break;
-
-            case 12:
-            case "end":
-              return _context6.stop();
-          }
-        }
-      }, _callee6);
-    }))();
-  },
-  //技能消耗动作
-  needSkill: function needSkill(his_log_extend) {
-    var _this9 = this;
-
-    return new Promise(function (resolve) {
-      if (his_log_extend.length != 0) {
-        var _this = _this9;
-
-        for (var npage = 0; npage < his_log_extend.length; npage++) {
-          var biology = his_log_extend[npage];
-          var _this_hero_node = cc.sys.fightingArray[biology.goid];
-          var _targ_hero_node = cc.sys.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
-          // _this.schedule(function(){
-
-          httpRequestFightingExtend.playAction(_targ_hero_node, biology, 0); //不需要其它动作，瞬发伤害动作
-          // },1)
-        }
-      }
-
-      resolve();
-    });
-  },
-  //技能攻击动作
-  playSkill: function playSkill(his_log_extend) {
-    var _this10 = this;
-
-    return new Promise(function (resolve) {
-      if (his_log_extend.length != 0) {
-        var _this = _this10;
-
-        for (var npage = 0; npage < his_log_extend.length; npage++) {
-          var biology = his_log_extend[npage];
-          var _this_hero_node = cc.sys.fightingArray[biology.goid];
-          var _targ_hero_node = cc.sys.fightingArray[biology.doid]; //2个攻击类型只能二选一 
-          // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
-
-          httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1); //不需要其它动作，瞬发伤害动作
-        }
-      }
-
-      resolve();
-    });
-  },
-  //普通攻击动作
-  playFight: function playFight(his_log_extend) {
-    var _this11 = this;
-
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
 
@@ -482,7 +407,147 @@ cc.Class({
           switch (_context7.prev = _context7.next) {
             case 0:
               if (!(his_log_extend.length != 0)) {
-                _context7.next = 17;
+                _context7.next = 14;
+                break;
+              }
+
+              _this = _this8;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context7.next = 14;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid];
+              _context7.next = 9;
+              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
+
+            case 9:
+              _context7.next = 11;
+              return httpRequestFightingExtend.playAction(_this_hero_node, biology, 1);
+
+            case 11:
+              npage++;
+              _context7.next = 3;
+              break;
+
+            case 14:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7);
+    }))();
+  },
+  //技能消耗动作
+  needSkill: function needSkill(his_log_extend) {
+    var _this9 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context8.next = 12;
+                break;
+              }
+
+              _this = _this9;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context8.next = 12;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
+              // _this.schedule(function(){
+
+              _context8.next = 9;
+              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 0);
+
+            case 9:
+              npage++;
+              _context8.next = 3;
+              break;
+
+            case 12:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }))();
+  },
+  //技能攻击动作
+  playSkill: function playSkill(his_log_extend) {
+    var _this10 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context9.next = 12;
+                break;
+              }
+
+              _this = _this10;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context9.next = 12;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid]; //2个攻击类型只能二选一 
+              // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
+
+              _context9.next = 9;
+              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1);
+
+            case 9:
+              npage++;
+              _context9.next = 3;
+              break;
+
+            case 12:
+            case "end":
+              return _context9.stop();
+          }
+        }
+      }, _callee9);
+    }))();
+  },
+  //普通攻击动作
+  playFight: function playFight(his_log_extend) {
+    var _this11 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee10$(_context10) {
+        while (1) {
+          switch (_context10.prev = _context10.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context10.next = 21;
                 break;
               }
 
@@ -491,7 +556,7 @@ cc.Class({
 
             case 3:
               if (!(npage < his_log_extend.length)) {
-                _context7.next = 17;
+                _context10.next = 21;
                 break;
               }
 
@@ -501,184 +566,41 @@ cc.Class({
               _targ_hero_node = cc.sys.fightingArray[biology.doid];
 
               if (!(biology.goid == biology.doid)) {
-                _context7.next = 12;
+                _context10.next = 14;
                 break;
               }
 
-              _context7.next = 10;
-              return _this.buttonReady(_this_hero_node, biology);
+              _context10.next = 10;
+              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
 
             case 10:
-              _context7.next = 14;
-              break;
+              _context10.next = 12;
+              return httpRequestFightingExtend.playAction(_this_hero_node, biology, 0);
 
             case 12:
-              _context7.next = 14;
-              return _this.buttonMove(_this_hero_node, _targ_hero_node, biology);
-
-            case 14:
-              npage++;
-              _context7.next = 3;
+              _context10.next = 18;
               break;
 
-            case 17:
+            case 14:
+              _context10.next = 16;
+              return httpRequestFightingExtend.buttonMove(_this_hero_node, _targ_hero_node, biology);
+
+            case 16:
+              _context10.next = 18;
+              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 0);
+
+            case 18:
+              npage++;
+              _context10.next = 3;
+              break;
+
+            case 21:
             case "end":
-              return _context7.stop();
+              return _context10.stop();
           }
         }
-      }, _callee7);
+      }, _callee10);
     }))();
-  },
-  //准备动作--变大
-  buttonReady: function buttonReady(node, biology) {
-    var _this12 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
-      return regeneratorRuntime.wrap(function _callee8$(_context8) {
-        while (1) {
-          switch (_context8.prev = _context8.next) {
-            case 0:
-              return _context8.abrupt("return", new Promise(function (resolve) {
-                // var _this =this
-                // var waite_time=waite_time||0
-                var actionhiddenBig = cc.spawn(cc.scaleTo(0.1, 1.1, 1.1), cc.callFunc(function () {
-                  //等待攻击完成
-                  httpRequestFightingExtend.playTips(node, biology);
-                }, _this12)); //变大还原//变大
-                // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
-                // const actionLeft = cc.moveBy(0.1, cc.v2(-5, 0));
-                // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
-                // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-                // const actionRightSecond = cc.moveBy(0.1, cc.v2(5, 0));
-                // actionLeft, actionRight, actionLeftSecond, actionRightSecond,
-                //闪烁
-                // const actionhiddenOn = cc.fadeTo(0.1,0);
-                // const actionhiddenoff = cc.fadeTo(0.1,255); 
-
-                var actionhiddenSmoll = cc.scaleTo(0.2, 1, 1); //变大还原
-                // cc.spwan( 同时完成
-
-                node.runAction(cc.sequence(actionhiddenBig, actionhiddenSmoll, // 执行动作完成之后调用的方法
-                cc.callFunc(function () {
-                  //先走提示再动作
-                  // _this.schedule(function(){
-                  // httpRequestFightingExtend.playTips(node,biology)
-                  httpRequestFightingExtend.playAction(node, biology); // },1)
-
-                  resolve();
-                })));
-              }));
-
-            case 1:
-            case "end":
-              return _context8.stop();
-          }
-        }
-      }, _callee8);
-    }))();
-  },
-  //移动
-  buttonMove: function buttonMove(node, m_node, biology) {
-    var _this13 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
-      return regeneratorRuntime.wrap(function _callee9$(_context9) {
-        while (1) {
-          switch (_context9.prev = _context9.next) {
-            case 0:
-              return _context9.abrupt("return", new Promise(function (resolve) {
-                var arr = [];
-                var _this = _this13;
-                var m_x = 10;
-                var m_y = 0;
-                var m_x_move = 0;
-
-                if (node.is_my == 1) {
-                  m_x_move = -120;
-                } else {
-                  m_x_move = 120;
-                }
-
-                if (node.x != m_node.x) m_x = m_node.x - node.x + m_x_move;
-                if (node.y != m_node.y) m_y = m_node.y - node.y; //普通攻击
-
-                var actionLeft = cc.spawn(cc.moveBy(0.1, cc.v2(m_x, m_y)), cc.scaleTo(0.1, 1, 1.2), cc.callFunc(function () {
-                  //等待攻击完成  
-                  if (biology.is_shanbi) {
-                    //闪避，后移
-                    _this.buttonMoveOut(m_node, biology);
-                  } else {
-                    //受伤，闪烁
-                    _this.buttonShake(m_node, biology);
-                  }
-                }, _this13)); // const actionWaite = cc.delayTime(0.01) 
-                //返回位置
-
-                var actionRight = cc.spawn(cc.moveBy(0.1, cc.v2(-m_x, -m_y)), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {// //等待攻击完成
-                  // _this.buttonShake(m_node,biology)
-                }, _this13)); // 让节点在向上移动的同时缩放
-                // arr.push(cc.scaleTo(0.1, 1,1))
-
-                node.runAction(cc.sequence(actionLeft, actionRight, cc.callFunc(function () {
-                  resolve(); //执行完动作再回调
-                })));
-              }));
-
-            case 1:
-            case "end":
-              return _context9.stop();
-          }
-        }
-      }, _callee9);
-    }))();
-  },
-  //闪避     // cc.spwan( 同时完成  cc.sequence( 按顺序执行
-  buttonMoveOut: function buttonMoveOut(node, biology) {
-    if (biology.position_my == 1) {
-      //己方 后移
-      var actionLeft = cc.moveBy(0.1, cc.v2(30, 5));
-      var actionRightSecond = cc.moveBy(0.1, cc.v2(-30, -5));
-      node.runAction(cc.sequence(actionLeft, actionRightSecond, // 执行动作完成之后调用的方法
-      cc.callFunc(function () {
-        // _this.schedule(function(){
-        httpRequestFightingExtend.playAction(node, biology); // },1)
-        // resolve();
-      })));
-    } else {
-      //敌方方 前移
-      var _actionLeft = cc.moveBy(0.1, cc.v2(-30, 5));
-
-      var _actionRightSecond = cc.moveBy(0.1, cc.v2(30, -5));
-
-      node.runAction(cc.sequence(_actionLeft, _actionRightSecond, // 执行动作完成之后调用的方法
-      cc.callFunc(function () {
-        // _this.schedule(function(){
-        httpRequestFightingExtend.playAction(node, biology); // },1)
-        // resolve();
-      })));
-    }
-  },
-  //受击
-  buttonShake: function buttonShake(node, biology) {
-    // var _this =this;
-    // var waite_time=waite_time||0
-    // const actionWaite =cc.delayTime(waite_time);//等待攻击时间
-    var actionhiddenOn = cc.fadeTo(0.1, 0); // const actionLeft = cc.moveBy(0.1, cc.v2(-10, 0));
-    // const actionRight = cc.moveBy(0.1, cc.v2(10, 0));
-    // const actionLeftSecond = cc.moveBy(0.1, cc.v2(-10, 0));
-    // const actionRightSecond = cc.moveBy(0.1, cc.v2(10, 0));
-
-    var actionhiddenoff = cc.fadeTo(0.1, 255); // cc.spwan( 同时完成
-    // return new Promise(resolve => {
-
-    node.runAction(cc.sequence(actionhiddenOn, actionhiddenoff, // cc.sequence(actionhiddenOn,actionLeft,actionhiddenoff,actionhiddenoff,
-    // cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
-    // 执行动作完成之后调用的方法
-    cc.callFunc(function () {
-      // _this.schedule(function(){
-      httpRequestFightingExtend.playAction(node, biology); // },1)
-      // resolve();
-    }))); // });
   },
   //生物渐隐-淡出-淡入
   // nodefadeIn(time,type,node){
@@ -779,7 +701,11 @@ cc.Class({
   removeBoxprefab: function removeBoxprefab() {
     cc.sys.BoxPrefab.removeAllChildren();
     cc.sys.BoxPrefab.destroyAllChildren();
-  }
+  } // onDestroy() {
+  //     // 停止定时器
+  //     this.unschedule(this.fighting_history);
+  // }
+
 });
 
 cc._RF.pop();

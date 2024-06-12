@@ -10,25 +10,25 @@ cc.Class({
 
     // onLoad () {},
     //定义按钮事件类型 is_bag  0卸下 1装备
-    biology_init(TipBoxPrefab_model,TipBoxPrefab_icon,goodsid,button_name,is_bag){
+    async biology_init(TipBoxPrefab_model,TipBoxPrefab_icon,goodsid,button_name,is_bag){
         //加载背包 和  背包列表
        var biology_id =  http_globalData.biology[http_globalData.biology_id].id;
         
         switch (button_name) {
             case ("装备1"):
-                    var goods_key ='gooduse1';
-                    httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
-                    //1装备  0卸下
-                    this.goods_update(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key,is_bag)
+                var goods_key ='gooduse1';
+                await   httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
+                //1装备  0卸下
+                this.goods_update(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key,is_bag)
                 break;
             case ("装备2"):
                 var goods_key ='gooduse2';
-                httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
+                await  httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
                 this.goods_update(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key,is_bag)
                 break;
             case ("元神"):
                 var goods_key ='yuanShen';
-                httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
+                await  httpRequestBagApi.http_update_goods(biology_id,goods_key,goodsid,is_bag)
                 this.goods_update(TipBoxPrefab_model,TipBoxPrefab_icon,button_name,goodsid,goods_key,is_bag)
                 break;
             default:
