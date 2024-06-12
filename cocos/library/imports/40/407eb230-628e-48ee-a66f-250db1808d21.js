@@ -11,10 +11,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var httpFightingExtend = cc.Class({
   //倍速
   sudu: function sudu(num) {
-    cc.log(http_globalData.user_info.beishu); //设置倍数
-    // http_globalData.user_info.beishu = 8
+    //设置倍数
     //速度越快，值越小
-
     if (http_globalData.user_info.beishu > 1) {
       return 1 / http_globalData.user_info.beishu * num;
     } else {

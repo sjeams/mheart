@@ -1,3 +1,4 @@
+require("../common"); 
 cc.Class({
     extends: cc.Component,
  
@@ -49,13 +50,15 @@ cc.Class({
       // button.clickEvents.push(clickEventHandler);
  
     }, 
-    button_beishu(){
+    async button_beishu(){
       // var beisu_arr =[1,2,3,4,8];
       if(http_globalData.user_info.beishu<4){
         http_globalData.user_info.beishu = parseInt(http_globalData.user_info.beishu)+1
       }else{
         http_globalData.user_info.beishu=1
       }
+      //修改倍数
+      await httpRequestBagApi.http_user_beishu_update()
       // http_globalData.user_info.beishu
       cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
     },

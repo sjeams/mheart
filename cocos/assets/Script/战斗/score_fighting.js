@@ -54,6 +54,8 @@ cc.Class({
     },
     spawnTools () {
       return new Promise(resolve => {
+      //开启倍数
+      cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
       var _this =this;
       var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
 

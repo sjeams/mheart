@@ -2684,11 +2684,6 @@
     "meta": 1718181795610,
     "relativePath": "Scene\\home\\大厅.fire"
   },
-  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
-    "asset": 1718181114084,
-    "meta": 1718181120395,
-    "relativePath": "Script\\commonApi\\bag_api.js"
-  },
   "643356fe-1be5-4b1e-aad4-75b155599a40": {
     "asset": 1718182717427,
     "meta": 1718182879146,
@@ -2699,24 +2694,29 @@
     "meta": 1718183732154,
     "relativePath": "Script\\战斗\\fightingTools.js"
   },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1718184146912,
-    "meta": 1718184231264,
-    "relativePath": "Script\\战斗\\score_fighting.js"
-  },
   "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1718185526575,
-    "meta": 1718185548374,
+    "asset": 1718186117295,
+    "meta": 1718186696920,
     "relativePath": "Script\\commonApi\\figthingExtend.js"
   },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
-    "asset": 1718185572060,
-    "meta": 1718185573033,
+    "asset": 1718186811641,
+    "meta": 1718186812804,
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
   },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1718187108390,
+    "meta": 1718187114631,
+    "relativePath": "Script\\commonApi\\bag_api.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1718187223034,
+    "meta": 1718187226938,
+    "relativePath": "Script\\战斗\\score_fighting.js"
+  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1718185939158,
-    "meta": 1718185939172,
+    "asset": 1718187227143,
+    "meta": 1718187227168,
     "relativePath": "Scene\\战斗场景.fire"
   }
 }

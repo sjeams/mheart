@@ -2,7 +2,7 @@
 const httpBagApi = cc.Class({
     extends: cc.Component,
     //实例化用户信息
-    http_user_info(){
+   async http_user_info(){
         //修改请求--等待响应后回调
         return new Promise(resolve => {
         httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
@@ -12,7 +12,6 @@ const httpBagApi = cc.Class({
         })
         });
     },   
-
     //实例化背包信息
     http_bag_info(){
         //获取生物列表
@@ -62,5 +61,15 @@ const httpBagApi = cc.Class({
         });
     },
  
+
+    //修改倍数
+    http_user_beishu_update(){
+        //修改请求
+       var  beishu = http_globalData.user_info.beishu
+        return new Promise(resolve => {
+        httpRequest.httpPost('/app/app-api/user-beishu-update',{beishu:beishu},function (data) { resolve(data);})
+        });
+    },  
+
 });
 httpRequestBagApi = new httpBagApi();

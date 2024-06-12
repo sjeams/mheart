@@ -4,6 +4,12 @@ cc._RF.push(module, '2e810gPIYdMIbdgLhTM821Z', 'score_fighting_alert');
 
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+require("../common");
+
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -47,15 +53,33 @@ cc.Class({
     // button.clickEvents.push(clickEventHandler);
   },
   button_beishu: function button_beishu() {
-    // var beisu_arr =[1,2,3,4,8];
-    if (http_globalData.user_info.beishu < 4) {
-      http_globalData.user_info.beishu = parseInt(http_globalData.user_info.beishu) + 1;
-    } else {
-      http_globalData.user_info.beishu = 1;
-    } // http_globalData.user_info.beishu
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              // var beisu_arr =[1,2,3,4,8];
+              if (http_globalData.user_info.beishu < 4) {
+                http_globalData.user_info.beishu = parseInt(http_globalData.user_info.beishu) + 1;
+              } else {
+                http_globalData.user_info.beishu = 1;
+              } //修改倍数
 
 
-    cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
+              _context.next = 3;
+              return httpRequestBagApi.http_user_beishu_update();
+
+            case 3:
+              // http_globalData.user_info.beishu
+              cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   back_home: function back_home() {
     httpRequest.playGame("sence_dating");

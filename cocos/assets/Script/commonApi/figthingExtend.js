@@ -1,9 +1,7 @@
  const httpFightingExtend = cc.Class({
   //倍速
   sudu(num){
-    cc.log( http_globalData.user_info.beishu)
     //设置倍数
-    // http_globalData.user_info.beishu = 8
     //速度越快，值越小
     if(http_globalData.user_info.beishu>1){
       return  (1/http_globalData.user_info.beishu)*num

@@ -30,5 +30,11 @@ class User extends ActiveRecord
         User::updateAll(['energy'=>new Yii\db\Expression("energy+20")],'energy < 120');
     }
 
+    public  function userUpdate($newData){  
+        $userId =$this->userId;
+        User::updateAll($newData,"userid=$userId");
+    }
+
+ 
 
 }

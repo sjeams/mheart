@@ -80,12 +80,12 @@ class AppApiController extends ApiUserControl{
     }
     
 
-
-
-
-        
     // ------------------------所有前端请求更新的api
-
+    public function actionUserBeishuUpdate(){
+        $newData =['beishu'=>$this->param['beishu']];
+        $data= (new User())->userUpdate($newData);
+        die(Method::jsonApp(1,$data,'succes'));
+    }
 
     /**
      * 更新装备
