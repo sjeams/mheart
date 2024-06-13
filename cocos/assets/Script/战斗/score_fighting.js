@@ -128,19 +128,25 @@ cc.Class({
             // cc.log(fighting_history[boat_count])
             //如果是空回合 ，等待跳过
             if(fighting_history[boat_count]){
-              await   _this.fighting_history(fighting_history[boat_count])//执行战斗顺序 
-            }
-          // 绑定点击事件
-          _this.back_time.on('click', _this.onButtonClicked,this);    
+              cc.log(fighting_history[boat_count])
+              await   _this.fighting_historyWait(fighting_history[boat_count])//执行战斗等待回合
+              await   _this.fighting_historyGo(fighting_history[boat_count])//执行被动
+              await   _this.fighting_historyDo(fighting_history[boat_count])//执行技能 
+              await   _this.fighting_history(fighting_history[boat_count])//普通   
+            } 
+              // 绑定点击事件
+              // _this.back_time.on('click', _this.onButtonClicked,this);    
+             
         // },1,boat_length,1.5);////2秒后执行1次间隔5秒
           }
       }
-      return new Promise(resolve => {         _this.alertResult(); resolve() })
+      return new Promise(resolve => {    _this.alertResult();  resolve()  })
       // resolve();})
     },
  
     //暂停并且跳过回合
     onButtonClicked: function(event) {
+      // return new Promise(resolve => {    _this.alertResult();  resolve()  })
       // 跳过回合
       // var _this =this
       // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
@@ -153,15 +159,42 @@ cc.Class({
       // _this.unschedule();
       _this.unscheduleAllCallbacks();//停止某组件的所有计时器
     },
-
-    async fighting_history(his_log) {
-      // return new Promise(resolve => {
-        var _this = this;
-        //预备回合
+    //预备回合
+    async fighting_historyWait(his_log){
+      var _this = this;
         if(his_log.h_yubei.length!=0){
           await  _this.readySkill(his_log.h_yubei)
           // cc.log('预备回合')
         }
+    },
+    //发起被动
+    async fighting_historyGo(his_log) {
+       var _this =this;
+        if(his_log.h_go.length!=0){
+            //消耗魔法 --技能名称和消耗放一起了
+            await   _this.playSkill(his_log.h_go)
+            if(his_log.h_need.length!=0){
+              await  _this.needSkill(his_log.h_need)
+            }
+
+        }
+    },
+    //发起技能
+    async fighting_historyDo (his_log) {
+      var _this =this;
+          if(his_log.h_do.length!=0){
+              //消耗魔法 --技能名称和消耗放一起了
+              await   _this.playSkill(his_log.h_do)
+              if(his_log.h_need.length!=0){
+                await  _this.needSkill(his_log.h_need)
+              }
+    
+          }
+      },
+    //战斗回合
+    async fighting_history(his_log) {
+      // return new Promise(resolve => {
+        var _this = this;
         //回合结束
         // if(his_log.h_end.length!=0){
         //   cc.log('回合结束')
@@ -172,24 +205,10 @@ cc.Class({
         // if(his_log.h_back.length!=0){
         //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)
         // }
-        //消耗魔法 --技能名称和消耗放一起了
-        if(his_log.h_need.length!=0){
-          await     _this.needSkill(his_log.h_need)
-        }
-        // //go和do 二选一 ，need 必有   
-        // // 发起技能名称被动
-        if(his_log.h_go.length!=0){
-          await   _this.playSkill(his_log.h_go)
-        }
-        // 执行技能
-        if(his_log.h_do.length!=0){
-          await  _this.playSkill(his_log.h_do)
-        }
         //普通攻击
         if(his_log.h_putong.length!=0){
-          await    _this.playFight(his_log.h_putong)
+          await     _this.playFight(his_log.h_putong)
         }
-      // resolve();})
     },
       //战斗结束
    async fightingEnd() {
@@ -247,7 +266,7 @@ cc.Class({
             var biology = his_log_extend[npage];
             var _this_hero_node =cc.sys.fightingArray[biology.goid]
             var _targ_hero_node =cc.sys.fightingArray[biology.doid]
-            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
+            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology,0)//自己变大--加载技能动作
             // await httpRequestFightingExtend.playAction(_this_hero_node,biology,1)
             }
         } 
@@ -259,17 +278,15 @@ cc.Class({
         var _this =this
         for (var npage=0; npage<his_log_extend.length; npage++){
           var biology = his_log_extend[npage];
-          
           var _this_hero_node =cc.sys.fightingArray[biology.goid]
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
           // _this.schedule(function(){
-            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
-            await httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
+            await httpRequestFightingExtend.buttonSkill(_this_hero_node,biology,0)//自己变大--加载技能动作
+            // await httpRequestFightingExtend.playAction(_targ_hero_node,biology,1) //不需要其它动作，瞬发伤害动作
           // },1)
         }
       }
- 
     },
     //技能攻击动作
     async playSkill(his_log_extend){
@@ -291,7 +308,6 @@ cc.Class({
     },
     //普通攻击动作
     async  playFight(his_log_extend){
-      // cc.log(444)
       // return new Promise(resolve => {
       if(his_log_extend.length!=0){
         var _this =this
@@ -302,11 +318,11 @@ cc.Class({
           var _targ_hero_node =cc.sys.fightingArray[biology.doid]
           if(biology.goid==biology.doid){
               // _this.buttonShake(0,_targ_hero_node,biology)//自己闪动
-            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology)//自己变大--加载技能动作
-            await httpRequestFightingExtend.playAction(_this_hero_node,biology,0)
+            await httpRequestFightingExtend.buttonReady(_this_hero_node,biology,0)//自己变大--加载技能动作
+            // await httpRequestFightingExtend.playAction(_this_hero_node,biology,0)
           }else{
-            await httpRequestFightingExtend.buttonMove(_this_hero_node,_targ_hero_node,biology) //移动
-            await httpRequestFightingExtend.playAction(_targ_hero_node,biology,0)
+            await httpRequestFightingExtend.buttonMove(_this_hero_node,_targ_hero_node,biology,0) //移动
+            // await httpRequestFightingExtend.playAction(_targ_hero_node,biology,0)
           }
         }
       }

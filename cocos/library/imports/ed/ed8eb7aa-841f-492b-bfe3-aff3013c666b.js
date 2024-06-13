@@ -185,7 +185,7 @@ cc.Class({
               fighting_history = fighting_list.fighting_history;
 
               if (!(boat_length != 0)) {
-                _context4.next = 21;
+                _context4.next = 27;
                 break;
               }
 
@@ -198,7 +198,7 @@ cc.Class({
 
             case 9:
               if (!(bpage < boat_length)) {
-                _context4.next = 21;
+                _context4.next = 27;
                 break;
               }
 
@@ -214,31 +214,39 @@ cc.Class({
 
             case 14:
               if (!fighting_history[boat_count]) {
-                _context4.next = 17;
+                _context4.next = 24;
                 break;
               }
 
-              _context4.next = 17;
-              return _this.fighting_history(fighting_history[boat_count]);
-
-            case 17:
-              // 绑定点击事件
-              _this.back_time.on('click', _this.onButtonClicked, _this6); // },1,boat_length,1.5);////2秒后执行1次间隔5秒
-
+              cc.log(fighting_history[boat_count]);
+              _context4.next = 18;
+              return _this.fighting_historyWait(fighting_history[boat_count]);
 
             case 18:
+              _context4.next = 20;
+              return _this.fighting_historyGo(fighting_history[boat_count]);
+
+            case 20:
+              _context4.next = 22;
+              return _this.fighting_historyDo(fighting_history[boat_count]);
+
+            case 22:
+              _context4.next = 24;
+              return _this.fighting_history(fighting_history[boat_count]);
+
+            case 24:
               bpage++;
               _context4.next = 9;
               break;
 
-            case 21:
+            case 27:
               return _context4.abrupt("return", new Promise(function (resolve) {
                 _this.alertResult();
 
                 resolve();
               }));
 
-            case 22:
+            case 28:
             case "end":
               return _context4.stop();
           }
@@ -247,7 +255,8 @@ cc.Class({
     }))();
   },
   //暂停并且跳过回合
-  onButtonClicked: function onButtonClicked(event) {// 跳过回合
+  onButtonClicked: function onButtonClicked(event) {// return new Promise(resolve => {    _this.alertResult();  resolve()  })
+    // 跳过回合
     // var _this =this
     // _this.unscheduleAllCallbacks();//停止某组件的所有计时器
     //   cc.log('跳过')
@@ -261,7 +270,8 @@ cc.Class({
     _this.unscheduleAllCallbacks(); //停止某组件的所有计时器
 
   },
-  fighting_history: function fighting_history(his_log) {
+  //预备回合
+  fighting_historyWait: function fighting_historyWait(his_log) {
     var _this7 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
@@ -271,8 +281,7 @@ cc.Class({
         while (1) {
           switch (_context5.prev = _context5.next) {
             case 0:
-              // return new Promise(resolve => {
-              _this = _this7; //预备回合
+              _this = _this7;
 
               if (!(his_log.h_yubei.length != 0)) {
                 _context5.next = 4;
@@ -283,42 +292,6 @@ cc.Class({
               return _this.readySkill(his_log.h_yubei);
 
             case 4:
-              if (!(his_log.h_need.length != 0)) {
-                _context5.next = 7;
-                break;
-              }
-
-              _context5.next = 7;
-              return _this.needSkill(his_log.h_need);
-
-            case 7:
-              if (!(his_log.h_go.length != 0)) {
-                _context5.next = 10;
-                break;
-              }
-
-              _context5.next = 10;
-              return _this.playSkill(his_log.h_go);
-
-            case 10:
-              if (!(his_log.h_do.length != 0)) {
-                _context5.next = 13;
-                break;
-              }
-
-              _context5.next = 13;
-              return _this.playSkill(his_log.h_do);
-
-            case 13:
-              if (!(his_log.h_putong.length != 0)) {
-                _context5.next = 16;
-                break;
-              }
-
-              _context5.next = 16;
-              return _this.playFight(his_log.h_putong);
-
-            case 16:
             case "end":
               return _context5.stop();
           }
@@ -326,19 +299,134 @@ cc.Class({
       }, _callee5);
     }))();
   },
-  //战斗结束
-  fightingEnd: function fightingEnd() {
+  //发起被动
+  fighting_historyGo: function fighting_historyGo(his_log) {
+    var _this8 = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-      var fighting_list;
+      var _this;
+
       return regeneratorRuntime.wrap(function _callee6$(_context6) {
         while (1) {
           switch (_context6.prev = _context6.next) {
+            case 0:
+              _this = _this8;
+
+              if (!(his_log.h_go.length != 0)) {
+                _context6.next = 7;
+                break;
+              }
+
+              _context6.next = 4;
+              return _this.playSkill(his_log.h_go);
+
+            case 4:
+              if (!(his_log.h_need.length != 0)) {
+                _context6.next = 7;
+                break;
+              }
+
+              _context6.next = 7;
+              return _this.needSkill(his_log.h_need);
+
+            case 7:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }))();
+  },
+  //发起技能
+  fighting_historyDo: function fighting_historyDo(his_log) {
+    var _this9 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+      var _this;
+
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _this = _this9;
+
+              if (!(his_log.h_do.length != 0)) {
+                _context7.next = 7;
+                break;
+              }
+
+              _context7.next = 4;
+              return _this.playSkill(his_log.h_do);
+
+            case 4:
+              if (!(his_log.h_need.length != 0)) {
+                _context7.next = 7;
+                break;
+              }
+
+              _context7.next = 7;
+              return _this.needSkill(his_log.h_need);
+
+            case 7:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7);
+    }))();
+  },
+  //战斗回合
+  fighting_history: function fighting_history(his_log) {
+    var _this10 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+      var _this;
+
+      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              // return new Promise(resolve => {
+              _this = _this10; //回合结束
+              // if(his_log.h_end.length!=0){
+              //   cc.log('回合结束')
+              // }
+              // cc.log(his_log)
+              //反击
+              // if(his_log.h_back.length!=0){
+              //   _this.playFight(_this_hero_node,_targ_hero_node,biology,his_log.h_back)
+              // }
+              //普通攻击
+
+              if (!(his_log.h_putong.length != 0)) {
+                _context8.next = 4;
+                break;
+              }
+
+              _context8.next = 4;
+              return _this.playFight(his_log.h_putong);
+
+            case 4:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }))();
+  },
+  //战斗结束
+  fightingEnd: function fightingEnd() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+      var fighting_list;
+      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
             case 0:
               // var _this =this;
               fighting_list = http_globalData.fighting.data; // var _task =task||0;
               //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
 
-              return _context6.abrupt("return", new Promise(function (resolve) {
+              return _context9.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model弹窗/biology_结算', function (errorMessage, loadedResource) {
                   //检查资源加载
                   if (errorMessage) {
@@ -376,10 +464,10 @@ cc.Class({
 
             case 2:
             case "end":
-              return _context6.stop();
+              return _context9.stop();
           }
         }
-      }, _callee6);
+      }, _callee9);
     }))();
   },
   //生成地图
@@ -399,146 +487,6 @@ cc.Class({
   },
   //技能准备动作
   readySkill: function readySkill(his_log_extend) {
-    var _this8 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
-      var _this, npage, biology, _this_hero_node, _targ_hero_node;
-
-      return regeneratorRuntime.wrap(function _callee7$(_context7) {
-        while (1) {
-          switch (_context7.prev = _context7.next) {
-            case 0:
-              if (!(his_log_extend.length != 0)) {
-                _context7.next = 12;
-                break;
-              }
-
-              _this = _this8;
-              npage = 0;
-
-            case 3:
-              if (!(npage < his_log_extend.length)) {
-                _context7.next = 12;
-                break;
-              }
-
-              biology = his_log_extend[npage];
-              _this_hero_node = cc.sys.fightingArray[biology.goid];
-              _targ_hero_node = cc.sys.fightingArray[biology.doid];
-              _context7.next = 9;
-              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
-
-            case 9:
-              npage++;
-              _context7.next = 3;
-              break;
-
-            case 12:
-            case "end":
-              return _context7.stop();
-          }
-        }
-      }, _callee7);
-    }))();
-  },
-  //技能消耗动作
-  needSkill: function needSkill(his_log_extend) {
-    var _this9 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
-      var _this, npage, biology, _this_hero_node, _targ_hero_node;
-
-      return regeneratorRuntime.wrap(function _callee8$(_context8) {
-        while (1) {
-          switch (_context8.prev = _context8.next) {
-            case 0:
-              if (!(his_log_extend.length != 0)) {
-                _context8.next = 14;
-                break;
-              }
-
-              _this = _this9;
-              npage = 0;
-
-            case 3:
-              if (!(npage < his_log_extend.length)) {
-                _context8.next = 14;
-                break;
-              }
-
-              biology = his_log_extend[npage];
-              _this_hero_node = cc.sys.fightingArray[biology.goid];
-              _targ_hero_node = cc.sys.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
-              // _this.schedule(function(){
-
-              _context8.next = 9;
-              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
-
-            case 9:
-              _context8.next = 11;
-              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1);
-
-            case 11:
-              npage++;
-              _context8.next = 3;
-              break;
-
-            case 14:
-            case "end":
-              return _context8.stop();
-          }
-        }
-      }, _callee8);
-    }))();
-  },
-  //技能攻击动作
-  playSkill: function playSkill(his_log_extend) {
-    var _this10 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
-      var _this, npage, biology, _this_hero_node, _targ_hero_node;
-
-      return regeneratorRuntime.wrap(function _callee9$(_context9) {
-        while (1) {
-          switch (_context9.prev = _context9.next) {
-            case 0:
-              if (!(his_log_extend.length != 0)) {
-                _context9.next = 12;
-                break;
-              }
-
-              _this = _this10;
-              npage = 0;
-
-            case 3:
-              if (!(npage < his_log_extend.length)) {
-                _context9.next = 12;
-                break;
-              }
-
-              biology = his_log_extend[npage];
-              _this_hero_node = cc.sys.fightingArray[biology.goid];
-              _targ_hero_node = cc.sys.fightingArray[biology.doid]; //2个攻击类型只能二选一 
-              // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
-
-              _context9.next = 9;
-              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1);
-
-            case 9:
-              npage++;
-              _context9.next = 3;
-              break;
-
-            case 12:
-            case "end":
-              return _context9.stop();
-          }
-        }
-      }, _callee9);
-    }))();
-  },
-  //普通攻击动作
-  playFight: function playFight(his_log_extend) {
     var _this11 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
@@ -549,7 +497,7 @@ cc.Class({
           switch (_context10.prev = _context10.next) {
             case 0:
               if (!(his_log_extend.length != 0)) {
-                _context10.next = 21;
+                _context10.next = 12;
                 break;
               }
 
@@ -558,7 +506,143 @@ cc.Class({
 
             case 3:
               if (!(npage < his_log_extend.length)) {
-                _context10.next = 21;
+                _context10.next = 12;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid];
+              _context10.next = 9;
+              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology, 0);
+
+            case 9:
+              npage++;
+              _context10.next = 3;
+              break;
+
+            case 12:
+            case "end":
+              return _context10.stop();
+          }
+        }
+      }, _callee10);
+    }))();
+  },
+  //技能消耗动作
+  needSkill: function needSkill(his_log_extend) {
+    var _this12 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee11$(_context11) {
+        while (1) {
+          switch (_context11.prev = _context11.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context11.next = 12;
+                break;
+              }
+
+              _this = _this12;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context11.next = 12;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid]; // _this.buttonShake(0.5,_targ_hero_node,biology)//技能攻击
+              // _this.schedule(function(){
+
+              _context11.next = 9;
+              return httpRequestFightingExtend.buttonSkill(_this_hero_node, biology, 0);
+
+            case 9:
+              npage++;
+              _context11.next = 3;
+              break;
+
+            case 12:
+            case "end":
+              return _context11.stop();
+          }
+        }
+      }, _callee11);
+    }))();
+  },
+  //技能攻击动作
+  playSkill: function playSkill(his_log_extend) {
+    var _this13 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee12$(_context12) {
+        while (1) {
+          switch (_context12.prev = _context12.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context12.next = 12;
+                break;
+              }
+
+              _this = _this13;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context12.next = 12;
+                break;
+              }
+
+              biology = his_log_extend[npage];
+              _this_hero_node = cc.sys.fightingArray[biology.goid];
+              _targ_hero_node = cc.sys.fightingArray[biology.doid]; //2个攻击类型只能二选一 
+              // _this.buttonShake(0.1,_targ_hero_node,biology)//技能攻击，动作后伤害
+
+              _context12.next = 9;
+              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 1);
+
+            case 9:
+              npage++;
+              _context12.next = 3;
+              break;
+
+            case 12:
+            case "end":
+              return _context12.stop();
+          }
+        }
+      }, _callee12);
+    }))();
+  },
+  //普通攻击动作
+  playFight: function playFight(his_log_extend) {
+    var _this14 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+      var _this, npage, biology, _this_hero_node, _targ_hero_node;
+
+      return regeneratorRuntime.wrap(function _callee13$(_context13) {
+        while (1) {
+          switch (_context13.prev = _context13.next) {
+            case 0:
+              if (!(his_log_extend.length != 0)) {
+                _context13.next = 17;
+                break;
+              }
+
+              _this = _this14;
+              npage = 0;
+
+            case 3:
+              if (!(npage < his_log_extend.length)) {
+                _context13.next = 17;
                 break;
               }
 
@@ -568,40 +652,32 @@ cc.Class({
               _targ_hero_node = cc.sys.fightingArray[biology.doid];
 
               if (!(biology.goid == biology.doid)) {
-                _context10.next = 14;
+                _context13.next = 12;
                 break;
               }
 
-              _context10.next = 10;
-              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology);
+              _context13.next = 10;
+              return httpRequestFightingExtend.buttonReady(_this_hero_node, biology, 0);
 
             case 10:
-              _context10.next = 12;
-              return httpRequestFightingExtend.playAction(_this_hero_node, biology, 0);
+              _context13.next = 14;
+              break;
 
             case 12:
-              _context10.next = 18;
-              break;
+              _context13.next = 14;
+              return httpRequestFightingExtend.buttonMove(_this_hero_node, _targ_hero_node, biology, 0);
 
             case 14:
-              _context10.next = 16;
-              return httpRequestFightingExtend.buttonMove(_this_hero_node, _targ_hero_node, biology);
-
-            case 16:
-              _context10.next = 18;
-              return httpRequestFightingExtend.playAction(_targ_hero_node, biology, 0);
-
-            case 18:
               npage++;
-              _context10.next = 3;
+              _context13.next = 3;
               break;
 
-            case 21:
+            case 17:
             case "end":
-              return _context10.stop();
+              return _context13.stop();
           }
         }
-      }, _callee10);
+      }, _callee13);
     }))();
   },
   //生物渐隐-淡出-淡入
