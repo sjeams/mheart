@@ -285,7 +285,6 @@ var httpFightingExtend = cc.Class({
               return _context3.abrupt("return", new Promise(function (resolve) {
                 var _this = _this4; // var _this =this
                 // var waite_time=waite_time||0
-                // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
 
                 var actionhiddenBig = cc.spawn(cc.scaleTo(_this.sudu(0.5), 1.2, 1.2), cc.delayTime(_this.sudu(1)), cc.callFunc(function () {
                   // //等待攻击完成  ---action  里面已经有了 这个悟性，所有这里不用plarredy
@@ -332,9 +331,8 @@ var httpFightingExtend = cc.Class({
               return _context4.abrupt("return", new Promise(function (resolve) {
                 var _this = _this5; // var _this =this
                 // var waite_time=waite_time||0
-                // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
 
-                var actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.3)), 10), cc.scaleTo(_this.sudu(0.5), 1.2, 1.2), cc.delayTime(_this.sudu(1)), cc.callFunc(function () {
+                var actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.2)), 20), cc.scaleTo(_this.sudu(0.5), 1.2, 1.2), cc.delayTime(_this.sudu(1)), cc.callFunc(function () {
                   // //等待攻击完成
                   _this.playReady(node, biology);
 
@@ -470,7 +468,7 @@ var httpFightingExtend = cc.Class({
     // return new Promise(resolve => {
 
 
-    node.runAction(cc.sequence(cc.blink(_this.sudu(1), 2), // actionhiddenOn,actionhiddenoff,
+    node.runAction(cc.sequence(cc.blink(_this.sudu(0.2), 1), // actionhiddenOn,actionhiddenoff,
     // cc.sequence(actionhiddenOn,actionLeft,actionhiddenoff,actionhiddenoff,
     // cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,
     // 执行动作完成之后调用的方法

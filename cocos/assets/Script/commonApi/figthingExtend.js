@@ -212,7 +212,6 @@
         var _this =this;
           // var _this =this
           // var waite_time=waite_time||0
-          // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
           const actionhiddenBig = cc.spawn(cc.scaleTo(_this.sudu(0.5), 1.2, 1.2),cc.delayTime(_this.sudu(1)),cc.callFunc(function(){
             // //等待攻击完成  ---action  里面已经有了 这个悟性，所有这里不用plarredy
             // _this.playReady(node,biology)
@@ -249,8 +248,7 @@
         var _this =this;
           // var _this =this
           // var waite_time=waite_time||0
-          // cc.blink(_this.sudu(3), 10) //3秒闪烁 10次
-          const actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.3)),10),cc.scaleTo(_this.sudu(0.5), 1.2, 1.2),cc.delayTime(_this.sudu(1)),cc.callFunc(function(){
+          const actionhiddenBig = cc.spawn(cc.blink(_this.sudu(_this.sudu(0.2)),20),cc.scaleTo(_this.sudu(0.5), 1.2, 1.2),cc.delayTime(_this.sudu(1)),cc.callFunc(function(){
             // //等待攻击完成
             _this.playReady(node,biology)
             _this.playAction(node,biology,is_skill)
@@ -381,7 +379,7 @@
       // cc.spwan( 同时完成
       // return new Promise(resolve => {
           node.runAction(
-              cc.sequence(cc.blink(_this.sudu(1),2),
+              cc.sequence(cc.blink(_this.sudu(0.2),1),
               // actionhiddenOn,actionhiddenoff,
               // cc.sequence(actionhiddenOn,actionLeft,actionhiddenoff,actionhiddenoff,
               // cc.sequence(actionLeft, actionRight, actionLeftSecond, actionRightSecond,actionhiddenOn,actionhiddenoff,

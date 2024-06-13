@@ -2700,23 +2700,23 @@
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1718250416466,
-    "meta": 1718250416504,
+    "asset": 1718273707394,
+    "meta": 1718273707422,
     "relativePath": "Scene\\战斗场景.fire"
   },
-  "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1718265610985,
-    "meta": 1718265611020,
-    "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
-  },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1718265606830,
-    "meta": 1718265610486,
+    "asset": 1718274019106,
+    "meta": 1718274046315,
     "relativePath": "Script\\战斗\\score_fighting.js"
   },
+  "40bedcd0-c109-4f66-aa9d-ca142724f729": {
+    "asset": 1718274339533,
+    "meta": 1718274339588,
+    "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
+  },
   "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1718265408645,
-    "meta": 1718265610655,
+    "asset": 1718274338004,
+    "meta": 1718274339005,
     "relativePath": "Script\\commonApi\\figthingExtend.js"
   }
 }
