@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1209,
-      "y": 57,
+      "x": 1242,
+      "y": 88,
       "width": 1336,
       "height": 818,
       "layout": {
@@ -86,9 +86,7 @@
         "timeline",
         "game-window"
       ]
-    },
-    "window-1718340511459": {},
-    "worker": {}
+    }
   },
   "panels": {
     "project-settings": {
@@ -140,8 +138,8 @@
       "height": 339
     },
     "builder": {
-      "x": 1031,
-      "y": 148,
+      "x": 889,
+      "y": 129,
       "width": 980,
       "height": 677
     },
