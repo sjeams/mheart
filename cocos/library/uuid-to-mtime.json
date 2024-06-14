@@ -2674,20 +2674,10 @@
     "meta": 1718359719788,
     "relativePath": "Script\\commonApi\\http.js"
   },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1718360114309,
-    "meta": 1718360141050,
-    "relativePath": "Script\\场景\\AudioManager.js"
-  },
   "6b79fa83-0475-4bb2-b85b-bc6a835f3cba": {
     "asset": 1718360251188,
     "meta": 1718360251189,
     "relativePath": "resources\\audio_music"
-  },
-  "d112096d-3e6d-479a-a83f-89e9b28f5a71": {
-    "asset": 1718360299696,
-    "meta": 1718360299708,
-    "relativePath": "resources\\audio_music\\武侠.mp3"
   },
   "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
     "asset": 1718360423399,
@@ -2705,8 +2695,8 @@
     "relativePath": "Script\\场景\\home_scence.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1718360991878,
-    "meta": 1718360991895,
+    "asset": 1718361386728,
+    "meta": 1718361386752,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
@@ -2728,5 +2718,10 @@
     "asset": 1718360986829,
     "meta": 1718360991395,
     "relativePath": "Script\\commonApi\\bag_api.js"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1718361379472,
+    "meta": 1718361385586,
+    "relativePath": "Script\\场景\\AudioManager.js"
   }
 }
