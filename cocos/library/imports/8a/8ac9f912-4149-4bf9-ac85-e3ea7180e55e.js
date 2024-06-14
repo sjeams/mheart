@@ -154,6 +154,8 @@ cc.Class({
 
                   for (var prop in info_list) {
                     var map_value;
+                    var map_x;
+                    var map_x;
 
                     _loop();
                   }

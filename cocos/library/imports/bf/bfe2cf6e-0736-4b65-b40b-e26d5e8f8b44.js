@@ -142,8 +142,9 @@ cc.Class({
           // 进入定义角色界面     
           var server = JSON.parse(cc.sys.localStorage.getItem('server')); // cc.log(server); 
           // 创建角色
+          // cc.director.loadScene('login/角色');
 
-          cc.director.loadScene('login/角色');
+          httpRequest.playGame("sence_dating");
         }
       }
     }); //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点

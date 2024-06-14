@@ -147,7 +147,8 @@ cc.Class({
                     var server = JSON.parse(cc.sys.localStorage.getItem('server'));
                     // cc.log(server); 
                     // 创建角色
-                    cc.director.loadScene('login/角色');
+                    // cc.director.loadScene('login/角色');
+                    httpRequest.playGame("sence_dating");
                 }
             }
 

@@ -83,9 +83,9 @@ cc.Class({
                 //设置距离
                 var map_value = 50
                 if(is_my){
-                    map_x =    map.x-map_value
+                   var map_x =    map.x-map_value
                 }else{
-                    map_x =    map.x+map_value
+                   var map_x =    map.x+map_value
                 }
                 if(info.length!=0){
                     //放在资源下面
