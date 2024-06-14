@@ -20,13 +20,17 @@ cc.Class({
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestBagApi.http_music();
 
             case 2:
               _context.next = 4;
-              return httpRequestBagApi.http_bag_info();
+              return httpRequestBagApi.http_user_info();
 
             case 4:
+              _context.next = 6;
+              return httpRequestBagApi.http_bag_info();
+
+            case 6:
             case "end":
               return _context.stop();
           }

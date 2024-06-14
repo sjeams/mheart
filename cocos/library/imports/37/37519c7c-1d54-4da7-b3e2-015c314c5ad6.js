@@ -23,8 +23,8 @@ var HttpHelper = cc.Class({
     // cc.dynamicAtlasManager.showDebug(false);
     // 从服务器加载mp3来进行播放
     //动态合图
-    this.image_cache();
-    this.current = cc.audioEngine.play(res.url, false, 1); //配置路径
+    this.image_cache(); // cc.audioEngine.play(_urls, false, 1);  
+    //配置路径
   },
 
   /**

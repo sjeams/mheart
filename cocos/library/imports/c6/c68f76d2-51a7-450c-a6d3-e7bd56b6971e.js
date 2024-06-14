@@ -12,13 +12,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var httpBagApi = cc.Class({
   "extends": cc.Component,
   //实例化用户信息
-  http_user_info: function http_user_info() {
+  http_music: function http_music() {
+    var _this = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               return _context.abrupt("return", new Promise(function (resolve) {
+                //获取全局播放器
+                _this.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
+                // this.AudioPlayer.stopBgMusic();
+
+                _this.AudioPlayer.playBgMusic();
+
+                resolve(); // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
+                //     //此处可能要判断登录失效 跳转、后期处理
+                //     http_globalData.user_info = data.data
+                //     resolve();
+                // })
+              }));
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  //实例化用户信息
+  http_user_info: function http_user_info() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              return _context2.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPost('/app/app-api/get-user', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
                   http_globalData.user_info = data.data;
@@ -28,10 +59,10 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     }))();
   },
   //实例化背包信息

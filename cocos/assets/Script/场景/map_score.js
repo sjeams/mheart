@@ -5,7 +5,8 @@ cc.Class({
     },
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad: function () {
+    async onLoad() {
+      await httpRequestBagApi.http_music()
       //全局定义容器节点
       cc.sys.BoxPrefab= cc.find('Canvas/战斗/content')
       this.spawnTools()

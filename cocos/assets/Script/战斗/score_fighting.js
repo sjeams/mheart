@@ -27,6 +27,7 @@ cc.Class({
     },
     // LIFE-CYCLE CALLBACKS:
     async onLoad () {
+      await httpRequestBagApi.http_music()
       //全局定义容器节点
       cc.sys.BoxPrefab= cc.find('Canvas/大厅/content');
       cc.sys.fightingArray=[]

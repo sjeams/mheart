@@ -4,7 +4,8 @@ cc.Class({
 
     properties: {
     },
-    onLoad: function () {
+    async onLoad () {
+      await httpRequestBagApi.http_music()
       cc.sys.BoxPrefab= cc.find('Canvas/大厅/content')
       this.spawnTools()
     },

@@ -4,6 +4,10 @@ cc._RF.push(module, '09d9e7+vGZLdKg/PEEJJ/Uq', 'map_score');
 
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 require("../common");
 
 cc.Class({
@@ -11,9 +15,30 @@ cc.Class({
   properties: {},
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    //全局定义容器节点
-    cc.sys.BoxPrefab = cc.find('Canvas/战斗/content');
-    this.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
+    var _this2 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return httpRequestBagApi.http_music();
+
+            case 2:
+              //全局定义容器节点
+              cc.sys.BoxPrefab = cc.find('Canvas/战斗/content');
+
+              _this2.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
+
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   spawnTools: function spawnTools() {
     var _this = this;

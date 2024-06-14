@@ -20,6 +20,10 @@ cc.Class({
     // var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
     // cc.loader.load({ url: remoteUrl }, function (err, data) {
     // this.brushBag();
+    // var _urls ='/app_resources/loading/武侠.mp3';
+    // var new_url = httpRequest.httpUrl(new_url);
+    // cc.audioEngine.playMusic(cc.url.raw(_urls), true);
+    // cc.audioEngine.play(_urls, false, 1);  
   },
   start: function start() {},
   //刷新背包--每次操作后需要刷新背包

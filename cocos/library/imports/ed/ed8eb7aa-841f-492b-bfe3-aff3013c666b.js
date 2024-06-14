@@ -45,23 +45,27 @@ cc.Class({
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              _context.next = 2;
+              return httpRequestBagApi.http_music();
+
+            case 2:
               //全局定义容器节点
               cc.sys.BoxPrefab = cc.find('Canvas/大厅/content');
               cc.sys.fightingArray = [];
               cc.sys.toolsArray = []; // this.spawnTools()
 
-              _context.next = 5;
-              return httpRequestBagApi.http_user_info();
-
-            case 5:
               _context.next = 7;
-              return _this2.spawnTools();
+              return httpRequestBagApi.http_user_info();
 
             case 7:
               _context.next = 9;
-              return _this2.playTask();
+              return _this2.spawnTools();
 
             case 9:
+              _context.next = 11;
+              return _this2.playTask();
+
+            case 11:
             case "end":
               return _context.stop();
           }

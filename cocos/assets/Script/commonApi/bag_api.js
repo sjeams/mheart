@@ -1,6 +1,26 @@
 // 背包的api请求接口
 const httpBagApi = cc.Class({
     extends: cc.Component,
+
+    //实例化用户信息
+    async http_music(){
+        //修改请求--等待响应后回调
+        return new Promise(resolve => {
+        //获取全局播放器
+        this.AudioPlayer = cc.find("Audio").getComponent("AudioManager");
+        //停止再开启背景音乐
+        // this.AudioPlayer.stopBgMusic();
+        this.AudioPlayer.playBgMusic();
+        resolve();
+        // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
+        //     //此处可能要判断登录失效 跳转、后期处理
+        //     http_globalData.user_info = data.data
+        //     resolve();
+        // })
+        });
+    },  
+
+
     //实例化用户信息
    async http_user_info(){
         //修改请求--等待响应后回调
