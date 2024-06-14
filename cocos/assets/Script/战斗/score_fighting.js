@@ -128,7 +128,7 @@ cc.Class({
             // cc.log(fighting_history[boat_count])
             //如果是空回合 ，等待跳过
             if(fighting_history[boat_count]){
-              cc.log(fighting_history[boat_count])
+              // cc.log(fighting_history[boat_count])
               await   _this.fighting_historyWait(fighting_history[boat_count])//执行战斗等待回合
               await   _this.fighting_historyGo(fighting_history[boat_count])//执行被动
               await   _this.fighting_historyDo(fighting_history[boat_count])//执行技能 

@@ -185,7 +185,7 @@ cc.Class({
               fighting_history = fighting_list.fighting_history;
 
               if (!(boat_length != 0)) {
-                _context4.next = 27;
+                _context4.next = 26;
                 break;
               }
 
@@ -198,7 +198,7 @@ cc.Class({
 
             case 9:
               if (!(bpage < boat_length)) {
-                _context4.next = 27;
+                _context4.next = 26;
                 break;
               }
 
@@ -214,39 +214,38 @@ cc.Class({
 
             case 14:
               if (!fighting_history[boat_count]) {
-                _context4.next = 24;
+                _context4.next = 23;
                 break;
               }
 
-              cc.log(fighting_history[boat_count]);
-              _context4.next = 18;
+              _context4.next = 17;
               return _this.fighting_historyWait(fighting_history[boat_count]);
 
-            case 18:
-              _context4.next = 20;
+            case 17:
+              _context4.next = 19;
               return _this.fighting_historyGo(fighting_history[boat_count]);
 
-            case 20:
-              _context4.next = 22;
+            case 19:
+              _context4.next = 21;
               return _this.fighting_historyDo(fighting_history[boat_count]);
 
-            case 22:
-              _context4.next = 24;
+            case 21:
+              _context4.next = 23;
               return _this.fighting_history(fighting_history[boat_count]);
 
-            case 24:
+            case 23:
               bpage++;
               _context4.next = 9;
               break;
 
-            case 27:
+            case 26:
               return _context4.abrupt("return", new Promise(function (resolve) {
                 _this.alertResult();
 
                 resolve();
               }));
 
-            case 28:
+            case 27:
             case "end":
               return _context4.stop();
           }
