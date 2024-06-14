@@ -69,13 +69,13 @@ class Video extends ActiveRecord {
 				$type = $type?$type:22;
 				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-					// https://sewozy16.com
+					// https://sewozy16.com https://www.sewoav.cc
 					$list=array(
-						array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://www.sewoav.cc'),
+						array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com'),
 					);
 				}else{
 					$list=array(
-						array($belong,$type,'SW',"/index.php/vod/type/id/$type/page/$page.html",'https://www.sewoav.cc'),
+						array($belong,$type,'SW',"/index.php/vod/type/id/$type/page/$page.html",'https://sewoav21.com'),
 					);
 				}
 			}else if($belong==4){
