@@ -4,16 +4,13 @@ cc._RF.push(module, 'b01edRwcatPzotunS35qvWZ', 'common');
 
 "use strict";
 
-require("commonApi/http"); //引入基础http请求
-// var httpRequest = new HttpHelper();
+require("./commonApi/http"); //引入基础http请求
 
 
-require("commonApi/bag_api"); //引入背包
-// var httpBagApi = new httpBagApi();
+require("./commonApi/bag_api"); //引入背包
 
 
-require("commonApi/figthingExtend"); //引入战斗动作
-// var getFightingExtend = new FightingExtend();
+require("./commonApi/figthingExtend"); //引入战斗动作
 //全局变量
 
 

@@ -3013,7 +3013,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 84
@@ -3022,7 +3022,7 @@
     "_prefab": {
       "__id__": 85
     },
-    "_opacity": 255,
+    "_opacity": 60,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -3032,8 +3032,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 45,
-      "height": 100.8
+      "width": 60,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3085,8 +3085,8 @@
     "_useOriginalSize": false,
     "_string": "0",
     "_N$string": "0",
-    "_fontSize": 80,
-    "_lineHeight": 80,
+    "_fontSize": 100,
+    "_lineHeight": 100,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,

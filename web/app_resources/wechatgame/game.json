@@ -12,20 +12,20 @@
             "root": "subpackages/图标世界/"
         },
         {
+            "name": "图标技能",
+            "root": "subpackages/图标技能/"
+        },
+        {
+            "name": "图标技能效果",
+            "root": "subpackages/图标技能效果/"
+        },
+        {
             "name": "图标生物",
             "root": "subpackages/图标生物/"
         },
         {
-            "name": "技能图标",
-            "root": "subpackages/技能图标/"
-        },
-        {
-            "name": "技能效果",
-            "root": "subpackages/技能效果/"
-        },
-        {
-            "name": "装备图标",
-            "root": "subpackages/装备图标/"
+            "name": "图标装备",
+            "root": "subpackages/图标装备/"
         }
     ]
 }

@@ -1,10 +1,6 @@
-require("commonApi/http"); //引入基础http请求
-// var httpRequest = new HttpHelper();
-require("commonApi/bag_api"); //引入背包
-// var httpBagApi = new httpBagApi();
-require("commonApi/figthingExtend"); //引入战斗动作
-// var getFightingExtend = new FightingExtend();
-
+require("./commonApi/http"); //引入基础http请求
+require("./commonApi/bag_api"); //引入背包
+require("./commonApi/figthingExtend"); //引入战斗动作
 //全局变量
 window.http_globalData = {
     user_info:[],//用户信息

@@ -1,46 +1,34 @@
 {
-  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "miniprogramRoot": "",
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "postcss": true,
-    "minified": false,
-    "newFeature": false,
-    "coverView": true,
-    "lazyloadPlaceholderEnable": false,
-    "preloadBackgroundData": false,
-    "autoAudits": false,
-    "uglifyFileName": false,
-    "uploadWithSourceMap": true,
-    "enhance": true,
-    "useMultiFrameRuntime": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useStaticServer": true,
-    "showES6CompileOption": false,
-    "checkInvalidKey": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
+    "description": "项目配置文件。",
+    "miniprogramRoot": "./",
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": false,
+        "newFeature": false
     },
-    "disableUseStrict": false,
-    "useCompilerPlugins": false
-  },
-  "compileType": "game",
-  "libVersion": "3.3.4",
-  "appid": "wx74281a6b17fcd51c",
-  "projectname": "xinyuan",
-  "condition": {},
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
-  }
+    "compileType": "game",
+    "libVersion": "game",
+    "appid": "wx74281a6b17fcd51c",
+    "projectname": "xinyuan",
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": [],
+            "current": -1
+        },
+        "miniprogram": {
+            "current": -1,
+            "list": []
+        }
+    }
 }

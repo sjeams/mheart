@@ -713,7 +713,7 @@ class Method
         }else{
             $data = array_filter($action, function($val) use($str,$value) { return $val[$str]== $value; }); 
         }
-        ksort($data); //排序
+        sort($data); //排序
         return $data;
     }
  

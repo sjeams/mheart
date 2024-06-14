@@ -1,12 +1,13 @@
  const httpFightingExtend = cc.Class({
   //倍速
   sudu(num){
-    //设置倍数
+    //设置基础倍数
+    var fast = 0.8
     //速度越快，值越小
     if(http_globalData.user_info.beishu>1){
-      return  (1/http_globalData.user_info.beishu)*num
+      return  (1/http_globalData.user_info.beishu)*num*fast
     }else{
-      return  num
+      return  num*fast
     }
   },
   async alertBoat(boat){
@@ -47,7 +48,7 @@
         _this.actionBig(node.getChildByName('悟性动作'))
         
         //向下取整
-        var wuxing_floor = Math.floor(biology.hurt_go_value/5)
+        var wuxing_floor = Math.floor(biology.hurt_go_value/100)
         if(wuxing_floor>0){
           var xingxing = node.getChildByName('悟性星星s').getComponent(cc.Label).string;
           if(parseInt(xingxing)!=wuxing_floor){
@@ -426,4 +427,4 @@
     },
 });
  
-httpRequestFightingExtend =  new httpFightingExtend();
+window.httpRequestFightingExtend =  new httpFightingExtend();

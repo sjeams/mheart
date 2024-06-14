@@ -1,9 +1,9 @@
 /**
  * Http 请求封装
  */
-// var https_url = 'https://www.aheart.cn';
-require("./runtime"); 
-var https_url = 'http://cs.aheart.com';
+var https_url = 'https://www.aheart.cn';
+// require("./runtime"); 
+// var https_url = 'http://cs.aheart.com';
 const HttpHelper = cc.Class({
     extends: cc.Component,
     // statics: {
@@ -267,5 +267,4 @@ const HttpHelper = cc.Class({
             return sence[url];
         },
 });
-httpRequest =  new HttpHelper();
-// window.HttpHelper = new HttpHelper();
+window.httpRequest =  new HttpHelper();

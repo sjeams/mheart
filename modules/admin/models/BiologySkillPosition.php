@@ -40,32 +40,30 @@ class BiologySkillPosition extends ActiveRecord
                         [4,5,6],
                         [7,8,9],
                     );
-                    //获取当前生物所在的列
+                    //获取当前生物所在的列--自己列
                     $user_positon =[];
                     foreach( $arra_list as $v){
                         if(in_array($position_in,$v)){
                             $user_positon  =$v;
                         }
                     }
-                    // 所有生物的位置
-          
+                    // 所有生物的位置--根据自己列，选择攻击敌方的列
                     foreach($att_position as $position_id){
-                        // var_dump());die;
                         if(in_array($position_id,$user_positon)){
-                            $arry_fisrt_li = $arra_lie[intval($position_id/3)][0];//当前列的最小值 147
-                
+                            $lie_num = intval($position_id/3.1); // 0 1 2  --不能为 123
+                            $arry_fisrt_li = $arra_lie[$lie_num][0];//当前列的最小值1, 147 其中一个
                             //查看还有没小于当前列最小值的。
                             $has_values_less_than_one = array_filter($att_position, function($value) use($arry_fisrt_li) {
                                 return  $value < $arry_fisrt_li;
                             }); 
-             
+                            sort($has_values_less_than_one);
                             //没有比当前值小的了
                             if($has_values_less_than_one){
                                 $new_att=$has_values_less_than_one[0];//敌方生物位置 --去比当前值小的 
                             }else{
                                 $new_att=$position_id;//敌方生物位置  
                             }
-                             break;
+                            break;
                         }
                     }
                     $int[]=$new_att;//敌方生物位置

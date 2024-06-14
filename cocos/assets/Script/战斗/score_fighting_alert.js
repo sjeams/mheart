@@ -31,6 +31,8 @@ cc.Class({
     back_map(){
       //销毁动态合图
       // cc.dynamicAtlasManager.reset()
+      var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting')
+      _this.removeBoxprefab()
       httpRequest.playGame("sence_ditu")
     },
     back_reload(){
@@ -48,6 +50,10 @@ cc.Class({
       // clickEventHandler.handler = "callback";
       // // clickEventHandler.customEventData = index;
       // button.clickEvents.push(clickEventHandler);
+      var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting')
+      _this.removeBoxprefab()
+      _this.playTask( )
+      cc.find('Canvas/结算').active =false;// 结束弹窗结果
  
     }, 
     async button_beishu(){

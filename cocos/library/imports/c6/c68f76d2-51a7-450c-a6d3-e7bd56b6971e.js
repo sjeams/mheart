@@ -108,6 +108,6 @@ var httpBagApi = cc.Class({
     });
   }
 });
-httpRequestBagApi = new httpBagApi();
+window.httpRequestBagApi = new httpBagApi();
 
 cc._RF.pop();

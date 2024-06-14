@@ -72,4 +72,4 @@ const httpBagApi = cc.Class({
     },  
 
 });
-httpRequestBagApi = new httpBagApi();
+window.httpRequestBagApi = new httpBagApi();

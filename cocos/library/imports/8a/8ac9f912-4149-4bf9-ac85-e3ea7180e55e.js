@@ -134,13 +134,13 @@ cc.Class({
 
                       TipBoxPrefab_icon.x = parseInt(map_x); //重新定义了间距
 
-                      TipBoxPrefab_icon.getChildByName('阵法s').getComponent(cc.Label).string = star - 1;
+                      TipBoxPrefab_icon.getChildByName('阵法s').getComponent(cc.Label).string = parseInt(prop) + 1;
                       TipBoxPrefab_icon.y = map.y;
                       TipBoxPrefab_icon.is_my = is_my; //阵容
 
                       TipBoxPrefab_icon.jing_bi = map.biology.jingBi; //金币
 
-                      TipBoxPrefab_icon.biology_int = star; //阵法编号
+                      TipBoxPrefab_icon.biology_int = parseInt(prop) + 1; //阵法编号
 
                       TipBoxPrefab_icon.shengMing = map.biology.shengMing;
                       TipBoxPrefab_icon.moFa = map.biology.moFa;

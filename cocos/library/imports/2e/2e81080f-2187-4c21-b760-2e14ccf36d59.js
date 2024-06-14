@@ -36,9 +36,14 @@ cc.Class({
   back_map: function back_map() {
     //销毁动态合图
     // cc.dynamicAtlasManager.reset()
+    var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting');
+
+    _this.removeBoxprefab();
+
     httpRequest.playGame("sence_ditu");
   },
-  back_reload: function back_reload() {// this.parent.active=false
+  back_reload: function back_reload() {
+    // this.parent.active=false
     // httpRequest.playGame("sence_zhandou") 
     // cc.find('Canvas/重播').click()
     // cc.find('Canvas/重播', this.node).on('touchstart', this.onButtonClick, this);
@@ -51,6 +56,13 @@ cc.Class({
     // clickEventHandler.handler = "callback";
     // // clickEventHandler.customEventData = index;
     // button.clickEvents.push(clickEventHandler);
+    var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting');
+
+    _this.removeBoxprefab();
+
+    _this.playTask();
+
+    cc.find('Canvas/结算').active = false; // 结束弹窗结果
   },
   button_beishu: function button_beishu() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {

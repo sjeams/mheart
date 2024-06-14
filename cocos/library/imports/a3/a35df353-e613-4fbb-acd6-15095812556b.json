@@ -1012,7 +1012,7 @@
     },
     "component": "",
     "_componentId": "2e810gPIYdMIbdgLhTM821Z",
-    "handler": "back_time_hidden",
+    "handler": "back_map",
     "customEventData": ""
   },
   {
@@ -1433,10 +1433,10 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 27
+      "__id__": 1
     },
     "component": "",
-    "_componentId": "ed8ebeqhB9JK7/jr/MBPGZr",
+    "_componentId": "2e810gPIYdMIbdgLhTM821Z",
     "handler": "back_reload",
     "customEventData": ""
   },
