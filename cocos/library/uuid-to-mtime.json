@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1715584822664,
+    "asset": 1718360289650,
     "meta": 1713491582551,
     "relativePath": "resources"
   },
@@ -500,7 +500,7 @@
     "relativePath": "Script\\登录"
   },
   "c1ef2949-c461-4e49-8f65-6e535fad3d75": {
-    "asset": 1716361768772,
+    "asset": 1718360075828,
     "meta": 1713491582499,
     "relativePath": "Script\\场景"
   },
@@ -535,7 +535,7 @@
     "relativePath": "Scene\\home"
   },
   "638e9aec-94f5-46dc-8189-c73eaf21f22c": {
-    "asset": 1713491582487,
+    "asset": 1718355118753,
     "meta": 1713491582486,
     "relativePath": "Script\\home_js"
   },
@@ -555,7 +555,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1714381381784,
+    "asset": 1718360254130,
     "meta": 1713491582551,
     "relativePath": "resources\\biology"
   },
@@ -620,8 +620,8 @@
     "relativePath": "Scene\\home\\镇妖塔.fire"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1713491582471,
-    "meta": 1714273943948,
+    "asset": 1718704015715,
+    "meta": 1718704015723,
     "relativePath": "Scene\\login\\角色.fire"
   },
   "976917f8-d11e-4f5c-9190-619188b1ae4e": {
@@ -828,11 +828,6 @@
     "asset": 1713929279180,
     "meta": 1713491583432,
     "relativePath": "resources\\图片背景"
-  },
-  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1718157403857,
-    "meta": 1718157403878,
-    "relativePath": "Scene\\login\\登录.fire"
   },
   "fc19e870-7010-47dc-9892-1b455bc95d30": {
     "asset": 1713491583331,
@@ -1150,7 +1145,7 @@
     "relativePath": "resources\\model背包\\a生物大厅 -备份.prefab"
   },
   "3683396a-e14e-45bd-aad4-8030d1c4c598": {
-    "asset": 1716364565834,
+    "asset": 1718343638899,
     "meta": 1713491582484,
     "relativePath": "Script\\背包"
   },
@@ -2210,13 +2205,13 @@
     "relativePath": "prefabs\\biology_生物详情.prefab"
   },
   "9f761f6a-7bdd-417c-bd52-eeaee3d78ebb": {
-    "asset": 1714035229716,
-    "meta": 1714273943909,
+    "asset": 1718695529159,
+    "meta": 1718695529167,
     "relativePath": "resources\\model战斗\\sprite_世界.prefab"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
-    "asset": 1718084711256,
-    "meta": 1718084711268,
+    "asset": 1718678722868,
+    "meta": 1718678722884,
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "5c7fae98-d310-4ab7-a14e-faac31300165": {
@@ -2559,16 +2554,6 @@
     "meta": 1716363856689,
     "relativePath": "Script\\登录\\register_in.js"
   },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1716363656670,
-    "meta": 1716363856707,
-    "relativePath": "Script\\登录\\register_knows.js"
-  },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1716363662261,
-    "meta": 1716363856727,
-    "relativePath": "Script\\登录\\register.js"
-  },
   "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
     "asset": 1716363667522,
     "meta": 1716363856742,
@@ -2649,16 +2634,6 @@
     "meta": 1718353714483,
     "relativePath": "Script\\commonApi\\runtime.js"
   },
-  "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1718354207855,
-    "meta": 1718354238044,
-    "relativePath": "Script\\commonApi\\figthingExtend.js"
-  },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1718355215644,
-    "meta": 1718355430939,
-    "relativePath": "Script\\登录\\myserver.js"
-  },
   "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
     "asset": 1718355407432,
     "meta": 1718355431021,
@@ -2669,20 +2644,10 @@
     "meta": 1718355431030,
     "relativePath": "Script\\home_js\\userinfo.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1718359679531,
-    "meta": 1718359719788,
-    "relativePath": "Script\\commonApi\\http.js"
-  },
   "6b79fa83-0475-4bb2-b85b-bc6a835f3cba": {
-    "asset": 1718360251188,
+    "asset": 1718361432016,
     "meta": 1718360251189,
     "relativePath": "resources\\audio_music"
-  },
-  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
-    "asset": 1718360423399,
-    "meta": 1718360425196,
-    "relativePath": "Script\\common.js"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
     "asset": 1718360561545,
@@ -2714,14 +2679,69 @@
     "meta": 1718360886203,
     "relativePath": "Script\\战斗\\score_fighting.js"
   },
-  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
-    "asset": 1718360986829,
-    "meta": 1718360991395,
-    "relativePath": "Script\\commonApi\\bag_api.js"
-  },
   "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
     "asset": 1718361379472,
     "meta": 1718361385586,
     "relativePath": "Script\\场景\\AudioManager.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1718679330448,
+    "meta": 1718679739654,
+    "relativePath": "Script\\登录\\register_knows.js"
+  },
+  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
+    "asset": 1718680222369,
+    "meta": 1718680292132,
+    "relativePath": "Script\\common.js"
+  },
+  "e757bbfa-2a28-43d3-b60e-97bc03f61c06": {
+    "asset": 1718695513069,
+    "meta": 1718695513096,
+    "relativePath": "resources\\biology\\水墨背景.png"
+  },
+  "a7ecaa9c-502f-4366-b207-0c80d065fe14": {
+    "asset": 1718701627599,
+    "meta": 1718701627664,
+    "relativePath": "resources\\biology\\边框圆.png"
+  },
+  "407eb230-628e-48ee-a66f-250db1808d21": {
+    "asset": 1718702110538,
+    "meta": 1718702120684,
+    "relativePath": "Script\\commonApi\\figthingExtend.js"
+  },
+  "655e55a5-1ce6-4e25-a480-35aeb57dfe63": {
+    "asset": 1718703864833,
+    "meta": 1718703864841,
+    "relativePath": "resources\\model召唤\\sprite_生物角色.prefab"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1718704502873,
+    "meta": 1718704508528,
+    "relativePath": "Script\\登录\\score_login.js"
+  },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1718704684014,
+    "meta": 1718704695624,
+    "relativePath": "Script\\commonApi\\bag_api.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1718704764030,
+    "meta": 1718704765410,
+    "relativePath": "Script\\登录\\login.js"
+  },
+  "ac5b2436-d451-43f8-be56-4190f94508a7": {
+    "asset": 1718705033146,
+    "meta": 1718705034294,
+    "relativePath": "Script\\登录\\score_jiaose.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1718704977604,
+    "meta": 1718705034404,
+    "relativePath": "Script\\commonApi\\http.js"
+  },
+  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
+    "asset": 1718705035100,
+    "meta": 1718705035119,
+    "relativePath": "Scene\\login\\登录.fire"
   }
 }

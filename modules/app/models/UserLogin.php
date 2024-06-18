@@ -22,7 +22,7 @@ class UserLogin extends ActiveRecord
             $user_info = Yii::$app->db->createCommand($sql)->queryOne();
             if($user_info){
                 $user_info['word_type'] = intval(Words::getUserWordGrade()['difficult']);
-            } 
+            }
             return $user_info;
         }else{
             return [];

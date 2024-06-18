@@ -1,8 +1,12 @@
 "use strict";
-cc._RF.push(module, 'bfe2c9uBzZLZbQL4m1ej4tE', 'myserver');
-// Script/登录/myserver.js
+cc._RF.push(module, 'bfe2c9uBzZLZbQL4m1ej4tE', 'score_login');
+// Script/登录/score_login.js
 
 "use strict";
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 require("../common");
 
@@ -15,21 +19,41 @@ cc.Class({
 
   },
   onLoad: function onLoad() {
-    this.tokenlogin(); // 快捷登录
-    // 操作文本--读取用户信息
-    // // 账号密码登录
-    // this.login();
-    //储存缓存
-    // cc.sys.localStorage.setItem('token', value);
-    // cc.sys.localStorage.getItem(key);
-    // cc.sys.localStorage.removeItem(key);
-    // 保存最高分到本地
-    // const KEY_BEST_SCORE = "bestScore";
-    // let bestScore = cc.sys.localStorage.getItem(KEY_BEST_SCORE);
-    // if (bestScore === "null" || this.score > bestScore) {
-    //     bestScore = this.score;
-    // }
-    // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return httpRequestBagApi.http_base_jiaose();
+
+            case 2:
+              _this.tokenlogin(); // 快捷登录
+              // 操作文本--读取用户信息
+              // // 账号密码登录
+              // this.login();
+              //储存缓存
+              // cc.sys.localStorage.setItem('token', value);
+              // cc.sys.localStorage.getItem(key);
+              // cc.sys.localStorage.removeItem(key);
+              // 保存最高分到本地
+              // const KEY_BEST_SCORE = "bestScore";
+              // let bestScore = cc.sys.localStorage.getItem(KEY_BEST_SCORE);
+              // if (bestScore === "null" || this.score > bestScore) {
+              //     bestScore = this.score;
+              // }
+              // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
+
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   tokenlogin: function tokenlogin() {
     // 获取本地json  信息
@@ -107,7 +131,7 @@ cc.Class({
   //         //操作文本--修改用户信息
   //     });
   // },
-  btnClick1: function btnClick1(event, customEventData) {
+  goGame: function goGame(event, customEventData) {
     // // 请求登录接口
     // var params = {
     //         'loginname': 'yincan1993',
@@ -116,12 +140,10 @@ cc.Class({
     // };
     // cc.sys.localStorage.setItem('params', JSON.stringify(params));
     // var params = JSON.parse(cc.sys.localStorage.getItem("params"));
-    var token = cc.sys.localStorage.getItem('token'); // cc.log(value); 
+    // var token =cc.sys.localStorage.getItem('token');
+    // cc.log(value); 
     // let httpRequest =  new HttpHelper();  
-
-    httpRequest.httpPostLogin('/app/api-server/user-login', {
-      'token': token
-    }, function (data) {
+    httpRequest.httpPostLogin('/app/api-server/user-login', {}, function (data) {
       // cc.log(data); 
       if (data.code == 0) {
         // 登录失败，或本地数据失效
@@ -140,11 +162,10 @@ cc.Class({
         } else if (data.code == 2) {
           // 登录成功，未定义角色
           // 进入定义角色界面     
-          var server = JSON.parse(cc.sys.localStorage.getItem('server')); // cc.log(server); 
+          // var server = JSON.parse(cc.sys.localStorage.getItem('server'));
+          // cc.log(cc.sys.localStorage.getItem('token')); 
           // 创建角色
-          // cc.director.loadScene('login/角色');
-
-          httpRequest.playGame("sence_dating");
+          cc.director.loadScene('login/角色'); // httpRequest.playGame("sence_jiaose");
         }
       }
     }); //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点

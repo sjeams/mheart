@@ -9,8 +9,8 @@ cc.Class({
         // register_login_password: cc.EditBox
     },
  
-    onLoad: function () {      
-        
+    async onLoad() {      
+        await httpRequestBagApi.http_base_jiaose()
         this.tokenlogin(); // 快捷登录
 
         // 操作文本--读取用户信息
@@ -31,7 +31,7 @@ cc.Class({
         // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
         
     },
-    tokenlogin: function(){
+    tokenlogin(){
     
         // 获取本地json  信息
         // cc.loader.load( cc.url.raw("resources/login.json"),function(err,res){  
@@ -114,7 +114,7 @@ cc.Class({
 
     // },
 
-    btnClick1: function (event, customEventData) {
+    goGame: function (event, customEventData) {
         // // 请求登录接口
         // var params = {
         //         'loginname': 'yincan1993',
@@ -123,11 +123,10 @@ cc.Class({
         // };
         // cc.sys.localStorage.setItem('params', JSON.stringify(params));
         // var params = JSON.parse(cc.sys.localStorage.getItem("params"));
-        var token =cc.sys.localStorage.getItem('token');
-    
+        // var token =cc.sys.localStorage.getItem('token');
         // cc.log(value); 
         // let httpRequest =  new HttpHelper();  
-        httpRequest.httpPostLogin('/app/api-server/user-login', {'token':token} ,function (data) {
+        httpRequest.httpPostLogin('/app/api-server/user-login', {} ,function (data) {
             // cc.log(data); 
             if(data.code==0){ // 登录失败，或本地数据失效
                 var user_status  =cc.find("Canvas/register");
@@ -144,11 +143,11 @@ cc.Class({
                     // cc.sys.localStorage.getItem(key); //读取数据
                 }else if(data.code==2){ // 登录成功，未定义角色
                     // 进入定义角色界面     
-                    var server = JSON.parse(cc.sys.localStorage.getItem('server'));
-                    // cc.log(server); 
+                    // var server = JSON.parse(cc.sys.localStorage.getItem('server'));
+                    // cc.log(cc.sys.localStorage.getItem('token')); 
                     // 创建角色
-                    // cc.director.loadScene('login/角色');
-                    httpRequest.playGame("sence_dating");
+                    cc.director.loadScene('login/角色');
+                    // httpRequest.playGame("sence_jiaose");
                 }
             }
 

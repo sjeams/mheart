@@ -17,6 +17,8 @@ require("./commonApi/figthingExtend"); //引入战斗动作
 window.http_globalData = {
   user_info: [],
   //用户信息
+  jiaose: [],
+  //角色基本信息
   fighting: [],
   biology: [],
   bag: [],

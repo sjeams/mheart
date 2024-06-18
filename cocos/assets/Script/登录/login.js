@@ -60,8 +60,7 @@ cc.Class({
         // })
         var token =cc.sys.localStorage.getItem('token');
         //定位弹出窗口
-        var user_status  =cc.find("Canvas/server/user_status");
-        user_status.active=true;
+        var user_status  =cc.find("Canvas/server/user_status").active=true;
         var user_phone  =cc.find("Canvas/server/user_status/user_phone");
         if(token){
                 httpRequest.httpPostLogin('/app/api-server/token-login', {'token':token} ,function (data) {

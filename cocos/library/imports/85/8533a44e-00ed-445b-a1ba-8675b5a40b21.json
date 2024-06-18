@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "水墨背景",
+    "texture": "e757bbfa-2a28-43d3-b60e-97bc03f61c06",
+    "atlas": "",
+    "rect": [
+      4,
+      0,
+      286,
+      70
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "originalSize": [
+      290,
+      70
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

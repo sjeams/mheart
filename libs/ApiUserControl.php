@@ -27,7 +27,12 @@
             }
             $user_info = UserLogin::getUserlogin($token);
             if(!$user_info){
-                die(json_encode(['code' => 0,null,'message' => '未登录']));   
+                $is_login = UserLogin::find()->select('id')->where("token='$token'")->one();
+                if($is_login){
+                    // die(Method::jsonApp(2,null,'未创建角色'));
+                }else{
+                    die(Method::jsonApp(0,null,'未登录'));
+                }
             }else{
                 $this->config($user_info);
             }

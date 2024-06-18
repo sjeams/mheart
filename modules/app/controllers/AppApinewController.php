@@ -62,7 +62,7 @@ class AppApinewController extends ApiUserControl{
 
 
     /**
-     * 随机获取一个生物--抽卡
+     * 随机获取一个生物--抽卡   --可以固定种族
      * http://cs.aheart.com/app/app-apinew/user-biology
      */
     public function actionUserBiology(){
@@ -163,6 +163,9 @@ class AppApinewController extends ApiUserControl{
     }
 
     
+
+
+
     // /**
     //  * bag背包---生物背包
     //  * http://cs.aheart.com/app/app-apinew/gooduse-bag

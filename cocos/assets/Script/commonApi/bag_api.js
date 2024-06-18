@@ -19,7 +19,17 @@ const httpBagApi = cc.Class({
         // })
         });
     },  
-
+    //实例化角色信息
+    async http_base_jiaose(){
+        //修改请求--等待响应后回调
+        return new Promise(resolve => {
+            httpRequest.httpPostLogin('/app/api-server/jiaose',{}, function (data) {
+            //此处可能要判断登录失效 跳转、后期处理
+            http_globalData.user_jiaose = data.data
+            resolve();
+        })
+        });
+    }, 
 
     //实例化用户信息
    async http_user_info(){

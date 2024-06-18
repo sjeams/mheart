@@ -199,7 +199,7 @@ cc.Class({
     xieyi_show_dlg () {
         // 假设你的 webview 组件的名称是 'webview'
         var webview = cc.find("Canvas/register_konws_scorllview/register_knows_webview").getComponent(cc.WebView);   
-        webview.url="https://www.aheart.cn/app/api-user/xieyi"
+        webview.url="https://www.aheart.cn/app/api-server/xieyi"
         // var  _self =this;
         // var remoteUrl = httpRequest.httpUrl("/app/api-user/xieyi");
         // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
@@ -218,7 +218,7 @@ cc.Class({
         // 假设你的 webview 组件的名称是 'webview'
         var webview = cc.find("Canvas/register_konws_scorllview/register_knows_webview").getComponent(cc.WebView);       
         // 设置你想要加载的 URL
-        webview.url = 'https://www.aheart.cn/app/api-user/yinsi';
+        webview.url = 'https://www.aheart.cn/app/api-server/yinsi';
         // var tips  =cc.find("Canvas/tips/gonggao_tips_scorllview/view/gonggao_tips");
         // var  _self =this;
         // var remoteUrl = httpRequest.httpUrl("/app/api-user/yinsi");
