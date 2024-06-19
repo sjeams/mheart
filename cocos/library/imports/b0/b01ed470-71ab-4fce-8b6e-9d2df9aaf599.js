@@ -11,6 +11,9 @@ require("./commonApi/bag_api"); //引入背包
 
 
 require("./commonApi/figthingExtend"); //引入战斗动作
+
+
+require("./commonApi/alert"); //引入弹窗样式
 //全局变量
 
 

@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "五行",
-    "texture": "c79a8f24-29d0-4a9e-b128-42f18f0a3637",
+    "name": "洛克人",
+    "texture": "ac89c93b-b97f-48d6-8d31-ee154b738e64",
     "atlas": "",
     "rect": [
-      7,
-      0,
-      150,
-      176
+      15,
+      2,
+      166,
+      196
     ],
     "offset": [
-      -5,
+      -2,
       0
     ],
     "originalSize": [
-      174,
-      176
+      200,
+      200
     ],
     "capInsets": [
       0,

@@ -74,36 +74,38 @@ cc.Class({
         TipBoxPrefab.getChildByName('经验s').getComponent(cc.Label).string= info.need_expe
 
         TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string= info.state_name
-
-        if(info.gooduse1){
-            var goods_image = http_globalData.bag[info.gooduse1].point
-            cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-                if (err) {
-                    // cc.error(err.message || err);
-                    return;
-                }
-                TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = texture; 
-            });
-        }
-        if(info.gooduse2){
-            var goods_image =http_globalData.bag[info.gooduse2].point
-            cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-                if (err) {
-                    // cc.error(err.message || err);
-                    return;
-                }
-                TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = texture; 
-            });
-        }
-        if(info.yuanShen){
-            var goods_image =http_globalData.bag[info.yuanShen].point
-            cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-                if (err) {
-                    // cc.error(err.message || err);
-                    return;
-                }
-                TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = texture; 
-            });
+        //有背包物品
+        if(http_globalData.bag.length){
+            if(info.gooduse1){
+                var goods_image = http_globalData.bag[info.gooduse1].point
+                cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
+                    if (err) {
+                        // cc.error(err.message || err);
+                        return;
+                    }
+                    TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = texture; 
+                });
+            }
+            if(info.gooduse2){
+                var goods_image =http_globalData.bag[info.gooduse2].point
+                cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
+                    if (err) {
+                        // cc.error(err.message || err);
+                        return;
+                    }
+                    TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = texture; 
+                });
+            }
+            if(info.yuanShen){
+                var goods_image =http_globalData.bag[info.yuanShen].point
+                cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
+                    if (err) {
+                        // cc.error(err.message || err);
+                        return;
+                    }
+                    TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = texture; 
+                });
+            }
         }
         return TipBoxPrefab
     },

@@ -26,10 +26,6 @@ cc.Class({
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return httpRequestBagApi.http_base_jiaose();
-
-            case 2:
               _this.tokenlogin(); // 快捷登录
               // 操作文本--读取用户信息
               // // 账号密码登录
@@ -47,7 +43,7 @@ cc.Class({
               // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
 
 
-            case 3:
+            case 1:
             case "end":
               return _context.stop();
           }

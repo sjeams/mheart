@@ -10,7 +10,7 @@ cc.Class({
     },
  
     async onLoad() {      
-        await httpRequestBagApi.http_base_jiaose()
+   
         this.tokenlogin(); // 快捷登录
 
         // 操作文本--读取用户信息

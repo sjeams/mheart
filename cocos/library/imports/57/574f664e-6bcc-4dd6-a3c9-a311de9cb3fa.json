@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "玄铁兵",
+    "texture": "a0366535-5232-4db6-8035-4d2d51f82b75",
+    "atlas": "",
+    "rect": [
+      35,
+      21,
+      137,
+      175
+    ],
+    "offset": [
+      3.5,
+      -8.5
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

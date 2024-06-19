@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "魔法少女",
+    "texture": "6d4ae13f-5dc5-4b73-aee2-fddff6cec622",
+    "atlas": "",
+    "rect": [
+      24,
+      13,
+      154,
+      206
+    ],
+    "offset": [
+      1,
+      -3.5
+    ],
+    "originalSize": [
+      200,
+      225
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

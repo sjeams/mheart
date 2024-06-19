@@ -23,6 +23,7 @@ class UserLogin extends ActiveRecord
             if($user_info){
                 $user_info['word_type'] = intval(Words::getUserWordGrade()['difficult']);
             }
+            Yii::$app->session->set('user_info',$user_info);
             return $user_info;
         }else{
             return [];

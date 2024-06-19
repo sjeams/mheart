@@ -253,7 +253,7 @@
       "array": [
         0,
         0,
-        267.8183561203377,
+        243.5696448143734,
         0,
         0,
         0,
@@ -945,7 +945,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "名字",
+    "_name": "角色名字",
     "_objFlags": 0,
     "_parent": {
       "__id__": 8
@@ -1011,7 +1011,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "name",
+    "_name": "角色名字s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 19
@@ -1085,8 +1085,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "大魔王是谁",
-    "_N$string": "大魔王是谁",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 32,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -1407,7 +1407,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "名字",
+    "_name": "金币s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 25
@@ -1481,8 +1481,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "3800",
-    "_N$string": "3800",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": false,

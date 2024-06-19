@@ -20,6 +20,9 @@ use app\modules\app\models\UserServer;
 use app\modules\app\models\User;
 use app\modules\app\models\UserLogin;
 use app\modules\app\models\UserBiologyNatureDo;
+use app\modules\app\models\UserBiology;
+
+
 use Codeception\PHPUnit\Constraint\Page;
 use Yii;
 use UploadFile;
@@ -52,7 +55,8 @@ class ApiServerController extends ApiControl{
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         $login =  UserLogin ::find()->select('id')->where( "loginname = '{$data['loginname']}'  "  )->One();
         if($login){
-            die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '账号已存在']));   
+            // die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '账号已存在']));   
+            die(Method::jsonApp(0,['token' => null,'userinfo'=>null],'账号已存在'));
         }else{
             $userinfo =  new UserLogin();
             $userinfo->loginname =$data['loginname'];
@@ -61,8 +65,9 @@ class ApiServerController extends ApiControl{
             $userinfo->token = $token;
             $userinfo->save();
 
-            $login =  UserLogin ::find()->select('id,loginname')->where( "token = '{$token}'  ")->asarray()->One();
-            die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '注册成功']));   
+            $login =  UserLogin ::find()->select('id,loginname')->where( "token = '$token'  ")->asarray()->One();
+            // die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '注册成功']));   
+            die(Method::jsonApp(1,['token' => $token,'userinfo'=>$login],'注册成功'));
         }
     }
 
@@ -76,12 +81,15 @@ class ApiServerController extends ApiControl{
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
-            $login =  UserLogin ::find()->select('id,loginname')->where( "token = '{$data['token']}'  ")->asarray()->One();
+            $token =$data['token'];
+            $userinfo =  UserLogin ::find()->select('id,loginname')->where( "token = '$token'  ")->asarray()->One();
             if(!empty($login)){ // 验证【录】-oken
-                die(json_encode(['code' => 1,'data'=>['token' =>$data['token'],'userinfo'=>$login],'message' => '登录成功']));
+                // die(json_encode(['code' => 1,'data'=>['token' =>$data['token'],'userinfo'=>$login],'message' => '登录成功']));
+                die(Method::jsonApp(1,['token' => $token,'userinfo'=>$userinfo],'登录成功'));
             } 
         }
-        die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   
+        // die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   
+        die(Method::jsonApp(0,['token' => null],'未登录'));
     }
 
 
@@ -95,17 +103,20 @@ class ApiServerController extends ApiControl{
         // $data = json_decode(file_get_contents("php://input"),true); // 接受表单类的  json  数组 序列化
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         if(!empty($data)){
-            $login =  UserLogin ::find()->select('id')->where( "(loginname = '{$data['loginname']}' or phone = '{$data['loginname']}')  and  password = '{$data['password']}' "  )->One();
-            if(!empty($login)){ // 验证【录】-oken
+            $userinfo =  UserLogin ::find()->select('id')->where( "(loginname = '{$data['loginname']}' or phone = '{$data['loginname']}')  and  password = '{$data['password']}' "  )->One();
+            if(!empty($userinfo)){ // 验证【录】-oken
                 // 29e1513810699c26b4ef39ebd79d4257
-                $token = md5($login['id'].'lhzm'.time());
-                $login->token = $token;
-                $login->save();
-                $login =  UserLogin ::find()->select('id,loginname')->where( "token = '{$token}'  ")->asarray()->One();
-                die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '登录成功']));   
+                $token = md5($userinfo['id'].'lhzm'.time());
+                $userinfo->token = $token;
+                $userinfo->save();
+                $userinfo =  UserLogin ::find()->select('id,loginname')->where( "token = '{$token}'  ")->asarray()->One();
+                // die(json_encode(['code' => 1,'data'=>['token' =>$token,'userinfo'=>$login],'message' => '登录成功']));   
+                die(Method::jsonApp(1,['token' => $token,'userinfo'=>$userinfo],'登录成功'));
             } 
         }
-        die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   
+        // die(json_encode(['code' => 0,'data'=>['token' =>null],'message' => '未登录']));   
+
+        die(Method::jsonApp(0,['token' => null],'未登录'));
     }
 
 
@@ -129,16 +140,19 @@ class ApiServerController extends ApiControl{
                 if(!empty($userinfo)){
                     // var_dump($userinfo);die;
                     UserLogin::updateAll(['userid' => $userinfo['userid']],"token='$token'");
-                    die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo,'server'=>$server],'message' => '登录成功'])); 
+                    // die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo,'server'=>$server],'message' => '登录成功'])); 
+                    die(Method::jsonApp(1,['userinfo' => $userinfo,'server'=>$server],'登录成功'));
                     // 登录状态储存操作
                 }else{
-                    die(json_encode(['code' => 2,'data'=>['userinfo' =>null,'server'=>$server],'message' => '未创建角色'])); 
+                    // die(json_encode(['code' => 2,'data'=>['userinfo' =>null,'server'=>$server],'message' => '未创建角色'])); 
+                    die(Method::jsonApp(2,['userinfo' => $userinfo,'server'=>$server],'未创建角色'));
                     // 登录状态储存操作
                 }
 
             } 
         }
-        die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
+        // die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
+        die(Method::jsonApp(0,['userinfo' => null],'未登录'));
     }
     /**
      * 服务器选择-退出登录
@@ -147,7 +161,8 @@ class ApiServerController extends ApiControl{
      */
     public function actionUserLoginOut($token){
         UserLogin::updateAll(['token' =>''],"token='$token'");
-        die(json_encode(['code' => 1,null,'message' => 'success']));  
+        // die(json_encode(['code' => 1,null,'message' => 'success']));  
+        die(Method::jsonApp(1,null,'success'));
     }
 
     /**
@@ -156,23 +171,42 @@ class ApiServerController extends ApiControl{
      * http://localhost/monster/web/app/api-server/user-role
      */
     public function actionUserRole(){
-    $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
-    if(!empty($data)){
-        $userinfo =  new User();
-        $userinfo->loginid =$data['loginid'];
-        $userinfo->server =$data['server'];
-        $userinfo->name =$data['name'];
-        $userinfo->servername =$data['servername'];
-        $userinfo->save();
-        $id = $userinfo->attributes['userid'];
-        $userinfo =  User::find()->where( "userid =$id")->asArray()->One();
-        //添加阵法
-        $UserBiologyNatureDo =  new UserBiologyNatureDo();
-        $UserBiologyNatureDo->userid=$userinfo['userid'];
-        $UserBiologyNatureDo ->save();
-        die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo],'message' => 'succes']));   
-    }
-        die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
+        $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
+        $token =$data['token'];
+        if(!empty($token)){
+            $server = $data['server'];
+            $role =trim($server['role']);
+            // $is_user = User::find()->where("name='$role'")->One();
+            $is_reole = User::find()->where("name='$role' or loginid ={$server['loginid']}")->One();
+            if($is_reole){
+                die(Method::jsonApp(2,['userinfo' => null],'你的角色重复啦！'));    
+            }else{
+                $userinfo =  new User();
+                $userinfo->server =$server['id'];
+                $userinfo->servername =$server['name'];
+                $userinfo->loginid =$server['loginid'];
+                $userinfo->name = $role;
+                $userinfo->save();
+                $id = $userinfo->attributes['userid'];
+                $userinfo =  User::find()->where( "userid =$id")->asArray()->One();
+                //添加阵法
+                $UserBiologyNatureDo =  new UserBiologyNatureDo();
+                $UserBiologyNatureDo->userid=$userinfo['userid'];
+                $UserBiologyNatureDo ->save();
+                // die(json_encode(['code' => 1,'data'=>['userinfo' =>$userinfo],'message' => 'succes']));   
+                
+                //登录--存储用户session 等信息
+                UserLogin::getUserlogin($token);
+                // 生成初始伙伴
+                $UserBiology  = new UserBiology();
+                $UserBiology->getBiologyId($server['jiaose_id']);
+                UserLogin::updateAll(['userid' => $userinfo['userid']],"token='$token'");
+                die(Method::jsonApp(1,['userinfo' => $userinfo],'succes'));
+            }
+
+        }
+        // die(json_encode(['code' => 0,'data'=>['userinfo' =>null],'message' => '未登录']));   
+        die(Method::jsonApp(0,['userinfo' => null],'未登录'));
     }
 
 
@@ -189,7 +223,8 @@ class ApiServerController extends ApiControl{
         $server = UserServer::find()->orderBy("id desc")->asarray()->All();
         // var_dump($server);die;
         //  echo  json_encode($server);
-       die(json_encode(['code' => 1,'data'=>['server' => $server],'message' => 'succes']));
+    //    die(json_encode(['code' => 1,'data'=>['server' => $server],'message' => 'succes']));
+       die(Method::jsonApp(1,['server' => $server],'succes'));
     }
 
 
@@ -208,8 +243,8 @@ class ApiServerController extends ApiControl{
         // Content::updateAll(['viewCount' => $data[0]['viewCount']+1],"id={$contentId}");
         UserServer::getServerColor($id);
         $server = UserServer::find()->where("id = $id")->asarray()->one();
-
-        die(json_encode(['code' => 0,'data'=>['server' => $server],'message' => 'succes']));
+        // die(json_encode(['code' => 0,'data'=>['server' => $server],'message' => 'succes']));
+        die(Method::jsonApp(1,['server' => $server],'succes'));
     }
         /**
      * 
@@ -231,7 +266,8 @@ class ApiServerController extends ApiControl{
     );
     // 【仙】-拥有极高的法术伤害，是大多数高输出的克星。特攻+12%     法术，控制，输出较高，适合普通玩家。
     // 【魔】-偏重物理防守，输出一般，属于肉盾类型，适合用于前排。生命+20%	血厚，坚硬，生存力强，适合新人。
-        die(json_encode(['code' => 0,'data'=>$data,'message' => 'succes']));
+        // die(json_encode(['code' => 0,'data'=>$data,'message' => 'succes']));
+        die(Method::jsonApp(1,$data,'succes'));
   
     }
 
@@ -260,7 +296,21 @@ class ApiServerController extends ApiControl{
      * http://www.mheart.com/app/api-server/jiaose
      */
     public function actionJiaose(){
-        $data=  BiologyBiology::getValueListAll();
-        die(Method::jsonApp(1,$data,'succes'));
+        $jiaose=  BiologyBiology::getValueListAll();
+        $nicheng = Yii::$app->params['xingming'];
+        die(Method::jsonApp(1,['jiaose' => $jiaose,'nicheng' => $nicheng],'succes'));
+        // die(Method::jsonApp(1,$data,'succes'));
     }
+
+
+    // /**
+    //  * 获取昵称
+    //  * http://www.mheart.com/app/api-server/nicheng
+    //  */
+    // public function actionNicheng(){
+    //     $data = Yii::$app->params['template'];
+    //     // $data=  BiologyBiology::getValueListAll();
+    //     die(Method::jsonApp(1,$data,'succes'));
+    // }
+  
 }

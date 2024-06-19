@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "96c56763-c612-4446-b871-d5adb95c223c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 200,
+  "height": 180,
+  "platformSettings": {},
+  "subMetas": {
+    "骷髅兵": {
+      "ver": "1.0.4",
+      "uuid": "39b34272-0d8b-454a-a88f-61fb309bb53a",
+      "rawTextureUuid": "96c56763-c612-4446-b871-d5adb95c223c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 200,
+      "height": 180,
+      "rawWidth": 200,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

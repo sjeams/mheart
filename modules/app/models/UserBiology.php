@@ -7,8 +7,10 @@
 //用户生物列表
 namespace app\modules\app\models;
 use yii\db\ActiveRecord;
+
 use app\modules\admin\models\UserWords;
 use app\modules\admin\models\User;
+use app\modules\admin\models\Biology;
 
 
 
@@ -49,7 +51,14 @@ class UserBiology extends ActiveRecord
         return $data;
     }
  
-    
+    // --前端
+
+    // 指定生物
+    public  function getBiologyId($id){
+        $biology =Biology::find()->where("id =$id")->Asarray()->One();
+        $this->getBiologyRandAttribute($biology);
+        return  $biology; 
+    }
     //随机获取生物
     public  function getBiologyRand(){
         $type = $this->user_info['word_type'];
@@ -60,7 +69,7 @@ class UserBiology extends ActiveRecord
     }
     public  function getBiologyRandAttribute($biology=[]){
         if($biology){
-            $biology = UserWords :: BiologySave($biology);
+            $biology = UserWords :: BiologySave($biology,$this->userId);  //需要把生物给指定的用户--玩家
             $userbiology = User::biolobyChange($biology);//获取战斗属性
             $userbiology['userBiologyid']=$userbiology['id'];
             $biologyid = $userbiology['userBiologyid'];

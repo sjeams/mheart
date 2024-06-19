@@ -34,12 +34,12 @@
                     die(Method::jsonApp(0,null,'未登录'));
                 }
             }else{
-                $this->config($user_info);
+                // $this->config($user_info);
             }
 		}
         //处理用户常用信息
         public function config($user_info){
-            Yii::$app->session->set('user_info',$user_info);
+            // Yii::$app->session->set('user_info',$user_info);
         }
 	}
 ?>

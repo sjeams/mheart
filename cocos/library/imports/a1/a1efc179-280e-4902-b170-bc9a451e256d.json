@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "鬼娃娃",
+    "texture": "28e6dec2-13bf-4045-8ed2-7042790d7a83",
+    "atlas": "",
+    "rect": [
+      22,
+      2,
+      152,
+      180
+    ],
+    "offset": [
+      -2,
+      8
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

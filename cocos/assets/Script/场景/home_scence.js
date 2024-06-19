@@ -14,6 +14,8 @@ cc.Class({
          await httpRequestBagApi.http_music()
          await httpRequestBagApi.http_user_info()
          await httpRequestBagApi.http_bag_info()
+         this.go_user_info()
+
      },
 
      start () {
@@ -21,6 +23,11 @@ cc.Class({
      },
      ProgressBar(){
 
+     },
+     go_user_info(){
+          cc.find('Canvas/大厅/头像/角色名字/角色名字s').getComponent(cc.Label).string= http_globalData.user_info.name
+          cc.find('Canvas/大厅/导航栏/金币/金币s').getComponent(cc.Label).string= http_globalData.user_info.jinbi
+          
      },
      // update (dt) {},
      //大厅

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "骷髅兵",
+    "texture": "96c56763-c612-4446-b871-d5adb95c223c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      200,
+      180
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      200,
+      180
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

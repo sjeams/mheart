@@ -20,7 +20,7 @@ class UserWords extends ActiveRecord
         // $wordid=  implode(',',array_column($wordid, 'wordid'));
         //  var_dump($wordid);die;     
         $biologyid = (new \yii\db\Query())
-        ->select("a.name,a.*")
+        ->select("a.*")
         ->from("x2_biology AS a")
         ->leftJoin("x2_words AS b","a.wordid = b.id")
         ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
@@ -69,11 +69,11 @@ class UserWords extends ActiveRecord
         // var_dump($biology);die;
         return $biology;
     }
-    public static function BiologySave($biology){
+    public static function BiologySave($biology,$userid=false){
 
         if(!empty($biology)){
             //随机生物属性处理
-            $biology = UserWords ::BiologyExtendRand($biology);
+            $biology = UserWords ::BiologyExtendRand($biology,$userid);
             Yii::$app->db->createCommand()->insert('x2_biology_create',$biology)->execute();//创造生物
             $biology['createid']=Yii::$app->db->getLastInsertID(); // 获取创造id
             Yii::$app->db->createCommand()->insert('x2_user_biology',$biology)->execute(); //添加到用户

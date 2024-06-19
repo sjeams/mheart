@@ -14,6 +14,8 @@ cc.Class({
   "extends": cc.Component,
   properties: {},
   onLoad: function onLoad() {
+    var _this = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -31,6 +33,9 @@ cc.Class({
               return httpRequestBagApi.http_bag_info();
 
             case 6:
+              _this.go_user_info();
+
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -40,6 +45,10 @@ cc.Class({
   },
   start: function start() {},
   ProgressBar: function ProgressBar() {},
+  go_user_info: function go_user_info() {
+    cc.find('Canvas/大厅/头像/角色名字/角色名字s').getComponent(cc.Label).string = http_globalData.user_info.name;
+    cc.find('Canvas/大厅/导航栏/金币/金币s').getComponent(cc.Label).string = http_globalData.user_info.jinbi;
+  },
   // update (dt) {},
   //大厅
   go_sence_dating: function go_sence_dating() {

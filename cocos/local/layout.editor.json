@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1110,
-      "y": 130,
-      "width": 1336,
-      "height": 780,
+      "x": 917,
+      "y": 172,
+      "width": 1335,
+      "height": 660,
       "layout": {
         "children": [
           {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 349.265625,
+                "height": 283.734375,
                 "type": "panel",
                 "width": 287
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 307.234375,
+                "height": 252.765625,
                 "type": "panel",
                 "width": 287
               }
             ],
-            "height": 659.5,
+            "height": 539.5,
             "type": "dock-v",
             "width": 287
           },
@@ -42,9 +42,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 659.5,
+            "height": 556,
             "type": "panel",
-            "width": 304
+            "width": 508
           },
           {
             "children": [
@@ -53,9 +53,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 333.75,
+                "height": 269.75,
                 "type": "panel",
-                "width": 722.984375
+                "width": 518
               },
               {
                 "active": 0,
@@ -64,14 +64,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 322.75,
+                "height": 266.75,
                 "type": "panel",
-                "width": 722.984375
+                "width": 518
               }
             ],
-            "height": 659.5,
+            "height": 539.5,
             "type": "dock-v",
-            "width": 722.984375
+            "width": 518
           }
         ],
         "type": "dock-h"
@@ -90,8 +90,8 @@
   },
   "panels": {
     "project-settings": {
-      "x": 802,
-      "y": 328,
+      "x": 1056,
+      "y": 305,
       "width": 702,
       "height": 568
     },
@@ -138,8 +138,8 @@
       "height": 339
     },
     "builder": {
-      "x": 889,
-      "y": 129,
+      "x": 715,
+      "y": 404,
       "width": 980,
       "height": 677
     },

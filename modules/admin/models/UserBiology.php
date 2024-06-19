@@ -11,6 +11,12 @@ use yii;
 
 class UserBiology extends ActiveRecord
 {
+    public $user_info; 
+    public $userId; 
+    function init(){
+        $this->user_info =  Yii::$app->session->get('user_info');
+        $this->userId =  $this->user_info['userid'];
+    }
     public static function tableName(){
         return '{{%user_biology}}';
     }
@@ -50,7 +56,7 @@ class UserBiology extends ActiveRecord
     // }
     public  function getBiologyRandAttribute($biology=[]){
         if($biology){
-            $biology = UserWords :: BiologySave($biology);
+            $biology = UserWords :: BiologySave($biology,$this->userId);
             $userbiology = User::biolobyChange($biology);//获取战斗属性
             $userbiology['userBiologyid']=$userbiology['id'];
             $biologyid = $userbiology['userBiologyid'];

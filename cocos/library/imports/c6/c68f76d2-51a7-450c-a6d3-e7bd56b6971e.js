@@ -52,7 +52,8 @@ var httpBagApi = cc.Class({
               return _context2.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPostLogin('/app/api-server/jiaose', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
-                  http_globalData.user_jiaose = data.data;
+                  http_globalData.user_jiaose = data.data.jiaose;
+                  http_globalData.user_nicheng = data.data.nicheng;
                   resolve();
                 });
               }));

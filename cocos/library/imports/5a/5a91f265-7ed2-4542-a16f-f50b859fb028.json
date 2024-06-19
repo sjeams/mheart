@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "蘑菇",
+    "texture": "c9a964a7-19c3-4e08-b859-4afd0c45e19c",
+    "atlas": "",
+    "rect": [
+      31,
+      26,
+      138,
+      156
+    ],
+    "offset": [
+      0,
+      -4
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
