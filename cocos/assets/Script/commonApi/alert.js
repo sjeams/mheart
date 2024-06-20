@@ -12,6 +12,27 @@ const httpAlert = cc.Class({
         }
         return stag_name;
     },
+
+    //操作加载弹窗模板
+   async getTips() {
+        return new Promise(resolve => {    
+        cc.loader.loadRes('/model弹窗/弹窗提示', function(errorMessage,loadedResource){
+                // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
+                http_globalData.alert_tips =loadedResource
+                resolve();
+            })   
+        });
+    },
+    //操作提示
+    goTips(tips){
+        var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+        TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+        TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
+            //移除挂载
+            TipBoxPrefab_tips.destroy();
+        },this)); 
+        cc.find('Canvas').addChild(TipBoxPrefab_tips); 
+    },
      // 隐藏弹窗
      hidePopup(popupNode) {
         // 播放隐藏动画

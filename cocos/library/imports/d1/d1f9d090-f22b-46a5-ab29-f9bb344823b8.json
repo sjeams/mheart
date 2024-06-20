@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "火",
-    "texture": "e5e97514-320d-4f91-b868-876535021407",
+    "name": "金",
+    "texture": "8297bf05-099e-4190-b087-560ad9b22bd3",
     "atlas": "",
     "rect": [
-      34,
-      0,
-      123,
-      182
+      26,
+      15,
+      105,
+      113
     ],
     "offset": [
-      5.5,
-      0
+      2.5,
+      5.5
     ],
     "originalSize": [
-      180,
-      182
+      152,
+      154
     ],
     "capInsets": [
       0,

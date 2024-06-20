@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "木",
-    "texture": "30e9a36d-b01c-4023-87f8-b433ad735c97",
+    "name": "火",
+    "texture": "ffe31f46-0028-45fd-8c92-4688021236c6",
     "atlas": "",
     "rect": [
-      33,
-      0,
-      123,
-      178
+      31,
+      6,
+      105,
+      125
     ],
     "offset": [
-      4.5,
-      0
+      3.5,
+      9
     ],
     "originalSize": [
-      180,
-      178
+      160,
+      155
     ],
     "capInsets": [
       0,

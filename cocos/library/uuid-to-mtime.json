@@ -555,7 +555,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1718701627602,
+    "asset": 1718854876155,
     "meta": 1713491582551,
     "relativePath": "resources\\biology"
   },
@@ -783,11 +783,6 @@
     "asset": 1718359586120,
     "meta": 1718359586125,
     "relativePath": "Scene\\login\\加载.fire"
-  },
-  "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1716357742550,
-    "meta": 1716357742559,
-    "relativePath": "Scene\\home\\创造生物.fire"
   },
   "6cac66da-93bc-47e8-8e74-317f0146b403": {
     "asset": 1713765920695,
@@ -1020,7 +1015,7 @@
     "relativePath": "resources\\图标技能\\AutoAtlas.pac"
   },
   "4b67f73c-a639-4e5b-84d6-d4f5da0d7655": {
-    "asset": 1714359202777,
+    "asset": 1718854896046,
     "meta": 1713491582574,
     "relativePath": "resources\\图标符文"
   },
@@ -2190,7 +2185,7 @@
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
-    "asset": 1714036985375,
+    "asset": 1718768215948,
     "meta": 1714037305567,
     "relativePath": "resources\\图标生物"
   },
@@ -2349,31 +2344,6 @@
     "meta": 1715844959388,
     "relativePath": "resources\\model背包\\背包装备详情.prefab"
   },
-  "e5e97514-320d-4f91-b868-876535021407": {
-    "asset": 1714359202767,
-    "meta": 1714359202802,
-    "relativePath": "resources\\图标符文\\火.png"
-  },
-  "e080e7a0-9238-4600-b7e9-758ce7ee3161": {
-    "asset": 1714359202767,
-    "meta": 1714359202818,
-    "relativePath": "resources\\图标符文\\土.png"
-  },
-  "292e19ab-013c-4a1d-bc91-f01b49ceb77d": {
-    "asset": 1714359202767,
-    "meta": 1714359202820,
-    "relativePath": "resources\\图标符文\\水.png"
-  },
-  "6a2ce939-3de2-47c2-b3d8-a0805df8330a": {
-    "asset": 1714359202767,
-    "meta": 1714359202833,
-    "relativePath": "resources\\图标符文\\金.png"
-  },
-  "30e9a36d-b01c-4023-87f8-b433ad735c97": {
-    "asset": 1714359202767,
-    "meta": 1714359202834,
-    "relativePath": "resources\\图标符文\\木.png"
-  },
   "7240839b-b8fd-40fb-995f-122b757e9c0d": {
     "asset": 1714359245256,
     "meta": 1714359250045,
@@ -2445,7 +2415,7 @@
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "266d590f-26a9-4693-8ceb-5d1eee39a870": {
-    "asset": 1718696355582,
+    "asset": 1718864371324,
     "meta": 1715584793646,
     "relativePath": "resources\\model召唤"
   },
@@ -2453,11 +2423,6 @@
     "asset": 1715584813182,
     "meta": 1715584813183,
     "relativePath": "resources\\model商店"
-  },
-  "eea50269-f225-4935-9406-5677bca6290b": {
-    "asset": 1716356648632,
-    "meta": 1716356648644,
-    "relativePath": "resources\\model召唤\\A生物召唤.prefab"
   },
   "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
     "asset": 1715913615890,
@@ -2565,7 +2530,7 @@
     "relativePath": "Script\\progressTools.js"
   },
   "5187790f-c875-47d3-b06a-facbda924933": {
-    "asset": 1718094693611,
+    "asset": 1718784344060,
     "meta": 1716365137999,
     "relativePath": "Script\\commonApi"
   },
@@ -2588,11 +2553,6 @@
     "asset": 1718159515878,
     "meta": 1718159636154,
     "relativePath": "Script\\背包\\bag_详情按钮Tools.js"
-  },
-  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1718159751738,
-    "meta": 1718159880866,
-    "relativePath": "Script\\召唤\\zhaohuan_home.js"
   },
   "643356fe-1be5-4b1e-aad4-75b155599a40": {
     "asset": 1718182717427,
@@ -2640,8 +2600,8 @@
     "relativePath": "Script\\背包\\bag_home.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1718794673545,
-    "meta": 1718794673565,
+    "asset": 1718877652379,
+    "meta": 1718877652411,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
@@ -2658,11 +2618,6 @@
     "asset": 1718360883737,
     "meta": 1718360886203,
     "relativePath": "Script\\战斗\\score_fighting.js"
-  },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1718361379472,
-    "meta": 1718361385586,
-    "relativePath": "Script\\场景\\AudioManager.js"
   },
   "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
     "asset": 1718679330448,
@@ -2690,8 +2645,8 @@
     "relativePath": "Script\\登录\\login.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1718787707783,
-    "meta": 1718787707815,
+    "asset": 1718871837134,
+    "meta": 1718871837160,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "2942de01-2598-49ac-898f-1140f91db3c9": {
@@ -2774,19 +2729,9 @@
     "meta": 1718775468957,
     "relativePath": "resources\\model召唤\\旋转.prefab"
   },
-  "ff9610dd-aadc-4867-be99-4e962b307668": {
-    "asset": 1718780983067,
-    "meta": 1718780983078,
-    "relativePath": "resources\\model召唤\\角色详情.prefab"
-  },
-  "32857f85-fae5-4a1b-9d43-3cdeaaa96be9": {
-    "asset": 1718778082072,
-    "meta": 1718778086707,
-    "relativePath": "resources\\图标符文\\无.png"
-  },
   "655e55a5-1ce6-4e25-a480-35aeb57dfe63": {
-    "asset": 1718781948247,
-    "meta": 1718781948257,
+    "asset": 1718865241045,
+    "meta": 1718865241056,
     "relativePath": "resources\\model召唤\\sprite_生物角色.prefab"
   },
   "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
@@ -2799,20 +2744,10 @@
     "meta": 1718784344289,
     "relativePath": "Script\\commonApi\\http.js"
   },
-  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
-    "asset": 1718786301710,
-    "meta": 1718786317141,
-    "relativePath": "Script\\commonApi\\bag_api.js"
-  },
   "63e0101c-cc96-4f19-96d3-224c8dd8c0f4": {
-    "asset": 1718786732366,
-    "meta": 1718786734243,
+    "asset": 1718865013460,
+    "meta": 1718865013471,
     "relativePath": "resources\\model召唤\\角色.prefab"
-  },
-  "d6864f90-040a-4637-afd2-d84425cb053b": {
-    "asset": 1718787253204,
-    "meta": 1718787273806,
-    "relativePath": "Script\\commonApi\\alert.js"
   },
   "ac5b2436-d451-43f8-be56-4190f94508a7": {
     "asset": 1718790662045,
@@ -2825,13 +2760,113 @@
     "relativePath": "Script\\场景\\home_scence.js"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1718794332304,
-    "meta": 1718794332417,
+    "asset": 1718872030292,
+    "meta": 1718872030304,
     "relativePath": "Scene\\login\\角色.fire"
   },
   "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
     "asset": 1718794590938,
     "meta": 1718794662942,
     "relativePath": "Script\\背包\\biology_infoTools.js"
+  },
+  "b332e10c-729a-4ac4-9f61-9829e3509e75": {
+    "asset": 1718850108170,
+    "meta": 1718850108175,
+    "relativePath": "resources\\model召唤\\角色详情.prefab"
+  },
+  "610cde51-00fc-431f-bacc-df611bb4c1b9": {
+    "asset": 1718851596075,
+    "meta": 1718851596102,
+    "relativePath": "resources\\图标符文\\无.png"
+  },
+  "8297bf05-099e-4190-b087-560ad9b22bd3": {
+    "asset": 1718852453204,
+    "meta": 1718852453238,
+    "relativePath": "resources\\图标符文\\金.png"
+  },
+  "ffe31f46-0028-45fd-8c92-4688021236c6": {
+    "asset": 1718852453205,
+    "meta": 1718852453241,
+    "relativePath": "resources\\图标符文\\火.png"
+  },
+  "8116d51f-2c53-4003-a10c-dd21f21f5d42": {
+    "asset": 1718852453205,
+    "meta": 1718852453252,
+    "relativePath": "resources\\图标符文\\木.png"
+  },
+  "b7798227-41c4-4baf-86c5-f0240447a95a": {
+    "asset": 1718852453205,
+    "meta": 1718852453254,
+    "relativePath": "resources\\图标符文\\土.png"
+  },
+  "9059fda1-4526-41d3-9695-37090b725185": {
+    "asset": 1718852585178,
+    "meta": 1718852585198,
+    "relativePath": "resources\\图标符文\\水.png"
+  },
+  "81c2b047-bf16-4c2a-9017-9d409dabc149": {
+    "asset": 1718853267056,
+    "meta": 1718853338358,
+    "relativePath": "resources\\图标符文\\A符文.pac"
+  },
+  "6ba3de48-03d8-4a2a-af52-bbb12d90cf3f": {
+    "asset": 1718854896045,
+    "meta": 1718854896060,
+    "relativePath": "resources\\图标符文\\背景.png"
+  },
+  "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
+    "asset": 1718861986442,
+    "meta": 1718864371330,
+    "relativePath": "resources\\model召唤\\A召唤 详情.prefab"
+  },
+  "c401445e-5141-4beb-8817-b993c1865231": {
+    "asset": 1718879322440,
+    "meta": 1718879322469,
+    "relativePath": "resources\\model召唤\\A创造.prefab"
+  },
+  "65b182dc-72c3-4e4a-b465-6f55cb7370d5": {
+    "asset": 1718870041036,
+    "meta": 1718870051757,
+    "relativePath": "resources\\model召唤\\A融合.prefab"
+  },
+  "ee100251-62ba-4c76-a40c-72387b49e9a3": {
+    "asset": 1718870043330,
+    "meta": 1718870061158,
+    "relativePath": "resources\\model召唤\\A训练.prefab"
+  },
+  "e2ded755-7be6-457e-826b-98df8332ab70": {
+    "asset": 1718870044843,
+    "meta": 1718870070333,
+    "relativePath": "resources\\model召唤\\A回收.prefab"
+  },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1718870972030,
+    "meta": 1718870994456,
+    "relativePath": "Script\\commonApi\\bag_api.js"
+  },
+  "e86f262c-50fa-4841-9702-fa306f21946d": {
+    "asset": 1718877235065,
+    "meta": 1718877235086,
+    "relativePath": "resources\\model弹窗\\弹窗提示.prefab"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1718877527549,
+    "meta": 1718877651400,
+    "relativePath": "Script\\场景\\AudioManager.js"
+  },
+  "d6864f90-040a-4637-afd2-d84425cb053b": {
+    "asset": 1718878292498,
+    "meta": 1718878353999,
+    "relativePath": "Script\\commonApi\\alert.js"
+  },
+  "496e7872-51ad-40b5-8724-b872860cdea3": {
+    "asset": 1718878431383,
+    "meta": 1718878431394,
+    "relativePath": "Scene\\home\\创造生物.fire"
+  },
+  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
+    "asset": 1718879321136,
+    "meta": 1718879321866,
+    "relativePath": "Script\\召唤\\zhaohuan_home.js"
   }
 }
