@@ -9,6 +9,26 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     async onLoad () {
+        // var iBoxPrefab = cc.find('Canvas/菜单/召唤b') 
+        // let label = "";
+        // label = "2d-sprite";//原色
+        // // label = "2d-gray-sprite";//灰色
+        // label ="/audio_music/builtin_描边"
+        // // iBoxPrefab.getComponent(cc.Sprite).setMaterial(0, cc.Material.getBuiltinMaterial(label,iBoxPrefab));
+        // cc.loader.loadRes(label, cc.Material, function(err, res) {
+        //     var material = cc.Material.getInstantiatedMaterial(res)
+        //     // let localPos = this.outlineSprite.node.parent.convertToNodeSpaceAR(e.getLocation());
+        //     // //判断鼠标移入图片内，则设置颜色为红色
+        //     // if (this.outlineSprite.node.getBoundingBox().contains(localPos)) {
+        //     //     material.setProperty("imgColor", new cc.Vec4(255, 0, 0, 255));
+        //     //     material.setProperty("radius", 0.002);
+        //     //     //判断鼠标移出图片，则设置颜色为0，还原成本来颜色
+        //     // } else {
+        //         material.setProperty("imgColor", new cc.Vec4(0, 0, 0, 255));
+        //     // }
+        //     iBoxPrefab.getComponent(cc.Sprite).setMaterial(0, material)
+        // })
+
         await httpRequestAlert.getTips(); //加载弹窗模板
         // cc.log(http_globalData.user_info)
         //大厅需要加载的全局变量

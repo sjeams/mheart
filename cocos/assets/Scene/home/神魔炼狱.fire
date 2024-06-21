@@ -57,7 +57,7 @@
     "_is3DNode": true,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "a6d455ec-80c3-4fb4-aa0b-21dee5748522"
   },
   {
@@ -174,7 +174,7 @@
       "array": [
         0,
         0,
-        252.8794179050561,
+        225.16660498395407,
         0,
         0,
         0,
@@ -660,10 +660,6 @@
       "__id__": 8
     },
     "_enabled": true,
-    "content": null,
-    "person": null,
-    "test_scrollView": null,
-    "test_pageView": null,
     "_id": "99nK3D8q5NJrOaSx62ua4v"
   },
   {
