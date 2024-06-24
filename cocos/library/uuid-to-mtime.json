@@ -550,12 +550,12 @@
     "relativePath": "Script\\战斗"
   },
   "34cfab56-b6f4-4a71-811d-0d2f70ab843a": {
-    "asset": 1713765920682,
+    "asset": 1719218425231,
     "meta": 1713491582472,
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1718854876155,
+    "asset": 1719219746599,
     "meta": 1713491582551,
     "relativePath": "resources\\biology"
   },
@@ -801,12 +801,12 @@
   },
   "1902624f-80dd-47e3-bb1b-0f04a33db756": {
     "asset": 1713491583431,
-    "meta": 1714273943243,
+    "meta": 1719197260274,
     "relativePath": "resources\\图标技能效果\\飓风.png"
   },
   "d79df13d-61d6-4c5d-b797-b86e06d6a749": {
     "asset": 1713491583430,
-    "meta": 1714273943238,
+    "meta": 1719197257337,
     "relativePath": "resources\\图标技能效果\\血爆.png"
   },
   "1b99732f-2a4f-4d7e-aee1-057390919a05": {
@@ -2180,8 +2180,8 @@
     "relativePath": "resources\\model战斗"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1718965125475,
-    "meta": 1718965125487,
+    "asset": 1719224091238,
+    "meta": 1719224091251,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
@@ -2356,12 +2356,12 @@
   },
   "062c300f-dae4-4325-856d-2649da614fb8": {
     "asset": 1714359307473,
-    "meta": 1714359307508,
+    "meta": 1719197262520,
     "relativePath": "resources\\图标技能效果\\龙卷风.png"
   },
   "c1156cbb-c7e9-4724-b8f4-2600f9bd102c": {
     "asset": 1714359307479,
-    "meta": 1714359307525,
+    "meta": 1719197254620,
     "relativePath": "resources\\图标技能效果\\奥术.png"
   },
   "7025811b-b2c5-4259-821f-8e522449ff93": {
@@ -2391,7 +2391,7 @@
   },
   "b5b1916b-9379-4e60-ab34-99f55abfe9bb": {
     "asset": 1714381500747,
-    "meta": 1714381500769,
+    "meta": 1719197251669,
     "relativePath": "resources\\图标技能效果\\光晕.png"
   },
   "264a5f19-3215-49a4-b292-37ddcce16c5c": {
@@ -2565,8 +2565,8 @@
     "relativePath": "Scene\\战斗场景.fire"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1718964657750,
-    "meta": 1718964657766,
+    "asset": 1719224213119,
+    "meta": 1719224213132,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "2e81080f-2187-4c21-b760-2e14ccf36d59": {
@@ -2590,7 +2590,7 @@
     "relativePath": "Script\\home_js\\userinfo.js"
   },
   "6b79fa83-0475-4bb2-b85b-bc6a835f3cba": {
-    "asset": 1718959121613,
+    "asset": 1719218453305,
     "meta": 1718360251189,
     "relativePath": "resources\\audio_music"
   },
@@ -2648,11 +2648,6 @@
     "asset": 1718765752377,
     "meta": 1718765767578,
     "relativePath": "Script\\Hls\\HSL_Frag.js"
-  },
-  "0cb6e8a0-5c62-4447-a049-ec47c672879f": {
-    "asset": 1718950432079,
-    "meta": 1718955978343,
-    "relativePath": "Script\\Hls\\Sprite_HSL.js"
   },
   "ac89c93b-b97f-48d6-8d31-ee154b738e64": {
     "asset": 1718766752226,
@@ -2850,8 +2845,8 @@
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "391d0f8c-bf45-489f-9756-b455a86e9b1d": {
-    "asset": 1718963176086,
-    "meta": 1718963176091,
+    "asset": 1719224153128,
+    "meta": 1719224153139,
     "relativePath": "resources\\audio_music\\builtin_描边.mtl"
   },
   "cc6a5999-7d3f-42ee-bc45-280e0971ffb5": {
@@ -2894,11 +2889,6 @@
     "meta": 1718959915371,
     "relativePath": "resources\\assets\\OutlineDemo\\OutlineDemo.ts"
   },
-  "aecd6f87-9174-4bce-8c15-8e5c608a5fca": {
-    "asset": 1718961217511,
-    "meta": 1718961219226,
-    "relativePath": "resources\\audio_music\\描边.effect"
-  },
   "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
     "asset": 1718962877235,
     "meta": 1718962882073,
@@ -2910,13 +2900,83 @@
     "relativePath": "Script\\场景\\map_score.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1718965341582,
-    "meta": 1718965341609,
+    "asset": 1719224154994,
+    "meta": 1719224155009,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
-    "asset": 1718964473305,
-    "meta": 1718964474590,
+    "asset": 1718965368903,
+    "meta": 1719193202725,
     "relativePath": "Script\\场景\\word_score.js"
+  },
+  "0cb6e8a0-5c62-4447-a049-ec47c672879f": {
+    "asset": 1719193945815,
+    "meta": 1719194150237,
+    "relativePath": "Script\\Hls\\Sprite_HSL.js"
+  },
+  "560902ed-f11a-4096-9ed6-3d99a7f4b9a2": {
+    "asset": 1719199486680,
+    "meta": 1719199491112,
+    "relativePath": "resources\\audio_music\\滚动.effect"
+  },
+  "aecd6f87-9174-4bce-8c15-8e5c608a5fca": {
+    "asset": 1719209679182,
+    "meta": 1719209709029,
+    "relativePath": "resources\\audio_music\\描边.effect"
+  },
+  "16bd776f-4c93-400c-9bfc-19c3076c6481": {
+    "asset": 1719219746584,
+    "meta": 1719219746620,
+    "relativePath": "resources\\biology\\标题2.png"
+  },
+  "76220847-c34c-4457-a405-d2d032d0d60e": {
+    "asset": 1719219746584,
+    "meta": 1719219746622,
+    "relativePath": "resources\\biology\\体力.png"
+  },
+  "bbc56ed9-a651-4137-9e9d-c566671463b2": {
+    "asset": 1719219746584,
+    "meta": 1719219746632,
+    "relativePath": "resources\\biology\\砖石.png"
+  },
+  "2719dfa6-cdbe-4a66-805d-28a952cd7540": {
+    "asset": 1719219746585,
+    "meta": 1719219746634,
+    "relativePath": "resources\\biology\\标题3.png"
+  },
+  "86036771-f96b-47b9-a85b-362ecc631fa9": {
+    "asset": 1719219746585,
+    "meta": 1719219746645,
+    "relativePath": "resources\\biology\\标题4.png"
+  },
+  "e12bf3c6-5eed-4161-8928-22caa4d22c2e": {
+    "asset": 1719219746585,
+    "meta": 1719219746646,
+    "relativePath": "resources\\biology\\信息.png"
+  },
+  "b15090f9-47e1-49ea-ad54-959cfc126fb3": {
+    "asset": 1719219746585,
+    "meta": 1719219746657,
+    "relativePath": "resources\\biology\\金币.png"
+  },
+  "7b6bb2cd-8fc0-4b6a-bb41-0e850a19d8dc": {
+    "asset": 1719219746585,
+    "meta": 1719219746659,
+    "relativePath": "resources\\biology\\战斗.png"
+  },
+  "1ab31567-7ae6-4fc1-b6a2-cf869ca5e8e3": {
+    "asset": 1719219746585,
+    "meta": 1719219746672,
+    "relativePath": "resources\\biology\\标题1.png"
+  },
+  "5b385d3d-9b47-4b52-976c-542b5f751b30": {
+    "asset": 1719224005948,
+    "meta": 1719224005963,
+    "relativePath": "Scene\\map\\New Scene.fire"
+  },
+  "35f59565-0b1e-4a57-9d59-06600234c298": {
+    "asset": 1719223846720,
+    "meta": 1719223847465,
+    "relativePath": "resources\\audio_music\\渐变.effect"
   }
 }

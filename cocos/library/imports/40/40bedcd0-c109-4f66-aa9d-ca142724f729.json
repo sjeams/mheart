@@ -1153,7 +1153,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "391d0f8c-bf45-489f-9756-b455a86e9b1d"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,
@@ -1581,7 +1581,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+        "__uuid__": "391d0f8c-bf45-489f-9756-b455a86e9b1d"
       }
     ],
     "_srcBlendFactor": 770,

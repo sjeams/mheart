@@ -4,7 +4,7 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "aecd6f87-9174-4bce-8c15-8e5c608a5fca"
+    "__uuid__": "35f59565-0b1e-4a57-9d59-06600234c298"
   },
   "_techniqueIndex": 0,
   "_techniqueData": {
@@ -12,12 +12,12 @@
       "props": {
         "imgColor": {
           "__type__": "cc.Color",
-          "r": 0,
-          "g": 0,
-          "b": 0,
+          "r": 255,
+          "g": 255,
+          "b": 255,
           "a": 255
         },
-        "radius": 0.001
+        "radius": 0.02
       },
       "defines": {
         "USE_TEXTURE": true,

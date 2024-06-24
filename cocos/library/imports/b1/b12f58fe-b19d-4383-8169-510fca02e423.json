@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "战斗",
+    "texture": "7b6bb2cd-8fc0-4b6a-bb41-0e850a19d8dc",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      59
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
