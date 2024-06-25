@@ -3,13 +3,22 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-
+        // material: cc.Material = null,
+        time: number = 0
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     async onLoad () {
-        // var iBoxPrefab = cc.find('Canvas/菜单/召唤b') 
+
+        // cc.loader.loadRes(label, cc.Material, function(err, res) {
+        //     httpRequestBagApi.builtin_yaohuang = cc.Material.getInstantiatedMaterial(res)
+        //     httpRequestBagApi.builtin_yaohuang.setProperty("u_time", 131);
+        // })
+
+     
+        // httpRequestBagApi.builtin_yaohuang.setProperty("u_time", 1.0)
+        // var iBoxPrefab = cc.find('Canvas/菜单/创造b') 
         // let label = "";
         // label = "2d-sprite";//原色
         // // label = "2d-gray-sprite";//灰色
@@ -28,24 +37,54 @@ cc.Class({
         //     // }
         //     iBoxPrefab.getComponent(cc.Sprite).setMaterial(0, material)
         // })
-
+        //大厅需要加载的全局变量
+        http_globalData.chuanzao_xibao=[];//细胞
         await httpRequestAlert.getTips(); //加载弹窗模板
         // cc.log(http_globalData.user_info)
-        //大厅需要加载的全局变量
-        httpRequestBagApi.chuanzao_xibao=[];//细胞
+        await httpRequestBagApi.http_material_yaohuang();//加载材质
         await httpRequestBagApi.http_user_info()
         await this.menu_chuangzao(); //加载召唤菜单
         await this.menu_ronghe(); //加载召唤菜单
         await this.menu_xunlian(); //加载召唤菜单
         await this.menu_huishou(); //加载召唤菜单
         http_globalData.check_Prefab =cc.find('Canvas/大厅/创造');
+        // this.materialTime()
     },
+    // materialTime(){
 
-    start () {
-
+    //     if(http_globalData.materialPrefab){
+    //         // 定义一个回调函数
+    //         // httpRequestBagApi.
+    //         // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+    //         // this.schedule(this.update,0);
+    //         // 定义一个回调函数
+    //         this.updateEveryFrame = function (dt) {
+    //             // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
+    //             // 这里可以放置每帧都需要执行的逻辑
+    //             this.time += dt;
+    //             http_globalData.materialPrefab.setProperty("u_time",this.time) 
+    //         };
+    //         // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+    //         this.schedule(this.updateEveryFrame, 0);
+    //     }
+    // },
+    update(dt) {
+    //     // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
+    //     // 这里可以放置每帧都需要执行的逻辑
+    //     // console.log('这个消息每帧都会打印');
+    //     cc.log(this.time)
+        if(http_globalData.materialPrefab){
+            this.time += dt;
+            http_globalData.materialPrefab.setProperty("u_time",this.time*1)  //这里可以设置摇晃速度
+        }
+    // },
+    // onDestroy() {
+    //     // 如果你想在组件被销毁时取消定时器，可以使用 this.unschedule 方法
+    //     httpRequestBagApi.updateEveryFrame=null;
+    //     this.unschedule(httpRequestBagApi.updateEveryFrame);
     },
-
-    //加载菜单
+ 
+    //加载菜单-创造
     async menu_chuangzao(){
         var _this =this;
         cc.log(http_globalData.user_info)
@@ -73,6 +112,11 @@ cc.Class({
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/火",TipBoxPrefab_model_name4,4);
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/土",TipBoxPrefab_model_name5,5);
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/无",TipBoxPrefab_model_name6,6);
+                _this.onclick_chuangzao(TipBoxPrefab)
+
+                TipBoxPrefab.getChildByName('云游商人').getComponent(cc.Sprite).setMaterial(0,httpRequestBagApi.material_yaohuang)
+                http_globalData.materialPrefab =   TipBoxPrefab.getChildByName('云游商人').getComponent(cc.Sprite).getMaterial(0);
+
                 BoxPrefab.addChild(TipBoxPrefab,1); // 预制体、zindex层级
                 resolve();
             })
@@ -97,20 +141,53 @@ cc.Class({
     },
     menu_chuangzao_xibao_button(TipBoxPrefab,TipBoxPrefab_model_ename,TipBoxPrefab_model_name,type){
         var _this =this;
-        if(httpRequestBagApi.chuanzao_xibao.length>=3){
+        if(http_globalData.chuanzao_xibao.length>=3){
             httpRequestAlert.goTips("材料已满，请创造"); //提示材料已经满
         }else{
             var string_num = cc.find(TipBoxPrefab_model_name,TipBoxPrefab).getComponent(cc.Label).string;
-            cc.log(httpRequestBagApi.chuanzao_xibao)
+            // cc.log(http_globalData.chuanzao_xibao)
             if(string_num>0){
-                httpRequestBagApi.chuanzao_xibao.push(type)
+
+                var item = {type:type,TipBoxPrefab_model_ename:TipBoxPrefab_model_ename,TipBoxPrefab_model_name:TipBoxPrefab_model_name}
+                http_globalData.chuanzao_xibao.push(item)
                 _this.menu_chuangzao_xibao_update(TipBoxPrefab,TipBoxPrefab_model_name,parseInt(string_num)-1)
                 //载入图片
                 var texture = cc.find(TipBoxPrefab_model_ename,TipBoxPrefab).getComponent(cc.Sprite).spriteFrame
-                cc.find("生物创造/细胞"+httpRequestBagApi.chuanzao_xibao.length,TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
+                cc.find("生物创造/细胞"+http_globalData.chuanzao_xibao.length,TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
             }
         }  
     },
+    onclick_chuangzao(TipBoxPrefab){
+        var _this =this;
+        cc.find("/重置",TipBoxPrefab).on('click', function () {
+            _this.button_zhaohuan_clear(TipBoxPrefab)
+ 
+        }, this);
+        cc.find("生物创造/创造",TipBoxPrefab).on('click', function () {
+            _this.button_zhaohuan_creater()
+        }, this);
+    },
+    //重置
+    button_zhaohuan_clear(TipBoxPrefab){
+        var _this =this;
+        // cc.find("生物创造/细胞"+http_globalData.chuanzao_xibao.length,TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
+        var texture = cc.find("生物创造/创造",TipBoxPrefab).getComponent(cc.Sprite).spriteFrame
+        for (let index = 0; index < http_globalData.chuanzao_xibao.length; index++) {
+            var item = http_globalData.chuanzao_xibao[index];
+            var string_num =  http_globalData.user_info['biology'+item.type]
+            _this.menu_chuangzao_xibao_update(TipBoxPrefab,item.TipBoxPrefab_model_name,string_num)
+        }
+        cc.find("生物创造/细胞1",TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
+        cc.find("生物创造/细胞2",TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
+        cc.find("生物创造/细胞3",TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
+        http_globalData.chuanzao_xibao=[];
+    },
+    //创造生物
+    button_zhaohuan_creater(TipBoxPrefab){
+
+    },
+
+// -------------------
     //加载菜单
     async menu_ronghe(){
             return new Promise(resolve => {
@@ -151,28 +228,36 @@ cc.Class({
             });
         },
     button_zhaohuan(){
+   
+ 
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/创造');
         http_globalData.check_Prefab.active=true;
     },
     button_ronghe(){
+    
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/融合');
         http_globalData.check_Prefab.active=true;
     },
 
     button_xunlian(){
+ 
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/训练');
         http_globalData.check_Prefab.active=true;
     },
 
     button_huishou(){
+ 
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/回收');
         http_globalData.check_Prefab.active=true;
     },
 
+    back_home(){
+        httpRequest.playGame('sence_dating')
+    },
 
     // //打开背包
     // openBag() {
@@ -227,7 +312,5 @@ cc.Class({
     //     // cc.find('Canvas/弹窗').removeAllChildren();
     // },
     // update (dt) {},
-    back_home(){
-        httpRequest.playGame('sence_dating')
-    },
+
 });

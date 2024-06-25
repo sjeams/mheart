@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "sprite_生物角色",
+    "_name": "角色选择",
     "_objFlags": 0,
     "_native": "",
     "data": {

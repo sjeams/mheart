@@ -64,7 +64,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Canvas",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
@@ -175,7 +175,7 @@
       "array": [
         0,
         0,
-        244.2191638672117,
+        171.47302994931886,
         0,
         0,
         0,
@@ -552,6 +552,7 @@
       "__id__": 5
     },
     "_enabled": true,
+    "time": 0,
     "_id": "3790SumjpBmpqhHFkv0Pdz"
   },
   {
@@ -761,7 +762,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 40
+      "height": 38
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -795,7 +796,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "76o6l8EstCNaxkarMZ0BGq"
+    "_id": "fcWxw2RDdPJIp+b1BvC80h"
   },
   {
     "__type__": "cc.Label",
@@ -813,8 +814,8 @@
     "_useOriginalSize": false,
     "_string": "返回",
     "_N$string": "返回",
-    "_fontSize": 20,
-    "_lineHeight": 40,
+    "_fontSize": 24,
+    "_lineHeight": 38,
     "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -827,7 +828,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 1,
     "_N$cacheMode": 1,
-    "_id": "89Ch9kZylOa7FZ3C3bksU3"
+    "_id": "28n/DZvEhHGqe4RmXyh/VT"
   },
   {
     "__type__": "cc.LabelOutline",
@@ -845,7 +846,7 @@
       "a": 255
     },
     "_width": 1,
-    "_id": "9enedvlztLUph1G0C0c+OV"
+    "_id": "763MkxO2JKNYTBcuI1Df3S"
   },
   {
     "__type__": "cc.LabelShadow",
@@ -864,11 +865,11 @@
     },
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 1,
-      "y": 1
+      "x": 2,
+      "y": 2
     },
-    "_blur": 1,
-    "_id": "9dvXG/SmhDJqOUwZ6j2TCk"
+    "_blur": 2,
+    "_id": "99m/E4En5EG6ghovqtmBFk"
   },
   {
     "__type__": "cc.Button",
@@ -953,7 +954,9 @@
     "_N$disabledSprite": {
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
     },
-    "_N$target": null,
+    "_N$target": {
+      "__id__": 13
+    },
     "_id": "8f8kz/QB1NGL+i68smHTKi"
   },
   {
@@ -1314,7 +1317,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "391d0f8c-bf45-489f-9756-b455a86e9b1d"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,

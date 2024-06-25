@@ -19,6 +19,16 @@ const httpBagApi = cc.Class({
         // })
         });
     },  
+    //加载材质
+    async  http_material_yaohuang() {
+        return new Promise(resolve => {    
+            var label ='/materials/builtin_摇晃';
+            cc.loader.loadRes(label, cc.Material, function(err, res) {
+                httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res)
+                resolve();
+            })
+        });
+    },
     //实例化角色信息
     async http_base_jiaose(){
         //修改请求--等待响应后回调

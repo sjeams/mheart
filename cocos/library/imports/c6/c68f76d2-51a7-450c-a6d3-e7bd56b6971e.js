@@ -42,18 +42,17 @@ var httpBagApi = cc.Class({
       }, _callee);
     }))();
   },
-  //实例化角色信息
-  http_base_jiaose: function http_base_jiaose() {
+  //加载材质
+  http_material_yaohuang: function http_material_yaohuang() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               return _context2.abrupt("return", new Promise(function (resolve) {
-                httpRequest.httpPostLogin('/app/api-server/jiaose', {}, function (data) {
-                  //此处可能要判断登录失效 跳转、后期处理
-                  http_globalData.user_jiaose = data.data.jiaose;
-                  http_globalData.user_nicheng = data.data.nicheng;
+                var label = '/materials/builtin_摇晃';
+                cc.loader.loadRes(label, cc.Material, function (err, res) {
+                  httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res);
                   resolve();
                 });
               }));
@@ -66,17 +65,18 @@ var httpBagApi = cc.Class({
       }, _callee2);
     }))();
   },
-  //实例化用户信息
-  http_user_info: function http_user_info() {
+  //实例化角色信息
+  http_base_jiaose: function http_base_jiaose() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
               return _context3.abrupt("return", new Promise(function (resolve) {
-                httpRequest.httpPost('/app/app-api/get-user', {}, function (data) {
+                httpRequest.httpPostLogin('/app/api-server/jiaose', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
-                  http_globalData.user_info = data.data;
+                  http_globalData.user_jiaose = data.data.jiaose;
+                  http_globalData.user_nicheng = data.data.nicheng;
                   resolve();
                 });
               }));
@@ -87,6 +87,29 @@ var httpBagApi = cc.Class({
           }
         }
       }, _callee3);
+    }))();
+  },
+  //实例化用户信息
+  http_user_info: function http_user_info() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              return _context4.abrupt("return", new Promise(function (resolve) {
+                httpRequest.httpPost('/app/app-api/get-user', {}, function (data) {
+                  //此处可能要判断登录失效 跳转、后期处理
+                  http_globalData.user_info = data.data;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
     }))();
   },
   //实例化背包信息

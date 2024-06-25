@@ -99,7 +99,7 @@ CCProgram fs %{
     vec4 oth = texture2D(texture, othUv);
     vec4 move = oth + cur;
     //闪烁
-    // float ablank = abs(sin(time*0.2));
+    float ablank = abs(sin(time*0.2));
     //描边
     // // 计算周围像素的 alpha 值
     // float alphaLeft = texture2D(texture, v_uv0 + vec2(radius, 0)).a;
@@ -120,6 +120,7 @@ CCProgram fs %{
     // vec2 distortedUV = v_uv0 + texture2D(texture, v_uv0).rg * distortionStrength;
     // vec4 bowen = texture2D(texture, distortedUV - vec2(0.0,n_time));
     // gl_FragColor =move*+ablank+j_color; 
-    gl_FragColor =j_color;  
+    gl_FragColor =j_color+ablank*+move;  
+ 
   }
 }%

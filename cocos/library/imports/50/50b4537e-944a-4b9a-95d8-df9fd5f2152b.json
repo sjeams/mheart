@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.Material",
+  "_name": "builtin_摇晃",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "6ca4aee5-dc46-4e3f-8b54-86e6b26d09c2"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "u_time": 0.01
+      }
+    }
+  }
+}
