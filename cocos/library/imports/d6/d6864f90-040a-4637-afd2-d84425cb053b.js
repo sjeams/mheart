@@ -26,7 +26,7 @@ var httpAlert = cc.Class({
     return stag_name;
   },
   //操作加载弹窗模板
-  getTips: function getTips() {
+  alert_getTips: function alert_getTips() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -48,8 +48,31 @@ var httpAlert = cc.Class({
       }, _callee);
     }))();
   },
+  //操作加载弹窗模板
+  alert_biologyDetail: function alert_biologyDetail() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              return _context2.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model召唤/A召唤详情', function (errorMessage, loadedResource) {
+                  // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
+                  http_globalData.alert_biologyDetail = loadedResource;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
   //操作提示
-  goTips: function goTips(tips) {
+  alert_goTips: function alert_goTips(tips) {
     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips);
     TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string = tips;
     TipBoxPrefab_tips.runAction(cc.sequence(cc.fadeIn(0.1), cc.delayTime(0.3), cc.fadeOut(0.2)), cc.callFunc(function () {
@@ -74,6 +97,65 @@ var httpAlert = cc.Class({
 
     popupNode.runAction(cc.sequence(cc.fadeOut(0.01), cc.fadeIn(0.5), cc.callFunc(function () {// 动画播放完成的回调
     }, this)));
+  },
+  //创建生物弹窗
+  alert_biologyTips: function alert_biologyTips(TipBoxPrefab) {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              return _context3.abrupt("return", new Promise(function (resolve) {
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 0, 1, 360, 360, 1.5);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.5); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+                // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+
+                _this.schedule(function () {
+                  var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_biologyDetail); // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+                  // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
+                  //     //移除挂载
+                  //     TipBoxPrefab_tips.destroy();
+                  // },this)); 
+
+                  cc.find('Canvas/弹窗').addChild(TipBoxPrefab_tips);
+                  resolve();
+                }, 1);
+              }));
+
+            case 1:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  //重复闪烁旋转   time 时常/角度
+  actionBlink_show: function actionBlink_show(TipBoxPrefab_icon, runing, time, ratation, ratation_back, big) {
+    // TipBoxPrefab_icon.getChildByName('旋转')
+    // var _this=this;
+    // 创建旋转动作，这里以每秒绕X轴旋转360度为例
+    // const rotateAction = cc.rotateBy(5,360)
+    // const rotateAction = cc.blink(1,1)
+    // const actionhiddenOn = cc.fadeTo(0.1,0);
+    // const actionhiddenoff = cc.fadeTo(0.1,255); 
+    if (runing) {
+      var actionhiddenBig = cc.spawn(cc.rotateBy(time, ratation), cc.scaleTo(time, big, big), cc.delayTime(1));
+      var actionhiddenSmoll = cc.spawn(cc.rotateBy(time, ratation_back), cc.scaleTo(time, 1, 1), cc.delayTime(1));
+      var repeatAction = cc.repeatForever(cc.sequence(actionhiddenBig, actionhiddenSmoll), cc.callFunc(function () {}, this));
+      TipBoxPrefab_icon.runAction(repeatAction);
+    } else {
+      var _actionhiddenBig = cc.spawn(cc.rotateBy(time, ratation), cc.scaleTo(time, big, big), cc.delayTime(1));
+
+      var _actionhiddenSmoll = cc.spawn(cc.rotateBy(time, ratation_back), cc.scaleTo(time, 1, 1), cc.delayTime(1));
+
+      TipBoxPrefab_icon.runAction(cc.sequence(_actionhiddenBig, _actionhiddenSmoll), cc.callFunc(function () {}, this)); // const actionhiddenSmoll   = cc.spawn(cc.rotateBy(0.01,0),cc.scaleTo(0.01,1,1),cc.delayTime(0.01))
+      // const  repeatAction  = cc.repeatForever(cc.sequence(actionhiddenSmoll),cc.callFunc(function(){   },this))
+      // TipBoxPrefab_icon.runAction(repeatAction);
+      // TipBoxPrefab_icon.stopAllActions();
+    }
   }
 });
 window.httpRequestAlert = new httpAlert();

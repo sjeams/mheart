@@ -53,11 +53,11 @@ cc.Class({
               http_globalData.chuanzao_xibao = []; //细胞
 
               _context.next = 3;
-              return httpRequestAlert.getTips();
+              return httpRequestAlert.alert_getTips();
 
             case 3:
               _context.next = 5;
-              return httpRequestBagApi.http_material_yaohuang();
+              return httpRequestAlert.alert_biologyDetail();
 
             case 5:
               _context.next = 7;
@@ -81,9 +81,10 @@ cc.Class({
 
             case 15:
               //加载召唤菜单
-              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造'); // this.materialTime()
+              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造');
+              httpRequestBagApi.materialTime(http_globalData.materialPrefab); //预制体晃动
 
-            case 16:
+            case 17:
             case "end":
               return _context.stop();
           }
@@ -91,38 +92,19 @@ cc.Class({
       }, _callee);
     }))();
   },
-  // materialTime(){
-  //     if(http_globalData.materialPrefab){
-  //         // 定义一个回调函数
-  //         // httpRequestBagApi.
-  //         // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-  //         // this.schedule(this.update,0);
-  //         // 定义一个回调函数
-  //         this.updateEveryFrame = function (dt) {
-  //             // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
-  //             // 这里可以放置每帧都需要执行的逻辑
-  //             this.time += dt;
-  //             http_globalData.materialPrefab.setProperty("u_time",this.time) 
-  //         };
-  //         // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-  //         this.schedule(this.updateEveryFrame, 0);
-  //     }
+  // updateAnimation(dt) {
+  // //     // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
+  // //     // 这里可以放置每帧都需要执行的逻辑
+  //     // if(http_globalData.materialPrefab){
+  //     //     this.time += dt;
+  //     //     http_globalData.materialPrefab.setProperty("u_time",this.time*1)  //这里可以设置摇晃速度
+  //     // }
+  // // },
+  // // onDestroy() {
+  // //     // 如果你想在组件被销毁时取消定时器，可以使用 this.unschedule 方法
+  // //     httpRequestBagApi.updateEveryFrame=null;
+  // //     this.unschedule(httpRequestBagApi.updateEveryFrame);
   // },
-  update: function update(dt) {
-    //     // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
-    //     // 这里可以放置每帧都需要执行的逻辑
-    //     // console.log('这个消息每帧都会打印');
-    //     cc.log(this.time)
-    if (http_globalData.materialPrefab) {
-      this.time += dt;
-      http_globalData.materialPrefab.setProperty("u_time", this.time * 1); //这里可以设置摇晃速度
-    } // },
-    // onDestroy() {
-    //     // 如果你想在组件被销毁时取消定时器，可以使用 this.unschedule 方法
-    //     httpRequestBagApi.updateEveryFrame=null;
-    //     this.unschedule(httpRequestBagApi.updateEveryFrame);
-
-  },
   //加载菜单-创造
   menu_chuangzao: function menu_chuangzao() {
     var _this3 = this;
@@ -173,10 +155,16 @@ cc.Class({
 
                   _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/无", TipBoxPrefab_model_name6, 6);
 
-                  _this.onclick_chuangzao(TipBoxPrefab);
+                  _this.onclick_chuangzao(TipBoxPrefab); // cc.find('云游商人b/云游商人',TipBoxPrefab).getComponent(cc.Sprite).setMaterial(0,httpRequestBagApi.material_yaohuang)
 
-                  TipBoxPrefab.getChildByName('云游商人').getComponent(cc.Sprite).setMaterial(0, httpRequestBagApi.material_yaohuang);
-                  http_globalData.materialPrefab = TipBoxPrefab.getChildByName('云游商人').getComponent(cc.Sprite).getMaterial(0);
+
+                  http_globalData.materialPrefab = cc.find('云游商人b/云游商人', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, 20, -20, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 5, 5, -5, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 1, 2, 20, 20, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 1, 20, 360, 360, 1.1);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物细胞'), 1, 10, 10, -10, 1.05);
                   BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
 
                   resolve();
@@ -212,19 +200,21 @@ cc.Class({
     var _this = this;
 
     if (http_globalData.chuanzao_xibao.length >= 3) {
-      httpRequestAlert.goTips("材料已满，请创造"); //提示材料已经满
+      httpRequestAlert.alert_goTips("材料已满，请创造"); //提示材料已经满
     } else {
       var string_num = cc.find(TipBoxPrefab_model_name, TipBoxPrefab).getComponent(cc.Label).string; // cc.log(http_globalData.chuanzao_xibao)
 
       if (string_num > 0) {
+        var now_num = parseInt(string_num) - 1;
         var item = {
           type: type,
+          now_num: now_num,
           TipBoxPrefab_model_ename: TipBoxPrefab_model_ename,
           TipBoxPrefab_model_name: TipBoxPrefab_model_name
         };
         http_globalData.chuanzao_xibao.push(item);
 
-        _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name, parseInt(string_num) - 1); //载入图片
+        _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name, now_num); //载入图片
 
 
         var texture = cc.find(TipBoxPrefab_model_ename, TipBoxPrefab).getComponent(cc.Sprite).spriteFrame;
@@ -238,8 +228,8 @@ cc.Class({
     cc.find("/重置", TipBoxPrefab).on('click', function () {
       _this.button_zhaohuan_clear(TipBoxPrefab);
     }, this);
-    cc.find("生物创造/创造", TipBoxPrefab).on('click', function () {
-      _this.button_zhaohuan_creater();
+    cc.find("创造", TipBoxPrefab).on('click', function () {
+      _this.button_zhaohuan_creater(TipBoxPrefab);
     }, this);
   },
   //重置
@@ -247,7 +237,7 @@ cc.Class({
     var _this = this; // cc.find("生物创造/细胞"+http_globalData.chuanzao_xibao.length,TipBoxPrefab).getComponent(cc.Sprite).spriteFrame =texture
 
 
-    var texture = cc.find("生物创造/创造", TipBoxPrefab).getComponent(cc.Sprite).spriteFrame;
+    var texture = cc.find("创造", TipBoxPrefab).getComponent(cc.Sprite).spriteFrame;
 
     for (var index = 0; index < http_globalData.chuanzao_xibao.length; index++) {
       var item = http_globalData.chuanzao_xibao[index];
@@ -262,28 +252,56 @@ cc.Class({
     http_globalData.chuanzao_xibao = [];
   },
   //创造生物
-  button_zhaohuan_creater: function button_zhaohuan_creater(TipBoxPrefab) {},
-  // -------------------
-  //加载菜单
-  menu_ronghe: function menu_ronghe() {
+  button_zhaohuan_creater: function button_zhaohuan_creater(TipBoxPrefab) {
+    var _this4 = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      var randomIndex, biology_type, data, index, item;
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
-                //技能图标挂载
-                var BoxPrefab = cc.find('Canvas/大厅/融合');
-                cc.loader.loadRes('/model召唤/A融合', function (errorMessage, loadedResource) {
-                  //开始实例化预制资源
-                  var TipBoxPrefab = cc.instantiate(loadedResource);
-                  BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
+              _context3.next = 2;
+              return httpRequestAlert.alert_biologyTips(TipBoxPrefab);
 
-                  resolve();
-                });
-              }));
+            case 2:
+              if (!(http_globalData.chuanzao_xibao.length < 3)) {
+                _context3.next = 5;
+                break;
+              }
 
-            case 1:
+              httpRequestAlert.alert_goTips("材料不足，请添加材料！！！"); //提示材料已经满
+
+              return _context3.abrupt("return");
+
+            case 5:
+              //随机数0-1
+              randomIndex = Math.floor(Math.random() * http_globalData.chuanzao_xibao.length);
+              biology_type = http_globalData.chuanzao_xibao[randomIndex].type; //细胞类型
+
+              _context3.next = 9;
+              return httpRequestBagApi.http_user_add_biology(biology_type);
+
+            case 9:
+              data = _context3.sent;
+
+              //返回成功的data
+              if (data.code == 1) {
+                for (index = 0; index < http_globalData.chuanzao_xibao.length; index++) {
+                  item = http_globalData.chuanzao_xibao[index];
+                  http_globalData.user_info['biology' + item.type] = item.now_num;
+                }
+
+                _this4.button_zhaohuan_clear(TipBoxPrefab); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+                // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+                // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
+                //     //移除挂载
+                //     TipBoxPrefab_tips.destroy();
+                // },this)); 
+
+              }
+
+            case 11:
             case "end":
               return _context3.stop();
           }
@@ -291,8 +309,9 @@ cc.Class({
       }, _callee3);
     }))();
   },
+  // -------------------
   //加载菜单
-  menu_xunlian: function menu_xunlian() {
+  menu_ronghe: function menu_ronghe() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
@@ -300,8 +319,8 @@ cc.Class({
             case 0:
               return _context4.abrupt("return", new Promise(function (resolve) {
                 //技能图标挂载
-                var BoxPrefab = cc.find('Canvas/大厅/训练');
-                cc.loader.loadRes('/model召唤/A训练', function (errorMessage, loadedResource) {
+                var BoxPrefab = cc.find('Canvas/大厅/融合');
+                cc.loader.loadRes('/model召唤/A融合', function (errorMessage, loadedResource) {
                   //开始实例化预制资源
                   var TipBoxPrefab = cc.instantiate(loadedResource);
                   BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
@@ -319,7 +338,7 @@ cc.Class({
     }))();
   },
   //加载菜单
-  menu_huishou: function menu_huishou() {
+  menu_xunlian: function menu_xunlian() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
       return regeneratorRuntime.wrap(function _callee5$(_context5) {
         while (1) {
@@ -327,8 +346,8 @@ cc.Class({
             case 0:
               return _context5.abrupt("return", new Promise(function (resolve) {
                 //技能图标挂载
-                var BoxPrefab = cc.find('Canvas/大厅/回收');
-                cc.loader.loadRes('/model召唤/A回收', function (errorMessage, loadedResource) {
+                var BoxPrefab = cc.find('Canvas/大厅/训练');
+                cc.loader.loadRes('/model召唤/A训练', function (errorMessage, loadedResource) {
                   //开始实例化预制资源
                   var TipBoxPrefab = cc.instantiate(loadedResource);
                   BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
@@ -343,6 +362,33 @@ cc.Class({
           }
         }
       }, _callee5);
+    }))();
+  },
+  //加载菜单
+  menu_huishou: function menu_huishou() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              return _context6.abrupt("return", new Promise(function (resolve) {
+                //技能图标挂载
+                var BoxPrefab = cc.find('Canvas/大厅/回收');
+                cc.loader.loadRes('/model召唤/A回收', function (errorMessage, loadedResource) {
+                  //开始实例化预制资源
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
+                  BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
+
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
     }))();
   },
   button_zhaohuan: function button_zhaohuan() {

@@ -25,10 +25,35 @@ const httpBagApi = cc.Class({
             var label ='/materials/builtin_摇晃';
             cc.loader.loadRes(label, cc.Material, function(err, res) {
                 httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res)
+
+                // // 计算每帧的纹理偏移量
+                // this.uvOffset = 1 / this.totalFrames;
+                // // 开始播放动画
+                // this.schedule(this.updateAnimation, 1 / this.framesPerSecond);
+
                 resolve();
             })
         });
     },
+    materialTime(materialPrefab){
+        if(materialPrefab){
+            // 定义一个回调函数
+            // httpRequestBagApi.
+            // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+            // this.schedule(this.update,0);
+            // 定义一个回调函数
+            var time =0;
+            this.updateEveryFrame = function (dt) {
+                // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
+                // 这里可以放置每帧都需要执行的逻辑
+                time += dt;
+                materialPrefab.setProperty("u_time",time) 
+            };
+            // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+            this.schedule(this.updateEveryFrame, 0);
+        }
+    },
+
     //实例化角色信息
     async http_base_jiaose(){
         //修改请求--等待响应后回调
@@ -111,6 +136,16 @@ const httpBagApi = cc.Class({
         httpRequest.httpPost('/app/app-api/user-beishu-update',{beishu:beishu},function (data) { resolve(data);})
         });
     },  
+
+    //获取生物
+    http_user_add_biology(biology_type){
+        //修改请求
+        return new Promise(resolve => {
+        httpRequest.httpPost('/app/app-apinew/user-biology',{biology_type:biology_type},function (data) { resolve(data);
+        })
+        });
+    },  
+
 
 });
 window.httpRequestBagApi = new httpBagApi();

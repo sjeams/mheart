@@ -16,9 +16,11 @@ class UserLogin extends ActiveRecord
     }
 
     public static function getUserlogin($token){
+
+
         //修改User后需要重新调用
         if(!empty($token)){
-            $sql ="SELECT u.* from {{%user_login}} ul INNER JOIN {{%user}} u on ul.server=u.server and ul.id=u.loginid  where ul.token = '$token'";
+            $sql ="SELECT u.* from x2_user_login ul INNER JOIN x2_user u on ul.server=u.server and ul.id=u.loginid  where ul.token = '$token'";
             $user_info = Yii::$app->db->createCommand($sql)->queryOne();
             if($user_info){
                 $user_info['word_type'] = intval(Words::getUserWordGrade()['difficult']);

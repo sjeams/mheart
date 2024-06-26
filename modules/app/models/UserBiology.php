@@ -43,16 +43,15 @@ class UserBiology extends ActiveRecord
         return $data;
     }
     //创建生物
-    public  function createrUserBiology(){  
-        $type = $this->user_info['word_type'];
-        // 用户 随机获取一个生物（默认管理员--权限为已通世界）
-        $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
-        $data = UserWords :: BiologySave($biology);
-        return $data;
-    }
+    // public  function createrUserBiology(){  
+    //     $type = $this->user_info['word_type'];
+    //     // 用户 随机获取一个生物（默认管理员--权限为已通世界）
+    //     $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
+    //     $data = UserWords :: BiologySave($biology);
+    //     return $data;
+    // }
  
     // --前端
-
     // 指定生物
     public  function getBiologyId($id){
         $biology =Biology::find()->where("id =$id")->Asarray()->One();
@@ -60,8 +59,8 @@ class UserBiology extends ActiveRecord
         return  $biology; 
     }
     //随机获取生物
-    public  function getBiologyRand(){
-        $type = $this->user_info['word_type'];
+    public  function getBiologyRand($type=1){
+        // $type = $this->user_info['word_type'];
         // 用户 随机获取一个生物（默认管理员--权限为已通世界）
         $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
         $this->getBiologyRandAttribute($biology);

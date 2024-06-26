@@ -66,13 +66,16 @@ class AppApinewController extends ApiUserControl{
      * http://cs.aheart.com/app/app-apinew/user-biology
      */
     public function actionUserBiology(){
+
+ 
+        $type= $this->param['biology_type']?:1;
         $UserBiologyNatureDo=new UserBiologyAttribute();
         $count = $UserBiologyNatureDo->getUserBiologyAttributeCount();
         if($count>=BIOLOGY_COUNT){
             die(Method::jsonApp(0,null,'生物背包已满！'));
         }else{
             $UserBiology= new UserBiology(); 
-            $data = $UserBiology->getBiologyRand();
+            // $data = $UserBiology->getBiologyRand($type);
             die(Method::jsonApp(1,$data,'succes'));
         }
     }

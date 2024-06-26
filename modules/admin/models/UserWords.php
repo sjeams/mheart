@@ -9,23 +9,36 @@ use yii\db\ActiveRecord;
 
 class UserWords extends ActiveRecord
 {
+
+    public $user_info; 
+    public $userId; 
+    function init(){
+        $this->user_info =  Yii::$app->session->get('user_info');
+        $this->userId =  $this->user_info['userid'];
+    }
     public static function tableName(){
         return '{{%user_words}}';
     }
 
 
-    // 根据征服世界随机生物id
+    // 根据征服世界随机生物id type 1普通 2特殊 3NPC 4不可用 5角色
     public static function BiologyRand($type=1,$num=1,$userid=1){  //默认管理员，数量为1
-        $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1")->asarray()->All();
-        // $wordid=  implode(',',array_column($wordid, 'wordid'));
-        //  var_dump($wordid);die;     
+       $user_info= Yii::$app->session->get('user_info');
+       $userid =$user_info?$user_info['userid']:$userid;
+       $wordid= UserWords::find()->select('wordid')->where("userid =$userid and complete = 1 and wordid!=1")->asarray()->All();
+    //    $wordid=  implode(',',array_column($wordid, 'wordid'));
+       $wordid= $wordid?array_column($wordid, 'wordid'):[];
+       $wordid=array_merge(array(1),$wordid);
+        // $type=$type==1?[1,5]:$type;  //普通 查询会带上基本角色
         $biologyid = (new \yii\db\Query())
         ->select("a.*")
         ->from("x2_biology AS a")
         ->leftJoin("x2_words AS b","a.wordid = b.id")
-        ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
+        ->where(['in', 'a.wordid', $wordid])
+        // ->where(['or' , ['wordid' =>'1'] ,['wordid' => $wordid]] )    // 先满足后面的条件
         // ->where(['a.id' =>'18'] ) 
         ->andWhere(['a.type' =>$type])
+        // ->andWhere(['in', 'a.type', $type])
         ->limit($num)
         ->orderBy("rand()")
         ->All();

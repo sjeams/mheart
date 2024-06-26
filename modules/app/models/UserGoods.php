@@ -76,14 +76,7 @@ class UserGoods extends ActiveRecord
         $data = UserGoods::find()->select('*')->where("userid=$this->userId")->asarray();
         return $data;
     }
-    // //创建生物
-    // public  function createrUserGoods(){  
-    //     $type = $this->user_info['word_type'];
-    //     // 用户 随机获取一个生物（默认管理员--权限为已通世界）
-    //     $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
-    //     $data = UserWords :: BiologySave($biology);
-    //     return $data;
-    // }
+ 
 
     //获取物品
     public function getGoodsList($gooduse){

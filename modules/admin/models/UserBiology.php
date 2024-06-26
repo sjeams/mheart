@@ -45,15 +45,7 @@ class UserBiology extends ActiveRecord
         UserBiology::updateAll($userbiology,['id'=>$id]);
         return UserBiology::find()->where("id=$id")->asarray()->One();
     }
-
-    //随机获取生物
-    // public  function getBiologyRand(){
-    //     $type = $this->user_info['word_type'];
-    //     // 用户 随机获取一个生物（默认管理员--权限为已通世界）
-    //     $biology = UserWords :: BiologyRand($type)[0]; //默认管理员-数量1 --返回数组
-    //     $this->getBiologyRandAttribute($biology);
-    //     return  $biology;
-    // }
+ 
     public  function getBiologyRandAttribute($biology=[]){
         if($biology){
             $biology = UserWords :: BiologySave($biology,$this->userId);

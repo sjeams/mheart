@@ -87,7 +87,7 @@ CCProgram fs %{
     // float height = 1.0 - v_uv0.y;
     float height =  0.2 - v_uv0.y; //晃动距离
     //使用pow函数，让越高的地方摆动幅度越明显且成抛物线形态
-    float k = 0.2*pow(height, 2.0);
+    float k = 0.18*pow(height, 2.0);
     //x轴偏移量，使用sin函数实现两边摆动效果，u_time*2.0是为了加快摆动
     float offset = k*sin(u_time*2.0);
  
