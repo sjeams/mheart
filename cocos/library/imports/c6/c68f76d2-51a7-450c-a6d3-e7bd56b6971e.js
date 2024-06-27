@@ -154,8 +154,10 @@ var httpBagApi = cc.Class({
 
         http_globalData.zhenfa = data.data.zhenfa.data;
         http_globalData.zhenfa_info = data.data.zhenfa.info; // 临时字段
-        // http_globalData.biology_id = 0;
-        // http_globalData.zhenfa_id=0;
+
+        http_globalData.biology_id = 0; //默认选择的生物id
+
+        http_globalData.zhenfa_id = 0; //默认选择的阵法id
 
         resolve();
       });

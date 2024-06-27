@@ -115,7 +115,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "关闭弹窗",
+    "_name": "关闭阵法",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

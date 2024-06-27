@@ -64,6 +64,9 @@ cc.Class({
                 if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
                 var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    httpRequestModel.openBag_hidden()
+                }, this);
                 TipBoxPrefab.getComponent('bag_zhenfaTools').biology_detail_alert(BoxPrefab,TipBoxPrefab)
             })
             // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)

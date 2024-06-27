@@ -78,6 +78,9 @@ cc.Class({
 
 
         var TipBoxPrefab = cc.instantiate(loadedResource);
+        TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+          httpRequestModel.openBag_hidden();
+        }, this);
         TipBoxPrefab.getComponent('bag_zhenfaTools').biology_detail_alert(BoxPrefab, TipBoxPrefab);
       }); // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
     } else {//如果没有生物需要弹窗另一个提示

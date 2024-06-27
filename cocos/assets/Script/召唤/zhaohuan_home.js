@@ -305,12 +305,7 @@ cc.Class({
     //     // cc.find('Canvas/弹窗').active =false;
     //     cc.find('Canvas/弹窗').removeAllChildren();
     // },
-    // //阵法 关闭 提交结果，需要单独处理了
-    // async openzhenfa_hidden(){
-    //     // cc.log(http_globalData.zhenfa)   
-    //     await httpRequestBagApi.http_update_zhenfa()
-    //     // cc.find('Canvas/弹窗').removeAllChildren();
-    // },
+ 
     // update (dt) {},
 
 });

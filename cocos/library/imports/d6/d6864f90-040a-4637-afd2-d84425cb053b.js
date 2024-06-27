@@ -11,10 +11,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 // 背包的api请求接口
 var httpAlert = cc.Class({
   "extends": cc.Component,
-  openBag_hidden: function openBag_hidden() {
-    // cc.find('Canvas/弹窗').active =false;
-    cc.find('Canvas/弹窗').removeAllChildren();
-  },
   getNicheng: function getNicheng() {
     var arr = http_globalData.user_nicheng;
     var r_num = Math.round(Math.random() * (3 - 1) + 1); //随机1-3
@@ -66,7 +62,7 @@ var httpAlert = cc.Class({
                 cc.loader.loadRes('/model召唤/A召唤详情', function (errorMessage, loadedResource) {
                   var TipBoxPrefab = cc.instantiate(loadedResource);
                   TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                    _this.openBag_hidden();
+                    httpRequestModel.openBag_hidden();
                   }, this);
                   http_globalData.alert_biologyDetail = TipBoxPrefab;
                   resolve();
@@ -96,7 +92,7 @@ var httpAlert = cc.Class({
                   // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
                   var TipBoxPrefab = cc.instantiate(loadedResource);
                   TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                    _this.openBag_hidden();
+                    httpRequestModel.openBag_hidden();
                   }, this);
                   http_globalData.alert_shangdian = TipBoxPrefab;
                   resolve();

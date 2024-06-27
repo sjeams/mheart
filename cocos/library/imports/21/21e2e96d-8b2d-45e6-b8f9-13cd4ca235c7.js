@@ -261,9 +261,6 @@ cc.Class({
       TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
 
       TipBoxPrefab_model.getComponent('bag_详情Tools').biology_detail_alert(TipBoxPrefab_model); // 切换默认挂载信息列表
-      // TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
-      // TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model,info)
-      // TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
       // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
     }, this);
   },

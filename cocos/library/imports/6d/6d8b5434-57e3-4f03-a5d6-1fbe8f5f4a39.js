@@ -68,7 +68,8 @@ cc.Class({
     }, this);
   },
   biology_detail_info: function biology_detail_info(TipBoxPrefab, info) {
-    var _this = this; // cc.log(info)
+    // var _this =this;
+    // cc.log(info)
     // TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
     // TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
     // TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name
@@ -77,8 +78,6 @@ cc.Class({
     // TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string='触发率'+info.chuFa+'%'
     // //生物命名必须叫生物
     // // TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame= biology_image
-
-
     TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string = '力量:' + info.power;
     TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string = '敏捷:' + info.agile;
     TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string = '智力:' + info.intelligence;
