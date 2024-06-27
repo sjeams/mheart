@@ -1,7 +1,11 @@
 // 背包的api请求接口
 const httpBagApi = cc.Class({
     extends: cc.Component,
-
+    //没有处理逻辑，可以共用--关闭窗口
+    openBag_hidden(){
+        // cc.find('Canvas/弹窗').active =false;
+        cc.find('Canvas/弹窗').removeAllChildren();
+    },
     //实例化用户信息
     async http_music(){
         //修改请求--等待响应后回调

@@ -41,6 +41,7 @@ cc.Class({
         http_globalData.chuanzao_xibao=[];//细胞
         await httpRequestAlert.alert_getTips(); //加载弹窗模板
         await httpRequestAlert.alert_biologyDetail(); //加载生物详情
+        await httpRequestAlert.alert_shangdian(); //加载商店
         // cc.log(http_globalData.user_info)
         // await httpRequestBagApi.http_material_yaohuang();//加载材质
         await httpRequestBagApi.http_user_info()
@@ -50,6 +51,9 @@ cc.Class({
         await this.menu_huishou(); //加载召唤菜单
         http_globalData.check_Prefab =cc.find('Canvas/大厅/创造');
         httpRequestBagApi.materialTime(http_globalData.materialPrefab)  //预制体晃动
+ 
+        // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
+   
     },
 
     // updateAnimation(dt) {
@@ -95,8 +99,7 @@ cc.Class({
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/土",TipBoxPrefab_model_name5,5);
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/无",TipBoxPrefab_model_name6,6);
                 _this.onclick_chuangzao(TipBoxPrefab)
-                // cc.find('云游商人b/云游商人',TipBoxPrefab).getComponent(cc.Sprite).setMaterial(0,httpRequestBagApi.material_yaohuang)
-                http_globalData.materialPrefab =  cc.find('云游商人b/云游商人',TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+                http_globalData.materialPrefab =  cc.find('云游商人/云游商人b',TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'),1,10,-10,10,1.2)
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'),1,10,20,-20,1.2)
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'),1,5,5,-5,1.2)
@@ -115,7 +118,6 @@ cc.Class({
     //绑定点击事件--关闭遮罩
     menu_chuangzao_xibao(TipBoxPrefab,TipBoxPrefab_model_ename,TipBoxPrefab_model_name,type){
         var _this =this;
-        // var TipBoxPrefab_model = cc.find(TipBoxPrefab_model_ename,TipBoxPrefab);
         //图片点击
         cc.find(TipBoxPrefab_model_ename,TipBoxPrefab).on('click', function () {
                 _this.menu_chuangzao_xibao_button(TipBoxPrefab,TipBoxPrefab_model_ename,TipBoxPrefab_model_name,type)
@@ -152,6 +154,9 @@ cc.Class({
         cc.find("创造",TipBoxPrefab).on('click', function () {
             _this.button_zhaohuan_creater(TipBoxPrefab)
         }, this);
+        cc.find("云游商人",TipBoxPrefab).on('click', function () {
+            _this.button_shangdian(TipBoxPrefab)
+        }, this);
     },
     //重置
     button_zhaohuan_clear(TipBoxPrefab){
@@ -171,8 +176,8 @@ cc.Class({
     },
     //创造生物
    async button_zhaohuan_creater(TipBoxPrefab){
+
         await httpRequestAlert.alert_biologyTips(TipBoxPrefab) //创造生物弹窗
- 
         if(http_globalData.chuanzao_xibao.length<3){
             httpRequestAlert.alert_goTips("材料不足，请添加材料！！！"); //提示材料已经满
             return 
@@ -187,7 +192,6 @@ cc.Class({
                 http_globalData.user_info['biology'+item.type] = item.now_num
             }
             this.button_zhaohuan_clear(TipBoxPrefab);
-
             // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
             // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
             // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
@@ -196,7 +200,6 @@ cc.Class({
             // },this)); 
         }
     },
-
 // -------------------
     //加载菜单
     async menu_ronghe(){
@@ -238,8 +241,6 @@ cc.Class({
             });
         },
     button_zhaohuan(){
-   
- 
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/创造');
         http_globalData.check_Prefab.active=true;
@@ -259,10 +260,13 @@ cc.Class({
     },
 
     button_huishou(){
- 
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/回收');
         http_globalData.check_Prefab.active=true;
+    },
+
+    button_shangdian(){
+        cc.find('Canvas/弹窗').addChild(http_globalData.alert_shangdian)
     },
 
     back_home(){

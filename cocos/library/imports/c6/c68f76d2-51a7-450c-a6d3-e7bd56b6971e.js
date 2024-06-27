@@ -11,6 +11,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 // 背包的api请求接口
 var httpBagApi = cc.Class({
   "extends": cc.Component,
+  //没有处理逻辑，可以共用--关闭窗口
+  openBag_hidden: function openBag_hidden() {
+    // cc.find('Canvas/弹窗').active =false;
+    cc.find('Canvas/弹窗').removeAllChildren();
+  },
   //实例化用户信息
   http_music: function http_music() {
     var _this = this;

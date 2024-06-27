@@ -75,7 +75,7 @@ class AppApinewController extends ApiUserControl{
             die(Method::jsonApp(0,null,'生物背包已满！'));
         }else{
             $UserBiology= new UserBiology(); 
-            // $data = $UserBiology->getBiologyRand($type);
+            $data = $UserBiology->getBiologyRand($type);
             die(Method::jsonApp(1,$data,'succes'));
         }
     }

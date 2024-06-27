@@ -61,30 +61,35 @@ cc.Class({
 
             case 5:
               _context.next = 7;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestAlert.alert_shangdian();
 
             case 7:
               _context.next = 9;
-              return _this2.menu_chuangzao();
+              return httpRequestBagApi.http_user_info();
 
             case 9:
               _context.next = 11;
-              return _this2.menu_ronghe();
+              return _this2.menu_chuangzao();
 
             case 11:
               _context.next = 13;
-              return _this2.menu_xunlian();
+              return _this2.menu_ronghe();
 
             case 13:
               _context.next = 15;
-              return _this2.menu_huishou();
+              return _this2.menu_xunlian();
 
             case 15:
+              _context.next = 17;
+              return _this2.menu_huishou();
+
+            case 17:
               //加载召唤菜单
               http_globalData.check_Prefab = cc.find('Canvas/大厅/创造');
               httpRequestBagApi.materialTime(http_globalData.materialPrefab); //预制体晃动
+              // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
 
-            case 17:
+            case 19:
             case "end":
               return _context.stop();
           }
@@ -155,10 +160,9 @@ cc.Class({
 
                   _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/无", TipBoxPrefab_model_name6, 6);
 
-                  _this.onclick_chuangzao(TipBoxPrefab); // cc.find('云游商人b/云游商人',TipBoxPrefab).getComponent(cc.Sprite).setMaterial(0,httpRequestBagApi.material_yaohuang)
+                  _this.onclick_chuangzao(TipBoxPrefab);
 
-
-                  http_globalData.materialPrefab = cc.find('云游商人b/云游商人', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+                  http_globalData.materialPrefab = cc.find('云游商人/云游商人b', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, 20, -20, 1.2);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 5, 5, -5, 1.2);
@@ -184,8 +188,7 @@ cc.Class({
   },
   //绑定点击事件--关闭遮罩
   menu_chuangzao_xibao: function menu_chuangzao_xibao(TipBoxPrefab, TipBoxPrefab_model_ename, TipBoxPrefab_model_name, type) {
-    var _this = this; // var TipBoxPrefab_model = cc.find(TipBoxPrefab_model_ename,TipBoxPrefab);
-    //图片点击
+    var _this = this; //图片点击
 
 
     cc.find(TipBoxPrefab_model_ename, TipBoxPrefab).on('click', function () {
@@ -230,6 +233,9 @@ cc.Class({
     }, this);
     cc.find("创造", TipBoxPrefab).on('click', function () {
       _this.button_zhaohuan_creater(TipBoxPrefab);
+    }, this);
+    cc.find("云游商人", TipBoxPrefab).on('click', function () {
+      _this.button_shangdian(TipBoxPrefab);
     }, this);
   },
   //重置
@@ -410,6 +416,9 @@ cc.Class({
     http_globalData.check_Prefab.active = false;
     http_globalData.check_Prefab = cc.find('Canvas/大厅/回收');
     http_globalData.check_Prefab.active = true;
+  },
+  button_shangdian: function button_shangdian() {
+    cc.find('Canvas/弹窗').addChild(http_globalData.alert_shangdian);
   },
   back_home: function back_home() {
     httpRequest.playGame('sence_dating');

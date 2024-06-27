@@ -11,6 +11,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 // 背包的api请求接口
 var httpAlert = cc.Class({
   "extends": cc.Component,
+  openBag_hidden: function openBag_hidden() {
+    // cc.find('Canvas/弹窗').active =false;
+    cc.find('Canvas/弹窗').removeAllChildren();
+  },
   getNicheng: function getNicheng() {
     var arr = http_globalData.user_nicheng;
     var r_num = Math.round(Math.random() * (3 - 1) + 1); //随机1-3
@@ -71,6 +75,36 @@ var httpAlert = cc.Class({
       }, _callee2);
     }))();
   },
+  //操作加载弹窗模板
+  alert_shangdian: function alert_shangdian() {
+    var _this2 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              return _context3.abrupt("return", new Promise(function (resolve) {
+                var _this = _this2;
+                cc.loader.loadRes('/model商店/A商店', function (errorMessage, loadedResource) {
+                  // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
+                  TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    _this.openBag_hidden();
+                  }, this);
+                  http_globalData.alert_shangdian = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
   //操作提示
   alert_goTips: function alert_goTips(tips) {
     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips);
@@ -100,19 +134,19 @@ var httpAlert = cc.Class({
   },
   //创建生物弹窗
   alert_biologyTips: function alert_biologyTips(TipBoxPrefab) {
-    var _this = this;
+    var _this3 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context4.prev = _context4.next) {
             case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
-                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 0, 1, 360, 360, 1.5);
-                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.5); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+              return _context4.abrupt("return", new Promise(function (resolve) {
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 0, 1, 360, 360, 1.6);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.6); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
                 // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
 
-                _this.schedule(function () {
+                _this3.schedule(function () {
                   var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_biologyDetail); // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
                   // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
                   //     //移除挂载
@@ -121,15 +155,15 @@ var httpAlert = cc.Class({
 
                   cc.find('Canvas/弹窗').addChild(TipBoxPrefab_tips);
                   resolve();
-                }, 1);
+                }, 1, 0);
               }));
 
             case 1:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }
-      }, _callee3);
+      }, _callee4);
     }))();
   },
   //重复闪烁旋转   time 时常/角度

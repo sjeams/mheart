@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2a742be0-8ee9-423b-b78e-f806b436d97a": {
-    "asset": 1719298115287,
+    "asset": 1719380852436,
     "meta": 1713491582551,
     "relativePath": "resources"
   },
@@ -2415,7 +2415,7 @@
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "266d590f-26a9-4693-8ceb-5d1eee39a870": {
-    "asset": 1719305126508,
+    "asset": 1719395297084,
     "meta": 1715584793646,
     "relativePath": "resources\\model召唤"
   },
@@ -2784,14 +2784,9 @@
     "meta": 1718854896060,
     "relativePath": "resources\\图标符文\\背景.png"
   },
-  "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
-    "asset": 1719395404813,
-    "meta": 1719395404835,
-    "relativePath": "resources\\model召唤\\A召唤详情.prefab"
-  },
   "65b182dc-72c3-4e4a-b465-6f55cb7370d5": {
-    "asset": 1718870041036,
-    "meta": 1718870051757,
+    "asset": 1719457785825,
+    "meta": 1719457785839,
     "relativePath": "resources\\model召唤\\A融合.prefab"
   },
   "ee100251-62ba-4c76-a40c-72387b49e9a3": {
@@ -2970,8 +2965,8 @@
     "relativePath": "resources\\assets\\builtin_摇晃.mtl"
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1719395755052,
-    "meta": 1719395755082,
+    "asset": 1719468404704,
+    "meta": 1719468404846,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "2ff1dadd-3de7-44e6-ad8e-e1998bf79163": {
@@ -2983,11 +2978,6 @@
     "asset": 1719309143289,
     "meta": 1719309143305,
     "relativePath": "Scene\\home\\大厅.fire"
-  },
-  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
-    "asset": 1719385882299,
-    "meta": 1719385884785,
-    "relativePath": "Script\\commonApi\\bag_api.js"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
     "asset": 1719386994226,
@@ -3005,18 +2995,48 @@
     "relativePath": "resources\\materials\\摇晃.effect"
   },
   "c401445e-5141-4beb-8817-b993c1865231": {
-    "asset": 1719395175621,
-    "meta": 1719395286259,
+    "asset": 1719468137100,
+    "meta": 1719468137113,
     "relativePath": "resources\\model召唤\\A创造.prefab"
   },
+  "93f8740c-5097-4221-b3b1-b272aa52660e": {
+    "asset": 1719472964916,
+    "meta": 1719472965070,
+    "relativePath": "resources\\model商店\\A商店.prefab"
+  },
+  "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
+    "asset": 1719460091008,
+    "meta": 1719460091029,
+    "relativePath": "resources\\model召唤\\A召唤详情.prefab"
+  },
+  "f6e84749-a55c-4f7c-96b9-5d33aa02c2e8": {
+    "asset": 1719472289315,
+    "meta": 1719472289345,
+    "relativePath": "resources\\model商店\\图标装备.prefab"
+  },
+  "e5387309-66c3-4908-9821-a2348584d37a": {
+    "asset": 1719467254092,
+    "meta": 1719467254118,
+    "relativePath": "resources\\model商店\\背包商店.prefab"
+  },
+  "fcf6c58e-aa00-41a1-a5be-d2ebbcaefe52": {
+    "asset": 1719458429129,
+    "meta": 1719458587280,
+    "relativePath": "resources\\model商店\\背包按钮.prefab"
+  },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1719459918632,
+    "meta": 1719460000723,
+    "relativePath": "Script\\commonApi\\bag_api.js"
+  },
   "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1719395578494,
-    "meta": 1719395580446,
+    "asset": 1719460243060,
+    "meta": 1719460433958,
     "relativePath": "Script\\召唤\\zhaohuan_home.js"
   },
   "d6864f90-040a-4637-afd2-d84425cb053b": {
-    "asset": 1719395724203,
-    "meta": 1719395725222,
+    "asset": 1719460488254,
+    "meta": 1719467033535,
     "relativePath": "Script\\commonApi\\alert.js"
   }
 }

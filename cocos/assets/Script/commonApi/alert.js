@@ -1,6 +1,10 @@
 // 背包的api请求接口
 const httpAlert = cc.Class({
     extends: cc.Component,
+    openBag_hidden(){
+        // cc.find('Canvas/弹窗').active =false;
+        cc.find('Canvas/弹窗').removeAllChildren();
+    },
     getNicheng() {
         var arr = http_globalData.user_nicheng
         var r_num = Math.round(Math.random()*(3-1)+1); //随机1-3
@@ -12,7 +16,6 @@ const httpAlert = cc.Class({
         }
         return stag_name;
     },
-
     //操作加载弹窗模板
    async alert_getTips() {
         return new Promise(resolve => {    
@@ -34,7 +37,22 @@ const httpAlert = cc.Class({
         });
     },
 
-    
+    //操作加载弹窗模板
+    async alert_shangdian() {
+        return new Promise(resolve => {    
+            var _this =this
+        cc.loader.loadRes('/model商店/A商店', function(errorMessage,loadedResource){
+                // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    _this.openBag_hidden()
+                }, this);
+                http_globalData.alert_shangdian =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+ 
     //操作提示
     alert_goTips(tips){
         var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
@@ -70,12 +88,11 @@ const httpAlert = cc.Class({
     //创建生物弹窗
     async alert_biologyTips(TipBoxPrefab){
         return new Promise(resolve => {    
-            httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'),0,1,360,360,1.5)
-            httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'),0,1,360,360,1.5)
+            httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'),0,1,360,360,1.6)
+            httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'),0,1,360,360,1.6)
         // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
         // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
             this.schedule(function(){
-
                 var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_biologyDetail)
                 // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
                 // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
@@ -84,7 +101,7 @@ const httpAlert = cc.Class({
                 // },this)); 
                 cc.find('Canvas/弹窗').addChild(TipBoxPrefab_tips); 
                 resolve();
-            },1)
+            },1,0)
         });
  
     },
