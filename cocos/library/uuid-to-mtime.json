@@ -2425,13 +2425,13 @@
     "relativePath": "resources\\model商店"
   },
   "5e929fbb-0a6a-4943-8080-eed9c29db1b4": {
-    "asset": 1715913615890,
-    "meta": 1715913615908,
+    "asset": 1719474209758,
+    "meta": 1719474209768,
     "relativePath": "resources\\model布阵\\背包生物.prefab"
   },
   "31295446-674c-4062-85fa-d9da8fc63094": {
-    "asset": 1715845725130,
-    "meta": 1715845725139,
+    "asset": 1719473777285,
+    "meta": 1719473777293,
     "relativePath": "resources\\model布阵\\A生物布阵.prefab"
   },
   "bc7ccbb9-64d5-40b8-b284-00cd93ead8f3": {
@@ -2519,11 +2519,6 @@
     "meta": 1716363947206,
     "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
-  "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
-    "asset": 1716363931248,
-    "meta": 1716363947327,
-    "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
-  },
   "236d3e27-76be-4b7b-92b2-84f609139b14": {
     "asset": 1716364487792,
     "meta": 1716364501715,
@@ -2543,11 +2538,6 @@
     "asset": 1718085085691,
     "meta": 1718085087316,
     "relativePath": "Script\\场景\\mapTools.js"
-  },
-  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
-    "asset": 1718098103849,
-    "meta": 1718098147736,
-    "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
   },
   "d679e419-181f-46f7-b526-c8c28ece4ed8": {
     "asset": 1718159515878,
@@ -2588,11 +2578,6 @@
     "asset": 1719279458003,
     "meta": 1718360251189,
     "relativePath": "resources\\audio"
-  },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1718360561545,
-    "meta": 1718360580619,
-    "relativePath": "Script\\背包\\bag_home.js"
   },
   "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
     "asset": 1718360883737,
@@ -2975,8 +2960,8 @@
     "relativePath": "resources\\model召唤\\云游商人.prefab"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1719309143289,
-    "meta": 1719309143305,
+    "asset": 1719473548234,
+    "meta": 1719473548248,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
@@ -3029,14 +3014,29 @@
     "meta": 1719460000723,
     "relativePath": "Script\\commonApi\\bag_api.js"
   },
-  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1719460243060,
-    "meta": 1719460433958,
-    "relativePath": "Script\\召唤\\zhaohuan_home.js"
-  },
   "d6864f90-040a-4637-afd2-d84425cb053b": {
     "asset": 1719460488254,
     "meta": 1719467033535,
     "relativePath": "Script\\commonApi\\alert.js"
+  },
+  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
+    "asset": 1719473746011,
+    "meta": 1719473775170,
+    "relativePath": "Script\\召唤\\zhaohuan_home.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1719473914328,
+    "meta": 1719473945037,
+    "relativePath": "Script\\背包\\bag_home.js"
+  },
+  "dac19bda-d393-495c-ab6e-ffe6a4600f1b": {
+    "asset": 1719473953097,
+    "meta": 1719473978800,
+    "relativePath": "Script\\阵法\\bag_zhenfaTools.js"
+  },
+  "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
+    "asset": 1719474149035,
+    "meta": 1719474197479,
+    "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
   }
 }

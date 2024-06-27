@@ -56,20 +56,6 @@ cc.Class({
    
     },
 
-    // updateAnimation(dt) {
-    // //     // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
-    // //     // 这里可以放置每帧都需要执行的逻辑
-    //     // if(http_globalData.materialPrefab){
-    //     //     this.time += dt;
-    //     //     http_globalData.materialPrefab.setProperty("u_time",this.time*1)  //这里可以设置摇晃速度
-    //     // }
-    // // },
-    // // onDestroy() {
-    // //     // 如果你想在组件被销毁时取消定时器，可以使用 this.unschedule 方法
-    // //     httpRequestBagApi.updateEveryFrame=null;
-    // //     this.unschedule(httpRequestBagApi.updateEveryFrame);
-    // },
- 
     //加载菜单-创造
     async menu_chuangzao(){
         var _this =this;
