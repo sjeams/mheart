@@ -25,7 +25,7 @@ cc.Class({
               return httpRequestBagApi.http_music();
 
             case 2:
-              cc.sys.BoxPrefab = cc.find('Canvas/大厅/content');
+              http_globalData.BoxPrefab_content = cc.find('Canvas/大厅/content');
 
               _this2.spawnTools();
 
@@ -57,10 +57,9 @@ cc.Class({
     var _this = this; //移除节点
 
 
-    _this.removeBoxprefab(); //技能图标挂载
+    httpRequestModel.removeBoxprefab(); //技能图标挂载
 
-
-    var BoxPrefab = cc.sys.BoxPrefab;
+    var BoxPrefab = http_globalData.BoxPrefab_content;
     BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab, info);
   },
   addWord: function addWord() {
@@ -82,7 +81,7 @@ cc.Class({
     //移除节点
     var _this = this;
 
-    _this.removeBoxprefab();
+    httpRequestModel.removeBoxprefab();
 
     _this.searchShow();
 
@@ -90,10 +89,8 @@ cc.Class({
   },
   backHome: function backHome() {
     //移除节点
-    var _this = this;
-
-    _this.removeBoxprefab();
-
+    // var _this = this;
+    httpRequestModel.removeBoxprefab();
     httpRequest.playGame("sence_dating");
   },
   searchShow: function searchShow() {
@@ -103,11 +100,6 @@ cc.Class({
   searchHidden: function searchHidden() {
     cc.find("Canvas/大厅/探索世界").active = false;
     cc.find("Canvas/大厅/退出世界").active = true;
-  },
-  //移除容器
-  removeBoxprefab: function removeBoxprefab() {
-    cc.sys.BoxPrefab.removeAllChildren();
-    cc.sys.BoxPrefab.destroyAllChildren();
   }
 });
 

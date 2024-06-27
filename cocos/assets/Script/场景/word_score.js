@@ -6,7 +6,7 @@ cc.Class({
     },
     async onLoad () {
       await httpRequestBagApi.http_music()
-      cc.sys.BoxPrefab= cc.find('Canvas/大厅/content')
+      http_globalData.BoxPrefab_content = cc.find('Canvas/大厅/content')
       this.spawnTools()
     },
     spawnTools () {
@@ -25,9 +25,9 @@ cc.Class({
     showWord(info,total){
       var _this =this;
       //移除节点
-      _this.removeBoxprefab()
+      httpRequestModel.removeBoxprefab()
       //技能图标挂载
-      var BoxPrefab =cc.sys.BoxPrefab
+      var BoxPrefab =http_globalData.BoxPrefab_content
       BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab,info)
     },
     addWord(){
@@ -48,16 +48,16 @@ cc.Class({
     outWord(){
         //移除节点
         var _this = this;
-        _this.removeBoxprefab()
+        httpRequestModel.removeBoxprefab()
         _this.searchShow()
         httpRequest.httpPost('/app/app-apiword/out-word',{},function (data) {
           
         })
       },
-      backHome(){
+    backHome(){
         //移除节点
-        var _this = this;
-        _this.removeBoxprefab()
+        // var _this = this;
+        httpRequestModel.removeBoxprefab()
         httpRequest.playGame("sence_dating")
     },
       searchShow(){
@@ -68,9 +68,5 @@ cc.Class({
         cc.find("Canvas/大厅/探索世界").active = false;
         cc.find("Canvas/大厅/退出世界").active = true;
       },
-    //移除容器
-    removeBoxprefab(){
-      cc.sys.BoxPrefab.removeAllChildren();
-      cc.sys.BoxPrefab.destroyAllChildren();
-    }
+
 });

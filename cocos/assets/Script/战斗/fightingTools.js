@@ -3,64 +3,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // server_picture: cc.Node,
-        // server_type: cc.Node,
-        // server_name: cc.Node,
-        // server_star: cc.Node,
-        // server_shenMing: cc.Node,
-        // server_moFa: cc.Node,
-        // sprite_server_biology: cc.Button
     },
-
-        // //生成生物
-        // init_postion(postion,biolgy_state,int_px,is_my,star){
-        //     var _this = this;
-        //     var TOOLS =[];
-        //     var TOOLS = postion;
-        //     var total = postion.length;
-        //     // const maps = new Map();
-        //     //添加节点
-        //     for (let i=0; i<total; i++) {    
-        //         //死亡移除map_status
-        //         var map = TOOLS[i];
-        //         // console.log(map) 
-        //         if(map.biology.length!=0){
-        //           star++;
-        //           var tool = cc.instantiate(_this.person);
-        //           tool.getComponent('fightingTools').initInfo(map.biology,biolgy_state,is_my);
-
-
-        //           tool.x=parseInt(map.x+int_px)
-        //           tool.getChildByName('阵法s').getComponent(cc.Label).string= star-1;
-        //           tool.y=map.y
-        //           tool.is_my=is_my//阵容
-        //           tool.jing_bi=map.biology.jingBi//金币
-        //           tool.biology_int=star//阵法编号
-        //           tool.shengMing=map.biology.shengMing
-        //           tool.moFa=map.biology.moFa
-        //           tool.biology=map.biology.id
-        //           tool.biology_name=map.biology.name
-        //           _this.toolsArray.push(tool);
-        //           cc.sys.fightingArray[map.biology.id]=tool;
-        //         //   _this.fightingArray[map.biology.id]=tool;
-            
-        //         //永久重复移动
-        //           // var randomNumup = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-        //           // var randomNumdown = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-        //           // var seq = cc.repeatForever(
-        //           //   cc.sequence(
-        //           //       cc.moveBy(randomNumup, 0,5),
-        //           //       // cc.scaleTo(randomNumup, 1, 1.05),
-        //           //       // cc.scaleTo(randomNumdown, 1.05,1),
-        //           //       cc.moveBy(randomNumdown, 0,-5)
-        //           //   ));
-        //           // tool.runAction(seq);
-            
-        //            cc.find('Canvas/大厅/content').addChild(tool); 
-        //         }
-        //     }
-        //     return star;
-        // },
     //生成生物
     async biology_detail_list(TipBoxPrefab_model,info_list,biolgy_state,is_my,star){
          return new Promise(resolve => {

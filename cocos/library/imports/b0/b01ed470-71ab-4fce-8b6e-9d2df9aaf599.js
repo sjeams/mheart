@@ -14,6 +14,9 @@ require("./commonApi/figthingExtend"); //引入战斗动作
 
 
 require("./commonApi/alert"); //引入弹窗样式
+
+
+require("./commonApi/model"); //引入基础http请求
 //全局变量
 
 

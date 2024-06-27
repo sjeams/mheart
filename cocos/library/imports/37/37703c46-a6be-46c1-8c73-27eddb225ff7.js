@@ -84,10 +84,10 @@ cc.Class({
       }
   },
   //没有处理逻辑，可以共用--关闭窗口
-  openBag_hidden: function openBag_hidden() {
-    // cc.find('Canvas/弹窗').active =false;
-    cc.find('Canvas/弹窗').removeAllChildren();
-  },
+  // openBag_hidden(){
+  //     // cc.find('Canvas/弹窗').active =false;
+  //     cc.find('Canvas/弹窗').removeAllChildren();
+  // },
   //阵法 关闭 提交结果，需要单独处理了
   openzhenfa_hidden: function openzhenfa_hidden() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {

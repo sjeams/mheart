@@ -29,9 +29,13 @@ const httpAlert = cc.Class({
     //操作加载弹窗模板
     async alert_biologyDetail() {
         return new Promise(resolve => {    
+        var _this =this
         cc.loader.loadRes('/model召唤/A召唤详情', function(errorMessage,loadedResource){
-                // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
-                http_globalData.alert_biologyDetail =loadedResource
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    _this.openBag_hidden()
+                }, this);
+                http_globalData.alert_biologyDetail =TipBoxPrefab
                 resolve();
             })   
         });
@@ -40,7 +44,7 @@ const httpAlert = cc.Class({
     //操作加载弹窗模板
     async alert_shangdian() {
         return new Promise(resolve => {    
-            var _this =this
+        var _this =this
         cc.loader.loadRes('/model商店/A商店', function(errorMessage,loadedResource){
                 // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
                 var TipBoxPrefab = cc.instantiate(loadedResource);
@@ -57,7 +61,7 @@ const httpAlert = cc.Class({
     alert_goTips(tips){
         var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
         TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
-        TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
+        TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.5),cc.fadeOut(0.2)),cc.callFunc(function(){ 
             //移除挂载
             TipBoxPrefab_tips.destroy();
         },this)); 
@@ -84,7 +88,6 @@ const httpAlert = cc.Class({
            }, this)));
     },
 
-
     //创建生物弹窗
     async alert_biologyTips(TipBoxPrefab){
         return new Promise(resolve => {    
@@ -93,7 +96,7 @@ const httpAlert = cc.Class({
         // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
         // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
             this.schedule(function(){
-                var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_biologyDetail)
+                var  TipBoxPrefab_tips = http_globalData.alert_biologyDetail
                 // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
                 // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
                 //     //移除挂载
@@ -103,7 +106,6 @@ const httpAlert = cc.Class({
                 resolve();
             },1,0)
         });
- 
     },
  
 

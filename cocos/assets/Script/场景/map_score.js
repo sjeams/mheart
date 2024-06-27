@@ -8,7 +8,7 @@ cc.Class({
     async onLoad() {
       await httpRequestBagApi.http_music()
       //全局定义容器节点
-      cc.sys.BoxPrefab= cc.find('Canvas/战斗/content')
+      http_globalData.BoxPrefab_content= cc.find('Canvas/战斗/content')
       this.spawnTools()
         // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
     },
@@ -52,7 +52,7 @@ cc.Class({
         let info =data.user_in_word_map;
 
         //技能图标挂载
-        var BoxPrefab =cc.sys.BoxPrefab
+        var BoxPrefab =http_globalData.BoxPrefab_content
         BoxPrefab.getComponent('mapTools').biology_detail_list(BoxPrefab,info)
     },
     addTouchEvent(node_1) {
@@ -64,20 +64,16 @@ cc.Class({
       var _this =this;
       httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
         //移除节点
-        _this.removeBoxprefab()
+        httpRequestModel.removeBoxprefab()
         //写入地图数据
         _this.addWordMap(data.data)
         })
     },
     back_map(){
       //移除节点
-      var _this = this;
-      _this.removeBoxprefab()
+      // var _this = this;
+      httpRequestModel.removeBoxprefab()
       httpRequest.playGame("sence_zhutian")
     },
-    //移除容器
-    removeBoxprefab(){
-      cc.sys.BoxPrefab.removeAllChildren();
-      cc.sys.BoxPrefab.destroyAllChildren();
-    }
+
 });

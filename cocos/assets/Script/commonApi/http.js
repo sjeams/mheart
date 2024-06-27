@@ -214,17 +214,6 @@ const HttpHelper = cc.Class({
                     //战斗历史路径
                     if(data.code==1){
                         cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid); 
-                        // for (let i=0; i<data.data.img_list; i++) {
-                        //     let remoteUrl = httpRequest.httpUrl(img_list[i]);
-                        //     cc.resources.preload(remoteUrl, cc.SpriteFrame);
-                        //     cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-                    
-                        //     });
-                        // }
-                        // // console.log(remoteUrl)
-                        // cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-                        //   _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-                        // });
                         _this.progress(sence)
                     }else{
                         callback(JSON.parse(data));  // json 转数组
@@ -240,6 +229,7 @@ const HttpHelper = cc.Class({
             cc.dynamicAtlasManager.maxFrameSize = 2048;
         },
         urlConfig(url){
+            http_globalData=[] //销毁内存
             // //配置场景路径
             var sence = {
                 //登录

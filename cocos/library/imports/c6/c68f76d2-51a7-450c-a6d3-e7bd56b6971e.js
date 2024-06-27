@@ -12,10 +12,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var httpBagApi = cc.Class({
   "extends": cc.Component,
   //没有处理逻辑，可以共用--关闭窗口
-  openBag_hidden: function openBag_hidden() {
-    // cc.find('Canvas/弹窗').active =false;
-    cc.find('Canvas/弹窗').removeAllChildren();
-  },
   //实例化用户信息
   http_music: function http_music() {
     var _this = this;
@@ -27,10 +23,12 @@ var httpBagApi = cc.Class({
             case 0:
               return _context.abrupt("return", new Promise(function (resolve) {
                 //获取全局播放器
-                _this.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
-                // this.AudioPlayer.stopBgMusic();
+                if (cc.find("Audio")) {
+                  _this.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
+                  // this.AudioPlayer.stopBgMusic();
 
-                _this.AudioPlayer.playBgMusic();
+                  _this.AudioPlayer.playBgMusic();
+                }
 
                 resolve(); // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
                 //     //此处可能要判断登录失效 跳转、后期处理

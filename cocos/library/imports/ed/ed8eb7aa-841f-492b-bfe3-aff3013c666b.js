@@ -45,27 +45,38 @@ cc.Class({
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              //全局定义容器节点
+              http_globalData.BoxPrefab_content = cc.find('Canvas/大厅/content');
+              cc.sys.fightingArray = [];
+              cc.sys.toolsArray = [];
+              _context.next = 5;
               return httpRequestBagApi.http_music();
 
-            case 2:
-              //全局定义容器节点
-              cc.sys.BoxPrefab = cc.find('Canvas/大厅/content');
-              cc.sys.fightingArray = [];
-              cc.sys.toolsArray = []; // this.spawnTools()
-
+            case 5:
               _context.next = 7;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestModel.model_biology_fighting();
 
             case 7:
               _context.next = 9;
-              return _this2.spawnTools();
+              return httpRequestModel.model_biology_fightingEnd();
 
             case 9:
               _context.next = 11;
-              return _this2.playTask();
+              return httpRequestBagApi.http_user_info();
 
             case 11:
+              _context.next = 13;
+              return _this2.spawnTools();
+
+            case 13:
+              _context.next = 15;
+              return _this2.fightingEnd();
+
+            case 15:
+              _context.next = 17;
+              return _this2.playTask();
+
+            case 17:
             case "end":
               return _context.stop();
           }
@@ -87,17 +98,13 @@ cc.Class({
 
             case 2:
               _context2.next = 4;
-              return _this3.fightingEnd();
+              return httpRequestFightingExtend.alertBoat('准备回合');
 
             case 4:
               _context2.next = 6;
-              return httpRequestFightingExtend.alertBoat('准备回合');
-
-            case 6:
-              _context2.next = 8;
               return _this3.fighting_boat();
 
-            case 8:
+            case 6:
             case "end":
               return _context2.stop();
           }
@@ -154,7 +161,7 @@ cc.Class({
               poition_my = data.data.poition_my;
               poition_enemy = data.data.poition_enemy; //生物挂载
 
-              BoxPrefab = cc.sys.BoxPrefab;
+              BoxPrefab = http_globalData.BoxPrefab_content;
               _context3.next = 8;
               return BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_my, biolgy_state, 1, 0);
 
@@ -419,6 +426,8 @@ cc.Class({
   },
   //战斗结束
   fightingEnd: function fightingEnd() {
+    var _this11 = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
       var fighting_list;
       return regeneratorRuntime.wrap(function _callee9$(_context9) {
@@ -426,43 +435,20 @@ cc.Class({
           switch (_context9.prev = _context9.next) {
             case 0:
               // var _this =this;
-              fighting_list = http_globalData.fighting.data; // var _task =task||0;
-              //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-
+              fighting_list = http_globalData.fighting.data;
               return _context9.abrupt("return", new Promise(function (resolve) {
-                cc.loader.loadRes('/model弹窗/biology_结算', function (errorMessage, loadedResource) {
-                  //检查资源加载
-                  if (errorMessage) {
-                    cc.log('载入预制资源失败, 原因:' + errorMessage);
-                    return;
-                  }
+                //开始实例化预制资源
+                var TipBoxPrefab = http_globalData.model_biology_fightingEnd; // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
 
-                  if (!(loadedResource instanceof cc.Prefab)) {
-                    cc.log('你载入的不是预制资源!');
-                    return;
-                  } //开始实例化预制资源
+                if (fighting_list.poition_winner == 1) {
+                  TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';
+                } else {
+                  TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '失败！';
+                } //将预制资源添加到父节点
 
 
-                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
-
-                  if (fighting_list.poition_winner == 1) {
-                    TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';
-                  } else {
-                    TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '失败！';
-                  } //将预制资源添加到父节点
-                  // CanvasNode.addChild(TipBoxPrefab);
-
-
-                  cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab, this); //请求战斗记录
-                  // if(_task==1){
-                  //     console.log(11111)
-                  //     _this.fightint(sence);
-                  // }else{
-                  //     _this.progress(sence);
-                  // }
-
-                  resolve();
-                });
+                cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab, _this11);
+                resolve();
               }));
 
             case 2:
@@ -490,7 +476,7 @@ cc.Class({
   },
   //技能准备动作
   readySkill: function readySkill(his_log_extend) {
-    var _this11 = this;
+    var _this12 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -504,7 +490,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this11;
+              _this = _this12;
               npage = 0;
 
             case 3:
@@ -534,7 +520,7 @@ cc.Class({
   },
   //技能消耗动作
   needSkill: function needSkill(his_log_extend) {
-    var _this12 = this;
+    var _this13 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -548,7 +534,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this12;
+              _this = _this13;
               npage = 0;
 
             case 3:
@@ -580,7 +566,7 @@ cc.Class({
   },
   //技能攻击动作
   playSkill: function playSkill(his_log_extend) {
-    var _this13 = this;
+    var _this14 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -594,7 +580,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this13;
+              _this = _this14;
               npage = 0;
 
             case 3:
@@ -626,7 +612,7 @@ cc.Class({
   },
   //普通攻击动作
   playFight: function playFight(his_log_extend) {
-    var _this14 = this;
+    var _this15 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -640,7 +626,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this14;
+              _this = _this15;
               npage = 0;
 
             case 3:
@@ -748,10 +734,8 @@ cc.Class({
   },
   back_map: function back_map() {
     //移除节点
-    var _this = this;
-
-    _this.removeBoxprefab();
-
+    // var _this = this;
+    httpRequestModel.removeBoxprefab();
     httpRequest.playGame("sence_ditu");
   },
   //重播
@@ -759,7 +743,7 @@ cc.Class({
     //移除节点
     var _this = this;
 
-    _this.removeBoxprefab();
+    httpRequestModel.removeBoxprefab();
 
     _this.playTask();
 
@@ -767,21 +751,14 @@ cc.Class({
   },
   back_home: function back_home() {
     //移除节点
-    var _this = this;
-
-    _this.removeBoxprefab();
-
+    // var _this = this;
+    httpRequestModel.removeBoxprefab();
     httpRequest.playGame("sence_dating");
   },
   addTouchEvent: function addTouchEvent(node_1) {
     node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
     node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
     node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
-  },
-  //移除容器
-  removeBoxprefab: function removeBoxprefab() {
-    cc.sys.BoxPrefab.removeAllChildren();
-    cc.sys.BoxPrefab.destroyAllChildren();
   } // onDestroy() {
   //     // 停止定时器
   //     this.unschedule(this.fighting_history);

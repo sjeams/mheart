@@ -54,15 +54,21 @@ var httpAlert = cc.Class({
   },
   //操作加载弹窗模板
   alert_biologyDetail: function alert_biologyDetail() {
+    var _this2 = this;
+
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               return _context2.abrupt("return", new Promise(function (resolve) {
+                var _this = _this2;
                 cc.loader.loadRes('/model召唤/A召唤详情', function (errorMessage, loadedResource) {
-                  // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
-                  http_globalData.alert_biologyDetail = loadedResource;
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
+                  TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    _this.openBag_hidden();
+                  }, this);
+                  http_globalData.alert_biologyDetail = TipBoxPrefab;
                   resolve();
                 });
               }));
@@ -77,7 +83,7 @@ var httpAlert = cc.Class({
   },
   //操作加载弹窗模板
   alert_shangdian: function alert_shangdian() {
-    var _this2 = this;
+    var _this3 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
@@ -85,7 +91,7 @@ var httpAlert = cc.Class({
           switch (_context3.prev = _context3.next) {
             case 0:
               return _context3.abrupt("return", new Promise(function (resolve) {
-                var _this = _this2;
+                var _this = _this3;
                 cc.loader.loadRes('/model商店/A商店', function (errorMessage, loadedResource) {
                   // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
                   var TipBoxPrefab = cc.instantiate(loadedResource);
@@ -109,7 +115,7 @@ var httpAlert = cc.Class({
   alert_goTips: function alert_goTips(tips) {
     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips);
     TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string = tips;
-    TipBoxPrefab_tips.runAction(cc.sequence(cc.fadeIn(0.1), cc.delayTime(0.3), cc.fadeOut(0.2)), cc.callFunc(function () {
+    TipBoxPrefab_tips.runAction(cc.sequence(cc.fadeIn(0.1), cc.delayTime(0.5), cc.fadeOut(0.2)), cc.callFunc(function () {
       //移除挂载
       TipBoxPrefab_tips.destroy();
     }, this));
@@ -134,7 +140,7 @@ var httpAlert = cc.Class({
   },
   //创建生物弹窗
   alert_biologyTips: function alert_biologyTips(TipBoxPrefab) {
-    var _this3 = this;
+    var _this4 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
@@ -146,8 +152,8 @@ var httpAlert = cc.Class({
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.6); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
                 // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
 
-                _this3.schedule(function () {
-                  var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_biologyDetail); // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+                _this4.schedule(function () {
+                  var TipBoxPrefab_tips = http_globalData.alert_biologyDetail; // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
                   // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
                   //     //移除挂载
                   //     TipBoxPrefab_tips.destroy();

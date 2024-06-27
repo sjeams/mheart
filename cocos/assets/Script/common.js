@@ -2,6 +2,7 @@ require("./commonApi/http"); //引入基础http请求
 require("./commonApi/bag_api"); //引入背包
 require("./commonApi/figthingExtend"); //引入战斗动作
 require("./commonApi/alert"); //引入弹窗样式
+require("./commonApi/model"); //引入基础http请求
 //全局变量
 window.http_globalData = {
     user_info:[],//用户信息

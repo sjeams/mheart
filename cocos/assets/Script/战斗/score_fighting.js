@@ -27,20 +27,24 @@ cc.Class({
     },
     // LIFE-CYCLE CALLBACKS:
     async onLoad () {
-      await httpRequestBagApi.http_music()
       //全局定义容器节点
-      cc.sys.BoxPrefab= cc.find('Canvas/大厅/content');
+      http_globalData.BoxPrefab_content= cc.find('Canvas/大厅/content');
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
+      await httpRequestBagApi.http_music()
+      await httpRequestModel.model_biology_fighting() //加载模型
+      await httpRequestModel.model_biology_fightingEnd();//加载战斗结果
+
       // this.spawnTools()
       await httpRequestBagApi.http_user_info()
       await this.spawnTools() //加载数据
+      await this.fightingEnd() //加载结果
       await this.playTask()
     },
     //task
     async playTask(){
       await this.goPlay() //实例化对象
-      await this.fightingEnd() //先加载战斗结果
+ 
       await httpRequestFightingExtend.alertBoat('准备回合') //准备回合
       await this.fighting_boat() //开启回合战斗
 	  },
@@ -87,7 +91,7 @@ cc.Class({
         var poition_my = data.data.poition_my;
         var poition_enemy = data.data.poition_enemy;
         //生物挂载
-        var BoxPrefab = cc.sys.BoxPrefab
+        var BoxPrefab = http_globalData.BoxPrefab_content
         await BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab,poition_my,biolgy_state,1,0) //挂载生物--position_my
         await BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
 
@@ -215,33 +219,18 @@ cc.Class({
    async fightingEnd() {
         // var _this =this;
         var fighting_list =  http_globalData.fighting.data; 
-        // var _task =task||0;
-        //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         return new Promise(resolve => { 
-        cc.loader.loadRes('/model弹窗/biology_结算', function(errorMessage,loadedResource){
-              //检查资源加载
-              if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-              if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-              //开始实例化预制资源
-              var TipBoxPrefab = cc.instantiate(loadedResource);
-              // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
-              if(fighting_list.poition_winner==1){
-                TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
-              }else{
-                TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
-              }
-              //将预制资源添加到父节点
-              // CanvasNode.addChild(TipBoxPrefab);
-              cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
-              //请求战斗记录
-              // if(_task==1){
-              //     console.log(11111)
-              //     _this.fightint(sence);
-              // }else{
-              //     _this.progress(sence);
-              // }
-              resolve()
-          });
+            //开始实例化预制资源
+            var TipBoxPrefab = http_globalData.model_biology_fightingEnd
+            // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+            if(fighting_list.poition_winner==1){
+              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
+            }else{
+              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
+            }
+            //将预制资源添加到父节点
+            cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
+            resolve()
         }) 
     },
 
@@ -400,22 +389,22 @@ cc.Class({
     },
     back_map(){
       //移除节点
-      var _this = this;
-      _this.removeBoxprefab()
+      // var _this = this;
+      httpRequestModel.removeBoxprefab()
       httpRequest.playGame("sence_ditu")
     },
     //重播
     back_reload(){
       //移除节点
       var _this = this;
-      _this.removeBoxprefab()
+      httpRequestModel.removeBoxprefab()
       _this.playTask( )
       cc.find('Canvas/结算').active =false;// 结束弹窗结果
     },
     back_home(){
       //移除节点
-      var _this = this;
-      _this.removeBoxprefab()
+      // var _this = this;
+      httpRequestModel.removeBoxprefab()
       httpRequest.playGame("sence_dating")
     },
     addTouchEvent(node_1) {
@@ -423,13 +412,7 @@ cc.Class({
         node_1.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
         node_1.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
     },
-    //移除容器
-    removeBoxprefab(){
-      cc.sys.BoxPrefab.removeAllChildren();
-      cc.sys.BoxPrefab.destroyAllChildren();
-    },
-
-
+ 
     // onDestroy() {
     //     // 停止定时器
     //     this.unschedule(this.fighting_history);
