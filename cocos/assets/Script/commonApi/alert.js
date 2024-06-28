@@ -29,7 +29,7 @@ const httpAlert = cc.Class({
         cc.loader.loadRes('/model召唤/A召唤详情', function(errorMessage,loadedResource){
                 var TipBoxPrefab = cc.instantiate(loadedResource);
                 TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                    httpRequestModel.openBag_hidden()
+                    httpRequestModel.openAlert_remove()
                 }, this);
                 http_globalData.alert_biologyDetail =TipBoxPrefab
                 resolve();
@@ -45,7 +45,7 @@ const httpAlert = cc.Class({
                 // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
                 var TipBoxPrefab = cc.instantiate(loadedResource);
                 TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                    httpRequestModel.openBag_hidden()
+                    httpRequestModel.openAlert_remove()
                 }, this);
                 http_globalData.alert_shangdian =TipBoxPrefab
                 resolve();
@@ -55,6 +55,11 @@ const httpAlert = cc.Class({
  
     //操作提示
     alert_goTips(tips){
+
+    //     box_tips.active=true
+    //     box_tips.runAction(cc.sequence(cc.fadeIn(0.01),cc.scaleTo(0.3, 1.1, 1.3),cc.fadeOut(0.1),cc.scaleTo(0.1, 1, 1),cc.callFunc(function(){  
+    //         box_tips.active=false
+    //     },this)));
         var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
         TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
         TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.5),cc.fadeOut(0.2)),cc.callFunc(function(){ 

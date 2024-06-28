@@ -409,53 +409,7 @@ cc.Class({
   },
   back_home: function back_home() {
     httpRequest.playGame('sence_dating');
-  } // //打开背包
-  // openBag() {
-  //     if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
-  //         //技能图标挂载
-  //         var BoxPrefab = cc.find('Canvas/弹窗')
-  //         // 销毁所有弹窗
-  //         BoxPrefab.removeAllChildren();
-  //         cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
-  //             //检查资源加载
-  //             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-  //             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-  //             //开始实例化预制资源
-  //             var TipBoxPrefab = cc.instantiate(loadedResource);
-  //             TipBoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,TipBoxPrefab)
-  //         })
-  //         // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
-  //     }else{
-  //     //如果没有生物需要弹窗另一个提示
-  //     }
-  // },
-  // //打开阵法
-  // openZhenfa() {
-  //     if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
-  //         //技能图标挂载
-  //         var BoxPrefab = cc.find('Canvas/弹窗')
-  //         // 销毁所有弹窗
-  //         BoxPrefab.removeAllChildren();
-  //         cc.loader.loadRes('/model布阵/A生物布阵', function(errorMessage,loadedResource){
-  //             //检查资源加载
-  //             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-  //             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-  //             //开始实例化预制资源
-  //             var TipBoxPrefab = cc.instantiate(loadedResource);
-  //             TipBoxPrefab.getComponent('bag_zhenfaTools').biology_detail_alert(BoxPrefab,TipBoxPrefab)
-  //         })
-  //         // BoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,info)
-  //     }else{
-  //     //如果没有生物需要弹窗另一个提示
-  //     }
-  // },
-  // //没有处理逻辑，可以共用--关闭窗口
-  // openBag_hidden(){
-  //     // cc.find('Canvas/弹窗').active =false;
-  //     cc.find('Canvas/弹窗').removeAllChildren();
-  // },
-  // update (dt) {},
-
+  }
 });
 
 cc._RF.pop();

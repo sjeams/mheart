@@ -26,16 +26,21 @@ cc.Class({
 
             case 2:
               _context.next = 4;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestAlert.alert_getTips();
 
             case 4:
               _context.next = 6;
-              return httpRequestBagApi.http_bag_info();
+              return httpRequestBagApi.http_user_info();
 
             case 6:
+              _context.next = 8;
+              return httpRequestBagApi.http_bag_info();
+
+            case 8:
+              //背包信息
               _this.go_user_info();
 
-            case 7:
+            case 9:
             case "end":
               return _context.stop();
           }

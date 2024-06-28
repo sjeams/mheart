@@ -12,10 +12,11 @@ cc.Class({
           // cc.game.removePersistRootNode( myNode)
          //获取生物列表--实例化用户登录信息
          await httpRequestBagApi.http_music()
-         await httpRequestBagApi.http_user_info()
-         await httpRequestBagApi.http_bag_info()
+         await httpRequestAlert.alert_getTips(); //加载弹窗模板
+         await httpRequestBagApi.http_user_info()    //用户信息
+         await httpRequestBagApi.http_bag_info()     //背包信息
          this.go_user_info()
-
+         
      },
 
      start () {
@@ -51,12 +52,10 @@ cc.Class({
      go_sence_mijing: function() {
           httpRequest.playGame("sence_mijing");
      },
-
      //万古仙门
      go_sence_wangu: function() {
           httpRequest.playGame("sence_wangu");
      },
-
      //天地熔炉
      go_sence_tiandi: function() {
      httpRequest.playGame("sence_tiandi");

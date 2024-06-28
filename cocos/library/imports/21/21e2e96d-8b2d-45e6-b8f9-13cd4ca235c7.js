@@ -152,9 +152,7 @@ cc.Class({
 
         http_globalData.biology_id = http_globalData.zhenfa[http_globalData.zhenfa_id]; //点击阵法时, 生物id取阵法 里面的id
       } else {
-        http_globalData.is_zhenfa_chaochu = false; //点击头像id
-        // http_globalData.zhenfa_id = null;
-        // 检查阵法是否存在生物id
+        http_globalData.is_zhenfa_chaochu = false; // 检查阵法是否存在生物id
 
         http_globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //阵法的序号key
 
@@ -215,9 +213,10 @@ cc.Class({
         if (http_globalData.is_zhenfa) {
           //超出范围
           if (http_globalData.is_zhenfa_chaochu) {
-            _this.biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab);
+            _this.biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab); // TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
 
-            TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model, '操作成功!');
+
+            httpRequestAlert.alert_goTips("操作成功!");
             cc.log('移除');
           } else {
             cc.log('无');
@@ -319,7 +318,8 @@ cc.Class({
       if (http_globalData.biology[biology_id]) {
         if (parseInt(http_globalData.zhenfa_info.num + 1) > 5) {
           //操作提示
-          TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model, '上阵数不能大于5!');
+          // TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'上阵数不能大于5!') 
+          httpRequestAlert.alert_goTips("上阵数不能大于5!");
           return false;
         } //如果阵法上没有这生物，那么加1
 
@@ -329,8 +329,9 @@ cc.Class({
         TipBoxPrefab_model.getComponent('bag_zhenfa布阵Tools').biology_buzhen_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, biology_id);
         cc.find("content/列表/content/gridLayout", TipBoxPrefab).children[biology_id].getChildByName('P出战').active = true;
         http_globalData.zhenfa[zhenfa_id] = biology_id;
-        http_globalData.biology[biology_id].is_chuzhan = 1;
-        TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model, '操作成功!');
+        http_globalData.biology[biology_id].is_chuzhan = 1; // TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
+
+        httpRequestAlert.alert_goTips("操作成功!");
       }
     }
   },

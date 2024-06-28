@@ -6,9 +6,19 @@ const httpModel = cc.Class({
         http_globalData.BoxPrefab_content.removeAllChildren();
         http_globalData.BoxPrefab_content.destroyAllChildren();
     },
-    openBag_hidden(){
+    openAlert_remove(){
         // cc.find('Canvas/弹窗').active =false;
-        cc.find('Canvas/弹窗').removeAllChildren();
+        cc.find('Canvas/弹窗').removeAllChildren();// 结束弹窗结果
+    },
+    openAlert_hidden(){
+        // cc.find('Canvas/弹窗').active =false;
+        cc.find('Canvas/结算').active =false;// 结束弹窗结果
+    },
+    //阵法 关闭 提交结果，需要单独处理了
+    async openzhenfa_hidden(){
+        // cc.log(http_globalData.zhenfa)   
+        await  httpRequestBagApi.http_update_zhenfa()
+        // cc.find('Canvas/弹窗').removeAllChildren();
     },
     //加载模板战斗生物详情
    async model_biology_fighting() {
@@ -38,10 +48,10 @@ const httpModel = cc.Class({
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 var TipBoxPrefab = cc.instantiate(loadedResource);
                 TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                    cc.find('Canvas/结算').active =false;// 结束弹窗结果
+                    httpRequestModel.openAlert_hidden()
                 }, this);
                 TipBoxPrefab.getChildByName('canser').on('click', function () {
-                    cc.find('Canvas/结算').active =false;// 结束弹窗结果
+                    httpRequestModel.openAlert_hidden()
                 }, this);
                 TipBoxPrefab.getChildByName('返回地图').on('click', function () {
                     httpRequest.playGame("sence_ditu")
@@ -49,12 +59,57 @@ const httpModel = cc.Class({
                 TipBoxPrefab.getChildByName('重播').on('click', function () {
                     httpRequestModel.removeBoxprefab()
                     cc.find('Canvas/大厅/content').getComponent('score_fighting').playTask( )
-                    cc.find('Canvas/结算').active =false;// 结束弹窗结果
+                    httpRequestModel.openAlert_hidden()
                 }, this);
                 http_globalData.model_biology_fightingEnd =TipBoxPrefab
                 resolve();
             })   
         });
     },
+
+    //加载模板战斗生物详情
+    async model_home_openBiology() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    httpRequestModel.openAlert_remove()
+                }, this);
+                http_globalData.model_home_openBiology =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+
+    //加载模板战斗生物详情
+    async model_home_zhenfa() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model布阵/A生物布阵', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    httpRequestModel.openzhenfa_hidden()
+                }, this);
+                http_globalData.model_home_zhenfa =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    //加载模板战斗生物详情
+    async model_home_zhenfa_bag() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model布阵/背包生物', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_home_zhenfa_bag =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+
 });
 window.httpRequestModel = new httpModel();

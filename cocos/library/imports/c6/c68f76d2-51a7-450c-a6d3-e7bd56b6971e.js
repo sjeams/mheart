@@ -157,7 +157,7 @@ var httpBagApi = cc.Class({
 
         http_globalData.biology_id = 0; //默认选择的生物id
 
-        http_globalData.zhenfa_id = 0; //默认选择的阵法id
+        http_globalData.zhenfa_id = null; //默认选择的阵法id
 
         resolve();
       });
