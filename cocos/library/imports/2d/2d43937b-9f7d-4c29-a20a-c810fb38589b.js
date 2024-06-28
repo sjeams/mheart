@@ -85,11 +85,10 @@ cc.Class({
 
             case 17:
               //加载召唤菜单
-              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造');
-              httpRequestBagApi.materialTime(http_globalData.materialPrefab); //预制体晃动
+              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造'); // httpRequestBagApi.materialTime(http_globalData.materialPrefab)  //预制体晃动
               // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
 
-            case 19:
+            case 18:
             case "end":
               return _context.stop();
           }
@@ -151,8 +150,8 @@ cc.Class({
 
                   http_globalData.materialPrefab = cc.find('云游商人/云游商人b', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, 20, -20, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 5, 5, -5, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 10, 20, -20, 1.2);
+                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转3'), 1, 5, 5, -5, 1.2);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 1, 2, 20, 20, 1.2);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 1, 20, 360, 360, 1.1);
                   httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物细胞'), 1, 10, 10, -10, 1.05);

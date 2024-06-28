@@ -1,8 +1,8 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "木",
-    "texture": "8116d51f-2c53-4003-a10c-dd21f21f5d42",
+    "name": "a木",
+    "texture": "e3619722-f212-4c6a-b31e-efcd7f0af03e",
     "atlas": "",
     "rect": [
       31,

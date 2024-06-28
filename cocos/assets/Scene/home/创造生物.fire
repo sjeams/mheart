@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        224.30057958016963,
+        216.50635094610968,
         0,
         0,
         0,
@@ -567,7 +567,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "50b4537e-944a-4b9a-95d8-df9fd5f2152b"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,
@@ -829,7 +829,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "仿宋",
     "_N$overflow": 0,
-    "_N$cacheMode": 0,
+    "_N$cacheMode": 1,
     "_id": "bcegI4iCBLD5hdmxCH+WFx"
   },
   {
@@ -1060,7 +1060,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "创造s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 21
@@ -1398,7 +1398,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "融合s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 29
@@ -1736,7 +1736,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "训练s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 37
@@ -2076,7 +2076,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "回收s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 45

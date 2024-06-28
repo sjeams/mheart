@@ -1,8 +1,8 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "土",
-    "texture": "b7798227-41c4-4baf-86c5-f0240447a95a",
+    "name": "a土",
+    "texture": "cba1677d-9701-4e69-a746-bd518127eaf3",
     "atlas": "",
     "rect": [
       36,

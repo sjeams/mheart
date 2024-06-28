@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "背景",
-    "texture": "6ba3de48-03d8-4a2a-af52-bbb12d90cf3f",
+    "name": "a火",
+    "texture": "364582a1-d059-4fde-949b-a0cfbcca3523",
     "atlas": "",
     "rect": [
-      36,
-      0,
-      104,
-      129
+      31,
+      6,
+      105,
+      125
     ],
     "offset": [
-      6,
-      11.5
+      3.5,
+      9
     ],
     "originalSize": [
-      164,
-      152
+      160,
+      155
     ],
     "capInsets": [
       0,

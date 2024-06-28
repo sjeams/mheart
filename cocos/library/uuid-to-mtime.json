@@ -1014,11 +1014,6 @@
     "meta": 1714273943230,
     "relativePath": "resources\\图标技能\\AutoAtlas.pac"
   },
-  "4b67f73c-a639-4e5b-84d6-d4f5da0d7655": {
-    "asset": 1718854896046,
-    "meta": 1713491582574,
-    "relativePath": "resources\\图标符文"
-  },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
     "asset": 1713765920693,
     "meta": 1714273943906,
@@ -2664,46 +2659,6 @@
     "meta": 1718850108175,
     "relativePath": "resources\\model召唤\\角色详情.prefab"
   },
-  "610cde51-00fc-431f-bacc-df611bb4c1b9": {
-    "asset": 1718851596075,
-    "meta": 1718851596102,
-    "relativePath": "resources\\图标符文\\无.png"
-  },
-  "8297bf05-099e-4190-b087-560ad9b22bd3": {
-    "asset": 1718852453204,
-    "meta": 1718852453238,
-    "relativePath": "resources\\图标符文\\金.png"
-  },
-  "ffe31f46-0028-45fd-8c92-4688021236c6": {
-    "asset": 1718852453205,
-    "meta": 1718852453241,
-    "relativePath": "resources\\图标符文\\火.png"
-  },
-  "8116d51f-2c53-4003-a10c-dd21f21f5d42": {
-    "asset": 1718852453205,
-    "meta": 1718852453252,
-    "relativePath": "resources\\图标符文\\木.png"
-  },
-  "b7798227-41c4-4baf-86c5-f0240447a95a": {
-    "asset": 1718852453205,
-    "meta": 1718852453254,
-    "relativePath": "resources\\图标符文\\土.png"
-  },
-  "9059fda1-4526-41d3-9695-37090b725185": {
-    "asset": 1718852585178,
-    "meta": 1718852585198,
-    "relativePath": "resources\\图标符文\\水.png"
-  },
-  "81c2b047-bf16-4c2a-9017-9d409dabc149": {
-    "asset": 1718853267056,
-    "meta": 1718853338358,
-    "relativePath": "resources\\图标符文\\A符文.pac"
-  },
-  "6ba3de48-03d8-4a2a-af52-bbb12d90cf3f": {
-    "asset": 1718854896045,
-    "meta": 1718854896060,
-    "relativePath": "resources\\图标符文\\背景.png"
-  },
   "65b182dc-72c3-4e4a-b465-6f55cb7370d5": {
     "asset": 1719457785825,
     "meta": 1719457785839,
@@ -2829,11 +2784,6 @@
     "meta": 1719219746659,
     "relativePath": "resources\\biology\\战斗.png"
   },
-  "1ab31567-7ae6-4fc1-b6a2-cf869ca5e8e3": {
-    "asset": 1719219746585,
-    "meta": 1719219746672,
-    "relativePath": "resources\\biology\\标题1.png"
-  },
   "cb97f2bc-bca2-443d-a988-4ff66049f82a": {
     "asset": 1719296685528,
     "meta": 1719279369657,
@@ -2875,8 +2825,8 @@
     "relativePath": "resources\\assets\\builtin_摇晃.mtl"
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1719478599229,
-    "meta": 1719478599242,
+    "asset": 1719556653391,
+    "meta": 1719556653404,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "2ff1dadd-3de7-44e6-ad8e-e1998bf79163": {
@@ -2885,8 +2835,8 @@
     "relativePath": "resources\\model召唤\\云游商人.prefab"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1719475340636,
-    "meta": 1719475340652,
+    "asset": 1719560859174,
+    "meta": 1719560859188,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "37f4be94-b986-4adf-be84-0107aebef494": {
@@ -2898,11 +2848,6 @@
     "asset": 1719390594165,
     "meta": 1719390595021,
     "relativePath": "resources\\materials\\摇晃.effect"
-  },
-  "c401445e-5141-4beb-8817-b993c1865231": {
-    "asset": 1719478555686,
-    "meta": 1719478555698,
-    "relativePath": "resources\\model召唤\\A创造.prefab"
   },
   "93f8740c-5097-4221-b3b1-b272aa52660e": {
     "asset": 1719476369977,
@@ -2935,8 +2880,8 @@
     "relativePath": "Script\\战斗\\fightingTools.js"
   },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1719480372022,
-    "meta": 1719480372031,
+    "asset": 1719560014935,
+    "meta": 1719560014943,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
@@ -2974,11 +2919,6 @@
     "meta": 1719483171755,
     "relativePath": "Script\\背包\\biology_infoTools.js"
   },
-  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1719538976933,
-    "meta": 1719539274909,
-    "relativePath": "Script\\召唤\\zhaohuan_home.js"
-  },
   "398e676d-633a-44ab-997e-980aedf61174": {
     "asset": 1719541928641,
     "meta": 1719542266034,
@@ -3015,8 +2955,8 @@
     "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1719546883408,
-    "meta": 1719546883423,
+    "asset": 1719559752855,
+    "meta": 1719559752876,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
@@ -3040,8 +2980,63 @@
     "relativePath": "Script\\common.js"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1719546881524,
-    "meta": 1719546883190,
+    "asset": 1719554315311,
+    "meta": 1719554357957,
     "relativePath": "Script\\commonApi\\http.js"
+  },
+  "7c7db64c-4827-4dc8-a55a-b5da19a3a170": {
+    "asset": 1719555425222,
+    "meta": 1719555425239,
+    "relativePath": "resources\\biology\\a金.png"
+  },
+  "ee9d0248-4c9c-4b33-9b66-7c59c17b999b": {
+    "asset": 1719555425385,
+    "meta": 1719555425550,
+    "relativePath": "resources\\biology\\a背景.png"
+  },
+  "364582a1-d059-4fde-949b-a0cfbcca3523": {
+    "asset": 1719555425669,
+    "meta": 1719555425823,
+    "relativePath": "resources\\biology\\a火.png"
+  },
+  "ddb24bf2-2a2a-468b-94ed-7a7f52bceb7b": {
+    "asset": 1719555425949,
+    "meta": 1719555426138,
+    "relativePath": "resources\\biology\\a水.png"
+  },
+  "e3619722-f212-4c6a-b31e-efcd7f0af03e": {
+    "asset": 1719555426267,
+    "meta": 1719555426422,
+    "relativePath": "resources\\biology\\a木.png"
+  },
+  "3599bcaf-c040-4eee-9c9c-9ded750b7f9f": {
+    "asset": 1719555426549,
+    "meta": 1719555426712,
+    "relativePath": "resources\\biology\\a无.png"
+  },
+  "cba1677d-9701-4e69-a746-bd518127eaf3": {
+    "asset": 1719555426839,
+    "meta": 1719555426991,
+    "relativePath": "resources\\biology\\a土.png"
+  },
+  "c401445e-5141-4beb-8817-b993c1865231": {
+    "asset": 1719556534901,
+    "meta": 1719556534916,
+    "relativePath": "resources\\model召唤\\A创造.prefab"
+  },
+  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
+    "asset": 1719555884587,
+    "meta": 1719555889949,
+    "relativePath": "Script\\召唤\\zhaohuan_home.js"
+  },
+  "6a9d1ceb-c63b-4f87-b5d5-c2d91840ad58": {
+    "asset": 1719557630634,
+    "meta": 1719557630661,
+    "relativePath": "resources\\biology\\标题1.png"
+  },
+  "371f4baf-b632-49a4-baa2-3913664b8642": {
+    "asset": 1719560089458,
+    "meta": 1719560089461,
+    "relativePath": "resources\\图标生物\\AutoAtlas.pac"
   }
 }

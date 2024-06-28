@@ -1,6 +1,6 @@
 {
-  "platform": "mini-game",
-  "actualPlatform": "wechatgame",
+  "platform": "android",
+  "actualPlatform": "android",
   "template": "link",
   "buildPath": "D:\\phpstudy_pro\\WWW\\mheart\\web\\app_resources",
   "debug": false,
