@@ -810,8 +810,8 @@
     "relativePath": "resources\\图标技能效果\\血爆.png"
   },
   "1b99732f-2a4f-4d7e-aee1-057390919a05": {
-    "asset": 1713765920692,
-    "meta": 1714273943883,
+    "asset": 1719564942907,
+    "meta": 1719564942915,
     "relativePath": "resources\\model弹窗\\biology_生物_战斗技能提示.prefab"
   },
   "5fb7e54c-a2f3-42ef-afd5-9e5d902df33c": {
@@ -1015,14 +1015,9 @@
     "relativePath": "resources\\图标技能\\AutoAtlas.pac"
   },
   "664024f3-ccc2-4904-98ec-f7cd4a69ac1e": {
-    "asset": 1713765920693,
-    "meta": 1714273943906,
+    "asset": 1719565561630,
+    "meta": 1719565561644,
     "relativePath": "resources\\model弹窗\\biology_生物_战斗详情.prefab"
-  },
-  "74e7f103-4492-4554-ac67-c4ae6ff74e55": {
-    "asset": 1713765920694,
-    "meta": 1714273943880,
-    "relativePath": "resources\\model弹窗\\biology_生物_技能图标.prefab"
   },
   "d51ef8a8-ae2d-4d82-83ec-7c54823d690a": {
     "asset": 1713491582552,
@@ -1153,11 +1148,6 @@
     "asset": 1713765920715,
     "meta": 1713765920706,
     "relativePath": "resources\\图片大厅"
-  },
-  "fcbcc85d-91ad-480e-a5ed-3d742c043613": {
-    "asset": 1713765920684,
-    "meta": 1714273944241,
-    "relativePath": "Script\\战斗\\biology_detailTools.js"
   },
   "a35df353-e613-4fbb-acd6-15095812556b": {
     "asset": 1719482298049,
@@ -2175,8 +2165,8 @@
     "relativePath": "resources\\model战斗"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1719224091238,
-    "meta": 1719224091251,
+    "asset": 1719568378753,
+    "meta": 1719568378762,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
@@ -2499,25 +2489,10 @@
     "meta": 1716365137999,
     "relativePath": "Script\\commonApi"
   },
-  "75f9cb2a-ca7c-4e7f-9f31-b73b31a78de2": {
-    "asset": 1718965065065,
-    "meta": 1718965065081,
-    "relativePath": "resources\\model战斗\\sprite_地图.prefab"
-  },
-  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
-    "asset": 1718085085691,
-    "meta": 1718085087316,
-    "relativePath": "Script\\场景\\mapTools.js"
-  },
   "d679e419-181f-46f7-b526-c8c28ece4ed8": {
     "asset": 1718159515878,
     "meta": 1718159636154,
     "relativePath": "Script\\背包\\bag_详情按钮Tools.js"
-  },
-  "643356fe-1be5-4b1e-aad4-75b155599a40": {
-    "asset": 1718182717427,
-    "meta": 1718182879146,
-    "relativePath": "Script\\战斗\\skill_iconTools.js"
   },
   "a76e802f-195a-4d2d-93f5-5bf581ce060d": {
     "asset": 1718353691511,
@@ -2548,11 +2523,6 @@
     "asset": 1718701627599,
     "meta": 1718701627664,
     "relativePath": "resources\\biology\\边框圆.png"
-  },
-  "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1718702110538,
-    "meta": 1718702120684,
-    "relativePath": "Script\\commonApi\\figthingExtend.js"
   },
   "5b7b73f9-1581-4589-862c-77f46711f06f": {
     "asset": 1718704764030,
@@ -2650,8 +2620,8 @@
     "relativePath": "resources\\model召唤\\角色.prefab"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1718872030292,
-    "meta": 1718872030304,
+    "asset": 1719567736236,
+    "meta": 1719567736248,
     "relativePath": "Scene\\login\\角色.fire"
   },
   "b332e10c-729a-4ac4-9f61-9829e3509e75": {
@@ -2834,20 +2804,10 @@
     "meta": 1719305126508,
     "relativePath": "resources\\model召唤\\云游商人.prefab"
   },
-  "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1719560859174,
-    "meta": 1719560859188,
-    "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
-  },
   "37f4be94-b986-4adf-be84-0107aebef494": {
     "asset": 1719387226245,
     "meta": 1719387234932,
     "relativePath": "resources\\model召唤\\A创造备份.prefab"
-  },
-  "6ca4aee5-dc46-4e3f-8b54-86e6b26d09c2": {
-    "asset": 1719390594165,
-    "meta": 1719390595021,
-    "relativePath": "resources\\materials\\摇晃.effect"
   },
   "93f8740c-5097-4221-b3b1-b272aa52660e": {
     "asset": 1719476369977,
@@ -2874,14 +2834,9 @@
     "meta": 1719458587280,
     "relativePath": "resources\\model商店\\背包按钮.prefab"
   },
-  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
-    "asset": 1719474618101,
-    "meta": 1719475155543,
-    "relativePath": "Script\\战斗\\fightingTools.js"
-  },
   "68ecaf1d-e48c-49d6-a0c6-7690879dfc50": {
-    "asset": 1719560014935,
-    "meta": 1719560014943,
+    "asset": 1719570240145,
+    "meta": 1719570240162,
     "relativePath": "Scene\\战斗场景.fire"
   },
   "09d9eefe-bc66-4b74-a83f-3c410927f52a": {
@@ -2893,11 +2848,6 @@
     "asset": 1719481853217,
     "meta": 1719481867742,
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
-  },
-  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
-    "asset": 1719482212588,
-    "meta": 1719482248753,
-    "relativePath": "Script\\战斗\\score_fighting.js"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1719482524094,
@@ -2944,11 +2894,6 @@
     "meta": 1719543504372,
     "relativePath": "resources\\model布阵\\A生物布阵.prefab"
   },
-  "d6864f90-040a-4637-afd2-d84425cb053b": {
-    "asset": 1719543201818,
-    "meta": 1719543214736,
-    "relativePath": "Script\\commonApi\\alert.js"
-  },
   "0a4d7796-cd18-425c-9469-5773d6bee99b": {
     "asset": 1719544616572,
     "meta": 1719544690249,
@@ -2969,20 +2914,10 @@
     "meta": 1719546613843,
     "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
   },
-  "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
-    "asset": 1719546505585,
-    "meta": 1719546613923,
-    "relativePath": "Script\\commonApi\\model.js"
-  },
   "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
     "asset": 1719546654302,
     "meta": 1719546781336,
     "relativePath": "Script\\common.js"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1719554315311,
-    "meta": 1719554357957,
-    "relativePath": "Script\\commonApi\\http.js"
   },
   "7c7db64c-4827-4dc8-a55a-b5da19a3a170": {
     "asset": 1719555425222,
@@ -3024,11 +2959,6 @@
     "meta": 1719556534916,
     "relativePath": "resources\\model召唤\\A创造.prefab"
   },
-  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1719555884587,
-    "meta": 1719555889949,
-    "relativePath": "Script\\召唤\\zhaohuan_home.js"
-  },
   "6a9d1ceb-c63b-4f87-b5d5-c2d91840ad58": {
     "asset": 1719557630634,
     "meta": 1719557630661,
@@ -3038,5 +2968,80 @@
     "asset": 1719560089458,
     "meta": 1719560089461,
     "relativePath": "resources\\图标生物\\AutoAtlas.pac"
+  },
+  "6ca4aee5-dc46-4e3f-8b54-86e6b26d09c2": {
+    "asset": 1719560947443,
+    "meta": 1719560961262,
+    "relativePath": "resources\\materials\\摇晃.effect"
+  },
+  "d7a8d8a7-e83d-49fd-acbf-ab8a77f76a45": {
+    "asset": 1719561643444,
+    "meta": 1719561643446,
+    "relativePath": "resources\\图标技能效果\\AutoAtlas.pac"
+  },
+  "40bedcd0-c109-4f66-aa9d-ca142724f729": {
+    "asset": 1719570165169,
+    "meta": 1719570165195,
+    "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
+  },
+  "8ac9f912-4149-4bf9-ac85-e3ea7180e55e": {
+    "asset": 1719563628887,
+    "meta": 1719563674012,
+    "relativePath": "Script\\战斗\\fightingTools.js"
+  },
+  "74e7f103-4492-4554-ac67-c4ae6ff74e55": {
+    "asset": 1719565207299,
+    "meta": 1719565207305,
+    "relativePath": "resources\\model弹窗\\biology_生物_技能图标.prefab"
+  },
+  "643356fe-1be5-4b1e-aad4-75b155599a40": {
+    "asset": 1719565143938,
+    "meta": 1719565145667,
+    "relativePath": "Script\\战斗\\skill_iconTools.js"
+  },
+  "ed8eb7aa-841f-492b-bfe3-aff3013c666b": {
+    "asset": 1719565382060,
+    "meta": 1719565471781,
+    "relativePath": "Script\\战斗\\score_fighting.js"
+  },
+  "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
+    "asset": 1719565341921,
+    "meta": 1719565471858,
+    "relativePath": "Script\\commonApi\\model.js"
+  },
+  "fcbcc85d-91ad-480e-a5ed-3d742c043613": {
+    "asset": 1719566379667,
+    "meta": 1719566380539,
+    "relativePath": "Script\\战斗\\biology_detailTools.js"
+  },
+  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
+    "asset": 1719566819735,
+    "meta": 1719566850654,
+    "relativePath": "Script\\召唤\\zhaohuan_home.js"
+  },
+  "d6864f90-040a-4637-afd2-d84425cb053b": {
+    "asset": 1719567161838,
+    "meta": 1719567735422,
+    "relativePath": "Script\\commonApi\\alert.js"
+  },
+  "75f9cb2a-ca7c-4e7f-9f31-b73b31a78de2": {
+    "asset": 1719569064514,
+    "meta": 1719569064522,
+    "relativePath": "resources\\model战斗\\sprite_地图.prefab"
+  },
+  "4b399bf3-6774-4ef9-b181-1f5936b04e02": {
+    "asset": 1719569610974,
+    "meta": 1719569627489,
+    "relativePath": "Script\\场景\\mapTools.js"
+  },
+  "407eb230-628e-48ee-a66f-250db1808d21": {
+    "asset": 1719570161961,
+    "meta": 1719570163327,
+    "relativePath": "Script\\commonApi\\figthingExtend.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1719570007323,
+    "meta": 1719570163378,
+    "relativePath": "Script\\commonApi\\http.js"
   }
 }

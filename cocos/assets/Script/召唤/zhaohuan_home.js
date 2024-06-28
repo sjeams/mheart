@@ -164,8 +164,9 @@ cc.Class({
             httpRequestAlert.alert_goTips("材料不足，请添加材料！！！"); //提示材料已经满
             return 
         }
-        //随机数0-1
-        var randomIndex = Math.floor(Math.random() * http_globalData.chuanzao_xibao.length);  
+        //随机数0-2
+        // var randomIndex = Math.floor(Math.random() * http_globalData.chuanzao_xibao.length);  
+        var randomIndex =   httpRequest.number_rand(http_globalData.chuanzao_xibao.length)
         var biology_type = http_globalData.chuanzao_xibao[randomIndex].type; //细胞类型
         var data= await httpRequestBagApi.http_user_add_biology(biology_type) //返回成功的data
         if(data.code==1){

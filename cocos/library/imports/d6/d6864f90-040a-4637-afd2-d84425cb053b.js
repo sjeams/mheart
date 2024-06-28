@@ -12,9 +12,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var httpAlert = cc.Class({
   "extends": cc.Component,
   getNicheng: function getNicheng() {
-    var arr = http_globalData.user_nicheng;
-    var r_num = Math.round(Math.random() * (3 - 1) + 1); //随机1-3
+    var arr = http_globalData.user_nicheng; // var r_num = Math.round(Math.random()*(3-1)+1); //随机1-3
 
+    var r_num = httpRequest.number_rand(3);
+    cc.log(r_num);
     var stag_name = '';
 
     for (var i = 0; i <= r_num; i++) {

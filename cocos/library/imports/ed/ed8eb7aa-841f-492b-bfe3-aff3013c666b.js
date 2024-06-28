@@ -54,29 +54,41 @@ cc.Class({
 
             case 5:
               _context.next = 7;
-              return httpRequestModel.model_biology_fighting();
+              return httpRequestModel.model_biology_fightingBiology();
 
             case 7:
               _context.next = 9;
-              return httpRequestModel.model_biology_fightingEnd();
+              return httpRequestModel.model_biology_fightingDetail();
 
             case 9:
               _context.next = 11;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestModel.model_biology_SkillIcon();
 
             case 11:
               _context.next = 13;
-              return _this2.spawnTools();
+              return httpRequestModel.model_biology_SkillTips();
 
             case 13:
               _context.next = 15;
-              return _this2.fightingEnd();
+              return httpRequestModel.model_biology_fightingEnd();
 
             case 15:
               _context.next = 17;
-              return _this2.playTask();
+              return httpRequestBagApi.http_user_info();
 
             case 17:
+              _context.next = 19;
+              return _this2.spawnTools();
+
+            case 19:
+              _context.next = 21;
+              return _this2.fightingEnd();
+
+            case 21:
+              _context.next = 23;
+              return _this2.playTask();
+
+            case 23:
             case "end":
               return _context.stop();
           }

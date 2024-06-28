@@ -99,13 +99,13 @@
         "__id__": 113
       },
       {
-        "__id__": 115
+        "__id__": 114
       }
     ],
     "_prefab": {
-      "__id__": 116
+      "__id__": 115
     },
-    "_opacity": 220,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -116,7 +116,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 180
+      "height": 200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -136,7 +136,7 @@
         1,
         1,
         1,
-        1
+        0
       ]
     },
     "_eulerAngles": {
@@ -192,7 +192,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -75,
+        -80,
         0,
         0,
         0,
@@ -261,7 +261,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "悟性",
+    "_name": "血条背景",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -286,7 +286,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 165,
       "height": 40
     },
     "_anchorPoint": {
@@ -299,7 +299,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        59,
+        62,
         0,
         0,
         0,
@@ -413,7 +413,7 @@
       "ctor": "Float64Array",
       "array": [
         10,
-        50,
+        53,
         0,
         0,
         0,
@@ -657,7 +657,7 @@
       "ctor": "Float64Array",
       "array": [
         10,
-        65,
+        68,
         0,
         0,
         0,
@@ -1119,7 +1119,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -30,
+        -20,
         0,
         0,
         0,
@@ -1153,7 +1153,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "50b4537e-944a-4b9a-95d8-df9fd5f2152b"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,
@@ -1581,7 +1581,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "391d0f8c-bf45-489f-9756-b455a86e9b1d"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,
@@ -1838,7 +1838,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -1877,7 +1877,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "魔法s",
+    "_name": "生命s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1909,7 +1909,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 120,
-      "height": 14
+      "height": 18
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1921,7 +1921,7 @@
       "ctor": "Float64Array",
       "array": [
         10,
-        50,
+        70,
         0,
         0,
         0,
@@ -1959,10 +1959,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "368",
-    "_N$string": "368",
-    "_fontSize": 14,
-    "_lineHeight": 14,
+    "_string": "80000",
+    "_N$string": "80000",
+    "_fontSize": 18,
+    "_lineHeight": 18,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1992,7 +1992,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2026,12 +2026,12 @@
     "asset": {
       "__uuid__": "40bedcd0-c109-4f66-aa9d-ca142724f729"
     },
-    "fileId": "7c3/b34TlJBLVGwnin0xyP",
+    "fileId": "f02CPJuXlMjoKj5WsJTyWS",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "生命s",
+    "_name": "魔法s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2063,7 +2063,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 120,
-      "height": 18
+      "height": 16
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2075,7 +2075,7 @@
       "ctor": "Float64Array",
       "array": [
         10,
-        65,
+        54,
         0,
         0,
         0,
@@ -2113,9 +2113,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "80000",
-    "_N$string": "80000",
-    "_fontSize": 18,
+    "_string": "368",
+    "_N$string": "368",
+    "_fontSize": 16,
     "_lineHeight": 16,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2146,7 +2146,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2180,7 +2180,7 @@
     "asset": {
       "__uuid__": "40bedcd0-c109-4f66-aa9d-ca142724f729"
     },
-    "fileId": "f02CPJuXlMjoKj5WsJTyWS",
+    "fileId": "7c3/b34TlJBLVGwnin0xyP",
     "sync": false
   },
   {
@@ -2216,7 +2216,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
+      "width": 180,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -2229,7 +2229,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -70,
+        -68,
         0,
         0,
         0,
@@ -2300,7 +2300,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2370,8 +2370,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 20.16
+      "width": 180,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2383,7 +2383,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -90,
+        -88,
         0,
         0,
         0,
@@ -2423,8 +2423,8 @@
     "_useOriginalSize": false,
     "_string": "等级10",
     "_N$string": "等级10",
-    "_fontSize": 12,
-    "_lineHeight": 16,
+    "_fontSize": 16,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2454,7 +2454,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2608,7 +2608,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2762,7 +2762,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -2916,7 +2916,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3070,7 +3070,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3224,7 +3224,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3378,7 +3378,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3448,7 +3448,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 25,
+      "width": 22,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -3460,8 +3460,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -70,
-        60,
+        -68,
+        63,
         0,
         0,
         0,
@@ -3532,7 +3532,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3686,7 +3686,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -3761,15 +3761,13 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_normalMaterial": null,
+    "_normalMaterial": {
+      "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+    },
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
-    "clickEvents": [
-      {
-        "__id__": 114
-      }
-    ],
+    "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
     "_N$transition": 0,
@@ -3826,14 +3824,6 @@
       "__id__": 1
     },
     "_id": ""
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": null,
-    "component": "",
-    "_componentId": "cc.Button",
-    "handler": "hidden_dlg",
-    "customEventData": ""
   },
   {
     "__type__": "8ac9fkSQUlL+ayF4+pxgOVe",

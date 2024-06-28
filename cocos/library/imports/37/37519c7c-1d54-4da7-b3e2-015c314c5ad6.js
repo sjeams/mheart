@@ -270,6 +270,38 @@ var HttpHelper = cc.Class({
       sence_zhandou: "战斗场景"
     };
     return sence[url];
+  },
+  //数字转换string，万    //point需要保留小数位
+  number_string_wan: function number_string_wan(num, point) {
+    var shengMing_string = num.toString();
+
+    if (shengMing_string.length >= 5) {
+      //小于1w
+      var decimal = shengMing_string.substring(shengMing_string.length - 4, shengMing_string.length - 4 + point);
+      var shengMing_string = parseFloat(parseInt(num / 10000) + '.' + decimal) + '万';
+    }
+
+    return shengMing_string;
+  },
+  //随机数
+  number_rand: function number_rand(num) {
+    // httpRequest.number_rand(1)
+    // Math.floor(Math.random() * http_globalData.chuanzao_xibao.length); 
+    return Math.round(Math.random() * (num - 1)); //传入3,随机0-2
+  },
+  //随机距离 --位置，偏移量
+  number_map_rand: function number_map_rand(map_position, value) {
+    // httpRequest.number_rand(1)
+    // Math.floor(Math.random() * http_globalData.chuanzao_xibao.length); 
+    var is_add = httpRequest.number_rand(1);
+
+    if (is_add) {
+      var postion = map_position - httpRequest.number_rand(value);
+    } else {
+      var postion = map_position + httpRequest.number_rand(value);
+    }
+
+    return postion;
   }
 });
 window.httpRequest = new HttpHelper();

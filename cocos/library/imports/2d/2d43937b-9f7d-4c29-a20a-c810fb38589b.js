@@ -267,8 +267,9 @@ cc.Class({
               return _context3.abrupt("return");
 
             case 5:
-              //随机数0-1
-              randomIndex = Math.floor(Math.random() * http_globalData.chuanzao_xibao.length);
+              //随机数0-2
+              // var randomIndex = Math.floor(Math.random() * http_globalData.chuanzao_xibao.length);  
+              randomIndex = httpRequest.number_rand(http_globalData.chuanzao_xibao.length);
               biology_type = http_globalData.chuanzao_xibao[randomIndex].type; //细胞类型
 
               _context3.next = 9;

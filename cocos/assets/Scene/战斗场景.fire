@@ -189,7 +189,7 @@
       "array": [
         0,
         0,
-        216.50635094610968,
+        266.73582436560713,
         0,
         0,
         0,
@@ -334,14 +334,14 @@
       "__id__": 5
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 7
       }
     ],
     "_prefab": null,
-    "_opacity": 180,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -438,7 +438,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 80,
+    "_opacity": 100,
     "_color": {
       "__type__": "cc.Color",
       "r": 54,
@@ -1354,7 +1354,7 @@
         1,
         1,
         1,
-        0
+        1
       ]
     },
     "_eulerAngles": {
@@ -1712,7 +1712,7 @@
         1,
         1,
         1,
-        0
+        1
       ]
     },
     "_eulerAngles": {

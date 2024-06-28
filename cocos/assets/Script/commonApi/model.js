@@ -21,16 +21,65 @@ const httpModel = cc.Class({
         // cc.find('Canvas/弹窗').removeAllChildren();
     },
     //战斗--加载模板战斗生物详情
-   async model_biology_fighting() {
+   async model_biology_fightingBiology() {
         return new Promise(resolve => {    
         cc.loader.loadRes('/model战斗/biology_生物详情', function(errorMessage,loadedResource){
                 if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-                // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
-                http_globalData.model_biology_fighting =loadedResource
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_biology_fightingBiology =TipBoxPrefab
                 resolve();
             })   
         });
     },
+
+ 
+    //战斗--加载模板战斗生物技能
+    async model_biology_fightingDetail() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model弹窗/biology_生物_战斗详情', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_biology_fightingDetail =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    
+    //战斗--加载模板战斗生物技能
+    async model_biology_SkillIcon() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_biology_SkillIcon =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    //战斗--加载模板战斗生物技能
+    async model_biology_SkillTips() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_biology_SkillTips =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+
     // //操作提示
     // alert_goTips(tips){
     //     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)

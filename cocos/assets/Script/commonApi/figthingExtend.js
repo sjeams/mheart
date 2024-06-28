@@ -154,7 +154,7 @@
         // cc.log(biology)
         // node.getChildByName('扣血s').color = new cc.color('#3568D5');
         // node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value+'/'+node.moFa
-        node.getChildByName('魔法s').getComponent(cc.Label).string= biology.hurt_go_value
+        node.getChildByName('魔法s').getComponent(cc.Label).string=  httpRequest.number_string_wan(biology.hurt_go_value,2);
         var progressBar = node.getChildByName('魔法').getComponent(cc.ProgressBar)
         //  耗蓝为0跳过0跳过
         if(biology.hurt_msg<0){
@@ -170,7 +170,7 @@
       if(biology.extend=='shengMing'){
         //血条动作
         // node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value +'/'+ node.shengMing 
-        node.getChildByName('生命s').getComponent(cc.Label).string= biology.hurt_go_value
+        node.getChildByName('生命s').getComponent(cc.Label).string=  httpRequest.number_string_wan(biology.hurt_go_value,2);
         var progressBar = node.getChildByName('生命').getComponents(cc.ProgressBar)
         // progressBar.progress = biology.hurt_go_value / node.shengMing
         // progressBar.completeCount = biology.hurt_go_value;
@@ -197,8 +197,9 @@
           node.getChildByName('受伤').runAction(cc.fadeOut(_this.sudu(1)),cc.callFunc(function(){  node.getChildByName('受伤').active=false },this));
         }
         //死亡
-        if(biology.hurt_go_value==0){
-          node.getChildByName('悟性').active=false
+        if(biology.hurt_go_value<=0){
+          cc.log(111)
+          node.getChildByName('血条背景').active=false
           node.getChildByName('生命').active=false
           node.getChildByName('魔法').active=false
           node.getChildByName('悟性s').active=false

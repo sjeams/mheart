@@ -32,7 +32,10 @@ cc.Class({
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
       await httpRequestBagApi.http_music()
-      await httpRequestModel.model_biology_fighting() //加载模型
+      await httpRequestModel.model_biology_fightingBiology() //加载模型
+      await httpRequestModel.model_biology_fightingDetail();//加载战斗生物详情
+      await httpRequestModel.model_biology_SkillIcon();//加载战斗技能图标
+      await httpRequestModel.model_biology_SkillTips();//加载战斗技能提示
       await httpRequestModel.model_biology_fightingEnd();//加载战斗结果
 
       // this.spawnTools()
@@ -50,8 +53,6 @@ cc.Class({
 	  },
 
 
-
- 
     start () {
     },
     update (dt) {

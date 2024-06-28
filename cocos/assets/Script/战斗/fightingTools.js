@@ -12,15 +12,15 @@ cc.Class({
         var TOOLS = info_list;
         // let image = '/技能图标/'+skill.image;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-        cc.loader.loadRes('/model战斗/biology_生物详情', function(errorMessage,loadedResource_icon){
+        // cc.loader.loadRes('/model战斗/biology_生物详情', function(errorMessage,loadedResource_icon){
             //检查资源加载
-            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-            if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+            // if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+            // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
 
             for (var prop in info_list) {
                 //声明节点对象
-                let  TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                let  TipBoxPrefab_icon =  cc.instantiate(http_globalData.model_biology_fightingBiology);
                 let map = TOOLS[prop];
                 let info = map.biology;
                 //设置距离
@@ -44,8 +44,8 @@ cc.Class({
                         TipBoxPrefab_icon.getChildByName('生物').setScale(-1, 1);
                     }
                     TipBoxPrefab_icon.getChildByName('生物').color = new cc.color(info.color); 
-                    TipBoxPrefab_icon.getChildByName('生命s').getComponent(cc.Label).string= info.shengMing
-                    TipBoxPrefab_icon.getChildByName('魔法s').getComponent(cc.Label).string= info.moFa
+                    TipBoxPrefab_icon.getChildByName('生命s').getComponent(cc.Label).string= httpRequest.number_string_wan(info.shengMing,2);
+                    TipBoxPrefab_icon.getChildByName('魔法s').getComponent(cc.Label).string= httpRequest.number_string_wan(info.moFa,2);
                     TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string= info.name
                     TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string= '等级'+info.grade+'('+biolgy_state[info.state]+')';
                     //创建一个新button 并将其挂载到创建的精灵下
@@ -68,7 +68,7 @@ cc.Class({
       
             }
             resolve();
-        })
+        // })
 
         })
         return TipBoxPrefab_model

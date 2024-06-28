@@ -37,22 +37,22 @@ cc.Class({
      biology_detail_alert(BoxPrefab,info,biology_image) {
         // 销毁所有弹窗
         BoxPrefab.removeAllChildren();
-        var _this =this;
+        // var _this =this;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-        cc.loader.loadRes('/model弹窗/biology_生物_战斗详情', function(errorMessage,loadedResource){
-            //检查资源加载
-            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-            if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+        // cc.loader.loadRes('/model弹窗/biology_生物_战斗详情', function(errorMessage,loadedResource){
+        //     //检查资源加载
+        //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+        //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
-            var TipBoxPrefab = cc.instantiate(loadedResource);
+            var TipBoxPrefab = cc.instantiate(http_globalData.model_biology_fightingDetail);
             //载入生物详情
-            _this.biology_detail_info(BoxPrefab,TipBoxPrefab,info,biology_image)
-            //将预制资源添加到父节点
-            // CanvasNode.addChild(TipBoxPrefab);
-        });
-    },
-    biology_detail_info(BoxPrefab,TipBoxPrefab,info,biology_image) {
-        var _this =this;
+    //         _this.biology_detail_info(BoxPrefab,TipBoxPrefab,info,biology_image)
+    //         //将预制资源添加到父节点
+    //         // CanvasNode.addChild(TipBoxPrefab);
+    //     // });
+    // },
+    // biology_detail_info(BoxPrefab,TipBoxPrefab,info,biology_image) {
+        // var _this =this;
         TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string= info.shengMing
         TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string= info.moFa
         TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string=info.name

@@ -3,8 +3,9 @@ const httpAlert = cc.Class({
     extends: cc.Component,
     getNicheng() {
         var arr = http_globalData.user_nicheng
-        var r_num = Math.round(Math.random()*(3-1)+1); //随机1-3
-
+        // var r_num = Math.round(Math.random()*(3-1)+1); //随机1-3
+        var r_num =   httpRequest.number_rand(3)
+        cc.log(r_num)
         var stag_name ='';
         for(var i=0;i<=r_num ;i++){
             var round = Math.round(Math.random()*(arr.length-1));  //随机 0-arr.length 的变量  

@@ -44,8 +44,11 @@ cc.Class({
         var total = map.biology_list.length; //战斗胜利移除
 
         if (map.map_status == 1) {
-          TipBoxPrefab_icon.x = map.x;
-          TipBoxPrefab_icon.y = map.y; //放在资源下面
+          //设置距离
+          TipBoxPrefab_icon.x = httpRequest.number_map_rand(map.x, 150); //设置随x机偏移量0-49
+
+          TipBoxPrefab_icon.y = httpRequest.number_map_rand(map.y, 25); //设置随机y偏移量0-49
+          //放在资源下面
 
           var image = info.picture;
           cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
