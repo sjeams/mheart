@@ -42,7 +42,7 @@ var httpModel = cc.Class({
       }, _callee);
     }))();
   },
-  //加载模板战斗生物详情
+  //战斗--加载模板战斗生物详情
   model_biology_fighting: function model_biology_fighting() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -80,7 +80,7 @@ var httpModel = cc.Class({
   //     },this)); 
   //     cc.find('Canvas').addChild(TipBoxPrefab_tips); 
   // },
-  //战斗结束
+  //战斗-战斗结束
   model_biology_fightingEnd: function model_biology_fightingEnd() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
@@ -122,7 +122,7 @@ var httpModel = cc.Class({
       }, _callee3);
     }))();
   },
-  //加载模板战斗生物详情
+  //背包
   model_home_openBiology: function model_home_openBiology() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
@@ -153,7 +153,7 @@ var httpModel = cc.Class({
       }, _callee4);
     }))();
   },
-  //加载模板战斗生物详情
+  //阵法
   model_home_zhenfa: function model_home_zhenfa() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
       return regeneratorRuntime.wrap(function _callee5$(_context5) {
@@ -184,7 +184,7 @@ var httpModel = cc.Class({
       }, _callee5);
     }))();
   },
-  //加载模板战斗生物详情
+  //阵法
   model_home_zhenfa_bag: function model_home_zhenfa_bag() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
       return regeneratorRuntime.wrap(function _callee6$(_context6) {
@@ -213,6 +213,68 @@ var httpModel = cc.Class({
           }
         }
       }, _callee6);
+    }))();
+  },
+  //阵法
+  model_home_zhenfa_icon: function model_home_zhenfa_icon() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              return _context7.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model布阵/图标生物', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalData.model_home_zhenfa_icon = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7);
+    }))();
+  },
+  //阵法
+  model_home_zhenfa_biology: function model_home_zhenfa_biology() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              return _context8.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model布阵/图标阵法', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalData.model_home_zhenfa_biology = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
     }))();
   }
 });

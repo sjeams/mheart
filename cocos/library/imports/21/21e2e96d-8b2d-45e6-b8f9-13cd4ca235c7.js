@@ -12,74 +12,74 @@ cc.Class({
   biology_detail_list: function biology_detail_list(TipBoxPrefab_model, TipBoxPrefab) {
     //获取点击物品的类型
     var _this = this; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    // cc.loader.loadRes('/model布阵/图标生物', function(errorMessage,loadedResource_icon){
 
 
-    cc.loader.loadRes('/model布阵/图标生物', function (errorMessage, loadedResource_icon) {
-      var num_height = 0;
+    var num_height = 0;
 
-      var _loop = function _loop() {
-        info = http_globalData.biology[prop]; //1是武器
-        // if(info.gooduse==gooduse_type){
+    var _loop = function _loop() {
+      info = http_globalData.biology[prop]; //1是武器
+      // if(info.gooduse==gooduse_type){
 
-        num_height = num_height + 1; // //开始实例化预制资源
+      num_height = num_height + 1; // //开始实例化预制资源
 
-        var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); // //载入技能图片
+      var TipBoxPrefab_icon = cc.instantiate(http_globalData.model_home_zhenfa_icon); // //载入技能图片
 
-        cc.loader.loadRes(http_globalData.biology[prop].picture, cc.SpriteFrame, function (err, texture) {
-          if (err) {
-            cc.error(err); // return;
-          } else {
-            TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
-          } // TipBoxPrefab_icon.getChildByName('P移动').getComponent(cc.Sprite).spriteFrame = texture; 
-          // var   biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
-          //拖拽
-
-
-          _this.bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, false);
-        }); // //技能等级
-
-        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = info.name; // // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-        //判断是否出战
-
-        if (info.is_chuzhan) {
-          TipBoxPrefab_icon.getChildByName('P出战').active = true;
+      cc.loader.loadRes(http_globalData.biology[prop].picture, cc.SpriteFrame, function (err, texture) {
+        if (err) {
+          cc.error(err); // return;
         } else {
-          TipBoxPrefab_icon.getChildByName('P出战').active = false;
-        } //写入icon
+          TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
+        } // TipBoxPrefab_icon.getChildByName('P移动').getComponent(cc.Sprite).spriteFrame = texture; 
+        // var   biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
+        //拖拽
 
 
-        cc.find("content/列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
-      };
+        _this.bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, false);
+      }); // //技能等级
 
-      for (var prop in http_globalData.biology) {
-        var info;
-        var num_height;
+      TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = info.name; // // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+      //判断是否出战
 
-        _loop();
-      } // }
-      // 定义content滚动条高度
-
-
-      var scorllheight = cc.find("content/列表/content/gridLayout", TipBoxPrefab).parent; //滚动高度= 预制体100*个数+ 上下 预留10 的位置  
-      //列个数--进1取整
-
-      var line_hight = Math.ceil(num_height / 3);
-      var cellHeight = cc.find("content/列表/content/gridLayout", TipBoxPrefab).height * 0.25 + 10;
-      var height = cellHeight * line_hight;
-
-      if (height <= 420) {
-        var height = 420;
-      } //设置滚动条高度
+      if (info.is_chuzhan) {
+        TipBoxPrefab_icon.getChildByName('P出战').active = true;
+      } else {
+        TipBoxPrefab_icon.getChildByName('P出战').active = false;
+      } //写入icon
 
 
-      scorllheight.setContentSize(500, height);
-      TipBoxPrefab.getChildByName('总数s').getComponent(cc.Label).string = Math.ceil(num_height / 12); // 此处进行事件绑定
+      cc.find("content/列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
+    };
 
-      _this.bind_button_page(TipBoxPrefab); //写入布阵
+    for (var prop in http_globalData.biology) {
+      var info;
+      var num_height;
+
+      _loop();
+    } // }
+    // 定义content滚动条高度
 
 
-      TipBoxPrefab_model.getComponent('bag_zhenfa布阵Tools').biology_buzhen_list(TipBoxPrefab_model, TipBoxPrefab);
-    });
+    var scorllheight = cc.find("content/列表/content/gridLayout", TipBoxPrefab).parent; //滚动高度= 预制体100*个数+ 上下 预留10 的位置  
+    //列个数--进1取整
+
+    var line_hight = Math.ceil(num_height / 3);
+    var cellHeight = cc.find("content/列表/content/gridLayout", TipBoxPrefab).height * 0.25 + 10;
+    var height = cellHeight * line_hight;
+
+    if (height <= 420) {
+      var height = 420;
+    } //设置滚动条高度
+
+
+    scorllheight.setContentSize(500, height);
+    TipBoxPrefab.getChildByName('总数s').getComponent(cc.Label).string = Math.ceil(num_height / 12); // 此处进行事件绑定
+
+    _this.bind_button_page(TipBoxPrefab); //写入布阵
+
+
+    TipBoxPrefab_model.getComponent('bag_zhenfa布阵Tools').biology_buzhen_list(TipBoxPrefab_model, TipBoxPrefab); // })
+
     return TipBoxPrefab;
   },
   //分页
@@ -213,7 +213,7 @@ cc.Class({
         if (http_globalData.is_zhenfa) {
           //超出范围
           if (http_globalData.is_zhenfa_chaochu) {
-            _this.biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab); // TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
+            _this.biologyClickRemove(TipBoxPrefab); // TipBoxPrefab_model.getComponent('bag_zhenfaTools').biology_detail_tips(TipBoxPrefab_model,'操作成功!')
 
 
             httpRequestAlert.alert_goTips("操作成功!");
@@ -291,10 +291,10 @@ cc.Class({
         // _this.biologyClickChange(TipBoxPrefab_model,TipBoxPrefab,TipBoxPrefab_icon_move,TipBoxPrefab_icon_new,true) //拖动的对象
         //替换操作--如果不是移动的同一个生物，生物存在，那么要替换--判断有没有阵法id ，没有就是拖拽头像，有就是拖拽阵法
 
-        _this.move_biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab); //删除替换
+        _this.move_biologyClickRemove(TipBoxPrefab); //删除替换
 
 
-        _this.biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab); //删除移动
+        _this.biologyClickRemove(TipBoxPrefab); //删除移动
 
 
         _this.biologyClickAdd(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon_new, http_globalData.move_zhenfa_id, http_globalData.biology_id); //拖动的对象--写入
@@ -336,7 +336,7 @@ cc.Class({
     }
   },
   // 移除布阵
-  biologyClickRemove: function biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab) {
+  biologyClickRemove: function biologyClickRemove(TipBoxPrefab) {
     //如果阵容已存在，就获取阵容id，并且移除
     var biology_id = http_globalData.biology_id;
     var zhenfa_id = http_globalData.zhenfa_id;
@@ -361,7 +361,7 @@ cc.Class({
     }
   },
   // 移除布阵
-  move_biologyClickRemove: function move_biologyClickRemove(TipBoxPrefab_model, TipBoxPrefab) {
+  move_biologyClickRemove: function move_biologyClickRemove(TipBoxPrefab) {
     //如果阵容已存在，就获取阵容id，并且移除
     var biology_id = http_globalData.move_biology_id;
     var zhenfa_id = http_globalData.move_zhenfa_id;

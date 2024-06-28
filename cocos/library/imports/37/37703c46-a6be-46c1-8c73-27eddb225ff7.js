@@ -12,9 +12,7 @@ require("../common");
 
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    BoxPrefab: cc.find('Canvas/弹窗')
-  },
+  properties: {},
   onLoad: function onLoad() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -33,10 +31,18 @@ cc.Class({
               return httpRequestModel.model_home_zhenfa_bag();
 
             case 6:
-              //加载阵法背包
+              _context.next = 8;
+              return httpRequestModel.model_home_zhenfa_icon();
+
+            case 8:
+              _context.next = 10;
+              return httpRequestModel.model_home_zhenfa_biology();
+
+            case 10:
+              //加载阵法生物图标
               http_globalData.BoxPrefab_alert = cc.find('Canvas/弹窗');
 
-            case 7:
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -67,71 +73,20 @@ cc.Class({
   openZhenfa: function openZhenfa() {
     if (http_globalData.biology && http_globalData.zhenfa && http_globalData.bag) {
       var BoxPrefab = http_globalData.BoxPrefab_alert;
-      var TipBoxPrefab_model = http_globalData.model_home_zhenfa;
-      var TipBoxPrefab = http_globalData.model_home_zhenfa_bag; // cc.loader.loadRes('/model布阵/背包生物', function(errorMessage,loadedResource_icon){
-      //开始实例化预制资源
-      // let   TipBoxPrefab =  cc.instantiate(loadedResource_icon);
+      var TipBoxPrefab_model = http_globalData.model_home_zhenfa; //阵法
+
+      var TipBoxPrefab = http_globalData.model_home_zhenfa_bag; //阵法背包
       //生物列表挂载
 
       TipBoxPrefab_model.getComponent('bag_zhenfa头像Tools').biology_detail_list(TipBoxPrefab_model, TipBoxPrefab);
       TipBoxPrefab.getChildByName('上阵数s').getComponent(cc.Label).string = http_globalData.zhenfa_info.num; //写入icon
 
-      TipBoxPrefab_model.getChildByName('背包生物').addChild(TipBoxPrefab); // })
+      TipBoxPrefab_model.getChildByName('背包生物').addChild(TipBoxPrefab); //写入模型
 
       BoxPrefab.addChild(TipBoxPrefab_model, 1);
     } else {//如果没有生物需要弹窗另一个提示
     }
-  } // //打开背包
-  // openBag() {
-  //     if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
-  //         //技能图标挂载
-  //         var BoxPrefab = cc.find('Canvas/弹窗')
-  //         // 销毁所有弹窗
-  //         BoxPrefab.removeAllChildren();
-  //         cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
-  //             //检查资源加载
-  //             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-  //             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-  //             //开始实例化预制资源
-  //             var TipBoxPrefab = cc.instantiate(loadedResource);
-  //             TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-  //                 httpRequestModel.openBag_hidden()
-  //             }, this);
-  //             TipBoxPrefab.getComponent('biology_bagTools').biology_detail_alert(BoxPrefab,TipBoxPrefab)
-  //         })
-  //     }else{
-  //     //如果没有生物需要弹窗另一个提示
-  //     }
-  // },
-  // //打开阵法
-  // openZhenfa() {
-  //     if(http_globalData.biology&&http_globalData.zhenfa&&http_globalData.bag){
-  //         //技能图标挂载
-  //         var BoxPrefab = cc.find('Canvas/弹窗')
-  //         // 销毁所有弹窗
-  //         BoxPrefab.removeAllChildren();
-  //         cc.loader.loadRes('/model布阵/A生物布阵', function(errorMessage,loadedResource){
-  //             //检查资源加载
-  //             if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-  //             if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-  //             //开始实例化预制资源
-  //             var TipBoxPrefab = cc.instantiate(loadedResource);
-  //             TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-  //                 httpRequestModel.openzhenfa_hidden()
-  //             }, this);
-  //             TipBoxPrefab.getComponent('bag_zhenfaTools').biology_detail_alert(BoxPrefab,TipBoxPrefab)
-  //         })
-  //     }else{
-  //     //如果没有生物需要弹窗另一个提示
-  //     }
-  // },
-  //没有处理逻辑，可以共用--关闭窗口
-  // openBag_hidden(){
-  //     // cc.find('Canvas/弹窗').active =false;
-  //     cc.find('Canvas/弹窗').removeAllChildren();
-  // },
-  // update (dt) {},
-
+  }
 });
 
 cc._RF.pop();

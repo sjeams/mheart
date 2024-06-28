@@ -252,7 +252,6 @@ const HttpHelper = cc.Class({
                 //场景
                 sence_ditu:"map/诸天地图",
                 sence_zhandou:"战斗场景",
-    
             }
             return sence[url];
         },

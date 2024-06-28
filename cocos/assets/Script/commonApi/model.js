@@ -20,7 +20,7 @@ const httpModel = cc.Class({
         await  httpRequestBagApi.http_update_zhenfa()
         // cc.find('Canvas/弹窗').removeAllChildren();
     },
-    //加载模板战斗生物详情
+    //战斗--加载模板战斗生物详情
    async model_biology_fighting() {
         return new Promise(resolve => {    
         cc.loader.loadRes('/model战斗/biology_生物详情', function(errorMessage,loadedResource){
@@ -41,7 +41,7 @@ const httpModel = cc.Class({
     //     },this)); 
     //     cc.find('Canvas').addChild(TipBoxPrefab_tips); 
     // },
-    //战斗结束
+   //战斗-战斗结束
     async model_biology_fightingEnd() {
         return new Promise(resolve => {    
         cc.loader.loadRes('/model弹窗/biology_结算', function(errorMessage,loadedResource){
@@ -67,7 +67,7 @@ const httpModel = cc.Class({
         });
     },
 
-    //加载模板战斗生物详情
+    //背包
     async model_home_openBiology() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
@@ -82,7 +82,7 @@ const httpModel = cc.Class({
         });
     },
 
-    //加载模板战斗生物详情
+    //阵法
     async model_home_zhenfa() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model布阵/A生物布阵', function(errorMessage,loadedResource){
@@ -96,7 +96,7 @@ const httpModel = cc.Class({
             })   
         });
     },
-    //加载模板战斗生物详情
+    //阵法
     async model_home_zhenfa_bag() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model布阵/背包生物', function(errorMessage,loadedResource){
@@ -110,6 +110,34 @@ const httpModel = cc.Class({
             })   
         });
     },
-
+    //阵法
+    async model_home_zhenfa_icon() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model布阵/图标生物', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_home_zhenfa_icon =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    //阵法
+    async model_home_zhenfa_biology() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model布阵/图标阵法', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalData.model_home_zhenfa_biology =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+ 
 });
 window.httpRequestModel = new httpModel();

@@ -4,7 +4,7 @@ cc._RF.push(module, 'b01edRwcatPzotunS35qvWZ', 'common');
 
 "use strict";
 
-require("./commonApi/http"); //引入基础http请求
+require("./commonApi/http"); //引入基础http请求--初始化实例
 
 
 require("./commonApi/bag_api"); //引入背包
