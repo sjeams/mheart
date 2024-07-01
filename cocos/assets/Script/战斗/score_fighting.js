@@ -1,4 +1,4 @@
-require("../common"); 
+// require("../common"); 
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -23,7 +23,7 @@ cc.Class({
 
     },
     init(){
-      cc.director.getScene();//获取当前场景
+      // cc.director.getScene();//获取当前场景
     },
     // LIFE-CYCLE CALLBACKS:
     async onLoad () {
@@ -32,22 +32,17 @@ cc.Class({
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
       await httpRequestBagApi.http_music()
-      await httpRequestModel.model_biology_fightingBiology() //加载模型
-      await httpRequestModel.model_biology_fightingDetail();//加载战斗生物详情
-      await httpRequestModel.model_biology_SkillIcon();//加载战斗技能图标
-      await httpRequestModel.model_biology_SkillTips();//加载战斗技能提示
-      await httpRequestModel.model_biology_fightingEnd();//加载战斗结果
 
+      await httpRequestModel.http_base_model();  // 引入 战斗模型model
       // this.spawnTools()
-      await httpRequestBagApi.http_user_info()
+      await httpRequestBagApi.http_user_info() //加载用户信息
       await this.spawnTools() //加载数据
-      await this.fightingEnd() //加载结果
-      await this.playTask()
+      await httpRequestModel.fightingEnd() //加载结果
+      await this.playTask() //开启回合战斗
     },
     //task
     async playTask(){
       await this.goPlay() //实例化对象
- 
       await httpRequestFightingExtend.alertBoat('准备回合') //准备回合
       await this.fighting_boat() //开启回合战斗
 	  },
@@ -58,11 +53,11 @@ cc.Class({
     update (dt) {
       // console.log(3333)
     },
-    spawnTools () {
+    async spawnTools () {
       return new Promise(resolve => {
       //开启倍数
       cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
-      var _this =this;
+      // var _this =this;
       var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
 
       if(figthing_remote_url==null){
@@ -80,6 +75,7 @@ cc.Class({
       }
       })
     },
+
 
     //开启战斗--加载生物
     async goPlay( ){
@@ -216,24 +212,7 @@ cc.Class({
           await     _this.playFight(his_log.h_putong)
         }
     },
-      //战斗结束
-   async fightingEnd() {
-        // var _this =this;
-        var fighting_list =  http_globalData.fighting.data; 
-        return new Promise(resolve => { 
-            //开始实例化预制资源
-            var TipBoxPrefab = http_globalData.model_biology_fightingEnd
-            // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
-            if(fighting_list.poition_winner==1){
-              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
-            }else{
-              TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
-            }
-            //将预制资源添加到父节点
-            cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
-            resolve()
-        }) 
-    },
+
 
     //生成地图
     addMapPic(data){
@@ -381,13 +360,13 @@ cc.Class({
       //     this.state = 0;
       //   }.bind(this),0.5);
     },
-    reloadWord(){
-      var _this =this;
-      httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
-        //写入地图数据
-        _this.addWordMap(data)
-        })
-    },
+    // reloadWord(){
+    //   var _this =this;
+    //   httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
+    //     //写入地图数据
+    //     _this.addWordMap(data)
+    //     })
+    // },
     back_map(){
       //移除节点
       // var _this = this;

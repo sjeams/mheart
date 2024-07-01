@@ -40,17 +40,19 @@ cc.Class({
                 // if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
                 // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
-                let   TipBoxPrefab_icon =  cc.instantiate(http_globalData.model_biology_SkillIcon);
+                let   TipBoxPrefab_icon =  cc.instantiate(http_globalAsset.model_biology_SkillIcon);
                 //载入技能图片
-                let image = '/图标技能/'+skill.image;
-                cc.log(image)
-                cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                    if (err) {
-                        // cc.error(err.message || err);
-                        return;
-                    }
-                    TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
-                });
+                // let image = '/图标技能/'+skill.image;
+                // cc.log(image)
+                // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                //     if (err) {
+                //         // cc.error(err.message || err);
+                //         return;
+                //     }
+                    // 图标技能
+                    cc.log(http_globalAsset.http_base_asset_skill)
+                    TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_skill[skill.image]
+                // });
                 //技能等级
                 TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string=skill.type
 
@@ -81,8 +83,8 @@ cc.Class({
         //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
         //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
-            let tips_Prefab = cc.instantiate(http_globalData.model_biology_SkillTips);
-            tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame
+            let tips_Prefab = cc.instantiate(http_globalAsset.model_biology_SkillTips);
+            tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame  =  http_globalAsset.http_base_asset_skill[skill.image]
             tips_Prefab.getChildByName('D技能名称s').getComponent(cc.Label).string=skill.name+'-['+skill.type+']'
             tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string='消耗：'+Math.abs(skill.needValue)
             var attack=skill.attack==0?'被动':'主动'

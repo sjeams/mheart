@@ -14,20 +14,60 @@ var httpBagApi = cc.Class({
   //没有处理逻辑，可以共用--关闭窗口
   //实例化用户信息
   http_music: function http_music() {
-    var _this = this;
-
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              return _context.abrupt("return", new Promise(function (resolve) {
+              if (http_globalAsset.model_onload_loading) {
+                _context.next = 3;
+                break;
+              }
+
+              _context.next = 3;
+              return httpRequestModel.model_onload_loading();
+
+            case 3:
+              if (http_globalAsset.AudioPlayer) {
+                _context.next = 6;
+                break;
+              }
+
+              _context.next = 6;
+              return httpRequestBagApi.http_home_music();
+
+            case 6:
+              _context.next = 8;
+              return httpRequestAsset.http_base_asset();
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  // //--基础类加载
+  // async http_base_request(){
+  //     await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+  //     await httpRequestModel.http_base_model();  // 引入 战斗模型model
+  //     http_globalAsset.http_base_request =1; //基础类
+  // },
+  //加载音乐
+  http_home_music: function http_home_music() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              return _context2.abrupt("return", new Promise(function (resolve) {
                 //获取全局播放器
                 if (cc.find("Audio")) {
-                  _this.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
+                  http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
                   // this.AudioPlayer.stopBgMusic();
 
-                  _this.AudioPlayer.playBgMusic();
+                  http_globalAsset.AudioPlayer.playBgMusic();
                 }
 
                 resolve(); // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
@@ -39,20 +79,20 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     }))();
   },
   //加载材质
   http_material_yaohuang: function http_material_yaohuang() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              return _context2.abrupt("return", new Promise(function (resolve) {
+              return _context3.abrupt("return", new Promise(function (resolve) {
                 var label = '/materials/builtin_摇晃';
                 cc.loader.loadRes(label, cc.Material, function (err, res) {
                   httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res); // // 计算每帧的纹理偏移量
@@ -66,10 +106,10 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }))();
   },
   materialTime: function materialTime(materialPrefab) {
@@ -94,12 +134,12 @@ var httpBagApi = cc.Class({
   },
   //实例化角色信息
   http_base_jiaose: function http_base_jiaose() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context4.prev = _context4.next) {
             case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
+              return _context4.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPostLogin('/app/api-server/jiaose', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
                   http_globalData.user_jiaose = data.data.jiaose;
@@ -110,20 +150,20 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }
-      }, _callee3);
+      }, _callee4);
     }))();
   },
   //实例化用户信息
   http_user_info: function http_user_info() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
-              return _context4.abrupt("return", new Promise(function (resolve) {
+              return _context5.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPost('/app/app-api/get-user', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
                   http_globalData.user_info = data.data;
@@ -133,10 +173,10 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }))();
   },
   //实例化背包信息

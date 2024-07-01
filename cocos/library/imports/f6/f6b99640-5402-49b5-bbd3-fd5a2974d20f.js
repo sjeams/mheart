@@ -8,8 +8,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -25,11 +24,20 @@ cc.Class({
               return httpRequestBagApi.http_music();
 
             case 2:
+              _context.next = 4;
+              return httpRequestAsset.http_base_asset();
+
+            case 4:
+              _context.next = 6;
+              return httpRequestModel.http_base_model();
+
+            case 6:
+              // 引入 战斗模型model
               http_globalData.BoxPrefab_content = cc.find('Canvas/大厅/content');
 
               _this2.spawnTools();
 
-            case 4:
+            case 8:
             case "end":
               return _context.stop();
           }

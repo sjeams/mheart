@@ -4,8 +4,7 @@ cc._RF.push(module, '398e6dtYzpEq5l+mArt9hF0', 'biology_bagTools');
 
 "use strict";
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},

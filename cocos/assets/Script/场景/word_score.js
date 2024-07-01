@@ -1,4 +1,4 @@
-require("../common"); 
+// require("../common"); 
 cc.Class({
     extends: cc.Component,
 
@@ -6,6 +6,8 @@ cc.Class({
     },
     async onLoad () {
       await httpRequestBagApi.http_music()
+      await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+      await httpRequestModel.http_base_model();  // 引入 战斗模型model
       http_globalData.BoxPrefab_content = cc.find('Canvas/大厅/content')
       this.spawnTools()
     },

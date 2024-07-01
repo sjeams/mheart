@@ -1,4 +1,4 @@
-require("../common"); 
+// require("../common"); 
 cc.Class({
     extends: cc.Component,
  
@@ -21,13 +21,13 @@ cc.Class({
       // console.log(3333)
     },
     
-    reloadWord(){
-      var _this =this;
-      httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
-        //写入地图数据
-        _this.addWordMap(data)
-        })
-    },
+    // reloadWord(){
+    //   var _this =this;
+    //   httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
+    //     //写入地图数据
+    //     _this.addWordMap(data)
+    //     })
+    // },
     back_map(){
       //销毁动态合图
       // cc.dynamicAtlasManager.reset()

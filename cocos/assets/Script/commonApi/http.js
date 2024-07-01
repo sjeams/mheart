@@ -9,9 +9,9 @@ const HttpHelper = cc.Class({
     // statics: {
     // },
     // properties: {
-
     // },
     onLoad () {
+        // cc.log(333)
         // 开启调试
         // cc.dynamicAtlasManager.showDebug(true);
         // 关闭调试
@@ -19,9 +19,10 @@ const HttpHelper = cc.Class({
         // 从服务器加载mp3来进行播放
         //动态合图
         this.image_cache();
+   
         // cc.audioEngine.play(_urls, false, 1);  
         //配置路径
-    },
+    },  
     /**
      * get请求
      * @param {string} url
@@ -128,6 +129,7 @@ const HttpHelper = cc.Class({
         },
         //场景加载--进度条
         playGame(sence,task,no_progress) {
+            //   httpRequest.http_base_request()//基类加载 
             //场景转译
             var sence =this.urlConfig(sence);
             var _task =task||0;
@@ -136,24 +138,22 @@ const HttpHelper = cc.Class({
             //是否加载场景--loading
             if(_no_progress){
                 //加载预制资源 PrefabUrl为 预制资源在 资源中的路径--预加载的进度条
-                cc.loader.loadRes('./sprite_loading', function(errorMessage,loadedResource){
-                    //检查资源加载
-                    if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-                    if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+                // cc.loader.loadRes('/model弹窗/进度条', function(errorMessage,loadedResource){
+                //     //检查资源加载
+                //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                     //开始实例化预制资源
-                    let TipBoxPrefab = cc.instantiate(loadedResource);
+                    http_globalAsset.model_onload_loading_new = cc.instantiate(http_globalAsset.model_onload_loading);
                     //将预制资源添加到父节点
                     // CanvasNode.addChild(TipBoxPrefab);
-                    cc.find('Canvas').addChild(TipBoxPrefab);
+                    cc.find('Canvas').addChild(http_globalAsset.model_onload_loading_new);
                     //请求战斗记录
                     if(_task==1){
                         _this.fightint(sence);
                     }else{
                         _this.progress(sence);
                     }
-
-                });
- 
+                // });
             }else{
                 //加载场景--不加载进度条
                 cc.director.loadScene(sence, function () {  
@@ -167,22 +167,36 @@ const HttpHelper = cc.Class({
             cc.director.preloadScene(sence,function (completeCount, totalCount,item) {
                 var item =item||0;
                 var totalCount =totalCount||0;
-                var completeCount =completeCount||0;
-                var progressBar = cc.find('Canvas/loading/progressBar').getComponent(cc.ProgressBar);
-                // console.log(item)
-                // console.log(completeCount)
-                // console.log(totalCount)
-                //加载进度回调
+                var completeCount =completeCount||1;
+                var TipBoxPrefab = http_globalAsset.model_onload_loading_new
+                // cc.log(item)
+                var progressBar =   cc.find('/progressBar',TipBoxPrefab).getComponent(cc.ProgressBar);
+
+        
+
+                //加载进度回调 
                 // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
                 // console.log('加载场景资源');
                 progressBar.progress = completeCount / totalCount;
                 // console.log(progressBar.progress)
                 progressBar.completeCount = completeCount;
-                progressBar.totalCount = totalCount;
+                progressBar.totalCount = totalCount;          
+                var sys_label =  cc.find('/progressBar/sys_label',TipBoxPrefab).getComponent(cc.Label);
+                cc.log(item)
+                // var sys_des =  cc.find('/progressBar/sys_des',TipBoxPrefab).getComponent(cc.Label);
+                // sys_des.string ='加载生物模型..';
+                // sys_label.string = parseInt( 30) + '%';
+                //   httpRequestModel.http_base_model();  // 引入 战斗模型model 
+                // // return '加载图片资源。。';
+                // sys_des.string ='加载图片资源..';
+                // // cc.log( progressBar.progress)
+                // sys_label.string = parseInt( 70) + '%';
+                //   httpRequestAsset.http_base_asset();  // 引入 资源图片asset
                 // resource = item;//实力的对象
                 // // 代码里面获取cc.Label组件, 修改文本内容
                 // //在代码里面获取cc.Label组件
-                var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
+                // var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
+                // var sys_label =  cc.find('/progressBar/sys_label',TipBoxPrefab).getComponent(cc.Label);
                 sys_label.string = parseInt( progressBar.progress * 100) + '%';
                 // if( this.resource.type=='mp3'){
                 //     // console.log(res);  // mp3
@@ -192,10 +206,9 @@ const HttpHelper = cc.Class({
                 //     this.current = cc.audioEngine.play(res.url, false, 1);
                 // }
             }, function (){
-                // progressBar.hide();
                 //加载场景
                 cc.director.loadScene(sence, function () {  
-                        // spawnTools();
+                    // spawnTools();
                 });
             })
         },
@@ -281,8 +294,6 @@ const HttpHelper = cc.Class({
                 var postion=  map_position+httpRequest.number_rand(value)
             }
             return postion
-        }
-    
-    
+        },
 });
 window.httpRequest =  new HttpHelper();

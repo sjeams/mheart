@@ -4,8 +4,7 @@ cc._RF.push(module, '6d8b5Q0V+NPA6XWH76PX0o5', 'biology_xinxiTools');
 
 "use strict";
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},

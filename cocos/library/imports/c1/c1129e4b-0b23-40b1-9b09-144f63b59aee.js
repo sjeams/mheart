@@ -4,8 +4,7 @@ cc._RF.push(module, 'c11295LCyNAsZsJFE9jtZru', 'biology_infoTools');
 
 "use strict";
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},

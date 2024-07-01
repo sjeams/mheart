@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '236d34ndr5Le5KyhPYJE5sU', 'progressTools');
-// Script/progressTools.js
+// Script/commonApi/progressTools.js
 
 "use strict";
 
@@ -11,16 +11,16 @@ cc.Class({
   properties: {
     speed: 1,
     progressBar: cc.ProgressBar,
-    audio: {
-      "default": null,
-      type: cc.AudioClip
-    },
-    play: function play() {
-      this.audioSource.play();
-    },
-    pause: function pause() {
-      this.audioSource.pause();
-    },
+    // audio: {
+    //     default: null,
+    //     type: cc.AudioClip
+    // },
+    // play: function () {
+    //     this.audioSource.play();
+    // },
+    // pause: function () {
+    //     this.audioSource.pause();
+    // },
     sys_label: cc.Label
   },
   onLoad: function onLoad() {

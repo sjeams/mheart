@@ -1,4 +1,4 @@
-require("../common"); 
+// require("../common"); 
 cc.Class({
     extends: cc.Component,
 

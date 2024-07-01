@@ -4,17 +4,17 @@ cc.Class({
     properties: {
         speed: 1,
         progressBar:cc.ProgressBar,
-        audio: {
-            default: null,
-            type: cc.AudioClip
-        },
-        play: function () {
-            this.audioSource.play();
-        },
+        // audio: {
+        //     default: null,
+        //     type: cc.AudioClip
+        // },
+        // play: function () {
+        //     this.audioSource.play();
+        // },
         
-        pause: function () {
-            this.audioSource.pause();
-        },
+        // pause: function () {
+        //     this.audioSource.pause();
+        // },
         sys_label:cc.Label,
  
     },

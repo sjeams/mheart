@@ -8,8 +8,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -33,8 +32,7 @@ cc.Class({
     // },
 
   },
-  init: function init() {
-    cc.director.getScene(); //获取当前场景
+  init: function init() {// cc.director.getScene();//获取当前场景
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
@@ -54,41 +52,25 @@ cc.Class({
 
             case 5:
               _context.next = 7;
-              return httpRequestModel.model_biology_fightingBiology();
+              return httpRequestModel.http_base_model();
 
             case 7:
               _context.next = 9;
-              return httpRequestModel.model_biology_fightingDetail();
+              return httpRequestBagApi.http_user_info();
 
             case 9:
               _context.next = 11;
-              return httpRequestModel.model_biology_SkillIcon();
+              return _this2.spawnTools();
 
             case 11:
               _context.next = 13;
-              return httpRequestModel.model_biology_SkillTips();
+              return httpRequestModel.fightingEnd();
 
             case 13:
               _context.next = 15;
-              return httpRequestModel.model_biology_fightingEnd();
-
-            case 15:
-              _context.next = 17;
-              return httpRequestBagApi.http_user_info();
-
-            case 17:
-              _context.next = 19;
-              return _this2.spawnTools();
-
-            case 19:
-              _context.next = 21;
-              return _this2.fightingEnd();
-
-            case 21:
-              _context.next = 23;
               return _this2.playTask();
 
-            case 23:
+            case 15:
             case "end":
               return _context.stop();
           }
@@ -128,43 +110,54 @@ cc.Class({
   update: function update(dt) {// console.log(3333)
   },
   spawnTools: function spawnTools() {
-    var _this4 = this;
-
-    return new Promise(function (resolve) {
-      //开启倍数
-      cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
-      var _this = _this4;
-      var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
-
-      if (figthing_remote_url == null) {
-        httpRequest.playGame("sence_ditu");
-        resolve();
-      } else {
-        var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
-        cc.loader.load({
-          url: remoteUrl
-        }, function (err, data) {
-          //定义常量
-          http_globalData.fighting = data; //开启战斗
-
-          resolve(); //  await   _this.goPlay( )
-        });
-      }
-    });
-  },
-  //开启战斗--加载生物
-  goPlay: function goPlay() {
-    var _this5 = this;
-
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      var data, biolgy_state, poition_my, poition_enemy, BoxPrefab;
       return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
+              return _context3.abrupt("return", new Promise(function (resolve) {
+                //开启倍数
+                cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu; // var _this =this;
+
+                var figthing_remote_url = cc.sys.localStorage.getItem('figthing_remote_url'); //读取数据--战斗记录
+
+                if (figthing_remote_url == null) {
+                  httpRequest.playGame("sence_ditu");
+                  resolve();
+                } else {
+                  var remoteUrl = httpRequest.httpUrlJson(figthing_remote_url);
+                  cc.loader.load({
+                    url: remoteUrl
+                  }, function (err, data) {
+                    //定义常量
+                    http_globalData.fighting = data; //开启战斗
+
+                    resolve(); //  await   _this.goPlay( )
+                  });
+                }
+              }));
+
+            case 1:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  //开启战斗--加载生物
+  goPlay: function goPlay() {
+    var _this4 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      var data, biolgy_state, poition_my, poition_enemy, BoxPrefab;
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
               // return new Promise(resolve => {
               //播放器先清除所有定时器
-              _this5.unscheduleAllCallbacks(); //停止某组件的所有计时器
+              _this4.unscheduleAllCallbacks(); //停止某组件的所有计时器
 
 
               data = http_globalData.fighting; // cc.log(data)
@@ -174,33 +167,33 @@ cc.Class({
               poition_enemy = data.data.poition_enemy; //生物挂载
 
               BoxPrefab = http_globalData.BoxPrefab_content;
-              _context3.next = 8;
+              _context4.next = 8;
               return BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_my, biolgy_state, 1, 0);
 
             case 8:
-              _context3.next = 10;
+              _context4.next = 10;
               return BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab, poition_enemy, biolgy_state, 0, poition_my.length);
 
             case 10:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }
-      }, _callee3);
+      }, _callee4);
     }))();
   },
   // 战斗回合
   fighting_boat: function fighting_boat() {
-    var _this6 = this;
+    var _this5 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
       var _this, fighting_list, boat_length, history_count, fighting_history, boat, boat_count, bpage;
 
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
-              _this = _this6; // return new Promise(resolve => {
+              _this = _this5; // return new Promise(resolve => {
 
               fighting_list = http_globalData.fighting.data;
               boat_length = fighting_list.fighting_history.length;
@@ -208,7 +201,7 @@ cc.Class({
               fighting_history = fighting_list.fighting_history;
 
               if (!(boat_length != 0)) {
-                _context4.next = 26;
+                _context5.next = 26;
                 break;
               }
 
@@ -221,7 +214,7 @@ cc.Class({
 
             case 9:
               if (!(bpage < boat_length)) {
-                _context4.next = 26;
+                _context5.next = 26;
                 break;
               }
 
@@ -232,37 +225,37 @@ cc.Class({
                 boat++;
               }
 
-              _context4.next = 14;
+              _context5.next = 14;
               return httpRequestFightingExtend.alertBoat('第' + parseInt(boat + 1) + '回合');
 
             case 14:
               if (!fighting_history[boat_count]) {
-                _context4.next = 23;
+                _context5.next = 23;
                 break;
               }
 
-              _context4.next = 17;
+              _context5.next = 17;
               return _this.fighting_historyWait(fighting_history[boat_count]);
 
             case 17:
-              _context4.next = 19;
+              _context5.next = 19;
               return _this.fighting_historyGo(fighting_history[boat_count]);
 
             case 19:
-              _context4.next = 21;
+              _context5.next = 21;
               return _this.fighting_historyDo(fighting_history[boat_count]);
 
             case 21:
-              _context4.next = 23;
+              _context5.next = 23;
               return _this.fighting_history(fighting_history[boat_count]);
 
             case 23:
               bpage++;
-              _context4.next = 9;
+              _context5.next = 9;
               break;
 
             case 26:
-              return _context4.abrupt("return", new Promise(function (resolve) {
+              return _context5.abrupt("return", new Promise(function (resolve) {
                 _this.alertResult();
 
                 resolve();
@@ -270,10 +263,10 @@ cc.Class({
 
             case 27:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }))();
   },
   //暂停并且跳过回合
@@ -294,36 +287,7 @@ cc.Class({
   },
   //预备回合
   fighting_historyWait: function fighting_historyWait(his_log) {
-    var _this7 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-      var _this;
-
-      return regeneratorRuntime.wrap(function _callee5$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              _this = _this7;
-
-              if (!(his_log.h_yubei.length != 0)) {
-                _context5.next = 4;
-                break;
-              }
-
-              _context5.next = 4;
-              return _this.readySkill(his_log.h_yubei);
-
-            case 4:
-            case "end":
-              return _context5.stop();
-          }
-        }
-      }, _callee5);
-    }))();
-  },
-  //发起被动
-  fighting_historyGo: function fighting_historyGo(his_log) {
-    var _this8 = this;
+    var _this6 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
       var _this;
@@ -332,26 +296,17 @@ cc.Class({
         while (1) {
           switch (_context6.prev = _context6.next) {
             case 0:
-              _this = _this8;
+              _this = _this6;
 
-              if (!(his_log.h_go.length != 0)) {
-                _context6.next = 7;
+              if (!(his_log.h_yubei.length != 0)) {
+                _context6.next = 4;
                 break;
               }
 
               _context6.next = 4;
-              return _this.playSkill(his_log.h_go);
+              return _this.readySkill(his_log.h_yubei);
 
             case 4:
-              if (!(his_log.h_need.length != 0)) {
-                _context6.next = 7;
-                break;
-              }
-
-              _context6.next = 7;
-              return _this.needSkill(his_log.h_need);
-
-            case 7:
             case "end":
               return _context6.stop();
           }
@@ -359,9 +314,9 @@ cc.Class({
       }, _callee6);
     }))();
   },
-  //发起技能
-  fighting_historyDo: function fighting_historyDo(his_log) {
-    var _this9 = this;
+  //发起被动
+  fighting_historyGo: function fighting_historyGo(his_log) {
+    var _this7 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
       var _this;
@@ -370,15 +325,15 @@ cc.Class({
         while (1) {
           switch (_context7.prev = _context7.next) {
             case 0:
-              _this = _this9;
+              _this = _this7;
 
-              if (!(his_log.h_do.length != 0)) {
+              if (!(his_log.h_go.length != 0)) {
                 _context7.next = 7;
                 break;
               }
 
               _context7.next = 4;
-              return _this.playSkill(his_log.h_do);
+              return _this.playSkill(his_log.h_go);
 
             case 4:
               if (!(his_log.h_need.length != 0)) {
@@ -397,9 +352,9 @@ cc.Class({
       }, _callee7);
     }))();
   },
-  //战斗回合
-  fighting_history: function fighting_history(his_log) {
-    var _this10 = this;
+  //发起技能
+  fighting_historyDo: function fighting_historyDo(his_log) {
+    var _this8 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
       var _this;
@@ -408,8 +363,46 @@ cc.Class({
         while (1) {
           switch (_context8.prev = _context8.next) {
             case 0:
+              _this = _this8;
+
+              if (!(his_log.h_do.length != 0)) {
+                _context8.next = 7;
+                break;
+              }
+
+              _context8.next = 4;
+              return _this.playSkill(his_log.h_do);
+
+            case 4:
+              if (!(his_log.h_need.length != 0)) {
+                _context8.next = 7;
+                break;
+              }
+
+              _context8.next = 7;
+              return _this.needSkill(his_log.h_need);
+
+            case 7:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }))();
+  },
+  //战斗回合
+  fighting_history: function fighting_history(his_log) {
+    var _this9 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+      var _this;
+
+      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
               // return new Promise(resolve => {
-              _this = _this10; //回合结束
+              _this = _this9; //回合结束
               // if(his_log.h_end.length!=0){
               //   cc.log('回合结束')
               // }
@@ -421,49 +414,14 @@ cc.Class({
               //普通攻击
 
               if (!(his_log.h_putong.length != 0)) {
-                _context8.next = 4;
+                _context9.next = 4;
                 break;
               }
 
-              _context8.next = 4;
+              _context9.next = 4;
               return _this.playFight(his_log.h_putong);
 
             case 4:
-            case "end":
-              return _context8.stop();
-          }
-        }
-      }, _callee8);
-    }))();
-  },
-  //战斗结束
-  fightingEnd: function fightingEnd() {
-    var _this11 = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
-      var fighting_list;
-      return regeneratorRuntime.wrap(function _callee9$(_context9) {
-        while (1) {
-          switch (_context9.prev = _context9.next) {
-            case 0:
-              // var _this =this;
-              fighting_list = http_globalData.fighting.data;
-              return _context9.abrupt("return", new Promise(function (resolve) {
-                //开始实例化预制资源
-                var TipBoxPrefab = http_globalData.model_biology_fightingEnd; // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
-
-                if (fighting_list.poition_winner == 1) {
-                  TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';
-                } else {
-                  TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '失败！';
-                } //将预制资源添加到父节点
-
-
-                cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab, _this11);
-                resolve();
-              }));
-
-            case 2:
             case "end":
               return _context9.stop();
           }
@@ -488,7 +446,7 @@ cc.Class({
   },
   //技能准备动作
   readySkill: function readySkill(his_log_extend) {
-    var _this12 = this;
+    var _this10 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -502,7 +460,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this12;
+              _this = _this10;
               npage = 0;
 
             case 3:
@@ -532,7 +490,7 @@ cc.Class({
   },
   //技能消耗动作
   needSkill: function needSkill(his_log_extend) {
-    var _this13 = this;
+    var _this11 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -546,7 +504,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this13;
+              _this = _this11;
               npage = 0;
 
             case 3:
@@ -578,7 +536,7 @@ cc.Class({
   },
   //技能攻击动作
   playSkill: function playSkill(his_log_extend) {
-    var _this14 = this;
+    var _this12 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -592,7 +550,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this14;
+              _this = _this12;
               npage = 0;
 
             case 3:
@@ -624,7 +582,7 @@ cc.Class({
   },
   //普通攻击动作
   playFight: function playFight(his_log_extend) {
-    var _this15 = this;
+    var _this13 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
       var _this, npage, biology, _this_hero_node, _targ_hero_node;
@@ -638,7 +596,7 @@ cc.Class({
                 break;
               }
 
-              _this = _this15;
+              _this = _this13;
               npage = 0;
 
             case 3:
@@ -736,14 +694,13 @@ cc.Class({
     //     this.state = 0;
     //   }.bind(this),0.5);
   },
-  reloadWord: function reloadWord() {
-    var _this = this;
-
-    httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
-      //写入地图数据
-      _this.addWordMap(data);
-    });
-  },
+  // reloadWord(){
+  //   var _this =this;
+  //   httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
+  //     //写入地图数据
+  //     _this.addWordMap(data)
+  //     })
+  // },
   back_map: function back_map() {
     //移除节点
     // var _this = this;

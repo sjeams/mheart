@@ -4,23 +4,42 @@ const httpBagApi = cc.Class({
     //没有处理逻辑，可以共用--关闭窗口
     //实例化用户信息
     async http_music(){
+        if(!http_globalAsset.model_onload_loading){
+            await httpRequestModel.model_onload_loading();//加载进度条
+        }
+        if(!http_globalAsset.AudioPlayer){
+            await httpRequestBagApi.http_home_music();//加载音乐
+        }
+        // if(!http_globalAsset.http_base_request){
+        //     await httpRequestBagApi.http_base_request();//加载音乐
+        // }
+        await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+    }, 
+    // //--基础类加载
+    // async http_base_request(){
+    //     await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+    //     await httpRequestModel.http_base_model();  // 引入 战斗模型model
+    //     http_globalAsset.http_base_request =1; //基础类
+    // },
+    //加载音乐
+    async  http_home_music() {
         //修改请求--等待响应后回调
         return new Promise(resolve => {
-        //获取全局播放器
-        if(cc.find("Audio")){
-            this.AudioPlayer = cc.find("Audio").getComponent("AudioManager");
-            //停止再开启背景音乐
-            // this.AudioPlayer.stopBgMusic();
-            this.AudioPlayer.playBgMusic();
-        }
-        resolve();
-        // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
-        //     //此处可能要判断登录失效 跳转、后期处理
-        //     http_globalData.user_info = data.data
-        //     resolve();
-        // })
-        });
-    },  
+            //获取全局播放器
+            if(cc.find("Audio")){
+                http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("AudioManager");
+                //停止再开启背景音乐
+                // this.AudioPlayer.stopBgMusic();
+                http_globalAsset.AudioPlayer.playBgMusic();
+            }
+            resolve();
+            // httpRequest.httpPost('/app/app-api/get-user',{},function (data) {
+            //     //此处可能要判断登录失效 跳转、后期处理
+            //     http_globalData.user_info = data.data
+            //     resolve();
+            // })
+            });
+    },
     //加载材质
     async  http_material_yaohuang() {
         return new Promise(resolve => {    

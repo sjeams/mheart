@@ -4,8 +4,7 @@ cc._RF.push(module, '1afe69pz2NEnIFv+XteDOYi', 'bag_技能Tools');
 
 "use strict";
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},

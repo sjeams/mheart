@@ -1,6 +1,40 @@
 // 背包的api请求接口
 const httpModel = cc.Class({
     extends: cc.Component,
+    //引入的基础类--战斗模型
+    async http_base_model(){
+        if(!http_globalAsset.model_biology_fightingBiology==[]){
+            await httpRequestModel.model_biology_fightingBiology() //加载模型
+        }
+        if(!http_globalAsset.model_biology_fightingDetail==[]){
+            await httpRequestModel.model_biology_fightingDetail();//加载战斗生物详情
+        }
+        if(!http_globalAsset.model_biology_SkillIcon==[]){
+            await httpRequestModel.model_biology_SkillIcon();//加载战斗技能图标
+        }
+        if(!http_globalAsset.model_biology_SkillTips==[]){
+            await httpRequestModel.model_biology_SkillTips();//加载战斗技能提示
+        }
+        if(!http_globalAsset.model_biology_fightingEnd==[]){
+            await httpRequestModel.model_biology_fightingEnd();//加载战斗技能提示
+        }
+        await httpRequestModel.model_biology_fightingEnd();//加载战斗结果--不是唯一的，每次都会变
+    },
+
+    //加载进度条
+    async model_onload_loading() {
+        return new Promise(resolve => {    
+        cc.loader.loadRes('/model弹窗/进度条', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_onload_loading =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
     //移除容器
     removeBoxprefab(){
         http_globalData.BoxPrefab_content.removeAllChildren();
@@ -29,7 +63,7 @@ const httpModel = cc.Class({
                 // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
                 //     httpRequestModel.openzhenfa_hidden()
                 // }, this);
-                http_globalData.model_biology_fightingBiology =TipBoxPrefab
+                http_globalAsset.model_biology_fightingBiology =TipBoxPrefab
                 resolve();
             })   
         });
@@ -45,7 +79,7 @@ const httpModel = cc.Class({
                 // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
                 //     httpRequestModel.openzhenfa_hidden()
                 // }, this);
-                http_globalData.model_biology_fightingDetail =TipBoxPrefab
+                http_globalAsset.model_biology_fightingDetail =TipBoxPrefab
                 resolve();
             })   
         });
@@ -60,7 +94,7 @@ const httpModel = cc.Class({
                 // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
                 //     httpRequestModel.openzhenfa_hidden()
                 // }, this);
-                http_globalData.model_biology_SkillIcon =TipBoxPrefab
+                http_globalAsset.model_biology_SkillIcon =TipBoxPrefab
                 resolve();
             })   
         });
@@ -74,7 +108,7 @@ const httpModel = cc.Class({
                 // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
                 //     httpRequestModel.openzhenfa_hidden()
                 // }, this);
-                http_globalData.model_biology_SkillTips =TipBoxPrefab
+                http_globalAsset.model_biology_SkillTips =TipBoxPrefab
                 resolve();
             })   
         });
@@ -90,6 +124,8 @@ const httpModel = cc.Class({
     //     },this)); 
     //     cc.find('Canvas').addChild(TipBoxPrefab_tips); 
     // },
+
+
    //战斗-战斗结束
     async model_biology_fightingEnd() {
         return new Promise(resolve => {    
@@ -110,10 +146,33 @@ const httpModel = cc.Class({
                     cc.find('Canvas/大厅/content').getComponent('score_fighting').playTask( )
                     httpRequestModel.openAlert_hidden()
                 }, this);
-                http_globalData.model_biology_fightingEnd =TipBoxPrefab
+                http_globalData.model_biology_fightingEnd = TipBoxPrefab
                 resolve();
             })   
         });
+    },
+
+
+    //生成战斗结束
+    async fightingEnd() {
+        // var _this =this;
+        return new Promise(resolve => { 
+            var fighting_list =  http_globalData.fighting.data; 
+    
+            //开始实例化预制资源
+            let  TipBoxPrefab =  http_globalData.model_biology_fightingEnd
+            // cc.log(TipBoxPrefab)
+            // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+            if(fighting_list.poition_winner==1){
+            TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='胜利！';
+            }else{
+            TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string='失败！';
+            }
+            //将预制资源添加到父节点
+            cc.find('Canvas/结算/弹框').addChild(TipBoxPrefab,this);
+        
+            resolve()
+        }) 
     },
 
     //背包

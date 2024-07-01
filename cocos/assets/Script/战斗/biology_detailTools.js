@@ -44,7 +44,7 @@ cc.Class({
         //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
         //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
-            var TipBoxPrefab = cc.instantiate(http_globalData.model_biology_fightingDetail);
+            var TipBoxPrefab = cc.instantiate(http_globalAsset.model_biology_fightingDetail);
             //载入生物详情
     //         _this.biology_detail_info(BoxPrefab,TipBoxPrefab,info,biology_image)
     //         //将预制资源添加到父节点

@@ -8,8 +8,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -33,30 +32,24 @@ cc.Class({
                 // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
                 //开始实例化预制资源
 
-                var _loop = function _loop() {
+                for (var prop in info_list) {
                   //声明节点对象
-                  var TipBoxPrefab_icon = cc.instantiate(http_globalData.model_biology_fightingBiology);
+                  var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_biology_fightingBiology);
                   var map = TOOLS[prop];
                   var info = map.biology; //设置距离
 
-                  map_value = 50;
+                  var map_value = 50;
 
                   if (is_my) {
-                    map_x = map.x - map_value;
+                    var map_x = map.x - map_value;
                   } else {
-                    map_x = map.x + map_value;
+                    var map_x = map.x + map_value;
                   }
 
                   if (info.length != 0) {
                     //放在资源下面
-                    cc.loader.loadRes(info.picture, cc.SpriteFrame, function (err, texture) {
-                      if (err) {
-                        // cc.error(err.message || err);
-                        return;
-                      }
-
-                      TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
-                    });
+                    //加载图片
+                    TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[info.picture];
 
                     if (is_my == 0) {
                       //图片翻转
@@ -90,14 +83,6 @@ cc.Class({
                     cc.sys.fightingArray[map.biology.id] = TipBoxPrefab_icon;
                     TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
                   }
-                };
-
-                for (var prop in info_list) {
-                  var map_value;
-                  var map_x;
-                  var map_x;
-
-                  _loop();
                 }
 
                 resolve(); // })
