@@ -35,7 +35,7 @@ cc.Class({
       } //开始实例化预制资源
 
 
-      var _loop = function _loop() {
+      for (var prop in info_list) {
         //声明节点对象
         var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon);
         var map = TOOLS[prop];
@@ -49,21 +49,20 @@ cc.Class({
           TipBoxPrefab_icon.y = httpRequest.number_map_rand(map.y, 25); //设置随机y偏移量0-49
           //放在资源下面
 
-          var image = info.picture;
-          cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
-            if (err) {
-              // cc.error(err.message || err);
-              return;
-            }
+          var image = info.picture; // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+          // if (err) {
+          //     // cc.error(err.message || err);
+          //     return;
+          // }
 
-            TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
-          });
-          color = ['#FFFFFF', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
-          type_color = color[info['yiXing']]; // console.log(info)
+          TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[image]; // });
 
-          star = '';
+          var color = ['#FFFFFF', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
+          var type_color = color[info['yiXing']]; // console.log(info)
 
-          for (i = 0; i <= info['yiXing']; i++) {
+          var star = '';
+
+          for (var i = 0; i <= info['yiXing']; i++) {
             star += '⭐';
           }
 
@@ -78,15 +77,6 @@ cc.Class({
 
           TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
         }
-      };
-
-      for (var prop in info_list) {
-        var color;
-        var type_color;
-        var star;
-        var i;
-
-        _loop();
       }
     });
     return TipBoxPrefab_model;

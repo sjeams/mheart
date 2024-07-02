@@ -37,13 +37,13 @@ cc.Class({
                     TipBoxPrefab_icon.y=httpRequest.number_map_rand(map.y,25)//设置随机y偏移量0-49
                     //放在资源下面
                     let image = info.picture;
-                    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-                        if (err) {
-                            // cc.error(err.message || err);
-                            return;
-                        }
-                        TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture; 
-                    });
+                    // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                        // if (err) {
+                        //     // cc.error(err.message || err);
+                        //     return;
+                        // }
+                        TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame =  http_globalAsset.http_base_asset_biology[image]; 
+                    // });
                     var color = ['#FFFFFF','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
                     var type_color = color[info['yiXing']];
                     // console.log(info)

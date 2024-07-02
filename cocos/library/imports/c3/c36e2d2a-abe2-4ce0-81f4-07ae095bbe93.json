@@ -196,7 +196,7 @@
       "array": [
         0,
         0,
-        212.1701408932446,
+        311.7691453623979,
         0,
         0,
         0,
@@ -720,7 +720,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BACKGROUND_SPRITE",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 13
     },
@@ -855,7 +855,7 @@
   {
     "__type__": "cc.Node",
     "_name": "TEXT_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 13
     },
@@ -986,7 +986,7 @@
   {
     "__type__": "cc.Node",
     "_name": "PLACEHOLDER_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 13
     },
@@ -1235,7 +1235,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BACKGROUND_SPRITE",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 28
     },
@@ -1370,7 +1370,7 @@
   {
     "__type__": "cc.Node",
     "_name": "TEXT_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 28
     },
@@ -1501,7 +1501,7 @@
   {
     "__type__": "cc.Node",
     "_name": "PLACEHOLDER_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 28
     },
@@ -1979,7 +1979,7 @@
   {
     "__type__": "cc.Node",
     "_name": "server",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
@@ -2349,7 +2349,7 @@
   {
     "__type__": "cc.Node",
     "_name": "login",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 51
     },
@@ -3481,7 +3481,7 @@
   {
     "__type__": "cc.Node",
     "_name": "scrollBar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 82
     },
@@ -3553,7 +3553,7 @@
   {
     "__type__": "cc.Node",
     "_name": "bar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 83
     },
@@ -3844,7 +3844,7 @@
   {
     "__type__": "cc.Node",
     "_name": "gridLayout",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 88
     },
@@ -5139,7 +5139,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BACKGROUND_SPRITE",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 122
     },
@@ -5274,7 +5274,7 @@
   {
     "__type__": "cc.Node",
     "_name": "TEXT_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 122
     },
@@ -5405,7 +5405,7 @@
   {
     "__type__": "cc.Node",
     "_name": "PLACEHOLDER_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 122
     },
@@ -5654,7 +5654,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BACKGROUND_SPRITE",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 137
     },
@@ -5789,7 +5789,7 @@
   {
     "__type__": "cc.Node",
     "_name": "TEXT_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 137
     },
@@ -5920,7 +5920,7 @@
   {
     "__type__": "cc.Node",
     "_name": "PLACEHOLDER_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 137
     },
@@ -6169,7 +6169,7 @@
   {
     "__type__": "cc.Node",
     "_name": "BACKGROUND_SPRITE",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 152
     },
@@ -6304,7 +6304,7 @@
   {
     "__type__": "cc.Node",
     "_name": "TEXT_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 152
     },
@@ -6435,7 +6435,7 @@
   {
     "__type__": "cc.Node",
     "_name": "PLACEHOLDER_LABEL",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 152
     },
@@ -7844,7 +7844,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Background",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 192
     },
@@ -7938,7 +7938,7 @@
   {
     "__type__": "cc.Node",
     "_name": "checkmark",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 192
     },
@@ -8816,7 +8816,7 @@
   {
     "__type__": "cc.Node",
     "_name": "提示弹窗",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
@@ -8975,7 +8975,7 @@
   {
     "__type__": "cc.Node",
     "_name": "scrollBar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 217
     },
@@ -9047,7 +9047,7 @@
   {
     "__type__": "cc.Node",
     "_name": "bar",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 218
     },
@@ -9255,7 +9255,7 @@
   {
     "__type__": "cc.Node",
     "_name": "view",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 217
     },

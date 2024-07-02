@@ -37,10 +37,16 @@ var httpBagApi = cc.Class({
               return httpRequestBagApi.http_home_music();
 
             case 6:
-              _context.next = 8;
-              return httpRequestAsset.http_base_asset();
+              // 没有资源，需要重新加载资源
+              if (http_globalAsset.http_base_asset_num == 0) {
+                httpRequest.playGame("", 0, 1); //加载资源的进度条
+              } // if(!http_globalAsset.http_base_request){
+              //     await httpRequestBagApi.http_base_request();//加载音乐
+              // }
+              // await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
 
-            case 8:
+
+            case 7:
             case "end":
               return _context.stop();
           }

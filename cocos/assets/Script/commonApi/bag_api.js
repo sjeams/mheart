@@ -10,10 +10,14 @@ const httpBagApi = cc.Class({
         if(!http_globalAsset.AudioPlayer){
             await httpRequestBagApi.http_home_music();//加载音乐
         }
+        // 没有资源，需要重新加载资源
+        if(http_globalAsset.http_base_asset_num==0){
+            httpRequest.playGame("",0,1) //加载资源的进度条
+        }
         // if(!http_globalAsset.http_base_request){
         //     await httpRequestBagApi.http_base_request();//加载音乐
         // }
-        await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+        // await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
     }, 
     // //--基础类加载
     // async http_base_request(){
@@ -80,11 +84,11 @@ const httpBagApi = cc.Class({
         //修改请求--等待响应后回调
         return new Promise(resolve => {
             httpRequest.httpPostLogin('/app/api-server/jiaose',{}, function (data) {
-            //此处可能要判断登录失效 跳转、后期处理
-            http_globalData.user_jiaose = data.data.jiaose
-            http_globalData.user_nicheng = data.data.nicheng
-            resolve();
-        })
+                //此处可能要判断登录失效 跳转、后期处理
+                http_globalData.user_jiaose = data.data.jiaose
+                http_globalData.user_nicheng = data.data.nicheng
+                resolve();
+            })
         });
     }, 
 

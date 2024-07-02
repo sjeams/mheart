@@ -8,8 +8,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {},
@@ -22,18 +21,26 @@ cc.Class({
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return httpRequestBagApi.http_base_jiaose();
+              return httpRequestBagApi.http_music();
 
             case 2:
               _context.next = 4;
-              return _this2.biology_detail_list();
+              return httpRequestBagApi.http_base_jiaose();
 
             case 4:
+              _context.next = 6;
+              return httpRequestModel.model_biology_jiaose();
+
+            case 6:
+              _context.next = 8;
+              return _this2.biology_detail_list();
+
+            case 8:
               _this2.checkClickButton(http_globalData.user_jiaose_check);
 
               _this2.createUserName();
 
-            case 6:
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -96,72 +103,60 @@ cc.Class({
                   var TOOLS = [];
                   var TOOLS = info_list; // let image = '/技能图标/'+skill.image;
                   //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+                  // cc.loader.loadRes('/model召唤/角色选择', function(errorMessage,loadedResource_icon){
+                  // //检查资源加载
+                  // if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                  // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+                  //开始实例化预制资源
 
-                  cc.loader.loadRes('/model召唤/角色选择', function (errorMessage, loadedResource_icon) {
-                    //检查资源加载
-                    if (errorMessage) {
-                      cc.log('载入预制资源失败, 原因:' + errorMessage);
-                      return;
+                  for (var prop in info_list) {
+                    //声明节点对象
+                    var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_biology_jiaose);
+
+                    if (prop == 0) {
+                      http_globalData.user_jiaose_check = TipBoxPrefab_icon;
                     }
 
-                    if (!(loadedResource_icon instanceof cc.Prefab)) {
-                      cc.log('你载入的不是预制资源!');
-                      return;
-                    } //开始实例化预制资源
+                    var info = TOOLS[prop];
+                    TipBoxPrefab_icon.info = info; //放在资源下面
+
+                    var image = info.jiaose.picture;
+
+                    if (info.jiaose) {
+                      _this.actionBlink_show(TipBoxPrefab_icon, 1); // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+                      // if (err) {
+                      //     // cc.error(err.message || err);
+                      //     return;
+                      // }
 
 
-                    var _loop = function _loop() {
-                      //声明节点对象
-                      var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon);
+                      cc.log(http_globalAsset.http_base_asset_biology);
+                      TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[image];
+                      TipBoxPrefab_icon.texture = http_globalAsset.http_base_asset_biology[image];
+                      TipBoxPrefab_icon.texture_name = info.jiaose.name; // });
+                      // var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
+                      // var type_color = color[info['type']];
+                      // // console.log(info)
+                      // var star ='';    
+                      // for(var i=0;i<=info['star'];i++){
+                      //     star +='⭐';
+                      // }
+                      // TipBoxPrefab_icon.getChildByName('名称').getComponent(cc.Label).string=info.name;
+                      // TipBoxPrefab_icon.getChildByName('名称').color = new cc.color(type_color);
+                      // TipBoxPrefab_icon.getChildByName('世界等级').getComponent(cc.Label).string= info.type_name;
+                      // TipBoxPrefab_icon.getChildByName('世界等级').color = new cc.color(type_color);
+                      // TipBoxPrefab_icon.getChildByName('星级').getComponent(cc.Label).string= star;
+                      //创建一个新button 并将其挂载到创建的精灵下
 
-                      if (prop == 0) {
-                        http_globalData.user_jiaose_check = TipBoxPrefab_icon;
-                      }
-
-                      var info = TOOLS[prop];
-                      TipBoxPrefab_icon.info = info; //放在资源下面
-
-                      var image = info.jiaose.picture;
-
-                      if (info.jiaose) {
-                        _this.actionBlink_show(TipBoxPrefab_icon, 1);
-
-                        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
-                          if (err) {
-                            // cc.error(err.message || err);
-                            return;
-                          }
-
-                          TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = texture;
-                          TipBoxPrefab_icon.texture = texture;
-                          TipBoxPrefab_icon.texture_name = info.jiaose.name;
-                        }); // var color = ['#ffffff','green','#BDFF00','#FFD100','#FF0000','#ffe000',];
-                        // var type_color = color[info['type']];
-                        // // console.log(info)
-                        // var star ='';    
-                        // for(var i=0;i<=info['star'];i++){
-                        //     star +='⭐';
-                        // }
-                        // TipBoxPrefab_icon.getChildByName('名称').getComponent(cc.Label).string=info.name;
-                        // TipBoxPrefab_icon.getChildByName('名称').color = new cc.color(type_color);
-                        // TipBoxPrefab_icon.getChildByName('世界等级').getComponent(cc.Label).string= info.type_name;
-                        // TipBoxPrefab_icon.getChildByName('世界等级').color = new cc.color(type_color);
-                        // TipBoxPrefab_icon.getChildByName('星级').getComponent(cc.Label).string= star;
-                        //创建一个新button 并将其挂载到创建的精灵下
-
-                        _this.onConfirBtn(TipBoxPrefab_icon); //写入icon
+                      _this.onConfirBtn(TipBoxPrefab_icon); //写入icon
 
 
-                        TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
-                      }
-
-                      resolve();
-                    };
-
-                    for (var prop in info_list) {
-                      _loop();
+                      TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
                     }
-                  });
+
+                    resolve();
+                  } // }) 
+
                 }
               }));
 

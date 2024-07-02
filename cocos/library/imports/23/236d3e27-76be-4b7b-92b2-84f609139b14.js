@@ -4,8 +4,7 @@ cc._RF.push(module, '236d34ndr5Le5KyhPYJE5sU', 'progressTools');
 
 "use strict";
 
-require("../common");
-
+// require("../common"); 
 cc.Class({
   "extends": cc.Component,
   properties: {

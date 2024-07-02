@@ -20,7 +20,6 @@ const httpModel = cc.Class({
         }
         await httpRequestModel.model_biology_fightingEnd();//加载战斗结果--不是唯一的，每次都会变
     },
-
     //加载进度条
     async model_onload_loading() {
         return new Promise(resolve => {    
@@ -54,6 +53,26 @@ const httpModel = cc.Class({
         await  httpRequestBagApi.http_update_zhenfa()
         // cc.find('Canvas/弹窗').removeAllChildren();
     },
+
+
+
+
+   
+    //战斗--加载模板战斗生物详情
+    async model_biology_jiaose() {
+        return new Promise(resolve => {    
+        cc.loader.loadRes('/model召唤/角色选择', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_biology_jiaose =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+
     //战斗--加载模板战斗生物详情
    async model_biology_fightingBiology() {
         return new Promise(resolve => {    
@@ -69,7 +88,6 @@ const httpModel = cc.Class({
         });
     },
 
- 
     //战斗--加载模板战斗生物技能
     async model_biology_fightingDetail() {
         return new Promise(resolve => {    

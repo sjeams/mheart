@@ -143,7 +143,7 @@ cc.Class({
       // cc.log(data); 
       if (data.code == 0) {
         // 登录失败，或本地数据失效
-        var user_status = cc.find("Canvas/register");
+        var user_status = cc.find("Canvas/登录");
         user_status.active = true; // 弹窗
       } else {
         // 设置服务器

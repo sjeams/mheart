@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '77e07WCeNBJrJqHjwTfqjkf', 'loading');
-// Script/login/loading.js
+// Script/登录/loading.js
 
 "use strict";
 
@@ -18,12 +18,12 @@ cc.Class({
       "default": null,
       type: cc.AudioClip
     },
-    play: function play() {
-      this.audioSource.play();
-    },
-    pause: function pause() {
-      this.audioSource.pause();
-    },
+    // play: function () {
+    //     this.audioSource.play();
+    // },
+    // pause: function () {
+    //     this.audioSource.pause();
+    // },
     bmp_font: {
       "default": null,
       type: cc.Label

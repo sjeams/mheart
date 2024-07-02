@@ -17,14 +17,13 @@ var HttpHelper = cc.Class({
   // properties: {
   // },
   onLoad: function onLoad() {
-    // cc.log(333)
     // 开启调试
     // cc.dynamicAtlasManager.showDebug(true);
     // 关闭调试
     // cc.dynamicAtlasManager.showDebug(false);
     // 从服务器加载mp3来进行播放
     //动态合图
-    this.image_cache(); // cc.audioEngine.play(_urls, false, 1);  
+    this.image_cache(); // cc.audioEngine.play(http_globalAsset.loading_asset, false, 1);  
     //配置路径
   },
 
@@ -61,8 +60,7 @@ var HttpHelper = cc.Class({
     xhr.send();
   },
   httpPostLogin: function httpPostLogin(url, params, callback) {
-    var token = cc.sys.localStorage.getItem('token'); // cc.log(token)
-
+    var token = cc.sys.localStorage.getItem('token');
     params['token'] = token;
     var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
@@ -94,8 +92,7 @@ var HttpHelper = cc.Class({
   httpPost: function httpPost(url, params, callback) {
     var _this = this;
 
-    var token = cc.sys.localStorage.getItem('token'); // cc.log(token)
-
+    var token = cc.sys.localStorage.getItem('token');
     params['token'] = token;
     var url = https_url + url;
     var xhr = cc.loader.getXMLHttpRequest();
@@ -134,9 +131,13 @@ var HttpHelper = cc.Class({
   },
   //场景加载--进度条
   playGame: function playGame(sence, task, no_progress) {
-    //   httpRequest.http_base_request()//基类加载 
     //场景转译
-    var sence = this.urlConfig(sence);
+    // var sence =this.urlConfig(sence);
+    http_globalAsset.http_base_redict_sence = '';
+
+    if (sence != '') {
+      http_globalAsset.http_base_redict_sence = this.urlConfig(sence);
+    }
 
     var _task = task || 0;
 
@@ -146,76 +147,167 @@ var HttpHelper = cc.Class({
 
 
     if (_no_progress) {
-      //加载预制资源 PrefabUrl为 预制资源在 资源中的路径--预加载的进度条
-      // cc.loader.loadRes('/model弹窗/进度条', function(errorMessage,loadedResource){
-      //     //检查资源加载
-      //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-      //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
       //开始实例化预制资源
-      http_globalAsset.model_onload_loading_new = cc.instantiate(http_globalAsset.model_onload_loading); //将预制资源添加到父节点
+      http_globalData.model_onload_loading_new = cc.instantiate(http_globalAsset.model_onload_loading); //将预制资源添加到父节点
       // CanvasNode.addChild(TipBoxPrefab);
 
-      cc.find('Canvas').addChild(http_globalAsset.model_onload_loading_new); //请求战斗记录
+      cc.find('Canvas').addChild(http_globalData.model_onload_loading_new); //请求战斗记录
 
       if (_task == 1) {
-        _this.fightint(sence);
+        _this.fightint();
       } else {
-        _this.progress(sence);
-      } // });
-
+        _this.progress();
+      }
     } else {
       //加载场景--不加载进度条
-      cc.director.loadScene(sence, function () {// spawnTools();
+      cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {// spawnTools();
       });
     }
   },
-  progress: function progress(sence) {
-    //预加载场景并获得加载进度
-    cc.director.preloadScene(sence, function (completeCount, totalCount, item) {
-      var item = item || 0;
-      var totalCount = totalCount || 0;
-      var completeCount = completeCount || 1;
-      var TipBoxPrefab = http_globalAsset.model_onload_loading_new; // cc.log(item)
+  //加载资源
+  _progressRuning: function _progressRuning(completeCount, totalCount, assets, describe) {
+    //加载进度回调
+    var progressBar = cc.find('/progressBar', http_globalData.model_onload_loading_new).getComponent(cc.ProgressBar); //加载进度回调 
 
-      var progressBar = cc.find('/progressBar', TipBoxPrefab).getComponent(cc.ProgressBar); //加载进度回调 
-      // console.log('资源 ' + completeCount + '加载完成！资源加载中...');
-      // console.log('加载场景资源');
+    progressBar.progress = completeCount / totalCount; // console.log(progressBar.progress)
 
-      progressBar.progress = completeCount / totalCount; // console.log(progressBar.progress)
+    progressBar.completeCount = completeCount;
+    progressBar.totalCount = totalCount;
+    var sys_label = cc.find('/progressBar/sys_label', http_globalData.model_onload_loading_new).getComponent(cc.Label);
+    var sys_des = cc.find('/progressBar/sys_des', http_globalData.model_onload_loading_new).getComponent(cc.Label); //加载生物
 
-      progressBar.completeCount = completeCount;
-      progressBar.totalCount = totalCount;
-      var sys_label = cc.find('/progressBar/sys_label', TipBoxPrefab).getComponent(cc.Label);
-      cc.log(item); // var sys_des =  cc.find('/progressBar/sys_des',TipBoxPrefab).getComponent(cc.Label);
-      // sys_des.string ='加载生物模型..';
-      // sys_label.string = parseInt( 30) + '%';
-      //   httpRequestModel.http_base_model();  // 引入 战斗模型model 
-      // // return '加载图片资源。。';
-      // sys_des.string ='加载图片资源..';
-      // // cc.log( progressBar.progress)
-      // sys_label.string = parseInt( 70) + '%';
-      //   httpRequestAsset.http_base_asset();  // 引入 资源图片asset
-      // resource = item;//实力的对象
-      // // 代码里面获取cc.Label组件, 修改文本内容
-      // //在代码里面获取cc.Label组件
-      // var sys_label = cc.find('Canvas/loading/progressBar/sys_label').getComponent(cc.Label);
-      // var sys_label =  cc.find('/progressBar/sys_label',TipBoxPrefab).getComponent(cc.Label);
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标生物') {
+      var asset = assets.content; // 检查资源是否为图片类型
 
-      sys_label.string = parseInt(progressBar.progress * 100) + '%'; // if( this.resource.type=='mp3'){
-      //     // console.log(res);  // mp3
-      //     // this.audio.clip = res;
-      //     // this.audio.play();
-      //     // 从服务器加载mp3来进行播放
-      //     this.current = cc.audioEngine.play(res.url, false, 1);
-      // }
-    }, function () {
-      //加载场景
-      cc.director.loadScene(sence, function () {// spawnTools();
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_biology[newname] = asset;
+        sys_des.string = describe + '/图标生物/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标装备') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_zhuangbei[newname] = asset;
+        sys_des.string = describe + '/图标装备/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标技能') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_skill[newname] = asset;
+        sys_des.string = describe + '/图标技能/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标技能效果') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_xiaoguo[newname] = asset;
+        sys_des.string = describe + '/图标技能效果/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标世界') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_word[newname] = asset;
+        sys_des.string = describe + '/图标世界/' + newname;
+      }
+    }
+
+    sys_label.string = parseInt(progressBar.progress * 100) + '%'; // if( this.resource.type=='json'){
+    //     // console.log(this.resource);  // json
+    //     // 从服务器加载mp3来进行播放
+    //     // this.audio.clip = ret;
+    //     // this.audio.play();
+    // }
+    // if( this.resource.type=='png'||this.resource.type=='jpg'){
+    //      console.log(res);  // json
+    //     //res是cc.Texture2D这样对象 
+    //     //   this.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(res)
+    //     // this.headpic.spriteFrame.setTexture(res);
+    //     // this.node.spriteFrame.setTexture(res);
+    //     // this.sprite.spriteFrame.setContentSize(res.getContentSize());
+    //     // this.node.getComponent(cc.Sprite).spriteFrame = res;
+    // }
+    // if( this.resource.type=='mp3'){
+    //     console.log(res);  // mp3
+    //     // this.audio.clip = res;
+    //     // this.audio.play();
+    //     // 从服务器加载mp3来进行播放
+    //     this.current = cc.audioEngine.play(res.url, false, 1);
+    // }
+  },
+  _progressCallback: function _progressCallback(completeCount, totalCount, item) {
+    // cc.log(completeCount+'---/---'+totalCount)
+    // cc.log(http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].describe)
+    // http_globalAsset.http_base_asset_num<http_globalAsset.loading_asset.length
+    var describe = '[' + parseInt(http_globalAsset.http_base_asset_num + 1) + '/' + http_globalAsset.loading_asset.length + ']' + http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].describe;
+
+    this._progressRuning(completeCount, totalCount, item, describe);
+  },
+  _completeCallback: function _completeCallback(err, texture) {
+    //加载完成回调
+    if (http_globalAsset.http_base_asset_num < http_globalAsset.loading_asset.length - 1) {
+      if (http_globalAsset.http_base_asset_num > http_globalAsset.loading_asset.length) {
+        return;
+      }
+
+      http_globalAsset.http_base_asset_num = http_globalAsset.http_base_asset_num + 1;
+      this.loading_asset(); //下一个资源
+    } else {
+      this.loadnextScene(); //下一场景 
+    }
+  },
+  //加载资源
+  loading_asset: function loading_asset() {
+    //默认从1开始
+    var url = cc.loader.loadResDir(http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].url, this._progressCallback.bind(this), this._completeCallback.bind(this));
+    cc.loader.release(url);
+  },
+  progress: function progress() {
+    //判断是否加载完成
+    cc.log(http_globalAsset.http_base_asset_num);
+
+    if (http_globalAsset.http_base_asset_num < http_globalAsset.loading_asset.length - 1) {
+      this.loading_asset();
+    } else {
+      this.loadnextScene();
+    }
+  },
+  loadnextScene: function loadnextScene() {
+    var _this = this; //加载场景-- 场景为空， 关闭进度条
+
+
+    if (http_globalAsset.http_base_redict_sence == '') {
+      cc.find('Canvas/进度条').parent.removeChild(cc.find('Canvas/进度条'));
+    } else {
+      //预加载场景并获得加载进度
+      cc.director.preloadScene(http_globalAsset.http_base_redict_sence, function (completeCount, totalCount, item) {
+        _this._progressRuning(completeCount, totalCount, item, '加载场景..');
+      }, function () {
+        cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {// spawnTools();  
+        });
       });
-    });
+    }
   },
   //请求战斗--写入文本记录
-  fightint: function fightint(sence) {
+  fightint: function fightint() {
     var _this = this;
 
     var map_int = cc.sys.localStorage.getItem('figthing_map_int'); //读取数据--临时地图id
@@ -233,7 +325,7 @@ var HttpHelper = cc.Class({
         if (data.code == 1) {
           cc.sys.localStorage.setItem('figthing_remote_url', data.data.sid);
 
-          _this.progress(sence);
+          _this.progress();
         } else {
           callback(JSON.parse(data)); // json 转数组
           // callback(-1);

@@ -13,13 +13,13 @@ cc.Class({
             default: null,
             type: cc.AudioClip
         },
-        play: function () {
-            this.audioSource.play();
-        },
+        // play: function () {
+        //     this.audioSource.play();
+        // },
         
-        pause: function () {
-            this.audioSource.pause();
-        },
+        // pause: function () {
+        //     this.audioSource.pause();
+        // },
         bmp_font: {
             default: null,
             type: cc.Label,
