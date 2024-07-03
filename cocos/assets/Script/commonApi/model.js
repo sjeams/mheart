@@ -271,7 +271,7 @@ const httpModel = cc.Class({
         }) 
     },
 
-    //背包
+    //生物背包
     async model_home_openBiology() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model背包/A生物背包', function(errorMessage,loadedResource){
@@ -285,6 +285,49 @@ const httpModel = cc.Class({
             })   
         });
     },
+    //生物详情
+    async model_home_biology_detail() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model背包/生物详情', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openAlert_remove()
+                // }, this);
+                http_globalAsset.model_home_biology_detail =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    //生物头像
+    async model_home_biology_detail_heard() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model背包/生物头像', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openAlert_remove()
+                // }, this);
+                http_globalAsset.model_home_biology_detail_heard =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    //生物图标
+    async model_home_biology_detail_heard_icon() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model背包/图标生物', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openAlert_remove()
+                // }, this);
+                http_globalAsset.model_home_biology_detail_heard_icon =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+ 
 
     //阵法
     async model_home_zhenfa() {

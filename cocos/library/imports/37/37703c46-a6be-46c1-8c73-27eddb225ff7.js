@@ -23,25 +23,37 @@ cc.Class({
 
             case 2:
               _context.next = 4;
-              return httpRequestModel.model_home_zhenfa();
+              return httpRequestModel.model_home_biology_detail();
 
             case 4:
               _context.next = 6;
-              return httpRequestModel.model_home_zhenfa_bag();
+              return httpRequestModel.model_home_biology_detail_heard();
 
             case 6:
               _context.next = 8;
-              return httpRequestModel.model_home_zhenfa_icon();
+              return httpRequestModel.model_home_biology_detail_heard_icon();
 
             case 8:
               _context.next = 10;
-              return httpRequestModel.model_home_zhenfa_biology();
+              return httpRequestModel.model_home_zhenfa();
 
             case 10:
+              _context.next = 12;
+              return httpRequestModel.model_home_zhenfa_bag();
+
+            case 12:
+              _context.next = 14;
+              return httpRequestModel.model_home_zhenfa_icon();
+
+            case 14:
+              _context.next = 16;
+              return httpRequestModel.model_home_zhenfa_biology();
+
+            case 16:
               //加载阵法生物图标
               http_globalData.BoxPrefab_alert = cc.find('Canvas/弹窗');
 
-            case 11:
+            case 17:
             case "end":
               return _context.stop();
           }

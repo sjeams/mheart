@@ -2330,8 +2330,8 @@
     "relativePath": "resources\\model布阵\\图标阵法.prefab"
   },
   "63c4ddcb-2276-4108-b8e4-25abf2b4455b": {
-    "asset": 1719999546463,
-    "meta": 1719999546474,
+    "asset": 1719999913650,
+    "meta": 1719999913711,
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "266d590f-26a9-4693-8ceb-5d1eee39a870": {
@@ -2794,21 +2794,6 @@
     "meta": 1719818950585,
     "relativePath": "Script\\背包\\bag_元神Tools.js"
   },
-  "398e676d-633a-44ab-997e-980aedf61174": {
-    "asset": 1719818922934,
-    "meta": 1719818950612,
-    "relativePath": "Script\\背包\\biology_bagTools.js"
-  },
-  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
-    "asset": 1719818926420,
-    "meta": 1719818950642,
-    "relativePath": "Script\\背包\\biology_iconTools.js"
-  },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1719818931622,
-    "meta": 1719818950677,
-    "relativePath": "Script\\背包\\biology_infoTools.js"
-  },
   "6d82bb25-539b-4553-b206-95d402ddb9d7": {
     "asset": 1719818939884,
     "meta": 1719818950713,
@@ -2873,16 +2858,6 @@
     "asset": 1719972625071,
     "meta": 1719972898145,
     "relativePath": "Script\\commonApi\\alert.js"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1719985159565,
-    "meta": 1719985159577,
-    "relativePath": "Scene\\home\\大厅.fire"
-  },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1719974528704,
-    "meta": 1719974530301,
-    "relativePath": "Script\\背包\\bag_home.js"
   },
   "6459d432-a2d8-4e3a-9f3d-468d469edf3c": {
     "asset": 1719975566198,
@@ -2979,9 +2954,29 @@
     "meta": 1719999221481,
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
   },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1720000122366,
+    "meta": 1720000123153,
+    "relativePath": "Script\\背包\\biology_infoTools.js"
+  },
   "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
-    "asset": 1719999176615,
-    "meta": 1719999221679,
+    "asset": 1720000580284,
+    "meta": 1720000619883,
     "relativePath": "Script\\commonApi\\model.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1720000692528,
+    "meta": 1720000694409,
+    "relativePath": "Script\\背包\\bag_home.js"
+  },
+  "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
+    "asset": 1720000647247,
+    "meta": 1720000694446,
+    "relativePath": "Script\\背包\\biology_iconTools.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1720000694715,
+    "meta": 1720000694725,
+    "relativePath": "Scene\\home\\大厅.fire"
   }
 }

@@ -505,7 +505,7 @@ var httpModel = cc.Class({
       }, _callee13);
     }))();
   },
-  //背包
+  //生物背包
   model_home_openBiology: function model_home_openBiology() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
       return regeneratorRuntime.wrap(function _callee14$(_context14) {
@@ -536,14 +536,107 @@ var httpModel = cc.Class({
       }, _callee14);
     }))();
   },
-  //阵法
-  model_home_zhenfa: function model_home_zhenfa() {
+  //生物详情
+  model_home_biology_detail: function model_home_biology_detail() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
       return regeneratorRuntime.wrap(function _callee15$(_context15) {
         while (1) {
           switch (_context15.prev = _context15.next) {
             case 0:
               return _context15.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/生物详情', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openAlert_remove()
+                  // }, this);
+
+                  http_globalAsset.model_home_biology_detail = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context15.stop();
+          }
+        }
+      }, _callee15);
+    }))();
+  },
+  //生物头像
+  model_home_biology_detail_heard: function model_home_biology_detail_heard() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
+      return regeneratorRuntime.wrap(function _callee16$(_context16) {
+        while (1) {
+          switch (_context16.prev = _context16.next) {
+            case 0:
+              return _context16.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/生物头像', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openAlert_remove()
+                  // }, this);
+
+                  http_globalAsset.model_home_biology_detail_heard = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context16.stop();
+          }
+        }
+      }, _callee16);
+    }))();
+  },
+  //生物图标
+  model_home_biology_detail_heard_icon: function model_home_biology_detail_heard_icon() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17() {
+      return regeneratorRuntime.wrap(function _callee17$(_context17) {
+        while (1) {
+          switch (_context17.prev = _context17.next) {
+            case 0:
+              return _context17.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/图标生物', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openAlert_remove()
+                  // }, this);
+
+                  http_globalAsset.model_home_biology_detail_heard_icon = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context17.stop();
+          }
+        }
+      }, _callee17);
+    }))();
+  },
+  //阵法
+  model_home_zhenfa: function model_home_zhenfa() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18() {
+      return regeneratorRuntime.wrap(function _callee18$(_context18) {
+        while (1) {
+          switch (_context18.prev = _context18.next) {
+            case 0:
+              return _context18.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/A生物布阵', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -561,20 +654,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context15.stop();
+              return _context18.stop();
           }
         }
-      }, _callee15);
+      }, _callee18);
     }))();
   },
   //阵法
   model_home_zhenfa_bag: function model_home_zhenfa_bag() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
-      return regeneratorRuntime.wrap(function _callee16$(_context16) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19() {
+      return regeneratorRuntime.wrap(function _callee19$(_context19) {
         while (1) {
-          switch (_context16.prev = _context16.next) {
+          switch (_context19.prev = _context19.next) {
             case 0:
-              return _context16.abrupt("return", new Promise(function (resolve) {
+              return _context19.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/背包生物', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -592,20 +685,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context16.stop();
+              return _context19.stop();
           }
         }
-      }, _callee16);
+      }, _callee19);
     }))();
   },
   //阵法
   model_home_zhenfa_icon: function model_home_zhenfa_icon() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17() {
-      return regeneratorRuntime.wrap(function _callee17$(_context17) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee20() {
+      return regeneratorRuntime.wrap(function _callee20$(_context20) {
         while (1) {
-          switch (_context17.prev = _context17.next) {
+          switch (_context20.prev = _context20.next) {
             case 0:
-              return _context17.abrupt("return", new Promise(function (resolve) {
+              return _context20.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/图标生物', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -623,20 +716,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context17.stop();
+              return _context20.stop();
           }
         }
-      }, _callee17);
+      }, _callee20);
     }))();
   },
   //阵法
   model_home_zhenfa_biology: function model_home_zhenfa_biology() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18() {
-      return regeneratorRuntime.wrap(function _callee18$(_context18) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee21() {
+      return regeneratorRuntime.wrap(function _callee21$(_context21) {
         while (1) {
-          switch (_context18.prev = _context18.next) {
+          switch (_context21.prev = _context21.next) {
             case 0:
-              return _context18.abrupt("return", new Promise(function (resolve) {
+              return _context21.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/图标阵法', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -654,19 +747,19 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context18.stop();
+              return _context21.stop();
           }
         }
-      }, _callee18);
+      }, _callee21);
     }))();
   },
   model_zhaohuan_chuangzao: function model_zhaohuan_chuangzao() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19() {
-      return regeneratorRuntime.wrap(function _callee19$(_context19) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee22() {
+      return regeneratorRuntime.wrap(function _callee22$(_context22) {
         while (1) {
-          switch (_context19.prev = _context19.next) {
+          switch (_context22.prev = _context22.next) {
             case 0:
-              return _context19.abrupt("return", new Promise(function (resolve) {
+              return _context22.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model召唤/A创造', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -684,10 +777,10 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context19.stop();
+              return _context22.stop();
           }
         }
-      }, _callee19);
+      }, _callee22);
     }))();
   }
 });
