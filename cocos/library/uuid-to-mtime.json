@@ -2745,8 +2745,8 @@
     "relativePath": "resources\\图标技能效果\\AutoAtlas.pac"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1719992295425,
-    "meta": 1719992295459,
+    "asset": 1720001228574,
+    "meta": 1720001228590,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "74e7f103-4492-4554-ac67-c4ae6ff74e55": {
@@ -2758,11 +2758,6 @@
     "asset": 1719990200688,
     "meta": 1719990200695,
     "relativePath": "resources\\model战斗\\sprite_地图.prefab"
-  },
-  "407eb230-628e-48ee-a66f-250db1808d21": {
-    "asset": 1719570161961,
-    "meta": 1719570163327,
-    "relativePath": "Script\\commonApi\\figthingExtend.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
     "asset": 1719999155929,
@@ -2978,5 +2973,10 @@
     "asset": 1720000694715,
     "meta": 1720000694725,
     "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "407eb230-628e-48ee-a66f-250db1808d21": {
+    "asset": 1720001140219,
+    "meta": 1720001141549,
+    "relativePath": "Script\\commonApi\\figthingExtend.js"
   }
 }

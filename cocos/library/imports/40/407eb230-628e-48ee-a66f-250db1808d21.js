@@ -137,7 +137,10 @@ var httpFightingExtend = cc.Class({
   actionMdel: function actionMdel(move_node, hurt_msg) {
     var _this = this;
 
-    move_node.getComponent(cc.Label).string = hurt_msg;
+    if (hurt_msg) {
+      move_node.getComponent(cc.Label).string = hurt_msg;
+    }
+
     move_node.active = true;
     move_node.opacity = 255;
     var actionhiddenSmoll = cc.spawn(cc.moveBy(_this.sudu(0.01), cc.v2(0, 40)), cc.fadeIn(_this.sudu(0.1)), cc.scaleTo(_this.sudu(0.2), 1.5, 1.5));

@@ -23,15 +23,11 @@
     var _this =this;
     //技能名称
     if(biology.descript_go_msg!=''){
- 
- 
         _this.actionMdel(node.getChildByName('技能s'),biology.descript_go_msg)
-
         node.getChildByName('技能背景').active=true
         node.getChildByName('技能背景').opacity=255
         // node.getChildByName('技能背景').runAction( cc.sequence(cc.fadeIn(_this.sudu(0.01)),cc.scaleTo(_this.sudu(0.1), 1.2, 1.2),cc.delayTime(_this.sudu(0.5)),cc.scaleTo(_this.sudu(0.3), 1, 1),cc.fadeOut(0.1),cc.moveBy(_this.sudu(0.01),cc.v2(0,0)),cc.callFunc(function(){  node.getChildByName('技能背景').active=false;  },this)));
         _this.actionBig(node.getChildByName('技能背景'))
-
     }
   },
   // 准备动作--悟性-治疗-中毒-冰冻-眩晕 持续伤害--回合前结算等
@@ -77,7 +73,9 @@
  
   actionMdel(move_node,hurt_msg){
     var _this=this;
-    move_node.getComponent(cc.Label).string= hurt_msg
+    if(hurt_msg){
+      move_node.getComponent(cc.Label).string= hurt_msg
+    }
     move_node.active=true
     move_node.opacity=255
     const actionhiddenSmoll = cc.spawn(cc.moveBy(_this.sudu(0.01),cc.v2(0,40)),cc.fadeIn(_this.sudu(0.1)),cc.scaleTo(_this.sudu(0.2),1.5,1.5))
