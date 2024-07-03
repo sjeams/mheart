@@ -34,23 +34,24 @@ cc.Class({
         //     iBoxPrefab.getComponent(cc.Sprite).setMaterial(0, material)
         // })
         //大厅需要加载的全局变量
+        http_globalData.check_Prefab =cc.find('Canvas/大厅/创造');
         http_globalData.chuanzao_xibao=[];//细胞
+        await httpRequestBagApi.http_music()
         await httpRequestModel.model_zhaohuan_chuangzao(); //加载商店
         // await httpRequestAlert.alert_tips(); //加载弹窗模板
         await httpRequestAlert.alert_biologyDetail(); //加载生物详情
         await httpRequestAlert.alert_shangdian(); //加载商店
         // cc.log(http_globalData.user_info)
-        // await httpRequestBagApi.http_material_yaohuang();//加载材质
+        // cc.log(http_globalData.materialPrefab)
         await httpRequestBagApi.http_user_info()
         await this.menu_chuangzao(); //加载召唤菜单
         await this.menu_ronghe(); //加载召唤菜单
         await this.menu_xunlian(); //加载召唤菜单
         await this.menu_huishou(); //加载召唤菜单
-        http_globalData.check_Prefab =cc.find('Canvas/大厅/创造');
         // httpRequestBagApi.materialTime(http_globalData.materialPrefab)  //预制体晃动
- 
         // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
-   
+        
+        // await httpRequestBagApi.http_material_yaohuang();//加载材质
     },
 
     //加载菜单-创造
@@ -82,7 +83,8 @@ cc.Class({
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/土",TipBoxPrefab_model_name5,5);
                 _this.menu_chuangzao_xibao(TipBoxPrefab,"生物细胞/无",TipBoxPrefab_model_name6,6);
                 _this.onclick_chuangzao(TipBoxPrefab)
-                http_globalData.materialPrefab =  cc.find('云游商人/云游商人b',TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+                // 占用2cd
+                // httpRequestAsset.materialTime( cc.find('云游商人/云游商人b',TipBoxPrefab).getComponent(cc.Sprite)) //加载摇晃材质
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'),1,10,-10,10,1.2)
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'),1,10,20,-20,1.2)
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转3'),1,5,5,-5,1.2)
@@ -230,7 +232,6 @@ cc.Class({
         http_globalData.check_Prefab.active=true;
     },
     button_ronghe(){
-    
         http_globalData.check_Prefab.active=false;
         http_globalData.check_Prefab=cc.find('Canvas/大厅/融合');
         http_globalData.check_Prefab.active=true;

@@ -37,13 +37,10 @@
     "_components": [
       {
         "__id__": 22
-      },
-      {
-        "__id__": 23
       }
     ],
     "_prefab": {
-      "__id__": 24
+      "__id__": 23
     },
     "_opacity": 255,
     "_color": {
@@ -338,7 +335,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 20
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -390,7 +387,7 @@
     "_useOriginalSize": false,
     "_string": "LV.10",
     "_N$string": "LV.10",
-    "_fontSize": 16,
+    "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
@@ -492,7 +489,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 20
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -545,7 +542,7 @@
     "_string": "李逍遥",
     "_N$string": "李逍遥",
     "_fontSize": 20,
-    "_lineHeight": 24,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": false,
@@ -643,7 +640,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 20
+      "height": 24
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -696,7 +693,7 @@
     "_string": "⭐⭐⭐⭐⭐",
     "_N$string": "⭐⭐⭐⭐⭐",
     "_fontSize": 20,
-    "_lineHeight": 24,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": false,
@@ -805,19 +802,7 @@
     "_N$hoverSprite": null,
     "hoverSprite": null,
     "_N$disabledSprite": null,
-    "_N$target": {
-      "__id__": 1
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "4b399vzZ3RO+bGBH1k2sE4C",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
+    "_N$target": null,
     "_id": ""
   },
   {

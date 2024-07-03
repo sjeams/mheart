@@ -34,13 +34,10 @@
     "_components": [
       {
         "__id__": 14
-      },
-      {
-        "__id__": 15
       }
     ],
     "_prefab": {
-      "__id__": 16
+      "__id__": 15
     },
     "_opacity": 255,
     "_color": {
@@ -514,17 +511,6 @@
     },
     "fileId": "88PnoO+BFMwbA/EDoE+Qys",
     "sync": false
-  },
-  {
-    "__type__": "2e810gPIYdMIbdgLhTM821Z",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "toolsArray": [],
-    "_id": ""
   },
   {
     "__type__": "cc.Button",

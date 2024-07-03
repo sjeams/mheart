@@ -6,23 +6,7 @@ cc._RF.push(module, '64335b+G+VLHqrUdbFVWZpA', 'skill_iconTools');
 
 cc.Class({
   "extends": cc.Component,
-  properties: {// foo: {
-    //     // ATTRIBUTES:
-    //     default: null,        // The default value will be used only when the component attaching
-    //                           // to a node for the first time
-    //     type: cc.SpriteFrame, // optional, default is typeof default
-    //     serializable: true,   // optional, default is true
-    // },
-    // bar: {
-    //     get () {
-    //         return this._bar;
-    //     },
-    //     set (value) {
-    //         this._bar = value;
-    //     }
-    // },
-  },
-  // LIFE-CYCLE CALLBACKS:
+  properties: {},
   // onLoad () {},
   start: function start() {},
   //技能图片渲染
@@ -32,24 +16,12 @@ cc.Class({
     var _this = this;
 
     var TOOLS = [];
-    var TOOLS = position_skill; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-    // cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource_icon){
+    var TOOLS = position_skill;
 
     var _loop = function _loop() {
-      var skill = TOOLS[prop]; //检查资源加载
-      // if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-      // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-      //开始实例化预制资源
+      var skill = TOOLS[prop]; //开始实例化预制资源
 
-      var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_biology_SkillIcon); //载入技能图片
-      // let image = '/图标技能/'+skill.image;
-      // cc.log(image)
-      // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-      //     if (err) {
-      //         // cc.error(err.message || err);
-      //         return;
-      //     }
-      // 图标技能
+      var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_biology_SkillIcon); // 图标技能
 
       cc.log(http_globalAsset.http_base_asset_skill);
       TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_skill[skill.image]; // });
@@ -60,7 +32,7 @@ cc.Class({
 
       TipBoxPrefab_icon.on('click', function () {
         // 事件处理逻辑
-        _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button), skill, TipBoxPrefab, TipBoxPrefab_icon);
+        _this.bindClickEventIcon(skill, TipBoxPrefab);
       }, _this2); //写入icon
 
       TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
@@ -68,22 +40,16 @@ cc.Class({
 
     for (var prop in position_skill) {
       _loop();
-    } // })
-
+    }
 
     return TipBoxPrefab;
   },
   // 绑定按钮事件
-  bindClickEventIcon: function bindClickEventIcon(button, skill, TipBoxPrefab, TipBoxPrefab_icon) {
-    // cc.log(skill)
+  bindClickEventIcon: function bindClickEventIcon(skill, TipBoxPrefab) {
     //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
     // 销毁所有弹窗--节点
     TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
-    var move_type = ['初始化', '回合化', '被击前触发', '被击后触发', '攻击前触发', '主动', '攻击后']; // cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function(errorMessage,loadedResource){
-    //     //检查资源加载
-    //     if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-    //     if( !(loadedResource instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
-    //开始实例化预制资源
+    var move_type = ['初始化', '回合化', '被击前触发', '被击后触发', '攻击前触发', '主动', '攻击后']; //开始实例化预制资源
 
     var tips_Prefab = cc.instantiate(http_globalAsset.model_biology_SkillTips);
     tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_skill[skill.image];
@@ -105,7 +71,7 @@ cc.Class({
     tips_Prefab.getChildByName('D技能来源s').getComponent(cc.Label).string = '技能来源：' + skill.words;
     tips_Prefab.getChildByName('D技能描述s').getComponent(cc.Label).string = '技能说明：' + skill.describe; //载入生物详情
 
-    TipBoxPrefab.getChildByName('技能描述').addChild(tips_Prefab); // });
+    TipBoxPrefab.getChildByName('技能描述').addChild(tips_Prefab);
   } // update (dt) {},
 
 });

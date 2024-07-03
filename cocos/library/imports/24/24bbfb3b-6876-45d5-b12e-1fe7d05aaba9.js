@@ -4,9 +4,35 @@ cc._RF.push(module, '24bbfs7aHZF1bEuH+fQWqup', 'asset');
 
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 // 加载资源图片
 var httpAsset = cc.Class({
   "extends": cc.Component,
+  // 开启适配
+  // startUpdateCanvasSize(){
+  //     // this.updateCanvasSize();
+  //     // cc.view.setResizeCallback(() => {
+  //     //     this.updateCanvasSize();
+  //     // })
+  // }
+  // 自由切换横竖屏，动态设置设计分辨率和适配模式。
+  // updateCanvasSize() {
+  //     let size = cc.view.getFrameSize();
+  //     if (size.width > size.height) {
+  //         this.canvas.fitWidth = false;
+  //         this.canvas.fitHeight = true;
+  //         this.canvas.designResolution = cc.size(1920, 1080);
+  //         this.showLandscape();
+  //     } else {
+  //         this.canvas.fitWidth = true;
+  //         this.canvas.fitHeight = false;
+  //         this.canvas.designResolution = cc.size(1080, 1920);
+  //         this.showPortait();
+  //     }
+  // },
   //引入的基础类--图片资源
   //加载资源
   _progressRuning: function _progressRuning(completeCount, totalCount, assets, describe) {
@@ -136,6 +162,56 @@ var httpAsset = cc.Class({
         cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {// spawnTools();  
         });
       });
+    }
+  },
+  //加载材质
+  http_material_yaohuang: function http_material_yaohuang() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              return _context.abrupt("return", new Promise(function (resolve) {
+                // var _this =this;
+                var label = '/materials/builtin_摇晃';
+                cc.loader.loadRes(label, cc.Material, function (err, res) {
+                  http_globalAsset.material_yaohuang = cc.Material.getInstantiatedMaterial(res); // _this. materialTime(materialPrefab)
+                  // // 计算每帧的纹理偏移量
+                  // this.uvOffset = 1 / this.totalFrames;
+                  // // 开始播放动画
+                  // this.schedule(this.updateAnimation, 1 / this.framesPerSecond);
+
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  materialTime: function materialTime(materialPrefab) {
+    if (materialPrefab) {
+      materialPrefab.getComponent(cc.Sprite).setMaterial(0, http_globalAsset.material_yaohuang); // 定义一个回调函数
+      // httpRequestBagApi.
+      // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+      // this.schedule(this.update,0);
+      // 定义一个回调函数
+
+      var time = 0;
+
+      this.updateEveryFrame = function (dt) {
+        // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
+        // 这里可以放置每帧都需要执行的逻辑
+        time += dt;
+        materialPrefab.getMaterial(0).setProperty("u_time", time);
+      }; // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
+
+
+      this.schedule(this.updateEveryFrame, 0);
     }
   }
 });

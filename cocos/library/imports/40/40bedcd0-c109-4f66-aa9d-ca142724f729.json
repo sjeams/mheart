@@ -97,13 +97,10 @@
       },
       {
         "__id__": 113
-      },
-      {
-        "__id__": 114
       }
     ],
     "_prefab": {
-      "__id__": 115
+      "__id__": 114
     },
     "_opacity": 255,
     "_color": {
@@ -3823,16 +3820,6 @@
     "_N$target": {
       "__id__": 1
     },
-    "_id": ""
-  },
-  {
-    "__type__": "8ac9fkSQUlL+ayF4+pxgOVe",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
     "_id": ""
   },
   {

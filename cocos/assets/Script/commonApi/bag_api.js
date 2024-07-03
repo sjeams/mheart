@@ -13,12 +13,28 @@ const httpBagApi = cc.Class({
         if(!http_globalAsset.alert_tips){
             await httpRequestAlert.alert_tips();//加载弹窗模板
         }
+        if(!http_globalAsset.material_yaohuang){
+            await httpRequestAsset.http_material_yaohuang();//加载材质
+        }
         // 没有资源，需要重新加载资源
         if(http_globalAsset.http_base_asset_num==0){
-            httpRequest.playGame("",0,1) //加载资源的进度条
+            // httpRequest.playGame("",0,1) //加载资源的进度条
+            await httpRequestBagApi.http_home_asset()
         }
     }, 
- 
+    //加载音乐
+    async  http_home_asset() {
+        //修改请求--等待响应后回调
+        return new Promise(resolve => {
+            //获取全局播放器
+            if(http_globalAsset.http_base_asset_num==0){
+                httpRequest.playGame("",0,1) //加载资源的进度条
+            }
+            resolve();
+        });
+    },
+
+
     //加载音乐
     async  http_home_music() {
         //修改请求--等待响应后回调
@@ -36,43 +52,8 @@ const httpBagApi = cc.Class({
             //     http_globalData.user_info = data.data
             //     resolve();
             // })
-            });
-    },
-    //加载材质
-    async  http_material_yaohuang() {
-        return new Promise(resolve => {    
-            var label ='/materials/builtin_摇晃';
-            cc.loader.loadRes(label, cc.Material, function(err, res) {
-                httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res)
-
-                // // 计算每帧的纹理偏移量
-                // this.uvOffset = 1 / this.totalFrames;
-                // // 开始播放动画
-                // this.schedule(this.updateAnimation, 1 / this.framesPerSecond);
-
-                resolve();
-            })
         });
     },
-    materialTime(materialPrefab){
-        if(materialPrefab){
-            // 定义一个回调函数
-            // httpRequestBagApi.
-            // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-            // this.schedule(this.update,0);
-            // 定义一个回调函数
-            var time =0;
-            this.updateEveryFrame = function (dt) {
-                // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
-                // 这里可以放置每帧都需要执行的逻辑
-                time += dt;
-                materialPrefab.setProperty("u_time",time) 
-            };
-            // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-            this.schedule(this.updateEveryFrame, 0);
-        }
-    },
-
     //实例化角色信息
     async http_base_jiaose(){
         //修改请求--等待响应后回调
@@ -163,10 +144,23 @@ const httpBagApi = cc.Class({
         })
         });
     },  
-
-    
-
-    
+    //获取生物
+    http_user_word_index(){
+        //修改请求
+        return new Promise(resolve => {
+        httpRequest.httpPost('/app/app-apiword/index',{}, function (data) { 
+            http_globalData.http_user_word_index = data.data
+        resolve(data);})
+        });
+    },  
+    http_user_word_new(){
+        //修改请求
+        return new Promise(resolve => {
+            httpRequest.httpPost('/app/app-apiword/map-word',{}, function (data) {
+                httpRequestModel.removeBoxprefab()
+            resolve(data);})
+        });
+    },      
 
 });
 window.httpRequestBagApi = new httpBagApi();

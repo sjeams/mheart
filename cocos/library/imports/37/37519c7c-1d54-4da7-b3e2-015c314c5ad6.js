@@ -131,9 +131,9 @@ var HttpHelper = cc.Class({
   },
   //场景加载--进度条
   playGame: function playGame(sence, task, no_progress) {
-    cc.log(sence); //场景转译
+    // cc.log(sence)
+    //场景转译
     // var sence =this.urlConfig(sence);
-
     http_globalAsset.http_base_redict_sence = '';
 
     if (sence != '') {

@@ -46,12 +46,24 @@ var httpBagApi = cc.Class({
               return httpRequestAlert.alert_tips();
 
             case 9:
-              // 没有资源，需要重新加载资源
-              if (http_globalAsset.http_base_asset_num == 0) {
-                httpRequest.playGame("", 0, 1); //加载资源的进度条
+              if (http_globalAsset.material_yaohuang) {
+                _context.next = 12;
+                break;
               }
 
-            case 10:
+              _context.next = 12;
+              return httpRequestAsset.http_material_yaohuang();
+
+            case 12:
+              if (!(http_globalAsset.http_base_asset_num == 0)) {
+                _context.next = 15;
+                break;
+              }
+
+              _context.next = 15;
+              return httpRequestBagApi.http_home_asset();
+
+            case 15:
             case "end":
               return _context.stop();
           }
@@ -60,13 +72,37 @@ var httpBagApi = cc.Class({
     }))();
   },
   //加载音乐
-  http_home_music: function http_home_music() {
+  http_home_asset: function http_home_asset() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               return _context2.abrupt("return", new Promise(function (resolve) {
+                //获取全局播放器
+                if (http_globalAsset.http_base_asset_num == 0) {
+                  httpRequest.playGame("", 0, 1); //加载资源的进度条
+                }
+
+                resolve();
+              }));
+
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+  //加载音乐
+  http_home_music: function http_home_music() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              return _context3.abrupt("return", new Promise(function (resolve) {
                 //获取全局播放器
                 if (cc.find("Audio")) {
                   http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("home_music"); //停止再开启背景音乐
@@ -84,58 +120,11 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }))();
-  },
-  //加载材质
-  http_material_yaohuang: function http_material_yaohuang() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
-                var label = '/materials/builtin_摇晃';
-                cc.loader.loadRes(label, cc.Material, function (err, res) {
-                  httpRequestBagApi.material_yaohuang = cc.Material.getInstantiatedMaterial(res); // // 计算每帧的纹理偏移量
-                  // this.uvOffset = 1 / this.totalFrames;
-                  // // 开始播放动画
-                  // this.schedule(this.updateAnimation, 1 / this.framesPerSecond);
-
-                  resolve();
-                });
-              }));
-
-            case 1:
-            case "end":
               return _context3.stop();
           }
         }
       }, _callee3);
     }))();
-  },
-  materialTime: function materialTime(materialPrefab) {
-    if (materialPrefab) {
-      // 定义一个回调函数
-      // httpRequestBagApi.
-      // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-      // this.schedule(this.update,0);
-      // 定义一个回调函数
-      var time = 0;
-
-      this.updateEveryFrame = function (dt) {
-        // dt 是时间间隔，每帧 dt 的值大概是 0.016 秒（即 1/60 秒）
-        // 这里可以放置每帧都需要执行的逻辑
-        time += dt;
-        materialPrefab.setProperty("u_time", time);
-      }; // 使用 this.schedule 方法来调用这个回调函数，它每帧都会被执行
-
-
-      this.schedule(this.updateEveryFrame, 0);
-    }
   },
   //实例化角色信息
   http_base_jiaose: function http_base_jiaose() {
@@ -266,6 +255,25 @@ var httpBagApi = cc.Class({
       httpRequest.httpPost('/app/app-apinew/user-biology', {
         biology_type: biology_type
       }, function (data) {
+        resolve(data);
+      });
+    });
+  },
+  //获取生物
+  http_user_word_index: function http_user_word_index() {
+    //修改请求
+    return new Promise(function (resolve) {
+      httpRequest.httpPost('/app/app-apiword/index', {}, function (data) {
+        http_globalData.http_user_word_index = data.data;
+        resolve(data);
+      });
+    });
+  },
+  http_user_word_new: function http_user_word_new() {
+    //修改请求
+    return new Promise(function (resolve) {
+      httpRequest.httpPost('/app/app-apiword/map-word', {}, function (data) {
+        httpRequestModel.removeBoxprefab();
         resolve(data);
       });
     });

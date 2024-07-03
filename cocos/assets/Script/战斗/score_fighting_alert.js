@@ -31,17 +31,9 @@ cc.Class({
     back_map(){
       //销毁动态合图
       // cc.dynamicAtlasManager.reset()
-      // var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting')
       httpRequestModel.removeBoxprefab()
       httpRequest.playGame("sence_ditu")
     },
-    back_reload(){
-      httpRequestModel.removeBoxprefab()
-      var _this = cc.find('Canvas/大厅/content').getComponent('score_fighting')
-      _this.playTask( )
-      cc.find('Canvas/结算').active =false;// 结束弹窗结果
-    }, 
-    
     async button_beishu(){
       // var beisu_arr =[1,2,3,4,8];
       if(http_globalData.user_info.beishu<4){
@@ -71,7 +63,6 @@ cc.Class({
 
     hidden_dlg () {
         this.node.active =false;
-        
     },
     remove_alert(){
       // 销毁所有弹窗

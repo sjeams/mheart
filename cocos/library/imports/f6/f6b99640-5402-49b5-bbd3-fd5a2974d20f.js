@@ -67,8 +67,7 @@ cc.Class({
 
     httpRequestModel.removeBoxprefab(); //技能图标挂载
 
-    var BoxPrefab = http_globalData.BoxPrefab_content; // BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab,info)
-
+    var BoxPrefab = http_globalData.BoxPrefab_content;
     this.biology_detail_list(BoxPrefab, info);
   },
   addWord: function addWord() {

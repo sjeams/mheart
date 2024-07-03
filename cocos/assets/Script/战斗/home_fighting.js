@@ -5,22 +5,8 @@ cc.Class({
       // 根据TOOLS生成相应的道具
       toolsArray:[],
       fightingArray:[],   
-      // content: cc.Node,
-      // person: cc.Prefab,
       home: cc.Node,
-      // back: cc.Node,
       back_time: cc.Node, //跳过回合
-      // //列表
-      // test_scrollView: {
-      //   default: null,
-      //   type: cc.ScrollView
-      // },
-      // //翻页容器
-      // test_pageView: {
-      //   default: null,
-      //   type: cc.PageView
-      // },
-
     },
     init(){
       // cc.director.getScene();//获取当前场景
@@ -31,13 +17,11 @@ cc.Class({
       http_globalData.BoxPrefab_content= cc.find('Canvas/大厅/content');
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
-
-
       await httpRequestModel.model_back_button('sence_ditu')//返回按钮
       await httpRequestBagApi.http_music()
+      await httpRequestBagApi.http_user_info() //加载用户信息
       await httpRequestModel.http_base_model();  // 引入 战斗模型model
       // this.spawnTools()
-      await httpRequestBagApi.http_user_info() //加载用户信息
       await this.spawnTools() //加载数据
       await httpRequestModel.fightingEnd() //加载结果
       await this.playTask() //开启回合战斗
@@ -72,7 +56,6 @@ cc.Class({
           http_globalData.fighting = data;
           //开启战斗
           resolve(); 
-          //  await   _this.goPlay( )
         });    
       }
       })
@@ -91,15 +74,60 @@ cc.Class({
         var poition_enemy = data.data.poition_enemy;
         //生物挂载
         var BoxPrefab = http_globalData.BoxPrefab_content
-        await BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab,poition_my,biolgy_state,1,0) //挂载生物--position_my
-        await BoxPrefab.getComponent('fightingTools').biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
-
-        // await this.biology_detail_list(BoxPrefab,poition_my,biolgy_state,1,0) //挂载生物--position_my
-        // await this.biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
-      // _this.addMapPic(data) //生成地图
-      // console.log( _this.toolsArray)
-      // console.log( cc.sys.fightingArray )
-        // resolve();})
+        await this.biology_detail_list(BoxPrefab,poition_my,biolgy_state,1,0) //挂载生物--position_my
+        await this.biology_detail_list(BoxPrefab,poition_enemy,biolgy_state,0,poition_my.length) //挂载生物--position_ememy
+    },
+    //生成生物
+    async biology_detail_list(TipBoxPrefab_model,info_list,biolgy_state,is_my,star){
+        return new Promise(resolve => {
+          var _this =this;
+          var TOOLS =[];
+          var TOOLS = info_list;
+          for (var prop in info_list) {
+              //声明节点对象
+              let  TipBoxPrefab_icon =  cc.instantiate(http_globalAsset.model_biology_fightingBiology);
+              let map = TOOLS[prop];
+              let info = map.biology;
+              //设置距离
+              var map_value = 50
+              if(is_my){
+                  var map_x =    map.x-map_value
+              }else{
+                  var map_x =    map.x+map_value
+              }
+              if(info.length!=0){
+                  //放在资源下面
+                  //加载图片
+                  TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[info.picture]
+                  if(is_my==0){
+                      //图片翻转
+                      TipBoxPrefab_icon.getChildByName('生物').setScale(-1, 1);
+                  }
+                  TipBoxPrefab_icon.getChildByName('生物').color = new cc.color(info.color); 
+                  TipBoxPrefab_icon.getChildByName('生命s').getComponent(cc.Label).string= httpRequest.number_string_wan(info.shengMing,2);
+                  TipBoxPrefab_icon.getChildByName('魔法s').getComponent(cc.Label).string= httpRequest.number_string_wan(info.moFa,2);
+                  TipBoxPrefab_icon.getChildByName('生物名称s').getComponent(cc.Label).string= info.name
+                  TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string= '等级'+info.grade+'('+biolgy_state[info.state]+')';
+                  //创建一个新button 并将其挂载到创建的精灵下
+                  httpRequestModel.model_biology_fightingBiology_button(TipBoxPrefab_icon,info);
+                  //写入icon
+                  TipBoxPrefab_icon.x=parseInt(map_x) //重新定义了间距
+                  TipBoxPrefab_icon.getChildByName('阵法s').getComponent(cc.Label).string= parseInt(prop)+1;
+                  TipBoxPrefab_icon.y=map.y
+                  TipBoxPrefab_icon.is_my=is_my//阵容
+                  TipBoxPrefab_icon.jing_bi=map.biology.jingBi//金币
+                  TipBoxPrefab_icon.biology_int=  parseInt(prop)+1//阵法编号
+                  TipBoxPrefab_icon.shengMing=map.biology.shengMing
+                  TipBoxPrefab_icon.moFa=map.biology.moFa
+                  TipBoxPrefab_icon.biology=map.biology.id
+                  TipBoxPrefab_icon.biology_name=map.biology.name
+                  cc.sys.toolsArray.push(TipBoxPrefab_icon);
+                  cc.sys.fightingArray[map.biology.id]=TipBoxPrefab_icon;
+                  TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
+              }
+          }
+        resolve();
+        })
     },
     // 战斗回合
     async fighting_boat(){
@@ -122,14 +150,6 @@ cc.Class({
               boat++;
             }
             await httpRequestFightingExtend.alertBoat('第'+ parseInt(boat+1)+'回合')
-            //判断下动作是否已经下一回合
-            // if(cc.find('Canvas/大厅/time').getComponent(cc.Label).string!='第'+ parseInt(boat+1)+'回合' ){
-            //   await this.alertBoat('第'+ parseInt(boat+1)+'回合')
-            //   // cc.find('Canvas/大厅/time').getComponent(cc.Label).string = '第'+ parseInt(boat+1)+'回合'                    
-            //   // return new Promise(resolve => {  cc.find('Canvas/大厅/time').runAction(   cc.sequence(cc.scaleTo(0.2, 2, 2),cc.scaleTo(0.2, 1,1),cc.callFunc(function(){   resolve()},this)));//建一个缩放到1.5倍大小的动作，持续时间2秒
-            //   //  }) 
-            // }
-            // cc.log(fighting_history[boat_count])
             //如果是空回合 ，等待跳过
             if(fighting_history[boat_count]){
               // cc.log(fighting_history[boat_count])
@@ -137,10 +157,7 @@ cc.Class({
               await   _this.fighting_historyGo(fighting_history[boat_count])//执行被动
               await   _this.fighting_historyDo(fighting_history[boat_count])//执行技能 
               await   _this.fighting_history(fighting_history[boat_count])//普通   
-            } 
-              // 绑定点击事件
-              // _this.back_time.on('click', _this.onButtonClicked,this);    
-             
+            }     
         // },1,boat_length,1.5);////2秒后执行1次间隔5秒
           }
       }
@@ -399,6 +416,25 @@ cc.Class({
     //     // 停止定时器
     //     this.unschedule(this.fighting_history);
     // }
-
+    async button_beishu(){
+      // var beisu_arr =[1,2,3,4,8];
+      if(http_globalData.user_info.beishu<4){
+        http_globalData.user_info.beishu = parseInt(http_globalData.user_info.beishu)+1
+      }else{
+        http_globalData.user_info.beishu=1
+      }
+      //修改倍数
+      await httpRequestBagApi.http_user_beishu_update()
+      // http_globalData.user_info.beishu
+      cc.find('Canvas/倍数/倍数s').getComponent(cc.Label).string = http_globalData.user_info.beishu;
+    },
+    // back_home(){
+    //   httpRequest.playGame("sence_dating")
+    // },
+    //跳过回合
+    back_time_show(){ 
+      // this.unscheduleAllCallbacks();//停止某组件的所有计时器
+      cc.find('Canvas/结算').active =true;
+    },
  
 });

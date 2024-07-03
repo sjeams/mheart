@@ -129,7 +129,7 @@ const HttpHelper = cc.Class({
         },
         //场景加载--进度条
         playGame(sence,task,no_progress) {
-            cc.log(sence)
+            // cc.log(sence)
             //场景转译
             // var sence =this.urlConfig(sence);
             http_globalAsset.http_base_redict_sence=''

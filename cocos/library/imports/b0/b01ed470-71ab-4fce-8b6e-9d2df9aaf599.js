@@ -65,13 +65,19 @@ window.http_globalAsset = {
     type: '图标生物',
     describe: '加载生物模型..'
   }, // {url:'图标装备',type:'图标装备',describe:'加载装备模型..'},
-  // {url:'图标技能',type:'图标技能',describe:'加载技能模型..'},
   {
+    url: '图标技能',
+    type: '图标技能',
+    describe: '加载技能模型..'
+  }, {
     url: '图标技能效果',
     type: '图标技能效果',
     describe: '加载技能效果..'
-  } // {url:'图标世界',type:'图标世界',describe:'加载世界模型..'},
-  ],
+  }, {
+    url: '图标世界',
+    type: '图标世界',
+    describe: '加载世界模型..'
+  }],
   // image 
   http_base_asset_biology: [],
   http_base_asset_skill: [],

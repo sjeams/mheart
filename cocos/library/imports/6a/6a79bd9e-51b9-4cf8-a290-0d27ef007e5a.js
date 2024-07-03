@@ -182,7 +182,7 @@ var httpModel = cc.Class({
                   }
 
                   var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
+                  //     httpRequestModel.openAlert_remove()
                   // }, this);
 
                   http_globalAsset.model_fighting_map = TipBoxPrefab;
@@ -213,7 +213,7 @@ var httpModel = cc.Class({
                   }
 
                   var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
+                  //     httpRequestModel.openAlert_remove()
                   // }, this);
 
                   http_globalAsset.model_fighting_word = TipBoxPrefab;
@@ -244,7 +244,7 @@ var httpModel = cc.Class({
                   }
 
                   var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
+                  //     httpRequestModel.openAlert_remove()
                   // }, this);
 
                   http_globalAsset.model_biology_jiaose = TipBoxPrefab;
@@ -275,7 +275,7 @@ var httpModel = cc.Class({
                   }
 
                   var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
+                  //     httpRequestModel.openAlert_remove()
                   // }, this);
 
                   http_globalAsset.model_biology_fightingBiology = TipBoxPrefab;
@@ -305,10 +305,7 @@ var httpModel = cc.Class({
                     return;
                   }
 
-                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
-                  // }, this);
-
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
                   http_globalAsset.model_biology_fightingDetail = TipBoxPrefab;
                   resolve();
                 });
@@ -321,6 +318,57 @@ var httpModel = cc.Class({
         }
       }, _callee9);
     }))();
+  },
+  //战斗--加载模板战斗生物技能--查看生物详情_弹窗
+  //按钮点击回调
+  model_biology_fightingBiology_button: function model_biology_fightingBiology_button(TipBoxPrefab_icon, info) {
+    // var _this =this;
+    TipBoxPrefab_icon.on('click', function () {
+      //技能图标挂载
+      var BoxPrefab = cc.find('Canvas/弹窗'); //图片直接传过去，不用再加载一次
+      //  var biology_image =TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame;
+      // 销毁所有弹窗
+
+      BoxPrefab.removeAllChildren();
+      var TipBoxPrefab = cc.instantiate(http_globalAsset.model_biology_fightingDetail); //点击事件
+
+      TipBoxPrefab.getChildByName('遮罩').on('click', function () {
+        TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
+        httpRequestModel.openAlert_remove();
+      }, this);
+      TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+        TipBoxPrefab.getChildByName('技能描述').removeAllChildren();
+      }, this); //载入生物详情
+
+      TipBoxPrefab.getChildByName('血s').getComponent(cc.Label).string = info.shengMing;
+      TipBoxPrefab.getChildByName('蓝s').getComponent(cc.Label).string = info.moFa;
+      TipBoxPrefab.getChildByName('生物名称s').getComponent(cc.Label).string = info.name;
+      TipBoxPrefab.getChildByName('种族名称s').getComponent(cc.Label).string = info.zhong_zhu + '族';
+      TipBoxPrefab.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade;
+      TipBoxPrefab.getChildByName('触发概率s').getComponent(cc.Label).string = '触发率' + info.chuFa + '%'; //生物命名必须叫生物
+
+      TipBoxPrefab.getChildByName('生物').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[info.picture];
+      TipBoxPrefab.getChildByName('力量s').getComponent(cc.Label).string = '力量:' + info.power;
+      TipBoxPrefab.getChildByName('敏捷s').getComponent(cc.Label).string = '敏捷:' + info.agile;
+      TipBoxPrefab.getChildByName('智力s').getComponent(cc.Label).string = '智力:' + info.intelligence;
+      TipBoxPrefab.getChildByName('攻击s').getComponent(cc.Label).string = '攻击:' + info.gongJi;
+      TipBoxPrefab.getChildByName('护甲s').getComponent(cc.Label).string = '护甲:' + info.huJia;
+      TipBoxPrefab.getChildByName('速度s').getComponent(cc.Label).string = '速度:' + info.suDu;
+      TipBoxPrefab.getChildByName('特攻s').getComponent(cc.Label).string = '特攻:' + info.faGong;
+      TipBoxPrefab.getChildByName('灵气s').getComponent(cc.Label).string = '灵气:' + info.reiki;
+      TipBoxPrefab.getChildByName('悟性s').getComponent(cc.Label).string = '悟性:' + info.wuXing;
+      TipBoxPrefab.getChildByName('暴击s').getComponent(cc.Label).string = '暴击:' + info.baojilv + '%';
+      TipBoxPrefab.getChildByName('吸血s').getComponent(cc.Label).string = '吸血:' + info.xiXue + '%';
+      TipBoxPrefab.getChildByName('暴伤s').getComponent(cc.Label).string = '暴伤:' + info.baoji + '%';
+      TipBoxPrefab.getChildByName('闪避s').getComponent(cc.Label).string = '闪避:' + info.shanbi + '%';
+      TipBoxPrefab.getChildByName('命中s').getComponent(cc.Label).string = '闪避' + '0%';
+      TipBoxPrefab.getChildByName('增伤s').getComponent(cc.Label).string = '增伤:' + info.jianShang + '%';
+      TipBoxPrefab.getChildByName('减伤s').getComponent(cc.Label).string = '减伤:' + info.zhenShang + '%'; //技能图标挂载
+
+      var tool = cc.instantiate(TipBoxPrefab);
+      tool.getComponent('skill_iconTools').biology_detail_skill(TipBoxPrefab, info.position_skill);
+      BoxPrefab.addChild(TipBoxPrefab, 1);
+    });
   },
   //战斗--加载模板战斗生物技能
   model_biology_SkillIcon: function model_biology_SkillIcon() {
@@ -336,10 +384,7 @@ var httpModel = cc.Class({
                     return;
                   }
 
-                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
-                  //     httpRequestModel.openzhenfa_hidden()
-                  // }, this);
-
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
                   http_globalAsset.model_biology_SkillIcon = TipBoxPrefab;
                   resolve();
                 });
@@ -406,11 +451,12 @@ var httpModel = cc.Class({
                     httpRequestModel.openAlert_hidden();
                   }, this);
                   TipBoxPrefab.getChildByName('返回地图').on('click', function () {
+                    httpRequestModel.removeBoxprefab();
                     httpRequest.playGame("sence_ditu");
                   }, this);
                   TipBoxPrefab.getChildByName('重播').on('click', function () {
                     httpRequestModel.removeBoxprefab();
-                    cc.find('Canvas/大厅/content').getComponent('score_fighting').playTask();
+                    cc.find('Canvas/大厅').getComponent('home_fighting').playTask();
                     httpRequestModel.openAlert_hidden();
                   }, this);
                   http_globalData.model_biology_fightingEnd = TipBoxPrefab;
@@ -438,8 +484,7 @@ var httpModel = cc.Class({
               return _context13.abrupt("return", new Promise(function (resolve) {
                 var fighting_list = http_globalData.fighting.data; //开始实例化预制资源
 
-                var TipBoxPrefab = http_globalData.model_biology_fightingEnd; // cc.log(TipBoxPrefab)
-                // TipBoxPrefab.getComponent('fightingTools').initInfo(fighting_list); //写入奖励物品预制体
+                var TipBoxPrefab = http_globalData.model_biology_fightingEnd;
 
                 if (fighting_list.poition_winner == 1) {
                   TipBoxPrefab.getChildByName('结果s').getComponent(cc.Label).string = '胜利！';

@@ -43,13 +43,10 @@
       },
       {
         "__id__": 27
-      },
-      {
-        "__id__": 28
       }
     ],
     "_prefab": {
-      "__id__": 29
+      "__id__": 28
     },
     "_opacity": 255,
     "_color": {
@@ -106,7 +103,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 3
@@ -510,7 +507,7 @@
     "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -605,7 +602,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 39.8
+      "height": 42.32
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -657,14 +654,14 @@
     "_useOriginalSize": false,
     "_string": "（普通世界）",
     "_N$string": "（普通世界）",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -878,16 +875,6 @@
     },
     "fileId": "557XyUMiRAzZ1kvxv2W+28",
     "sync": false
-  },
-  {
-    "__type__": "9fe90XuBmFABbeLvXUzRi55",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_id": ""
   },
   {
     "__type__": "cc.Sprite",

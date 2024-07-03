@@ -50,45 +50,45 @@ cc.Class({
               //     iBoxPrefab.getComponent(cc.Sprite).setMaterial(0, material)
               // })
               //大厅需要加载的全局变量
+              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造');
               http_globalData.chuanzao_xibao = []; //细胞
 
-              _context.next = 3;
+              _context.next = 4;
+              return httpRequestBagApi.http_music();
+
+            case 4:
+              _context.next = 6;
               return httpRequestModel.model_zhaohuan_chuangzao();
 
-            case 3:
-              _context.next = 5;
+            case 6:
+              _context.next = 8;
               return httpRequestAlert.alert_biologyDetail();
 
-            case 5:
-              _context.next = 7;
+            case 8:
+              _context.next = 10;
               return httpRequestAlert.alert_shangdian();
 
-            case 7:
-              _context.next = 9;
+            case 10:
+              _context.next = 12;
               return httpRequestBagApi.http_user_info();
 
-            case 9:
-              _context.next = 11;
+            case 12:
+              _context.next = 14;
               return _this2.menu_chuangzao();
 
-            case 11:
-              _context.next = 13;
+            case 14:
+              _context.next = 16;
               return _this2.menu_ronghe();
 
-            case 13:
-              _context.next = 15;
+            case 16:
+              _context.next = 18;
               return _this2.menu_xunlian();
 
-            case 15:
-              _context.next = 17;
+            case 18:
+              _context.next = 20;
               return _this2.menu_huishou();
 
-            case 17:
-              //加载召唤菜单
-              http_globalData.check_Prefab = cc.find('Canvas/大厅/创造'); // httpRequestBagApi.materialTime(http_globalData.materialPrefab)  //预制体晃动
-              // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
-
-            case 18:
+            case 20:
             case "end":
               return _context.stop();
           }
@@ -146,9 +146,10 @@ cc.Class({
 
                 _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/无", TipBoxPrefab_model_name6, 6);
 
-                _this.onclick_chuangzao(TipBoxPrefab);
+                _this.onclick_chuangzao(TipBoxPrefab); // 占用2cd
+                // httpRequestAsset.materialTime( cc.find('云游商人/云游商人b',TipBoxPrefab).getComponent(cc.Sprite)) //加载摇晃材质
 
-                http_globalData.materialPrefab = cc.find('云游商人/云游商人b', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 10, 20, -20, 1.2);
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转3'), 1, 5, 5, -5, 1.2);

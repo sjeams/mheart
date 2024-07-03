@@ -1,7 +1,6 @@
 // require("../common"); 
 cc.Class({
     extends: cc.Component,
-
     properties: {
     },
     async onLoad () {
@@ -30,7 +29,6 @@ cc.Class({
       httpRequestModel.removeBoxprefab()
       //技能图标挂载
       var BoxPrefab =http_globalData.BoxPrefab_content
-      // BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab,info)
       this.biology_detail_list(BoxPrefab,info)
     },
     addWord(){

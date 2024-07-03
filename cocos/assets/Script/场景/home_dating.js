@@ -5,12 +5,8 @@ cc.Class({
 
      },
    async  onLoad () {
-          // 常驻节点
-          // cc.game.addPersistRootNode( myNode)
-          // cc.game.removePersistRootNode( myNode)
          //获取生物列表--实例化用户登录信息
          await httpRequestBagApi.http_music()
-     //     await httpRequestAlert.alert_tips(); //加载弹窗模板
          await httpRequestBagApi.http_user_info()    //用户信息
          await httpRequestBagApi.http_bag_info()     //背包信息 
          this.go_user_info()
