@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "A融合",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "data": {
@@ -13,88 +13,22 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "A创造",
+    "_name": "back",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
       {
         "__id__": 2
-      },
-      {
-        "__id__": 5
-      },
-      {
-        "__id__": 8
       }
     ],
-    "_active": true,
-    "_components": [],
-    "_prefab": {
-      "__id__": 17
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 1200,
-      "height": 700
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "生物细胞",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 3
+        "__id__": 9
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 10
     },
     "_opacity": 255,
     "_color": {
@@ -106,8 +40,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
-      "height": 360
+      "width": 100,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -118,8 +52,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -150,
-        0,
+        -500,
+        320,
         0,
         0,
         0,
@@ -144,191 +78,38 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 2
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a46ecef5-ca0e-4048-9656-0dd816766fde"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "65b182dc-72c3-4e4a-b465-6f55cb7370d5"
-    },
-    "fileId": "f4i1aGFLRKor6Gt0pPoLsM",
-    "sync": false
-  },
-  {
     "__type__": "cc.Node",
-    "_name": "生物创造",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 6
-      }
-    ],
-    "_prefab": {
-      "__id__": 7
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 360,
-      "height": 360
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        350,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 5
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a46ecef5-ca0e-4048-9656-0dd816766fde"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "65b182dc-72c3-4e4a-b465-6f55cb7370d5"
-    },
-    "fileId": "e51pr3k51Kqa91DDNy9vzf",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "重置",
+    "_name": "Background",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [
       {
-        "__id__": 9
+        "__id__": 3
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 14
-      },
-      {
-        "__id__": 15
+        "__id__": 7
       }
     ],
     "_prefab": {
-      "__id__": 16
+      "__id__": 8
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 120,
+      "g": 120,
+      "b": 120,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
-      "height": 60
+      "width": 100,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -339,8 +120,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        400,
-        -300,
+        0,
+        0,
         0,
         0,
         0,
@@ -366,26 +147,23 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "重置s",
+    "_name": "返回s",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 8
+      "__id__": 2
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 10
+        "__id__": 4
       },
       {
-        "__id__": 11
-      },
-      {
-        "__id__": 12
+        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 13
+      "__id__": 6
     },
     "_opacity": 255,
     "_color": {
@@ -397,8 +175,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 68,
-      "height": 44.32
+      "width": 100,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -439,7 +217,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 9
+      "__id__": 3
     },
     "_enabled": true,
     "_materials": [
@@ -448,22 +226,22 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "重置",
-    "_N$string": "重置",
-    "_fontSize": 32,
-    "_lineHeight": 32,
-    "_enableWrapText": true,
+    "_string": "返回",
+    "_N$string": "返回",
+    "_fontSize": 20,
+    "_lineHeight": 40,
+    "_enableWrapText": false,
     "_N$file": null,
-    "_isSystemFontUsed": false,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 1,
+    "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "仿宋",
-    "_N$overflow": 0,
-    "_N$cacheMode": 0,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 1,
+    "_N$cacheMode": 1,
     "_id": ""
   },
   {
@@ -471,7 +249,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 9
+      "__id__": 3
     },
     "_enabled": true,
     "_color": {
@@ -481,30 +259,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.LabelShadow",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 9
-    },
-    "_enabled": true,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_offset": {
-      "__type__": "cc.Vec2",
-      "x": 4,
-      "y": 4
-    },
-    "_blur": 4,
+    "_width": 1,
     "_id": ""
   },
   {
@@ -513,9 +268,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "65b182dc-72c3-4e4a-b465-6f55cb7370d5"
+      "__uuid__": "02cb371e-b443-4575-91ac-8d5c9f72b32b"
     },
-    "fileId": "3f3CiCtz9BFYhn2dDXKJWN",
+    "fileId": "aeCjDlnG5IUJYxKoH0LTap",
     "sync": false
   },
   {
@@ -523,7 +278,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 8
+      "__id__": 2
     },
     "_enabled": true,
     "_materials": [
@@ -536,7 +291,7 @@
     "_spriteFrame": {
       "__uuid__": "a36557ae-c6fa-440b-b62a-bdeeb58f773d"
     },
-    "_type": 0,
+    "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
@@ -551,16 +306,25 @@
     "_id": ""
   },
   {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "02cb371e-b443-4575-91ac-8d5c9f72b32b"
+    },
+    "fileId": "93mnAD/fJA5pHk8FwHSX+O",
+    "sync": false
+  },
+  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 8
+      "__id__": 1
     },
     "_enabled": true,
-    "_normalMaterial": {
-      "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-    },
+    "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
@@ -626,20 +390,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "65b182dc-72c3-4e4a-b465-6f55cb7370d5"
+      "__uuid__": "02cb371e-b443-4575-91ac-8d5c9f72b32b"
     },
-    "fileId": "57su/OID5OCptSpxsBQCFe",
-    "sync": false
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "65b182dc-72c3-4e4a-b465-6f55cb7370d5"
-    },
-    "fileId": "9emaR4HHhAIrISktmIy4Mk",
+    "fileId": "7fVu5/ckBAO64ZwkKEBlZb",
     "sync": false
   }
 ]

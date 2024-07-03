@@ -31,8 +31,10 @@ cc.Class({
       http_globalData.BoxPrefab_content= cc.find('Canvas/大厅/content');
       cc.sys.fightingArray=[]
       cc.sys.toolsArray=[]
-      await httpRequestBagApi.http_music()
 
+
+      await httpRequestModel.model_back_button('sence_ditu')//返回按钮
+      await httpRequestBagApi.http_music()
       await httpRequestModel.http_base_model();  // 引入 战斗模型model
       // this.spawnTools()
       await httpRequestBagApi.http_user_info() //加载用户信息
@@ -367,12 +369,12 @@ cc.Class({
     //     _this.addWordMap(data)
     //     })
     // },
-    back_map(){
-      //移除节点
-      // var _this = this;
-      httpRequestModel.removeBoxprefab()
-      httpRequest.playGame("sence_ditu")
-    },
+    // back_map(){
+    //   //移除节点
+    //   // var _this = this;
+    //   // httpRequestModel.removeBoxprefab()
+    //   httpRequest.playGame("sence_ditu")
+    // },
     //重播
     back_reload(){
       //移除节点

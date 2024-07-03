@@ -25,13 +25,18 @@ cc.Class({
               return httpRequestBagApi.http_music();
 
             case 2:
+              _context.next = 4;
+              return httpRequestModel.model_fighting_map();
+
+            case 4:
+              // 引入 战斗模型model
               //全局定义容器节点
               http_globalData.BoxPrefab_content = cc.find('Canvas/战斗/content');
 
               _this2.spawnTools(); // this.scroll_view.node.on("scroll-ended", this.on_scroll_ended.bind(this), this);
 
 
-            case 4:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -56,24 +61,9 @@ cc.Class({
       }
     });
   },
-  // //生成地图
-  // addMapPic(data){
-  //     var _this = this;
-  //     if(data.data['map_pic']){
-  //       var  map_pic =data.data['map_pic'];
-  //     }else{
-  //       var  map_pic =data.data['picture'];
-  //     }
-  //     var remoteUrl = httpRequest.httpUrl(map_pic);
-  //       cc.loader.load({ url: remoteUrl }, function (err, texture) {  
-  //         if(texture!=null){
-  //           _this.home.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
-  //         }
-  //     });
-  // },
   //生成生物
   addWordMap: function addWordMap(data) {
-    cc.log(data);
+    // cc.log(data)
     cc.find('Canvas/当前世界').getComponent(cc.Label).string = data.name + '(' + data.time + '年)';
     cc.find('Canvas/流速').getComponent(cc.Label).string = '流速: ' + data.time + '年/S';
     cc.find('Canvas/类型').getComponent(cc.Label).string = '类型: ' + data.type_name;

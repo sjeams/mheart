@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'score_fighting');
-// Script/战斗/score_fighting.js
+cc._RF.push(module, 'ed8ebeqhB9JK7/jr/MBPGZr', 'home_fighting');
+// Script/战斗/home_fighting.js
 
 "use strict";
 
@@ -48,29 +48,33 @@ cc.Class({
               cc.sys.fightingArray = [];
               cc.sys.toolsArray = [];
               _context.next = 5;
-              return httpRequestBagApi.http_music();
+              return httpRequestModel.model_back_button('sence_ditu');
 
             case 5:
               _context.next = 7;
-              return httpRequestModel.http_base_model();
+              return httpRequestBagApi.http_music();
 
             case 7:
               _context.next = 9;
-              return httpRequestBagApi.http_user_info();
+              return httpRequestModel.http_base_model();
 
             case 9:
               _context.next = 11;
-              return _this2.spawnTools();
+              return httpRequestBagApi.http_user_info();
 
             case 11:
               _context.next = 13;
-              return httpRequestModel.fightingEnd();
+              return _this2.spawnTools();
 
             case 13:
               _context.next = 15;
-              return _this2.playTask();
+              return httpRequestModel.fightingEnd();
 
             case 15:
+              _context.next = 17;
+              return _this2.playTask();
+
+            case 17:
             case "end":
               return _context.stop();
           }
@@ -701,12 +705,12 @@ cc.Class({
   //     _this.addWordMap(data)
   //     })
   // },
-  back_map: function back_map() {
-    //移除节点
-    // var _this = this;
-    httpRequestModel.removeBoxprefab();
-    httpRequest.playGame("sence_ditu");
-  },
+  // back_map(){
+  //   //移除节点
+  //   // var _this = this;
+  //   // httpRequestModel.removeBoxprefab()
+  //   httpRequest.playGame("sence_ditu")
+  // },
   //重播
   back_reload: function back_reload() {
     //移除节点

@@ -14,7 +14,7 @@ const httpAlert = cc.Class({
         return stag_name;
     },
     //操作加载弹窗模板
-   async alert_getTips() {
+   async alert_tips() {
         return new Promise(resolve => {    
         cc.loader.loadRes('/model弹窗/弹窗提示', function(errorMessage,loadedResource){
                 // var TipBoxPrefab_tips = cc.instantiate(loadedResource);
@@ -95,7 +95,7 @@ const httpAlert = cc.Class({
         return new Promise(resolve => {    
             httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'),0,1,360,360,1.6)
             httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'),0,1,360,360,1.6)
-        // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+ 
         // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
             this.schedule(function(){
                 var  TipBoxPrefab_tips = http_globalData.alert_biologyDetail

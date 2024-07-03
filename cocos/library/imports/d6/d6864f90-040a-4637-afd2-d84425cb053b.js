@@ -27,7 +27,7 @@ var httpAlert = cc.Class({
     return stag_name;
   },
   //操作加载弹窗模板
-  alert_getTips: function alert_getTips() {
+  alert_tips: function alert_tips() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -150,8 +150,7 @@ var httpAlert = cc.Class({
             case 0:
               return _context4.abrupt("return", new Promise(function (resolve) {
                 httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 0, 1, 360, 360, 1.6);
-                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.6); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
-                // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 0, 1, 360, 360, 1.6); // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
 
                 _this4.schedule(function () {
                   var TipBoxPrefab_tips = http_globalData.alert_biologyDetail; // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips

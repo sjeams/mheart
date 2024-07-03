@@ -136,14 +136,107 @@ var httpModel = cc.Class({
       }, _callee3);
     }))();
   },
-  //战斗--加载模板战斗生物详情
-  model_biology_jiaose: function model_biology_jiaose() {
+  //返回按钮
+  model_back_button: function model_back_button(sence) {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               return _context4.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model按钮/返回', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource);
+                  TipBoxPrefab.on('click', function () {
+                    httpRequest.playGame('sence_dating');
+                  }, this);
+                  cc.find('Canvas/按钮').addChild(TipBoxPrefab, this);
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }))();
+  },
+  //战斗--加载模板战斗生物详情
+  model_fighting_map: function model_fighting_map() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              return _context5.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model战斗/sprite_地图', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_fighting_map = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }))();
+  },
+  //战斗--加载模板战斗生物详情
+  model_fighting_word: function model_fighting_word() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              return _context6.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model战斗/sprite_世界', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_fighting_word = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }))();
+  },
+  //战斗--加载模板战斗生物详情
+  model_biology_jiaose: function model_biology_jiaose() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              return _context7.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model召唤/角色选择', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -161,20 +254,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context4.stop();
+              return _context7.stop();
           }
         }
-      }, _callee4);
+      }, _callee7);
     }))();
   },
   //战斗--加载模板战斗生物详情
   model_biology_fightingBiology: function model_biology_fightingBiology() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+      return regeneratorRuntime.wrap(function _callee8$(_context8) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context8.prev = _context8.next) {
             case 0:
-              return _context5.abrupt("return", new Promise(function (resolve) {
+              return _context8.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model战斗/biology_生物详情', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -192,20 +285,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context5.stop();
+              return _context8.stop();
           }
         }
-      }, _callee5);
+      }, _callee8);
     }))();
   },
   //战斗--加载模板战斗生物技能
   model_biology_fightingDetail: function model_biology_fightingDetail() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+      return regeneratorRuntime.wrap(function _callee9$(_context9) {
         while (1) {
-          switch (_context6.prev = _context6.next) {
+          switch (_context9.prev = _context9.next) {
             case 0:
-              return _context6.abrupt("return", new Promise(function (resolve) {
+              return _context9.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model弹窗/biology_生物_战斗详情', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -223,20 +316,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context6.stop();
+              return _context9.stop();
           }
         }
-      }, _callee6);
+      }, _callee9);
     }))();
   },
   //战斗--加载模板战斗生物技能
   model_biology_SkillIcon: function model_biology_SkillIcon() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
-      return regeneratorRuntime.wrap(function _callee7$(_context7) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
+      return regeneratorRuntime.wrap(function _callee10$(_context10) {
         while (1) {
-          switch (_context7.prev = _context7.next) {
+          switch (_context10.prev = _context10.next) {
             case 0:
-              return _context7.abrupt("return", new Promise(function (resolve) {
+              return _context10.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -254,20 +347,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context7.stop();
+              return _context10.stop();
           }
         }
-      }, _callee7);
+      }, _callee10);
     }))();
   },
   //战斗--加载模板战斗生物技能
   model_biology_SkillTips: function model_biology_SkillTips() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
-      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+      return regeneratorRuntime.wrap(function _callee11$(_context11) {
         while (1) {
-          switch (_context8.prev = _context8.next) {
+          switch (_context11.prev = _context11.next) {
             case 0:
-              return _context8.abrupt("return", new Promise(function (resolve) {
+              return _context11.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -285,30 +378,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context8.stop();
+              return _context11.stop();
           }
         }
-      }, _callee8);
+      }, _callee11);
     }))();
   },
-  // //操作提示
-  // alert_goTips(tips){
-  //     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
-  //     TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
-  //     TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
-  //         //移除挂载
-  //         TipBoxPrefab_tips.destroy();
-  //     },this)); 
-  //     cc.find('Canvas').addChild(TipBoxPrefab_tips); 
-  // },
   //战斗-战斗结束
   model_biology_fightingEnd: function model_biology_fightingEnd() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
-      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
+      return regeneratorRuntime.wrap(function _callee12$(_context12) {
         while (1) {
-          switch (_context9.prev = _context9.next) {
+          switch (_context12.prev = _context12.next) {
             case 0:
-              return _context9.abrupt("return", new Promise(function (resolve) {
+              return _context12.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model弹窗/biology_结算', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -337,22 +420,22 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context9.stop();
+              return _context12.stop();
           }
         }
-      }, _callee9);
+      }, _callee12);
     }))();
   },
   //生成战斗结束
   fightingEnd: function fightingEnd() {
     var _this = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
-      return regeneratorRuntime.wrap(function _callee10$(_context10) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+      return regeneratorRuntime.wrap(function _callee13$(_context13) {
         while (1) {
-          switch (_context10.prev = _context10.next) {
+          switch (_context13.prev = _context13.next) {
             case 0:
-              return _context10.abrupt("return", new Promise(function (resolve) {
+              return _context13.abrupt("return", new Promise(function (resolve) {
                 var fighting_list = http_globalData.fighting.data; //开始实例化预制资源
 
                 var TipBoxPrefab = http_globalData.model_biology_fightingEnd; // cc.log(TipBoxPrefab)
@@ -371,20 +454,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context10.stop();
+              return _context13.stop();
           }
         }
-      }, _callee10);
+      }, _callee13);
     }))();
   },
   //背包
   model_home_openBiology: function model_home_openBiology() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
-      return regeneratorRuntime.wrap(function _callee11$(_context11) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
+      return regeneratorRuntime.wrap(function _callee14$(_context14) {
         while (1) {
-          switch (_context11.prev = _context11.next) {
+          switch (_context14.prev = _context14.next) {
             case 0:
-              return _context11.abrupt("return", new Promise(function (resolve) {
+              return _context14.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model背包/A生物背包', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -402,20 +485,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context11.stop();
+              return _context14.stop();
           }
         }
-      }, _callee11);
+      }, _callee14);
     }))();
   },
   //阵法
   model_home_zhenfa: function model_home_zhenfa() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
-      return regeneratorRuntime.wrap(function _callee12$(_context12) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
+      return regeneratorRuntime.wrap(function _callee15$(_context15) {
         while (1) {
-          switch (_context12.prev = _context12.next) {
+          switch (_context15.prev = _context15.next) {
             case 0:
-              return _context12.abrupt("return", new Promise(function (resolve) {
+              return _context15.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/A生物布阵', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -433,20 +516,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context12.stop();
+              return _context15.stop();
           }
         }
-      }, _callee12);
+      }, _callee15);
     }))();
   },
   //阵法
   model_home_zhenfa_bag: function model_home_zhenfa_bag() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
-      return regeneratorRuntime.wrap(function _callee13$(_context13) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
+      return regeneratorRuntime.wrap(function _callee16$(_context16) {
         while (1) {
-          switch (_context13.prev = _context13.next) {
+          switch (_context16.prev = _context16.next) {
             case 0:
-              return _context13.abrupt("return", new Promise(function (resolve) {
+              return _context16.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/背包生物', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -464,20 +547,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context13.stop();
+              return _context16.stop();
           }
         }
-      }, _callee13);
+      }, _callee16);
     }))();
   },
   //阵法
   model_home_zhenfa_icon: function model_home_zhenfa_icon() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
-      return regeneratorRuntime.wrap(function _callee14$(_context14) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17() {
+      return regeneratorRuntime.wrap(function _callee17$(_context17) {
         while (1) {
-          switch (_context14.prev = _context14.next) {
+          switch (_context17.prev = _context17.next) {
             case 0:
-              return _context14.abrupt("return", new Promise(function (resolve) {
+              return _context17.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/图标生物', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -495,20 +578,20 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context14.stop();
+              return _context17.stop();
           }
         }
-      }, _callee14);
+      }, _callee17);
     }))();
   },
   //阵法
   model_home_zhenfa_biology: function model_home_zhenfa_biology() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
-      return regeneratorRuntime.wrap(function _callee15$(_context15) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18() {
+      return regeneratorRuntime.wrap(function _callee18$(_context18) {
         while (1) {
-          switch (_context15.prev = _context15.next) {
+          switch (_context18.prev = _context18.next) {
             case 0:
-              return _context15.abrupt("return", new Promise(function (resolve) {
+              return _context18.abrupt("return", new Promise(function (resolve) {
                 cc.loader.loadRes('/model布阵/图标阵法', function (errorMessage, loadedResource) {
                   if (errorMessage) {
                     cc.log('载入预制资源失败, 原因:' + errorMessage);
@@ -526,10 +609,40 @@ var httpModel = cc.Class({
 
             case 1:
             case "end":
-              return _context15.stop();
+              return _context18.stop();
           }
         }
-      }, _callee15);
+      }, _callee18);
+    }))();
+  },
+  model_zhaohuan_chuangzao: function model_zhaohuan_chuangzao() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19() {
+      return regeneratorRuntime.wrap(function _callee19$(_context19) {
+        while (1) {
+          switch (_context19.prev = _context19.next) {
+            case 0:
+              return _context19.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model召唤/A创造', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhaohuan_chuangzao = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context19.stop();
+          }
+        }
+      }, _callee19);
     }))();
   }
 });

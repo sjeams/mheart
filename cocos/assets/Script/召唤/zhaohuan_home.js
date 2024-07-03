@@ -35,7 +35,8 @@ cc.Class({
         // })
         //大厅需要加载的全局变量
         http_globalData.chuanzao_xibao=[];//细胞
-        await httpRequestAlert.alert_getTips(); //加载弹窗模板
+        await httpRequestModel.model_zhaohuan_chuangzao(); //加载商店
+        // await httpRequestAlert.alert_tips(); //加载弹窗模板
         await httpRequestAlert.alert_biologyDetail(); //加载生物详情
         await httpRequestAlert.alert_shangdian(); //加载商店
         // cc.log(http_globalData.user_info)
@@ -55,13 +56,13 @@ cc.Class({
     //加载菜单-创造
     async menu_chuangzao(){
         var _this =this;
-        cc.log(http_globalData.user_info)
+        // cc.log(http_globalData.user_info)
         return new Promise(resolve => {
             //技能图标挂载
             var BoxPrefab = cc.find('Canvas/大厅/创造')
-            cc.loader.loadRes('/model召唤/A创造', function(errorMessage,loadedResource){
+            // cc.loader.loadRes('/model召唤/A创造', function(errorMessage,loadedResource){
                 //开始实例化预制资源
-                var TipBoxPrefab = cc.instantiate(loadedResource);
+                var TipBoxPrefab = cc.instantiate(http_globalAsset.model_zhaohuan_chuangzao);
                 var TipBoxPrefab_model_name1=  "生物细胞/金/金s";
                 var TipBoxPrefab_model_name2=  "生物细胞/木/木s";
                 var TipBoxPrefab_model_name3=  "生物细胞/水/水s";
@@ -91,7 +92,7 @@ cc.Class({
                 BoxPrefab.addChild(TipBoxPrefab,1); // 预制体、zindex层级
                 resolve();
             })
-        });
+        // });
     },
     menu_chuangzao_xibao_update(TipBoxPrefab,TipBoxPrefab_model_name,num){
         cc.find(TipBoxPrefab_model_name,TipBoxPrefab).getComponent(cc.Label).string=num
@@ -175,7 +176,7 @@ cc.Class({
                 http_globalData.user_info['biology'+item.type] = item.now_num
             }
             this.button_zhaohuan_clear(TipBoxPrefab);
-            // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
+ 
             // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
             // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
             //     //移除挂载

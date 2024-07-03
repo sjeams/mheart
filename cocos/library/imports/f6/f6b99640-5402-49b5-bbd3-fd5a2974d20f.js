@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'word_score');
-// Script/场景/word_score.js
+cc._RF.push(module, 'f6b99ZAVAJJtbvT/VopdNIP', 'home_word');
+// Script/场景/home_word.js
 
 "use strict";
 
@@ -21,15 +21,15 @@ cc.Class({
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return httpRequestBagApi.http_music();
+              return httpRequestModel.model_back_button('sence_dating');
 
             case 2:
               _context.next = 4;
-              return httpRequestAsset.http_base_asset();
+              return httpRequestBagApi.http_music();
 
             case 4:
               _context.next = 6;
-              return httpRequestModel.http_base_model();
+              return httpRequestModel.model_fighting_word();
 
             case 6:
               // 引入 战斗模型model
@@ -67,8 +67,9 @@ cc.Class({
 
     httpRequestModel.removeBoxprefab(); //技能图标挂载
 
-    var BoxPrefab = http_globalData.BoxPrefab_content;
-    BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab, info);
+    var BoxPrefab = http_globalData.BoxPrefab_content; // BoxPrefab.getComponent('wordTools').biology_detail_list(BoxPrefab,info)
+
+    this.biology_detail_list(BoxPrefab, info);
   },
   addWord: function addWord() {
     var _this = this;
@@ -108,6 +109,57 @@ cc.Class({
   searchHidden: function searchHidden() {
     cc.find("Canvas/大厅/探索世界").active = false;
     cc.find("Canvas/大厅/退出世界").active = true;
+  },
+  //技能图片渲染
+  biology_detail_list: function biology_detail_list(TipBoxPrefab_model, info_list) {
+    var _this = this;
+
+    var TOOLS = [];
+    var TOOLS = info_list; //开始实例化预制资源
+
+    for (var prop in info_list) {
+      //声明节点对象
+      var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_fighting_word);
+      var info = TOOLS[prop]; //放在资源下面
+
+      var image = info.picture;
+      TipBoxPrefab_icon.getChildByName('世界').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_word[image];
+      var color = ['#ffffff', 'green', '#BDFF00', '#FFD100', '#FF0000', '#ffe000'];
+      var type_color = color[info['type']]; // console.log(info)
+
+      var star = '';
+
+      for (var i = 0; i <= info['star']; i++) {
+        star += '⭐';
+      }
+
+      TipBoxPrefab_icon.getChildByName('名称').getComponent(cc.Label).string = info.name;
+      TipBoxPrefab_icon.getChildByName('名称').color = new cc.color(type_color);
+      TipBoxPrefab_icon.getChildByName('世界等级').getComponent(cc.Label).string = info.type_name;
+      TipBoxPrefab_icon.getChildByName('世界等级').color = new cc.color(type_color);
+      TipBoxPrefab_icon.getChildByName('星级').getComponent(cc.Label).string = star; //创建一个新button 并将其挂载到创建的精灵下
+
+      _this.onConfirBtn(TipBoxPrefab_icon, info); //写入icon
+
+
+      TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
+    }
+
+    return TipBoxPrefab_model;
+  },
+  //按钮点击回调
+  onConfirBtn: function onConfirBtn(TipBoxPrefab_icon, info) {
+    var _this = this;
+
+    TipBoxPrefab_icon.on('click', function () {
+      httpRequest.httpPost('/app/app-apiword/in-word', {
+        'wordid': info.id,
+        'star': info.star
+      }, function (data) {
+        //跳转到世界
+        httpRequest.playGame("sence_ditu");
+      });
+    });
   }
 });
 

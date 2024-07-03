@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '9acd6ttOHZOHr2DPhLJYZ2C', 'home_scence');
-// Script/场景/home_scence.js
+cc._RF.push(module, '9acd6ttOHZOHr2DPhLJYZ2C', 'home_dating');
+// Script/场景/home_dating.js
 
 "use strict";
 
@@ -25,21 +25,17 @@ cc.Class({
 
             case 2:
               _context.next = 4;
-              return httpRequestAlert.alert_getTips();
+              return httpRequestBagApi.http_user_info();
 
             case 4:
               _context.next = 6;
-              return httpRequestBagApi.http_user_info();
-
-            case 6:
-              _context.next = 8;
               return httpRequestBagApi.http_bag_info();
 
-            case 8:
-              //背包信息
+            case 6:
+              //背包信息 
               _this.go_user_info();
 
-            case 9:
+            case 7:
             case "end":
               return _context.stop();
           }

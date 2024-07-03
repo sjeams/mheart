@@ -37,16 +37,21 @@ var httpBagApi = cc.Class({
               return httpRequestBagApi.http_home_music();
 
             case 6:
+              if (http_globalAsset.alert_tips) {
+                _context.next = 9;
+                break;
+              }
+
+              _context.next = 9;
+              return httpRequestAlert.alert_tips();
+
+            case 9:
               // 没有资源，需要重新加载资源
               if (http_globalAsset.http_base_asset_num == 0) {
                 httpRequest.playGame("", 0, 1); //加载资源的进度条
-              } // if(!http_globalAsset.http_base_request){
-              //     await httpRequestBagApi.http_base_request();//加载音乐
-              // }
-              // await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
+              }
 
-
-            case 7:
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -54,12 +59,6 @@ var httpBagApi = cc.Class({
       }, _callee);
     }))();
   },
-  // //--基础类加载
-  // async http_base_request(){
-  //     await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
-  //     await httpRequestModel.http_base_model();  // 引入 战斗模型model
-  //     http_globalAsset.http_base_request =1; //基础类
-  // },
   //加载音乐
   http_home_music: function http_home_music() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
@@ -70,7 +69,7 @@ var httpBagApi = cc.Class({
               return _context2.abrupt("return", new Promise(function (resolve) {
                 //获取全局播放器
                 if (cc.find("Audio")) {
-                  http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("AudioManager"); //停止再开启背景音乐
+                  http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("home_music"); //停止再开启背景音乐
                   // this.AudioPlayer.stopBgMusic();
 
                   http_globalAsset.AudioPlayer.playBgMusic();

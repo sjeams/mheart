@@ -54,9 +54,50 @@ const httpModel = cc.Class({
         // cc.find('Canvas/弹窗').removeAllChildren();
     },
 
-
-
-
+    //返回按钮
+    async model_back_button(sence) {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model按钮/返回', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                TipBoxPrefab.on('click', function () {
+                    httpRequest.playGame('sence_dating')
+                }, this);
+                cc.find('Canvas/按钮').addChild(TipBoxPrefab,this);
+                resolve();
+            })   
+        });
+    },
+ 
+    //战斗--加载模板战斗生物详情
+    async model_fighting_map() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model战斗/sprite_地图', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_fighting_map =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+   
+    //战斗--加载模板战斗生物详情
+    async model_fighting_word() {
+        return new Promise(resolve => {    
+        cc.loader.loadRes('/model战斗/sprite_世界', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_fighting_word =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
    
     //战斗--加载模板战斗生物详情
     async model_biology_jiaose() {
@@ -131,18 +172,7 @@ const httpModel = cc.Class({
             })   
         });
     },
-
-    // //操作提示
-    // alert_goTips(tips){
-    //     var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
-    //     TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
-    //     TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
-    //         //移除挂载
-    //         TipBoxPrefab_tips.destroy();
-    //     },this)); 
-    //     cc.find('Canvas').addChild(TipBoxPrefab_tips); 
-    // },
-
+ 
 
    //战斗-战斗结束
     async model_biology_fightingEnd() {
@@ -265,5 +295,20 @@ const httpModel = cc.Class({
         });
     },
  
+
+ 
+        async model_zhaohuan_chuangzao() {
+            return new Promise(resolve => {    
+                cc.loader.loadRes('/model召唤/A创造', function(errorMessage,loadedResource){
+                    if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                    var TipBoxPrefab = cc.instantiate(loadedResource);
+                    // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                    //     httpRequestModel.openzhenfa_hidden()
+                    // }, this);
+                    http_globalAsset.model_zhaohuan_chuangzao =TipBoxPrefab
+                    resolve();
+                })   
+            });
+        },
 });
 window.httpRequestModel = new httpModel();

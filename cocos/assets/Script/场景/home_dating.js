@@ -10,9 +10,9 @@ cc.Class({
           // cc.game.removePersistRootNode( myNode)
          //获取生物列表--实例化用户登录信息
          await httpRequestBagApi.http_music()
-         await httpRequestAlert.alert_getTips(); //加载弹窗模板
+     //     await httpRequestAlert.alert_tips(); //加载弹窗模板
          await httpRequestBagApi.http_user_info()    //用户信息
-         await httpRequestBagApi.http_bag_info()     //背包信息
+         await httpRequestBagApi.http_bag_info()     //背包信息 
          this.go_user_info()
          
      },
@@ -26,7 +26,6 @@ cc.Class({
      go_user_info(){
           cc.find('Canvas/大厅/头像/角色名字/角色名字s').getComponent(cc.Label).string= http_globalData.user_info.name
           cc.find('Canvas/大厅/导航栏/金币/金币s').getComponent(cc.Label).string= http_globalData.user_info.jinbi
-          
      },
      // update (dt) {},
      //大厅

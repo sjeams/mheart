@@ -4,215 +4,139 @@ cc._RF.push(module, '24bbfs7aHZF1bEuH+fQWqup', 'asset');
 
 "use strict";
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 // 加载资源图片
 var httpAsset = cc.Class({
   "extends": cc.Component,
   //引入的基础类--图片资源
-  http_base_asset: function http_base_asset() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              if (!(http_globalAsset.http_base_asset_biology.length == [])) {
-                _context.next = 3;
-                break;
-              }
+  //加载资源
+  _progressRuning: function _progressRuning(completeCount, totalCount, assets, describe) {
+    //加载进度回调
+    var progressBar = cc.find('/progressBar', http_globalData.model_onload_loading_new).getComponent(cc.ProgressBar); //加载进度回调 
 
-              _context.next = 3;
-              return httpRequestAsset.http_base_asset_biology();
+    progressBar.progress = completeCount / totalCount; // console.log(progressBar.progress)
 
-            case 3:
-              if (!(http_globalAsset.http_base_asset_skill.length == [])) {
-                _context.next = 6;
-                break;
-              }
+    progressBar.completeCount = completeCount;
+    progressBar.totalCount = totalCount;
+    var sys_label = cc.find('/progressBar/sys_label', http_globalData.model_onload_loading_new).getComponent(cc.Label);
+    var sys_des = cc.find('/progressBar/sys_des', http_globalData.model_onload_loading_new).getComponent(cc.Label); //加载生物
 
-              _context.next = 6;
-              return httpRequestAsset.http_base_asset_skill();
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标生物') {
+      var asset = assets.content; // 检查资源是否为图片类型
 
-            case 6:
-              if (!(http_globalAsset.http_base_asset_xiaoguo.length == [])) {
-                _context.next = 9;
-                break;
-              }
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_biology[newname] = asset;
+        sys_des.string = describe + '/图标生物/' + newname;
+      }
+    } //加载生物
 
-              _context.next = 9;
-              return httpRequestAsset.http_base_asset_xiaoguo();
 
-            case 9:
-              if (!(http_globalAsset.http_base_asset_zhuangbei.length == [])) {
-                _context.next = 12;
-                break;
-              }
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标装备') {
+      var asset = assets.content; // 检查资源是否为图片类型
 
-              _context.next = 12;
-              return httpRequestAsset.http_base_asset_zhuangbei();
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_zhuangbei[newname] = asset;
+        sys_des.string = describe + '/图标装备/' + newname;
+      }
+    } //加载生物
 
-            case 12:
-              return _context.abrupt("return", '加载资源图片');
 
-            case 13:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标技能') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_skill[newname] = asset;
+        sys_des.string = describe + '/图标技能/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标技能效果') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_xiaoguo[newname] = asset;
+        sys_des.string = describe + '/图标技能效果/' + newname;
+      }
+    } //加载生物
+
+
+    if (http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type == '图标世界') {
+      var asset = assets.content; // 检查资源是否为图片类型
+
+      if (asset instanceof cc.SpriteFrame) {
+        var newname = asset.name;
+        http_globalAsset.http_base_asset_word[newname] = asset;
+        sys_des.string = describe + '/图标世界/' + newname;
+      }
+    }
+
+    sys_label.string = parseInt(progressBar.progress * 100) + '%'; // if( this.resource.type=='json'){
+    //     // console.log(this.resource);  // json
+    //     // 从服务器加载mp3来进行播放
+    //     // this.audio.clip = ret;
+    //     // this.audio.play();
+    // }
+    // if( this.resource.type=='png'||this.resource.type=='jpg'){
+    //      console.log(res);  // json
+    //     //res是cc.Texture2D这样对象 
+    //     //   this.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(res)
+    //     // this.headpic.spriteFrame.setTexture(res);
+    //     // this.node.spriteFrame.setTexture(res);
+    //     // this.sprite.spriteFrame.setContentSize(res.getContentSize());
+    //     // this.node.getComponent(cc.Sprite).spriteFrame = res;
+    // }
+    // if( this.resource.type=='mp3'){
+    //     console.log(res);  // mp3
+    //     // this.audio.clip = res;
+    //     // this.audio.play();
+    //     // 从服务器加载mp3来进行播放
+    //     this.current = cc.audioEngine.play(res.url, false, 1);
+    // }
   },
-  //实例化角色图片
-  http_base_asset_biology: function http_base_asset_biology() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              return _context2.abrupt("return", new Promise(function (resolve) {
-                http_globalAsset.http_base_asset_biology = []; // 加载资源目录
+  // 回调
+  _progressCallback: function _progressCallback(completeCount, totalCount, item) {
+    var describe = '[' + parseInt(http_globalAsset.http_base_asset_num + 1) + '/' + http_globalAsset.loading_asset.length + ']' + http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].describe;
 
-                cc.loader.loadResDir("图标生物", function (err, assets) {
-                  if (err) {
-                    cc.error(err);
-                    return;
-                  } // 遍历加载的资源
-
-
-                  for (var i = 1; i <= assets.length; i++) {
-                    var asset = assets[i]; // 检查资源是否为图片类型
-
-                    if (asset instanceof cc.SpriteFrame) {
-                      var newname = asset.name;
-                      http_globalAsset.http_base_asset_biology[newname] = asset;
-                    }
-                  }
-
-                  resolve();
-                });
-              }));
-
-            case 1:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }))();
+    this._progressRuning(completeCount, totalCount, item, describe);
   },
-  //技能
-  http_base_asset_skill: function http_base_asset_skill() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
-                http_globalAsset.http_base_asset_skill = []; // 加载资源目录
+  // 回调
+  _completeCallback: function _completeCallback(err, texture) {
+    //加载完成回调
+    if (http_globalAsset.http_base_asset_num < http_globalAsset.loading_asset.length - 1) {
+      if (http_globalAsset.http_base_asset_num > http_globalAsset.loading_asset.length) {
+        return;
+      }
 
-                cc.loader.loadResDir("图标技能", function (err, assets) {
-                  if (err) {
-                    cc.error(err);
-                    return;
-                  } // 遍历加载的资源
-
-
-                  for (var i = 1; i <= assets.length; i++) {
-                    var asset = assets[i]; // 检查资源是否为图片类型
-
-                    if (asset instanceof cc.SpriteFrame) {
-                      var newname = asset.name;
-                      http_globalAsset.http_base_asset_skill[newname] = asset;
-                    }
-                  }
-
-                  resolve();
-                });
-              }));
-
-            case 1:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }))();
+      http_globalAsset.http_base_asset_num = http_globalAsset.http_base_asset_num + 1;
+      this.loading_asset(); //下一个资源
+    } else {
+      this.loadnextScene(); //下一场景 
+    }
   },
-  http_base_asset_xiaoguo: function http_base_asset_xiaoguo() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
-        while (1) {
-          switch (_context4.prev = _context4.next) {
-            case 0:
-              return _context4.abrupt("return", new Promise(function (resolve) {
-                http_globalAsset.http_base_asset_xiaoguo = []; // 加载资源目录
-
-                cc.loader.loadResDir("图标技能效果", function (err, assets) {
-                  if (err) {
-                    cc.error(err);
-                    return;
-                  } // 遍历加载的资源
-
-
-                  for (var i = 1; i <= assets.length; i++) {
-                    var asset = assets[i]; // 检查资源是否为图片类型
-
-                    if (asset instanceof cc.SpriteFrame) {
-                      var newname = asset.name;
-                      http_globalAsset.http_base_asset_xiaoguo[newname] = asset;
-                    }
-                  }
-
-                  resolve();
-                });
-              }));
-
-            case 1:
-            case "end":
-              return _context4.stop();
-          }
-        }
-      }, _callee4);
-    }))();
+  //加载资源
+  loading_asset: function loading_asset() {
+    //默认从1开始
+    var url = cc.loader.loadResDir(http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].url, this._progressCallback.bind(this), this._completeCallback.bind(this));
+    cc.loader.release(url);
   },
-  http_base_asset_zhuangbei: function http_base_asset_zhuangbei() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-      return regeneratorRuntime.wrap(function _callee5$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              return _context5.abrupt("return", new Promise(function (resolve) {
-                http_globalAsset.http_base_asset_zhuangbei = []; // 加载资源目录
-
-                cc.loader.loadResDir("图标装备", function (err, assets) {
-                  if (err) {
-                    cc.error(err);
-                    return;
-                  } // 遍历加载的资源
-
-
-                  for (var i = 1; i <= assets.length; i++) {
-                    var asset = assets[i]; // 检查资源是否为图片类型
-
-                    if (asset instanceof cc.SpriteFrame) {
-                      var newname = asset.name;
-                      http_globalAsset.http_base_asset_zhuangbei[newname] = asset;
-                    }
-                  }
-
-                  resolve();
-                });
-              }));
-
-            case 1:
-            case "end":
-              return _context5.stop();
-          }
-        }
-      }, _callee5);
-    }))();
+  //加载场景
+  loadnextScene: function loadnextScene() {
+    //加载场景-- 场景为空， 关闭进度条
+    if (http_globalAsset.http_base_redict_sence == '') {
+      cc.find('Canvas/进度条').parent.removeChild(cc.find('Canvas/进度条'));
+    } else {
+      //预加载场景并获得加载进度
+      cc.director.preloadScene(http_globalAsset.http_base_redict_sence, function (completeCount, totalCount, item) {
+        httpRequestAsset._progressRuning(completeCount, totalCount, item, '加载场景..');
+      }, function () {
+        cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {// spawnTools();  
+        });
+      });
+    }
   }
 });
 window.httpRequestAsset = new httpAsset();

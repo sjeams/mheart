@@ -53,7 +53,7 @@ cc.Class({
               http_globalData.chuanzao_xibao = []; //细胞
 
               _context.next = 3;
-              return httpRequestAlert.alert_getTips();
+              return httpRequestModel.model_zhaohuan_chuangzao();
 
             case 3:
               _context.next = 5;
@@ -107,61 +107,60 @@ cc.Class({
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _this = _this3;
-              cc.log(http_globalData.user_info);
+              _this = _this3; // cc.log(http_globalData.user_info)
+
               return _context2.abrupt("return", new Promise(function (resolve) {
                 //技能图标挂载
-                var BoxPrefab = cc.find('Canvas/大厅/创造');
-                cc.loader.loadRes('/model召唤/A创造', function (errorMessage, loadedResource) {
-                  //开始实例化预制资源
-                  var TipBoxPrefab = cc.instantiate(loadedResource);
-                  var TipBoxPrefab_model_name1 = "生物细胞/金/金s";
-                  var TipBoxPrefab_model_name2 = "生物细胞/木/木s";
-                  var TipBoxPrefab_model_name3 = "生物细胞/水/水s";
-                  var TipBoxPrefab_model_name4 = "生物细胞/火/火s";
-                  var TipBoxPrefab_model_name5 = "生物细胞/土/土s";
-                  var TipBoxPrefab_model_name6 = "生物细胞/无/无s";
+                var BoxPrefab = cc.find('Canvas/大厅/创造'); // cc.loader.loadRes('/model召唤/A创造', function(errorMessage,loadedResource){
+                //开始实例化预制资源
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name1, http_globalData.user_info.biology1);
+                var TipBoxPrefab = cc.instantiate(http_globalAsset.model_zhaohuan_chuangzao);
+                var TipBoxPrefab_model_name1 = "生物细胞/金/金s";
+                var TipBoxPrefab_model_name2 = "生物细胞/木/木s";
+                var TipBoxPrefab_model_name3 = "生物细胞/水/水s";
+                var TipBoxPrefab_model_name4 = "生物细胞/火/火s";
+                var TipBoxPrefab_model_name5 = "生物细胞/土/土s";
+                var TipBoxPrefab_model_name6 = "生物细胞/无/无s";
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name2, http_globalData.user_info.biology2);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name1, http_globalData.user_info.biology1);
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name3, http_globalData.user_info.biology3);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name2, http_globalData.user_info.biology2);
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name4, http_globalData.user_info.biology4);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name3, http_globalData.user_info.biology3);
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name5, http_globalData.user_info.biology5);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name4, http_globalData.user_info.biology4);
 
-                  _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name6, http_globalData.user_info.biology6);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name5, http_globalData.user_info.biology5);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/金", TipBoxPrefab_model_name1, 1);
+                _this.menu_chuangzao_xibao_update(TipBoxPrefab, TipBoxPrefab_model_name6, http_globalData.user_info.biology6);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/木", TipBoxPrefab_model_name2, 2);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/金", TipBoxPrefab_model_name1, 1);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/水", TipBoxPrefab_model_name3, 3);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/木", TipBoxPrefab_model_name2, 2);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/火", TipBoxPrefab_model_name4, 4);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/水", TipBoxPrefab_model_name3, 3);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/土", TipBoxPrefab_model_name5, 5);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/火", TipBoxPrefab_model_name4, 4);
 
-                  _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/无", TipBoxPrefab_model_name6, 6);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/土", TipBoxPrefab_model_name5, 5);
 
-                  _this.onclick_chuangzao(TipBoxPrefab);
+                _this.menu_chuangzao_xibao(TipBoxPrefab, "生物细胞/无", TipBoxPrefab_model_name6, 6);
 
-                  http_globalData.materialPrefab = cc.find('云游商人/云游商人b', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 10, 20, -20, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转3'), 1, 5, 5, -5, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 1, 2, 20, 20, 1.2);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 1, 20, 360, 360, 1.1);
-                  httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物细胞'), 1, 10, 10, -10, 1.05);
-                  BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
+                _this.onclick_chuangzao(TipBoxPrefab);
 
-                  resolve();
-                });
+                http_globalData.materialPrefab = cc.find('云游商人/云游商人b', TipBoxPrefab).getComponent(cc.Sprite).getMaterial(0);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转1'), 1, 10, -10, 10, 1.2);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转2'), 1, 10, 20, -20, 1.2);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('左旋转3'), 1, 5, 5, -5, 1.2);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('右旋转'), 1, 2, 20, 20, 1.2);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物创造'), 1, 20, 360, 360, 1.1);
+                httpRequestAlert.actionBlink_show(TipBoxPrefab.getChildByName('生物细胞'), 1, 10, 10, -10, 1.05);
+                BoxPrefab.addChild(TipBoxPrefab, 1); // 预制体、zindex层级
+
+                resolve();
               }));
 
-            case 3:
+            case 2:
             case "end":
               return _context2.stop();
           }
@@ -285,8 +284,7 @@ cc.Class({
                   http_globalData.user_info['biology' + item.type] = item.now_num;
                 }
 
-                _this4.button_zhaohuan_clear(TipBoxPrefab); // var TipBoxPrefab_tips = cc.instantiate(http_globalData.alert_tips)
-                // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
+                _this4.button_zhaohuan_clear(TipBoxPrefab); // TipBoxPrefab_tips.getChildByName('提示s').getComponent(cc.Label).string=tips
                 // TipBoxPrefab_tips.runAction(cc.sequence( cc.fadeIn(0.1),cc.delayTime(0.3),cc.fadeOut(0.2)),cc.callFunc(function(){ 
                 //     //移除挂载
                 //     TipBoxPrefab_tips.destroy();

@@ -10,28 +10,22 @@ const httpBagApi = cc.Class({
         if(!http_globalAsset.AudioPlayer){
             await httpRequestBagApi.http_home_music();//加载音乐
         }
+        if(!http_globalAsset.alert_tips){
+            await httpRequestAlert.alert_tips();//加载弹窗模板
+        }
         // 没有资源，需要重新加载资源
         if(http_globalAsset.http_base_asset_num==0){
             httpRequest.playGame("",0,1) //加载资源的进度条
         }
-        // if(!http_globalAsset.http_base_request){
-        //     await httpRequestBagApi.http_base_request();//加载音乐
-        // }
-        // await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
     }, 
-    // //--基础类加载
-    // async http_base_request(){
-    //     await httpRequestAsset.http_base_asset();  // 引入 资源图片asset
-    //     await httpRequestModel.http_base_model();  // 引入 战斗模型model
-    //     http_globalAsset.http_base_request =1; //基础类
-    // },
+ 
     //加载音乐
     async  http_home_music() {
         //修改请求--等待响应后回调
         return new Promise(resolve => {
             //获取全局播放器
             if(cc.find("Audio")){
-                http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("AudioManager");
+                http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("home_music");
                 //停止再开启背景音乐
                 // this.AudioPlayer.stopBgMusic();
                 http_globalAsset.AudioPlayer.playBgMusic();
@@ -152,7 +146,6 @@ const httpBagApi = cc.Class({
         });
     },
  
-
     //修改倍数
     http_user_beishu_update(){
         //修改请求
@@ -171,6 +164,9 @@ const httpBagApi = cc.Class({
         });
     },  
 
+    
+
+    
 
 });
 window.httpRequestBagApi = new httpBagApi();

@@ -11,8 +11,6 @@ cc.Class({
     onLoad() {
         cc.game.addPersistRootNode(this.node);
     },
-
-    
     playBgMusic() {
        var _urls ='/app_resources/loading/武侠.mp3';
        this.bgMusic = httpRequest.httpUrl(_urls);

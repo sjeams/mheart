@@ -18,15 +18,15 @@ cc.Class({
         var TOOLS = info_list;
         // let image = '/技能图标/'+skill.image;
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
-        cc.loader.loadRes('/model战斗/sprite_地图', function(errorMessage,loadedResource_icon){
+        // cc.loader.loadRes('/model战斗/sprite_地图', function(errorMessage,loadedResource_icon){
             //检查资源加载
-            if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
-            if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
+            // if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+            // if( !(loadedResource_icon instanceof cc.Prefab ) ) { cc.log( '你载入的不是预制资源!' ); return; }
             //开始实例化预制资源
 
             for (var prop in info_list) {
                 //声明节点对象
-                let  TipBoxPrefab_icon =  cc.instantiate(loadedResource_icon);
+                let  TipBoxPrefab_icon =  cc.instantiate(http_globalAsset.model_fighting_map);
                 let map = TOOLS[prop];
                 let info = map.biology_list[0];
                 let total = map.biology_list.length;
@@ -62,7 +62,7 @@ cc.Class({
                     TipBoxPrefab_model.addChild(TipBoxPrefab_icon);
                 }
             }
-        })
+        // })
         return TipBoxPrefab_model
     },
     //按钮点击回调

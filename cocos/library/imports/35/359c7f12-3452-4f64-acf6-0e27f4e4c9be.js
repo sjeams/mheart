@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '359c78SNFJPZKz2Dif05Mm+', 'AudioManager');
-// Script/场景/AudioManager.js
+cc._RF.push(module, '359c78SNFJPZKz2Dif05Mm+', 'home_music');
+// Script/music/home_music.js
 
 "use strict";
 

@@ -4,7 +4,7 @@ require("./commonApi/figthingExtend"); //引入战斗动作
 require("./commonApi/alert"); //引入弹窗样式
 require("./commonApi/model"); //引入模型
 require("./commonApi/asset"); //引入资源图片
-//全局变量--随着数据改变
+//全局变量--随着数据改变-每次跳转 场景 置为空
 window.http_globalData = {
     progress:0,//进度条百分比
     user_info:[],//用户信息
@@ -27,9 +27,12 @@ window.http_globalAsset = {
     http_base_asset_num:0,
     //加载的资源目录
     loading_asset : [
+        
+        {url:'A基础图标',type:'',describe:'加载基础..'},
+        {url:'图片大厅',type:'',describe:'加载大厅..'},
         {url:'图标生物',type:'图标生物',describe:'加载生物模型..'},
         // {url:'图标装备',type:'图标装备',describe:'加载装备模型..'},
-        {url:'图标技能',type:'图标技能',describe:'加载技能模型..'},
+        // {url:'图标技能',type:'图标技能',describe:'加载技能模型..'},
         {url:'图标技能效果',type:'图标技能效果',describe:'加载技能效果..'},
         // {url:'图标世界',type:'图标世界',describe:'加载世界模型..'},
     ],
