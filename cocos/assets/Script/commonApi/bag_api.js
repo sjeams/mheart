@@ -4,6 +4,8 @@ const httpBagApi = cc.Class({
     //没有处理逻辑，可以共用--关闭窗口
     //实例化用户信息
     async http_music(){
+
+        // cc.log(http_globalAsset.model_onload_loading)
         if(!http_globalAsset.model_onload_loading){
             await httpRequestModel.model_onload_loading();//加载进度条
         }

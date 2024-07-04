@@ -1,6 +1,3 @@
-
-
-
 require("./commonApi/runtime"); //引入基础async  await
 require("./commonApi/asset"); //引入资源图片
 require("./commonApi/http"); //引入基础http请求--初始化实例
@@ -43,6 +40,8 @@ window.http_globalAsset = {
         {url:'图标世界',type:'图标世界',describe:'加载世界模型..'},
     ],
     // image 
+    // model_onload_loading:[],
+    // model_onload_loading_new:[],
     http_base_asset_biology:[],
     http_base_asset_skill:[],
     http_base_asset_xiaoguo:[],
@@ -54,4 +53,4 @@ window.http_globalAsset = {
     model_biology_SkillIcon:[],
     model_biology_SkillTips:[],
 }
-httpRequestAsset.reloading_asset() //加载所有资源
+// httpRequestAsset.reloading_asset() //加载所有资源

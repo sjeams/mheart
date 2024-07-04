@@ -2417,17 +2417,17 @@
   "391d0f8c-bf45-489f-9756-b455a86e9b1d": {
     "asset": 1719282439058,
     "meta": 1719282439080,
-    "relativePath": "resources\\materials\\builtin_渐变.mtl"
+    "relativePath": "prefabs\\materials\\builtin_渐变.mtl"
   },
   "560902ed-f11a-4096-9ed6-3d99a7f4b9a2": {
     "asset": 1719199486680,
     "meta": 1719199491112,
-    "relativePath": "resources\\materials\\滚动.effect"
+    "relativePath": "prefabs\\materials\\滚动.effect"
   },
   "aecd6f87-9174-4bce-8c15-8e5c608a5fca": {
     "asset": 1719209679182,
     "meta": 1719209709029,
-    "relativePath": "resources\\materials\\描边.effect"
+    "relativePath": "prefabs\\materials\\描边.effect"
   },
   "16bd776f-4c93-400c-9bfc-19c3076c6481": {
     "asset": 1719219746584,
@@ -2472,36 +2472,36 @@
   "cb97f2bc-bca2-443d-a988-4ff66049f82a": {
     "asset": 1719296685528,
     "meta": 1719279369657,
-    "relativePath": "resources\\materials"
+    "relativePath": "prefabs\\materials"
   },
   "c6846200-fb9f-4433-b039-1430fa05af44": {
     "asset": 1719388102983,
     "meta": 1719388102996,
-    "relativePath": "resources\\materials\\builtin_描边.mtl"
+    "relativePath": "prefabs\\materials\\builtin_描边.mtl"
   },
   "eb11a13d-b9fb-4b4c-a976-6f5420835b75": {
     "asset": 1719280353446,
     "meta": 1719280353451,
-    "relativePath": "resources\\materials\\builtin_滚动.mtl"
+    "relativePath": "prefabs\\materials\\builtin_滚动.mtl"
   },
   "85660488-92a4-4a66-bac9-8f4a0be98270": {
     "asset": 1719281041464,
     "meta": 1719281049934,
-    "relativePath": "resources\\materials\\渐变 备份.effect"
+    "relativePath": "prefabs\\materials\\渐变 备份.effect"
   },
   "50b4537e-944a-4b9a-95d8-df9fd5f2152b": {
     "asset": 1719309576574,
     "meta": 1719309576587,
-    "relativePath": "resources\\materials\\builtin_摇晃.mtl"
+    "relativePath": "prefabs\\materials\\builtin_摇晃.mtl"
   },
   "35f59565-0b1e-4a57-9d59-06600234c298": {
     "asset": 1719282918341,
     "meta": 1719282919298,
-    "relativePath": "resources\\materials\\渐变.effect"
+    "relativePath": "prefabs\\materials\\渐变.effect"
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1719988918572,
-    "meta": 1719988918586,
+    "asset": 1720083267898,
+    "meta": 1720083267914,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "2ff1dadd-3de7-44e6-ad8e-e1998bf79163": {
@@ -2585,8 +2585,8 @@
     "relativePath": "resources\\A基础图标\\a土.png"
   },
   "c401445e-5141-4beb-8817-b993c1865231": {
-    "asset": 1719990182607,
-    "meta": 1719990182619,
+    "asset": 1720082685985,
+    "meta": 1720082686006,
     "relativePath": "resources\\model召唤\\A创造.prefab"
   },
   "6a9d1ceb-c63b-4f87-b5d5-c2d91840ad58": {
@@ -2605,8 +2605,8 @@
     "relativePath": "resources\\图标技能效果\\AutoAtlas.pac"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1720057466757,
-    "meta": 1720057466768,
+    "asset": 1720082486631,
+    "meta": 1720082486650,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "74e7f103-4492-4554-ac67-c4ae6ff74e55": {
@@ -2702,7 +2702,7 @@
   "6ca4aee5-dc46-4e3f-8b54-86e6b26d09c2": {
     "asset": 1719989160812,
     "meta": 1719989161736,
-    "relativePath": "resources\\materials\\摇晃.effect"
+    "relativePath": "prefabs\\materials\\摇晃.effect"
   },
   "643356fe-1be5-4b1e-aad4-75b155599a40": {
     "asset": 1719996027824,
@@ -2795,8 +2795,8 @@
     "relativePath": "Scene\\home\\诸天万界.fire"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1720078377661,
-    "meta": 1720078380948,
+    "asset": 1720082695914,
+    "meta": 1720082695938,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
@@ -2839,11 +2839,6 @@
     "meta": 1720078381573,
     "relativePath": "Script\\战斗\\score_fighting_alert.js"
   },
-  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
-    "asset": 1720078377701,
-    "meta": 1720078381726,
-    "relativePath": "Script\\召唤\\zhaohuan_home.js"
-  },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
     "asset": 1720078377698,
     "meta": 1720078381995,
@@ -2858,16 +2853,6 @@
     "asset": 1720078688871,
     "meta": 1720078690314,
     "relativePath": "Script\\commonApi\\runtime.js"
-  },
-  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
-    "asset": 1720079780190,
-    "meta": 1720079811609,
-    "relativePath": "Script\\commonApi\\bag_api.js"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1720079749254,
-    "meta": 1720079811669,
-    "relativePath": "Script\\commonApi\\http.js"
   },
   "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
     "asset": 1720079826466,
@@ -2885,8 +2870,8 @@
     "relativePath": "Script\\登录\\login_in.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1720080267550,
-    "meta": 1720080267581,
+    "asset": 1720083261007,
+    "meta": 1720083261027,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
@@ -2905,18 +2890,33 @@
     "relativePath": "Script\\场景\\home_map.js"
   },
   "711cbd0e-6b4f-401d-b312-0ac54d6c5b38": {
-    "asset": 1720081756652,
-    "meta": 1720081756666,
+    "asset": 1720082428895,
+    "meta": 1720082428908,
     "relativePath": "Scene\\map\\诸天地图.fire"
   },
-  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
-    "asset": 1720081843909,
-    "meta": 1720081858782,
-    "relativePath": "Script\\common.js"
+  "2d43937b-9f7d-4c29-a20a-c810fb38589b": {
+    "asset": 1720082630783,
+    "meta": 1720082650935,
+    "relativePath": "Script\\召唤\\zhaohuan_home.js"
   },
   "24bbfb3b-6876-45d5-b12e-1fe7d05aaba9": {
-    "asset": 1720081834896,
-    "meta": 1720081858850,
+    "asset": 1720082647964,
+    "meta": 1720082650983,
     "relativePath": "Script\\commonApi\\asset.js"
+  },
+  "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
+    "asset": 1720082949490,
+    "meta": 1720082969328,
+    "relativePath": "Script\\commonApi\\bag_api.js"
+  },
+  "b01ed470-71ab-4fce-8b6e-9d2df9aaf599": {
+    "asset": 1720083307542,
+    "meta": 1720083325755,
+    "relativePath": "Script\\common.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1720083318001,
+    "meta": 1720083325838,
+    "relativePath": "Script\\commonApi\\http.js"
   }
 }
