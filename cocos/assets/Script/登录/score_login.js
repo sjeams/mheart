@@ -46,13 +46,10 @@ cc.Class({
         //         // 未登录弹出登录
         //         if(data.code==0){
         //             // this.loginbox.node.active = false;  // 进度隐藏
-
-                    
         //         }
              
         //     });
         // })
-
         var token = cc.sys.localStorage.getItem('token');
         //定位弹出窗口
         var user_status  =cc.find("Canvas/server/user_status");
@@ -60,7 +57,6 @@ cc.Class({
         var user_phone  =cc.find("Canvas/server/user_status/user_phone");
         if(token){
                 httpRequest.httpPostLogin('/app/api-server/token-login', {'token':token} ,function (data) {
-                  
                     // cc.loader.release('resources/login.json'); //释放json 资源
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                     //     jsb.fileUtils.writeStringToFile(data,token)

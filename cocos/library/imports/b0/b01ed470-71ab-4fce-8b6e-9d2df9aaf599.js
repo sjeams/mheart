@@ -4,6 +4,9 @@ cc._RF.push(module, 'b01edRwcatPzotunS35qvWZ', 'common');
 
 "use strict";
 
+require("./commonApi/runtime"); //引入基础async  await
+
+
 require("./commonApi/http"); //引入基础http请求--初始化实例
 
 

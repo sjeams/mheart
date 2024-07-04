@@ -13,9 +13,9 @@ const httpBagApi = cc.Class({
         if(!http_globalAsset.alert_tips){
             await httpRequestAlert.alert_tips();//加载弹窗模板
         }
-        if(!http_globalAsset.material_yaohuang){
-            await httpRequestAsset.http_material_yaohuang();//加载材质
-        }
+        // if(!http_globalAsset.material_yaohuang){
+        //     await httpRequestAsset.http_material_yaohuang();//加载材质
+        // }
         // 没有资源，需要重新加载资源
         if(http_globalAsset.http_base_asset_num==0){
             // httpRequest.playGame("",0,1) //加载资源的进度条

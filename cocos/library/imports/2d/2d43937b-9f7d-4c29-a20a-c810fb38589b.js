@@ -12,9 +12,8 @@ require("../common");
 
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    // material: cc.Material = null,
-    time: number = 0
+  properties: {// material: cc.Material = null,
+    // time: number = 0
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {

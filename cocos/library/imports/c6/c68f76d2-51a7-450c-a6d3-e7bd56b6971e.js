@@ -46,24 +46,15 @@ var httpBagApi = cc.Class({
               return httpRequestAlert.alert_tips();
 
             case 9:
-              if (http_globalAsset.material_yaohuang) {
+              if (!(http_globalAsset.http_base_asset_num == 0)) {
                 _context.next = 12;
                 break;
               }
 
               _context.next = 12;
-              return httpRequestAsset.http_material_yaohuang();
-
-            case 12:
-              if (!(http_globalAsset.http_base_asset_num == 0)) {
-                _context.next = 15;
-                break;
-              }
-
-              _context.next = 15;
               return httpRequestBagApi.http_home_asset();
 
-            case 15:
+            case 12:
             case "end":
               return _context.stop();
           }

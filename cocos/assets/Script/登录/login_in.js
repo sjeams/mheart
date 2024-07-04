@@ -36,35 +36,13 @@ cc.Class({
         // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
     },
     tokenlogin: function(){
-        // 获取本地json  信息
-        // cc.loader.load( cc.url.raw("resources/login.json"),function(err,res){  
-        // cc.loader.loadRes('login.json',function(err,res){   //默认resources
-        //     let json = res.json;
-        //     var params = {
-        //         'token': json.token,
-        //     };
-        //     cc.log(json.token); 
-        //     var res = httpRequest.httpPostLogin('/app/api-server/token-login', params ,function (data) {
-        //         cc.loader.release('resources/login.json'); //释放json 资源
-        //         // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
-        //         //     jsb.fileUtils.writeStringToFile(data,token)
-        //         // }
-        //         // cc.log(data); 
-        //         // 未登录弹出登录
-        //         if(data.code==0){
-        //             // this.loginbox.node.active = false;  // 进度隐藏
-                    
-        //         }
-             
-        //     });
-        // })
         var token =cc.sys.localStorage.getItem('token');
         //定位弹出窗口
-        var user_status  =cc.find("Canvas/server/user_status").active=true;
+        cc.find("Canvas/server/user_status").active=true;
         var user_phone  =cc.find("Canvas/server/user_status/user_phone");
         if(token){
                 httpRequest.httpPostLogin('/app/api-server/token-login', {'token':token} ,function (data) {
-                    var _this =this;
+                    // var _this =this;
                     // cc.loader.release('resources/login.json'); //释放json 资源
                     // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
                     //     jsb.fileUtils.writeStringToFile(data,token)
@@ -99,7 +77,6 @@ cc.Class({
             // 'loginname': 'yincan1993',
             // 'password': 123456,
         };
-
         var _this= this;
         httpRequest.httpPostLogin('/app/api-server/login', params ,function (data) {
             cc.log(data); 
@@ -110,8 +87,12 @@ cc.Class({
                 cc.sys.localStorage.setItem('loginname', loginname);
                 cc.sys.localStorage.setItem('password', password);
                 _this.node.active =false;
-                cc.find("Canvas/server/user_status/user_phone");
-                    _this.tokenlogin()
+                // cc.find("Canvas/server/user_status/user_phone");
+                cc.find("Canvas/server/user_status").active=true;
+                var loginname =  data.data.userinfo.loginname;
+                var phone = loginname.slice(0,3) + "****" + loginname.slice(7,10);
+                cc.find("Canvas/server/user_status/user_phone").getComponent(cc.Label).string=phone;
+                    // _this.tokenlogin()
                 // var mycomponet =  _this.node.getComponent(register)
                 // mycomponet.tokenlogin(); // 快捷登录
             }else{

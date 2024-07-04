@@ -4,7 +4,7 @@ cc.Class({
 
     properties: {
         // material: cc.Material = null,
-        time: number = 0
+        // time: number = 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -48,10 +48,6 @@ cc.Class({
         await this.menu_ronghe(); //加载召唤菜单
         await this.menu_xunlian(); //加载召唤菜单
         await this.menu_huishou(); //加载召唤菜单
-        // httpRequestBagApi.materialTime(http_globalData.materialPrefab)  //预制体晃动
-        // httpRequestBagApi.materialTime(cc.find('Canvas/大厅').getComponent(cc.Sprite).getMaterial(0))  //预制体晃动
-        
-        // await httpRequestBagApi.http_material_yaohuang();//加载材质
     },
 
     //加载菜单-创造

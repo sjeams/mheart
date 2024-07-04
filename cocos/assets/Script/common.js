@@ -1,3 +1,7 @@
+
+
+
+require("./commonApi/runtime"); //引入基础async  await
 require("./commonApi/http"); //引入基础http请求--初始化实例
 require("./commonApi/bag_api"); //引入背包
 require("./commonApi/figthingExtend"); //引入战斗动作
