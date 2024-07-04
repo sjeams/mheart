@@ -65,19 +65,18 @@ cc.Class({
       //移除挂载
       TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren(); //重新挂载--按钮事件类型--定义按钮事件类型
 
-      TipBoxPrefab_model.getComponent('bag_详情按钮Tools').biology_init(TipBoxPrefab_model, TipBoxPrefab_icon, info.id, button_name, is_use);
+      TipBoxPrefab_model.getComponent('bag_详情按钮Tools').biology_init(TipBoxPrefab_model, TipBoxPrefab_icon, info, button_name, is_use);
     }, this);
   },
   biology_detail_list: function biology_detail_list(TipBoxPrefab, info, gooduse_type) {
-    var image = info.point;
-    cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
-      if (err) {
-        // cc.error(err.message || err);
-        return;
-      }
+    // let image = info.point;
+    // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+    //     if (err) {
+    //         // cc.error(err.message || err);
+    //         return;
+    //     }
+    TipBoxPrefab.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[info.point]; // });
 
-      TipBoxPrefab.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
-    });
     TipBoxPrefab.getChildByName('名称s').getComponent(cc.Label).string = info.name;
     TipBoxPrefab.getChildByName('名称s').color = new cc.color(info.nature_color);
     TipBoxPrefab.getChildByName('介绍s').getComponent(cc.Label).string = info.describe; // (白 绿 蓝 紫 金 红 橙) 鬼仙神（彩）

@@ -69,8 +69,11 @@ window.http_globalAsset = {
     url: '图标生物',
     type: '图标生物',
     describe: '加载生物模型..'
-  }, // {url:'图标装备',type:'图标装备',describe:'加载装备模型..'},
-  {
+  }, {
+    url: '图标装备',
+    type: '图标装备',
+    describe: '加载装备模型..'
+  }, {
     url: '图标技能',
     type: '图标技能',
     describe: '加载技能模型..'

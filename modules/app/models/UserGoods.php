@@ -158,7 +158,7 @@ class UserGoods extends ActiveRecord
         return $goods;
     }
     
-    //生物背包
+    //装备背包
     public  function  getGooduseBag(){
        $gooduse= $this->getUserGoodsList();
         foreach($gooduse as$key=> $v){
@@ -171,7 +171,7 @@ class UserGoods extends ActiveRecord
             $int = $int>=0?$int:0;
             $gooduse[$key]['nature_color']=  UserBiologyAttribute:: getNatureColor($int);        //属性颜色
             $gooduse[$key]['nature_grade']=  UserBiologyAttribute:: getNatureGrade($int);        //属性评分
-            
+            $gooduse[$key]['int'] =intval($v['id']-1);//序号索引
         }
         return $gooduse;
     }

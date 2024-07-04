@@ -19,7 +19,7 @@
         public $description;
 		public function init() {
             $token = isset($_SERVER['HTTP_TOKEN']) && !empty($_SERVER['HTTP_TOKEN'])?$_SERVER['HTTP_TOKEN']:false;
-            // $token ='f02f59383c5c3f9d04805de13d1f636c'; 
+            $token ='f02f59383c5c3f9d04805de13d1f636c'; 
             // // // $update = isset($_SERVER['HTTP_UPDATE']) && !empty($_SERVER['HTTP_UPDATE'])?$_SERVER['HTTP_UPDATE']:false;
 
             if(!$token){  // 登录状态

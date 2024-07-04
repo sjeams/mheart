@@ -11,6 +11,10 @@ cc.Class({
         await httpRequestModel.model_home_biology_detail_heard() //加载生物头像
         await httpRequestModel.model_home_biology_detail_heard_icon() //加载生物头像图标
 
+        await httpRequestModel.model_zhuangbei_bag() //加载装备背包
+        await httpRequestModel.model_zhuangbei_bag_icon()  //加载装备背包图标
+
+
         await httpRequestModel.model_home_zhenfa() //加载阵法
         await httpRequestModel.model_home_zhenfa_bag() //加载阵法背包
         await httpRequestModel.model_home_zhenfa_icon() //加载阵法图标

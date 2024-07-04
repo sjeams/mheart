@@ -10,6 +10,9 @@ cc.Class({
     // onLoad () {},
      //技能图片渲染  is_use  0卸下  1使用
      biology_detail_alert(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,is_use){
+
+        http_globalData.goodsinfo =info;
+
         let gooduse_list = http_globalData.gooduse;
         // gooduse_type  1武器  详情类型必传，不然无法区分类型
         var _this=this;
@@ -53,24 +56,20 @@ cc.Class({
             //移除挂载
             TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
             //重新挂载--按钮事件类型--定义按钮事件类型
-            TipBoxPrefab_model.getComponent('bag_详情按钮Tools').biology_init(TipBoxPrefab_model,TipBoxPrefab_icon,info.id,button_name,is_use)
+            TipBoxPrefab_model.getComponent('bag_详情按钮Tools').biology_init(TipBoxPrefab_model,TipBoxPrefab_icon,info,button_name,is_use)
         }, this);
     },
 
 
-
-
-
-
     biology_detail_list(TipBoxPrefab,info,gooduse_type){
-        let image = info.point;
-        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
-            if (err) {
-                // cc.error(err.message || err);
-                return;
-            }
-            TipBoxPrefab.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture; 
-        });
+        // let image = info.point;
+        // cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) { 
+        //     if (err) {
+        //         // cc.error(err.message || err);
+        //         return;
+        //     }
+            TipBoxPrefab.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[info.point]
+        // });
         TipBoxPrefab.getChildByName('名称s').getComponent(cc.Label).string=info.name
         TipBoxPrefab.getChildByName('名称s').color = new cc.color(info.nature_color);
         TipBoxPrefab.getChildByName('介绍s').getComponent(cc.Label).string=info.describe

@@ -46,6 +46,7 @@ const httpAsset = cc.Class({
             }
         }
         //加载生物
+ 
         if(http_globalAsset.loading_asset[http_globalAsset.http_base_asset_num].type=='图标装备'){
             var asset = assets.content
             // 检查资源是否为图片类型

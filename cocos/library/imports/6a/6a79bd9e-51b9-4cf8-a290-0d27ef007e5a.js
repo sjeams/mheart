@@ -782,6 +782,66 @@ var httpModel = cc.Class({
         }
       }, _callee22);
     }))();
+  },
+  model_zhuangbei_bag: function model_zhuangbei_bag() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee23() {
+      return regeneratorRuntime.wrap(function _callee23$(_context23) {
+        while (1) {
+          switch (_context23.prev = _context23.next) {
+            case 0:
+              return _context23.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/背包装备', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhuangbei_bag = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context23.stop();
+          }
+        }
+      }, _callee23);
+    }))();
+  },
+  model_zhuangbei_bag_icon: function model_zhuangbei_bag_icon() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee24() {
+      return regeneratorRuntime.wrap(function _callee24$(_context24) {
+        while (1) {
+          switch (_context24.prev = _context24.next) {
+            case 0:
+              return _context24.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/图标背包装备', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhuangbei_bag_icon = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context24.stop();
+          }
+        }
+      }, _callee24);
+    }))();
   }
 });
 window.httpRequestModel = new httpModel();

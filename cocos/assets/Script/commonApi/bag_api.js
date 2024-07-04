@@ -95,7 +95,8 @@ const httpBagApi = cc.Class({
     http_update_goods(biology_id,goods_key,goodsid,is_bag){
         //修改请求
         return new Promise(resolve => {
-        httpRequest.httpPost('/app/app-api/biology-goods-update',{biology_id:biology_id,goods_key:goods_key,goodsid:goodsid,is_bag:is_bag},function (data) { resolve(data);})
+        httpRequest.httpPost('/app/app-api/biology-goods-update',{biology_id:biology_id,goods_key:goods_key,goodsid:goodsid,is_bag:is_bag},function (data) { 
+            resolve(data);})
         });
     },  
     //http请求--快速请求接口
