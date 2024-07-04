@@ -18,21 +18,11 @@ const httpBagApi = cc.Class({
         // }
         // 没有资源，需要重新加载资源
         if(http_globalAsset.http_base_asset_num==0){
-            // httpRequest.playGame("",0,1) //加载资源的进度条
-            await httpRequestBagApi.http_home_asset()
+            httpRequest.playGame("",0,1) //加载资源的进度条
+            // await httpRequestBagApi.http_home_asset()
         }
     }, 
-    //加载音乐
-    async  http_home_asset() {
-        //修改请求--等待响应后回调
-        return new Promise(resolve => {
-            //获取全局播放器
-            if(http_globalAsset.http_base_asset_num==0){
-                httpRequest.playGame("",0,1) //加载资源的进度条
-            }
-            resolve();
-        });
-    },
+ 
 
 
     //加载音乐

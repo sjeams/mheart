@@ -19,7 +19,7 @@ cc.Class({
             this.register_login_password.getComponent(cc.EditBox).string=password;
         }
         // 操作文本--读取用户信息
-        this.tokenlogin(); // 快捷登录
+        // this.tokenlogin(); // 快捷登录
         // // 账号密码登录
         // this.login();
         //储存缓存
@@ -35,38 +35,38 @@ cc.Class({
         // }
         // cc.sys.localStorage.setItem(KEY_BEST_SCORE, bestScore);
     },
-    tokenlogin: function(){
-        var token =cc.sys.localStorage.getItem('token');
-        //定位弹出窗口
-        cc.find("Canvas/server/user_status").active=true;
-        var user_phone  =cc.find("Canvas/server/user_status/user_phone");
-        if(token){
-                httpRequest.httpPostLogin('/app/api-server/token-login', {'token':token} ,function (data) {
-                    // var _this =this;
-                    // cc.loader.release('resources/login.json'); //释放json 资源
-                    // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
-                    //     jsb.fileUtils.writeStringToFile(data,token)
-                    // }
-                    // cc.log(data); 
-                    // 未登录弹出登录
-                   // 登录成功
-                    if(data.code==1){
-                        // 其中slice(start, end)：用于提取字符串的片段
-                        // str.slice(1) 指下标为1之后的所有元素
-                        var loginname =  data.data.userinfo.loginname;
-                        var phone = loginname.slice(0,3) + "****" + loginname.slice(7,10);
-                        user_phone.getComponent(cc.Label).string=phone;
-                        // this.loginbox.node.active = false;  // 进度隐藏
-                    }else{
-                        user_phone.getComponent(cc.Label).string=data.message;
-                        // this.loginbox.node.active = false;  // 进度隐藏
-                    }
-            });
+    // tokenlogin: function(){
+    //     var token =cc.sys.localStorage.getItem('token');
+    //     //定位弹出窗口
+    //     cc.find("Canvas/server/user_status").active=true;
+    //     var user_phone  =cc.find("Canvas/server/user_status/user_phone");
+    //     if(token){
+    //             httpRequest.httpPostLogin('/app/api-server/token-login', {'token':token} ,function (data) {
+    //                 // var _this =this;
+    //                 // cc.loader.release('resources/login.json'); //释放json 资源
+    //                 // if(cc.sys.isNative){  //  jsb.fileUtils不支持 web  读写
+    //                 //     jsb.fileUtils.writeStringToFile(data,token)
+    //                 // }
+    //                 // cc.log(data); 
+    //                 // 未登录弹出登录
+    //                // 登录成功
+    //                 if(data.code==1){
+    //                     // 其中slice(start, end)：用于提取字符串的片段
+    //                     // str.slice(1) 指下标为1之后的所有元素
+    //                     var loginname =  data.data.userinfo.loginname;
+    //                     var phone = loginname.slice(0,3) + "****" + loginname.slice(7,10);
+    //                     user_phone.getComponent(cc.Label).string=phone;
+    //                     // this.loginbox.node.active = false;  // 进度隐藏
+    //                 }else{
+    //                     user_phone.getComponent(cc.Label).string=data.message;
+    //                     // this.loginbox.node.active = false;  // 进度隐藏
+    //                 }
+    //         });
 
-        }else{
-            user_phone.getComponent(cc.Label).string="未登录";
-        }
-    },
+    //     }else{
+    //         user_phone.getComponent(cc.Label).string="未登录";
+    //     }
+    // },
 
     login: function(){
        var loginname = this.register_login_name.getComponent(cc.EditBox).string;
@@ -79,7 +79,7 @@ cc.Class({
         };
         var _this= this;
         httpRequest.httpPostLogin('/app/api-server/login', params ,function (data) {
-            cc.log(data); 
+            // cc.log(data); 
             if(data.code==1){
                 // _this.register_alert.color =  new cc.color('#BDFF00');
                 _this.register_alert.string ='';

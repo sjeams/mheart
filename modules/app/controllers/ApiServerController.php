@@ -83,7 +83,7 @@ class ApiServerController extends ApiControl{
         if(!empty($data)){
             $token =$data['token'];
             $userinfo =  UserLogin ::find()->select('id,loginname')->where( "token = '$token'  ")->asarray()->One();
-            if(!empty($login)){ // 验证【录】-oken
+            if(!empty($userinfo)){ // 验证【录】-oken
                 // die(json_encode(['code' => 1,'data'=>['token' =>$data['token'],'userinfo'=>$login],'message' => '登录成功']));
                 die(Method::jsonApp(1,['token' => $token,'userinfo'=>$userinfo],'登录成功'));
             } 

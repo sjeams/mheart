@@ -46,15 +46,16 @@ var httpBagApi = cc.Class({
               return httpRequestAlert.alert_tips();
 
             case 9:
-              if (!(http_globalAsset.http_base_asset_num == 0)) {
-                _context.next = 12;
-                break;
+              // if(!http_globalAsset.material_yaohuang){
+              //     await httpRequestAsset.http_material_yaohuang();//加载材质
+              // }
+              // 没有资源，需要重新加载资源
+              if (http_globalAsset.http_base_asset_num == 0) {
+                httpRequest.playGame("", 0, 1); //加载资源的进度条
+                // await httpRequestBagApi.http_home_asset()
               }
 
-              _context.next = 12;
-              return httpRequestBagApi.http_home_asset();
-
-            case 12:
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -63,37 +64,13 @@ var httpBagApi = cc.Class({
     }))();
   },
   //加载音乐
-  http_home_asset: function http_home_asset() {
+  http_home_music: function http_home_music() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               return _context2.abrupt("return", new Promise(function (resolve) {
-                //获取全局播放器
-                if (http_globalAsset.http_base_asset_num == 0) {
-                  httpRequest.playGame("", 0, 1); //加载资源的进度条
-                }
-
-                resolve();
-              }));
-
-            case 1:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }))();
-  },
-  //加载音乐
-  http_home_music: function http_home_music() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              return _context3.abrupt("return", new Promise(function (resolve) {
                 //获取全局播放器
                 if (cc.find("Audio")) {
                   http_globalAsset.AudioPlayer = cc.find("Audio").getComponent("home_music"); //停止再开启背景音乐
@@ -111,20 +88,20 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context3.stop();
+              return _context2.stop();
           }
         }
-      }, _callee3);
+      }, _callee2);
     }))();
   },
   //实例化角色信息
   http_base_jiaose: function http_base_jiaose() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              return _context4.abrupt("return", new Promise(function (resolve) {
+              return _context3.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPostLogin('/app/api-server/jiaose', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
                   http_globalData.user_jiaose = data.data.jiaose;
@@ -135,20 +112,20 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context4.stop();
+              return _context3.stop();
           }
         }
-      }, _callee4);
+      }, _callee3);
     }))();
   },
   //实例化用户信息
   http_user_info: function http_user_info() {
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context4.prev = _context4.next) {
             case 0:
-              return _context5.abrupt("return", new Promise(function (resolve) {
+              return _context4.abrupt("return", new Promise(function (resolve) {
                 httpRequest.httpPost('/app/app-api/get-user', {}, function (data) {
                   //此处可能要判断登录失效 跳转、后期处理
                   http_globalData.user_info = data.data;
@@ -158,10 +135,10 @@ var httpBagApi = cc.Class({
 
             case 1:
             case "end":
-              return _context5.stop();
+              return _context4.stop();
           }
         }
-      }, _callee5);
+      }, _callee4);
     }))();
   },
   //实例化背包信息

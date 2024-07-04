@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'cb9c9nq1ARCEIGdOhdxiwAf', 'userinfo');
-// Script/home_js/userinfo.js
+// Script/userinfo/userinfo.js
 
 // require("../common"); 
 // cc.Class({

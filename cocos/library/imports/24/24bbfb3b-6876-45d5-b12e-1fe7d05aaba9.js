@@ -150,6 +150,9 @@ var httpAsset = cc.Class({
     //加载场景-- 场景为空， 关闭进度条
     if (http_globalAsset.http_base_redict_sence == '') {
       cc.find('Canvas/进度条').parent.removeChild(cc.find('Canvas/进度条'));
+    } else if (!http_globalAsset.http_base_redict_sence) {
+      //不做操作
+      cc.log(7777);
     } else {
       //预加载场景并获得加载进度
       cc.director.preloadScene(http_globalAsset.http_base_redict_sence, function (completeCount, totalCount, item) {
@@ -159,6 +162,9 @@ var httpAsset = cc.Class({
         });
       });
     }
+  },
+  reloading_asset: function reloading_asset() {
+    cc.loader.loadResDir('/');
   } // //加载材质
   // async  http_material_yaohuang() {
   //     return new Promise(resolve => {    

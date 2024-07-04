@@ -2,12 +2,15 @@
 
 
 require("./commonApi/runtime"); //引入基础async  await
+require("./commonApi/asset"); //引入资源图片
 require("./commonApi/http"); //引入基础http请求--初始化实例
 require("./commonApi/bag_api"); //引入背包
 require("./commonApi/figthingExtend"); //引入战斗动作
 require("./commonApi/alert"); //引入弹窗样式
 require("./commonApi/model"); //引入模型
-require("./commonApi/asset"); //引入资源图片
+
+// httpRequestModel.model_onload_loading();//加载进度条
+// httpRequest.playGame("",0,1) //加载资源的进度条
 //全局变量--随着数据改变-每次跳转 场景 置为空
 window.http_globalData = {
     progress:0,//进度条百分比
@@ -31,7 +34,6 @@ window.http_globalAsset = {
     http_base_asset_num:0,
     //加载的资源目录
     loading_asset : [
-        
         {url:'A基础图标',type:'',describe:'加载基础..'},
         {url:'图片大厅',type:'',describe:'加载大厅..'},
         {url:'图标生物',type:'图标生物',describe:'加载生物模型..'},
@@ -51,5 +53,5 @@ window.http_globalAsset = {
     model_biology_fightingDetail:[],
     model_biology_SkillIcon:[],
     model_biology_SkillTips:[],
-
 }
+httpRequestAsset.reloading_asset() //加载所有资源

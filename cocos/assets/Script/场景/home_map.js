@@ -31,6 +31,7 @@ cc.Class({
         //技能图标挂载
         var BoxPrefab =http_globalData.BoxPrefab_content
         await  this.biology_detail_list(BoxPrefab,info)
+        // await BoxPrefab.getComponent('home_map_detail').biology_detail_list(BoxPrefab,info)
     },
     addTouchEvent(node_1) {
         node_1.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
@@ -45,7 +46,7 @@ cc.Class({
     },
     //技能图片渲染
     async biology_detail_list(TipBoxPrefab_model,info_list){
-      return new Promise(resolve => {
+        return new Promise(resolve => {
         var TOOLS =[];
         var TOOLS = info_list;
         //开始实例化预制资源
@@ -58,8 +59,8 @@ cc.Class({
             //战斗胜利移除
             if(map.map_status==1){
                 //设置距离
-                TipBoxPrefab_icon.x=httpRequest.number_map_rand(map.x,150) //设置随x机偏移量0-49
-                TipBoxPrefab_icon.y=httpRequest.number_map_rand(map.y,25)//设置随机y偏移量0-49
+                TipBoxPrefab_icon.x=httpRequest.number_map_rand(map.x,100) //设置随x机偏移量0-49
+                TipBoxPrefab_icon.y=httpRequest.number_map_rand(map.y,10)//设置随机y偏移量0-49
                 //放在资源下面
                 // let image = info.picture;
                 TipBoxPrefab_icon.getChildByName('生物').getComponent(cc.Sprite).spriteFrame =   http_globalAsset.http_base_asset_biology[info.picture]
@@ -83,15 +84,15 @@ cc.Class({
         }
         resolve();
     })
-      // return TipBoxPrefab_model
-  },
-  //按钮点击回调
-  onConfirBtn:function(TipBoxPrefab_icon,map_int){
-      TipBoxPrefab_icon.on('click', function () {
-          //session设置战斗请求id
-          cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
-          cc.log(333)
-          httpRequest.playGame("sence_zhandou",1,1)
-      })
-  },
+        // return TipBoxPrefab_model
+    },
+    //按钮点击回调
+    onConfirBtn:function(TipBoxPrefab_icon,map_int){
+        TipBoxPrefab_icon.on('click', function () {
+            //session设置战斗请求id
+            cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); 
+            // cc.log(333)
+            httpRequest.playGame("sence_zhandou",1,1)
+        })
+    },
 });

@@ -161,9 +161,9 @@ cc.Class({
 
                   if (map.map_status == 1) {
                     //设置距离
-                    TipBoxPrefab_icon.x = httpRequest.number_map_rand(map.x, 150); //设置随x机偏移量0-49
+                    TipBoxPrefab_icon.x = httpRequest.number_map_rand(map.x, 100); //设置随x机偏移量0-49
 
-                    TipBoxPrefab_icon.y = httpRequest.number_map_rand(map.y, 25); //设置随机y偏移量0-49
+                    TipBoxPrefab_icon.y = httpRequest.number_map_rand(map.y, 10); //设置随机y偏移量0-49
                     //放在资源下面
                     // let image = info.picture;
 
@@ -205,8 +205,8 @@ cc.Class({
   onConfirBtn: function onConfirBtn(TipBoxPrefab_icon, map_int) {
     TipBoxPrefab_icon.on('click', function () {
       //session设置战斗请求id
-      cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int));
-      cc.log(333);
+      cc.sys.localStorage.setItem('figthing_map_int', JSON.stringify(map_int)); // cc.log(333)
+
       httpRequest.playGame("sence_zhandou", 1, 1);
     });
   }

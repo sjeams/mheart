@@ -7,6 +7,9 @@ cc._RF.push(module, 'b01edRwcatPzotunS35qvWZ', 'common');
 require("./commonApi/runtime"); //引入基础async  await
 
 
+require("./commonApi/asset"); //引入资源图片
+
+
 require("./commonApi/http"); //引入基础http请求--初始化实例
 
 
@@ -20,9 +23,8 @@ require("./commonApi/alert"); //引入弹窗样式
 
 
 require("./commonApi/model"); //引入模型
-
-
-require("./commonApi/asset"); //引入资源图片
+// httpRequestModel.model_onload_loading();//加载进度条
+// httpRequest.playGame("",0,1) //加载资源的进度条
 //全局变量--随着数据改变-每次跳转 场景 置为空
 
 
@@ -93,5 +95,6 @@ window.http_globalAsset = {
   model_biology_SkillIcon: [],
   model_biology_SkillTips: []
 };
+httpRequestAsset.reloading_asset(); //加载所有资源
 
 cc._RF.pop();

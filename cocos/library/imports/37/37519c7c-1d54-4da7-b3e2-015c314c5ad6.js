@@ -129,6 +129,23 @@ var HttpHelper = cc.Class({
 
     xhr.send('data=' + JSON.stringify(params)); //  xhr.send(params);
   },
+  model_onload_loading_start: function model_onload_loading_start() {
+    // return new Promise(resolve => {    
+    cc.loader.loadRes('/model弹窗/进度条', function (errorMessage, loadedResource) {
+      if (errorMessage) {
+        cc.log('载入预制资源失败, 原因:' + errorMessage);
+        return;
+      }
+
+      var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+      //     httpRequestModel.openzhenfa_hidden()
+      // }, this);
+
+      http_globalAsset.model_onload_loading = TipBoxPrefab;
+      httpRequest.playGame("", 0, 1); //加载资源的进度条
+      // resolve();
+    }); // });
+  },
   //场景加载--进度条
   playGame: function playGame(sence, task, no_progress) {
     // cc.log(sence)
