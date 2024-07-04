@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '264a58ZMhVJpLKSN93M4Wxc', 'alert');
-// Script/commonjs/alert.js
+cc._RF.push(module, '264a58ZMhVJpLKSN93M4Wxc', 'alert_type');
+// Script/commonjs/alert_type.js
 
 "use strict";
 

@@ -629,36 +629,6 @@
     "meta": 1714273944199,
     "relativePath": "Script\\commonjs\\post.js"
   },
-  "59db4906-ccc3-42ea-8c90-4ca3b1c6f8f9": {
-    "asset": 1713491582492,
-    "meta": 1714273944812,
-    "relativePath": "Script\\登录\\button_check.js"
-  },
-  "3c4c5ddc-889a-4a4a-a3e7-ea0f1005d027": {
-    "asset": 1713491582492,
-    "meta": 1714273944820,
-    "relativePath": "Script\\登录\\button_xieyi.js"
-  },
-  "418e4990-983e-4d50-ba34-3160c134c9f0": {
-    "asset": 1713491582493,
-    "meta": 1714273944829,
-    "relativePath": "Script\\登录\\jspfile.js"
-  },
-  "f10d1231-8ce3-4a09-87af-ded7e6ebad14": {
-    "asset": 1713491582495,
-    "meta": 1714273944868,
-    "relativePath": "Script\\登录\\popup_dlg.js"
-  },
-  "f0363ed1-abc3-482f-8c5a-c0f7b447ce19": {
-    "asset": 1713491582489,
-    "meta": 1714273944875,
-    "relativePath": "Script\\登录\\ProgressBarScript.js"
-  },
-  "522f7454-94d8-4e87-9f92-b1c1f9b4c84a": {
-    "asset": 1713491582491,
-    "meta": 1714273944928,
-    "relativePath": "Script\\登录\\SpriteTextTool.js"
-  },
   "6ceefc79-9306-4f0d-9273-1514eade4f90": {
     "asset": 1713491582505,
     "meta": 1714273945060,
@@ -1119,24 +1089,14 @@
     "meta": 1714273942055,
     "relativePath": "prefabs\\biology_boss.prefab"
   },
-  "70a52e55-77eb-4634-9a4f-48f2634de3cb": {
-    "asset": 1713765920691,
-    "meta": 1714273942062,
-    "relativePath": "prefabs\\sprite_地图.prefab"
-  },
   "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
     "asset": 1713491582549,
     "meta": 1714273942065,
     "relativePath": "prefabs\\sprite_生物.prefab"
   },
-  "0fae4388-15e0-48b8-9221-3bbf05280a1c": {
-    "asset": 1713765920690,
-    "meta": 1714273942071,
-    "relativePath": "prefabs\\sprite_世界.prefab"
-  },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
-    "asset": 1713491582547,
-    "meta": 1714273942068,
+    "asset": 1720059771131,
+    "meta": 1720059771142,
     "relativePath": "prefabs\\sprite_server_login.prefab"
   },
   "4a51e97c-3da5-4d8d-abf3-bd43b140a7df": {
@@ -2240,8 +2200,8 @@
     "relativePath": "resources\\图标世界\\武林外传.jpg"
   },
   "62f95362-361a-46b6-800a-552e75eb1aec": {
-    "asset": 1714101303060,
-    "meta": 1714273943859,
+    "asset": 1720061479175,
+    "meta": 1720061479188,
     "relativePath": "resources\\model背包\\生物信息.prefab"
   },
   "293102ac-b79a-41c1-82c0-f86c3c40a9a7": {
@@ -2316,8 +2276,8 @@
   },
   "264a5f19-3215-49a4-b292-37ddcce16c5c": {
     "asset": 1714381871133,
-    "meta": 1714381873255,
-    "relativePath": "Script\\commonjs\\alert.js"
+    "meta": 1720061356071,
+    "relativePath": "Script\\commonjs\\alert_type.js"
   },
   "be0166eb-f3a5-47e5-877f-338b0116276e": {
     "asset": 1715067285716,
@@ -2354,35 +2314,15 @@
     "meta": 1716357387215,
     "relativePath": "Script\\召唤"
   },
-  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
-    "asset": 1716363636884,
-    "meta": 1716363856659,
-    "relativePath": "Script\\登录\\Alert.js"
-  },
   "e24f24d0-a3c6-460d-8816-558b77aabeaa": {
     "asset": 1716363650720,
     "meta": 1716363856689,
     "relativePath": "Script\\登录\\register_in.js"
   },
-  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
-    "asset": 1716363667522,
-    "meta": 1716363856742,
-    "relativePath": "Script\\登录\\tips.js"
-  },
-  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
-    "asset": 1716363671560,
-    "meta": 1716363856754,
-    "relativePath": "Script\\登录\\Tools.js"
-  },
   "5187790f-c875-47d3-b06a-facbda924933": {
     "asset": 1719818779921,
     "meta": 1716365137999,
     "relativePath": "Script\\commonApi"
-  },
-  "a76e802f-195a-4d2d-93f5-5bf581ce060d": {
-    "asset": 1718353691511,
-    "meta": 1718353714483,
-    "relativePath": "Script\\commonApi\\runtime.js"
   },
   "cb9c99ea-d404-4210-819d-3a17718b001f": {
     "asset": 1718355118753,
@@ -2404,14 +2344,9 @@
     "meta": 1718701627664,
     "relativePath": "resources\\A基础图标\\边框圆.png"
   },
-  "5b7b73f9-1581-4589-862c-77f46711f06f": {
-    "asset": 1718704764030,
-    "meta": 1718704765410,
-    "relativePath": "Script\\登录\\login.js"
-  },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1719911422388,
-    "meta": 1719911422418,
+    "asset": 1720061407137,
+    "meta": 1720061407156,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "ac89c93b-b97f-48d6-8d31-ee154b738e64": {
@@ -2470,8 +2405,8 @@
     "relativePath": "resources\\model召唤\\旋转.prefab"
   },
   "655e55a5-1ce6-4e25-a480-35aeb57dfe63": {
-    "asset": 1719975637778,
-    "meta": 1719975637786,
+    "asset": 1720061741351,
+    "meta": 1720061741358,
     "relativePath": "resources\\model召唤\\角色选择.prefab"
   },
   "63e0101c-cc96-4f19-96d3-224c8dd8c0f4": {
@@ -2650,8 +2585,8 @@
     "relativePath": "resources\\model商店\\A商店.prefab"
   },
   "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
-    "asset": 1719975556380,
-    "meta": 1719975556395,
+    "asset": 1720061691913,
+    "meta": 1720061691927,
     "relativePath": "resources\\model召唤\\A召唤详情.prefab"
   },
   "f6e84749-a55c-4f7c-96b9-5d33aa02c2e8": {
@@ -2678,16 +2613,6 @@
     "asset": 1719975754982,
     "meta": 1719975754993,
     "relativePath": "resources\\model布阵\\A生物布阵.prefab"
-  },
-  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
-    "asset": 1719544616572,
-    "meta": 1719544690249,
-    "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
-  },
-  "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
-    "asset": 1719546415200,
-    "meta": 1719546613843,
-    "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
   },
   "7c7db64c-4827-4dc8-a55a-b5da19a3a170": {
     "asset": 1719555425222,
@@ -2745,8 +2670,8 @@
     "relativePath": "resources\\图标技能效果\\AutoAtlas.pac"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
-    "asset": 1720001228574,
-    "meta": 1720001228590,
+    "asset": 1720057466757,
+    "meta": 1720057466768,
     "relativePath": "resources\\model战斗\\biology_生物详情.prefab"
   },
   "74e7f103-4492-4554-ac67-c4ae6ff74e55": {
@@ -2779,11 +2704,6 @@
     "meta": 1719818950542,
     "relativePath": "Script\\背包\\bag_详情按钮Tools.js"
   },
-  "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
-    "asset": 1719818912226,
-    "meta": 1719818950565,
-    "relativePath": "Script\\背包\\bag_详情Tools.js"
-  },
   "6a66811c-a6a4-4a20-8ab8-3dfa17b62e3e": {
     "asset": 1719818915332,
     "meta": 1719818950585,
@@ -2809,16 +2729,6 @@
     "meta": 1719997994921,
     "relativePath": "Scene\\map\\战斗场景.fire"
   },
-  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
-    "asset": 1719892307769,
-    "meta": 1719892308779,
-    "relativePath": "Script\\登录\\score_login.js"
-  },
-  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
-    "asset": 1719892461962,
-    "meta": 1719892547687,
-    "relativePath": "Script\\登录\\register_knows.js"
-  },
   "77e07582-78d0-49ac-9a87-8f04dfaa391f": {
     "asset": 1719899244367,
     "meta": 1719899590735,
@@ -2839,20 +2749,10 @@
     "meta": 1719911679165,
     "relativePath": "Scene\\login\\加载.fire"
   },
-  "5f3cfe19-0377-452b-b089-707cf81467e0": {
-    "asset": 1719911795835,
-    "meta": 1719911813531,
-    "relativePath": "Script\\登录\\loading_progress.js"
-  },
   "ac5b2436-d451-43f8-be56-4190f94508a7": {
     "asset": 1719913415976,
     "meta": 1719913448203,
     "relativePath": "Script\\登录\\score_jiaose.js"
-  },
-  "d6864f90-040a-4637-afd2-d84425cb053b": {
-    "asset": 1719972625071,
-    "meta": 1719972898145,
-    "relativePath": "Script\\commonApi\\alert.js"
   },
   "6459d432-a2d8-4e3a-9f3d-468d469edf3c": {
     "asset": 1719975566198,
@@ -2898,11 +2798,6 @@
     "asset": 1719989864037,
     "meta": 1719990182019,
     "relativePath": "Script\\召唤\\zhaohuan_home.js"
-  },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1719991676384,
-    "meta": 1719991885460,
-    "relativePath": "Script\\commonApi\\http.js"
   },
   "f6b99640-5402-49b5-bbd3-fd5a2974d20f": {
     "asset": 1719992909747,
@@ -2959,11 +2854,6 @@
     "meta": 1720000619883,
     "relativePath": "Script\\commonApi\\model.js"
   },
-  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
-    "asset": 1720000692528,
-    "meta": 1720000694409,
-    "relativePath": "Script\\背包\\bag_home.js"
-  },
   "219ad309-eb79-4954-b3c4-27d4bba3d8a5": {
     "asset": 1720000647247,
     "meta": 1720000694446,
@@ -2978,5 +2868,80 @@
     "asset": 1720001140219,
     "meta": 1720001141549,
     "relativePath": "Script\\commonApi\\figthingExtend.js"
+  },
+  "0a4d7796-cd18-425c-9469-5773d6bee99b": {
+    "asset": 1720056987492,
+    "meta": 1720057088700,
+    "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
+  },
+  "86ac8ef4-f17d-4fac-80c7-d813b2ce6e2e": {
+    "asset": 1720057221306,
+    "meta": 1720057248553,
+    "relativePath": "Script\\背包\\bag_详情Tools.js"
+  },
+  "21e2e96d-8b2d-45e6-b8f9-13cd4ca235c7": {
+    "asset": 1720057207279,
+    "meta": 1720057248661,
+    "relativePath": "Script\\阵法\\bag_zhenfa头像Tools.js"
+  },
+  "37703c46-a6be-46c1-8c73-27eddb225ff7": {
+    "asset": 1720057406338,
+    "meta": 1720057456463,
+    "relativePath": "Script\\背包\\bag_home.js"
+  },
+  "1e7f7722-3504-4b3a-83bb-402965fc8d1d": {
+    "asset": 1720057686109,
+    "meta": 1720058049439,
+    "relativePath": "Script\\登录\\tips.js"
+  },
+  "5b7b73f9-1581-4589-862c-77f46711f06f": {
+    "asset": 1720058309673,
+    "meta": 1720058347618,
+    "relativePath": "Script\\登录\\login_in.js"
+  },
+  "f10d1231-8ce3-4a09-87af-ded7e6ebad14": {
+    "asset": 1720058323473,
+    "meta": 1720058347638,
+    "relativePath": "Script\\登录\\popup_dlg.js"
+  },
+  "99bc188e-a439-4d64-85b0-1a8e8f814b4a": {
+    "asset": 1720058496475,
+    "meta": 1720058505478,
+    "relativePath": "Script\\登录\\register_knows.js"
+  },
+  "5f3cfe19-0377-452b-b089-707cf81467e0": {
+    "asset": 1720059210140,
+    "meta": 1720059211568,
+    "relativePath": "Script\\登录\\loading_progress.js"
+  },
+  "418e4990-983e-4d50-ba34-3160c134c9f0": {
+    "asset": 1720059272099,
+    "meta": 1720059340447,
+    "relativePath": "Script\\登录\\jspfile.js"
+  },
+  "2045bef5-9c71-43c3-b5ff-2a0c7eeb1332": {
+    "asset": 1720059337658,
+    "meta": 1720059340486,
+    "relativePath": "Script\\登录\\server_alert.js"
+  },
+  "9c99ead9-736f-4448-8550-2b03fa2ec99a": {
+    "asset": 1720059366892,
+    "meta": 1720059368393,
+    "relativePath": "Script\\登录\\Tools.js"
+  },
+  "bfe2cf6e-0736-4b65-b40b-e26d5e8f8b44": {
+    "asset": 1720060861163,
+    "meta": 1720060867768,
+    "relativePath": "Script\\登录\\score_login.js"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1720060948116,
+    "meta": 1720060949174,
+    "relativePath": "Script\\commonApi\\http.js"
+  },
+  "d6864f90-040a-4637-afd2-d84425cb053b": {
+    "asset": 1720061038644,
+    "meta": 1720061052615,
+    "relativePath": "Script\\commonApi\\alert.js"
   }
 }

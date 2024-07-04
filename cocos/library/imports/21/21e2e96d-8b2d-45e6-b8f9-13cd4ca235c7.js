@@ -17,26 +17,27 @@ cc.Class({
 
     var num_height = 0;
 
-    var _loop = function _loop() {
-      info = http_globalData.biology[prop]; //1是武器
+    for (var prop in http_globalData.biology) {
+      var info = http_globalData.biology[prop]; //1是武器
       // if(info.gooduse==gooduse_type){
 
-      num_height = num_height + 1; // //开始实例化预制资源
+      var num_height = num_height + 1; // //开始实例化预制资源
 
       var TipBoxPrefab_icon = cc.instantiate(http_globalData.model_home_zhenfa_icon); // //载入技能图片
+      // cc.loader.loadRes(http_globalData.biology[prop].picture, cc.SpriteFrame, function (err, texture) { 
+      //     if(err){
+      //         cc.error(err);
+      //         // return;
+      //   }else{
 
-      cc.loader.loadRes(http_globalData.biology[prop].picture, cc.SpriteFrame, function (err, texture) {
-        if (err) {
-          cc.error(err); // return;
-        } else {
-          TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
-        } // TipBoxPrefab_icon.getChildByName('P移动').getComponent(cc.Sprite).spriteFrame = texture; 
-        // var   biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
-        //拖拽
+      TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[http_globalData.biology[prop].picture]; //   }
+      // TipBoxPrefab_icon.getChildByName('P移动').getComponent(cc.Sprite).spriteFrame = texture; 
+      // var   biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); //生物id biology_id
+      //拖拽
 
+      _this.bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, false); // });
+      // //技能等级
 
-        _this.bind_button_detail(TipBoxPrefab_model, TipBoxPrefab, TipBoxPrefab_icon, false);
-      }); // //技能等级
 
       TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = info.name; // // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
       //判断是否出战
@@ -49,13 +50,6 @@ cc.Class({
 
 
       cc.find("content/列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
-    };
-
-    for (var prop in http_globalData.biology) {
-      var info;
-      var num_height;
-
-      _loop();
     } // }
     // 定义content滚动条高度
 
@@ -167,10 +161,10 @@ cc.Class({
       if (http_globalData.biology[http_globalData.biology_id]) {
         TipBoxPrefab.getChildByName('生物移动').position = startPos; // var texture =  cc.find("content/列表/content/gridLayout",TipBoxPrefab).children[biology_id].getChildByName('P技能').getComponent(cc.Sprite).spriteFrame  
         //加载头像
+        // cc.loader.loadRes(http_globalData.biology[http_globalData.biology_id].picture, cc.SpriteFrame, function (err, texture) { 
 
-        cc.loader.loadRes(http_globalData.biology[http_globalData.biology_id].picture, cc.SpriteFrame, function (err, texture) {
-          TipBoxPrefab.getChildByName('生物移动').getComponent(cc.Sprite).spriteFrame = texture;
-        }); // 标记为正在拖拽
+        TipBoxPrefab.getChildByName('生物移动').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_biology[http_globalData.biology[http_globalData.biology_id].picture]; // });
+        // 标记为正在拖拽
 
         isDragging = true;
       } else {

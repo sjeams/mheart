@@ -7,7 +7,6 @@ cc.Class({
     },
 
     // LIFE-CYCLE CALLBACKS:
-
     // onLoad () {},
      //技能图片渲染  is_use  0卸下  1使用
      biology_detail_alert(TipBoxPrefab_model,TipBoxPrefab_icon,info,gooduse_type,button_name,is_use){

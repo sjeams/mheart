@@ -100,13 +100,10 @@
       },
       {
         "__id__": 83
-      },
-      {
-        "__id__": 84
       }
     ],
     "_prefab": {
-      "__id__": 85
+      "__id__": 84
     },
     "_opacity": 255,
     "_color": {
@@ -3144,16 +3141,6 @@
     "content": null,
     "_N$horizontalScrollBar": null,
     "_N$verticalScrollBar": null,
-    "_id": ""
-  },
-  {
-    "__type__": "398e6dtYzpEq5l+mArt9hF0",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
     "_id": ""
   },
   {

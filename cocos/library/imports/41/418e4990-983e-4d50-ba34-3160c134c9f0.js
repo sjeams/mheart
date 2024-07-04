@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '418e4mQmD5NULo0MWDBNMnw', 'jspfile');
-// Script/login/jspfile.js
+// Script/登录/jspfile.js
 
 "use strict";
 

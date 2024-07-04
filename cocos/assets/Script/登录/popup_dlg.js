@@ -38,7 +38,6 @@
          var fin = cc.fadeTo(0.3, this.mask_opacity);
         this.mask.runAction(fin);
      // dlg由小到大
-
         this.content.scale = 0;
         var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
          this.content.runAction(s);

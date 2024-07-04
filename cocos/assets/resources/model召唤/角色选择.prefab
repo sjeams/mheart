@@ -34,13 +34,10 @@
       },
       {
         "__id__": 15
-      },
-      {
-        "__id__": 16
       }
     ],
     "_prefab": {
-      "__id__": 17
+      "__id__": 16
     },
     "_opacity": 255,
     "_color": {
@@ -518,16 +515,6 @@
     },
     "fileId": "0aFXY5VotJyq7nbUZDPZB7",
     "sync": false
-  },
-  {
-    "__type__": "9fe90XuBmFABbeLvXUzRi55",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_id": ""
   },
   {
     "__type__": "cc.Sprite",

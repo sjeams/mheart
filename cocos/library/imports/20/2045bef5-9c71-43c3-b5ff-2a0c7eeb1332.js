@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '2045b71nHFDw7X/Kgx+6xMy', 'Alert');
-// Script/登录/Alert.js
+cc._RF.push(module, '2045b71nHFDw7X/Kgx+6xMy', 'server_alert');
+// Script/登录/server_alert.js
 
 "use strict";
 

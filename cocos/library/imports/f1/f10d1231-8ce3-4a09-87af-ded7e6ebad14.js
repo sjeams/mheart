@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'f10d1IxjONKCYev3tfm660U', 'popup_dlg');
-// Script/login/popup_dlg.js
+// Script/登录/popup_dlg.js
 
 "use strict";
 

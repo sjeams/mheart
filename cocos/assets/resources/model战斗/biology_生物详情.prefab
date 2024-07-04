@@ -1720,7 +1720,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "技能s",
+    "_name": "悟性星星s",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1740,160 +1740,6 @@
     ],
     "_prefab": {
       "__id__": 51
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 127,
-      "b": 0,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 140,
-      "height": 30.240000000000002
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        20,
-        100,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "server_star<Label>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 47
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "【降龙十八掌】",
-    "_N$string": "【降龙十八掌】",
-    "_fontSize": 24,
-    "_lineHeight": 24,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 3,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 2,
-    "_N$cacheMode": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.LabelOutline",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 47
-    },
-    "_enabled": true,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_width": 1,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.LabelShadow",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 47
-    },
-    "_enabled": true,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_offset": {
-      "__type__": "cc.Vec2",
-      "x": 2,
-      "y": 2
-    },
-    "_blur": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "40bedcd0-c109-4f66-aa9d-ca142724f729"
-    },
-    "fileId": "e0hlqQ5B9AuolikKcbOtLP",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "悟性星星s",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": false,
-    "_components": [
-      {
-        "__id__": 53
-      },
-      {
-        "__id__": 54
-      },
-      {
-        "__id__": 55
-      }
-    ],
-    "_prefab": {
-      "__id__": 56
     },
     "_opacity": 255,
     "_color": {
@@ -1947,7 +1793,7 @@
     "_name": "server_star<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 52
+      "__id__": 47
     },
     "_enabled": true,
     "_materials": [
@@ -1979,7 +1825,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 52
+      "__id__": 47
     },
     "_enabled": true,
     "_color": {
@@ -1997,7 +1843,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 52
+      "__id__": 47
     },
     "_enabled": true,
     "_color": {
@@ -2037,17 +1883,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 58
+        "__id__": 53
       },
       {
-        "__id__": 59
+        "__id__": 54
       },
       {
-        "__id__": 60
+        "__id__": 55
       }
     ],
     "_prefab": {
-      "__id__": 61
+      "__id__": 56
     },
     "_opacity": 255,
     "_color": {
@@ -2101,7 +1947,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 57
+      "__id__": 52
     },
     "_enabled": true,
     "_materials": [
@@ -2133,7 +1979,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 57
+      "__id__": 52
     },
     "_enabled": true,
     "_color": {
@@ -2151,7 +1997,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 57
+      "__id__": 52
     },
     "_enabled": true,
     "_color": {
@@ -2191,17 +2037,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 63
+        "__id__": 58
       },
       {
-        "__id__": 64
+        "__id__": 59
       },
       {
-        "__id__": 65
+        "__id__": 60
       }
     ],
     "_prefab": {
-      "__id__": 66
+      "__id__": 61
     },
     "_opacity": 255,
     "_color": {
@@ -2255,7 +2101,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 57
     },
     "_enabled": true,
     "_materials": [
@@ -2287,7 +2133,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 57
     },
     "_enabled": true,
     "_color": {
@@ -2305,7 +2151,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 57
     },
     "_enabled": true,
     "_color": {
@@ -2345,17 +2191,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 68
+        "__id__": 63
       },
       {
-        "__id__": 69
+        "__id__": 64
       },
       {
-        "__id__": 70
+        "__id__": 65
       }
     ],
     "_prefab": {
-      "__id__": 71
+      "__id__": 66
     },
     "_opacity": 255,
     "_color": {
@@ -2409,7 +2255,7 @@
     "_name": "server_name<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 67
+      "__id__": 62
     },
     "_enabled": true,
     "_materials": [
@@ -2441,7 +2287,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 67
+      "__id__": 62
     },
     "_enabled": true,
     "_color": {
@@ -2459,7 +2305,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 67
+      "__id__": 62
     },
     "_enabled": true,
     "_color": {
@@ -2499,17 +2345,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 73
+        "__id__": 68
       },
       {
-        "__id__": 74
+        "__id__": 69
       },
       {
-        "__id__": 75
+        "__id__": 70
       }
     ],
     "_prefab": {
-      "__id__": 76
+      "__id__": 71
     },
     "_opacity": 255,
     "_color": {
@@ -2563,7 +2409,7 @@
     "_name": "server_type<Label>",
     "_objFlags": 0,
     "node": {
-      "__id__": 72
+      "__id__": 67
     },
     "_enabled": true,
     "_materials": [
@@ -2584,6 +2430,160 @@
     "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 2,
+    "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.LabelOutline",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 67
+    },
+    "_enabled": true,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_width": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.LabelShadow",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 67
+    },
+    "_enabled": true,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 2,
+      "y": 2
+    },
+    "_blur": 2,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "40bedcd0-c109-4f66-aa9d-ca142724f729"
+    },
+    "fileId": "b3NIPJNjVFvpGT9HN8WKWx",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "技能s",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 73
+      },
+      {
+        "__id__": 74
+      },
+      {
+        "__id__": 75
+      }
+    ],
+    "_prefab": {
+      "__id__": 76
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 127,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 140,
+      "height": 30.240000000000002
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        30,
+        100,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "server_star<Label>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 72
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "【降龙十八掌】",
+    "_N$string": "【降龙十八掌】",
+    "_fontSize": 24,
+    "_lineHeight": 24,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 3,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,
@@ -2639,7 +2639,7 @@
     "asset": {
       "__uuid__": "40bedcd0-c109-4f66-aa9d-ca142724f729"
     },
-    "fileId": "b3NIPJNjVFvpGT9HN8WKWx",
+    "fileId": "e0hlqQ5B9AuolikKcbOtLP",
     "sync": false
   },
   {

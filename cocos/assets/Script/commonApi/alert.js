@@ -111,7 +111,6 @@ const httpAlert = cc.Class({
     },
  
 
-
     //重复闪烁旋转   time 时常/角度
     actionBlink_show(TipBoxPrefab_icon,runing,time,ratation,ratation_back,big){
         // TipBoxPrefab_icon.getChildByName('旋转')

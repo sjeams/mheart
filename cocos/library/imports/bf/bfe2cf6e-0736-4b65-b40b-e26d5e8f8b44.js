@@ -12,11 +12,10 @@ require("../common");
 
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    user_status: cc.Node,
-    user_phone: cc.Label // register_login_name: cc.EditBox,
+  properties: {// user_status:cc.Node,
+    // user_phone:cc.Label,
+    // register_login_name: cc.EditBox,
     // register_login_password: cc.EditBox
-
   },
   onLoad: function onLoad() {
     var _this = this;
@@ -127,23 +126,13 @@ cc.Class({
   //         //操作文本--修改用户信息
   //     });
   // },
-  goGame: function goGame(event, customEventData) {
-    // // 请求登录接口
-    // var params = {
-    //         'loginname': 'yincan1993',
-    //         'password': 123456,
-    //         'serverid': 1,
-    // };
-    // cc.sys.localStorage.setItem('params', JSON.stringify(params));
-    // var params = JSON.parse(cc.sys.localStorage.getItem("params"));
-    // var token =cc.sys.localStorage.getItem('token');
-    // cc.log(value); 
-    // let httpRequest =  new HttpHelper();  
+  //开始游戏按钮--不作为登录，只是开始
+  goGame: function goGame() {
     httpRequest.httpPostLogin('/app/api-server/user-login', {}, function (data) {
       // cc.log(data); 
       if (data.code == 0) {
         // 登录失败，或本地数据失效
-        var user_status = cc.find("Canvas/登录");
+        var user_status = cc.find("Canvas/登录弹窗");
         user_status.active = true; // 弹窗
       } else {
         // 设置服务器
@@ -164,38 +153,9 @@ cc.Class({
           cc.director.loadScene('login/角色'); // httpRequest.playGame("sence_jiaose");
         }
       }
-    }); //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
-    // var node = event.target;
-    // var button = node.getComponent(cc.Button);
-    //这里的 customEventData 参数就等于你之前设置的 "click1 user data"
-    // cc.log("node=", node.name, " event=", event.type, " data=", customEventData);
-  },
-  callback: function callback(event) {
-    // cc.log(data)
-    // var userCount =  cc.find("Canvas/ground/editbox_count").getComponent(cc.EditBox).string;
-    // var userPassward =  cc.find("Canvas/ground/editbox_passward").getComponent(cc.EditBox).string;
-    // console.log("用户账号："+userCount+ "用户密码："+ userPassward);
-    // HttpHelp.login(userCount,userPassward,function(isSuccess,Data){
-    //     var info = Data;
-    //     if(true == isSuccess){
-    //         console.log("login  success!!!");
-    //         console.log(info);
-    //         globaluserinfo.username = info.username;
-    //         globaluserinfo.gamepoint = info.gamepoint;
-    //         globaluserinfo.skey = info.skey;
-    //         globaluserinfo.userid = info.userid;
-    //         globaluserinfo.money = info.money;
-    //         globaluserinfo.userid = info.userid;
-    //         globaluserinfo.password = info.password;
-    //         globaluserinfo.salt = info.salt;
-    //         //登录成功后加载地图资源
-    cc.director.loadScene('map'); //     }else{
-    //         console.log("login  filed!!!")
-    //     }
-    // });
+    });
   },
   start: function start() {},
-  // update (dt) {},
   show_dlg: function show_dlg() {
     this.node.active = true;
   },
