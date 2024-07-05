@@ -252,7 +252,7 @@
                 // 页面跳转
                 var goPage = Number($("#goPage").val()) - Number(1)   
                 if(goPage>0){
-                  nextPage(goPage)
+                  static_nextPage(goPage)
 
                 }else{
                   page_unchange();
@@ -267,7 +267,7 @@
                 console.log('下分页');
                 // 页面跳转
                 var goPage = Number($("#goPage").val()) + Number(1)  
-                nextPage(goPage)
+                static_nextPage(goPage)
               }else{
                 page_unchange(); 
     

@@ -61,11 +61,11 @@ $(".friend_opacityBottom").on("touchend", function(e) {
 	if(Y>0){
 		if(Number($("#goPage").val())>0){
 			var goPage = Number($("#goPage").val()) - Number(1)   
-			nextPage(goPage)
+			static_nextPage(goPage)
 		}
 	}else{
 		var goPage = Number($("#goPage").val()) + Number(1)  
-		nextPage(goPage)
+		static_nextPage(goPage)
 	}
 	// e.stopPropagation();   
 })

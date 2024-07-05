@@ -51,7 +51,7 @@
             if(goPageCount){
                 var goPage = Number($("#goPage").val()) + Number(1)   
                 if(goPage<=goPageCount){
-                    nextPage(goPage);
+                    static_nextPage(goPage); //list 页面没有滚动分页nextPage(goPage)
                 }else{
                     //到底部距离160 显示 底部
                     if(getScrollHeight()<= getWindowHeight() + getDocumentTop()+160){

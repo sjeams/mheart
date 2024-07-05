@@ -27,9 +27,9 @@
                 </div>
                 <p class="center" id="listBelong" >
                     <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
-                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange(0)" href="javascript:;" >全部</a>
+                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
                     <?php foreach($list as $v){ ?>
-                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>"  onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
+                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>"  onclick="belongChange_static(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
                         <?php }?>
                 </p>
                 <div class="layui-input-inline center" id="goTypeInput">
@@ -120,7 +120,7 @@
     }
 
 
-    function belongChange(belong){
+    function belongChange_static(belong){
         // 重置状态page和search
         // $("#goSearch").val('');
         $("#goPage").val(1);
@@ -188,7 +188,7 @@
         // });
     })
 
-    function nextPage(goPage){
+    function static_nextPage(goPage){
         var full_model =$("#full_model").val();
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
@@ -223,7 +223,7 @@
     }
     function  gou(){
         var goPage =$("#goPage").val();
-        nextPage(goPage);
+        static_nextPage(goPage);
         // imageError();//图片报错监听
     }
 
