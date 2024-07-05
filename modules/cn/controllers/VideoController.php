@@ -369,20 +369,27 @@ class VideoController extends VideoApiControl
         $belong = Yii::$app->request->get('belong',0);
         $type = Yii::$app->request->get('type',0);
         $where ="1=1";
+        $wherecount ="1=1";
         if($belong){
             $where .= " and a.belong =$belong"; 
+            $wherecount .= " and belong =$belong"; 
         }
         if(intval($type)&&$belong!=0){
             $where .= " and a.type =$type"; 
+            $wherecount .= " and title like '%$title%'";
         }
         if($title){
             $where .= " and a.title like '%$title%'";
-        } 
-        $count= (new \yii\db\Query())
-        ->select("count(1) as num")
-        ->from("x2_video_list_detail as a")
-        // ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and user_id = ".$this->user['id'])
-        ->where($where)->one('sign')['num'];
+            $wherecount .= " and title like '%$title%'";
+        }
+        // // sign  是 sign 数据库
+        // $count= (new \yii\db\Query())
+        // ->select("count(1) as num")
+        // ->from("x2_video_list_detail as a")
+        // // ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and user_id = ".$this->user['id'])
+        // ->where($where)->one('sign')['num'];
+        $count = VideoListDetail::find()->where("$wherecount")->count();
+        // var_dump($count);die;
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         // $where .=" and user_id = ".$this->user['id'];
         $brush= (new \yii\db\Query())
