@@ -10,7 +10,7 @@ cc.Class({
 
     // onLoad () {},
      //技能图片渲染
-     biology_detail_alert(TipBoxPrefab_model,info){
+     biology_detail_alert(info){
         var _this=this;
         cc.loader.loadRes('/model背包/生物信息', function(errorMessage,loadedResource_icon){
             //检查资源加载
@@ -24,30 +24,30 @@ cc.Class({
             
             
                // 此处进行事件绑定
-            _this.bind_button(TipBoxPrefab_model,TipBoxPrefab,info)
+            _this.bind_button(TipBoxPrefab,info)
             //写入icon
-            TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
-            return TipBoxPrefab_model
+            http_globalAsset.TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
+            return http_globalAsset.TipBoxPrefab_model
         })
-        return TipBoxPrefab_model
+        return http_globalAsset.TipBoxPrefab_model
     },
     //绑定点击事件
-    bind_button(TipBoxPrefab_model,TipBoxPrefab,info){
+    bind_button(TipBoxPrefab,info){
         
         //  cc.find("列表/content/gridLayout",TipBoxPrefab)
         TipBoxPrefab.getChildByName('技能').on('click', function () {
             // 事件处理逻辑
             //移除挂载
-            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            http_globalAsset.TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
             //重新挂载
-            TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(TipBoxPrefab_model,info)
+            http_globalAsset.TipBoxPrefab_model.getComponent('biology_skillTools').biology_detail_alert(info)
         }, this);
         TipBoxPrefab.getChildByName('缘分').on('click', function () {
             // 事件处理逻辑
             //移除挂载
-            TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
+            http_globalAsset.TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
             //重新挂载
-            TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
+            http_globalAsset.TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(info)
         }, this);
     },
     biology_detail_info(BoxPrefab,TipBoxPrefab,info) {

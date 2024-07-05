@@ -11,12 +11,12 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model) {
+  biology_detail_alert: function biology_detail_alert() {
     var info_list = http_globalData.biology; //尽量先关闭所有弹窗
 
-    TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
 
     var _this = this; // cc.loader.loadRes('/model背包/生物头像', function(errorMessage,loadedResource_icon){
     //检查资源加载
@@ -29,15 +29,15 @@ cc.Class({
 
     TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string = '生物(' + info_list.length + '/60)'; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
 
-    _this.biology_detail_list(TipBoxPrefab_model, TipBoxPrefab, info_list); //写入icon
+    _this.biology_detail_list(TipBoxPrefab, info_list); //写入icon
 
 
-    TipBoxPrefab_model.getChildByName('生物头像').addChild(TipBoxPrefab); // return TipBoxPrefab_model
+    http_globalAsset.TipBoxPrefab_model.getChildByName('生物头像').addChild(TipBoxPrefab); // return http_globalAsset.TipBoxPrefab_model
     // })
-    // return TipBoxPrefab_model
+    // return http_globalAsset.TipBoxPrefab_model
   },
   //技能图片渲染
-  biology_detail_list: function biology_detail_list(TipBoxPrefab_model, TipBoxPrefab, info_list) {
+  biology_detail_list: function biology_detail_list(TipBoxPrefab, info_list) {
     var _this = this;
 
     var TOOLS = [];
@@ -67,7 +67,7 @@ cc.Class({
       TipBoxPrefab_icon.getChildByName('生物等级s').getComponent(cc.Label).string = '等级' + info.grade; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
       //绑定按钮事件
 
-      _this.bindClickEventIcon(TipBoxPrefab_model, TipBoxPrefab_icon); //写入icon
+      _this.bindClickEventIcon(TipBoxPrefab_icon); //写入icon
 
 
       cc.find("列表/content/gridLayout", TipBoxPrefab).addChild(TipBoxPrefab_icon);
@@ -89,7 +89,7 @@ cc.Class({
     return TipBoxPrefab;
   },
   // 绑定按钮事件---挂载生物详情
-  bindClickEventIcon: function bindClickEventIcon(TipBoxPrefab_model, TipBoxPrefab_icon) {
+  bindClickEventIcon: function bindClickEventIcon(TipBoxPrefab_icon) {
     // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
     // 此处进行事件绑定
     TipBoxPrefab_icon.on('click', function () {
@@ -97,10 +97,10 @@ cc.Class({
       http_globalData.biology_id = TipBoxPrefab_icon.parent.children.indexOf(TipBoxPrefab_icon); // 事件处理逻辑
       //移除挂载
 
-      TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
+      http_globalAsset.TipBoxPrefab_model.getChildByName('生物详情').removeAllChildren(); //重新挂载
 
-      TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab_model); // 切换默认挂载信息列表
-      // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,TipBoxPrefab_model);
+      http_globalAsset.TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert(http_globalAsset.TipBoxPrefab_model); // 切换默认挂载信息列表
+      // _this.bindClickEventIcon(TipBoxPrefab_icon.getComponent(cc.Button),info,http_globalAsset.TipBoxPrefab_model);
     }, this); //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
     // 销毁所有弹窗--节点
     // TipBoxPrefab.getChildByName('技能描述').removeAllChildren();

@@ -79,12 +79,14 @@ cc.Class({
   openBiology: function openBiology() {
     if (http_globalData.biology && http_globalData.zhenfa && http_globalData.bag) {
       // //技能图标挂载
-      var BoxPrefab = http_globalData.BoxPrefab_alert;
-      var TipBoxPrefab = http_globalData.model_home_openBiology;
-      TipBoxPrefab.getComponent('biology_iconTools').biology_detail_alert(TipBoxPrefab); // //生物详情挂载--默认加载第一个
+      var BoxPrefab = http_globalData.BoxPrefab_alert; // var TipBoxPrefab =  http_globalData.model_home_openBiology
+      //主模板
 
-      TipBoxPrefab.getComponent('biology_infoTools').biology_detail_alert(TipBoxPrefab);
-      BoxPrefab.addChild(TipBoxPrefab, 1);
+      http_globalAsset.TipBoxPrefab_model = http_globalData.model_home_openBiology;
+      http_globalAsset.TipBoxPrefab_model.getComponent('biology_iconTools').biology_detail_alert(); // //生物详情挂载--默认加载第一个
+
+      http_globalAsset.TipBoxPrefab_model.getComponent('biology_infoTools').biology_detail_alert();
+      BoxPrefab.addChild(http_globalAsset.TipBoxPrefab_model, 1);
     } else {//如果没有生物需要弹窗另一个提示
     }
   },

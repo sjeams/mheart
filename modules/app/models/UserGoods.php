@@ -163,7 +163,6 @@ class UserGoods extends ActiveRecord
        $gooduse= $this->getUserGoodsList();
         foreach($gooduse as$key=> $v){
             // $gooduse[$key]['nature']= UserGoodsNature::UserGoodsNatureList($v['id']);
-
             //属性
             $gooduse[$key]['nature']= UserGoodsNature::UserGoodsNatureExtend($v['id']);
             //从0 开始，需要-1
@@ -173,6 +172,8 @@ class UserGoods extends ActiveRecord
             $gooduse[$key]['nature_grade']=  UserBiologyAttribute:: getNatureGrade($int);        //属性评分
             $gooduse[$key]['int'] =intval($v['id']-1);//序号索引
         }
+ 
+        $gooduse=  array_column($gooduse,null,'id'); //重置索引id
         return $gooduse;
     }
     // x2_user_goods_nature

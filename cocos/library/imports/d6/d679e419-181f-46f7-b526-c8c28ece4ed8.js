@@ -15,53 +15,60 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //定义按钮事件类型 is_bag  0卸下 1装备
-  biology_init: function biology_init(TipBoxPrefab_model, TipBoxPrefab_icon, info, button_name, is_bag) {
+  biology_init: function biology_init(TipBoxPrefab_icon) {
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var biology_id, goods_key;
+      var biology_id, is_bag, goods_key;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               //加载背包 和  背包列表
-              biology_id = http_globalData.biology[http_globalData.biology_id].id;
-              _context.t0 = button_name;
-              _context.next = _context.t0 === "装备1" ? 4 : _context.t0 === "装备2" ? 9 : _context.t0 === "元神" ? 14 : 19;
+              biology_id = http_globalData.biology[http_globalData.biology_id].id; //相同  卸下
+
+              if (http_globalData.goodsid == http_globalData.goodsinfo.id) {
+                is_bag = 0;
+              } else {
+                is_bag = 1;
+              }
+
+              _context.t0 = http_globalData.button_name;
+              _context.next = _context.t0 === "装备1" ? 5 : _context.t0 === "装备2" ? 10 : _context.t0 === "元神" ? 15 : 20;
               break;
 
-            case 4:
+            case 5:
               goods_key = 'gooduse1';
-              _context.next = 7;
-              return httpRequestBagApi.http_update_goods(biology_id, goods_key, info.id, is_bag);
+              _context.next = 8;
+              return httpRequestBagApi.http_update_goods(biology_id, goods_key, http_globalData.goodsinfo.id, is_bag);
 
-            case 7:
+            case 8:
               //1装备  0卸下
-              _this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key, is_bag);
+              _this.goods_update(TipBoxPrefab_icon, goods_key, is_bag);
 
-              return _context.abrupt("break", 19);
+              return _context.abrupt("break", 20);
 
-            case 9:
+            case 10:
               goods_key = 'gooduse2';
-              _context.next = 12;
-              return httpRequestBagApi.http_update_goods(biology_id, goods_key, info.id, is_bag);
+              _context.next = 13;
+              return httpRequestBagApi.http_update_goods(biology_id, goods_key, http_globalData.goodsinfo.id, is_bag);
 
-            case 12:
-              _this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key, is_bag);
+            case 13:
+              _this.goods_update(TipBoxPrefab_icon, goods_key, is_bag);
 
-              return _context.abrupt("break", 19);
+              return _context.abrupt("break", 20);
 
-            case 14:
+            case 15:
               goods_key = 'yuanShen';
-              _context.next = 17;
-              return httpRequestBagApi.http_update_goods(biology_id, goods_key, info.id, is_bag);
+              _context.next = 18;
+              return httpRequestBagApi.http_update_goods(biology_id, goods_key, http_globalData.goodsinfo.id, is_bag);
 
-            case 17:
-              _this.goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key, is_bag);
+            case 18:
+              _this.goods_update(TipBoxPrefab_icon, goods_key, is_bag);
 
-              return _context.abrupt("break", 19);
+              return _context.abrupt("break", 20);
 
-            case 19:
+            case 20:
             case "end":
               return _context.stop();
           }
@@ -69,11 +76,11 @@ cc.Class({
       }, _callee);
     }))();
   },
-  goods_update: function goods_update(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key, is_bag) {
+  goods_update: function goods_update(TipBoxPrefab_icon, goods_key, is_bag) {
     if (is_bag == 1) {
-      this.zhuangbe_up(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key);
+      this.zhuangbe_up(TipBoxPrefab_icon, goods_key);
     } else {
-      this.zhuangbei_down(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key);
+      this.zhuangbei_down(TipBoxPrefab_icon, goods_key);
     }
   },
   //图标回填
@@ -99,21 +106,21 @@ cc.Class({
   TipBoxPrefab_biology_detail_make: function TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon) {
     http_globalData.TipBoxPrefab_biology_detail = TipBoxPrefab_icon;
   },
-  zhuangbei_down: function zhuangbei_down(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key) {
+  zhuangbei_down: function zhuangbei_down(TipBoxPrefab_icon, goods_key) {
     //移除预制节点
     this.TipBoxPrefab_biology_detail_hidden(); // 移除装备栏--返回背包
 
-    http_globalData.bag[info["int"]].is_bag = 0;
+    http_globalData.bag[http_globalData.goodsinfo.id].is_bag = 0;
     TipBoxPrefab_icon.active = true; //背包显示
 
     http_globalData.biology[http_globalData.biology_id][goods_key] = null; //装备栏不显示
     //icon显示     
 
-    var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + button_name, TipBoxPrefab_model);
+    var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + http_globalData.button_name, http_globalAsset.TipBoxPrefab_model);
     this.biology_icon(TipBoxPrefab_biology, null);
     http_globalData.goodsid = ''; //如果使用就重新绑定
   },
-  zhuangbe_up: function zhuangbe_up(TipBoxPrefab_model, TipBoxPrefab_icon, button_name, info, goods_key) {
+  zhuangbe_up: function zhuangbe_up(TipBoxPrefab_icon, goods_key) {
     // 添加到装备栏--移出背包
     //如果原来装备栏有--装备，难么要返回背包
     if (http_globalData.biology[http_globalData.biology_id][goods_key]) {
@@ -126,13 +133,13 @@ cc.Class({
     // cc.log(goodsid)
 
 
-    http_globalData.bag[info["int"]].is_bag = 1;
+    http_globalData.bag[http_globalData.goodsinfo.id].is_bag = 1;
     TipBoxPrefab_icon.active = false;
-    http_globalData.biology[http_globalData.biology_id][goods_key] = info["int"]; //info icon显示
+    http_globalData.biology[http_globalData.biology_id][goods_key] = http_globalData.goodsinfo.id; //info icon显示
 
-    var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + button_name, TipBoxPrefab_model);
-    this.biology_icon(TipBoxPrefab_biology, info["int"]);
-    http_globalData.goodsid = info.id; //如果使用就重新绑定
+    var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + http_globalData.button_name, http_globalAsset.TipBoxPrefab_model);
+    this.biology_icon(TipBoxPrefab_biology, http_globalData.goodsinfo.id);
+    http_globalData.goodsid = http_globalData.goodsinfo.id; //如果使用就重新绑定
   }
 });
 

@@ -11,13 +11,13 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   // onLoad () {},
   //技能图片渲染
-  biology_detail_alert: function biology_detail_alert(TipBoxPrefab_model) {
+  biology_detail_alert: function biology_detail_alert() {
     //info 为选中生物的info
     var info = http_globalData.biology[http_globalData.biology_id]; // cc.log(http_globalData.bag)
 
-    TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
 
     var _this = this; // cc.loader.loadRes('/model背包/生物详情', function(errorMessage,loadedResource_icon){
     //检查资源加载
@@ -34,14 +34,14 @@ cc.Class({
     _this.biology_detail_list(TipBoxPrefab, info); //绑定按钮事件
 
 
-    _this.bind_button(TipBoxPrefab_model, TipBoxPrefab, info); //写入icon
+    _this.bind_button(TipBoxPrefab, info); //写入icon
 
 
-    TipBoxPrefab_model.getChildByName('生物详情').addChild(TipBoxPrefab); // return TipBoxPrefab_model
+    http_globalAsset.TipBoxPrefab_model.getChildByName('生物详情').addChild(TipBoxPrefab); // return TipBoxPrefab_model
     // })
     // //技能列表挂载--默认挂载信息
 
-    TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(TipBoxPrefab_model, info); // return TipBoxPrefab_model
+    http_globalAsset.TipBoxPrefab_model.getComponent('biology_xinxiTools').biology_detail_alert(info); // return TipBoxPrefab_model
   },
   //技能图片渲染
   biology_detail_list: function biology_detail_list(TipBoxPrefab, info) {
@@ -77,72 +77,57 @@ cc.Class({
     TipBoxPrefab.getChildByName('经验s').getComponent(cc.Label).string = info.need_expe;
     TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string = info.state_name; //有背包物品
 
-    if (http_globalData.bag.length) {
+    if (http_globalData.bag) {
       if (info.gooduse1) {
-        var goods_image = http_globalData.bag[info.gooduse1].point; // cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-        //     if (err) {
-        //         // cc.error(err.message || err);
-        //         return;
-        //     }
-
-        TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image]; // });
+        var goods_image = http_globalData.bag[info.gooduse1].point;
+        TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
 
       if (info.gooduse2) {
-        var goods_image = http_globalData.bag[info.gooduse2].point; // cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-        //     if (err) {
-        //         // cc.error(err.message || err);
-        //         return;
-        //     }
-
-        TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image]; // });
+        var goods_image = http_globalData.bag[info.gooduse2].point;
+        TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
 
       if (info.yuanShen) {
-        var goods_image = http_globalData.bag[info.yuanShen].point; // cc.loader.loadRes(goods_image, cc.SpriteFrame, function (err, texture) { 
-        //     if (err) {
-        //         // cc.error(err.message || err);
-        //         return;
-        //     }
-
-        TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image]; // });
+        var goods_image = http_globalData.bag[info.yuanShen].point;
+        TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
     }
 
     return TipBoxPrefab;
   },
   //绑定点击事件
-  bind_button: function bind_button(TipBoxPrefab_model, TipBoxPrefab, info) {
-    TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
-    TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren(); //  cc.find("列表/content/gridLayout",TipBoxPrefab)
+  bind_button: function bind_button(TipBoxPrefab, info) {
+    http_globalAsset.TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren(); //  cc.find("列表/content/gridLayout",TipBoxPrefab)
 
     TipBoxPrefab.getChildByName('装备1').on('click', function () {
       // 事件处理逻辑
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse1, 1, '装备1');
+      http_globalAsset.TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(info.gooduse1, 1, '装备1');
     }, this);
     TipBoxPrefab.getChildByName('装备2').on('click', function () {
       // 事件处理逻辑
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(TipBoxPrefab_model, info.gooduse2, 1, '装备2');
+      http_globalAsset.TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(info.gooduse2, 1, '装备2');
     }, this);
     TipBoxPrefab.getChildByName('元神').on('click', function () {
       // 事件处理逻辑
       //移除挂载
       // TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
       //重新挂载
-      TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(TipBoxPrefab_model, info.yuanShen, 4, '元神');
+      http_globalAsset.TipBoxPrefab_model.getComponent('bag_物品Tools').biology_detail_alert(info.yuanShen, 4, '元神');
     }, this); // TipBoxPrefab.getChildByName('缘分').on('click', function () {
     //     // 事件处理逻辑
     //     //移除挂载
     //     TipBoxPrefab_model.getChildByName('生物信息').removeAllChildren();
     //     //重新挂载
-    //     TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(TipBoxPrefab_model,info)
+    //     TipBoxPrefab_model.getComponent('biology_yuanfenTools').biology_detail_alert(info)
     // }, this);
   } // update (dt) {},
 
