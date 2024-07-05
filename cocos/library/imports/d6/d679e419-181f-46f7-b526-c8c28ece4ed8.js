@@ -129,13 +129,21 @@ cc.Class({
       this.TipBoxPrefab_biology_detail_shown();
     } else {
       this.TipBoxPrefab_biology_detail_make(TipBoxPrefab_icon);
-    } //隐藏当前物品
-    // cc.log(goodsid)
+    } //隐藏当前物品--选中id
 
 
     http_globalData.bag[http_globalData.goodsinfo.id].is_bag = 1;
     TipBoxPrefab_icon.active = false;
-    http_globalData.biology[http_globalData.biology_id][goods_key] = http_globalData.goodsinfo.id; //info icon显示
+    http_globalData.biology[http_globalData.biology_id][goods_key] = http_globalData.goodsinfo.id;
+    cc.log(http_globalData.goodsid); //背包显示--回填装备栏物品
+
+    if (http_globalData.goodsid) {
+      http_globalData.bag[http_globalData.goodsid].is_bag = 0;
+      TipBoxPrefab_icon.parent.children[http_globalData.goodsid - 1].active = true;
+      cc.log(http_globalData.goodsid);
+      cc.log(TipBoxPrefab_icon.parent.children); // TipBoxPrefab_icon.active=true //背包显示
+    } //info icon显示
+
 
     var TipBoxPrefab_biology = cc.find("生物详情/biology_end/" + http_globalData.button_name, http_globalAsset.TipBoxPrefab_model);
     this.biology_icon(TipBoxPrefab_biology, http_globalData.goodsinfo.id);

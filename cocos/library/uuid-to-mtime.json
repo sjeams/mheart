@@ -2860,8 +2860,8 @@
     "relativePath": "Script\\commonApi\\bag_api.js"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1720148886050,
-    "meta": 1720148886063,
+    "asset": 1720150220385,
+    "meta": 1720150220399,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "1afe6f69-cf63-449c-816f-f97b5e0ce622": {
@@ -2873,11 +2873,6 @@
     "asset": 1720148263925,
     "meta": 1720148408573,
     "relativePath": "Script\\背包\\bag_物品Tools.js"
-  },
-  "d679e419-181f-46f7-b526-c8c28ece4ed8": {
-    "asset": 1720148379359,
-    "meta": 1720148408613,
-    "relativePath": "Script\\背包\\bag_详情按钮Tools.js"
   },
   "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
     "asset": 1720148221944,
@@ -2915,8 +2910,13 @@
     "relativePath": "Script\\背包\\bag_元神Tools.js"
   },
   "7768f8c7-9728-432e-89b0-670d599f9d30": {
-    "asset": 1720148884603,
-    "meta": 1720148885491,
+    "asset": 1720148909691,
+    "meta": 1720149251640,
     "relativePath": "Script\\背包\\biology_yuanfenTools.js"
+  },
+  "d679e419-181f-46f7-b526-c8c28ece4ed8": {
+    "asset": 1720150217290,
+    "meta": 1720150219840,
+    "relativePath": "Script\\背包\\bag_详情按钮Tools.js"
   }
 }
