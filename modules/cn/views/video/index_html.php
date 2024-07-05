@@ -24,9 +24,7 @@
                     <a class="btn <?php echo $data['type']==5?'active btn-primary':' btn-success'?>"  id="belong5"  onclick="belongChange_static(5)" href="javascript:;" >精品</a>
                     <a class="btn <?php echo $data['type']==6?'active btn-primary':' btn-success'?>"  id="belong6"  onclick="belongChange_static(6)" href="javascript:;" >美女</a>
                     <a class="btn <?php echo $data['type']==7?'active btn-primary':' btn-success'?>"  id="belong7"  onclick="belongChange_static(7)" href="javascript:;" >收藏</a>
-                    <!-- <?php foreach($list as $v){ ?>
-                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['type'] ?>" id="belong<?php echo $v['type'] ?>"  onclick="belongChange_static(<?php echo $v['type'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
-                    <?php }?> -->
+  
                 </p>
 
 
