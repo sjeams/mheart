@@ -15,7 +15,7 @@
                         <?php }?>
                 </p> -->
                 <p class="center" id="listBelong" >
-                    <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                    <input type="hidden" id="goBelong"  value="<?php echo $data['type'] ?>">
                     <a class="btn <?php echo $data['type']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
                     <a class="btn <?php echo $data['type']==1?'active btn-primary':' btn-success'?>"  id="belong1"  onclick="belongChange_static(1)" href="javascript:;" >国产</a>
                     <a class="btn <?php echo $data['type']==2?'active btn-primary':' btn-success'?>"  id="belong2"  onclick="belongChange_static(2)" href="javascript:;" >主播</a>
