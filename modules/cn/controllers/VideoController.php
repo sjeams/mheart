@@ -142,9 +142,8 @@ class VideoController extends VideoApiControl
         $html = Yii::$app->request->get('html',0);
         if($html){
             $this->layout = 'kongbai';
-            return $this->render('html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
-            $this->layout = 'kongbai';
             return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }

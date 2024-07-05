@@ -304,13 +304,6 @@ $(document).ajaxStop(function( ) {
     //         }
     //     );
     // }
-
-
-
-
-
-
-
   /*  header ______________________ */
     //首页 
     //静态跳转
@@ -319,7 +312,6 @@ $(document).ajaxStop(function( ) {
         var html = getprintHtml(url);
         $('#video_center').html('')
         if(html){ $('.video_center').html(html);}
-   
     }
     function video_list(){
         // window.location.href='/cn/video/list';
@@ -333,7 +325,7 @@ $(document).ajaxStop(function( ) {
     }
     function old_content(){
         // window.location.href='/cn/video/like';  
-        var url="/cn/video/like";
+        var url="/cn/video/like?html=1";
         goStaticHtml(url)
     }
     function my_video(){
