@@ -95,33 +95,6 @@
 <!-- </form> -->
 <input type="hidden" id="videotype" value="<?php echo $data['type'] ?>">
 <script>
-
-    // function  gou(){
-    //     var goPage =$("#goPage").val();
-    //     static_nextPage(goPage);
-    //     // imageError();//图片报错监听
-    // }
-
-    // function  gou_new(){
-    //     $('#content_append').html(''); 
-    //     gou();
-    //     var  total_count =  $('.return_count').eq(0).val();
-    //     $('#total_count').html(total_count)
-    //     $("#goPageCount").val(total_count)
-    // }
-
-    //跳转页面
-    // function  gouSerach(goPage){
-    //     if(goPage){
-    //         $(".footer_go_input").val(goPage)
-    //     }
-    //     var goPage =$(".footer_go_input").val()
-    //     $("#goPage").val(goPage);
-    //     gou_new();
-    //     // console.log(gouSerach)
-    //     // var title =  $('#appendedInputButton').val();
-    //     // window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
-    // }
     function belongChange_static(belong){
         // 重置状态page和search
         // $("#goSearch").val('');
@@ -133,27 +106,6 @@
         $('#belong'+belong).removeClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
         gou()  
-        // if(belong==0){
-        //     var inputvalue ="";
-        //     $("#goTypeInput").html(inputvalue);
-        //     gou() 
-        // }else{
-        //     $.ajax({
-        //         url: '/cn/video-api/get-belong', // 跳转到 action 
-        //         data:{
-        //             belong:belong,
-        //             type:0
-        //         },
-        //         type: 'post',
-        //         dataType: 'json',
-        //         success: function (data) {
-        //             if(data){
-        //                 $("#goTypeInput").html(data.data);
-        //             }
-        //             gou()    
-        //         },
-        //     });
-        // }
     }
 
     function  gou(){
