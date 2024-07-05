@@ -5,15 +5,30 @@
         <tr>
             <td >
                 <div class="input_div center" style="display: block;">
-                    <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
+                    <input name="title" class="search_input"   id="goSearch"   type="text" value="<?php echo $data['title']?>"/>
                     <button class="btn btn-primary search_button" onclick="gou()"  >搜索</button>
                 </div>
-                <p class="center">
+                <!-- <p class="center">
                     <a class="btn <?php echo $data['type']=='all'?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&title=<?php echo $data['title']?>" >全部</a>
                     <?php foreach($list as $v){ ?>
                         <a class="btn  <?php echo $data['type']==$v['type']?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&type=<?php echo $v['type']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
                         <?php }?>
+                </p> -->
+                <p class="center" id="listBelong" >
+                    <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                    <a class="btn <?php echo $data['type']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
+                    <a class="btn <?php echo $data['type']==1?'active btn-primary':' btn-success'?>"  id="belong1"  onclick="belongChange_static(1)" href="javascript:;" >国产</a>
+                    <a class="btn <?php echo $data['type']==2?'active btn-primary':' btn-success'?>"  id="belong2"  onclick="belongChange_static(2)" href="javascript:;" >主播</a>
+                    <a class="btn <?php echo $data['type']==3?'active btn-primary':' btn-success'?>"  id="belong3"  onclick="belongChange_static(3)" href="javascript:;" >少女</a>
+                    <a class="btn <?php echo $data['type']==4?'active btn-primary':' btn-success'?>"  id="belong4"  onclick="belongChange_static(4)" href="javascript:;" >日韩</a>
+                    <a class="btn <?php echo $data['type']==5?'active btn-primary':' btn-success'?>"  id="belong5"  onclick="belongChange_static(5)" href="javascript:;" >精品</a>
+                    <a class="btn <?php echo $data['type']==6?'active btn-primary':' btn-success'?>"  id="belong6"  onclick="belongChange_static(6)" href="javascript:;" >美女</a>
+                    <a class="btn <?php echo $data['type']==7?'active btn-primary':' btn-success'?>"  id="belong7"  onclick="belongChange_static(7)" href="javascript:;" >收藏</a>
+                    <!-- <?php foreach($list as $v){ ?>
+                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['type'] ?>" id="belong<?php echo $v['type'] ?>"  onclick="belongChange_static(<?php echo $v['type'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
+                    <?php }?> -->
                 </p>
+
 
             </td>
                 <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
@@ -82,10 +97,75 @@
 <!-- </form> -->
 <input type="hidden" id="videotype" value="<?php echo $data['type'] ?>">
 <script>
+
+    // function  gou(){
+    //     var goPage =$("#goPage").val();
+    //     static_nextPage(goPage);
+    //     // imageError();//图片报错监听
+    // }
+
+    // function  gou_new(){
+    //     $('#content_append').html(''); 
+    //     gou();
+    //     var  total_count =  $('.return_count').eq(0).val();
+    //     $('#total_count').html(total_count)
+    //     $("#goPageCount").val(total_count)
+    // }
+
+    //跳转页面
+    // function  gouSerach(goPage){
+    //     if(goPage){
+    //         $(".footer_go_input").val(goPage)
+    //     }
+    //     var goPage =$(".footer_go_input").val()
+    //     $("#goPage").val(goPage);
+    //     gou_new();
+    //     // console.log(gouSerach)
+    //     // var title =  $('#appendedInputButton').val();
+    //     // window.location.href="/cn/video/query-video?page="+gouSerach+"&belong=<?php echo $data['belong'] ?>&title="+title;
+    // }
+    function belongChange_static(belong){
+        // 重置状态page和search
+        // $("#goSearch").val('');
+        // $("#goPage").val(1);
+        $('#goBelong').val(belong);
+        $('#listBelong a').removeClass('active'); 
+        $('#listBelong a').removeClass('btn-primary'); 
+        $('#listBelong a').addClass('btn-success'); 
+        $('#belong'+belong).removeClass('btn-success'); 
+        $('#belong'+belong).addClass('active btn-primary'); 
+        gou()  
+        // if(belong==0){
+        //     var inputvalue ="";
+        //     $("#goTypeInput").html(inputvalue);
+        //     gou() 
+        // }else{
+        //     $.ajax({
+        //         url: '/cn/video-api/get-belong', // 跳转到 action 
+        //         data:{
+        //             belong:belong,
+        //             type:0
+        //         },
+        //         type: 'post',
+        //         dataType: 'json',
+        //         success: function (data) {
+        //             if(data){
+        //                 $("#goTypeInput").html(data.data);
+        //             }
+        //             gou()    
+        //         },
+        //     });
+        // }
+    }
+
     function  gou(){
         var goPage =$("#goPage").val();
+        var goBelong =$("#goBelong").val();
+        var goSearch =$("#goSearch").val();
+        
+   
         // window.location.href="/cn/video/like?page="+goPage+"&type=<?php echo $data['type'] ?>&title=<?php echo $data['title'] ?>";
-        url="/cn/video/like?html=1&page="+goPage+"&type=<?php echo $data['type'] ?>&title=<?php echo $data['title'] ?>";
+        url="/cn/video/like?html=1&page="+goPage+"&type="+goBelong+"&title="+goSearch;
         goStaticHtml(url)
     }
     function  videoup(id){

@@ -127,8 +127,8 @@ class VideoController extends VideoApiControl
         //     $brush[$k]['total'] = $num;
             // var_dump($v);die;   
             //替换第三方错误路径
-            $v['imageurl'] = str_replace( 'http://img.ywtuchuang2.com','http://img.lytuchuang20.com',$v['imageurl']);
-            $v['imageurl'] = str_replace( 'https://laoyazy54.com','http://img.lytuchuang20.com',$v['imageurl']);
+            // $v['imageurl'] = str_replace( 'http://img.ywtuchuang2.com','http://img.lytuchuang20.com',$v['imageurl']);
+            // $v['imageurl'] = str_replace( 'https://laoyazy54.com','http://img.lytuchuang20.com',$v['imageurl']);
             $v['imageurl'] = str_replace( 'https://img.siwapay.com:5278','https://img.siwazywimg2.com:5278',$v['imageurl']);
             $v['imageurl'] = str_replace( 'https://img.siwazywimg:5278','https://img.siwazywimg2.com:5278',$v['imageurl']);
             $brush[$k]['imageurl'] =  $v['imageurl'];
