@@ -310,8 +310,7 @@ $(document).ajaxStop(function( ) {
     function goStaticHtml(url){
         MenuHidden()
         var html = getprintHtml(url);
-        $('#video_center').html('')
-        if(html){ $('.video_center').html(html);}
+        if(html){ $('.header_content').html(html);}
     }
     function video_list(){
         // window.location.href='/cn/video/list';

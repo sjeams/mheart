@@ -36,36 +36,40 @@
         <tbody>
         <?php
         foreach($content as $kss => $v) {    ?>
-            <tr>
-                <td>
-                    <div id="form<?php echo $v['id']?>">
-                        <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
-                        <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                        <input type="hidden" name="title" value="<?php echo $v['title']?>" >
-                        <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
-                        <input type="hidden" name="type" value="<?php echo $v['type']?>" >
-                        <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
-                        <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-                        <input type="hidden"  name="is_collect" value="">
-                    </div>
-                    <!-- //跳转 -->
-                    <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
-                    <!-- <p class="center"> <img  class="pimage" src="<?php   echo $v['imageurl']?>" alt="Img"></p> -->
-                    <div id="dplay_video<?php echo $v['id']?>" class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+ 
 
-                    <div id="form<?php echo $kss?>" style="display:none">
-                        <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                    </div>
-                    <p class="center"  onclick="video(<?php echo $kss?>)"><span ><b><?php echo $kss+1 ?>、</b></span>  <?php echo $v['title']?></p>
+            <div id="form<?php echo $v['id']?>">
+                <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
+                <input type="hidden" name="url" value="<?php echo $v['url']?>" >
+                <input type="hidden" name="title" value="<?php echo $v['title']?>" >
+                <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                <input type="hidden" name="type" value="<?php echo $v['type']?>" >
+                <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
+                <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                <input type="hidden"  name="is_collect" value="0">
+            </div>
+            <tr>
+                <td  >
+                    <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
+                    <p class="center"  style="width: 90%;">
+                        <a href="<?php echo $v['url'] ?>"> 
+                        <span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
+                        </a>
+                    </p>
                     <!-- </a> -->
-                    <p class="center">
-                        <span onclick="videoup(<?php echo $v['id']?>)" class="btn videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
-                        <!-- <span onclick="video(<?php echo $kss?>)" class="btn  collect"> 预览 </span> -->
+                    <p class="center"> 
+                        <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
                         <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
+                        <!-- <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span> -->
+                        <span onclick="videoup(<?php echo $v['id']?>)" class="btn videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
                         <span onclick="Delete(<?php echo $v['id']?>)" class="btn collect"> 删除 </span>
+                        <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->
+                        <!-- <span onclick="clearRload( )" class="btn btn-primary collect"> 刷新 </span> -->
                     </p>
                 </td>
+            
             </tr>
+            
             <?php
         }
         ?>
