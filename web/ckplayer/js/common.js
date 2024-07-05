@@ -313,26 +313,44 @@ $(document).ajaxStop(function( ) {
 
   /*  header ______________________ */
     //首页 
-    function video_list(){
-        window.location.href='/cn/video/list';
+    //静态跳转
+    function goStaticHtml(url){
+        MenuHidden()
+        var html = getprintHtml(url);
+        $('#video_center').html('')
+        if(html){ $('.video_center').html(html);}
+   
     }
-
+    function video_list(){
+        // window.location.href='/cn/video/list';
+        var url="/cn/video/list?html=2";
+        goStaticHtml(url)
+    }
     function my_collect(){
-        window.location.href='/cn/video/query-video';  
+        // window.location.href='/cn/video/query-video';  
+        var url="/cn/video/query-video";
+        goStaticHtml(url)
     }
     function old_content(){
-        window.location.href='/cn/video/like';  
+        // window.location.href='/cn/video/like';  
+        var url="/cn/video/like";
+        goStaticHtml(url)
     }
     function my_video(){
-        window.location.href='/cn/video/collect-video';
+        // window.location.href='/cn/video/collect-video';
+        var url="/cn/video/collect-video";
+        goStaticHtml(url)
     }
     function my_like(){
-        window.location.href='/cn/video/collect-like';
+        // window.location.href='/cn/video/collect-like';
+        var url="/cn/video/collect-like";
+        goStaticHtml(url)
     }
     function my_chat(){
         window.location.href='/cn/chat/list';
+        // var url="/cn/chat/list";
+        // goStaticHtml(url)
     }
-
     function Menu(){
        var menu =$("#menu").val();
        if(menu==1){
@@ -343,7 +361,6 @@ $(document).ajaxStop(function( ) {
             $("#menu").val(1)
         }
     }
-    
     function vidoeModel(){
         $.ajax({
             url: '/cn/video-api/video-model', // 跳转到 action 

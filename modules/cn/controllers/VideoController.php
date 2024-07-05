@@ -144,6 +144,7 @@ class VideoController extends VideoApiControl
             $this->layout = 'kongbai';
             return $this->render('html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
+            $this->layout = 'kongbai';
             return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
@@ -198,7 +199,7 @@ class VideoController extends VideoApiControl
         }
         //来源
         $html = Yii::$app->request->get('html',0);
-        if($html){
+        if($html==1){
             $category_id = Video::getCategoryId($belong,$type);
             $this->layout = 'kongbai';
             $res['html'] = $this->render('list',$res );
@@ -216,7 +217,12 @@ class VideoController extends VideoApiControl
             }else{
                 return $this->render('kongbai',[]);
             }
+        }else  if($html==2){
+            //静态加载--不再加载js
+            $this->layout = 'kongbai';
+            return $this->render('list_html',$res);
         }else{
+            //首次加载
             return $this->render('list_html',$res);
         }
     }
@@ -284,6 +290,7 @@ class VideoController extends VideoApiControl
             //全屏
             return $this->render('collect_video_full_screen',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
+            $this->layout = 'kongbai';
             //页面
             return $this->render('collect_video',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
@@ -350,6 +357,7 @@ class VideoController extends VideoApiControl
             //全屏
             return $this->render('collect_like_full_screen',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
+            $this->layout = 'kongbai';
             //页面
             return $this->render('collect_like',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
@@ -416,6 +424,7 @@ class VideoController extends VideoApiControl
                 return '';
             }
         }else{
+            $this->layout = 'kongbai';
             return $this->render('query_video',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }

@@ -16,7 +16,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <!-- //chat -->
             <?php  if( $http_geturl=='chat'){ ?>
                 <?php  if( $http_index=='list'){ ?>
-                <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
+                <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name"  onclick="video_list()">采集√</a></td>
                 <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
                 <td class="btn-primary button_over_side" style="width: 25%;">
                     <input type="hidden" name="" id="menu" value="0">
@@ -56,7 +56,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                 <?php }else if( $http_index=='pic'){ ?>
                     
                 <?php }else { ?>    
-                    <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name" href="/cn/video/list">采集√</a></td>
+                    <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name"  onclick="video_list()">采集√</a></td>
                         <?php if($userlogin['graden']>0) {?>
                             <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" onclick="my_like()">极品</a></td>
                         <?php }else{?>
@@ -81,6 +81,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <li class="list-group-item list-item-style btn-defult" onclick="my_collect()"> 收录</li>
             <li class="list-group-item list-item-style btn-defult" onclick="my_like()"> 极品</li>
             <li class="list-group-item list-item-style btn-defult" onclick="my_video()"> 收藏</li>
+            <li class="list-group-item list-item-style btn-defult" onclick="old_content()"> 旧的</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
             <li class="list-group-item list-item-style  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>

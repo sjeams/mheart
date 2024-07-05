@@ -7,9 +7,6 @@
         height: 340px!important;
     }
 </style>
-
-
- 
     <table class="table table-bordered  tablestyle"  >
     <thead>
         <?php if($graden>0){?>
