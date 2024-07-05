@@ -46,7 +46,7 @@
                         <input type="hidden" name="type" value="<?php echo $v['type']?>" >
                         <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
                         <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-                        <input type="hidden"  name="is_collect" value="<?php echo $v['collect']?>">
+                        <input type="hidden"  name="is_collect" value="">
                     </div>
                     <!-- //跳转 -->
                     <!-- <a href="https://help.siwazywcdn2.com:5278/m3u8.php?url=<?php $v['url'] = str_replace('在线播放$','',$v['url']);  echo $v['url']   ?>" target="blank"> -->
