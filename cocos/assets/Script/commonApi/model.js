@@ -388,6 +388,7 @@ const httpModel = cc.Class({
  
 
 
+    // 创造
     async model_zhaohuan_chuangzao() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model召唤/A创造', function(errorMessage,loadedResource){
@@ -401,7 +402,7 @@ const httpModel = cc.Class({
             })   
         });
     },
-
+    //装备背包
     async model_zhuangbei_bag() {
         return new Promise(resolve => {    
             cc.loader.loadRes('/model背包/背包装备', function(errorMessage,loadedResource){
@@ -428,8 +429,47 @@ const httpModel = cc.Class({
             })   
         });
     },
+    async model_zhuangbei_bag_skill() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model背包/生物技能', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_zhuangbei_bag_skill =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+    async model_zhuangbei_bag_skill_icon() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_zhuangbei_bag_skill_icon =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
 
-   
+    async model_zhuangbei_bag_skill_tips() {
+        return new Promise(resolve => {    
+            cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function(errorMessage,loadedResource){
+                if( errorMessage ) { cc.log( '载入预制资源失败, 原因:' + errorMessage ); return; }
+                var TipBoxPrefab = cc.instantiate(loadedResource);
+                // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                //     httpRequestModel.openzhenfa_hidden()
+                // }, this);
+                http_globalAsset.model_zhuangbei_bag_skill_tips =TipBoxPrefab
+                resolve();
+            })   
+        });
+    },
+ 
 
 });
 window.httpRequestModel = new httpModel();

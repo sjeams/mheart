@@ -15,6 +15,12 @@ cc.Class({
         await httpRequestModel.model_zhuangbei_bag_icon()  //加载装备背包图标
 
 
+        await httpRequestModel.model_zhuangbei_bag_skill()  //加载装备背包技能
+        await httpRequestModel.model_zhuangbei_bag_skill_icon()  //加载装备背包技能图标
+        await httpRequestModel.model_zhuangbei_bag_skill_tips()  //加载装备背包技能图标提示
+
+    
+
         await httpRequestModel.model_home_zhenfa() //加载阵法
         await httpRequestModel.model_home_zhenfa_bag() //加载阵法背包
         await httpRequestModel.model_home_zhenfa_icon() //加载阵法图标

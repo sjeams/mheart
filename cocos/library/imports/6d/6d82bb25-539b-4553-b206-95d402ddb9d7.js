@@ -4,8 +4,6 @@ cc._RF.push(module, '6d82bslU5tFU7IGldQC3bnX', 'biology_skillTools');
 
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 // require("../common"); 
 cc.Class({
   "extends": cc.Component,
@@ -17,35 +15,17 @@ cc.Class({
     //尽量先关闭所有弹窗
     http_globalAsset.TipBoxPrefab_model.getChildByName('左边弹窗').removeAllChildren();
     http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
-    http_globalAsset.TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren();
+    http_globalAsset.TipBoxPrefab_model.getChildByName('右边弹窗').removeAllChildren(); //开始实例化预制资源
 
-    var _this = this;
+    var TipBoxPrefab = cc.instantiate(http_globalAsset.model_zhuangbei_bag_skill); //技能等级
+    // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
+    // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
 
-    cc.loader.loadRes('/model背包/生物技能', function (errorMessage, loadedResource_icon) {
-      //检查资源加载
-      if (errorMessage) {
-        cc.log('载入预制资源失败, 原因:' + errorMessage);
-        return;
-      }
+    this.biology_detail_list(TipBoxPrefab, info.position_skill); // 此处进行事件绑定
 
-      if (!(loadedResource_icon instanceof cc.Prefab)) {
-        cc.log('你载入的不是预制资源!');
-        return;
-      } //开始实例化预制资源
+    this.bind_button(TipBoxPrefab, info); //写入icon
 
-
-      var TipBoxPrefab = cc.instantiate(loadedResource_icon); //技能等级
-      // TipBoxPrefab.getChildByName('生物数量s').getComponent(cc.Label).string='生物('+info_list.length+'/60)'
-      // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-
-      _this.biology_detail_list(TipBoxPrefab, info.position_skill); // 此处进行事件绑定
-
-
-      _this.bind_button(TipBoxPrefab, info); //写入icon
-
-
-      http_globalAsset.TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab); // return TipBoxPrefab_model
-    }); // return TipBoxPrefab_model
+    http_globalAsset.TipBoxPrefab_model.getChildByName('生物信息').addChild(TipBoxPrefab);
   },
   //绑定点击事件
   bind_button: function bind_button(TipBoxPrefab, info) {
@@ -70,102 +50,60 @@ cc.Class({
     var _this = this;
 
     var TOOLS = [];
-    var TOOLS = position_skill; //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
+    var TOOLS = position_skill;
 
-    cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource_icon) {
-      var _this2 = this;
+    var _loop = function _loop() {
+      var skill = TOOLS[prop]; //开始实例化预制资源
 
-      var _loop = function _loop() {
-        var skill = TOOLS[prop]; //检查资源加载
+      var TipBoxPrefab_icon = cc.instantiate(http_globalAsset.model_zhuangbei_bag_skill_icon); //载入技能图片
 
-        if (errorMessage) {
-          cc.log('载入预制资源失败, 原因:' + errorMessage);
-          return {
-            v: void 0
-          };
-        }
+      TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_skill[skill.image]; //技能等级
 
-        if (!(loadedResource_icon instanceof cc.Prefab)) {
-          cc.log('你载入的不是预制资源!');
-          return {
-            v: void 0
-          };
-        } //开始实例化预制资源
+      TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = skill.type; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
+      // 此处进行事件绑定
 
+      TipBoxPrefab_icon.on('click', function () {
+        // 事件处理逻辑
+        this.bindClickEventIcon(skill);
+      }, _this); //写入icon
 
-        var TipBoxPrefab_icon = cc.instantiate(loadedResource_icon); //载入技能图片
+      TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
+    };
 
-        var image = skill.image;
-        cc.loader.loadRes(image, cc.SpriteFrame, function (err, texture) {
-          if (err) {
-            // cc.error(err.message || err);
-            return;
-          }
-
-          TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame = texture;
-        }); //技能等级
-
-        TipBoxPrefab_icon.getChildByName('技能s').getComponent(cc.Label).string = skill.type; // 由于加载资源的操作是异步的，如果在加载完成前就绑定了事件，有可能会触发事件的自动执行。
-        // 此处进行事件绑定
-
-        TipBoxPrefab_icon.on('click', function () {
-          // 事件处理逻辑
-          _this.bindClickEventIcon(skill, TipBoxPrefab, TipBoxPrefab_icon);
-        }, _this2); //写入icon
-
-        TipBoxPrefab.getChildByName('技能列表').addChild(TipBoxPrefab_icon);
-      };
-
-      for (var prop in position_skill) {
-        var _ret = _loop();
-
-        if (_typeof(_ret) === "object") return _ret.v;
-      }
-    });
-    return TipBoxPrefab;
+    for (var prop in position_skill) {
+      _loop();
+    }
   },
   // 绑定按钮事件
-  bindClickEventIcon: function bindClickEventIcon(skill, TipBoxPrefab, TipBoxPrefab_icon) {
+  bindClickEventIcon: function bindClickEventIcon(skill) {
     // cc.log(skill)
     //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
     // 销毁所有弹窗--节点
     http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').removeAllChildren();
-    var move_type = ['初始化', '回合化', '被击前触发', '被击后触发', '攻击前触发', '主动', '攻击后'];
-    cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function (errorMessage, loadedResource) {
-      //检查资源加载
-      if (errorMessage) {
-        cc.log('载入预制资源失败, 原因:' + errorMessage);
-        return;
-      }
+    var move_type = ['初始化', '回合化', '被击前触发', '被击后触发', '攻击前触发', '主动', '攻击后']; //开始实例化预制资源
 
-      if (!(loadedResource instanceof cc.Prefab)) {
-        cc.log('你载入的不是预制资源!');
-        return;
-      } //开始实例化预制资源
+    var tips_Prefab = cc.instantiate(http_globalAsset.model_zhuangbei_bag_skill_tips); // tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame
 
+    tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_skill[skill.image];
+    tips_Prefab.getChildByName('D技能名称s').getComponent(cc.Label).string = skill.name + '-[' + skill.type + ']';
+    tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = '消耗：' + Math.abs(skill.needValue);
+    var attack = skill.attack == 0 ? '被动' : '主动';
+    tips_Prefab.getChildByName('D技能类型s').getComponent(cc.Label).string = '触发: ' + attack;
+    var star = '';
 
-      var tips_Prefab = cc.instantiate(loadedResource);
-      tips_Prefab.getChildByName('D技能图标').getComponent(cc.Sprite).spriteFrame = TipBoxPrefab_icon.getChildByName('P技能').getComponent(cc.Sprite).spriteFrame;
-      tips_Prefab.getChildByName('D技能名称s').getComponent(cc.Label).string = skill.name + '-[' + skill.type + ']';
-      tips_Prefab.getChildByName('D技能消耗s').getComponent(cc.Label).string = '消耗：' + Math.abs(skill.needValue);
-      var attack = skill.attack == 0 ? '被动' : '主动';
-      tips_Prefab.getChildByName('D技能类型s').getComponent(cc.Label).string = '触发: ' + attack;
-      var star = '';
+    for (var i = 0; i <= skill['type']; i++) {
+      star += '☆';
+    }
 
-      for (var i = 0; i <= skill['type']; i++) {
-        star += '☆';
-      }
+    tips_Prefab.getChildByName('D技能星级s').getComponent(cc.Label).string = '稀有程度：' + star;
+    var hurtType = skill.hurtType == 1 ? '物理' : '法术';
+    tips_Prefab.getChildByName('D技能攻击s').getComponent(cc.Label).string = '攻击类型: ' + hurtType;
+    tips_Prefab.getChildByName('D技能触发s').getComponent(cc.Label).string = '触发几率：' + skill.probability + '%';
+    tips_Prefab.getChildByName('D发动时机s').getComponent(cc.Label).string = '攻击类型: ' + move_type[skill.belong];
+    tips_Prefab.getChildByName('D技能来源s').getComponent(cc.Label).string = '技能来源：' + skill.words;
+    tips_Prefab.getChildByName('D技能描述s').getComponent(cc.Label).string = '技能说明：' + skill.describe; //载入生物详情
 
-      tips_Prefab.getChildByName('D技能星级s').getComponent(cc.Label).string = '稀有程度：' + star;
-      var hurtType = skill.hurtType == 1 ? '物理' : '法术';
-      tips_Prefab.getChildByName('D技能攻击s').getComponent(cc.Label).string = '攻击类型: ' + hurtType;
-      tips_Prefab.getChildByName('D技能触发s').getComponent(cc.Label).string = '触发几率：' + skill.probability + '%';
-      tips_Prefab.getChildByName('D发动时机s').getComponent(cc.Label).string = '攻击类型: ' + move_type[skill.belong];
-      tips_Prefab.getChildByName('D技能来源s').getComponent(cc.Label).string = '技能来源：' + skill.words;
-      tips_Prefab.getChildByName('D技能描述s').getComponent(cc.Label).string = '技能说明：' + skill.describe; //载入生物详情
-
-      http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').addChild(tips_Prefab);
-    });
+    http_globalAsset.TipBoxPrefab_model.getChildByName('中间弹窗').addChild(tips_Prefab);
   } // update (dt) {},
 
 });

@@ -753,6 +753,7 @@ var httpModel = cc.Class({
       }, _callee21);
     }))();
   },
+  // 创造
   model_zhaohuan_chuangzao: function model_zhaohuan_chuangzao() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee22() {
       return regeneratorRuntime.wrap(function _callee22$(_context22) {
@@ -783,6 +784,7 @@ var httpModel = cc.Class({
       }, _callee22);
     }))();
   },
+  //装备背包
   model_zhuangbei_bag: function model_zhuangbei_bag() {
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee23() {
       return regeneratorRuntime.wrap(function _callee23$(_context23) {
@@ -841,6 +843,96 @@ var httpModel = cc.Class({
           }
         }
       }, _callee24);
+    }))();
+  },
+  model_zhuangbei_bag_skill: function model_zhuangbei_bag_skill() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee25() {
+      return regeneratorRuntime.wrap(function _callee25$(_context25) {
+        while (1) {
+          switch (_context25.prev = _context25.next) {
+            case 0:
+              return _context25.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model背包/生物技能', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhuangbei_bag_skill = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context25.stop();
+          }
+        }
+      }, _callee25);
+    }))();
+  },
+  model_zhuangbei_bag_skill_icon: function model_zhuangbei_bag_skill_icon() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee26() {
+      return regeneratorRuntime.wrap(function _callee26$(_context26) {
+        while (1) {
+          switch (_context26.prev = _context26.next) {
+            case 0:
+              return _context26.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model弹窗/biology_生物_技能图标', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhuangbei_bag_skill_icon = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context26.stop();
+          }
+        }
+      }, _callee26);
+    }))();
+  },
+  model_zhuangbei_bag_skill_tips: function model_zhuangbei_bag_skill_tips() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee27() {
+      return regeneratorRuntime.wrap(function _callee27$(_context27) {
+        while (1) {
+          switch (_context27.prev = _context27.next) {
+            case 0:
+              return _context27.abrupt("return", new Promise(function (resolve) {
+                cc.loader.loadRes('/model弹窗/biology_生物_战斗技能提示', function (errorMessage, loadedResource) {
+                  if (errorMessage) {
+                    cc.log('载入预制资源失败, 原因:' + errorMessage);
+                    return;
+                  }
+
+                  var TipBoxPrefab = cc.instantiate(loadedResource); // TipBoxPrefab.getChildByName('关闭弹窗').on('click', function () {
+                  //     httpRequestModel.openzhenfa_hidden()
+                  // }, this);
+
+                  http_globalAsset.model_zhuangbei_bag_skill_tips = TipBoxPrefab;
+                  resolve();
+                });
+              }));
+
+            case 1:
+            case "end":
+              return _context27.stop();
+          }
+        }
+      }, _callee27);
     }))();
   }
 });

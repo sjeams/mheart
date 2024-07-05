@@ -96,14 +96,11 @@ cc.Class({
         http_globalData.bag[http_globalData.goodsinfo.id].is_bag=1;
         TipBoxPrefab_icon.active=false
         http_globalData.biology[http_globalData.biology_id][goods_key]=http_globalData.goodsinfo.id;
-        // cc.log(http_globalData.goodsid)
         //背包显示--回填装备栏物品
         if(http_globalData.goodsid){
             http_globalData.bag[http_globalData.goodsid].is_bag=0;
             //因为是节点是0开始，所以要-1
             TipBoxPrefab_icon.parent.children[http_globalData.goodsid-1].active=true
-            // cc.log(http_globalData.goodsid)
-            // cc.log(TipBoxPrefab_icon.parent.children)
         }
         //info icon显示
         let TipBoxPrefab_biology = cc.find("生物详情/biology_end/"+http_globalData.button_name,http_globalAsset.TipBoxPrefab_model)
