@@ -508,40 +508,46 @@ function downloadUrl(id) {
                 // clearModel(istype);
                 let url = fileUrl
                 let name = fileName+fileType
-                // 发送http请求，将文件链接转换成文件流
-                fileAjax(url, function(xhr) {
-                    downloadFile(xhr.response, name)
-                }, {
-                    responseType: 'blob'
-                })    
-                return; 
+                window.open(url)
+                // ajaxDown(url,name)
         });
 
         }
     })
 }
-function fileAjax(url, callback, options) {
-    let xhr = new XMLHttpRequest()
-    xhr.open('get', url, true)
-    if (options.responseType) {
-        xhr.responseType = options.responseType
-    }
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            callback(xhr)
-        }
-    }
-    xhr.send()
-}
-function downloadFile(content, filename) {
-    window.URL = window.URL || window.webkitURL
-    let a = document.createElement('a')
-    let blob = new Blob([content])
-    // 通过二进制文件创建url
-    let url = window.URL.createObjectURL(blob)
-    a.href = url
-    a.download = filename
-    a.click()
-    // 销毁创建的url
-    window.URL.revokeObjectURL(url)
-}
+
+// function ajaxDown(url,name){
+
+//     // 发送http请求，将文件链接转换成文件流
+//     fileAjax(url, function(xhr) {
+//         downloadFile(xhr.response, name)
+//     }, {
+//         responseType: 'arraybuffer'
+//     })    
+//     return; 
+// }
+// function fileAjax(url, callback, options) {
+//     let xhr = new XMLHttpRequest()
+//     xhr.open('get', url, true)
+//     if (options.responseType) {
+//         xhr.responseType = options.responseType
+//     }
+//     xhr.onreadystatechange = function() {
+//         if (xhr.readyState === 4 && xhr.status === 200) {
+//             callback(xhr)
+//         }
+//     }
+//     xhr.send()
+// }
+// function downloadFile(content, filename) {
+//     window.URL = window.URL || window.webkitURL
+//     let a = document.createElement('a')
+//     let blob = new Blob([content],{ type: 'video/MP2T' })
+//     // 通过二进制文件创建url
+//     let url = window.URL.createObjectURL(blob)
+//     a.href = url
+//     a.download = filename
+//     a.click()
+//     // 销毁创建的url
+//     window.URL.revokeObjectURL(url)
+// }
