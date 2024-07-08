@@ -57,7 +57,9 @@
     <?php VideoWidget::begin();?>
     <?php VideoWidget::end();?> 
     <!-- 内容 -->
+    <div class="header_content"> 
     <?= $content ?>
+    </div>
     <!-- 备案 -->
     <?php use app\commands\BeiAnWidget;?>
     <?php BeiAnWidget::begin();?>

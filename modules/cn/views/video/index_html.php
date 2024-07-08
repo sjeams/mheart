@@ -58,7 +58,6 @@
                     </p>
                     <!-- </a> -->
                     <p class="center"> 
-                        <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
                         <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                         <span onclick="videoup(<?php echo $v['id']?>)" class="btn videoup<?php echo $v['id']?> collect"> <?php echo $v['up']==0?'收藏':'取消'?>  </span>
                         <span onclick="Delete(<?php echo $v['id']?>)" class="btn collect"> 删除 </span>

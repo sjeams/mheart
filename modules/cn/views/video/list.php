@@ -19,7 +19,6 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
                     <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
                     <input type="hidden" name="title" value="<?php echo $vdieo['title']?>" >
                 </div>
-                <!-- <a href="javascript:;"  onclick="video('<?php echo $kss.'c'.$y?>')"  > <?php echo $vdieo['title']?>  </a> -->
                 <a id="click_video<?php echo $kss.'c'.$y ?>" onclick="videoList(<?php echo $kss?>,'<?php echo $kss.'c'.$y ?>')" class="btn   collect click_video"> <?php echo $vdieo['title']?> </a>
                 <?php } }?>
                 </span>
@@ -42,13 +41,12 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <td  >
             <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
             <p class="center"  style="width: 90%;">
-                <a href="<?php echo $v['url'] ?>"> 
-                <span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
-                </a>
+                <p   onclick="downloadUrl(<?php echo $v['id']?>)"> 
+                    <span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
+                </p>
             </p>
             <!-- </a> -->
             <p class="center"> 
-                <!-- <span onclick="video(<?php echo $v['id']?>)" class="btn collect"> 预览</span> -->
                 <span onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
                 <span onclick="Update_my(<?php echo $v['id']?>)" class="btn collect my_collect_<?php echo $v['id']?> <?php echo $v['my_collect']==1?'btn-success':''  ?>"> 收藏</span>
                 <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->

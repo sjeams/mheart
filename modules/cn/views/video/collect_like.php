@@ -324,26 +324,6 @@
  
     } 
     
-        // //滚动条触发事件
-        // $(window).scroll(function() {
-        // //监听事件内容
-        // // console.log(getScrollHeight()) 
-        // // console.log(getWindowHeight() + getDocumentTop())  
-        //     //自动播放插件
-        //     var is_bofang = $('#is_bofang_type').val();
-        //     if(is_bofang==1){
-        //         var goPageCount = $("#goPageCount").val()
-        //         var top_hidden =$("#top_hidden").val()
-        //         var td_num = Math.floor((getDocumentTop()+100)/340)
-        //         var id =  $("#content_append").find("td:eq("+td_num+") input[name=video_id]").val();
-        //         var now_video =$("#now_video").val();
-        //         //自动播放
-        //         if( id!=now_video){
-        //             videoList(id,0,0);
-        //         }
-        //     }
-
-        // });
 </script>
 
 

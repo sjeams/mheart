@@ -3,7 +3,7 @@
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 <!-- 视频end -->
 <!-- <form action="/cn/video/list" method="post" class="  " > -->
-    <table class="header_content table table-bordered  tablestyle"  >
+    <table class="table table-bordered  tablestyle"  >
         <thead>
             <tr>
                 <td>

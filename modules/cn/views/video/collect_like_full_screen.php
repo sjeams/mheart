@@ -80,11 +80,6 @@
                 </div>
  
                 <div id="dplay_video<?php echo $v['id']?>" class="video<?php echo $v['id']?> collect-video-style" style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>,0,0)"  class="video_box "></span></div> 
-                <!-- <p class="center"  onclick="video(<?php echo $v['id']?>)"><span ><b>P<?php echo (($data['page']-1) ) ?>-<?php echo ( (($data['page']-1)*10 )+($kss+1)) ?>、</b></span>  <?php echo $v['title']?></p>
-                <p class="center">
-                    <span style="width: 49%!important;max-width:210px" onclick="videoList(<?php echo $v['id']?>)" class="btn btn-primary collect"> 重播 </span>
-                    <span style="width: 49%!important;max-width:210px" onclick="Update_my(<?php echo $v['id']?>)" class="btn btn-danger collect my_collect_<?php echo $v['id']?> "> 移除</span>
-                </p> -->
             </td>
         </div>
 
@@ -92,10 +87,6 @@
     </div>
     <div class="swiper-pagination"></div><!--分页器。如果放置在swiper外面，需要自定义样式。-->
 </div>
-<!-- <p class="center btn-primary video_footer "   id="full_buttom">
-  <span style="width: 49%!important;max-width:210px" onclick="videoList_click( )" class="btn btn-primary p-0 collect"> 重播 </span>
-  <span style="width: 49%!important;max-width:210px" onclick="Update_my_click( )" class="btn btn-danger  p-0 collect my_collect_<?php echo $v['id']?> "> 移除</span>
-</p> -->
 
 
 <input type="hidden" value="<?php echo count($content) ?>" id="swiper_count">

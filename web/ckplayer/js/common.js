@@ -482,3 +482,66 @@ $(document).ajaxStop(function( ) {
             gou();
         }
     });
+
+
+    // 下载视频------------下载m3u8--下载url
+function downloadUrl(id) {
+    var fileUrl = $("#form"+id+"  input[name=url]").val();
+    var fileName = $("#form"+id+"  input[name=title]").val();
+    // var fileType = $(this).attr('data-type');
+    var fileType = '.m3u8'
+    var type_str ='是否下载：'+fileName; 
+    layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_download' //设定一个id，防止重复弹出
+        ,btn: ['确定', '取消']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
+        ,success: function(layero){
+            var btn = layero.find('.layui-layer-btn');
+            btn.find('.layui-layer-btn0').click(function(){
+                // clearModel(istype);
+                let url = fileUrl
+                let name = fileName+fileType
+                // 发送http请求，将文件链接转换成文件流
+                fileAjax(url, function(xhr) {
+                    downloadFile(xhr.response, name)
+                }, {
+                    responseType: 'blob'
+                })    
+                return; 
+        });
+
+        }
+    })
+}
+function fileAjax(url, callback, options) {
+    let xhr = new XMLHttpRequest()
+    xhr.open('get', url, true)
+    if (options.responseType) {
+        xhr.responseType = options.responseType
+    }
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(xhr)
+        }
+    }
+    xhr.send()
+}
+function downloadFile(content, filename) {
+    window.URL = window.URL || window.webkitURL
+    let a = document.createElement('a')
+    let blob = new Blob([content])
+    // 通过二进制文件创建url
+    let url = window.URL.createObjectURL(blob)
+    a.href = url
+    a.download = filename
+    a.click()
+    // 销毁创建的url
+    window.URL.revokeObjectURL(url)
+}
