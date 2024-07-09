@@ -62,7 +62,7 @@
 		color: #a5a5a5;
 	}
 	.user_text_hidden{
-		/* //超出边界解决办法 隐藏*/
+		/* //超出边界解决办法 隐藏 超出隐藏 文字隐藏文字换行*/
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;

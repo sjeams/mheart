@@ -31,7 +31,16 @@ video{
     top: 0;
     left: 0;
 }
- 
+/* 公共css */
+.user_text_hidden{
+    /* //超出边界解决办法 隐藏 超出隐藏 文字隐藏文字换行*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: inline-block;
+    line-height: 20px;
+}
 
 
  /*  header ______________________ */

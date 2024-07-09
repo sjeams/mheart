@@ -196,6 +196,11 @@ class VideoController extends VideoApiControl
         if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id']);
         }
+        //缓存验证
+        if($belong!=0){ // 影视不进入
+            // 采集查询-标题-是否收藏
+            $res['content']=  Video::isCollect($res['content'],$this->user['id']);
+        }
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html==1){

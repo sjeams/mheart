@@ -484,13 +484,75 @@ $(document).ajaxStop(function( ) {
     });
 
 
+
     // 下载视频------------下载m3u8--下载url
-function downloadUrl(id) {
-    var fileUrl = $("#form"+id+"  input[name=url]").val();
+    // function downloadUrl(id) {
+    //     var fileUrl = $("#form"+id+"  input[name=url]").val();
+    //     var fileName = $("#form"+id+"  input[name=title]").val();
+    //     // var fileType = $(this).attr('data-type');
+    //     var fileType = '.m3u8'
+    //     var type_str ='是否下载：'+fileName; 
+    //     let name = fileName+fileType
+    //     console.log(fileUrl)
+    //     // ajaxDownload(fileUrl)
+    //     return
+    //     layer.open({
+    //         type: 1
+    //         ,title: false //不显示标题栏
+    //         ,closeBtn: false
+    //         ,area: '300px;'
+    //         ,shade: 0.8
+    //         ,id: 'LAY_download' //设定一个id，防止重复弹出
+    //         ,btn: ['确定', '取消']
+    //         ,btnAlign: 'c'
+    //         ,moveType: 1 //拖拽模式，0或者1
+    //         ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
+    //         ,success: function(layero){
+    //             var btn = layero.find('.layui-layer-btn');
+    //             btn.find('.layui-layer-btn0').click(function(){
+    //                 // clearModel(istype);
+                
+    //                 // window.open(url)
+    //                 // ajaxDown(url)
+    //                 // ajaxDown(url,name)
+    //         });
+    
+    //         }
+    //     })
+    // }
+//获取文件数量
+function downloadUrl(id){
+    var url = $("#form"+id+"  input[name=url]").val();
+    var domain_url =  getDomain(url)     //截取域名
+    fetch(url).then(response => response.text()).then(data => {  
+        // 解析 m3u8 文件，获取所有的 ts 视频链接  
+        var urls = parseM3u8Urls(data);
+        //是否有ts文件
+        if(urls.length==0){
+            var urls_online = parseM3u8Urls_online(data);  
+            if(url.length!=0){
+                //筛选m3u8是否有解析地址
+                var new_url =domain_url+urls_online[0]
+                fetch(new_url).then(response => response.text()).then(data => {   
+                    var urls = parseM3u8Urls(data);  
+                    if(urls.length!=0){
+                        layerOpen(id,urls.length);
+                    }
+                })
+            }
+        }else{
+            layerOpen(id,urls.length);
+        }
+    });    
+
+}
+function layerOpen(id,flie_length){
+    var url = $("#form"+id+"  input[name=url]").val();
     var fileName = $("#form"+id+"  input[name=title]").val();
-    // var fileType = $(this).attr('data-type');
     var fileType = '.m3u8'
-    var type_str ='是否下载：'+fileName; 
+    var fileTips =fileName+fileType
+    // var fileTips =''
+    var type_str ='是否下载：'+fileTips+'</br><p style="color:red">('+flie_length+'.ts)</p?'; 
     layer.open({
         type: 1
         ,title: false //不显示标题栏
@@ -501,53 +563,112 @@ function downloadUrl(id) {
         ,btn: ['确定', '取消']
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
+        ,content: ' <div class="center user_text_hidden" style="margin-top:20px">'+type_str+'</div>'
         ,success: function(layero){
             var btn = layero.find('.layui-layer-btn');
             btn.find('.layui-layer-btn0').click(function(){
-                // clearModel(istype);
-                let url = fileUrl
-                let name = fileName+fileType
-                window.open(url)
-                // ajaxDown(url,name)
+                // window.open(url)
+                addLoading(id,flie_length) //进度条
+                ajaxDown(id,url,fileTips)//加载资源
         });
 
         }
     })
 }
-
-// function ajaxDown(url,name){
-
-//     // 发送http请求，将文件链接转换成文件流
-//     fileAjax(url, function(xhr) {
-//         downloadFile(xhr.response, name)
-//     }, {
-//         responseType: 'arraybuffer'
-//     })    
-//     return; 
+//进度条
+function addLoading(id,flie_length){
+    // console.log($('#dplay_video'+id).next())
+    //查看是否有进度条
+    if(!$('#dplay_video'+id).next().hasClass('progress'+id)){
+        var string ='<div class="progress progress'+id+'"><div class="progress_bar'+id+' progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div><span class="progress_text'+id+'" style="display: flex;position: absolute;width: 100%;line-height: 16px;font-weight: bold;justify-content: center;"></span></div>'
+        $('#dplay_video'+id).after(string)
+    }else{
+        var progress_text ='(0/'+flie_length+')0%'
+        // 调用函数来更新进度条
+        $('.progress_bar'+id).css('width','1%');
+        // 更新内部文本以显示当前百分比
+        $('.progress_text'+id).text(progress_text); // 设置进度条为50%
+    }   
+}
+// // 如果你想通过jQuery动态改变进度条的值，可以这样做：
+// function updateProgress(percentage) {
+//     progress_bar.css('width', percentage + '%');
+//     // 更新内部文本以显示当前百分比
+//     progress_bar.text(percentage + '%');
 // }
-// function fileAjax(url, callback, options) {
-//     let xhr = new XMLHttpRequest()
-//     xhr.open('get', url, true)
-//     if (options.responseType) {
-//         xhr.responseType = options.responseType
-//     }
-//     xhr.onreadystatechange = function() {
-//         if (xhr.readyState === 4 && xhr.status === 200) {
-//             callback(xhr)
-//         }
-//     }
-//     xhr.send()
-// }
-// function downloadFile(content, filename) {
-//     window.URL = window.URL || window.webkitURL
-//     let a = document.createElement('a')
-//     let blob = new Blob([content],{ type: 'video/MP2T' })
-//     // 通过二进制文件创建url
-//     let url = window.URL.createObjectURL(blob)
-//     a.href = url
-//     a.download = filename
-//     a.click()
-//     // 销毁创建的url
-//     window.URL.revokeObjectURL(url)
-// }
+// ：https://www.zhihu.com/question/596582533/answer/2991540255
+// 1、使用 fetch 函数获取 m3u8 文件。
+function ajaxDown(id,url,fileTips){
+    var domain_url =  getDomain(url)     //截取域名
+    var httpurl =    url.replace('index.m3u8','')    //截取url
+    fetch(url).then(response => response.text()).then(data => {  
+        // 解析 m3u8 文件，获取所有的 ts 视频链接  
+        var urls = parseM3u8Urls(data);
+        //是否有ts文件
+        if(urls.length==0){
+            var urls_online = parseM3u8Urls_online(data);  
+            if(url.length!=0){
+                var new_url =domain_url+urls_online[0]       //筛选m3u8是否有解析地址
+                fetch(new_url).then(response => response.text()).then(data => {   
+                    var urls = parseM3u8Urls(data);  
+                    if(urls.length!=0){
+                        mergeTsVideos(id,urls,domain_url,fileTips);      // 合并 ts 视频 
+                    }})
+                }
+        }else{
+            mergeTsVideos(id,urls,httpurl,fileTips);          // 合并 ts 视频  
+        }
+    });    
+}
+// 2、解析 m3u8 文件，获取所有的 ts 视频链接。
+function parseM3u8Urls(m3u8Content) {  
+    const lines = m3u8Content.trim().split("\n");  
+    // 找到所有的 ts 视频链接  
+    const urls = lines.filter(line => line.trim().endsWith('.ts'));  
+    return urls;
+}
+// 2、解析 m3u8 文件，里面的url--特殊情况，有2层
+function parseM3u8Urls_online(m3u8Content) {  
+    const lines = m3u8Content.trim().split("\n");  
+    // 找到所有的 ts 视频链接  
+    const urls = lines.filter(line => line.trim().endsWith('.m3u8'));  
+    return urls;
+}
+// 3、合并 ts 视频。
+async function mergeTsVideos(id,urls,httpurl,fileTips) { 
+    window.URL = window.URL || window.webkitURL
+    const blobs = [];  
+    let index = 0;
+    let total_index =urls.length
+    for (const url of urls) {    
+        const  new_url = httpurl+url
+        const response = await fetch(new_url);
+        const blob = await response.blob();   
+        index++; //百分比--加1之后--从1开始计算
+        let percent = ((index / total_index*100).toFixed(0))
+        // console.log(index,urls.length,percent)
+        var progress_text ='('+index+'/'+total_index+')'+percent+'%'
+        // 调用函数来更新进度条
+        $('.progress_bar'+id).css('width', percent + '%');
+        // 更新内部文本以显示当前百分比
+        $('.progress_text'+id).text(progress_text); // 设置进度条为50%
+        blobs.push(blob);
+    } 
+    // 将所有的 ts 视频合并成一个 Blob  
+    const mergedBlob = new Blob(blobs); 
+    // 创建 URL 对象，用于播放视频  
+    const url = URL.createObjectURL(mergedBlob); 
+    // 在页面中播放视频  
+    const link = document.createElement("a");  
+    document.body.appendChild(link);
+    //下载
+    link.href = url
+    link.download = fileTips
+    link.click()
+    document.body.removeChild(link)     // 销毁创建的url
+    window.URL.revokeObjectURL(url)
+}
+//url截取域名，获取域名
+function getDomain(url){
+   return url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n?]+)/img)[0];
+}
