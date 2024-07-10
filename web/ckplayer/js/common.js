@@ -144,20 +144,29 @@ function removeLoading(){
     // }); 
 }
 // 异步html
-function getprintHtml(url){
-    var getHtml =$.ajax({
-        type:"post",
-        url: url,
-        cache:true,
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-            removeLoading()
-        },error:function(data){
-            removeLoading()
-        }
-    });
-    return getHtml.responseText;
+async function getprintHtml(url){
+    // 使用 await 结合 waitFor 函数
+    try {
+        // const result = await waitFor(fetch(url, { signal }), 5000); // 在5秒内完成，否则终止
+        var getHtml = await $.ajax({
+            type:"post",
+            url: url,
+            cache:true,
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                removeLoading()
+            },error:function(data){
+                removeLoading()
+            }
+        });
+        return getHtml.responseText;
+        // 处理结果
+    } catch (error) {
+        // 处理错误
+        removeLoading()
+        return
+    }
 }
 
 //ajax 请求前添加加载状态
