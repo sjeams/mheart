@@ -69,12 +69,7 @@
         var goPage =$("#goPage").val();
         var title =  $('#appendedInputButton').val();
         var url="/cn/video/collect-like?page="+goPage+"&belong=<?php echo $data['belong'] ?>&title="+title+"&html=2";
-        var html = getprintHtml(url);
-        //    console.log(html)
-        if(html){
-            $("#goPage").val(goPage);
-            $('#content_append').html(html);
-        }
+        getprintHtml(url,getprintHtml_content_append,goPage);
     }
     //退出全屏
     function full_out(){
@@ -196,29 +191,10 @@
         var title =  $('#appendedInputButton').val();
         if(full_model==1){
             var url="/cn/video/collect-like?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=2";
-            var html = getprintHtml(url);
-            if(html!=false){
-                //分页后初始页码
-                page_change();
-                // console.log(111)
-                $("#goPage").val(goPage);
-                $('#content_append').html(html);
-                //定位变化
-                scoll_change();
-            }else{
-                page_unchange();
-            }
+            getprintHtml(url,getprintHtml_content_append_full_model,goPage);
         }else{
             var url="/cn/video/collect-like?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=1";
-            var html = getprintHtml(url);
-            if(html){
-                $("#goPage").val(goPage);
-                $('#content_append').append(html);
-                //搜索框
-                // var goPageCount = $("#goPageCount").val()
-                // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-                // $('.go_hidden').html(go_input);
-            }
+            getprintHtml(url,getprintHtml_content_append,goPage);
        }
     }
     function  gou(){

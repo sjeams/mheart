@@ -126,15 +126,7 @@ function nextPage(goPage){
 		var friend_title =$("#friend_title").val();
 	    // if(friend_title ){
 			url="/cn/chat/list?page="+goPage+"&friend_title="+friend_title+"&html=1";
-			var html = getprintHtml(url);
-			if(html){
-				$("#goPage").val(goPage);
-				$('#content_append').append(html);
-				//搜索框
-				// var goPageCount = $("#goPageCount").val()
-				// var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-				// $('.go_hidden').html(go_input);
-			}
+			getprintHtml(url,getprintHtml_content_append,goPage);
 		// }
     }
  
@@ -149,11 +141,7 @@ function nextPage(goPage){
         var friend_title =$("#friend_title").val();
         // window.location.href="/cn/chat/list?friend_title="+friend_title ;
 		url="/cn/chat/list?page="+goPage+"&friend_title="+friend_title+"&html=1";
-		var html = getprintHtml(url);
-		// if(html){
-            $('#content_append').html(html);
-			// $("#friend_title").val('');
-		// }
+		getprintHtml(url,getprintHtml_content_append,goPage);
     } 
 	
 	// websocket通讯

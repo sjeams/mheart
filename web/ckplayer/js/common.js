@@ -143,20 +143,20 @@ function removeLoading(){
     //   //do something
     // }); 
 }
-
-async function fetchData(url) {
-
-}
-
-const  getprintHtml_text=''
 // 异步html
-function getprintHtml(url){
-    //开启async 任务，防止页面空白请求
-    fetch(url).then(response => response.text()).then(data => {  
-        // 解析 m3u8 文件，获取所有的 ts 视频链接  
-        this.getprintHtml_text =data
+function getprintHtml(url,callback,goPage){
+    addLoading()
+    var goPage =goPage||1;
+    //开启async 任务，防止页面空白请求--5-10
+   try{
+    fetch(url).then(response => response.text()).then(data => { 
+        // $('.list_html').html(data)
+        callback(data,goPage)
     });
-    return this.getprintHtml_text
+   } catch(e){
+    removeLoading()
+   }
+
     // var getHtml =$.ajax({
     //     type:"post",
     //     url: url,
@@ -171,10 +171,57 @@ function getprintHtml(url){
     // });
     // return getHtml.responseText;
 }
+//list_html 页面回调
+function getprintHtml_list_html(html,goPage){
+    if(html){
+        $('.list_html').html(html)
+        //回填
+        is_last_button() //上一页
+        is_next_button() //下一页
+        // var t = $("#top").offset().top;
+        // $(window).scrollTop(t);
+        scllTop()
+    }
+    removeLoading()
+}
+
+//friend_detai 页面回调--全屏模式
+function getprintHtml_friend_detail(html,chat_belong){
+    if(html){
+        $('#show-logs').html(html);
+        $('#chat_belong').val(chat_belong)
+    }
+    removeLoading()
+}
+//video_pic 页面回调--全屏模式
+function getprintHtml_video_pic(html,goPage){
+    if(html){
+        $('.pic_html').html(list_html)
+    }
+    removeLoading()
+}
+//content_append 页面回调--全屏模式
+function getprintHtml_content_append_full_model(html,goPage){
+    if(html){
+        //分页后初始页码
+        page_change();
+        // console.log(111)
+        $("#goPage").val(goPage);
+        $('#content_append').html(html);
+        //定位变化
+        scoll_change();
+    }else{
+        page_unchange();
+    }
+}
+//content_append 页面回调
+function getprintHtml_content_append(html,goPage){
+    $("#goPage").val(goPage);
+    $('#content_append').append(html);
+}
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function( ) {
     addLoading()
- 
 });
 $(document).ajaxError(function( ) {
     removeLoading()
@@ -187,8 +234,6 @@ $(document).ajaxStop(function( ) {
 //     removeLoading()
 // });
  
-
-
   /*  footer ______________________ */
 
 

@@ -88,15 +88,6 @@
 		// console.log(chat_belong)
 			// window.location.href="/cn/chat/list?friend_title="+friend_title ;
 		var	url="/cn/chat/detail?page="+goPage+"&uid="+friend_id+"&html="+chat_belong+"&list=1";
-		var html = getprintHtml(url);
-	//    console.log(html)
-		if(html){
-			$("#goPage").val(goPage);
-			$('#content_append').append(html);
-			//搜索框
-			// var goPageCount = $("#goPageCount").val()
-			// var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-			// $('.go_hidden').html(go_input);
-		}
+         getprintHtml(url,getprintHtml_content_append,goPage);
 	}
  </script>

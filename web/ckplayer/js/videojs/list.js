@@ -235,26 +235,21 @@
             type: 'post',
             dataType: 'json',
             success: function (data) {
-                // console.log(data)
-                // $("#goTypeInput").html(data.data);
                 moreGetCaches()//手动缓存
             },
         });
     }
     //查询
     function  gou( ){
-        $.ajax({
-            url: '/cn/video-api/ajax-start', // 跳转到 action 
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                // console.log(data)
-                // $("#goTypeInput").html(data.data);
+        // $.ajax({
+        //     url: '/cn/video-api/ajax-start', // 跳转到 action 
+        //     type: 'post',
+        //     dataType: 'json',
+        //     success: function (data) {
                 isGetCaches()//开启缓存，固定缓存一页
                 gouhtml(0);
-                // gouhtml(1);//跳转页面
-            },
-        });
+        //     },
+        // });
     }
     function  gouhtml(clearRload){
         var goBelong =$("#goBelong").val();
@@ -271,19 +266,10 @@
             // $('.list_html').html('采集中，请稍后...')
         }else{
             var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
-            var list_html = getprintHtml(url);
-            if(list_html){
-                $('.list_html').html(list_html)
-            }
-            //回填
-            is_last_button() //上一页
-            is_next_button() //下一页
-            // var t = $("#top").offset().top;
-            // $(window).scrollTop(t);
-            scllTop()
-            removeLoading()
+            getprintHtml(url,getprintHtml_list_html);
         }
     } 
+
     
     function is_last_button(){
         var is_last_page = $("#goPage_list").val()

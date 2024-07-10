@@ -166,24 +166,14 @@ function  gou(chat_belong){
 	var friend_id =$('#friend_id').val();
 	// window.location.href="/cn/chat/list?friend_title="+friend_title ;
 	url="/cn/chat/detail?uid="+friend_id+"&html="+chat_belong;
-	var html = getprintHtml(url);
-	if(html){
-		$('#show-logs').html(html);
-		$('#chat_belong').val(chat_belong)
-	}
+	getprintHtml(url,getprintHtml_friend_detail,chat_belong);
 } 
 //朋友圈图片查看
 function  detail_photo(photo_id,prev=0){
 	var friend_id =$('#friend_id').val();
 	var	chat_belong=5;
 	url="/cn/chat/detail?uid="+friend_id+"&html="+chat_belong+"&photo_id="+photo_id+"&prev="+prev;
-	// window.location.href=url;
-	var html = getprintHtml(url);
-	// // console.log(html)
-	if(html!=1){
-	    $('#show-logs').html(html);
-		$('#chat_belong').val(chat_belong)
-	}
+	getprintHtml(url,getprintHtml_friend_detail,chat_belong);
 } 
 
 function  add_friend(friend_id){
