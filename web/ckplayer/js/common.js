@@ -634,9 +634,16 @@ async function mergeTsVideos(id,urls,httpurl,fileTips) {
     let index = 0;
     let total_index =urls.length
     for (const url of urls) {    
-        const  new_url = httpurl+url
-        const response = await fetch(new_url,{ signal: this.controller.signal}) //强制停止这里promise会报错终止,不影响后续操作
-        const blob = await response.blob();   
+        //事务等待
+        try {
+            const  new_url = httpurl+url
+            const response = await fetch(new_url,{ signal: this.controller.signal}) //强制停止这里promise会报错终止,不影响后续操作
+            const blob = await response.blob();   
+            blobs.push(blob);
+        } catch (error) {
+         // 处理错误
+            return
+        }
         index++; //百分比--加1之后--从1开始计算
         let percent = ((index / total_index*100).toFixed(0))
         // console.log(index,urls.length,percent)
@@ -645,7 +652,7 @@ async function mergeTsVideos(id,urls,httpurl,fileTips) {
         $('.progress_bar'+id).css('width', percent + '%');
         // 更新内部文本以显示当前百分比
         $('.progress_text'+id).text(progress_text); // 设置进度条为50%
-        blobs.push(blob);
+     
     } 
     // 将所有的 ts 视频合并成一个 Blob  
     const mergedBlob = new Blob(blobs); 
@@ -666,3 +673,10 @@ async function mergeTsVideos(id,urls,httpurl,fileTips) {
 function getDomain(url){
    return url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n?]+)/img)[0];
 }
+// // 使用 await 结合 waitFor 函数
+// try {
+//     const result = await waitFor(fetch(url, { signal }), 5000); // 在5秒内完成，否则终止
+//     // 处理结果
+//   } catch (error) {
+//     // 处理错误
+//   }
