@@ -86,7 +86,7 @@
         $.ajax({
             url: '/cn/video-api/get-cache', // 跳转到 action 
             type: 'post',
-            async:false,
+            // async:false,
             data:{ 
                 setnum:setnum,
                 page:goPage,
@@ -230,14 +230,14 @@
 
     // 手动缓存
     function  gouCache( ){
-        $.ajax({
-            url: '/cn/video-api/ajax-start', // 跳转到 action 
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
+        // $.ajax({
+        //     url: '/cn/video-api/ajax-start', // 跳转到 action 
+        //     type: 'post',
+        //     dataType: 'json',
+            // success: function (data) {
                 moreGetCaches()//手动缓存
-            },
-        });
+            // },
+        // });
     }
     //查询
     function  gou( ){
