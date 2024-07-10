@@ -143,21 +143,33 @@ function removeLoading(){
     //   //do something
     // }); 
 }
+
+async function fetchData(url) {
+
+}
+
+const  getprintHtml_text=''
 // 异步html
 function getprintHtml(url){
-    var getHtml =$.ajax({
-        type:"post",
-        url: url,
-        cache:true,
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-            removeLoading()
-        },error:function(data){
-            removeLoading()
-        }
+    //开启async 任务，防止页面空白请求
+    fetch(url).then(response => response.text()).then(data => {  
+        // 解析 m3u8 文件，获取所有的 ts 视频链接  
+        this.getprintHtml_text =data
     });
-    return getHtml.responseText;
+    return this.getprintHtml_text
+    // var getHtml =$.ajax({
+    //     type:"post",
+    //     url: url,
+    //     cache:true,
+    //     dataType: 'json',
+    //     async: false,
+    //     success: function (data) {
+    //         removeLoading()
+    //     },error:function(data){
+    //         removeLoading()
+    //     }
+    // });
+    // return getHtml.responseText;
 }
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function( ) {
