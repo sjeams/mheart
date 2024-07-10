@@ -635,7 +635,7 @@ async function mergeTsVideos(id,urls,httpurl,fileTips) {
     let total_index =urls.length
     for (const url of urls) {    
         const  new_url = httpurl+url
-        const response = await fetch(new_url,{ signal: this.controller.signal}); //强制停止这里promise会报错终止,不影响后续操作
+        const response = await fetch(new_url,{ signal: this.controller.signal}) //强制停止这里promise会报错终止,不影响后续操作
         const blob = await response.blob();   
         index++; //百分比--加1之后--从1开始计算
         let percent = ((index / total_index*100).toFixed(0))
@@ -660,7 +660,7 @@ async function mergeTsVideos(id,urls,httpurl,fileTips) {
     link.click()
     document.body.removeChild(link)     // 销毁创建的url
     window.URL.revokeObjectURL(url)
-    link.remove()
+    // link.remove()
 }
 //url截取域名，获取域名
 function getDomain(url){
