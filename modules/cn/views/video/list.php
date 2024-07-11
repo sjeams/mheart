@@ -37,14 +37,13 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         <input type="hidden" name="link" value="<?php echo $v['link']?>" >
         <input type="hidden"  name="is_collect" value="<?php echo $v['collect']?>">
     </div>
-    <tr>
-        <td  >
+    <div class="card col-md-6" style="float: left">
+        <div class="card-body">
             <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
             <p class="center"  style="width: 90%;">
-                <p   onclick="downloadUrl(<?php echo $v['id']?>)"> 
-                <span ><b><?php echo $kss ?>、</b></span>  <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
-                <i class="bi bi-download btn-success">down</i>
-                </p>
+            <p  class="center user_text_hidden text-success"   onclick="downloadUrl(<?php echo $v['id']?>)"> 
+            <i class="bi bi-arrow-down-circle"></i><span><b><?php echo $kss ?>、</b></span><?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
+            </p>
             </p>
             <!-- </a> -->
             <p class="center"> 
@@ -53,9 +52,9 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
                 <!-- <span onclick="Update(<?php echo $v['id']?>)" class="btn collect collect_id<?php echo $v['id']?> <?php echo $v['collect']==1?'btn-success':''  ?>"> 喜欢</span> -->
                 <span onclick="clearRload( )" class="btn btn-primary collect"> 刷新 </span>
             </p>
-        </td>
+        </div>
     
-    </tr>
+    </div>
     <?php
 } } }
 ?>
