@@ -149,14 +149,15 @@ function getprintHtml(url,callback,goPage){
     var goPage =goPage||1;
     //开启async 任务，防止页面空白请求--5-10
    try{
-    fetch(url).then(response => response.text()).then(data => { 
+    fetch(url).then(response =>{
+        //请求失败，抛出错误
+        if (!response.ok) { removeLoading();return }
+        return response.text();
+    }).then(data => { 
         // $('.list_html').html(data)
         callback(data,goPage)
     });
-   } catch(e){
-        removeLoading()
-   }
-
+   } catch(e){ removeLoading() }
     // var getHtml =$.ajax({
     //     type:"post",
     //     url: url,
@@ -174,6 +175,7 @@ function getprintHtml(url,callback,goPage){
 //list_html 页面回调
 function getprintHtml_list_html(html,goPage){
     if(html){
+        // $('.list_html').html(html)
         $('.list_html').html(html)
         //回填
         is_last_button() //上一页
@@ -182,6 +184,11 @@ function getprintHtml_list_html(html,goPage){
         // $(window).scrollTop(t);
         scllTop()
     }
+    removeLoading()
+}
+//header_content 页面回调
+function getprintHtml_content_goStaticHtml(html){
+    if(html){ $('.header_content').html(html);}
     removeLoading()
 }
 
@@ -368,11 +375,6 @@ $(document).ajaxStop(function( ) {
         getprintHtml(url,getprintHtml_content_goStaticHtml);
         // var html = getprintHtml(url);
         // if(html){ $('.header_content').html(html);}
-    }
-    //header_content 页面回调
-    function getprintHtml_content_goStaticHtml(html){
-        if(html){ $('.header_content').html(html);}
-        removeLoading()
     }
     function video_list(){
         // window.location.href='/cn/video/list';
