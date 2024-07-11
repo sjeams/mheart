@@ -292,12 +292,14 @@ $(document).ajaxStop(function( ) {
         }
     }
  
-
+    
+    //头部显示
     function header_title_show(){
         $('.top-title').removeClass('hiddened');
         $('.page_bottom').css('display','table');
         $('.video_hidden_button').css('display','block');
     }
+    //头部隐藏
     function header_title_hidden(){
         $('.top-title').addClass('hiddened');
         $('.page_bottom').css('display','none');
@@ -548,7 +550,6 @@ $(document).ajaxStop(function( ) {
             return
         }
      }
-
      // 点击事件监听
     $(document).keyup(function(event){
         if(event.keyCode ==13){
