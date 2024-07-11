@@ -326,11 +326,12 @@ class VideoController extends VideoApiControl
         if($title){
             $where .= " and a.title like '%$title%'";
         } 
-        $count= (new \yii\db\Query())
-        ->select("count(1) as num")
-        ->from("x2_video_list_collect as c")
-        ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
-        ->where($where)->one('sign')['num'];
+        // $count= (new \yii\db\Query())
+        // ->select("count(1) as num")
+        // ->from("x2_video_list_collect as c")
+        // ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        // ->where($where)->one('sign')['num'];
+        $count = VideoListCollect::find()->where("$where")->count();
  
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $where .=" and user_id = ".$this->user['id'];
@@ -380,32 +381,24 @@ class VideoController extends VideoApiControl
         $page = Yii::$app->request->get('page',1);
         $belong = Yii::$app->request->get('belong',0);
         $type = Yii::$app->request->get('type',0);
-        $where ="WHERE 1=1";
-        $wherecount =" 1=1";
+        $where =" 1=1";
         if($belong){
-            $where .= " and a.belong =$belong"; 
-            $wherecount .= " and belong =$belong"; 
+            $where .= " and belong =$belong"; 
         }
         if(intval($type)&&$belong!=0){
-            $where .= " and a.type =$type"; 
-            $wherecount .= " and title like '%$title%'";
+            $where .= " and title like '%$title%'";
         }
         if($title){
-            $where .= " and a.title like '%$title%'";
-            $wherecount .= " and title like '%$title%'";
+            $where .= " and title like '%$title%'";
         }
         // // sign  是 sign 数据库
-        $count = VideoListDetail::find()->where("$wherecount")->count();
-        // var_dump($count);die;
+        $count = VideoListDetail::find()->where("$where")->count();
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $limit = "limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
-        $where.=' order by a.id desc '.$limit;
+        $where.=' order by id desc '.$limit;
         $user_id =$this->user['id'];
-
-        // $limit = " limit $pageStr->offset,$pageStr->limit";
-        $sql ="SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from x2_video_list_detail a left JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
-        // print_r($sql.$where);die;
-        $brush = Yii::$app->signdb->createCommand($sql.$where)->queryAll();
+        $sql ="SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT * FROM x2_video_list_detail  where $where )  a left JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
+        $brush = Yii::$app->signdb->createCommand($sql)->queryAll();
         // $limit = "limit ".($page-1)*$pageSize.",$pageSize";
         // $brush= (new \yii\db\Query())
         // ->select("a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect ")
