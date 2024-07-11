@@ -154,7 +154,7 @@ function getprintHtml(url,callback,goPage){
         callback(data,goPage)
     });
    } catch(e){
-    removeLoading()
+        removeLoading()
    }
 
     // var getHtml =$.ajax({
@@ -365,8 +365,14 @@ $(document).ajaxStop(function( ) {
     //静态跳转
     function goStaticHtml(url){
         MenuHidden()
-        var html = getprintHtml(url);
+        getprintHtml(url,getprintHtml_content_goStaticHtml);
+        // var html = getprintHtml(url);
+        // if(html){ $('.header_content').html(html);}
+    }
+    //header_content 页面回调
+    function getprintHtml_content_goStaticHtml(html){
         if(html){ $('.header_content').html(html);}
+        removeLoading()
     }
     function video_list(){
         // window.location.href='/cn/video/list';

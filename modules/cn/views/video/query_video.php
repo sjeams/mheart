@@ -124,15 +124,16 @@
         if(!goType){ var  goType =''; }
         var title =  $('#appendedInputButton').val();
         var url="/cn/video/query-video?page="+goPage+"&type="+goType+"&belong="+goBelong+"&title="+title+"&html=1";
-        var html = getprintHtml(url);
-        if(html){
-            $("#goPage").val(goPage);
-            $('#content_append').append(html);
-            //搜索框
-            // var goPageCount = $("#goPageCount").val()
-            // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
-            // $('.go_hidden').html(go_input);
-        }
+        getprintHtml(url,getprintHtml_content_append,goPage);
+        // var html = getprintHtml(url);
+        // if(html){
+        //     $("#goPage").val(goPage);
+        //     $('#content_append').append(html);
+        //     //搜索框
+        //     // var goPageCount = $("#goPageCount").val()
+        //     // var go_input ='<input type="text" value="'+goPage+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO('+goPageCount+')</span>';
+        //     // $('.go_hidden').html(go_input);
+        // }
     }
     function  gou(){
         var goPage =$("#goPage").val();
