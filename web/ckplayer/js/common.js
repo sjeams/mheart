@@ -376,6 +376,11 @@ $(document).ajaxStop(function( ) {
         // var html = getprintHtml(url);
         // if(html){ $('.header_content').html(html);}
     }
+
+
+    function window_Reload(){
+       window.location.reload()
+    }
     function video_list(){
         // window.location.href='/cn/video/list';
         var url="/cn/video/list?html=2";

@@ -85,9 +85,11 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
             <li class="list-group-item list-item-style  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>
+
         <li class="list-group-item list-item-style  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'Ckplay':'Dplay' ?></li>
         <li class="list-group-item list-item-style  model_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']?'btn-success':'btn-defult' ?>" onclick="vidoeModel()"> <?php echo $userlogin['video_model']?'窗口√':'列表×' ?></li>
-        <li class="list-group-item list-item-style btn-defult" onclick="loginOuts()"> 退出</li>
+        <li class="list-group-item list-item-style btn-defult" onclick="window_Reload()">rload</li>
+        <li class="list-group-item list-item-style btn-defult" onclick="loginOuts()">退出</li>
     </ul>
 </div>
 
