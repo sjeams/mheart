@@ -401,6 +401,7 @@ class VideoController extends VideoApiControl
         $limit = "limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
         $where.=' order by a.id desc '.$limit;
         $user_id =$this->user['id'];
+
         // $limit = " limit $pageStr->offset,$pageStr->limit";
         $sql ="SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from x2_video_list_detail a left JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
         // print_r($sql.$where);die;
@@ -416,7 +417,6 @@ class VideoController extends VideoApiControl
         $data['title']=$title; 
         $data['page']=$page; 
         $data['count']=ceil($count/10 ); 
- 
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html){

@@ -94,6 +94,7 @@ video{
      right:0;   
      display: none;
      z-index: 101;
+     height: 0%;
  }
 .tablestyle{
     margin-bottom: auto;
@@ -137,6 +138,9 @@ video{
  }
 .list-item-style{
     line-height:unset;
+    min-width: 240px;
+    float: right;
+    clear: both;
 } 
 
 

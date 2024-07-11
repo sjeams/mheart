@@ -220,11 +220,13 @@ function getprintHtml_content_append_full_model(html,goPage){
     }else{
         page_unchange();
     }
+    removeLoading()
 }
 //content_append 页面回调
 function getprintHtml_content_append(html,goPage){
     $("#goPage").val(goPage);
     $('#content_append').append(html);
+    removeLoading()
 }
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function( ) {
@@ -542,6 +544,8 @@ $(document).ajaxStop(function( ) {
         if(menu==1){
              $('.menu_list').css('display','none');
              $("#menu").val(0)
+        }else{
+            return
         }
      }
 
