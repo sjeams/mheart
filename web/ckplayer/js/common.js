@@ -24,7 +24,7 @@ $(function(){
                 // console.log("往上滚动");
                 header_title_show();
                 MenuHidden();//隐藏菜单
-                }
+            }
             setTimeout(function(){t=scrollY},0);
         }
     });
@@ -145,19 +145,24 @@ function removeLoading(){
 }
 // 异步html
 function getprintHtml(url,callback,goPage){
+    // console.log(222)
     addLoading()
     var goPage =goPage||1;
     //开启async 任务，防止页面空白请求--5-10
    try{
     fetch(url).then(response =>{
         //请求失败，抛出错误
-        if (!response.ok) { removeLoading();return }
+        if (!response.ok) { removeLoading();  $('#getPage').val(1); return }
         return response.text();
     }).then(data => { 
         // $('.list_html').html(data)
         callback(data,goPage)
+        $('#getPage').val(1) //等待请求--滚动到底部释放处理，防止多次请求
     });
-   } catch(e){ removeLoading() }
+   } catch(e){ removeLoading(); $('#getPage').val(1)  }
+
+
+
     // var getHtml =$.ajax({
     //     type:"post",
     //     url: url,
@@ -268,16 +273,17 @@ $(document).ajaxStop(function( ) {
     // });
      //监听分页
     function getPage(){
-
         if($('#getPage').val()==1){
             //窗口高度 = 滚动高度+页面高度+160.触发
             if (getScrollHeight()<= getWindowHeight() + getDocumentTop()+160) {
-                var goPageCount = $('#goPageCount').val();
+                var goPageCount =  parseInt($('#goPageCount').val());
                 //当滚动条到底时,这里是触发内容
                 //判断是否使用分页插件
                 if(goPageCount){
                     var goPage = Number($("#goPage").val()) + Number(1)   
+                    // console.log(goPage,goPageCount)
                     if(goPage<=goPageCount){
+                        $('#getPage').val(0) //等待请求---防止多次请求
                         static_nextPage(goPage); //list 页面没有滚动分页nextPage(goPage)
                     }else{
                         //到底部距离160 显示 底部
