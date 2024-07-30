@@ -27,6 +27,7 @@ use app\modules\cn\models\CategoryName;
 use app\modules\cn\models\Query;
 use yii\data\Pagination;
 use app\modules\cn\models\WechatUser;
+use app\modules\cn\models\VideoImage;
 
  
 class VideoController extends VideoApiControl

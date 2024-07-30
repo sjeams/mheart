@@ -84,7 +84,9 @@ class VideoListDetail extends ActiveRecord {
     public static function videoBaseImage($find_video){
         if(!$find_video['image']){
             $file_base =new VideoImage();
-            $base_id = $file_base->addBaseImage($find_video['imageurl'],128); //宽度256
+            $base_id = $file_base->addBaseImage($find_video['imageurl'],2); //宽度256
+            // $base_image =$file_base->getBaseImage($find_video['imageurl'],1);
+            // var_dump($base_image);die;
             $find_video['image'] =$base_id;
         }
         return $find_video;
