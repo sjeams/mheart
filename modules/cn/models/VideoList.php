@@ -28,8 +28,7 @@ class VideoList extends ActiveRecord {
 
 
     public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid){
-        $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
- 
+        $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->asarray()->one();
         if($res){
             $list =  json_decode($res['value'],true);
             $count = $res['count'];

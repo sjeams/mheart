@@ -26,7 +26,7 @@ class Video extends ActiveRecord {
 
 	public static function getCategoryId($belong,$type)
     {
-		$category = Category::find()->where("belong =$belong and type =$type")->asArray()->One();
+		$category = Category::find()->select('category_id')->where("belong =$belong and type =$type")->asArray()->One();
 		return $category?$category['category_id']:0;
 
 	}

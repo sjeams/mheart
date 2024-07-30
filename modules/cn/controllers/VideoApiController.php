@@ -181,12 +181,17 @@ class VideoApiController extends VideoApiControl
             $belong=0;
         }
         $newpage =$page_list;
+        // $belong =5; 
+        // $setnum =5;
+        // $type =24;
+        // $page_list =125;
         // 影视不进入缓存-开启缓存进入--手动缓存>1时开启缓存
         if($belong!=0&&($get_cache==1|| $setnum>1)){
             // 缓存列表
             for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
+                // videolistBelong5page1page_list124type24search
                 //查询是否有session缓存
                 $res = Yii::$app->session->get($sessionStr);
                 if(!$res){
