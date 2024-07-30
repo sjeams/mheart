@@ -53,26 +53,19 @@ class VideoListDetail extends ActiveRecord {
                 if($find_video['type']!=$val['type']&&$val['type']!=0){
                     $update_list[] = $find_id;
                     $val_type = $val['type'];
-                    // VideoListDetail::updateAll(['type' =>$val_type],"id = $find_id");
-                    // $update_list[] =array('id'=>$find_id,'type'=>$val_type);//批量修改
                 }
-                // $find_video['imageurl'] = str_replace( 'https://ttzytp3.com/','https://ttzytp.com/',$find_video['imageurl']);
-                // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
                 $video_list [] =$find_video;
             }else{
                 //单条数据采集
                 $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
                 if(is_array($find_video)){  //判断是否为数组，报错则跳过
                     // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
-                    // 插入采集数据库
-                    // Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $find_video)->execute();
-                    // $find_video['id']=Yii::$app->signdb->getLastInsertID();
-                    // $new_list[] =$find_video;//批量插入
                     $video_list [] =$find_video;
                 }
             }
-            // $video_list [] =$find_video;//改为单独写入，剔除重复m3u8
         }
+        //批量更新
+        // $video_list=  Video::updateVidoeMethod($link);
         //更新type
         if($update_list){
             $update_list = implode(',',$update_list);

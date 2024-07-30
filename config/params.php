@@ -84,7 +84,8 @@ return [
         // ],
 
     ],
-
+ 
+    'insertVideo' => [],
     'attribute' => [ 
         // 基础属性
         '力量' => '',  //

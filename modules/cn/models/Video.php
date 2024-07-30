@@ -540,12 +540,37 @@ class Video extends ActiveRecord {
 		// var_dump($args);die;
 		// isquery 0 需要写入， 1 不需要写入
 		if(!$isquery&&$args!=null){
-			Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			Video::insertVideo($args);
 		}else{
 			$args = Video::geturlDetails($args);//验证视频是否入库--查看库是否已经存在m3u8视频
 		}
 		return $args;
 	}
+
+
+
+	//写入视频
+	public static function insertVideo($args){
+		Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+		// $length = count(Yii::$app->params['insertVideo']);
+		// Yii::$app->params['insertVideo'][$length]=$args;
+	}
+	//批量插入，暂时无法用，请求太慢了
+    public static function updateVidoeMethod($link){
+        $video_list=[];
+        $insertVideo = Yii::$app->params['insertVideo'];
+        if($insertVideo){
+            // var_dump( $insertVideo );die;
+            $new_key = array_keys($insertVideo[0]);
+            Video::batchInsertVideo('x2_video_list_detail',$new_key,$insertVideo);
+            //重置容器
+            Yii::$app->params['insertVideo']=[];
+        }
+        //重新查找插入的链接
+        $video_list =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        return  $video_list;
+    }
 
 	public static function getxdfDetails($id){
 		return Video::find()->where("id=$id")->asarray()->One();
@@ -571,7 +596,8 @@ class Video extends ActiveRecord {
 			return $res;
 		}else{
 			//视频不存在，写入
-			Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			Video::insertVideo($args);
 			$args['id']=Yii::$app->signdb->getLastInsertID();
 			return $args;
 		}
