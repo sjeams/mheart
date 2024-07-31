@@ -207,7 +207,7 @@ class VideoApiController extends VideoApiControl
                     $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
                     if(!$res){
                         //改到公共方法
-                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache,$is_cache);
+                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
                         if(!$res['content']){
                             //为空时，跳出循环
                             die(Method::jsonGenerate(0,$newpage-1,'false')); 
