@@ -86,7 +86,7 @@ class VideoList extends ActiveRecord {
             $list=  Video::isCollect($list,$userid);
         }
         // var_dump($list);die;
-        if($graden==1){
+        if($graden>0){
             $category = CategoryName::Category();
         }else{
             $category = CategoryName::CategoryVideo();

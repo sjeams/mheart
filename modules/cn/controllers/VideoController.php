@@ -86,7 +86,7 @@ class VideoController extends VideoApiControl
         
         // 登录状态
         $graden = $this->graden;
-        if($graden!=0){
+        if($graden>0){
             $belong=1;
             $list = Category::find()->where("belong=0")->asArray()->all();
         }else{

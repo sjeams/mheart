@@ -115,7 +115,6 @@
                 if(data.code==1){
                     // 自动缓存-循环执行
                     if(is_cache==2){
-                        console.log(222)
                         $("#goPage_list").val(data.data);
                         // 可以不进跳转
                         //已缓存+1
