@@ -27,7 +27,7 @@ class VideoList extends ActiveRecord {
     }   
 
 
-    public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid){
+    public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=1){
         $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->asarray()->one();
         if($res){
             $list =  json_decode($res['value'],true);
@@ -74,7 +74,10 @@ class VideoList extends ActiveRecord {
                     $args['search'] =$search;
                     $args['page_list'] =$page_list;
                     // 存入缓存列表
-                    Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                    //快速自动采集，不录入缓存，大容量储存会加大消耗
+                    if($get_cache){
+                        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+                    }
                 }
             }
         }

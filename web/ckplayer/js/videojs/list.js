@@ -117,8 +117,12 @@
                     if(is_cache==2){
                         console.log(222)
                         $("#goPage_list").val(data.data);
-                        console.log(data.data)
-                        gouhtml(0);
+                        // 可以不进跳转
+                        //已缓存+1
+                        $('.end_cache_num').text(parseInt($('.end_cache_num').text( ))+1);
+                        //检查是否继续下一页缓存
+                        isGetCaches()
+                        // gouhtml(0);
                     }else{
                         $('.caiji_name').text('采集√')
                         if(setnum>1){//手动缓存

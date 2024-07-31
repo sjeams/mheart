@@ -163,7 +163,7 @@ class VideoApiController extends VideoApiControl
     // 自动缓存
     public function actionGetCache()
     {
-        // 是否开启-自动缓存 0/1
+        // 是否开启-自动缓存 0/1 --- 关闭缓存模式后，不写入缓存记录
         $get_cache =$this->user['is_cache'];
         // 登录状态
         $graden = $this->graden;
@@ -198,7 +198,7 @@ class VideoApiController extends VideoApiControl
                     $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
                     if(!$res){
                         //改到公共方法
-                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id']);
+                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
                         if(!$res['content']){
                             //为空时，跳出循环
                             die(Method::jsonGenerate(0,$newpage-1,'false')); 
