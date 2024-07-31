@@ -176,14 +176,14 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',0);
         //默认缓存页码
         $setnum = Yii::$app->request->post('setnum',1);
-        $is_cache = Yii::$app->request->post('is_cache',0); //0单独插入 2 开启自动缓存--批量插入
 
         //批量插入
-        if($is_cache==2){
-            Yii::$app->params['insertVideo_iscache']=1;
-        }else{
-            Yii::$app->params['insertVideo_iscache']=0;
-        }
+        // $is_cache = Yii::$app->request->post('is_cache',0); //0单独插入 2 开启自动缓存--批量插入
+        // if($is_cache==2){
+        //     Yii::$app->params['insertVideo_iscache']=1;
+        // }else{
+        //     Yii::$app->params['insertVideo_iscache']=0;
+        // }
         
         // 未登录 禁止链接访问
         if($graden==0){
