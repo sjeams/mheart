@@ -59,15 +59,29 @@
     //      $('.collect-video-style').eq(i).attr('style',"background-image:url('"+url_link+"')");
     //     })
     // }
+    //单页缓存
     function isGetCaches(){
         var is_cache =$("#is_cache").val();
         var page_isnext =$("#page_isnext").val(); //是否有下一页
-        if(is_cache==1&&page_isnext==1){
+        if(is_cache!=0&&page_isnext==1){
             goCache(1);
         }
     }
-
-
+    //自动缓存--自动采集
+    function startCache(){
+        $('.endCache').css('display','inline-block');
+        $('.startCache').css('display','none');
+        $("#is_cache").val(2)
+        isGetCaches()
+    }
+    function endCache(){
+        $('.endCache').css('display','none');
+        $('.startCache').css('display','inline-block');
+        $("#is_cache").val(0)
+        $('.end_cache_num').text(0);
+        //结束后 跳转到当前页面
+        // gouhtml(0);
+    }
     function moreGetCaches(){
         var setnum =$("#setCaches").val();
         goCache(setnum)
@@ -75,6 +89,7 @@
     }
     // 开启缓存
     function goCache(setnum=0){
+        var is_cache =$("#is_cache").val();
         // console.log(setnum)
         $('.caiji_name').text('采集...')
         var goBelong =$("#goBelong").val();
@@ -98,16 +113,28 @@
             dataType: 'json',
             success: function (data) {
                 if(data.code==1){
-                    $('.caiji_name').text('采集√')
-                    if(setnum>1){//手动缓存
+                    // 自动缓存-循环执行
+                    if(is_cache==2){
+                        console.log(222)
                         $("#goPage_list").val(data.data);
+                        console.log(data.data)
                         gouhtml(0);
+                    }else{
+                        $('.caiji_name').text('采集√')
+                        if(setnum>1){//手动缓存
+                            $("#goPage_list").val(data.data);
+                            gouhtml(0);
+                        }
                     }
                 }else{
                     $('.caiji_name').text('采集×')
                 }
                 // removeLoading()
                 // window.location.reload();   
+            },error: function (data) {
+                if(is_cache==2){
+                    isGetCaches()
+                }
             }
         });
     }
@@ -246,7 +273,7 @@
         //     type: 'post',
         //     dataType: 'json',
         //     success: function (data) {
-                isGetCaches()//开启缓存，固定缓存一页
+                // isGetCaches()//开启缓存，固定缓存下一页
                 gouhtml(0);
         //     },
         // });

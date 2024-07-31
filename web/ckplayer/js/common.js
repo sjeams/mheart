@@ -146,7 +146,13 @@ function removeLoading(){
 // 异步html
 function getprintHtml(url,callback,goPage){
     // console.log(222)
-    addLoading()
+    //自动采集--回调
+    var is_cache =$("#is_cache").val();
+    if(is_cache==2){
+        removeLoading()
+    }else{
+        addLoading()
+    }
     var goPage =goPage||1;
     //开启async 任务，防止页面空白请求--5-10
    try{
@@ -156,11 +162,20 @@ function getprintHtml(url,callback,goPage){
         return response.text();
     }).then(data => { 
         // $('.list_html').html(data)
-        callback(data,goPage)
         $('#getPage').val(1) //等待请求--滚动到底部释放处理，防止多次请求
+        if(is_cache==2){
+            //已缓存+1
+            $('.end_cache_num').text(parseInt($('.end_cache_num').text( ))+1);
+            //不跳转返回
+            callback(false,goPage)
+            //检查是否继续下一页缓存
+            isGetCaches()
+        }else{
+            //正常放回
+            callback(data,goPage)
+        }
     });
    } catch(e){ removeLoading(); $('#getPage').val(1)  }
-
 
 
     // var getHtml =$.ajax({
@@ -235,7 +250,10 @@ function getprintHtml_content_append(html,goPage){
 }
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function( ) {
-    addLoading()
+    var is_cache =$("#is_cache").val();
+    if(is_cache!=2){
+        addLoading()
+    }
 });
 $(document).ajaxError(function( ) {
     removeLoading()

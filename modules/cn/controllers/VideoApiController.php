@@ -186,7 +186,7 @@ class VideoApiController extends VideoApiControl
         // $type =24;
         // $page_list =125;
         // 影视不进入缓存-开启缓存进入--手动缓存>1时开启缓存
-        if($belong!=0&&($get_cache==1|| $setnum>1)){
+        if($belong!=0&&($get_cache==1|| $setnum>0)){
             // 缓存列表
             for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;

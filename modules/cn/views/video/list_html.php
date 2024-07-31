@@ -77,6 +77,9 @@
                             <div class="layui-input-inline center">
                                 <p class="center">
                                     <!-- <span  class="btn btn-primary" onclick="gouSuper()"> 极品 </span> -->
+                                    <!-- //自动缓存，请不要操作 -->
+                                    <span  class="btn btn-primary startCache" style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
+                                    <span  class="btn btn-danger endCache" style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
                                     <input type="text" value="5" class="btn_style"  placeholder="setCaches"  id="setCaches" >
                                     <span  class="btn btn-primary" onclick="gouCache()"> 手动缓存 </span>
                                 </p>
