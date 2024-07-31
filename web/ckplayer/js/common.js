@@ -407,7 +407,8 @@ $(document).ajaxStop(function( ) {
 
 
     function window_Reload(){
-       window.location.reload()
+    //    window.location.reload()
+       window.location.href='/cn/video/list';
     }
     function video_list(){
         // window.location.href='/cn/video/list';
