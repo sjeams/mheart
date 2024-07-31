@@ -109,6 +109,7 @@
                 page_list:goPage_list,
                 belong:goBelong,
                 search:goSearch,
+                is_cache:is_cache,
             },
             dataType: 'json',
             success: function (data) {

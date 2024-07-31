@@ -524,6 +524,9 @@ $(document).ajaxStop(function( ) {
     } 
     
     function isCache(){
+        addLoading()
+        //结束自动缓存
+        endCache()
         $.ajax({
             url: '/cn/video-api/is-cache', // 跳转到 action 
             type: 'post',
@@ -540,6 +543,7 @@ $(document).ajaxStop(function( ) {
                     $('.cache_name').addClass('btn-defult');
                 }
                 $("#is_cache").val(data);
+                removeLoading()
                 // console.log(data);
                 // window.location.reload();   
             },

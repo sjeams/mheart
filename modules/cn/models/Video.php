@@ -552,9 +552,12 @@ class Video extends ActiveRecord {
 
 	//写入视频
 	public static function insertVideo($args){
-		Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
-		// $length = count(Yii::$app->params['insertVideo']);
-		// Yii::$app->params['insertVideo'][$length]=$args;
+		if(Yii::$app->params['insertVideo_iscache']){
+			$length = count(Yii::$app->params['insertVideo']);
+			Yii::$app->params['insertVideo'][$length]=$args;
+		}else{
+			Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+		}
 	}
 	//批量插入，暂时无法用，请求太慢了
     public static function updateVidoeMethod($link){

@@ -18,6 +18,12 @@ return [
     'timeLimit' => 600,
     'alipay_path' => dirname(__FILE__).'/../libs/yii2_alipay/',
     'defaultImg' => '/cn/images/details_defaultImg.png',
+     
+    'insertVideo' => [],
+     
+    'insertVideo_iscache' => 0,
+
+
 
     'point' => [  //图标
         'grade' => [ // 10个境界
@@ -84,8 +90,7 @@ return [
         // ],
 
     ],
- 
-    'insertVideo' => [],
+
     'attribute' => [ 
         // 基础属性
         '力量' => '',  //

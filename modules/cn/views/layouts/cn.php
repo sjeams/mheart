@@ -29,6 +29,7 @@
 <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js"></script>
 <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
 <!-- layui弹窗 -->
 <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">

@@ -176,6 +176,15 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',0);
         //默认缓存页码
         $setnum = Yii::$app->request->post('setnum',1);
+        $is_cache = Yii::$app->request->post('is_cache',0); //0单独插入 2 开启自动缓存--批量插入
+
+        //批量插入
+        if($is_cache==2){
+            Yii::$app->params['insertVideo_iscache']=1;
+        }else{
+            Yii::$app->params['insertVideo_iscache']=0;
+        }
+        
         // 未登录 禁止链接访问
         if($graden==0){
             $belong=0;
@@ -198,7 +207,7 @@ class VideoApiController extends VideoApiControl
                     $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
                     if(!$res){
                         //改到公共方法
-                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
+                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache,$is_cache);
                         if(!$res['content']){
                             //为空时，跳出循环
                             die(Method::jsonGenerate(0,$newpage-1,'false')); 

@@ -65,7 +65,9 @@ class VideoListDetail extends ActiveRecord {
             }
         }
         //批量更新
-        // $video_list=  Video::updateVidoeMethod($link);
+        if(Yii::$app->params['insertVideo_iscache']){
+            $video_list=  Video::updateVidoeMethod($link);
+        }
         //更新type
         if($update_list){
             $update_list = implode(',',$update_list);
