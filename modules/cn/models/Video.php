@@ -532,8 +532,8 @@ class Video extends ActiveRecord {
 		}
 		// siwa第三方图片路径错误--图片处理
 		// UPDATE x2_video SET imageurl =  REPLACE(imageurl, 'https://img.siwapay.com:5278/','https://img.siwazywimg2.com:5278/')
-		$args['imageurl'] = str_replace( 'https://img.siwapay.com:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
-		$args['imageurl'] = str_replace( 'https://img.siwazywimg:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
+		// $args['imageurl'] = str_replace( 'https://img.siwapay.com:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
+		// $args['imageurl'] = str_replace( 'https://img.siwazywimg:5278/','https://img.siwazywimg2.com:5278/',$args['imageurl']);
 		$args['type']= $type;
 		$args['belong']= $belong;
 		$args['link']= $link;
