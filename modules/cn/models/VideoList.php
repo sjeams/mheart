@@ -27,7 +27,7 @@ class VideoList extends ActiveRecord {
     }   
 
 
-    public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=1){
+    public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
         $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->asarray()->one();
         if($res){
             $list =  json_decode($res['value'],true);
@@ -104,7 +104,7 @@ class VideoList extends ActiveRecord {
 
         $categoryBelong = Category::getBelong($belong,$type);
         $videoData =['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong];
-        if($list){ //有数据写入缓存
+        if(!empty($list)&&$get_cache==1){ //有数据写入缓存
             Yii::$app->session->set($sessionStr,$videoData);
         }
         return  $videoData ;
