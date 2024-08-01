@@ -81,33 +81,39 @@ class VideoList extends ActiveRecord {
                 }
             }
         }
-        if($belong!=0){ // 影视不进入
-            // 采集查询-标题-是否收藏
-            $list=  Video::isCollect($list,$userid);
-        }
-        // var_dump($list);die;
-        if($graden>0){
-            $category = CategoryName::Category();
-        }else{
-            $category = CategoryName::CategoryVideo();
-        }
-        // var_dump($type);die;
-        $data['page']=$page;
-        $data['type']=$type;
-        $data['page_list']=$page_list;
-        $data['search']=$search;
-        $data['belong']=$belong;
-        $data['issearch']=$category[$belong]['issearch'];
-        // var_dump( $count);die;
-        //是否有下一页
-        $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
+        // 不开启缓存采集不进入查询，因为不会保存数据
+        if($get_cache){
+            if($belong!=0){ // 影视不进入--
+                // 采集查询-标题-是否收藏
+                $list=  Video::isCollect($list,$userid);
+            }
+            // var_dump($list);die;
+            if($graden>0){
+                $category = CategoryName::Category();
+            }else{
+                $category = CategoryName::CategoryVideo();
+            }
+            // var_dump($type);die;
+            $data['page']=$page;
+            $data['type']=$type;
+            $data['page_list']=$page_list;
+            $data['search']=$search;
+            $data['belong']=$belong;
+            $data['issearch']=$category[$belong]['issearch'];
+            // var_dump( $count);die;
+            //是否有下一页
+            $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
 
-        $categoryBelong = Category::getBelong($belong,$type);
-        $videoData =['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong];
-        if(!empty($list)&&$get_cache==1){ //有数据写入缓存
-            Yii::$app->session->set($sessionStr,$videoData);
+            $categoryBelong = Category::getBelong($belong,$type);
+            $videoData =['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list, 'category'=>$category,'sessionkey'=>$sessionStr,'categoryBelong'=>$categoryBelong];
+            if($list){ //有数据写入缓存
+                Yii::$app->session->set($sessionStr,$videoData);
+            }
+            return  $videoData ;
+        }else{
+            return ['content'=>$list];
         }
-        return  $videoData ;
+   
     }
 
     // 获取关键词

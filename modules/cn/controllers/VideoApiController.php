@@ -204,7 +204,7 @@ class VideoApiController extends VideoApiControl
                 //查询是否有session缓存
                 $res = Yii::$app->session->get($sessionStr);
                 if(!$res){
-                    $res = VideoList::find()->where(" key_value ='$sessionStr' ")->asarray()->one();
+                    $res = VideoList::find()->select('id')->where(" key_value ='$sessionStr' ")->one();
                     if(!$res){
                         //改到公共方法
                         $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);

@@ -159,8 +159,6 @@ class VideoController extends VideoApiControl
         if(!$this->user){
             return $this->render('login');die;
         }
-        // 是否开启-自动缓存 0/1 --- 关闭缓存模式后，不写入缓存记录
-        $get_cache =$this->user['is_cache'];
         // 登录状态
         $graden = $this->graden;
         $page = Yii::$app->request->get('page',1);
@@ -197,7 +195,7 @@ class VideoController extends VideoApiControl
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
         $res = Yii::$app->session->get($sessionStr)?:[];
         if(!$res){
-            $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],$get_cache);
+            $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1);  //get_cache 浏览时，必定开启缓存
         }
         //缓存验证
         if($belong!=0){ // 影视不进入
