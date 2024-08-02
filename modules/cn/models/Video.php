@@ -26,18 +26,16 @@ class Video extends ActiveRecord {
 
 	public static function getCategoryId($belong,$type)
     {
-		$category = Category::find()->select('category_id')->where("belong =$belong and type =$type")->asArray()->One();
-		return $category?$category['category_id']:0;
+		$category = Category::find()->select('category_id')->where("belong =$belong and type =$type")->One();
+		return $category?$category->category_id:0;
 
 	}
 	
-	
-	// 采集列表
-    public static function getQueryUrl($page,$belong,$type=0,$search)
+ 
+	public static function getQueryUrl($page,$belong,$type=0,$search)
     {
 
 		$category_id = Video::getCategoryId($belong,$type);
-
 		$list=[];
 		// 类型  0国产--1主播/  2少女  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9无码  10 收藏
 			// 新东方
@@ -45,41 +43,40 @@ class Video extends ActiveRecord {
 				$type = $type?$type:12;
 				if($search){
 					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
-					$list=array(
+					$list=array($belong,$type,'花魁',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com');
 						// array($belong,$type,'花魁',"/?m=vod-index-pg-$page.html",'https://huakuizy0.com'),
-						array($belong,$type,'花魁',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com'),
-					);
+						
+				 
 				}else{ 
-					$list=array(
+					$list=array($belong,$type,'花魁',"/index.php/vod/type/id/$type/page/$page.html",'https://aosikazy1.com');
 						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
 						// array($belong,$type,'花魁',"/vod-type-id-$type-pg-$page.html",'https://huakuizy0.com'),
-						array($belong,$type,'花魁',"/index.php/vod/type/id/$type/page/$page.html",'https://aosikazy1.com'),
-					);
+					 
 				}
 			}else if($belong==2){
 				$type = $type?$type:20;
 				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-					$list=array(
+			 
 						// https://laoyazy54.com
 						// https://aosikazy1.com/index.php/vod/type/id/20.html https://lyzyz66.com/
 						// array($belong,$type,'丝袜',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com'),
-						array($belong,$type,'丝袜',"/index.php/vod/search/page/$page/wd/$search.html",'https://lyzyz66.com'),
-					);
+						$list=array($belong,$type,'丝袜',"/index.php/vod/search/page/$page/wd/$search.html",'https://lyzyz66.com');
+					 
 				}else{
-					$list=array(
-						array($belong,$type,'丝袜',"/index.php/vod/type/id/$type/page/$page.html",'https://lyzyz66.com'),
+				 
+						$list=	array($belong,$type,'丝袜',"/index.php/vod/type/id/$type/page/$page.html",'https://lyzyz66.com');
 						// array($belong,$type,'丝袜',"/index.php/vod/type/id/$type/page/$page.html",'https://aosikazy1.com'),
-					);
+				 
 				}
 			}else if($belong==3){
 				$type = $type?$type:22;
 				if($search){
 					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					// https://sewozy16.com https://www.sewoav.cc
-					$list=array(
-						array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com'),
-					);
+				 
+					$list=	array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com');
+			 
 				}else{
 					$list=array(
 						array($belong,$type,'SW',"/index.php/vod/type/id/$type/page/$page.html",'https://sewoav21.com'),
@@ -89,21 +86,17 @@ class Video extends ActiveRecord {
 				$type = $type?$type:1;
 				//如果是图片
 				if($category_id==2){
-					$list=array(
-						array($belong,$type,'国产主播',"/index.php/art/type/id/$type/page/$page.html",'https://tantanzy88.com'),
-					);
+			 
+						$list=array($belong,$type,'国产主播',"/index.php/art/type/id/$type/page/$page.html",'https://tantanzy88.com');
+					 
 				}else{
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-						$list=array(
-							array($belong,$type,'探探',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy88.com'),
-							// array($belong,$type,'探探',"/type/2.html",'https://436727.166477.com'),
-						);
+						$list=array($belong,$type,'探探',"/index.php/vod/search/page/$page/wd/$search.html",'https://tantanzy88.com');
+						// array($belong,$type,'探探',"/type/2.html",'https://436727.166477.com'),
 					}else{
-						$list=array(
-							array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy88.com'),
+						$list=	array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'https://tantanzy88.com');
 							// array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
-						);
 					}
 				}
 			}else if($belong==5){
@@ -112,13 +105,13 @@ class Video extends ActiveRecord {
 				// https://siwazyw.cc/index.php/vod/type/id/20/page/2.html
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.com'),
-						);
+					 
+						$list=array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.com');
+				 
 					}else{
-						$list=array(
-							array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.com'),
-						);
+				 
+						$list=array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.com');
+					 
 					}
 			}else if($belong==6){
 				// https://bfqde2023llsplde12qd27qdl.820723.com/search?tag=%E7%B4%A0%E4%BA%BA
@@ -127,13 +120,9 @@ class Video extends ActiveRecord {
 				// $type = $type?$type:1;
 				// https://bfqde2023llsplde12qd27qdl.820723.com/json/1688045881974226946.html?t=s2
 				if($search){
-					$list=array(
-						array($belong,$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv'),
-					);
+					$list=array($belong,$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv');
 				}else{
-					$list=array(
-						array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv'),
-					);
+					$list=array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv');
 				}
 
 			}else{
@@ -143,150 +132,104 @@ class Video extends ActiveRecord {
 			// array(2,2,'小站备考心经','https://gre.zhan.com/beikao/'),
 	
 		//键值处理
-		foreach($list as$key=> $v){
-			$data[$key]['belong']= $v[0]; // 1【鸡婆TV】 本站永久域名www.jipotv.com
-			$data[$key]['type']=	$v[1];  // 类型  --0 主播   1 电影  2 影视剧
-			$data[$key]['title']=$v[2];
-			$data[$key]['url']=	$v[3];
-			$data[$key]['http']=$v[4];
-			$data[$key]['category_id']=$category_id;
-		}
+		// foreach($list as$key=> $v){
+			$data['belong']=$list[0]; // 1【鸡婆TV】 本站永久域名www.jipotv.com
+			$data['type']=$list[1];  // 类型  --0 主播   1 电影  2 影视剧
+			$data['title']=$list[2];
+			$data['url']=	$list[3];
+			$data['http']=$list[4];
+			$data['category_id']=$category_id;
+		// }
         return $data;
     }
-
 
 	// 采集数据
     public static function getQueryListModel($page,$belong,$isquery=0,$type=0,$search='')
     {
-		$res =Video::getQueryUrl($page,$belong,$type,$search);
-		// var_dump($res);die;
-		if($res){ 
+		$list =Video::getQueryUrl($page,$belong,$type,$search);
+
+		if($list){ 
 			$Rlist =[];
-			foreach($res as$key=> $v){
-				switch($v['belong']){
-					case 1 :     	
-						// $content1= array('#tpl-img-content li>a','href','');
-						// $content2= array('#tpl-img-content li>a','title','');
-						// $content3= array('#tpl-img-content li a>img','src','');
-						// $model	='#tpl-img-content';
-						$content1= array('','href','');
-						$content2= array(' ul li','html','');
-						$content3= array(' ul li>img','src','');
-						$rang='.content .row';
+			switch($list['belong']){
+				case 1 :     	
+					$content1= array('','href','');
+					$content2= array(' ul li','html','');
+					$content3= array(' ul li>img','src','');
+					$rang='.content .row';
+				break;
+				case 2 :   		// 小站
+					$content1= array('.videoName','href','');
+					$content2= array('.videoName','text','');
+					$content3= array('.videoName>img','src','');
+					$rang='.videoContent li ';
+				break;
+				case 3 :   		// 小站
+					$content1= array('.uzimg','href','');
+					$content2= array('.uzimg','title','');
+					$content3= array('.uzimg>.lazy','data-original','');
+					$rang='.myvod ul>li ';
+				break;
 
-
-					break;
-					case 2 :   		// 小站
-						// $content1= array('','href','');
-						// $content2= array(' ul li','html','img');
-						// $content3= array(' ul li>img','src','');
-						// $rang='.content .row';
-						$content1= array('.videoName','href','');
-						$content2= array('.videoName','text','');
-						$content3= array('.videoName>img','src','');
-						$rang='.videoContent li ';
-					break;
-					case 3 :   		// 小站
-						$content1= array('.uzimg','href','');
-						$content2= array('.uzimg','title','');
-						$content3= array('.uzimg>.lazy','data-original','');
-						$rang='.myvod ul>li ';
-					break;
-
-					case 4 :   		// 小站
-						$content1= array(' .name','href','');
-						$content2= array(' .name','html','');
-						$content3= array('.name>img','src','');
-						$rang='.content .nr li   ';
-						// $content1= array('  ','href','');
-						// $content2= array('  .txt>p','html','');
-						// $content3= array('  .pic>img','data-original','');
-						// $rang='  .vods .vod';
-					break;
-					case 5 :   		// 小站
-						$content1= array(' a','href','');
-						$content2= array(' a','title','');
-						$content3= array(' a .img>img','data-src','');
-						$rang='.block-post .item ';
-					break;
-				}
-				// var_dump($v['http'].$v['url'] );die;
-				// 抓取列表  --结果
-				$httpurl =$v['http'].$v['url'];
-				// var_dump($httpurl);die;
-				$rules=array(
-					'url' =>  $content1,
-					'title' => $content2,
-					'imageurl' => $content3,
-				);
-				$ql = QueryList::rules($rules);
-				$data =$ql->get($httpurl)->range($rang)->queryData();
-				$ql->destruct();
-				// var_dump($isquery);die;
-				// var_dump($data);die;
-				if($isquery){
-					foreach($data as $ky=>$val){
-						$data[$ky]['http'] =$v['http'];
-						$data[$ky]['belong'] =$v['belong'];
-						$data[$ky]['type'] =$v['type'];
-					}
-					return $data?$data:[];die;
-				}else{
-					//采集数据处理
-					foreach($data as $ky=>$val){
-						$Rlist[] = Video::getQueryDetails($v['belong'],$val,$v['type'],$v['http'],$isquery);
-					}
-				}
-
+				case 4 :   		// 小站
+					$content1= array(' .name','href','');
+					$content2= array(' .name','html','');
+					$content3= array('.name>img','src','');
+					$rang='.content .nr li   ';
+				break;
+				case 5 :   		// 小站
+					$content1= array(' a','href','');
+					$content2= array(' a','title','');
+					$content3= array(' a .img>img','data-src','');
+					$rang='.block-post .item ';
+				break;
 			}
-
+			// 抓取列表  --结果
+			$httpurl =$list['http'].$list['url'];
+			// var_dump($httpurl);die;
+			$rules=array(
+				'url' =>  $content1,
+				'title' => $content2,
+				'imageurl' => $content3,
+			);
+			$ql = QueryList::rules($rules);
+			$data =$ql->get($httpurl)->range($rang)->queryData();
+			$ql->destruct();
+			// var_dump($isquery);die;
+			// var_dump($data);die;
+			if($isquery){
+				foreach($data as $ky=>$val){
+					$data[$ky]['http'] =$list['http'];
+					$data[$ky]['belong'] =$list['belong'];
+					$data[$ky]['type'] =$list['type'];
+				}
+				return $data?$data:[];die;
+			}else{
+				//采集数据处理
+				foreach($data as $ky=>$val){
+					$Rlist[] = Video::getQueryDetails($list['belong'],$val,$list['type'],$list['http'],$isquery);
+				}
+			}
 		}
-
 		return $Rlist;
 	}
 
 	// 抓取详情 --存入本地
     public static function getQueryDetails($belong,$val,$type,$http,$isquery=0)
     {
-	
 		switch($belong){
 			case 1 :     	// 新东方
-				// // $content1= array('.copy_text .hidden-xs ','text');
-				// // $content2= array('.img-responsive ','src');
-				// // $model	='.xqy_core_main';
-				// $content1= array('#playId1','value');
-				// $content2= array('.theme .detail img','src','-img');
-				// $content3= array('.theme .detail img','title');
-				// $link =$http.$val['url'];
-				// // var_dump($link);			
-				// $rules=array(
-				// 	'content' => $content1,
-				// 	'imageurl' => $content2,
-				// 	'title' => $content3
-				// );
-				// // var_dump($link);die;
-				// $ql = QueryList::rules($rules);
-				// $data1 =$ql->get($link)->queryData();
-				// $ql->destruct();
-				// var_dump($data1);die;
-				// if(!empty($data1['content'] )){
-				// 	$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
-				// 	return $args;
-				// } 
 				$args = Video::getQueryDetailsMethod5($belong,$val,$type,$http,$isquery);
 				if($args){
 					return 	$args;
 				}
 			break;
 			case 2 :     	// 新东方
- 
 				$args = Video::getQueryDetailsMethod3($belong,$val,$type,$http,$isquery);
 				if($args){
 					return 	$args;
 				}
 
 			break;
-
 			case 3 :      
 				$args = Video::getQueryDetailsMethod4($belong,$val,$type,$http,$isquery);
 				if($args){
@@ -307,14 +250,9 @@ class Video extends ActiveRecord {
 			case 5 :  
 				$val['title']= Method::getMytrim($val['title']);
 				$content1= array('#input','value');
-				// $content2= array('.lazy ','src');
-				// $content2= array('h1','text');
-				// $model	='.xqy_core_main';
 				$link =$http.$val['url'];
-				// var_dump($link);
 				$rules=array(
 					'content' => $content1,
-					// 'imageurl' => $content2
 				);
 				$ql = QueryList::rules($rules);
 				$data1 =$ql->get($link)->queryData();

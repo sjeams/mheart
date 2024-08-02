@@ -18,8 +18,8 @@ class VideoList extends ActiveRecord {
         $type = intval($type);
         $belong = intval($belong);
         $where =" belong =$belong and type = $type  " ;
-        $res =  VideoList::find()->select('count')->where(" $where ")->orderBy('count desc')->asArray()->one();   
-        if($count== $res['count']){
+        $res =  VideoList::find()->select('count')->where(" $where ")->orderBy('count desc')->one();   
+        if($count== $res->count){
              return true;
         }else{
             return false;
@@ -28,10 +28,10 @@ class VideoList extends ActiveRecord {
 
 
     public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
-        $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->asarray()->one();
+        $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->one();
         if($res){
-            $list =  json_decode($res['value'],true);
-            $count = $res['count'];
+            $list =  json_decode($res->value,true);
+            $count = $res->count;
         }else{
             if($belong==0){
                 $list = Query::getVideo($search,$type,$page_list);
@@ -47,23 +47,19 @@ class VideoList extends ActiveRecord {
                 // 存入缓存列表
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
             }else{
-            //    var_dump($type);die;
                 $listvideo = Video::getQueryListModel($page_list,$belong,1,$type,$search); // 获取采集数据
+ 
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
-                // $pageSize=20;
-                // $pageSize= $count;
                 if($listvideo){
                     $category_id = Video::getCategoryId($belong,$type);
                     //category_id 2 图片,1直播  0视频
                     if($category_id==2){
-                        // var_dump($listvideo);die;
                         $list= VideoListDetail::checkImage($listvideo);
                     }else{
                         $list= VideoListDetail::checkVideo($listvideo);
                     }
-                    // var_dump($list);die;
                     $args['key_value'] =$sessionStr;
                     $args['value'] = $list?json_encode($list,true):false;
                     $args['time'] =time();

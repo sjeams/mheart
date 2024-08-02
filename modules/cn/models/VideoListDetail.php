@@ -42,7 +42,6 @@ class VideoListDetail extends ActiveRecord {
         $video_list =[];
         // $new_list=[];
         $update_list=[];
-        // var_dump($listvideo);die;
         foreach($listvideo as$key=> $val){
             $video_link= $val['link'];
             if(in_array($video_link,$find_link)){
@@ -64,7 +63,7 @@ class VideoListDetail extends ActiveRecord {
                 }
             }
         }
-        //批量更新
+        //批量更新--默认关闭批量写入的
         if(Yii::$app->params['insertVideo_iscache']){
             $video_list=  Video::updateVidoeMethod($link);
         }

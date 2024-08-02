@@ -176,7 +176,6 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',0);
         //默认缓存页码
         $setnum = Yii::$app->request->post('setnum',1);
-
         //批量插入
         // $is_cache = Yii::$app->request->post('is_cache',0); //0单独插入 2 开启自动缓存--批量插入
         // if($is_cache==2){
@@ -184,57 +183,30 @@ class VideoApiController extends VideoApiControl
         // }else{
         //     Yii::$app->params['insertVideo_iscache']=0;
         // }
-        
         // 未登录 禁止链接访问
         if($graden==0){
             $belong=0;
         }
         $newpage =$page_list;
         // $belong =5; 
-        // $setnum =5;
+        // $setnum =1;
         // $type =24;
-        // $page_list =125;
+        // $page_list =510;
         // 影视不进入缓存-开启缓存进入--手动缓存>1时开启缓存
         if($belong!=0&&($get_cache==1|| $setnum>0)){
             // 缓存列表
             for ($i =0; $i <= $setnum; $i++) {
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
-                // videolistBelong5page1page_list124type24search
                 //查询是否有session缓存
                 $res = Yii::$app->session->get($sessionStr);
                 if(!$res){
-                    $res = VideoList::find()->select('id')->where(" key_value ='$sessionStr' ")->one();
-                    if(!$res){
-                        //改到公共方法
-                        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
-                        if(!$res['content']){
-                            //为空时，跳出循环
-                            die(Method::jsonGenerate(0,$newpage-1,'false')); 
-                        }
-                        // $listvideo = Video::getQueryListModel($newpage,$belong,1,$type,$search); // 获取采集数据
-                        // // var_dump($listvideo);die;
-                        // $list=[];
-                        // // 是否分页--改为不分页，直接采集
-                        // $count = count($listvideo);
-                        // if($listvideo){
-                        //     $list= VideoListDetail::checkVideo($listvideo);
-                        //     $args['key_value'] =$sessionStr;
-                        //     $args['value'] = $list?json_encode($list,true):false;
-                        //     $args['time'] =time();
-                        //     $args['count'] =$count;
-                        //     $args['page'] =$page;
-                        //     $args['belong'] =$belong;
-                        //     $args['type'] =$type;
-                        //     $args['search'] =$search;
-                        //     $args['page_list'] =$newpage;
-                        //     // 存入缓存列表
-                        //     Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();    
-                     
-                        // }else{
-                        //     //为空时，跳出循环
-                        //     die(Method::jsonGenerate(0,$newpage-1,'false'));
-                        // }
+                    //缓存中没有，那么就重新存如入session
+                    //改到公共方法
+                    $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
+                    if(!$res['content']){
+                        //为空时，跳出循环
+                        die(Method::jsonGenerate(0,$newpage-1,'false')); 
                     }
                 }
             }
