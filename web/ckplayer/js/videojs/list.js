@@ -119,7 +119,7 @@
                         $("#goPage_list").val(data.data);
                         // 可以不进跳转
                         //已缓存+1
-                        $('.end_cache_num').text(parseInt($('.end_cache_num').text( ))+1);
+                        $('.end_cache_num').text(parseInt($('.end_cache_num').text())+1);
                         //检查是否继续下一页缓存
                         isGetCaches()
                         // gouhtml(0);
@@ -131,7 +131,12 @@
                         }
                     }
                 }else{
-                    $('.caiji_name').text('采集×')
+                    //结束缓存--跳转到尾页
+                    if(is_cache==2){
+                        endCache()
+                        gouhtml(0); 
+                    }
+                    $('.caiji_name').text('采集√')
                 }
                 // removeLoading()
                 // window.location.reload();   
