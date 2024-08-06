@@ -55,9 +55,7 @@ class Video extends ActiveRecord {
 				}
 			}else if($belong==2){
 				$type = $type?$type:20;
-				if($search){
-					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-			 
+				if($search){			 
 						// https://laoyazy54.com
 						// https://aosikazy1.com/index.php/vod/type/id/20.html https://lyzyz66.com/
 						// array($belong,$type,'丝袜',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com'),
@@ -72,9 +70,7 @@ class Video extends ActiveRecord {
 			}else if($belong==3){
 				$type = $type?$type:22;
 				if($search){
-					// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
 					// https://sewozy16.com https://www.sewoav.cc
-				 
 					$list=	array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com');
 			 
 				}else{
@@ -86,9 +82,7 @@ class Video extends ActiveRecord {
 				$type = $type?$type:1;
 				//如果是图片
 				if($category_id==2){
-			 
-						$list=array($belong,$type,'国产主播',"/index.php/art/type/id/$type/page/$page.html",'https://tantanzy88.com');
-					 
+						$list=array($belong,$type,'探探',"/index.php/art/type/id/$type/page/$page.html",'https://tantanzy88.com');
 				}else{
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
@@ -100,12 +94,10 @@ class Video extends ActiveRecord {
 					}
 				}
 			}else if($belong==5){
-				// siwazyw.cc  siwazyw.tv https://siwazyw.com
+				// siwazyw.cc  siwazyw.tv https://siwazyw.com  https://siwazyw.tv
 				$type = $type?$type:1;
 				// https://siwazyw.cc/index.php/vod/type/id/20/page/2.html
 					if($search){
-						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-					 
 						$list=array($belong,$type,'国产主播',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.com');
 				 
 					}else{
@@ -114,23 +106,15 @@ class Video extends ActiveRecord {
 					 
 					}
 			}else if($belong==6){
-				// https://bfqde2023llsplde12qd27qdl.820723.com/search?tag=%E7%B4%A0%E4%BA%BA
-				// www.fi11.tv 永久网址
-				// https://hereaa.com/tags.jsp
-				// $type = $type?$type:1;
-				// https://bfqde2023llsplde12qd27qdl.820723.com/json/1688045881974226946.html?t=s2
+				// https://436727.166477.com   //6584.xyz
 				if($search){
-					$list=array($belong,$type,'fi11',"/index.php/vod/search/page/$page/wd/$search.html",'https://siwazyw.tv');
+					$list=array($belong,$type,'色色',"/so/$search/$page.html",'https://8jqg.6584.xyz');
 				}else{
-					$list=array($belong,$type,'国产主播',"/index.php/vod/type/id/$type/page/$page.html",'https://siwazyw.tv');
+					$list=array($belong,$type,'色色',"/list/$type/$page.html",'https://8jqg.6584.xyz');
 				}
-
 			}else{
 				return false;
 			}	
-			// 小站
-			// array(2,2,'小站备考心经','https://gre.zhan.com/beikao/'),
-	
 		//键值处理
 		// foreach($list as$key=> $v){
 			$data['belong']=$list[0]; // 1【鸡婆TV】 本站永久域名www.jipotv.com
@@ -177,10 +161,16 @@ class Video extends ActiveRecord {
 					$rang='.content .nr li   ';
 				break;
 				case 5 :   		// 小站
-					$content1= array(' a','href','');
+					$content1= array(' a','html','');
 					$content2= array(' a','title','');
 					$content3= array(' a .img>img','data-src','');
 					$rang='.block-post .item ';
+				break;
+				case 6 :   		// 小站
+					$content1= array('','href','');
+					// $content2= array(' .txt p','text','');
+					$content3= array(' .pic>img','data-src','');
+					$rang='.box4 .vdd a';
 				break;
 			}
 			// 抓取列表  --结果
@@ -188,19 +178,24 @@ class Video extends ActiveRecord {
 			// var_dump($httpurl);die;
 			$rules=array(
 				'url' =>  $content1,
-				'title' => $content2,
+				'title' => '',
 				'imageurl' => $content3,
 			);
 			$ql = QueryList::rules($rules);
 			$data =$ql->get($httpurl)->range($rang)->queryData();
 			$ql->destruct();
-			// var_dump($isquery);die;
 			// var_dump($data);die;
 			if($isquery){
 				foreach($data as $ky=>$val){
 					$data[$ky]['http'] =$list['http'];
 					$data[$ky]['belong'] =$list['belong'];
 					$data[$ky]['type'] =$list['type'];
+					if(!$val['title']){
+						//取链接中的id					 
+						preg_match('/\d+/',$val['url'],$matches);
+						$data[$ky]['title'] =$matches[0];
+						// var_dump($data[$ky]['title']);die;
+					}
 				}
 				return $data?$data:[];die;
 			}else{
@@ -264,11 +259,34 @@ class Video extends ActiveRecord {
 					return $args;
 				}  
 			break;
+			case 6 :  
+				$data1['title']= Method::getMytrim($val['title']);
+				$link =$http.$val['url'];
+				$data1['content'] ="https://cdn59.com:10059/".$val['title']."/hls/index.m3u8";
+				if(!empty($data1['content'] )){
+					$data1['imageurl']=$val['imageurl'];
+					$args = video::videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http);
+					return $args;
+				}  
+			break;
 			default:
 			return false;
 		}
 	}
-	
+	public static function getQueryDetailsMethod6($data1,$type,$belong,$link,$isquery,$http){
+		$args['type']= $type;
+		$args['belong']= $belong;
+		$args['link']= $link;
+		// var_dump($args);die;
+		// isquery 0 需要写入， 1 不需要写入
+		if(!$isquery&&$args!=null){
+			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+			Video::insertVideo($args);
+		}else{
+			$args = Video::geturlDetails($args);//验证视频是否入库--查看库是否已经存在m3u8视频
+		}
+		return $args;
+	}
 	public static function getQueryDetailsMethod2($belong,$val,$type,$http,$isquery=0){
 		// $val['title']= Method::getMytrim($val['title']);
 		$content1= array('#playId1','value');

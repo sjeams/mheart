@@ -15,8 +15,6 @@
                         <!-- <a class="btn_link " href="https://www.394tv.com" class="btn">  394tv  </a> -->
                         <a class="btn_link " href="https://www.czzy55.com" class="btn">  厂长  </a>
                         <a class="btn_link " href="https://www.hbotv1.com/" class="btn">  bptv  </a>
-                        
-
                     </p>
                     <?php if($graden>0){ ?>
                         <p class="center  "  >
@@ -47,20 +45,13 @@
                                 <?php }  ?>
                             </p>
                         </div>
-                        <!-- <label class="layui-form-label">类型typ</label> -->
                         <div class="layui-input-inline center" id="goTypeInput">
-                            <!-- <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType"> -->
                                 <?php echo $categoryBelong ?>
                         </div>
-
- 
-                        <!-- <label class="layui-form-label">搜索</label> -->
                         <div class="layui-input-inline center">
                             <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" readonly="readonly" class="center form-control mr-sm-2" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
-                        <!-- <label class="layui-form-label">采集页码</label> -->
                         <div class="layui-input-inline center">
-                            <!-- <span  class="btn btn-primary" onclick="prevPage()">上一页</span> -->
                             <span class="is_last_page_button"></span>
                             <input type="text" class="btn_style"   value="<?php echo $data['page_list'] ?>" id="goPage_list">
                             <span class="is_next_page_button"></span>
