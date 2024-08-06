@@ -1,4 +1,7 @@
-
+<!-- cplayer -->
+<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
+<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 <!-- dplayer -->
 <link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>

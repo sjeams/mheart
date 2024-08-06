@@ -21,14 +21,15 @@
 <!-- 自适应布局 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
+<!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script> -->
 <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<!-- 编辑器源码文件 -->  
+<!-- 不需要编辑器 -->
+<!-- <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script> -->
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/videojs/list.js"></script>
 <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
 <!-- layui弹窗 -->
