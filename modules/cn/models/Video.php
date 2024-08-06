@@ -168,7 +168,7 @@ class Video extends ActiveRecord {
 				break;
 				case 6 :   		// 小站
 					$content1= array('','href','');
-					// $content2= array(' .txt p','text','');
+					$content2= array(' .txt p','text','');
 					$content3= array(' .pic>img','data-src','');
 					$rang='.box4 .vdd a';
 				break;
@@ -178,7 +178,7 @@ class Video extends ActiveRecord {
 			// var_dump($httpurl);die;
 			$rules=array(
 				'url' =>  $content1,
-				'title' => '',
+				'title' => $content2,
 				'imageurl' => $content3,
 			);
 			$ql = QueryList::rules($rules);
@@ -190,7 +190,7 @@ class Video extends ActiveRecord {
 					$data[$ky]['http'] =$list['http'];
 					$data[$ky]['belong'] =$list['belong'];
 					$data[$ky]['type'] =$list['type'];
-					if(!$val['title']){
+					if($belong==6){
 						//取链接中的id					 
 						preg_match('/\d+/',$val['url'],$matches);
 						$data[$ky]['title'] =$matches[0];
