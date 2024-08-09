@@ -245,7 +245,7 @@ class VideoController extends VideoApiControl
     {
         // 登录状态
         $graden = $this->graden; 
-        $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
+        $list =   CategoryName:: CategoryGraden();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $type = Yii::$app->request->get('type',0);
@@ -312,7 +312,7 @@ class VideoController extends VideoApiControl
     {
         // 登录状态
         $graden = $this->graden; 
-        $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
+        $list =   CategoryName:: CategoryGraden();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $type = Yii::$app->request->get('type',0);
@@ -378,7 +378,7 @@ class VideoController extends VideoApiControl
     {
         // 登录状态
         $graden = $this->graden; 
-        $list =   CategoryName::find()->where("belong!=0")->asArray()->all();
+        $list =   CategoryName:: CategoryGraden();
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $belong = Yii::$app->request->get('belong',0);

@@ -234,7 +234,11 @@ function getprintHtml_content_append_full_model(html,goPage){
         page_change();
         // console.log(111)
         $("#goPage").val(goPage);
-        $('#content_append').html(html);
+        $('#content_append').html(html);    
+        //监听页面变化  like,query,collect 3个页面，滚动监听回填
+        var  total_count =  $('.return_count').eq(0).val();
+        $('#total_count').html(total_count)
+        $("#goPageCount").val(total_count)
         //定位变化
         scoll_change();
     }else{
@@ -291,6 +295,7 @@ $(document).ajaxStop(function( ) {
     // });
      //监听分页
     function getPage(){
+
         if($('#getPage').val()==1){
             //窗口高度 = 滚动高度+页面高度+160.触发
             if (getScrollHeight()<= getWindowHeight() + getDocumentTop()+160) {

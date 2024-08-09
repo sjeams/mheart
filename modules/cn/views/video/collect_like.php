@@ -207,9 +207,6 @@
     function  gou_new(){
         $('#content_append').html(''); 
         static_gou();
-        var  total_count =  $('.return_count').eq(0).val();
-        $('#total_count').html(total_count)
-        $("#goPageCount").val(total_count)
     }
 
     //跳转页面

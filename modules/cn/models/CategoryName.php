@@ -17,8 +17,11 @@ class CategoryName extends ActiveRecord {
     public static function tableName(){
             return '{{%category_name}}';
     }
-
-
+    //带权限的查看
+    public static function CategoryGraden(){
+        $list =   CategoryName::find()->where("belong!=0 and is_show =1 ")->asArray()->all();
+        return  $list;
+    }
 	 public static function Category(){
         $list = CategoryName::find()->where("is_show =1 ")->asArray()->all();
         // $list =array(
