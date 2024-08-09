@@ -24,18 +24,11 @@ class Video extends ActiveRecord {
             return '{{%video}}';
     }
 
-	public static function getCategoryId($belong,$type)
-    {
-		$category = Category::find()->select('category_id')->where("belong =$belong and type =$type")->One();
-		return $category?$category->category_id:0;
-
-	}
-	
- 
+	 
 	public static function getQueryUrl($page,$belong,$type=0,$search)
     {
 
-		$category_id = Video::getCategoryId($belong,$type);
+		$category_id = Category::getCategoryId($belong,$type);
 		$list=[];
 		// 类型  0国产--1主播/  2少女  3熟女 4日韩  5其它  6AI/明星  7三级 8精品  9无码  10 收藏
 			// 新东方
@@ -232,7 +225,7 @@ class Video extends ActiveRecord {
 				}
 			break;
 			case 4 :     	// 新东方
-				$category_id = Video::getCategoryId($belong,$type);
+				$category_id = Category::getCategoryId($belong,$type);
 				if($category_id==2){
 					$args = Video::getQueryDetailsMethodPic1($belong,$val,$type,$http,$isquery);
 				}else{

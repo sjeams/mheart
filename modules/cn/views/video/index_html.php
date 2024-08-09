@@ -8,12 +8,7 @@
                     <input name="title" class="search_input"   id="goSearch"   type="text" value="<?php echo $data['title']?>"/>
                     <button class="btn btn-primary search_button" onclick="gou()"  >搜索</button>
                 </div>
-                <!-- <p class="center">
-                    <a class="btn <?php echo $data['type']=='all'?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&title=<?php echo $data['title']?>" >全部</a>
-                    <?php foreach($list as $v){ ?>
-                        <a class="btn  <?php echo $data['type']==$v['type']?'active btn-primary':' btn-default'?>" href="/cn/video/like?page=1&type=<?php echo $v['type']?>&title=<?php echo $data['title']?>" ><?php echo $v['name']?></a>
-                        <?php }?>
-                </p> -->
+ 
                 <p class="center" id="listBelong" >
                     <input type="hidden" id="goBelong"  value="<?php echo $data['type'] ?>">
                     <a class="btn <?php echo $data['type']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
@@ -112,8 +107,6 @@
         var goPage =$("#goPage").val();
         var goBelong =$("#goBelong").val();
         var goSearch =$("#goSearch").val();
-        
-   
         // window.location.href="/cn/video/like?page="+goPage+"&type=<?php echo $data['type'] ?>&title=<?php echo $data['title'] ?>";
         url="/cn/video/like?html=1&page="+goPage+"&type="+goBelong+"&title="+goSearch;
         goStaticHtml(url)

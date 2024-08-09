@@ -88,7 +88,8 @@ class VideoController extends VideoApiControl
         $graden = $this->graden;
         if($graden>0){
             $belong=1;
-            $list = Category::find()->where("belong=0")->asArray()->all();
+            // $list = Category::getTypeTitle();
+            $list = [];
         }else{
             $graden=0;
             $belong=0;
@@ -142,10 +143,10 @@ class VideoController extends VideoApiControl
   
         $html = Yii::$app->request->get('html',0);
         if($html){
-            $this->layout = 'kongbai';
-            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            // $this->layout = 'kongbai';
+            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'content'=>$brush,'pageStr'=>$pageStr]);
         }else{
-            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'list'=>$list,'content'=>$brush,'pageStr'=>$pageStr]);
+            return $this->render('index_html',['graden'=>$graden,'data'=>$data,'content'=>$brush,'pageStr'=>$pageStr]);
         }
     }
   
@@ -205,7 +206,7 @@ class VideoController extends VideoApiControl
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html==1){
-            $category_id = Video::getCategoryId($belong,$type);
+            $category_id = Category::getCategoryId($belong,$type);
             $this->layout = 'kongbai';
             $res['html'] = $this->render('list',$res );
             // $this->layout = 'cn';

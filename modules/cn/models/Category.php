@@ -43,6 +43,15 @@ class Category extends ActiveRecord {
         }
         return $str;
     }
+
+   
+
+    //获取默认type 标题
+    public static function getTypeTitle(){
+        $type = Category::find()->where("belong=0 and is_show =1")->asArray()->all();
+        return $type;
+    }
+
     //获取默认type
     public static function getType($belong,$type){
         $type = Category:: getBelongList($belong,$type)['type'];
@@ -51,9 +60,9 @@ class Category extends ActiveRecord {
 
     public static function getBelongList($belong,$type){
         if($belong==0){
-            $list = Category::find()->where("category_id=1")->asArray()->all();
+            $list = Category::find()->where("category_id=1  and is_show =1")->asArray()->all();
         }else{
-            $list = Category::find()->where("belong=$belong")->asArray()->all();
+            $list = Category::find()->where("belong=$belong  and is_show =1")->asArray()->all();
         }
         //获取默认设置 type
         $type = Category::getTypeByStatus($list,$belong,$type);
@@ -62,7 +71,7 @@ class Category extends ActiveRecord {
 
     public static function getTypeByStatus($list,$belong,$type){
         if($list&&$type==0){
-            $info = Category::find()->select('type')->where("belong=$belong and status =1")->asArray()->One();
+            $info = Category::find()->select('type')->where("belong=$belong and status =1 and is_show =1")->asArray()->One();
             if($info){
                 $type =$info['type'];
             }else{
@@ -75,7 +84,12 @@ class Category extends ActiveRecord {
         return $type;
     }
         
+	public static function getCategoryId($belong,$type)
+    {
+		$category = Category::find()->select('category_id')->where("belong =$belong and type =$type")->One();
+		return $category?$category->category_id:0;
 
+	}
 
 
 	//  public static function Category(){

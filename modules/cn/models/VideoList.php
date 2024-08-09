@@ -53,7 +53,7 @@ class VideoList extends ActiveRecord {
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
                 if($listvideo){
-                    $category_id = Video::getCategoryId($belong,$type);
+                    $category_id = Category::getCategoryId($belong,$type);
                     //category_id 2 图片,1直播  0视频
                     if($category_id==2){
                         $list= VideoListDetail::checkImage($listvideo);

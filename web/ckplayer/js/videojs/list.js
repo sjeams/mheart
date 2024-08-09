@@ -11,18 +11,12 @@
     // ;(function () {
         // alert("function执行");
     // }())
-    // 优先1
+    // 优先1 --去掉默认加载
     $(document).ready(function(){ 
-        gouhtml(0)
-    //     //搜索框
-    //     // $('.go_hidden').removeClass('hiddened');
-    //     // var goPage_list =$("#goPage_list").val();
-    //     // var go_input ='<input type="text" value="'+goPage_list+'"   class="footer_go_input" /><span onclick="gouSerach()"  class="footer_go">GO</span>';
-    //     // $('.go_hidden').html(go_input);
-    //     //getbelong 获取来源
-    //     var belong = $('#goBelong').val(); 
-    //     var type = $('#goType').val(); 
-    //     gouSerachType(belong,type);
+        //不是采集，就不进这个接口了
+        if($("#goPage_list").val()){
+            gouhtml(0)
+        }
     });
     //查询type
     function  gouSerachType(belong,type){
