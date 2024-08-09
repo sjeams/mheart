@@ -154,7 +154,7 @@ class Video extends ActiveRecord {
 					$rang='.content .nr li   ';
 				break;
 				case 5 :   		// 小站
-					$content1= array(' a','html','');
+					$content1= array(' a','href','');
 					$content2= array(' a','title','');
 					$content3= array(' a .img>img','data-src','');
 					$rang='.block-post .item ';
@@ -177,6 +177,7 @@ class Video extends ActiveRecord {
 			$ql = QueryList::rules($rules);
 			$data =$ql->get($httpurl)->range($rang)->queryData();
 			$ql->destruct();
+			// var_dump($httpurl);
 			// var_dump($data);die;
 			if($isquery){
 				foreach($data as $ky=>$val){
@@ -244,6 +245,7 @@ class Video extends ActiveRecord {
 				);
 				$ql = QueryList::rules($rules);
 				$data1 =$ql->get($link)->queryData();
+				// var_dump($data1);die;
 				$ql->destruct();
 				if(!empty($data1['content'] )){
 					$data1['title']=$val['title'];
