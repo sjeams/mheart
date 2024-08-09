@@ -98,7 +98,7 @@
     }
     $(function(){
         $('.go_hidden').removeClass('hiddened');
-        gou();
+        static_gou();
         // var belong = $('#goBelong').val(); 
         // var type = $('#goType').val(); 
         // $.ajax({
@@ -135,7 +135,7 @@
         //     // $('.go_hidden').html(go_input);
         // }
     }
-    function  gou(){
+    function  static_gou(){
         var goPage =$("#goPage").val();
         static_nextPage(goPage);
         // imageError();//图片报错监听
@@ -150,7 +150,7 @@
 
     function  gou_new(){
         $('#content_append').html(''); 
-        gou();
+        static_gou();
         var  total_count =  $('.return_count').eq(0).val();
         $('#total_count').html(total_count)
         $("#goPageCount").val(total_count)

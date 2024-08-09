@@ -6,7 +6,7 @@
             <td >
                 <div class="input_div center" style="display: block;">
                     <input name="title" class="search_input"   id="goSearch"   type="text" value="<?php echo $data['title']?>"/>
-                    <button class="btn btn-primary search_button" onclick="gou()"  >搜索</button>
+                    <button class="btn btn-primary search_button" onclick="static_gou()"  >搜索</button>
                 </div>
  
                 <p class="center" id="listBelong" >
@@ -80,7 +80,7 @@
                 ])?>
                 <div class="input_div center">
                     <input type="text"  class="search_input" value="<?php echo $data['page'] ?>" id="goPage">
-                    <button class="btn btn-primary search_button" onclick="gou()"  >GO</button>
+                    <button class="btn btn-primary search_button" onclick="static_gou()"  >GO</button>
                 </div>
             </div>
 
@@ -100,10 +100,10 @@
         $('#listBelong a').addClass('btn-success'); 
         $('#belong'+belong).removeClass('btn-success'); 
         $('#belong'+belong).addClass('active btn-primary'); 
-        gou()  
+        static_gou()  
     }
 
-    function  gou(){
+    function  static_gou(){
         var goPage =$("#goPage").val();
         var goBelong =$("#goBelong").val();
         var goSearch =$("#goSearch").val();
@@ -127,7 +127,7 @@
                     $('.videoup'+id).html('收藏');   
                     if(videotype==10 ){
                         // window.location.reload();
-                        gou()
+                        static_gou()
                     }
                 }
             },
@@ -146,7 +146,7 @@
             success: function (data) {
                 if(data.code==1){
                     // window.location.reload(); 
-                    gou()
+                    static_gou()
                 }
             },
         });

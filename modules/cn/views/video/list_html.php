@@ -92,6 +92,19 @@
 
 </div>
 <script>
+        //查询
+        function  gou(){
+            // $.ajax({
+            //     url: '/cn/video-api/ajax-start', // 跳转到 action 
+            //     type: 'post',
+            //     dataType: 'json',
+            //     success: function (data) {
+                    // isGetCaches()//开启缓存，固定缓存下一页
+                    gouhtml(0);
+            //     },
+            // });
+        }
+
         $('#goSearch').click(function(){
             var goSearch =$("#goSearch").val();
             var belong =$("#goBelong").val();
