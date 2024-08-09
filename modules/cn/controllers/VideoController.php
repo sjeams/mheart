@@ -274,7 +274,7 @@ class VideoController extends VideoApiControl
         ->from("x2_video_list_collect as c")
         ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         // ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
-        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('c.create_time desc')->all('sign');
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('c.id desc')->all('sign');
         $data['belong']=$belong; 
         $data['type']=$type; 
         $data['title']=$title; 
@@ -342,7 +342,7 @@ class VideoController extends VideoApiControl
         ->from("x2_video_list_collect as c")
         ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
         // ->where($where)->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('create_time desc')->all('sign');
-        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('c.create_time desc')->all('sign');
+        ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('c.id desc')->all('sign');
         $data['belong']=$belong; 
         $data['type']=$type; 
         $data['title']=$title; 

@@ -309,7 +309,6 @@ class VideoApiController extends VideoApiControl
             die(Method::jsonGenerate(0,null,'删除'));
         }else{
             $args['user_id']=$user_id;
-            $args['create_time']=time();
             Yii::$app->signdb->createCommand()->insert('x2_video_list_collect',$args)->execute();
             die(Method::jsonGenerate(1,null,'收藏'));
         }
