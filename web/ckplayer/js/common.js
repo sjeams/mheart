@@ -403,7 +403,13 @@ $(document).ajaxStop(function( ) {
   /*  header ______________________ */
     //首页 
     //静态跳转
+
+ 
     function goStaticHtml(url){
+        //跳转chat后返回list
+        if(window.location.pathname.split('/')[2]=='chat'){
+            window.location.href='/cn/video/list';
+        }
         MenuHidden()
         getprintHtml(url,getprintHtml_content_goStaticHtml);
         // var html = getprintHtml(url);
