@@ -67,9 +67,9 @@ class Video extends ActiveRecord {
 					$list=	array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com');
 			 
 				}else{
-					$list=array(
-						array($belong,$type,'SW',"/index.php/vod/type/id/$type/page/$page.html",'https://sewoav21.com'),
-					);
+			 
+					$list=	array($belong,$type,'SW',"/index.php/vod/type/id/$type/page/$page.html",'https://sewoav21.com');
+				 
 				}
 			}else if($belong==4){
 				$type = $type?$type:1;
@@ -174,10 +174,11 @@ class Video extends ActiveRecord {
 				'title' => $content2,
 				'imageurl' => $content3,
 			);
+			// var_dump($httpurl);die;
 			$ql = QueryList::rules($rules);
 			$data =$ql->get($httpurl)->range($rang)->queryData();
 			$ql->destruct();
-			// var_dump($httpurl);
+
 			// var_dump($data);die;
 			if($isquery){
 				foreach($data as $ky=>$val){
