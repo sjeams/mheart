@@ -83,36 +83,25 @@ class VideoController extends VideoApiControl
      */
     public function actionLike()
     {
-        
+        // belong=3 已删
         // 登录状态
         $graden = $this->graden;
-        if($graden>0){
-            $belong=1;
-            // $list = Category::getTypeTitle();
-            $list = [];
-        }else{
-            $graden=0;
-            $belong=0;
-            $list = [];
-        }
         $type = Yii::$app->request->get('type','all');
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $where ="1=1";
-
-        if($belong == 0){
-            $where .= " and belong =$belong"; 
-        }
+        //已经没用belong了，只通过type类型查询
+        // if($belong == 0){
+        //     $where .= " and belong =$belong"; 
+        // }
         if($type!='all'){
-     
-            if($type==10){
+            if($type==11){
                 // 收藏视频
                 $where .= " and up = 1"; 
             }else{
                 // 不同类型视频
                 $where .= " and type = $type ";
             }
-
         }
         if($title){
             $where .= " and title like '%$title%'";
