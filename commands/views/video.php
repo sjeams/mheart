@@ -24,7 +24,8 @@
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="0" id="now_video_key"> 
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/cookie.js"></script>
+<!-- 改到video.js最后了 -->
+<!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/cookie.js"></script> -->
 <script>
     // 初始化容器
   var container_id=   '.video';

@@ -17,12 +17,9 @@
 <!-- <meta http-equiv="Access-Control-Allow-Origin" content="https://436727.166477.com"> -->
 <!-- 自适应布局 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script> -->
 <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- <script type="text/javascript" src="/ueditor/ueditor.config.js"></script> -->
 <!-- 编辑器源码文件 -->  
 <!-- 不需要编辑器 -->
 <!-- <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script> -->
@@ -39,7 +36,7 @@
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
 <!-- 自定义公共样式，覆盖所有 -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
-<script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
+<!-- <script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script> -->
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
 <title>心缘测试</title>
 </head>
