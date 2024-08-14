@@ -86,7 +86,7 @@ class VideoController extends VideoApiControl
         // belong=3 已删
         // 登录状态
         $graden = $this->graden;
-        $type = Yii::$app->request->get('type','all');
+        $type = Yii::$app->request->get('type',0);
         $title = Yii::$app->request->get('title');
         $page = Yii::$app->request->get('page',1);
         $where ="1=1";
@@ -94,7 +94,9 @@ class VideoController extends VideoApiControl
         // if($belong == 0){
         //     $where .= " and belong =$belong"; 
         // }
-        if($type!='all'){
+
+        //2 默认全部
+        if($type!=0){
             if($type==11){
                 // 收藏视频
                 $where .= " and up = 1"; 

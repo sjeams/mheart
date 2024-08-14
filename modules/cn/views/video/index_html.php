@@ -12,18 +12,11 @@
                 <p class="center" id="listBelong" >
                     <input type="hidden" id="goBelong"  value="<?php echo $data['type'] ?>">
                     <a class="btn <?php echo $data['type']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
-                    <a class="btn <?php echo $data['type']==1?'active btn-primary':' btn-success'?>"  id="belong1"  onclick="belongChange_static(1)" href="javascript:;" >国产</a>
-                    <a class="btn <?php echo $data['type']==2?'active btn-primary':' btn-success'?>"  id="belong2"  onclick="belongChange_static(2)" href="javascript:;" >主播</a>
-                    <a class="btn <?php echo $data['type']==3?'active btn-primary':' btn-success'?>"  id="belong3"  onclick="belongChange_static(3)" href="javascript:;" >少女</a>
-                    <a class="btn <?php echo $data['type']==4?'active btn-primary':' btn-success'?>"  id="belong4"  onclick="belongChange_static(4)" href="javascript:;" >日韩</a>
-                    <a class="btn <?php echo $data['type']==5?'active btn-primary':' btn-success'?>"  id="belong5"  onclick="belongChange_static(5)" href="javascript:;" >精品</a>
-                    <a class="btn <?php echo $data['type']==6?'active btn-primary':' btn-success'?>"  id="belong6"  onclick="belongChange_static(6)" href="javascript:;" >美女</a>
-                    <a class="btn <?php echo $data['type']==7?'active btn-primary':' btn-success'?>"  id="belong7"  onclick="belongChange_static(7)" href="javascript:;" >直播</a>
-                    <a class="btn <?php echo $data['type']==8?'active btn-primary':' btn-success'?>"  id="belong8"  onclick="belongChange_static(8)" href="javascript:;" >麻豆</a>
-                    <a class="btn <?php echo $data['type']==9?'active btn-primary':' btn-success'?>"  id="belong9"  onclick="belongChange_static(9)" href="javascript:;" >有码</a>
-                    <a class="btn <?php echo $data['type']==10?'active btn-primary':' btn-success'?>"  id="belong10"  onclick="belongChange_static(10)" href="javascript:;" >极品</a>
+                    <a class="btn <?php echo $data['type']==7?'active btn-primary':' btn-success'?>"  id="belong7"  onclick="belongChange_static(7)" href="javascript:;" >国产</a>
+                    <a class="btn <?php echo $data['type']==8?'active btn-primary':' btn-success'?>"  id="belong8"  onclick="belongChange_static(8)" href="javascript:;" >主播</a>
+                    <a class="btn <?php echo $data['type']==9?'active btn-primary':' btn-success'?>"  id="belong9"  onclick="belongChange_static(9)" href="javascript:;" >少女</a>
+                    <a class="btn <?php echo $data['type']==10?'active btn-primary':' btn-success'?>"  id="belong10"  onclick="belongChange_static(10)" href="javascript:;" >精品</a>
                     <a class="btn <?php echo $data['type']==11?'active btn-primary':' btn-success'?>"  id="belong11"  onclick="belongChange_static(11)" href="javascript:;" >收藏</a>
-
                 </p>
 
 

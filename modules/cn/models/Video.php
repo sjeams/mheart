@@ -63,7 +63,7 @@ class Video extends ActiveRecord {
 			}else if($belong==3){
 				$type = $type?$type:22;
 				if($search){
-					// https://sewozy16.com https://www.sewoav.cc
+					// https://sewozy16.com https://www.sewoav.cc  sewoav
 					$list=	array($belong,$type,'SW',"/index.php/vod/search/page/$page/wd/$search.html",'https://sewoav21.com');
 			 
 				}else{
