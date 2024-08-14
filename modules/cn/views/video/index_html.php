@@ -8,7 +8,6 @@
                     <input name="title" class="search_input"   id="goSearch"   type="text" value="<?php echo $data['title']?>"/>
                     <button class="btn btn-primary search_button" onclick="static_gou()"  >搜索</button>
                 </div>
-
                 <p class="center" id="listBelong" >
                     <input type="hidden" id="goBelong"  value="<?php echo $data['type'] ?>">
                     <a class="btn <?php echo $data['type']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
@@ -18,8 +17,6 @@
                     <a class="btn <?php echo $data['type']==10?'active btn-primary':' btn-success'?>"  id="belong10"  onclick="belongChange_static(10)" href="javascript:;" >精品</a>
                     <a class="btn <?php echo $data['type']==11?'active btn-primary':' btn-success'?>"  id="belong11"  onclick="belongChange_static(11)" href="javascript:;" >收藏</a>
                 </p>
-
-
             </td>
                 <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
         </tr>
@@ -28,20 +25,19 @@
         <tbody>
         <?php
         foreach($content as $kss => $v) {    ?>
- 
 
-            <div id="form<?php echo $v['id']?>">
-                <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
-                <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-                <input type="hidden" name="title" value="<?php echo $v['title']?>" >
-                <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
-                <input type="hidden" name="type" value="<?php echo $v['type']?>" >
-                <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
-                <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-                <input type="hidden"  name="is_collect" value="0">
-            </div>
             <tr>
                 <td  >
+                    <div id="form<?php echo $v['id']?>">
+                        <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
+                        <input type="hidden" name="url" value="<?php echo $v['url']?>" >
+                        <input type="hidden" name="title" value="<?php echo $v['title']?>" >
+                        <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                        <input type="hidden" name="type" value="<?php echo $v['type']?>" >
+                        <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
+                        <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                        <input type="hidden"  name="is_collect" value="0">
+                    </div>
                     <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
                     <p class="center"  style="width: 90%;">
                         <a href="<?php echo $v['url'] ?>"> 

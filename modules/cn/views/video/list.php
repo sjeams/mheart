@@ -27,18 +27,19 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
         </tr>
 
     <?php   }else{  //采集 ?>
-    <div id="form<?php echo $v['id']?>">
-        <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
-        <input type="hidden" name="url" value="<?php echo $v['url']?>" >
-        <input type="hidden" name="title" value="<?php echo $v['title']?>" >
-        <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
-        <input type="hidden" name="type" value="<?php echo $v['type']?>" >
-        <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
-        <input type="hidden" name="link" value="<?php echo $v['link']?>" >
-        <input type="hidden"  name="is_collect" value="<?php echo $v['collect']?>">
-    </div>
+
     <tr>
-        <td  >
+        <td>
+            <div id="form<?php echo $v['id']?>">
+                <input type="hidden" name="video_id" value="<?php echo $v['id']?>" >
+                <input type="hidden" name="url" value="<?php echo $v['url']?>" >
+                <input type="hidden" name="title" value="<?php echo $v['title']?>" >
+                <input type="hidden" name="imageurl" value="<?php echo $v['imageurl']?>" >
+                <input type="hidden" name="type" value="<?php echo $v['type']?>" >
+                <input type="hidden" name="belong" value="<?php echo $v['belong']?>" >
+                <input type="hidden" name="link" value="<?php echo $v['link']?>" >
+                <input type="hidden"  name="is_collect" value="<?php echo $v['collect']?>">
+            </div>
             <div id="dplay_video<?php echo $v['id']?>"  class="video<?php echo $v['id']?> collect-video-style"   style="background-image:url(<?php echo $v['imageurl']?>);"> <span  onclick="videoList(<?php echo $v['id']?>)"  class="video_box "></span></div> 
             <p class="center"  style="width: 90%;">
                 <p class="center"  onclick="downloadUrl(<?php echo $v['id']?>)"> 
