@@ -43,7 +43,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                     <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
                     <td class="btn-primary button_over_side" style="width: 25%;">
                         <input type="hidden" name="" id="menu" value="0">
-                        <a class="btn" href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
+                        <a class=" " href="javascript:;"  onclick="Menu()" ><?php echo $userlogin['name'] ?>&nbsp;<i class="bi bi-gear"></i></a>
                     </td>
                 <?php }else if( $http_index=='otherlink'){ ?>
                     <td class="" >
