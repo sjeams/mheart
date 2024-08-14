@@ -1,4 +1,4 @@
- 
+<!-- 测试页面 -->
 <style>
     .collect-video-style-pic{
 	    height: -webkit-fill-available;

@@ -92,6 +92,11 @@
 
 </div>
 <script>
+    //第一次加载才会gou。点击采集
+    $(function(){
+        gou()
+
+    })
         //查询
         function  gou(){
             // $.ajax({
