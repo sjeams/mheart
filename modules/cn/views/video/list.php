@@ -26,8 +26,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     
         </tr>
 
-    <?php   }else{  //采集 ?>
-
+    <?php   }else{ if($v['url']){  //采集---没有url 失效地址不显示 ?>
     <tr>
         <td>
             <div id="form<?php echo $v['id']?>">
@@ -58,7 +57,7 @@ foreach($content as $kss => $v) {  $kss= $kss+1; ?>
     
     </tr>
     <?php
-} } }
+} }} }
 ?>
 <tr>
     <td class="center"  >

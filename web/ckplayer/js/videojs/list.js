@@ -8,16 +8,16 @@
         gou();
     }
       //优先级0
-    // ;(function () {
+    // (function () {
         // alert("function执行");
     // }())
     // 优先1 --去掉默认加载
-    $(document).ready(function(){ 
-        //不是采集，就不进这个接口了
-        if($("#goPage_list").val()){
-            gouhtml(0)
-        }
-    });
+    // $(document).ready(function(){ 
+    //     //不是采集，就不进这个接口了
+    //     if($("#goPage_list").val()){
+    //         gouhtml(0)
+    //     }
+    // });
     //查询type
     function  gouSerachType(belong,type){
         $.ajax({
