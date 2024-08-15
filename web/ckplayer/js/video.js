@@ -126,7 +126,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         },
     }
     var _this=this;
-    console.log(_this);
+    // console.log(_this);
     // console.log(_this.newdplayer)
     // var hls = Hls()
     // hls.destroy()
