@@ -34,12 +34,11 @@ class Video extends ActiveRecord {
 			// 新东方
 			if($belong==1){
 				$type = $type?$type:12;
-				if($search){
-					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html
+				if($search){ 
+					// 播放域名更换为：askzycdn.com 图片域名更换为: wdeab01.com/
+					// https://yinwovideo.com/index.php/vod/search/page/1/wd/婚礼.html  
 					$list=array($belong,$type,'花魁',"/index.php/vod/search/page/$page/wd/$search.html",'https://aosikazy1.com');
 						// array($belong,$type,'花魁',"/?m=vod-index-pg-$page.html",'https://huakuizy0.com'),
-						
-				 
 				}else{ 
 					$list=array($belong,$type,'花魁',"/index.php/vod/type/id/$type/page/$page.html",'https://aosikazy1.com');
 						// array($belong,40,'国产主播',"/vod/type/id/$type/page/$page.html",'https://www.zhishub-wwwjipotv.cc:2083'),
