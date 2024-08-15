@@ -374,30 +374,29 @@ class VideoController extends VideoApiControl
         $page = Yii::$app->request->get('page',1);
         $belong = Yii::$app->request->get('belong',0);
         $type = Yii::$app->request->get('type',0);
-        $where =" 1=1";
+        $where =" 1=1 ";
         if($belong){
-            $where .= " and belong =$belong"; 
+            $where .= " and belong =$belong "; 
         }
         if(intval($type)&&$belong!=0){
-            $where .= " and title like '%$title%'";
+            $where .= " and title like '%$title%' ";
         }
         if($title){
-            $where .= " and title like '%$title%'";
+            $where .= " and title like '%$title%' ";
         }
         // // sign  是 sign 数据库
-        $count = VideoListDetail::find()->where("$where")->count();
+        // $count = VideoListDetail::find()->where("$where")->count();
+        $count_sql ="select count(*) as num from x2_video_list_detail where $where";
+        $count =Yii::$app->signdb->createCommand($count_sql)->queryOne()['num'];
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $limit = "limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
-        $where.=' order by id desc '.$limit;
+        // $where.=' order by id desc '.$limit;
+        $where.= $limit;
         $user_id =$this->user['id'];
-        $sql ="SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT * FROM x2_video_list_detail  where $where )  a left JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
+        $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT id FROM x2_video_list_detail  where $where ) s
+                LEFT JOIN  x2_video_list_detail a on  a.id in (s.id)
+                LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
         $brush = Yii::$app->signdb->createCommand($sql)->queryAll();
-        // $limit = "limit ".($page-1)*$pageSize.",$pageSize";
-        // $brush= (new \yii\db\Query())
-        // ->select("a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect ")
-        // ->from("x2_video_list_detail as a")
-        // ->leftJoin('x2_video_list_collect as c', "c.video_id = a.id   and c.user_id = ".$this->user['id'])
-        // ->where($where)->offset($pageStr->offset)->limit($pageStr->limit)->orderBy('id desc')->all('sign');
         $data['belong']=$belong; 
         $data['type']=$type; 
         $data['title']=$title; 
