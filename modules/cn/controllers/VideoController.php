@@ -390,7 +390,10 @@ class VideoController extends VideoApiControl
         $count =Yii::$app->signdb->createCommand($count_sql)->queryOne()['num'];
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $limit = "limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
-        // $where.=' order by id desc '.$limit;
+        //搜索加快查询，不排序了
+        if(!$title){
+            $where.=' order by id desc ' ;
+        } 
         $where.= $limit;
         $user_id =$this->user['id'];
         $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT id FROM x2_video_list_detail  where $where ) s
