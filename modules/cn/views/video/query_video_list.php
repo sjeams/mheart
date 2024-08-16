@@ -20,7 +20,7 @@
                 <div id="form<?php echo $v['id']?>" style="display:none">
                     <input type="hidden" name="url" value="<?php echo $v['url']?>" >
                 </div>
-                <p class="center"  onclick="downloadUrl(<?php echo $v['id']?>)">
+                <p class="center  <?php echo $v['url']?'':'btn-danger'?>"  onclick="downloadUrl(<?php echo $v['id']?>)">
                     <span ><b>P<?php echo (($data['page']-1) ) ?>-<?php echo ( (($data['page']-1)*10 )+($kss+1)) ?>、</b></span> <?php echo  $search_title ? str_replace($search_title,"<span class='red'> $search_title </span> ",$v['title']) : $v['title']?>
                     <i class="bi bi-download btn-success">down</i>
                 </p>
