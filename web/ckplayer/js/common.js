@@ -235,6 +235,7 @@ function getprintHtml_content_append_full_model(html,goPage){
         // console.log(111)
         $("#goPage").val(goPage);
         $('#content_append').html(html);    
+        // 滚动监听页面数量回填
         //监听页面变化  like,query,collect 3个页面，滚动监听回填
         var  total_count =  $('.return_count').eq(0).val();
         $('#total_count').html(total_count)
@@ -250,6 +251,10 @@ function getprintHtml_content_append_full_model(html,goPage){
 function getprintHtml_content_append(html,goPage){
     $("#goPage").val(goPage);
     $('#content_append').append(html);
+    // 滚动监听页面数量回填
+    var  total_count =  $('.return_count').eq(0).val();
+    $('#total_count').html(total_count)
+    $("#goPageCount").val(total_count)
     removeLoading()
 }
 //ajax 请求前添加加载状态
