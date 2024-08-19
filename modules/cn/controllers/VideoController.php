@@ -379,7 +379,7 @@ class VideoController extends VideoApiControl
             $where .= " and belong =$belong "; 
         }
         if(intval($type)&&$belong!=0){
-            $where .= " and title like '%$title%' ";
+            $where .= " and type =$type";
         }
         if($title){
             $where .= " and title like '%$title%' ";
