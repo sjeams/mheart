@@ -2,7 +2,7 @@
  
 <input type="hidden" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache'] ;?>" id="is_cache">
 <!-- 视频end -->
-<!-- <form action="/cn/video/list" method="post" class="  " > -->
+ 
     <table class="table table-bordered  tablestyle"  >
         <thead>
             <tr>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>
-                    <!-- <div class="layui-form-item center"> -->
+         
                         <div class="layui-input-inline center">
                             <input type="hidden" id="isCollect"  value="1">
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
@@ -77,7 +77,7 @@
                                 </p>
                             </div>
                         <?php } ?>
-                    <!-- </div> -->
+       
                 </td>
             </tr>
         </thead>
@@ -86,7 +86,7 @@
         </tbody>
 
     </table>
-<!-- </form> -->
+ 
 
 <div class="pic_html" >
 

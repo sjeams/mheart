@@ -1,4 +1,4 @@
-<!-- <form action="/cn/video/like" method="get"  > -->
+
     <table class="table table-bordered  tablestyle"  >
     <thead>
         <?php if($graden>0){?>
@@ -80,7 +80,7 @@
           </td></tr>
         </tbody>
     </table>
-<!-- </form> -->
+
 <input type="hidden" id="videotype" value="<?php echo $data['type'] ?>">
 <script>
     function belongChange_static(belong){

@@ -12,41 +12,40 @@
         height: 340px!important;
     }
 </style>
-<form>
-    <table class="table table-bordered  tablestyle"  >
-    <thead>
-        <?php if($graden>0){?>
-        <tr>
-        <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go" onclick="gouSerach()" >GO( <span id="total_count"><?php echo isset($data['count'])?$data['count']:0; ?></span>)</span></td>
-        </tr>
-        <tr>
-            <td >
-                <div class="input_div center" style="display: block;">
-                    <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
-                    <span class="btn btn-primary  " onclick="gouSerach(1)" >搜索</span>
-                </div>
-                <p class="center" id="listBelong" >
-                    <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
-                    <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
-                    <?php foreach($list as $v){ ?>
-                        <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>"  onclick="belongChange_static(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
-                        <?php }?>
-                </p>
-                <div class="layui-input-inline center" id="goTypeInput">
-                    <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
-                </div>
-            </td>
-                <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
-        </tr>
 
-        <?php }?>
-        </thead>
-        <tbody id="content_append">
-                        
-        </tbody>
-    </table>
+<table class="table table-bordered  tablestyle"  >
+<thead>
+    <?php if($graden>0){?>
+    <tr>
+    <td class="btn-primary go_hidden  hiddened" ><input type="text" value="1"   class="footer_go_input" /><span  class="footer_go" onclick="gouSerach()" >GO( <span id="total_count"><?php echo isset($data['count'])?$data['count']:0; ?></span>)</span></td>
+    </tr>
+    <tr>
+        <td >
+            <div class="input_div center" style="display: block;">
+                <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
+                <span class="btn btn-primary  " onclick="gouSerach(1)" >搜索</span>
+            </div>
+            <p class="center" id="listBelong" >
+                <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
+                <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
+                <?php foreach($list as $v){ ?>
+                    <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>"  onclick="belongChange_static(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
+                    <?php }?>
+            </p>
+            <div class="layui-input-inline center" id="goTypeInput">
+                <input type="hidden" value="<?php echo $data['type'] ?>" name="goType" id="goType">
+            </div>
+        </td>
+            <!-- <button class="btn btn-primary" type="submit">搜索</button> -->
+    </tr>
 
-</form>
+    <?php }?>
+    </thead>
+    <tbody id="content_append">
+                    
+    </tbody>
+</table>
+ 
 <!-- 当前视频id -->
 <input type="hidden" value="<?php echo isset($data['page'])?$data['page']:1; ?>" id="goPage">
 <input type="hidden" id="goPageCount" value="<?php echo isset($data['count'])?$data['count']:0; ?>">
