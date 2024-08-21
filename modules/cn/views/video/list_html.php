@@ -109,6 +109,21 @@
             //     },
             // });
         }
+        // type 是后台返回的要分开
+        function typeChange(type){
+            $("#goPage").val(1);
+            $("#goPage_list").val(1);
+            $('#goType').val(type);
+            $('#listType a').removeClass('active'); 
+            $('#listType a').removeClass('btn-primary'); 
+            $('#type'+type).addClass('active btn-primary'); 
+            // 重置状态page和search
+            if($("#goBelong").val()!=0){
+                $("#goSearch").val('');
+            }
+
+            gou();
+        }
 
         $('#goSearch').click(function(){
             var goSearch =$("#goSearch").val();

@@ -142,21 +142,6 @@
         });
     }
 
-    function typeChange(type){
-
-        $("#goPage").val(1);
-        $("#goPage_list").val(1);
-        $('#goType').val(type);
-        $('#listType a').removeClass('active'); 
-        $('#listType a').removeClass('btn-primary'); 
-        $('#type'+type).addClass('active btn-primary'); 
-        // 重置状态page和search
-        if($("#goBelong").val()!=0){
-            $("#goSearch").val('');
-        }
-        
-        gou();
-    }
 
     function belongChange(belong){
 
