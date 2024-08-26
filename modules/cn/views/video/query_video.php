@@ -25,6 +25,9 @@
                 <input name="title" class="search_input" id="appendedInputButton"   type="text" value="<?php echo $data['title']?>"/>
                 <span class="btn btn-primary  " onclick="gouSerach(1)" >搜索</span>
             </div>
+            <div class="layui-input-inline center">
+                            <input type="text" readonly="readonly" class="center form-control mr-sm-2" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                        </div>
             <p class="center" id="listBelong" >
                 <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                 <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
@@ -52,6 +55,91 @@
 
 
 <script>
+
+
+
+$('#goSearch').click(function(){
+        var goSearch =$("#goSearch").val();
+        var belong =$("#goBelong").val();
+        $.ajax({
+            url: '/cn/video-api/get-kwords', // 跳转到 action
+            data:{
+                belong: belong,
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                // 关键词
+                if(data.code==1){    
+                    var str ='<p>搜索</p><p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="'+goSearch+'" id="search_text"><span class="btn btn-primary  " onclick="layerReSerach()">重新采集</span><span class="btn btn-primary  " onclick="layerGoSearch()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
+                    $.each(data.data,function(index,value){
+                        str = str+'<span class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</span>';
+                    })
+                    var content  = str+'</div>';
+                    // <table class="layui-table" lay-even="" lay-skin="nob">
+                    layer.open({
+                        type: 1
+                        ,title: false //不显示标题栏
+                        ,closeBtn: false
+                        ,area: ['100%','100%']
+                        // ,area: '300px;'// 由于样式会乱，所以设置一个小的背景
+                        ,shade: 0.8
+                        // ,shadeClose:false
+                        ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
+                        // ,btn: ['搜索', '取消']
+                        ,btnAlign: 'c'
+
+                        ,fixed:true //固定
+                        ,moveType: 1 //拖拽模式，0或者1
+                        ,content: ' <div class="center rotatable-element" style="padding:20px">'+content+'</div>'
+                        ,success: function(layero){
+                            // var btn = layero.find('.layui-layer-btn');
+                            // btn.find('.layui-layer-btn0').click(function(){
+                            //     var search_text =$('#search_text').val()
+                            //     layerSearch(search_text)
+                            // })
+                            // btn.find('.layui-layer-btn1').click(function(){
+                            //     removeLoading()
+                            // })
+                        }
+                    })
+                }else{
+                    removeLoading()
+                }
+            } 
+        }); 
+    })
+
+    //不能搜索空内容
+    function layerGoSearch(){
+        var search_text =$('#search_text').val()
+        if(search_text){
+            layerSearch(search_text);
+        }else{
+            layer.open({
+                type: 1
+                ,title: false //不显示标题栏
+                ,closeBtn: false
+                ,area: '300px;'
+                ,shade: 0.8
+                ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
+                ,btn: ['确定']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: ' <div class="center" style="margin-top:20px">搜索不能为空!</div>'
+                ,success: function(layero){
+                    removeLoading()
+                }
+            })
+        }
+    }
+    function layerSearch(search_text){
+        cancelSerach();
+        $('#goSearch').val(search_text);
+        $('#appendedInputButton').val(search_text);
+        gouSerach(1);//重新搜索
+    }
+
     function belongChange_static(belong){
         // 重置状态page和search
         // $("#goSearch").val('');
