@@ -19,7 +19,8 @@ class VideoList extends ActiveRecord {
         $belong = intval($belong);
         $where =" belong =$belong and type = $type  " ;
         $res =  VideoList::find()->select('count')->where(" $where ")->orderBy('count desc')->one();   
-        if($count== $res->count){
+        //总数相等并且总数大于等于10
+        if($count== $res->count&&$count>=10){
              return true;
         }else{
             return false;
