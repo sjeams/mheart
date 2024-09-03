@@ -389,7 +389,7 @@ class VideoController extends VideoApiControl
         $count_sql ="select count(*) as num from x2_video_list_detail where $where";
         $count =Yii::$app->signdb->createCommand($count_sql)->queryOne()['num'];
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
-        $limit = "limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
+        $limit = " limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
         //搜索加快查询，不排序了
         if(!$title){
             $where.=' order by id desc ' ;
@@ -406,11 +406,12 @@ class VideoController extends VideoApiControl
         // LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
         $where_new ='';
         if($ids){
-            $where_new .="    where  a.id in ($ids) ";
+            $where_new .="  where  a.id in ($ids) ";
         }
         $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from  
-                 x2_video_list_detail a
+                x2_video_list_detail a
                 LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id ) $where_new";
+                
         $brush = Yii::$app->signdb->createCommand($sql)->queryAll();
         $data['belong']=$belong; 
         $data['type']=$type; 
