@@ -396,9 +396,21 @@ class VideoController extends VideoApiControl
         } 
         $where.= $limit;
         $user_id =$this->user['id'];
-        $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT id FROM x2_video_list_detail  where $where ) s
-                LEFT JOIN  x2_video_list_detail a on  a.id in (s.id)
-                LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
+        
+        // var_dump($where);die;
+
+        $ids =Yii::$app->signdb->createCommand(" SELECT id FROM x2_video_list_detail  where $where")->queryAll();
+        $ids = $ids?implode(",",array_column($ids,"id")):'' ;
+        // $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT id FROM x2_video_list_detail  where $where ) s
+        // LEFT JOIN  x2_video_list_detail a on  a.id in (s.id)
+        // LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id )";
+        $where_new ='';
+        if($ids){
+            $where_new .="    where  a.id in ($ids) ";
+        }
+        $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from  
+                 x2_video_list_detail a
+                LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $user_id ) $where_new";
         $brush = Yii::$app->signdb->createCommand($sql)->queryAll();
         $data['belong']=$belong; 
         $data['type']=$type; 
