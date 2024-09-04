@@ -167,7 +167,7 @@ class Video extends ActiveRecord {
 			}
 			// 抓取列表  --结果
 			$httpurl =$list['http'].$list['url'];
-			// var_dump($httpurl);die;
+			var_dump($httpurl);die;
 			$rules=array(
 				'url' =>  $content1,
 				'title' => $content2,
