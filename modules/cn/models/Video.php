@@ -340,8 +340,6 @@ class Video extends ActiveRecord {
 		);
 		$ql = QueryList::rules($rules);
 		$data1 =$ql->get($link)->queryData();
-
-		var_dump($data1);die;
 		$ql->destruct();
 		if(!empty($data1['content'] )){
 			$data1['imageurl']=$data1['imageurl']?$data1['imageurl']:$data1['imageurl2'];
