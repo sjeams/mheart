@@ -50,6 +50,7 @@ class VideoList extends ActiveRecord {
             }else{
                 $listvideo = Video::getQueryListModel($page_list,$belong,1,$type,$search); // 获取采集数据
  
+                var_dump($listvideo);die;
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);
