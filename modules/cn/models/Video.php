@@ -490,7 +490,7 @@ class Video extends ActiveRecord {
 		$args['type']= $type;
 		$args['belong']= $belong;
 		$args['link']= $link;
-		var_dump($args);die;
+		// var_dump($args);die;
 		// isquery 0 需要写入， 1 不需要写入
 		if(!$isquery&&$args!=null){
 			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
