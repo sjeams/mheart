@@ -30,8 +30,6 @@ class VideoList extends ActiveRecord {
 
     public Static function getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
         $res = VideoList::find()->select('value,count')->where(" key_value ='$sessionStr' ")->one();
-
-        var_dump($res);die;
         if($res){
             $list =  json_decode($res->value,true);
             $count = $res->count;
@@ -51,7 +49,7 @@ class VideoList extends ActiveRecord {
                 Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
             }else{
                 $listvideo = Video::getQueryListModel($page_list,$belong,1,$type,$search); // 获取采集数据
-                var_dump($listvideo);die;
+ 
                 $list=[];
                 // 是否分页--改为不分页，直接采集
                 $count = count($listvideo);

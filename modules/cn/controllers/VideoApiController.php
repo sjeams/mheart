@@ -183,7 +183,7 @@ class VideoApiController extends VideoApiControl
         // }else{
         //     Yii::$app->params['insertVideo_iscache']=0;
         // }
-
+            var_dump(111);die;
         // var_dump($is_cache);die;
         // 未登录 禁止链接访问
         if($graden==0){
