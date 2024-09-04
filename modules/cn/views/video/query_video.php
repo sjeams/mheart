@@ -26,8 +26,8 @@
                 <span class="btn btn-primary  " onclick="gouSerach(1)" >搜索</span>
             </div>
             <div class="layui-input-inline center">
-                            <input type="text" readonly="readonly" class="center form-control mr-sm-2" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
-                        </div>
+                <input type="text" readonly="readonly" class="center form-control mr-sm-2" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['title'] ?>" id="goSearch">
+            </div>
             <p class="center" id="listBelong" >
                 <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                 <a class="btn <?php echo $data['belong']==0?'active btn-primary':' btn-success'?>"  id="belong0"  onclick="belongChange_static(0)" href="javascript:;" >全部</a>
