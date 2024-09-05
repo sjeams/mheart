@@ -25,7 +25,7 @@ class Video extends ActiveRecord {
     }
 
 	 
-	public static function getQueryUrl($page,$belong,$type=0,$search)
+	public static function getQueryUrl($page,$belong,$type=0,$search='')
     {
 
 		$category_id = Category::getCategoryId($belong,$type);

@@ -397,8 +397,6 @@ class VideoController extends VideoApiControl
         $where.= $limit;
         $user_id =$this->user['id'];
         
-
-
         $ids =Yii::$app->signdb->createCommand(" SELECT id FROM x2_video_list_detail  where $where")->queryAll();
         $ids = $ids?implode(",",array_column($ids,"id")):'0' ;
         // $sql =" SELECT  a.*,(CASE WHEN c.video_id != 'NULL'  THEN '1' ELSE '0' END) as my_collect from ( SELECT id FROM x2_video_list_detail  where $where ) s

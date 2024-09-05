@@ -165,6 +165,7 @@
         addLoading()
         var goBelong =$("#goBelong").val();
         var goType =$("#goType").val();
+        var _this =this;
         $.ajax({
             url: '/cn/video-api/clear-session', // 跳转到 action 
             type: 'post',
@@ -173,6 +174,7 @@
             success: function (data) {
                 removeLoading()
                 if(data.code==0){    
+                    console.log(222)
                     // alert(data.message)
                     layer.open({
                         type: 1
@@ -186,10 +188,12 @@
                         ,moveType: 1 //拖拽模式，0或者1
                         ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
                         ,success: function(layero){
+                            $("#belong_badge_show"+goBelong).text('n');
                             removeLoading()
                         }
                     })
                 }else{
+                    $("#belong_badge_show"+goBelong).text('');
                     $("#goPage_list").val(1);
                     gou();
                 }

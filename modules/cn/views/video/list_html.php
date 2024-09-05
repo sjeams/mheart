@@ -36,13 +36,14 @@
             </tr>
             <tr>
                 <td>
-         
                         <div class="layui-input-inline center">
                             <input type="hidden" id="isCollect"  value="1">
                             <input type="hidden" id="goBelong"  value="<?php echo $data['belong'] ?>">
                             <p class="center" id="listBelong" >
                                 <?php foreach($category as    $v){  ?>
-                                    <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-primary':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>" onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?></a>
+                                    <a class="btn btn-sm  <?php echo $data['belong']== $v['belong'] ?'active btn-success':'btn-success'?>" value="<?php echo $v['belong'] ?>" id="belong<?php echo $v['belong'] ?>" onclick="belongChange(<?php echo $v['belong'] ?>)" href="javascript:;"><?php echo $v['name'] ?>
+                                        <span class="badge badge-danger"  id="belong_badge_show<?php echo $v['belong'] ?>"><?php echo $v['status']== 1 ?'':'n'?></span> 
+                                    </a>
                                 <?php }  ?>
                             </p>
                         </div>

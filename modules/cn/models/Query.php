@@ -488,7 +488,7 @@ public static function getVideoFox7($search,$type,$url,$http)
 	return $list;
 }
 
-	// 采集列表
+	// 采集列表-登录采集，获取页面，采集页面
     public static function getQueryUrl( )
     {
 	 //DOM解析新浪微博需要登录才能访问的页面

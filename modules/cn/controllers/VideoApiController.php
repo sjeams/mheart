@@ -109,7 +109,7 @@ class VideoApiController extends VideoApiControl
         );
         $rang='  .vods .vod';
         $httpurl =$data[0]['http'].$data[0]['url'];
-        $data = QueryList::get($httpurl)->getHtml(); ;
+        $data = QueryList::get($httpurl)->getHtml();
         // print($data);die;
         // $html = strip_tags($data);
         echo $data;
@@ -234,20 +234,36 @@ class VideoApiController extends VideoApiControl
         $type = Yii::$app->request->post('type',33);
         $istype = Yii::$app->request->post('istype',1); // 是否只清除当前类型
         if($belong>0){
-            $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
-            if(empty($listvideo)){
+            // $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
+            $list =Video::getQueryUrl(1,$belong,$type);
+            // var_dump($list);die;
+            //默认第一页有效地址
+            try {
+                //请求访问url
+                // var_dump($list['http'].$list['url']);
+                $httpurl =$list['http'].$list['url'];
+                $data = QueryList::get($httpurl)->getHtml();
+                $is_show =true;
+            } catch (\Exception $e) {
+                $is_show =false;
+            }
+            //直接清除缓存了
+            session_destroy();
+            if($istype==1){
+                VideoList::deleteAll(" belong =$belong and (type =$type or type = 0 )");
+            }else{
+                VideoList::deleteAll(" belong =$belong ");
+            }
+            if($is_show){
+                CategoryName::updateAll(['status' => 1], "belong = $belong");
+                die(Method::jsonGenerate(1,null,'succes'));
+            }else{
+                CategoryName::updateAll(['status' => 0], "belong = $belong");
                 die(Method::jsonGenerate(0,null,'error'));
             }
-        } 
-        session_destroy();
-        if($istype==1){
-            VideoList::deleteAll(" belong =$belong and (type =$type or type = 0 )");
-        }else{
-            VideoList::deleteAll(" belong =$belong ");
         }
-        die(Method::jsonGenerate(1,null,'succes'));
     }
-
+ 
     //清除指定搜索内容
     public function actionClearSearch()
     {
