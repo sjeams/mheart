@@ -41,11 +41,12 @@ class VideoList extends ActiveRecord {
         $videoData =[];
         //取本地 缓存
         $list = VideoList::sessionKeyVideo($sessionkey);
+
         //缓存没有数据,进入采集
-        if(!$list){
+        if(empty($list)){
             //是否能采集
-            $category_name = CategoryName::find('status')->where("belong =$belong and status=1" )->one();
-            if($belong&&$get_cache&&$category_name){
+            $category_name = CategoryName::find('status')->where("belong =$belong " )->one();
+            if($belong&&$get_cache&&$category_name->status==0){
                 //本地采集--本地数据库直查--跳过采集
                 $list= VideoList::delfutData($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);
                 $search =1;//本地可以搜索
