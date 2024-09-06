@@ -160,9 +160,9 @@ class VideoList extends ActiveRecord {
     // 获取关键词
     public static function getKeyWords($belong){
         if($belong==0){
-            $words = VideoList::find()->select('search')->where(" belong =0 and search!='' and value!='' ")->orderBy(" id desc")->asArray()->one()['search']; // 获取采集数据
+            $words = VideoList::find()->select('search')->where(" belong =0 and search!=''  ")->orderBy(" id desc")->asArray()->one()['search']; // 获取采集数据
         }else{
-            $words = VideoList::find()->select('search')->where(" belong !=0 and search!='' and value!='' ")->orderBy(" id desc")->asArray()->one()['search']; // 获取采集数据
+            $words = VideoList::find()->select('search')->where(" belong !=0 and search!=''  ")->orderBy(" id desc")->asArray()->one()['search']; // 获取采集数据
         }
         return $words?:'苍兰诀';
     }
@@ -170,9 +170,9 @@ class VideoList extends ActiveRecord {
     public static function getKwordsList($belong)
     {
         if($belong==0){
-            $keyword = VideoList::find()->select('search')->where(" belong =0 and search!='' and value!='' ")->limit(20)->groupBy("search")->orderBy(" id desc")->asArray()->all(); // 获取采集数据
+            $keyword = VideoList::find()->select('search')->where(" belong =0 and search!=''  ")->limit(20)->groupBy("search")->orderBy(" id desc")->asArray()->all(); // 获取采集数据
         }else{
-            $keyword = VideoList::find()->select('search')->where(" belong !=0 and search!='' and value!='' ")->limit(20)->groupBy("search")->orderBy(" id desc")->asArray()->all(); // 获取采集数据
+            $keyword = VideoList::find()->select('search')->where(" belong !=0 and search!=''  ")->limit(20)->groupBy("search")->orderBy(" id desc")->asArray()->all(); // 获取采集数据
         }
         return $keyword;
     }
@@ -199,18 +199,19 @@ class VideoList extends ActiveRecord {
     // ---主要构成部分
     //增   insert 插入视频记录
     public static function  insertVideoList($args=[]){
-        //id 缓存保持一致
-        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
-        $fist_id = Yii::$app->signdb->getLastInsertID(); //text 的id存入list
+
         //前面一定要查询，防止重复插入
         $inser_text = new VideoListText();
-        $inser_text->id =$fist_id;
-        $inser_text->text =$args['value'];
+        $inser_text->text = $args['value'];
         $inser_text->belong =$args['belong'];
         $inser_text->type =$args['type'];
         $inser_text->search =$args['search'];
         $inser_text->save();
-
+        //去掉list 的value 字段
+        unset($args['value']);
+        //id 缓存保持一致
+        $args['id'] = Yii::$app->signdb->getLastInsertID(); //text 的id存入list
+        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
     }
     //删 删除text 和list
     public static function  deleteVideoList($sql){
@@ -219,7 +220,7 @@ class VideoList extends ActiveRecord {
     }
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){
-        $res = VideoList::find('value')->where(" key_value ='$sessionkey' ")->one();
+        $res = VideoList::find('id')->where(" key_value ='$sessionkey' ")->one();
         $list =[];
         if($res){
             $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
