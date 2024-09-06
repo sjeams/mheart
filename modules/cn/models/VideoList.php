@@ -45,11 +45,13 @@ class VideoList extends ActiveRecord {
         if(!$list){
             //是否能采集
             $category_name = CategoryName::find('status')->where("belong =$belong and status=1" )->one();
-            if($belong&&$get_cache&&$category_name->status==0){
+            if($belong&&$get_cache&&$category_name){
                 //本地采集--本地数据库直查--跳过采集
                 $list= VideoList::delfutData($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);
+                $search =1;//本地可以搜索
             }else{
                 $list= VideoList::queryVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);   
+                $search =0;
             }
             //本地浏览，写入缓存
             if($get_cache){
@@ -80,11 +82,7 @@ class VideoList extends ActiveRecord {
             $data['page_list']=$page_list;
             $data['search']=$search;
             $data['belong']=$belong;
-            if($belong&&$get_cache&&$category_name->status==0){
-                $data['issearch']=1; //本地可以搜索
-            }else{
-                $data['issearch']=$category[$belong]['issearch'];
-            }  
+            $data['issearch']= $search? $search:$category[$belong]['issearch'];
             $count = count($list);
             //是否有下一页
             $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
