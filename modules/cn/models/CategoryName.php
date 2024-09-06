@@ -47,9 +47,11 @@ class CategoryName extends ActiveRecord {
         // );
      return  $list;
     }
-
-
-    
+        //采集默认页码
+    public static function delfutPage($belong){
+        $res = CategoryName::find('count')->where("belong =$belong " )->one();
+        return $res->count;
+    }
 
 }
 

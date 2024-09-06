@@ -236,7 +236,6 @@ class VideoApiController extends VideoApiControl
         if($belong>0){
             // $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
             $list =Video::getQueryUrl(1,$belong,$type);
-            // var_dump($list);die;
             //默认第一页有效地址
             try {
                 //请求访问url
@@ -248,12 +247,8 @@ class VideoApiController extends VideoApiControl
                 $is_show =false;
             }
             //直接清除缓存了
-            session_destroy();
-            if($istype==1){
-                VideoList::deleteAll(" belong =$belong and (type =$type or type = 0 )");
-            }else{
-                VideoList::deleteAll(" belong =$belong ");
-            }
+            // session_destroy();
+            VideoList::clearSession($istype,$belong,$type);
             if($is_show){
                 CategoryName::updateAll(['status' => 1], "belong = $belong");
                 die(Method::jsonGenerate(1,null,'succes'));
@@ -270,14 +265,8 @@ class VideoApiController extends VideoApiControl
         $search = Yii::$app->request->post('search','');
         $belong = Yii::$app->request->post('belong',0);
         $type = Yii::$app->request->post('type',0);
-        session_destroy();
-        if($search){
-            if($belong==0){
-                VideoList::deleteAll(" belong =$belong   and search ='$search' "); 
-            }else{
-                VideoList::deleteAll(" belong =$belong  and (type =$type or type = 0 ) and search ='$search' "); 
-            }
-        }
+        // session_destroy();
+        VideoList::clearSerach($search,$belong,$type);
         die(Method::jsonGenerate(1,null,'succes'));
     }
 

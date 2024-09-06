@@ -185,15 +185,11 @@ class VideoController extends VideoApiControl
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-        $res = Yii::$app->session->get($sessionStr)?:[];
-        if(!$res){
+        // $res = Yii::$app->session->get($sessionStr)?:[];
+        // if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1);  //get_cache 浏览时，必定开启缓存
-        }
-        //缓存验证
-        if($belong!=0){ // 影视不进入
-            // 采集查询-标题-是否收藏
-            $res['content']=  Video::isCollect($res['content'],$this->user['id']);
-        }
+        // }
+
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html==1){
@@ -442,8 +438,7 @@ class VideoController extends VideoApiControl
         if($sessionkey){
             $key = Yii::$app->request->get('key',0);
             $num = Yii::$app->request->get('num',0);
-            $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
-            $list =   json_decode($res['value'],true)[$key];
+            $list = VideoList::sessionKeyVideo($sessionkey)[$key];
             $data = $list['video'];
             $list['name'] = $list['title'];
             $list['url'] = $list['video'][$num]['url'];
@@ -473,8 +468,7 @@ class VideoController extends VideoApiControl
         $sessionkey = Yii::$app->request->get('sessionkey');
         $key = Yii::$app->request->get('key',0);
         $num = Yii::$app->request->get('num',0);
-        $res = VideoList::find()->where(" key_value ='$sessionkey' ")->asarray()->one();
-        $list =   json_decode($res['value'],true)[$key];
+        $list = VideoList::sessionKeyVideo($sessionkey)[$key];
         // $data = $list['video'];
         $list['name'] = $list['title'];
         // $list['url'] = $list['video'][$num]['url'];

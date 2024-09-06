@@ -174,7 +174,6 @@
             success: function (data) {
                 removeLoading()
                 if(data.code==0){    
-                    console.log(222)
                     // alert(data.message)
                     layer.open({
                         type: 1
