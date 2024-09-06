@@ -199,15 +199,18 @@ class VideoList extends ActiveRecord {
     // ---主要构成部分
     //增   insert 插入视频记录
     public static function  insertVideoList($args=[]){
+        //id 缓存保持一致
+        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+        $fist_id = Yii::$app->signdb->getLastInsertID(); //text 的id存入list
         //前面一定要查询，防止重复插入
         $inser_text = new VideoListText();
+        $inser_text->id =$fist_id;
         $inser_text->text =$args['value'];
         $inser_text->belong =$args['belong'];
         $inser_text->type =$args['type'];
         $inser_text->search =$args['search'];
         $inser_text->save();
-	    $args['value'] = Yii::$app->signdb->getLastInsertID(); //text 的id存入list
-        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+
     }
     //删 删除text 和list
     public static function  deleteVideoList($sql){
@@ -219,7 +222,7 @@ class VideoList extends ActiveRecord {
         $res = VideoList::find('value')->where(" key_value ='$sessionkey' ")->one();
         $list =[];
         if($res){
-            $res_text  =  VideoListText::find()->select('text')->where(" id = $res->value ")->one();
+            $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
             $list =  json_decode($res_text->text,true);
         }
         return  $list ;
