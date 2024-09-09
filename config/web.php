@@ -2,7 +2,8 @@
 $params = require __DIR__ . '/const.php';
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
- 
+$redis = require __DIR__ . '/redis.php';
+
 Yii::$classMap['Method'] = '@app/libs/Method.php';
 Yii::$classMap['UploadFile'] = '@app/libs/upload/UploadFile.php';
 Yii::$classMap['AlipaySubmit'] = '@app/libs/yii2_alipay/AlipaySubmit.php';
@@ -56,14 +57,12 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
-        ],
-        'user' => [
+            // 'class' => 'yii\redis\Cache',  //redis接管缓存
+        ], 
+       'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-
-
-
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -83,9 +82,11 @@ $config = [
                 ],
             ],
         ],
+
         'db' => $db,
         // 'signdb' => $signdb,
         'signdb' => require(__DIR__ . '/signdb.php'),
+        'redis' =>$redis, //redis 缓存数据库
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

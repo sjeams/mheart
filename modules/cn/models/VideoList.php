@@ -3,6 +3,7 @@ namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
 use yii\data\Pagination;
 use Yii;
+use app\libs\Redis;
 
 class VideoList extends ActiveRecord {
     public $cateData;
@@ -35,12 +36,14 @@ class VideoList extends ActiveRecord {
             return false;
         }
     }   
-
     public Static function getVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
-        
         $videoData =[];
-        //取本地 缓存
-        $list = VideoList::sessionKeyVideo($sessionkey);
+        //先查redis
+        $list =  Redis::get($sessionkey);
+        if(empty($list)){
+            //取本地 缓存
+            $list = VideoList::sessionKeyVideo($sessionkey);
+        }
         //缓存没有数据,进入采集
         if(empty($list)){
             //是否能采集
@@ -204,6 +207,8 @@ class VideoList extends ActiveRecord {
     }
     //增   insert 插入视频记录
     public static function  insertVideoList($args=[]){
+        //存入reids
+        Redis::set($args['key_value'],$args['value']);
         //前面一定要查询，防止重复插入
         $insert_id =  VideoList::insertVideoListSort($args);
         //超长的另存数据库
@@ -227,6 +232,8 @@ class VideoList extends ActiveRecord {
             VideoListText::deleteAll(" $sql ");    
         }
         VideoList::deleteAll(" $sql "); 
+        //清除redis 缓存
+        Redis::clear(); 
     }
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){

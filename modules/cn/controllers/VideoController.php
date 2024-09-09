@@ -10,6 +10,7 @@
  */
 namespace app\modules\cn\controllers;
 use app\libs\Method;
+use app\libs\Redis;
 use app\libs\ImageBase64;
 use yii\db\ActiveRecord;
 use yii;
@@ -165,6 +166,7 @@ class VideoController extends VideoApiControl
         }
         //默认关键词
         $key_words = VideoList::getKeyWords($belong);
+
         if($belong==0){
             //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="")   $search=$key_words;
@@ -185,7 +187,6 @@ class VideoController extends VideoApiControl
         }
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-        // $res = Yii::$app->session->get($sessionStr)?:[];
         // if(!$res){
             $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1);  //get_cache 浏览时，必定开启缓存
         // }
