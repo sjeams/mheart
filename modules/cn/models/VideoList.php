@@ -41,7 +41,6 @@ class VideoList extends ActiveRecord {
         $videoData =[];
         //取本地 缓存
         $list = VideoList::sessionKeyVideo($sessionkey);
-
         //缓存没有数据,进入采集
         if(empty($list)){
             //是否能采集
@@ -178,43 +177,55 @@ class VideoList extends ActiveRecord {
     // 清除 缓存
     public static function  clearSession($istype,$belong,$type){
         if($istype==1){
-            VideoList::deleteVideoList( " belong =$belong and (type =$type or type = 0 ) ");
+            VideoList::deleteVideoList($belong, " belong =$belong and (type =$type or type = 0 ) ");
         }else{
-            VideoList::deleteVideoList( " belong =$belong ");
+            VideoList::deleteVideoList($belong, " belong =$belong ");
         }
     }
     // 清除 搜索
     public static function  clearSerach($search,$belong,$type){
         if($search){
             if($belong==0){
-                VideoList::deleteVideoList( " belong =$belong   and search ='$search' ");
+                VideoList::deleteVideoList($belong, " belong =$belong   and search ='$search' ");
             }else{
-                VideoList::deleteVideoList( " belong =$belong  and (type =$type or type = 0 ) and search ='$search' ");
+                VideoList::deleteVideoList($belong, " belong =$belong  and (type =$type or type = 0 ) and search ='$search' ");
 
             }
         }
     }
 
     // ---主要构成部分
+    //id 缓存保持一致 --list 是递增的
+    public static function  insertVideoListSort($args=[]){
+        //去掉list 的value 字段
+        unset($args['value']);
+        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+        return  Yii::$app->signdb->getLastInsertID(); //text 的id存入list
+    }
     //增   insert 插入视频记录
     public static function  insertVideoList($args=[]){
-
         //前面一定要查询，防止重复插入
-        $inser_text = new VideoListText();
+        $insert_id =  VideoList::insertVideoListSort($args);
+        //超长的另存数据库
+        if(intval($args['belong'])==0){
+            $inser_text = new VideoListMediuText();
+        }else{
+            $inser_text = new VideoListText();
+        }
+        $inser_text->id = $insert_id;
         $inser_text->text = $args['value'];
         $inser_text->belong =$args['belong'];
         $inser_text->type =$args['type'];
         $inser_text->search =$args['search'];
-        $inser_text->save();
-        //去掉list 的value 字段
-        unset($args['value']);
-        //id 缓存保持一致
-        $args['id'] = Yii::$app->signdb->getLastInsertID(); //text 的id存入list
-        Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
+        $inser_text->save();  
     }
     //删 删除text 和list
-    public static function  deleteVideoList($sql){
-        VideoListText::deleteAll(" $sql "); 
+    public static function  deleteVideoList($belong,$sql){
+        if($belong==0){
+            VideoListMediuText::deleteAll(" $sql "); 
+        }else{
+            VideoListText::deleteAll(" $sql ");    
+        }
         VideoList::deleteAll(" $sql "); 
     }
     //查 根据session key 查询值i
@@ -222,7 +233,11 @@ class VideoList extends ActiveRecord {
         $res = VideoList::find('id')->where(" key_value ='$sessionkey' ")->one();
         $list =[];
         if($res){
-            $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
+            if($res->belong==0){
+                $res_text  =  VideoListMediuText::find()->select('text')->where(" id = $res->id ")->one();
+            }else{
+                $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
+            }
             $list =  json_decode($res_text->text,true);
         }
         return  $list ;
