@@ -5,6 +5,7 @@ return [
     'hostname' => '127.0.0.1',
     'port' => 6379,
     'database' => 0,
+    'password' => 'yincan1993', // 这里填写你的Redis密码
 ];
 
 
