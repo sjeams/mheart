@@ -247,7 +247,10 @@ class VideoList extends ActiveRecord {
             }else{
                 $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
             }
-            $list =  json_decode($res_text->text,true);
+            if($list){
+                $list =  json_decode($res_text->text,true);
+            }
+
         }
         return  $list ;
     }
