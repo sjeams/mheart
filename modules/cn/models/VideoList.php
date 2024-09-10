@@ -180,6 +180,8 @@ class VideoList extends ActiveRecord {
     }
     // 清除 缓存
     public static function  clearSession($istype,$belong,$type){
+        //清除redis 缓存
+        Redis::clear(); 
         if($istype==1){
             VideoList::deleteVideoList($belong, " belong =$belong and (type =$type or type = 0 ) ");
         }else{
@@ -232,8 +234,6 @@ class VideoList extends ActiveRecord {
             VideoListText::deleteAll(" $sql ");    
         }
         VideoList::deleteAll(" $sql "); 
-        //清除redis 缓存
-        Redis::clear(); 
     }
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){

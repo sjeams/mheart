@@ -245,11 +245,11 @@ class VideoApiController extends VideoApiControl
                 // var_dump($list['http'].$list['url']);
                 $httpurl =$list['http'].$list['url'];
                 QueryList::get($httpurl)->getHtml();
-                $is_show =true;
+                // $is_show =true;
                 CategoryName::updateAll(['status' => 1], "belong = $belong");
                 die(Method::jsonGenerate(1,null,'succes'));
             } catch (\Exception $e) {
-                $is_show =false;
+                // $is_show =false;
                 CategoryName::updateAll(['status' => 0], "belong = $belong");
                 die(Method::jsonGenerate(0,null,'error'));
             }
