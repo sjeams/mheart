@@ -43,7 +43,7 @@ class VideoList extends ActiveRecord {
         $list =  Redis::get($sessionkey); //没有缓存取 本地或者采集
         if(empty($list)){
             //取本地 缓存
-            // $list = VideoList::sessionKeyVideo($sessionkey);
+            $list = VideoList::sessionKeyVideo($sessionkey);
             //缓存没有数据,进入采集
             if(empty($list)){
                 //是否能采集
@@ -60,18 +60,18 @@ class VideoList extends ActiveRecord {
                 if($get_cache){
                     //存入reids--将结果存入redis
                     Redis::set($sessionkey,json_encode($list,true));
-                    // $args['key_value'] =$sessionkey;
-                    // // $args['value'] = json_encode($list,true);
-                    // // $args['time'] =time();
-                    // $args['count'] =count($list);
-                    // $args['page'] =$page;
-                    // $args['belong'] =$belong;
-                    // $args['type'] =$type;
-                    // $args['search'] =$search;
-                    // $args['page_list'] =$page_list;
-                    // // 存入缓存列表
-                    // //快速自动采集，不录入缓存，大容量储存会加大消耗
-                    // VideoList::insertVideoList($args,$list);
+                    $args['key_value'] =$sessionkey;
+                    // $args['value'] = json_encode($list,true);
+                    // $args['time'] =time();
+                    $args['count'] =count($list);
+                    $args['page'] =$page;
+                    $args['belong'] =$belong;
+                    $args['type'] =$type;
+                    $args['search'] =$search;
+                    $args['page_list'] =$page_list;
+                    // 存入缓存列表
+                    //快速自动采集，不录入缓存，大容量储存会加大消耗
+                    VideoList::insertVideoList($args,$list);
                 }
             }
 
