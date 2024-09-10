@@ -241,7 +241,7 @@ class VideoApiController extends VideoApiControl
                 //请求访问url
                 // var_dump($list['http'].$list['url']);
                 $httpurl =$list['http'].$list['url'];
-                $data = QueryList::get($httpurl)->getHtml();
+                QueryList::get($httpurl)->getHtml();
                 $is_show =true;
             } catch (\Exception $e) {
                 $is_show =false;
