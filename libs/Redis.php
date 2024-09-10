@@ -28,7 +28,7 @@ class Redis
     public static function get($sessionStr=[])
     {
         $redis =Yii::$app->redis;
-        return json_decode($redis->get($sessionStr),true);
+        return json_decode($redis->get($sessionStr),true)?:[];
     }
     public static function clear()
     {

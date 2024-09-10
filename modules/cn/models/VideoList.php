@@ -97,7 +97,6 @@ class VideoList extends ActiveRecord {
             if($belong!=0){ // 影视不进入
                 $list=  Video::isCollect($list,$userid);
             }
-
             $videoData =['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list,'category'=>$category,'sessionkey'=>$sessionkey,'categoryBelong'=>$categoryBelong];
         }else{
             //采集不用进入缓存--采集状态
@@ -109,7 +108,6 @@ class VideoList extends ActiveRecord {
         $list=[];
         //采集逻辑
         if($belong==0){
-
             //电视采集
             $list = Query::getVideo($search,$type,$page_list);
             // Yii::$app->signdb->createCommand()->insert('x2_video_list',$args)->execute();
@@ -248,9 +246,8 @@ class VideoList extends ActiveRecord {
                 $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
             }
             if($list){
-                $list =  json_decode($res_text->text,true);
+                $list =  json_decode($res_text->text,true)?:[];
             }
-
         }
         return  $list ;
     }
