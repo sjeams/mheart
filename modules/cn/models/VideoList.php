@@ -38,6 +38,7 @@ class VideoList extends ActiveRecord {
     }   
 
     public Static function getVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
+        $issearch =0; //能否搜索，本地可以直接搜索
         $videoData =[];
         //先查redis
         $list =  Redis::get($sessionkey); //没有缓存取 本地或者采集
@@ -54,7 +55,6 @@ class VideoList extends ActiveRecord {
                     $issearch =1;//本地可以搜索
                 }else{
                     $list= VideoList::queryVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);   
-                    $issearch =0;
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
