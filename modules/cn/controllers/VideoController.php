@@ -185,6 +185,8 @@ class VideoController extends VideoApiControl
                 }
             }
         }
+
+
         // 缓存列表
         $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
         // if(!$res){

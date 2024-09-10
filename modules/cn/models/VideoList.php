@@ -48,13 +48,13 @@ class VideoList extends ActiveRecord {
             if(empty($list)){
                 //是否能采集
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
-                if($belong&&$get_cache&&$category_name->status==0){
+                if($belong&&$category_name->status==0){
                     //本地采集--本地数据库直查--跳过采集
                     $list= VideoList::delfutData($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);
-                    $search =1;//本地可以搜索
+                    $issearch =1;//本地可以搜索
                 }else{
                     $list= VideoList::queryVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);   
-                    $search =0;
+                    $issearch =0;
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
@@ -63,7 +63,7 @@ class VideoList extends ActiveRecord {
                     $args['key_value'] =$sessionkey;
                     // $args['value'] = json_encode($list,true);
                     // $args['time'] =time();
-                    $args['count'] =count($list);
+                    $args['count'] = count($list);
                     $args['page'] =$page;
                     $args['belong'] =$belong;
                     $args['type'] =$type;
@@ -74,7 +74,6 @@ class VideoList extends ActiveRecord {
                     VideoList::insertVideoList($args,$list);
                 }
             }
-
         }
         // 动态数据验证--返回显示页码的状态
         if($get_cache){
@@ -89,7 +88,7 @@ class VideoList extends ActiveRecord {
             $data['page_list']=$page_list;
             $data['search']=$search;
             $data['belong']=$belong;
-            $data['issearch']= $search? $search:$category[$belong]['issearch'];
+            $data['issearch']= $issearch? $issearch:$category[$belong]['issearch'];
             $count = count($list);
             //是否有下一页
             $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
@@ -146,7 +145,7 @@ class VideoList extends ActiveRecord {
         $page =$page_list;
         $limit = "limit ".($page-1)*$pageSize.",$pageSize";
         //搜索加快查询，不排序了
-        $where.=' order by id desc ' ;
+        // $where.=' order by id desc ' ;
         $where.=" ".$limit;
         // print_r("SELECT * FROM x2_video_list_detail  where $where");die;
         $list =Yii::$app->signdb->createCommand("SELECT * FROM x2_video_list_detail  where $where")->queryAll();
