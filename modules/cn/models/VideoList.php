@@ -141,12 +141,12 @@ class VideoList extends ActiveRecord {
         if($search){
             $where .= " and title like '%$search%'  "; 
         }
+
+        //搜索加快查询，不排序了
+        $where.=' order by id desc ' ;
         $pageSize = CategoryName::delfutPage($belong);
         $page =$page_list;
-        $limit = "limit ".($page-1)*$pageSize.",$pageSize";
-        //搜索加快查询，不排序了
-        // $where.=' order by id desc ' ;
-        $where.=" ".$limit;
+        $where.= " limit ".($page-1)*$pageSize.",$pageSize";
         // print_r("SELECT * FROM x2_video_list_detail  where $where");die;
         $list =Yii::$app->signdb->createCommand("SELECT * FROM x2_video_list_detail  where $where")->queryAll();
         // 外面有是否收藏验证了，这里不需要了
