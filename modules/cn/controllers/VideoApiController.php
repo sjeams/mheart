@@ -201,8 +201,8 @@ class VideoApiController extends VideoApiControl
                 $newpage= $page_list+$i;
                 $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$newpage.'type'.$type.'search'.$search; 
                 //查询是否有session缓存
-                $res = Yii::$app->session->get($sessionStr);
-                if(!$res){
+                // $res = Yii::$app->session->get($sessionStr);
+                // if(!$res){
                     //缓存中没有，那么就重新存如入session
                     //改到公共方法
                     $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
@@ -210,7 +210,7 @@ class VideoApiController extends VideoApiControl
                         //为空时，跳出循环
                         die(Method::jsonGenerate(0,$newpage-1,'false')); 
                     }
-                }
+                // }
             }
 
         } 

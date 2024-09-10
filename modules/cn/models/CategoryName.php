@@ -49,7 +49,7 @@ class CategoryName extends ActiveRecord {
     }
         //采集默认页码
     public static function delfutPage($belong){
-        $res = CategoryName::find('count')->where("belong =$belong " )->one();
+        $res = CategoryName::find()->select('count')->where("belong =$belong " )->one();
         return $res->count;
     }
 

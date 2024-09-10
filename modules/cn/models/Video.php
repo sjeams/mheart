@@ -571,11 +571,11 @@ class Video extends ActiveRecord {
 			}
 			$list_collect =  "'".implode("','",$list_collect)."'" ;
 			// $list_collect = addslashes($list_collect);
-			$find_collect =Video::find('title')->select('title')->where("title in ($list_collect)")->asarray()->all();
+			$find_collect =Video::find()->select('title')->where("title in ($list_collect)")->asarray()->all();
 			$find_collect = array_column($find_collect,'title');
 			$video_id = implode(",",array_column($list,'id'));
 			if($video_id){
-				$my_collect = VideoListCollect::find('video_id')->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
+				$my_collect = VideoListCollect::find()->select('video_id')->where("video_id in($video_id) and user_id =$user_id ")->asarray()->all();
 			} 
 			$find_my_collect = array_column($my_collect,'video_id');
 			//是否收藏
