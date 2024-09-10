@@ -233,6 +233,9 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',1);
         $type = Yii::$app->request->post('type',33);
         $istype = Yii::$app->request->post('istype',1); // 是否只清除当前类型
+        //直接清除缓存了
+        // session_destroy();
+        VideoList::clearSession($istype,$belong,$type);
         if($belong>0){
             // $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
             $list =Video::getQueryUrl(1,$belong,$type);
@@ -243,16 +246,10 @@ class VideoApiController extends VideoApiControl
                 $httpurl =$list['http'].$list['url'];
                 QueryList::get($httpurl)->getHtml();
                 $is_show =true;
-            } catch (\Exception $e) {
-                $is_show =false;
-            }
-            //直接清除缓存了
-            // session_destroy();
-            VideoList::clearSession($istype,$belong,$type);
-            if($is_show){
                 CategoryName::updateAll(['status' => 1], "belong = $belong");
                 die(Method::jsonGenerate(1,null,'succes'));
-            }else{
+            } catch (\Exception $e) {
+                $is_show =false;
                 CategoryName::updateAll(['status' => 0], "belong = $belong");
                 die(Method::jsonGenerate(0,null,'error'));
             }
