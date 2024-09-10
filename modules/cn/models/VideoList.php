@@ -58,6 +58,8 @@ class VideoList extends ActiveRecord {
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
+                    //存入reids--将结果存入redis
+                    Redis::set($sessionkey,json_encode($list,true));
                     $args['key_value'] =$sessionkey;
                     // $args['value'] = json_encode($list,true);
                     // $args['time'] =time();
@@ -72,8 +74,7 @@ class VideoList extends ActiveRecord {
                     VideoList::insertVideoList($args,$list);
                 }
             }
-            //存入reids--将结果存入redis
-            Redis::set($sessionkey,json_encode($list,true));
+
         }
         // 动态数据验证--返回显示页码的状态
         if($get_cache){
