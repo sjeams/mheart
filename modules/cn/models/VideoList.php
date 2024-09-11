@@ -13,9 +13,13 @@ class VideoList extends ActiveRecord {
     public static function tableName(){
             return '{{%video_list}}';
     }
-
-
- 
+    public Static function Md5sessionKey($belong,$page,$page_list,$type,$search){
+        // 缓存列表
+        // $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
+        $sessionStr = 'B'.$belong.'P'.$page.'P'.$page_list.'T'.$type.'S'.$search;
+        return md5($sessionStr);
+    }
+    
     //查询分页页码，判断是否有下一页
     public Static function getIsNext($belong,$type,$count){
         $type = intval($type);

@@ -38,7 +38,7 @@ class Redis
         // $redis->flushall(); // 清空所有数据库
     }
     // // 去空格 大转小写
-    // public   function get($sessionStr=[])
+    // public   function get($key=[])
     // {
     //     // // 获取列表长度
     //     // Yii::$app->redis->llen('listKey');  // 6
@@ -70,7 +70,7 @@ class Redis
     //     // $len = Yii::$app->redis->LLEN($key); //获取元素个数
     //     // Yii::$app->redis->lrem($key,$len,$value); 
     //     // var_dump( $res );die;
-    //     // $res = Yii::$app->session->get($sessionStr)?:[];
+    //     // $res = Yii::$app->session->get($key)?:[];
     //     // 设置键的有效时间为300秒
     //     // $redis = Yii::$app->redis;
     //     // $redis->set('mykey', 'myvalue', 'EX', 300);

@@ -185,14 +185,10 @@ class VideoController extends VideoApiControl
                 }
             }
         }
-
-
-        // 缓存列表
-        $sessionStr = 'videolistBelong'.$belong.'page'.$page.'page_list'.$page_list.'type'.$type.'search'.$search;
-        // if(!$res){
-            $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1);  //get_cache 浏览时，必定开启缓存
-        // }
-
+        //获取列表
+        $sessionStr =VideoList::Md5sessionKey($belong,$page,$page_list,$type,$search);
+        $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1);  //get_cache 浏览时，必定开启缓存
+ 
         //来源
         $html = Yii::$app->request->get('html',0);
         if($html==1){
