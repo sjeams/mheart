@@ -28,7 +28,7 @@ class VideoList extends ActiveRecord {
             //浮动页码--根据采集页码
             $where =" belong =$belong and type = $type  " ;
             $res =  VideoList::find()->select('count')->where(" $where ")->orderBy('count desc')->one();
-            $total_page =$res->count;
+            $total_page  = isset($res)?$res->count:20;
         }else{
             //固定页码
             $total_page = CategoryName::delfutPage($belong); //每页总条数
