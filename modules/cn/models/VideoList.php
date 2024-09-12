@@ -218,18 +218,21 @@ class VideoList extends ActiveRecord {
 
         //前面一定要查询，防止重复插入
         $insert_id =  VideoList::insertVideoListSort($args);
-        //超长的另存数据库
-        if(intval($args['belong'])==0){
-            $inser_text = new VideoListMediuText();
-        }else{
-            $inser_text = new VideoListText();
+        //有数据才存附表了，没有就不存，为空
+        if($args['count']){
+            //超长的另存数据库
+            if(intval($args['belong'])==0){
+                $inser_text = new VideoListMediuText();
+            }else{
+                $inser_text = new VideoListText();
+            }
+            $inser_text->id = $insert_id;
+            $inser_text->text = json_encode($list,true);
+            $inser_text->belong =$args['belong'];
+            $inser_text->type =$args['type'];
+            $inser_text->search =$args['search'];
+            $inser_text->save();  
         }
-        $inser_text->id = $insert_id;
-        $inser_text->text = json_encode($list,true);
-        $inser_text->belong =$args['belong'];
-        $inser_text->type =$args['type'];
-        $inser_text->search =$args['search'];
-        $inser_text->save();  
     }
     //删 删除text 和list
     public static function  deleteVideoList($belong,$sql){
