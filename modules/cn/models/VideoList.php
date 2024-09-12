@@ -28,7 +28,7 @@ class VideoList extends ActiveRecord {
             //浮动页码--根据采集页码
             $where =" belong =$belong and type = $type  " ;
             $res =  VideoList::find()->select('count')->where(" $where ")->orderBy('count desc')->one();
-            $total_page  = isset($res)?$res->count:20;
+            $total_page  = isset($res)?$res->count:10;
         }else{
             //固定页码
             $total_page = CategoryName::delfutPage($belong); //每页总条数
@@ -187,6 +187,8 @@ class VideoList extends ActiveRecord {
     public static function  clearSession($istype,$belong,$type){
         //清除redis 缓存
         Redis::clear(); 
+        //更新type总数
+        Category::updateCategoryCount();
         if($istype==1){
             VideoList::deleteVideoList($belong, " belong =$belong and (type =$type or type = 0 ) ");
         }else{
@@ -200,7 +202,6 @@ class VideoList extends ActiveRecord {
                 VideoList::deleteVideoList($belong, " belong =$belong   and search ='$search' ");
             }else{
                 VideoList::deleteVideoList($belong, " belong =$belong  and (type =$type or type = 0 ) and search ='$search' ");
-
             }
         }
     }

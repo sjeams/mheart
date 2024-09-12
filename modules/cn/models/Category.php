@@ -27,6 +27,10 @@ class Category extends ActiveRecord {
                 $str .='<p class="center" id="listType" >'; 
                 foreach($list as $v){
                     $name =$v['name'];
+                    //加上总数标签
+                    if($v['total']){
+                        $name .= '<span class="badge badge-success">'.$v['total'].'</span>';
+                    }
                     $value =$v['type'];
                     if($v['type']==$type){
                         $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
@@ -90,6 +94,18 @@ class Category extends ActiveRecord {
 		return $category?$category->category_id:0;
 
 	}
+
+    public static function updateCategoryCount()
+    {
+        $list = Category::find()->select('id')->where("belong!=0")->asArray()->all();
+        foreach($list as $v){
+            $cls = Category::findOne($v['id']);
+            $count = VideoListDetail::find()->where("belong = $cls->belong and type = $cls->type")->count();
+            $cls->total =$count;
+            $cls->save();
+        }
+    }
+
 
 
 	//  public static function Category(){
