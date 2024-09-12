@@ -34,7 +34,7 @@ class VideoList extends ActiveRecord {
             $total_page = CategoryName::delfutPage($belong); //每页总条数
         }
         //总数相等并且总数大于等于10
-        if($count== $total_page&&$count>=10){
+        if($count>= $total_page&&$count>=10){
              return true;
         }else{
             return false;
