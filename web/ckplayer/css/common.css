@@ -6,7 +6,7 @@ video{
 /* //文字自适应大小 */
 .responsive-text {
     /* font-size: 1vw; 文字大小为视口宽度的1% */
-    font-size: 12px;
+    font-size: 8px;
 }
 .bigImg {
     position: absolute;
