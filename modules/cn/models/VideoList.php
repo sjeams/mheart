@@ -47,11 +47,12 @@ class VideoList extends ActiveRecord {
         //先查redis
         $list =  Redis::get($sessionkey); //没有缓存取 本地或者采集
         if(empty($list)){
-            //取本地 缓存
-            $list = VideoList::sessionKeyVideo($sessionkey);
-            //缓存没有数据,进入采集
-            if(empty($list)){
-                //是否能采集
+            $res = VideoList::find()->select('id')->where(" key_value ='$sessionkey' ")->one();
+            if($res){
+                //取本地 缓存
+                $list = VideoList::sessionKeyVideo($sessionkey);
+            }else{
+                //缓存没有数据,进入采集
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
                 if($belong&&$category_name->status==0){
                     //本地采集--本地数据库直查--跳过采集
