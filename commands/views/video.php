@@ -79,7 +79,6 @@ function videoDetail(sessionkey,key){
 function picDetail(sessionkey,key){
     //初始化
     videoHidden() //隐藏悬浮窗口
-    // var url ="/cn/video/list?page="+goPage+"&type="+goType+"&page_list="+goPage_list+"&belong="+goBelong+"&search="+goSearch+"&html=1";
     var url ='/cn/video/pic?sessionkey='+sessionkey+'&key='+key+"&html=1";
     getprintHtml(url,getprintHtml_video_pic);
     // var list_html = getprintHtml(url);

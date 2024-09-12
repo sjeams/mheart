@@ -241,16 +241,17 @@ class VideoList extends ActiveRecord {
     }
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){
-        $res = VideoList::find()->select('id')->where(" key_value ='$sessionkey' ")->one();
+        $res = VideoList::find()->select('id,count')->where(" key_value ='$sessionkey' ")->one();
         $list =[];
         if($res){
-            if($res->belong==0){
-                $res_text  =  VideoListMediuText::find()->select('text')->where(" id = $res->id ")->one();
-            }else{
-                $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
-            }
-            if($list){
-                $list =  json_decode($res_text->text,true)?:[];
+            //没有视频数量，就不用去取列表了
+            if($res->count){
+                if($res->belong==0){
+                    $res_text  =  VideoListMediuText::find()->select('text')->where(" id = $res->id ")->one();
+                }else{
+                    $res_text  =  VideoListText::find()->select('text')->where(" id = $res->id ")->one();
+                }
+                $list =  isset($res_text->text) ?json_decode($res_text->text,true):[];
             }
         }
         return  $list ;
