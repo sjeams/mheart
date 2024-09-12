@@ -100,7 +100,10 @@ body {
 .showed{
 	display: block!important;
 }
-.btn {width:28%!important;margin: 5px;max-width: 120px;}
+/* .btn {width:28%!important;margin: 5px;max-width: 120px;} */
+.btn { width: 
+	110px!important;
+	margin: 2px;}
 /* .btn { width:28%!important;margin: 2%; } */
 .btn-primary{
 	cursor: pointer;

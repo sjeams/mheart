@@ -26,20 +26,20 @@ class Category extends ActiveRecord {
                 $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
                 $str .='<p class="center" id="listType" >'; 
                 foreach($list as $v){
-                    $name =$v['name'];
+                    $name ='<span class="responsive-text">'.$v['name'].'</span>';
                     //加上总数标签
                     if($v['total']){
                         $name .= '<span class="badge badge-success">'.$v['total'].'</span>';
                     }
                     $value =$v['type'];
                     if($v['type']==$type){
-                        $str .=  "<a class='btn btn-sm  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        $str .=  "<a class='btn btn-sm m-1  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                     }else{
                         //图片
                         if($v['category_id']==2){
-                            $str .=  "<a class='btn btn-sm btn-warning' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm m-1 btn-warning' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }else{
-                            $str .=  "<a class='btn btn-sm ' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm m-1 ' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }
                     }
                 }
