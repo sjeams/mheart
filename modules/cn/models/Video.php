@@ -75,14 +75,14 @@ class Video extends ActiveRecord {
 				// tantanzy.com，tantanzy1.com
 				//如果是图片
 				if($category_id==2){
-						$list=array($belong,$type,'探探',"/index.php/art/type/id/$type/page/$page.html",'http://www.tantanzy55.com');
+						$list=array($belong,$type,'探探',"/index.php/art/type/id/$type/page/$page.html",'http://www.tantanzy11.com');
 				}else{
 					if($search){
 						// http://tantanzy11.com/index.php/vod/search/page/1/wd/邱淑贞.html
-						$list=array($belong,$type,'探探',"/index.php/vod/search/page/$page/wd/$search.html",'http://www.tantanzy55.com');
+						$list=array($belong,$type,'探探',"/index.php/vod/search/page/$page/wd/$search.html",'http://www.tantanzy11.com');
 						// array($belong,$type,'探探',"/type/2.html",'https://436727.166477.com'),
 					}else{
-						$list=	array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'http://www.tantanzy55.com');
+						$list=	array($belong,$type,'探探',"/index.php/vod/type/id/$type/page/$page.html",'http://www.tantanzy11.com');
 							// array($belong,$type,'探探',"/type/$type-$page.html",'https://436727.166477.com'),
 					}
 				}
