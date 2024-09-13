@@ -55,7 +55,7 @@
                         </div>
                         <div class="layui-input-inline center">
                             <span class="is_last_page_button"></span>
-                            <input type="text" class="btn_style"   value="<?php echo $data['page_list'] ?>" id="goPage_list">
+                            <input type="text" class="btn_style"   value="<?php echo $data['page_list'] ?>" <?php echo $graden>0?'':'disabled' ?> id="goPage_list">
                             <span class="is_next_page_button"></span>
                         </div>
                         <?php if($graden>0){ ?>

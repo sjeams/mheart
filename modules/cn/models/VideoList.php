@@ -186,10 +186,6 @@ class VideoList extends ActiveRecord {
     }
     // 清除 缓存
     public static function  clearSession($istype,$belong,$type){
-        //清除redis 缓存
-        Redis::clear(); 
-        //更新type总数
-        Category::updateCategoryCount();
         if($istype==1){
             VideoList::deleteVideoList($belong, " belong =$belong and (type =$type or type = 0 ) ");
         }else{
@@ -217,7 +213,6 @@ class VideoList extends ActiveRecord {
     }
     //增   insert 插入视频记录
     public static function  insertVideoList($args,$list){
-
         //前面一定要查询，防止重复插入
         $insert_id =  VideoList::insertVideoListSort($args);
         //有数据才存附表了，没有就不存，为空
@@ -238,6 +233,10 @@ class VideoList extends ActiveRecord {
     }
     //删 删除text 和list
     public static function  deleteVideoList($belong,$sql){
+        //清除redis 缓存
+        Redis::clear(); 
+        //更新type总数
+        Category::updateCategoryCount();
         if($belong==0){
             VideoListMediuText::deleteAll(" $sql "); 
         }else{
