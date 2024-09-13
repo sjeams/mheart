@@ -436,18 +436,38 @@ class Video extends ActiveRecord {
 		preg_match_all($preg_str, $data['imageurl'], $result);
 		$image_list =$result[1];;
 		if($image_list){
-			$args['id']=time(); //id作为时间戳吧
+			// $args['id']=time(); //id作为时间戳吧
 			$args['url']='';
 			$args['imageurl'] =$image_list[0];
-			$args['image_list'] =$image_list; //图片多加个图片列表
+			// $args['image_list'] =$image_list; //图片多加个图片列表
 			$args['title']=$val['title'];
 			$args['type']= $type;
 			$args['belong']= $belong;
 			$args['link']= $link;
+			// 写入图片
+			$where =" link='$link' and belong = '$belong'   and type = '$type' ";
+			$res =VideoListDetail::find()->where($where)->asarray()->One();
+			if(!$res){
+				//视频不存在，写入
+			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
+				Video::insertVideo($args);
+				$args['id']=Yii::$app->signdb->getLastInsertID();
+				$insertVideo = [];
+				foreach($image_list as $key=> $v){
+					$insertVideo[$key] =array('video_id'=>$args['id'], 'imageurl'=>$v);
+				}	
+				$new_key = array_keys($insertVideo[0]);
+				// $new_key =['video_id','image'];
+				//批量擦汗如到图片表
+				Video::batchInsertVideo('x2_video_list_image',$new_key,$insertVideo);
+				//返回数据中 ，加入list
+				$args['image_list'] =$image_list; //图片多加个图片列表
+			}
 			return $args;
 		}else{
 			return null;
 		} 
+
 		// var_dump($img_list);die;
 		// preg_match('/\d+/', $val['url'], $result);
 		// $keyid=$result[0];
@@ -466,6 +486,10 @@ class Video extends ActiveRecord {
 		// 	return null;
 		// } 
 	}
+ 
+ 
+
+
 	//处理视频公用方法
 	public static function videoDetailsMethod($data1,$type,$belong,$link,$isquery,$http){
 		// $data1['content'] = iconv("gb2312","UTF-8",$data1['content']);

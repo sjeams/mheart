@@ -195,6 +195,7 @@ class VideoApiController extends VideoApiControl
         // $type =24;
         // $page_list =510;
         // 影视不进入缓存-开启缓存进入--手动缓存>1时开启缓存
+        $category_id = Category::getCategoryId($belong,$type);
         if($belong!=0&&($get_cache==1|| $setnum>0)){
             // 缓存列表
             for ($i =0; $i <= $setnum; $i++) {
@@ -202,7 +203,7 @@ class VideoApiController extends VideoApiControl
                 $sessionStr =VideoList::Md5sessionKey($belong,$page,$page_list,$type,$search);
                 //缓存中没有，那么就重新存如入session
                 //改到公共方法
-                $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache);
+                $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$newpage,$graden,$this->user['id'],$get_cache,$category_id);
                 if(!$res['content']){
                     //为空时，跳出循环
                     die(Method::jsonGenerate(0,$newpage-1,'false')); 

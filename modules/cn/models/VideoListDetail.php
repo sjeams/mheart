@@ -22,10 +22,41 @@ class VideoListDetail extends ActiveRecord {
 
     // 图片不做保存
 	public static function checkImage($listvideo){
+        // $video_list =[];
+        // foreach($listvideo as$key=> $val){
+        //     $find_video = Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+        //     $video_list [] =$find_video;
+        // }
+        // return $video_list;
+        $listvideo =  Method::functionsecond_array_unique_bykey($listvideo,'title',1); //二维数组根据title去重 去重复数据
+        foreach($listvideo as$key=> $val){
+            $listvideo[$key]['link']= addslashes($val['http'].$val['url']);
+        }
+        $link =  "'" .implode("','",array_column($listvideo,'link'))."'" ;
+        $find_collect =VideoListDetail::find()->where("link in ($link)")->asarray()->all();
+        $find_link = array_column($find_collect,'link');
         $video_list =[];
         foreach($listvideo as$key=> $val){
-            $find_video = Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
-            $video_list [] =$find_video;
+            $video_link= $val['link'];
+            if(in_array($video_link,$find_link)){
+                $key = array_search($val['link'], $find_link);
+                $find_video= $find_collect[$key];
+                // 处理搜索以后存入的视频没有type--更新时，自动更新视频类型
+                // $find_id=  $find_video['id'];
+                // if($find_video['type']!=$val['type']&&$val['type']!=0){
+                //     $update_list[] = $find_id;
+                //     $val_type = $val['type'];
+                // }
+                $find_video['image_list'] =  VideoList::findImageList($find_video['id']);
+                $video_list [] =$find_video;
+            }else{
+                //单条数据采集
+                $find_video= Video::getQueryDetails($val['belong'],$val,$val['type'],$val['http'],1);
+                if(is_array($find_video)){  //判断是否为数组，报错则跳过
+                    // $find_video =VideoListDetail::videoBaseImage($find_video);//保存base64 图片
+                    $video_list [] = $find_video;
+                }
+            }
         }
         return $video_list;
     }

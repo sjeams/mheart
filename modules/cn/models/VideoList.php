@@ -41,7 +41,7 @@ class VideoList extends ActiveRecord {
         }
     }   
 
-    public Static function getVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
+    public Static function getVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0,$category_id){
         $issearch =0; //能否搜索，本地可以直接搜索
         $videoData =[];
         //先查redis
@@ -56,11 +56,11 @@ class VideoList extends ActiveRecord {
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
                 if($belong&&$category_name->status==0){
                     //本地采集--本地数据库直查--跳过采集
-                    $list= VideoList::delfutData($belong,$type,$page,$search,$page_list);
+                    $list= VideoList::delfutData($belong,$type,$page,$search,$page_list,$category_id);
                     $issearch =1;//本地可以搜索
                 }else{
                     //采集接口
-                    $list= VideoList::queryVideoList($belong,$type,$page,$search,$page_list);
+                    $list= VideoList::queryVideoList($belong,$type,$page,$search,$page_list,$category_id);
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
@@ -112,7 +112,7 @@ class VideoList extends ActiveRecord {
         }
         return  $videoData ;
     }
-    public Static function queryVideoList($belong,$type,$page,$search,$page_list){
+    public Static function queryVideoList($belong,$type,$page,$search,$page_list,$category_id){
         $list=[];
         //采集逻辑
         if($belong==0){
@@ -124,7 +124,6 @@ class VideoList extends ActiveRecord {
             $listvideo = Video::getQueryListModel($page_list,$belong,1,$type,$search); // 获取采集数据
             // 是否分页--改为不分页，直接采集
             if($listvideo){
-                $category_id = Category::getCategoryId($belong,$type);
                 //category_id 2 图片,1直播  0视频
                 if($category_id==2){
                     $list= VideoListDetail::checkImage($listvideo);
@@ -137,7 +136,7 @@ class VideoList extends ActiveRecord {
     }
 
     //链接失效，本地直查数据
-    public Static function delfutData($belong,$type,$page,$search,$page_list){
+    public Static function delfutData($belong,$type,$page,$search,$page_list,$category_id){
         //查询现有的
         $where =" 1=1 ";
         if($belong){
@@ -162,9 +161,20 @@ class VideoList extends ActiveRecord {
         //         (SELECT * FROM x2_video_list_detail  where $where ) a
         //         LEFT JOIN x2_video_list_collect c on (c.video_id = a.id   and c.user_id = $userid )";
         // $list = Yii::$app->signdb->createCommand($sql)->queryAll();
+        //图片处理
+        if($category_id==2){
+            foreach($list as &$v)
+            $video_id =$v['id'];
+            $v['image_list'] =  VideoList::findImageList($video_id);
+        }
         return $list;
-
     }
+
+    public static  function findImageList($video_id){
+        $image = VideoListImage::find()->select('imageurl')->where("video_id =$video_id")->asArray()->all();
+        return  $image ?array_column($image ,'imageurl'):[];
+    }
+
 
 
     // 获取关键词
