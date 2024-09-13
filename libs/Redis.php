@@ -14,8 +14,8 @@ class Redis
     //设置redis
     public static  function set($sessionStr='',$string,$time=0)
     {
-        //redis默认有效时间为24小时
-        $time =$time?$time:3600*24;
+        //redis默认有效时间为12小时
+        $time =$time?$time:3600*12;
         $redis =Yii::$app->redis;
         $session_value = $redis->get($sessionStr);
         //查看是否存在

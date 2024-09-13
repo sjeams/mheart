@@ -51,6 +51,7 @@ class VideoList extends ActiveRecord {
             if($res){
                 //取本地 缓存
                 $list = VideoList::sessionKeyVideo($sessionkey);
+                Redis::set($sessionkey,json_encode($list,true));
             }else{
                 //缓存没有数据,进入采集
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
