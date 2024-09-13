@@ -51,7 +51,6 @@ class VideoList extends ActiveRecord {
             if($res){
                 //取本地 缓存
                 $list = VideoList::sessionKeyVideo($sessionkey);
-                Redis::set($sessionkey,json_encode($list,true));
             }else{
                 //缓存没有数据,进入采集
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
@@ -65,8 +64,6 @@ class VideoList extends ActiveRecord {
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
-                    //存入reids--将结果存入redis
-                    Redis::set($sessionkey,json_encode($list,true));
                     $args['key_value'] =$sessionkey;
                     // $args['value'] = json_encode($list,true);
                     // $args['time'] =time();
@@ -80,6 +77,10 @@ class VideoList extends ActiveRecord {
                     //快速自动采集，不录入缓存，大容量储存会加大消耗
                     VideoList::insertVideoList($args,$list);
                 }
+            }
+            //存入reids--将结果存入redis
+            if($get_cache){
+                Redis::set($sessionkey,json_encode($list,true));
             }
         }
         // 动态数据验证--返回显示页码的状态
