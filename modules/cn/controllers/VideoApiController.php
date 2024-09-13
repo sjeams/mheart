@@ -229,25 +229,30 @@ class VideoApiController extends VideoApiControl
         $belong = Yii::$app->request->post('belong',1);
         $type = Yii::$app->request->post('type',33);
         $istype = Yii::$app->request->post('istype',1); // 是否只清除当前类型
-        //直接清除缓存了
-        // session_destroy();
-        VideoList::clearSession($istype,$belong,$type);
-        if($belong>0){
-            // $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
-            $list =Video::getQueryUrl(1,$belong,$type);
-            //默认第一页有效地址
-            try {
-                //请求访问url
-                // var_dump($list['http'].$list['url']);
-                $httpurl =$list['http'].$list['url'];
-                QueryList::get($httpurl)->getHtml();
-                // $is_show =true;
-                CategoryName::updateAll(['status' => 1], "belong = $belong");
-                die(Method::jsonGenerate(1,null,'succes'));
-            } catch (\Exception $e) {
-                // $is_show =false;
-                CategoryName::updateAll(['status' => 0], "belong = $belong");
-                die(Method::jsonGenerate(0,null,'error'));
+        if($istype==2){            
+            //直接清除缓存了
+            // session_destroy();
+            VideoList::clearSessionAll(); //清空所有缓存
+            die(Method::jsonGenerate(1,null,'succes'));
+        }else{
+            VideoList::clearSession($istype,$belong,$type);
+            if($belong>0){
+                // $listvideo = Video::getQueryListModel(1,$belong,1,$type); // 获取采集数据
+                $list =Video::getQueryUrl(1,$belong,$type);
+                //默认第一页有效地址
+                try {
+                    //请求访问url
+                    // var_dump($list['http'].$list['url']);
+                    $httpurl =$list['http'].$list['url'];
+                    QueryList::get($httpurl)->getHtml();
+                    // $is_show =true;
+                    CategoryName::updateAll(['status' => 1], "belong = $belong");
+                    die(Method::jsonGenerate(1,null,'succes'));
+                } catch (\Exception $e) {
+                    // $is_show =false;
+                    CategoryName::updateAll(['status' => 0], "belong = $belong");
+                    die(Method::jsonGenerate(0,null,'error'));
+                }
             }
         }
     }

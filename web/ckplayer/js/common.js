@@ -420,9 +420,13 @@ $(document).ajaxStop(function( ) {
         // var html = getprintHtml(url);
         // if(html){ $('.header_content').html(html);}
     }
-
-
-    function window_Reload(){
+    
+    function window_clear(){
+    //    window.location.reload()
+        //清空所有缓存
+        clearSession(2)
+    }
+    function window_reload(){
     //    window.location.reload()
        window.location.href='/cn/video/list';
     }

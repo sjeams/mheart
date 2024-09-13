@@ -245,6 +245,17 @@ class VideoList extends ActiveRecord {
         }
         VideoList::deleteAll(" $sql "); 
     }
+    //清除belong>0
+    public static function  clearSessionAll(){
+        //清除redis 缓存
+        Redis::clear(); 
+        //更新type总数
+        Category::updateCategoryCount();
+        VideoList::deleteAll();
+        VideoListText::deleteAll();
+        VideoListMediuText::deleteAll();
+    }
+
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){
         $res = VideoList::find()->select('id,count,belong')->where(" key_value ='$sessionkey' ")->One();

@@ -109,6 +109,7 @@ video{
      display: none;
      z-index: 101;
      height: 0%;
+     border-radius: 5px;
  }
 .tablestyle{
     margin-bottom: auto;
@@ -152,9 +153,10 @@ video{
  }
 .list-item-style{
     line-height:unset;
-    min-width: 240px;
+    min-width: 200px;
     float: right;
     clear: both;
+    margin: -1px 0px;
 } 
 
 
