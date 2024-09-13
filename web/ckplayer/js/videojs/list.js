@@ -281,9 +281,9 @@
     function is_last_button(){
         var is_last_page = $("#goPage_list").val()
         if(is_last_page>1){
-          var is_last_page_html ='<span  class="btn btn-primary" onclick="prevPage()">上一页</span>'
+          var is_last_page_html ='<span  class="btn btn-primary m-1" onclick="prevPage()">上一页</span>'
         }else{
-            var is_last_page_html = '<span  class="btn btn-defult"  >上一页</span>  '
+            var is_last_page_html = '<span  class="btn btn-defult m-1"  >上一页</span>  '
         }
         $('.is_last_page_button').html(is_last_page_html)
     }
@@ -291,9 +291,9 @@
     function is_next_button(){
         var is_next_page = $("#page_isnext").val()
         if(is_next_page){
-          var is_next_page_html ='<span  class="btn btn-primary" onclick="nextPage()">下一页</span>'
+          var is_next_page_html ='<span  class="btn btn-primary m-1" onclick="nextPage()">下一页</span>'
         }else{
-            var is_next_page_html = '<span  class="btn btn-defult"  >下一页</span>  '
+            var is_next_page_html = '<span  class="btn btn-defult m-1"  >下一页</span>  '
         }
         $('.is_next_page_button').html(is_next_page_html)
     }

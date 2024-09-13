@@ -238,10 +238,10 @@ function getprintHtml_friend_detail(html,chat_belong){
 }
 //video_pic 页面回调--全屏模式
 function getprintHtml_video_pic(html,goPage){
-    if(html){
-        $('.pic_html').html(list_html)
-    }
     removeLoading()
+    if(html){
+        $('.pic_html').html(html)
+    }
 }
 //content_append 页面回调--全屏模式
 function getprintHtml_content_append_full_model(html,goPage){

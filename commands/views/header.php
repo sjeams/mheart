@@ -56,7 +56,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                 <?php }else if( $http_index=='pic'){ ?>
                     
                 <?php }else { ?>    
-                    <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name"  onclick="video_list()">采集√</a></td>
+                    <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name"  onclick="video_list()">采集</a></td>
                         <?php if($userlogin['graden']>0) {?>
                             <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" onclick="my_like()">极品</a></td>
                         <?php }else{?>
@@ -74,20 +74,20 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
         </tr>
     </table>
     <ul class="list-group text-center menu_list">
-        <li class="list-group-item list-item-style btn-defult" onclick="my_chat()"> 聊天</li>
+        <li class="list-group-item list-item-style  btn-defult" onclick="my_chat()"> 聊天</li>
         <?php if($userlogin['graden']>0) {?>
-            <li class="list-group-item list-item-style btn-defult" onclick="my_collect()"> 收录</li>
-            <li class="list-group-item list-item-style btn-defult" onclick="my_like()"> 极品</li>
-            <li class="list-group-item list-item-style btn-defult" onclick="my_video()"> 收藏</li>
-            <li class="list-group-item list-item-style btn-defult" onclick="old_content()"> 旧的</li>
-            <li class="list-group-item list-item-style btn-defult" onclick="window_clear()">Clear</li>
+            <li class="list-group-item list-item-style  btn-defult" onclick="my_collect()"> 收录</li>
+            <li class="list-group-item list-item-style  btn-defult" onclick="my_like()"> 极品</li>
+            <li class="list-group-item list-item-style  btn-defult" onclick="my_video()"> 收藏</li>
+            <li class="list-group-item list-item-style  btn-defult" onclick="old_content()"> 旧的</li>
+            <li class="list-group-item list-item-style  btn-defult" onclick="window_clear()">Clear</li>
             <!-- <?php   if( explode('?',$_SERVER["REQUEST_URI"])[0]=='/cn/video/list'){ ?><?php }?> -->
-            <li class="list-group-item list-item-style  cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
+            <li class="list-group-item list-item-style   cache_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_cache']?'btn-success':'btn-defult' ?>" onclick="isCache()"> <?php echo $userlogin['is_cache']?'缓存√':'缓存×' ?></li>
         <?php } ?>
-        <li class="list-group-item list-item-style  bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'Ckplay':'Dplay' ?></li>
-        <li class="list-group-item list-item-style  model_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']?'btn-success':'btn-defult' ?>" onclick="vidoeModel()"> <?php echo $userlogin['video_model']?'窗口√':'列表×' ?></li>
-        <li class="list-group-item list-item-style btn-defult" onclick="window_reload()">rload</li>
-        <li class="list-group-item list-item-style btn-defult" onclick="loginOuts()">退出</li>
+        <li class="list-group-item list-item-style   bofang_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang']?'btn-success':'btn-defult' ?>" onclick="isBofang()"> <?php echo $userlogin['is_bofang']?'Ckplay':'Dplay' ?></li>
+        <li class="list-group-item list-item-style   model_name  <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']?'btn-success':'btn-defult' ?>" onclick="vidoeModel()"> <?php echo $userlogin['video_model']?'窗口√':'列表×' ?></li>
+        <li class="list-group-item list-item-style  btn-defult" onclick="window_reload()">rload</li>
+        <li class="list-group-item list-item-style  btn-defult" onclick="loginOuts()">退出</li>
     </ul>
 </div>
 

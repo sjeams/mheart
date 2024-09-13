@@ -17,7 +17,10 @@ class Category extends ActiveRecord {
         $data = Category:: getBelongList($belong,$type);
         $list = $data['list'];
         $type = $data['type'];
-        $str ="<input type='hidden' value='0' name='goType' id='goType'/>";
+
+
+  
+        $str ="        <script type='text/html' > <input type='hidden' value='0' name='goType' id='goType'/>";
         if($list){
             // $typeArray= array_column($list,'type');
             // if(!$type||!in_array($type,$typeArray)){
@@ -33,17 +36,17 @@ class Category extends ActiveRecord {
                     }
                     $value =$v['type'];
                     if($v['type']==$type){
-                        $str .=  "<a class='btn btn-sm m-1  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                        $str .=  "<a class='btn btn-sm m-1 m-1  active btn-primary' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                     }else{
                         //图片
                         if($v['category_id']==2){
-                            $str .=  "<a class='btn btn-sm m-1 btn-warning' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm m-1 m-1 btn-warning' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }else{
-                            $str .=  "<a class='btn btn-sm m-1 ' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
+                            $str .=  "<a class='btn btn-sm m-1 m-1 ' value='$value' id='type$value' onclick='typeChange($value)' href='javascript:;'>$name</a>";
                         }
                     }
                 }
-                $str .='  </p>';
+                $str .='  </p>       </script >';
         }
         return $str;
     }

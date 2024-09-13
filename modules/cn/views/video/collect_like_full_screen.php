@@ -18,6 +18,7 @@
         display: block;
         float:left;
         color: white;
+        text-shadow: 2px 2px 2px #000000;
     }
 .video_title {
     overflow: hidden;
@@ -25,6 +26,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     display: block;
+    text-shadow: 2px 2px 2px #000000;
 }
 .video_footer{
   height: 30px!important;
@@ -62,7 +64,7 @@
 
 <div class="swiper friend_opacityBottom">
 <p class="center  inherit " onclick="full_out()" id="full_out"> 
-<span class="video_back"> <</span>
+<span class="video_back"> <i class="bi bi-chevron-left"></i> </span>
 <span class="video_title"></span>
 </p>
     <div class="swiper-wrapper">

@@ -95,7 +95,7 @@ video{
      margin:0px auto;
      left:0; 
      right:0; 
-     top:40px;
+     top:30px;
      z-index: 1;
  }
  .menu_list{
@@ -153,13 +153,14 @@ video{
  }
 .list-item-style{
     line-height:unset;
-    min-width: 200px;
+    min-width: 160px;
     float: right;
     clear: both;
     margin: -1px 0px;
+    /* color: white; */
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #adadad;
 } 
-
-
 
 
   /*  footer ______________________ */
@@ -234,7 +235,7 @@ video{
     /* text-align: center; */
     position: fixed;
     left: 0px;
-    top: 60px;
+    top: 40px;
     right: 0px;
     }
     #LAY_layuipro_kwords{

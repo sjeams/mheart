@@ -15,24 +15,20 @@
   }
   .video_back{
         width: 40px!important;
+        font-size: 20px;
+        line-height: 40px;
         display: block;
         float:left;
         color: white;
+        text-shadow: 2px 2px 2px #000000;
     }
-/* .video_title {
-    overflow: hidden;
-    word-break: keep-all;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: block;
-} */
-.video_footer{
-  display: none!important;
-}
-.video_footer{
-  height: 30px!important;
-  display: none!important;
-}
+  .video_footer{
+    display: none!important;
+  }
+  .video_footer{
+    height: 30px!important;
+    display: none!important;
+  }
 </style>
 <style>
   /* 分页样式 */
@@ -63,8 +59,11 @@
     top:0px!important;
     text-align: center;
     width: 100%;
-    color:wheat;
-    font-size: large;
+    color:white;
+    /* font-size: large; */
+    font-size: 20px;
+    line-height: 40px;
+    text-shadow: 2px 2px 2px #000000;
   }
 </style>
 <div class="friend_opacityBottom list_hidden page_item">
@@ -74,7 +73,7 @@
     <!-- btn-primary -->
     <div class="swiper friend_opacityBottom">
         <p class="center  inherit " onclick="clearPic()"  > 
-        <span class="video_back"> <</span>
+        <span class="video_back"> <i class="bi bi-chevron-left"></i> </span>
         <!-- <span class="video_title"></span> -->
         </p>
           <div class="swiper-wrapper">

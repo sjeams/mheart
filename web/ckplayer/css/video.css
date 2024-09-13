@@ -101,9 +101,10 @@ body {
 	display: block!important;
 }
 /* .btn {width:28%!important;margin: 5px;max-width: 120px;} */
-.btn { width: 
+.btn { min-width: 
 	110px!important;
-	margin: 2px;}
+	margin: 2px;
+}
 /* .btn { width:28%!important;margin: 2%; } */
 .btn-primary{
 	cursor: pointer;
@@ -145,6 +146,7 @@ input{
 	-webkit-box-orient: vertical;
 	display: block;
 	float: left;
+	text-shadow: 2px 2px 2px #000000;
 }
 
 /* 搜索 */
@@ -163,8 +165,8 @@ input{
     /* width:80px; */
 }
 .btn_style{
-	width: 28%!important;
-	margin: 2%;
+	width: 110px!important;
+	margin: 2px;
 	text-align: center;
    
 }
@@ -209,7 +211,10 @@ input{
 .search_button{
 	height: 40px!important;
 }
-.btn_link{margin: 5px;}
+.btn_link{
+	margin: 5px;
+    text-shadow: 1px 1px 1px #adadad;
+}
 /* //index */
 	
    .check{
