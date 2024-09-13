@@ -56,10 +56,11 @@ class VideoList extends ActiveRecord {
                 $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
                 if($belong&&$category_name->status==0){
                     //本地采集--本地数据库直查--跳过采集
-                    $list= VideoList::delfutData($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);
+                    $list= VideoList::delfutData($belong,$type,$page,$search,$page_list);
                     $issearch =1;//本地可以搜索
                 }else{
-                    $list= VideoList::queryVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache);   
+                    //采集接口
+                    $list= VideoList::queryVideoList($belong,$type,$page,$search,$page_list);
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
@@ -109,7 +110,7 @@ class VideoList extends ActiveRecord {
         }
         return  $videoData ;
     }
-    public Static function queryVideoList($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache=0){
+    public Static function queryVideoList($belong,$type,$page,$search,$page_list){
         $list=[];
         //采集逻辑
         if($belong==0){
@@ -134,7 +135,7 @@ class VideoList extends ActiveRecord {
     }
 
     //链接失效，本地直查数据
-    public Static function delfutData($sessionkey,$belong,$type,$page,$search,$page_list,$graden,$userid,$get_cache){
+    public Static function delfutData($belong,$type,$page,$search,$page_list){
         //查询现有的
         $where =" 1=1 ";
         if($belong){
@@ -246,7 +247,8 @@ class VideoList extends ActiveRecord {
     }
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){
-        $res = VideoList::find()->select('id,count')->where(" key_value ='$sessionkey' ")->one();
+        $res = VideoList::find()->select('id,count,belong')->where(" key_value ='$sessionkey' ")->One();
+
         $list =[];
         if($res){
             //没有视频数量，就不用去取列表了

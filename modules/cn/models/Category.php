@@ -26,10 +26,10 @@ class Category extends ActiveRecord {
                 $str ="<input type='hidden' value='$type' name='goType' id='goType'/>";
                 $str .='<p class="center" id="listType" >'; 
                 foreach($list as $v){
-                    $name ='<span class="responsive-text">'.$v['name'].'</span>';
+                    $name ='<span class="fs-10">'.$v['name'].'</span>';
                     //加上总数标签
                     if($v['total']){
-                        $name .= '<span class="badge badge-success">'.$v['total'].'</span>';
+                        $name .= '<span class="badge badge-success fs-8">'.$v['total'].'</span>';
                     }
                     $value =$v['type'];
                     if($v['type']==$type){
