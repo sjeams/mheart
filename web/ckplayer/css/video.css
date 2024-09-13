@@ -213,7 +213,8 @@ input{
 }
 .btn_link{
 	margin: 5px;
-    text-shadow: 1px 1px 1px #adadad;
+    /* text-shadow: 1px 1px 1px #000000; */
+	font-weight: bold;
 }
 /* //index */
 	

@@ -53,7 +53,8 @@ class VideoList extends ActiveRecord {
                 $list = VideoList::sessionKeyVideo($sessionkey);
             }else{
                 //缓存没有数据,进入采集
-                $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
+                // $category_name = CategoryName::find()->select('status')->where("belong =$belong " )->one();
+                $category_name = CategoryName::findOne(['belong'=>$belong]);
                 if($belong&&$category_name->status==0){
                     //本地采集--本地数据库直查--跳过采集
                     $list= VideoList::delfutData($belong,$type,$page,$search,$page_list,$category_id);

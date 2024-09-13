@@ -59,6 +59,7 @@
 <script>
     //全屏模式
     function full_screen(){
+        $('#content_append').html("");
         //初始化
         $("#swiper_type").val(0)
         $("#swiper_page").val(0)

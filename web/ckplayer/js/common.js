@@ -265,13 +265,27 @@ function getprintHtml_content_append_full_model(html,goPage){
 }
 //content_append 页面回调
 function getprintHtml_content_append(html,goPage){
-    $("#goPage").val(goPage);
-    $('#content_append').append(html);
-    // 滚动监听页面数量回填
-    var  total_count =  $('.return_count').eq(0).val();
-    $('#total_count').html(total_count)
-    $("#goPageCount").val(total_count)
-    removeLoading()
+    if(html){
+        $("#goPage").val(goPage);
+        $('#content_append').append(html);
+        // 滚动监听页面数量回填
+        var  total_count =  $('.return_count').eq(0).val();
+        $('#total_count').html(total_count)
+        $("#goPageCount").val(total_count)
+        removeLoading()
+    }else{
+        full_out()
+    }
+}
+
+//退出全屏
+function full_out(){
+    $("#full_model").val(0);
+    $(".video_header").css("display","block");
+    $(".video_footer").css("display","block");
+    $('.go_hidden').removeClass('hiddened');
+    $('#content_append').html("");
+    static_gou();
 }
 //ajax 请求前添加加载状态
 $(document).ajaxStart(function( ) {
