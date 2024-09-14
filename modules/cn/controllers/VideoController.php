@@ -313,12 +313,12 @@ class VideoController extends VideoApiControl
         if($title){
             $where .= " and a.title like '%$title%'";
         } 
-        // $count= (new \yii\db\Query())
-        // ->select("count(1) as num")
-        // ->from("x2_video_list_collect as c")
-        // ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
-        // ->where($where)->one('sign')['num'];
-        $count = VideoListCollect::find()->where("$where")->count();
+        $count= (new \yii\db\Query())
+        ->select("count(1) as num")
+        ->from("x2_video_list_collect as c")
+        ->innerJoin('x2_video_list_detail as a', 'c.video_id = a.id ')
+        ->where($where)->one('sign')['num'];
+        // $count = VideoListCollect::find()->where("$where")->count();
  
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $where .=" and user_id = ".$this->user['id'];
@@ -385,9 +385,9 @@ class VideoController extends VideoApiControl
         $pageStr = new Pagination(['totalCount'=>$count,'pageSize'=>10]);
         $limit = " limit ".($pageStr->offset)*$pageStr->limit.",$pageStr->limit";
         //搜索加快查询，不排序了
-        if(!$title){
+        // if(!$title){
             $where.=' order by id desc ' ;
-        } 
+        // } 
         $where.= $limit;
         $user_id =$this->user['id'];
         
