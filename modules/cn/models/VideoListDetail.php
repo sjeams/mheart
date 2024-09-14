@@ -47,7 +47,7 @@ class VideoListDetail extends ActiveRecord {
                 //     $update_list[] = $find_id;
                 //     $val_type = $val['type'];
                 // }
-                $find_video['image_list'] =  VideoList::findImageList($find_video['id']);
+                $find_video['image_list'] =  VideoListImage::findImageList($find_video['id']);
                 $video_list [] =$find_video;
             }else{
                 //单条数据采集

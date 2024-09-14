@@ -165,15 +165,11 @@ class VideoList extends ActiveRecord {
         if($category_id==2){
             foreach($list as &$v)
             $video_id =$v['id'];
-            $v['image_list'] =  VideoList::findImageList($video_id);
+            $v['image_list'] =  VideoListImage::findImageList($video_id);
         }
         return $list;
     }
 
-    public static  function findImageList($video_id){
-        $image = VideoListImage::find()->select('imageurl')->where("video_id =$video_id")->asArray()->all();
-        return  $image ?array_column($image ,'imageurl'):[];
-    }
 
 
 

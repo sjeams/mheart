@@ -445,24 +445,7 @@ class Video extends ActiveRecord {
 			$args['belong']= $belong;
 			$args['link']= $link;
 			// 写入图片
-			$where =" link='$link' and belong = '$belong'   and type = '$type' ";
-			$res =VideoListDetail::find()->where($where)->asarray()->One();
-			if(!$res){
-				//视频不存在，写入
-			// Yii::$app->signdb->createCommand()->insert('x2_video_list_detail', $args)->execute();
-				Video::insertVideo($args);
-				$args['id']=Yii::$app->signdb->getLastInsertID();
-				$insertVideo = [];
-				foreach($image_list as $key=> $v){
-					$insertVideo[$key] =array('video_id'=>$args['id'], 'imageurl'=>$v);
-				}	
-				$new_key = array_keys($insertVideo[0]);
-				// $new_key =['video_id','image'];
-				//批量擦汗如到图片表
-				Video::batchInsertVideo('x2_video_list_image',$new_key,$insertVideo);
-				//返回数据中 ，加入list
-				$args['image_list'] =$image_list; //图片多加个图片列表
-			}
+			VideoListImage::insertImageList($args,$image_list);
 			return $args;
 		}else{
 			return null;
