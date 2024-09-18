@@ -164,9 +164,10 @@ class VideoList extends ActiveRecord {
         // $list = Yii::$app->signdb->createCommand($sql)->queryAll();
         //图片处理
         if($category_id==2){
-            foreach($list as &$v)
-            $video_id =$v['id'];
-            $v['image_list'] =  VideoListImage::findImageList($video_id);
+            foreach($list as &$v){
+                $video_id =$v['id'];
+                $v['image_list'] =  VideoListImage::findImageList($video_id);
+            }
         }
         return $list;
     }
