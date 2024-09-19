@@ -1,31 +1,8 @@
-<div id="home_vue" class="d-flex align-content-start flex-wrap">
-    <div class="card  col-md-6 mb-2 d-inline-block shadow p-2  bg-white rounded ">
-        <div   style="background-image: url('https://img.ukuapi.com/upload/vod/20220718-1/b12b8a33d054606dc8dc3ba21ab87e74.jpg');"  class="card-img-top collect-video-style rounded card-header" alt="...">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card  col-md-6 mb-2 d-inline-block shadow p-2  bg-white rounded ">
-        <div   style="background-image: url('https://img.ukuapi.com/upload/vod/20220718-1/b12b8a33d054606dc8dc3ba21ab87e74.jpg');"  class="card-img-top collect-video-style rounded card-header" alt="...">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card  col-md-6 mb-2 d-inline-block shadow p-2  bg-white rounded ">
-        <div   style="background-image: url('https://img.ukuapi.com/upload/vod/20220718-1/b12b8a33d054606dc8dc3ba21ab87e74.jpg');"  class="card-img-top collect-video-style rounded card-header" alt="...">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card  col-md-6 mb-2 d-inline-block shadow p-2  bg-white rounded ">
-        <div src="..."   class="card-img-top collect-video-style rounded card-header" alt="...">        </div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
+<div id="home_vue">
+    <h2 v-color="color" style="border: 1px solid;"> 按钮</h2>
+    <h1>{{count}}</h1>
+    <button @click="add">增加</button>
+    <button @click="remove">删除</button>
 </div>
 <script>
     //全局变量

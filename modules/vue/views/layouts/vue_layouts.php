@@ -7,31 +7,46 @@
     <meta name="description" content="在线视频">
     <meta name="keywords" content="在线视频">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>在线视频</title>
-    <!-- Le styles -->
-
-    <link href="/backStage/css/coreCss/layoutit.css" rel="stylesheet">
-    <link href="/backStage/css/coreCss/plugin.css" rel="stylesheet">
-    <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
+    <title>测试</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
     <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
     <!-- 编辑器公式插件 -->
     <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
-
+    <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+    <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
     <!-- vue 组件 -->
     <script  type="text/javascript" src="/vue/vue.js"></script>
 </head>
-
-
 <body>
-<div class="container-fluid">
+<?php use app\commands\HeaderWidget;?>
+<?php HeaderWidget::begin();?>
+<?php HeaderWidget::end();?> 
+<div class="container">
+    <!-- 视频窗口 -->
+    <?php use app\commands\VideoWidget;?>
+    <?php VideoWidget::begin();?>
+    <?php VideoWidget::end();?> 
+    <!-- 内容 -->
+    <div class="header_content"> 
     <?= $content ?>
+    </div>
+    <!-- 备案 -->
+    <?php use app\commands\BeiAnWidget;?>
+    <?php BeiAnWidget::begin();?>
+    <?php BeiAnWidget::end();?> 
 </div>
+</div>
+<!-- 底部 -->
+<?php use app\commands\FooterWidget;?>
+<?php FooterWidget::begin();?>
+<?php FooterWidget::end();?> 
 </body>
 </html>
 
