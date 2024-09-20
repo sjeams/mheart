@@ -17,9 +17,6 @@ class Category extends ActiveRecord {
         $data = Category:: getBelongList($belong,$type);
         $list = $data['list'];
         $type = $data['type'];
-
-
-  
         $str ="        <script type='text/html' > <input type='hidden' value='0' name='goType' id='goType'/>";
         if($list){
             // $typeArray= array_column($list,'type');

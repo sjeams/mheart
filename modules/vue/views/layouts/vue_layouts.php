@@ -19,6 +19,9 @@
     <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/defaultFilterFix.js"></script> -->
+    <!-- layui弹窗 -->
+    <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
+    <script src="/layui-v2.6.8/layui/layui.js"></script>
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
     <!-- vue 组件 -->
@@ -49,4 +52,6 @@
 <?php FooterWidget::end();?> 
 </body>
 </html>
+
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
 
