@@ -456,6 +456,11 @@ $(document).ajaxStop(function( ) {
         //清空所有缓存
         clearSession(2)
     }
+    
+    function window_Vue(){
+    //    window.location.reload()
+        window.location.href='/vue/home/index';
+    }
     function window_reload(){
     //    window.location.reload()
        window.location.href='/cn/video/list';
