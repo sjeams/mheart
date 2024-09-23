@@ -94,14 +94,17 @@ class Category extends ActiveRecord {
 		return $category?$category->category_id:0;
 
 	}
-
+    //分页统计
     public static function updateCategoryCount()
     {
-        $list = Category::find()->select('id')->where("belong!=0")->asArray()->all();
+        $list = Category::find()->select('id')->where("belong!=0 and belong !=6")->asArray()->all();
+        $categoryCount = CategoryName::find()->select('count')->asArray()->all();
+        $categoryCount =  array_column($categoryCount,'count');
         foreach($list as $v){
             $cls = Category::findOne($v['id']);
             $count = VideoListDetail::find()->where("belong = $cls->belong and type = $cls->type")->count();
-            $cls->total =$count;
+            $page = intval($categoryCount[$cls->belong]);
+            $cls->total = $page>0?ceil($count/$page):0;
             $cls->save();
         }
     }
