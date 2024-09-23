@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
     <!-- vue 组件 -->
     <script  type="text/javascript" src="/vue/vue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
 </head>
 <body>
 <?php use app\commands\HeaderWidget;?>
@@ -53,5 +54,5 @@
 </body>
 </html>
 
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
+
 

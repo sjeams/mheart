@@ -130,7 +130,6 @@
             clearRload(){
                 this.$nextTick(()=>{
                     fetchData()
-                    // scllTop()
                 })
             },
             prevPage(){
@@ -233,6 +232,7 @@
                     videoVue.$data.data = param
                     videoVue.$data.param= param.data
                     videoVue.$data.is_disabled = data.graden>0?true:false
+                    scllTop()
                 }else{
                    layOpen()
                 }
