@@ -676,6 +676,11 @@ $(document).ajaxStop(function( ) {
 //获取文件数量
 function downloadUrl(id){
     var url = $("#form"+id+"  input[name=url]").val();
+    var fileName = $("#form"+id+"  input[name=title]").val();
+    downloadUrlMethod(id,url,fileName)
+}
+
+function downloadUrlMethod(id,url,fileName){
     var domain_url =  getDomain(url)     //截取域名
     fetch(url).then(response => response.text()).then(data => {  
         // 解析 m3u8 文件，获取所有的 ts 视频链接  
@@ -689,19 +694,17 @@ function downloadUrl(id){
                 fetch(new_url).then(response => response.text()).then(data => {   
                     var urls = parseM3u8Urls(data);  
                     if(urls.length!=0){
-                        layerOpen(id,urls.length);
+                        layerOpen(id,url,fileName,urls.length);
                     }
                 })
             }
         }else{
-            layerOpen(id,urls.length);
+            layerOpen(id,url,fileName,urls.length);
         }
     });    
-
 }
-function layerOpen(id,flie_length){
-    var url = $("#form"+id+"  input[name=url]").val();
-    var fileName = $("#form"+id+"  input[name=title]").val();
+
+function layerOpen(id,url,fileName,flie_length){
     var fileType = '.m3u8'
     var fileTips =fileName+fileType
     // var fileTips =''

@@ -65,6 +65,12 @@ class VideoList extends ActiveRecord {
                 }
                 //本地浏览，写入缓存
                 if($get_cache){
+                    //替换标题
+                    if($search){
+                        foreach($list as &$v){
+                            $v['title'] = VideoList::replaceTitle($search,$v['title']);
+                        }
+                    }
                     $args['key_value'] =$sessionkey;
                     // $args['value'] = json_encode($list,true);
                     // $args['time'] =time();
@@ -103,7 +109,7 @@ class VideoList extends ActiveRecord {
             $isnext = VideoList::getIsNext($belong,$type,$count); // 获取采集数据
             $categoryBelong = Category::getBelong($belong,$type);
             // 采集查询-标题-是否收藏
-            if($belong!=0){ // 影视不进入
+            if($belong!=0){ // 影视不进入 
                 $list=  Video::isCollect($list,$userid);
             }
             $videoData =['isnext'=>$isnext,'data'=>$data ,'graden'=>$graden,'content'=>$list,'category'=>$category,'sessionkey'=>$sessionkey,'categoryBelong'=>$categoryBelong];
@@ -172,8 +178,9 @@ class VideoList extends ActiveRecord {
         return $list;
     }
 
-
-
+    public static function replaceTitle($search,$title){
+        return   $search ?str_replace($search,"<span class='red'> $search </span> ",$title):$title;
+    }
 
     // 获取关键词
     public static function getKeyWords($belong){
