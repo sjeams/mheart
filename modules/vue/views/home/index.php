@@ -24,8 +24,8 @@
         </p>
     </div>
     <!-- belong  -->
-    <div class="layui-input-inline center"  >
-        <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'active btn-success':'btn-success']" :value="item.belong" id="'belong'+[item.belong]" @click="belongChangeVue(item.belong)" href="javascript:;">
+    <div class="layui-input-inline center  pt-2"  >
+        <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'active btn-success':'btn-success']" :value="item.belong"  @click="belongChangeVue(item.belong)" href="javascript:;">
             {{item.name}}
             <span class="badge badge-danger" >{{item.status==1?'':'n'}}</span> 
         </a>
