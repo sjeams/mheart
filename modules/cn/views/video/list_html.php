@@ -51,30 +51,30 @@
                                 <?php echo $categoryBelong ?>
                         </div>
                         <div class="layui-input-inline center">
-                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" readonly="readonly" class="center form-control   m-1" style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
+                            <input type="<?php echo $data['issearch']==1?'text':'hidden'; ?>" readonly="readonly" class="center form-control   " style="display:inline-block"   placeholder="Search"  value="<?php echo $data['search'] ?>" id="goSearch">
                         </div>
                         <div class="layui-input-inline center">
                             <span class="is_last_page_button"></span>
-                            <input type="text" class="btn_style  m-1"   value="<?php echo $data['page_list'] ?>" <?php echo $graden>0?'':'disabled' ?> id="goPage_list">
+                            <input type="text" class="btn_style  "   value="<?php echo $data['page_list'] ?>" <?php echo $graden>0?'':'disabled' ?> id="goPage_list">
                             <span class="is_next_page_button"></span>
                         </div>
                         <?php if($graden>0){ ?>
                             <div class="layui-input-inline center">
                                 <p class="center">
                                     <input type="hidden" value="<?php echo $data['page']?>"  placeholder="page"  id="goPage">
-                                    <span  class="btn btn-primary  m-1" onclick="gou()"> GO  </span>
-                                    <span  class="btn btn-primary btn_style  m-1" onclick="clearSession(0)"> 更新 </span>
-                                    <span  class="btn btn-primary  m-1" onclick="clearSession(1)"> 刷新 </span>
+                                    <span  class="btn btn-primary  " onclick="gou()"> GO  </span>
+                                    <span  class="btn btn-primary btn_style  " onclick="clearSession(0)"> 更新 </span>
+                                    <span  class="btn btn-primary  " onclick="clearSession(1)"> 刷新 </span>
                                 </p>
                             </div>
                             <div class="layui-input-inline center">
                                 <p class="center">
                                     <!-- <span  class="btn btn-primary" onclick="gouSuper()"> 极品 </span> -->
                                     <!-- //自动缓存，请不要操作 -->
-                                    <span  class="btn btn-primary startCache  m-1" style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
-                                    <span  class="btn btn-danger endCache  m-1" style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
-                                    <input type="text" value="5" class="btn_style m-1"  placeholder="setCaches"  id="setCaches" >
-                                    <span  class="btn btn-primary  m-1" onclick="gouCache()"> 手动缓存 </span>
+                                    <span  class="btn btn-primary startCache  " style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
+                                    <span  class="btn btn-danger endCache  " style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
+                                    <input type="text" value="5" class="btn_style "  placeholder="setCaches"  id="setCaches" >
+                                    <span  class="btn btn-primary  " onclick="gouCache()"> 手动缓存 </span>
                                 </p>
                             </div>
                         <?php } ?>

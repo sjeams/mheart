@@ -33,7 +33,7 @@
      <!-- type  -->
     <div class="layui-input-inline center" v-html="data.categoryBelong"></div>
     <div class="layui-input-inline center">
-        <input :type="[param.issearch==1?'text':'hidden']" readonly="readonly" class="center form-control" style="display:inline-block" placeholder="Search" v-model="param.search" id="goSearch">
+        <input :type="[param.issearch==1?'text':'hidden']" readonly="readonly" class="center form-control" style="display:inline-block" placeholder="Search" v-model="param.search"  @click="goSearchVue()">
     </div>
  
     <div class="layui-input-inline center">
@@ -46,7 +46,7 @@
     <p class="center" v-if="data.graden>0">
         <div class="layui-input-inline center">
             <p class="center">
-                <span  class="btn btn-primary " onclick="gou()"> GO  </span>
+                <span  class="btn btn-primary " @click="clearRload()"> GO  </span>
                 <span  class="btn btn-primary btn_style " @click="clearSessionVue(0)"> 更新 </span>
                 <span  class="btn btn-primary " @click="clearSessionVue(1)"> 刷新 </span>
             </p>
@@ -57,29 +57,29 @@
                 <!-- //自动缓存，请不要操作 -->
                 <span  class="btn btn-primary startCache " style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
                 <span  class="btn btn-danger endCache " style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
-                <input type="text" value="5" class="btn_style"  placeholder="setCaches"  id="setCaches" >
-                <span  class="btn btn-primary " onclick="gouCache()"> 手动缓存 </span>
+                <input type="text" v-model="setCaches" class="btn_style"  placeholder="setCaches"  >
+                <span  class="btn btn-primary " onclick="moreGetCaches()"> 手动缓存 </span>
             </p>
         </div>
     </p>
  
 <div class="d-flex align-content-start flex-wrap">
-    <div class="card  col-md-6 mb-1 d-inline-block shadow p-2  bg-white rounded " v-for="(item,index) in data.content" >
+    <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" >
 
         <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"   :style="{backgroundImage: 'url('+item.imageurl+')'}"  alt="...">
             <span  @click="videoList(item.id)"  class="video_box "></span>
         </div>  
-        <div class="p-2 ">
-            <p class="center"  @click="downloadUrl(index)"> 
-                <span ><b>{{index+1}}、</b></span> {{item.title}}
-                <i class="bi bi-download text-success">down</i>
-            </p>
-            <p class="layui-input-inline center pt-2"> 
-                <span @click="videoList(item.id)" class="btn btn-sm btn-primary  "> 重播 </span>
-                <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[ item.my_collect ==1?' btn-success':'btn-defult' ]"> 收藏</span>
-                <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
-            </p>
-        </div>
+
+        <p class="center p-1"  @click="downloadUrl(index)"> 
+            <b>{{index+1}}、</b><span v-html="item.title"></span>   
+            <i class="bi bi-download text-success">down</i>
+        </p>
+        <p class="layui-input-inline center pt-2"> 
+            <span @click="videoList(item.id)" class="btn btn-sm btn-primary  "> 重播 </span>
+            <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[ item.my_collect ==1?' btn-success':'btn-defult' ]"> 收藏</span>
+            <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
+        </p>
+    
 
     </div>
  
@@ -94,6 +94,8 @@
                 is_disabled:false,
                 data:[],
                 param:[],
+                is_cache:0,
+                setCaches:5,
             }
         },
         created() {
@@ -129,6 +131,7 @@
             },
             clearRload(){
                 this.$nextTick(()=>{
+                    //搜索条件不变
                     fetchData()
                 })
             },
@@ -141,83 +144,33 @@
                 this.clearRload()
             },
             clearSessionVue(istype){
-                var _this =this;
-                if(istype){
-                    var type_str ='清空type缓存？'; 
-                }else{
-                    var type_str ='清空belong缓存？';
-                }
-                layer.open({
-                    type: 1
-                    ,title: false //不显示标题栏
-                    ,closeBtn: false
-                    ,area: '300px;'
-                    ,shade: 0.8
-                    ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
-                    ,btn: ['确定', '取消']
-                    ,btnAlign: 'c'
-                    ,moveType: 1 //拖拽模式，0或者1
-                    ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
-                    ,success: function(layero){
-                        var btn = layero.find('.layui-layer-btn');
-                        btn.find('.layui-layer-btn0').click(function(){
-                            _this.clearModelVue(istype);
-                    });
-        
-                    }
-                })
+                clearSession(istype)
             },
-            // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
-            clearModelVue(istype){
-                addLoading()
-                var goBelong =videoVue.param.belong;
-                var goType =videoVue.param.type;;
-                var _this =this;
-                $.ajax({
-                    url: '/cn/video-api/clear-session', // 跳转到 action 
-                    type: 'post',
-                    dataType: 'json',
-                    data:{belong:goBelong,type:goType,istype:istype},
-                    success: function (data) {
-                        removeLoading()
-                        if(data.code==0){    
-                            // alert(data.message)
-                            layer.open({
-                                type: 1
-                                ,title: false //不显示标题栏
-                                ,closeBtn: false
-                                ,area: '300px;'
-                                ,shade: 0.8
-                                ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
-                                ,btn: ['确定']
-                                ,btnAlign: 'c'
-                                ,moveType: 1 //拖拽模式，0或者1
-                                ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
-                                ,success: function(layero){
-                                    // $("#belong_badge_show"+goBelong).text('n');
-                                    _this.clearRload()
-                                }
-                            })
-                        }else{
-                            _this.clearRload()
-                        }
-                    }
-                }); 
+            goSearchVue(){
+                goSearch()
             }
         },
         watch: {
         }
     })
+
+
+
+
     function belongChange(belong){
         videoVue.$data.param.belong = belong;
+        videoVue.$data.param.type = 0
+        videoVue.$data.param.search='' //搜索置为空
         // console.log(videoVue.$data.param.belong)
         fetchData()
     }
     //type
     function typeChange(type){
         videoVue.$data.param.type = type;
+        videoVue.$data.param.search=''  //搜索置为空
         // console.log(videoVue.$data.param.type)
         fetchData()
+
     }
     //请求数据
     function fetchData(){
@@ -230,7 +183,7 @@
                 if(data.code){
                     let param = data.data //返回的值
                     videoVue.$data.data = param
-                    videoVue.$data.param= param.data
+                    videoVue.$data.param = param.data
                     videoVue.$data.is_disabled = data.graden>0?true:false
                     scllTop()
                 }else{
@@ -257,5 +210,247 @@
             }
         })  
     }
+
+    function  clearSession(istype){
+            var _this =this;
+            if(istype){
+                var type_str ='清空type缓存？'; 
+            }else{
+                var type_str ='清空belong缓存？';
+            }
+            layer.open({
+                type: 1
+                ,title: false //不显示标题栏
+                ,closeBtn: false
+                ,area: '300px;'
+                ,shade: 0.8
+                ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
+                ,success: function(layero){
+                    var btn = layero.find('.layui-layer-btn');
+                    btn.find('.layui-layer-btn0').click(function(){
+                        clearModelVue(istype);
+                });
+    
+                }
+            })
+        }
+        // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
+        function   clearModelVue(istype){
+            addLoading()
+            var belong =  videoVue.$data.param.belong     
+            var type =  videoVue.$data.param.type  
+            var _this =this;
+            $.ajax({
+                url: '/cn/video-api/clear-session', // 跳转到 action 
+                type: 'post',
+                dataType: 'json',
+                data:{belong:belong,type:type,istype:istype},
+                success: function (data) {
+                    removeLoading()
+                    if(data.code==0){    
+                        // alert(data.message)
+                        layer.open({
+                            type: 1
+                            ,title: false //不显示标题栏
+                            ,closeBtn: false
+                            ,area: '300px;'
+                            ,shade: 0.8
+                            ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
+                            ,btn: ['确定']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
+                            ,success: function(layero){
+                                // $("#belong_badge_show"+goBelong).text('n');
+                                videoVue.clearRload()
+                            }
+                        })
+                    }else{
+                        videoVue.clearRload()
+                    }
+                }
+            }); 
+        }
+          function  goSearch(){
+                var goSearch =  videoVue.$data.param.search     
+                var belong =  videoVue.$data.param.belong  
+                $.ajax({
+                    url: '/cn/video-api/get-kwords', // 跳转到 action
+                    data:{
+                        belong: belong,
+                    },
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        // 关键词
+                        if(data.code==1){    
+                            var str =' <p> <input type="text" class="center form-control mr-sm-2"   placeholder="Search"  value="'+goSearch+'" id="search_text"></p><p class="pt-2"><span class="btn btn-primary  " onclick="layerReSerach()">重新采集</span><span class="btn btn-primary  " onclick="layerGoSearch()">搜索</span><span class="btn btn-primary  " onclick="cancelSerach()">取消</span></p> <div class="layui-btn-container">';
+                            $.each(data.data,function(index,value){
+                                str = str+'<span class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</span>';
+                            })
+                            var content  = str+'</div>';
+                            layer.open({
+                                type: 1
+                                ,title: false //不显示标题栏
+                                ,closeBtn: false
+                                ,area: ['100%','100%']
+                                // ,area: '300px;'// 由于样式会乱，所以设置一个小的背景
+                                ,shade: 0.8
+                                // ,shadeClose:false
+                                ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
+                                // ,btn: ['搜索', '取消']
+                                ,btnAlign: 'c'
+                                ,fixed:true //固定
+                                ,moveType: 1 //拖拽模式，0或者1
+                                ,content: ' <div class="center rotatable-element " >'+content+'</div>'
+                                ,success: function(layero){
+                                }
+                            })
+                        }else{
+                            removeLoading()
+                        }
+                    } 
+                }); 
+            }
+
+        //搜索弹窗按钮    
+        function cancelSerach(){
+            removeLoadingPage();//关闭弹窗page
+        }   
+
+        //重新搜索指定内容
+        function layerReSerach(){
+            addLoading()
+            var goSearch =  videoVue.$data.param.search     
+            var belong =  videoVue.$data.param.belong   
+            var type =  videoVue.$data.param.type    
+            $.ajax({
+                url: '/cn/video-api/clear-search', // 跳转到 action 
+                type: 'post',
+                dataType: 'json',
+                data:{search:goSearch,belong:belong,type:type},
+                success: function (data) {
+                    layerGoSearch()
+                },error:function(data){
+                    removeLoading()
+                }
+            }); 
+        }
+        //不能搜索空内容
+        function layerGoSearch(){
+            var goSearch   = $("#search_text").val();
+            videoVue.$data.param.search  =    goSearch
+            if(goSearch){
+                layerSearch(goSearch);
+            }else{
+                layer.open({
+                    type: 1
+                    ,title: false //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '300px;'
+                    ,shade: 0.8
+                    ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
+                    ,btn: ['确定']
+                    ,btnAlign: 'c'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: ' <div class="center" style="margin-top:20px">搜索不能为空!</div>'
+                    ,success: function(layero){
+                        removeLoading()
+                    }
+                })
+            }
+        }
+        function layerSearch(goSearch){
+            cancelSerach();
+            //弹窗搜索，才会带search
+            videoVue.$data.param.search=goSearch
+            fetchData();
+        }
+
+
+
+        //单页缓存
+        function isGetCaches(){
+            var is_cache = videoVue.$data.is_cache
+            var page_isnext = videoVue.$data.data.isnext //是否有下一页
+            if(is_cache!=0&&page_isnext==1){
+                goCache(1);
+            }
+        }
+        //自动缓存--自动采集
+        function startCache(){
+            $('.endCache').css('display','inline-block');
+            $('.startCache').css('display','none');
+            // $("#is_cache").val(2)
+            videoVue.$data.is_cache=2
+            isGetCaches()
+        }
+        function endCache(){
+            $('.endCache').css('display','none');
+            $('.startCache').css('display','inline-block');
+            // $("#is_cache").val(0)
+            videoVue.$data.is_cache=0
+            $('.end_cache_num').text(0);
+            //结束后 跳转到当前页面
+            // gouhtml(0);
+        }
+        //手动缓存
+        function moreGetCaches(){
+            var setnum =  videoVue.$data.setCaches
+            goCache(setnum)
+        }
+        // 开启缓存
+        function goCache(setnum=0){
+            var is_cache =videoVue.$data.is_cache
+            $('.caiji_name').text('采集...')
+            let new_param = videoVue.$data.param;
+                new_param.setnum =setnum
+                new_param.is_cache =is_cache
+            $.ajax({
+                url: '/cn/video-api/get-cache', // 跳转到 action 
+                type: 'post',
+                // async:false,
+                data:new_param,
+                dataType: 'json',
+                success: function (data) {
+                    removeLoading()
+                    if(data.code==1){
+                        // 自动缓存-循环执行
+                        if(is_cache==2){
+                            // $("#goPage_list").val(data.data);
+                            videoVue.$data.param.page_list = data.data
+                            // 可以不进跳转
+                            //已缓存+1
+                            $('.end_cache_num').text(parseInt($('.end_cache_num').text())+1);
+                            //检查是否继续下一页缓存
+                            isGetCaches()
+                        }else{
+                            $('.caiji_name').text('采集√')
+                            if(setnum>1){//手动缓存
+                                // $("#goPage_list").val(data.data);
+                                videoVue.$data.param.page_list = data.data
+                                // gouhtml(0);
+                                videoVue.clearRload()
+                            }
+                        }
+                    }else{
+                        //结束缓存--跳转到尾页
+                        if(is_cache==2){
+                            endCache()
+                            videoVue.clearRload()
+                        }
+                        $('.caiji_name').text('采集√')
+                    }
+                },error: function (data) {
+                    if(is_cache==2){
+                        isGetCaches()
+                    }
+                }
+            });
+        }
 
 </script>

@@ -102,7 +102,7 @@ body {
 }
 /* .btn {width:28%!important;margin: 5px;max-width: 120px;} */
 .btn { min-width: 
-	110px!important;
+	100px!important;
 	margin: 2px;
 }
 /* .btn { width:28%!important;margin: 2%; } */
@@ -165,8 +165,8 @@ input{
     /* width:80px; */
 }
 .btn_style{
-	width: 110px!important;
-	margin: 2px;
+	width: 100px!important;
+	/* margin: 2px; */
 	text-align: center;
    
 }
@@ -213,6 +213,7 @@ input{
 }
 .btn_link{
 	margin: 5px;
+	font-size: 14px;
     /* text-shadow: 1px 1px 1px #000000; */
 	font-weight: bold;
 }

@@ -180,7 +180,7 @@ video{
         display: inline-block;
 	}
     .video_footer td{
-        background-color: white;
+        /* background-color: white; */
         /* border: 1px solid #0044cc; */
         text-align: center ;
         width: 50%;
