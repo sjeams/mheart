@@ -1,7 +1,7 @@
 
 <span id="home_vue" >
-    <div class="layui-input-inline center">
-        <p class="center  "  >
+    <div class="layui-input-inline center pt-2">
+        <p class="center "  >
             <a class="btn_link " href="https://www.djuu.com/"> 音乐 </a>
             <a class="btn_link " href="https://www.69mj.com" class="btn">  美剧  </a>
             <a class="btn_link " href="https://www.6080yy3.com" class="btn">  6080  </a>
@@ -9,7 +9,7 @@
             <a class="btn_link " href="https://www.czzy55.com" class="btn">  厂长  </a>
             <a class="btn_link " href="https://www.hbotv1.com/" class="btn">  bptv  </a>
         </p>
-        <p class="center  "  v-if="data.graden>0">
+        <p class="center "   v-if="data.graden>0">
             <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a>
             <!-- <a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a> -->
             <a class="btn_link " href="https://677062.com/"> 草榴 </a>
@@ -421,7 +421,6 @@
                     if(data.code==1){
                         // 自动缓存-循环执行
                         if(is_cache==2){
-                            // $("#goPage_list").val(data.data);
                             videoVue.$data.param.page_list = data.data
                             // 可以不进跳转
                             //已缓存+1
@@ -431,9 +430,7 @@
                         }else{
                             $('.caiji_name').text('采集√')
                             if(setnum>1){//手动缓存
-                                // $("#goPage_list").val(data.data);
                                 videoVue.$data.param.page_list = data.data
-                                // gouhtml(0);
                                 videoVue.clearRload()
                             }
                         }
