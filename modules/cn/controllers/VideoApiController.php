@@ -298,7 +298,25 @@ class VideoApiController extends VideoApiControl
         // var_dump($args);die;
         echo true; 
     }
+    /**
+     * 采集单条插入收藏
+     * by  sjeam
+     */
+    public function actionUpdateCategoryStatus()
+    {
+        $args = Yii::$app->request->post();
+        $belong = $args['belong'];
+        $category_name = CategoryName::findOne(['belong'=>$belong]);
+        if($category_name->status==0){
+            $status=1;
 
+        }else{
+            $status=0;
+        }
+        $category_name->status=$status;  
+        $category_name->save();
+        die(Method::jsonGenerate(1,$status,'收藏'));
+    }
     /**
      * 采集单条插入收藏
      * by  sjeam

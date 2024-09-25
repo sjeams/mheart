@@ -1,4 +1,3 @@
-
 <span id="home_vue" >
     <div class="layui-input-inline center pt-2">
         <p class="center "  >
@@ -38,10 +37,10 @@
  
     <div class="layui-input-inline center">
         <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
-        <span  v-else class="btn btn-defult"  >上一页</span> 
+        <span  v-else class="btn btn-secondary"  >上一页</span> 
         <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
         <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
-        <span v-else class="btn btn-defult"  >下一页</span> 
+        <span v-else class="btn btn-secondary"  >下一页</span> 
     </div>
     <p class="center" v-if="data.graden>0">
         <div class="layui-input-inline center">
@@ -58,7 +57,8 @@
                 <span  class="btn btn-primary startCache " style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
                 <span  class="btn btn-danger endCache " style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
                 <input type="text" v-model="setCaches" class="btn_style"  placeholder="setCaches"  >
-                <span  class="btn btn-primary " onclick="moreGetCaches()"> 手动缓存 </span>
+                <!-- <span  class="btn btn-primary " onclick="moreGetCaches()"> 手动缓存 </span> -->
+                <span  :class="'btn '+[param.is_local == 0 ?' btn-danger':' btn-secondary']"  @click="changeLocal()"> 本地 </span>
             </p>
         </div>
     </p>
@@ -76,7 +76,7 @@
         </p>
         <p class="layui-input-inline center pt-2"> 
             <span @click="videoList(item.id)" class="btn btn-sm btn-primary  "> 重播 </span>
-            <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[ item.my_collect ==1?' btn-success':'btn-defult' ]"> 收藏</span>
+            <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[item.my_collect ==1?' btn-success':' btn-secondary' ]"> 收藏</span>
             <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
         </p>
     
@@ -102,6 +102,21 @@
             this.clearRload();
         },
         methods:{
+            changeLocal(){ 
+                $.ajax({
+                    url: '/cn/video-api/update-category-status', // 跳转到 action 
+                    type: 'post',
+                    data:{belong:videoVue.param.belong},
+                    dataType: 'json',
+                    success: function (data) {
+                        if(data.code==1){
+                            //返回状态
+                            // videoVue.param.is_local =data.data;
+                            videoVue.clearRload();
+                        }
+                    },
+                });   
+            },
             belongChangeVue(belong){
                 belongChange(belong)
             },

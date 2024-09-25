@@ -465,6 +465,7 @@ $(document).ajaxStop(function( ) {
     //    window.location.reload()
        window.location.href='/cn/video/list';
     }
+    //list 返回不刷新
     function video_list(){
         // window.location.href='/cn/video/list';
         var url="/cn/video/list?html=2";

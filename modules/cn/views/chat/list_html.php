@@ -7,7 +7,8 @@
 		/* height: 70px; */
 	}
 	.user_list td{
-		height: 70px;
+	    height: 80px;
+    	padding: 5px!important;
 	}
 	.user_time {
 		line-height: 70px;
@@ -26,7 +27,7 @@
 		z-index: 0;
 		position: fixed;
 		height: 70px;
-		width: 100%;
+		width:calc(100vw - 10px);
 		margin-bottom:0rem!important;
 	}
 	.user_information_right{

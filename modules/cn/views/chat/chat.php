@@ -40,7 +40,7 @@
 		z-index: 0;
 		position: fixed;
 		height: 70px;
-		width: 100%;
+		width:calc(100vw-10px);
 		margin-bottom:0rem!important;
 	}
 	.user_information_right{
