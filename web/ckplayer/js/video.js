@@ -88,6 +88,21 @@ function  videoList(id,key,isbofang){
         $(".video"+now_video).html(player);
     }
 }
+
+function videoDestory(){
+    var _this=this;
+    var isbofang  = $("#is_bofang_type").val();
+    // videoHidden(0);//隐藏窗口
+    if(isbofang==1){
+        //销毁视频，并重新生成
+        _this.newdplayer.destroy();
+        _this.newplayer.remove();
+    }else{
+        _this.newdplayer.destroy();
+        _this.newplayer.remove();
+    }
+}
+
 //dplayer 播放器
 function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     //播放窗口模式。。
