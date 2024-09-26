@@ -64,9 +64,9 @@
     </p>
  
 <div class="d-flex align-content-start flex-wrap">
-    <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" >
+    <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
             <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  图片改为懒加载 -->
-        <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :data-image="item.imageurl" :key="item.key"   alt="..." v-html="item.player">
+        <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
  
         
         </div>  
@@ -97,6 +97,8 @@
                 param:[],
                 is_cache:0,
                 setCaches:5,
+                video_index:0,
+                video_id:0,
             }
         },
         created() {
@@ -126,7 +128,7 @@
                 let value_data = videoVue.data.content[index];
                 downloadUrlMethod(value_data.id,value_data.url,value_data.title)
             },
-            videoListVue(){
+            videoListVue(index){
                 videoListVue(index)
             },
             Update_my(index){
@@ -144,8 +146,7 @@
                         }
                     },
                 });
-            },
-            
+            },  
             clearRload(){
                 this.$nextTick(()=>{
                     //搜索条件不变
@@ -172,15 +173,23 @@
     })
     function  videoListVue(index){
         let value_data = videoVue.$data.data.content[index];
+
     // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
         var id =value_data.id
         var key=key||'1c0';
         //判断播放器类型
         var isbofang  = $("#is_bofang_type").val();
+        var video_index = videoVue.$data.video_index
+        //存入当前id
+        if(videoVue.$data.video_id!=0){
+            scoreSort(video_index) //覆盖
+        }
+        videoVue.$data.video_index=index;
+        videoVue.$data.video_id=id;
         //暂停在播视频
-        var now_video =$("#now_video").val();
+        // var video_index =$("#video_index").val();
         //存储当前的视频id
-        $("#now_video").val(index); 
+        // $("#video_index").val(index); 
         //判断是否是影视，影视不为空
         var goBelong  = videoVue.$data.param.belong
         //判断是否是采集页面--只有采集页面才有影视
@@ -192,36 +201,35 @@
             // var imageurl =$("#form"+key+"  input[name=imageurl]").val();
             // $('.click_video').removeClass('btn-success');
             // $('#click_video'+key).addClass('btn-success');
-            // var now_video_str =now_video+',"'+key+'"';
-            // $("#now_video_key").val(key);
+            // var video_index_str =video_index+',"'+key+'"';
+            // $("#video_index_key").val(key);
         }else{
             //获取视频
             var url =value_data.url
             var title =value_data.title
             var imageurl =value_data.imageurl
-            var now_video_str = now_video;
+            var video_index_str = video_index;
         }
-        // console.log(key)
+        // console.log(id)
         // console.log(url)
         //选择视频
         if(isbofang==1){
         //1 ckplayer 播放器
-            ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
-            // var _this =this;
-            // _this.newdplayer.destroy();
+            ckplayerVideo(id,video_index,isbofang,video_index_str,url,imageurl,title)
         }else{
         //0 dplayer 播放器
-            dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
-            // var _this =this;
-            // _this.newplayer.remove();
+            dplayerVideo(id,video_index,isbofang,video_index_str,url,imageurl,title)
         }
-        
         //因为对象覆盖了，所以要放最后面--实例化后加上标签
-        let sort = md5(Date.now()+now_video)
-            videoVue.$data.data.content[now_video].key = sort;
+
     }
-
-
+    //覆盖视频
+    function scoreSort(video_index){
+        let value_data_old = videoVue.$data.data.content[video_index];
+        let sort = Date.now()+'_'+value_data_old.id
+            videoVue.$data.data.content[video_index].key = sort;
+            videoVue.$data.data.content[video_index].player = '<span  id="'+sort+'" onclick="videoListVue('+video_index+')"  class="video_box "></span>';
+    }
 
     function belongChange(belong){
         videoVue.$data.param.belong = belong;
@@ -236,29 +244,8 @@
         videoVue.$data.param.search=''  //搜索置为空
         // console.log(videoVue.$data.param.type)
         fetchData()
+    }
 
-    }
-    //请求数据
-    function fetchData(){
-        $.ajax({
-            url: '/vue/home/get-list', // 跳转到 action 
-            type: 'post',
-            data:videoVue.$data.param,
-            dataType: 'json',
-            success: function (data) {
-                if(data.code){
-                    let param = data.data //返回的值
-                    videoVue.$data.data = param
-                    videoVue.$data.param = param.data
-                    videoVue.$data.is_disabled = data.graden>0?true:false
-                    scllTop()
-                    videoDestory() //切换后销毁视频
-                }else{
-                   layOpen()
-                }
-            }
-        })
-    }
     //弹窗提示
     function  layOpen(){
         layer.open({
@@ -516,26 +503,50 @@
                 }
             });
         }
-        // 慢加载
-        window.onload = function () {
-            // 初始化执行
-            lazyLoad( );
-            // 滚动执行
-            window.addEventListener("scroll", function () {
-            lazyLoad( );
-            });
-            function lazyLoad( ) {
-                $(".collect-video-style").each(function(){  //遍历所有图片
-                    var  othis = $(this)//当前图片对象	
-                    var  top = othis.offset().top - $(window).scrollTop(); 
-                            //计算图片top-滚动条top
-                    if (top > $(window).height()) {   //如果两者之差小于屏幕高度
-                            return;   //不管
-                    } else {                
-                        othis.css({'background-image': 'url('+othis.attr('data-image')+')'});
-                        //可见的时候把占位值替换 并删除占位属性
-                    };	            
-                });
-            }
-        };
+
+        //请求数据
+        function fetchData(){
+            $.ajax({
+                url: '/vue/home/get-list', // 跳转到 action 
+                type: 'post',
+                data:videoVue.$data.param,
+                dataType: 'json',
+                success: function (data) {
+                    if(data.code){
+                        let param = data.data //返回的值
+                        videoVue.$data.data = param
+                        videoVue.$data.param = param.data
+                        videoVue.$data.is_disabled = data.graden>0?true:false
+                        scllTop()
+                        videoDestory() //切换后销毁视频
+                    }else{
+                    layOpen()
+                    }
+                }
+            })
+        }
+
+        // // 慢加载
+        // window.onload = function () {
+        //     // lazyLoad();        // 初始化执行
+        //     // 滚动执行
+        //     window.addEventListener("scroll", function () {
+        //         lazyLoad( );
+        //     });
+        // };
+        // function lazyLoad() {
+        //     $(".collect-video-style").each(function(){  //遍历所有图片
+        //         console.log(0)
+        //         var  othis = $(this)//当前图片对象	
+        //         var  top = othis.offset().top - $(window).scrollTop(); 
+        //         //计算图片top-滚动条top
+        //         if (top > $(window).height()) {   //如果两者之差小于屏幕高度
+        //                 return;   //不管
+        //         } else {       
+        //             othis.css({'background-image': 'url('+othis.attr('data-image')+')'});
+        //             //可见的时候把占位值替换 并删除占位属性
+        //         };	            
+        //     });
+        // }
+        
 </script>

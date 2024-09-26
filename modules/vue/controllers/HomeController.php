@@ -89,8 +89,10 @@ class HomeController extends VideoApiControl
         $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1,$category_id);  //get_cache 浏览时，必定开启缓存
         if($res['content']){
             foreach($res['content'] as $k=>$v){
-                $res['content'][$k]['key']= md5(time().$k); 
-                $res['content'][$k]['player']=  '<span  onclick="videoListVue('.$k.')"  class="video_box "></span>';
+               
+                $key = time().'_'.$v['id']; 
+                $res['content'][$k]['key'] =$key;
+                $res['content'][$k]['player']=  '<span  id="'.$key.'" onclick="videoListVue('.$k.')"  class="video_box "></span>';
             }
             //是否标记为本地采集
             $res['data']['is_local'] =  intval($category_name ->status);
