@@ -63,7 +63,7 @@
             </div>
         </p>
     </span>
-    <span v-show="!show">
+ 
         <div class="d-flex align-content-start flex-wrap">
             <div class="card col-sm-12 col-md-6 col-lg-3 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
                     <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
@@ -89,9 +89,9 @@
                 <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
                 <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
                 <span v-else class="btn btn-secondary"  >下一页</span> 
+            </div>
         </div>
-        </div>
-    </span>
+   
 </span>
 <script>
     //全局变量
@@ -106,7 +106,7 @@
                 setCaches:5,
                 video_index:0,
                 video_id:0,
-                show:false,
+                show:true,
             }
         },
         created() {
@@ -441,7 +441,6 @@
                         videoVue.$data.data = param
                         videoVue.$data.param = param.data
                         videoVue.$data.is_disabled = data.graden>0?true:false
-                        menu_show()
                         scllTop()
                         videoDestory() //切换后销毁视频
                         // lazyLoad() //加载图片
