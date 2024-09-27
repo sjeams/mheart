@@ -65,9 +65,8 @@
  
 <div class="d-flex align-content-start flex-wrap">
     <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
-            <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  图片改为懒加载 -->
+            <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
         <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
- 
         
         </div>  
 
@@ -83,7 +82,14 @@
     
 
     </div>
- 
+  
+    <div class="layui-input-inline center">
+        <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
+        <span  v-else class="btn btn-secondary"  >上一页</span> 
+        <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
+        <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
+        <span v-else class="btn btn-secondary"  >下一页</span> 
+    </div>
 </div>
 </span>
 <script>
@@ -519,6 +525,7 @@
                         videoVue.$data.is_disabled = data.graden>0?true:false
                         scllTop()
                         videoDestory() //切换后销毁视频
+                        // lazyLoad() //加载图片
                     }else{
                     layOpen()
                     }
@@ -548,5 +555,11 @@
         //         };	            
         //     });
         // }
+            function lazyLoad() {
+            $(".collect-video-style").each(function(){  //遍历所有图片
+                var  othis = $(this)//当前图片对象	
+                othis.css({'background-image': 'url('+othis.attr('data-image')+')'});          
+            });
+        }
         
 </script>

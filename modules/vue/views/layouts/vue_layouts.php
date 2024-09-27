@@ -14,7 +14,8 @@
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <!-- 日历 -->
+    <!-- <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script> -->
     <!-- 编辑器公式插件 -->
     <!-- <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
     <script type="text/javascript" charset="utf-8" src="/ueditor/kityformula-plugin/getKfContent.js"></script>
