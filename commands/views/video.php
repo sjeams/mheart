@@ -1,31 +1,25 @@
 <!-- cplayer -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
+<link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
 <script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 <!-- dplayer -->
-<link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/md5.min.js"></script>
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/hls.min.js"></script>
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
-
 <!-- ckplayer -->
 <!-- old视频 1-->
 <div class="video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'block':'none';?>;">
     <input type="hidden" name="" id="hiddenvalue" value="0">
-    <!-- <button class="video_hidden_button btn-primary" style="display:block" onclick="videoHidden()">video</button> -->
     <div class="videohidden">
         <div class="video" id="dplay_video" style="z-index: 1;"> </div>
     </div>
 </div>
-
-
 <!-- new 视频 0-->
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="0" id="now_video_key"> 
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script>
-<!-- 改到video.js最后了 -->
-<!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/cookie.js"></script> -->
 <script>
     // 初始化容器
   var container_id=   '.video';
@@ -68,9 +62,6 @@
 }; 
 // ckplayer
 var newplayer= new ckplayer(videoObject);
-
-
-
 // 视频详情页
 function videoDetail(sessionkey,key){
     window.location.href='/cn/video/video?sessionkey='+sessionkey+'&key='+key;
@@ -81,27 +72,12 @@ function picDetail(sessionkey,key){
     videoHidden() //隐藏悬浮窗口
     var url ='/cn/video/pic?sessionkey='+sessionkey+'&key='+key+"&html=1";
     getprintHtml(url,getprintHtml_video_pic);
-    // var list_html = getprintHtml(url);
-    // if(list_html){
-    //     $('.pic_html').html(list_html)
-    // }
-    // removeLoading()
 }   
-
 // 视频详情页 //全屏模式--dplayer 播放器
 function dplayDetail(url){
     getprintHtml(url,getprintHtml_video_pic);
-    // var url ='/cn/video/dplay?url='+url;
-    // // console.log(url)
-    // var list_html = getprintHtml(url);
-    // if(list_html){
-    //     $('.pic_html').html(list_html)
-    // }
 }
 </script>
-
-
-
 <script>
     var container_id= 'dplay_video';
     var dplayerObject={

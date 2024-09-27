@@ -71,18 +71,21 @@ class VideoList extends ActiveRecord {
                             $v['title'] = VideoList::replaceTitle($search,$v['title']);
                         }
                     }
-                    $args['key_value'] =$sessionkey;
-                    // $args['value'] = json_encode($list,true);
-                    // $args['time'] =time();
-                    $args['count'] = count($list);
-                    $args['page'] =$page;
-                    $args['belong'] =$belong;
-                    $args['type'] =$type;
-                    $args['search'] =$search;
-                    $args['page_list'] =$page_list;
-                    // 存入缓存列表
-                    //快速自动采集，不录入缓存，大容量储存会加大消耗
-                    VideoList::insertVideoList($args,$list);
+                    // 提升效率本地不入库了
+                    if($category_name->status==1){
+                        $args['key_value'] =$sessionkey;
+                        // $args['value'] = json_encode($list,true);
+                        // $args['time'] =time();
+                        $args['count'] = count($list);
+                        $args['page'] =$page;
+                        $args['belong'] =$belong;
+                        $args['type'] =$type;
+                        $args['search'] =$search;
+                        $args['page_list'] =$page_list;
+                        // 存入缓存列表
+                        //快速自动采集，不录入缓存，大容量储存会加大消耗
+                        VideoList::insertVideoList($args,$list);
+                    }
                 }
             }
             //存入reids--将结果存入redis

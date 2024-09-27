@@ -179,8 +179,7 @@
     })
     function  videoListVue(index){
         let value_data = videoVue.$data.data.content[index];
-
-    // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
+        // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
         var id =value_data.id
         var key=key||'1c0';
         //判断播放器类型
@@ -190,16 +189,10 @@
         if(videoVue.$data.video_id!=0){
             scoreSort(video_index) //覆盖
         }
-        videoVue.$data.video_index=index;
-        videoVue.$data.video_id=id;
-        //暂停在播视频
-        // var video_index =$("#video_index").val();
-        //存储当前的视频id
-        // $("#video_index").val(index); 
+        videoVue.$data.video_index=index;  //暂停在播视频
+        videoVue.$data.video_id=id;    //存储当前的视频id
         //判断是否是影视，影视不为空
         var goBelong  = videoVue.$data.param.belong
-        //判断是否是采集页面--只有采集页面才有影视
-        // var isCollect  = $("#isCollect").val();
         if(goBelong==0){
             //获取视频
             // var url = $("#form"+key+"  input[name=url]").val();
@@ -216,8 +209,6 @@
             var imageurl =value_data.imageurl
             var video_index_str = video_index;
         }
-        // console.log(id)
-        // console.log(url)
         //选择视频
         if(isbofang==1){
         //1 ckplayer 播放器
@@ -254,49 +245,18 @@
 
     //弹窗提示
     function  layOpen(){
-        layer.open({
-            type: 1
-            ,title: false //不显示标题栏
-            ,closeBtn: false
-            ,area: '300px;'
-            ,shade: 0.8
-            ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
-            ,btn: ['确定']
-            ,btnAlign: 'c'
-            ,moveType: 1 //拖拽模式，0或者1
-            ,content: ' <div class="center" style="margin-top:20px">请求失败,请重新操作!</div>'
-            ,success: function(layero){
-                removeLoading()
-            }
-        })  
+        var content =' <div class="center" style="margin-top:20px">请求失败,请重新操作!</div>'
+        btn_layer_tips_type1('LAY_layuipro_error','300px',['确定'],content,removeLoading)
     }
 
     function  clearSession(istype){
             var _this =this;
             if(istype){
-                var type_str ='清空type缓存？'; 
+                var content =' <div class="center" style="margin-top:20px"> 清空type缓存?</div>'
             }else{
-                var type_str ='清空belong缓存？';
+                var content =' <div class="center" style="margin-top:20px"> 清空belong缓存?</div>'
             }
-            layer.open({
-                type: 1
-                ,title: false //不显示标题栏
-                ,closeBtn: false
-                ,area: '300px;'
-                ,shade: 0.8
-                ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
-                ,btn: ['确定', '取消']
-                ,btnAlign: 'c'
-                ,moveType: 1 //拖拽模式，0或者1
-                ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
-                ,success: function(layero){
-                    var btn = layero.find('.layui-layer-btn');
-                    btn.find('.layui-layer-btn0').click(function(){
-                        clearModelVue(istype);
-                });
-    
-                }
-            })
+            btn_layer_tips_type1('LAY_layuipro','300px',['确定', '取消'],content,layerClearModel,istype)
         }
         // istype 是否根据type更新 ,0 更新belong , 1更新 belong、type
         function   clearModelVue(istype){
@@ -313,22 +273,8 @@
                     removeLoading()
                     if(data.code==0){    
                         // alert(data.message)
-                        layer.open({
-                            type: 1
-                            ,title: false //不显示标题栏
-                            ,closeBtn: false
-                            ,area: '300px;'
-                            ,shade: 0.8
-                            ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
-                            ,btn: ['确定']
-                            ,btnAlign: 'c'
-                            ,moveType: 1 //拖拽模式，0或者1
-                            ,content: ' <div class="center" style="margin-top:20px">'+data.message+'</div>'
-                            ,success: function(layero){
-                                // $("#belong_badge_show"+goBelong).text('n');
-                                videoVue.clearRload()
-                            }
-                        })
+                        var content =' <div class="center" style="margin-top:20px">'+data.message+'</div>'
+                        btn_layer_tips_type1('LAY_layuipro_error','300px',['确定'],content,vueRrload)
                     }else{
                         videoVue.clearRload()
                     }
@@ -353,23 +299,8 @@
                                 str = str+'<span class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</span>';
                             })
                             var content  = str+'</div>';
-                            layer.open({
-                                type: 1
-                                ,title: false //不显示标题栏
-                                ,closeBtn: false
-                                ,area: ['100%','100%']
-                                // ,area: '300px;'// 由于样式会乱，所以设置一个小的背景
-                                ,shade: 0.8
-                                // ,shadeClose:false
-                                ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
-                                // ,btn: ['搜索', '取消']
-                                ,btnAlign: 'c'
-                                ,fixed:true //固定
-                                ,moveType: 1 //拖拽模式，0或者1
-                                ,content: ' <div class="center rotatable-element " >'+content+'</div>'
-                                ,success: function(layero){
-                                }
-                            })
+                            var content =' <div class="center rotatable-element " >'+content+'</div>'
+                                btn_layer_tips_type1('LAY_layuipro_kwords',['100%','100%'],'',content,vueRrload)
                         }else{
                             removeLoading()
                         }
@@ -381,7 +312,6 @@
         function cancelSerach(){
             removeLoadingPage();//关闭弹窗page
         }   
-
         //重新搜索指定内容
         function layerReSerach(){
             addLoading()
@@ -407,21 +337,9 @@
             if(goSearch){
                 layerSearch(goSearch);
             }else{
-                layer.open({
-                    type: 1
-                    ,title: false //不显示标题栏
-                    ,closeBtn: false
-                    ,area: '300px;'
-                    ,shade: 0.8
-                    ,id: 'LAY_layuipro_error' //设定一个id，防止重复弹出
-                    ,btn: ['确定']
-                    ,btnAlign: 'c'
-                    ,moveType: 1 //拖拽模式，0或者1
-                    ,content: ' <div class="center" style="margin-top:20px">搜索不能为空!</div>'
-                    ,success: function(layero){
-                        removeLoading()
-                    }
-                })
+                var content = ' <div class="center" style="margin-top:20px">搜索不能为空!</div>'
+                    btn_layer_tips_type1('LAY_layuipro_error','300px',['确定'],content,removeLoading)
+
             }
         }
         function layerSearch(goSearch){
@@ -430,9 +348,6 @@
             videoVue.$data.param.search=goSearch
             fetchData();
         }
-
-
-
         //单页缓存
         function isGetCaches(){
             var is_cache = videoVue.$data.is_cache
@@ -509,7 +424,6 @@
                 }
             });
         }
-
         //请求数据
         function fetchData(){
             $.ajax({
@@ -527,39 +441,9 @@
                         videoDestory() //切换后销毁视频
                         // lazyLoad() //加载图片
                     }else{
-                    layOpen()
+                        layOpen()
                     }
                 }
             })
         }
-
-        // // 慢加载
-        // window.onload = function () {
-        //     // lazyLoad();        // 初始化执行
-        //     // 滚动执行
-        //     window.addEventListener("scroll", function () {
-        //         lazyLoad( );
-        //     });
-        // };
-        // function lazyLoad() {
-        //     $(".collect-video-style").each(function(){  //遍历所有图片
-        //         console.log(0)
-        //         var  othis = $(this)//当前图片对象	
-        //         var  top = othis.offset().top - $(window).scrollTop(); 
-        //         //计算图片top-滚动条top
-        //         if (top > $(window).height()) {   //如果两者之差小于屏幕高度
-        //                 return;   //不管
-        //         } else {       
-        //             othis.css({'background-image': 'url('+othis.attr('data-image')+')'});
-        //             //可见的时候把占位值替换 并删除占位属性
-        //         };	            
-        //     });
-        // }
-            function lazyLoad() {
-            $(".collect-video-style").each(function(){  //遍历所有图片
-                var  othis = $(this)//当前图片对象	
-                othis.css({'background-image': 'url('+othis.attr('data-image')+')'});          
-            });
-        }
-        
 </script>

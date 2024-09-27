@@ -7,7 +7,7 @@
     }
 </style>
 <!-- content_header 的结尾div 别删了 --html 自动补全了-->
-</div>
+<!-- </div> -->
 <!-- //底部高度占位，防遮挡 -->
 <p class="use_button_height" style="visibility: hidden;">  </p>
 <?php 

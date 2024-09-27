@@ -17,7 +17,6 @@ function imageError(){
         videoList(id,0,1);
     }) 
 }
-
 //判断图片是否存在
 function is_img_url(imgurl) {
     return new Promise(function(resolve, reject) {
@@ -31,7 +30,6 @@ function is_img_url(imgurl) {
         }
     }).catch((e) => {}); // 加上这句不会报错（Uncaught (in promise)）
 }
-
 // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
 function  videoList(id,key,isbofang){
     var key=key||'1c0';
@@ -61,25 +59,14 @@ function  videoList(id,key,isbofang){
         var imageurl =$("#form"+id+"  input[name=imageurl]").val();
         var now_video_str =now_video;
     }
-    // console.log(key)
-    // console.log(url)
-    // var url ='https://wolongzywcdn2.com:65/20220417/nJ0C6TnT/index.m3u8';
-
-
-    
     //选择视频
     if(isbofang==1){
     //1 ckplayer 播放器
         ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
-        // var _this =this;
-        // _this.newdplayer.destroy();
     }else{
     //0 dplayer 播放器
         dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
-        // var _this =this;
-        // _this.newplayer.remove();
     }
-    
     //因为对象覆盖了，所以要放最后面--实例化后加上标签
     if(now_video!=0&&now_video!=id){
         var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
@@ -141,10 +128,6 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         },
     }
     var _this=this;
-    // console.log(_this);
-    // console.log(_this.newdplayer)
-    // var hls = Hls()
-    // hls.destroy()
     _this.newdplayer.destroy();
     _this.newplayer.remove();
     _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
@@ -278,14 +261,10 @@ function videoHidden(open){
 
 }
  
-
-
 //cookie---js改过来的
 function cokieTime(videoObject,videoID){
     // console.log(videoID)
     var cookieTime = cookie.get('time_'+videoID); //调用已记录的time
-    // console.log(cookieTime)
-    //console.log(cookieTime);
     if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
         cookieTime = 0;
     }
@@ -294,7 +273,6 @@ function cokieTime(videoObject,videoID){
     // }
     if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
         videoObject['seek'] = parseInt(cookieTime) ;
-        // videoObject.seek=cookieTime;
     }
     return videoObject;
 }

@@ -1,9 +1,4 @@
 <?php 
-/*
- * @Author: sjeam
- * @Date: 2023-04-07 10:41:17
- * @Description: 
- */
 //请求路径
 $http_geturl = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[2];
 $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
@@ -92,8 +87,5 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
     </ul>
 </div>
 
-<div class="video_center " onclick="MenuHidden()"  id="top" > 
 <input type="hidden"  id="is_bofang_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['is_bofang'] ;?>">
 <input type="hidden"  id="is_model_type" value="<?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model'] ;?>">
-
-<!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/header.js"></script> -->

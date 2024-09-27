@@ -104,6 +104,7 @@ body {
 .btn { 
 	min-width: 100px!important;
 	margin: 2px;
+	width: 20%;
 }
 /* .btn { width:28%!important;margin: 2%; } */
 .btn-primary{

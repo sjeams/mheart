@@ -6,7 +6,6 @@
             <div id="leftTree" class="mini-outlooktree" url="/admin/api/meanu-tree" onnodeclick="onNodeSelect"
                 textField="text" idField="id" parentField="pid" >
             </div>
-            
         </div>
         <div showCollapseButton="false" style="border:0;">
             <!--Tabs-->
