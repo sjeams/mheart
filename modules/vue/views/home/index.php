@@ -1,96 +1,97 @@
 <span id="home_vue" >
-    <div class="layui-input-inline center pt-2">
-        <p class="center "  >
-            <a class="btn_link " href="https://www.djuu.com/"> 音乐 </a>
-            <a class="btn_link " href="https://www.69mj.com" class="btn">  美剧  </a>
-            <a class="btn_link " href="https://www.6080yy3.com" class="btn">  6080  </a>
-            <!-- <a class="btn_link " href="https://www.394tv.com" class="btn">  394tv  </a> -->
-            <a class="btn_link " href="https://www.czzy55.com" class="btn">  厂长  </a>
-            <a class="btn_link " href="https://www.hbotv1.com/" class="btn">  bptv  </a>
-        </p>
-        <p class="center "   v-if="data.graden>0">
-            <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a>
-            <!-- <a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a> -->
-            <a class="btn_link " href="https://677062.com/"> 草榴 </a>
-                <a class="btn_link " href="https://gk8vh7pc2i2ze.top:8443/video/hot/4.html">  少女 </a>
-            <!-- <a class="btn_link " href="https://www.fi11cc96.com/"> fi11 </a> -->
-            <a class="btn_link " href="https://sewovideo.com/"> 色窝 </a>
-            <a class="btn_link " href="https://siwazyw.com"> 丝袜 </a>
-            <a class="btn_link " href="https://6584.xyz"> 色色 </a>
-            <!-- <a class="btn_link " href="https://xjav10.cc/">  香蕉 </a>   -->
-            <!-- <a class="btn_link " href="https://bfqde2023llsplde12qd27qdl.820723.com/search?tag=少女">  少女 </a>  -->
-            <a class="btn_link " href="http://www.newxiuren.com/"> 秀人网 </a> 
-        </p>
-    </div>
-    <!-- belong  -->
-    <div class="layui-input-inline center  pt-2"  >
-        <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'active btn-success':'btn-success']" :value="item.belong"  @click="belongChangeVue(item.belong)" href="javascript:;">
-            {{item.name}}
-            <span class="badge badge-danger" >{{item.status==1?'':'n'}}</span> 
-        </a>
-    </div>
-     <!-- type  -->
-    <div class="layui-input-inline center" v-html="data.categoryBelong"></div>
-    <div class="layui-input-inline center">
-        <input :type="[param.issearch==1?'text':'hidden']" readonly="readonly" class="center form-control" style="display:inline-block" placeholder="Search" v-model="param.search"  @click="goSearchVue()">
-    </div>
- 
-    <div class="layui-input-inline center">
-        <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
-        <span  v-else class="btn btn-secondary"  >上一页</span> 
-        <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
-        <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
-        <span v-else class="btn btn-secondary"  >下一页</span> 
-    </div>
-    <p class="center" v-if="data.graden>0">
-        <div class="layui-input-inline center">
-            <p class="center">
-                <span  class="btn btn-primary " @click="clearRload()"> GO  </span>
-                <span  class="btn btn-primary btn_style " @click="clearSessionVue(0)"> 更新 </span>
-                <span  class="btn btn-primary " @click="clearSessionVue(1)"> 刷新 </span>
+    <span v-show="show" >
+        <div class="layui-input-inline center pt-2">
+            <p class="center "  >
+                <a class="btn_link " href="https://www.djuu.com/"> 音乐 </a>
+                <a class="btn_link " href="https://www.69mj.com" class="btn">  美剧  </a>
+                <a class="btn_link " href="https://www.6080yy3.com" class="btn">  6080  </a>
+                <!-- <a class="btn_link " href="https://www.394tv.com" class="btn">  394tv  </a> -->
+                <a class="btn_link " href="https://www.czzy55.com" class="btn">  厂长  </a>
+                <a class="btn_link " href="https://www.hbotv1.com/" class="btn">  bptv  </a>
+            </p>
+            <p class="center "   v-if="data.graden>0">
+                <a class="btn_link " href="https://laoyavideo.com/" class="btn">  老鸭头  </a>
+                <!-- <a class="btn_link " href="https://yinwovideo.com/"> 淫窝 </a> -->
+                <a class="btn_link " href="https://677062.com/"> 草榴 </a>
+                    <a class="btn_link " href="https://gk8vh7pc2i2ze.top:8443/video/hot/4.html">  少女 </a>
+                <!-- <a class="btn_link " href="https://www.fi11cc96.com/"> fi11 </a> -->
+                <a class="btn_link " href="https://sewovideo.com/"> 色窝 </a>
+                <a class="btn_link " href="https://siwazyw.com"> 丝袜 </a>
+                <a class="btn_link " href="https://6584.xyz"> 色色 </a>
+                <!-- <a class="btn_link " href="https://xjav10.cc/">  香蕉 </a>   -->
+                <!-- <a class="btn_link " href="https://bfqde2023llsplde12qd27qdl.820723.com/search?tag=少女">  少女 </a>  -->
+                <a class="btn_link " href="http://www.newxiuren.com/"> 秀人网 </a> 
             </p>
         </div>
-        <div class="layui-input-inline center">
-            <p class="center">
-                <!-- <span  class="btn btn-primary" onclick="gouSuper()"> 极品 </span> -->
-                <!-- //自动缓存，请不要操作 -->
-                <span  class="btn btn-primary startCache " style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
-                <span  class="btn btn-danger endCache " style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
-                <input type="text" v-model="setCaches" class="btn_style"  placeholder="setCaches"  >
-                <!-- <span  class="btn btn-primary " onclick="moreGetCaches()"> 手动缓存 </span> -->
-                <span  :class="'btn '+[param.is_local == 0 ?' btn-danger':' btn-secondary']"  @click="changeLocal()"> 本地 </span>
-            </p>
+        <!-- belong  -->
+        <div class="layui-input-inline center  pt-2"  >
+            <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'active btn-success':'btn-success']" :value="item.belong"  @click="belongChangeVue(item.belong)" href="javascript:;">
+                {{item.name}}
+                <span class="badge badge-danger" >{{item.status==1?'':'n'}}</span> 
+            </a>
         </div>
-    </p>
- 
-<div class="d-flex align-content-start flex-wrap">
-    <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
-            <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
-        <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
-        
-        </div>  
-
-        <p class="center p-1"  @click="downloadUrl(index)"> 
-            <b>{{index+1}}、</b><span v-html="item.title"></span>   
-            <i class="bi bi-download text-success">down</i>
+        <!-- type  -->
+        <div class="layui-input-inline center" v-html="data.categoryBelong"></div>
+        <div class="layui-input-inline center">
+            <input :type="[param.issearch==1?'text':'hidden']" readonly="readonly" class="center form-control" style="display:inline-block" placeholder="Search" v-model="param.search"  @click="goSearchVue()">
+        </div>
+        <div class="layui-input-inline center">
+            <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
+            <span  v-else class="btn btn-secondary"  >上一页</span> 
+            <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
+            <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
+            <span v-else class="btn btn-secondary"  >下一页</span> 
+        </div>
+        <p class="center" v-if="data.graden>0">
+            <div class="layui-input-inline center">
+                <p class="center">
+                    <span  class="btn btn-primary " @click="clearRload()"> GO  </span>
+                    <span  class="btn btn-primary btn_style " @click="clearSessionVue(0)"> 更新 </span>
+                    <span  class="btn btn-primary " @click="clearSessionVue(1)"> 刷新 </span>
+                </p>
+            </div>
+            <div class="layui-input-inline center">
+                <p class="center">
+                    <!-- <span  class="btn btn-primary" onclick="gouSuper()"> 极品 </span> -->
+                    <!-- //自动缓存，请不要操作 -->
+                    <span  class="btn btn-primary startCache " style="display: inline-block;" onclick="startCache()"> 自动缓存 </span>
+                    <span  class="btn btn-danger endCache " style="display: none;" onclick="endCache()">停止(<span class="end_cache_num">0</span>)</span>
+                    <input type="text" v-model="setCaches" class="btn_style"  placeholder="setCaches"  >
+                    <!-- <span  class="btn btn-primary " onclick="moreGetCaches()"> 手动缓存 </span> -->
+                    <span  :class="'btn '+[param.is_local == 0 ?' btn-danger':' btn-secondary']"  @click="changeLocal()"> 本地 </span>
+                </p>
+            </div>
         </p>
-        <p class="layui-input-inline center pt-2"> 
-            <span @click="videoListVue(index)" class="btn btn-sm btn-primary  "> 重播 </span>
-            <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[item.my_collect ==1?' btn-success':' btn-secondary' ]"> 收藏</span>
-            <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
-        </p>
-    
+    </span>
+    <span v-show="!show">
+        <div class="d-flex align-content-start flex-wrap">
+            <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
+                    <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
+                <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
+                
+                </div>  
 
-    </div>
-  
-    <div class="layui-input-inline center">
-        <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
-        <span  v-else class="btn btn-secondary"  >上一页</span> 
-        <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
-        <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
-        <span v-else class="btn btn-secondary"  >下一页</span> 
-    </div>
-</div>
+                <p class="center p-1"  @click="downloadUrl(index)"> 
+                    <b>{{index+1}}、</b><span v-html="item.title"></span>   
+                    <i class="bi bi-download text-success">down</i>
+                </p>
+                <p class="layui-input-inline center pt-2"> 
+                    <span @click="videoListVue(index)" class="btn btn-sm btn-primary  "> 重播 </span>
+                    <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[item.my_collect ==1?' btn-success':' btn-secondary' ]"> 收藏</span>
+                    <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
+                </p>
+            
+
+            </div>
+            <div class="layui-input-inline center">
+                <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
+                <span  v-else class="btn btn-secondary"  >上一页</span> 
+                <input type="text" class="btn_style "   v-model="param.page_list"  id="goPage_list" :disabled="is_disabled"  >
+                <span v-if="data.isnext"  class="btn btn-primary" @click="nextPage()">下一页</span>
+                <span v-else class="btn btn-secondary"  >下一页</span> 
+        </div>
+        </div>
+    </span>
 </span>
 <script>
     //全局变量
@@ -105,6 +106,7 @@
                 setCaches:5,
                 video_index:0,
                 video_id:0,
+                show:true,
             }
         },
         created() {
@@ -229,6 +231,7 @@
     }
 
     function belongChange(belong){
+        videoVue.param.page_list=1 //返回第一页
         videoVue.$data.param.belong = belong;
         videoVue.$data.param.type = 0
         videoVue.$data.param.search='' //搜索置为空
@@ -237,6 +240,7 @@
     }
     //type
     function typeChange(type){
+        videoVue.param.page_list=1 //返回第一页
         videoVue.$data.param.type = type;
         videoVue.$data.param.search=''  //搜索置为空
         // console.log(videoVue.$data.param.type)
@@ -437,6 +441,7 @@
                         videoVue.$data.data = param
                         videoVue.$data.param = param.data
                         videoVue.$data.is_disabled = data.graden>0?true:false
+                        menu_show()
                         scllTop()
                         videoDestory() //切换后销毁视频
                         // lazyLoad() //加载图片
@@ -445,5 +450,8 @@
                     }
                 }
             })
+        }
+        function menu_show() {
+            videoVue.$data.show = !videoVue.$data.show;
         }
 </script>

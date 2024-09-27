@@ -8,8 +8,9 @@
     <meta name="keywords" content="在线视频">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>测试</title>
-    <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
+
     <!-- layui弹窗 -->
     <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
