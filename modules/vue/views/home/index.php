@@ -106,7 +106,7 @@
                 setCaches:5,
                 video_index:0,
                 video_id:0,
-                show:true,
+                show:false,
             }
         },
         created() {
