@@ -65,7 +65,7 @@
     </span>
     <span v-show="!show">
         <div class="d-flex align-content-start flex-wrap">
-            <div class="card  col-md-6 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
+            <div class="card col-sm-12 col-md-6 col-lg-3 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
                     <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
                 <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
                 
