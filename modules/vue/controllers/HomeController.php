@@ -72,9 +72,9 @@ class HomeController extends VideoApiControl
         $type = Yii::$app->request->post('type',0);
         $search = Yii::$app->request->post('search','');
         // 搜索类型默认为0
-        $belong = Yii::$app->request->post('belong',1);
+        $belong = Yii::$app->request->post('belong',0);
         // 未登录 禁止链接访问
-        if($graden==0){
+        if($graden==0||$belong==0){
             $belong=0;
             //默认关键词
             $key_words = VideoList::getKeyWords($belong);
@@ -89,8 +89,7 @@ class HomeController extends VideoApiControl
         $res = VideoList::getVideoList($sessionStr,$belong,$type,$page,$search,$page_list,$graden,$this->user['id'],1,$category_id);  //get_cache 浏览时，必定开启缓存
         if($res['content']){
             foreach($res['content'] as $k=>$v){
-               
-                $key = time().'_'.$v['id']; 
+                $key = time().'_'.$v['id'].'_'.$k; 
                 $res['content'][$k]['key'] =$key;
                 $res['content'][$k]['player']=  '<span  id="'.$key.'" onclick="videoListVue('.$k.')"  class="video_box "></span>';
             }

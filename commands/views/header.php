@@ -66,12 +66,10 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
                        
                 <?php }else { ?>    
                     <td class="btn-primary button_over_side" style="width: 25%;"><a class="caiji_name"  onclick="window_reload()">采集</a></td>
-                        <?php if($userlogin['graden']>0) {?>
+                   
                             <!-- <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" onclick="my_like()">极品</a></td> -->
                             <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" onclick="window_Vue()">Vue</a></td>
-                        <?php }else{?>
-                            <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td>
-                        <?php  } ?>  
+                            <!-- <td class="btn-primary button_over_side" style="width: 50%;"><a class="user_chat" href="/cn/chat/list">聊天</a></td> -->
 
                     <td class="btn-primary button_over_side"   style="width: 25%;">
                         <input type="hidden" name="" id="menu" value="0">

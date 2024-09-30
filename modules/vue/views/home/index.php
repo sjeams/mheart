@@ -25,7 +25,7 @@
         </div>
         <!-- belong  -->
         <div class="layui-input-inline center  pt-2"  >
-            <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'active btn-success':'btn-success']" :value="item.belong"  @click="belongChangeVue(item.belong)" href="javascript:;">
+            <a v-for="(item,index) in data.category"  :class="'btn btn-sm '+[param.belong==item.belong ?'  btn-primary':'btn-success']" :value="item.belong"  @click="belongChangeVue(item.belong)" href="javascript:;">
                 {{item.name}}
                 <span class="badge badge-danger" >{{item.status==1?'':'n'}}</span> 
             </a>
@@ -67,22 +67,33 @@
         <div class="d-flex align-content-start flex-wrap">
             <div class="card col-sm-12 col-md-6 col-lg-3 mb-1 d-inline-block shadow p-0  bg-white rounded " v-for="(item,index) in data.content" :key="item.key" >
                     <!-- :style="{backgroundImage: 'url('+item.imageurl+')'}"  :data-image="item.imageurl"  图片改为懒加载 -->
-                <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player">
-                
-                </div>  
-
-                <p class="center p-1"  @click="downloadUrl(index)"> 
-                    <b>{{index+1}}、</b><span v-html="item.title"></span>   
-                    <i class="bi bi-download text-success">down</i>
-                </p>
-                <p class="layui-input-inline center pt-2"> 
-                    <span @click="videoListVue(index)" class="btn btn-sm btn-primary  "> 重播 </span>
-                    <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[item.my_collect ==1?' btn-success':' btn-secondary' ]"> 收藏</span>
-                    <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
-                </p>
-            
-
+                <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player"></div>  
+    
+                <span  v-if="item.belong!=0" >
+                    <p class="center p-1"  @click="downloadUrl(index)"> 
+                        <b>{{index+1}}、</b><span v-html="item.title"></span>   
+                        <i class="bi bi-download text-success">down</i>
+                    </p>
+                    <!-- video  -->
+                    <p  class="layui-input-inline center pt-2"> 
+                        <span @click="videoListVue(index,0)" class="btn btn-sm btn-primary  "> 重播 </span>
+                        <span @click="Update_my(index)" :class="'btn btn-sm   my_collect_'+[item.id]+[item.my_collect ==1?' btn-success':' btn-secondary' ]"> 收藏</span>
+                        <span @click="clearRload()" class="btn btn-sm btn-primary  "> 刷新 </span>
+                    </p>
+                </span>
+                <span v-else >
+                    <p class="center p-1"  > 
+                        <b>{{index+1}}、</b><span v-html="item.title"></span>   
+                    </p>
+                    <!-- 影视 -->
+                    <p    class="layui-input-inline center pt-2"> 
+                        <span class="check" style="overflow-y:auto;">
+                            <a  v-for="(video,video_index) in item.video"  @click="videoListVue(index,video_index)" :id="'click_video'+[index+'n'+video_index]" class="btn btn-sm  btn-secondary  collect click_video" v-html="video.title"> </a>
+                        </span>
+                    </p>
+                </span>
             </div>
+
             <div class="layui-input-inline center">
                 <span v-if="param.page_list>1"  class="btn btn-primary" @click="prevPage()">上一页</span>
                 <span  v-else class="btn btn-secondary"  >上一页</span> 
@@ -101,7 +112,10 @@
             return {
                 is_disabled:false,
                 data:[],
-                param:[],
+                param:{
+                    belong:0,
+                    issearch:1,
+                },
                 is_cache:0,
                 setCaches:5,
                 video_index:0,
@@ -136,8 +150,8 @@
                 let value_data = videoVue.data.content[index];
                 downloadUrlMethod(value_data.id,value_data.url,value_data.title)
             },
-            videoListVue(index){
-                videoListVue(index)
+            videoListVue(index,video_index){
+                videoListVue(index,video_index)
             },
             Update_my(index){
                 let value_data = this.data.content[index];
@@ -179,16 +193,20 @@
         watch: {
         }
     })
-    function  videoListVue(index){
-        let value_data = videoVue.$data.data.content[index];
+    function  videoListVue(index,video_child_index){
+        var value_data = videoVue.$data.data.content[index];
         // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
         var id =value_data.id
-        var key=key||'1c0';
+        // var key=key||'1c0';
+        if(value_data.belong==0){
+            var new_value_data =value_data.video[video_child_index] //数据为子元素
+        }
+
         //判断播放器类型
         var isbofang  = $("#is_bofang_type").val();
         var video_index = videoVue.$data.video_index
         //存入当前id
-        if(videoVue.$data.video_id!=0){
+        if(videoVue.$data.video_id!=0&&videoVue.$data.video_id!=id){
             scoreSort(video_index) //覆盖
         }
         videoVue.$data.video_index=index;  //暂停在播视频
@@ -200,17 +218,20 @@
             // var url = $("#form"+key+"  input[name=url]").val();
             // var title =$("#form"+key+"  input[name=title]").val();
             // var imageurl =$("#form"+key+"  input[name=imageurl]").val();
-            // $('.click_video').removeClass('btn-success');
-            // $('#click_video'+key).addClass('btn-success');
+            $('.click_video').removeClass('btn-success');
+            $('#click_video'+index+'n'+video_child_index).addClass('btn-success');
             // var video_index_str =video_index+',"'+key+'"';
             // $("#video_index_key").val(key);
+            //获取视频
+            var url =new_value_data.url
         }else{
             //获取视频
             var url =value_data.url
-            var title =value_data.title
-            var imageurl =value_data.imageurl
-            var video_index_str = video_index;
         }
+        var title =value_data.title
+        var imageurl =value_data.imageurl
+        var video_index_str = video_index;
+
         //选择视频
         if(isbofang==1){
         //1 ckplayer 播放器
@@ -225,9 +246,9 @@
     //覆盖视频
     function scoreSort(video_index){
         let value_data_old = videoVue.$data.data.content[video_index];
-        let sort = Date.now()+'_'+value_data_old.id
+        let sort = Date.now()+'_'+value_data_old.id+'_'+video_index
             videoVue.$data.data.content[video_index].key = sort;
-            videoVue.$data.data.content[video_index].player = '<span  id="'+sort+'" onclick="videoListVue('+video_index+')"  class="video_box "></span>';
+            videoVue.$data.data.content[video_index].player = '<span  id="'+sort+'" onclick="videoListVue('+video_index+',0)"  class="video_box "></span>';
     }
 
     function belongChange(belong){
@@ -437,16 +458,20 @@
                 dataType: 'json',
                 success: function (data) {
                     if(data.code){
-                        let param = data.data //返回的值
-                        videoVue.$data.data = param
-                        videoVue.$data.param = param.data
-                        videoVue.$data.is_disabled = data.graden>0?true:false
-                        scllTop()
-                        videoDestory() //切换后销毁视频
+
                         // lazyLoad() //加载图片
                     }else{
                         layOpen()
                     }
+             
+                    let param = data.data //返回的值
+                        videoVue.$data.data = param
+                        console.log(param)
+                        videoVue.$data.param = param.data
+                        videoVue.$data.is_disabled = data.graden>0?true:false
+                        scllTop()
+                        videoDestory() //切换后销毁视频
+
                 }
             })
         }

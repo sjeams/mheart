@@ -104,6 +104,9 @@ class Query extends ActiveRecord {
 					$list =Query::getVideoFox7($search,$type,$url,$http);
 				break;
 		}
+		foreach($list as$k=>&$v){
+			$v['id']=time().$k;
+		}
 		return $list;	
 	}
 
@@ -298,10 +301,16 @@ public static function getVideoFox4($search,$type,$url,$http)
 		$video = $sql->get($url)->query()->getData()->all();
 		// $rt['title'] =$video[0]['name'];
 		// $rt['imageurl'] =$video[0]['imageurl'];
+		$string ='.m3u8';
+		foreach($video as &$v){
+			$pos = strpos($v['url'],$string);
+			if(!$pos){
+				$v['url']= $v['url'].'/index.m3u8';
+			}
+		}
 		$rt['video'] =	$video;
 		$list[$key] =$rt;
 	}
-	// var_dump($list[0]);die;
 	return $list;
 
 }
