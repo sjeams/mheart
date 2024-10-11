@@ -194,6 +194,7 @@
         }
     })
     function  videoListVue(index,video_child_index){
+        var video_child_index =video_child_index||0;
         var value_data = videoVue.$data.data.content[index];
         // isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
         var id =value_data.id
@@ -201,7 +202,6 @@
         if(value_data.belong==0){
             var new_value_data =value_data.video[video_child_index] //数据为子元素
         }
-
         //判断播放器类型
         var isbofang  = $("#is_bofang_type").val();
         var video_index = videoVue.$data.video_index

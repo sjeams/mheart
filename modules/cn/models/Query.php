@@ -122,12 +122,12 @@ class Query extends ActiveRecord {
 		// var_dump($url );die;
 		// 切片选择器,跳过第一条广告
 		$list = QueryList::get($url)->rules($rules)->range($range)->query()->getData()->all();
-		// var_dump($list );die;
 		$urls =[];
-		foreach($list as  $v){
-			$urls[] =$http.$v['link'];
+		foreach($list as  &$val){
+			$val['name']=trim($val['name']);
+			$urls[] =$http.$val['link'];
 		}
-
+	
 		// 切片选择器----start
 		// $range = '.playList table tbody tr:nth-child(odd)'; // 奇数行
 		$range = '.playList table tbody tr:not(.videoPlayBox)'; // 跳过某个class
@@ -137,7 +137,7 @@ class Query extends ActiveRecord {
 		$rules = [
 			// 'imageUrl' => array(' .left>img','data-original'),
 			// 'name' => array('.right .name','html','span'),
-			'title' => array('.title .download-title ','html','span'),
+			'title' => array('.title .download-title ','text','span'),
 			'url' => array(' .tbAddr:eq(0) input','value',' '),
 		];
 		// 由于DOM解析的都是同一个网站的网页，所以DOM解析规则是可以复用的
@@ -185,7 +185,7 @@ class Query extends ActiveRecord {
 			}
 			$rt['video'] =	$new_video;
 			$list[$key] =$rt;
-			// var_dump($list[0]);
+			// var_dump($list[0]);die;
 		}
 		// var_dump($list );die;
 		// var_dump($list[2]);die;
