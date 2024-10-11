@@ -14,6 +14,7 @@
                         <a class="btn_link " href="https://www.6080yy3.com" class="btn">  6080  </a>
                         <!-- <a class="btn_link " href="https://www.394tv.com" class="btn">  394tv  </a> -->
                         <a class="btn_link " href="https://www.czzy55.com" class="btn">  厂长  </a>
+                        <a class="btn_link " href="https://www.wwgz.cn" class="btn"> wwgz  </a>
                         <a class="btn_link " href="https://www.hbotv1.com/" class="btn">  bptv  </a>
                     </p>
                     <?php if($graden>0){ ?>
