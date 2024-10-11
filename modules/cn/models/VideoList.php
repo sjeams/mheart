@@ -141,7 +141,9 @@ class VideoList extends ActiveRecord {
                     $list= VideoListDetail::checkVideo($listvideo);
                 }
             }
+   
         }
+ 
         return $list;
     }
 
@@ -278,7 +280,7 @@ class VideoList extends ActiveRecord {
     //查 根据session key 查询值i
     public static function  sessionKeyVideo($sessionkey){
         $res = VideoList::find()->select('id,count,belong')->where(" key_value ='$sessionkey' ")->One();
-
+        // var_dump($res);die;
         $list =[];
         if($res){
             //没有视频数量，就不用去取列表了
@@ -291,6 +293,7 @@ class VideoList extends ActiveRecord {
                 $list =  isset($res_text->text) ?json_decode($res_text->text,true):[];
             }
         }
+        // $v['image_list'] =  VideoListImage::findImageList($video_id);
         return  $list ;
     }
 

@@ -445,7 +445,7 @@ class Video extends ActiveRecord {
 			$args['belong']= $belong;
 			$args['link']= $link;
 			// 写入图片
-			VideoListImage::insertImageList($args,$image_list);
+		    $args =	VideoListImage::insertImageList($args,$image_list);
 			return $args;
 		}else{
 			return null;
