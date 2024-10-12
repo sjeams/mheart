@@ -65,14 +65,14 @@ body {
     padding-right: 0px;
 }
 .loading1{
-    margin: auto;
+    margin: auto!important;
 	width: 100px;
 	height: 100px;
-    border-radius: 50%;
-    background: url(./images/loading1.png) no-repeat center center;
-    background-size: 100px 100px;
-    animation: ck-Circle 1.5s linear infinite;
-	-webkit-animation: ck-Circle 1.5s linear infinite
+    border-radius: 50%!important;
+    background: url(./images/loading1.png) no-repeat center center!important;
+    background-size: 100px 100px!important;
+    animation: ck-Circle 1.5s linear infinite!important;
+	-webkit-animation: ck-Circle 1.5s linear infinite!important
 }
 #loading1{
 	/* background: none; */

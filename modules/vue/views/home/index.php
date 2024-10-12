@@ -326,7 +326,7 @@
                             })
                             var content  = str+'</div>';
                             var content =' <div class="center rotatable-element " >'+content+'</div>'
-                                btn_layer_tips_type1('LAY_layuipro_kwords',['100%','100%'],'',content,vueRrload)
+                                btn_layer_tips_type1('LAY_layuipro_kwords',['100%','100%'],'',content,removeLoading)
                         }else{
                             removeLoading()
                         }
