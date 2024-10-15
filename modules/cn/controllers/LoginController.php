@@ -40,8 +40,6 @@ class LoginController extends ApiControl
     //第一次进来先加载空白logo 页面
     public function actionHomeLogo()
     {
-        //进来后就取消logo页面
-       Yii::$app->session->set('first_login',0);
         $this->layout = 'kongbai';
         return $this->render('home_log');    
     }

@@ -1,7 +1,2 @@
-<!-- <script>
-$(function(){
-    window.location.reload();  
-})
-</script> -->
-加载中...
-<meta http-equiv="refresh" content="1;url=/cn/login/home-logo">
+<!-- 加载中...
+<meta http-equiv="refresh" content="1;url=/cn/login/home-logo"> -->

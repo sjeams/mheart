@@ -45,17 +45,10 @@ class WechatUser extends ActiveRecord {
     }
     public static function headerLocation(){
         $user = Yii::$app->session->get('userlogin');
-        $first_login =  Yii::$app->session->get('first_login')?1:0;
         if($user){
             // 判断http还是https
             $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-            // 第一次登录--先加载空白页面
-            if($first_login==0){
-                Yii::$app->session->set('first_login',1);
-                $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/login/home-logo';
-            }else{
-                $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
-            }
+            $href =$http_type.$_SERVER['SERVER_NAME'].'/cn/video/list';
             header('Location: '.$href);die;
         }
     }
