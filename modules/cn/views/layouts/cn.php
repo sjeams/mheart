@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/backStage/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">
 <script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
 <!-- <script type="text/javascript" src="/ueditor/ueditor.config.js"></script> -->
 <!-- 编辑器源码文件 -->  
 <!-- 不需要编辑器 -->
@@ -30,14 +31,10 @@
 <script src="/layui-v2.6.8/layui/layui.js"></script>
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
-<!-- 轮播图 -->
-<link rel="stylesheet" type="text/css" href="/swiper/swiper-bundle.min.css">
-<script type="text/javascript" src="/swiper/swiper-bundle.min.js"></script>
 <!-- 自定义样式 -->
 <!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css"> -->
 <!-- 自定义公共样式，覆盖所有 -->
 <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/jquery.md5.js"></script>
 <title>心缘测试</title>
 </head>
 <body>

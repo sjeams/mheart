@@ -101,15 +101,7 @@
     })
         //查询
         function  gou(){
-            // $.ajax({
-            //     url: '/cn/video-api/ajax-start', // 跳转到 action 
-            //     type: 'post',
-            //     dataType: 'json',
-            //     success: function (data) {
-                    // isGetCaches()//开启缓存，固定缓存下一页
-                    gouhtml(0);
-            //     },
-            // });
+            gouhtml(0);
         }
         // type 是后台返回的要分开
         function typeChange(type){
@@ -145,31 +137,19 @@
                             str = str+'<span class="btn btn-sm  btn-success"  onclick=layerSearch("'+value.search+'")>'+value.search+'</span>';
                         })
                         var content  = str+'</div>';
-                        // <table class="layui-table" lay-even="" lay-skin="nob">
                         layer.open({
                             type: 1
                             ,title: false //不显示标题栏
                             ,closeBtn: false
                             ,area: ['100%','100%']
-                            // ,area: '300px;'// 由于样式会乱，所以设置一个小的背景
                             ,shade: 0.8
-                            // ,shadeClose:false
                             ,id: 'LAY_layuipro_kwords' //设定一个id，防止重复弹出
                             // ,btn: ['搜索', '取消']
                             ,btnAlign: 'c'
- 
                             ,fixed:true //固定
                             ,moveType: 1 //拖拽模式，0或者1
                             ,content: ' <div class="center rotatable-element" style="padding:10px">'+content+'</div>'
                             ,success: function(layero){
-                                // var btn = layero.find('.layui-layer-btn');
-                                // btn.find('.layui-layer-btn0').click(function(){
-                                //     var search_text =$('#search_text').val()
-                                //     layerSearch(search_text)
-                                // })
-                                // btn.find('.layui-layer-btn1').click(function(){
-                                //     removeLoading()
-                                // })
                             }
                         })
                     }else{

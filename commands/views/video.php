@@ -1,13 +1,16 @@
+<!-- 轮播图 -->
+<link rel="stylesheet" async type="text/css" href="/swiper/swiper-bundle.min.css">
+<script type="text/javascript" async src="/swiper/swiper-bundle.min.js"></script>
 <!-- cplayer -->
-<link rel="stylesheet" type="text/css" href="/ckplayer/css/ckplayer.css">
-<link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
-<script type="text/javascript" src="/ckplayer/hls.js/hls.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
+<link rel="stylesheet" async type="text/css" href="/ckplayer/css/ckplayer.css">
+<link rel="stylesheet" async href="/dplayer/dist/DPlayer.min.css" />
+<script type="text/javascript" async src="/ckplayer/hls.js/hls.min.js"></script>
+<script type="text/javascript" async charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 <!-- dplayer -->
-<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>
+<script type="text/javascript" async  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>
 <!-- <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/md5.min.js"></script> -->
-<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/hls.min.js"></script>
-<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
+<script type="text/javascript" async  charset="utf-8"  src="/dplayer/dist/hls.min.js"></script>
+<script type="text/javascript" async  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
 <!-- ckplayer -->
 <!-- old视频 1-->
 <div class="video_old" style="display: <?php $userlogin = Yii::$app->session->get('userlogin'); echo $userlogin['video_model']==1?'block':'none';?>;">
