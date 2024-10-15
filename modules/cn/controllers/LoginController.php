@@ -26,6 +26,26 @@ class LoginController extends ApiControl
             WechatUser::headerLocation();
         }
     }
+
+
+    public function actionLogin()
+    {
+        return $this->render('login');die;
+    }
+    public function actionRegister()
+    {
+        return $this->render('register');die;
+    }
+
+    //第一次进来先加载空白logo 页面
+    public function actionHomeLogo()
+    {
+        //进来后就取消logo页面
+       Yii::$app->session->set('first_login',0);
+        $this->layout = 'kongbai';
+        return $this->render('home_log');    
+    }
+    
     // login-phone
     public function actionLoginPhone(){
         $phone = Yii::$app->request->post('phone');
@@ -45,6 +65,7 @@ class LoginController extends ApiControl
             $this->LoginIn($phone,$password);
             // die(Method::jsonGenerate(1,[],'游客'));
         }
+        die;
     }
     // login-phone
     public function actionLoginToken(){
@@ -139,14 +160,6 @@ class LoginController extends ApiControl
         die(Method::jsonGenerate(1,[],'succes'));
     }
 
-    public function actionLogin()
-    {
-        return $this->render('login');die;
-    }
-    public function actionRegister()
-    {
-        return $this->render('register');die;
-    }
 
 
 }

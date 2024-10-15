@@ -54,6 +54,7 @@ class VideoController extends VideoApiControl
             header('Location: '.$href);die;
         }
     }
+
     /**
      * 基本信息
      * by  sjeam
@@ -166,7 +167,6 @@ class VideoController extends VideoApiControl
         }
         //默认关键词
         $key_words = VideoList::getKeyWords($belong);
-
         if($belong==0){
             //视频通过type 区分网站
             if($search=='undefined'||$search==null||empty($search)||$search=="")   $search=$key_words;
@@ -448,13 +448,6 @@ class VideoController extends VideoApiControl
             $data = Jian::find()->where("name='{$m3u8['name']}'")->orderBy('num asc')->asArray()->all();
             $res=['m3u8'=>$m3u8,'data' =>$data,'sessionkey'=>null,'kss' =>1,'do_num' =>0];
         }
-
-        // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
-        // $res['data'][0]['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
-        // var_dump($res);die;
-        // http://wolongzyw.com/index.php/vod/detail/id/41194.html
-        // var_dump($m3u8);die;
-        // var_dump($res);die;
         return $this->render('video', $res);
     }
       /**
@@ -473,18 +466,6 @@ class VideoController extends VideoApiControl
         // unset($list['video']);
         // var_dump($list);die;
         $res=['content'=>$list['image_list'],'data' =>$list,'sessionkey'=>$sessionkey,'kss' =>$key,'do_num' =>$num];
- 
-        // var_dump($res);die;
-        // $res['m3u8']['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
-        // $res['data'][0]['url'] ='https://aod.cos.tx.xmcdn.com/storages/90d9-audiofreehighqps/5D/27/GKwRIJEGBSaAAQoXdAEp-yVu.m4a';
-        // var_dump($res);die;
-        // http://wolongzyw.com/index.php/vod/detail/id/41194.html
-        // var_dump($m3u8);die;
-        // var_dump($res);die;
-        // return $this->render('pic', $res);
-        // $html = Yii::$app->request->get('html',0);
-
-        // var_dump($res);die;
         $this->layout = 'kongbai';
         return $this->render('pic_full_screen', $res);
     }
