@@ -170,14 +170,14 @@ video{
         z-index: 100;
         /* margin: auto  0px ; */
 		/* border: 1px solid black; */
-        /* height:36px; */
+        height:36px;
         width: 100%;
         position: fixed;
         margin:0px  auto;
         left:0px; 
         right:0px; 
         /* top:0;  */
-        bottom: 0px;
+        bottom: -4px;
         display: inline-block;
         border: none;
 	}
