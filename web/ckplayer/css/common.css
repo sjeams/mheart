@@ -115,10 +115,11 @@ video{
     margin-bottom: auto;
 }
 .table td, .table th {
-    padding: 1px!important;
+    padding: 0px!important;
     vertical-align: top;
     line-height: 30px!important;
-    border-top: 1px solid #dee2e6!important;
+    border: none!important;
+    /* border: 0px solid #dee2e6!important; */
 }
 .table-bordered td, .table-bordered th {
      border: 0px solid #dee2e6;
