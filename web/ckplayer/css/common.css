@@ -67,7 +67,7 @@ video{
      margin:auto;
      left:0; 
      right:0; 
-     top:0; 
+     top: -1px; 
      /* bottom:0; */
      display: inline-block;
      z-index: 100;

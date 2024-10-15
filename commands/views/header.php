@@ -13,7 +13,7 @@ $http_index = explode('/', explode('?',$_SERVER["REQUEST_URI"])[0])[3];
 </style>
 <div class="video_header center  top-title"> 
 <!-- table-bordered  -->
-    <table class="table  tablestyle mb-0">
+    <table class="table  tablestyle mb-0 border-none">
         <tr>
             <!-- //chat -->
             <?php if( $http_geturl=='chat'){ ?>
