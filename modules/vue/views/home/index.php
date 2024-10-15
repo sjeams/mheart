@@ -71,7 +71,7 @@
                 <div  :id="'dplay_video'+[item.id]" :class="'p-0 card-img-top collect-video-style rounded card-header video'+[item.id]"  :style="{backgroundImage: 'url('+item.imageurl+')'}" alt="..." v-html="item.player"></div>  
     
                 <span  v-if="item.belong!=0" >
-                    <p class="center p-1"  @click="downloadUrl(index)"> 
+                    <p class="center p-1"  @click="downloadUrl(index)"  style="width: 90%;"> 
                         <b>{{index+1}}、</b><span v-html="item.title"></span>   
                         <i class="bi bi-download text-success">down</i>
                     </p>
@@ -83,7 +83,7 @@
                     </p>
                 </span>
                 <span v-else >
-                    <p class="center p-1"  > 
+                    <p class="center p-1" style="width: 90%;"> 
                         <b>{{index+1}}、</b><span v-html="item.title"></span>   
                     </p>
                     <!-- 影视 -->

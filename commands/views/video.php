@@ -21,11 +21,14 @@
 <script defer type="text/javascript"  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
 
 <!-- layui弹窗 -->
-<link  async rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
-<script defer src="/layui-v2.6.8/layui/layui.js"></script>
+<link    rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
+<script   src="/layui-v2.6.8/layui/layui.js"></script>
 <!-- 轮播图 -->
 <link async rel="stylesheet"  type="text/css" href="/swiper/swiper-bundle.min.css">
 <script async type="text/javascript"  src="/swiper/swiper-bundle.min.js"></script>
 
 <!-- 初始化视频容器 -->
 <script defer type="text/javascript"  charset="utf-8" src="/ckplayer/js/video_start.js"></script>
+
+<!-- 公共样式 -->
+<script defer type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>

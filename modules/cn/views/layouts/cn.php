@@ -66,7 +66,5 @@
 <!-- <div class="center top"><a href="#top" class="btn" title="回到顶端">回到顶部</a></div> -->
 <!-- <div style="height:30px;overflow:hidden"></div>  -->
 <!-- <div class="footer"><a href="#top" class="btn" title="回到顶端">top</a></div> -->
-
 </body>
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
 

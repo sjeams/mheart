@@ -14,11 +14,10 @@
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <!-- vue 组件 -->
-    <script  type="text/javascript" src="/vue/vue.js"></script>
+    <script type="text/javascript" src="/vue/vue.js"></script>
     <!-- vue  组件js -->
     <script type="text/javascript" charset="utf-8" src="/ckplayer/vue/vue_player.js"></script>
-    <!-- 公共样式 -->
-    <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
+
 </head>
 <body>
 <?php use app\commands\HeaderWidget;?>
