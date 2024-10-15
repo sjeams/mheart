@@ -2,9 +2,7 @@
 function scllTop(){
     $(window).scrollTop(0)
 }
-
 $.orientationModel=true  //竖屏显示菜单，横屏不显示菜单
-// {/* <script type="text/javascript">
 //     //滚动条头部和底部隐藏事件 */}
 $(function(){   
     scllTop()
@@ -29,7 +27,6 @@ $(function(){
         }
     });
 });
-// </script>
 //监听旋转
 $(window).on('orientationchange', function(event) {
     var isbofang  = $("#is_bofang_type").val();
@@ -50,7 +47,6 @@ $(window).on('orientationchange', function(event) {
     }
     //旋转，关闭弹窗
     // cancelSerach()
-
 });
 // player.webFull(function(bool){//bool=true，页面全屏状态，=false，普通状态});
 function onorientationChangeModel(type) {
@@ -73,7 +69,6 @@ function onorientationChangeModel(type) {
         }
     }
 }
-
 $('.img_click').click(function () {
     //获取图片路径
     var imgsrc = $(this).attr("src");
@@ -93,20 +88,6 @@ function toBigImg() {
         $(".opacityBottom").remove();
     });
 }
-
-//添加阴影加载中
-// function addLoading(){
-//     layer.open({
-//         type: 3
-//         ,title: false //不显示标题栏
-//         ,closeBtn: false
-//         ,skin: 'loading1 layui-anim-loop'
-//         ,shade: 0.1
-//         ,id: 'loading1' //设定一个id，防止重复弹出
-//         // ,content: '<div class="center layui-anim layui-anim-up   " ></div>'
-//         ,success: function(layero){  
-//     } });
-// }
 function addLoading(){
     layer.open({
         type: 3  // 默认弹出加载层
@@ -124,7 +105,6 @@ function addLoading(){
 function removeLoadingPage(){
     layer.closeAll('page'); //关闭所有页面层  1
 }
-
 //移除阴影加载中
 function removeLoading(){
     // 对应所有的type  
@@ -134,7 +114,6 @@ function removeLoading(){
     // layer.closeAll('iframe'); //关闭所有的iframe层 2
     layer.closeAll('loading'); //关闭加载层 3
     // layer.closeAll('tips'); //关闭所有的tips层   4
-     
     // //关闭后的回调（layui 2.6.5、layer 3.4.0 新增）
     // layer.closeAll('loading', function(){ //关闭 loading 并执行回调
     //   //do something
@@ -192,21 +171,6 @@ function getprintHtml(url,callback,goPage){
         }
     });
    } catch(e){ removeLoading(); $('#getPage').val(1)  }
-
-
-    // var getHtml =$.ajax({
-    //     type:"post",
-    //     url: url,
-    //     cache:true,
-    //     dataType: 'json',
-    //     async: false,
-    //     success: function (data) {
-    //         removeLoading()
-    //     },error:function(data){
-    //         removeLoading()
-    //     }
-    // });
-    // return getHtml.responseText;
 }
 //list_html 页面回调
 function getprintHtml_list_html(html,goPage){
@@ -304,10 +268,7 @@ $(document).ajaxStop(function( ) {
 // $(document).ajaxSuccess(function( ) {
 //     removeLoading()
 // });
- 
   /*  footer ______________________ */
-
-
     //滚动条触发事件--分页
     // $(window).scroll(function() {
     //     //监听事件内容
@@ -355,8 +316,6 @@ $(document).ajaxStop(function( ) {
             goPage=null;
         }
     }
- 
-    
     //头部显示
     function header_title_show(){
         $('.top-title').removeClass('hiddened');
@@ -369,11 +328,7 @@ $(document).ajaxStop(function( ) {
         $('.page_bottom').css('display','none');
         $('.video_hidden_button').css('display','none');
     }
-
- 
- 
     // <!-- 窗口滚动异步事件 -->
- 
     //文档高度
     function getDocumentTop() {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
@@ -411,35 +366,9 @@ $(document).ajaxStop(function( ) {
         scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
         return scrollHeight;
     }
-
-
-    /*
-    当滚动条滑动，触发事件，判断是否到达最底部
-    然后调用ajax处理函数异步加载数据
-    */
-    // window.onscroll = function () {
-    //     //监听事件内容
-    //     if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
-    //         //当滚动条到底时,这里是触发内容
-    //         //异步请求数据,局部刷新dom
-    //         ajax_function(); 
-    //     }
-    // }
-    
-    // function ajax_function() {
-    //     $.get(
-    //         url,
-    //         data,
-    //         function (data) {
-    //             // dosomething
-    //         }
-    //     );
-    // }
   /*  header ______________________ */
     //首页 
     //静态跳转
-
- 
     function goStaticHtml(url){
         //跳转chat后返回list
         if(window.location.pathname.split('/')[2]=='chat'){
@@ -450,13 +379,11 @@ $(document).ajaxStop(function( ) {
         // var html = getprintHtml(url);
         // if(html){ $('.header_content').html(html);}
     }
-    
     function window_clear(){
     //    window.location.reload()
         //清空所有缓存
         clearSession(2)
     }
-    
     function window_Vue(){
     //    window.location.reload()
         window.location.href='/vue/home/index';
@@ -531,7 +458,6 @@ $(document).ajaxStop(function( ) {
                         }
                         $(".video"+now_video).html(player);
                     } 
-                    
                     //显示窗口播放栏
                     $('.video_old').css('display','table-cell');
                 }else{
@@ -543,9 +469,6 @@ $(document).ajaxStop(function( ) {
                     $('.video_old').css('display','none');
     
                 }
-                // removeLoading()
-                // console.log(data);
-                // window.location.reload();  
                 var now_video =$("#now_video").val();
                 var now_video_key =$("#now_video_key").val();
                 videoList(now_video,now_video_key) 
@@ -641,44 +564,6 @@ $(document).ajaxStop(function( ) {
             gou();
         }
     });
-
-
-
-    // 下载视频------------下载m3u8--下载url
-    // function downloadUrl(id) {
-    //     var fileUrl = $("#form"+id+"  input[name=url]").val();
-    //     var fileName = $("#form"+id+"  input[name=title]").val();
-    //     // var fileType = $(this).attr('data-type');
-    //     var fileType = '.m3u8'
-    //     var type_str ='是否下载：'+fileName; 
-    //     let name = fileName+fileType
-    //     console.log(fileUrl)
-    //     // ajaxDownload(fileUrl)
-    //     return
-    //     layer.open({
-    //         type: 1
-    //         ,title: false //不显示标题栏
-    //         ,closeBtn: false
-    //         ,area: '300px;'
-    //         ,shade: 0.8
-    //         ,id: 'LAY_download' //设定一个id，防止重复弹出
-    //         ,btn: ['确定', '取消']
-    //         ,btnAlign: 'c'
-    //         ,moveType: 1 //拖拽模式，0或者1
-    //         ,content: ' <div class="center" style="margin-top:20px">'+type_str+'</div>'
-    //         ,success: function(layero){
-    //             var btn = layero.find('.layui-layer-btn');
-    //             btn.find('.layui-layer-btn0').click(function(){
-    //                 // clearModel(istype);
-                
-    //                 // window.open(url)
-    //                 // ajaxDown(url)
-    //                 // ajaxDown(url,name)
-    //         });
-    
-    //         }
-    //     })
-    // 
 //获取文件数量
 function downloadUrl(id){
     var url = $("#form"+id+"  input[name=url]").val();
@@ -842,3 +727,307 @@ function getDomain(url){
 //   } catch (error) {
 //     // 处理错误
 //   }
+
+
+
+
+// video-js 改过来了---------------------------------------------------------------------------------------------------------
+
+// $(function(){
+// <img class="img" src="https://data1.huakuibf2.com/20220722/CFFA575AA9A87353/CFFA575AA9A87353.jpg" onerror="imgError(this);">
+//     //图片加载失败
+//     function imgError(image){ 
+//         // 隐藏图片 
+//         // image.style.display = 'none'; 
+//         // 替换为默认图片
+//         image.setAttribute("src", "nophoto.png") 
+//         // document.getElementsByClassName("img")[0].setAttribute("src", "nophoto.png"); 
+//     }
+// })
+//图片报错监听
+function imageError(){
+    $('.video_image').error(function(){
+        var id= $(this).siblings("input[name=video_id]").val();
+        videoList(id,0,1);
+    }) 
+}
+//判断图片是否存在
+function is_img_url(imgurl) {
+    return new Promise(function(resolve, reject) {
+        var ImgObj = new Image(); //判断图片是否存在
+        ImgObj.src = imgurl;
+        ImgObj.onload = function(res) {
+            resolve(res);
+        }
+        ImgObj.onerror = function(err) {
+            reject(err)
+        }
+    }).catch((e) => {}); // 加上这句不会报错（Uncaught (in promise)）
+}
+// isbofang //滚动自动播放时为0，使用ckplayer播放器(能自动播放)--- 不滚动播放时为1，使用移动端自带控制器(会出现暂停)。 请根据情况进行传值
+function  videoList(id,key,isbofang){
+    var key=key||'1c0';
+   //判断播放器类型
+   var isbofang  = $("#is_bofang_type").val();
+    //暂停在播视频
+    var now_video =$("#now_video").val();
+    //存储当前的视频id
+    $("#now_video").val(id); 
+    //判断是否是影视，影视不为空
+    var goBelong  = $("#goBelong").val();
+    //判断是否是采集页面--只有采集页面才有影视
+    var isCollect  = $("#isCollect").val();
+    if(goBelong==0&&isCollect==1){
+        //获取视频
+        var url =$("#form"+key+"  input[name=url]").val();
+        var title =$("#form"+key+"  input[name=title]").val();
+        var imageurl =$("#form"+key+"  input[name=imageurl]").val();
+        $('.click_video').removeClass('btn-success');
+        $('#click_video'+key).addClass('btn-success');
+        var now_video_str =now_video+',"'+key+'"';
+        $("#now_video_key").val(key);
+    }else{
+        //获取视频
+        var url =$("#form"+id+"  input[name=url]").val();
+        var title =$("#form"+id+"  input[name=title]").val();
+        var imageurl =$("#form"+id+"  input[name=imageurl]").val();
+        var now_video_str =now_video;
+    }
+    //选择视频
+    if(isbofang==1){
+    //1 ckplayer 播放器
+        ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
+    }else{
+    //0 dplayer 播放器
+        dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title)
+    }
+    //因为对象覆盖了，所以要放最后面--实例化后加上标签
+    if(now_video!=0&&now_video!=id){
+        var player ="<span onclick='videoList("+now_video_str+")'  class='video_box '></span>";
+        // console.log(now_video)
+        // console.log(player)
+        $(".video"+now_video).html(player);
+    }
+}
+
+function videoDestory(){
+    var _this=this;
+    var isbofang  = $("#is_bofang_type").val();
+    // videoHidden(0);//隐藏窗口
+    if(isbofang==1){
+        //销毁视频，并重新生成
+        _this.newdplayer.destroy();
+        _this.newplayer.remove();
+    }else{
+        _this.newdplayer.destroy();
+        _this.newplayer.remove();
+    }
+}
+
+//dplayer 播放器
+function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
+    //播放窗口模式。。
+    var video_model = $('#is_model_type').val();
+    if(video_model==0&&id!=0){
+        var container_id=   'dplay_video'+id;
+        videoHidden(0);//隐藏窗口
+    }else{
+        var container_id=   'dplay_video';
+        videoHidden(1);//显示窗口
+    }
+    var vid = $.md5(url);
+    var dplayerObject={
+        container: document.getElementById(container_id),
+        autoplay: true, // 自动播放
+        // theme: '#FADFA3', // 主题
+        loop: true, // 循环播放
+        lang: 'zh-cn', // 语言
+        // screenshot: true, // 截图
+        hotkey: true, // 热键
+        preload: 'auto', // 预加载
+        // logo: '/assets/octocat.png', // 左上角logo
+        volume: 0, // 音量
+        playbackSpeed:[0.5, 1, 1.5, 2],
+        mutex: true, // 多个视频互斥
+        landscape: true,        //手机端默认进入横屏全屏时设置true  默认false
+        playNext: true,           //全屏时是否显示下一集图标   选集数组小于等于1时不显示
+        title: title,            //视频标题
+        header: true,             //全屏显示头部信息(返回图标+标题) 
+        // 常规方式
+        video: {
+            url: url,
+            type: 'hls',
+            pic: imageurl, // 封面
+            thumbnails: imageurl, // 缩略图
+        },
+    }
+    var _this=this;
+    _this.newdplayer.destroy();
+    _this.newplayer.remove();
+    _this.newdplayer = new DPlayer(dplayerObject);//初始化播放器
+    _this.newplayer.play()//点击播放
+    // if (isQQBrowser()) {
+    //     // 用户正在使用QQ浏览器
+    //     console.log("当前是QQ浏览器");
+    //     videoHidden(0);//隐藏窗口
+    // }
+ 
+}
+//ckplayer 播放器
+function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
+    //播放窗口模式。。
+    var video_model = $('#is_model_type').val();
+    if(video_model==0&&id!=0){
+        var container_id=   '.video'+id;
+        videoHidden(0);//隐藏窗口
+    }else{
+        var container_id=   '.video';
+        videoHidden(1);//显示窗口
+    }
+    
+    
+    //获取播cookie放时间
+    // var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
+    var videoID = $.md5(url);
+    var videoObject = {
+            debug:true,//开启调试模式
+            container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
+            plug:'hls.js',//设置使用hls插件
+            autoplay:true,
+            video:url,
+            // [ 
+            //     [url, 'video/m3u8', '标清', 0],
+            //     ['05cacb4e02f9d9e.mp4', 'video/mp4', '高清', 0],//视频地址
+            // ],
+            live: false,//是否是直播
+            rightBar: true,//右边控制栏
+            // poster:imageurl,//封面图片
+            title:title,//视频标题
+            // rotate:90,//旋转90度
+            // seek:180,
+            // debug:true,//开启调试模式
+            next:false,
+            rightBar:true,
+            screenshot:true,
+            smallWindows:true,
+            flashplayer: false,//设置成true则强制使用flashplayer
+            // html5m3u8: true,//PC平台上是否使用h5播放器播放m3u8---强制html播放全屏
+            webFull:true,
+            // mobileAutoFull: true,//移动端是否默认全屏播放
+            // mobileCkControls: false,//移动端h5显示控制栏
+            theatre:true,
+            crossOrigin:'Anonymous',//设置html5视频的crossOrigin属性
+            // loop: true,//是否需要循环播放 
+            // seek: 42,//默认需要跳转的秒数
+            controls:isbofang, // 1 使用浏览器自带控制栏  / 0 自动播放，启用控制栏
+            // // language:'en',
+            // // rotate:90,//旋转90度
+            // documentFocusPause:false,//窗口失去焦点后暂停播放
+            // playbackrate: 1,//默认倍速
+            // debug: false,//是否开启调试模式
+            volume:0,//音量
+            overspread:true,//是否让视频铺满播放器
+            playbackrateOpen: true, // 是否开启控制栏倍速选项
+            playbackrateList: [0.75, 1, 1.25, 1.5, 2, 4], // 倍速配置值
+            loaded:'loadHandler',// 监听播放时间方法
+            seek:'cookie',//指定跳转到cookie记录的时间，使用该属性必需配置属性cookie
+		    cookie:videoID,//cookie名称,请在同一域中保持唯一
+            // timeScheduleAdjust:1,//是否可调节播放进度,0不启用，1是启用，2是只能前进（向右拖动），3是只能后退，4是只能前进但能回到第一次拖动时的位置，5是看过的地方可以随意拖动
+        }; 
+       // document.querySelector('video').playbackRate = 4.0   //可以f12 控制台直接倍速播放
+        var videoObject = cokieTime(videoObject,videoID);//开启视频缓存
+        // console.log(videoObject);
+        //刷新视频
+        //销毁视频，并重新生成
+        var _this=this;
+        _this.newdplayer.destroy();
+        _this.newplayer.remove();
+        _this.newplayer= new ckplayer(videoObject);//初始化播放器
+        _this.newplayer.addListener('time', timeHandler,videoID); //监听播放时间
+        // _this.newplayer.addListener('ended', VideoPlayEndedHandler);//监听播放结束
+        // newplayer.visibilityState(function(state){   
+        // //state=show，页面标签当前处于显示状态，=hidden，页面标签当前处理隐藏状态  
+        // console.log(state)
+        // });
+        _this.newplayer.play()//点击播放
+        function timeHandler(t) {
+            // console.log(videoID)
+            cookie.set('time_'+videoID, t); //当前视频播放时间写入cookie
+            // cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
+        }
+        // function VideoPlayEndedHandler(){//监听视频播放完成
+        //     // alert('本视频已结束');
+        // }
+        // if (isQQBrowser()) {
+        //     // 用户正在使用QQ浏览器
+        //     console.log("当前是QQ浏览器");
+        //     videoHidden(0);//隐藏窗口
+        // }
+        //  else {
+        //     // 用户不是使用QQ浏览器
+        //     console.log("当前不是QQ浏览器");
+        // }
+}
+
+function isQQBrowser() {
+    var userAgent = navigator.userAgent;
+    return userAgent.indexOf("QQBrowser") !== -1;
+}
+ // 视频隐藏
+function videoHidden(open){
+    if(open==1){
+        var hiddenvalue = 0; //默认开启
+    }else{
+        var hiddenvalue = $("#hiddenvalue").val();
+    }
+    // console.log(hiddenvalue)
+    if(hiddenvalue==1){
+        $("#hiddenvalue").val(0); 
+        $('.videohidden').css("display","table-column");
+    }else{
+        $("#hiddenvalue").val(1); 
+        $('.videohidden').css("display","table-cell");
+    }
+
+}
+ 
+//cookie---js改过来的
+function cokieTime(videoObject,videoID){
+    // console.log(videoID)
+    var cookieTime = cookie.get('time_'+videoID); //调用已记录的time
+    if(!cookieTime || cookieTime == undefined) { //如果没有记录值，则设置时间0开始播放
+        cookieTime = 0;
+    }
+    // if(cookieTime > 0) {
+    //     alert('本视频记录的上次观看时间(秒)为：' + cookieTime);
+    // }
+    if(cookieTime > 0) { //如果记录时间大于0，则设置视频播放后跳转至上次记录时间
+        videoObject['seek'] = parseInt(cookieTime) ;
+    }
+    return videoObject;
+}
+// //操作cookie的对象
+var cookie = {
+    set: function(name, value) {
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+        document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString();
+    },
+    get: function(name) {
+        var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+        if(arr = document.cookie.match(reg)) {
+            return unescape(arr[2]);
+        } else {
+            return null;
+        }
+    },
+    del: function(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if(cval != null) {
+            document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+        }
+    }
+};

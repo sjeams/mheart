@@ -5,7 +5,7 @@
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/ckplayer.js"></script>
 <!-- dplayer -->
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/flv.min.js"></script>
-<script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/md5.min.js"></script>
+<!-- <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/md5.min.js"></script> -->
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/hls.min.js"></script>
 <script type="text/javascript"  charset="utf-8"  src="/dplayer/dist/DPlayer.min.js"></script>
 <!-- ckplayer -->
@@ -19,7 +19,7 @@
 <!-- new 视频 0-->
 <input type="hidden" value="0" id="now_video"> 
 <input type="hidden" value="0" id="now_video_key"> 
-<script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script>
+<!-- <script type="text/javascript" charset="utf-8" src="/ckplayer/js/video.js"></script> -->
 <script>
     // 初始化容器
   var container_id=   '.video';

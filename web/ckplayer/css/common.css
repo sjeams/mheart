@@ -246,5 +246,273 @@ video{
         margin: 0px auto;
         display: inline-block;
     }
+/* video-css ------------------------------------------------------------------------------------------------ */
+/* //图片浮动 */
+.pic_html{
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+}
+/* 视频样式 */
+/* <style> */
+    /* 单个播放边框  窗口大小*/
+    /* .ckplayer-ckplayer .ck-main{
+        position: inherit;
+    } */
+    .video_hidden_button{
+        position:fixed;z-index:101;width:30%; right: 0;bottom: 40px; float:right;
+    }
+    /* 播放按钮样式 */
+    .video_box{
+        opacity: 0.8;      /* 背景透明度 */
+        background: url(/ckplayer/css/images/play.png) no-repeat 70% center;
+        background-size: 60% 60%;
+        border: 8px solid rgba(255,255,255,0.6);
+        border-radius: 50%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        /* display: none; */
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: 2s;
+    }
+    .ckplayer-ckplayer{
+        /* border-radius: 2%; */
+    }
+    .collect-video-style{
+        border-radius:0.5%!important;width:100%;
+		/* max-width:420px; */
+		margin:auto; 
+		height:300px;
+		position:relative;
+		background-repeat: no-repeat;background-position: center;
+		background-size:auto 100%;
+		/* background-size: 100% 300px; */
+    }
+    .video_img{
+        display: none;
+    }
+/* </style> */
+
+
+
+/* 公共样式 */
+body {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.loading1{
+    margin: auto!important;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%!important;
+    background: url(./images/loading1.png) no-repeat center center!important;
+    background-size: 100px 100px!important;
+    animation: ck-Circle 1.5s linear infinite!important;
+	-webkit-animation: ck-Circle 1.5s linear infinite!important
+}
+#loading1{
+	/* background: none; */
+}
+
+
+
+.red{
+	color: red;
+	font-weight: bold;
+    background: #fff3e6;
+}
+/* 标签在视频上面 */
+.inherit{
+    position: absolute;
+    z-index: 999;
+}
+.container{
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+}
+.hiddened{
+	display: none!important;
+}
+.showed{
+	display: block!important;
+}
+/* .btn {width:28%!important;margin: 5px;max-width: 120px;} */
+.btn { 
+	min-width: 100px!important;
+	margin: 2px;
+	width: 20%;
+}
+/* .btn { width:28%!important;margin: 2%; } */
+.btn-primary{
+	cursor: pointer;
+}
+ 
+.td a{
+	width: 100%;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}
+a:hover{text-decoration:none!important}
+input{
+	height: 40px!important;
+	border-radius: 5px!important;
+	/* //input超出边界解决办法 */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.click_video{
+	/* //超出边界解决办法 */
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1; 
+	/* display: -webkit-box;  */
+	-webkit-box-orient: vertical;
+}
+.button_over_side{
+	/* //超出边界解决办法 */
+	overflow: hidden;
+	/* word-break: keep-all; */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1; 
+	/* display: -webkit-box;  */
+	-webkit-box-orient: vertical;
+	display: block;
+	float: left;
+	text-shadow: 2px 2px 2px #000000;
+}
+
+/* 搜索 */
+.search_input{
+	margin-top: 10px;
+}
+.input_div{
+	vertical-align: middle;
+    font-size: 0;
+    white-space: nowrap;
+}
+/* list */
+#goPage_list{
+    display: inline-block;
+	/* width: 32%; */
+    /* width:80px; */
+}
+.btn_style{
+	width: 100px!important;
+	/* margin: 2px; */
+	text-align: center;
+	border: 1px solid #007bff;
+}
+.pimage {
+    margin: 0px auto;
+    display: block;
+	max-width: 90%;
+	max-height: 400px;
+ }
+.name{
+    margin-top: 20px;
+}
+
+.videohidden{
+    display: table-column-group;
+}
+.video{
+	position:fixed!important;
+	z-index:100;
+	width:100%;
+	height:40%; 
+	margin: auto;
+	left:0; 
+	right:0; 
+	top:40px; 
+	/* bottom:0; */
+}
+.bord{
+    display: inline-block;
+    text-align: center;
+    width:80px;
+    height:20px;
+    border: 1px solid wheat;
+}
+.on{
+    
+    background-color: #fbb450a3;
+    border-radius: 2px;
+}
+
+
+.search_button{
+	height: 40px!important;
+}
+.btn_link{
+	margin: 5px;
+	font-size: 14px;
+    /* text-shadow: 1px 1px 1px #000000; */
+	font-weight: bold;
+}
+/* //index */
+	
+   .check{
+		/* display: flex; */
+		/* float: left; */
+	   clear: both;
+	   /* padding: 5px; */
+	   display: inline-block;
+	   overflow-y: scroll;
+	   max-height: 260px;
+	   width: 100%;
+	   margin: 0px auto ;
+	   text-align: center;
+	}
+	.check a{
+	   display: inline-block;
+	   min-width: 42%;
+	   padding: 10px  5%;
+	   border: 1px solid #ededed;
+	   text-align: center;  
+	   border-radius: 5px; 
+	   margin:  5px auto;
+	   font-size: 12px;
+	}
+	.center{
+	   width: 100%!important;
+	   text-align: center;
+	   margin:  0px  auto  ;
+	   display: inline-block;
+	   /* cursor: pointer; */
+	   /* 文字换行 */
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+
+	.collect{
+	   display: inline-block;
+	   /* width: 65px;
+	   padding: 5px 20px; */
+	   /* border: 1px solid black; */
+	   text-align: center;  
+	   /* border-radius: 5px;  */
+	   margin-top:  10px ;
+	   /* background-color:  #5879f3a3!important; */
+	   cursor: pointer;
+	   margin: auto;
+	}
+	.nav-item{
+	   display: inline-block;
+	}
 
     

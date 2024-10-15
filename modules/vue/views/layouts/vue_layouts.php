@@ -13,7 +13,7 @@
 
     <!-- layui弹窗 -->
     <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css"> -->
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
     
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>

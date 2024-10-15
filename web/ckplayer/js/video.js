@@ -1,6 +1,7 @@
  
-// <img class="img" src="https://data1.huakuibf2.com/20220722/CFFA575AA9A87353/CFFA575AA9A87353.jpg" onerror="imgError(this);">
+
 // $(function(){
+// <img class="img" src="https://data1.huakuibf2.com/20220722/CFFA575AA9A87353/CFFA575AA9A87353.jpg" onerror="imgError(this);">
 //     //图片加载失败
 //     function imgError(image){ 
 //         // 隐藏图片 
@@ -101,7 +102,7 @@ function dplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
         var container_id=   'dplay_video';
         videoHidden(1);//显示窗口
     }
-    var vid = md5(url);
+    var vid = $.md5(url);
     var dplayerObject={
         container: document.getElementById(container_id),
         autoplay: true, // 自动播放
@@ -154,7 +155,7 @@ function ckplayerVideo(id,now_video,isbofang,now_video_str,url,imageurl,title){
     
     //获取播cookie放时间
     // var videoID =$.md5(url); //视频的区分ID，每个视频分配一个唯一的ID
-    var videoID = md5(url);
+    var videoID = $.md5(url);
     var videoObject = {
             debug:true,//开启调试模式
             container: container_id, //“#”代表容器的ID，“.”或“”代表容器的class
@@ -239,10 +240,6 @@ function isQQBrowser() {
     var userAgent = navigator.userAgent;
     return userAgent.indexOf("QQBrowser") !== -1;
 }
-
-
-
-
  // 视频隐藏
 function videoHidden(open){
     if(open==1){

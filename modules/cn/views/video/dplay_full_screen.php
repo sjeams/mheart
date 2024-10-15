@@ -16,7 +16,7 @@
 <!-- <script src="https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.js"></script> -->
 <link rel="stylesheet" href="/dplayer/dist/DPlayer.min.css" />
 <script type="text/javascript" src="/dplayer/dist/flv.min.js"></script>
-<script type="text/javascript" src="/dplayer/dist/md5.min.js"></script>
+<!-- <script type="text/javascript" src="/dplayer/dist/md5.min.js"></script> -->
 <script type="text/javascript" src="/dplayer/dist/hls.min.js"></script>
 <script type="text/javascript" src="/dplayer/dist/DPlayer.min.js"></script>
 <div id="dplayer" class="collect-video-style-pic"></div>
@@ -24,7 +24,7 @@
     // var url = 'https://sd7.taopianplay1.com:43333/c56b1bc09da3/HD/2024-01-20/30/b5bcbd095592/cfc2c49d3918/playlist.m3u8';
 
     var url ='<?php echo $url ?>';
-    var vid = md5(url);
+    var vid = $.md5(url);
     const dp = new DPlayer({
         container: document.getElementById('dplayer'),
         autoplay: true, // 自动播放
