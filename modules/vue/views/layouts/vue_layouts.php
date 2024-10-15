@@ -10,14 +10,9 @@
     <title>测试</title>
     <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/bootstrap-4.6.1-dist/font/bootstrap-icons.css">
-
-    <!-- layui弹窗 -->
-    <link rel="stylesheet" href="/layui-v2.6.8/layui/css/layui.css">
     <!-- <link rel="stylesheet" type="text/css" href="/ckplayer/css/video.css"> -->
     <link rel="stylesheet" type="text/css" href="/ckplayer/css/common.css?v=1">
-    
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
-    <script src="/layui-v2.6.8/layui/layui.js"></script>
     <!-- vue 组件 -->
     <script  type="text/javascript" src="/vue/vue.js"></script>
     <!-- vue  组件js -->
