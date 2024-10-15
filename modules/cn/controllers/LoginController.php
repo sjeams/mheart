@@ -27,7 +27,6 @@ class LoginController extends ApiControl
         }
     }
 
-
     public function actionLogin()
     {
         return $this->render('login');die;
@@ -43,7 +42,6 @@ class LoginController extends ApiControl
         $this->layout = 'kongbai';
         return $this->render('home_log');    
     }
-    
     // login-phone
     public function actionLoginPhone(){
         $phone = Yii::$app->request->post('phone');

@@ -99,7 +99,8 @@
                 if(data.code==1){
                     //登录后设置session
                     // localStorage.setItem('sslToken',data.data);
-                    window.location.reload();   
+                    // window.location.reload();  
+                    window.location.href="/cn/video/list" 
                 }else{
                     $('.error').text(data.message);
                 }
