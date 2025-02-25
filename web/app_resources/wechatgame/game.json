@@ -8,10 +8,6 @@
     },
     "subpackages": [
         {
-            "name": "A基础图标",
-            "root": "subpackages/A基础图标/"
-        },
-        {
             "name": "图标世界",
             "root": "subpackages/图标世界/"
         },
@@ -30,10 +26,6 @@
         {
             "name": "图片大厅",
             "root": "subpackages/图片大厅/"
-        },
-        {
-            "name": "图片背景",
-            "root": "subpackages/图片背景/"
         }
     ]
 }
