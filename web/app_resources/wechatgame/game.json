@@ -26,10 +26,6 @@
         {
             "name": "图标装备",
             "root": "subpackages/图标装备/"
-        },
-        {
-            "name": "图片大厅",
-            "root": "subpackages/图片大厅/"
         }
     ]
 }
