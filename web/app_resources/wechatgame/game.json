@@ -8,10 +8,6 @@
     },
     "subpackages": [
         {
-            "name": "A基础图标",
-            "root": "subpackages/A基础图标/"
-        },
-        {
             "name": "model召唤",
             "root": "subpackages/model召唤/"
         },
@@ -58,10 +54,6 @@
         {
             "name": "图标装备",
             "root": "subpackages/图标装备/"
-        },
-        {
-            "name": "图片大厅",
-            "root": "subpackages/图片大厅/"
         }
     ]
 }
