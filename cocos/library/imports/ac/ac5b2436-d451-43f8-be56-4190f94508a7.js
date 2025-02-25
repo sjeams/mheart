@@ -221,10 +221,7 @@ cc.Class({
     httpRequest.httpPostLogin('/app/api-server/user-role', {
       server: server
     }, function (data) {
-      if (data.code == 1) {
-        httpRequest.playGame("sence_dating");
-      } else if (data.code == 2) {
-        cc.find('Canvas/大厅/提示s').getComponent(cc.Label).string = data.message;
+      if (data.code == 1 || data.code == 2) {
         httpRequest.playGame("sence_dating");
       } else {
         cc.find('Canvas/大厅/提示s').getComponent(cc.Label).string = data.message;

@@ -2904,14 +2904,34 @@
     "meta": 1740466866468,
     "relativePath": "Script\\common.js"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1740466611384,
-    "meta": 1740466866622,
-    "relativePath": "Script\\commonApi\\http.js"
-  },
   "ac5b2436-d451-43f8-be56-4190f94508a7": {
-    "asset": 1740467852436,
-    "meta": 1740467864242,
+    "asset": 1740467933059,
+    "meta": 1740469730124,
     "relativePath": "Script\\登录\\score_jiaose.js"
+  },
+  "60e96421-16be-4762-a18b-ee5d3435e54a": {
+    "asset": 1740469827441,
+    "meta": 1740469827445,
+    "relativePath": "resources\\图标世界\\AutoAtlas.pac"
+  },
+  "00c14b03-56c6-4e65-a08c-67ce70173b04": {
+    "asset": 1740469862874,
+    "meta": 1740469862877,
+    "relativePath": "resources\\图标装备\\AutoAtlas.pac"
+  },
+  "ab91c3d9-ab50-4e2a-a157-47bc1de69e4e": {
+    "asset": 1740469925959,
+    "meta": 1740469925967,
+    "relativePath": "resources\\图片大厅\\AutoAtlas.pac"
+  },
+  "26998acb-d1b6-4667-a9ac-b424d7dbac6c": {
+    "asset": 1740469937811,
+    "meta": 1740469937815,
+    "relativePath": "resources\\图片背景\\AutoAtlas.pac"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1740470071823,
+    "meta": 1740470118244,
+    "relativePath": "Script\\commonApi\\http.js"
   }
 }

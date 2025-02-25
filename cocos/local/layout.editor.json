@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 392,
-      "y": 70,
-      "width": 1052,
-      "height": 698,
+      "x": 564,
+      "y": 56,
+      "width": 1054,
+      "height": 700,
       "layout": {
         "children": [
           {
@@ -142,9 +142,9 @@
     },
     "builder": {
       "x": 416,
-      "y": 8,
-      "width": 982,
-      "height": 812
+      "y": 17,
+      "width": 984,
+      "height": 803
     },
     "sprite-editor": {
       "x": 1199,
