@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 564,
-      "y": 56,
-      "width": 1054,
-      "height": 700,
+      "x": 455,
+      "y": 91,
+      "width": 1055,
+      "height": 701,
       "layout": {
         "children": [
           {
@@ -88,15 +88,14 @@
       ]
     },
     "worker": {},
-    "window-1740464765353": {},
-    "window-1740467001227": {}
+    "window-1740472287727": {}
   },
   "panels": {
     "project-settings": {
-      "x": 396,
-      "y": 96,
-      "width": 704,
-      "height": 572
+      "x": 735,
+      "y": 83,
+      "width": 705,
+      "height": 573
     },
     "ui-kit-preview-extra": {
       "x": 552,
@@ -141,10 +140,10 @@
       "height": 339
     },
     "builder": {
-      "x": 416,
-      "y": 17,
-      "width": 984,
-      "height": 803
+      "x": 500,
+      "y": 6,
+      "width": 987,
+      "height": 805
     },
     "sprite-editor": {
       "x": 1199,
