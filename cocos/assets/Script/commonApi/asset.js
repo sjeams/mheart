@@ -119,11 +119,13 @@ const httpAsset = cc.Class({
     // 回调
     _completeCallback: function(err, texture) {
         //加载完成回调
-        if(http_globalAsset.http_base_asset_num<http_globalAsset.loading_asset.length-1){   
+        if(http_globalAsset.http_base_asset_num<http_globalAsset.loading_asset.length-1){  
+            cc.log('加载下一个资源') 
             if(http_globalAsset.http_base_asset_num>http_globalAsset.loading_asset.length){ return }
             http_globalAsset.http_base_asset_num = http_globalAsset.http_base_asset_num+1
             this.loading_asset(); //下一个资源
         }else{
+            cc.log(' 加载完成') 
             this.loadnextScene() //下一场景 
         }
     },
@@ -144,11 +146,11 @@ const httpAsset = cc.Class({
          }else{
              //预加载场景并获得加载进度
              cc.director.preloadScene(http_globalAsset.http_base_redict_sence,function (completeCount, totalCount,item) {
-                 httpRequestAsset._progressRuning(completeCount,totalCount,item,'加载场景..')
+                httpRequestAsset._progressRuning(completeCount,totalCount,item,'加载场景..')
              }, function (){
-                 cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {  
+                cc.director.loadScene(http_globalAsset.http_base_redict_sence, function () {  
                      // spawnTools();  
-                 });
+                });
              })
          }
      },

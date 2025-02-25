@@ -49,7 +49,19 @@ window.http_globalData = {
   //生物id
   move_zhenfa_id: 0,
   //阵法id
-  model_biology_fightingEnd: [] //战斗结果，每次都是变化的
+  model_biology_fightingEnd: [],
+  //战斗结果，每次都是变化的
+  model_biology_fightingBiology: [],
+  //战斗生物
+  model_biology_fightingDetail: [],
+  //战斗详情
+  model_biology_SkillIcon: [],
+  //技能图标
+  model_biology_SkillTips: [],
+  //技能提示
+  http_user_word_index: [],
+  //用户词库
+  TipBoxPrefab_biology_detail: null //生物详情弹窗预制体
 
 }; //全局资源--唯一不变
 

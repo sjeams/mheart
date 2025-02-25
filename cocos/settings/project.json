@@ -27,7 +27,7 @@
     "3D Physics/Builtin",
     "3D Particle"
   ],
-  "last-module-event-record-time": 1719557993561,
+  "last-module-event-record-time": 1740464830192,
   "design-resolution-width": 1334,
   "design-resolution-height": 750,
   "fit-width": true,
@@ -50,6 +50,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }

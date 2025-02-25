@@ -4,8 +4,6 @@
     "ignore": []
   },
   "setting": {
-    "bundle": false,
-    "userConfirmedBundleSwitch": false,
     "urlCheck": true,
     "scopeDataCheck": false,
     "coverView": true,
@@ -25,10 +23,9 @@
     "userConfirmedUseCompilerModuleSwitch": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
-    "enableEngineNative": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
   },

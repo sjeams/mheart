@@ -172,7 +172,7 @@ cc.Class({
         server.role =cc.find('Canvas/大厅/角色名字').getComponent(cc.EditBox).string
         server.jiaose_id =http_globalData.user_jiaose_check.info.jiaose.id
         httpRequest.httpPostLogin('/app/api-server/user-role', {server} ,function (data) {
-            if(data.code==1){
+            if(data.code==1||data.code==2){
                 httpRequest.playGame("sence_dating");  
             }else{
                 cc.find('Canvas/大厅/提示s').getComponent(cc.Label).string= data.message

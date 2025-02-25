@@ -129,6 +129,8 @@ var httpAsset = cc.Class({
   _completeCallback: function _completeCallback(err, texture) {
     //加载完成回调
     if (http_globalAsset.http_base_asset_num < http_globalAsset.loading_asset.length - 1) {
+      cc.log('加载下一个资源');
+
       if (http_globalAsset.http_base_asset_num > http_globalAsset.loading_asset.length) {
         return;
       }
@@ -136,6 +138,7 @@ var httpAsset = cc.Class({
       http_globalAsset.http_base_asset_num = http_globalAsset.http_base_asset_num + 1;
       this.loading_asset(); //下一个资源
     } else {
+      cc.log(' 加载完成');
       this.loadnextScene(); //下一场景 
     }
   },

@@ -91,7 +91,7 @@ const HttpHelper = cc.Class({
         httpPost: function (url, params, callback) {
             var _this =this;
             var token = cc.sys.localStorage.getItem('token');
-    
+            cc.log(token)
             params['token'] = token;
             var url =https_url+url;
             var xhr = cc.loader.getXMLHttpRequest();
@@ -102,7 +102,8 @@ const HttpHelper = cc.Class({
                     var new_respone =JSON.parse(respone);
                     if(new_respone.code==0){
                         //未登录
-                        // console.log(JSON.parse(respone))
+                        console.log(JSON.parse(respone))
+                        cc.log(333)
                         cc.director.loadScene(_this.urlConfig("sence_login"));
                     }else{
                         callback(JSON.parse(respone));  // json 转数组
@@ -163,6 +164,7 @@ const HttpHelper = cc.Class({
         progress(){
             //判断是否加载完成
             cc.log(http_globalAsset.http_base_asset_num )
+            cc.log(3333)
             if(http_globalAsset.http_base_asset_num<http_globalAsset.loading_asset.length-1){
                 httpRequestAsset.loading_asset() //加载图片资源
             }else{

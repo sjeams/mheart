@@ -173,13 +173,14 @@ class ApiServerController extends ApiControl{
     public function actionUserRole(){
         $data = json_decode(Yii::$app->request->post('data'),true);//游客标识码 // key =123&name =cc 拼接 
         $token =$data['token'];
+
         if(!empty($token)){
             $server = $data['server'];
             $role =trim($server['role']);
             // $is_user = User::find()->where("name='$role'")->One();
             $is_reole = User::find()->where("name='$role' or loginid ={$server['loginid']}")->One();
             if($is_reole){
-                die(Method::jsonApp(2,['userinfo' => null],'你的角色重复啦！'));    
+                die(Method::jsonApp(2,['userinfo' => null],'你已经创建过角色哦！'));    
             }else{
                 $userinfo =  new User();
                 $userinfo->server =$server['id'];
