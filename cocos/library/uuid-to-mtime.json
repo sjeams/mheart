@@ -1620,8 +1620,8 @@
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1740489859055,
-    "meta": 1740489859087,
+    "asset": 1740491785137,
+    "meta": 1740491785175,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
@@ -2935,8 +2935,8 @@
     "relativePath": "resources\\A基础图标\\点数.png"
   },
   "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1740491291916,
-    "meta": 1740491294283,
+    "asset": 1740491776112,
+    "meta": 1740491782889,
     "relativePath": "Script\\music\\home_music.js"
   }
 }
