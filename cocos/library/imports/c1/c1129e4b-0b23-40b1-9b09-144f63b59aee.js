@@ -60,17 +60,17 @@ cc.Class({
     TipBoxPrefab.getChildByName('境界s').getComponent(cc.Label).string = info.state_name; //有背包物品
 
     if (http_globalData.bag) {
-      if (info.gooduse1) {
+      if (info.gooduse1 && http_globalData.bag[info.gooduse1]) {
         var goods_image = http_globalData.bag[info.gooduse1].point;
         TipBoxPrefab.getChildByName('装备1').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
 
-      if (info.gooduse2) {
+      if (info.gooduse2 && http_globalData.bag[info.gooduse2]) {
         var goods_image = http_globalData.bag[info.gooduse2].point;
         TipBoxPrefab.getChildByName('装备2').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
 
-      if (info.yuanShen) {
+      if (info.yuanShen && http_globalData.bag[info.yuanShen]) {
         var goods_image = http_globalData.bag[info.yuanShen].point;
         TipBoxPrefab.getChildByName('元神').getComponent(cc.Sprite).spriteFrame = http_globalAsset.http_base_asset_zhuangbei[goods_image];
       }
