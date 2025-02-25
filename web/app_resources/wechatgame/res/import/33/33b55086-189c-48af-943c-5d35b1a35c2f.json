@@ -1,1 +1,1 @@
-{"__type__":"cc.SpriteFrame","content":{"name":"独角兽","texture":"144f593a4","rect":[571,623,143,182],"offset":[-8.5,-7],"originalSize":[200,200],"rotated":1,"capInsets":[0,0,0,0]}}
+{"__type__":"cc.SpriteFrame","content":{"name":"独角兽","texture":"144f593a4","rect":[160,800,143,182],"offset":[-8.5,-7],"originalSize":[200,200],"capInsets":[0,0,0,0]}}

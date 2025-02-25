@@ -11,7 +11,7 @@
     "upsideDown": false
   },
   "webOrientation": "portrait",
-  "inlineSpriteFrames": true,
+  "inlineSpriteFrames": false,
   "inlineSpriteFrames_native": true,
   "mergeStartScene": true,
   "optimizeHotUpdate": false,

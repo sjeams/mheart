@@ -11,7 +11,7 @@
   "format": "png",
   "quality": 80,
   "contourBleed": true,
-  "paddingBleed": true,
+  "paddingBleed": false,
   "filterUnused": false,
   "packable": false,
   "premultiplyAlpha": false,
