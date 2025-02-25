@@ -15,10 +15,9 @@ cc.Class({
   onLoad: function onLoad() {
     cc.game.addPersistRootNode(this.node);
   },
-  playBgMusic: function playBgMusic() {
-    var _urls = '/app_resources/loading/武侠.mp3';
-    this.bgMusic = httpRequest.httpUrl(_urls);
-    this.bgMusicChannel = cc.audioEngine.play(this.bgMusic, true, 0.5);
+  playBgMusic: function playBgMusic() {//    var _urls ='/app_resources/loading/武侠.mp3';
+    //    this.bgMusic = httpRequest.httpUrl(_urls);
+    //    this.bgMusicChannel = cc.audioEngine.play(this.bgMusic,true,0.5)
   },
   stopBgMusic: function stopBgMusic() {
     if (this.bgMusicChannel !== undefined) {

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "cd6055c3-407c-4296-9212-3314fbcd1c43",
+  "uuid": "eca3540e-84f9-4c9a-9b07-14175e1fab20",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "金币": {
       "ver": "1.0.4",
-      "uuid": "2e7e3611-81a4-4414-a4ec-437bb09ca50f",
-      "rawTextureUuid": "cd6055c3-407c-4296-9212-3314fbcd1c43",
+      "uuid": "6d40c40f-e551-4063-babd-5a38d6eac932",
+      "rawTextureUuid": "eca3540e-84f9-4c9a-9b07-14175e1fab20",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

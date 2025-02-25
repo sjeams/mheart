@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "a63d8afa-ef91-41f1-a84b-11ec2885131c",
+  "uuid": "0f9d284b-a532-4646-9ca2-c2ce26be16d6",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "背包": {
       "ver": "1.0.4",
-      "uuid": "d833cba2-84d4-40a1-b26e-220ac36aeb3c",
-      "rawTextureUuid": "a63d8afa-ef91-41f1-a84b-11ec2885131c",
+      "uuid": "f3e1fed4-df35-4de4-bbc6-2c7469582cc0",
+      "rawTextureUuid": "0f9d284b-a532-4646-9ca2-c2ce26be16d6",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

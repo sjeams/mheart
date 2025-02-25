@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "司马懿",
+    "texture": "048753c9-09ef-46b1-a128-e44c02c619f2",
+    "atlas": "",
+    "rect": [
+      4,
+      3,
+      192,
+      277
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      200,
+      283
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

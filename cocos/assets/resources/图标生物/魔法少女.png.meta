@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "6d4ae13f-5dc5-4b73-aee2-fddff6cec622",
+  "uuid": "278eba71-1ba4-497b-a65d-667530ceb015",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "魔法少女": {
       "ver": "1.0.4",
-      "uuid": "add92892-10a6-404e-84ee-3322fb02dd8f",
-      "rawTextureUuid": "6d4ae13f-5dc5-4b73-aee2-fddff6cec622",
+      "uuid": "b521d893-a292-41b3-95cd-4a42e405f868",
+      "rawTextureUuid": "278eba71-1ba4-497b-a65d-667530ceb015",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

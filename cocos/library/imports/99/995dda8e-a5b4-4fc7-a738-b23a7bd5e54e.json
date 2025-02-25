@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "神魔炼狱",
+    "texture": "97ec71b9-930a-4056-8231-a907e76efb9c",
+    "atlas": "",
+    "rect": [
+      2,
+      0,
+      96,
+      120
+    ],
+    "offset": [
+      1,
+      0
+    ],
+    "originalSize": [
+      98,
+      120
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "28e6dec2-13bf-4045-8ed2-7042790d7a83",
+  "uuid": "8b4d3c4e-defc-4e12-b1eb-ac855c2d5998",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "鬼娃娃": {
       "ver": "1.0.4",
-      "uuid": "a1efc179-280e-4902-b170-bc9a451e256d",
-      "rawTextureUuid": "28e6dec2-13bf-4045-8ed2-7042790d7a83",
+      "uuid": "f2d9d862-ee6c-40b8-9a56-023e5a742306",
+      "rawTextureUuid": "8b4d3c4e-defc-4e12-b1eb-ac855c2d5998",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

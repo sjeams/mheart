@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "任务",
+    "texture": "cc44cb78-a0b5-4d98-a9db-8f8c8122b364",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      102,
+      106
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      102,
+      106
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

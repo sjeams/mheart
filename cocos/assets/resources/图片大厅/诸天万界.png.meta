@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "bba60408-68e1-4232-83e7-35d879820234",
+  "uuid": "be207685-f2a1-4459-be67-cf41ba0967c1",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "诸天万界": {
       "ver": "1.0.4",
-      "uuid": "b5e409fc-9f5e-4a34-af2f-9e6b2f226c99",
-      "rawTextureUuid": "bba60408-68e1-4232-83e7-35d879820234",
+      "uuid": "ba0dc279-9901-489e-92eb-dddbaabe81c8",
+      "rawTextureUuid": "be207685-f2a1-4459-be67-cf41ba0967c1",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

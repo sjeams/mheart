@@ -1144,11 +1144,6 @@
     "meta": 1730291944105,
     "relativePath": "Script\\召唤\\zhaohuan_home.js"
   },
-  "1b95ff32-4c3b-482f-87f9-14984b7f2fab": {
-    "asset": 1726231163125,
-    "meta": 1740489751012,
-    "relativePath": "resources\\图标生物\\AutoAtlas.pac"
-  },
   "c68f76d2-51a7-450c-a6d3-e7bd56b6971e": {
     "asset": 1726231162452,
     "meta": 1730291944416,
@@ -1228,11 +1223,6 @@
     "asset": 1740467933059,
     "meta": 1740469730124,
     "relativePath": "Script\\登录\\score_jiaose.js"
-  },
-  "ab91c3d9-ab50-4e2a-a157-47bc1de69e4e": {
-    "asset": 1740469925959,
-    "meta": 1740469925967,
-    "relativePath": "resources\\图片大厅\\AutoAtlas.pac"
   },
   "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
     "asset": 1740480704725,
@@ -1375,8 +1365,8 @@
     "relativePath": "resources\\model商店\\A商店.prefab"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1740490519471,
-    "meta": 1740490519485,
+    "asset": 1740493556156,
+    "meta": 1740493556171,
     "relativePath": "Scene\\login\\角色.fire"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
@@ -1479,86 +1469,6 @@
     "meta": 1740486766256,
     "relativePath": "resources\\图标世界\\天下第一.jpg"
   },
-  "a63d8afa-ef91-41f1-a84b-11ec2885131c": {
-    "asset": 1740486924057,
-    "meta": 1740486929475,
-    "relativePath": "resources\\图片大厅\\背包.png"
-  },
-  "331030f2-05e3-4870-b4e7-e355ed2aed35": {
-    "asset": 1740486923834,
-    "meta": 1740486929477,
-    "relativePath": "resources\\图片大厅\\布阵.png"
-  },
-  "a03ffd8c-f05e-4a24-b521-d4f29c5da20f": {
-    "asset": 1740486923616,
-    "meta": 1740486929497,
-    "relativePath": "resources\\图片大厅\\创造生物.png"
-  },
-  "21e03c39-13c3-4c6c-b616-ba1cb2f92c0a": {
-    "asset": 1740486924031,
-    "meta": 1740486929500,
-    "relativePath": "resources\\图片大厅\\符文.png"
-  },
-  "cd6055c3-407c-4296-9212-3314fbcd1c43": {
-    "asset": 1740486924183,
-    "meta": 1740486929518,
-    "relativePath": "resources\\图片大厅\\金币.png"
-  },
-  "2d227ffa-7603-418e-b8b6-e89253a17426": {
-    "asset": 1740486923776,
-    "meta": 1740486929520,
-    "relativePath": "resources\\图片大厅\\好友.png"
-  },
-  "8900a44a-4726-458b-b81d-d0721a1ac7b6": {
-    "asset": 1740486923917,
-    "meta": 1740486929536,
-    "relativePath": "resources\\图片大厅\\礼包.png"
-  },
-  "3352352e-4d36-4ea4-87cc-7c3482134966": {
-    "asset": 1740486923555,
-    "meta": 1740486929539,
-    "relativePath": "resources\\图片大厅\\任务.png"
-  },
-  "598ae552-ed5a-424a-b13a-fdc58720b123": {
-    "asset": 1740486923667,
-    "meta": 1740486929558,
-    "relativePath": "resources\\图片大厅\\商店.png"
-  },
-  "7e50f21d-3bbe-4abc-9511-6cb13956e01f": {
-    "asset": 1740486923496,
-    "meta": 1740486929560,
-    "relativePath": "resources\\图片大厅\\上古秘境.png"
-  },
-  "0d27af22-912f-4d94-952d-d82b9f4e84c3": {
-    "asset": 1740486923422,
-    "meta": 1740486929576,
-    "relativePath": "resources\\图片大厅\\上古仙门.png"
-  },
-  "8a6edb01-3758-4d5c-b263-1a901ab15718": {
-    "asset": 1740486923974,
-    "meta": 1740486929579,
-    "relativePath": "resources\\图片大厅\\神魔炼狱.png"
-  },
-  "04b6cc9a-3e0f-4520-b03d-c4ce1c51b913": {
-    "asset": 1740486923880,
-    "meta": 1740486929600,
-    "relativePath": "resources\\图片大厅\\生物.png"
-  },
-  "ec5ed8f2-b5cb-47cb-becb-b9b83093ee05": {
-    "asset": 1740486924236,
-    "meta": 1740486929602,
-    "relativePath": "resources\\图片大厅\\锁妖塔.png"
-  },
-  "4a7dcf00-7385-4705-8e23-6a9d80959431": {
-    "asset": 1740486923727,
-    "meta": 1740486929618,
-    "relativePath": "resources\\图片大厅\\天地熔炉.png"
-  },
-  "bba60408-68e1-4232-83e7-35d879820234": {
-    "asset": 1740486924137,
-    "meta": 1740486929620,
-    "relativePath": "resources\\图片大厅\\诸天万界.png"
-  },
   "277f8418-32bc-49ad-a0ad-55bd3108246c": {
     "asset": 1740487128700,
     "meta": 1740487133368,
@@ -1613,81 +1523,6 @@
     "asset": 1740487128846,
     "meta": 1740487133458,
     "relativePath": "resources\\图标装备\\药水绿色.png"
-  },
-  "274253cd-07d9-4c9a-80bd-1a2dd2d0ea40": {
-    "asset": 1740487212783,
-    "meta": 1740487216549,
-    "relativePath": "resources\\图标生物\\蛋.png"
-  },
-  "7e6b9bb9-77d5-43e5-b8a9-f509313c41e9": {
-    "asset": 1740487212885,
-    "meta": 1740487216550,
-    "relativePath": "resources\\图标生物\\貂蝉.png"
-  },
-  "4820353a-d1e7-439f-9fb8-87606e505210": {
-    "asset": 1740487212549,
-    "meta": 1740487216570,
-    "relativePath": "resources\\图标生物\\独角兽.png"
-  },
-  "5c7fae98-d310-4ab7-a14e-faac31300165": {
-    "asset": 1740487212329,
-    "meta": 1740487216573,
-    "relativePath": "resources\\图标生物\\宫本.png"
-  },
-  "82a5a9ce-5a4f-4e2d-82fc-d998c1f3f8fe": {
-    "asset": 1740487213072,
-    "meta": 1740487216591,
-    "relativePath": "resources\\图标生物\\鬼海龙.png"
-  },
-  "28e6dec2-13bf-4045-8ed2-7042790d7a83": {
-    "asset": 1740487213018,
-    "meta": 1740487216593,
-    "relativePath": "resources\\图标生物\\鬼娃娃.png"
-  },
-  "74fbe4e9-a1d3-4bf5-8ba5-81cb62d5ae6a": {
-    "asset": 1740487212676,
-    "meta": 1740487216610,
-    "relativePath": "resources\\图标生物\\花妖.png"
-  },
-  "96c56763-c612-4446-b871-d5adb95c223c": {
-    "asset": 1740487212948,
-    "meta": 1740487216612,
-    "relativePath": "resources\\图标生物\\骷髅兵.png"
-  },
-  "ac89c93b-b97f-48d6-8d31-ee154b738e64": {
-    "asset": 1740487212485,
-    "meta": 1740487216627,
-    "relativePath": "resources\\图标生物\\洛克人.png"
-  },
-  "c9a964a7-19c3-4e08-b859-4afd0c45e19c": {
-    "asset": 1740487212737,
-    "meta": 1740487216630,
-    "relativePath": "resources\\图标生物\\蘑菇.png"
-  },
-  "6d4ae13f-5dc5-4b73-aee2-fddff6cec622": {
-    "asset": 1740487213158,
-    "meta": 1740487216646,
-    "relativePath": "resources\\图标生物\\魔法少女.png"
-  },
-  "7eb2322b-3198-4208-b62a-afca517ae1f6": {
-    "asset": 1740487212429,
-    "meta": 1740487216648,
-    "relativePath": "resources\\图标生物\\山贼.png"
-  },
-  "a06c61b0-96fb-46b9-9a3f-e9960465a5c6": {
-    "asset": 1740487212084,
-    "meta": 1740487216666,
-    "relativePath": "resources\\图标生物\\司马懿.png"
-  },
-  "34d21626-d5a7-40dd-983d-81375643a645": {
-    "asset": 1740487212209,
-    "meta": 1740487216668,
-    "relativePath": "resources\\图标生物\\孙尚香.png"
-  },
-  "a0366535-5232-4db6-8035-4d2d51f82b75": {
-    "asset": 1740487212614,
-    "meta": 1740487216680,
-    "relativePath": "resources\\图标生物\\玄铁兵.png"
   },
   "698df1b3-0642-4b35-8971-e61c8e333c88": {
     "asset": 1740487363237,
@@ -2670,19 +2505,14 @@
     "relativePath": "resources\\图标技能\\Ability_Suffocate.png"
   },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1740492467195,
-    "meta": 1740492467216,
+    "asset": 1740493788796,
+    "meta": 1740493788824,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1740492017933,
     "meta": 1740492022049,
     "relativePath": "Script\\commonApi\\http.js"
-  },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1740492235417,
-    "meta": 1740492247124,
-    "relativePath": "Script\\music\\home_music.js"
   },
   "d51ef8a8-ae2d-4d82-83ec-7c54823d690a": {
     "asset": 1740492433509,
@@ -2938,5 +2768,175 @@
     "asset": 1740492435379,
     "meta": 1740492447364,
     "relativePath": "resources\\A基础图标\\a无.png"
+  },
+  "6a308740-cbe0-4cef-aaed-39fc300432b2": {
+    "asset": 1740493445997,
+    "meta": 1740493446060,
+    "relativePath": "resources\\图标生物\\蘑菇.png"
+  },
+  "871f9a4d-c241-409d-aff1-3f00d277da6e": {
+    "asset": 1740493445997,
+    "meta": 1740493446063,
+    "relativePath": "resources\\图标生物\\山贼.png"
+  },
+  "278eba71-1ba4-497b-a65d-667530ceb015": {
+    "asset": 1740493445997,
+    "meta": 1740493446084,
+    "relativePath": "resources\\图标生物\\魔法少女.png"
+  },
+  "048753c9-09ef-46b1-a128-e44c02c619f2": {
+    "asset": 1740493445997,
+    "meta": 1740493446087,
+    "relativePath": "resources\\图标生物\\司马懿.png"
+  },
+  "fa92774a-c130-43b7-b9d9-e6d27441c05d": {
+    "asset": 1740493445997,
+    "meta": 1740493446107,
+    "relativePath": "resources\\图标生物\\蛋.png"
+  },
+  "446ac18d-bcdd-4d99-ba4f-dd523cbf56e9": {
+    "asset": 1740493445997,
+    "meta": 1740493446113,
+    "relativePath": "resources\\图标生物\\孙尚香.png"
+  },
+  "d2ecb9bf-2fe1-49ab-9fe7-da7eb4fb1628": {
+    "asset": 1740493445997,
+    "meta": 1740493446132,
+    "relativePath": "resources\\图标生物\\玄铁兵.png"
+  },
+  "6003d5b3-a223-4480-a713-7e84f8d8b5ef": {
+    "asset": 1740493445997,
+    "meta": 1740493446134,
+    "relativePath": "resources\\图标生物\\貂蝉.png"
+  },
+  "8b4d3c4e-defc-4e12-b1eb-ac855c2d5998": {
+    "asset": 1740493445998,
+    "meta": 1740493446154,
+    "relativePath": "resources\\图标生物\\鬼娃娃.png"
+  },
+  "1ad396e1-a9aa-4eeb-b571-20394ca5294d": {
+    "asset": 1740493445998,
+    "meta": 1740493446156,
+    "relativePath": "resources\\图标生物\\独角兽.png"
+  },
+  "d049f321-73ad-4ed7-8354-adc15ebffc2e": {
+    "asset": 1740493445998,
+    "meta": 1740493446176,
+    "relativePath": "resources\\图标生物\\花妖.png"
+  },
+  "c5c2a0d9-089d-41da-824c-730a0a42e32e": {
+    "asset": 1740493445998,
+    "meta": 1740493446179,
+    "relativePath": "resources\\图标生物\\洛克人.png"
+  },
+  "c95eda7b-37e5-4081-b7de-ca385c01fdc5": {
+    "asset": 1740493445998,
+    "meta": 1740493446201,
+    "relativePath": "resources\\图标生物\\骷髅兵.png"
+  },
+  "4d2a2e18-a01e-40cf-a9cd-73345628bd2e": {
+    "asset": 1740493446000,
+    "meta": 1740493446203,
+    "relativePath": "resources\\图标生物\\鬼海龙.png"
+  },
+  "2c548927-a0df-4a71-b313-3df916dd1123": {
+    "asset": 1740493446000,
+    "meta": 1740493446220,
+    "relativePath": "resources\\图标生物\\宫本.png"
+  },
+  "be73ba17-2ca8-4715-ba47-7749259bbb9a": {
+    "asset": 1740493450443,
+    "meta": 1740493450445,
+    "relativePath": "resources\\图标生物\\AutoAtlas.pac"
+  },
+  "d1fe0061-b852-46d5-9073-6208c1ed4a20": {
+    "asset": 1740493543266,
+    "meta": 1740493543318,
+    "relativePath": "resources\\图片大厅\\好友.png"
+  },
+  "eca3540e-84f9-4c9a-9b07-14175e1fab20": {
+    "asset": 1740493543266,
+    "meta": 1740493543321,
+    "relativePath": "resources\\图片大厅\\金币.png"
+  },
+  "72800891-fd9d-4c17-9c24-6878346583b8": {
+    "asset": 1740493543266,
+    "meta": 1740493543339,
+    "relativePath": "resources\\图片大厅\\符文.png"
+  },
+  "e36fa447-0e37-45b6-9b01-4f0156d6a3e0": {
+    "asset": 1740493543266,
+    "meta": 1740493543342,
+    "relativePath": "resources\\图片大厅\\商店.png"
+  },
+  "a5bdd390-01f4-4357-a711-54642cd46ce3": {
+    "asset": 1740493543266,
+    "meta": 1740493543362,
+    "relativePath": "resources\\图片大厅\\上古仙门.png"
+  },
+  "cc44cb78-a0b5-4d98-a9db-8f8c8122b364": {
+    "asset": 1740493543266,
+    "meta": 1740493543364,
+    "relativePath": "resources\\图片大厅\\任务.png"
+  },
+  "97ec71b9-930a-4056-8231-a907e76efb9c": {
+    "asset": 1740493543266,
+    "meta": 1740493543383,
+    "relativePath": "resources\\图片大厅\\神魔炼狱.png"
+  },
+  "e1b2031e-538d-405d-9329-ea9b4f0c69e2": {
+    "asset": 1740493543266,
+    "meta": 1740493543385,
+    "relativePath": "resources\\图片大厅\\上古秘境.png"
+  },
+  "ed2e0588-375d-4691-9240-f7038bcc0686": {
+    "asset": 1740493543266,
+    "meta": 1740493543402,
+    "relativePath": "resources\\图片大厅\\生物.png"
+  },
+  "24770063-0e0a-4c24-a4fe-ef76f4e890d8": {
+    "asset": 1740493543266,
+    "meta": 1740493543404,
+    "relativePath": "resources\\图片大厅\\天地熔炉.png"
+  },
+  "be207685-f2a1-4459-be67-cf41ba0967c1": {
+    "asset": 1740493543266,
+    "meta": 1740493543422,
+    "relativePath": "resources\\图片大厅\\诸天万界.png"
+  },
+  "ae0d4afc-247c-4d6d-b68f-221a72b865e6": {
+    "asset": 1740493543266,
+    "meta": 1740493543427,
+    "relativePath": "resources\\图片大厅\\礼包.png"
+  },
+  "0f9d284b-a532-4646-9ca2-c2ce26be16d6": {
+    "asset": 1740493543266,
+    "meta": 1740493543447,
+    "relativePath": "resources\\图片大厅\\背包.png"
+  },
+  "60ccaf1c-7964-4e0c-ba12-9db236f75062": {
+    "asset": 1740493543266,
+    "meta": 1740493543449,
+    "relativePath": "resources\\图片大厅\\锁妖塔.png"
+  },
+  "3d5967f8-a7c8-468a-89b1-6e0ab1f8b390": {
+    "asset": 1740493543266,
+    "meta": 1740493543466,
+    "relativePath": "resources\\图片大厅\\布阵.png"
+  },
+  "d98e6c52-c98e-48a2-8d64-8e143be168f0": {
+    "asset": 1740493543266,
+    "meta": 1740493543467,
+    "relativePath": "resources\\图片大厅\\创造生物.png"
+  },
+  "f1a7af02-8cf0-430e-ba26-9c9d56e3c2f1": {
+    "asset": 1740493550262,
+    "meta": 1740493550264,
+    "relativePath": "resources\\图片大厅\\AutoAtlas.pac"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1740493822243,
+    "meta": 1740493827906,
+    "relativePath": "Script\\music\\home_music.js"
   }
 }

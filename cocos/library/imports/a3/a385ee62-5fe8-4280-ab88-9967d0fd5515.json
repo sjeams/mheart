@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "鬼海龙",
+    "texture": "4d2a2e18-a01e-40cf-a9cd-73345628bd2e",
+    "atlas": "",
+    "rect": [
+      22,
+      20,
+      156,
+      176
+    ],
+    "offset": [
+      0,
+      -8
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

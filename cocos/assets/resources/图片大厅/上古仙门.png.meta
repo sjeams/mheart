@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "0d27af22-912f-4d94-952d-d82b9f4e84c3",
+  "uuid": "a5bdd390-01f4-4357-a711-54642cd46ce3",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "上古仙门": {
       "ver": "1.0.4",
-      "uuid": "53edcb83-539c-4d80-b6a6-62433bc4d3b9",
-      "rawTextureUuid": "0d27af22-912f-4d94-952d-d82b9f4e84c3",
+      "uuid": "78aa7302-13f9-47b1-a80c-013ad2995454",
+      "rawTextureUuid": "a5bdd390-01f4-4357-a711-54642cd46ce3",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

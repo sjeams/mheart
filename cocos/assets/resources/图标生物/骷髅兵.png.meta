@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "96c56763-c612-4446-b871-d5adb95c223c",
+  "uuid": "c95eda7b-37e5-4081-b7de-ca385c01fdc5",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "骷髅兵": {
       "ver": "1.0.4",
-      "uuid": "39b34272-0d8b-454a-a88f-61fb309bb53a",
-      "rawTextureUuid": "96c56763-c612-4446-b871-d5adb95c223c",
+      "uuid": "6f03a060-ba77-4b05-a811-4da60cef9f74",
+      "rawTextureUuid": "c95eda7b-37e5-4081-b7de-ca385c01fdc5",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "598ae552-ed5a-424a-b13a-fdc58720b123",
+  "uuid": "e36fa447-0e37-45b6-9b01-4f0156d6a3e0",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "商店": {
       "ver": "1.0.4",
-      "uuid": "a57e3a6e-8ab4-4246-964f-07d31159fa09",
-      "rawTextureUuid": "598ae552-ed5a-424a-b13a-fdc58720b123",
+      "uuid": "17bbb228-057a-4521-ad9c-a5ac662e38ab",
+      "rawTextureUuid": "e36fa447-0e37-45b6-9b01-4f0156d6a3e0",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

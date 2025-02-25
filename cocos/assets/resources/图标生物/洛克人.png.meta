@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "ac89c93b-b97f-48d6-8d31-ee154b738e64",
+  "uuid": "c5c2a0d9-089d-41da-824c-730a0a42e32e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "洛克人": {
       "ver": "1.0.4",
-      "uuid": "a46ecef5-ca0e-4048-9656-0dd816766fde",
-      "rawTextureUuid": "ac89c93b-b97f-48d6-8d31-ee154b738e64",
+      "uuid": "62ccfc6c-66eb-49c7-a8d7-628815c9780d",
+      "rawTextureUuid": "c5c2a0d9-089d-41da-824c-730a0a42e32e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

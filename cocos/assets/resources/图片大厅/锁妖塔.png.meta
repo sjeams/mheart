@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "ec5ed8f2-b5cb-47cb-becb-b9b83093ee05",
+  "uuid": "60ccaf1c-7964-4e0c-ba12-9db236f75062",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "锁妖塔": {
       "ver": "1.0.4",
-      "uuid": "cff5220f-c371-44f2-9b49-997bd16c7c79",
-      "rawTextureUuid": "ec5ed8f2-b5cb-47cb-becb-b9b83093ee05",
+      "uuid": "44ec7127-32c9-4d6b-8418-479b5fd35f2c",
+      "rawTextureUuid": "60ccaf1c-7964-4e0c-ba12-9db236f75062",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

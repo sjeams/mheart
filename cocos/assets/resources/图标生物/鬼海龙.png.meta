@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "82a5a9ce-5a4f-4e2d-82fc-d998c1f3f8fe",
+  "uuid": "4d2a2e18-a01e-40cf-a9cd-73345628bd2e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "鬼海龙": {
       "ver": "1.0.4",
-      "uuid": "73aae475-43df-4648-9130-35f352a99329",
-      "rawTextureUuid": "82a5a9ce-5a4f-4e2d-82fc-d998c1f3f8fe",
+      "uuid": "a385ee62-5fe8-4280-ab88-9967d0fd5515",
+      "rawTextureUuid": "4d2a2e18-a01e-40cf-a9cd-73345628bd2e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

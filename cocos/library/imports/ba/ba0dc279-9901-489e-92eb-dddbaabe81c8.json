@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "诸天万界",
+    "texture": "be207685-f2a1-4459-be67-cf41ba0967c1",
+    "atlas": "",
+    "rect": [
+      0,
+      17,
+      200,
+      160
+    ],
+    "offset": [
+      0,
+      1.5
+    ],
+    "originalSize": [
+      200,
+      197
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

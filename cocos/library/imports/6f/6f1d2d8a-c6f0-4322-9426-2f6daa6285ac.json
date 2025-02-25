@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "山贼",
+    "texture": "871f9a4d-c241-409d-aff1-3f00d277da6e",
+    "atlas": "",
+    "rect": [
+      5,
+      6,
+      240,
+      279
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      250,
+      290
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

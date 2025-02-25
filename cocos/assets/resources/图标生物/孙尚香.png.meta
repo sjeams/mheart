@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "34d21626-d5a7-40dd-983d-81375643a645",
+  "uuid": "446ac18d-bcdd-4d99-ba4f-dd523cbf56e9",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "孙尚香": {
       "ver": "1.0.4",
-      "uuid": "87786d12-f17f-4a14-bd9b-a51deb139cfd",
-      "rawTextureUuid": "34d21626-d5a7-40dd-983d-81375643a645",
+      "uuid": "0253a361-edd0-4c58-b452-e002b1040d90",
+      "rawTextureUuid": "446ac18d-bcdd-4d99-ba4f-dd523cbf56e9",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

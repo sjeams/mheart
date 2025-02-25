@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "7e50f21d-3bbe-4abc-9511-6cb13956e01f",
+  "uuid": "e1b2031e-538d-405d-9329-ea9b4f0c69e2",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "上古秘境": {
       "ver": "1.0.4",
-      "uuid": "0f36fb28-6adc-4a7b-b950-05c8d867e64d",
-      "rawTextureUuid": "7e50f21d-3bbe-4abc-9511-6cb13956e01f",
+      "uuid": "648a7aac-96b0-497a-b74c-fa6beecf8e48",
+      "rawTextureUuid": "e1b2031e-538d-405d-9329-ea9b4f0c69e2",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

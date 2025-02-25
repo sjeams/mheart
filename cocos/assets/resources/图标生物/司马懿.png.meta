@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "a06c61b0-96fb-46b9-9a3f-e9960465a5c6",
+  "uuid": "048753c9-09ef-46b1-a128-e44c02c619f2",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "司马懿": {
       "ver": "1.0.4",
-      "uuid": "5689fc56-096f-44f6-8b37-c9e195118d58",
-      "rawTextureUuid": "a06c61b0-96fb-46b9-9a3f-e9960465a5c6",
+      "uuid": "454e47fe-41d9-448c-a83e-7b2d3dbd5d27",
+      "rawTextureUuid": "048753c9-09ef-46b1-a128-e44c02c619f2",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

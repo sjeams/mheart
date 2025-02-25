@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "花妖",
+    "texture": "d049f321-73ad-4ed7-8354-adc15ebffc2e",
+    "atlas": "",
+    "rect": [
+      8,
+      7,
+      179,
+      177
+    ],
+    "offset": [
+      -2.5,
+      4.5
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

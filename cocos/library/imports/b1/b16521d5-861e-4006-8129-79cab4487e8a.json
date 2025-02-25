@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "独角兽",
+    "texture": "1ad396e1-a9aa-4eeb-b571-20394ca5294d",
+    "atlas": "",
+    "rect": [
+      20,
+      16,
+      143,
+      182
+    ],
+    "offset": [
+      -8.5,
+      -7
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

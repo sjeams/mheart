@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "礼包",
+    "texture": "ae0d4afc-247c-4d6d-b68f-221a72b865e6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      178,
+      198
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      178,
+      198
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
