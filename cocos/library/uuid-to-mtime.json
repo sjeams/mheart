@@ -1234,11 +1234,6 @@
     "meta": 1740469925967,
     "relativePath": "resources\\图片大厅\\AutoAtlas.pac"
   },
-  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
-    "asset": 1740470071823,
-    "meta": 1740470118244,
-    "relativePath": "Script\\commonApi\\http.js"
-  },
   "6a79bd9e-51b9-4cf8-a290-0d27ef007e5a": {
     "asset": 1740480704725,
     "meta": 1740480774051,
@@ -1618,11 +1613,6 @@
     "asset": 1740486378588,
     "meta": 1740486378603,
     "relativePath": "Scene\\home\\创造生物.fire"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1740491785137,
-    "meta": 1740491785175,
-    "relativePath": "Scene\\home\\大厅.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
     "asset": 1740486245606,
@@ -2935,8 +2925,18 @@
     "relativePath": "resources\\A基础图标\\点数.png"
   },
   "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1740491776112,
-    "meta": 1740491782889,
+    "asset": 1740491858384,
+    "meta": 1740491928753,
     "relativePath": "Script\\music\\home_music.js"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1740492022876,
+    "meta": 1740492022899,
+    "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
+    "asset": 1740492017933,
+    "meta": 1740492022049,
+    "relativePath": "Script\\commonApi\\http.js"
   }
 }
