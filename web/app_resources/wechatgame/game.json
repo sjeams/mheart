@@ -8,38 +8,6 @@
     },
     "subpackages": [
         {
-            "name": "A基础图标",
-            "root": "subpackages/A基础图标/"
-        },
-        {
-            "name": "model召唤",
-            "root": "subpackages/model召唤/"
-        },
-        {
-            "name": "model商店",
-            "root": "subpackages/model商店/"
-        },
-        {
-            "name": "model布阵",
-            "root": "subpackages/model布阵/"
-        },
-        {
-            "name": "model弹窗",
-            "root": "subpackages/model弹窗/"
-        },
-        {
-            "name": "model战斗",
-            "root": "subpackages/model战斗/"
-        },
-        {
-            "name": "model按钮",
-            "root": "subpackages/model按钮/"
-        },
-        {
-            "name": "model背包",
-            "root": "subpackages/model背包/"
-        },
-        {
             "name": "图标世界",
             "root": "subpackages/图标世界/"
         },
@@ -52,20 +20,8 @@
             "root": "subpackages/图标技能效果/"
         },
         {
-            "name": "图标生物",
-            "root": "subpackages/图标生物/"
-        },
-        {
             "name": "图标装备",
             "root": "subpackages/图标装备/"
-        },
-        {
-            "name": "图片大厅",
-            "root": "subpackages/图片大厅/"
-        },
-        {
-            "name": "图片背景",
-            "root": "subpackages/图片背景/"
         }
     ]
 }
