@@ -2924,19 +2924,19 @@
     "meta": 1740490411105,
     "relativePath": "resources\\A基础图标\\点数.png"
   },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1740491858384,
-    "meta": 1740491928753,
-    "relativePath": "Script\\music\\home_music.js"
-  },
   "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1740492022876,
-    "meta": 1740492022899,
+    "asset": 1740492199879,
+    "meta": 1740492199904,
     "relativePath": "Scene\\home\\大厅.fire"
   },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1740492017933,
     "meta": 1740492022049,
     "relativePath": "Script\\commonApi\\http.js"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1740492235417,
+    "meta": 1740492247124,
+    "relativePath": "Script\\music\\home_music.js"
   }
 }
