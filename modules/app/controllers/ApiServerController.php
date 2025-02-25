@@ -178,7 +178,7 @@ class ApiServerController extends ApiControl{
             $server = $data['server'];
             $role =trim($server['role']);
             // $is_user = User::find()->where("name='$role'")->One();
-            $is_reole = User::find()->where("name='$role' or loginid ={$server['loginid']}")->One();
+            $is_reole = User::find()->where("name='$role' or ( server = {$server['id']} and loginid ={$server['loginid']} )")->One();
             if($is_reole){
                 die(Method::jsonApp(2,['userinfo' => null],'你已经创建过角色哦！'));    
             }else{
