@@ -20,6 +20,10 @@
             "root": "subpackages/图标技能效果/"
         },
         {
+            "name": "图标生物",
+            "root": "subpackages/图标生物/"
+        },
+        {
             "name": "图标装备",
             "root": "subpackages/图标装备/"
         },
