@@ -1014,11 +1014,6 @@
     "meta": 1730291942381,
     "relativePath": "resources\\model按钮\\返回.prefab"
   },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1726231162465,
-    "meta": 1730291945199,
-    "relativePath": "Script\\music\\home_music.js"
-  },
   "a35df353-e613-4fbb-acd6-15095812556b": {
     "asset": 1726231162673,
     "meta": 1730291942471,
@@ -1640,8 +1635,8 @@
     "relativePath": "resources\\model商店\\A商店.prefab"
   },
   "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1740486994784,
-    "meta": 1740486994800,
+    "asset": 1740490519471,
+    "meta": 1740490519485,
     "relativePath": "Scene\\login\\角色.fire"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
@@ -1655,8 +1650,8 @@
     "relativePath": "Script\\common.js"
   },
   "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1740488458197,
-    "meta": 1740488458239,
+    "asset": 1740491305611,
+    "meta": 1740491305640,
     "relativePath": "Scene\\login\\登录.fire"
   },
   "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
@@ -2933,5 +2928,15 @@
     "asset": 1740487373327,
     "meta": 1740487384052,
     "relativePath": "resources\\图标技能\\Ability_Suffocate.png"
+  },
+  "ba6a0b14-3cd5-4366-b25a-539894f0417e": {
+    "asset": 1740490411079,
+    "meta": 1740490411105,
+    "relativePath": "resources\\A基础图标\\点数.png"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1740491291916,
+    "meta": 1740491294283,
+    "relativePath": "Script\\music\\home_music.js"
   }
 }
