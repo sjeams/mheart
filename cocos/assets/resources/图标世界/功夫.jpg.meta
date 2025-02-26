@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "f1911ddf-155a-4a0b-8ad8-25736623f567",
+  "uuid": "3dcc38d4-1dd8-4099-923f-9c4c876632f9",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "功夫": {
       "ver": "1.0.4",
-      "uuid": "07830c55-e2e3-48ec-afc2-3ead41f0369b",
-      "rawTextureUuid": "f1911ddf-155a-4a0b-8ad8-25736623f567",
+      "uuid": "47aa3f92-248b-4cae-8c0e-2dd8d64ec037",
+      "rawTextureUuid": "3dcc38d4-1dd8-4099-923f-9c4c876632f9",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

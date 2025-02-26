@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "功夫",
+    "texture": "3dcc38d4-1dd8-4099-923f-9c4c876632f9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      200,
+      286
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      200,
+      286
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

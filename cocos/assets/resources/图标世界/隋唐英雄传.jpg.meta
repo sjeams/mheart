@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "3fbb443d-1bf0-4c42-b010-7f08236cb521",
+  "uuid": "80466f3d-3d8b-4371-8ae1-7149bf6633c9",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "隋唐英雄传": {
       "ver": "1.0.4",
-      "uuid": "3610725c-8bba-4135-84c6-749cb4dc0fd8",
-      "rawTextureUuid": "3fbb443d-1bf0-4c42-b010-7f08236cb521",
+      "uuid": "c47db836-7ece-4022-9b8c-96f44385a476",
+      "rawTextureUuid": "80466f3d-3d8b-4371-8ae1-7149bf6633c9",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "9948b5b7-6219-4a1b-aeee-2bf8b9ab968d",
+  "uuid": "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "大唐双龙传": {
       "ver": "1.0.4",
-      "uuid": "31b7886b-c875-40ef-814b-a0d9d76be3bd",
-      "rawTextureUuid": "9948b5b7-6219-4a1b-aeee-2bf8b9ab968d",
+      "uuid": "d14f296d-5ac8-4166-820b-f2992d822752",
+      "rawTextureUuid": "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

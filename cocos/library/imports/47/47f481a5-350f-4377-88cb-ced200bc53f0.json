@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "水浒传",
+    "texture": "ce8d76e7-d83a-415f-b5fd-5f3c7c258930",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      214,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      214,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

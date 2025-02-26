@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "ab4c91b4-d8aa-441a-ac0b-0c70895b395f",
+  "uuid": "22071f21-91f2-4c00-8a57-3ff7b2d84af4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "倩女幽魂": {
       "ver": "1.0.4",
-      "uuid": "731a2afd-e031-436e-9c8d-1a2d9582adc0",
-      "rawTextureUuid": "ab4c91b4-d8aa-441a-ac0b-0c70895b395f",
+      "uuid": "5a8ed08c-7534-4ec5-b85b-b61b42d03d52",
+      "rawTextureUuid": "22071f21-91f2-4c00-8a57-3ff7b2d84af4",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

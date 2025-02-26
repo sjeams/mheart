@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "f2c97552-727b-4f80-90b8-a49281fc637d",
+  "uuid": "476480a7-6ba8-4230-aef2-ba29ff5cdd3f",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "蝶舞天涯": {
       "ver": "1.0.4",
-      "uuid": "72e47f94-1c88-4eaf-a8b5-2756a6024d0d",
-      "rawTextureUuid": "f2c97552-727b-4f80-90b8-a49281fc637d",
+      "uuid": "28dc0db2-2802-41d9-838d-3963c1db2d86",
+      "rawTextureUuid": "476480a7-6ba8-4230-aef2-ba29ff5cdd3f",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "6593d4d8-2252-44b8-8da0-59b9dbb52bcb",
+  "uuid": "ce8d76e7-d83a-415f-b5fd-5f3c7c258930",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "水浒传": {
       "ver": "1.0.4",
-      "uuid": "d3346a3f-92a2-4063-9fd1-ada485714292",
-      "rawTextureUuid": "6593d4d8-2252-44b8-8da0-59b9dbb52bcb",
+      "uuid": "47f481a5-350f-4377-88cb-ced200bc53f0",
+      "rawTextureUuid": "ce8d76e7-d83a-415f-b5fd-5f3c7c258930",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

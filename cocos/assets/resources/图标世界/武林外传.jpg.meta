@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "6efaa722-78c7-4bfa-a395-271f84e85e00",
+  "uuid": "a32e65f0-41e5-4583-9ec1-33ca2efa535f",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "武林外传": {
       "ver": "1.0.4",
-      "uuid": "b170e622-201c-4cb4-bdc9-f40c8ac93421",
-      "rawTextureUuid": "6efaa722-78c7-4bfa-a395-271f84e85e00",
+      "uuid": "18e24547-f9f2-45ea-a631-0fc15af7c962",
+      "rawTextureUuid": "a32e65f0-41e5-4583-9ec1-33ca2efa535f",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "隋唐英雄传",
+    "texture": "80466f3d-3d8b-4371-8ae1-7149bf6633c9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      119,
+      200
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      119,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

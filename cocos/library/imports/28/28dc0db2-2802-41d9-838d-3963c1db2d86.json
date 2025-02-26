@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "蝶舞天涯",
+    "texture": "476480a7-6ba8-4230-aef2-ba29ff5cdd3f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      207,
+      300
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      207,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

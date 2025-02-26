@@ -670,12 +670,12 @@
     "relativePath": "resources\\model弹窗"
   },
   "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
-    "asset": 1740486353658,
+    "asset": 1740487373313,
     "meta": 1726231162747,
     "relativePath": "resources\\图标技能"
   },
   "d26831db-7435-43ec-addc-7e8ae543575c": {
-    "asset": 1740486353662,
+    "asset": 1740487304835,
     "meta": 1726231163111,
     "relativePath": "resources\\图标技能效果"
   },
@@ -765,7 +765,7 @@
     "relativePath": "resources\\model战斗"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
-    "asset": 1740487213093,
+    "asset": 1740493450445,
     "meta": 1740493155181,
     "relativePath": "resources\\图标生物"
   },
@@ -971,8 +971,8 @@
   },
   "d7a8d8a7-e83d-49fd-acbf-ab8a77f76a45": {
     "asset": 1726231163112,
-    "meta": 1740489808057,
-    "relativePath": "resources\\图标技能效果\\AutoAtlas.pac"
+    "meta": 1740546661578,
+    "relativePath": "resources\\图标技能效果\\skill_AutoAtlas.pac"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
     "asset": 1740479029728,
@@ -1246,43 +1246,38 @@
   },
   "d6cffba2-485d-4249-91db-fb84d18af3ed": {
     "asset": 1740477886058,
-    "meta": 1740486369094,
-    "relativePath": "resources\\图标技能\\AutoAtlas.pac"
+    "meta": 1740546572916,
+    "relativePath": "resources\\图标技能\\skill_AutoAtlas.pac"
   },
   "b5b1916b-9379-4e60-ab34-99f55abfe9bb": {
-    "asset": 1740486246113,
-    "meta": 1740486369151,
+    "asset": 1740487304595,
+    "meta": 1740546025512,
     "relativePath": "resources\\图标技能效果\\光晕.png"
   },
   "c1156cbb-c7e9-4724-b8f4-2600f9bd102c": {
-    "asset": 1740486246117,
-    "meta": 1740486369167,
+    "asset": 1740487304715,
+    "meta": 1740546025496,
     "relativePath": "resources\\图标技能效果\\奥术.png"
   },
   "062c300f-dae4-4325-856d-2649da614fb8": {
-    "asset": 1740486246122,
-    "meta": 1740486369192,
+    "asset": 1740487304850,
+    "meta": 1740546025528,
     "relativePath": "resources\\图标技能效果\\龙卷风.png"
   },
   "1902624f-80dd-47e3-bb1b-0f04a33db756": {
-    "asset": 1740486246121,
-    "meta": 1740486369194,
+    "asset": 1740487304799,
+    "meta": 1740546025543,
     "relativePath": "resources\\图标技能效果\\飓风.png"
   },
   "d79df13d-61d6-4c5d-b797-b86e06d6a749": {
-    "asset": 1740486246119,
-    "meta": 1740486369222,
+    "asset": 1740487304746,
+    "meta": 1740546025543,
     "relativePath": "resources\\图标技能效果\\血爆.png"
-  },
-  "60e96421-16be-4762-a18b-ee5d3435e54a": {
-    "asset": 1740469827441,
-    "meta": 1740489817866,
-    "relativePath": "resources\\图标世界\\AutoAtlas.pac"
   },
   "00c14b03-56c6-4e65-a08c-67ce70173b04": {
     "asset": 1740469862874,
-    "meta": 1740486369658,
-    "relativePath": "resources\\图标装备\\AutoAtlas.pac"
+    "meta": 1740546648850,
+    "relativePath": "resources\\图标装备\\gade_AutoAtlas.pac"
   },
   "4a51e97c-3da5-4d8d-abf3-bd43b140a7df": {
     "asset": 1740486246205,
@@ -1308,11 +1303,6 @@
     "asset": 1740486246203,
     "meta": 1740486369724,
     "relativePath": "resources\\图片背景\\神魔炼狱.jpg"
-  },
-  "26998acb-d1b6-4667-a9ac-b424d7dbac6c": {
-    "asset": 1740486172341,
-    "meta": 1740486369727,
-    "relativePath": "resources\\图片背景\\AutoAtlas.pac"
   },
   "482ff8b2-944a-40a8-8e74-1558b3cc0b66": {
     "asset": 1740486246193,
@@ -1350,8 +1340,8 @@
     "relativePath": "resources\\model战斗\\sprite_地图.prefab"
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1740495278700,
-    "meta": 1740495278727,
+    "asset": 1740547479707,
+    "meta": 1740547479718,
     "relativePath": "Scene\\home\\创造生物.fire"
   },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
@@ -1388,86 +1378,6 @@
     "asset": 1740486532693,
     "meta": 1740486537266,
     "relativePath": "Script\\背包\\biology_infoTools.js"
-  },
-  "863737f1-602c-4db4-8d22-95ed07819172": {
-    "asset": 1740486756997,
-    "meta": 1740486766117,
-    "relativePath": "resources\\图标世界\\楚汉传奇.jpg"
-  },
-  "9948b5b7-6219-4a1b-aeee-2bf8b9ab968d": {
-    "asset": 1740486756860,
-    "meta": 1740486766123,
-    "relativePath": "resources\\图标世界\\大唐双龙传.jpg"
-  },
-  "7e3af2ed-de80-4f01-bdcb-a6c5ca8d1241": {
-    "asset": 1740486757285,
-    "meta": 1740486766140,
-    "relativePath": "resources\\图标世界\\风云.jpg"
-  },
-  "f2c97552-727b-4f80-90b8-a49281fc637d": {
-    "asset": 1740486757164,
-    "meta": 1740486766142,
-    "relativePath": "resources\\图标世界\\蝶舞天涯.jpg"
-  },
-  "1843b4aa-7bfe-49f2-90ee-5982174646e3": {
-    "asset": 1740486756768,
-    "meta": 1740486766157,
-    "relativePath": "resources\\图标世界\\僵尸道长.jpg"
-  },
-  "f1911ddf-155a-4a0b-8ad8-25736623f567": {
-    "asset": 1740486756820,
-    "meta": 1740486766160,
-    "relativePath": "resources\\图标世界\\功夫.jpg"
-  },
-  "a513a375-dc4b-4678-b9ae-23e10bae31fd": {
-    "asset": 1740486757205,
-    "meta": 1740486766180,
-    "relativePath": "resources\\图标世界\\连城诀.jpg"
-  },
-  "dd9688c6-678f-4991-9926-efa874afad34": {
-    "asset": 1740486757122,
-    "meta": 1740486766182,
-    "relativePath": "resources\\图标世界\\蓝星.jpg"
-  },
-  "ab4c91b4-d8aa-441a-ac0b-0c70895b395f": {
-    "asset": 1740486756718,
-    "meta": 1740486766199,
-    "relativePath": "resources\\图标世界\\倩女幽魂.jpg"
-  },
-  "c12172e5-5083-4f48-a994-71a05e714e03": {
-    "asset": 1740486757336,
-    "meta": 1740486766201,
-    "relativePath": "resources\\图标世界\\鹿鼎记.jpg"
-  },
-  "85911566-3a47-43d9-9fcd-1503785381c2": {
-    "asset": 1740486756675,
-    "meta": 1740486766217,
-    "relativePath": "resources\\图标世界\\三国演义.jpg"
-  },
-  "d7f4b7d0-b56a-4d79-b22e-6c88c579eb34": {
-    "asset": 1740486756956,
-    "meta": 1740486766220,
-    "relativePath": "resources\\图标世界\\少年张三丰.jpg"
-  },
-  "3fbb443d-1bf0-4c42-b010-7f08236cb521": {
-    "asset": 1740486757241,
-    "meta": 1740486766236,
-    "relativePath": "resources\\图标世界\\隋唐英雄传.jpg"
-  },
-  "6593d4d8-2252-44b8-8da0-59b9dbb52bcb": {
-    "asset": 1740486757077,
-    "meta": 1740486766238,
-    "relativePath": "resources\\图标世界\\水浒传.jpg"
-  },
-  "6efaa722-78c7-4bfa-a395-271f84e85e00": {
-    "asset": 1740486757029,
-    "meta": 1740486766255,
-    "relativePath": "resources\\图标世界\\武林外传.jpg"
-  },
-  "247b4685-5e4e-419d-b222-7eebd29e3593": {
-    "asset": 1740486756910,
-    "meta": 1740486766256,
-    "relativePath": "resources\\图标世界\\天下第一.jpg"
   },
   "277f8418-32bc-49ad-a0ad-55bd3108246c": {
     "asset": 1740487128700,
@@ -2794,11 +2704,6 @@
     "meta": 1740493446107,
     "relativePath": "resources\\图标生物\\蛋.png"
   },
-  "446ac18d-bcdd-4d99-ba4f-dd523cbf56e9": {
-    "asset": 1740493445997,
-    "meta": 1740493446113,
-    "relativePath": "resources\\图标生物\\孙尚香.png"
-  },
   "d2ecb9bf-2fe1-49ab-9fe7-da7eb4fb1628": {
     "asset": 1740493445997,
     "meta": 1740493446132,
@@ -2843,11 +2748,6 @@
     "asset": 1740493446000,
     "meta": 1740493446220,
     "relativePath": "resources\\图标生物\\宫本.png"
-  },
-  "be73ba17-2ca8-4715-ba47-7749259bbb9a": {
-    "asset": 1740493450443,
-    "meta": 1740493450445,
-    "relativePath": "resources\\图标生物\\AutoAtlas.pac"
   },
   "d1fe0061-b852-46d5-9073-6208c1ed4a20": {
     "asset": 1740493543266,
@@ -2931,12 +2831,97 @@
   },
   "f1a7af02-8cf0-430e-ba26-9c9d56e3c2f1": {
     "asset": 1740493550262,
-    "meta": 1740493550264,
-    "relativePath": "resources\\图片大厅\\AutoAtlas.pac"
+    "meta": 1740546611666,
+    "relativePath": "resources\\图片大厅\\home_AutoAtlas.pac"
   },
   "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
     "asset": 1740493822243,
     "meta": 1740493827906,
     "relativePath": "Script\\music\\home_music.js"
+  },
+  "d347639b-f764-451b-b5b8-76eda399bc61": {
+    "asset": 1740546336672,
+    "meta": 1740546336699,
+    "relativePath": "resources\\图标生物\\孙尚香.png"
+  },
+  "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786": {
+    "asset": 1740546943445,
+    "meta": 1740546959189,
+    "relativePath": "resources\\图标世界\\大唐双龙传.jpg"
+  },
+  "8624aa4e-9e12-493f-aa3e-474b84cbc67b": {
+    "asset": 1740546943558,
+    "meta": 1740546959191,
+    "relativePath": "resources\\图标世界\\楚汉传奇.jpg"
+  },
+  "476480a7-6ba8-4230-aef2-ba29ff5cdd3f": {
+    "asset": 1740546943695,
+    "meta": 1740546959207,
+    "relativePath": "resources\\图标世界\\蝶舞天涯.jpg"
+  },
+  "17bb3d97-974b-44f0-aee6-175cf9cb4ab1": {
+    "asset": 1740546943794,
+    "meta": 1740546959208,
+    "relativePath": "resources\\图标世界\\风云.jpg"
+  },
+  "3dcc38d4-1dd8-4099-923f-9c4c876632f9": {
+    "asset": 1740546943413,
+    "meta": 1740546959223,
+    "relativePath": "resources\\图标世界\\功夫.jpg"
+  },
+  "b26538da-e84b-438d-a9c8-2858ad7d156e": {
+    "asset": 1740546943376,
+    "meta": 1740546959225,
+    "relativePath": "resources\\图标世界\\僵尸道长.jpg"
+  },
+  "b36586f6-780f-4b3b-bf1e-db3d04082696": {
+    "asset": 1740546943835,
+    "meta": 1740546959258,
+    "relativePath": "resources\\图标世界\\鹿鼎记.jpg"
+  },
+  "22071f21-91f2-4c00-8a57-3ff7b2d84af4": {
+    "asset": 1740546943343,
+    "meta": 1740546959260,
+    "relativePath": "resources\\图标世界\\倩女幽魂.jpg"
+  },
+  "4d8dfeeb-5e06-46ad-a4f3-cd969ec803fd": {
+    "asset": 1740546943523,
+    "meta": 1740546959276,
+    "relativePath": "resources\\图标世界\\少年张三丰.jpg"
+  },
+  "d5de7070-3b56-4285-8f76-5b83bf521860": {
+    "asset": 1740546943313,
+    "meta": 1740546959278,
+    "relativePath": "resources\\图标世界\\三国演义.jpg"
+  },
+  "80466f3d-3d8b-4371-8ae1-7149bf6633c9": {
+    "asset": 1740546943761,
+    "meta": 1740546959294,
+    "relativePath": "resources\\图标世界\\隋唐英雄传.jpg"
+  },
+  "ce8d76e7-d83a-415f-b5fd-5f3c7c258930": {
+    "asset": 1740546943623,
+    "meta": 1740546959296,
+    "relativePath": "resources\\图标世界\\水浒传.jpg"
+  },
+  "a32e65f0-41e5-4583-9ec1-33ca2efa535f": {
+    "asset": 1740546943584,
+    "meta": 1740546959314,
+    "relativePath": "resources\\图标世界\\武林外传.jpg"
+  },
+  "e118f4d3-7bd3-400d-947c-66ca4ae2bac4": {
+    "asset": 1740546943487,
+    "meta": 1740546959315,
+    "relativePath": "resources\\图标世界\\天下第一.jpg"
+  },
+  "9303d994-51d2-41c9-a4fa-005e96be88a2": {
+    "asset": 1740547394830,
+    "meta": 1740547473598,
+    "relativePath": "resources\\图标世界\\蓝星.jpg"
+  },
+  "1788d4c5-f704-425a-bd47-9ede6d351c67": {
+    "asset": 1740547432543,
+    "meta": 1740547473600,
+    "relativePath": "resources\\图标世界\\连城诀.jpg"
   }
 }

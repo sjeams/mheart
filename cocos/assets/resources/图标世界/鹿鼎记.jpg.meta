@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "c12172e5-5083-4f48-a994-71a05e714e03",
+  "uuid": "b36586f6-780f-4b3b-bf1e-db3d04082696",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "鹿鼎记": {
       "ver": "1.0.4",
-      "uuid": "2e895c52-a088-45dc-96ef-383dd073faad",
-      "rawTextureUuid": "c12172e5-5083-4f48-a994-71a05e714e03",
+      "uuid": "6ec48932-9549-47bb-a241-fdade8917add",
+      "rawTextureUuid": "b36586f6-780f-4b3b-bf1e-db3d04082696",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

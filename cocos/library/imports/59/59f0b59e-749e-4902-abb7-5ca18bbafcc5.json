@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "孙尚香",
+    "texture": "d347639b-f764-451b-b5b8-76eda399bc61",
+    "atlas": "",
+    "rect": [
+      4,
+      3,
+      242,
+      363
+    ],
+    "offset": [
+      0,
+      4.5
+    ],
+    "originalSize": [
+      250,
+      378
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

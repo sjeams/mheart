@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "85911566-3a47-43d9-9fcd-1503785381c2",
+  "uuid": "d5de7070-3b56-4285-8f76-5b83bf521860",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "三国演义": {
       "ver": "1.0.4",
-      "uuid": "6d1f5db9-61c0-4593-bca6-0535110b0ef1",
-      "rawTextureUuid": "85911566-3a47-43d9-9fcd-1503785381c2",
+      "uuid": "18fb995f-2767-4d89-af63-6f6e24283357",
+      "rawTextureUuid": "d5de7070-3b56-4285-8f76-5b83bf521860",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

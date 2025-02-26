@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "大唐双龙传",
+    "texture": "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      165,
+      228
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      165,
+      228
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

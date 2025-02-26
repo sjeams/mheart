@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "d7f4b7d0-b56a-4d79-b22e-6c88c579eb34",
+  "uuid": "4d8dfeeb-5e06-46ad-a4f3-cd969ec803fd",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "少年张三丰": {
       "ver": "1.0.4",
-      "uuid": "85804070-5f4e-471c-85b0-d03b17c2d245",
-      "rawTextureUuid": "d7f4b7d0-b56a-4d79-b22e-6c88c579eb34",
+      "uuid": "14339411-7fda-45af-8cfa-007c54ef7a20",
+      "rawTextureUuid": "4d8dfeeb-5e06-46ad-a4f3-cd969ec803fd",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
