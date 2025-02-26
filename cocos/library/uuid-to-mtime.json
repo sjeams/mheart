@@ -515,7 +515,7 @@
     "relativePath": "Script\\commonjs"
   },
   "11419367-4da7-4096-a9a4-51666f1d1905": {
-    "asset": 1730291907460,
+    "asset": 1740548668090,
     "meta": 1726231162539,
     "relativePath": "prefabs"
   },
@@ -525,7 +525,7 @@
     "relativePath": "Script\\bage"
   },
   "9b1b7e76-5faa-4860-874b-7bd27f723b54": {
-    "asset": 1740486353350,
+    "asset": 1740548762748,
     "meta": 1726231162404,
     "relativePath": "Scene\\home"
   },
@@ -550,7 +550,7 @@
     "relativePath": "Scene\\map"
   },
   "53c02310-76a9-437f-9346-98e1960113f0": {
-    "asset": 1740492440426,
+    "asset": 1740548668149,
     "meta": 1740492862903,
     "relativePath": "resources\\A基础图标"
   },
@@ -655,7 +655,7 @@
     "relativePath": "Script\\bakcground.js"
   },
   "495154c0-dc59-4d87-adb7-d4f8e997c605": {
-    "asset": 1740486353351,
+    "asset": 1740548668084,
     "meta": 1726231162426,
     "relativePath": "Scene\\login"
   },
@@ -670,12 +670,12 @@
     "relativePath": "resources\\model弹窗"
   },
   "1ecb1dcc-613f-47a2-9bdb-b2aa1ee5c84f": {
-    "asset": 1740487373313,
+    "asset": 1740548668376,
     "meta": 1726231162747,
     "relativePath": "resources\\图标技能"
   },
   "d26831db-7435-43ec-addc-7e8ae543575c": {
-    "asset": 1740487304835,
+    "asset": 1740548668383,
     "meta": 1726231163111,
     "relativePath": "resources\\图标技能效果"
   },
@@ -685,7 +685,7 @@
     "relativePath": "resources\\model弹窗\\biology_生物_战斗技能提示.prefab"
   },
   "725cd49e-44d5-4557-8876-17c6cbbd5c43": {
-    "asset": 1740487128868,
+    "asset": 1740548886475,
     "meta": 1726231163154,
     "relativePath": "resources\\图标装备"
   },
@@ -705,7 +705,7 @@
     "relativePath": "resources\\model背包\\图标技能.prefab"
   },
   "3683396a-e14e-45bd-aad4-8030d1c4c598": {
-    "asset": 1740486353353,
+    "asset": 1740548668086,
     "meta": 1726231162497,
     "relativePath": "Script\\背包"
   },
@@ -720,8 +720,8 @@
     "relativePath": "resources\\model背包\\生物技能.prefab"
   },
   "bada2566-178c-4a87-bb4c-c746b81d745d": {
-    "asset": 1740493550264,
-    "meta": 1740495865629,
+    "asset": 1740548668448,
+    "meta": 1740549743383,
     "relativePath": "resources\\图片大厅"
   },
   "8ce4ef1d-0e85-4a19-92af-3eac6fa4c94d": {
@@ -755,12 +755,12 @@
     "relativePath": "resources\\model战斗"
   },
   "8e02a277-d607-4fd2-921a-ac3687de3b98": {
-    "asset": 1740493450445,
+    "asset": 1740548668408,
     "meta": 1740493155181,
     "relativePath": "resources\\图标生物"
   },
   "d2b7ebc7-a51d-4f06-8c09-6071523d8e84": {
-    "asset": 1740486757315,
+    "asset": 1740548668183,
     "meta": 1726231162718,
     "relativePath": "resources\\图标世界"
   },
@@ -810,7 +810,7 @@
     "relativePath": "resources\\model背包\\A生物背包.prefab"
   },
   "266d590f-26a9-4693-8ceb-5d1eee39a870": {
-    "asset": 1730291907514,
+    "asset": 1740548668157,
     "meta": 1740490169944,
     "relativePath": "resources\\model召唤"
   },
@@ -970,7 +970,7 @@
     "relativePath": "resources\\model弹窗\\biology_结算.prefab"
   },
   "d8cc2b67-d1eb-4d5c-943a-91d8318be16a": {
-    "asset": 1730291907406,
+    "asset": 1740548668085,
     "meta": 1726231162464,
     "relativePath": "Script\\music"
   },
@@ -1190,8 +1190,8 @@
     "relativePath": "Script\\阵法\\bag_zhenfa布阵Tools.js"
   },
   "5fb7e54c-a2f3-42ef-afd5-9e5d902df33c": {
-    "asset": 1740486353726,
-    "meta": 1740493171249,
+    "asset": 1740549719303,
+    "meta": 1740549728243,
     "relativePath": "resources\\图片背景"
   },
   "4a51e97c-3da5-4d8d-abf3-bd43b140a7df": {
@@ -2915,8 +2915,8 @@
     "relativePath": "Scene\\login\\登录.fire"
   },
   "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1740548845187,
-    "meta": 1740548845202,
+    "asset": 1740549772926,
+    "meta": 1740549772943,
     "relativePath": "Scene\\home\\创造生物.fire"
   }
 }
