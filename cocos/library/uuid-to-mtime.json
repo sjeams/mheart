@@ -729,11 +729,6 @@
     "meta": 1730291942442,
     "relativePath": "resources\\model背包\\图标缘分.prefab"
   },
-  "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
-    "asset": 1740495103334,
-    "meta": 1740495103350,
-    "relativePath": "prefabs\\血条格子.prefab"
-  },
   "4c2c28d0-843c-471f-adee-9a34c065b20a": {
     "asset": 1726231162562,
     "meta": 1730291939468,
@@ -743,11 +738,6 @@
     "asset": 1726231162541,
     "meta": 1730291939471,
     "relativePath": "prefabs\\biology_boss.prefab"
-  },
-  "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
-    "asset": 1740494979944,
-    "meta": 1740494979973,
-    "relativePath": "prefabs\\sprite_生物.prefab"
   },
   "4a3603e9-dc9d-407a-a950-5432eb18d8d3": {
     "asset": 1726231162556,
@@ -768,11 +758,6 @@
     "asset": 1740493450445,
     "meta": 1740493155181,
     "relativePath": "resources\\图标生物"
-  },
-  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
-    "asset": 1740494928912,
-    "meta": 1740494928945,
-    "relativePath": "prefabs\\biology_生物详情.prefab"
   },
   "d2b7ebc7-a51d-4f06-8c09-6071523d8e84": {
     "asset": 1740486757315,
@@ -869,11 +854,6 @@
     "meta": 1730291942542,
     "relativePath": "resources\\model召唤\\角色详情.prefab"
   },
-  "65b182dc-72c3-4e4a-b465-6f55cb7370d5": {
-    "asset": 1740495222013,
-    "meta": 1740495222041,
-    "relativePath": "resources\\model召唤\\A融合.prefab"
-  },
   "e2ded755-7be6-457e-826b-98df8332ab70": {
     "asset": 1740495220453,
     "meta": 1740495220475,
@@ -929,21 +909,6 @@
     "meta": 1730291939514,
     "relativePath": "prefabs\\materials\\渐变.effect"
   },
-  "2ff1dadd-3de7-44e6-ad8e-e1998bf79163": {
-    "asset": 1740495232378,
-    "meta": 1740495232408,
-    "relativePath": "resources\\model召唤\\云游商人.prefab"
-  },
-  "37f4be94-b986-4adf-be84-0107aebef494": {
-    "asset": 1740495161936,
-    "meta": 1740495161958,
-    "relativePath": "resources\\model召唤\\A创造备份.prefab"
-  },
-  "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
-    "asset": 1740495198837,
-    "meta": 1740495198860,
-    "relativePath": "resources\\model召唤\\A召唤详情.prefab"
-  },
   "e5387309-66c3-4908-9821-a2348584d37a": {
     "asset": 1740495248224,
     "meta": 1740495248265,
@@ -963,16 +928,6 @@
     "asset": 1740482939303,
     "meta": 1740482939321,
     "relativePath": "resources\\model布阵\\A生物布阵.prefab"
-  },
-  "c401445e-5141-4beb-8817-b993c1865231": {
-    "asset": 1740495115013,
-    "meta": 1740495115035,
-    "relativePath": "resources\\model召唤\\A创造.prefab"
-  },
-  "d7a8d8a7-e83d-49fd-acbf-ab8a77f76a45": {
-    "asset": 1726231163112,
-    "meta": 1740546661578,
-    "relativePath": "resources\\图标技能效果\\skill_AutoAtlas.pac"
   },
   "40bedcd0-c109-4f66-aa9d-ca142724f729": {
     "asset": 1740479029728,
@@ -998,11 +953,6 @@
     "asset": 1726231162458,
     "meta": 1730291945067,
     "relativePath": "Script\\commonApi\\progressTools.js"
-  },
-  "6459d432-a2d8-4e3a-9f3d-468d469edf3c": {
-    "asset": 1740495234773,
-    "meta": 1740495234817,
-    "relativePath": "resources\\model召唤\\A训练.prefab"
   },
   "289a48d1-b158-4a51-9a44-7cbcb7b7c5f8": {
     "asset": 1730291907528,
@@ -1244,41 +1194,6 @@
     "meta": 1740493171249,
     "relativePath": "resources\\图片背景"
   },
-  "d6cffba2-485d-4249-91db-fb84d18af3ed": {
-    "asset": 1740477886058,
-    "meta": 1740546572916,
-    "relativePath": "resources\\图标技能\\skill_AutoAtlas.pac"
-  },
-  "b5b1916b-9379-4e60-ab34-99f55abfe9bb": {
-    "asset": 1740487304595,
-    "meta": 1740546025512,
-    "relativePath": "resources\\图标技能效果\\光晕.png"
-  },
-  "c1156cbb-c7e9-4724-b8f4-2600f9bd102c": {
-    "asset": 1740487304715,
-    "meta": 1740546025496,
-    "relativePath": "resources\\图标技能效果\\奥术.png"
-  },
-  "062c300f-dae4-4325-856d-2649da614fb8": {
-    "asset": 1740487304850,
-    "meta": 1740546025528,
-    "relativePath": "resources\\图标技能效果\\龙卷风.png"
-  },
-  "1902624f-80dd-47e3-bb1b-0f04a33db756": {
-    "asset": 1740487304799,
-    "meta": 1740546025543,
-    "relativePath": "resources\\图标技能效果\\飓风.png"
-  },
-  "d79df13d-61d6-4c5d-b797-b86e06d6a749": {
-    "asset": 1740487304746,
-    "meta": 1740546025543,
-    "relativePath": "resources\\图标技能效果\\血爆.png"
-  },
-  "00c14b03-56c6-4e65-a08c-67ce70173b04": {
-    "asset": 1740469862874,
-    "meta": 1740546648850,
-    "relativePath": "resources\\图标装备\\gade_AutoAtlas.pac"
-  },
   "4a51e97c-3da5-4d8d-abf3-bd43b140a7df": {
     "asset": 1740486246205,
     "meta": 1740486369682,
@@ -1339,11 +1254,6 @@
     "meta": 1740495273161,
     "relativePath": "resources\\model战斗\\sprite_地图.prefab"
   },
-  "496e7872-51ad-40b5-8724-b872860cdea3": {
-    "asset": 1740547479707,
-    "meta": 1740547479718,
-    "relativePath": "Scene\\home\\创造生物.fire"
-  },
   "6fec8c7b-21bb-4499-bd73-93b60f052f76": {
     "asset": 1740486245606,
     "meta": 1740486370466,
@@ -1353,11 +1263,6 @@
     "asset": 1740486245696,
     "meta": 1740486370482,
     "relativePath": "resources\\model商店\\A商店.prefab"
-  },
-  "c36814a1-f948-4855-b798-7a99aebbb506": {
-    "asset": 1740494113900,
-    "meta": 1740494113925,
-    "relativePath": "Scene\\login\\角色.fire"
   },
   "37703c46-a6be-46c1-8c73-27eddb225ff7": {
     "asset": 1740486245610,
@@ -1369,1559 +1274,1649 @@
     "meta": 1740486370889,
     "relativePath": "Script\\common.js"
   },
-  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
-    "asset": 1740491305611,
-    "meta": 1740491305640,
-    "relativePath": "Scene\\login\\登录.fire"
-  },
-  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
-    "asset": 1740486532693,
-    "meta": 1740486537266,
-    "relativePath": "Script\\背包\\biology_infoTools.js"
-  },
-  "277f8418-32bc-49ad-a0ad-55bd3108246c": {
-    "asset": 1740487128700,
-    "meta": 1740487133368,
-    "relativePath": "resources\\图标装备\\抵消疾病.png"
-  },
-  "7025811b-b2c5-4259-821f-8e522449ff93": {
-    "asset": 1740487128606,
-    "meta": 1740487133371,
-    "relativePath": "resources\\图标装备\\彩蛋.png"
-  },
-  "848d1e49-48f3-4dc0-a8be-7a63c6cd3334": {
-    "asset": 1740487128651,
-    "meta": 1740487133387,
-    "relativePath": "resources\\图标装备\\恶魔召唤.png"
-  },
-  "b65df4e9-9723-4eb4-b2bd-4bd2c0964ae4": {
-    "asset": 1740487128483,
-    "meta": 1740487133389,
-    "relativePath": "resources\\图标装备\\刚毅.png"
-  },
-  "1c809480-ce59-43da-977e-9783713e4ede": {
-    "asset": 1740487128560,
-    "meta": 1740487133402,
-    "relativePath": "resources\\图标装备\\加.png"
-  },
-  "1731d4e1-d4f3-4e63-89aa-dd3c669e7acb": {
-    "asset": 1740487128524,
-    "meta": 1740487133403,
-    "relativePath": "resources\\图标装备\\剑.jpg"
-  },
-  "49f5a970-fa9d-4f35-8aa3-145ecbfe7ceb": {
-    "asset": 1740487128887,
-    "meta": 1740487133419,
-    "relativePath": "resources\\图标装备\\金币.png"
-  },
-  "ce491221-7bff-4ffc-a7b3-041125a29128": {
-    "asset": 1740487128749,
-    "meta": 1740487133420,
-    "relativePath": "resources\\图标装备\\死亡缠绕.png"
-  },
-  "467bb9d1-05c6-46f7-b439-0b7cf231dff4": {
-    "asset": 1740487128800,
-    "meta": 1740487133437,
-    "relativePath": "resources\\图标装备\\消耗.png"
-  },
-  "2b1f7af7-8281-43e3-a61c-aa1eabfa6dff": {
-    "asset": 1740487128429,
-    "meta": 1740487133439,
-    "relativePath": "resources\\图标装备\\仙剑.png"
-  },
-  "f97eaa7f-bbd4-479c-b26b-a357c5385a18": {
-    "asset": 1740487128846,
-    "meta": 1740487133458,
-    "relativePath": "resources\\图标装备\\药水绿色.png"
-  },
-  "698df1b3-0642-4b35-8971-e61c8e333c88": {
-    "asset": 1740487363237,
-    "meta": 1740487381519,
-    "relativePath": "resources\\图标技能\\Ability_BackStab.png"
-  },
-  "8f7c4da7-1b3f-443a-9e22-a46a5c5c9ec2": {
-    "asset": 1740487363170,
-    "meta": 1740487381523,
-    "relativePath": "resources\\图标技能\\Ability_Ambush.png"
-  },
-  "222cddf8-97de-45c7-befb-4c94827b4c6a": {
-    "asset": 1740487363287,
-    "meta": 1740487381543,
-    "relativePath": "resources\\图标技能\\Ability_BullRush.png"
-  },
-  "ce9cef12-78c3-4a19-91b5-2b3f1abdb937": {
-    "asset": 1740487363350,
-    "meta": 1740487381546,
-    "relativePath": "resources\\图标技能\\Ability_CheapShot.png"
-  },
-  "15738f2d-bc2a-4407-911e-d8413d732742": {
-    "asset": 1740487363398,
-    "meta": 1740487381569,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_01.png"
-  },
-  "5557d58f-a546-4614-8a41-3828889e3e57": {
-    "asset": 1740487363443,
-    "meta": 1740487381572,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_02.png"
-  },
-  "43140d91-690d-4f57-86cf-a413c8678366": {
-    "asset": 1740487363543,
-    "meta": 1740487381613,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_04.png"
-  },
-  "b335d261-a414-4f49-8c29-c555d9ddd9b3": {
-    "asset": 1740487363494,
-    "meta": 1740487381618,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_03.png"
-  },
-  "60730279-ad24-4505-9fff-3a4153d8b4a1": {
-    "asset": 1740487363633,
-    "meta": 1740487381659,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_01.png"
-  },
-  "e53fbe73-b271-4cae-8184-a6f92a2fc52d": {
-    "asset": 1740487363585,
-    "meta": 1740487381667,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_05.png"
-  },
-  "bf292a8e-6f3f-4f2e-87d9-129bd73518a0": {
-    "asset": 1740487363681,
-    "meta": 1740487381694,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_02.png"
-  },
-  "85a6f85f-cbb7-45b6-9ac5-ced9d34cb9b0": {
-    "asset": 1740487363734,
-    "meta": 1740487381697,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_03.png"
-  },
-  "5b429a34-9fc3-4d5c-ae3f-29cb85f36032": {
-    "asset": 1740487363828,
-    "meta": 1740487381718,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_05.png"
-  },
-  "b3e1d903-0ff6-41be-baac-8ca397848e8b": {
-    "asset": 1740487363782,
-    "meta": 1740487381720,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_04.png"
-  },
-  "e8e6d6a9-fad7-43b8-bf8a-cb8bd227f0a4": {
-    "asset": 1740487363873,
-    "meta": 1740487381738,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_01.png"
-  },
-  "fe9e00b5-0919-4c6e-b785-598eaa443188": {
-    "asset": 1740487363923,
-    "meta": 1740487381741,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_02.png"
-  },
-  "d38e516f-f8e3-4ae5-9c48-082b943ca369": {
-    "asset": 1740487363965,
-    "meta": 1740487381761,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_03.png"
-  },
-  "4457bd22-0d2d-4895-889d-b389d36b2c45": {
-    "asset": 1740487364018,
-    "meta": 1740487381764,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_04.png"
-  },
-  "5adc98fe-71e2-4516-a631-86b27e6f3308": {
-    "asset": 1740487364065,
-    "meta": 1740487381783,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_05.png"
-  },
-  "1d9c7b63-7516-464c-85d6-a3150c229d4f": {
-    "asset": 1740487364115,
-    "meta": 1740487381786,
-    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_06.png"
-  },
-  "53f2473e-4ebf-482c-ae80-39c8e4b66bda": {
-    "asset": 1740487364211,
-    "meta": 1740487381804,
-    "relativePath": "resources\\图标技能\\Ability_Defend.png"
-  },
-  "779587bc-29b1-4370-ad3a-a72634fd5423": {
-    "asset": 1740487364165,
-    "meta": 1740487381806,
-    "relativePath": "resources\\图标技能\\Ability_CriticalStrike.png"
-  },
-  "81fdc370-cb7c-4944-8094-3d942d97ab3e": {
-    "asset": 1740487364300,
-    "meta": 1740487381825,
-    "relativePath": "resources\\图标技能\\Ability_Druid_AquaticForm.png"
-  },
-  "4f6edf93-7b02-4031-b27b-29d634a26608": {
-    "asset": 1740487364258,
-    "meta": 1740487381827,
-    "relativePath": "resources\\图标技能\\Ability_Devour.png"
-  },
-  "5aee6fd4-f97b-47bd-a864-601e2fb1f465": {
-    "asset": 1740487364349,
-    "meta": 1740487381848,
-    "relativePath": "resources\\图标技能\\Ability_Druid_BalanceofPower.png"
-  },
-  "26acf668-4cf4-463e-a8d8-4509d2445b73": {
-    "asset": 1740487364389,
-    "meta": 1740487381851,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Bash.png"
-  },
-  "4388b8a3-c466-40dd-a252-ca9ccde47f80": {
-    "asset": 1740487364433,
-    "meta": 1740487381869,
-    "relativePath": "resources\\图标技能\\Ability_Druid_CatForm.png"
-  },
-  "164a72c1-4554-4296-9dfa-8103698569b9": {
-    "asset": 1740487364478,
-    "meta": 1740487381872,
-    "relativePath": "resources\\图标技能\\Ability_Druid_CatFormAttack.png"
-  },
-  "ae4089d1-56ec-4371-ae0a-c72838094d0e": {
-    "asset": 1740487364582,
-    "meta": 1740487381890,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Cower.png"
-  },
-  "3dace8f2-ec03-4dfe-bb4d-2bbe11ec12d8": {
-    "asset": 1740487364528,
-    "meta": 1740487381893,
-    "relativePath": "resources\\图标技能\\Ability_Druid_ChallangingRoar.png"
-  },
-  "5e8c486b-ac75-4968-931f-6853bb623f18": {
-    "asset": 1740487364672,
-    "meta": 1740487381917,
-    "relativePath": "resources\\图标技能\\Ability_Druid_DemoralizingRoar.png"
-  },
-  "98f77b8e-c49c-4bc3-9d8d-5b8d7c64e2d8": {
-    "asset": 1740487364629,
-    "meta": 1740487381920,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Dash.png"
-  },
-  "948d464f-da3c-4c94-b935-7ba55e320b2c": {
-    "asset": 1740487364720,
-    "meta": 1740487381939,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Disembowel.png"
-  },
-  "b9aeb377-9830-4866-8709-7ab9d1be3b85": {
-    "asset": 1740487364776,
-    "meta": 1740487381941,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Dreamstate.png"
-  },
-  "5b24941a-ebd6-4830-af71-304e9ec0a868": {
-    "asset": 1740487364822,
-    "meta": 1740487381965,
-    "relativePath": "resources\\图标技能\\Ability_Druid_EmpoweredRejuvination.png"
-  },
-  "f3a4c5cb-bd5f-4a57-af65-0437018c5d77": {
-    "asset": 1740487364880,
-    "meta": 1740487381970,
-    "relativePath": "resources\\图标技能\\Ability_Druid_EmpoweredTouch.png"
-  },
-  "d6236548-25e7-4730-9cde-21737a351fac": {
-    "asset": 1740487364984,
-    "meta": 1740487381992,
-    "relativePath": "resources\\图标技能\\Ability_Druid_FerociousBite.png"
-  },
-  "babda69e-4ed7-4fed-bfad-394803ebcc8a": {
-    "asset": 1740487364936,
-    "meta": 1740487381995,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Enrage.png"
-  },
-  "f671d637-c96f-47a6-a0bf-fd011cea8118": {
-    "asset": 1740487365098,
-    "meta": 1740487382030,
-    "relativePath": "resources\\图标技能\\Ability_Druid_ForceofNature.png"
-  },
-  "bcdacb3d-63fb-496d-bbb9-51da6ecf2533": {
-    "asset": 1740487365043,
-    "meta": 1740487382037,
-    "relativePath": "resources\\图标技能\\Ability_Druid_FlightForm.png"
-  },
-  "e1d2d578-c6c3-428a-bff9-3b42fa9bf2cc": {
-    "asset": 1740487365164,
-    "meta": 1740487382058,
-    "relativePath": "resources\\图标技能\\Ability_Druid_HealingInstincts.png"
-  },
-  "90f48e57-28bb-43d4-9d65-924a07fa7464": {
-    "asset": 1740487365213,
-    "meta": 1740487382061,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Lacerate.png"
-  },
-  "dc371dd6-9b51-4118-a16e-b0b205fc43bd": {
-    "asset": 1740487365329,
-    "meta": 1740487382088,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Mangle.png"
-  },
-  "a92d5c15-3e2b-4eef-83da-d0a898a2fa49": {
-    "asset": 1740487365269,
-    "meta": 1740487382090,
-    "relativePath": "resources\\图标技能\\Ability_Druid_LunarGuidance.png"
-  },
-  "77c5c881-d5c6-48e7-a356-17077c8609fe": {
-    "asset": 1740487365382,
-    "meta": 1740487382112,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Maul.png"
-  },
-  "cfa40c7c-991e-4efc-8eba-043645290fcd": {
-    "asset": 1740487365439,
-    "meta": 1740487382118,
-    "relativePath": "resources\\图标技能\\Ability_Druid_NaturalPerfection.png"
-  },
-  "9a125ee3-1798-43b9-9cb2-302069bf3166": {
-    "asset": 1740487365498,
-    "meta": 1740487382143,
-    "relativePath": "resources\\图标技能\\Ability_Druid_PredatoryInstincts.png"
-  },
-  "2fbac230-a12c-4369-86a9-4b3df2c5607a": {
-    "asset": 1740487365556,
-    "meta": 1740487382146,
-    "relativePath": "resources\\图标技能\\Ability_Druid_PrimalTenacity.png"
-  },
-  "efb98461-b260-497f-9a10-d09b3c6ea252": {
-    "asset": 1740487365612,
-    "meta": 1740487382168,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Rake.png"
-  },
-  "eb1fa9ed-4092-4684-a1db-09bbc496c1d2": {
-    "asset": 1740487365657,
-    "meta": 1740487382172,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Ravage.png"
-  },
-  "5629937a-40cc-4fc6-a97f-fa4e6e9803a5": {
-    "asset": 1740487365716,
-    "meta": 1740487382190,
-    "relativePath": "resources\\图标技能\\Ability_Druid_SupriseAttack.png"
-  },
-  "9fbc9229-8ab8-4871-9adb-47244327ef67": {
-    "asset": 1740487365774,
-    "meta": 1740487382192,
-    "relativePath": "resources\\图标技能\\Ability_Druid_Swipe.png"
-  },
-  "b3d58479-7c2c-4d38-ba4b-27b15b3291ef": {
-    "asset": 1740487365831,
-    "meta": 1740487382217,
-    "relativePath": "resources\\图标技能\\Ability_Druid_TravelForm.png"
-  },
-  "76fc0f09-264a-456a-8f6e-34b777084fbd": {
-    "asset": 1740487365880,
-    "meta": 1740487382221,
-    "relativePath": "resources\\图标技能\\Ability_Druid_TreeofLife.png"
-  },
-  "6df768ec-3f60-403d-96b1-2d97613f4670": {
-    "asset": 1740487365934,
-    "meta": 1740487382241,
-    "relativePath": "resources\\图标技能\\Ability_Druid_TwilightsWrath.png"
-  },
-  "4e9c60cf-6864-4396-9505-ccac7cd4ea44": {
-    "asset": 1740487366002,
-    "meta": 1740487382243,
-    "relativePath": "resources\\图标技能\\Ability_DualWield.png"
-  },
-  "a1a7bf1a-680d-4554-8123-b8cf6b11cfdc": {
-    "asset": 1740487366087,
-    "meta": 1740487382263,
-    "relativePath": "resources\\图标技能\\Ability_DualWieldSpecialization.png"
-  },
-  "adf77081-302c-481b-b903-d6baa6737894": {
-    "asset": 1740487366170,
-    "meta": 1740487382267,
-    "relativePath": "resources\\图标技能\\Ability_Ensnare.png"
-  },
-  "d52e7fc8-e345-41bc-a7bb-2e4cb4ee611d": {
-    "asset": 1740487366235,
-    "meta": 1740487382286,
-    "relativePath": "resources\\图标技能\\Ability_EyeOfTheOwl.png"
-  },
-  "5f27bce3-f96e-4ae4-b419-25fbff69fb82": {
-    "asset": 1740487366304,
-    "meta": 1740487382289,
-    "relativePath": "resources\\图标技能\\Ability_FiegnDead.png"
-  },
-  "b986b5a5-7dd5-4157-981a-fe2de351cd3a": {
-    "asset": 1740487366430,
-    "meta": 1740487382306,
-    "relativePath": "resources\\图标技能\\Ability_GolemStormBolt.png"
-  },
-  "4792784a-4966-486f-9a0b-0840a7c1ded0": {
-    "asset": 1740487366375,
-    "meta": 1740487382308,
-    "relativePath": "resources\\图标技能\\Ability_GhoulFrenzy.png"
-  },
-  "4cb69520-0633-46b6-ab89-1272f630c9b5": {
-    "asset": 1740487366530,
-    "meta": 1740487382332,
-    "relativePath": "resources\\图标技能\\Ability_Gouge.png"
-  },
-  "79674a17-03d1-4b90-ac9f-80d56b93f356": {
-    "asset": 1740487366484,
-    "meta": 1740487382335,
-    "relativePath": "resources\\图标技能\\Ability_GolemThunderClap.png"
-  },
-  "2c2d1df4-ac8c-492a-aab0-a2a711b7f499": {
-    "asset": 1740487366581,
-    "meta": 1740487382352,
-    "relativePath": "resources\\图标技能\\Ability_Hibernation.png"
-  },
-  "fe4639ca-46df-4a3f-94ab-344638faf47c": {
-    "asset": 1740487366630,
-    "meta": 1740487382354,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_AimedShot.png"
-  },
-  "1934b3dd-d0a7-46b0-90e4-0ee6b2e67c15": {
-    "asset": 1740487366681,
-    "meta": 1740487382372,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_AnimalHandler.png"
-  },
-  "66e2db94-782c-4a13-a9f5-f5ddd1b24761": {
-    "asset": 1740487366729,
-    "meta": 1740487382376,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_AspectOfTheMonkey.png"
-  },
-  "dc15a7e9-2747-4cb3-91a2-1182bd0b4793": {
-    "asset": 1740487366791,
-    "meta": 1740487382404,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_AspectoftheViper.png"
-  },
-  "384a94ae-db9e-4512-b53b-d6463e040643": {
-    "asset": 1740487366837,
-    "meta": 1740487382406,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastCall.png"
-  },
-  "1ddfb351-e0b5-4b78-b826-bd5b34c3bc29": {
-    "asset": 1740487366894,
-    "meta": 1740487382425,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastCall02.png"
-  },
-  "edfc9bc5-a25e-4095-ac2d-707a5b6c309a": {
-    "asset": 1740487366964,
-    "meta": 1740487382427,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastSoothe.png"
-  },
-  "b276512b-556f-4962-89bb-ab631ae46062": {
-    "asset": 1740487367015,
-    "meta": 1740487382444,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastTaming.png"
-  },
-  "8aac014e-6996-4f57-a3bc-a6b734e660b2": {
-    "asset": 1740487367062,
-    "meta": 1740487382451,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastTraining.png"
-  },
-  "4f8a19f2-b6e9-4073-b365-fdb18ea291d9": {
-    "asset": 1740487367113,
-    "meta": 1740487382468,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastWithin.png"
-  },
-  "70046f9b-b001-4528-84f7-89a585bd1137": {
-    "asset": 1740487367164,
-    "meta": 1740487382471,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_CatlikeReflexes.png"
-  },
-  "da1bde61-befd-4402-9d8c-069b0ae34a8b": {
-    "asset": 1740487367215,
-    "meta": 1740487382489,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_CombatExperience.png"
-  },
-  "560c8c12-9b5a-4422-a3ef-78ce630f9676": {
-    "asset": 1740487367264,
-    "meta": 1740487382492,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_CriticalShot.png"
-  },
-  "572796de-6115-446c-badb-13e4a9e9a5ff": {
-    "asset": 1740487367314,
-    "meta": 1740487382525,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Displacement.png"
-  },
-  "9eb81b2e-ba57-404c-9ccb-43f905ed5f2d": {
-    "asset": 1740487367362,
-    "meta": 1740487382529,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_EagleEye.png"
-  },
-  "4b0249b5-016b-435a-8cef-de56efa0584f": {
-    "asset": 1740487367423,
-    "meta": 1740487382560,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_FerociousInspiration.png"
-  },
-  "d6539cd6-b821-4385-bc9c-67ef1cd2cbb9": {
-    "asset": 1740487367498,
-    "meta": 1740487382565,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Harass.png"
-  },
-  "ffec2c7b-0d5c-4d26-8676-849989099bb8": {
-    "asset": 1740487367550,
-    "meta": 1740487382596,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_KillCommand.png"
-  },
-  "06f82140-0a27-4d88-8194-40ccab6540c9": {
-    "asset": 1740487367611,
-    "meta": 1740487382607,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_MasterTactitian.png"
-  },
-  "1c9c3a3f-560e-4ba3-9b7d-df30a93f5e9e": {
-    "asset": 1740487367665,
-    "meta": 1740487382628,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_MendPet.png"
-  },
-  "4f1d76a3-6e65-4e7e-bfbc-431bc2a6857c": {
-    "asset": 1740487367710,
-    "meta": 1740487382633,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Misdirection.png"
-  },
-  "b13238d8-b4cb-4cf7-b829-da79bc21a107": {
-    "asset": 1740487367810,
-    "meta": 1740487382653,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Bat.png"
-  },
-  "dbd7c3c4-32f9-498b-a0ed-99fdd07cd90c": {
-    "asset": 1740487367756,
-    "meta": 1740487382655,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pathfinding.png"
-  },
-  "f5f6050c-6969-49db-94f9-2d7df5ff95e4": {
-    "asset": 1740487367912,
-    "meta": 1740487382677,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Boar.png"
-  },
-  "ddca2a31-a9ff-4505-8b6a-10434694cc75": {
-    "asset": 1740487367862,
-    "meta": 1740487382681,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Bear.png"
-  },
-  "7726235e-4a46-41c2-a33d-51c3410d1fc4": {
-    "asset": 1740487367962,
-    "meta": 1740487382702,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Cat.png"
-  },
-  "a8e20991-6910-4c15-b4a1-68895e191bf5": {
-    "asset": 1740487368012,
-    "meta": 1740487382704,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Crab.png"
-  },
-  "85ba8545-e3e9-4609-9246-6b493d1e83fc": {
-    "asset": 1740487368066,
-    "meta": 1740487382724,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Crocolisk.png"
-  },
-  "a9087618-5c60-4470-8ea6-545cb58f720e": {
-    "asset": 1740487368113,
-    "meta": 1740487382729,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Gorilla.png"
-  },
-  "585ecaa1-b944-438e-8d07-b0fe719634ae": {
-    "asset": 1740487368215,
-    "meta": 1740487382749,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Owl.png"
-  },
-  "f7218439-dbc8-4079-966b-b2061b4cb157": {
-    "asset": 1740487368165,
-    "meta": 1740487382752,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Hyena.png"
-  },
-  "b33bd184-f5e0-488f-b629-53778d12f9fa": {
-    "asset": 1740487368276,
-    "meta": 1740487382772,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Raptor.png"
-  },
-  "00096344-cc77-4c46-a8c5-49d9d28a16b9": {
-    "asset": 1740487368327,
-    "meta": 1740487382775,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Scorpid.png"
-  },
-  "35f6d202-3b7e-42ba-95c5-5078906defd6": {
-    "asset": 1740487368379,
-    "meta": 1740487382798,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Spider.png"
-  },
-  "9ddf4826-bcd1-4737-b124-7dda80dc2960": {
-    "asset": 1740487368430,
-    "meta": 1740487382802,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_TallStrider.png"
-  },
-  "3a3f518b-8666-4793-8fc3-681c7b9b15f6": {
-    "asset": 1740487368536,
-    "meta": 1740487382823,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Vulture.png"
-  },
-  "91ed52ea-0eba-4455-97ef-7a74888a5e7a": {
-    "asset": 1740487368489,
-    "meta": 1740487382825,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Turtle.png"
-  },
-  "ae61aadb-a112-41da-ba75-aa94c02b51a5": {
-    "asset": 1740487368608,
-    "meta": 1740487382847,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_WindSerpent.png"
-  },
-  "22444a14-3805-4f6c-8489-0ad50f6cf570": {
-    "asset": 1740487368654,
-    "meta": 1740487382851,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Wolf.png"
-  },
-  "b9921826-57c8-480f-a849-d900db4f7343": {
-    "asset": 1740487368706,
-    "meta": 1740487382871,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Quickshot.png"
-  },
-  "e9cf1dd1-776c-44a7-8a30-dc7a461c6bef": {
-    "asset": 1740487368752,
-    "meta": 1740487382873,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Readiness.png"
-  },
-  "074eab57-5bed-420e-89ab-92d3c4765f4b": {
-    "asset": 1740487368839,
-    "meta": 1740487382900,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_RunningShot.png"
-  },
-  "3a360dbb-2181-4438-9a3b-1231f44461ca": {
-    "asset": 1740487368807,
-    "meta": 1740487382904,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_Resourcefulness.png"
-  },
-  "ec54f230-1f16-4d1b-8614-5055561c8f54": {
-    "asset": 1740487368888,
-    "meta": 1740487382926,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_SilentHunter.png"
-  },
-  "4a819cf3-899d-4fc4-b018-be2d422e54be": {
-    "asset": 1740487368935,
-    "meta": 1740487382932,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_SniperShot.png"
-  },
-  "0c603cc1-e9e8-4052-831c-73cdaf342afe": {
-    "asset": 1740487368991,
-    "meta": 1740487382953,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_SteadyShot.png"
-  },
-  "307ac7b6-9b2b-4677-b321-a550aa165f8f": {
-    "asset": 1740487369049,
-    "meta": 1740487382955,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_SurvivalInstincts.png"
-  },
-  "27ca2556-011f-4dad-98e3-68b6481bc33a": {
-    "asset": 1740487369145,
-    "meta": 1740487382980,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_ThrilloftheHunt.png"
-  },
-  "12910008-6692-40cf-a447-8936d0f32647": {
-    "asset": 1740487369092,
-    "meta": 1740487382985,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_SwiftStrike.png"
-  },
-  "8977fd71-badf-4289-9a42-a724be7cef3b": {
-    "asset": 1740487369191,
-    "meta": 1740487383010,
-    "relativePath": "resources\\图标技能\\Ability_Hunter_ZenArchery.png"
-  },
-  "f4e58cac-2a90-4129-afac-bf17a68b7873": {
-    "asset": 1740487369242,
-    "meta": 1740487383013,
-    "relativePath": "resources\\图标技能\\Ability_ImpalingBolt.png"
-  },
-  "953c12f9-1f6a-4bbc-91e9-2f2a9b381213": {
-    "asset": 1740487369285,
-    "meta": 1740487383040,
-    "relativePath": "resources\\图标技能\\Ability_Kick.png"
-  },
-  "d84e08bc-dc60-444c-8244-32f699a36b15": {
-    "asset": 1740487369335,
-    "meta": 1740487383043,
-    "relativePath": "resources\\图标技能\\Ability_Mage_Invisibility.png"
-  },
-  "110342fe-12ab-4bdc-9744-84a71a0b7329": {
-    "asset": 1740487369431,
-    "meta": 1740487383070,
-    "relativePath": "resources\\图标技能\\Ability_Marksmanship.png"
-  },
-  "c0f7c22b-4ad0-4efe-93cf-8361e6ea3d04": {
-    "asset": 1740487369386,
-    "meta": 1740487383073,
-    "relativePath": "resources\\图标技能\\Ability_Mage_MoltenArmor.png"
-  },
-  "92ecf19f-0774-4bd9-85fc-72581109eec4": {
-    "asset": 1740487369532,
-    "meta": 1740487383094,
-    "relativePath": "resources\\图标技能\\Ability_Mount_BlackDireWolf.png"
-  },
-  "5b4e754f-b986-4cd2-b6cb-09017dfb4a5a": {
-    "asset": 1740487369486,
-    "meta": 1740487383103,
-    "relativePath": "resources\\图标技能\\Ability_MeleeDamage.png"
-  },
-  "330750e2-c2a4-4972-aad2-aa012e110b83": {
-    "asset": 1740487369585,
-    "meta": 1740487383123,
-    "relativePath": "resources\\图标技能\\Ability_Mount_BlackPanther.png"
-  },
-  "abae4fac-b3c2-454d-9a3a-cdcdc10ae82b": {
-    "asset": 1740487369643,
-    "meta": 1740487383126,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Charger.png"
-  },
-  "9b59ba88-0c7a-46a1-88c7-c817db10bc87": {
-    "asset": 1740487369765,
-    "meta": 1740487383153,
-    "relativePath": "resources\\图标技能\\Ability_Mount_CockatriceMountElite.png"
-  },
-  "058c16a6-807b-427f-bcd9-0d6651fd244a": {
-    "asset": 1740487369700,
-    "meta": 1740487383155,
-    "relativePath": "resources\\图标技能\\Ability_Mount_CockatriceMount.png"
-  },
-  "6146ac0e-296f-40b3-975f-c7d82e71c8cb": {
-    "asset": 1740487369829,
-    "meta": 1740487383177,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Dreadsteed.png"
-  },
-  "8fcdfb97-70b2-441c-bd63-a2e420c4939c": {
-    "asset": 1740487369877,
-    "meta": 1740487383182,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Gryphon_01.png"
-  },
-  "82bdc396-9233-4890-82bd-15a193f7d991": {
-    "asset": 1740487369927,
-    "meta": 1740487383204,
-    "relativePath": "resources\\图标技能\\Ability_Mount_JungleTiger.png"
-  },
-  "525d1331-42c7-44d8-a253-3a93614ab5db": {
-    "asset": 1740487369970,
-    "meta": 1740487383206,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_01.png"
-  },
-  "623d2e87-660c-495b-84f0-351622b81fd4": {
-    "asset": 1740487370027,
-    "meta": 1740487383234,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_02.png"
-  },
-  "729b448a-f5dc-4ff0-a556-b77e4e20870f": {
-    "asset": 1740487370075,
-    "meta": 1740487383238,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_03.png"
-  },
-  "e5b380d1-9b67-448e-886f-25be3c9559c6": {
-    "asset": 1740487370126,
-    "meta": 1740487383260,
-    "relativePath": "resources\\图标技能\\Ability_Mount_MechaStrider.png"
-  },
-  "238c3af5-90d1-4d56-b9de-09f1bd453949": {
-    "asset": 1740487370175,
-    "meta": 1740487383265,
-    "relativePath": "resources\\图标技能\\Ability_Mount_MountainRam.png"
-  },
-  "93d41820-4f87-4f77-9997-ac432d317d47": {
-    "asset": 1740487370224,
-    "meta": 1740487383288,
-    "relativePath": "resources\\图标技能\\Ability_Mount_NetherDrakeElite.png"
-  },
-  "d93c0624-1257-46db-9319-1a59d51a8e25": {
-    "asset": 1740487370273,
-    "meta": 1740487383291,
-    "relativePath": "resources\\图标技能\\Ability_Mount_NetherdrakePurple.png"
-  },
-  "457af094-76f4-45e0-93a4-eac9c1ecf946": {
-    "asset": 1740487370325,
-    "meta": 1740487383310,
-    "relativePath": "resources\\图标技能\\Ability_Mount_NightmareHorse.png"
-  },
-  "d07e33e7-1cd3-4899-b992-d068562a23c2": {
-    "asset": 1740487370373,
-    "meta": 1740487383313,
-    "relativePath": "resources\\图标技能\\Ability_Mount_PinkTiger.png"
-  },
-  "c7cf368b-111d-452b-b222-51a2d1caa842": {
-    "asset": 1740487370416,
-    "meta": 1740487383337,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Raptor.png"
-  },
-  "a0eaf396-70bb-4556-a59f-0ebe40b9fe14": {
-    "asset": 1740487370465,
-    "meta": 1740487383340,
-    "relativePath": "resources\\图标技能\\Ability_Mount_RidingElekk.png"
-  },
-  "532d3010-3837-4547-8220-bf67e1f5f859": {
-    "asset": 1740487370508,
-    "meta": 1740487383360,
-    "relativePath": "resources\\图标技能\\Ability_Mount_RidingElekkElite.png"
-  },
-  "d109a93e-7f38-4cb9-8bfc-20decd36d188": {
-    "asset": 1740487370557,
-    "meta": 1740487383362,
-    "relativePath": "resources\\图标技能\\Ability_Mount_RidingHorse.png"
-  },
-  "1b9c5ca9-4ae3-44b8-b006-fb9d098d547b": {
-    "asset": 1740487370599,
-    "meta": 1740487383384,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Undeadhorse.png"
-  },
-  "cc53e675-1bd0-48f2-82e7-74128b838a47": {
-    "asset": 1740487370649,
-    "meta": 1740487383386,
-    "relativePath": "resources\\图标技能\\Ability_Mount_WhiteDireWolf.png"
-  },
-  "06a57ffd-323d-497a-a86a-0f7757a6c17d": {
-    "asset": 1740487370677,
-    "meta": 1740487383407,
-    "relativePath": "resources\\图标技能\\Ability_Mount_WhiteTiger.png"
-  },
-  "1b42117c-7f05-4e23-a065-388accb24a3a": {
-    "asset": 1740487370731,
-    "meta": 1740487383410,
-    "relativePath": "resources\\图标技能\\Ability_Mount_Wyvern_01.png"
-  },
-  "c7f2c1ce-a14c-4fea-a155-8eb795bbccf5": {
-    "asset": 1740487370783,
-    "meta": 1740487383434,
-    "relativePath": "resources\\图标技能\\Ability_Parry.png"
-  },
-  "be6faf5b-184a-4896-8724-63fa1caa2e6b": {
-    "asset": 1740487370827,
-    "meta": 1740487383436,
-    "relativePath": "resources\\图标技能\\Ability_Physical_Taunt.png"
-  },
-  "97e0d79d-6838-43dc-9382-5305d88713ec": {
-    "asset": 1740487370929,
-    "meta": 1740487383453,
-    "relativePath": "resources\\图标技能\\Ability_PoisonArrow.png"
-  },
-  "d0fc03f8-fbfa-45df-b7b1-998c0e3d277a": {
-    "asset": 1740487370879,
-    "meta": 1740487383455,
-    "relativePath": "resources\\图标技能\\Ability_PierceDamage.png"
-  },
-  "28d3c882-bbc0-4335-8740-566f55a6e10f": {
-    "asset": 1740487371028,
-    "meta": 1740487383474,
-    "relativePath": "resources\\图标技能\\Ability_Poisons.png"
-  },
-  "6f97cf52-ab85-4f13-9f25-4217338f8367": {
-    "asset": 1740487370976,
-    "meta": 1740487383476,
-    "relativePath": "resources\\图标技能\\Ability_PoisonSting.png"
-  },
-  "ae950a29-b391-427f-97e2-07d5de5e46fa": {
-    "asset": 1740487371149,
-    "meta": 1740487383501,
-    "relativePath": "resources\\图标技能\\Ability_Racial_BearForm.png"
-  },
-  "ce7ead66-2e85-4e96-9df6-66a20fcc9776": {
-    "asset": 1740487371095,
-    "meta": 1740487383503,
-    "relativePath": "resources\\图标技能\\Ability_Racial_Avatar.png"
-  },
-  "f4988e4c-266b-4dc8-8a2d-de31c91f9c12": {
-    "asset": 1740487371209,
-    "meta": 1740487383531,
-    "relativePath": "resources\\图标技能\\Ability_Racial_BloodRage.png"
-  },
-  "4761aadb-614e-49aa-af41-d31a8beb8184": {
-    "asset": 1740487371252,
-    "meta": 1740487383536,
-    "relativePath": "resources\\图标技能\\Ability_Racial_Cannibalize.png"
-  },
-  "7cce8f1e-e6b3-4250-8f62-f0aa7b9d4e29": {
-    "asset": 1740487371306,
-    "meta": 1740487383561,
-    "relativePath": "resources\\图标技能\\Ability_Racial_ShadowMeld.png"
-  },
-  "cf8bad6e-5cc4-4d5e-af71-b1b8488b851d": {
-    "asset": 1740487371358,
-    "meta": 1740487383569,
-    "relativePath": "resources\\图标技能\\Ability_Racial_Ultravision.png"
-  },
-  "2a096600-1ea6-4aa2-b15b-ef4932ef7cfe": {
-    "asset": 1740487371462,
-    "meta": 1740487383593,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Ambush.png"
-  },
-  "5222842c-70c0-4732-86d9-5ce8422ea838": {
-    "asset": 1740487371413,
-    "meta": 1740487383601,
-    "relativePath": "resources\\图标技能\\Ability_Repair.png"
-  },
-  "8da5f8c7-ab19-40be-951c-1a1b8547cadf": {
-    "asset": 1740487371513,
-    "meta": 1740487383626,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_BladeTwisting.png"
-  },
-  "a227a596-f77d-4c85-b04e-56a8c34323b8": {
-    "asset": 1740487371566,
-    "meta": 1740487383629,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_BloodyEye.png"
-  },
-  "192516a0-6deb-4e37-8397-13b868dfcc26": {
-    "asset": 1740487371657,
-    "meta": 1740487383658,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_CheatDeath.png"
-  },
-  "b3851ff6-c4e2-4c3d-834c-dfbd221e19ae": {
-    "asset": 1740487371719,
-    "meta": 1740487383661,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_DeadenedNerves.png"
-  },
-  "a503145a-94e3-4521-991c-771c6ef644bf": {
-    "asset": 1740487371786,
-    "meta": 1740487383688,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Disembowel.png"
-  },
-  "6ed1bc87-3fa3-4d4f-aa39-d4b15f7d17be": {
-    "asset": 1740487371842,
-    "meta": 1740487383690,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Disguise.png"
-  },
-  "450c64bc-60c6-40d6-b925-57e768275150": {
-    "asset": 1740487371892,
-    "meta": 1740487383709,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Distract.png"
-  },
-  "fc19e870-7010-47dc-9892-1b455bc95d30": {
-    "asset": 1740487371941,
-    "meta": 1740487383714,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_DualWeild.png"
-  },
-  "7add4389-5156-4330-96d3-b91f255aa7c2": {
-    "asset": 1740487371990,
-    "meta": 1740487383739,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_EnvelopingShadows.png"
-  },
-  "4e7c69b8-01e9-4c84-9e8d-676cfa411122": {
-    "asset": 1740487372039,
-    "meta": 1740487383742,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Eviscerate.png"
-  },
-  "a6b8f45a-bc89-4e91-8d92-d7eb5de7d324": {
-    "asset": 1740487372090,
-    "meta": 1740487383760,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_FeignDeath.png"
-  },
-  "6c2430ab-1628-41e3-b495-a120e0216bad": {
-    "asset": 1740487372142,
-    "meta": 1740487383763,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Feint.png"
-  },
-  "24301621-93b1-4a85-9321-64757ce9cc67": {
-    "asset": 1740487372233,
-    "meta": 1740487383789,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_FleetFooted.png"
-  },
-  "f75ad9cb-9a1d-49bb-9c8f-5048270a2087": {
-    "asset": 1740487372189,
-    "meta": 1740487383792,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_FindWeakness.png"
-  },
-  "f1f226f9-90ec-4083-941c-6c1b671ee5fc": {
-    "asset": 1740487372275,
-    "meta": 1740487383810,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Garrote.png"
-  },
-  "1cf466fc-4fef-49a9-b2ae-a3b24b5cbaab": {
-    "asset": 1740487372329,
-    "meta": 1740487383813,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_KidneyShot.png"
-  },
-  "c7055d9d-eed9-41d9-80c2-07fd9f23fce7": {
-    "asset": 1740487372381,
-    "meta": 1740487383834,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_MasterOfSubtlety.png"
-  },
-  "699454f5-2562-4665-a35a-a66fe3c2d115": {
-    "asset": 1740487372426,
-    "meta": 1740487383836,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_NervesOfSteel.png"
-  },
-  "c4fcdd64-ffe6-477e-ab5f-d679d1bfe987": {
-    "asset": 1740487372478,
-    "meta": 1740487383856,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_QuickRecovery.png"
-  },
-  "6887ff6e-fa16-472d-88f1-d4f4ae4c2c9c": {
-    "asset": 1740487372519,
-    "meta": 1740487383858,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Rupture.png"
-  },
-  "78fa6cb7-575a-40c0-94ac-0bd727e0c4f9": {
-    "asset": 1740487372631,
-    "meta": 1740487383881,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_SinisterCalling.png"
-  },
-  "557d9512-77b0-4f9a-993a-d29fdbecf70f": {
-    "asset": 1740487372570,
-    "meta": 1740487383884,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_ShadowStrikes.png"
-  },
-  "d76ebbfe-9b96-456c-b3fd-bac090970e4c": {
-    "asset": 1740487372677,
-    "meta": 1740487383901,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_SliceDice.png"
-  },
-  "4bbdd206-e949-4019-945b-60af51c9cbf0": {
-    "asset": 1740487372725,
-    "meta": 1740487383903,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Sprint.png"
-  },
-  "ad8200be-4971-41bf-969f-09da52b78d09": {
-    "asset": 1740487372775,
-    "meta": 1740487383924,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_SurpriseAttack.png"
-  },
-  "46ca2ab5-849c-47cd-8245-775105b1f0e8": {
-    "asset": 1740487372820,
-    "meta": 1740487383926,
-    "relativePath": "resources\\图标技能\\Ability_Rogue_Trip.png"
-  },
-  "19f2a79a-0b26-4468-b39d-a762f619ad71": {
-    "asset": 1740487372920,
-    "meta": 1740487383945,
-    "relativePath": "resources\\图标技能\\Ability_Seal.png"
-  },
-  "84d3a225-6ef9-46fe-9ac2-3f6c5edd05b0": {
-    "asset": 1740487372866,
-    "meta": 1740487383949,
-    "relativePath": "resources\\图标技能\\Ability_Sap.png"
-  },
-  "8cbe40a6-5b8c-40dc-b6f2-794a5f05b7f3": {
-    "asset": 1740487373015,
-    "meta": 1740487383967,
-    "relativePath": "resources\\图标技能\\Ability_ShockWave.png"
-  },
-  "2e3c128a-b6f8-4ec0-b3a2-220659f62aa4": {
-    "asset": 1740487372971,
-    "meta": 1740487383969,
-    "relativePath": "resources\\图标技能\\Ability_SearingArrow.png"
-  },
-  "73e301e4-010e-44df-8a19-534c836c40ed": {
-    "asset": 1740487373074,
-    "meta": 1740487383989,
-    "relativePath": "resources\\图标技能\\Ability_ShootWand.png"
-  },
-  "746ce262-73ec-4840-91f8-ad3a4bf4cc3d": {
-    "asset": 1740487373130,
-    "meta": 1740487383994,
-    "relativePath": "resources\\图标技能\\Ability_Smash.png"
-  },
-  "31c90670-27dd-4a8f-afa7-24d81ad33903": {
-    "asset": 1740487373227,
-    "meta": 1740487384018,
-    "relativePath": "resources\\图标技能\\Ability_Stealth.png"
-  },
-  "1aac4eee-116a-4f9c-96c5-d1e7e5e39ecd": {
-    "asset": 1740487373178,
-    "meta": 1740487384021,
-    "relativePath": "resources\\图标技能\\Ability_Spy.png"
-  },
-  "668456da-4e65-44c9-894a-2268bb54fc5f": {
-    "asset": 1740487373275,
-    "meta": 1740487384050,
-    "relativePath": "resources\\图标技能\\Ability_SteelMelee.png"
-  },
-  "da33b0d7-8e01-45a5-8e70-a068253adaba": {
-    "asset": 1740487373327,
-    "meta": 1740487384052,
-    "relativePath": "resources\\图标技能\\Ability_Suffocate.png"
-  },
-  "34235350-b894-43aa-9725-8d614c5633e0": {
-    "asset": 1740493788796,
-    "meta": 1740493788824,
-    "relativePath": "Scene\\home\\大厅.fire"
-  },
   "37519c7c-1d54-4da7-b3e2-015c314c5ad6": {
     "asset": 1740492017933,
     "meta": 1740492022049,
     "relativePath": "Script\\commonApi\\http.js"
   },
-  "d51ef8a8-ae2d-4d82-83ec-7c54823d690a": {
-    "asset": 1740492433509,
-    "meta": 1740492446521,
-    "relativePath": "resources\\A基础图标\\10标准弹窗.png"
+  "4c63b3ba-fe7c-4901-8b16-6a57e73ee915": {
+    "asset": 1740548668090,
+    "meta": 1740548680680,
+    "relativePath": "prefabs\\血条格子.prefab"
   },
-  "7dca248e-972c-44f3-9e70-63e29d46894c": {
-    "asset": 1740492434019,
-    "meta": 1740492446532,
-    "relativePath": "resources\\A基础图标\\1攻击.png"
+  "19d4125f-52a1-4e8a-9c5c-6ec1b6bb0508": {
+    "asset": 1740548668088,
+    "meta": 1740548680686,
+    "relativePath": "prefabs\\biology_生物详情.prefab"
   },
-  "59c4a857-2dd7-44b7-b0d6-63e4b252dadb": {
-    "asset": 1740492433929,
-    "meta": 1740492446569,
-    "relativePath": "resources\\A基础图标\\1技能框.png"
+  "0d598635-c030-4dbd-b28f-1ec01d09b7bb": {
+    "asset": 1740548668089,
+    "meta": 1740548680690,
+    "relativePath": "prefabs\\sprite_生物.prefab"
   },
-  "6df561e8-8d43-4e1a-8f7f-35b23caf4702": {
-    "asset": 1740492433823,
-    "meta": 1740492446577,
-    "relativePath": "resources\\A基础图标\\1技能.png"
+  "8f7c4da7-1b3f-443a-9e22-a46a5c5c9ec2": {
+    "asset": 1740548668185,
+    "meta": 1740548680726,
+    "relativePath": "resources\\图标技能\\Ability_Ambush.png"
   },
-  "146198f3-814c-46b3-9f93-491eea1ac55c": {
-    "asset": 1740492434110,
-    "meta": 1740492446611,
-    "relativePath": "resources\\A基础图标\\1死亡之花.png"
+  "698df1b3-0642-4b35-8971-e61c8e333c88": {
+    "asset": 1740548668186,
+    "meta": 1740548680729,
+    "relativePath": "resources\\图标技能\\Ability_BackStab.png"
   },
-  "f0121585-cf7d-4bad-91b8-11b387bb6106": {
-    "asset": 1740492433632,
-    "meta": 1740492446614,
-    "relativePath": "resources\\A基础图标\\1墓碑.png"
+  "222cddf8-97de-45c7-befb-4c94827b4c6a": {
+    "asset": 1740548668187,
+    "meta": 1740548680748,
+    "relativePath": "resources\\图标技能\\Ability_BullRush.png"
   },
-  "5328e16c-709a-4b9e-91ce-6915249dbe8b": {
-    "asset": 1740492434315,
-    "meta": 1740492446637,
-    "relativePath": "resources\\A基础图标\\3关闭.png"
+  "ce9cef12-78c3-4a19-91b5-2b3f1abdb937": {
+    "asset": 1740548668188,
+    "meta": 1740548680752,
+    "relativePath": "resources\\图标技能\\Ability_CheapShot.png"
   },
-  "3b739a45-be54-480f-81f7-f705d00e0750": {
-    "asset": 1740492434197,
-    "meta": 1740492446642,
-    "relativePath": "resources\\A基础图标\\2阴影.png"
+  "15738f2d-bc2a-4407-911e-d8413d732742": {
+    "asset": 1740548668189,
+    "meta": 1740548680766,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_01.png"
   },
-  "4b854cee-0f1d-461d-89b5-07fa26b74880": {
-    "asset": 1740492434427,
-    "meta": 1740492446662,
-    "relativePath": "resources\\A基础图标\\4异形.png"
+  "5557d58f-a546-4614-8a41-3828889e3e57": {
+    "asset": 1740548668190,
+    "meta": 1740548680768,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_02.png"
   },
-  "e8baa60a-b060-4437-aa88-59f9721556f9": {
-    "asset": 1740492434526,
-    "meta": 1740492446665,
-    "relativePath": "resources\\A基础图标\\5标准按钮1.png"
+  "43140d91-690d-4f57-86cf-a413c8678366": {
+    "asset": 1740548668192,
+    "meta": 1740548680786,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_04.png"
   },
-  "d3920daf-d6d5-42cd-822c-3e8ac82d5184": {
-    "asset": 1740492434634,
-    "meta": 1740492446687,
-    "relativePath": "resources\\A基础图标\\6标准按钮2.png"
+  "b335d261-a414-4f49-8c29-c555d9ddd9b3": {
+    "asset": 1740548668191,
+    "meta": 1740548680788,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_03.png"
   },
-  "a57fc618-a4e9-4ebf-8f49-c1d41eab2db2": {
-    "asset": 1740492434737,
-    "meta": 1740492446695,
-    "relativePath": "resources\\A基础图标\\6标准按钮3.png"
+  "60730279-ad24-4505-9fff-3a4153d8b4a1": {
+    "asset": 1740548668194,
+    "meta": 1740548680804,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_01.png"
   },
-  "2c2b1d6e-0a7d-45fd-a346-180be98e84e1": {
-    "asset": 1740492434993,
-    "meta": 1740492446729,
-    "relativePath": "resources\\A基础图标\\8边框.png"
+  "e53fbe73-b271-4cae-8184-a6f92a2fc52d": {
+    "asset": 1740548668193,
+    "meta": 1740548680807,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Cursed_05.png"
   },
-  "74f2f6d9-b0d3-4fe4-90c0-51e6c5e0e043": {
-    "asset": 1740492434856,
-    "meta": 1740492446732,
-    "relativePath": "resources\\A基础图标\\7问号.png"
+  "bf292a8e-6f3f-4f2e-87d9-129bd73518a0": {
+    "asset": 1740548668195,
+    "meta": 1740548680824,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_02.png"
   },
-  "57043434-c331-44d9-b43b-1d84ffc43f94": {
-    "asset": 1740492435118,
-    "meta": 1740492446784,
-    "relativePath": "resources\\A基础图标\\9标准弹窗.png"
+  "85a6f85f-cbb7-45b6-9ac5-ced9d34cb9b0": {
+    "asset": 1740548668196,
+    "meta": 1740548680826,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_03.png"
   },
-  "83d38215-0c69-4f46-9a6a-4b9cca0c29df": {
-    "asset": 1740492437713,
-    "meta": 1740492446790,
-    "relativePath": "resources\\A基础图标\\按钮.png"
+  "b3e1d903-0ff6-41be-baac-8ca397848e8b": {
+    "asset": 1740548668197,
+    "meta": 1740548680842,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_04.png"
   },
-  "6a9d1ceb-c63b-4f87-b5d5-c2d91840ad58": {
-    "asset": 1740492437969,
-    "meta": 1740492446818,
-    "relativePath": "resources\\A基础图标\\标题1.png"
+  "5b429a34-9fc3-4d5c-ae3f-29cb85f36032": {
+    "asset": 1740548668198,
+    "meta": 1740548680843,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Disease_05.png"
   },
-  "a7ecaa9c-502f-4366-b207-0c80d065fe14": {
-    "asset": 1740492440204,
-    "meta": 1740492446824,
-    "relativePath": "resources\\A基础图标\\边框圆.png"
+  "e8e6d6a9-fad7-43b8-bf8a-cb8bd227f0a4": {
+    "asset": 1740548668199,
+    "meta": 1740548680860,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_01.png"
   },
-  "16bd776f-4c93-400c-9bfc-19c3076c6481": {
-    "asset": 1740492438102,
-    "meta": 1740492446857,
-    "relativePath": "resources\\A基础图标\\标题2.png"
+  "fe9e00b5-0919-4c6e-b785-598eaa443188": {
+    "asset": 1740548668200,
+    "meta": 1740548680863,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_02.png"
   },
-  "2719dfa6-cdbe-4a66-805d-28a952cd7540": {
-    "asset": 1740492438228,
-    "meta": 1740492446864,
-    "relativePath": "resources\\A基础图标\\标题3.png"
+  "4457bd22-0d2d-4895-889d-b389d36b2c45": {
+    "asset": 1740548668202,
+    "meta": 1740548680882,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_04.png"
   },
-  "86036771-f96b-47b9-a85b-362ecc631fa9": {
-    "asset": 1740492438455,
-    "meta": 1740492446893,
-    "relativePath": "resources\\A基础图标\\标题4.png"
+  "d38e516f-f8e3-4ae5-9c48-082b943ca369": {
+    "asset": 1740548668201,
+    "meta": 1740548680883,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_03.png"
   },
-  "238d70df-3827-480e-a1b6-b454d0e5c90a": {
-    "asset": 1740492436479,
-    "meta": 1740492446900,
-    "relativePath": "resources\\A基础图标\\出战.png"
+  "5adc98fe-71e2-4516-a631-86b27e6f3308": {
+    "asset": 1740548668203,
+    "meta": 1740548680900,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_05.png"
   },
-  "7240839b-b8fd-40fb-995f-122b757e9c0d": {
-    "asset": 1740492437103,
-    "meta": 1740492446934,
-    "relativePath": "resources\\A基础图标\\底座.png"
+  "1d9c7b63-7516-464c-85d6-a3150c229d4f": {
+    "asset": 1740548668205,
+    "meta": 1740548680904,
+    "relativePath": "resources\\图标技能\\Ability_Creature_Poison_06.png"
   },
-  "c0b3d456-9789-4287-bdaa-0da4f56a3468": {
-    "asset": 1740492437262,
-    "meta": 1740492446943,
-    "relativePath": "resources\\A基础图标\\底座1.png"
+  "779587bc-29b1-4370-ad3a-a72634fd5423": {
+    "asset": 1740548668205,
+    "meta": 1740548680920,
+    "relativePath": "resources\\图标技能\\Ability_CriticalStrike.png"
   },
-  "9fc462e7-77a5-422b-89ed-5498cbb8594e": {
-    "asset": 1740492437596,
-    "meta": 1740492446975,
-    "relativePath": "resources\\A基础图标\\抵消疾病.png"
+  "53f2473e-4ebf-482c-ae80-39c8e4b66bda": {
+    "asset": 1740548668206,
+    "meta": 1740548680922,
+    "relativePath": "resources\\图标技能\\Ability_Defend.png"
   },
-  "ba6a0b14-3cd5-4366-b25a-539894f0417e": {
-    "asset": 1740492439738,
-    "meta": 1740492446986,
-    "relativePath": "resources\\A基础图标\\点数.png"
+  "81fdc370-cb7c-4944-8094-3d942d97ab3e": {
+    "asset": 1740548668208,
+    "meta": 1740548680938,
+    "relativePath": "resources\\图标技能\\Ability_Druid_AquaticForm.png"
   },
-  "b68c3e96-6af1-49a8-b84c-f8cc1708dcf4": {
-    "asset": 1740492437355,
-    "meta": 1740492447005,
-    "relativePath": "resources\\A基础图标\\恶魔召唤.png"
+  "4f6edf93-7b02-4031-b27b-29d634a26608": {
+    "asset": 1740548668206,
+    "meta": 1740548680941,
+    "relativePath": "resources\\图标技能\\Ability_Devour.png"
   },
-  "3bd227bb-e56f-46d8-b3bf-afd4fd726ee6": {
-    "asset": 1740492436623,
-    "meta": 1740492447030,
-    "relativePath": "resources\\A基础图标\\刚毅.png"
+  "5aee6fd4-f97b-47bd-a864-601e2fb1f465": {
+    "asset": 1740548668209,
+    "meta": 1740548680957,
+    "relativePath": "resources\\图标技能\\Ability_Druid_BalanceofPower.png"
   },
-  "9ec95e88-a2b2-4974-b27a-108f043d13f8": {
-    "asset": 1740492436695,
-    "meta": 1740492447035,
-    "relativePath": "resources\\A基础图标\\加.png"
+  "26acf668-4cf4-463e-a8d8-4509d2445b73": {
+    "asset": 1740548668210,
+    "meta": 1740548680961,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Bash.png"
   },
-  "d115405e-7195-47b4-ac64-4caf190c4acc": {
-    "asset": 1740492436773,
-    "meta": 1740492447064,
-    "relativePath": "resources\\A基础图标\\加黑.png"
+  "4388b8a3-c466-40dd-a252-ca9ccde47f80": {
+    "asset": 1740548668211,
+    "meta": 1740548680978,
+    "relativePath": "resources\\图标技能\\Ability_Druid_CatForm.png"
   },
-  "b15090f9-47e1-49ea-ad54-959cfc126fb3": {
-    "asset": 1740492440334,
-    "meta": 1740492447066,
-    "relativePath": "resources\\A基础图标\\金币.png"
+  "164a72c1-4554-4296-9dfa-8103698569b9": {
+    "asset": 1740548668212,
+    "meta": 1740548680980,
+    "relativePath": "resources\\图标技能\\Ability_Druid_CatFormAttack.png"
   },
-  "9062c045-3fdb-4957-bac5-6dca69fc0fa4": {
-    "asset": 1740492439575,
-    "meta": 1740492447095,
-    "relativePath": "resources\\A基础图标\\灵石.png"
+  "3dace8f2-ec03-4dfe-bb4d-2bbe11ec12d8": {
+    "asset": 1740548668213,
+    "meta": 1740548680998,
+    "relativePath": "resources\\图标技能\\Ability_Druid_ChallangingRoar.png"
   },
-  "1ae37c6f-0066-44c2-b2a1-4c7c94b018c3": {
-    "asset": 1740492440488,
-    "meta": 1740492447097,
-    "relativePath": "resources\\A基础图标\\金币2.png"
+  "ae4089d1-56ec-4371-ae0a-c72838094d0e": {
+    "asset": 1740548668214,
+    "meta": 1740548681000,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Cower.png"
   },
-  "80b85a87-eb45-4dbb-944d-7f821233eaca": {
-    "asset": 1740492439853,
-    "meta": 1740492447117,
-    "relativePath": "resources\\A基础图标\\生命.png"
+  "98f77b8e-c49c-4bc3-9d8d-5b8d7c64e2d8": {
+    "asset": 1740548668215,
+    "meta": 1740548681017,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Dash.png"
   },
-  "94c139dc-7a30-4661-98da-c3008acb96c7": {
-    "asset": 1740492436883,
-    "meta": 1740492447120,
-    "relativePath": "resources\\A基础图标\\墓碑.png"
+  "5e8c486b-ac75-4968-931f-6853bb623f18": {
+    "asset": 1740548668216,
+    "meta": 1740548681020,
+    "relativePath": "resources\\图标技能\\Ability_Druid_DemoralizingRoar.png"
   },
-  "58fe9e2b-74b9-4fc7-a0a4-84b098116a91": {
-    "asset": 1740492438687,
-    "meta": 1740492447146,
-    "relativePath": "resources\\A基础图标\\死亡缠绕.png"
+  "948d464f-da3c-4c94-b935-7ba55e320b2c": {
+    "asset": 1740548668217,
+    "meta": 1740548681037,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Disembowel.png"
   },
-  "e757bbfa-2a28-43d3-b60e-97bc03f61c06": {
-    "asset": 1740492438922,
-    "meta": 1740492447148,
-    "relativePath": "resources\\A基础图标\\水墨背景.png"
+  "b9aeb377-9830-4866-8709-7ab9d1be3b85": {
+    "asset": 1740548668218,
+    "meta": 1740548681039,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Dreamstate.png"
   },
-  "76220847-c34c-4457-a405-d2d032d0d60e": {
-    "asset": 1740492436292,
-    "meta": 1740492447175,
-    "relativePath": "resources\\A基础图标\\体力.png"
+  "5b24941a-ebd6-4830-af71-304e9ec0a868": {
+    "asset": 1740548668219,
+    "meta": 1740548681055,
+    "relativePath": "resources\\图标技能\\Ability_Druid_EmpoweredRejuvination.png"
   },
-  "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
-    "asset": 1740492439171,
-    "meta": 1740492447179,
-    "relativePath": "resources\\A基础图标\\消耗.png"
+  "f3a4c5cb-bd5f-4a57-af65-0437018c5d77": {
+    "asset": 1740548668220,
+    "meta": 1740548681057,
+    "relativePath": "resources\\图标技能\\Ability_Druid_EmpoweredTouch.png"
   },
-  "e12bf3c6-5eed-4161-8928-22caa4d22c2e": {
-    "asset": 1740492436423,
-    "meta": 1740492447200,
-    "relativePath": "resources\\A基础图标\\信息.png"
+  "babda69e-4ed7-4fed-bfad-394803ebcc8a": {
+    "asset": 1740548668221,
+    "meta": 1740548681073,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Enrage.png"
   },
-  "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
-    "asset": 1740492437831,
-    "meta": 1740492447203,
-    "relativePath": "resources\\A基础图标\\星星.png"
+  "d6236548-25e7-4730-9cde-21737a351fac": {
+    "asset": 1740548668222,
+    "meta": 1740548681075,
+    "relativePath": "resources\\图标技能\\Ability_Druid_FerociousBite.png"
   },
-  "83d0fc9f-fdb1-44f4-8c76-9148a236b723": {
-    "asset": 1740492440079,
-    "meta": 1740492447230,
-    "relativePath": "resources\\A基础图标\\药水绿色.png"
+  "f671d637-c96f-47a6-a0bf-fd011cea8118": {
+    "asset": 1740548668224,
+    "meta": 1740548681091,
+    "relativePath": "resources\\图标技能\\Ability_Druid_ForceofNature.png"
   },
-  "7b6bb2cd-8fc0-4b6a-bb41-0e850a19d8dc": {
-    "asset": 1740492437475,
-    "meta": 1740492447232,
-    "relativePath": "resources\\A基础图标\\战斗.png"
+  "bcdacb3d-63fb-496d-bbb9-51da6ecf2533": {
+    "asset": 1740548668223,
+    "meta": 1740548681093,
+    "relativePath": "resources\\图标技能\\Ability_Druid_FlightForm.png"
   },
-  "bbc56ed9-a651-4137-9e9d-c566671463b2": {
-    "asset": 1740492439956,
-    "meta": 1740492447259,
-    "relativePath": "resources\\A基础图标\\砖石.png"
+  "e1d2d578-c6c3-428a-bff9-3b42fa9bf2cc": {
+    "asset": 1740548668225,
+    "meta": 1740548681109,
+    "relativePath": "resources\\图标技能\\Ability_Druid_HealingInstincts.png"
   },
-  "ee9d0248-4c9c-4b33-9b66-7c59c17b999b": {
-    "asset": 1740492435985,
-    "meta": 1740492447264,
-    "relativePath": "resources\\A基础图标\\a背景.png"
+  "90f48e57-28bb-43d4-9d65-924a07fa7464": {
+    "asset": 1740548668226,
+    "meta": 1740548681111,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Lacerate.png"
   },
-  "364582a1-d059-4fde-949b-a0cfbcca3523": {
-    "asset": 1740492435862,
-    "meta": 1740492447288,
-    "relativePath": "resources\\A基础图标\\a火.png"
+  "dc371dd6-9b51-4118-a16e-b0b205fc43bd": {
+    "asset": 1740548668228,
+    "meta": 1740548681128,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Mangle.png"
   },
-  "7c7db64c-4827-4dc8-a55a-b5da19a3a170": {
-    "asset": 1740492436173,
-    "meta": 1740492447296,
-    "relativePath": "resources\\A基础图标\\a金.png"
+  "a92d5c15-3e2b-4eef-83da-d0a898a2fa49": {
+    "asset": 1740548668227,
+    "meta": 1740548681130,
+    "relativePath": "resources\\图标技能\\Ability_Druid_LunarGuidance.png"
   },
-  "e3619722-f212-4c6a-b31e-efcd7f0af03e": {
-    "asset": 1740492435520,
-    "meta": 1740492447328,
-    "relativePath": "resources\\A基础图标\\a木.png"
+  "77c5c881-d5c6-48e7-a356-17077c8609fe": {
+    "asset": 1740548668229,
+    "meta": 1740548681148,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Maul.png"
   },
-  "ddb24bf2-2a2a-468b-94ed-7a7f52bceb7b": {
-    "asset": 1740492435674,
-    "meta": 1740492447334,
-    "relativePath": "resources\\A基础图标\\a水.png"
+  "cfa40c7c-991e-4efc-8eba-043645290fcd": {
+    "asset": 1740548668230,
+    "meta": 1740548681150,
+    "relativePath": "resources\\图标技能\\Ability_Druid_NaturalPerfection.png"
   },
-  "cba1677d-9701-4e69-a746-bd518127eaf3": {
-    "asset": 1740492435277,
-    "meta": 1740492447361,
-    "relativePath": "resources\\A基础图标\\a土.png"
+  "9a125ee3-1798-43b9-9cb2-302069bf3166": {
+    "asset": 1740548668231,
+    "meta": 1740548681169,
+    "relativePath": "resources\\图标技能\\Ability_Druid_PredatoryInstincts.png"
   },
-  "3599bcaf-c040-4eee-9c9c-9ded750b7f9f": {
-    "asset": 1740492435379,
-    "meta": 1740492447364,
-    "relativePath": "resources\\A基础图标\\a无.png"
+  "2fbac230-a12c-4369-86a9-4b3df2c5607a": {
+    "asset": 1740548668232,
+    "meta": 1740548681171,
+    "relativePath": "resources\\图标技能\\Ability_Druid_PrimalTenacity.png"
+  },
+  "eb1fa9ed-4092-4684-a1db-09bbc496c1d2": {
+    "asset": 1740548668235,
+    "meta": 1740548681190,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Ravage.png"
+  },
+  "efb98461-b260-497f-9a10-d09b3c6ea252": {
+    "asset": 1740548668234,
+    "meta": 1740548681192,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Rake.png"
+  },
+  "5629937a-40cc-4fc6-a97f-fa4e6e9803a5": {
+    "asset": 1740548668236,
+    "meta": 1740548681209,
+    "relativePath": "resources\\图标技能\\Ability_Druid_SupriseAttack.png"
+  },
+  "9fbc9229-8ab8-4871-9adb-47244327ef67": {
+    "asset": 1740548668237,
+    "meta": 1740548681211,
+    "relativePath": "resources\\图标技能\\Ability_Druid_Swipe.png"
+  },
+  "b3d58479-7c2c-4d38-ba4b-27b15b3291ef": {
+    "asset": 1740548668238,
+    "meta": 1740548681227,
+    "relativePath": "resources\\图标技能\\Ability_Druid_TravelForm.png"
+  },
+  "76fc0f09-264a-456a-8f6e-34b777084fbd": {
+    "asset": 1740548668239,
+    "meta": 1740548681229,
+    "relativePath": "resources\\图标技能\\Ability_Druid_TreeofLife.png"
+  },
+  "6df768ec-3f60-403d-96b1-2d97613f4670": {
+    "asset": 1740548668240,
+    "meta": 1740548681244,
+    "relativePath": "resources\\图标技能\\Ability_Druid_TwilightsWrath.png"
+  },
+  "4e9c60cf-6864-4396-9505-ccac7cd4ea44": {
+    "asset": 1740548668241,
+    "meta": 1740548681246,
+    "relativePath": "resources\\图标技能\\Ability_DualWield.png"
+  },
+  "a1a7bf1a-680d-4554-8123-b8cf6b11cfdc": {
+    "asset": 1740548668242,
+    "meta": 1740548681264,
+    "relativePath": "resources\\图标技能\\Ability_DualWieldSpecialization.png"
+  },
+  "adf77081-302c-481b-b903-d6baa6737894": {
+    "asset": 1740548668243,
+    "meta": 1740548681267,
+    "relativePath": "resources\\图标技能\\Ability_Ensnare.png"
+  },
+  "d52e7fc8-e345-41bc-a7bb-2e4cb4ee611d": {
+    "asset": 1740548668244,
+    "meta": 1740548681284,
+    "relativePath": "resources\\图标技能\\Ability_EyeOfTheOwl.png"
+  },
+  "5f27bce3-f96e-4ae4-b419-25fbff69fb82": {
+    "asset": 1740548668245,
+    "meta": 1740548681287,
+    "relativePath": "resources\\图标技能\\Ability_FiegnDead.png"
+  },
+  "4792784a-4966-486f-9a0b-0840a7c1ded0": {
+    "asset": 1740548668246,
+    "meta": 1740548681305,
+    "relativePath": "resources\\图标技能\\Ability_GhoulFrenzy.png"
+  },
+  "b986b5a5-7dd5-4157-981a-fe2de351cd3a": {
+    "asset": 1740548668246,
+    "meta": 1740548681307,
+    "relativePath": "resources\\图标技能\\Ability_GolemStormBolt.png"
+  },
+  "79674a17-03d1-4b90-ac9f-80d56b93f356": {
+    "asset": 1740548668247,
+    "meta": 1740548681323,
+    "relativePath": "resources\\图标技能\\Ability_GolemThunderClap.png"
+  },
+  "4cb69520-0633-46b6-ab89-1272f630c9b5": {
+    "asset": 1740548668248,
+    "meta": 1740548681326,
+    "relativePath": "resources\\图标技能\\Ability_Gouge.png"
+  },
+  "2c2d1df4-ac8c-492a-aab0-a2a711b7f499": {
+    "asset": 1740548668249,
+    "meta": 1740548681343,
+    "relativePath": "resources\\图标技能\\Ability_Hibernation.png"
+  },
+  "fe4639ca-46df-4a3f-94ab-344638faf47c": {
+    "asset": 1740548668250,
+    "meta": 1740548681345,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_AimedShot.png"
+  },
+  "1934b3dd-d0a7-46b0-90e4-0ee6b2e67c15": {
+    "asset": 1740548668251,
+    "meta": 1740548681362,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_AnimalHandler.png"
+  },
+  "66e2db94-782c-4a13-a9f5-f5ddd1b24761": {
+    "asset": 1740548668252,
+    "meta": 1740548681364,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_AspectOfTheMonkey.png"
+  },
+  "dc15a7e9-2747-4cb3-91a2-1182bd0b4793": {
+    "asset": 1740548668253,
+    "meta": 1740548681381,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_AspectoftheViper.png"
+  },
+  "384a94ae-db9e-4512-b53b-d6463e040643": {
+    "asset": 1740548668254,
+    "meta": 1740548681384,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastCall.png"
+  },
+  "1ddfb351-e0b5-4b78-b826-bd5b34c3bc29": {
+    "asset": 1740548668255,
+    "meta": 1740548681404,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastCall02.png"
+  },
+  "edfc9bc5-a25e-4095-ac2d-707a5b6c309a": {
+    "asset": 1740548668256,
+    "meta": 1740548681406,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastSoothe.png"
+  },
+  "8aac014e-6996-4f57-a3bc-a6b734e660b2": {
+    "asset": 1740548668258,
+    "meta": 1740548681423,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastTraining.png"
+  },
+  "b276512b-556f-4962-89bb-ab631ae46062": {
+    "asset": 1740548668257,
+    "meta": 1740548681425,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastTaming.png"
+  },
+  "70046f9b-b001-4528-84f7-89a585bd1137": {
+    "asset": 1740548668260,
+    "meta": 1740548681440,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_CatlikeReflexes.png"
+  },
+  "4f8a19f2-b6e9-4073-b365-fdb18ea291d9": {
+    "asset": 1740548668259,
+    "meta": 1740548681442,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_BeastWithin.png"
+  },
+  "da1bde61-befd-4402-9d8c-069b0ae34a8b": {
+    "asset": 1740548668261,
+    "meta": 1740548681460,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_CombatExperience.png"
+  },
+  "560c8c12-9b5a-4422-a3ef-78ce630f9676": {
+    "asset": 1740548668262,
+    "meta": 1740548681463,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_CriticalShot.png"
+  },
+  "572796de-6115-446c-badb-13e4a9e9a5ff": {
+    "asset": 1740548668263,
+    "meta": 1740548681482,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Displacement.png"
+  },
+  "9eb81b2e-ba57-404c-9ccb-43f905ed5f2d": {
+    "asset": 1740548668264,
+    "meta": 1740548681484,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_EagleEye.png"
+  },
+  "d6539cd6-b821-4385-bc9c-67ef1cd2cbb9": {
+    "asset": 1740548668266,
+    "meta": 1740548681500,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Harass.png"
+  },
+  "4b0249b5-016b-435a-8cef-de56efa0584f": {
+    "asset": 1740548668265,
+    "meta": 1740548681504,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_FerociousInspiration.png"
+  },
+  "ffec2c7b-0d5c-4d26-8676-849989099bb8": {
+    "asset": 1740548668267,
+    "meta": 1740548681521,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_KillCommand.png"
+  },
+  "06f82140-0a27-4d88-8194-40ccab6540c9": {
+    "asset": 1740548668268,
+    "meta": 1740548681522,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_MasterTactitian.png"
+  },
+  "1c9c3a3f-560e-4ba3-9b7d-df30a93f5e9e": {
+    "asset": 1740548668269,
+    "meta": 1740548681539,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_MendPet.png"
+  },
+  "4f1d76a3-6e65-4e7e-bfbc-431bc2a6857c": {
+    "asset": 1740548668270,
+    "meta": 1740548681541,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Misdirection.png"
+  },
+  "b13238d8-b4cb-4cf7-b829-da79bc21a107": {
+    "asset": 1740548668272,
+    "meta": 1740548681558,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Bat.png"
+  },
+  "dbd7c3c4-32f9-498b-a0ed-99fdd07cd90c": {
+    "asset": 1740548668271,
+    "meta": 1740548681560,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pathfinding.png"
+  },
+  "ddca2a31-a9ff-4505-8b6a-10434694cc75": {
+    "asset": 1740548668273,
+    "meta": 1740548681577,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Bear.png"
+  },
+  "f5f6050c-6969-49db-94f9-2d7df5ff95e4": {
+    "asset": 1740548668274,
+    "meta": 1740548681580,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Boar.png"
+  },
+  "7726235e-4a46-41c2-a33d-51c3410d1fc4": {
+    "asset": 1740548668275,
+    "meta": 1740548681601,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Cat.png"
+  },
+  "a8e20991-6910-4c15-b4a1-68895e191bf5": {
+    "asset": 1740548668276,
+    "meta": 1740548681603,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Crab.png"
+  },
+  "85ba8545-e3e9-4609-9246-6b493d1e83fc": {
+    "asset": 1740548668276,
+    "meta": 1740548681620,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Crocolisk.png"
+  },
+  "a9087618-5c60-4470-8ea6-545cb58f720e": {
+    "asset": 1740548668277,
+    "meta": 1740548681622,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Gorilla.png"
+  },
+  "f7218439-dbc8-4079-966b-b2061b4cb157": {
+    "asset": 1740548668278,
+    "meta": 1740548681639,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Hyena.png"
+  },
+  "585ecaa1-b944-438e-8d07-b0fe719634ae": {
+    "asset": 1740548668279,
+    "meta": 1740548681641,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Owl.png"
+  },
+  "b33bd184-f5e0-488f-b629-53778d12f9fa": {
+    "asset": 1740548668280,
+    "meta": 1740548681658,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Raptor.png"
+  },
+  "00096344-cc77-4c46-a8c5-49d9d28a16b9": {
+    "asset": 1740548668281,
+    "meta": 1740548681660,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Scorpid.png"
+  },
+  "9ddf4826-bcd1-4737-b124-7dda80dc2960": {
+    "asset": 1740548668283,
+    "meta": 1740548681676,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_TallStrider.png"
+  },
+  "35f6d202-3b7e-42ba-95c5-5078906defd6": {
+    "asset": 1740548668282,
+    "meta": 1740548681678,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Spider.png"
+  },
+  "3a3f518b-8666-4793-8fc3-681c7b9b15f6": {
+    "asset": 1740548668285,
+    "meta": 1740548681694,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Vulture.png"
+  },
+  "91ed52ea-0eba-4455-97ef-7a74888a5e7a": {
+    "asset": 1740548668284,
+    "meta": 1740548681696,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Turtle.png"
+  },
+  "ae61aadb-a112-41da-ba75-aa94c02b51a5": {
+    "asset": 1740548668286,
+    "meta": 1740548681708,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_WindSerpent.png"
+  },
+  "b9921826-57c8-480f-a849-d900db4f7343": {
+    "asset": 1740548668288,
+    "meta": 1740548681727,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Quickshot.png"
+  },
+  "22444a14-3805-4f6c-8489-0ad50f6cf570": {
+    "asset": 1740548668287,
+    "meta": 1740548681729,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Pet_Wolf.png"
+  },
+  "e9cf1dd1-776c-44a7-8a30-dc7a461c6bef": {
+    "asset": 1740548668289,
+    "meta": 1740548681745,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Readiness.png"
+  },
+  "3a360dbb-2181-4438-9a3b-1231f44461ca": {
+    "asset": 1740548668290,
+    "meta": 1740548681747,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_Resourcefulness.png"
+  },
+  "ec54f230-1f16-4d1b-8614-5055561c8f54": {
+    "asset": 1740548668292,
+    "meta": 1740548681764,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_SilentHunter.png"
+  },
+  "074eab57-5bed-420e-89ab-92d3c4765f4b": {
+    "asset": 1740548668291,
+    "meta": 1740548681766,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_RunningShot.png"
+  },
+  "4a819cf3-899d-4fc4-b018-be2d422e54be": {
+    "asset": 1740548668293,
+    "meta": 1740548681783,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_SniperShot.png"
+  },
+  "0c603cc1-e9e8-4052-831c-73cdaf342afe": {
+    "asset": 1740548668294,
+    "meta": 1740548681785,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_SteadyShot.png"
+  },
+  "307ac7b6-9b2b-4677-b321-a550aa165f8f": {
+    "asset": 1740548668294,
+    "meta": 1740548681801,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_SurvivalInstincts.png"
+  },
+  "12910008-6692-40cf-a447-8936d0f32647": {
+    "asset": 1740548668295,
+    "meta": 1740548681803,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_SwiftStrike.png"
+  },
+  "8977fd71-badf-4289-9a42-a724be7cef3b": {
+    "asset": 1740548668297,
+    "meta": 1740548681818,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_ZenArchery.png"
+  },
+  "27ca2556-011f-4dad-98e3-68b6481bc33a": {
+    "asset": 1740548668296,
+    "meta": 1740548681820,
+    "relativePath": "resources\\图标技能\\Ability_Hunter_ThrilloftheHunt.png"
+  },
+  "f4e58cac-2a90-4129-afac-bf17a68b7873": {
+    "asset": 1740548668298,
+    "meta": 1740548681836,
+    "relativePath": "resources\\图标技能\\Ability_ImpalingBolt.png"
+  },
+  "953c12f9-1f6a-4bbc-91e9-2f2a9b381213": {
+    "asset": 1740548668299,
+    "meta": 1740548681839,
+    "relativePath": "resources\\图标技能\\Ability_Kick.png"
+  },
+  "d84e08bc-dc60-444c-8244-32f699a36b15": {
+    "asset": 1740548668300,
+    "meta": 1740548681853,
+    "relativePath": "resources\\图标技能\\Ability_Mage_Invisibility.png"
+  },
+  "c0f7c22b-4ad0-4efe-93cf-8361e6ea3d04": {
+    "asset": 1740548668301,
+    "meta": 1740548681856,
+    "relativePath": "resources\\图标技能\\Ability_Mage_MoltenArmor.png"
+  },
+  "5b4e754f-b986-4cd2-b6cb-09017dfb4a5a": {
+    "asset": 1740548668303,
+    "meta": 1740548681872,
+    "relativePath": "resources\\图标技能\\Ability_MeleeDamage.png"
+  },
+  "110342fe-12ab-4bdc-9744-84a71a0b7329": {
+    "asset": 1740548668302,
+    "meta": 1740548681874,
+    "relativePath": "resources\\图标技能\\Ability_Marksmanship.png"
+  },
+  "330750e2-c2a4-4972-aad2-aa012e110b83": {
+    "asset": 1740548668305,
+    "meta": 1740548681891,
+    "relativePath": "resources\\图标技能\\Ability_Mount_BlackPanther.png"
+  },
+  "92ecf19f-0774-4bd9-85fc-72581109eec4": {
+    "asset": 1740548668304,
+    "meta": 1740548681893,
+    "relativePath": "resources\\图标技能\\Ability_Mount_BlackDireWolf.png"
+  },
+  "abae4fac-b3c2-454d-9a3a-cdcdc10ae82b": {
+    "asset": 1740548668306,
+    "meta": 1740548681909,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Charger.png"
+  },
+  "058c16a6-807b-427f-bcd9-0d6651fd244a": {
+    "asset": 1740548668307,
+    "meta": 1740548681911,
+    "relativePath": "resources\\图标技能\\Ability_Mount_CockatriceMount.png"
+  },
+  "9b59ba88-0c7a-46a1-88c7-c817db10bc87": {
+    "asset": 1740548668308,
+    "meta": 1740548681927,
+    "relativePath": "resources\\图标技能\\Ability_Mount_CockatriceMountElite.png"
+  },
+  "6146ac0e-296f-40b3-975f-c7d82e71c8cb": {
+    "asset": 1740548668309,
+    "meta": 1740548681929,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Dreadsteed.png"
+  },
+  "82bdc396-9233-4890-82bd-15a193f7d991": {
+    "asset": 1740548668311,
+    "meta": 1740548681945,
+    "relativePath": "resources\\图标技能\\Ability_Mount_JungleTiger.png"
+  },
+  "8fcdfb97-70b2-441c-bd63-a2e420c4939c": {
+    "asset": 1740548668310,
+    "meta": 1740548681947,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Gryphon_01.png"
+  },
+  "623d2e87-660c-495b-84f0-351622b81fd4": {
+    "asset": 1740548668313,
+    "meta": 1740548681965,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_02.png"
+  },
+  "525d1331-42c7-44d8-a253-3a93614ab5db": {
+    "asset": 1740548668312,
+    "meta": 1740548681967,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_01.png"
+  },
+  "729b448a-f5dc-4ff0-a556-b77e4e20870f": {
+    "asset": 1740548668314,
+    "meta": 1740548681984,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Kodo_03.png"
+  },
+  "e5b380d1-9b67-448e-886f-25be3c9559c6": {
+    "asset": 1740548668315,
+    "meta": 1740548681986,
+    "relativePath": "resources\\图标技能\\Ability_Mount_MechaStrider.png"
+  },
+  "238c3af5-90d1-4d56-b9de-09f1bd453949": {
+    "asset": 1740548668316,
+    "meta": 1740548682002,
+    "relativePath": "resources\\图标技能\\Ability_Mount_MountainRam.png"
+  },
+  "93d41820-4f87-4f77-9997-ac432d317d47": {
+    "asset": 1740548668316,
+    "meta": 1740548682004,
+    "relativePath": "resources\\图标技能\\Ability_Mount_NetherDrakeElite.png"
+  },
+  "d93c0624-1257-46db-9319-1a59d51a8e25": {
+    "asset": 1740548668317,
+    "meta": 1740548682020,
+    "relativePath": "resources\\图标技能\\Ability_Mount_NetherdrakePurple.png"
+  },
+  "457af094-76f4-45e0-93a4-eac9c1ecf946": {
+    "asset": 1740548668318,
+    "meta": 1740548682023,
+    "relativePath": "resources\\图标技能\\Ability_Mount_NightmareHorse.png"
+  },
+  "d07e33e7-1cd3-4899-b992-d068562a23c2": {
+    "asset": 1740548668319,
+    "meta": 1740548682041,
+    "relativePath": "resources\\图标技能\\Ability_Mount_PinkTiger.png"
+  },
+  "c7cf368b-111d-452b-b222-51a2d1caa842": {
+    "asset": 1740548668320,
+    "meta": 1740548682042,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Raptor.png"
+  },
+  "532d3010-3837-4547-8220-bf67e1f5f859": {
+    "asset": 1740548668322,
+    "meta": 1740548682059,
+    "relativePath": "resources\\图标技能\\Ability_Mount_RidingElekkElite.png"
+  },
+  "a0eaf396-70bb-4556-a59f-0ebe40b9fe14": {
+    "asset": 1740548668321,
+    "meta": 1740548682060,
+    "relativePath": "resources\\图标技能\\Ability_Mount_RidingElekk.png"
+  },
+  "d109a93e-7f38-4cb9-8bfc-20decd36d188": {
+    "asset": 1740548668323,
+    "meta": 1740548682077,
+    "relativePath": "resources\\图标技能\\Ability_Mount_RidingHorse.png"
+  },
+  "1b9c5ca9-4ae3-44b8-b006-fb9d098d547b": {
+    "asset": 1740548668324,
+    "meta": 1740548682079,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Undeadhorse.png"
+  },
+  "06a57ffd-323d-497a-a86a-0f7757a6c17d": {
+    "asset": 1740548668326,
+    "meta": 1740548682094,
+    "relativePath": "resources\\图标技能\\Ability_Mount_WhiteTiger.png"
+  },
+  "cc53e675-1bd0-48f2-82e7-74128b838a47": {
+    "asset": 1740548668325,
+    "meta": 1740548682096,
+    "relativePath": "resources\\图标技能\\Ability_Mount_WhiteDireWolf.png"
+  },
+  "1b42117c-7f05-4e23-a065-388accb24a3a": {
+    "asset": 1740548668327,
+    "meta": 1740548682111,
+    "relativePath": "resources\\图标技能\\Ability_Mount_Wyvern_01.png"
+  },
+  "c7f2c1ce-a14c-4fea-a155-8eb795bbccf5": {
+    "asset": 1740548668328,
+    "meta": 1740548682113,
+    "relativePath": "resources\\图标技能\\Ability_Parry.png"
+  },
+  "be6faf5b-184a-4896-8724-63fa1caa2e6b": {
+    "asset": 1740548668329,
+    "meta": 1740548682129,
+    "relativePath": "resources\\图标技能\\Ability_Physical_Taunt.png"
+  },
+  "d0fc03f8-fbfa-45df-b7b1-998c0e3d277a": {
+    "asset": 1740548668330,
+    "meta": 1740548682130,
+    "relativePath": "resources\\图标技能\\Ability_PierceDamage.png"
+  },
+  "97e0d79d-6838-43dc-9382-5305d88713ec": {
+    "asset": 1740548668331,
+    "meta": 1740548682146,
+    "relativePath": "resources\\图标技能\\Ability_PoisonArrow.png"
+  },
+  "28d3c882-bbc0-4335-8740-566f55a6e10f": {
+    "asset": 1740548668333,
+    "meta": 1740548682147,
+    "relativePath": "resources\\图标技能\\Ability_Poisons.png"
+  },
+  "6f97cf52-ab85-4f13-9f25-4217338f8367": {
+    "asset": 1740548668332,
+    "meta": 1740548682164,
+    "relativePath": "resources\\图标技能\\Ability_PoisonSting.png"
+  },
+  "ce7ead66-2e85-4e96-9df6-66a20fcc9776": {
+    "asset": 1740548668334,
+    "meta": 1740548682166,
+    "relativePath": "resources\\图标技能\\Ability_Racial_Avatar.png"
+  },
+  "ae950a29-b391-427f-97e2-07d5de5e46fa": {
+    "asset": 1740548668335,
+    "meta": 1740548682183,
+    "relativePath": "resources\\图标技能\\Ability_Racial_BearForm.png"
+  },
+  "f4988e4c-266b-4dc8-8a2d-de31c91f9c12": {
+    "asset": 1740548668336,
+    "meta": 1740548682186,
+    "relativePath": "resources\\图标技能\\Ability_Racial_BloodRage.png"
+  },
+  "7cce8f1e-e6b3-4250-8f62-f0aa7b9d4e29": {
+    "asset": 1740548668338,
+    "meta": 1740548682204,
+    "relativePath": "resources\\图标技能\\Ability_Racial_ShadowMeld.png"
+  },
+  "4761aadb-614e-49aa-af41-d31a8beb8184": {
+    "asset": 1740548668337,
+    "meta": 1740548682206,
+    "relativePath": "resources\\图标技能\\Ability_Racial_Cannibalize.png"
+  },
+  "cf8bad6e-5cc4-4d5e-af71-b1b8488b851d": {
+    "asset": 1740548668339,
+    "meta": 1740548682224,
+    "relativePath": "resources\\图标技能\\Ability_Racial_Ultravision.png"
+  },
+  "5222842c-70c0-4732-86d9-5ce8422ea838": {
+    "asset": 1740548668340,
+    "meta": 1740548682227,
+    "relativePath": "resources\\图标技能\\Ability_Repair.png"
+  },
+  "2a096600-1ea6-4aa2-b15b-ef4932ef7cfe": {
+    "asset": 1740548668340,
+    "meta": 1740548682243,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Ambush.png"
+  },
+  "8da5f8c7-ab19-40be-951c-1a1b8547cadf": {
+    "asset": 1740548668341,
+    "meta": 1740548682245,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_BladeTwisting.png"
+  },
+  "192516a0-6deb-4e37-8397-13b868dfcc26": {
+    "asset": 1740548668343,
+    "meta": 1740548682262,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_CheatDeath.png"
+  },
+  "a227a596-f77d-4c85-b04e-56a8c34323b8": {
+    "asset": 1740548668342,
+    "meta": 1740548682264,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_BloodyEye.png"
+  },
+  "b3851ff6-c4e2-4c3d-834c-dfbd221e19ae": {
+    "asset": 1740548668344,
+    "meta": 1740548682279,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_DeadenedNerves.png"
+  },
+  "a503145a-94e3-4521-991c-771c6ef644bf": {
+    "asset": 1740548668345,
+    "meta": 1740548682281,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Disembowel.png"
+  },
+  "6ed1bc87-3fa3-4d4f-aa39-d4b15f7d17be": {
+    "asset": 1740548668346,
+    "meta": 1740548682297,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Disguise.png"
+  },
+  "450c64bc-60c6-40d6-b925-57e768275150": {
+    "asset": 1740548668347,
+    "meta": 1740548682299,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Distract.png"
+  },
+  "fc19e870-7010-47dc-9892-1b455bc95d30": {
+    "asset": 1740548668348,
+    "meta": 1740548682314,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_DualWeild.png"
+  },
+  "7add4389-5156-4330-96d3-b91f255aa7c2": {
+    "asset": 1740548668349,
+    "meta": 1740548682316,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_EnvelopingShadows.png"
+  },
+  "a6b8f45a-bc89-4e91-8d92-d7eb5de7d324": {
+    "asset": 1740548668351,
+    "meta": 1740548682332,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_FeignDeath.png"
+  },
+  "4e7c69b8-01e9-4c84-9e8d-676cfa411122": {
+    "asset": 1740548668350,
+    "meta": 1740548682334,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Eviscerate.png"
+  },
+  "6c2430ab-1628-41e3-b495-a120e0216bad": {
+    "asset": 1740548668352,
+    "meta": 1740548682351,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Feint.png"
+  },
+  "f75ad9cb-9a1d-49bb-9c8f-5048270a2087": {
+    "asset": 1740548668353,
+    "meta": 1740548682353,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_FindWeakness.png"
+  },
+  "24301621-93b1-4a85-9321-64757ce9cc67": {
+    "asset": 1740548668354,
+    "meta": 1740548682369,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_FleetFooted.png"
+  },
+  "f1f226f9-90ec-4083-941c-6c1b671ee5fc": {
+    "asset": 1740548668355,
+    "meta": 1740548682371,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Garrote.png"
+  },
+  "1cf466fc-4fef-49a9-b2ae-a3b24b5cbaab": {
+    "asset": 1740548668356,
+    "meta": 1740548682386,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_KidneyShot.png"
+  },
+  "c7055d9d-eed9-41d9-80c2-07fd9f23fce7": {
+    "asset": 1740548668357,
+    "meta": 1740548682388,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_MasterOfSubtlety.png"
+  },
+  "c4fcdd64-ffe6-477e-ab5f-d679d1bfe987": {
+    "asset": 1740548668359,
+    "meta": 1740548682405,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_QuickRecovery.png"
+  },
+  "699454f5-2562-4665-a35a-a66fe3c2d115": {
+    "asset": 1740548668358,
+    "meta": 1740548682407,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_NervesOfSteel.png"
+  },
+  "6887ff6e-fa16-472d-88f1-d4f4ae4c2c9c": {
+    "asset": 1740548668360,
+    "meta": 1740548682424,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Rupture.png"
+  },
+  "557d9512-77b0-4f9a-993a-d29fdbecf70f": {
+    "asset": 1740548668361,
+    "meta": 1740548682426,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_ShadowStrikes.png"
+  },
+  "d76ebbfe-9b96-456c-b3fd-bac090970e4c": {
+    "asset": 1740548668363,
+    "meta": 1740548682441,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_SliceDice.png"
+  },
+  "78fa6cb7-575a-40c0-94ac-0bd727e0c4f9": {
+    "asset": 1740548668362,
+    "meta": 1740548682443,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_SinisterCalling.png"
+  },
+  "4bbdd206-e949-4019-945b-60af51c9cbf0": {
+    "asset": 1740548668364,
+    "meta": 1740548682460,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Sprint.png"
+  },
+  "ad8200be-4971-41bf-969f-09da52b78d09": {
+    "asset": 1740548668365,
+    "meta": 1740548682463,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_SurpriseAttack.png"
+  },
+  "46ca2ab5-849c-47cd-8245-775105b1f0e8": {
+    "asset": 1740548668366,
+    "meta": 1740548682479,
+    "relativePath": "resources\\图标技能\\Ability_Rogue_Trip.png"
+  },
+  "84d3a225-6ef9-46fe-9ac2-3f6c5edd05b0": {
+    "asset": 1740548668367,
+    "meta": 1740548682481,
+    "relativePath": "resources\\图标技能\\Ability_Sap.png"
+  },
+  "19f2a79a-0b26-4468-b39d-a762f619ad71": {
+    "asset": 1740548668368,
+    "meta": 1740548682497,
+    "relativePath": "resources\\图标技能\\Ability_Seal.png"
+  },
+  "2e3c128a-b6f8-4ec0-b3a2-220659f62aa4": {
+    "asset": 1740548668369,
+    "meta": 1740548682499,
+    "relativePath": "resources\\图标技能\\Ability_SearingArrow.png"
+  },
+  "73e301e4-010e-44df-8a19-534c836c40ed": {
+    "asset": 1740548668370,
+    "meta": 1740548682515,
+    "relativePath": "resources\\图标技能\\Ability_ShootWand.png"
+  },
+  "8cbe40a6-5b8c-40dc-b6f2-794a5f05b7f3": {
+    "asset": 1740548668369,
+    "meta": 1740548682517,
+    "relativePath": "resources\\图标技能\\Ability_ShockWave.png"
+  },
+  "746ce262-73ec-4840-91f8-ad3a4bf4cc3d": {
+    "asset": 1740548668371,
+    "meta": 1740548682533,
+    "relativePath": "resources\\图标技能\\Ability_Smash.png"
+  },
+  "1aac4eee-116a-4f9c-96c5-d1e7e5e39ecd": {
+    "asset": 1740548668372,
+    "meta": 1740548682535,
+    "relativePath": "resources\\图标技能\\Ability_Spy.png"
+  },
+  "31c90670-27dd-4a8f-afa7-24d81ad33903": {
+    "asset": 1740548668373,
+    "meta": 1740548682549,
+    "relativePath": "resources\\图标技能\\Ability_Stealth.png"
+  },
+  "668456da-4e65-44c9-894a-2268bb54fc5f": {
+    "asset": 1740548668374,
+    "meta": 1740548682552,
+    "relativePath": "resources\\图标技能\\Ability_SteelMelee.png"
+  },
+  "d6cffba2-485d-4249-91db-fb84d18af3ed": {
+    "asset": 1740548668375,
+    "meta": 1740548682553,
+    "relativePath": "resources\\图标技能\\skill_AutoAtlas.pac"
+  },
+  "da33b0d7-8e01-45a5-8e70-a068253adaba": {
+    "asset": 1740548668375,
+    "meta": 1740548682567,
+    "relativePath": "resources\\图标技能\\Ability_Suffocate.png"
+  },
+  "c1156cbb-c7e9-4724-b8f4-2600f9bd102c": {
+    "asset": 1740548668380,
+    "meta": 1740548682578,
+    "relativePath": "resources\\图标技能效果\\奥术.png"
+  },
+  "b5b1916b-9379-4e60-ab34-99f55abfe9bb": {
+    "asset": 1740548668378,
+    "meta": 1740548682590,
+    "relativePath": "resources\\图标技能效果\\光晕.png"
+  },
+  "1902624f-80dd-47e3-bb1b-0f04a33db756": {
+    "asset": 1740548668382,
+    "meta": 1740548682596,
+    "relativePath": "resources\\图标技能效果\\飓风.png"
+  },
+  "062c300f-dae4-4325-856d-2649da614fb8": {
+    "asset": 1740548668383,
+    "meta": 1740548682608,
+    "relativePath": "resources\\图标技能效果\\龙卷风.png"
+  },
+  "d7a8d8a7-e83d-49fd-acbf-ab8a77f76a45": {
+    "asset": 1740548668376,
+    "meta": 1740548682610,
+    "relativePath": "resources\\图标技能效果\\skill_AutoAtlas.pac"
+  },
+  "d79df13d-61d6-4c5d-b797-b86e06d6a749": {
+    "asset": 1740548668381,
+    "meta": 1740548682612,
+    "relativePath": "resources\\图标技能效果\\血爆.png"
+  },
+  "fa92774a-c130-43b7-b9d9-e6d27441c05d": {
+    "asset": 1740548668399,
+    "meta": 1740548682627,
+    "relativePath": "resources\\图标生物\\蛋.png"
+  },
+  "6003d5b3-a223-4480-a713-7e84f8d8b5ef": {
+    "asset": 1740548668401,
+    "meta": 1740548682632,
+    "relativePath": "resources\\图标生物\\貂蝉.png"
+  },
+  "1ad396e1-a9aa-4eeb-b571-20394ca5294d": {
+    "asset": 1740548668392,
+    "meta": 1740548682649,
+    "relativePath": "resources\\图标生物\\独角兽.png"
+  },
+  "2c548927-a0df-4a71-b313-3df916dd1123": {
+    "asset": 1740548668387,
+    "meta": 1740548682651,
+    "relativePath": "resources\\图标生物\\宫本.png"
+  },
+  "4d2a2e18-a01e-40cf-a9cd-73345628bd2e": {
+    "asset": 1740548668405,
+    "meta": 1740548682668,
+    "relativePath": "resources\\图标生物\\鬼海龙.png"
+  },
+  "8b4d3c4e-defc-4e12-b1eb-ac855c2d5998": {
+    "asset": 1740548668404,
+    "meta": 1740548682670,
+    "relativePath": "resources\\图标生物\\鬼娃娃.png"
+  },
+  "d049f321-73ad-4ed7-8354-adc15ebffc2e": {
+    "asset": 1740548668396,
+    "meta": 1740548682688,
+    "relativePath": "resources\\图标生物\\花妖.png"
+  },
+  "c95eda7b-37e5-4081-b7de-ca385c01fdc5": {
+    "asset": 1740548668402,
+    "meta": 1740548682690,
+    "relativePath": "resources\\图标生物\\骷髅兵.png"
   },
   "6a308740-cbe0-4cef-aaed-39fc300432b2": {
-    "asset": 1740493445997,
-    "meta": 1740493446060,
+    "asset": 1740548668397,
+    "meta": 1740548682707,
     "relativePath": "resources\\图标生物\\蘑菇.png"
   },
+  "c5c2a0d9-089d-41da-824c-730a0a42e32e": {
+    "asset": 1740548668391,
+    "meta": 1740548682709,
+    "relativePath": "resources\\图标生物\\洛克人.png"
+  },
   "871f9a4d-c241-409d-aff1-3f00d277da6e": {
-    "asset": 1740493445997,
-    "meta": 1740493446063,
+    "asset": 1740548668389,
+    "meta": 1740548682727,
     "relativePath": "resources\\图标生物\\山贼.png"
   },
   "278eba71-1ba4-497b-a65d-667530ceb015": {
-    "asset": 1740493445997,
-    "meta": 1740493446084,
+    "asset": 1740548668407,
+    "meta": 1740548682730,
     "relativePath": "resources\\图标生物\\魔法少女.png"
   },
   "048753c9-09ef-46b1-a128-e44c02c619f2": {
-    "asset": 1740493445997,
-    "meta": 1740493446087,
+    "asset": 1740548668384,
+    "meta": 1740548682746,
     "relativePath": "resources\\图标生物\\司马懿.png"
   },
-  "fa92774a-c130-43b7-b9d9-e6d27441c05d": {
-    "asset": 1740493445997,
-    "meta": 1740493446107,
-    "relativePath": "resources\\图标生物\\蛋.png"
-  },
-  "d2ecb9bf-2fe1-49ab-9fe7-da7eb4fb1628": {
-    "asset": 1740493445997,
-    "meta": 1740493446132,
-    "relativePath": "resources\\图标生物\\玄铁兵.png"
-  },
-  "6003d5b3-a223-4480-a713-7e84f8d8b5ef": {
-    "asset": 1740493445997,
-    "meta": 1740493446134,
-    "relativePath": "resources\\图标生物\\貂蝉.png"
-  },
-  "8b4d3c4e-defc-4e12-b1eb-ac855c2d5998": {
-    "asset": 1740493445998,
-    "meta": 1740493446154,
-    "relativePath": "resources\\图标生物\\鬼娃娃.png"
-  },
-  "1ad396e1-a9aa-4eeb-b571-20394ca5294d": {
-    "asset": 1740493445998,
-    "meta": 1740493446156,
-    "relativePath": "resources\\图标生物\\独角兽.png"
-  },
-  "d049f321-73ad-4ed7-8354-adc15ebffc2e": {
-    "asset": 1740493445998,
-    "meta": 1740493446176,
-    "relativePath": "resources\\图标生物\\花妖.png"
-  },
-  "c5c2a0d9-089d-41da-824c-730a0a42e32e": {
-    "asset": 1740493445998,
-    "meta": 1740493446179,
-    "relativePath": "resources\\图标生物\\洛克人.png"
-  },
-  "c95eda7b-37e5-4081-b7de-ca385c01fdc5": {
-    "asset": 1740493445998,
-    "meta": 1740493446201,
-    "relativePath": "resources\\图标生物\\骷髅兵.png"
-  },
-  "4d2a2e18-a01e-40cf-a9cd-73345628bd2e": {
-    "asset": 1740493446000,
-    "meta": 1740493446203,
-    "relativePath": "resources\\图标生物\\鬼海龙.png"
-  },
-  "2c548927-a0df-4a71-b313-3df916dd1123": {
-    "asset": 1740493446000,
-    "meta": 1740493446220,
-    "relativePath": "resources\\图标生物\\宫本.png"
-  },
-  "d1fe0061-b852-46d5-9073-6208c1ed4a20": {
-    "asset": 1740493543266,
-    "meta": 1740493543318,
-    "relativePath": "resources\\图片大厅\\好友.png"
-  },
-  "eca3540e-84f9-4c9a-9b07-14175e1fab20": {
-    "asset": 1740493543266,
-    "meta": 1740493543321,
-    "relativePath": "resources\\图片大厅\\金币.png"
-  },
-  "72800891-fd9d-4c17-9c24-6878346583b8": {
-    "asset": 1740493543266,
-    "meta": 1740493543339,
-    "relativePath": "resources\\图片大厅\\符文.png"
-  },
-  "e36fa447-0e37-45b6-9b01-4f0156d6a3e0": {
-    "asset": 1740493543266,
-    "meta": 1740493543342,
-    "relativePath": "resources\\图片大厅\\商店.png"
-  },
-  "a5bdd390-01f4-4357-a711-54642cd46ce3": {
-    "asset": 1740493543266,
-    "meta": 1740493543362,
-    "relativePath": "resources\\图片大厅\\上古仙门.png"
-  },
-  "cc44cb78-a0b5-4d98-a9db-8f8c8122b364": {
-    "asset": 1740493543266,
-    "meta": 1740493543364,
-    "relativePath": "resources\\图片大厅\\任务.png"
-  },
-  "97ec71b9-930a-4056-8231-a907e76efb9c": {
-    "asset": 1740493543266,
-    "meta": 1740493543383,
-    "relativePath": "resources\\图片大厅\\神魔炼狱.png"
-  },
-  "e1b2031e-538d-405d-9329-ea9b4f0c69e2": {
-    "asset": 1740493543266,
-    "meta": 1740493543385,
-    "relativePath": "resources\\图片大厅\\上古秘境.png"
-  },
-  "ed2e0588-375d-4691-9240-f7038bcc0686": {
-    "asset": 1740493543266,
-    "meta": 1740493543402,
-    "relativePath": "resources\\图片大厅\\生物.png"
-  },
-  "24770063-0e0a-4c24-a4fe-ef76f4e890d8": {
-    "asset": 1740493543266,
-    "meta": 1740493543404,
-    "relativePath": "resources\\图片大厅\\天地熔炉.png"
-  },
-  "be207685-f2a1-4459-be67-cf41ba0967c1": {
-    "asset": 1740493543266,
-    "meta": 1740493543422,
-    "relativePath": "resources\\图片大厅\\诸天万界.png"
-  },
-  "ae0d4afc-247c-4d6d-b68f-221a72b865e6": {
-    "asset": 1740493543266,
-    "meta": 1740493543427,
-    "relativePath": "resources\\图片大厅\\礼包.png"
-  },
-  "0f9d284b-a532-4646-9ca2-c2ce26be16d6": {
-    "asset": 1740493543266,
-    "meta": 1740493543447,
-    "relativePath": "resources\\图片大厅\\背包.png"
-  },
-  "60ccaf1c-7964-4e0c-ba12-9db236f75062": {
-    "asset": 1740493543266,
-    "meta": 1740493543449,
-    "relativePath": "resources\\图片大厅\\锁妖塔.png"
-  },
-  "3d5967f8-a7c8-468a-89b1-6e0ab1f8b390": {
-    "asset": 1740493543266,
-    "meta": 1740493543466,
-    "relativePath": "resources\\图片大厅\\布阵.png"
-  },
-  "d98e6c52-c98e-48a2-8d64-8e143be168f0": {
-    "asset": 1740493543266,
-    "meta": 1740493543467,
-    "relativePath": "resources\\图片大厅\\创造生物.png"
-  },
-  "f1a7af02-8cf0-430e-ba26-9c9d56e3c2f1": {
-    "asset": 1740493550262,
-    "meta": 1740546611666,
-    "relativePath": "resources\\图片大厅\\home_AutoAtlas.pac"
-  },
-  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
-    "asset": 1740493822243,
-    "meta": 1740493827906,
-    "relativePath": "Script\\music\\home_music.js"
-  },
   "d347639b-f764-451b-b5b8-76eda399bc61": {
-    "asset": 1740546336672,
-    "meta": 1740546336699,
+    "asset": 1740548668386,
+    "meta": 1740548682748,
     "relativePath": "resources\\图标生物\\孙尚香.png"
   },
-  "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786": {
-    "asset": 1740546943445,
-    "meta": 1740546959189,
-    "relativePath": "resources\\图标世界\\大唐双龙传.jpg"
+  "d2ecb9bf-2fe1-49ab-9fe7-da7eb4fb1628": {
+    "asset": 1740548668394,
+    "meta": 1740548682764,
+    "relativePath": "resources\\图标生物\\玄铁兵.png"
   },
   "8624aa4e-9e12-493f-aa3e-474b84cbc67b": {
-    "asset": 1740546943558,
-    "meta": 1740546959191,
+    "asset": 1740548668169,
+    "meta": 1740548682766,
     "relativePath": "resources\\图标世界\\楚汉传奇.jpg"
   },
+  "3a4ee1a0-c7d9-463d-bdc4-394ab6ed3786": {
+    "asset": 1740548668164,
+    "meta": 1740548682782,
+    "relativePath": "resources\\图标世界\\大唐双龙传.jpg"
+  },
   "476480a7-6ba8-4230-aef2-ba29ff5cdd3f": {
-    "asset": 1740546943695,
-    "meta": 1740546959207,
+    "asset": 1740548668176,
+    "meta": 1740548682784,
     "relativePath": "resources\\图标世界\\蝶舞天涯.jpg"
   },
-  "17bb3d97-974b-44f0-aee6-175cf9cb4ab1": {
-    "asset": 1740546943794,
-    "meta": 1740546959208,
-    "relativePath": "resources\\图标世界\\风云.jpg"
-  },
   "3dcc38d4-1dd8-4099-923f-9c4c876632f9": {
-    "asset": 1740546943413,
-    "meta": 1740546959223,
+    "asset": 1740548668163,
+    "meta": 1740548682800,
     "relativePath": "resources\\图标世界\\功夫.jpg"
   },
+  "17bb3d97-974b-44f0-aee6-175cf9cb4ab1": {
+    "asset": 1740548668181,
+    "meta": 1740548682802,
+    "relativePath": "resources\\图标世界\\风云.jpg"
+  },
   "b26538da-e84b-438d-a9c8-2858ad7d156e": {
-    "asset": 1740546943376,
-    "meta": 1740546959225,
+    "asset": 1740548668161,
+    "meta": 1740548682817,
     "relativePath": "resources\\图标世界\\僵尸道长.jpg"
   },
-  "b36586f6-780f-4b3b-bf1e-db3d04082696": {
-    "asset": 1740546943835,
-    "meta": 1740546959258,
-    "relativePath": "resources\\图标世界\\鹿鼎记.jpg"
-  },
-  "22071f21-91f2-4c00-8a57-3ff7b2d84af4": {
-    "asset": 1740546943343,
-    "meta": 1740546959260,
-    "relativePath": "resources\\图标世界\\倩女幽魂.jpg"
-  },
-  "4d8dfeeb-5e06-46ad-a4f3-cd969ec803fd": {
-    "asset": 1740546943523,
-    "meta": 1740546959276,
-    "relativePath": "resources\\图标世界\\少年张三丰.jpg"
-  },
-  "d5de7070-3b56-4285-8f76-5b83bf521860": {
-    "asset": 1740546943313,
-    "meta": 1740546959278,
-    "relativePath": "resources\\图标世界\\三国演义.jpg"
-  },
-  "80466f3d-3d8b-4371-8ae1-7149bf6633c9": {
-    "asset": 1740546943761,
-    "meta": 1740546959294,
-    "relativePath": "resources\\图标世界\\隋唐英雄传.jpg"
-  },
-  "ce8d76e7-d83a-415f-b5fd-5f3c7c258930": {
-    "asset": 1740546943623,
-    "meta": 1740546959296,
-    "relativePath": "resources\\图标世界\\水浒传.jpg"
-  },
-  "a32e65f0-41e5-4583-9ec1-33ca2efa535f": {
-    "asset": 1740546943584,
-    "meta": 1740546959314,
-    "relativePath": "resources\\图标世界\\武林外传.jpg"
-  },
-  "e118f4d3-7bd3-400d-947c-66ca4ae2bac4": {
-    "asset": 1740546943487,
-    "meta": 1740546959315,
-    "relativePath": "resources\\图标世界\\天下第一.jpg"
-  },
   "9303d994-51d2-41c9-a4fa-005e96be88a2": {
-    "asset": 1740547394830,
-    "meta": 1740547473598,
+    "asset": 1740548668174,
+    "meta": 1740548682819,
     "relativePath": "resources\\图标世界\\蓝星.jpg"
   },
   "1788d4c5-f704-425a-bd47-9ede6d351c67": {
-    "asset": 1740547432543,
-    "meta": 1740547473600,
+    "asset": 1740548668177,
+    "meta": 1740548682835,
     "relativePath": "resources\\图标世界\\连城诀.jpg"
+  },
+  "b36586f6-780f-4b3b-bf1e-db3d04082696": {
+    "asset": 1740548668182,
+    "meta": 1740548682836,
+    "relativePath": "resources\\图标世界\\鹿鼎记.jpg"
+  },
+  "d5de7070-3b56-4285-8f76-5b83bf521860": {
+    "asset": 1740548668158,
+    "meta": 1740548682853,
+    "relativePath": "resources\\图标世界\\三国演义.jpg"
+  },
+  "22071f21-91f2-4c00-8a57-3ff7b2d84af4": {
+    "asset": 1740548668160,
+    "meta": 1740548682855,
+    "relativePath": "resources\\图标世界\\倩女幽魂.jpg"
+  },
+  "4d8dfeeb-5e06-46ad-a4f3-cd969ec803fd": {
+    "asset": 1740548668168,
+    "meta": 1740548682871,
+    "relativePath": "resources\\图标世界\\少年张三丰.jpg"
+  },
+  "ce8d76e7-d83a-415f-b5fd-5f3c7c258930": {
+    "asset": 1740548668172,
+    "meta": 1740548682874,
+    "relativePath": "resources\\图标世界\\水浒传.jpg"
+  },
+  "e118f4d3-7bd3-400d-947c-66ca4ae2bac4": {
+    "asset": 1740548668166,
+    "meta": 1740548682889,
+    "relativePath": "resources\\图标世界\\天下第一.jpg"
+  },
+  "80466f3d-3d8b-4371-8ae1-7149bf6633c9": {
+    "asset": 1740548668179,
+    "meta": 1740548682891,
+    "relativePath": "resources\\图标世界\\隋唐英雄传.jpg"
+  },
+  "a32e65f0-41e5-4583-9ec1-33ca2efa535f": {
+    "asset": 1740548668171,
+    "meta": 1740548682907,
+    "relativePath": "resources\\图标世界\\武林外传.jpg"
+  },
+  "7025811b-b2c5-4259-821f-8e522449ff93": {
+    "asset": 1740548668413,
+    "meta": 1740548682910,
+    "relativePath": "resources\\图标装备\\彩蛋.png"
+  },
+  "277f8418-32bc-49ad-a0ad-55bd3108246c": {
+    "asset": 1740548668415,
+    "meta": 1740548682926,
+    "relativePath": "resources\\图标装备\\抵消疾病.png"
+  },
+  "848d1e49-48f3-4dc0-a8be-7a63c6cd3334": {
+    "asset": 1740548668414,
+    "meta": 1740548682927,
+    "relativePath": "resources\\图标装备\\恶魔召唤.png"
+  },
+  "1c809480-ce59-43da-977e-9783713e4ede": {
+    "asset": 1740548668412,
+    "meta": 1740548682943,
+    "relativePath": "resources\\图标装备\\加.png"
+  },
+  "b65df4e9-9723-4eb4-b2bd-4bd2c0964ae4": {
+    "asset": 1740548668410,
+    "meta": 1740548682945,
+    "relativePath": "resources\\图标装备\\刚毅.png"
+  },
+  "1731d4e1-d4f3-4e63-89aa-dd3c669e7acb": {
+    "asset": 1740548668412,
+    "meta": 1740548682960,
+    "relativePath": "resources\\图标装备\\剑.jpg"
+  },
+  "49f5a970-fa9d-4f35-8aa3-145ecbfe7ceb": {
+    "asset": 1740548668418,
+    "meta": 1740548682962,
+    "relativePath": "resources\\图标装备\\金币.png"
+  },
+  "ce491221-7bff-4ffc-a7b3-041125a29128": {
+    "asset": 1740548668415,
+    "meta": 1740548682978,
+    "relativePath": "resources\\图标装备\\死亡缠绕.png"
+  },
+  "2b1f7af7-8281-43e3-a61c-aa1eabfa6dff": {
+    "asset": 1740548668410,
+    "meta": 1740548682980,
+    "relativePath": "resources\\图标装备\\仙剑.png"
+  },
+  "467bb9d1-05c6-46f7-b439-0b7cf231dff4": {
+    "asset": 1740548668416,
+    "meta": 1740548683000,
+    "relativePath": "resources\\图标装备\\消耗.png"
+  },
+  "f97eaa7f-bbd4-479c-b26b-a357c5385a18": {
+    "asset": 1740548668417,
+    "meta": 1740548683005,
+    "relativePath": "resources\\图标装备\\药水绿色.png"
+  },
+  "3d5967f8-a7c8-468a-89b1-6e0ab1f8b390": {
+    "asset": 1740548668433,
+    "meta": 1740548683021,
+    "relativePath": "resources\\图片大厅\\布阵.png"
+  },
+  "0f9d284b-a532-4646-9ca2-c2ce26be16d6": {
+    "asset": 1740548668442,
+    "meta": 1740548683023,
+    "relativePath": "resources\\图片大厅\\背包.png"
+  },
+  "d98e6c52-c98e-48a2-8d64-8e143be168f0": {
+    "asset": 1740548668426,
+    "meta": 1740548683043,
+    "relativePath": "resources\\图片大厅\\创造生物.png"
+  },
+  "72800891-fd9d-4c17-9c24-6878346583b8": {
+    "asset": 1740548668440,
+    "meta": 1740548683045,
+    "relativePath": "resources\\图片大厅\\符文.png"
+  },
+  "eca3540e-84f9-4c9a-9b07-14175e1fab20": {
+    "asset": 1740548668445,
+    "meta": 1740548683063,
+    "relativePath": "resources\\图片大厅\\金币.png"
+  },
+  "d1fe0061-b852-46d5-9073-6208c1ed4a20": {
+    "asset": 1740548668431,
+    "meta": 1740548683065,
+    "relativePath": "resources\\图片大厅\\好友.png"
+  },
+  "ae0d4afc-247c-4d6d-b68f-221a72b865e6": {
+    "asset": 1740548668436,
+    "meta": 1740548683081,
+    "relativePath": "resources\\图片大厅\\礼包.png"
+  },
+  "cc44cb78-a0b5-4d98-a9db-8f8c8122b364": {
+    "asset": 1740548668424,
+    "meta": 1740548683084,
+    "relativePath": "resources\\图片大厅\\任务.png"
+  },
+  "e36fa447-0e37-45b6-9b01-4f0156d6a3e0": {
+    "asset": 1740548668428,
+    "meta": 1740548683100,
+    "relativePath": "resources\\图片大厅\\商店.png"
+  },
+  "e1b2031e-538d-405d-9329-ea9b4f0c69e2": {
+    "asset": 1740548668422,
+    "meta": 1740548683103,
+    "relativePath": "resources\\图片大厅\\上古秘境.png"
+  },
+  "a5bdd390-01f4-4357-a711-54642cd46ce3": {
+    "asset": 1740548668420,
+    "meta": 1740548683117,
+    "relativePath": "resources\\图片大厅\\上古仙门.png"
+  },
+  "97ec71b9-930a-4056-8231-a907e76efb9c": {
+    "asset": 1740548668438,
+    "meta": 1740548683120,
+    "relativePath": "resources\\图片大厅\\神魔炼狱.png"
+  },
+  "ed2e0588-375d-4691-9240-f7038bcc0686": {
+    "asset": 1740548668435,
+    "meta": 1740548683136,
+    "relativePath": "resources\\图片大厅\\生物.png"
+  },
+  "60ccaf1c-7964-4e0c-ba12-9db236f75062": {
+    "asset": 1740548668447,
+    "meta": 1740548683138,
+    "relativePath": "resources\\图片大厅\\锁妖塔.png"
+  },
+  "24770063-0e0a-4c24-a4fe-ef76f4e890d8": {
+    "asset": 1740548668429,
+    "meta": 1740548683153,
+    "relativePath": "resources\\图片大厅\\天地熔炉.png"
+  },
+  "f1a7af02-8cf0-430e-ba26-9c9d56e3c2f1": {
+    "asset": 1740548668418,
+    "meta": 1740548683154,
+    "relativePath": "resources\\图片大厅\\home_AutoAtlas.pac"
+  },
+  "be207685-f2a1-4459-be67-cf41ba0967c1": {
+    "asset": 1740548668444,
+    "meta": 1740548683156,
+    "relativePath": "resources\\图片大厅\\诸天万界.png"
+  },
+  "d51ef8a8-ae2d-4d82-83ec-7c54823d690a": {
+    "asset": 1740548668091,
+    "meta": 1740548683172,
+    "relativePath": "resources\\A基础图标\\10标准弹窗.png"
+  },
+  "7dca248e-972c-44f3-9e70-63e29d46894c": {
+    "asset": 1740548668096,
+    "meta": 1740548683175,
+    "relativePath": "resources\\A基础图标\\1攻击.png"
+  },
+  "59c4a857-2dd7-44b7-b0d6-63e4b252dadb": {
+    "asset": 1740548668095,
+    "meta": 1740548683191,
+    "relativePath": "resources\\A基础图标\\1技能框.png"
+  },
+  "6df561e8-8d43-4e1a-8f7f-35b23caf4702": {
+    "asset": 1740548668094,
+    "meta": 1740548683193,
+    "relativePath": "resources\\A基础图标\\1技能.png"
+  },
+  "f0121585-cf7d-4bad-91b8-11b387bb6106": {
+    "asset": 1740548668092,
+    "meta": 1740548683208,
+    "relativePath": "resources\\A基础图标\\1墓碑.png"
+  },
+  "146198f3-814c-46b3-9f93-491eea1ac55c": {
+    "asset": 1740548668097,
+    "meta": 1740548683212,
+    "relativePath": "resources\\A基础图标\\1死亡之花.png"
+  },
+  "3b739a45-be54-480f-81f7-f705d00e0750": {
+    "asset": 1740548668098,
+    "meta": 1740548683230,
+    "relativePath": "resources\\A基础图标\\2阴影.png"
+  },
+  "5328e16c-709a-4b9e-91ce-6915249dbe8b": {
+    "asset": 1740548668099,
+    "meta": 1740548683232,
+    "relativePath": "resources\\A基础图标\\3关闭.png"
+  },
+  "4b854cee-0f1d-461d-89b5-07fa26b74880": {
+    "asset": 1740548668101,
+    "meta": 1740548683249,
+    "relativePath": "resources\\A基础图标\\4异形.png"
+  },
+  "e8baa60a-b060-4437-aa88-59f9721556f9": {
+    "asset": 1740548668102,
+    "meta": 1740548683250,
+    "relativePath": "resources\\A基础图标\\5标准按钮1.png"
+  },
+  "a57fc618-a4e9-4ebf-8f49-c1d41eab2db2": {
+    "asset": 1740548668104,
+    "meta": 1740548683267,
+    "relativePath": "resources\\A基础图标\\6标准按钮3.png"
+  },
+  "d3920daf-d6d5-42cd-822c-3e8ac82d5184": {
+    "asset": 1740548668103,
+    "meta": 1740548683269,
+    "relativePath": "resources\\A基础图标\\6标准按钮2.png"
+  },
+  "74f2f6d9-b0d3-4fe4-90c0-51e6c5e0e043": {
+    "asset": 1740548668105,
+    "meta": 1740548683285,
+    "relativePath": "resources\\A基础图标\\7问号.png"
+  },
+  "2c2b1d6e-0a7d-45fd-a346-180be98e84e1": {
+    "asset": 1740548668106,
+    "meta": 1740548683287,
+    "relativePath": "resources\\A基础图标\\8边框.png"
+  },
+  "57043434-c331-44d9-b43b-1d84ffc43f94": {
+    "asset": 1740548668107,
+    "meta": 1740548683302,
+    "relativePath": "resources\\A基础图标\\9标准弹窗.png"
+  },
+  "83d38215-0c69-4f46-9a6a-4b9cca0c29df": {
+    "asset": 1740548668131,
+    "meta": 1740548683304,
+    "relativePath": "resources\\A基础图标\\按钮.png"
+  },
+  "6a9d1ceb-c63b-4f87-b5d5-c2d91840ad58": {
+    "asset": 1740548668133,
+    "meta": 1740548683320,
+    "relativePath": "resources\\A基础图标\\标题1.png"
+  },
+  "a7ecaa9c-502f-4366-b207-0c80d065fe14": {
+    "asset": 1740548668147,
+    "meta": 1740548683322,
+    "relativePath": "resources\\A基础图标\\边框圆.png"
+  },
+  "16bd776f-4c93-400c-9bfc-19c3076c6481": {
+    "asset": 1740548668134,
+    "meta": 1740548683338,
+    "relativePath": "resources\\A基础图标\\标题2.png"
+  },
+  "2719dfa6-cdbe-4a66-805d-28a952cd7540": {
+    "asset": 1740548668136,
+    "meta": 1740548683340,
+    "relativePath": "resources\\A基础图标\\标题3.png"
+  },
+  "86036771-f96b-47b9-a85b-362ecc631fa9": {
+    "asset": 1740548668137,
+    "meta": 1740548683355,
+    "relativePath": "resources\\A基础图标\\标题4.png"
+  },
+  "238d70df-3827-480e-a1b6-b454d0e5c90a": {
+    "asset": 1740548668120,
+    "meta": 1740548683357,
+    "relativePath": "resources\\A基础图标\\出战.png"
+  },
+  "7240839b-b8fd-40fb-995f-122b757e9c0d": {
+    "asset": 1740548668125,
+    "meta": 1740548683373,
+    "relativePath": "resources\\A基础图标\\底座.png"
+  },
+  "c0b3d456-9789-4287-bdaa-0da4f56a3468": {
+    "asset": 1740548668127,
+    "meta": 1740548683375,
+    "relativePath": "resources\\A基础图标\\底座1.png"
+  },
+  "9fc462e7-77a5-422b-89ed-5498cbb8594e": {
+    "asset": 1740548668130,
+    "meta": 1740548683389,
+    "relativePath": "resources\\A基础图标\\抵消疾病.png"
+  },
+  "ba6a0b14-3cd5-4366-b25a-539894f0417e": {
+    "asset": 1740548668142,
+    "meta": 1740548683391,
+    "relativePath": "resources\\A基础图标\\点数.png"
+  },
+  "3bd227bb-e56f-46d8-b3bf-afd4fd726ee6": {
+    "asset": 1740548668121,
+    "meta": 1740548683407,
+    "relativePath": "resources\\A基础图标\\刚毅.png"
+  },
+  "b68c3e96-6af1-49a8-b84c-f8cc1708dcf4": {
+    "asset": 1740548668128,
+    "meta": 1740548683409,
+    "relativePath": "resources\\A基础图标\\恶魔召唤.png"
+  },
+  "d115405e-7195-47b4-ac64-4caf190c4acc": {
+    "asset": 1740548668123,
+    "meta": 1740548683424,
+    "relativePath": "resources\\A基础图标\\加黑.png"
+  },
+  "9ec95e88-a2b2-4974-b27a-108f043d13f8": {
+    "asset": 1740548668122,
+    "meta": 1740548683425,
+    "relativePath": "resources\\A基础图标\\加.png"
+  },
+  "1ae37c6f-0066-44c2-b2a1-4c7c94b018c3": {
+    "asset": 1740548668149,
+    "meta": 1740548683442,
+    "relativePath": "resources\\A基础图标\\金币2.png"
+  },
+  "b15090f9-47e1-49ea-ad54-959cfc126fb3": {
+    "asset": 1740548668148,
+    "meta": 1740548683445,
+    "relativePath": "resources\\A基础图标\\金币.png"
+  },
+  "9062c045-3fdb-4957-bac5-6dca69fc0fa4": {
+    "asset": 1740548668141,
+    "meta": 1740548683462,
+    "relativePath": "resources\\A基础图标\\灵石.png"
+  },
+  "94c139dc-7a30-4661-98da-c3008acb96c7": {
+    "asset": 1740548668124,
+    "meta": 1740548683464,
+    "relativePath": "resources\\A基础图标\\墓碑.png"
+  },
+  "e757bbfa-2a28-43d3-b60e-97bc03f61c06": {
+    "asset": 1740548668139,
+    "meta": 1740548683481,
+    "relativePath": "resources\\A基础图标\\水墨背景.png"
+  },
+  "80b85a87-eb45-4dbb-944d-7f821233eaca": {
+    "asset": 1740548668144,
+    "meta": 1740548683482,
+    "relativePath": "resources\\A基础图标\\生命.png"
+  },
+  "58fe9e2b-74b9-4fc7-a0a4-84b098116a91": {
+    "asset": 1740548668138,
+    "meta": 1740548683497,
+    "relativePath": "resources\\A基础图标\\死亡缠绕.png"
+  },
+  "76220847-c34c-4457-a405-d2d032d0d60e": {
+    "asset": 1740548668118,
+    "meta": 1740548683500,
+    "relativePath": "resources\\A基础图标\\体力.png"
+  },
+  "7ce4ce9e-9959-4809-9b6f-3a7b342ecedb": {
+    "asset": 1740548668140,
+    "meta": 1740548683517,
+    "relativePath": "resources\\A基础图标\\消耗.png"
+  },
+  "e12bf3c6-5eed-4161-8928-22caa4d22c2e": {
+    "asset": 1740548668119,
+    "meta": 1740548683519,
+    "relativePath": "resources\\A基础图标\\信息.png"
+  },
+  "60858a3a-0444-4e83-8a82-c2f3c0d33dc3": {
+    "asset": 1740548668132,
+    "meta": 1740548683534,
+    "relativePath": "resources\\A基础图标\\星星.png"
+  },
+  "83d0fc9f-fdb1-44f4-8c76-9148a236b723": {
+    "asset": 1740548668146,
+    "meta": 1740548683536,
+    "relativePath": "resources\\A基础图标\\药水绿色.png"
+  },
+  "bbc56ed9-a651-4137-9e9d-c566671463b2": {
+    "asset": 1740548668145,
+    "meta": 1740548683553,
+    "relativePath": "resources\\A基础图标\\砖石.png"
+  },
+  "7b6bb2cd-8fc0-4b6a-bb41-0e850a19d8dc": {
+    "asset": 1740548668129,
+    "meta": 1740548683555,
+    "relativePath": "resources\\A基础图标\\战斗.png"
+  },
+  "364582a1-d059-4fde-949b-a0cfbcca3523": {
+    "asset": 1740548668114,
+    "meta": 1740548683571,
+    "relativePath": "resources\\A基础图标\\a火.png"
+  },
+  "ee9d0248-4c9c-4b33-9b66-7c59c17b999b": {
+    "asset": 1740548668115,
+    "meta": 1740548683574,
+    "relativePath": "resources\\A基础图标\\a背景.png"
+  },
+  "7c7db64c-4827-4dc8-a55a-b5da19a3a170": {
+    "asset": 1740548668117,
+    "meta": 1740548683589,
+    "relativePath": "resources\\A基础图标\\a金.png"
+  },
+  "e3619722-f212-4c6a-b31e-efcd7f0af03e": {
+    "asset": 1740548668111,
+    "meta": 1740548683591,
+    "relativePath": "resources\\A基础图标\\a木.png"
+  },
+  "ddb24bf2-2a2a-468b-94ed-7a7f52bceb7b": {
+    "asset": 1740548668112,
+    "meta": 1740548683608,
+    "relativePath": "resources\\A基础图标\\a水.png"
+  },
+  "cba1677d-9701-4e69-a746-bd518127eaf3": {
+    "asset": 1740548668109,
+    "meta": 1740548683610,
+    "relativePath": "resources\\A基础图标\\a土.png"
+  },
+  "2ff1dadd-3de7-44e6-ad8e-e1998bf79163": {
+    "asset": 1740548668157,
+    "meta": 1740548683613,
+    "relativePath": "resources\\model召唤\\云游商人.prefab"
+  },
+  "c401445e-5141-4beb-8817-b993c1865231": {
+    "asset": 1740548668150,
+    "meta": 1740548683622,
+    "relativePath": "resources\\model召唤\\A创造.prefab"
+  },
+  "3599bcaf-c040-4eee-9c9c-9ded750b7f9f": {
+    "asset": 1740548668110,
+    "meta": 1740548683625,
+    "relativePath": "resources\\A基础图标\\a无.png"
+  },
+  "65b182dc-72c3-4e4a-b465-6f55cb7370d5": {
+    "asset": 1740548668155,
+    "meta": 1740548683628,
+    "relativePath": "resources\\model召唤\\A融合.prefab"
+  },
+  "6459d432-a2d8-4e3a-9f3d-468d469edf3c": {
+    "asset": 1740548668156,
+    "meta": 1740548683632,
+    "relativePath": "resources\\model召唤\\A训练.prefab"
+  },
+  "37f4be94-b986-4adf-be84-0107aebef494": {
+    "asset": 1740548668152,
+    "meta": 1740548683637,
+    "relativePath": "resources\\model召唤\\A创造备份.prefab"
+  },
+  "5406df07-29b5-41f0-a1a1-ba90b1e7f71f": {
+    "asset": 1740548668154,
+    "meta": 1740548683652,
+    "relativePath": "resources\\model召唤\\A召唤详情.prefab"
+  },
+  "34235350-b894-43aa-9725-8d614c5633e0": {
+    "asset": 1740548668080,
+    "meta": 1740548683661,
+    "relativePath": "Scene\\home\\大厅.fire"
+  },
+  "c36814a1-f948-4855-b798-7a99aebbb506": {
+    "asset": 1740548668084,
+    "meta": 1740548683667,
+    "relativePath": "Scene\\login\\角色.fire"
+  },
+  "c1129e4b-0b23-40b1-9b09-144f63b59aee": {
+    "asset": 1740548668086,
+    "meta": 1740548683754,
+    "relativePath": "Script\\背包\\biology_infoTools.js"
+  },
+  "359c7f12-3452-4f64-acf6-0e27f4e4c9be": {
+    "asset": 1740548668085,
+    "meta": 1740548683768,
+    "relativePath": "Script\\music\\home_music.js"
+  },
+  "c36e2d2a-abe2-4ce0-81f4-07ae095bbe93": {
+    "asset": 1740548668083,
+    "meta": 1740548683788,
+    "relativePath": "Scene\\login\\登录.fire"
+  },
+  "496e7872-51ad-40b5-8724-b872860cdea3": {
+    "asset": 1740548845187,
+    "meta": 1740548845202,
+    "relativePath": "Scene\\home\\创造生物.fire"
   }
 }
