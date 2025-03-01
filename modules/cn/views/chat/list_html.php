@@ -198,7 +198,7 @@ function nextPage(goPage){
 		$("#user_list"+uid).find('.user_time').text(h +":"+ m);
 		$("#user_list"+uid).find('.user_tips_title').addClass('user_tips');
 		//提示
-		var user_num = Number($("#user_list"+uid).find('.user_tips_title').html()) + Number(1);
+		var user_num = Number($("#user_list"+uid).find('.user_tips_title').html()) + Numaber(1);
 		$("#user_list"+uid).find('.user_tips_title').html(user_num);
 		//统计
 		var num = Number($("#usernum").val()) + Number(1);

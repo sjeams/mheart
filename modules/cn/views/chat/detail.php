@@ -6,6 +6,10 @@
 			手机号：<span><?php echo $friend['phone']?></span> <br>
 			地区：<span><?php echo $friend['city']?></span> <br>
 	</div> 
+	<span class="float_rigth" style="padding: 0px 10px;">
+		<button id="call_on">一键外呼</button>
+	</span>
+
 </div> 
 
 <div class="user_information_center"> 
@@ -56,3 +60,13 @@
 	<?php  } }?>
 </div>	
 <script type="text/javascript" charset="utf-8" src="/ckplayer/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="/nodejs/node_modules/client.js"></script>
+<script>
+
+
+	// 一键外呼
+	$("#call_on").click(function(){
+		console.log('一键外呼');
+		sdkCall('18181941463');
+	});
+</script>
