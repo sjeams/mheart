@@ -66,7 +66,6 @@
 
 	// 一键外呼
 	$("#call_on").click(function(){
-		console.log('一键外呼');
 		sdkCall('18181941463');
 	});
 </script>
