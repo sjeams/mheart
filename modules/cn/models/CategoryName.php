@@ -24,6 +24,7 @@ class CategoryName extends ActiveRecord {
     }
 	 public static function Category(){
         $list = CategoryName::find()->where("is_show =1 ")->asArray()->all();
+        $list = array_column($list, null, 'belong');
         // $list =array(
         //     array( 'id'=>0,'name'=>'淘片','issearch'=>'1' ),
         //     // array( 'id'=>1,'name'=>'jipo' ),
@@ -37,6 +38,7 @@ class CategoryName extends ActiveRecord {
     }
     public static function CategoryVideo(){
         $list = CategoryName::find()->where("belong=0 and is_show =1")->asArray()->all();
+        $list = array_column($list, null, 'belong');
         // $list =array(
         //     array( 'id'=>0,'name'=>'淘片片' ,'issearch'=>'1'),
         //     // array( 'id'=>1,'name'=>'jipo' ),
