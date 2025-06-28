@@ -61,6 +61,15 @@
     .container{
         top:0;
     }
+    
+    input, textarea {
+    -webkit-user-select: auto !important;
+    user-select: auto !important;
+    }
+    
+input {
+  -webkit-transform: translate3d(0, 0, 0);
+}
 </style>
 
 <div class="container">
