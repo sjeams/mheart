@@ -83,23 +83,18 @@
     </table>
 </div>
 <script>
-// 在页面加载后执行
-document.addEventListener('DOMContentLoaded', function() {
-  const pwdInputs = document.querySelectorAll('input[type="password"][data-ios-fix]');
-  
-  pwdInputs.forEach(input => {
-    // 修复焦点切换问题
-    input.addEventListener('focus', function() {
-      this.setAttribute('autocomplete', 'new-password');
+    // 当密码框获得焦点时
+    passwordInput.addEventListener('focus', function() {
+    this.type = 'text';
+    this.setAttribute('data-original-type', 'password');
     });
-    
-    // 修复键盘切换问题
-    input.addEventListener('blur', function() {
-      this.removeAttribute('autocomplete');
-    });
-  });
-});
 
+    // 当密码框失去焦点时
+    passwordInput.addEventListener('blur', function() {
+    if(this.getAttribute('data-original-type') === 'password') {
+        this.type = 'password';
+    }
+    }); 
     function  loginPhone(){
         phone = $("#phone").val();
         password = $("#password").val();
