@@ -61,6 +61,11 @@
     .container{
         top:0;
     }
+    input[type="text"], input[type="password"] {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    }
+
 </style>
 
 <div class="container">
@@ -70,7 +75,7 @@
             <td>
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
-                <input type="text" onfocus="this.type='password'" onblur="this.type='text'" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
+                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
