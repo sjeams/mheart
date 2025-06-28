@@ -70,12 +70,8 @@
             <td>
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
-                <span>
-                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
-              
-     <span>
+                <input type="text" onfocus="this.type='password'" onblur="this.type='text'" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
-                  </span>
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
                 <button  class=" logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
