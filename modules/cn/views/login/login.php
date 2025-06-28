@@ -75,7 +75,7 @@
             <td>
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
-                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
+                <input type="text"  style="width:0;height:0;opacity:0" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
