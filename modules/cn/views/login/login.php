@@ -61,11 +61,6 @@
     .container{
         top:0;
     }
-    
-input, textarea {
-  -webkit-user-select: auto !important;  /* 允许文本选择 */
-  user-select: auto !important;
-}
 </style>
 
 <div class="container">
@@ -76,9 +71,6 @@ input, textarea {
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
                 <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
-                <!-- 关键：插入隐藏输入框 兼容ios输入法 -->
-                <!-- 关键：隐藏占位框 -->
-                <input disabled style="height:0; min-height:0; padding:0; border:none">
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
@@ -91,6 +83,12 @@ input, textarea {
     </table>
 </div>
 <script>
+    
+    // 监听键盘高度动态调整布局
+    uni.onKeyboardHeightChange(res => {
+    const keyboardHeight = res.height;
+    document.querySelector('.input-wrap').style.bottom = `${keyboardHeight}px`;
+    });
     function  loginPhone(){
         phone = $("#phone").val();
         password = $("#password").val();
