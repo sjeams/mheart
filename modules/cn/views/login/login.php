@@ -1,4 +1,5 @@
  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <style>
     .login_check{
         font-size: 24px;
@@ -83,18 +84,6 @@
     </table>
 </div>
 <script>
-    // 当密码框获得焦点时
-    passwordInput.addEventListener('focus', function() {
-    this.type = 'text';
-    this.setAttribute('data-original-type', 'password');
-    });
-
-    // 当密码框失去焦点时
-    passwordInput.addEventListener('blur', function() {
-    if(this.getAttribute('data-original-type') === 'password') {
-        this.type = 'password';
-    }
-    }); 
     function  loginPhone(){
         phone = $("#phone").val();
         password = $("#password").val();
