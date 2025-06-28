@@ -61,6 +61,10 @@
     .container{
         top:0;
     }
+    /* 防止iOS的密码保存提示遮挡输入框 */
+input[type="password"] {
+  -webkit-text-security: disc !important;
+}
 </style>
 
 <div class="container">
@@ -70,14 +74,8 @@
             <td>
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
-                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone"
-            autocapitalize="off"
-       autocorrect="off"
-       enterkeyhint="next">
-                <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password"        autocapitalize="off"
-       autocorrect="off"
-       enterkeyhint="done"
-       data-ios-fix="true" >
+                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone" autocapitalize="off"  autocorrect="off"  enterkeyhint="next">
+                <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password"  autocapitalize="off"  autocorrect="off"  enterkeyhint="done"  data-ios-fix="true" >
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
                 <button  class=" logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
@@ -121,22 +119,22 @@ $(document).keyup(function(event){
 });
 
 
-// 在页面加载后执行
-document.addEventListener('DOMContentLoaded', function() {
-  const pwdInputs = document.querySelectorAll('input[type="password"][data-ios-fix]');
-  
-  pwdInputs.forEach(input => {
-    // 修复焦点切换问题
-    input.addEventListener('focus', function() {
-      this.setAttribute('autocomplete', 'new-password');
-    });
+    // 在页面加载后执行
+    document.addEventListener('DOMContentLoaded', function() {
+    const pwdInputs = document.querySelectorAll('input[type="password"][data-ios-fix]');
     
-    // 修复键盘切换问题
-    input.addEventListener('blur', function() {
-      this.removeAttribute('autocomplete');
+    pwdInputs.forEach(input => {
+        // 修复焦点切换问题
+        input.addEventListener('focus', function() {
+        this.setAttribute('autocomplete', 'new-password');
+        });
+        
+        // 修复键盘切换问题
+        input.addEventListener('blur', function() {
+        this.removeAttribute('autocomplete');
+        });
     });
-  });
-});
+    });
 
 </script>
 
