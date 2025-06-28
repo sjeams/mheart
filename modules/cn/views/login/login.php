@@ -61,15 +61,6 @@
     .container{
         top:0;
     }
-    
-    input, textarea {
-    -webkit-user-select: auto !important;
-    user-select: auto !important;
-    }
-    
-input {
-  -webkit-transform: translate3d(0, 0, 0);
-}
 </style>
 
 <div class="container">
@@ -79,7 +70,7 @@ input {
             <td>
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
-                <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
+                <input  name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
@@ -92,12 +83,6 @@ input {
     </table>
 </div>
 <script>
-    
-    // 监听键盘高度动态调整布局
-    uni.onKeyboardHeightChange(res => {
-    const keyboardHeight = res.height;
-    document.querySelector('.input-wrap').style.bottom = `${keyboardHeight}px`;
-    });
     function  loginPhone(){
         phone = $("#phone").val();
         password = $("#password").val();
