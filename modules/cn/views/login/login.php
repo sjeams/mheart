@@ -71,6 +71,8 @@
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
                 <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone">
+                <!-- 关键：插入隐藏输入框 兼容ios输入法 -->
+                <input disabled style="height:2rpx; min-height:2rpx" />
                 <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password">
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
