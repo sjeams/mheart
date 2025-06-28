@@ -75,7 +75,7 @@ input[type="password"] {
             <div class="login_check">
                 <span class="logincss">心缘测试</span>
                 <input type="text" name="phone" value="" class="logincss" placeholder="账号：快速注册可用手机号" id="phone" autocapitalize="off"  autocorrect="off"  enterkeyhint="next">
-                <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password"  autocapitalize="off"  autocorrect="off"  enterkeyhint="done"  data-ios-fix="true" >
+                <input type="password" name="password" value="" class="logincss" placeholder="密码" id="password"  autocapitalize="off"  autocorrect="off"  enterkeyhint="done"   >
                 <span class="error "></span>
                     <!-- <button onclick="loginIn()" class="logincss">登录</button>             <button onclick="loginIn()" class="logincss">登录</button>  -->
                 <button  class=" logincss_btn login_left" onclick="loginPhone()"  >   游客登录 </button>
